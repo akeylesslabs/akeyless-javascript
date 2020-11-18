@@ -1,0 +1,13 @@
+# akl.Encrypt
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**encryptionContext** | **{String: String}** | name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the same value must be supplied to the decrypt command or decryption will fail | [optional] 
+**keyName** | **String** | The name of the key to use in the encryption process | 
+**plaintext** | **String** | Data to be encrypted | 
+**token** | **String** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
+
+

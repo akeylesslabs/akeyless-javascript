@@ -1,0 +1,17 @@
+# akl.CreateSSHCertIssuer
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**allowedUsers** | **String** | Users allowed to fetch the certificate, e.g root,ubuntu | 
+**extensions** | **{String: String}** | Signed certificates with extensions, e.g permit-port-forwarding&#x3D;\\\&quot;\\\&quot; | [optional] 
+**metadata** | **String** | A metadata about the issuer | [optional] 
+**name** | **String** | SSH certificate issuer name | 
+**principals** | **String** | Signed certificates with principal, e.g example_role1,example_role2 | [optional] 
+**signerKeyName** | **String** | A key to sign the certificate with | 
+**token** | **String** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**ttl** | **Number** | The requested Time To Live for the certificate, use second units | 
+**uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
+
+
