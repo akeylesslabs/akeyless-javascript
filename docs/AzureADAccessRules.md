@@ -1,4 +1,4 @@
-# akl.AzureADAccessRules
+# akeyless.AzureADAccessRules
 
 ## Properties
 

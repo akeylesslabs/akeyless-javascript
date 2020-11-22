@@ -1,6 +1,6 @@
-# akl.V2Api
+# akeyless.V2Api
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.akeyless.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -66,20 +66,18 @@ Method | HTTP request | Description
 
 ## assocRoleAuthMethod
 
-> CreateRoleAuthMethodAssocOutput assocRoleAuthMethod(opts)
+> CreateRoleAuthMethodAssocOutput assocRoleAuthMethod(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.AssocRoleAuthMethod() // AssocRoleAuthMethod | 
-};
-apiInstance.assocRoleAuthMethod(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.AssocRoleAuthMethod(); // AssocRoleAuthMethod | 
+apiInstance.assocRoleAuthMethod(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -93,7 +91,7 @@ apiInstance.assocRoleAuthMethod(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AssocRoleAuthMethod**](AssocRoleAuthMethod.md)|  | [optional] 
+ **body** | [**AssocRoleAuthMethod**](AssocRoleAuthMethod.md)|  | 
 
 ### Return type
 
@@ -111,20 +109,18 @@ No authorization required
 
 ## auth
 
-> AuthOutput auth(opts)
+> AuthOutput auth(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.Auth() // Auth | 
-};
-apiInstance.auth(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.Auth(); // Auth | 
+apiInstance.auth(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -138,7 +134,7 @@ apiInstance.auth(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Auth**](Auth.md)|  | [optional] 
+ **body** | [**Auth**](Auth.md)|  | 
 
 ### Return type
 
@@ -156,20 +152,18 @@ No authorization required
 
 ## configure
 
-> ConfigureOutput configure(opts)
+> ConfigureOutput configure(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.Configure() // Configure | 
-};
-apiInstance.configure(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.Configure(); // Configure | 
+apiInstance.configure(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -183,7 +177,7 @@ apiInstance.configure(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Configure**](Configure.md)|  | [optional] 
+ **body** | [**Configure**](Configure.md)|  | 
 
 ### Return type
 
@@ -201,20 +195,18 @@ No authorization required
 
 ## createAuthMethod
 
-> CreateAuthMethodOutput createAuthMethod(opts)
+> CreateAuthMethodOutput createAuthMethod(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.CreateAuthMethod() // CreateAuthMethod | 
-};
-apiInstance.createAuthMethod(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateAuthMethod(); // CreateAuthMethod | 
+apiInstance.createAuthMethod(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -228,7 +220,7 @@ apiInstance.createAuthMethod(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethod**](CreateAuthMethod.md)|  | [optional] 
+ **body** | [**CreateAuthMethod**](CreateAuthMethod.md)|  | 
 
 ### Return type
 
@@ -246,20 +238,18 @@ No authorization required
 
 ## createAuthMethodAWSIAM
 
-> CreateAuthMethodAWSIAMOutput createAuthMethodAWSIAM(opts)
+> CreateAuthMethodAWSIAMOutput createAuthMethodAWSIAM(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.CreateAuthMethodAWSIAM() // CreateAuthMethodAWSIAM | 
-};
-apiInstance.createAuthMethodAWSIAM(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateAuthMethodAWSIAM(); // CreateAuthMethodAWSIAM | 
+apiInstance.createAuthMethodAWSIAM(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -273,7 +263,7 @@ apiInstance.createAuthMethodAWSIAM(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodAWSIAM**](CreateAuthMethodAWSIAM.md)|  | [optional] 
+ **body** | [**CreateAuthMethodAWSIAM**](CreateAuthMethodAWSIAM.md)|  | 
 
 ### Return type
 
@@ -291,20 +281,18 @@ No authorization required
 
 ## createAuthMethodAzureAD
 
-> CreateAuthMethodAzureADOutput createAuthMethodAzureAD(opts)
+> CreateAuthMethodAzureADOutput createAuthMethodAzureAD(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.CreateAuthMethodAzureAD() // CreateAuthMethodAzureAD | 
-};
-apiInstance.createAuthMethodAzureAD(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateAuthMethodAzureAD(); // CreateAuthMethodAzureAD | 
+apiInstance.createAuthMethodAzureAD(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -318,7 +306,7 @@ apiInstance.createAuthMethodAzureAD(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodAzureAD**](CreateAuthMethodAzureAD.md)|  | [optional] 
+ **body** | [**CreateAuthMethodAzureAD**](CreateAuthMethodAzureAD.md)|  | 
 
 ### Return type
 
@@ -336,20 +324,18 @@ No authorization required
 
 ## createAuthMethodHuawei
 
-> CreateAuthMethodHuaweiOutput createAuthMethodHuawei(opts)
+> CreateAuthMethodHuaweiOutput createAuthMethodHuawei(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.CreateAuthMethodHuawei() // CreateAuthMethodHuawei | 
-};
-apiInstance.createAuthMethodHuawei(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateAuthMethodHuawei(); // CreateAuthMethodHuawei | 
+apiInstance.createAuthMethodHuawei(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -363,7 +349,7 @@ apiInstance.createAuthMethodHuawei(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodHuawei**](CreateAuthMethodHuawei.md)|  | [optional] 
+ **body** | [**CreateAuthMethodHuawei**](CreateAuthMethodHuawei.md)|  | 
 
 ### Return type
 
@@ -381,20 +367,18 @@ No authorization required
 
 ## createAuthMethodOAuth2
 
-> CreateAuthMethodOAuth2Output createAuthMethodOAuth2(opts)
+> CreateAuthMethodOAuth2Output createAuthMethodOAuth2(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.CreateAuthMethodOAuth2() // CreateAuthMethodOAuth2 | 
-};
-apiInstance.createAuthMethodOAuth2(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateAuthMethodOAuth2(); // CreateAuthMethodOAuth2 | 
+apiInstance.createAuthMethodOAuth2(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -408,7 +392,7 @@ apiInstance.createAuthMethodOAuth2(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodOAuth2**](CreateAuthMethodOAuth2.md)|  | [optional] 
+ **body** | [**CreateAuthMethodOAuth2**](CreateAuthMethodOAuth2.md)|  | 
 
 ### Return type
 
@@ -426,20 +410,18 @@ No authorization required
 
 ## createAuthMethodSAML
 
-> CreateAuthMethodSAMLOutput createAuthMethodSAML(opts)
+> CreateAuthMethodSAMLOutput createAuthMethodSAML(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.CreateAuthMethodSAML() // CreateAuthMethodSAML | 
-};
-apiInstance.createAuthMethodSAML(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateAuthMethodSAML(); // CreateAuthMethodSAML | 
+apiInstance.createAuthMethodSAML(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -453,7 +435,7 @@ apiInstance.createAuthMethodSAML(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodSAML**](CreateAuthMethodSAML.md)|  | [optional] 
+ **body** | [**CreateAuthMethodSAML**](CreateAuthMethodSAML.md)|  | 
 
 ### Return type
 
@@ -471,20 +453,18 @@ No authorization required
 
 ## createAuthMethodUniversalIdentity
 
-> CreateAuthMethodUniversalIdentityOutput createAuthMethodUniversalIdentity(opts)
+> CreateAuthMethodUniversalIdentityOutput createAuthMethodUniversalIdentity(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.CreateAuthMethodUniversalIdentity() // CreateAuthMethodUniversalIdentity | 
-};
-apiInstance.createAuthMethodUniversalIdentity(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateAuthMethodUniversalIdentity(); // CreateAuthMethodUniversalIdentity | 
+apiInstance.createAuthMethodUniversalIdentity(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -498,7 +478,7 @@ apiInstance.createAuthMethodUniversalIdentity(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodUniversalIdentity**](CreateAuthMethodUniversalIdentity.md)|  | [optional] 
+ **body** | [**CreateAuthMethodUniversalIdentity**](CreateAuthMethodUniversalIdentity.md)|  | 
 
 ### Return type
 
@@ -516,20 +496,18 @@ No authorization required
 
 ## createDynamicSecret
 
-> Object createDynamicSecret(opts)
+> Object createDynamicSecret(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.CreateDynamicSecret() // CreateDynamicSecret | 
-};
-apiInstance.createDynamicSecret(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateDynamicSecret(); // CreateDynamicSecret | 
+apiInstance.createDynamicSecret(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -543,7 +521,7 @@ apiInstance.createDynamicSecret(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateDynamicSecret**](CreateDynamicSecret.md)|  | [optional] 
+ **body** | [**CreateDynamicSecret**](CreateDynamicSecret.md)|  | 
 
 ### Return type
 
@@ -561,20 +539,18 @@ No authorization required
 
 ## createKey
 
-> CreateKeyOutput createKey(opts)
+> CreateKeyOutput createKey(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.CreateKey() // CreateKey | 
-};
-apiInstance.createKey(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateKey(); // CreateKey | 
+apiInstance.createKey(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -588,7 +564,7 @@ apiInstance.createKey(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateKey**](CreateKey.md)|  | [optional] 
+ **body** | [**CreateKey**](CreateKey.md)|  | 
 
 ### Return type
 
@@ -606,20 +582,18 @@ No authorization required
 
 ## createPKICertIssuer
 
-> CreatePKICertIssuerOutput createPKICertIssuer(opts)
+> CreatePKICertIssuerOutput createPKICertIssuer(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.CreatePKICertIssuer() // CreatePKICertIssuer | 
-};
-apiInstance.createPKICertIssuer(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreatePKICertIssuer(); // CreatePKICertIssuer | 
+apiInstance.createPKICertIssuer(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -633,7 +607,7 @@ apiInstance.createPKICertIssuer(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreatePKICertIssuer**](CreatePKICertIssuer.md)|  | [optional] 
+ **body** | [**CreatePKICertIssuer**](CreatePKICertIssuer.md)|  | 
 
 ### Return type
 
@@ -651,20 +625,18 @@ No authorization required
 
 ## createRole
 
-> Object createRole(opts)
+> Object createRole(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.CreateRole() // CreateRole | 
-};
-apiInstance.createRole(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateRole(); // CreateRole | 
+apiInstance.createRole(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -678,7 +650,7 @@ apiInstance.createRole(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateRole**](CreateRole.md)|  | [optional] 
+ **body** | [**CreateRole**](CreateRole.md)|  | 
 
 ### Return type
 
@@ -696,20 +668,18 @@ No authorization required
 
 ## createSSHCertIssuer
 
-> CreateSSHCertIssuerOutput createSSHCertIssuer(opts)
+> CreateSSHCertIssuerOutput createSSHCertIssuer(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.CreateSSHCertIssuer() // CreateSSHCertIssuer | 
-};
-apiInstance.createSSHCertIssuer(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateSSHCertIssuer(); // CreateSSHCertIssuer | 
+apiInstance.createSSHCertIssuer(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -723,7 +693,7 @@ apiInstance.createSSHCertIssuer(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateSSHCertIssuer**](CreateSSHCertIssuer.md)|  | [optional] 
+ **body** | [**CreateSSHCertIssuer**](CreateSSHCertIssuer.md)|  | 
 
 ### Return type
 
@@ -741,20 +711,18 @@ No authorization required
 
 ## createSecret
 
-> CreateSecretOutput createSecret(opts)
+> CreateSecretOutput createSecret(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.CreateSecret() // CreateSecret | 
-};
-apiInstance.createSecret(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateSecret(); // CreateSecret | 
+apiInstance.createSecret(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -768,7 +736,7 @@ apiInstance.createSecret(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateSecret**](CreateSecret.md)|  | [optional] 
+ **body** | [**CreateSecret**](CreateSecret.md)|  | 
 
 ### Return type
 
@@ -786,20 +754,18 @@ No authorization required
 
 ## decrypt
 
-> DecryptOutput decrypt(opts)
+> DecryptOutput decrypt(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.Decrypt() // Decrypt | 
-};
-apiInstance.decrypt(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.Decrypt(); // Decrypt | 
+apiInstance.decrypt(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -813,7 +779,7 @@ apiInstance.decrypt(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Decrypt**](Decrypt.md)|  | [optional] 
+ **body** | [**Decrypt**](Decrypt.md)|  | 
 
 ### Return type
 
@@ -831,20 +797,18 @@ No authorization required
 
 ## decryptPKCS1
 
-> DecryptPKCS1Output decryptPKCS1(opts)
+> DecryptPKCS1Output decryptPKCS1(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.DecryptPKCS1() // DecryptPKCS1 | 
-};
-apiInstance.decryptPKCS1(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DecryptPKCS1(); // DecryptPKCS1 | 
+apiInstance.decryptPKCS1(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -858,7 +822,7 @@ apiInstance.decryptPKCS1(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DecryptPKCS1**](DecryptPKCS1.md)|  | [optional] 
+ **body** | [**DecryptPKCS1**](DecryptPKCS1.md)|  | 
 
 ### Return type
 
@@ -876,20 +840,18 @@ No authorization required
 
 ## deleteAuthMethod
 
-> DeleteAuthMethodOutput deleteAuthMethod(opts)
+> DeleteAuthMethodOutput deleteAuthMethod(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.DeleteAuthMethod() // DeleteAuthMethod | 
-};
-apiInstance.deleteAuthMethod(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DeleteAuthMethod(); // DeleteAuthMethod | 
+apiInstance.deleteAuthMethod(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -903,7 +865,7 @@ apiInstance.deleteAuthMethod(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteAuthMethod**](DeleteAuthMethod.md)|  | [optional] 
+ **body** | [**DeleteAuthMethod**](DeleteAuthMethod.md)|  | 
 
 ### Return type
 
@@ -921,20 +883,18 @@ No authorization required
 
 ## deleteAuthMethods
 
-> DeleteAuthMethodsOutput deleteAuthMethods(opts)
+> DeleteAuthMethodsOutput deleteAuthMethods(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.DeleteAuthMethods() // DeleteAuthMethods | 
-};
-apiInstance.deleteAuthMethods(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DeleteAuthMethods(); // DeleteAuthMethods | 
+apiInstance.deleteAuthMethods(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -948,7 +908,7 @@ apiInstance.deleteAuthMethods(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteAuthMethods**](DeleteAuthMethods.md)|  | [optional] 
+ **body** | [**DeleteAuthMethods**](DeleteAuthMethods.md)|  | 
 
 ### Return type
 
@@ -966,20 +926,18 @@ No authorization required
 
 ## deleteItem
 
-> DeleteItemOutput deleteItem(opts)
+> DeleteItemOutput deleteItem(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.DeleteItem() // DeleteItem | 
-};
-apiInstance.deleteItem(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DeleteItem(); // DeleteItem | 
+apiInstance.deleteItem(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -993,7 +951,7 @@ apiInstance.deleteItem(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteItem**](DeleteItem.md)|  | [optional] 
+ **body** | [**DeleteItem**](DeleteItem.md)|  | 
 
 ### Return type
 
@@ -1011,20 +969,18 @@ No authorization required
 
 ## deleteItems
 
-> DeleteItemsOutput deleteItems(opts)
+> DeleteItemsOutput deleteItems(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.DeleteItems() // DeleteItems | 
-};
-apiInstance.deleteItems(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DeleteItems(); // DeleteItems | 
+apiInstance.deleteItems(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1038,7 +994,7 @@ apiInstance.deleteItems(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteItems**](DeleteItems.md)|  | [optional] 
+ **body** | [**DeleteItems**](DeleteItems.md)|  | 
 
 ### Return type
 
@@ -1056,20 +1012,18 @@ No authorization required
 
 ## deleteRole
 
-> Object deleteRole(opts)
+> Object deleteRole(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.DeleteRole() // DeleteRole | 
-};
-apiInstance.deleteRole(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DeleteRole(); // DeleteRole | 
+apiInstance.deleteRole(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1083,7 +1037,7 @@ apiInstance.deleteRole(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteRole**](DeleteRole.md)|  | [optional] 
+ **body** | [**DeleteRole**](DeleteRole.md)|  | 
 
 ### Return type
 
@@ -1101,20 +1055,18 @@ No authorization required
 
 ## deleteRoleAssociation
 
-> Object deleteRoleAssociation(opts)
+> Object deleteRoleAssociation(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.DeleteRoleAssociation() // DeleteRoleAssociation | 
-};
-apiInstance.deleteRoleAssociation(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DeleteRoleAssociation(); // DeleteRoleAssociation | 
+apiInstance.deleteRoleAssociation(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1128,7 +1080,7 @@ apiInstance.deleteRoleAssociation(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteRoleAssociation**](DeleteRoleAssociation.md)|  | [optional] 
+ **body** | [**DeleteRoleAssociation**](DeleteRoleAssociation.md)|  | 
 
 ### Return type
 
@@ -1146,20 +1098,18 @@ No authorization required
 
 ## deleteRoleRule
 
-> DeleteRoleRuleOutput deleteRoleRule(opts)
+> DeleteRoleRuleOutput deleteRoleRule(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.DeleteRoleRule() // DeleteRoleRule | 
-};
-apiInstance.deleteRoleRule(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DeleteRoleRule(); // DeleteRoleRule | 
+apiInstance.deleteRoleRule(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1173,7 +1123,7 @@ apiInstance.deleteRoleRule(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteRoleRule**](DeleteRoleRule.md)|  | [optional] 
+ **body** | [**DeleteRoleRule**](DeleteRoleRule.md)|  | 
 
 ### Return type
 
@@ -1191,20 +1141,18 @@ No authorization required
 
 ## deleteRoles
 
-> Object deleteRoles(opts)
+> Object deleteRoles(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.DeleteRoles() // DeleteRoles | 
-};
-apiInstance.deleteRoles(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DeleteRoles(); // DeleteRoles | 
+apiInstance.deleteRoles(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1218,7 +1166,7 @@ apiInstance.deleteRoles(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteRoles**](DeleteRoles.md)|  | [optional] 
+ **body** | [**DeleteRoles**](DeleteRoles.md)|  | 
 
 ### Return type
 
@@ -1236,20 +1184,18 @@ No authorization required
 
 ## describeItem
 
-> Item describeItem(opts)
+> Item describeItem(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.DescribeItem() // DescribeItem | 
-};
-apiInstance.describeItem(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DescribeItem(); // DescribeItem | 
+apiInstance.describeItem(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1263,7 +1209,7 @@ apiInstance.describeItem(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DescribeItem**](DescribeItem.md)|  | [optional] 
+ **body** | [**DescribeItem**](DescribeItem.md)|  | 
 
 ### Return type
 
@@ -1281,20 +1227,18 @@ No authorization required
 
 ## encrypt
 
-> EncryptOutput encrypt(opts)
+> EncryptOutput encrypt(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.Encrypt() // Encrypt | 
-};
-apiInstance.encrypt(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.Encrypt(); // Encrypt | 
+apiInstance.encrypt(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1308,7 +1252,7 @@ apiInstance.encrypt(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Encrypt**](Encrypt.md)|  | [optional] 
+ **body** | [**Encrypt**](Encrypt.md)|  | 
 
 ### Return type
 
@@ -1326,20 +1270,18 @@ No authorization required
 
 ## encryptPKCS1
 
-> EncryptPKCS1Output encryptPKCS1(opts)
+> EncryptPKCS1Output encryptPKCS1(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.EncryptPKCS1() // EncryptPKCS1 | 
-};
-apiInstance.encryptPKCS1(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.EncryptPKCS1(); // EncryptPKCS1 | 
+apiInstance.encryptPKCS1(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1353,7 +1295,7 @@ apiInstance.encryptPKCS1(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EncryptPKCS1**](EncryptPKCS1.md)|  | [optional] 
+ **body** | [**EncryptPKCS1**](EncryptPKCS1.md)|  | 
 
 ### Return type
 
@@ -1371,20 +1313,18 @@ No authorization required
 
 ## getAuthMethod
 
-> AuthMethod getAuthMethod(opts)
+> AuthMethod getAuthMethod(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.GetAuthMethod() // GetAuthMethod | 
-};
-apiInstance.getAuthMethod(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GetAuthMethod(); // GetAuthMethod | 
+apiInstance.getAuthMethod(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1398,7 +1338,7 @@ apiInstance.getAuthMethod(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetAuthMethod**](GetAuthMethod.md)|  | [optional] 
+ **body** | [**GetAuthMethod**](GetAuthMethod.md)|  | 
 
 ### Return type
 
@@ -1416,20 +1356,18 @@ No authorization required
 
 ## getDynamicSecretValue
 
-> {String: String} getDynamicSecretValue(opts)
+> {String: String} getDynamicSecretValue(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.GetDynamicSecretValue() // GetDynamicSecretValue | 
-};
-apiInstance.getDynamicSecretValue(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GetDynamicSecretValue(); // GetDynamicSecretValue | 
+apiInstance.getDynamicSecretValue(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1443,7 +1381,7 @@ apiInstance.getDynamicSecretValue(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetDynamicSecretValue**](GetDynamicSecretValue.md)|  | [optional] 
+ **body** | [**GetDynamicSecretValue**](GetDynamicSecretValue.md)|  | 
 
 ### Return type
 
@@ -1461,20 +1399,18 @@ No authorization required
 
 ## getRSAPublic
 
-> GetRSAPublicOutput getRSAPublic(opts)
+> GetRSAPublicOutput getRSAPublic(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.GetRSAPublic() // GetRSAPublic | 
-};
-apiInstance.getRSAPublic(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GetRSAPublic(); // GetRSAPublic | 
+apiInstance.getRSAPublic(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1488,7 +1424,7 @@ apiInstance.getRSAPublic(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetRSAPublic**](GetRSAPublic.md)|  | [optional] 
+ **body** | [**GetRSAPublic**](GetRSAPublic.md)|  | 
 
 ### Return type
 
@@ -1506,20 +1442,18 @@ No authorization required
 
 ## getRole
 
-> Role getRole(opts)
+> Role getRole(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.GetRole() // GetRole | 
-};
-apiInstance.getRole(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GetRole(); // GetRole | 
+apiInstance.getRole(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1533,7 +1467,7 @@ apiInstance.getRole(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetRole**](GetRole.md)|  | [optional] 
+ **body** | [**GetRole**](GetRole.md)|  | 
 
 ### Return type
 
@@ -1551,20 +1485,18 @@ No authorization required
 
 ## getSSHCertificate
 
-> GetSSHCertificateOutput getSSHCertificate(opts)
+> GetSSHCertificateOutput getSSHCertificate(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.GetSSHCertificate() // GetSSHCertificate | 
-};
-apiInstance.getSSHCertificate(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GetSSHCertificate(); // GetSSHCertificate | 
+apiInstance.getSSHCertificate(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1578,7 +1510,7 @@ apiInstance.getSSHCertificate(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetSSHCertificate**](GetSSHCertificate.md)|  | [optional] 
+ **body** | [**GetSSHCertificate**](GetSSHCertificate.md)|  | 
 
 ### Return type
 
@@ -1596,20 +1528,18 @@ No authorization required
 
 ## getSecretValue
 
-> {String: String} getSecretValue(opts)
+> {String: String} getSecretValue(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.GetSecretValue() // GetSecretValue | 
-};
-apiInstance.getSecretValue(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GetSecretValue(); // GetSecretValue | 
+apiInstance.getSecretValue(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1623,7 +1553,7 @@ apiInstance.getSecretValue(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetSecretValue**](GetSecretValue.md)|  | [optional] 
+ **body** | [**GetSecretValue**](GetSecretValue.md)|  | 
 
 ### Return type
 
@@ -1641,20 +1571,18 @@ No authorization required
 
 ## listAuthMethods
 
-> ListAuthMethodsOutput listAuthMethods(opts)
+> ListAuthMethodsOutput listAuthMethods(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.ListAuthMethods() // ListAuthMethods | 
-};
-apiInstance.listAuthMethods(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ListAuthMethods(); // ListAuthMethods | 
+apiInstance.listAuthMethods(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1668,7 +1596,7 @@ apiInstance.listAuthMethods(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ListAuthMethods**](ListAuthMethods.md)|  | [optional] 
+ **body** | [**ListAuthMethods**](ListAuthMethods.md)|  | 
 
 ### Return type
 
@@ -1686,20 +1614,18 @@ No authorization required
 
 ## listItems
 
-> ListItemsInPathOutput listItems(opts)
+> ListItemsInPathOutput listItems(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.ListItems() // ListItems | 
-};
-apiInstance.listItems(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ListItems(); // ListItems | 
+apiInstance.listItems(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1713,7 +1639,7 @@ apiInstance.listItems(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ListItems**](ListItems.md)|  | [optional] 
+ **body** | [**ListItems**](ListItems.md)|  | 
 
 ### Return type
 
@@ -1731,20 +1657,18 @@ No authorization required
 
 ## listRoles
 
-> ListRolesOutput listRoles(opts)
+> ListRolesOutput listRoles(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.ListRoles() // ListRoles | 
-};
-apiInstance.listRoles(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ListRoles(); // ListRoles | 
+apiInstance.listRoles(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1758,7 +1682,7 @@ apiInstance.listRoles(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ListRoles**](ListRoles.md)|  | [optional] 
+ **body** | [**ListRoles**](ListRoles.md)|  | 
 
 ### Return type
 
@@ -1776,20 +1700,18 @@ No authorization required
 
 ## moveObjects
 
-> Object moveObjects(opts)
+> Object moveObjects(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.MoveObjects() // MoveObjects | 
-};
-apiInstance.moveObjects(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.MoveObjects(); // MoveObjects | 
+apiInstance.moveObjects(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1803,7 +1725,7 @@ apiInstance.moveObjects(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MoveObjects**](MoveObjects.md)|  | [optional] 
+ **body** | [**MoveObjects**](MoveObjects.md)|  | 
 
 ### Return type
 
@@ -1821,20 +1743,18 @@ No authorization required
 
 ## refreshKey
 
-> RefreshKeyOutput refreshKey(opts)
+> RefreshKeyOutput refreshKey(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.RefreshKey() // RefreshKey | 
-};
-apiInstance.refreshKey(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RefreshKey(); // RefreshKey | 
+apiInstance.refreshKey(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1848,7 +1768,7 @@ apiInstance.refreshKey(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RefreshKey**](RefreshKey.md)|  | [optional] 
+ **body** | [**RefreshKey**](RefreshKey.md)|  | 
 
 ### Return type
 
@@ -1866,20 +1786,18 @@ No authorization required
 
 ## reverseRBAC
 
-> ReverseRBACOutput reverseRBAC(opts)
+> ReverseRBACOutput reverseRBAC(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.ReverseRBAC() // ReverseRBAC | 
-};
-apiInstance.reverseRBAC(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ReverseRBAC(); // ReverseRBAC | 
+apiInstance.reverseRBAC(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1893,7 +1811,7 @@ apiInstance.reverseRBAC(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ReverseRBAC**](ReverseRBAC.md)|  | [optional] 
+ **body** | [**ReverseRBAC**](ReverseRBAC.md)|  | 
 
 ### Return type
 
@@ -1911,20 +1829,18 @@ No authorization required
 
 ## rollbackSecret
 
-> RollbackSecretOutput rollbackSecret(opts)
+> RollbackSecretOutput rollbackSecret(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.RollbackSecret() // RollbackSecret | 
-};
-apiInstance.rollbackSecret(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RollbackSecret(); // RollbackSecret | 
+apiInstance.rollbackSecret(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1938,7 +1854,7 @@ apiInstance.rollbackSecret(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RollbackSecret**](RollbackSecret.md)|  | [optional] 
+ **body** | [**RollbackSecret**](RollbackSecret.md)|  | 
 
 ### Return type
 
@@ -1956,20 +1872,18 @@ No authorization required
 
 ## rotateKey
 
-> RotateKeyOutput rotateKey(opts)
+> RotateKeyOutput rotateKey(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.RotateKey() // RotateKey | 
-};
-apiInstance.rotateKey(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotateKey(); // RotateKey | 
+apiInstance.rotateKey(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1983,7 +1897,7 @@ apiInstance.rotateKey(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotateKey**](RotateKey.md)|  | [optional] 
+ **body** | [**RotateKey**](RotateKey.md)|  | 
 
 ### Return type
 
@@ -2001,20 +1915,18 @@ No authorization required
 
 ## setItemState
 
-> Object setItemState(opts)
+> Object setItemState(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.SetItemState() // SetItemState | 
-};
-apiInstance.setItemState(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.SetItemState(); // SetItemState | 
+apiInstance.setItemState(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2028,7 +1940,7 @@ apiInstance.setItemState(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SetItemState**](SetItemState.md)|  | [optional] 
+ **body** | [**SetItemState**](SetItemState.md)|  | 
 
 ### Return type
 
@@ -2046,20 +1958,18 @@ No authorization required
 
 ## setRoleRule
 
-> Object setRoleRule(opts)
+> Object setRoleRule(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.SetRoleRule() // SetRoleRule | 
-};
-apiInstance.setRoleRule(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.SetRoleRule(); // SetRoleRule | 
+apiInstance.setRoleRule(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2073,7 +1983,7 @@ apiInstance.setRoleRule(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SetRoleRule**](SetRoleRule.md)|  | [optional] 
+ **body** | [**SetRoleRule**](SetRoleRule.md)|  | 
 
 ### Return type
 
@@ -2091,20 +2001,18 @@ No authorization required
 
 ## signPKCS1
 
-> SignPKCS1Output signPKCS1(opts)
+> SignPKCS1Output signPKCS1(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.SignPKCS1() // SignPKCS1 | 
-};
-apiInstance.signPKCS1(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.SignPKCS1(); // SignPKCS1 | 
+apiInstance.signPKCS1(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2118,7 +2026,7 @@ apiInstance.signPKCS1(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SignPKCS1**](SignPKCS1.md)|  | [optional] 
+ **body** | [**SignPKCS1**](SignPKCS1.md)|  | 
 
 ### Return type
 
@@ -2136,20 +2044,18 @@ No authorization required
 
 ## staticCredsAuth
 
-> StaticCredsAuthOutput staticCredsAuth(opts)
+> StaticCredsAuthOutput staticCredsAuth(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.StaticCredsAuth() // StaticCredsAuth | 
-};
-apiInstance.staticCredsAuth(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.StaticCredsAuth(); // StaticCredsAuth | 
+apiInstance.staticCredsAuth(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2163,7 +2069,7 @@ apiInstance.staticCredsAuth(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**StaticCredsAuth**](StaticCredsAuth.md)|  | [optional] 
+ **body** | [**StaticCredsAuth**](StaticCredsAuth.md)|  | 
 
 ### Return type
 
@@ -2181,20 +2087,18 @@ No authorization required
 
 ## uidCreateChildToken
 
-> UidCreateChildTokenOutput uidCreateChildToken(opts)
+> UidCreateChildTokenOutput uidCreateChildToken(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.UidCreateChildToken() // UidCreateChildToken | 
-};
-apiInstance.uidCreateChildToken(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UidCreateChildToken(); // UidCreateChildToken | 
+apiInstance.uidCreateChildToken(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2208,7 +2112,7 @@ apiInstance.uidCreateChildToken(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UidCreateChildToken**](UidCreateChildToken.md)|  | [optional] 
+ **body** | [**UidCreateChildToken**](UidCreateChildToken.md)|  | 
 
 ### Return type
 
@@ -2226,20 +2130,18 @@ No authorization required
 
 ## uidGenerateToken
 
-> UidGenerateTokenOutput uidGenerateToken(opts)
+> UidGenerateTokenOutput uidGenerateToken(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.UidGenerateToken() // UidGenerateToken | 
-};
-apiInstance.uidGenerateToken(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UidGenerateToken(); // UidGenerateToken | 
+apiInstance.uidGenerateToken(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2253,7 +2155,7 @@ apiInstance.uidGenerateToken(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UidGenerateToken**](UidGenerateToken.md)|  | [optional] 
+ **body** | [**UidGenerateToken**](UidGenerateToken.md)|  | 
 
 ### Return type
 
@@ -2271,20 +2173,18 @@ No authorization required
 
 ## uidListChildren
 
-> UniversalIdentityDetails uidListChildren(opts)
+> UniversalIdentityDetails uidListChildren(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.UidListChildren() // UidListChildren | 
-};
-apiInstance.uidListChildren(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UidListChildren(); // UidListChildren | 
+apiInstance.uidListChildren(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2298,7 +2198,7 @@ apiInstance.uidListChildren(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UidListChildren**](UidListChildren.md)|  | [optional] 
+ **body** | [**UidListChildren**](UidListChildren.md)|  | 
 
 ### Return type
 
@@ -2316,20 +2216,18 @@ No authorization required
 
 ## uidRevokeToken
 
-> Object uidRevokeToken(opts)
+> Object uidRevokeToken(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.UidRevokeToken() // UidRevokeToken | 
-};
-apiInstance.uidRevokeToken(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UidRevokeToken(); // UidRevokeToken | 
+apiInstance.uidRevokeToken(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2343,7 +2241,7 @@ apiInstance.uidRevokeToken(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UidRevokeToken**](UidRevokeToken.md)|  | [optional] 
+ **body** | [**UidRevokeToken**](UidRevokeToken.md)|  | 
 
 ### Return type
 
@@ -2361,20 +2259,18 @@ No authorization required
 
 ## uidRotateToken
 
-> UidRotateTokenOutput uidRotateToken(opts)
+> UidRotateTokenOutput uidRotateToken(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.UidRotateToken() // UidRotateToken | 
-};
-apiInstance.uidRotateToken(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UidRotateToken(); // UidRotateToken | 
+apiInstance.uidRotateToken(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2388,7 +2284,7 @@ apiInstance.uidRotateToken(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UidRotateToken**](UidRotateToken.md)|  | [optional] 
+ **body** | [**UidRotateToken**](UidRotateToken.md)|  | 
 
 ### Return type
 
@@ -2406,20 +2302,18 @@ No authorization required
 
 ## updateItem
 
-> UpdateItemOutput updateItem(opts)
+> UpdateItemOutput updateItem(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.UpdateItem() // UpdateItem | 
-};
-apiInstance.updateItem(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateItem(); // UpdateItem | 
+apiInstance.updateItem(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2433,7 +2327,7 @@ apiInstance.updateItem(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateItem**](UpdateItem.md)|  | [optional] 
+ **body** | [**UpdateItem**](UpdateItem.md)|  | 
 
 ### Return type
 
@@ -2451,20 +2345,18 @@ No authorization required
 
 ## updateRole
 
-> UpdateRoleOutput updateRole(opts)
+> UpdateRoleOutput updateRole(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.UpdateRole() // UpdateRole | 
-};
-apiInstance.updateRole(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateRole(); // UpdateRole | 
+apiInstance.updateRole(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2478,7 +2370,7 @@ apiInstance.updateRole(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateRole**](UpdateRole.md)|  | [optional] 
+ **body** | [**UpdateRole**](UpdateRole.md)|  | 
 
 ### Return type
 
@@ -2496,20 +2388,18 @@ No authorization required
 
 ## updateSecretVal
 
-> UpdateSecretValOutput updateSecretVal(opts)
+> UpdateSecretValOutput updateSecretVal(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.UpdateSecretVal() // UpdateSecretVal | 
-};
-apiInstance.updateSecretVal(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateSecretVal(); // UpdateSecretVal | 
+apiInstance.updateSecretVal(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2523,7 +2413,7 @@ apiInstance.updateSecretVal(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateSecretVal**](UpdateSecretVal.md)|  | [optional] 
+ **body** | [**UpdateSecretVal**](UpdateSecretVal.md)|  | 
 
 ### Return type
 
@@ -2541,20 +2431,18 @@ No authorization required
 
 ## uploadRSA
 
-> Object uploadRSA(opts)
+> Object uploadRSA(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.UploadRSA() // UploadRSA | 
-};
-apiInstance.uploadRSA(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UploadRSA(); // UploadRSA | 
+apiInstance.uploadRSA(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2568,7 +2456,7 @@ apiInstance.uploadRSA(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadRSA**](UploadRSA.md)|  | [optional] 
+ **body** | [**UploadRSA**](UploadRSA.md)|  | 
 
 ### Return type
 
@@ -2586,20 +2474,18 @@ No authorization required
 
 ## verifyPKCS1
 
-> Object verifyPKCS1(opts)
+> Object verifyPKCS1(body)
 
 
 
 ### Example
 
 ```javascript
-import akl from 'akeyless-javascript';
+import akeyless from 'akeyless-javascript';
 
-let apiInstance = new akl.V2Api();
-let opts = {
-  'body': new akl.VerifyPKCS1() // VerifyPKCS1 | 
-};
-apiInstance.verifyPKCS1(opts, (error, data, response) => {
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.VerifyPKCS1(); // VerifyPKCS1 | 
+apiInstance.verifyPKCS1(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2613,7 +2499,7 @@ apiInstance.verifyPKCS1(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**VerifyPKCS1**](VerifyPKCS1.md)|  | [optional] 
+ **body** | [**VerifyPKCS1**](VerifyPKCS1.md)|  | 
 
 ### Return type
 

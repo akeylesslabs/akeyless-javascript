@@ -1,4 +1,4 @@
-# akl.EncryptOutput
+# akeyless.EncryptOutput
 
 ## Properties
 

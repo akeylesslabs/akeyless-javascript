@@ -1,4 +1,4 @@
-# akl.ListItemsInPathOutput
+# akeyless.ListItemsInPathOutput
 
 ## Properties
 

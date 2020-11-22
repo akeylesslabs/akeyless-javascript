@@ -1,4 +1,4 @@
-# akl.ReverseRBACOutput
+# akeyless.ReverseRBACOutput
 
 ## Properties
 

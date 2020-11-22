@@ -1,4 +1,4 @@
-# akl.RotateKeyOutput
+# akeyless.RotateKeyOutput
 
 ## Properties
 

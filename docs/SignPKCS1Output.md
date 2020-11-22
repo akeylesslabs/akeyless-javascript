@@ -1,4 +1,4 @@
-# akl.SignPKCS1Output
+# akeyless.SignPKCS1Output
 
 ## Properties
 

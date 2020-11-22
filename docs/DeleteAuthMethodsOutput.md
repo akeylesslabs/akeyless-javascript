@@ -1,4 +1,4 @@
-# akl.DeleteAuthMethodsOutput
+# akeyless.DeleteAuthMethodsOutput
 
 ## Properties
 

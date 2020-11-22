@@ -1,4 +1,4 @@
-# akl.ConfigureOutput
+# akeyless.ConfigureOutput
 
 ## Properties
 

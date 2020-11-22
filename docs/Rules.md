@@ -1,4 +1,4 @@
-# akl.Rules
+# akeyless.Rules
 
 ## Properties
 

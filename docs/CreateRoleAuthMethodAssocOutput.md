@@ -1,4 +1,4 @@
-# akl.CreateRoleAuthMethodAssocOutput
+# akeyless.CreateRoleAuthMethodAssocOutput
 
 ## Properties
 

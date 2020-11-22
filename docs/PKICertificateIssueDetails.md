@@ -1,4 +1,4 @@
-# akl.PKICertificateIssueDetails
+# akeyless.PKICertificateIssueDetails
 
 ## Properties
 

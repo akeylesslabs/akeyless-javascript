@@ -1,4 +1,4 @@
-# akl.DeleteItemOutput
+# akeyless.DeleteItemOutput
 
 ## Properties
 

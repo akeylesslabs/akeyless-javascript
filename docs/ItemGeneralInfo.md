@@ -1,4 +1,4 @@
-# akl.ItemGeneralInfo
+# akeyless.ItemGeneralInfo
 
 ## Properties
 

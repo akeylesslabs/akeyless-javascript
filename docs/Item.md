@@ -1,4 +1,4 @@
-# akl.Item
+# akeyless.Item
 
 ## Properties
 

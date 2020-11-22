@@ -1,4 +1,4 @@
-# akl.CreateRole
+# akeyless.CreateRole
 
 ## Properties
 
@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **String** | Comment about the role | [optional] 
 **name** | **String** | Role name | 
-**token** | **String** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 
 

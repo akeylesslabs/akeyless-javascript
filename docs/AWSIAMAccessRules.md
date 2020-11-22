@@ -1,4 +1,4 @@
-# akl.AWSIAMAccessRules
+# akeyless.AWSIAMAccessRules
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# akl.OAuth2AccessRules
+# akeyless.OAuth2AccessRules
 
 ## Properties
 

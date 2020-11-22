@@ -1,4 +1,4 @@
-# akl.JSONError
+# akeyless.JSONError
 
 ## Properties
 

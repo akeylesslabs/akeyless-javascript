@@ -1,4 +1,4 @@
-# akl.UidCreateChildTokenOutput
+# akeyless.UidCreateChildTokenOutput
 
 ## Properties
 

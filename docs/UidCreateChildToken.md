@@ -1,4 +1,4 @@
-# akl.UidCreateChildToken
+# akeyless.UidCreateChildToken
 
 ## Properties
 
@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **childDenyRotate** | **Boolean** | Deny from new child to rotate | [optional] 
 **childTtl** | **Number** | New child token ttl | [optional] 
 **comment** | **String** | New Token comment | [optional] 
-**token** | **String** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 
 

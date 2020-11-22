@@ -1,4 +1,4 @@
-# akl.ListRolesOutput
+# akeyless.ListRolesOutput
 
 ## Properties
 

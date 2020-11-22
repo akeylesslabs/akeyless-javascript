@@ -1,4 +1,4 @@
-# akl.ItemVersion
+# akeyless.ItemVersion
 
 ## Properties
 

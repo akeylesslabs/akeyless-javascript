@@ -1,4 +1,4 @@
-# akl.CreatePKICertIssuer
+# akeyless.CreatePKICertIssuer
 
 ## Properties
 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **serverFlag** | **Boolean** | If set, certificates will be flagged for server auth use | [optional] 
 **signerKeyName** | **String** | A key to sign the certificate with | 
 **streetAddress** | **String** | A comma-separated list of the street address that will be set in the issued certificate | [optional] 
-**token** | **String** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **ttl** | **Number** | The requested Time To Live for the certificate, use second units | 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 

@@ -1,4 +1,4 @@
-# akl.CreateAuthMethodUniversalIdentityOutput
+# akeyless.CreateAuthMethodUniversalIdentityOutput
 
 ## Properties
 

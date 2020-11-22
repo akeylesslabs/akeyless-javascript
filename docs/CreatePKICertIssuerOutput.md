@@ -1,4 +1,4 @@
-# akl.CreatePKICertIssuerOutput
+# akeyless.CreatePKICertIssuerOutput
 
 ## Properties
 

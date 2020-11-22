@@ -1,4 +1,4 @@
-# akl.UidRotateToken
+# akeyless.UidRotateToken
 
 ## Properties
 

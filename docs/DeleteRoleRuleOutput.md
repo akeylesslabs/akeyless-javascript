@@ -1,4 +1,4 @@
-# akl.DeleteRoleRuleOutput
+# akeyless.DeleteRoleRuleOutput
 
 ## Properties
 

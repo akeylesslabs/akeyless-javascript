@@ -1,4 +1,4 @@
-# akl.GetSSHCertificateOutput
+# akeyless.GetSSHCertificateOutput
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# akl.CreateSSHCertIssuerOutput
+# akeyless.CreateSSHCertIssuerOutput
 
 ## Properties
 

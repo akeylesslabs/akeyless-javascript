@@ -1,4 +1,4 @@
-# akl.CreateAuthMethodHuaweiOutput
+# akeyless.CreateAuthMethodHuaweiOutput
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# akl.OAuth2CustomClaim
+# akeyless.OAuth2CustomClaim
 
 ## Properties
 

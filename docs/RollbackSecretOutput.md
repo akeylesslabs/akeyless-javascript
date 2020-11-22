@@ -1,4 +1,4 @@
-# akl.RollbackSecretOutput
+# akeyless.RollbackSecretOutput
 
 ## Properties
 

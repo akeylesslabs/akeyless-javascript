@@ -1,4 +1,4 @@
-# akl.DynamicSecretProducerInfo
+# akeyless.DynamicSecretProducerInfo
 
 ## Properties
 

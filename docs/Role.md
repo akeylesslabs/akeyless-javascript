@@ -1,4 +1,4 @@
-# akl.Role
+# akeyless.Role
 
 ## Properties
 

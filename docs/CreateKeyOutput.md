@@ -1,4 +1,4 @@
-# akl.CreateKeyOutput
+# akeyless.CreateKeyOutput
 
 ## Properties
 

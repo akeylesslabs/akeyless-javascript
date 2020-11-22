@@ -1,4 +1,4 @@
-# akl.GetCloudIdentity
+# akeyless.GetCloudIdentity
 
 ## Properties
 

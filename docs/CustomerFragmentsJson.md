@@ -1,4 +1,4 @@
-# akl.CustomerFragmentsJson
+# akeyless.CustomerFragmentsJson
 
 ## Properties
 

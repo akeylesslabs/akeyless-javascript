@@ -1,4 +1,4 @@
-# akl.CreateSecret
+# akeyless.CreateSecret
 
 ## Properties
 
@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **name** | **String** | Secret name | 
 **protectionKey** | **String** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **tags** | **[String]** | List of the tags attached to this secret | [optional] 
-**token** | **String** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **value** | **String** | The secret value | 
 

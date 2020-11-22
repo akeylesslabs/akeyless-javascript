@@ -1,4 +1,4 @@
-# akl.GetKubeExecCredsOutput
+# akeyless.GetKubeExecCredsOutput
 
 ## Properties
 

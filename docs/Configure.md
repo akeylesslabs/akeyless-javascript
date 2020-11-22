@@ -1,4 +1,4 @@
-# akl.Configure
+# akeyless.Configure
 
 ## Properties
 

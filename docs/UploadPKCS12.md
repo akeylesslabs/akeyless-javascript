@@ -1,4 +1,4 @@
-# akl.UploadPKCS12
+# akeyless.UploadPKCS12
 
 ## Properties
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **passphrase** | **String** | Passphrase to unlock the pkcs#12 bundle | 
 **splitLevel** | **Number** | The number of fragments that the item will be split into | [optional] [default to 2]
 **tag** | **[String]** | List of the tags attached to this key | [optional] 
-**token** | **String** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 
 

@@ -1,4 +1,4 @@
-# akl.UidGenerateTokenOutput
+# akeyless.UidGenerateTokenOutput
 
 ## Properties
 

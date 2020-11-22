@@ -1,4 +1,4 @@
-# akl.CreateAuthMethodUniversalIdentity
+# akeyless.CreateAuthMethodUniversalIdentity
 
 ## Properties
 
@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **denyInheritance** | **Boolean** | Deny from root to create children | [optional] 
 **denyRotate** | **Boolean** | Deny from the token to rotate | [optional] 
 **name** | **String** | Auth Method name | 
-**token** | **String** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **ttl** | **Number** | Token ttl | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 

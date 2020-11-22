@@ -1,4 +1,4 @@
-# akl.GenCustomerFragment
+# akeyless.GenCustomerFragment
 
 ## Properties
 

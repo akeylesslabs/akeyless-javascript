@@ -1,4 +1,4 @@
-# akl.UniversalIdentityAccessRules
+# akeyless.UniversalIdentityAccessRules
 
 ## Properties
 

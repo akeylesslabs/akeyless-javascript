@@ -1,4 +1,4 @@
-# akl.SSHCertificateIssueDetails
+# akeyless.SSHCertificateIssueDetails
 
 ## Properties
 

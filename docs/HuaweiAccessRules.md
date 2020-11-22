@@ -1,4 +1,4 @@
-# akl.HuaweiAccessRules
+# akeyless.HuaweiAccessRules
 
 ## Properties
 

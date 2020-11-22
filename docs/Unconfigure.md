@@ -1,4 +1,4 @@
-# akl.Unconfigure
+# akeyless.Unconfigure
 
 ## Properties
 

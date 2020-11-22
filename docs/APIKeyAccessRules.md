@@ -1,4 +1,4 @@
-# akl.APIKeyAccessRules
+# akeyless.APIKeyAccessRules
 
 ## Properties
 

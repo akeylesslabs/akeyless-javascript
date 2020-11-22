@@ -1,4 +1,4 @@
-# akl.UpdateSecretVal
+# akeyless.UpdateSecretVal
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **multiline** | **Boolean** | The provided value is a multiline value (separated by &#39;\\n&#39;) | [optional] 
 **name** | **String** | Secret name | 
 **newVersion** | **Boolean** | Whether to create a new version of not | [optional] [default to false]
-**token** | **String** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **value** | **String** | The new secret value | 
 

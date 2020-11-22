@@ -1,4 +1,4 @@
-# akl.AuthOutput
+# akeyless.AuthOutput
 
 ## Properties
 

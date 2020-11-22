@@ -1,4 +1,4 @@
-# akl.UpdateItemOutput
+# akeyless.UpdateItemOutput
 
 ## Properties
 

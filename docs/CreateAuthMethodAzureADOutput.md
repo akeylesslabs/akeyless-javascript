@@ -1,4 +1,4 @@
-# akl.CreateAuthMethodAzureADOutput
+# akeyless.CreateAuthMethodAzureADOutput
 
 ## Properties
 

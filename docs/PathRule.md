@@ -1,4 +1,4 @@
-# akl.PathRule
+# akeyless.PathRule
 
 ## Properties
 

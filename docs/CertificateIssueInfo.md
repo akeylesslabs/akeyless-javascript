@@ -1,4 +1,4 @@
-# akl.CertificateIssueInfo
+# akeyless.CertificateIssueInfo
 
 ## Properties
 

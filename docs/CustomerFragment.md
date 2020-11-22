@@ -1,4 +1,4 @@
-# akl.CustomerFragment
+# akeyless.CustomerFragment
 
 ## Properties
 

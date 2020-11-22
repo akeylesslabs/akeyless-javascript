@@ -1,4 +1,4 @@
-# akl.SAMLAccessRules
+# akeyless.SAMLAccessRules
 
 ## Properties
 

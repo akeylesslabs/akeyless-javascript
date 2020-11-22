@@ -1,4 +1,4 @@
-# akl.GetRSAPublicOutput
+# akeyless.GetRSAPublicOutput
 
 ## Properties
 

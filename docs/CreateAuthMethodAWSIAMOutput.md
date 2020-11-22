@@ -1,4 +1,4 @@
-# akl.CreateAuthMethodAWSIAMOutput
+# akeyless.CreateAuthMethodAWSIAMOutput
 
 ## Properties
 

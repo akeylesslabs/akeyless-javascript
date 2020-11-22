@@ -1,4 +1,4 @@
-# akl.UIDTokenDetails
+# akeyless.UIDTokenDetails
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# akl.ListAuthMethodsOutput
+# akeyless.ListAuthMethodsOutput
 
 ## Properties
 

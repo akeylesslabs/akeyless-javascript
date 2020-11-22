@@ -1,4 +1,4 @@
-# akl.DecryptOutput
+# akeyless.DecryptOutput
 
 ## Properties
 

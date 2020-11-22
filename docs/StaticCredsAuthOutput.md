@@ -1,4 +1,4 @@
-# akl.StaticCredsAuthOutput
+# akeyless.StaticCredsAuthOutput
 
 ## Properties
 

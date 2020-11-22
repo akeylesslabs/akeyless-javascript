@@ -1,4 +1,4 @@
-# akl.SAMLAttribute
+# akeyless.SAMLAttribute
 
 ## Properties
 

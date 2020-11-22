@@ -1,4 +1,4 @@
-# akl.LDAPAccessRules
+# akeyless.LDAPAccessRules
 
 ## Properties
 

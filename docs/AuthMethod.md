@@ -1,4 +1,4 @@
-# akl.AuthMethod
+# akeyless.AuthMethod
 
 ## Properties
 

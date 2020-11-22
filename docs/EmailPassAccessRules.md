@@ -1,4 +1,4 @@
-# akl.EmailPassAccessRules
+# akeyless.EmailPassAccessRules
 
 ## Properties
 

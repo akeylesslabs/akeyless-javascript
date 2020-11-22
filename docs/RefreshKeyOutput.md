@@ -1,4 +1,4 @@
-# akl.RefreshKeyOutput
+# akeyless.RefreshKeyOutput
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# akl.ClientData
+# akeyless.ClientData
 
 ## Properties
 

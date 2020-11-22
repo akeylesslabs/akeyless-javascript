@@ -1,4 +1,4 @@
-# akl.UpdateSecretValOutput
+# akeyless.UpdateSecretValOutput
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# akl.UpdateRoleOutput
+# akeyless.UpdateRoleOutput
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# akl.AuthMethodRoleAssociation
+# akeyless.AuthMethodRoleAssociation
 
 ## Properties
 

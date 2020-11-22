@@ -1,4 +1,4 @@
-# akl.CreateSSHCertIssuer
+# akeyless.CreateSSHCertIssuer
 
 ## Properties
 
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **name** | **String** | SSH certificate issuer name | 
 **principals** | **String** | Signed certificates with principal, e.g example_role1,example_role2 | [optional] 
 **signerKeyName** | **String** | A key to sign the certificate with | 
-**token** | **String** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **ttl** | **Number** | The requested Time To Live for the certificate, use second units | 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 

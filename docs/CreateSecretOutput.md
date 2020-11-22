@@ -1,4 +1,4 @@
-# akl.CreateSecretOutput
+# akeyless.CreateSecretOutput
 
 ## Properties
 
