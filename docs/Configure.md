@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **adminEmail** | **String** | Email (relevant only for access-type&#x3D;password) | [optional] 
 **adminPassword** | **String** | Password (relevant only for access-type&#x3D;password) | [optional] 
 **azureAdObjectId** | **String** | Azure Active Directory ObjectId (relevant only for access-type&#x3D;azure_ad) | [optional] 
-**ldapProxyUrl** | **String** | Address URL for ldap proxy (relevant only for access-type&#x3D;ldap) | [optional] 
+**gcpAudience** | **String** | GCP JWT audience | [optional] 
 
 

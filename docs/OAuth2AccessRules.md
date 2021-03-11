@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **boundClientsId** | **[String]** | The clients ids that login is restricted to. | [optional] 
 **issuer** | **String** | Issuer URL | [optional] 
 **jwksUri** | **String** | The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server. | [optional] 
+**uniqueIdentifier** | **String** | A unique identifier to distinguish different users | [optional] 
 
 
