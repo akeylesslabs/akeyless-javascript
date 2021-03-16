@@ -2840,41 +2840,6 @@ export default class V2Api {
     }
 
     /**
-     * Callback function to receive the result of the getDynamicPkiCertificate operation.
-     * @callback module:api/V2Api~getDynamicPkiCertificateCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * @param {module:api/V2Api~getDynamicPkiCertificateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
-     */
-    getDynamicPkiCertificate(callback) {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = {'String': 'String'};
-      return this.apiClient.callApi(
-        '/get-dynamic-pki-certificate', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the getDynamicSecretValue operation.
      * @callback module:api/V2Api~getDynamicSecretValueCallback
      * @param {String} error Error message, if any.

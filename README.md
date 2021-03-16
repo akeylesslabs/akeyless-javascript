@@ -187,7 +187,6 @@ Class | Method | HTTP request | Description
 *akeyless.V2Api* | [**gatewayUpdateTmpUsers**](docs/V2Api.md#gatewayUpdateTmpUsers) | **POST** /gateway-update-producer-tmp-creds | 
 *akeyless.V2Api* | [**getAccountLogo**](docs/V2Api.md#getAccountLogo) | **POST** /get-account-logo | 
 *akeyless.V2Api* | [**getAuthMethod**](docs/V2Api.md#getAuthMethod) | **POST** /get-auth-method | 
-*akeyless.V2Api* | [**getDynamicPkiCertificate**](docs/V2Api.md#getDynamicPkiCertificate) | **POST** /get-dynamic-pki-certificate | 
 *akeyless.V2Api* | [**getDynamicSecretValue**](docs/V2Api.md#getDynamicSecretValue) | **POST** /get-dynamic-secret-value | 
 *akeyless.V2Api* | [**getRSAPublic**](docs/V2Api.md#getRSAPublic) | **POST** /get-rsa-public | 
 *akeyless.V2Api* | [**getRole**](docs/V2Api.md#getRole) | **POST** /get-role | 

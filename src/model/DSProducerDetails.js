@@ -59,12 +59,6 @@ class DSProducerDetails {
             if (data.hasOwnProperty('admin_rotation_interval_days')) {
                 obj['admin_rotation_interval_days'] = ApiClient.convertToType(data['admin_rotation_interval_days'], 'Number');
             }
-            if (data.hasOwnProperty('allow_subdomains')) {
-                obj['allow_subdomains'] = ApiClient.convertToType(data['allow_subdomains'], 'Boolean');
-            }
-            if (data.hasOwnProperty('allowed_domains')) {
-                obj['allowed_domains'] = ApiClient.convertToType(data['allowed_domains'], 'String');
-            }
             if (data.hasOwnProperty('artifactory_admin_apikey')) {
                 obj['artifactory_admin_apikey'] = ApiClient.convertToType(data['artifactory_admin_apikey'], 'String');
             }
@@ -79,9 +73,6 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('artifactory_token_scope')) {
                 obj['artifactory_token_scope'] = ApiClient.convertToType(data['artifactory_token_scope'], 'String');
-            }
-            if (data.hasOwnProperty('auto_generated_folder')) {
-                obj['auto_generated_folder'] = ApiClient.convertToType(data['auto_generated_folder'], 'String');
             }
             if (data.hasOwnProperty('aws_access_key_id')) {
                 obj['aws_access_key_id'] = ApiClient.convertToType(data['aws_access_key_id'], 'String');
@@ -160,9 +151,6 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('chef_skip_ssl')) {
                 obj['chef_skip_ssl'] = ApiClient.convertToType(data['chef_skip_ssl'], 'Boolean');
-            }
-            if (data.hasOwnProperty('create_cert_using_pki')) {
-                obj['create_cert_using_pki'] = ApiClient.convertToType(data['create_cert_using_pki'], 'Boolean');
             }
             if (data.hasOwnProperty('db_host_name')) {
                 obj['db_host_name'] = ApiClient.convertToType(data['db_host_name'], 'String');
@@ -341,17 +329,8 @@ class DSProducerDetails {
             if (data.hasOwnProperty('rabbitmq_user_write_permission')) {
                 obj['rabbitmq_user_write_permission'] = ApiClient.convertToType(data['rabbitmq_user_write_permission'], 'String');
             }
-            if (data.hasOwnProperty('root_first_in_chain')) {
-                obj['root_first_in_chain'] = ApiClient.convertToType(data['root_first_in_chain'], 'Boolean');
-            }
             if (data.hasOwnProperty('should_stop')) {
                 obj['should_stop'] = ApiClient.convertToType(data['should_stop'], 'String');
-            }
-            if (data.hasOwnProperty('signer_key_name')) {
-                obj['signer_key_name'] = ApiClient.convertToType(data['signer_key_name'], 'String');
-            }
-            if (data.hasOwnProperty('store_private_key')) {
-                obj['store_private_key'] = ApiClient.convertToType(data['store_private_key'], 'Boolean');
             }
             if (data.hasOwnProperty('user_principal_name')) {
                 obj['user_principal_name'] = ApiClient.convertToType(data['user_principal_name'], 'String');
@@ -359,8 +338,41 @@ class DSProducerDetails {
             if (data.hasOwnProperty('user_ttl')) {
                 obj['user_ttl'] = ApiClient.convertToType(data['user_ttl'], 'String');
             }
+            if (data.hasOwnProperty('venafi_allow_subdomains')) {
+                obj['venafi_allow_subdomains'] = ApiClient.convertToType(data['venafi_allow_subdomains'], 'Boolean');
+            }
+            if (data.hasOwnProperty('venafi_allowed_domains')) {
+                obj['venafi_allowed_domains'] = ApiClient.convertToType(data['venafi_allowed_domains'], ['String']);
+            }
             if (data.hasOwnProperty('venafi_api_key')) {
                 obj['venafi_api_key'] = ApiClient.convertToType(data['venafi_api_key'], 'String');
+            }
+            if (data.hasOwnProperty('venafi_auto_generated_folder')) {
+                obj['venafi_auto_generated_folder'] = ApiClient.convertToType(data['venafi_auto_generated_folder'], 'String');
+            }
+            if (data.hasOwnProperty('venafi_base_url')) {
+                obj['venafi_base_url'] = ApiClient.convertToType(data['venafi_base_url'], 'String');
+            }
+            if (data.hasOwnProperty('venafi_root_first_in_chain')) {
+                obj['venafi_root_first_in_chain'] = ApiClient.convertToType(data['venafi_root_first_in_chain'], 'Boolean');
+            }
+            if (data.hasOwnProperty('venafi_sign_using_akeyless_pki')) {
+                obj['venafi_sign_using_akeyless_pki'] = ApiClient.convertToType(data['venafi_sign_using_akeyless_pki'], 'Boolean');
+            }
+            if (data.hasOwnProperty('venafi_signer_key_name')) {
+                obj['venafi_signer_key_name'] = ApiClient.convertToType(data['venafi_signer_key_name'], 'String');
+            }
+            if (data.hasOwnProperty('venafi_store_private_key')) {
+                obj['venafi_store_private_key'] = ApiClient.convertToType(data['venafi_store_private_key'], 'Boolean');
+            }
+            if (data.hasOwnProperty('venafi_tpp_password')) {
+                obj['venafi_tpp_password'] = ApiClient.convertToType(data['venafi_tpp_password'], 'String');
+            }
+            if (data.hasOwnProperty('venafi_tpp_username')) {
+                obj['venafi_tpp_username'] = ApiClient.convertToType(data['venafi_tpp_username'], 'String');
+            }
+            if (data.hasOwnProperty('venafi_use_tpp')) {
+                obj['venafi_use_tpp'] = ApiClient.convertToType(data['venafi_use_tpp'], 'Boolean');
             }
             if (data.hasOwnProperty('venafi_zone')) {
                 obj['venafi_zone'] = ApiClient.convertToType(data['venafi_zone'], 'String');
@@ -393,16 +405,6 @@ DSProducerDetails.prototype['admin_pwd'] = undefined;
 DSProducerDetails.prototype['admin_rotation_interval_days'] = undefined;
 
 /**
- * @member {Boolean} allow_subdomains
- */
-DSProducerDetails.prototype['allow_subdomains'] = undefined;
-
-/**
- * @member {String} allowed_domains
- */
-DSProducerDetails.prototype['allowed_domains'] = undefined;
-
-/**
  * @member {String} artifactory_admin_apikey
  */
 DSProducerDetails.prototype['artifactory_admin_apikey'] = undefined;
@@ -426,11 +428,6 @@ DSProducerDetails.prototype['artifactory_token_audience'] = undefined;
  * @member {String} artifactory_token_scope
  */
 DSProducerDetails.prototype['artifactory_token_scope'] = undefined;
-
-/**
- * @member {String} auto_generated_folder
- */
-DSProducerDetails.prototype['auto_generated_folder'] = undefined;
 
 /**
  * @member {String} aws_access_key_id
@@ -561,11 +558,6 @@ DSProducerDetails.prototype['chef_server_username'] = undefined;
  * @member {Boolean} chef_skip_ssl
  */
 DSProducerDetails.prototype['chef_skip_ssl'] = undefined;
-
-/**
- * @member {Boolean} create_cert_using_pki
- */
-DSProducerDetails.prototype['create_cert_using_pki'] = undefined;
 
 /**
  * @member {String} db_host_name
@@ -868,25 +860,10 @@ DSProducerDetails.prototype['rabbitmq_user_vhost'] = undefined;
 DSProducerDetails.prototype['rabbitmq_user_write_permission'] = undefined;
 
 /**
- * @member {Boolean} root_first_in_chain
- */
-DSProducerDetails.prototype['root_first_in_chain'] = undefined;
-
-/**
  * TODO delete this after migration
  * @member {String} should_stop
  */
 DSProducerDetails.prototype['should_stop'] = undefined;
-
-/**
- * @member {String} signer_key_name
- */
-DSProducerDetails.prototype['signer_key_name'] = undefined;
-
-/**
- * @member {Boolean} store_private_key
- */
-DSProducerDetails.prototype['store_private_key'] = undefined;
 
 /**
  * @member {String} user_principal_name
@@ -899,9 +876,64 @@ DSProducerDetails.prototype['user_principal_name'] = undefined;
 DSProducerDetails.prototype['user_ttl'] = undefined;
 
 /**
+ * @member {Boolean} venafi_allow_subdomains
+ */
+DSProducerDetails.prototype['venafi_allow_subdomains'] = undefined;
+
+/**
+ * @member {Array.<String>} venafi_allowed_domains
+ */
+DSProducerDetails.prototype['venafi_allowed_domains'] = undefined;
+
+/**
  * @member {String} venafi_api_key
  */
 DSProducerDetails.prototype['venafi_api_key'] = undefined;
+
+/**
+ * @member {String} venafi_auto_generated_folder
+ */
+DSProducerDetails.prototype['venafi_auto_generated_folder'] = undefined;
+
+/**
+ * @member {String} venafi_base_url
+ */
+DSProducerDetails.prototype['venafi_base_url'] = undefined;
+
+/**
+ * @member {Boolean} venafi_root_first_in_chain
+ */
+DSProducerDetails.prototype['venafi_root_first_in_chain'] = undefined;
+
+/**
+ * @member {Boolean} venafi_sign_using_akeyless_pki
+ */
+DSProducerDetails.prototype['venafi_sign_using_akeyless_pki'] = undefined;
+
+/**
+ * @member {String} venafi_signer_key_name
+ */
+DSProducerDetails.prototype['venafi_signer_key_name'] = undefined;
+
+/**
+ * @member {Boolean} venafi_store_private_key
+ */
+DSProducerDetails.prototype['venafi_store_private_key'] = undefined;
+
+/**
+ * @member {String} venafi_tpp_password
+ */
+DSProducerDetails.prototype['venafi_tpp_password'] = undefined;
+
+/**
+ * @member {String} venafi_tpp_username
+ */
+DSProducerDetails.prototype['venafi_tpp_username'] = undefined;
+
+/**
+ * @member {Boolean} venafi_use_tpp
+ */
+DSProducerDetails.prototype['venafi_use_tpp'] = undefined;
 
 /**
  * @member {String} venafi_zone
