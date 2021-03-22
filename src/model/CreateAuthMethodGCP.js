@@ -59,29 +59,26 @@ class CreateAuthMethodGCP {
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
             }
-            if (data.hasOwnProperty('bound_labels')) {
-                obj['bound_labels'] = ApiClient.convertToType(data['bound_labels'], ['String']);
+            if (data.hasOwnProperty('bound-labels')) {
+                obj['bound-labels'] = ApiClient.convertToType(data['bound-labels'], ['String']);
             }
-            if (data.hasOwnProperty('bound_projects')) {
-                obj['bound_projects'] = ApiClient.convertToType(data['bound_projects'], ['String']);
+            if (data.hasOwnProperty('bound-projects')) {
+                obj['bound-projects'] = ApiClient.convertToType(data['bound-projects'], ['String']);
             }
-            if (data.hasOwnProperty('bound_regions')) {
-                obj['bound_regions'] = ApiClient.convertToType(data['bound_regions'], ['String']);
+            if (data.hasOwnProperty('bound-regions')) {
+                obj['bound-regions'] = ApiClient.convertToType(data['bound-regions'], ['String']);
             }
-            if (data.hasOwnProperty('bound_service_accounts')) {
-                obj['bound_service_accounts'] = ApiClient.convertToType(data['bound_service_accounts'], ['String']);
+            if (data.hasOwnProperty('bound-service-accounts')) {
+                obj['bound-service-accounts'] = ApiClient.convertToType(data['bound-service-accounts'], ['String']);
             }
-            if (data.hasOwnProperty('bound_zones')) {
-                obj['bound_zones'] = ApiClient.convertToType(data['bound_zones'], ['String']);
+            if (data.hasOwnProperty('bound-zones')) {
+                obj['bound-zones'] = ApiClient.convertToType(data['bound-zones'], ['String']);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('service_account_data')) {
-                obj['service_account_data'] = ApiClient.convertToType(data['service_account_data'], 'String');
-            }
-            if (data.hasOwnProperty('service_account_file')) {
-                obj['service_account_file'] = ApiClient.convertToType(data['service_account_file'], 'String');
+            if (data.hasOwnProperty('service-account-creds-data')) {
+                obj['service-account-creds-data'] = ApiClient.convertToType(data['service-account-creds-data'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -121,33 +118,33 @@ CreateAuthMethodGCP.prototype['bound-ips'] = undefined;
 
 /**
  * A comma-separated list of GCP labels formatted as \"key:value\" strings that must be set on authorized GCE instances. TODO: Because GCP labels are not currently ACL'd ....
- * @member {Array.<String>} bound_labels
+ * @member {Array.<String>} bound-labels
  */
-CreateAuthMethodGCP.prototype['bound_labels'] = undefined;
+CreateAuthMethodGCP.prototype['bound-labels'] = undefined;
 
 /**
  * === Human and Machine authentication section === Array of GCP project IDs. Only entities belonging to any of the provided projects can authenticate.
- * @member {Array.<String>} bound_projects
+ * @member {Array.<String>} bound-projects
  */
-CreateAuthMethodGCP.prototype['bound_projects'] = undefined;
+CreateAuthMethodGCP.prototype['bound-projects'] = undefined;
 
 /**
  * List of regions that a GCE instance must belong to in order to be authenticated. TODO: If bound_instance_groups is provided, it is assumed to be a regional group and the group must belong to this region. If bound_zones are provided, this attribute is ignored.
- * @member {Array.<String>} bound_regions
+ * @member {Array.<String>} bound-regions
  */
-CreateAuthMethodGCP.prototype['bound_regions'] = undefined;
+CreateAuthMethodGCP.prototype['bound-regions'] = undefined;
 
 /**
  * === Human authentication section === List of service accounts the service account must be part of in order to be authenticated.
- * @member {Array.<String>} bound_service_accounts
+ * @member {Array.<String>} bound-service-accounts
  */
-CreateAuthMethodGCP.prototype['bound_service_accounts'] = undefined;
+CreateAuthMethodGCP.prototype['bound-service-accounts'] = undefined;
 
 /**
  * === Machine authentication section === List of zones that a GCE instance must belong to in order to be authenticated. TODO: If bound_instance_groups is provided, it is assumed to be a zonal group and the group must belong to this zone.
- * @member {Array.<String>} bound_zones
+ * @member {Array.<String>} bound-zones
  */
-CreateAuthMethodGCP.prototype['bound_zones'] = undefined;
+CreateAuthMethodGCP.prototype['bound-zones'] = undefined;
 
 /**
  * Auth Method name
@@ -157,15 +154,9 @@ CreateAuthMethodGCP.prototype['name'] = undefined;
 
 /**
  * ServiceAccount credentials data instead of giving a file path, base64 encoded
- * @member {String} service_account_data
+ * @member {String} service-account-creds-data
  */
-CreateAuthMethodGCP.prototype['service_account_data'] = undefined;
-
-/**
- * ServiceAccount credentials file path to be used by Akeyless to validate IAM (Human) and GCE (Machine) logins with GCP
- * @member {String} service_account_file
- */
-CreateAuthMethodGCP.prototype['service_account_file'] = undefined;
+CreateAuthMethodGCP.prototype['service-account-creds-data'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

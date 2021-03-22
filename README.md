@@ -128,6 +128,7 @@ Class | Method | HTTP request | Description
 *akeyless.V2Api* | [**createAuthMethod**](docs/V2Api.md#createAuthMethod) | **POST** /create-auth-method | 
 *akeyless.V2Api* | [**createAuthMethodAWSIAM**](docs/V2Api.md#createAuthMethodAWSIAM) | **POST** /create-auth-method-aws-iam | 
 *akeyless.V2Api* | [**createAuthMethodAzureAD**](docs/V2Api.md#createAuthMethodAzureAD) | **POST** /create-auth-method-azure-ad | 
+*akeyless.V2Api* | [**createAuthMethodGCP**](docs/V2Api.md#createAuthMethodGCP) | **POST** /create-auth-method-gcp | 
 *akeyless.V2Api* | [**createAuthMethodHuawei**](docs/V2Api.md#createAuthMethodHuawei) | **POST** /create-auth-method-huawei | 
 *akeyless.V2Api* | [**createAuthMethodOAuth2**](docs/V2Api.md#createAuthMethodOAuth2) | **POST** /create-auth-method-oauth2 | 
 *akeyless.V2Api* | [**createAuthMethodSAML**](docs/V2Api.md#createAuthMethodSAML) | **POST** /create-auth-method-saml | 

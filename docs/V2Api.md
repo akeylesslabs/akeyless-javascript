@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**createAuthMethod**](V2Api.md#createAuthMethod) | **POST** /create-auth-method | 
 [**createAuthMethodAWSIAM**](V2Api.md#createAuthMethodAWSIAM) | **POST** /create-auth-method-aws-iam | 
 [**createAuthMethodAzureAD**](V2Api.md#createAuthMethodAzureAD) | **POST** /create-auth-method-azure-ad | 
+[**createAuthMethodGCP**](V2Api.md#createAuthMethodGCP) | **POST** /create-auth-method-gcp | 
 [**createAuthMethodHuawei**](V2Api.md#createAuthMethodHuawei) | **POST** /create-auth-method-huawei | 
 [**createAuthMethodOAuth2**](V2Api.md#createAuthMethodOAuth2) | **POST** /create-auth-method-oauth2 | 
 [**createAuthMethodSAML**](V2Api.md#createAuthMethodSAML) | **POST** /create-auth-method-saml | 
@@ -402,6 +403,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateAuthMethodAzureADOutput**](CreateAuthMethodAzureADOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createAuthMethodGCP
+
+> CreateAuthMethodGCPOutput createAuthMethodGCP(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless-javascript';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateAuthMethodGCP(); // CreateAuthMethodGCP | 
+apiInstance.createAuthMethodGCP(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateAuthMethodGCP**](CreateAuthMethodGCP.md)|  | 
+
+### Return type
+
+[**CreateAuthMethodGCPOutput**](CreateAuthMethodGCPOutput.md)
 
 ### Authorization
 

@@ -26,6 +26,8 @@ import CreateAuthMethodAWSIAM from '../model/CreateAuthMethodAWSIAM';
 import CreateAuthMethodAWSIAMOutput from '../model/CreateAuthMethodAWSIAMOutput';
 import CreateAuthMethodAzureAD from '../model/CreateAuthMethodAzureAD';
 import CreateAuthMethodAzureADOutput from '../model/CreateAuthMethodAzureADOutput';
+import CreateAuthMethodGCP from '../model/CreateAuthMethodGCP';
+import CreateAuthMethodGCPOutput from '../model/CreateAuthMethodGCPOutput';
 import CreateAuthMethodHuawei from '../model/CreateAuthMethodHuawei';
 import CreateAuthMethodHuaweiOutput from '../model/CreateAuthMethodHuaweiOutput';
 import CreateAuthMethodOAuth2 from '../model/CreateAuthMethodOAuth2';
@@ -481,6 +483,46 @@ export default class V2Api {
       let returnType = CreateAuthMethodAzureADOutput;
       return this.apiClient.callApi(
         '/create-auth-method-azure-ad', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createAuthMethodGCP operation.
+     * @callback module:api/V2Api~createAuthMethodGCPCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CreateAuthMethodGCPOutput} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/CreateAuthMethodGCP} body 
+     * @param {module:api/V2Api~createAuthMethodGCPCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CreateAuthMethodGCPOutput}
+     */
+    createAuthMethodGCP(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createAuthMethodGCP");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateAuthMethodGCPOutput;
+      return this.apiClient.callApi(
+        '/create-auth-method-gcp', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

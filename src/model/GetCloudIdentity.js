@@ -51,6 +51,9 @@ class GetCloudIdentity {
             if (data.hasOwnProperty('azure_ad_object_id')) {
                 obj['azure_ad_object_id'] = ApiClient.convertToType(data['azure_ad_object_id'], 'String');
             }
+            if (data.hasOwnProperty('debug')) {
+                obj['debug'] = ApiClient.convertToType(data['debug'], 'Boolean');
+            }
             if (data.hasOwnProperty('gcp-audience')) {
                 obj['gcp-audience'] = ApiClient.convertToType(data['gcp-audience'], 'String');
             }
@@ -69,6 +72,11 @@ class GetCloudIdentity {
  * @member {String} azure_ad_object_id
  */
 GetCloudIdentity.prototype['azure_ad_object_id'] = undefined;
+
+/**
+ * @member {Boolean} debug
+ */
+GetCloudIdentity.prototype['debug'] = undefined;
 
 /**
  * GCP JWT audience

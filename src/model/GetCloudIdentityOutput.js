@@ -47,6 +47,9 @@ class GetCloudIdentityOutput {
         if (data) {
             obj = obj || new GetCloudIdentityOutput();
 
+            if (data.hasOwnProperty('provider')) {
+                obj['provider'] = ApiClient.convertToType(data['provider'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -56,6 +59,11 @@ class GetCloudIdentityOutput {
 
 
 }
+
+/**
+ * @member {String} provider
+ */
+GetCloudIdentityOutput.prototype['provider'] = undefined;
 
 /**
  * @member {String} token
