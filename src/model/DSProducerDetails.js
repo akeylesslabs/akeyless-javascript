@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.0.14
+ * @version 2.0.15
  */
 class DSProducerDetails {
     /**

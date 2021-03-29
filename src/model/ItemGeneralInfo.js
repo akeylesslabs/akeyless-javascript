@@ -19,7 +19,7 @@ import ManagedKeyDetailsInfo from './ManagedKeyDetailsInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 2.0.14
+ * @version 2.0.15
  */
 class ItemGeneralInfo {
     /**

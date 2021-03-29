@@ -17,7 +17,7 @@ import ManagedKeyTargetInfo from './ManagedKeyTargetInfo';
 /**
  * The ManagedKeyDetailsInfo model module.
  * @module model/ManagedKeyDetailsInfo
- * @version 2.0.14
+ * @version 2.0.15
  */
 class ManagedKeyDetailsInfo {
     /**

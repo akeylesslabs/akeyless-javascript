@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleAuthMethodAssociation model module.
  * @module model/RoleAuthMethodAssociation
- * @version 2.0.14
+ * @version 2.0.15
  */
 class RoleAuthMethodAssociation {
     /**

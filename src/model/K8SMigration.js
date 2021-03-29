@@ -18,7 +18,7 @@ import MigrationGeneral from './MigrationGeneral';
 /**
  * The K8SMigration model module.
  * @module model/K8SMigration
- * @version 2.0.14
+ * @version 2.0.15
  */
 class K8SMigration {
     /**
