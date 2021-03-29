@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AdminsConfigPart model module.
  * @module model/AdminsConfigPart
- * @version 2.0
+ * @version 2.0.12
  */
 class AdminsConfigPart {
     /**

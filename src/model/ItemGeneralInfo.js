@@ -18,7 +18,7 @@ import DynamicSecretProducerInfo from './DynamicSecretProducerInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 2.0
+ * @version 2.0.12
  */
 class ItemGeneralInfo {
     /**

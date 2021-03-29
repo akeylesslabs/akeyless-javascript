@@ -17,7 +17,7 @@ import TargetItemAssociation from './TargetItemAssociation';
 /**
  * The Target model module.
  * @module model/Target
- * @version 2.0
+ * @version 2.0.12
  */
 class Target {
     /**
