@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LeadershipConfigPart model module.
  * @module model/LeadershipConfigPart
- * @version 2.0.12
+ * @version 2.0.13
  */
 class LeadershipConfigPart {
     /**

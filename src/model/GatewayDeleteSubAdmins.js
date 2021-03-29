@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteSubAdmins model module.
  * @module model/GatewayDeleteSubAdmins
- * @version 2.0.12
+ * @version 2.0.13
  */
 class GatewayDeleteSubAdmins {
     /**

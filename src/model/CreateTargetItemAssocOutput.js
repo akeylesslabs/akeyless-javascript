@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateTargetItemAssocOutput model module.
  * @module model/CreateTargetItemAssocOutput
- * @version 2.0.12
+ * @version 2.0.13
  */
 class CreateTargetItemAssocOutput {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayAddSubAdminsOutput model module.
  * @module model/GatewayAddSubAdminsOutput
- * @version 2.0.12
+ * @version 2.0.13
  */
 class GatewayAddSubAdminsOutput {
     /**

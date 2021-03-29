@@ -122,7 +122,7 @@ Method | HTTP request | Description
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.AssocRoleAuthMethod(); // AssocRoleAuthMethod | 
@@ -164,7 +164,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.AssocTargetItem(); // AssocTargetItem | 
@@ -206,7 +206,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.Auth(); // Auth | 
@@ -248,7 +248,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.Configure(); // Configure | 
@@ -290,7 +290,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethod(); // CreateAuthMethod | 
@@ -332,7 +332,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethodAWSIAM(); // CreateAuthMethodAWSIAM | 
@@ -374,7 +374,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethodAzureAD(); // CreateAuthMethodAzureAD | 
@@ -416,7 +416,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethodGCP(); // CreateAuthMethodGCP | 
@@ -458,7 +458,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethodHuawei(); // CreateAuthMethodHuawei | 
@@ -500,7 +500,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethodOAuth2(); // CreateAuthMethodOAuth2 | 
@@ -542,7 +542,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethodSAML(); // CreateAuthMethodSAML | 
@@ -584,7 +584,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethodUniversalIdentity(); // CreateAuthMethodUniversalIdentity | 
@@ -626,7 +626,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAwsTarget(); // CreateAwsTarget | 
@@ -668,7 +668,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateDBTarget(); // CreateDBTarget | 
@@ -710,7 +710,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateDynamicSecret(); // CreateDynamicSecret | 
@@ -752,7 +752,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateKey(); // CreateKey | 
@@ -794,7 +794,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreatePKICertIssuer(); // CreatePKICertIssuer | 
@@ -836,7 +836,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateRabbitMQTarget(); // CreateRabbitMQTarget | 
@@ -878,7 +878,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateRdpTarget(); // CreateRdpTarget | 
@@ -920,7 +920,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateRole(); // CreateRole | 
@@ -962,7 +962,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateSSHCertIssuer(); // CreateSSHCertIssuer | 
@@ -1004,7 +1004,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateSSHTarget(); // CreateSSHTarget | 
@@ -1046,7 +1046,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateSecret(); // CreateSecret | 
@@ -1088,7 +1088,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = null; // Object | 
@@ -1130,7 +1130,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateWebTarget(); // CreateWebTarget | 
@@ -1172,7 +1172,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.Decrypt(); // Decrypt | 
@@ -1214,7 +1214,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DecryptPKCS1(); // DecryptPKCS1 | 
@@ -1256,7 +1256,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteAuthMethod(); // DeleteAuthMethod | 
@@ -1298,7 +1298,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteAuthMethods(); // DeleteAuthMethods | 
@@ -1340,7 +1340,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteItem(); // DeleteItem | 
@@ -1382,7 +1382,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteItems(); // DeleteItems | 
@@ -1424,7 +1424,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteRole(); // DeleteRole | 
@@ -1466,7 +1466,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteRoleAssociation(); // DeleteRoleAssociation | 
@@ -1508,7 +1508,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteRoleRule(); // DeleteRoleRule | 
@@ -1550,7 +1550,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteRoles(); // DeleteRoles | 
@@ -1592,7 +1592,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteTarget(); // DeleteTarget | 
@@ -1634,7 +1634,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteTargetAssociation(); // DeleteTargetAssociation | 
@@ -1676,7 +1676,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteTargets(); // DeleteTargets | 
@@ -1718,7 +1718,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DescribeItem(); // DescribeItem | 
@@ -1760,7 +1760,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.Encrypt(); // Encrypt | 
@@ -1802,7 +1802,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.EncryptPKCS1(); // EncryptPKCS1 | 
@@ -1844,7 +1844,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayAddSubAdmins(); // GatewayAddSubAdmins | 
@@ -1886,7 +1886,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerArtifactory(); // GatewayCreateProducerArtifactory | 
@@ -1928,7 +1928,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerAws(); // GatewayCreateProducerAws | 
@@ -1970,7 +1970,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerAzure(); // GatewayCreateProducerAzure | 
@@ -2012,7 +2012,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerEks(); // GatewayCreateProducerEks | 
@@ -2054,7 +2054,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerGke(); // GatewayCreateProducerGke | 
@@ -2096,7 +2096,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerMSSQL(); // GatewayCreateProducerMSSQL | 
@@ -2138,7 +2138,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerMongo(); // GatewayCreateProducerMongo | 
@@ -2180,7 +2180,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerMySQL(); // GatewayCreateProducerMySQL | 
@@ -2222,7 +2222,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerPostgreSQL(); // GatewayCreateProducerPostgreSQL | 
@@ -2264,7 +2264,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerRabbitMQ(); // GatewayCreateProducerRabbitMQ | 
@@ -2306,7 +2306,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerRdp(); // GatewayCreateProducerRdp | 
@@ -2348,7 +2348,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerAws(); // GatewayCreateProducerAws | 
@@ -2390,7 +2390,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayDeleteProducer(); // GatewayDeleteProducer | 
@@ -2432,7 +2432,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayDeleteSubAdmins(); // GatewayDeleteSubAdmins | 
@@ -2474,7 +2474,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayGetConfig(); // GatewayGetConfig | 
@@ -2516,7 +2516,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayGetProducer(); // GatewayGetProducer | 
@@ -2558,7 +2558,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayGetTmpUsers(); // GatewayGetTmpUsers | 
@@ -2600,7 +2600,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayListProducers(); // GatewayListProducers | 
@@ -2642,7 +2642,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayListSubAdmins(); // GatewayListSubAdmins | 
@@ -2684,7 +2684,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayRevokeTmpUsers(); // GatewayRevokeTmpUsers | 
@@ -2726,7 +2726,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayStartProducer(); // GatewayStartProducer | 
@@ -2768,7 +2768,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayStopProducer(); // GatewayStopProducer | 
@@ -2810,7 +2810,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayUpdateTmpUsers(); // GatewayUpdateTmpUsers | 
@@ -2852,7 +2852,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 apiInstance.getAccountLogo().then((data) => {
@@ -2890,7 +2890,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetAuthMethod(); // GetAuthMethod | 
@@ -2932,7 +2932,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetDynamicSecretValue(); // GetDynamicSecretValue | 
@@ -2974,7 +2974,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetRSAPublic(); // GetRSAPublic | 
@@ -3016,7 +3016,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetRole(); // GetRole | 
@@ -3058,7 +3058,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetSSHCertificate(); // GetSSHCertificate | 
@@ -3100,7 +3100,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetSecretValue(); // GetSecretValue | 
@@ -3142,7 +3142,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetTarget(); // GetTarget | 
@@ -3184,7 +3184,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetTargetDetails(); // GetTargetDetails | 
@@ -3226,7 +3226,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.ListAuthMethods(); // ListAuthMethods | 
@@ -3268,7 +3268,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.ListItems(); // ListItems | 
@@ -3310,7 +3310,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.ListRoles(); // ListRoles | 
@@ -3352,7 +3352,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.ListTargets(); // ListTargets | 
@@ -3394,7 +3394,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.MoveObjects(); // MoveObjects | 
@@ -3436,7 +3436,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
@@ -3480,7 +3480,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.RefreshKey(); // RefreshKey | 
@@ -3522,7 +3522,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.ReverseRBAC(); // ReverseRBAC | 
@@ -3564,7 +3564,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.RollbackSecret(); // RollbackSecret | 
@@ -3606,7 +3606,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.RotateKey(); // RotateKey | 
@@ -3648,7 +3648,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.SetItemState(); // SetItemState | 
@@ -3690,7 +3690,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.SetRoleRule(); // SetRoleRule | 
@@ -3732,7 +3732,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.SignPKCS1(); // SignPKCS1 | 
@@ -3774,7 +3774,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.StaticCredsAuth(); // StaticCredsAuth | 
@@ -3816,7 +3816,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UidCreateChildToken(); // UidCreateChildToken | 
@@ -3858,7 +3858,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UidGenerateToken(); // UidGenerateToken | 
@@ -3900,7 +3900,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UidListChildren(); // UidListChildren | 
@@ -3942,7 +3942,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UidRevokeToken(); // UidRevokeToken | 
@@ -3984,7 +3984,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UidRotateToken(); // UidRotateToken | 
@@ -4026,7 +4026,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateAWSTargetDetails(); // UpdateAWSTargetDetails | 
@@ -4068,7 +4068,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateDBTargetDetails(); // UpdateDBTargetDetails | 
@@ -4110,7 +4110,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateItem(); // UpdateItem | 
@@ -4152,7 +4152,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateRDPTargetDetails(); // UpdateRDPTargetDetails | 
@@ -4194,7 +4194,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateRabbitMQTargetDetails(); // UpdateRabbitMQTargetDetails | 
@@ -4236,7 +4236,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateRole(); // UpdateRole | 
@@ -4278,7 +4278,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateSSHTargetDetails(); // UpdateSSHTargetDetails | 
@@ -4320,7 +4320,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateSecretVal(); // UpdateSecretVal | 
@@ -4362,7 +4362,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateTarget(); // UpdateTarget | 
@@ -4404,7 +4404,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = null; // Object | 
@@ -4446,7 +4446,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateWebTargetDetails(); // UpdateWebTargetDetails | 
@@ -4488,7 +4488,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UploadRSA(); // UploadRSA | 
@@ -4530,7 +4530,7 @@ No authorization required
 ### Example
 
 ```javascript
-import akeyless from 'akeyless-javascript';
+import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.VerifyPKCS1(); // VerifyPKCS1 | 

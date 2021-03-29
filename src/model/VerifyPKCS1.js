@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyPKCS1 model module.
  * @module model/VerifyPKCS1
- * @version 2.0.12
+ * @version 2.0.13
  */
 class VerifyPKCS1 {
     /**

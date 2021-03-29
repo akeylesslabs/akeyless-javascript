@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRdpTarget model module.
  * @module model/CreateRdpTarget
- * @version 2.0.12
+ * @version 2.0.13
  */
 class CreateRdpTarget {
     /**

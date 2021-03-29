@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConfigureOutput model module.
  * @module model/ConfigureOutput
- * @version 2.0.12
+ * @version 2.0.13
  */
 class ConfigureOutput {
     /**

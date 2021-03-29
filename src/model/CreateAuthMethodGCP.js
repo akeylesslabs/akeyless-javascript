@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodGCP model module.
  * @module model/CreateAuthMethodGCP
- * @version 2.0.12
+ * @version 2.0.13
  */
 class CreateAuthMethodGCP {
     /**
