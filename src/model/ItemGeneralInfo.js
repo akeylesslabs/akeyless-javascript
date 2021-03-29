@@ -14,11 +14,12 @@
 import ApiClient from '../ApiClient';
 import CertificateIssueInfo from './CertificateIssueInfo';
 import DynamicSecretProducerInfo from './DynamicSecretProducerInfo';
+import ManagedKeyDetailsInfo from './ManagedKeyDetailsInfo';
 
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 2.0.13
+ * @version 2.0.14
  */
 class ItemGeneralInfo {
     /**
@@ -55,6 +56,9 @@ class ItemGeneralInfo {
             if (data.hasOwnProperty('dynamic_secret_producer_details')) {
                 obj['dynamic_secret_producer_details'] = DynamicSecretProducerInfo.constructFromObject(data['dynamic_secret_producer_details']);
             }
+            if (data.hasOwnProperty('managed_key_details')) {
+                obj['managed_key_details'] = ManagedKeyDetailsInfo.constructFromObject(data['managed_key_details']);
+            }
         }
         return obj;
     }
@@ -71,6 +75,11 @@ ItemGeneralInfo.prototype['cert_issue_details'] = undefined;
  * @member {module:model/DynamicSecretProducerInfo} dynamic_secret_producer_details
  */
 ItemGeneralInfo.prototype['dynamic_secret_producer_details'] = undefined;
+
+/**
+ * @member {module:model/ManagedKeyDetailsInfo} managed_key_details
+ */
+ItemGeneralInfo.prototype['managed_key_details'] = undefined;
 
 
 

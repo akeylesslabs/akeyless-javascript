@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetSubAdminsListReplyObj model module.
  * @module model/GetSubAdminsListReplyObj
- * @version 2.0.13
+ * @version 2.0.14
  */
 class GetSubAdminsListReplyObj {
     /**

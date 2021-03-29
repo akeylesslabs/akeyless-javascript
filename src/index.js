@@ -107,6 +107,7 @@ import EncryptFileOutput from './model/EncryptFileOutput';
 import EncryptOutput from './model/EncryptOutput';
 import EncryptPKCS1 from './model/EncryptPKCS1';
 import EncryptPKCS1Output from './model/EncryptPKCS1Output';
+import ExternalKMSKeyId from './model/ExternalKMSKeyId';
 import GCPAccessRules from './model/GCPAccessRules';
 import GatewayAddSubAdmins from './model/GatewayAddSubAdmins';
 import GatewayAddSubAdminsOutput from './model/GatewayAddSubAdminsOutput';
@@ -192,6 +193,9 @@ import ListTargetsOutput from './model/ListTargetsOutput';
 import LogForwardingConfigPart from './model/LogForwardingConfigPart';
 import LogstashLogForwardingConfig from './model/LogstashLogForwardingConfig';
 import LogzIoLogForwardingConfig from './model/LogzIoLogForwardingConfig';
+import ManagedKeyDetailsInfo from './model/ManagedKeyDetailsInfo';
+import ManagedKeyStatusInfo from './model/ManagedKeyStatusInfo';
+import ManagedKeyTargetInfo from './model/ManagedKeyTargetInfo';
 import MigrationGeneral from './model/MigrationGeneral';
 import MigrationsConfigPart from './model/MigrationsConfigPart';
 import MoveObjects from './model/MoveObjects';
@@ -294,7 +298,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.0.13
+* @version 2.0.14
 */
 export {
     /**
@@ -868,6 +872,12 @@ export {
     EncryptPKCS1Output,
 
     /**
+     * The ExternalKMSKeyId model constructor.
+     * @property {module:model/ExternalKMSKeyId}
+     */
+    ExternalKMSKeyId,
+
+    /**
      * The GCPAccessRules model constructor.
      * @property {module:model/GCPAccessRules}
      */
@@ -1376,6 +1386,24 @@ export {
      * @property {module:model/LogzIoLogForwardingConfig}
      */
     LogzIoLogForwardingConfig,
+
+    /**
+     * The ManagedKeyDetailsInfo model constructor.
+     * @property {module:model/ManagedKeyDetailsInfo}
+     */
+    ManagedKeyDetailsInfo,
+
+    /**
+     * The ManagedKeyStatusInfo model constructor.
+     * @property {module:model/ManagedKeyStatusInfo}
+     */
+    ManagedKeyStatusInfo,
+
+    /**
+     * The ManagedKeyTargetInfo model constructor.
+     * @property {module:model/ManagedKeyTargetInfo}
+     */
+    ManagedKeyTargetInfo,
 
     /**
      * The MigrationGeneral model constructor.

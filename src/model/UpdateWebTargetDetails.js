@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateWebTargetDetails model module.
  * @module model/UpdateWebTargetDetails
- * @version 2.0.13
+ * @version 2.0.14
  */
 class UpdateWebTargetDetails {
     /**

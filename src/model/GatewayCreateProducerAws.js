@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAws model module.
  * @module model/GatewayCreateProducerAws
- * @version 2.0.13
+ * @version 2.0.14
  */
 class GatewayCreateProducerAws {
     /**
