@@ -152,6 +152,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('chef_skip_ssl')) {
                 obj['chef_skip_ssl'] = ApiClient.convertToType(data['chef_skip_ssl'], 'Boolean');
             }
+            if (data.hasOwnProperty('create_sync_url')) {
+                obj['create_sync_url'] = ApiClient.convertToType(data['create_sync_url'], 'String');
+            }
             if (data.hasOwnProperty('db_host_name')) {
                 obj['db_host_name'] = ApiClient.convertToType(data['db_host_name'], 'String');
             }
@@ -302,6 +305,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('mysql_creation_statements')) {
                 obj['mysql_creation_statements'] = ApiClient.convertToType(data['mysql_creation_statements'], 'String');
             }
+            if (data.hasOwnProperty('payload')) {
+                obj['payload'] = ApiClient.convertToType(data['payload'], 'String');
+            }
             if (data.hasOwnProperty('postgres_creation_statements')) {
                 obj['postgres_creation_statements'] = ApiClient.convertToType(data['postgres_creation_statements'], 'String');
             }
@@ -328,6 +334,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('rabbitmq_user_write_permission')) {
                 obj['rabbitmq_user_write_permission'] = ApiClient.convertToType(data['rabbitmq_user_write_permission'], 'String');
+            }
+            if (data.hasOwnProperty('revoke_sync_url')) {
+                obj['revoke_sync_url'] = ApiClient.convertToType(data['revoke_sync_url'], 'String');
             }
             if (data.hasOwnProperty('should_stop')) {
                 obj['should_stop'] = ApiClient.convertToType(data['should_stop'], 'String');
@@ -558,6 +567,11 @@ DSProducerDetails.prototype['chef_server_username'] = undefined;
  * @member {Boolean} chef_skip_ssl
  */
 DSProducerDetails.prototype['chef_skip_ssl'] = undefined;
+
+/**
+ * @member {String} create_sync_url
+ */
+DSProducerDetails.prototype['create_sync_url'] = undefined;
 
 /**
  * @member {String} db_host_name
@@ -815,6 +829,11 @@ DSProducerDetails.prototype['mssql_revocation_statements'] = undefined;
 DSProducerDetails.prototype['mysql_creation_statements'] = undefined;
 
 /**
+ * @member {String} payload
+ */
+DSProducerDetails.prototype['payload'] = undefined;
+
+/**
  * @member {String} postgres_creation_statements
  */
 DSProducerDetails.prototype['postgres_creation_statements'] = undefined;
@@ -858,6 +877,11 @@ DSProducerDetails.prototype['rabbitmq_user_vhost'] = undefined;
  * @member {String} rabbitmq_user_write_permission
  */
 DSProducerDetails.prototype['rabbitmq_user_write_permission'] = undefined;
+
+/**
+ * @member {String} revoke_sync_url
+ */
+DSProducerDetails.prototype['revoke_sync_url'] = undefined;
 
 /**
  * TODO delete this after migration

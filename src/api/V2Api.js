@@ -208,20 +208,12 @@ export default class V2Api {
     }
 
 
-    /**
-     * Callback function to receive the result of the assocRoleAuthMethod operation.
-     * @callback module:api/V2Api~assocRoleAuthMethodCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateRoleAuthMethodAssocOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * @param {module:model/AssocRoleAuthMethod} body 
-     * @param {module:api/V2Api~assocRoleAuthMethodCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateRoleAuthMethodAssocOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateRoleAuthMethodAssocOutput} and HTTP response
      */
-    assocRoleAuthMethod(body, callback) {
+    assocRoleAuthMethodWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -244,24 +236,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/assoc-role-am', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the assocTargetItem operation.
-     * @callback module:api/V2Api~assocTargetItemCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateTargetItemAssocOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/AssocRoleAuthMethod} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateRoleAuthMethodAssocOutput}
      */
+    assocRoleAuthMethod(body) {
+      return this.assocRoleAuthMethodWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/AssocTargetItem} body 
-     * @param {module:api/V2Api~assocTargetItemCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateTargetItemAssocOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateTargetItemAssocOutput} and HTTP response
      */
-    assocTargetItem(body, callback) {
+    assocTargetItemWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -284,24 +279,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/assoc-target-item', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the auth operation.
-     * @callback module:api/V2Api~authCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/AuthOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/AssocTargetItem} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateTargetItemAssocOutput}
      */
+    assocTargetItem(body) {
+      return this.assocTargetItemWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/Auth} body 
-     * @param {module:api/V2Api~authCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/AuthOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthOutput} and HTTP response
      */
-    auth(body, callback) {
+    authWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -324,24 +322,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/auth', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the configure operation.
-     * @callback module:api/V2Api~configureCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ConfigureOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/Auth} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthOutput}
      */
+    auth(body) {
+      return this.authWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/Configure} body 
-     * @param {module:api/V2Api~configureCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ConfigureOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConfigureOutput} and HTTP response
      */
-    configure(body, callback) {
+    configureWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -364,24 +365,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/configure', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createAuthMethod operation.
-     * @callback module:api/V2Api~createAuthMethodCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateAuthMethodOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/Configure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConfigureOutput}
      */
+    configure(body) {
+      return this.configureWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateAuthMethod} body 
-     * @param {module:api/V2Api~createAuthMethodCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateAuthMethodOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAuthMethodOutput} and HTTP response
      */
-    createAuthMethod(body, callback) {
+    createAuthMethodWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -404,24 +408,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-auth-method', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createAuthMethodAWSIAM operation.
-     * @callback module:api/V2Api~createAuthMethodAWSIAMCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateAuthMethodAWSIAMOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateAuthMethod} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAuthMethodOutput}
      */
+    createAuthMethod(body) {
+      return this.createAuthMethodWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateAuthMethodAWSIAM} body 
-     * @param {module:api/V2Api~createAuthMethodAWSIAMCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateAuthMethodAWSIAMOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAuthMethodAWSIAMOutput} and HTTP response
      */
-    createAuthMethodAWSIAM(body, callback) {
+    createAuthMethodAWSIAMWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -444,24 +451,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-auth-method-aws-iam', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createAuthMethodAzureAD operation.
-     * @callback module:api/V2Api~createAuthMethodAzureADCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateAuthMethodAzureADOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateAuthMethodAWSIAM} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAuthMethodAWSIAMOutput}
      */
+    createAuthMethodAWSIAM(body) {
+      return this.createAuthMethodAWSIAMWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateAuthMethodAzureAD} body 
-     * @param {module:api/V2Api~createAuthMethodAzureADCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateAuthMethodAzureADOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAuthMethodAzureADOutput} and HTTP response
      */
-    createAuthMethodAzureAD(body, callback) {
+    createAuthMethodAzureADWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -484,24 +494,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-auth-method-azure-ad', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createAuthMethodGCP operation.
-     * @callback module:api/V2Api~createAuthMethodGCPCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateAuthMethodGCPOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateAuthMethodAzureAD} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAuthMethodAzureADOutput}
      */
+    createAuthMethodAzureAD(body) {
+      return this.createAuthMethodAzureADWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateAuthMethodGCP} body 
-     * @param {module:api/V2Api~createAuthMethodGCPCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateAuthMethodGCPOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAuthMethodGCPOutput} and HTTP response
      */
-    createAuthMethodGCP(body, callback) {
+    createAuthMethodGCPWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -524,24 +537,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-auth-method-gcp', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createAuthMethodHuawei operation.
-     * @callback module:api/V2Api~createAuthMethodHuaweiCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateAuthMethodHuaweiOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateAuthMethodGCP} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAuthMethodGCPOutput}
      */
+    createAuthMethodGCP(body) {
+      return this.createAuthMethodGCPWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateAuthMethodHuawei} body 
-     * @param {module:api/V2Api~createAuthMethodHuaweiCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateAuthMethodHuaweiOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAuthMethodHuaweiOutput} and HTTP response
      */
-    createAuthMethodHuawei(body, callback) {
+    createAuthMethodHuaweiWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -564,24 +580,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-auth-method-huawei', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createAuthMethodOAuth2 operation.
-     * @callback module:api/V2Api~createAuthMethodOAuth2Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateAuthMethodOAuth2Output} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateAuthMethodHuawei} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAuthMethodHuaweiOutput}
      */
+    createAuthMethodHuawei(body) {
+      return this.createAuthMethodHuaweiWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateAuthMethodOAuth2} body 
-     * @param {module:api/V2Api~createAuthMethodOAuth2Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateAuthMethodOAuth2Output}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAuthMethodOAuth2Output} and HTTP response
      */
-    createAuthMethodOAuth2(body, callback) {
+    createAuthMethodOAuth2WithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -604,24 +623,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-auth-method-oauth2', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createAuthMethodSAML operation.
-     * @callback module:api/V2Api~createAuthMethodSAMLCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateAuthMethodSAMLOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateAuthMethodOAuth2} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAuthMethodOAuth2Output}
      */
+    createAuthMethodOAuth2(body) {
+      return this.createAuthMethodOAuth2WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateAuthMethodSAML} body 
-     * @param {module:api/V2Api~createAuthMethodSAMLCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateAuthMethodSAMLOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAuthMethodSAMLOutput} and HTTP response
      */
-    createAuthMethodSAML(body, callback) {
+    createAuthMethodSAMLWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -644,24 +666,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-auth-method-saml', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createAuthMethodUniversalIdentity operation.
-     * @callback module:api/V2Api~createAuthMethodUniversalIdentityCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateAuthMethodUniversalIdentityOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateAuthMethodSAML} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAuthMethodSAMLOutput}
      */
+    createAuthMethodSAML(body) {
+      return this.createAuthMethodSAMLWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateAuthMethodUniversalIdentity} body 
-     * @param {module:api/V2Api~createAuthMethodUniversalIdentityCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateAuthMethodUniversalIdentityOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAuthMethodUniversalIdentityOutput} and HTTP response
      */
-    createAuthMethodUniversalIdentity(body, callback) {
+    createAuthMethodUniversalIdentityWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -684,24 +709,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-auth-method-universal-identity', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createAwsTarget operation.
-     * @callback module:api/V2Api~createAwsTargetCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateAuthMethodUniversalIdentity} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAuthMethodUniversalIdentityOutput}
      */
+    createAuthMethodUniversalIdentity(body) {
+      return this.createAuthMethodUniversalIdentityWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateAwsTarget} body 
-     * @param {module:api/V2Api~createAwsTargetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    createAwsTarget(body, callback) {
+    createAwsTargetWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -724,24 +752,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-aws-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createDBTarget operation.
-     * @callback module:api/V2Api~createDBTargetCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateAwsTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    createAwsTarget(body) {
+      return this.createAwsTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateDBTarget} body 
-     * @param {module:api/V2Api~createDBTargetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    createDBTarget(body, callback) {
+    createDBTargetWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -764,24 +795,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-db-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createDynamicSecret operation.
-     * @callback module:api/V2Api~createDynamicSecretCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateDBTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    createDBTarget(body) {
+      return this.createDBTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateDynamicSecret} body 
-     * @param {module:api/V2Api~createDynamicSecretCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    createDynamicSecret(body, callback) {
+    createDynamicSecretWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -804,24 +838,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-dynamic-secret', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createKey operation.
-     * @callback module:api/V2Api~createKeyCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateKeyOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateDynamicSecret} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    createDynamicSecret(body) {
+      return this.createDynamicSecretWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateKey} body 
-     * @param {module:api/V2Api~createKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateKeyOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateKeyOutput} and HTTP response
      */
-    createKey(body, callback) {
+    createKeyWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -844,24 +881,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-key', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createPKICertIssuer operation.
-     * @callback module:api/V2Api~createPKICertIssuerCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreatePKICertIssuerOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateKeyOutput}
      */
+    createKey(body) {
+      return this.createKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreatePKICertIssuer} body 
-     * @param {module:api/V2Api~createPKICertIssuerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreatePKICertIssuerOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreatePKICertIssuerOutput} and HTTP response
      */
-    createPKICertIssuer(body, callback) {
+    createPKICertIssuerWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -884,24 +924,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-pki-cert-issuer', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createRabbitMQTarget operation.
-     * @callback module:api/V2Api~createRabbitMQTargetCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreatePKICertIssuer} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreatePKICertIssuerOutput}
      */
+    createPKICertIssuer(body) {
+      return this.createPKICertIssuerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateRabbitMQTarget} body 
-     * @param {module:api/V2Api~createRabbitMQTargetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    createRabbitMQTarget(body, callback) {
+    createRabbitMQTargetWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -924,24 +967,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-rabbitMQ-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createRdpTarget operation.
-     * @callback module:api/V2Api~createRdpTargetCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateRabbitMQTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    createRabbitMQTarget(body) {
+      return this.createRabbitMQTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateRdpTarget} body 
-     * @param {module:api/V2Api~createRdpTargetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    createRdpTarget(body, callback) {
+    createRdpTargetWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -964,24 +1010,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-rdp-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createRole operation.
-     * @callback module:api/V2Api~createRoleCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateRdpTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    createRdpTarget(body) {
+      return this.createRdpTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateRole} body 
-     * @param {module:api/V2Api~createRoleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    createRole(body, callback) {
+    createRoleWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1004,24 +1053,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-role', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createSSHCertIssuer operation.
-     * @callback module:api/V2Api~createSSHCertIssuerCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateSSHCertIssuerOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateRole} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    createRole(body) {
+      return this.createRoleWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateSSHCertIssuer} body 
-     * @param {module:api/V2Api~createSSHCertIssuerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateSSHCertIssuerOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateSSHCertIssuerOutput} and HTTP response
      */
-    createSSHCertIssuer(body, callback) {
+    createSSHCertIssuerWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1044,24 +1096,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-ssh-cert-issuer', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createSSHTarget operation.
-     * @callback module:api/V2Api~createSSHTargetCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateSSHCertIssuer} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateSSHCertIssuerOutput}
      */
+    createSSHCertIssuer(body) {
+      return this.createSSHCertIssuerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateSSHTarget} body 
-     * @param {module:api/V2Api~createSSHTargetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    createSSHTarget(body, callback) {
+    createSSHTargetWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1084,24 +1139,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-ssh-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createSecret operation.
-     * @callback module:api/V2Api~createSecretCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateSecretOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateSSHTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    createSSHTarget(body) {
+      return this.createSSHTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateSecret} body 
-     * @param {module:api/V2Api~createSecretCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateSecretOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateSecretOutput} and HTTP response
      */
-    createSecret(body, callback) {
+    createSecretWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1124,24 +1182,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-secret', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createTarget operation.
-     * @callback module:api/V2Api~createTargetCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateSecret} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateSecretOutput}
      */
+    createSecret(body) {
+      return this.createSecretWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {Object} body 
-     * @param {module:api/V2Api~createTargetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    createTarget(body, callback) {
+    createTargetWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1164,24 +1225,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the createWebTarget operation.
-     * @callback module:api/V2Api~createWebTargetCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    createTarget(body) {
+      return this.createTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/CreateWebTarget} body 
-     * @param {module:api/V2Api~createWebTargetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    createWebTarget(body, callback) {
+    createWebTargetWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1204,24 +1268,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/create-web-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the decrypt operation.
-     * @callback module:api/V2Api~decryptCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DecryptOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/CreateWebTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    createWebTarget(body) {
+      return this.createWebTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/Decrypt} body 
-     * @param {module:api/V2Api~decryptCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DecryptOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DecryptOutput} and HTTP response
      */
-    decrypt(body, callback) {
+    decryptWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1244,24 +1311,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/decrypt', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the decryptPKCS1 operation.
-     * @callback module:api/V2Api~decryptPKCS1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DecryptPKCS1Output} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/Decrypt} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DecryptOutput}
      */
+    decrypt(body) {
+      return this.decryptWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/DecryptPKCS1} body 
-     * @param {module:api/V2Api~decryptPKCS1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DecryptPKCS1Output}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DecryptPKCS1Output} and HTTP response
      */
-    decryptPKCS1(body, callback) {
+    decryptPKCS1WithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1284,24 +1354,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/decrypt-pkcs1', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteAuthMethod operation.
-     * @callback module:api/V2Api~deleteAuthMethodCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DeleteAuthMethodOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/DecryptPKCS1} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DecryptPKCS1Output}
      */
+    decryptPKCS1(body) {
+      return this.decryptPKCS1WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/DeleteAuthMethod} body 
-     * @param {module:api/V2Api~deleteAuthMethodCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DeleteAuthMethodOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DeleteAuthMethodOutput} and HTTP response
      */
-    deleteAuthMethod(body, callback) {
+    deleteAuthMethodWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1324,24 +1397,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/delete-auth-method', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteAuthMethods operation.
-     * @callback module:api/V2Api~deleteAuthMethodsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DeleteAuthMethodsOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/DeleteAuthMethod} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DeleteAuthMethodOutput}
      */
+    deleteAuthMethod(body) {
+      return this.deleteAuthMethodWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/DeleteAuthMethods} body 
-     * @param {module:api/V2Api~deleteAuthMethodsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DeleteAuthMethodsOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DeleteAuthMethodsOutput} and HTTP response
      */
-    deleteAuthMethods(body, callback) {
+    deleteAuthMethodsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1364,24 +1440,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/delete-auth-methods', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteItem operation.
-     * @callback module:api/V2Api~deleteItemCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DeleteItemOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/DeleteAuthMethods} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DeleteAuthMethodsOutput}
      */
+    deleteAuthMethods(body) {
+      return this.deleteAuthMethodsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/DeleteItem} body 
-     * @param {module:api/V2Api~deleteItemCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DeleteItemOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DeleteItemOutput} and HTTP response
      */
-    deleteItem(body, callback) {
+    deleteItemWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1404,24 +1483,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/delete-item', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteItems operation.
-     * @callback module:api/V2Api~deleteItemsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DeleteItemsOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/DeleteItem} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DeleteItemOutput}
      */
+    deleteItem(body) {
+      return this.deleteItemWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/DeleteItems} body 
-     * @param {module:api/V2Api~deleteItemsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DeleteItemsOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DeleteItemsOutput} and HTTP response
      */
-    deleteItems(body, callback) {
+    deleteItemsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1444,24 +1526,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/delete-items', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteRole operation.
-     * @callback module:api/V2Api~deleteRoleCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/DeleteItems} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DeleteItemsOutput}
      */
+    deleteItems(body) {
+      return this.deleteItemsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/DeleteRole} body 
-     * @param {module:api/V2Api~deleteRoleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    deleteRole(body, callback) {
+    deleteRoleWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1484,24 +1569,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/delete-role', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteRoleAssociation operation.
-     * @callback module:api/V2Api~deleteRoleAssociationCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/DeleteRole} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    deleteRole(body) {
+      return this.deleteRoleWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/DeleteRoleAssociation} body 
-     * @param {module:api/V2Api~deleteRoleAssociationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    deleteRoleAssociation(body, callback) {
+    deleteRoleAssociationWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1524,24 +1612,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/delete-assoc', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteRoleRule operation.
-     * @callback module:api/V2Api~deleteRoleRuleCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DeleteRoleRuleOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/DeleteRoleAssociation} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    deleteRoleAssociation(body) {
+      return this.deleteRoleAssociationWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/DeleteRoleRule} body 
-     * @param {module:api/V2Api~deleteRoleRuleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DeleteRoleRuleOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DeleteRoleRuleOutput} and HTTP response
      */
-    deleteRoleRule(body, callback) {
+    deleteRoleRuleWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1564,24 +1655,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/delete-role-rule', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteRoles operation.
-     * @callback module:api/V2Api~deleteRolesCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/DeleteRoleRule} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DeleteRoleRuleOutput}
      */
+    deleteRoleRule(body) {
+      return this.deleteRoleRuleWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/DeleteRoles} body 
-     * @param {module:api/V2Api~deleteRolesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    deleteRoles(body, callback) {
+    deleteRolesWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1604,24 +1698,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/delete-roles', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteTarget operation.
-     * @callback module:api/V2Api~deleteTargetCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/DeleteRoles} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    deleteRoles(body) {
+      return this.deleteRolesWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/DeleteTarget} body 
-     * @param {module:api/V2Api~deleteTargetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    deleteTarget(body, callback) {
+    deleteTargetWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1644,24 +1741,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/delete-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteTargetAssociation operation.
-     * @callback module:api/V2Api~deleteTargetAssociationCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/DeleteTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    deleteTarget(body) {
+      return this.deleteTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/DeleteTargetAssociation} body 
-     * @param {module:api/V2Api~deleteTargetAssociationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    deleteTargetAssociation(body, callback) {
+    deleteTargetAssociationWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1684,24 +1784,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/delete-assoc-target-item', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteTargets operation.
-     * @callback module:api/V2Api~deleteTargetsCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/DeleteTargetAssociation} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    deleteTargetAssociation(body) {
+      return this.deleteTargetAssociationWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/DeleteTargets} body 
-     * @param {module:api/V2Api~deleteTargetsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    deleteTargets(body, callback) {
+    deleteTargetsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1724,24 +1827,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/delete-targets', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the describeItem operation.
-     * @callback module:api/V2Api~describeItemCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Item} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/DeleteTargets} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    deleteTargets(body) {
+      return this.deleteTargetsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/DescribeItem} body 
-     * @param {module:api/V2Api~describeItemCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Item}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Item} and HTTP response
      */
-    describeItem(body, callback) {
+    describeItemWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1764,24 +1870,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/describe-item', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the encrypt operation.
-     * @callback module:api/V2Api~encryptCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/EncryptOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/DescribeItem} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Item}
      */
+    describeItem(body) {
+      return this.describeItemWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/Encrypt} body 
-     * @param {module:api/V2Api~encryptCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/EncryptOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EncryptOutput} and HTTP response
      */
-    encrypt(body, callback) {
+    encryptWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1804,24 +1913,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/encrypt', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the encryptPKCS1 operation.
-     * @callback module:api/V2Api~encryptPKCS1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/EncryptPKCS1Output} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/Encrypt} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EncryptOutput}
      */
+    encrypt(body) {
+      return this.encryptWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/EncryptPKCS1} body 
-     * @param {module:api/V2Api~encryptPKCS1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/EncryptPKCS1Output}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EncryptPKCS1Output} and HTTP response
      */
-    encryptPKCS1(body, callback) {
+    encryptPKCS1WithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1844,24 +1956,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/encrypt-pkcs1', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayAddSubAdmins operation.
-     * @callback module:api/V2Api~gatewayAddSubAdminsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayAddSubAdminsOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/EncryptPKCS1} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EncryptPKCS1Output}
      */
+    encryptPKCS1(body) {
+      return this.encryptPKCS1WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayAddSubAdmins} body 
-     * @param {module:api/V2Api~gatewayAddSubAdminsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayAddSubAdminsOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayAddSubAdminsOutput} and HTTP response
      */
-    gatewayAddSubAdmins(body, callback) {
+    gatewayAddSubAdminsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1884,24 +1999,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-add-sub-admins', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayCreateProducerArtifactory operation.
-     * @callback module:api/V2Api~gatewayCreateProducerArtifactoryCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayCreateProducerArtifactoryOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayAddSubAdmins} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayAddSubAdminsOutput}
      */
+    gatewayAddSubAdmins(body) {
+      return this.gatewayAddSubAdminsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayCreateProducerArtifactory} body 
-     * @param {module:api/V2Api~gatewayCreateProducerArtifactoryCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayCreateProducerArtifactoryOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerArtifactoryOutput} and HTTP response
      */
-    gatewayCreateProducerArtifactory(body, callback) {
+    gatewayCreateProducerArtifactoryWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1924,24 +2042,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-create-producer-artifactory', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayCreateProducerAws operation.
-     * @callback module:api/V2Api~gatewayCreateProducerAwsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayCreateProducerAwsOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayCreateProducerArtifactory} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerArtifactoryOutput}
      */
+    gatewayCreateProducerArtifactory(body) {
+      return this.gatewayCreateProducerArtifactoryWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayCreateProducerAws} body 
-     * @param {module:api/V2Api~gatewayCreateProducerAwsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayCreateProducerAwsOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerAwsOutput} and HTTP response
      */
-    gatewayCreateProducerAws(body, callback) {
+    gatewayCreateProducerAwsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -1964,24 +2085,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-create-producer-aws', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayCreateProducerAzure operation.
-     * @callback module:api/V2Api~gatewayCreateProducerAzureCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayCreateProducerAzureOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayCreateProducerAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerAwsOutput}
      */
+    gatewayCreateProducerAws(body) {
+      return this.gatewayCreateProducerAwsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayCreateProducerAzure} body 
-     * @param {module:api/V2Api~gatewayCreateProducerAzureCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayCreateProducerAzureOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerAzureOutput} and HTTP response
      */
-    gatewayCreateProducerAzure(body, callback) {
+    gatewayCreateProducerAzureWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2004,24 +2128,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-create-producer-azure', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayCreateProducerEks operation.
-     * @callback module:api/V2Api~gatewayCreateProducerEksCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayCreateProducerEksOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayCreateProducerAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerAzureOutput}
      */
+    gatewayCreateProducerAzure(body) {
+      return this.gatewayCreateProducerAzureWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayCreateProducerEks} body 
-     * @param {module:api/V2Api~gatewayCreateProducerEksCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayCreateProducerEksOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerEksOutput} and HTTP response
      */
-    gatewayCreateProducerEks(body, callback) {
+    gatewayCreateProducerEksWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2044,24 +2171,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-create-producer-eks', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayCreateProducerGke operation.
-     * @callback module:api/V2Api~gatewayCreateProducerGkeCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayCreateProducerGkeOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayCreateProducerEks} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerEksOutput}
      */
+    gatewayCreateProducerEks(body) {
+      return this.gatewayCreateProducerEksWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayCreateProducerGke} body 
-     * @param {module:api/V2Api~gatewayCreateProducerGkeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayCreateProducerGkeOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerGkeOutput} and HTTP response
      */
-    gatewayCreateProducerGke(body, callback) {
+    gatewayCreateProducerGkeWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2084,24 +2214,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-create-producer-gke', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayCreateProducerMSSQL operation.
-     * @callback module:api/V2Api~gatewayCreateProducerMSSQLCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayCreateProducerMSSQLOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayCreateProducerGke} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerGkeOutput}
      */
+    gatewayCreateProducerGke(body) {
+      return this.gatewayCreateProducerGkeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayCreateProducerMSSQL} body 
-     * @param {module:api/V2Api~gatewayCreateProducerMSSQLCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayCreateProducerMSSQLOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerMSSQLOutput} and HTTP response
      */
-    gatewayCreateProducerMSSQL(body, callback) {
+    gatewayCreateProducerMSSQLWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2124,24 +2257,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-create-producer-mssql', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayCreateProducerMongo operation.
-     * @callback module:api/V2Api~gatewayCreateProducerMongoCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayCreateProducerMongoOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayCreateProducerMSSQL} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerMSSQLOutput}
      */
+    gatewayCreateProducerMSSQL(body) {
+      return this.gatewayCreateProducerMSSQLWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayCreateProducerMongo} body 
-     * @param {module:api/V2Api~gatewayCreateProducerMongoCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayCreateProducerMongoOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerMongoOutput} and HTTP response
      */
-    gatewayCreateProducerMongo(body, callback) {
+    gatewayCreateProducerMongoWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2164,24 +2300,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-create-producer-mongo', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayCreateProducerMySQL operation.
-     * @callback module:api/V2Api~gatewayCreateProducerMySQLCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayCreateProducerMySQLOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayCreateProducerMongo} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerMongoOutput}
      */
+    gatewayCreateProducerMongo(body) {
+      return this.gatewayCreateProducerMongoWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayCreateProducerMySQL} body 
-     * @param {module:api/V2Api~gatewayCreateProducerMySQLCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayCreateProducerMySQLOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerMySQLOutput} and HTTP response
      */
-    gatewayCreateProducerMySQL(body, callback) {
+    gatewayCreateProducerMySQLWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2204,24 +2343,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-create-producer-mysql', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayCreateProducerPostgreSQL operation.
-     * @callback module:api/V2Api~gatewayCreateProducerPostgreSQLCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayCreateProducerPostgreSQLOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayCreateProducerMySQL} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerMySQLOutput}
      */
+    gatewayCreateProducerMySQL(body) {
+      return this.gatewayCreateProducerMySQLWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayCreateProducerPostgreSQL} body 
-     * @param {module:api/V2Api~gatewayCreateProducerPostgreSQLCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayCreateProducerPostgreSQLOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerPostgreSQLOutput} and HTTP response
      */
-    gatewayCreateProducerPostgreSQL(body, callback) {
+    gatewayCreateProducerPostgreSQLWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2244,24 +2386,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-create-producer-postgresql', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayCreateProducerRabbitMQ operation.
-     * @callback module:api/V2Api~gatewayCreateProducerRabbitMQCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayCreateProducerRabbitMQOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayCreateProducerPostgreSQL} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerPostgreSQLOutput}
      */
+    gatewayCreateProducerPostgreSQL(body) {
+      return this.gatewayCreateProducerPostgreSQLWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayCreateProducerRabbitMQ} body 
-     * @param {module:api/V2Api~gatewayCreateProducerRabbitMQCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayCreateProducerRabbitMQOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerRabbitMQOutput} and HTTP response
      */
-    gatewayCreateProducerRabbitMQ(body, callback) {
+    gatewayCreateProducerRabbitMQWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2284,24 +2429,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-create-producer-rabbitmq', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayCreateProducerRdp operation.
-     * @callback module:api/V2Api~gatewayCreateProducerRdpCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayCreateProducerRdpOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayCreateProducerRabbitMQ} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerRabbitMQOutput}
      */
+    gatewayCreateProducerRabbitMQ(body) {
+      return this.gatewayCreateProducerRabbitMQWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayCreateProducerRdp} body 
-     * @param {module:api/V2Api~gatewayCreateProducerRdpCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayCreateProducerRdpOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerRdpOutput} and HTTP response
      */
-    gatewayCreateProducerRdp(body, callback) {
+    gatewayCreateProducerRdpWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2324,24 +2472,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-create-producer-rdp', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayCreateProducerVenafi operation.
-     * @callback module:api/V2Api~gatewayCreateProducerVenafiCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayCreateProducerAwsOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayCreateProducerRdp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerRdpOutput}
      */
+    gatewayCreateProducerRdp(body) {
+      return this.gatewayCreateProducerRdpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayCreateProducerAws} body 
-     * @param {module:api/V2Api~gatewayCreateProducerVenafiCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayCreateProducerAwsOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerAwsOutput} and HTTP response
      */
-    gatewayCreateProducerVenafi(body, callback) {
+    gatewayCreateProducerVenafiWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2364,24 +2515,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-create-producer-venafi', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayDeleteProducer operation.
-     * @callback module:api/V2Api~gatewayDeleteProducerCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayDeleteProducerOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayCreateProducerAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerAwsOutput}
      */
+    gatewayCreateProducerVenafi(body) {
+      return this.gatewayCreateProducerVenafiWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayDeleteProducer} body 
-     * @param {module:api/V2Api~gatewayDeleteProducerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayDeleteProducerOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayDeleteProducerOutput} and HTTP response
      */
-    gatewayDeleteProducer(body, callback) {
+    gatewayDeleteProducerWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2404,24 +2558,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-delete-producer', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayDeleteSubAdmins operation.
-     * @callback module:api/V2Api~gatewayDeleteSubAdminsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayDeleteSubAdminsOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayDeleteProducer} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayDeleteProducerOutput}
      */
+    gatewayDeleteProducer(body) {
+      return this.gatewayDeleteProducerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayDeleteSubAdmins} body 
-     * @param {module:api/V2Api~gatewayDeleteSubAdminsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayDeleteSubAdminsOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayDeleteSubAdminsOutput} and HTTP response
      */
-    gatewayDeleteSubAdmins(body, callback) {
+    gatewayDeleteSubAdminsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2444,24 +2601,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-delete-sub-admins', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayGetConfig operation.
-     * @callback module:api/V2Api~gatewayGetConfigCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/AkeylessGatewayConfig} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayDeleteSubAdmins} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayDeleteSubAdminsOutput}
      */
+    gatewayDeleteSubAdmins(body) {
+      return this.gatewayDeleteSubAdminsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayGetConfig} body 
-     * @param {module:api/V2Api~gatewayGetConfigCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/AkeylessGatewayConfig}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AkeylessGatewayConfig} and HTTP response
      */
-    gatewayGetConfig(body, callback) {
+    gatewayGetConfigWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2484,24 +2644,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-get-config', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayGetProducer operation.
-     * @callback module:api/V2Api~gatewayGetProducerCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DSProducerDetails} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayGetConfig} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AkeylessGatewayConfig}
      */
+    gatewayGetConfig(body) {
+      return this.gatewayGetConfigWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayGetProducer} body 
-     * @param {module:api/V2Api~gatewayGetProducerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DSProducerDetails}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DSProducerDetails} and HTTP response
      */
-    gatewayGetProducer(body, callback) {
+    gatewayGetProducerWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2524,24 +2687,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-get-producer', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayGetTmpUsers operation.
-     * @callback module:api/V2Api~gatewayGetTmpUsersCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/TmpUserData>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayGetProducer} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DSProducerDetails}
      */
+    gatewayGetProducer(body) {
+      return this.gatewayGetProducerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayGetTmpUsers} body 
-     * @param {module:api/V2Api~gatewayGetTmpUsersCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/TmpUserData>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/TmpUserData>} and HTTP response
      */
-    gatewayGetTmpUsers(body, callback) {
+    gatewayGetTmpUsersWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2564,24 +2730,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-get-producer-tmp-creds', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayListProducers operation.
-     * @callback module:api/V2Api~gatewayListProducersCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GetProducersListReplyObj} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayGetTmpUsers} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/TmpUserData>}
      */
+    gatewayGetTmpUsers(body) {
+      return this.gatewayGetTmpUsersWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayListProducers} body 
-     * @param {module:api/V2Api~gatewayListProducersCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GetProducersListReplyObj}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetProducersListReplyObj} and HTTP response
      */
-    gatewayListProducers(body, callback) {
+    gatewayListProducersWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2604,24 +2773,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-list-producers', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayListSubAdmins operation.
-     * @callback module:api/V2Api~gatewayListSubAdminsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GetSubAdminsListReplyObj} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayListProducers} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetProducersListReplyObj}
      */
+    gatewayListProducers(body) {
+      return this.gatewayListProducersWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayListSubAdmins} body 
-     * @param {module:api/V2Api~gatewayListSubAdminsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GetSubAdminsListReplyObj}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetSubAdminsListReplyObj} and HTTP response
      */
-    gatewayListSubAdmins(body, callback) {
+    gatewayListSubAdminsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2644,23 +2816,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-list-SubAdmins', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayRevokeTmpUsers operation.
-     * @callback module:api/V2Api~gatewayRevokeTmpUsersCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayListSubAdmins} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetSubAdminsListReplyObj}
      */
+    gatewayListSubAdmins(body) {
+      return this.gatewayListSubAdminsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayRevokeTmpUsers} body 
-     * @param {module:api/V2Api~gatewayRevokeTmpUsersCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    gatewayRevokeTmpUsers(body, callback) {
+    gatewayRevokeTmpUsersWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2683,24 +2859,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-revoke-producer-tmp-creds', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayStartProducer operation.
-     * @callback module:api/V2Api~gatewayStartProducerCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayStartProducerOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayRevokeTmpUsers} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    gatewayRevokeTmpUsers(body) {
+      return this.gatewayRevokeTmpUsersWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayStartProducer} body 
-     * @param {module:api/V2Api~gatewayStartProducerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayStartProducerOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayStartProducerOutput} and HTTP response
      */
-    gatewayStartProducer(body, callback) {
+    gatewayStartProducerWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2723,24 +2902,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-start-producer', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayStopProducer operation.
-     * @callback module:api/V2Api~gatewayStopProducerCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GatewayStopProducerOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayStartProducer} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayStartProducerOutput}
      */
+    gatewayStartProducer(body) {
+      return this.gatewayStartProducerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayStopProducer} body 
-     * @param {module:api/V2Api~gatewayStopProducerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GatewayStopProducerOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayStopProducerOutput} and HTTP response
      */
-    gatewayStopProducer(body, callback) {
+    gatewayStopProducerWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2763,23 +2945,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-stop-producer', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the gatewayUpdateTmpUsers operation.
-     * @callback module:api/V2Api~gatewayUpdateTmpUsersCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayStopProducer} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayStopProducerOutput}
      */
+    gatewayStopProducer(body) {
+      return this.gatewayStopProducerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GatewayUpdateTmpUsers} body 
-     * @param {module:api/V2Api~gatewayUpdateTmpUsersCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    gatewayUpdateTmpUsers(body, callback) {
+    gatewayUpdateTmpUsersWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2802,23 +2988,26 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/gateway-update-producer-tmp-creds', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getAccountLogo operation.
-     * @callback module:api/V2Api~getAccountLogoCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GatewayUpdateTmpUsers} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    gatewayUpdateTmpUsers(body) {
+      return this.gatewayUpdateTmpUsersWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
-     * @param {module:api/V2Api~getAccountLogoCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    getAccountLogo(callback) {
+    getAccountLogoWithHttpInfo() {
       let postBody = null;
 
       let pathParams = {
@@ -2837,24 +3026,26 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/get-account-logo', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getAuthMethod operation.
-     * @callback module:api/V2Api~getAuthMethodCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/AuthMethod} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    getAccountLogo() {
+      return this.getAccountLogoWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GetAuthMethod} body 
-     * @param {module:api/V2Api~getAuthMethodCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/AuthMethod}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethod} and HTTP response
      */
-    getAuthMethod(body, callback) {
+    getAuthMethodWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2877,24 +3068,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/get-auth-method', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getDynamicSecretValue operation.
-     * @callback module:api/V2Api~getDynamicSecretValueCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GetAuthMethod} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethod}
      */
+    getAuthMethod(body) {
+      return this.getAuthMethodWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GetDynamicSecretValue} body 
-     * @param {module:api/V2Api~getDynamicSecretValueCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    getDynamicSecretValue(body, callback) {
+    getDynamicSecretValueWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2917,24 +3111,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/get-dynamic-secret-value', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getRSAPublic operation.
-     * @callback module:api/V2Api~getRSAPublicCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GetRSAPublicOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GetDynamicSecretValue} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    getDynamicSecretValue(body) {
+      return this.getDynamicSecretValueWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GetRSAPublic} body 
-     * @param {module:api/V2Api~getRSAPublicCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GetRSAPublicOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetRSAPublicOutput} and HTTP response
      */
-    getRSAPublic(body, callback) {
+    getRSAPublicWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2957,24 +3154,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/get-rsa-public', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getRole operation.
-     * @callback module:api/V2Api~getRoleCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Role} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GetRSAPublic} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetRSAPublicOutput}
      */
+    getRSAPublic(body) {
+      return this.getRSAPublicWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GetRole} body 
-     * @param {module:api/V2Api~getRoleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Role}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Role} and HTTP response
      */
-    getRole(body, callback) {
+    getRoleWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -2997,24 +3197,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/get-role', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getSSHCertificate operation.
-     * @callback module:api/V2Api~getSSHCertificateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GetSSHCertificateOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GetRole} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Role}
      */
+    getRole(body) {
+      return this.getRoleWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GetSSHCertificate} body 
-     * @param {module:api/V2Api~getSSHCertificateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GetSSHCertificateOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetSSHCertificateOutput} and HTTP response
      */
-    getSSHCertificate(body, callback) {
+    getSSHCertificateWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3037,24 +3240,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/get-ssh-certificate', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getSecretValue operation.
-     * @callback module:api/V2Api~getSecretValueCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GetSSHCertificate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetSSHCertificateOutput}
      */
+    getSSHCertificate(body) {
+      return this.getSSHCertificateWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GetSecretValue} body 
-     * @param {module:api/V2Api~getSecretValueCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    getSecretValue(body, callback) {
+    getSecretValueWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3077,24 +3283,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/get-secret-value', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getTarget operation.
-     * @callback module:api/V2Api~getTargetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Target} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GetSecretValue} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    getSecretValue(body) {
+      return this.getSecretValueWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GetTarget} body 
-     * @param {module:api/V2Api~getTargetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Target}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Target} and HTTP response
      */
-    getTarget(body, callback) {
+    getTargetWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3117,24 +3326,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/get-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the getTargetDetails operation.
-     * @callback module:api/V2Api~getTargetDetailsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GetTargetDetailsOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GetTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Target}
      */
+    getTarget(body) {
+      return this.getTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/GetTargetDetails} body 
-     * @param {module:api/V2Api~getTargetDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GetTargetDetailsOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetTargetDetailsOutput} and HTTP response
      */
-    getTargetDetails(body, callback) {
+    getTargetDetailsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3157,24 +3369,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/get-target-details', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the listAuthMethods operation.
-     * @callback module:api/V2Api~listAuthMethodsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ListAuthMethodsOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/GetTargetDetails} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetTargetDetailsOutput}
      */
+    getTargetDetails(body) {
+      return this.getTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/ListAuthMethods} body 
-     * @param {module:api/V2Api~listAuthMethodsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ListAuthMethodsOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListAuthMethodsOutput} and HTTP response
      */
-    listAuthMethods(body, callback) {
+    listAuthMethodsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3197,24 +3412,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/list-auth-methods', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the listItems operation.
-     * @callback module:api/V2Api~listItemsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ListItemsInPathOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/ListAuthMethods} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ListAuthMethodsOutput}
      */
+    listAuthMethods(body) {
+      return this.listAuthMethodsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/ListItems} body 
-     * @param {module:api/V2Api~listItemsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ListItemsInPathOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListItemsInPathOutput} and HTTP response
      */
-    listItems(body, callback) {
+    listItemsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3237,24 +3455,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/list-items', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the listRoles operation.
-     * @callback module:api/V2Api~listRolesCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ListRolesOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/ListItems} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ListItemsInPathOutput}
      */
+    listItems(body) {
+      return this.listItemsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/ListRoles} body 
-     * @param {module:api/V2Api~listRolesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ListRolesOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListRolesOutput} and HTTP response
      */
-    listRoles(body, callback) {
+    listRolesWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3277,24 +3498,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/list-roles', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the listTargets operation.
-     * @callback module:api/V2Api~listTargetsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ListTargetsOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/ListRoles} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ListRolesOutput}
      */
+    listRoles(body) {
+      return this.listRolesWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/ListTargets} body 
-     * @param {module:api/V2Api~listTargetsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ListTargetsOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListTargetsOutput} and HTTP response
      */
-    listTargets(body, callback) {
+    listTargetsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3317,24 +3541,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/list-targets', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the moveObjects operation.
-     * @callback module:api/V2Api~moveObjectsCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/ListTargets} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ListTargetsOutput}
      */
+    listTargets(body) {
+      return this.listTargetsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/MoveObjects} body 
-     * @param {module:api/V2Api~moveObjectsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    moveObjects(body, callback) {
+    moveObjectsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3357,25 +3584,28 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/move-objects', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the rawCreds operation.
-     * @callback module:api/V2Api~rawCredsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/SystemAccessCredentialsReplyObj} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/MoveObjects} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    moveObjects(body) {
+      return this.moveObjectsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {Object} opts Optional parameters
      * @param {module:model/RawCreds} opts.body 
-     * @param {module:api/V2Api~rawCredsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/SystemAccessCredentialsReplyObj}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SystemAccessCredentialsReplyObj} and HTTP response
      */
-    rawCreds(opts, callback) {
+    rawCredsWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -3395,24 +3625,28 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/raw-creds', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the refreshKey operation.
-     * @callback module:api/V2Api~refreshKeyCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/RefreshKeyOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/RawCreds} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SystemAccessCredentialsReplyObj}
      */
+    rawCreds(opts) {
+      return this.rawCredsWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/RefreshKey} body 
-     * @param {module:api/V2Api~refreshKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RefreshKeyOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RefreshKeyOutput} and HTTP response
      */
-    refreshKey(body, callback) {
+    refreshKeyWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3435,24 +3669,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/refresh-key', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the reverseRBAC operation.
-     * @callback module:api/V2Api~reverseRBACCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ReverseRBACOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/RefreshKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RefreshKeyOutput}
      */
+    refreshKey(body) {
+      return this.refreshKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/ReverseRBAC} body 
-     * @param {module:api/V2Api~reverseRBACCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ReverseRBACOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ReverseRBACOutput} and HTTP response
      */
-    reverseRBAC(body, callback) {
+    reverseRBACWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3475,24 +3712,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/reverse-rbac', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the rollbackSecret operation.
-     * @callback module:api/V2Api~rollbackSecretCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/RollbackSecretOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/ReverseRBAC} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ReverseRBACOutput}
      */
+    reverseRBAC(body) {
+      return this.reverseRBACWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/RollbackSecret} body 
-     * @param {module:api/V2Api~rollbackSecretCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RollbackSecretOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RollbackSecretOutput} and HTTP response
      */
-    rollbackSecret(body, callback) {
+    rollbackSecretWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3515,24 +3755,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/rollback-secret', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the rotateKey operation.
-     * @callback module:api/V2Api~rotateKeyCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/RotateKeyOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/RollbackSecret} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RollbackSecretOutput}
      */
+    rollbackSecret(body) {
+      return this.rollbackSecretWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/RotateKey} body 
-     * @param {module:api/V2Api~rotateKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RotateKeyOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotateKeyOutput} and HTTP response
      */
-    rotateKey(body, callback) {
+    rotateKeyWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3555,24 +3798,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/rotate-key', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the setItemState operation.
-     * @callback module:api/V2Api~setItemStateCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/RotateKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotateKeyOutput}
      */
+    rotateKey(body) {
+      return this.rotateKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/SetItemState} body 
-     * @param {module:api/V2Api~setItemStateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    setItemState(body, callback) {
+    setItemStateWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3595,24 +3841,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/set-item-state', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the setRoleRule operation.
-     * @callback module:api/V2Api~setRoleRuleCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/SetItemState} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    setItemState(body) {
+      return this.setItemStateWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/SetRoleRule} body 
-     * @param {module:api/V2Api~setRoleRuleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    setRoleRule(body, callback) {
+    setRoleRuleWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3635,24 +3884,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/set-role-rule', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the signPKCS1 operation.
-     * @callback module:api/V2Api~signPKCS1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/SignPKCS1Output} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/SetRoleRule} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    setRoleRule(body) {
+      return this.setRoleRuleWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/SignPKCS1} body 
-     * @param {module:api/V2Api~signPKCS1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/SignPKCS1Output}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SignPKCS1Output} and HTTP response
      */
-    signPKCS1(body, callback) {
+    signPKCS1WithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3675,24 +3927,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/sign-pkcs1', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the staticCredsAuth operation.
-     * @callback module:api/V2Api~staticCredsAuthCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/StaticCredsAuthOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/SignPKCS1} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SignPKCS1Output}
      */
+    signPKCS1(body) {
+      return this.signPKCS1WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/StaticCredsAuth} body 
-     * @param {module:api/V2Api~staticCredsAuthCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/StaticCredsAuthOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StaticCredsAuthOutput} and HTTP response
      */
-    staticCredsAuth(body, callback) {
+    staticCredsAuthWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3715,24 +3970,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/static-creds-auth', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the uidCreateChildToken operation.
-     * @callback module:api/V2Api~uidCreateChildTokenCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UidCreateChildTokenOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/StaticCredsAuth} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StaticCredsAuthOutput}
      */
+    staticCredsAuth(body) {
+      return this.staticCredsAuthWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UidCreateChildToken} body 
-     * @param {module:api/V2Api~uidCreateChildTokenCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UidCreateChildTokenOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UidCreateChildTokenOutput} and HTTP response
      */
-    uidCreateChildToken(body, callback) {
+    uidCreateChildTokenWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3755,24 +4013,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/uid-create-child-token', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the uidGenerateToken operation.
-     * @callback module:api/V2Api~uidGenerateTokenCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UidGenerateTokenOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UidCreateChildToken} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UidCreateChildTokenOutput}
      */
+    uidCreateChildToken(body) {
+      return this.uidCreateChildTokenWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UidGenerateToken} body 
-     * @param {module:api/V2Api~uidGenerateTokenCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UidGenerateTokenOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UidGenerateTokenOutput} and HTTP response
      */
-    uidGenerateToken(body, callback) {
+    uidGenerateTokenWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3795,24 +4056,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/uid-generate-token', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the uidListChildren operation.
-     * @callback module:api/V2Api~uidListChildrenCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UniversalIdentityDetails} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UidGenerateToken} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UidGenerateTokenOutput}
      */
+    uidGenerateToken(body) {
+      return this.uidGenerateTokenWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UidListChildren} body 
-     * @param {module:api/V2Api~uidListChildrenCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UniversalIdentityDetails}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UniversalIdentityDetails} and HTTP response
      */
-    uidListChildren(body, callback) {
+    uidListChildrenWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3835,24 +4099,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/uid-list-children', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the uidRevokeToken operation.
-     * @callback module:api/V2Api~uidRevokeTokenCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UidListChildren} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UniversalIdentityDetails}
      */
+    uidListChildren(body) {
+      return this.uidListChildrenWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UidRevokeToken} body 
-     * @param {module:api/V2Api~uidRevokeTokenCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    uidRevokeToken(body, callback) {
+    uidRevokeTokenWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3875,24 +4142,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/uid-revoke-token', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the uidRotateToken operation.
-     * @callback module:api/V2Api~uidRotateTokenCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UidRotateTokenOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UidRevokeToken} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    uidRevokeToken(body) {
+      return this.uidRevokeTokenWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UidRotateToken} body 
-     * @param {module:api/V2Api~uidRotateTokenCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UidRotateTokenOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UidRotateTokenOutput} and HTTP response
      */
-    uidRotateToken(body, callback) {
+    uidRotateTokenWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3915,24 +4185,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/uid-rotate-token', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateAWSTargetDetails operation.
-     * @callback module:api/V2Api~updateAWSTargetDetailsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UpdateTargetOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UidRotateToken} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UidRotateTokenOutput}
      */
+    uidRotateToken(body) {
+      return this.uidRotateTokenWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UpdateAWSTargetDetails} body 
-     * @param {module:api/V2Api~updateAWSTargetDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UpdateTargetOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTargetOutput} and HTTP response
      */
-    updateAWSTargetDetails(body, callback) {
+    updateAWSTargetDetailsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3955,24 +4228,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/update-aws-target-details', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateDBTargetDetails operation.
-     * @callback module:api/V2Api~updateDBTargetDetailsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UpdateTargetOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UpdateAWSTargetDetails} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateTargetOutput}
      */
+    updateAWSTargetDetails(body) {
+      return this.updateAWSTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UpdateDBTargetDetails} body 
-     * @param {module:api/V2Api~updateDBTargetDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UpdateTargetOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTargetOutput} and HTTP response
      */
-    updateDBTargetDetails(body, callback) {
+    updateDBTargetDetailsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -3995,24 +4271,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/update-db-target-details', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateItem operation.
-     * @callback module:api/V2Api~updateItemCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UpdateItemOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UpdateDBTargetDetails} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateTargetOutput}
      */
+    updateDBTargetDetails(body) {
+      return this.updateDBTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UpdateItem} body 
-     * @param {module:api/V2Api~updateItemCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UpdateItemOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateItemOutput} and HTTP response
      */
-    updateItem(body, callback) {
+    updateItemWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -4035,24 +4314,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/update-item', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateRDPTargetDetails operation.
-     * @callback module:api/V2Api~updateRDPTargetDetailsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UpdateTargetOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UpdateItem} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateItemOutput}
      */
+    updateItem(body) {
+      return this.updateItemWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UpdateRDPTargetDetails} body 
-     * @param {module:api/V2Api~updateRDPTargetDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UpdateTargetOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTargetOutput} and HTTP response
      */
-    updateRDPTargetDetails(body, callback) {
+    updateRDPTargetDetailsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -4075,24 +4357,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/update-rdp-target-details', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateRabbitMQTargetDetails operation.
-     * @callback module:api/V2Api~updateRabbitMQTargetDetailsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UpdateTargetOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UpdateRDPTargetDetails} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateTargetOutput}
      */
+    updateRDPTargetDetails(body) {
+      return this.updateRDPTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UpdateRabbitMQTargetDetails} body 
-     * @param {module:api/V2Api~updateRabbitMQTargetDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UpdateTargetOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTargetOutput} and HTTP response
      */
-    updateRabbitMQTargetDetails(body, callback) {
+    updateRabbitMQTargetDetailsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -4115,24 +4400,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/update-rabbitmq-target-details', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateRole operation.
-     * @callback module:api/V2Api~updateRoleCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UpdateRoleOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UpdateRabbitMQTargetDetails} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateTargetOutput}
      */
+    updateRabbitMQTargetDetails(body) {
+      return this.updateRabbitMQTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UpdateRole} body 
-     * @param {module:api/V2Api~updateRoleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UpdateRoleOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateRoleOutput} and HTTP response
      */
-    updateRole(body, callback) {
+    updateRoleWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -4155,24 +4443,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/update-role', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateSSHTargetDetails operation.
-     * @callback module:api/V2Api~updateSSHTargetDetailsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UpdateTargetOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UpdateRole} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateRoleOutput}
      */
+    updateRole(body) {
+      return this.updateRoleWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UpdateSSHTargetDetails} body 
-     * @param {module:api/V2Api~updateSSHTargetDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UpdateTargetOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTargetOutput} and HTTP response
      */
-    updateSSHTargetDetails(body, callback) {
+    updateSSHTargetDetailsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -4195,24 +4486,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/update-ssh-target-details', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateSecretVal operation.
-     * @callback module:api/V2Api~updateSecretValCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UpdateSecretValOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UpdateSSHTargetDetails} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateTargetOutput}
      */
+    updateSSHTargetDetails(body) {
+      return this.updateSSHTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UpdateSecretVal} body 
-     * @param {module:api/V2Api~updateSecretValCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UpdateSecretValOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateSecretValOutput} and HTTP response
      */
-    updateSecretVal(body, callback) {
+    updateSecretValWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -4235,24 +4529,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/update-secret-val', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateTarget operation.
-     * @callback module:api/V2Api~updateTargetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UpdateTargetOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UpdateSecretVal} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateSecretValOutput}
      */
+    updateSecretVal(body) {
+      return this.updateSecretValWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UpdateTarget} body 
-     * @param {module:api/V2Api~updateTargetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UpdateTargetOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTargetOutput} and HTTP response
      */
-    updateTarget(body, callback) {
+    updateTargetWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -4275,24 +4572,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/update-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateTargetDetails operation.
-     * @callback module:api/V2Api~updateTargetDetailsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UpdateTargetOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UpdateTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateTargetOutput}
      */
+    updateTarget(body) {
+      return this.updateTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {Object} body 
-     * @param {module:api/V2Api~updateTargetDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UpdateTargetOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTargetOutput} and HTTP response
      */
-    updateTargetDetails(body, callback) {
+    updateTargetDetailsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -4315,24 +4615,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/update-target-details', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the updateWebTargetDetails operation.
-     * @callback module:api/V2Api~updateWebTargetDetailsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UpdateTargetOutput} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateTargetOutput}
      */
+    updateTargetDetails(body) {
+      return this.updateTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UpdateWebTargetDetails} body 
-     * @param {module:api/V2Api~updateWebTargetDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UpdateTargetOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTargetOutput} and HTTP response
      */
-    updateWebTargetDetails(body, callback) {
+    updateWebTargetDetailsWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -4355,24 +4658,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/update-web-target-details', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the uploadRSA operation.
-     * @callback module:api/V2Api~uploadRSACallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UpdateWebTargetDetails} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateTargetOutput}
      */
+    updateWebTargetDetails(body) {
+      return this.updateWebTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/UploadRSA} body 
-     * @param {module:api/V2Api~uploadRSACallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    uploadRSA(body, callback) {
+    uploadRSAWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -4395,24 +4701,27 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/upload-rsa', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Callback function to receive the result of the verifyPKCS1 operation.
-     * @callback module:api/V2Api~verifyPKCS1Callback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {module:model/UploadRSA} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    uploadRSA(body) {
+      return this.uploadRSAWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * @param {module:model/VerifyPKCS1} body 
-     * @param {module:api/V2Api~verifyPKCS1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    verifyPKCS1(body, callback) {
+    verifyPKCS1WithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
@@ -4435,8 +4744,19 @@ export default class V2Api {
       return this.apiClient.callApi(
         '/verify-pkcs1', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
+        authNames, contentTypes, accepts, returnType, null
       );
+    }
+
+    /**
+     * @param {module:model/VerifyPKCS1} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    verifyPKCS1(body) {
+      return this.verifyPKCS1WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
 
 

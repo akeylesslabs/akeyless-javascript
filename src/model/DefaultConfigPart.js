@@ -50,6 +50,9 @@ class DefaultConfigPart {
             if (data.hasOwnProperty('default_protection_key_id')) {
                 obj['default_protection_key_id'] = ApiClient.convertToType(data['default_protection_key_id'], 'Number');
             }
+            if (data.hasOwnProperty('default_secret_location')) {
+                obj['default_secret_location'] = ApiClient.convertToType(data['default_secret_location'], 'String');
+            }
             if (data.hasOwnProperty('open_id_connect_access_id')) {
                 obj['open_id_connect_access_id'] = ApiClient.convertToType(data['open_id_connect_access_id'], 'String');
             }
@@ -67,6 +70,11 @@ class DefaultConfigPart {
  * @member {Number} default_protection_key_id
  */
 DefaultConfigPart.prototype['default_protection_key_id'] = undefined;
+
+/**
+ * @member {String} default_secret_location
+ */
+DefaultConfigPart.prototype['default_secret_location'] = undefined;
 
 /**
  * @member {String} open_id_connect_access_id

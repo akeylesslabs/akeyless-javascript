@@ -126,13 +126,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.AssocRoleAuthMethod(); // AssocRoleAuthMethod | 
-apiInstance.assocRoleAuthMethod(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.assocRoleAuthMethod(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -169,13 +168,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.AssocTargetItem(); // AssocTargetItem | 
-apiInstance.assocTargetItem(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.assocTargetItem(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -212,13 +210,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.Auth(); // Auth | 
-apiInstance.auth(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.auth(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -255,13 +252,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.Configure(); // Configure | 
-apiInstance.configure(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.configure(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -298,13 +294,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethod(); // CreateAuthMethod | 
-apiInstance.createAuthMethod(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createAuthMethod(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -341,13 +336,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethodAWSIAM(); // CreateAuthMethodAWSIAM | 
-apiInstance.createAuthMethodAWSIAM(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createAuthMethodAWSIAM(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -384,13 +378,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethodAzureAD(); // CreateAuthMethodAzureAD | 
-apiInstance.createAuthMethodAzureAD(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createAuthMethodAzureAD(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -427,13 +420,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethodGCP(); // CreateAuthMethodGCP | 
-apiInstance.createAuthMethodGCP(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createAuthMethodGCP(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -470,13 +462,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethodHuawei(); // CreateAuthMethodHuawei | 
-apiInstance.createAuthMethodHuawei(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createAuthMethodHuawei(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -513,13 +504,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethodOAuth2(); // CreateAuthMethodOAuth2 | 
-apiInstance.createAuthMethodOAuth2(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createAuthMethodOAuth2(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -556,13 +546,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethodSAML(); // CreateAuthMethodSAML | 
-apiInstance.createAuthMethodSAML(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createAuthMethodSAML(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -599,13 +588,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAuthMethodUniversalIdentity(); // CreateAuthMethodUniversalIdentity | 
-apiInstance.createAuthMethodUniversalIdentity(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createAuthMethodUniversalIdentity(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -642,13 +630,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateAwsTarget(); // CreateAwsTarget | 
-apiInstance.createAwsTarget(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createAwsTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -685,13 +672,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateDBTarget(); // CreateDBTarget | 
-apiInstance.createDBTarget(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createDBTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -728,13 +714,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateDynamicSecret(); // CreateDynamicSecret | 
-apiInstance.createDynamicSecret(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createDynamicSecret(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -771,13 +756,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateKey(); // CreateKey | 
-apiInstance.createKey(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -814,13 +798,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreatePKICertIssuer(); // CreatePKICertIssuer | 
-apiInstance.createPKICertIssuer(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createPKICertIssuer(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -857,13 +840,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateRabbitMQTarget(); // CreateRabbitMQTarget | 
-apiInstance.createRabbitMQTarget(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createRabbitMQTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -900,13 +882,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateRdpTarget(); // CreateRdpTarget | 
-apiInstance.createRdpTarget(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createRdpTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -943,13 +924,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateRole(); // CreateRole | 
-apiInstance.createRole(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createRole(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -986,13 +966,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateSSHCertIssuer(); // CreateSSHCertIssuer | 
-apiInstance.createSSHCertIssuer(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createSSHCertIssuer(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1029,13 +1008,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateSSHTarget(); // CreateSSHTarget | 
-apiInstance.createSSHTarget(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createSSHTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1072,13 +1050,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateSecret(); // CreateSecret | 
-apiInstance.createSecret(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createSecret(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1115,13 +1092,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = null; // Object | 
-apiInstance.createTarget(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1158,13 +1134,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.CreateWebTarget(); // CreateWebTarget | 
-apiInstance.createWebTarget(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.createWebTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1201,13 +1176,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.Decrypt(); // Decrypt | 
-apiInstance.decrypt(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.decrypt(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1244,13 +1218,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DecryptPKCS1(); // DecryptPKCS1 | 
-apiInstance.decryptPKCS1(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.decryptPKCS1(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1287,13 +1260,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteAuthMethod(); // DeleteAuthMethod | 
-apiInstance.deleteAuthMethod(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.deleteAuthMethod(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1330,13 +1302,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteAuthMethods(); // DeleteAuthMethods | 
-apiInstance.deleteAuthMethods(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.deleteAuthMethods(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1373,13 +1344,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteItem(); // DeleteItem | 
-apiInstance.deleteItem(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.deleteItem(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1416,13 +1386,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteItems(); // DeleteItems | 
-apiInstance.deleteItems(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.deleteItems(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1459,13 +1428,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteRole(); // DeleteRole | 
-apiInstance.deleteRole(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.deleteRole(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1502,13 +1470,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteRoleAssociation(); // DeleteRoleAssociation | 
-apiInstance.deleteRoleAssociation(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.deleteRoleAssociation(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1545,13 +1512,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteRoleRule(); // DeleteRoleRule | 
-apiInstance.deleteRoleRule(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.deleteRoleRule(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1588,13 +1554,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteRoles(); // DeleteRoles | 
-apiInstance.deleteRoles(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.deleteRoles(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1631,13 +1596,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteTarget(); // DeleteTarget | 
-apiInstance.deleteTarget(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.deleteTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1674,13 +1638,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteTargetAssociation(); // DeleteTargetAssociation | 
-apiInstance.deleteTargetAssociation(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.deleteTargetAssociation(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1717,13 +1680,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DeleteTargets(); // DeleteTargets | 
-apiInstance.deleteTargets(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.deleteTargets(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1760,13 +1722,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.DescribeItem(); // DescribeItem | 
-apiInstance.describeItem(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.describeItem(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1803,13 +1764,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.Encrypt(); // Encrypt | 
-apiInstance.encrypt(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.encrypt(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1846,13 +1806,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.EncryptPKCS1(); // EncryptPKCS1 | 
-apiInstance.encryptPKCS1(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.encryptPKCS1(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1889,13 +1848,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayAddSubAdmins(); // GatewayAddSubAdmins | 
-apiInstance.gatewayAddSubAdmins(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayAddSubAdmins(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1932,13 +1890,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerArtifactory(); // GatewayCreateProducerArtifactory | 
-apiInstance.gatewayCreateProducerArtifactory(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayCreateProducerArtifactory(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -1975,13 +1932,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerAws(); // GatewayCreateProducerAws | 
-apiInstance.gatewayCreateProducerAws(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayCreateProducerAws(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2018,13 +1974,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerAzure(); // GatewayCreateProducerAzure | 
-apiInstance.gatewayCreateProducerAzure(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayCreateProducerAzure(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2061,13 +2016,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerEks(); // GatewayCreateProducerEks | 
-apiInstance.gatewayCreateProducerEks(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayCreateProducerEks(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2104,13 +2058,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerGke(); // GatewayCreateProducerGke | 
-apiInstance.gatewayCreateProducerGke(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayCreateProducerGke(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2147,13 +2100,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerMSSQL(); // GatewayCreateProducerMSSQL | 
-apiInstance.gatewayCreateProducerMSSQL(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayCreateProducerMSSQL(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2190,13 +2142,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerMongo(); // GatewayCreateProducerMongo | 
-apiInstance.gatewayCreateProducerMongo(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayCreateProducerMongo(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2233,13 +2184,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerMySQL(); // GatewayCreateProducerMySQL | 
-apiInstance.gatewayCreateProducerMySQL(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayCreateProducerMySQL(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2276,13 +2226,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerPostgreSQL(); // GatewayCreateProducerPostgreSQL | 
-apiInstance.gatewayCreateProducerPostgreSQL(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayCreateProducerPostgreSQL(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2319,13 +2268,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerRabbitMQ(); // GatewayCreateProducerRabbitMQ | 
-apiInstance.gatewayCreateProducerRabbitMQ(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayCreateProducerRabbitMQ(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2362,13 +2310,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerRdp(); // GatewayCreateProducerRdp | 
-apiInstance.gatewayCreateProducerRdp(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayCreateProducerRdp(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2405,13 +2352,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayCreateProducerAws(); // GatewayCreateProducerAws | 
-apiInstance.gatewayCreateProducerVenafi(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayCreateProducerVenafi(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2448,13 +2394,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayDeleteProducer(); // GatewayDeleteProducer | 
-apiInstance.gatewayDeleteProducer(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayDeleteProducer(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2491,13 +2436,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayDeleteSubAdmins(); // GatewayDeleteSubAdmins | 
-apiInstance.gatewayDeleteSubAdmins(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayDeleteSubAdmins(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2534,13 +2478,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayGetConfig(); // GatewayGetConfig | 
-apiInstance.gatewayGetConfig(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayGetConfig(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2577,13 +2520,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayGetProducer(); // GatewayGetProducer | 
-apiInstance.gatewayGetProducer(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayGetProducer(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2620,13 +2562,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayGetTmpUsers(); // GatewayGetTmpUsers | 
-apiInstance.gatewayGetTmpUsers(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayGetTmpUsers(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2663,13 +2604,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayListProducers(); // GatewayListProducers | 
-apiInstance.gatewayListProducers(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayListProducers(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2706,13 +2646,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayListSubAdmins(); // GatewayListSubAdmins | 
-apiInstance.gatewayListSubAdmins(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayListSubAdmins(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2749,13 +2688,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayRevokeTmpUsers(); // GatewayRevokeTmpUsers | 
-apiInstance.gatewayRevokeTmpUsers(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.gatewayRevokeTmpUsers(body).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2792,13 +2730,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayStartProducer(); // GatewayStartProducer | 
-apiInstance.gatewayStartProducer(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayStartProducer(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2835,13 +2772,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayStopProducer(); // GatewayStopProducer | 
-apiInstance.gatewayStopProducer(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.gatewayStopProducer(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2878,13 +2814,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GatewayUpdateTmpUsers(); // GatewayUpdateTmpUsers | 
-apiInstance.gatewayUpdateTmpUsers(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
+apiInstance.gatewayUpdateTmpUsers(body).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2920,13 +2855,12 @@ No authorization required
 import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
-apiInstance.getAccountLogo((error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getAccountLogo().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -2960,13 +2894,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetAuthMethod(); // GetAuthMethod | 
-apiInstance.getAuthMethod(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getAuthMethod(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3003,13 +2936,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetDynamicSecretValue(); // GetDynamicSecretValue | 
-apiInstance.getDynamicSecretValue(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getDynamicSecretValue(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3046,13 +2978,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetRSAPublic(); // GetRSAPublic | 
-apiInstance.getRSAPublic(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getRSAPublic(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3089,13 +3020,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetRole(); // GetRole | 
-apiInstance.getRole(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getRole(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3132,13 +3062,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetSSHCertificate(); // GetSSHCertificate | 
-apiInstance.getSSHCertificate(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getSSHCertificate(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3175,13 +3104,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetSecretValue(); // GetSecretValue | 
-apiInstance.getSecretValue(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getSecretValue(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3218,13 +3146,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetTarget(); // GetTarget | 
-apiInstance.getTarget(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3261,13 +3188,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.GetTargetDetails(); // GetTargetDetails | 
-apiInstance.getTargetDetails(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.getTargetDetails(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3304,13 +3230,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.ListAuthMethods(); // ListAuthMethods | 
-apiInstance.listAuthMethods(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.listAuthMethods(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3347,13 +3272,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.ListItems(); // ListItems | 
-apiInstance.listItems(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.listItems(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3390,13 +3314,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.ListRoles(); // ListRoles | 
-apiInstance.listRoles(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.listRoles(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3433,13 +3356,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.ListTargets(); // ListTargets | 
-apiInstance.listTargets(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.listTargets(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3476,13 +3398,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.MoveObjects(); // MoveObjects | 
-apiInstance.moveObjects(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.moveObjects(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3521,13 +3442,12 @@ let apiInstance = new akeyless.V2Api();
 let opts = {
   'body': new akeyless.RawCreds() // RawCreds | 
 };
-apiInstance.rawCreds(opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.rawCreds(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3564,13 +3484,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.RefreshKey(); // RefreshKey | 
-apiInstance.refreshKey(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.refreshKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3607,13 +3526,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.ReverseRBAC(); // ReverseRBAC | 
-apiInstance.reverseRBAC(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.reverseRBAC(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3650,13 +3568,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.RollbackSecret(); // RollbackSecret | 
-apiInstance.rollbackSecret(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.rollbackSecret(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3693,13 +3610,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.RotateKey(); // RotateKey | 
-apiInstance.rotateKey(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.rotateKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3736,13 +3652,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.SetItemState(); // SetItemState | 
-apiInstance.setItemState(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.setItemState(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3779,13 +3694,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.SetRoleRule(); // SetRoleRule | 
-apiInstance.setRoleRule(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.setRoleRule(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3822,13 +3736,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.SignPKCS1(); // SignPKCS1 | 
-apiInstance.signPKCS1(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.signPKCS1(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3865,13 +3778,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.StaticCredsAuth(); // StaticCredsAuth | 
-apiInstance.staticCredsAuth(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.staticCredsAuth(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3908,13 +3820,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UidCreateChildToken(); // UidCreateChildToken | 
-apiInstance.uidCreateChildToken(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.uidCreateChildToken(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3951,13 +3862,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UidGenerateToken(); // UidGenerateToken | 
-apiInstance.uidGenerateToken(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.uidGenerateToken(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -3994,13 +3904,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UidListChildren(); // UidListChildren | 
-apiInstance.uidListChildren(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.uidListChildren(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4037,13 +3946,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UidRevokeToken(); // UidRevokeToken | 
-apiInstance.uidRevokeToken(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.uidRevokeToken(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4080,13 +3988,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UidRotateToken(); // UidRotateToken | 
-apiInstance.uidRotateToken(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.uidRotateToken(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4123,13 +4030,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateAWSTargetDetails(); // UpdateAWSTargetDetails | 
-apiInstance.updateAWSTargetDetails(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.updateAWSTargetDetails(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4166,13 +4072,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateDBTargetDetails(); // UpdateDBTargetDetails | 
-apiInstance.updateDBTargetDetails(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.updateDBTargetDetails(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4209,13 +4114,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateItem(); // UpdateItem | 
-apiInstance.updateItem(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.updateItem(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4252,13 +4156,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateRDPTargetDetails(); // UpdateRDPTargetDetails | 
-apiInstance.updateRDPTargetDetails(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.updateRDPTargetDetails(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4295,13 +4198,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateRabbitMQTargetDetails(); // UpdateRabbitMQTargetDetails | 
-apiInstance.updateRabbitMQTargetDetails(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.updateRabbitMQTargetDetails(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4338,13 +4240,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateRole(); // UpdateRole | 
-apiInstance.updateRole(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.updateRole(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4381,13 +4282,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateSSHTargetDetails(); // UpdateSSHTargetDetails | 
-apiInstance.updateSSHTargetDetails(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.updateSSHTargetDetails(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4424,13 +4324,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateSecretVal(); // UpdateSecretVal | 
-apiInstance.updateSecretVal(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.updateSecretVal(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4467,13 +4366,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateTarget(); // UpdateTarget | 
-apiInstance.updateTarget(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.updateTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4510,13 +4408,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = null; // Object | 
-apiInstance.updateTargetDetails(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.updateTargetDetails(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4553,13 +4450,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UpdateWebTargetDetails(); // UpdateWebTargetDetails | 
-apiInstance.updateWebTargetDetails(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.updateWebTargetDetails(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4596,13 +4492,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.UploadRSA(); // UploadRSA | 
-apiInstance.uploadRSA(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.uploadRSA(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -4639,13 +4534,12 @@ import akeyless from 'akeyless-javascript';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.VerifyPKCS1(); // VerifyPKCS1 | 
-apiInstance.verifyPKCS1(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.verifyPKCS1(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
