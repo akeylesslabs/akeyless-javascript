@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAwsTarget model module.
  * @module model/CreateAwsTarget
- * @version 2.0.15
+ * @version 2.4.0
  */
 class CreateAwsTarget {
     /**
@@ -49,8 +49,11 @@ class CreateAwsTarget {
         if (data) {
             obj = obj || new CreateAwsTarget();
 
-            if (data.hasOwnProperty('access_key_id')) {
-                obj['access_key_id'] = ApiClient.convertToType(data['access_key_id'], 'String');
+            if (data.hasOwnProperty('access-key')) {
+                obj['access-key'] = ApiClient.convertToType(data['access-key'], 'String');
+            }
+            if (data.hasOwnProperty('access-key-id')) {
+                obj['access-key-id'] = ApiClient.convertToType(data['access-key-id'], 'String');
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
@@ -64,11 +67,8 @@ class CreateAwsTarget {
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
-            if (data.hasOwnProperty('secret_access_key')) {
-                obj['secret_access_key'] = ApiClient.convertToType(data['secret_access_key'], 'String');
-            }
-            if (data.hasOwnProperty('session_token')) {
-                obj['session_token'] = ApiClient.convertToType(data['session_token'], 'String');
+            if (data.hasOwnProperty('session-token')) {
+                obj['session-token'] = ApiClient.convertToType(data['session-token'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -84,9 +84,14 @@ class CreateAwsTarget {
 }
 
 /**
- * @member {String} access_key_id
+ * @member {String} access-key
  */
-CreateAwsTarget.prototype['access_key_id'] = undefined;
+CreateAwsTarget.prototype['access-key'] = undefined;
+
+/**
+ * @member {String} access-key-id
+ */
+CreateAwsTarget.prototype['access-key-id'] = undefined;
 
 /**
  * Comment about the target
@@ -112,14 +117,9 @@ CreateAwsTarget.prototype['protection_key'] = undefined;
 CreateAwsTarget.prototype['region'] = undefined;
 
 /**
- * @member {String} secret_access_key
+ * @member {String} session-token
  */
-CreateAwsTarget.prototype['secret_access_key'] = undefined;
-
-/**
- * @member {String} session_token
- */
-CreateAwsTarget.prototype['session_token'] = undefined;
+CreateAwsTarget.prototype['session-token'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

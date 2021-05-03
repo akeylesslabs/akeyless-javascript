@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPKICertificateOutput model module.
  * @module model/GetPKICertificateOutput
- * @version 2.0.15
+ * @version 2.4.0
  */
 class GetPKICertificateOutput {
     /**
@@ -47,6 +47,9 @@ class GetPKICertificateOutput {
         if (data) {
             obj = obj || new GetPKICertificateOutput();
 
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], 'String');
+            }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
@@ -56,6 +59,11 @@ class GetPKICertificateOutput {
 
 
 }
+
+/**
+ * @member {String} data
+ */
+GetPKICertificateOutput.prototype['data'] = undefined;
 
 /**
  * @member {String} path

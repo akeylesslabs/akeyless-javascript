@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAWSTargetDetails model module.
  * @module model/UpdateAWSTargetDetails
- * @version 2.0.15
+ * @version 2.4.0
  */
 class UpdateAWSTargetDetails {
     /**
@@ -49,11 +49,17 @@ class UpdateAWSTargetDetails {
         if (data) {
             obj = obj || new UpdateAWSTargetDetails();
 
-            if (data.hasOwnProperty('access_key_id')) {
-                obj['access_key_id'] = ApiClient.convertToType(data['access_key_id'], 'String');
+            if (data.hasOwnProperty('access-key')) {
+                obj['access-key'] = ApiClient.convertToType(data['access-key'], 'String');
+            }
+            if (data.hasOwnProperty('access-key-id')) {
+                obj['access-key-id'] = ApiClient.convertToType(data['access-key-id'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('new-version')) {
+                obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
             }
             if (data.hasOwnProperty('protection_key')) {
                 obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
@@ -61,11 +67,8 @@ class UpdateAWSTargetDetails {
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
-            if (data.hasOwnProperty('secret_access_key')) {
-                obj['secret_access_key'] = ApiClient.convertToType(data['secret_access_key'], 'String');
-            }
-            if (data.hasOwnProperty('session_token')) {
-                obj['session_token'] = ApiClient.convertToType(data['session_token'], 'String');
+            if (data.hasOwnProperty('session-token')) {
+                obj['session-token'] = ApiClient.convertToType(data['session-token'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -81,15 +84,27 @@ class UpdateAWSTargetDetails {
 }
 
 /**
- * @member {String} access_key_id
+ * @member {String} access-key
  */
-UpdateAWSTargetDetails.prototype['access_key_id'] = undefined;
+UpdateAWSTargetDetails.prototype['access-key'] = undefined;
+
+/**
+ * @member {String} access-key-id
+ */
+UpdateAWSTargetDetails.prototype['access-key-id'] = undefined;
 
 /**
  * Target name
  * @member {String} name
  */
 UpdateAWSTargetDetails.prototype['name'] = undefined;
+
+/**
+ * Whether to create a new version of not
+ * @member {Boolean} new-version
+ * @default false
+ */
+UpdateAWSTargetDetails.prototype['new-version'] = false;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
@@ -103,14 +118,9 @@ UpdateAWSTargetDetails.prototype['protection_key'] = undefined;
 UpdateAWSTargetDetails.prototype['region'] = undefined;
 
 /**
- * @member {String} secret_access_key
+ * @member {String} session-token
  */
-UpdateAWSTargetDetails.prototype['secret_access_key'] = undefined;
-
-/**
- * @member {String} session_token
- */
-UpdateAWSTargetDetails.prototype['session_token'] = undefined;
+UpdateAWSTargetDetails.prototype['session-token'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

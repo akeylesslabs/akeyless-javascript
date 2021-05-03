@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHTargetDetails model module.
  * @module model/UpdateSSHTargetDetails
- * @version 2.0.15
+ * @version 2.4.0
  */
 class UpdateSSHTargetDetails {
     /**
@@ -49,17 +49,32 @@ class UpdateSSHTargetDetails {
         if (data) {
             obj = obj || new UpdateSSHTargetDetails();
 
-            if (data.hasOwnProperty('ip')) {
-                obj['ip'] = ApiClient.convertToType(data['ip'], ['String']);
+            if (data.hasOwnProperty('host')) {
+                obj['host'] = ApiClient.convertToType(data['host'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('new-version')) {
+                obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
+            }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
             }
+            if (data.hasOwnProperty('private-key')) {
+                obj['private-key'] = ApiClient.convertToType(data['private-key'], 'String');
+            }
+            if (data.hasOwnProperty('private-key-password')) {
+                obj['private-key-password'] = ApiClient.convertToType(data['private-key-password'], 'String');
+            }
             if (data.hasOwnProperty('protection_key')) {
                 obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
+            }
+            if (data.hasOwnProperty('ssh-password')) {
+                obj['ssh-password'] = ApiClient.convertToType(data['ssh-password'], 'String');
+            }
+            if (data.hasOwnProperty('ssh-username')) {
+                obj['ssh-username'] = ApiClient.convertToType(data['ssh-username'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -75,9 +90,9 @@ class UpdateSSHTargetDetails {
 }
 
 /**
- * @member {Array.<String>} ip
+ * @member {String} host
  */
-UpdateSSHTargetDetails.prototype['ip'] = undefined;
+UpdateSSHTargetDetails.prototype['host'] = undefined;
 
 /**
  * Target name
@@ -86,15 +101,42 @@ UpdateSSHTargetDetails.prototype['ip'] = undefined;
 UpdateSSHTargetDetails.prototype['name'] = undefined;
 
 /**
+ * Whether to create a new version of not
+ * @member {Boolean} new-version
+ * @default false
+ */
+UpdateSSHTargetDetails.prototype['new-version'] = false;
+
+/**
  * @member {String} port
  */
 UpdateSSHTargetDetails.prototype['port'] = undefined;
+
+/**
+ * @member {String} private-key
+ */
+UpdateSSHTargetDetails.prototype['private-key'] = undefined;
+
+/**
+ * @member {String} private-key-password
+ */
+UpdateSSHTargetDetails.prototype['private-key-password'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
  * @member {String} protection_key
  */
 UpdateSSHTargetDetails.prototype['protection_key'] = undefined;
+
+/**
+ * @member {String} ssh-password
+ */
+UpdateSSHTargetDetails.prototype['ssh-password'] = undefined;
+
+/**
+ * @member {String} ssh-username
+ */
+UpdateSSHTargetDetails.prototype['ssh-username'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

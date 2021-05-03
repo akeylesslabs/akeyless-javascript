@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTargets model module.
  * @module model/DeleteTargets
- * @version 2.0.15
+ * @version 2.4.0
  */
 class DeleteTargets {
     /**
      * Constructs a new <code>DeleteTargets</code>.
      * @alias module:model/DeleteTargets
-     * @param path {String} Path to delete the auth methods from
+     * @param path {String} Path to delete the targets from
      */
     constructor(path) { 
         
@@ -66,7 +66,7 @@ class DeleteTargets {
 }
 
 /**
- * Path to delete the auth methods from
+ * Path to delete the targets from
  * @member {String} path
  */
 DeleteTargets.prototype['path'] = undefined;

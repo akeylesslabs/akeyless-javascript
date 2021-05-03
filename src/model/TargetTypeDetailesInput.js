@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailesInput model module.
  * @module model/TargetTypeDetailesInput
- * @version 2.0.15
+ * @version 2.4.0
  */
 class TargetTypeDetailesInput {
     /**
@@ -47,12 +47,6 @@ class TargetTypeDetailesInput {
         if (data) {
             obj = obj || new TargetTypeDetailesInput();
 
-            if (data.hasOwnProperty('admin_name')) {
-                obj['admin_name'] = ApiClient.convertToType(data['admin_name'], 'String');
-            }
-            if (data.hasOwnProperty('admin_pwd')) {
-                obj['admin_pwd'] = ApiClient.convertToType(data['admin_pwd'], 'String');
-            }
             if (data.hasOwnProperty('aws_access_key_id')) {
                 obj['aws_access_key_id'] = ApiClient.convertToType(data['aws_access_key_id'], 'String');
             }
@@ -86,14 +80,8 @@ class TargetTypeDetailesInput {
             if (data.hasOwnProperty('db_user_name')) {
                 obj['db_user_name'] = ApiClient.convertToType(data['db_user_name'], 'String');
             }
-            if (data.hasOwnProperty('host_name')) {
-                obj['host_name'] = ApiClient.convertToType(data['host_name'], 'String');
-            }
-            if (data.hasOwnProperty('host_port')) {
-                obj['host_port'] = ApiClient.convertToType(data['host_port'], 'String');
-            }
-            if (data.hasOwnProperty('ip')) {
-                obj['ip'] = ApiClient.convertToType(data['ip'], ['String']);
+            if (data.hasOwnProperty('host')) {
+                obj['host'] = ApiClient.convertToType(data['host'], 'String');
             }
             if (data.hasOwnProperty('mongodb_db_name')) {
                 obj['mongodb_db_name'] = ApiClient.convertToType(data['mongodb_db_name'], 'String');
@@ -101,8 +89,17 @@ class TargetTypeDetailesInput {
             if (data.hasOwnProperty('mongodb_uri_connection')) {
                 obj['mongodb_uri_connection'] = ApiClient.convertToType(data['mongodb_uri_connection'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
+            }
+            if (data.hasOwnProperty('private_key')) {
+                obj['private_key'] = ApiClient.convertToType(data['private_key'], 'String');
+            }
+            if (data.hasOwnProperty('private_key_password')) {
+                obj['private_key_password'] = ApiClient.convertToType(data['private_key_password'], 'String');
             }
             if (data.hasOwnProperty('rabbitmq_server_password')) {
                 obj['rabbitmq_server_password'] = ApiClient.convertToType(data['rabbitmq_server_password'], 'String');
@@ -116,22 +113,15 @@ class TargetTypeDetailesInput {
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
             }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            }
         }
         return obj;
     }
 
 
 }
-
-/**
- * @member {String} admin_name
- */
-TargetTypeDetailesInput.prototype['admin_name'] = undefined;
-
-/**
- * @member {String} admin_pwd
- */
-TargetTypeDetailesInput.prototype['admin_pwd'] = undefined;
 
 /**
  * @member {String} aws_access_key_id
@@ -191,19 +181,9 @@ TargetTypeDetailesInput.prototype['db_server_name'] = undefined;
 TargetTypeDetailesInput.prototype['db_user_name'] = undefined;
 
 /**
- * @member {String} host_name
+ * @member {String} host
  */
-TargetTypeDetailesInput.prototype['host_name'] = undefined;
-
-/**
- * @member {String} host_port
- */
-TargetTypeDetailesInput.prototype['host_port'] = undefined;
-
-/**
- * @member {Array.<String>} ip
- */
-TargetTypeDetailesInput.prototype['ip'] = undefined;
+TargetTypeDetailesInput.prototype['host'] = undefined;
 
 /**
  * @member {String} mongodb_db_name
@@ -216,9 +196,24 @@ TargetTypeDetailesInput.prototype['mongodb_db_name'] = undefined;
 TargetTypeDetailesInput.prototype['mongodb_uri_connection'] = undefined;
 
 /**
+ * @member {String} password
+ */
+TargetTypeDetailesInput.prototype['password'] = undefined;
+
+/**
  * @member {String} port
  */
 TargetTypeDetailesInput.prototype['port'] = undefined;
+
+/**
+ * @member {String} private_key
+ */
+TargetTypeDetailesInput.prototype['private_key'] = undefined;
+
+/**
+ * @member {String} private_key_password
+ */
+TargetTypeDetailesInput.prototype['private_key_password'] = undefined;
 
 /**
  * @member {String} rabbitmq_server_password
@@ -239,6 +234,11 @@ TargetTypeDetailesInput.prototype['rabbitmq_server_user'] = undefined;
  * @member {String} url
  */
 TargetTypeDetailesInput.prototype['url'] = undefined;
+
+/**
+ * @member {String} username
+ */
+TargetTypeDetailesInput.prototype['username'] = undefined;
 
 
 

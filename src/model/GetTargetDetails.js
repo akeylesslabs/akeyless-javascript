@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetTargetDetails model module.
  * @module model/GetTargetDetails
- * @version 2.0.15
+ * @version 2.4.0
  */
 class GetTargetDetails {
     /**
@@ -52,6 +52,12 @@ class GetTargetDetails {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('show-versions')) {
+                obj['show-versions'] = ApiClient.convertToType(data['show-versions'], 'Boolean');
+            }
+            if (data.hasOwnProperty('target-version')) {
+                obj['target-version'] = ApiClient.convertToType(data['target-version'], 'Number');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -70,6 +76,19 @@ class GetTargetDetails {
  * @member {String} name
  */
 GetTargetDetails.prototype['name'] = undefined;
+
+/**
+ * Include all target versions in reply
+ * @member {Boolean} show-versions
+ * @default false
+ */
+GetTargetDetails.prototype['show-versions'] = false;
+
+/**
+ * Target version
+ * @member {Number} target-version
+ */
+GetTargetDetails.prototype['target-version'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

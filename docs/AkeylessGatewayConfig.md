@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **logForwarding** | [**LogForwardingConfigPart**](LogForwardingConfigPart.md) |  | [optional] 
 **migrations** | [**MigrationsConfigPart**](MigrationsConfigPart.md) |  | [optional] 
 **producers** | [**ProducersConfigPart**](ProducersConfigPart.md) |  | [optional] 
+**rotators** | [**RotatorsConfigPart**](RotatorsConfigPart.md) |  | [optional] 
 **saml** | [**DefaultConfigPart**](DefaultConfigPart.md) |  | [optional] 
 **uidentity** | [**UIdentityConfigPart**](UIdentityConfigPart.md) |  | [optional] 
 **version** | **Number** |  | [optional] 

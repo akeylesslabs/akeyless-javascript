@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetKubeExecCreds model module.
  * @module model/GetKubeExecCreds
- * @version 2.0.15
+ * @version 2.4.0
  */
 class GetKubeExecCreds {
     /**
@@ -24,11 +24,10 @@ class GetKubeExecCreds {
      * getKubeExecCreds is a command that gets credentials for authentication with Kubernetes cluster based on a PKI cert issuer.
      * @alias module:model/GetKubeExecCreds
      * @param certIssuerName {String} The name of the PKI certificate issuer
-     * @param keyFilePath {String} The client public or private key file path (in case of a private key, it will be use to extract the public key)
      */
-    constructor(certIssuerName, keyFilePath) { 
+    constructor(certIssuerName) { 
         
-        GetKubeExecCreds.initialize(this, certIssuerName, keyFilePath);
+        GetKubeExecCreds.initialize(this, certIssuerName);
     }
 
     /**
@@ -36,9 +35,8 @@ class GetKubeExecCreds {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, certIssuerName, keyFilePath) { 
+    static initialize(obj, certIssuerName) { 
         obj['cert-issuer-name'] = certIssuerName;
-        obj['key-file-path'] = keyFilePath;
     }
 
     /**
@@ -61,11 +59,8 @@ class GetKubeExecCreds {
             if (data.hasOwnProperty('common-name')) {
                 obj['common-name'] = ApiClient.convertToType(data['common-name'], 'String');
             }
-            if (data.hasOwnProperty('key-file-path')) {
-                obj['key-file-path'] = ApiClient.convertToType(data['key-file-path'], 'String');
-            }
-            if (data.hasOwnProperty('outfile')) {
-                obj['outfile'] = ApiClient.convertToType(data['outfile'], 'String');
+            if (data.hasOwnProperty('key-data-base64')) {
+                obj['key-data-base64'] = ApiClient.convertToType(data['key-data-base64'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -102,16 +97,10 @@ GetKubeExecCreds.prototype['cert-issuer-name'] = undefined;
 GetKubeExecCreds.prototype['common-name'] = undefined;
 
 /**
- * The client public or private key file path (in case of a private key, it will be use to extract the public key)
- * @member {String} key-file-path
+ * PKI key file contents. If this option is used, the certificate will be printed to stdout
+ * @member {String} key-data-base64
  */
-GetKubeExecCreds.prototype['key-file-path'] = undefined;
-
-/**
- * Output file path with the certificate. If not provided, the file with the certificate will be created in the same location of the provided public key with the -cert extension
- * @member {String} outfile
- */
-GetKubeExecCreds.prototype['outfile'] = undefined;
+GetKubeExecCreds.prototype['key-data-base64'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

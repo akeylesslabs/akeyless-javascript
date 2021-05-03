@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretProducerInfo model module.
  * @module model/DynamicSecretProducerInfo
- * @version 2.0.15
+ * @version 2.4.0
  */
 class DynamicSecretProducerInfo {
     /**
@@ -48,6 +48,9 @@ class DynamicSecretProducerInfo {
         if (data) {
             obj = obj || new DynamicSecretProducerInfo();
 
+            if (data.hasOwnProperty('gw_cluster_id')) {
+                obj['gw_cluster_id'] = ApiClient.convertToType(data['gw_cluster_id'], 'Number');
+            }
             if (data.hasOwnProperty('producer_metadata')) {
                 obj['producer_metadata'] = ApiClient.convertToType(data['producer_metadata'], 'String');
             }
@@ -65,12 +68,17 @@ class DynamicSecretProducerInfo {
 }
 
 /**
+ * @member {Number} gw_cluster_id
+ */
+DynamicSecretProducerInfo.prototype['gw_cluster_id'] = undefined;
+
+/**
  * @member {String} producer_metadata
  */
 DynamicSecretProducerInfo.prototype['producer_metadata'] = undefined;
 
 /**
- * ProducerStatus defines types of Producer Status
+ * RotationStatus defines types of rotation Status
  * @member {String} producer_status
  */
 DynamicSecretProducerInfo.prototype['producer_status'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRabbitMQTargetDetails model module.
  * @module model/UpdateRabbitMQTargetDetails
- * @version 2.0.15
+ * @version 2.4.0
  */
 class UpdateRabbitMQTargetDetails {
     /**
@@ -52,6 +52,9 @@ class UpdateRabbitMQTargetDetails {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('new-version')) {
+                obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
+            }
             if (data.hasOwnProperty('protection_key')) {
                 obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
             }
@@ -82,6 +85,13 @@ class UpdateRabbitMQTargetDetails {
  * @member {String} name
  */
 UpdateRabbitMQTargetDetails.prototype['name'] = undefined;
+
+/**
+ * Whether to create a new version of not
+ * @member {Boolean} new-version
+ * @default false
+ */
+UpdateRabbitMQTargetDetails.prototype['new-version'] = false;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)

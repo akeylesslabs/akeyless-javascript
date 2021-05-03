@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetDynamicSecretValue model module.
  * @module model/GetDynamicSecretValue
- * @version 2.0.15
+ * @version 2.4.0
  */
 class GetDynamicSecretValue {
     /**
@@ -61,6 +61,9 @@ class GetDynamicSecretValue {
             if (data.hasOwnProperty('target')) {
                 obj['target'] = ApiClient.convertToType(data['target'], 'String');
             }
+            if (data.hasOwnProperty('timeout')) {
+                obj['timeout'] = ApiClient.convertToType(data['timeout'], 'Number');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -75,7 +78,7 @@ class GetDynamicSecretValue {
 }
 
 /**
- * Optional input as `key-value` pairs
+ * Optional arguments as key=value pairs or JSON strings, e.g - \\\"--args=csr=base64_encoded_csr --args=common_name=bar\\\" or args='{\\\"csr\\\":\\\"base64_encoded_csr\\\"}. It is possible to combine both formats.'
  * @member {Array.<String>} args
  */
 GetDynamicSecretValue.prototype['args'] = undefined;
@@ -97,6 +100,13 @@ GetDynamicSecretValue.prototype['name'] = undefined;
  * @member {String} target
  */
 GetDynamicSecretValue.prototype['target'] = undefined;
+
+/**
+ * Timeout in seconds
+ * @member {Number} timeout
+ * @default 15
+ */
+GetDynamicSecretValue.prototype['timeout'] = 15;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.0.15
+ * @version 2.4.0
  */
 class DSProducerDetails {
     /**
@@ -227,6 +227,24 @@ class DSProducerDetails {
             if (data.hasOwnProperty('fixed_user_only')) {
                 obj['fixed_user_only'] = ApiClient.convertToType(data['fixed_user_only'], 'String');
             }
+            if (data.hasOwnProperty('gcp_key_algo')) {
+                obj['gcp_key_algo'] = ApiClient.convertToType(data['gcp_key_algo'], 'String');
+            }
+            if (data.hasOwnProperty('gcp_service_account_email')) {
+                obj['gcp_service_account_email'] = ApiClient.convertToType(data['gcp_service_account_email'], 'String');
+            }
+            if (data.hasOwnProperty('gcp_service_account_key')) {
+                obj['gcp_service_account_key'] = ApiClient.convertToType(data['gcp_service_account_key'], ['Number']);
+            }
+            if (data.hasOwnProperty('gcp_token_lifetime')) {
+                obj['gcp_token_lifetime'] = ApiClient.convertToType(data['gcp_token_lifetime'], 'String');
+            }
+            if (data.hasOwnProperty('gcp_token_scope')) {
+                obj['gcp_token_scope'] = ApiClient.convertToType(data['gcp_token_scope'], 'String');
+            }
+            if (data.hasOwnProperty('gcp_token_type')) {
+                obj['gcp_token_type'] = ApiClient.convertToType(data['gcp_token_type'], 'String');
+            }
             if (data.hasOwnProperty('gke_cluster_ca_certificate')) {
                 obj['gke_cluster_ca_certificate'] = ApiClient.convertToType(data['gke_cluster_ca_certificate'], 'String');
             }
@@ -338,8 +356,14 @@ class DSProducerDetails {
             if (data.hasOwnProperty('revoke_sync_url')) {
                 obj['revoke_sync_url'] = ApiClient.convertToType(data['revoke_sync_url'], 'String');
             }
+            if (data.hasOwnProperty('rotate_sync_url')) {
+                obj['rotate_sync_url'] = ApiClient.convertToType(data['rotate_sync_url'], 'String');
+            }
             if (data.hasOwnProperty('should_stop')) {
                 obj['should_stop'] = ApiClient.convertToType(data['should_stop'], 'String');
+            }
+            if (data.hasOwnProperty('timeout_seconds')) {
+                obj['timeout_seconds'] = ApiClient.convertToType(data['timeout_seconds'], 'Number');
             }
             if (data.hasOwnProperty('user_principal_name')) {
                 obj['user_principal_name'] = ApiClient.convertToType(data['user_principal_name'], 'String');
@@ -696,6 +720,36 @@ DSProducerDetails.prototype['failure_message'] = undefined;
 DSProducerDetails.prototype['fixed_user_only'] = undefined;
 
 /**
+ * @member {String} gcp_key_algo
+ */
+DSProducerDetails.prototype['gcp_key_algo'] = undefined;
+
+/**
+ * @member {String} gcp_service_account_email
+ */
+DSProducerDetails.prototype['gcp_service_account_email'] = undefined;
+
+/**
+ * @member {Array.<Number>} gcp_service_account_key
+ */
+DSProducerDetails.prototype['gcp_service_account_key'] = undefined;
+
+/**
+ * @member {String} gcp_token_lifetime
+ */
+DSProducerDetails.prototype['gcp_token_lifetime'] = undefined;
+
+/**
+ * @member {String} gcp_token_scope
+ */
+DSProducerDetails.prototype['gcp_token_scope'] = undefined;
+
+/**
+ * @member {String} gcp_token_type
+ */
+DSProducerDetails.prototype['gcp_token_type'] = undefined;
+
+/**
  * @member {String} gke_cluster_ca_certificate
  */
 DSProducerDetails.prototype['gke_cluster_ca_certificate'] = undefined;
@@ -884,10 +938,20 @@ DSProducerDetails.prototype['rabbitmq_user_write_permission'] = undefined;
 DSProducerDetails.prototype['revoke_sync_url'] = undefined;
 
 /**
+ * @member {String} rotate_sync_url
+ */
+DSProducerDetails.prototype['rotate_sync_url'] = undefined;
+
+/**
  * TODO delete this after migration
  * @member {String} should_stop
  */
 DSProducerDetails.prototype['should_stop'] = undefined;
+
+/**
+ * @member {Number} timeout_seconds
+ */
+DSProducerDetails.prototype['timeout_seconds'] = undefined;
 
 /**
  * @member {String} user_principal_name

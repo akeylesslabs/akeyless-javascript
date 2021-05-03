@@ -18,7 +18,7 @@ import ManagedKeyStatusInfo from './ManagedKeyStatusInfo';
 /**
  * The ManagedKeyTargetInfo model module.
  * @module model/ManagedKeyTargetInfo
- * @version 2.0.15
+ * @version 2.4.0
  */
 class ManagedKeyTargetInfo {
     /**
@@ -52,6 +52,9 @@ class ManagedKeyTargetInfo {
             if (data.hasOwnProperty('external_kms_id')) {
                 obj['external_kms_id'] = ExternalKMSKeyId.constructFromObject(data['external_kms_id']);
             }
+            if (data.hasOwnProperty('key_purpose')) {
+                obj['key_purpose'] = ApiClient.convertToType(data['key_purpose'], ['String']);
+            }
             if (data.hasOwnProperty('key_statuses')) {
                 obj['key_statuses'] = ApiClient.convertToType(data['key_statuses'], [ManagedKeyStatusInfo]);
             }
@@ -69,6 +72,11 @@ class ManagedKeyTargetInfo {
  * @member {module:model/ExternalKMSKeyId} external_kms_id
  */
 ManagedKeyTargetInfo.prototype['external_kms_id'] = undefined;
+
+/**
+ * @member {Array.<String>} key_purpose
+ */
+ManagedKeyTargetInfo.prototype['key_purpose'] = undefined;
 
 /**
  * @member {Array.<module:model/ManagedKeyStatusInfo>} key_statuses

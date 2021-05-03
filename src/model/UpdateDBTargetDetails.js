@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTargetDetails model module.
  * @module model/UpdateDBTargetDetails
- * @version 2.0.15
+ * @version 2.4.0
  */
 class UpdateDBTargetDetails {
     /**
@@ -63,6 +63,9 @@ class UpdateDBTargetDetails {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('new-version')) {
+                obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
             }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
@@ -114,6 +117,13 @@ UpdateDBTargetDetails.prototype['mongo_uri'] = undefined;
  * @member {String} name
  */
 UpdateDBTargetDetails.prototype['name'] = undefined;
+
+/**
+ * Whether to create a new version of not
+ * @member {Boolean} new-version
+ * @default false
+ */
+UpdateDBTargetDetails.prototype['new-version'] = false;
 
 /**
  * @member {String} port

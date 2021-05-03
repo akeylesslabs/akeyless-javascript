@@ -17,7 +17,7 @@ import ManagedKeyTargetInfo from './ManagedKeyTargetInfo';
 /**
  * The ManagedKeyDetailsInfo model module.
  * @module model/ManagedKeyDetailsInfo
- * @version 2.0.15
+ * @version 2.4.0
  */
 class ManagedKeyDetailsInfo {
     /**
@@ -48,14 +48,23 @@ class ManagedKeyDetailsInfo {
         if (data) {
             obj = obj || new ManagedKeyDetailsInfo();
 
-            if (data.hasOwnProperty('is_enabled')) {
-                obj['is_enabled'] = ApiClient.convertToType(data['is_enabled'], 'Boolean');
+            if (data.hasOwnProperty('is_provided_by_user')) {
+                obj['is_provided_by_user'] = ApiClient.convertToType(data['is_provided_by_user'], 'Boolean');
             }
-            if (data.hasOwnProperty('is_external')) {
-                obj['is_external'] = ApiClient.convertToType(data['is_external'], 'Boolean');
+            if (data.hasOwnProperty('is_unexportable')) {
+                obj['is_unexportable'] = ApiClient.convertToType(data['is_unexportable'], 'Boolean');
+            }
+            if (data.hasOwnProperty('key_state')) {
+                obj['key_state'] = ApiClient.convertToType(data['key_state'], 'String');
             }
             if (data.hasOwnProperty('key_type')) {
                 obj['key_type'] = ApiClient.convertToType(data['key_type'], 'String');
+            }
+            if (data.hasOwnProperty('managed_key_id')) {
+                obj['managed_key_id'] = ApiClient.convertToType(data['managed_key_id'], 'String');
+            }
+            if (data.hasOwnProperty('target_alias_helper')) {
+                obj['target_alias_helper'] = ApiClient.convertToType(data['target_alias_helper'], 'String');
             }
             if (data.hasOwnProperty('targets')) {
                 obj['targets'] = ApiClient.convertToType(data['targets'], [ManagedKeyTargetInfo]);
@@ -68,19 +77,35 @@ class ManagedKeyDetailsInfo {
 }
 
 /**
- * @member {Boolean} is_enabled
+ * @member {Boolean} is_provided_by_user
  */
-ManagedKeyDetailsInfo.prototype['is_enabled'] = undefined;
+ManagedKeyDetailsInfo.prototype['is_provided_by_user'] = undefined;
 
 /**
- * @member {Boolean} is_external
+ * @member {Boolean} is_unexportable
  */
-ManagedKeyDetailsInfo.prototype['is_external'] = undefined;
+ManagedKeyDetailsInfo.prototype['is_unexportable'] = undefined;
+
+/**
+ * ItemState defines the different states an Item can be in
+ * @member {String} key_state
+ */
+ManagedKeyDetailsInfo.prototype['key_state'] = undefined;
 
 /**
  * @member {String} key_type
  */
 ManagedKeyDetailsInfo.prototype['key_type'] = undefined;
+
+/**
+ * @member {String} managed_key_id
+ */
+ManagedKeyDetailsInfo.prototype['managed_key_id'] = undefined;
+
+/**
+ * @member {String} target_alias_helper
+ */
+ManagedKeyDetailsInfo.prototype['target_alias_helper'] = undefined;
 
 /**
  * @member {Array.<module:model/ManagedKeyTargetInfo>} targets

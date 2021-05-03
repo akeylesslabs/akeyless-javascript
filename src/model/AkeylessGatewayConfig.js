@@ -22,12 +22,13 @@ import LeadershipConfigPart from './LeadershipConfigPart';
 import LogForwardingConfigPart from './LogForwardingConfigPart';
 import MigrationsConfigPart from './MigrationsConfigPart';
 import ProducersConfigPart from './ProducersConfigPart';
+import RotatorsConfigPart from './RotatorsConfigPart';
 import UIdentityConfigPart from './UIdentityConfigPart';
 
 /**
  * The AkeylessGatewayConfig model module.
  * @module model/AkeylessGatewayConfig
- * @version 2.0.15
+ * @version 2.4.0
  */
 class AkeylessGatewayConfig {
     /**
@@ -87,6 +88,9 @@ class AkeylessGatewayConfig {
             }
             if (data.hasOwnProperty('producers')) {
                 obj['producers'] = ProducersConfigPart.constructFromObject(data['producers']);
+            }
+            if (data.hasOwnProperty('rotators')) {
+                obj['rotators'] = RotatorsConfigPart.constructFromObject(data['rotators']);
             }
             if (data.hasOwnProperty('saml')) {
                 obj['saml'] = DefaultConfigPart.constructFromObject(data['saml']);
@@ -153,6 +157,11 @@ AkeylessGatewayConfig.prototype['migrations'] = undefined;
  * @member {module:model/ProducersConfigPart} producers
  */
 AkeylessGatewayConfig.prototype['producers'] = undefined;
+
+/**
+ * @member {module:model/RotatorsConfigPart} rotators
+ */
+AkeylessGatewayConfig.prototype['rotators'] = undefined;
 
 /**
  * @member {module:model/DefaultConfigPart} saml

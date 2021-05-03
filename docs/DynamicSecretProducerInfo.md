@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**gwClusterId** | **Number** |  | [optional] 
 **producerMetadata** | **String** |  | [optional] 
-**producerStatus** | **String** | ProducerStatus defines types of Producer Status | [optional] 
+**producerStatus** | **String** | RotationStatus defines types of rotation Status | [optional] 
 **producerType** | **String** |  | [optional] 
 
 

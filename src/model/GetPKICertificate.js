@@ -16,18 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPKICertificate model module.
  * @module model/GetPKICertificate
- * @version 2.0.15
+ * @version 2.4.0
  */
 class GetPKICertificate {
     /**
      * Constructs a new <code>GetPKICertificate</code>.
      * @alias module:model/GetPKICertificate
      * @param certIssuerName {String} The name of the PKI certificate issuer
-     * @param keyFilePath {String} The client public or private key file path (in case of a private key, it will be use to extract the public key)
      */
-    constructor(certIssuerName, keyFilePath) { 
+    constructor(certIssuerName) { 
         
-        GetPKICertificate.initialize(this, certIssuerName, keyFilePath);
+        GetPKICertificate.initialize(this, certIssuerName);
     }
 
     /**
@@ -35,9 +34,8 @@ class GetPKICertificate {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, certIssuerName, keyFilePath) { 
+    static initialize(obj, certIssuerName) { 
         obj['cert-issuer-name'] = certIssuerName;
-        obj['key-file-path'] = keyFilePath;
     }
 
     /**
@@ -60,11 +58,8 @@ class GetPKICertificate {
             if (data.hasOwnProperty('common-name')) {
                 obj['common-name'] = ApiClient.convertToType(data['common-name'], 'String');
             }
-            if (data.hasOwnProperty('key-file-path')) {
-                obj['key-file-path'] = ApiClient.convertToType(data['key-file-path'], 'String');
-            }
-            if (data.hasOwnProperty('outfile')) {
-                obj['outfile'] = ApiClient.convertToType(data['outfile'], 'String');
+            if (data.hasOwnProperty('key-data-base64')) {
+                obj['key-data-base64'] = ApiClient.convertToType(data['key-data-base64'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -101,16 +96,10 @@ GetPKICertificate.prototype['cert-issuer-name'] = undefined;
 GetPKICertificate.prototype['common-name'] = undefined;
 
 /**
- * The client public or private key file path (in case of a private key, it will be use to extract the public key)
- * @member {String} key-file-path
+ * PKI key file contents. If this option is used, the certificate will be printed to stdout
+ * @member {String} key-data-base64
  */
-GetPKICertificate.prototype['key-file-path'] = undefined;
-
-/**
- * Output file path with the certificate. If not provided, the file with the certificate will be created in the same location of the provided public key with the -cert extension
- * @member {String} outfile
- */
-GetPKICertificate.prototype['outfile'] = undefined;
+GetPKICertificate.prototype['key-data-base64'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

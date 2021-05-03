@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadRSA model module.
  * @module model/UploadRSA
- * @version 2.0.15
+ * @version 2.4.0
  */
 class UploadRSA {
     /**
      * Constructs a new <code>UploadRSA</code>.
      * @alias module:model/UploadRSA
-     * @param alg {String} Key type. options: [RSA1024, RSA2048]
+     * @param alg {String} Key type. options: [RSA1024, RSA2048, RSA3072, RSA4096]
      * @param name {String} Name of key to be created
      */
     constructor(alg, name) { 
@@ -95,7 +95,7 @@ class UploadRSA {
 }
 
 /**
- * Key type. options: [RSA1024, RSA2048]
+ * Key type. options: [RSA1024, RSA2048, RSA3072, RSA4096]
  * @member {String} alg
  */
 UploadRSA.prototype['alg'] = undefined;

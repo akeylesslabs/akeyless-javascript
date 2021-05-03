@@ -20,10 +20,12 @@ Method | HTTP request | Description
 [**createDBTarget**](V2Api.md#createDBTarget) | **POST** /create-db-target | 
 [**createDynamicSecret**](V2Api.md#createDynamicSecret) | **POST** /create-dynamic-secret | 
 [**createKey**](V2Api.md#createKey) | **POST** /create-key | 
+[**createManagedKey**](V2Api.md#createManagedKey) | **POST** /create-managed-key | 
 [**createPKICertIssuer**](V2Api.md#createPKICertIssuer) | **POST** /create-pki-cert-issuer | 
 [**createRabbitMQTarget**](V2Api.md#createRabbitMQTarget) | **POST** /create-rabbitMQ-target | 
 [**createRdpTarget**](V2Api.md#createRdpTarget) | **POST** /create-rdp-target | 
 [**createRole**](V2Api.md#createRole) | **POST** /create-role | 
+[**createRotatedSecret**](V2Api.md#createRotatedSecret) | **POST** /create-rotated-secret | 
 [**createSSHCertIssuer**](V2Api.md#createSSHCertIssuer) | **POST** /create-ssh-cert-issuer | 
 [**createSSHTarget**](V2Api.md#createSSHTarget) | **POST** /create-ssh-target | 
 [**createSecret**](V2Api.md#createSecret) | **POST** /create-secret | 
@@ -43,13 +45,17 @@ Method | HTTP request | Description
 [**deleteTargetAssociation**](V2Api.md#deleteTargetAssociation) | **POST** /delete-assoc-target-item | 
 [**deleteTargets**](V2Api.md#deleteTargets) | **POST** /delete-targets | 
 [**describeItem**](V2Api.md#describeItem) | **POST** /describe-item | 
+[**describePermissions**](V2Api.md#describePermissions) | **POST** /describe-permissions | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
 [**encryptPKCS1**](V2Api.md#encryptPKCS1) | **POST** /encrypt-pkcs1 | 
 [**gatewayAddSubAdmins**](V2Api.md#gatewayAddSubAdmins) | **POST** /gateway-add-sub-admins | 
 [**gatewayCreateProducerArtifactory**](V2Api.md#gatewayCreateProducerArtifactory) | **POST** /gateway-create-producer-artifactory | 
 [**gatewayCreateProducerAws**](V2Api.md#gatewayCreateProducerAws) | **POST** /gateway-create-producer-aws | 
 [**gatewayCreateProducerAzure**](V2Api.md#gatewayCreateProducerAzure) | **POST** /gateway-create-producer-azure | 
+[**gatewayCreateProducerCertificateAutomation**](V2Api.md#gatewayCreateProducerCertificateAutomation) | **POST** /gateway-create-producer-certificate-automation | 
+[**gatewayCreateProducerCustom**](V2Api.md#gatewayCreateProducerCustom) | **POST** /gateway-create-producer-custom | 
 [**gatewayCreateProducerEks**](V2Api.md#gatewayCreateProducerEks) | **POST** /gateway-create-producer-eks | 
+[**gatewayCreateProducerGcp**](V2Api.md#gatewayCreateProducerGcp) | **POST** /gateway-create-producer-gcp | 
 [**gatewayCreateProducerGke**](V2Api.md#gatewayCreateProducerGke) | **POST** /gateway-create-producer-gke | 
 [**gatewayCreateProducerMSSQL**](V2Api.md#gatewayCreateProducerMSSQL) | **POST** /gateway-create-producer-mssql | 
 [**gatewayCreateProducerMongo**](V2Api.md#gatewayCreateProducerMongo) | **POST** /gateway-create-producer-mongo | 
@@ -57,7 +63,6 @@ Method | HTTP request | Description
 [**gatewayCreateProducerPostgreSQL**](V2Api.md#gatewayCreateProducerPostgreSQL) | **POST** /gateway-create-producer-postgresql | 
 [**gatewayCreateProducerRabbitMQ**](V2Api.md#gatewayCreateProducerRabbitMQ) | **POST** /gateway-create-producer-rabbitmq | 
 [**gatewayCreateProducerRdp**](V2Api.md#gatewayCreateProducerRdp) | **POST** /gateway-create-producer-rdp | 
-[**gatewayCreateProducerVenafi**](V2Api.md#gatewayCreateProducerVenafi) | **POST** /gateway-create-producer-venafi | 
 [**gatewayDeleteProducer**](V2Api.md#gatewayDeleteProducer) | **POST** /gateway-delete-producer | 
 [**gatewayDeleteSubAdmins**](V2Api.md#gatewayDeleteSubAdmins) | **POST** /gateway-delete-sub-admins | 
 [**gatewayGetConfig**](V2Api.md#gatewayGetConfig) | **POST** /gateway-get-config | 
@@ -68,12 +73,16 @@ Method | HTTP request | Description
 [**gatewayRevokeTmpUsers**](V2Api.md#gatewayRevokeTmpUsers) | **POST** /gateway-revoke-producer-tmp-creds | 
 [**gatewayStartProducer**](V2Api.md#gatewayStartProducer) | **POST** /gateway-start-producer | 
 [**gatewayStopProducer**](V2Api.md#gatewayStopProducer) | **POST** /gateway-stop-producer | 
+[**gatewayUpdateItem**](V2Api.md#gatewayUpdateItem) | **POST** /update-managed-key | 
 [**gatewayUpdateTmpUsers**](V2Api.md#gatewayUpdateTmpUsers) | **POST** /gateway-update-producer-tmp-creds | 
 [**getAccountLogo**](V2Api.md#getAccountLogo) | **POST** /get-account-logo | 
 [**getAuthMethod**](V2Api.md#getAuthMethod) | **POST** /get-auth-method | 
 [**getDynamicSecretValue**](V2Api.md#getDynamicSecretValue) | **POST** /get-dynamic-secret-value | 
+[**getKubeExecCreds**](V2Api.md#getKubeExecCreds) | **POST** /get-kube-exec-creds | 
+[**getPKICertificate**](V2Api.md#getPKICertificate) | **POST** /get-pki-certificate | 
 [**getRSAPublic**](V2Api.md#getRSAPublic) | **POST** /get-rsa-public | 
 [**getRole**](V2Api.md#getRole) | **POST** /get-role | 
+[**getRotatedSecretValue**](V2Api.md#getRotatedSecretValue) | **POST** /get-rotated-secret-value | 
 [**getSSHCertificate**](V2Api.md#getSSHCertificate) | **POST** /get-ssh-certificate | 
 [**getSecretValue**](V2Api.md#getSecretValue) | **POST** /get-secret-value | 
 [**getTarget**](V2Api.md#getTarget) | **POST** /get-target | 
@@ -103,6 +112,8 @@ Method | HTTP request | Description
 [**updateRDPTargetDetails**](V2Api.md#updateRDPTargetDetails) | **POST** /update-rdp-target-details | 
 [**updateRabbitMQTargetDetails**](V2Api.md#updateRabbitMQTargetDetails) | **POST** /update-rabbitmq-target-details | 
 [**updateRole**](V2Api.md#updateRole) | **POST** /update-role | 
+[**updateRotatedSecret**](V2Api.md#updateRotatedSecret) | **POST** /update-rotated-secret | 
+[**updateRotationSettings**](V2Api.md#updateRotationSettings) | **POST** /update-rotation-settingsrotate-key | 
 [**updateSSHTargetDetails**](V2Api.md#updateSSHTargetDetails) | **POST** /update-ssh-target-details | 
 [**updateSecretVal**](V2Api.md#updateSecretVal) | **POST** /update-secret-val | 
 [**updateTarget**](V2Api.md#updateTarget) | **POST** /update-target | 
@@ -619,7 +630,7 @@ No authorization required
 
 ## createAwsTarget
 
-> Object createAwsTarget(body)
+> CreateTargetOutput createAwsTarget(body)
 
 
 
@@ -647,7 +658,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**CreateTargetOutput**](CreateTargetOutput.md)
 
 ### Authorization
 
@@ -661,7 +672,7 @@ No authorization required
 
 ## createDBTarget
 
-> Object createDBTarget(body)
+> CreateTargetOutput createDBTarget(body)
 
 
 
@@ -689,7 +700,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**CreateTargetOutput**](CreateTargetOutput.md)
 
 ### Authorization
 
@@ -785,6 +796,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## createManagedKey
+
+> CreateManagedKeyOutput createManagedKey(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateManagedKey(); // CreateManagedKey | 
+apiInstance.createManagedKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateManagedKey**](CreateManagedKey.md)|  | 
+
+### Return type
+
+[**CreateManagedKeyOutput**](CreateManagedKeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## createPKICertIssuer
 
 > CreatePKICertIssuerOutput createPKICertIssuer(body)
@@ -829,7 +882,7 @@ No authorization required
 
 ## createRabbitMQTarget
 
-> Object createRabbitMQTarget(body)
+> CreateTargetOutput createRabbitMQTarget(body)
 
 
 
@@ -857,7 +910,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**CreateTargetOutput**](CreateTargetOutput.md)
 
 ### Authorization
 
@@ -871,7 +924,7 @@ No authorization required
 
 ## createRdpTarget
 
-> Object createRdpTarget(body)
+> CreateTargetOutput createRdpTarget(body)
 
 
 
@@ -899,7 +952,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**CreateTargetOutput**](CreateTargetOutput.md)
 
 ### Authorization
 
@@ -942,6 +995,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 **Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createRotatedSecret
+
+> CreateRotatedSecretOutput createRotatedSecret(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateRotatedSecret(); // CreateRotatedSecret | 
+apiInstance.createRotatedSecret(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateRotatedSecret**](CreateRotatedSecret.md)|  | 
+
+### Return type
+
+[**CreateRotatedSecretOutput**](CreateRotatedSecretOutput.md)
 
 ### Authorization
 
@@ -997,7 +1092,7 @@ No authorization required
 
 ## createSSHTarget
 
-> Object createSSHTarget(body)
+> CreateTargetOutput createSSHTarget(body)
 
 
 
@@ -1025,7 +1120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**CreateTargetOutput**](CreateTargetOutput.md)
 
 ### Authorization
 
@@ -1081,7 +1176,7 @@ No authorization required
 
 ## createTarget
 
-> Object createTarget(body)
+> CreateTargetOutput createTarget(body)
 
 
 
@@ -1109,7 +1204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**CreateTargetOutput**](CreateTargetOutput.md)
 
 ### Authorization
 
@@ -1123,7 +1218,7 @@ No authorization required
 
 ## createWebTarget
 
-> Object createWebTarget(body)
+> CreateTargetOutput createWebTarget(body)
 
 
 
@@ -1151,7 +1246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**CreateTargetOutput**](CreateTargetOutput.md)
 
 ### Authorization
 
@@ -1751,6 +1846,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## describePermissions
+
+> DescribePermissionsOutput describePermissions(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DescribePermissions(); // DescribePermissions | 
+apiInstance.describePermissions(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DescribePermissions**](DescribePermissions.md)|  | 
+
+### Return type
+
+[**DescribePermissionsOutput**](DescribePermissionsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## encrypt
 
 > EncryptOutput encrypt(body)
@@ -2003,6 +2140,92 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayCreateProducerCertificateAutomation
+
+> GatewayCreateProducerCertificateAutomationOutput gatewayCreateProducerCertificateAutomation(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayCreateProducerCertificateAutomation(); // GatewayCreateProducerCertificateAutomation | 
+apiInstance.gatewayCreateProducerCertificateAutomation(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerCertificateAutomation**](GatewayCreateProducerCertificateAutomation.md)|  | 
+
+### Return type
+
+[**GatewayCreateProducerCertificateAutomationOutput**](GatewayCreateProducerCertificateAutomationOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayCreateProducerCustom
+
+> GatewayCreateProducerCustomOutput gatewayCreateProducerCustom(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.GatewayCreateProducerCustom() // GatewayCreateProducerCustom | 
+};
+apiInstance.gatewayCreateProducerCustom(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerCustom**](GatewayCreateProducerCustom.md)|  | [optional] 
+
+### Return type
+
+[**GatewayCreateProducerCustomOutput**](GatewayCreateProducerCustomOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayCreateProducerEks
 
 > GatewayCreateProducerEksOutput gatewayCreateProducerEks(body)
@@ -2034,6 +2257,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayCreateProducerEksOutput**](GatewayCreateProducerEksOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayCreateProducerGcp
+
+> GatewayCreateProducerGcpOutput gatewayCreateProducerGcp(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayCreateProducerGcp(); // GatewayCreateProducerGcp | 
+apiInstance.gatewayCreateProducerGcp(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerGcp**](GatewayCreateProducerGcp.md)|  | 
+
+### Return type
+
+[**GatewayCreateProducerGcpOutput**](GatewayCreateProducerGcpOutput.md)
 
 ### Authorization
 
@@ -2328,48 +2593,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayCreateProducerRdpOutput**](GatewayCreateProducerRdpOutput.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## gatewayCreateProducerVenafi
-
-> GatewayCreateProducerAwsOutput gatewayCreateProducerVenafi(body)
-
-
-
-### Example
-
-```javascript
-import akeyless from 'akeyless';
-
-let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerAws(); // GatewayCreateProducerAws | 
-apiInstance.gatewayCreateProducerVenafi(body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerAws**](GatewayCreateProducerAws.md)|  | 
-
-### Return type
-
-[**GatewayCreateProducerAwsOutput**](GatewayCreateProducerAwsOutput.md)
 
 ### Authorization
 
@@ -2801,6 +3024,44 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayUpdateItem
+
+> gatewayUpdateItem()
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+apiInstance.gatewayUpdateItem().then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## gatewayUpdateTmpUsers
 
 > gatewayUpdateTmpUsers(body)
@@ -2965,6 +3226,86 @@ No authorization required
 - **Accept**: application/json
 
 
+## getKubeExecCreds
+
+> GetKubeExecCredsOutput getKubeExecCreds(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GetKubeExecCreds(); // GetKubeExecCreds | 
+apiInstance.getKubeExecCreds(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetKubeExecCreds**](GetKubeExecCreds.md)|  | 
+
+### Return type
+
+[**GetKubeExecCredsOutput**](GetKubeExecCredsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## getPKICertificate
+
+> GetPKICertificateOutput getPKICertificate()
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+apiInstance.getPKICertificate().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetPKICertificateOutput**](GetPKICertificateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getRSAPublic
 
 > GetRSAPublicOutput getRSAPublic(body)
@@ -3038,6 +3379,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Role**](Role.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## getRotatedSecretValue
+
+> {String: String} getRotatedSecretValue(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GetRotatedSecretValue(); // GetRotatedSecretValue | 
+apiInstance.getRotatedSecretValue(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetRotatedSecretValue**](GetRotatedSecretValue.md)|  | 
+
+### Return type
+
+**{String: String}**
 
 ### Authorization
 
@@ -3609,7 +3992,7 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotateKey(); // RotateKey | 
+let body = new akeyless.UpdateRotationSettings(); // UpdateRotationSettings | 
 apiInstance.rotateKey(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3623,7 +4006,7 @@ apiInstance.rotateKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotateKey**](RotateKey.md)|  | 
+ **body** | [**UpdateRotationSettings**](UpdateRotationSettings.md)|  | 
 
 ### Return type
 
@@ -4266,6 +4649,86 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateRotatedSecret
+
+> UpdateRotatedSecretOutput updateRotatedSecret(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateRotatedSecret(); // UpdateRotatedSecret | 
+apiInstance.updateRotatedSecret(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateRotatedSecret**](UpdateRotatedSecret.md)|  | 
+
+### Return type
+
+[**UpdateRotatedSecretOutput**](UpdateRotatedSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateRotationSettings
+
+> RotateKeyOutput updateRotationSettings()
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+apiInstance.updateRotationSettings().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**RotateKeyOutput**](RotateKeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

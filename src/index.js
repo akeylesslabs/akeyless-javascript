@@ -58,18 +58,23 @@ import CreateDBTarget from './model/CreateDBTarget';
 import CreateDynamicSecret from './model/CreateDynamicSecret';
 import CreateKey from './model/CreateKey';
 import CreateKeyOutput from './model/CreateKeyOutput';
+import CreateManagedKey from './model/CreateManagedKey';
+import CreateManagedKeyOutput from './model/CreateManagedKeyOutput';
 import CreatePKICertIssuer from './model/CreatePKICertIssuer';
 import CreatePKICertIssuerOutput from './model/CreatePKICertIssuerOutput';
 import CreateRabbitMQTarget from './model/CreateRabbitMQTarget';
 import CreateRdpTarget from './model/CreateRdpTarget';
 import CreateRole from './model/CreateRole';
 import CreateRoleAuthMethodAssocOutput from './model/CreateRoleAuthMethodAssocOutput';
+import CreateRotatedSecret from './model/CreateRotatedSecret';
+import CreateRotatedSecretOutput from './model/CreateRotatedSecretOutput';
 import CreateSSHCertIssuer from './model/CreateSSHCertIssuer';
 import CreateSSHCertIssuerOutput from './model/CreateSSHCertIssuerOutput';
 import CreateSSHTarget from './model/CreateSSHTarget';
 import CreateSecret from './model/CreateSecret';
 import CreateSecretOutput from './model/CreateSecretOutput';
 import CreateTargetItemAssocOutput from './model/CreateTargetItemAssocOutput';
+import CreateTargetOutput from './model/CreateTargetOutput';
 import CreateWebTarget from './model/CreateWebTarget';
 import CustomerFragment from './model/CustomerFragment';
 import CustomerFragmentsJson from './model/CustomerFragmentsJson';
@@ -98,6 +103,8 @@ import DeleteTarget from './model/DeleteTarget';
 import DeleteTargetAssociation from './model/DeleteTargetAssociation';
 import DeleteTargets from './model/DeleteTargets';
 import DescribeItem from './model/DescribeItem';
+import DescribePermissions from './model/DescribePermissions';
+import DescribePermissionsOutput from './model/DescribePermissionsOutput';
 import DynamicSecretProducerInfo from './model/DynamicSecretProducerInfo';
 import ElasticsearchLogForwardingConfig from './model/ElasticsearchLogForwardingConfig';
 import EmailPassAccessRules from './model/EmailPassAccessRules';
@@ -117,8 +124,16 @@ import GatewayCreateProducerAws from './model/GatewayCreateProducerAws';
 import GatewayCreateProducerAwsOutput from './model/GatewayCreateProducerAwsOutput';
 import GatewayCreateProducerAzure from './model/GatewayCreateProducerAzure';
 import GatewayCreateProducerAzureOutput from './model/GatewayCreateProducerAzureOutput';
+import GatewayCreateProducerCertificateAutomation from './model/GatewayCreateProducerCertificateAutomation';
+import GatewayCreateProducerCertificateAutomationOutput from './model/GatewayCreateProducerCertificateAutomationOutput';
+import GatewayCreateProducerChef from './model/GatewayCreateProducerChef';
+import GatewayCreateProducerChefOutput from './model/GatewayCreateProducerChefOutput';
+import GatewayCreateProducerCustom from './model/GatewayCreateProducerCustom';
+import GatewayCreateProducerCustomOutput from './model/GatewayCreateProducerCustomOutput';
 import GatewayCreateProducerEks from './model/GatewayCreateProducerEks';
 import GatewayCreateProducerEksOutput from './model/GatewayCreateProducerEksOutput';
+import GatewayCreateProducerGcp from './model/GatewayCreateProducerGcp';
+import GatewayCreateProducerGcpOutput from './model/GatewayCreateProducerGcpOutput';
 import GatewayCreateProducerGke from './model/GatewayCreateProducerGke';
 import GatewayCreateProducerGkeOutput from './model/GatewayCreateProducerGkeOutput';
 import GatewayCreateProducerMSSQL from './model/GatewayCreateProducerMSSQL';
@@ -162,6 +177,7 @@ import GetProducersListReplyObj from './model/GetProducersListReplyObj';
 import GetRSAPublic from './model/GetRSAPublic';
 import GetRSAPublicOutput from './model/GetRSAPublicOutput';
 import GetRole from './model/GetRole';
+import GetRotatedSecretValue from './model/GetRotatedSecretValue';
 import GetSSHCertificate from './model/GetSSHCertificate';
 import GetSSHCertificateOutput from './model/GetSSHCertificateOutput';
 import GetSecretValue from './model/GetSecretValue';
@@ -217,6 +233,9 @@ import RollbackSecret from './model/RollbackSecret';
 import RollbackSecretOutput from './model/RollbackSecretOutput';
 import RotateKey from './model/RotateKey';
 import RotateKeyOutput from './model/RotateKeyOutput';
+import RotatedSecretDetailsInfo from './model/RotatedSecretDetailsInfo';
+import Rotator from './model/Rotator';
+import RotatorsConfigPart from './model/RotatorsConfigPart';
 import Rules from './model/Rules';
 import SAMLAccessRules from './model/SAMLAccessRules';
 import SAMLAttribute from './model/SAMLAttribute';
@@ -251,11 +270,17 @@ import UpdateAWSTargetDetails from './model/UpdateAWSTargetDetails';
 import UpdateDBTargetDetails from './model/UpdateDBTargetDetails';
 import UpdateItem from './model/UpdateItem';
 import UpdateItemOutput from './model/UpdateItemOutput';
+import UpdateManagedKey from './model/UpdateManagedKey';
 import UpdateOutput from './model/UpdateOutput';
 import UpdateRDPTargetDetails from './model/UpdateRDPTargetDetails';
 import UpdateRabbitMQTargetDetails from './model/UpdateRabbitMQTargetDetails';
 import UpdateRole from './model/UpdateRole';
 import UpdateRoleOutput from './model/UpdateRoleOutput';
+import UpdateRotatedSecret from './model/UpdateRotatedSecret';
+import UpdateRotatedSecretOutput from './model/UpdateRotatedSecretOutput';
+import UpdateRotatedSecretSC from './model/UpdateRotatedSecretSC';
+import UpdateRotatedSecretSCOutput from './model/UpdateRotatedSecretSCOutput';
+import UpdateRotationSettings from './model/UpdateRotationSettings';
 import UpdateSSHTargetDetails from './model/UpdateSSHTargetDetails';
 import UpdateSecretVal from './model/UpdateSecretVal';
 import UpdateSecretValOutput from './model/UpdateSecretValOutput';
@@ -298,7 +323,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.0.15
+* @version 2.4.0
 */
 export {
     /**
@@ -578,6 +603,18 @@ export {
     CreateKeyOutput,
 
     /**
+     * The CreateManagedKey model constructor.
+     * @property {module:model/CreateManagedKey}
+     */
+    CreateManagedKey,
+
+    /**
+     * The CreateManagedKeyOutput model constructor.
+     * @property {module:model/CreateManagedKeyOutput}
+     */
+    CreateManagedKeyOutput,
+
+    /**
      * The CreatePKICertIssuer model constructor.
      * @property {module:model/CreatePKICertIssuer}
      */
@@ -614,6 +651,18 @@ export {
     CreateRoleAuthMethodAssocOutput,
 
     /**
+     * The CreateRotatedSecret model constructor.
+     * @property {module:model/CreateRotatedSecret}
+     */
+    CreateRotatedSecret,
+
+    /**
+     * The CreateRotatedSecretOutput model constructor.
+     * @property {module:model/CreateRotatedSecretOutput}
+     */
+    CreateRotatedSecretOutput,
+
+    /**
      * The CreateSSHCertIssuer model constructor.
      * @property {module:model/CreateSSHCertIssuer}
      */
@@ -648,6 +697,12 @@ export {
      * @property {module:model/CreateTargetItemAssocOutput}
      */
     CreateTargetItemAssocOutput,
+
+    /**
+     * The CreateTargetOutput model constructor.
+     * @property {module:model/CreateTargetOutput}
+     */
+    CreateTargetOutput,
 
     /**
      * The CreateWebTarget model constructor.
@@ -818,6 +873,18 @@ export {
     DescribeItem,
 
     /**
+     * The DescribePermissions model constructor.
+     * @property {module:model/DescribePermissions}
+     */
+    DescribePermissions,
+
+    /**
+     * The DescribePermissionsOutput model constructor.
+     * @property {module:model/DescribePermissionsOutput}
+     */
+    DescribePermissionsOutput,
+
+    /**
      * The DynamicSecretProducerInfo model constructor.
      * @property {module:model/DynamicSecretProducerInfo}
      */
@@ -932,6 +999,42 @@ export {
     GatewayCreateProducerAzureOutput,
 
     /**
+     * The GatewayCreateProducerCertificateAutomation model constructor.
+     * @property {module:model/GatewayCreateProducerCertificateAutomation}
+     */
+    GatewayCreateProducerCertificateAutomation,
+
+    /**
+     * The GatewayCreateProducerCertificateAutomationOutput model constructor.
+     * @property {module:model/GatewayCreateProducerCertificateAutomationOutput}
+     */
+    GatewayCreateProducerCertificateAutomationOutput,
+
+    /**
+     * The GatewayCreateProducerChef model constructor.
+     * @property {module:model/GatewayCreateProducerChef}
+     */
+    GatewayCreateProducerChef,
+
+    /**
+     * The GatewayCreateProducerChefOutput model constructor.
+     * @property {module:model/GatewayCreateProducerChefOutput}
+     */
+    GatewayCreateProducerChefOutput,
+
+    /**
+     * The GatewayCreateProducerCustom model constructor.
+     * @property {module:model/GatewayCreateProducerCustom}
+     */
+    GatewayCreateProducerCustom,
+
+    /**
+     * The GatewayCreateProducerCustomOutput model constructor.
+     * @property {module:model/GatewayCreateProducerCustomOutput}
+     */
+    GatewayCreateProducerCustomOutput,
+
+    /**
      * The GatewayCreateProducerEks model constructor.
      * @property {module:model/GatewayCreateProducerEks}
      */
@@ -942,6 +1045,18 @@ export {
      * @property {module:model/GatewayCreateProducerEksOutput}
      */
     GatewayCreateProducerEksOutput,
+
+    /**
+     * The GatewayCreateProducerGcp model constructor.
+     * @property {module:model/GatewayCreateProducerGcp}
+     */
+    GatewayCreateProducerGcp,
+
+    /**
+     * The GatewayCreateProducerGcpOutput model constructor.
+     * @property {module:model/GatewayCreateProducerGcpOutput}
+     */
+    GatewayCreateProducerGcpOutput,
 
     /**
      * The GatewayCreateProducerGke model constructor.
@@ -1200,6 +1315,12 @@ export {
      * @property {module:model/GetRole}
      */
     GetRole,
+
+    /**
+     * The GetRotatedSecretValue model constructor.
+     * @property {module:model/GetRotatedSecretValue}
+     */
+    GetRotatedSecretValue,
 
     /**
      * The GetSSHCertificate model constructor.
@@ -1532,6 +1653,24 @@ export {
     RotateKeyOutput,
 
     /**
+     * The RotatedSecretDetailsInfo model constructor.
+     * @property {module:model/RotatedSecretDetailsInfo}
+     */
+    RotatedSecretDetailsInfo,
+
+    /**
+     * The Rotator model constructor.
+     * @property {module:model/Rotator}
+     */
+    Rotator,
+
+    /**
+     * The RotatorsConfigPart model constructor.
+     * @property {module:model/RotatorsConfigPart}
+     */
+    RotatorsConfigPart,
+
+    /**
      * The Rules model constructor.
      * @property {module:model/Rules}
      */
@@ -1736,6 +1875,12 @@ export {
     UpdateItemOutput,
 
     /**
+     * The UpdateManagedKey model constructor.
+     * @property {module:model/UpdateManagedKey}
+     */
+    UpdateManagedKey,
+
+    /**
      * The UpdateOutput model constructor.
      * @property {module:model/UpdateOutput}
      */
@@ -1764,6 +1909,36 @@ export {
      * @property {module:model/UpdateRoleOutput}
      */
     UpdateRoleOutput,
+
+    /**
+     * The UpdateRotatedSecret model constructor.
+     * @property {module:model/UpdateRotatedSecret}
+     */
+    UpdateRotatedSecret,
+
+    /**
+     * The UpdateRotatedSecretOutput model constructor.
+     * @property {module:model/UpdateRotatedSecretOutput}
+     */
+    UpdateRotatedSecretOutput,
+
+    /**
+     * The UpdateRotatedSecretSC model constructor.
+     * @property {module:model/UpdateRotatedSecretSC}
+     */
+    UpdateRotatedSecretSC,
+
+    /**
+     * The UpdateRotatedSecretSCOutput model constructor.
+     * @property {module:model/UpdateRotatedSecretSCOutput}
+     */
+    UpdateRotatedSecretSCOutput,
+
+    /**
+     * The UpdateRotationSettings model constructor.
+     * @property {module:model/UpdateRotationSettings}
+     */
+    UpdateRotationSettings,
 
     /**
      * The UpdateSSHTargetDetails model constructor.

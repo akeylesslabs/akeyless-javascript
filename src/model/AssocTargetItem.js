@@ -16,19 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocTargetItem model module.
  * @module model/AssocTargetItem
- * @version 2.0.15
+ * @version 2.4.0
  */
 class AssocTargetItem {
     /**
      * Constructs a new <code>AssocTargetItem</code>.
      * assocTargetItem is a command that creates an association between target and item.
      * @alias module:model/AssocTargetItem
-     * @param itemName {String} The item to associate
+     * @param name {String} The item to associate
      * @param targetName {String} The target to associate
      */
-    constructor(itemName, targetName) { 
+    constructor(name, targetName) { 
         
-        AssocTargetItem.initialize(this, itemName, targetName);
+        AssocTargetItem.initialize(this, name, targetName);
     }
 
     /**
@@ -36,8 +36,8 @@ class AssocTargetItem {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, itemName, targetName) { 
-        obj['item-name'] = itemName;
+    static initialize(obj, name, targetName) { 
+        obj['name'] = name;
         obj['target-name'] = targetName;
     }
 
@@ -52,8 +52,8 @@ class AssocTargetItem {
         if (data) {
             obj = obj || new AssocTargetItem();
 
-            if (data.hasOwnProperty('item-name')) {
-                obj['item-name'] = ApiClient.convertToType(data['item-name'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -73,9 +73,9 @@ class AssocTargetItem {
 
 /**
  * The item to associate
- * @member {String} item-name
+ * @member {String} name
  */
-AssocTargetItem.prototype['item-name'] = undefined;
+AssocTargetItem.prototype['name'] = undefined;
 
 /**
  * The target to associate

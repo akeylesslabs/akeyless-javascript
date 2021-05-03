@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTargetAssociation model module.
  * @module model/DeleteTargetAssociation
- * @version 2.0.15
+ * @version 2.4.0
  */
 class DeleteTargetAssociation {
     /**
      * Constructs a new <code>DeleteTargetAssociation</code>.
      * deleteTargetAssociation is a command that deletes an association between target and item.
      * @alias module:model/DeleteTargetAssociation
-     * @param assocId {String} The association id to be deleted
+     * @param name {String} Item name
      */
-    constructor(assocId) { 
+    constructor(name) { 
         
-        DeleteTargetAssociation.initialize(this, assocId);
+        DeleteTargetAssociation.initialize(this, name);
     }
 
     /**
@@ -35,8 +35,8 @@ class DeleteTargetAssociation {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, assocId) { 
-        obj['assoc-id'] = assocId;
+    static initialize(obj, name) { 
+        obj['name'] = name;
     }
 
     /**
@@ -52,6 +52,12 @@ class DeleteTargetAssociation {
 
             if (data.hasOwnProperty('assoc-id')) {
                 obj['assoc-id'] = ApiClient.convertToType(data['assoc-id'], 'String');
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -71,6 +77,18 @@ class DeleteTargetAssociation {
  * @member {String} assoc-id
  */
 DeleteTargetAssociation.prototype['assoc-id'] = undefined;
+
+/**
+ * Item name
+ * @member {String} name
+ */
+DeleteTargetAssociation.prototype['name'] = undefined;
+
+/**
+ * The target to associate
+ * @member {String} target-name
+ */
+DeleteTargetAssociation.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

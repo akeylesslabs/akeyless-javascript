@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import ItemVersion from './ItemVersion';
 import TargetItemAssociation from './TargetItemAssociation';
 
 /**
  * The Target model module.
  * @module model/Target
- * @version 2.0.15
+ * @version 2.4.0
  */
 class Target {
     /**
@@ -48,8 +49,14 @@ class Target {
         if (data) {
             obj = obj || new Target();
 
+            if (data.hasOwnProperty('client_permissions')) {
+                obj['client_permissions'] = ApiClient.convertToType(data['client_permissions'], ['String']);
+            }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('last_version')) {
+                obj['last_version'] = ApiClient.convertToType(data['last_version'], 'Number');
             }
             if (data.hasOwnProperty('protection_key_name')) {
                 obj['protection_key_name'] = ApiClient.convertToType(data['protection_key_name'], 'String');
@@ -66,6 +73,9 @@ class Target {
             if (data.hasOwnProperty('target_type')) {
                 obj['target_type'] = ApiClient.convertToType(data['target_type'], 'String');
             }
+            if (data.hasOwnProperty('target_versions')) {
+                obj['target_versions'] = ApiClient.convertToType(data['target_versions'], [ItemVersion]);
+            }
             if (data.hasOwnProperty('with_customer_fragment')) {
                 obj['with_customer_fragment'] = ApiClient.convertToType(data['with_customer_fragment'], 'Boolean');
             }
@@ -77,9 +87,19 @@ class Target {
 }
 
 /**
+ * @member {Array.<String>} client_permissions
+ */
+Target.prototype['client_permissions'] = undefined;
+
+/**
  * @member {String} comment
  */
 Target.prototype['comment'] = undefined;
+
+/**
+ * @member {Number} last_version
+ */
+Target.prototype['last_version'] = undefined;
 
 /**
  * @member {String} protection_key_name
@@ -105,6 +125,11 @@ Target.prototype['target_name'] = undefined;
  * @member {String} target_type
  */
 Target.prototype['target_type'] = undefined;
+
+/**
+ * @member {Array.<module:model/ItemVersion>} target_versions
+ */
+Target.prototype['target_versions'] = undefined;
 
 /**
  * @member {Boolean} with_customer_fragment

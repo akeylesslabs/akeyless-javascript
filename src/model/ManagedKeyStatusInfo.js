@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagedKeyStatusInfo model module.
  * @module model/ManagedKeyStatusInfo
- * @version 2.0.15
+ * @version 2.4.0
  */
 class ManagedKeyStatusInfo {
     /**
@@ -74,6 +74,7 @@ ManagedKeyStatusInfo.prototype['key_id'] = undefined;
 ManagedKeyStatusInfo.prototype['last_error'] = undefined;
 
 /**
+ * ManagedKeyTargetStatus defines status of managed key target
  * @member {String} last_status
  */
 ManagedKeyStatusInfo.prototype['last_status'] = undefined;

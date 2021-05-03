@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteRoleRule model module.
  * @module model/DeleteRoleRule
- * @version 2.0.15
+ * @version 2.4.0
  */
 class DeleteRoleRule {
     /**
@@ -86,7 +86,7 @@ DeleteRoleRule.prototype['path'] = undefined;
 DeleteRoleRule.prototype['role-name'] = undefined;
 
 /**
- * item-rule, role-rule or auth-method-rule
+ * item-rule, role-rule, auth-method-rule, search-rule or reports-rule
  * @member {String} rule-type
  * @default 'item-rule'
  */

@@ -15,11 +15,12 @@ import ApiClient from '../ApiClient';
 import CertificateIssueInfo from './CertificateIssueInfo';
 import DynamicSecretProducerInfo from './DynamicSecretProducerInfo';
 import ManagedKeyDetailsInfo from './ManagedKeyDetailsInfo';
+import RotatedSecretDetailsInfo from './RotatedSecretDetailsInfo';
 
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 2.0.15
+ * @version 2.4.0
  */
 class ItemGeneralInfo {
     /**
@@ -59,6 +60,9 @@ class ItemGeneralInfo {
             if (data.hasOwnProperty('managed_key_details')) {
                 obj['managed_key_details'] = ManagedKeyDetailsInfo.constructFromObject(data['managed_key_details']);
             }
+            if (data.hasOwnProperty('rotated_secret_details')) {
+                obj['rotated_secret_details'] = RotatedSecretDetailsInfo.constructFromObject(data['rotated_secret_details']);
+            }
         }
         return obj;
     }
@@ -80,6 +84,11 @@ ItemGeneralInfo.prototype['dynamic_secret_producer_details'] = undefined;
  * @member {module:model/ManagedKeyDetailsInfo} managed_key_details
  */
 ItemGeneralInfo.prototype['managed_key_details'] = undefined;
+
+/**
+ * @member {module:model/RotatedSecretDetailsInfo} rotated_secret_details
+ */
+ItemGeneralInfo.prototype['rotated_secret_details'] = undefined;
 
 
 

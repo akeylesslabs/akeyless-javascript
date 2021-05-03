@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteItemOutput model module.
  * @module model/DeleteItemOutput
- * @version 2.0.15
+ * @version 2.4.0
  */
 class DeleteItemOutput {
     /**
@@ -50,6 +50,9 @@ class DeleteItemOutput {
             if (data.hasOwnProperty('deletion_date')) {
                 obj['deletion_date'] = ApiClient.convertToType(data['deletion_date'], 'Date');
             }
+            if (data.hasOwnProperty('item_id')) {
+                obj['item_id'] = ApiClient.convertToType(data['item_id'], 'Number');
+            }
             if (data.hasOwnProperty('item_name')) {
                 obj['item_name'] = ApiClient.convertToType(data['item_name'], 'String');
             }
@@ -67,6 +70,11 @@ class DeleteItemOutput {
  * @member {Date} deletion_date
  */
 DeleteItemOutput.prototype['deletion_date'] = undefined;
+
+/**
+ * @member {Number} item_id
+ */
+DeleteItemOutput.prototype['item_id'] = undefined;
 
 /**
  * @member {String} item_name

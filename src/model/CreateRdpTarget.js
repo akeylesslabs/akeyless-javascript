@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRdpTarget model module.
  * @module model/CreateRdpTarget
- * @version 2.0.15
+ * @version 2.4.0
  */
 class CreateRdpTarget {
     /**
@@ -49,23 +49,20 @@ class CreateRdpTarget {
         if (data) {
             obj = obj || new CreateRdpTarget();
 
-            if (data.hasOwnProperty('admin_name')) {
-                obj['admin_name'] = ApiClient.convertToType(data['admin_name'], 'String');
-            }
-            if (data.hasOwnProperty('admin_pwd')) {
-                obj['admin_pwd'] = ApiClient.convertToType(data['admin_pwd'], 'String');
-            }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
-            if (data.hasOwnProperty('host_name')) {
-                obj['host_name'] = ApiClient.convertToType(data['host_name'], 'String');
-            }
-            if (data.hasOwnProperty('host_port')) {
-                obj['host_port'] = ApiClient.convertToType(data['host_port'], 'String');
+            if (data.hasOwnProperty('host')) {
+                obj['host'] = ApiClient.convertToType(data['host'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('pass')) {
+                obj['pass'] = ApiClient.convertToType(data['pass'], 'String');
+            }
+            if (data.hasOwnProperty('port')) {
+                obj['port'] = ApiClient.convertToType(data['port'], 'String');
             }
             if (data.hasOwnProperty('protection_key')) {
                 obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
@@ -76,6 +73,9 @@ class CreateRdpTarget {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
+            if (data.hasOwnProperty('user')) {
+                obj['user'] = ApiClient.convertToType(data['user'], 'String');
+            }
         }
         return obj;
     }
@@ -84,36 +84,31 @@ class CreateRdpTarget {
 }
 
 /**
- * @member {String} admin_name
- */
-CreateRdpTarget.prototype['admin_name'] = undefined;
-
-/**
- * @member {String} admin_pwd
- */
-CreateRdpTarget.prototype['admin_pwd'] = undefined;
-
-/**
  * Comment about the target
  * @member {String} comment
  */
 CreateRdpTarget.prototype['comment'] = undefined;
 
 /**
- * @member {String} host_name
+ * @member {String} host
  */
-CreateRdpTarget.prototype['host_name'] = undefined;
-
-/**
- * @member {String} host_port
- */
-CreateRdpTarget.prototype['host_port'] = undefined;
+CreateRdpTarget.prototype['host'] = undefined;
 
 /**
  * Target name
  * @member {String} name
  */
 CreateRdpTarget.prototype['name'] = undefined;
+
+/**
+ * @member {String} pass
+ */
+CreateRdpTarget.prototype['pass'] = undefined;
+
+/**
+ * @member {String} port
+ */
+CreateRdpTarget.prototype['port'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
@@ -132,6 +127,11 @@ CreateRdpTarget.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateRdpTarget.prototype['uid-token'] = undefined;
+
+/**
+ * @member {String} user
+ */
+CreateRdpTarget.prototype['user'] = undefined;
 
 
 

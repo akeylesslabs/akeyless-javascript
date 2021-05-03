@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateKey model module.
  * @module model/CreateKey
- * @version 2.0.15
+ * @version 2.4.0
  */
 class CreateKey {
     /**
      * Constructs a new <code>CreateKey</code>.
      * @alias module:model/CreateKey
-     * @param alg {String} Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048]
+     * @param alg {String} Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096]
      * @param name {String} Key name
      */
     constructor(alg, name) { 
@@ -83,7 +83,7 @@ class CreateKey {
 }
 
 /**
- * Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048]
+ * Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096]
  * @member {String} alg
  */
 CreateKey.prototype['alg'] = undefined;
