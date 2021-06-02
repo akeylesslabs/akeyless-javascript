@@ -13,12 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import Target from './Target';
-import TargetTypeDetailesInput from './TargetTypeDetailesInput';
+import TargetTypeDetailsInput from './TargetTypeDetailsInput';
 
 /**
  * The GetTargetDetailsOutput model module.
  * @module model/GetTargetDetailsOutput
- * @version 2.4.0
+ * @version 2.4.1
  */
 class GetTargetDetailsOutput {
     /**
@@ -53,7 +53,7 @@ class GetTargetDetailsOutput {
                 obj['target'] = Target.constructFromObject(data['target']);
             }
             if (data.hasOwnProperty('value')) {
-                obj['value'] = TargetTypeDetailesInput.constructFromObject(data['value']);
+                obj['value'] = TargetTypeDetailsInput.constructFromObject(data['value']);
             }
         }
         return obj;
@@ -68,7 +68,7 @@ class GetTargetDetailsOutput {
 GetTargetDetailsOutput.prototype['target'] = undefined;
 
 /**
- * @member {module:model/TargetTypeDetailesInput} value
+ * @member {module:model/TargetTypeDetailsInput} value
  */
 GetTargetDetailsOutput.prototype['value'] = undefined;
 

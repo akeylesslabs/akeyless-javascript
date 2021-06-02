@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadPKCS12 model module.
  * @module model/UploadPKCS12
- * @version 2.4.0
+ * @version 2.4.1
  */
 class UploadPKCS12 {
     /**
@@ -71,6 +71,9 @@ class UploadPKCS12 {
             if (data.hasOwnProperty('passphrase')) {
                 obj['passphrase'] = ApiClient.convertToType(data['passphrase'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('split-level')) {
                 obj['split-level'] = ApiClient.convertToType(data['split-level'], 'Number');
             }
@@ -82,6 +85,9 @@ class UploadPKCS12 {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -127,6 +133,12 @@ UploadPKCS12.prototype['name'] = undefined;
 UploadPKCS12.prototype['passphrase'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+UploadPKCS12.prototype['password'] = undefined;
+
+/**
  * The number of fragments that the item will be split into
  * @member {Number} split-level
  * @default 2
@@ -150,6 +162,12 @@ UploadPKCS12.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UploadPKCS12.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+UploadPKCS12.prototype['username'] = undefined;
 
 
 

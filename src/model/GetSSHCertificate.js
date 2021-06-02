@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetSSHCertificate model module.
  * @module model/GetSSHCertificate
- * @version 2.4.0
+ * @version 2.4.1
  */
 class GetSSHCertificate {
     /**
@@ -57,6 +57,9 @@ class GetSSHCertificate {
             if (data.hasOwnProperty('cert-username')) {
                 obj['cert-username'] = ApiClient.convertToType(data['cert-username'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('public-key-data')) {
                 obj['public-key-data'] = ApiClient.convertToType(data['public-key-data'], 'String');
             }
@@ -65,6 +68,9 @@ class GetSSHCertificate {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -86,6 +92,12 @@ GetSSHCertificate.prototype['cert-issuer-name'] = undefined;
 GetSSHCertificate.prototype['cert-username'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+GetSSHCertificate.prototype['password'] = undefined;
+
+/**
  * SSH public key file contents. If this option is used, the certificate will be printed to stdout
  * @member {String} public-key-data
  */
@@ -102,6 +114,12 @@ GetSSHCertificate.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GetSSHCertificate.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+GetSSHCertificate.prototype['username'] = undefined;
 
 
 

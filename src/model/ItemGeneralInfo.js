@@ -13,14 +13,14 @@
 
 import ApiClient from '../ApiClient';
 import CertificateIssueInfo from './CertificateIssueInfo';
+import ClassicKeyDetailsInfo from './ClassicKeyDetailsInfo';
 import DynamicSecretProducerInfo from './DynamicSecretProducerInfo';
-import ManagedKeyDetailsInfo from './ManagedKeyDetailsInfo';
 import RotatedSecretDetailsInfo from './RotatedSecretDetailsInfo';
 
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 2.4.0
+ * @version 2.4.1
  */
 class ItemGeneralInfo {
     /**
@@ -54,11 +54,11 @@ class ItemGeneralInfo {
             if (data.hasOwnProperty('cert_issue_details')) {
                 obj['cert_issue_details'] = CertificateIssueInfo.constructFromObject(data['cert_issue_details']);
             }
+            if (data.hasOwnProperty('classic_key_details')) {
+                obj['classic_key_details'] = ClassicKeyDetailsInfo.constructFromObject(data['classic_key_details']);
+            }
             if (data.hasOwnProperty('dynamic_secret_producer_details')) {
                 obj['dynamic_secret_producer_details'] = DynamicSecretProducerInfo.constructFromObject(data['dynamic_secret_producer_details']);
-            }
-            if (data.hasOwnProperty('managed_key_details')) {
-                obj['managed_key_details'] = ManagedKeyDetailsInfo.constructFromObject(data['managed_key_details']);
             }
             if (data.hasOwnProperty('rotated_secret_details')) {
                 obj['rotated_secret_details'] = RotatedSecretDetailsInfo.constructFromObject(data['rotated_secret_details']);
@@ -76,14 +76,14 @@ class ItemGeneralInfo {
 ItemGeneralInfo.prototype['cert_issue_details'] = undefined;
 
 /**
+ * @member {module:model/ClassicKeyDetailsInfo} classic_key_details
+ */
+ItemGeneralInfo.prototype['classic_key_details'] = undefined;
+
+/**
  * @member {module:model/DynamicSecretProducerInfo} dynamic_secret_producer_details
  */
 ItemGeneralInfo.prototype['dynamic_secret_producer_details'] = undefined;
-
-/**
- * @member {module:model/ManagedKeyDetailsInfo} managed_key_details
- */
-ItemGeneralInfo.prototype['managed_key_details'] = undefined;
 
 /**
  * @member {module:model/RotatedSecretDetailsInfo} rotated_secret_details

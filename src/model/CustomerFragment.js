@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerFragment model module.
  * @module model/CustomerFragment
- * @version 2.4.0
+ * @version 2.4.1
  */
 class CustomerFragment {
     /**

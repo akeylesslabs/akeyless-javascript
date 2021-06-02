@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetTargetDetails model module.
  * @module model/GetTargetDetails
- * @version 2.4.0
+ * @version 2.4.1
  */
 class GetTargetDetails {
     /**
@@ -52,6 +52,9 @@ class GetTargetDetails {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('show-versions')) {
                 obj['show-versions'] = ApiClient.convertToType(data['show-versions'], 'Boolean');
             }
@@ -63,6 +66,9 @@ class GetTargetDetails {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -76,6 +82,12 @@ class GetTargetDetails {
  * @member {String} name
  */
 GetTargetDetails.prototype['name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+GetTargetDetails.prototype['password'] = undefined;
 
 /**
  * Include all target versions in reply
@@ -101,6 +113,12 @@ GetTargetDetails.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GetTargetDetails.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+GetTargetDetails.prototype['username'] = undefined;
 
 
 

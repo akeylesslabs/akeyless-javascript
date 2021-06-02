@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 2.4.0
+ * @version 2.4.1
  */
 class CreateRotatedSecret {
     /**
@@ -55,26 +55,29 @@ class CreateRotatedSecret {
             if (data.hasOwnProperty('gateway-url')) {
                 obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('protection_key')) {
-                obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
+            if (data.hasOwnProperty('rotation-hour')) {
+                obj['rotation-hour'] = ApiClient.convertToType(data['rotation-hour'], 'Number');
             }
             if (data.hasOwnProperty('rotation-interval')) {
                 obj['rotation-interval'] = ApiClient.convertToType(data['rotation-interval'], 'String');
             }
-            if (data.hasOwnProperty('rotation_hour')) {
-                obj['rotation_hour'] = ApiClient.convertToType(data['rotation_hour'], 'Number');
+            if (data.hasOwnProperty('rotator-creds-type')) {
+                obj['rotator-creds-type'] = ApiClient.convertToType(data['rotator-creds-type'], 'String');
             }
-            if (data.hasOwnProperty('rotator_creds_type')) {
-                obj['rotator_creds_type'] = ApiClient.convertToType(data['rotator_creds_type'], 'String');
-            }
-            if (data.hasOwnProperty('rotator_type')) {
-                obj['rotator_type'] = ApiClient.convertToType(data['rotator_type'], 'String');
+            if (data.hasOwnProperty('rotator-type')) {
+                obj['rotator-type'] = ApiClient.convertToType(data['rotator-type'], 'String');
             }
             if (data.hasOwnProperty('ssh-password')) {
                 obj['ssh-password'] = ApiClient.convertToType(data['ssh-password'], 'String');
@@ -93,6 +96,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -115,6 +121,12 @@ CreateRotatedSecret.prototype['auto-rotate'] = undefined;
 CreateRotatedSecret.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
+ * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
+ * @member {String} key
+ */
+CreateRotatedSecret.prototype['key'] = undefined;
+
+/**
  * Metadata about the secret
  * @member {String} metadata
  */
@@ -127,10 +139,15 @@ CreateRotatedSecret.prototype['metadata'] = undefined;
 CreateRotatedSecret.prototype['name'] = undefined;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
- * @member {String} protection_key
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
  */
-CreateRotatedSecret.prototype['protection_key'] = undefined;
+CreateRotatedSecret.prototype['password'] = undefined;
+
+/**
+ * @member {Number} rotation-hour
+ */
+CreateRotatedSecret.prototype['rotation-hour'] = undefined;
 
 /**
  * The number of days to wait between every automatic key rotation (7-365)
@@ -139,19 +156,14 @@ CreateRotatedSecret.prototype['protection_key'] = undefined;
 CreateRotatedSecret.prototype['rotation-interval'] = undefined;
 
 /**
- * @member {Number} rotation_hour
+ * @member {String} rotator-creds-type
  */
-CreateRotatedSecret.prototype['rotation_hour'] = undefined;
+CreateRotatedSecret.prototype['rotator-creds-type'] = undefined;
 
 /**
- * @member {String} rotator_creds_type
+ * @member {String} rotator-type
  */
-CreateRotatedSecret.prototype['rotator_creds_type'] = undefined;
-
-/**
- * @member {String} rotator_type
- */
-CreateRotatedSecret.prototype['rotator_type'] = undefined;
+CreateRotatedSecret.prototype['rotator-type'] = undefined;
 
 /**
  * @member {String} ssh-password
@@ -185,6 +197,12 @@ CreateRotatedSecret.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateRotatedSecret.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+CreateRotatedSecret.prototype['username'] = undefined;
 
 
 

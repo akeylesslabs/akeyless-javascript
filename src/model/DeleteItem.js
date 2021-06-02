@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteItem model module.
  * @module model/DeleteItem
- * @version 2.4.0
+ * @version 2.4.1
  */
 class DeleteItem {
     /**
@@ -58,11 +58,17 @@ class DeleteItem {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
             if (data.hasOwnProperty('version')) {
                 obj['version'] = ApiClient.convertToType(data['version'], 'Number');
@@ -95,6 +101,12 @@ DeleteItem.prototype['delete-in-days'] = 7;
 DeleteItem.prototype['name'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+DeleteItem.prototype['password'] = undefined;
+
+/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -105,6 +117,12 @@ DeleteItem.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 DeleteItem.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+DeleteItem.prototype['username'] = undefined;
 
 /**
  * The specific version you want to delete - 0=last version, -1=entire item with all versions (default)

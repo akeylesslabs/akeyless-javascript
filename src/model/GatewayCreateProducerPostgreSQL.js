@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerPostgreSQL model module.
  * @module model/GatewayCreateProducerPostgreSQL
- * @version 2.4.0
+ * @version 2.4.1
  */
 class GatewayCreateProducerPostgreSQL {
     /**
@@ -65,6 +65,9 @@ class GatewayCreateProducerPostgreSQL {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('postgresql-db-name')) {
                 obj['postgresql-db-name'] = ApiClient.convertToType(data['postgresql-db-name'], 'String');
             }
@@ -92,6 +95,9 @@ class GatewayCreateProducerPostgreSQL {
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
             }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            }
         }
         return obj;
     }
@@ -117,6 +123,12 @@ GatewayCreateProducerPostgreSQL.prototype['gateway-url'] = 'http://localhost:800
  * @member {String} name
  */
 GatewayCreateProducerPostgreSQL.prototype['name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+GatewayCreateProducerPostgreSQL.prototype['password'] = undefined;
 
 /**
  * PostgreSQL DB Name
@@ -174,6 +186,12 @@ GatewayCreateProducerPostgreSQL.prototype['uid-token'] = undefined;
  * @default '60m'
  */
 GatewayCreateProducerPostgreSQL.prototype['user-ttl'] = '60m';
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+GatewayCreateProducerPostgreSQL.prototype['username'] = undefined;
 
 
 

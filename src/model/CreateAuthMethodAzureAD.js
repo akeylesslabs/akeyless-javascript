@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAzureAD model module.
  * @module model/CreateAuthMethodAzureAD
- * @version 2.4.0
+ * @version 2.4.1
  */
 class CreateAuthMethodAzureAD {
     /**
@@ -88,6 +88,9 @@ class CreateAuthMethodAzureAD {
             if (data.hasOwnProperty('bound-tenant-id')) {
                 obj['bound-tenant-id'] = ApiClient.convertToType(data['bound-tenant-id'], 'String');
             }
+            if (data.hasOwnProperty('force-sub-claims')) {
+                obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
             }
@@ -97,11 +100,17 @@ class CreateAuthMethodAzureAD {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -185,6 +194,12 @@ CreateAuthMethodAzureAD.prototype['bound-sub-id'] = undefined;
 CreateAuthMethodAzureAD.prototype['bound-tenant-id'] = undefined;
 
 /**
+ * if true: enforce role-association must include sub claims
+ * @member {Boolean} force-sub-claims
+ */
+CreateAuthMethodAzureAD.prototype['force-sub-claims'] = undefined;
+
+/**
  * Issuer URL
  * @member {String} issuer
  * @default 'https://sts.windows.net/---bound_tenant_id---'
@@ -205,6 +220,12 @@ CreateAuthMethodAzureAD.prototype['jwks-uri'] = 'https://login.microsoftonline.c
 CreateAuthMethodAzureAD.prototype['name'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+CreateAuthMethodAzureAD.prototype['password'] = undefined;
+
+/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -215,6 +236,12 @@ CreateAuthMethodAzureAD.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateAuthMethodAzureAD.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+CreateAuthMethodAzureAD.prototype['username'] = undefined;
 
 
 

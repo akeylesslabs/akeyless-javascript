@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **clientSecret** | **String** | Azure Client Secret | 
 **gatewayUrl** | **String** | Gateway url | [optional] [default to &#39;http://localhost:8000&#39;]
 **name** | **String** | Producer name | 
+**password** | **String** | Required only when the authentication process requires a username and password | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **tenantId** | **String** | Azure Tenant ID | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
@@ -19,5 +20,6 @@ Name | Type | Description | Notes
 **userProgrammaticAccess** | **Boolean** | Azure User programmatic access | [optional] [default to true]
 **userRoleTemplateId** | **String** | User Role Template Id | [optional] 
 **userTtl** | **String** | User TTL | [optional] [default to &#39;60m&#39;]
+**username** | **String** | Required only when the authentication process requires a username and password | [optional] 
 
 

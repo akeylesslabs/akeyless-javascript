@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateWebTargetDetails model module.
  * @module model/UpdateWebTargetDetails
- * @version 2.4.0
+ * @version 2.4.1
  */
 class UpdateWebTargetDetails {
     /**
@@ -55,6 +55,9 @@ class UpdateWebTargetDetails {
             if (data.hasOwnProperty('new-version')) {
                 obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('protection_key')) {
                 obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
             }
@@ -66,6 +69,9 @@ class UpdateWebTargetDetails {
             }
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -86,6 +92,12 @@ UpdateWebTargetDetails.prototype['name'] = undefined;
  * @default false
  */
 UpdateWebTargetDetails.prototype['new-version'] = false;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+UpdateWebTargetDetails.prototype['password'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
@@ -109,6 +121,12 @@ UpdateWebTargetDetails.prototype['uid-token'] = undefined;
  * @member {String} url
  */
 UpdateWebTargetDetails.prototype['url'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+UpdateWebTargetDetails.prototype['username'] = undefined;
 
 
 

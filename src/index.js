@@ -19,6 +19,7 @@ import AWSPayload from './model/AWSPayload';
 import AWSSecretsMigration from './model/AWSSecretsMigration';
 import AdminsConfigPart from './model/AdminsConfigPart';
 import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
+import AllowedAccess from './model/AllowedAccess';
 import AssocRoleAuthMethod from './model/AssocRoleAuthMethod';
 import AssocTargetItem from './model/AssocTargetItem';
 import Auth from './model/Auth';
@@ -26,15 +27,24 @@ import AuthMethod from './model/AuthMethod';
 import AuthMethodAccessInfo from './model/AuthMethodAccessInfo';
 import AuthMethodRoleAssociation from './model/AuthMethodRoleAssociation';
 import AuthOutput from './model/AuthOutput';
+import AwsS3LogForwardingConfig from './model/AwsS3LogForwardingConfig';
 import AzureADAccessRules from './model/AzureADAccessRules';
 import AzureKeyVaultMigration from './model/AzureKeyVaultMigration';
+import AzureLogAnalyticsForwardingConfig from './model/AzureLogAnalyticsForwardingConfig';
 import AzurePayload from './model/AzurePayload';
 import CFConfigPart from './model/CFConfigPart';
 import CacheConfigPart from './model/CacheConfigPart';
 import CertificateIssueInfo from './model/CertificateIssueInfo';
+import ClassicKeyDetailsInfo from './model/ClassicKeyDetailsInfo';
+import ClassicKeyStatusInfo from './model/ClassicKeyStatusInfo';
+import ClassicKeyTargetInfo from './model/ClassicKeyTargetInfo';
 import ClientData from './model/ClientData';
 import Configure from './model/Configure';
 import ConfigureOutput from './model/ConfigureOutput';
+import CreateAWSTarget from './model/CreateAWSTarget';
+import CreateAWSTargetOutput from './model/CreateAWSTargetOutput';
+import CreateArtifactoryTarget from './model/CreateArtifactoryTarget';
+import CreateArtifactoryTargetOutput from './model/CreateArtifactoryTargetOutput';
 import CreateAuthMethod from './model/CreateAuthMethod';
 import CreateAuthMethodAWSIAM from './model/CreateAuthMethodAWSIAM';
 import CreateAuthMethodAWSIAMOutput from './model/CreateAuthMethodAWSIAMOutput';
@@ -53,17 +63,27 @@ import CreateAuthMethodSAML from './model/CreateAuthMethodSAML';
 import CreateAuthMethodSAMLOutput from './model/CreateAuthMethodSAMLOutput';
 import CreateAuthMethodUniversalIdentity from './model/CreateAuthMethodUniversalIdentity';
 import CreateAuthMethodUniversalIdentityOutput from './model/CreateAuthMethodUniversalIdentityOutput';
-import CreateAwsTarget from './model/CreateAwsTarget';
+import CreateAzureTarget from './model/CreateAzureTarget';
+import CreateAzureTargetOutput from './model/CreateAzureTargetOutput';
+import CreateClassicKey from './model/CreateClassicKey';
+import CreateClassicKeyOutput from './model/CreateClassicKeyOutput';
 import CreateDBTarget from './model/CreateDBTarget';
+import CreateDBTargetOutput from './model/CreateDBTargetOutput';
+import CreateDFCKey from './model/CreateDFCKey';
+import CreateDFCKeyOutput from './model/CreateDFCKeyOutput';
 import CreateDynamicSecret from './model/CreateDynamicSecret';
+import CreateEKSTarget from './model/CreateEKSTarget';
+import CreateEKSTargetOutput from './model/CreateEKSTargetOutput';
+import CreateGKETarget from './model/CreateGKETarget';
+import CreateGKETargetOutput from './model/CreateGKETargetOutput';
+import CreateGcpTarget from './model/CreateGcpTarget';
+import CreateGcpTargetOutput from './model/CreateGcpTargetOutput';
 import CreateKey from './model/CreateKey';
 import CreateKeyOutput from './model/CreateKeyOutput';
-import CreateManagedKey from './model/CreateManagedKey';
-import CreateManagedKeyOutput from './model/CreateManagedKeyOutput';
 import CreatePKICertIssuer from './model/CreatePKICertIssuer';
 import CreatePKICertIssuerOutput from './model/CreatePKICertIssuerOutput';
 import CreateRabbitMQTarget from './model/CreateRabbitMQTarget';
-import CreateRdpTarget from './model/CreateRdpTarget';
+import CreateRabbitMQTargetOutput from './model/CreateRabbitMQTargetOutput';
 import CreateRole from './model/CreateRole';
 import CreateRoleAuthMethodAssocOutput from './model/CreateRoleAuthMethodAssocOutput';
 import CreateRotatedSecret from './model/CreateRotatedSecret';
@@ -71,11 +91,12 @@ import CreateRotatedSecretOutput from './model/CreateRotatedSecretOutput';
 import CreateSSHCertIssuer from './model/CreateSSHCertIssuer';
 import CreateSSHCertIssuerOutput from './model/CreateSSHCertIssuerOutput';
 import CreateSSHTarget from './model/CreateSSHTarget';
+import CreateSSHTargetOutput from './model/CreateSSHTargetOutput';
 import CreateSecret from './model/CreateSecret';
 import CreateSecretOutput from './model/CreateSecretOutput';
 import CreateTargetItemAssocOutput from './model/CreateTargetItemAssocOutput';
-import CreateTargetOutput from './model/CreateTargetOutput';
 import CreateWebTarget from './model/CreateWebTarget';
+import CreateWebTargetOutput from './model/CreateWebTargetOutput';
 import CustomerFragment from './model/CustomerFragment';
 import CustomerFragmentsJson from './model/CustomerFragmentsJson';
 import DSProducerDetails from './model/DSProducerDetails';
@@ -117,7 +138,6 @@ import EncryptPKCS1Output from './model/EncryptPKCS1Output';
 import ExternalKMSKeyId from './model/ExternalKMSKeyId';
 import GCPAccessRules from './model/GCPAccessRules';
 import GatewayAddSubAdmins from './model/GatewayAddSubAdmins';
-import GatewayAddSubAdminsOutput from './model/GatewayAddSubAdminsOutput';
 import GatewayCreateProducerArtifactory from './model/GatewayCreateProducerArtifactory';
 import GatewayCreateProducerArtifactoryOutput from './model/GatewayCreateProducerArtifactoryOutput';
 import GatewayCreateProducerAws from './model/GatewayCreateProducerAws';
@@ -148,10 +168,11 @@ import GatewayCreateProducerRabbitMQ from './model/GatewayCreateProducerRabbitMQ
 import GatewayCreateProducerRabbitMQOutput from './model/GatewayCreateProducerRabbitMQOutput';
 import GatewayCreateProducerRdp from './model/GatewayCreateProducerRdp';
 import GatewayCreateProducerRdpOutput from './model/GatewayCreateProducerRdpOutput';
+import GatewayCreateProducerSnowflake from './model/GatewayCreateProducerSnowflake';
+import GatewayCreateProducerSnowflakeOutput from './model/GatewayCreateProducerSnowflakeOutput';
 import GatewayDeleteProducer from './model/GatewayDeleteProducer';
 import GatewayDeleteProducerOutput from './model/GatewayDeleteProducerOutput';
 import GatewayDeleteSubAdmins from './model/GatewayDeleteSubAdmins';
-import GatewayDeleteSubAdminsOutput from './model/GatewayDeleteSubAdminsOutput';
 import GatewayGetConfig from './model/GatewayGetConfig';
 import GatewayGetProducer from './model/GatewayGetProducer';
 import GatewayGetTmpUsers from './model/GatewayGetTmpUsers';
@@ -162,6 +183,7 @@ import GatewayStartProducer from './model/GatewayStartProducer';
 import GatewayStartProducerOutput from './model/GatewayStartProducerOutput';
 import GatewayStopProducer from './model/GatewayStopProducer';
 import GatewayStopProducerOutput from './model/GatewayStopProducerOutput';
+import GatewayUpdateItemOutput from './model/GatewayUpdateItemOutput';
 import GatewayUpdateTmpUsers from './model/GatewayUpdateTmpUsers';
 import GenCustomerFragment from './model/GenCustomerFragment';
 import GeneralConfigPart from './model/GeneralConfigPart';
@@ -209,9 +231,6 @@ import ListTargetsOutput from './model/ListTargetsOutput';
 import LogForwardingConfigPart from './model/LogForwardingConfigPart';
 import LogstashLogForwardingConfig from './model/LogstashLogForwardingConfig';
 import LogzIoLogForwardingConfig from './model/LogzIoLogForwardingConfig';
-import ManagedKeyDetailsInfo from './model/ManagedKeyDetailsInfo';
-import ManagedKeyStatusInfo from './model/ManagedKeyStatusInfo';
-import ManagedKeyTargetInfo from './model/ManagedKeyTargetInfo';
 import MigrationGeneral from './model/MigrationGeneral';
 import MigrationsConfigPart from './model/MigrationsConfigPart';
 import MoveObjects from './model/MoveObjects';
@@ -251,7 +270,7 @@ import SyslogLogForwardingConfig from './model/SyslogLogForwardingConfig';
 import SystemAccessCredentialsReplyObj from './model/SystemAccessCredentialsReplyObj';
 import Target from './model/Target';
 import TargetItemAssociation from './model/TargetItemAssociation';
-import TargetTypeDetailesInput from './model/TargetTypeDetailesInput';
+import TargetTypeDetailsInput from './model/TargetTypeDetailsInput';
 import TmpUserData from './model/TmpUserData';
 import UIDTokenDetails from './model/UIDTokenDetails';
 import UIdentityConfigPart from './model/UIdentityConfigPart';
@@ -267,10 +286,10 @@ import Unconfigure from './model/Unconfigure';
 import UniversalIdentityAccessRules from './model/UniversalIdentityAccessRules';
 import UniversalIdentityDetails from './model/UniversalIdentityDetails';
 import UpdateAWSTargetDetails from './model/UpdateAWSTargetDetails';
+import UpdateAssoc from './model/UpdateAssoc';
 import UpdateDBTargetDetails from './model/UpdateDBTargetDetails';
 import UpdateItem from './model/UpdateItem';
 import UpdateItemOutput from './model/UpdateItemOutput';
-import UpdateManagedKey from './model/UpdateManagedKey';
 import UpdateOutput from './model/UpdateOutput';
 import UpdateRDPTargetDetails from './model/UpdateRDPTargetDetails';
 import UpdateRabbitMQTargetDetails from './model/UpdateRabbitMQTargetDetails';
@@ -278,8 +297,6 @@ import UpdateRole from './model/UpdateRole';
 import UpdateRoleOutput from './model/UpdateRoleOutput';
 import UpdateRotatedSecret from './model/UpdateRotatedSecret';
 import UpdateRotatedSecretOutput from './model/UpdateRotatedSecretOutput';
-import UpdateRotatedSecretSC from './model/UpdateRotatedSecretSC';
-import UpdateRotatedSecretSCOutput from './model/UpdateRotatedSecretSCOutput';
 import UpdateRotationSettings from './model/UpdateRotationSettings';
 import UpdateSSHTargetDetails from './model/UpdateSSHTargetDetails';
 import UpdateSecretVal from './model/UpdateSecretVal';
@@ -323,7 +340,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.4.0
+* @version 2.4.1
 */
 export {
     /**
@@ -369,6 +386,12 @@ export {
     AkeylessGatewayConfig,
 
     /**
+     * The AllowedAccess model constructor.
+     * @property {module:model/AllowedAccess}
+     */
+    AllowedAccess,
+
+    /**
      * The AssocRoleAuthMethod model constructor.
      * @property {module:model/AssocRoleAuthMethod}
      */
@@ -411,6 +434,12 @@ export {
     AuthOutput,
 
     /**
+     * The AwsS3LogForwardingConfig model constructor.
+     * @property {module:model/AwsS3LogForwardingConfig}
+     */
+    AwsS3LogForwardingConfig,
+
+    /**
      * The AzureADAccessRules model constructor.
      * @property {module:model/AzureADAccessRules}
      */
@@ -421,6 +450,12 @@ export {
      * @property {module:model/AzureKeyVaultMigration}
      */
     AzureKeyVaultMigration,
+
+    /**
+     * The AzureLogAnalyticsForwardingConfig model constructor.
+     * @property {module:model/AzureLogAnalyticsForwardingConfig}
+     */
+    AzureLogAnalyticsForwardingConfig,
 
     /**
      * The AzurePayload model constructor.
@@ -447,6 +482,24 @@ export {
     CertificateIssueInfo,
 
     /**
+     * The ClassicKeyDetailsInfo model constructor.
+     * @property {module:model/ClassicKeyDetailsInfo}
+     */
+    ClassicKeyDetailsInfo,
+
+    /**
+     * The ClassicKeyStatusInfo model constructor.
+     * @property {module:model/ClassicKeyStatusInfo}
+     */
+    ClassicKeyStatusInfo,
+
+    /**
+     * The ClassicKeyTargetInfo model constructor.
+     * @property {module:model/ClassicKeyTargetInfo}
+     */
+    ClassicKeyTargetInfo,
+
+    /**
      * The ClientData model constructor.
      * @property {module:model/ClientData}
      */
@@ -463,6 +516,30 @@ export {
      * @property {module:model/ConfigureOutput}
      */
     ConfigureOutput,
+
+    /**
+     * The CreateAWSTarget model constructor.
+     * @property {module:model/CreateAWSTarget}
+     */
+    CreateAWSTarget,
+
+    /**
+     * The CreateAWSTargetOutput model constructor.
+     * @property {module:model/CreateAWSTargetOutput}
+     */
+    CreateAWSTargetOutput,
+
+    /**
+     * The CreateArtifactoryTarget model constructor.
+     * @property {module:model/CreateArtifactoryTarget}
+     */
+    CreateArtifactoryTarget,
+
+    /**
+     * The CreateArtifactoryTargetOutput model constructor.
+     * @property {module:model/CreateArtifactoryTargetOutput}
+     */
+    CreateArtifactoryTargetOutput,
 
     /**
      * The CreateAuthMethod model constructor.
@@ -573,10 +650,28 @@ export {
     CreateAuthMethodUniversalIdentityOutput,
 
     /**
-     * The CreateAwsTarget model constructor.
-     * @property {module:model/CreateAwsTarget}
+     * The CreateAzureTarget model constructor.
+     * @property {module:model/CreateAzureTarget}
      */
-    CreateAwsTarget,
+    CreateAzureTarget,
+
+    /**
+     * The CreateAzureTargetOutput model constructor.
+     * @property {module:model/CreateAzureTargetOutput}
+     */
+    CreateAzureTargetOutput,
+
+    /**
+     * The CreateClassicKey model constructor.
+     * @property {module:model/CreateClassicKey}
+     */
+    CreateClassicKey,
+
+    /**
+     * The CreateClassicKeyOutput model constructor.
+     * @property {module:model/CreateClassicKeyOutput}
+     */
+    CreateClassicKeyOutput,
 
     /**
      * The CreateDBTarget model constructor.
@@ -585,10 +680,64 @@ export {
     CreateDBTarget,
 
     /**
+     * The CreateDBTargetOutput model constructor.
+     * @property {module:model/CreateDBTargetOutput}
+     */
+    CreateDBTargetOutput,
+
+    /**
+     * The CreateDFCKey model constructor.
+     * @property {module:model/CreateDFCKey}
+     */
+    CreateDFCKey,
+
+    /**
+     * The CreateDFCKeyOutput model constructor.
+     * @property {module:model/CreateDFCKeyOutput}
+     */
+    CreateDFCKeyOutput,
+
+    /**
      * The CreateDynamicSecret model constructor.
      * @property {module:model/CreateDynamicSecret}
      */
     CreateDynamicSecret,
+
+    /**
+     * The CreateEKSTarget model constructor.
+     * @property {module:model/CreateEKSTarget}
+     */
+    CreateEKSTarget,
+
+    /**
+     * The CreateEKSTargetOutput model constructor.
+     * @property {module:model/CreateEKSTargetOutput}
+     */
+    CreateEKSTargetOutput,
+
+    /**
+     * The CreateGKETarget model constructor.
+     * @property {module:model/CreateGKETarget}
+     */
+    CreateGKETarget,
+
+    /**
+     * The CreateGKETargetOutput model constructor.
+     * @property {module:model/CreateGKETargetOutput}
+     */
+    CreateGKETargetOutput,
+
+    /**
+     * The CreateGcpTarget model constructor.
+     * @property {module:model/CreateGcpTarget}
+     */
+    CreateGcpTarget,
+
+    /**
+     * The CreateGcpTargetOutput model constructor.
+     * @property {module:model/CreateGcpTargetOutput}
+     */
+    CreateGcpTargetOutput,
 
     /**
      * The CreateKey model constructor.
@@ -601,18 +750,6 @@ export {
      * @property {module:model/CreateKeyOutput}
      */
     CreateKeyOutput,
-
-    /**
-     * The CreateManagedKey model constructor.
-     * @property {module:model/CreateManagedKey}
-     */
-    CreateManagedKey,
-
-    /**
-     * The CreateManagedKeyOutput model constructor.
-     * @property {module:model/CreateManagedKeyOutput}
-     */
-    CreateManagedKeyOutput,
 
     /**
      * The CreatePKICertIssuer model constructor.
@@ -633,10 +770,10 @@ export {
     CreateRabbitMQTarget,
 
     /**
-     * The CreateRdpTarget model constructor.
-     * @property {module:model/CreateRdpTarget}
+     * The CreateRabbitMQTargetOutput model constructor.
+     * @property {module:model/CreateRabbitMQTargetOutput}
      */
-    CreateRdpTarget,
+    CreateRabbitMQTargetOutput,
 
     /**
      * The CreateRole model constructor.
@@ -681,6 +818,12 @@ export {
     CreateSSHTarget,
 
     /**
+     * The CreateSSHTargetOutput model constructor.
+     * @property {module:model/CreateSSHTargetOutput}
+     */
+    CreateSSHTargetOutput,
+
+    /**
      * The CreateSecret model constructor.
      * @property {module:model/CreateSecret}
      */
@@ -699,16 +842,16 @@ export {
     CreateTargetItemAssocOutput,
 
     /**
-     * The CreateTargetOutput model constructor.
-     * @property {module:model/CreateTargetOutput}
-     */
-    CreateTargetOutput,
-
-    /**
      * The CreateWebTarget model constructor.
      * @property {module:model/CreateWebTarget}
      */
     CreateWebTarget,
+
+    /**
+     * The CreateWebTargetOutput model constructor.
+     * @property {module:model/CreateWebTargetOutput}
+     */
+    CreateWebTargetOutput,
 
     /**
      * The CustomerFragment model constructor.
@@ -957,12 +1100,6 @@ export {
     GatewayAddSubAdmins,
 
     /**
-     * The GatewayAddSubAdminsOutput model constructor.
-     * @property {module:model/GatewayAddSubAdminsOutput}
-     */
-    GatewayAddSubAdminsOutput,
-
-    /**
      * The GatewayCreateProducerArtifactory model constructor.
      * @property {module:model/GatewayCreateProducerArtifactory}
      */
@@ -1143,6 +1280,18 @@ export {
     GatewayCreateProducerRdpOutput,
 
     /**
+     * The GatewayCreateProducerSnowflake model constructor.
+     * @property {module:model/GatewayCreateProducerSnowflake}
+     */
+    GatewayCreateProducerSnowflake,
+
+    /**
+     * The GatewayCreateProducerSnowflakeOutput model constructor.
+     * @property {module:model/GatewayCreateProducerSnowflakeOutput}
+     */
+    GatewayCreateProducerSnowflakeOutput,
+
+    /**
      * The GatewayDeleteProducer model constructor.
      * @property {module:model/GatewayDeleteProducer}
      */
@@ -1159,12 +1308,6 @@ export {
      * @property {module:model/GatewayDeleteSubAdmins}
      */
     GatewayDeleteSubAdmins,
-
-    /**
-     * The GatewayDeleteSubAdminsOutput model constructor.
-     * @property {module:model/GatewayDeleteSubAdminsOutput}
-     */
-    GatewayDeleteSubAdminsOutput,
 
     /**
      * The GatewayGetConfig model constructor.
@@ -1225,6 +1368,12 @@ export {
      * @property {module:model/GatewayStopProducerOutput}
      */
     GatewayStopProducerOutput,
+
+    /**
+     * The GatewayUpdateItemOutput model constructor.
+     * @property {module:model/GatewayUpdateItemOutput}
+     */
+    GatewayUpdateItemOutput,
 
     /**
      * The GatewayUpdateTmpUsers model constructor.
@@ -1509,24 +1658,6 @@ export {
     LogzIoLogForwardingConfig,
 
     /**
-     * The ManagedKeyDetailsInfo model constructor.
-     * @property {module:model/ManagedKeyDetailsInfo}
-     */
-    ManagedKeyDetailsInfo,
-
-    /**
-     * The ManagedKeyStatusInfo model constructor.
-     * @property {module:model/ManagedKeyStatusInfo}
-     */
-    ManagedKeyStatusInfo,
-
-    /**
-     * The ManagedKeyTargetInfo model constructor.
-     * @property {module:model/ManagedKeyTargetInfo}
-     */
-    ManagedKeyTargetInfo,
-
-    /**
      * The MigrationGeneral model constructor.
      * @property {module:model/MigrationGeneral}
      */
@@ -1761,10 +1892,10 @@ export {
     TargetItemAssociation,
 
     /**
-     * The TargetTypeDetailesInput model constructor.
-     * @property {module:model/TargetTypeDetailesInput}
+     * The TargetTypeDetailsInput model constructor.
+     * @property {module:model/TargetTypeDetailsInput}
      */
-    TargetTypeDetailesInput,
+    TargetTypeDetailsInput,
 
     /**
      * The TmpUserData model constructor.
@@ -1857,6 +1988,12 @@ export {
     UpdateAWSTargetDetails,
 
     /**
+     * The UpdateAssoc model constructor.
+     * @property {module:model/UpdateAssoc}
+     */
+    UpdateAssoc,
+
+    /**
      * The UpdateDBTargetDetails model constructor.
      * @property {module:model/UpdateDBTargetDetails}
      */
@@ -1873,12 +2010,6 @@ export {
      * @property {module:model/UpdateItemOutput}
      */
     UpdateItemOutput,
-
-    /**
-     * The UpdateManagedKey model constructor.
-     * @property {module:model/UpdateManagedKey}
-     */
-    UpdateManagedKey,
 
     /**
      * The UpdateOutput model constructor.
@@ -1921,18 +2052,6 @@ export {
      * @property {module:model/UpdateRotatedSecretOutput}
      */
     UpdateRotatedSecretOutput,
-
-    /**
-     * The UpdateRotatedSecretSC model constructor.
-     * @property {module:model/UpdateRotatedSecretSC}
-     */
-    UpdateRotatedSecretSC,
-
-    /**
-     * The UpdateRotatedSecretSCOutput model constructor.
-     * @property {module:model/UpdateRotatedSecretSCOutput}
-     */
-    UpdateRotatedSecretSCOutput,
 
     /**
      * The UpdateRotationSettings model constructor.

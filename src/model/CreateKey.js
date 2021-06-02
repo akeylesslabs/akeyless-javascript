@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateKey model module.
  * @module model/CreateKey
- * @version 2.4.0
+ * @version 2.4.1
  */
 class CreateKey {
     /**
      * Constructs a new <code>CreateKey</code>.
+     * createKey is a command that creates a new key. [Deprecated: Use command create-dfc-key]
      * @alias module:model/CreateKey
      * @param alg {String} Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096]
      * @param name {String} Key name
@@ -63,6 +64,9 @@ class CreateKey {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('split-level')) {
                 obj['split-level'] = ApiClient.convertToType(data['split-level'], 'Number');
             }
@@ -74,6 +78,9 @@ class CreateKey {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -107,6 +114,12 @@ CreateKey.prototype['metadata'] = undefined;
 CreateKey.prototype['name'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+CreateKey.prototype['password'] = undefined;
+
+/**
  * The number of fragments that the item will be split into (not includes customer fragment)
  * @member {Number} split-level
  * @default 2
@@ -130,6 +143,12 @@ CreateKey.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateKey.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+CreateKey.prototype['username'] = undefined;
 
 
 

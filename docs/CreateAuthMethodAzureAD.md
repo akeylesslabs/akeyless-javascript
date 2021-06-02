@@ -16,10 +16,13 @@ Name | Type | Description | Notes
 **boundSpid** | **[String]** | A list of service principal IDs that the access is restricted to | [optional] 
 **boundSubId** | **[String]** | A list of subscription ids that the access is restricted to | [optional] 
 **boundTenantId** | **String** | The Azure tenant id that the access is restricted to | 
+**forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **issuer** | **String** | Issuer URL | [optional] [default to &#39;https://sts.windows.net/---bound_tenant_id---&#39;]
 **jwksUri** | **String** | The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server. | [optional] [default to &#39;https://login.microsoftonline.com/common/discovery/keys&#39;]
 **name** | **String** | Auth Method name | 
+**password** | **String** | Required only when the authentication process requires a username and password | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**username** | **String** | Required only when the authentication process requires a username and password | [optional] 
 
 

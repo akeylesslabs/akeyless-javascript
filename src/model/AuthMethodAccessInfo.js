@@ -26,7 +26,7 @@ import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 2.4.0
+ * @version 2.4.1
  */
 class AuthMethodAccessInfo {
     /**
@@ -77,6 +77,9 @@ class AuthMethodAccessInfo {
             }
             if (data.hasOwnProperty('email_pass_access_rules')) {
                 obj['email_pass_access_rules'] = EmailPassAccessRules.constructFromObject(data['email_pass_access_rules']);
+            }
+            if (data.hasOwnProperty('force_sub_claims')) {
+                obj['force_sub_claims'] = ApiClient.convertToType(data['force_sub_claims'], 'Boolean');
             }
             if (data.hasOwnProperty('gcp_access_rules')) {
                 obj['gcp_access_rules'] = GCPAccessRules.constructFromObject(data['gcp_access_rules']);
@@ -141,6 +144,12 @@ AuthMethodAccessInfo.prototype['cidr_whitelist'] = undefined;
  * @member {module:model/EmailPassAccessRules} email_pass_access_rules
  */
 AuthMethodAccessInfo.prototype['email_pass_access_rules'] = undefined;
+
+/**
+ * if true the role associated with this auth method must include sub claims
+ * @member {Boolean} force_sub_claims
+ */
+AuthMethodAccessInfo.prototype['force_sub_claims'] = undefined;
 
 /**
  * @member {module:model/GCPAccessRules} gcp_access_rules

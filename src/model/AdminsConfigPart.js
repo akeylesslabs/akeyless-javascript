@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import AllowedAccess from './AllowedAccess';
 
 /**
  * The AdminsConfigPart model module.
  * @module model/AdminsConfigPart
- * @version 2.4.0
+ * @version 2.4.1
  */
 class AdminsConfigPart {
     /**
@@ -47,8 +48,8 @@ class AdminsConfigPart {
         if (data) {
             obj = obj || new AdminsConfigPart();
 
-            if (data.hasOwnProperty('admins')) {
-                obj['admins'] = ApiClient.convertToType(data['admins'], ['String']);
+            if (data.hasOwnProperty('allowed_access')) {
+                obj['allowed_access'] = ApiClient.convertToType(data['allowed_access'], {'String': AllowedAccess});
             }
         }
         return obj;
@@ -58,9 +59,9 @@ class AdminsConfigPart {
 }
 
 /**
- * @member {Array.<String>} admins
+ * @member {Object.<String, module:model/AllowedAccess>} allowed_access
  */
-AdminsConfigPart.prototype['admins'] = undefined;
+AdminsConfigPart.prototype['allowed_access'] = undefined;
 
 
 

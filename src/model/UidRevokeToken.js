@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidRevokeToken model module.
  * @module model/UidRevokeToken
- * @version 2.4.0
+ * @version 2.4.1
  */
 class UidRevokeToken {
     /**
@@ -54,6 +54,9 @@ class UidRevokeToken {
             if (data.hasOwnProperty('auth-method-name')) {
                 obj['auth-method-name'] = ApiClient.convertToType(data['auth-method-name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('revoke-token')) {
                 obj['revoke-token'] = ApiClient.convertToType(data['revoke-token'], 'String');
             }
@@ -65,6 +68,9 @@ class UidRevokeToken {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -78,6 +84,12 @@ class UidRevokeToken {
  * @member {String} auth-method-name
  */
 UidRevokeToken.prototype['auth-method-name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+UidRevokeToken.prototype['password'] = undefined;
 
 /**
  * the universal identity token/token-id to revoke
@@ -102,6 +114,12 @@ UidRevokeToken.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UidRevokeToken.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+UidRevokeToken.prototype['username'] = undefined;
 
 
 

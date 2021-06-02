@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 2.4.0
+ * @version 2.4.1
  */
 class UpdateRotatedSecret {
     /**
      * Constructs a new <code>UpdateRotatedSecret</code>.
+     * updateRotatedSecret is a command that updates rotated secret. [Deprecated: Use gateway-update-item command]
      * @alias module:model/UpdateRotatedSecret
      * @param name {String} Secret name
      */
@@ -73,17 +74,20 @@ class UpdateRotatedSecret {
             if (data.hasOwnProperty('new-version')) {
                 obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('rm-tag')) {
                 obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
+            }
+            if (data.hasOwnProperty('rotation-hour')) {
+                obj['rotation-hour'] = ApiClient.convertToType(data['rotation-hour'], 'Number');
             }
             if (data.hasOwnProperty('rotation-interval')) {
                 obj['rotation-interval'] = ApiClient.convertToType(data['rotation-interval'], 'String');
             }
-            if (data.hasOwnProperty('rotation_hour')) {
-                obj['rotation_hour'] = ApiClient.convertToType(data['rotation_hour'], 'Number');
-            }
-            if (data.hasOwnProperty('rotator_creds_type')) {
-                obj['rotator_creds_type'] = ApiClient.convertToType(data['rotator_creds_type'], 'String');
+            if (data.hasOwnProperty('rotator-creds-type')) {
+                obj['rotator-creds-type'] = ApiClient.convertToType(data['rotator-creds-type'], 'String');
             }
             if (data.hasOwnProperty('ssh-password')) {
                 obj['ssh-password'] = ApiClient.convertToType(data['ssh-password'], 'String');
@@ -96,6 +100,9 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -156,10 +163,21 @@ UpdateRotatedSecret.prototype['new-name'] = undefined;
 UpdateRotatedSecret.prototype['new-version'] = false;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+UpdateRotatedSecret.prototype['password'] = undefined;
+
+/**
  * List of the existent tags that will be removed from this item
  * @member {Array.<String>} rm-tag
  */
 UpdateRotatedSecret.prototype['rm-tag'] = undefined;
+
+/**
+ * @member {Number} rotation-hour
+ */
+UpdateRotatedSecret.prototype['rotation-hour'] = undefined;
 
 /**
  * The number of days to wait between every automatic key rotation (7-365)
@@ -168,14 +186,9 @@ UpdateRotatedSecret.prototype['rm-tag'] = undefined;
 UpdateRotatedSecret.prototype['rotation-interval'] = undefined;
 
 /**
- * @member {Number} rotation_hour
+ * @member {String} rotator-creds-type
  */
-UpdateRotatedSecret.prototype['rotation_hour'] = undefined;
-
-/**
- * @member {String} rotator_creds_type
- */
-UpdateRotatedSecret.prototype['rotator_creds_type'] = undefined;
+UpdateRotatedSecret.prototype['rotator-creds-type'] = undefined;
 
 /**
  * @member {String} ssh-password
@@ -198,6 +211,12 @@ UpdateRotatedSecret.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateRotatedSecret.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+UpdateRotatedSecret.prototype['username'] = undefined;
 
 
 

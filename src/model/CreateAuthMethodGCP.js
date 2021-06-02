@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodGCP model module.
  * @module model/CreateAuthMethodGCP
- * @version 2.4.0
+ * @version 2.4.1
  */
 class CreateAuthMethodGCP {
     /**
@@ -74,8 +74,14 @@ class CreateAuthMethodGCP {
             if (data.hasOwnProperty('bound-zones')) {
                 obj['bound-zones'] = ApiClient.convertToType(data['bound-zones'], ['String']);
             }
+            if (data.hasOwnProperty('force-sub-claims')) {
+                obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('service-account-creds-data')) {
                 obj['service-account-creds-data'] = ApiClient.convertToType(data['service-account-creds-data'], 'String');
@@ -88,6 +94,9 @@ class CreateAuthMethodGCP {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -147,10 +156,22 @@ CreateAuthMethodGCP.prototype['bound-service-accounts'] = undefined;
 CreateAuthMethodGCP.prototype['bound-zones'] = undefined;
 
 /**
+ * if true: enforce role-association must include sub claims
+ * @member {Boolean} force-sub-claims
+ */
+CreateAuthMethodGCP.prototype['force-sub-claims'] = undefined;
+
+/**
  * Auth Method name
  * @member {String} name
  */
 CreateAuthMethodGCP.prototype['name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+CreateAuthMethodGCP.prototype['password'] = undefined;
 
 /**
  * ServiceAccount credentials data instead of giving a file path, base64 encoded
@@ -175,6 +196,12 @@ CreateAuthMethodGCP.prototype['type'] = undefined;
  * @member {String} uid-token
  */
 CreateAuthMethodGCP.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+CreateAuthMethodGCP.prototype['username'] = undefined;
 
 
 

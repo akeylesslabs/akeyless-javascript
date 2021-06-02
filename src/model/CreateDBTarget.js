@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTarget model module.
  * @module model/CreateDBTarget
- * @version 2.4.0
+ * @version 2.4.1
  */
 class CreateDBTarget {
     /**
@@ -52,29 +52,68 @@ class CreateDBTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
-            if (data.hasOwnProperty('db_type')) {
-                obj['db_type'] = ApiClient.convertToType(data['db_type'], 'String');
+            if (data.hasOwnProperty('db-name')) {
+                obj['db-name'] = ApiClient.convertToType(data['db-name'], 'String');
             }
-            if (data.hasOwnProperty('host_name')) {
-                obj['host_name'] = ApiClient.convertToType(data['host_name'], 'String');
+            if (data.hasOwnProperty('db-server-certificates')) {
+                obj['db-server-certificates'] = ApiClient.convertToType(data['db-server-certificates'], 'String');
             }
-            if (data.hasOwnProperty('mongo_db_name')) {
-                obj['mongo_db_name'] = ApiClient.convertToType(data['mongo_db_name'], 'String');
+            if (data.hasOwnProperty('db-server-name')) {
+                obj['db-server-name'] = ApiClient.convertToType(data['db-server-name'], 'String');
             }
-            if (data.hasOwnProperty('mongo_uri')) {
-                obj['mongo_uri'] = ApiClient.convertToType(data['mongo_uri'], 'String');
+            if (data.hasOwnProperty('db-type')) {
+                obj['db-type'] = ApiClient.convertToType(data['db-type'], 'String');
+            }
+            if (data.hasOwnProperty('host')) {
+                obj['host'] = ApiClient.convertToType(data['host'], 'String');
+            }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('mongodb-atlas')) {
+                obj['mongodb-atlas'] = ApiClient.convertToType(data['mongodb-atlas'], 'Boolean');
+            }
+            if (data.hasOwnProperty('mongodb-atlas-api-private-key')) {
+                obj['mongodb-atlas-api-private-key'] = ApiClient.convertToType(data['mongodb-atlas-api-private-key'], 'String');
+            }
+            if (data.hasOwnProperty('mongodb-atlas-api-public-key')) {
+                obj['mongodb-atlas-api-public-key'] = ApiClient.convertToType(data['mongodb-atlas-api-public-key'], 'String');
+            }
+            if (data.hasOwnProperty('mongodb-atlas-project-id')) {
+                obj['mongodb-atlas-project-id'] = ApiClient.convertToType(data['mongodb-atlas-project-id'], 'String');
+            }
+            if (data.hasOwnProperty('mongodb-default-auth-db')) {
+                obj['mongodb-default-auth-db'] = ApiClient.convertToType(data['mongodb-default-auth-db'], 'String');
+            }
+            if (data.hasOwnProperty('mongodb-host-port')) {
+                obj['mongodb-host-port'] = ApiClient.convertToType(data['mongodb-host-port'], 'String');
+            }
+            if (data.hasOwnProperty('mongodb-password')) {
+                obj['mongodb-password'] = ApiClient.convertToType(data['mongodb-password'], 'String');
+            }
+            if (data.hasOwnProperty('mongodb-server-uri')) {
+                obj['mongodb-server-uri'] = ApiClient.convertToType(data['mongodb-server-uri'], 'String');
+            }
+            if (data.hasOwnProperty('mongodb-uri-options')) {
+                obj['mongodb-uri-options'] = ApiClient.convertToType(data['mongodb-uri-options'], 'String');
+            }
+            if (data.hasOwnProperty('mongodb-username')) {
+                obj['mongodb-username'] = ApiClient.convertToType(data['mongodb-username'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
             }
-            if (data.hasOwnProperty('protection_key')) {
-                obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
-            }
             if (data.hasOwnProperty('pwd')) {
                 obj['pwd'] = ApiClient.convertToType(data['pwd'], 'String');
+            }
+            if (data.hasOwnProperty('snowflake-account')) {
+                obj['snowflake-account'] = ApiClient.convertToType(data['snowflake-account'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -82,8 +121,11 @@ class CreateDBTarget {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
-            if (data.hasOwnProperty('user_name')) {
-                obj['user_name'] = ApiClient.convertToType(data['user_name'], 'String');
+            if (data.hasOwnProperty('user-name')) {
+                obj['user-name'] = ApiClient.convertToType(data['user-name'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -99,24 +141,96 @@ class CreateDBTarget {
 CreateDBTarget.prototype['comment'] = undefined;
 
 /**
- * @member {String} db_type
+ * @member {String} db-name
  */
-CreateDBTarget.prototype['db_type'] = undefined;
+CreateDBTarget.prototype['db-name'] = undefined;
 
 /**
- * @member {String} host_name
+ * (Optional) DB server certificates
+ * @member {String} db-server-certificates
  */
-CreateDBTarget.prototype['host_name'] = undefined;
+CreateDBTarget.prototype['db-server-certificates'] = undefined;
 
 /**
- * @member {String} mongo_db_name
+ * (Optional) Server name for certificate verification
+ * @member {String} db-server-name
  */
-CreateDBTarget.prototype['mongo_db_name'] = undefined;
+CreateDBTarget.prototype['db-server-name'] = undefined;
 
 /**
- * @member {String} mongo_uri
+ * @member {String} db-type
  */
-CreateDBTarget.prototype['mongo_uri'] = undefined;
+CreateDBTarget.prototype['db-type'] = undefined;
+
+/**
+ * @member {String} host
+ */
+CreateDBTarget.prototype['host'] = undefined;
+
+/**
+ * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
+ * @member {String} key
+ */
+CreateDBTarget.prototype['key'] = undefined;
+
+/**
+ * @member {Boolean} mongodb-atlas
+ */
+CreateDBTarget.prototype['mongodb-atlas'] = undefined;
+
+/**
+ * MongoDB Atlas private key
+ * @member {String} mongodb-atlas-api-private-key
+ */
+CreateDBTarget.prototype['mongodb-atlas-api-private-key'] = undefined;
+
+/**
+ * MongoDB Atlas public key
+ * @member {String} mongodb-atlas-api-public-key
+ */
+CreateDBTarget.prototype['mongodb-atlas-api-public-key'] = undefined;
+
+/**
+ * MongoDB Atlas project ID
+ * @member {String} mongodb-atlas-project-id
+ */
+CreateDBTarget.prototype['mongodb-atlas-project-id'] = undefined;
+
+/**
+ * MongoDB server default authentication database
+ * @member {String} mongodb-default-auth-db
+ */
+CreateDBTarget.prototype['mongodb-default-auth-db'] = undefined;
+
+/**
+ * MongoDB server host and port
+ * @member {String} mongodb-host-port
+ */
+CreateDBTarget.prototype['mongodb-host-port'] = undefined;
+
+/**
+ * MongoDB server password. You will prompted to provide a password if it will not appear in CLI parameters
+ * @member {String} mongodb-password
+ */
+CreateDBTarget.prototype['mongodb-password'] = undefined;
+
+/**
+ * MongoDB server URI
+ * @member {String} mongodb-server-uri
+ */
+CreateDBTarget.prototype['mongodb-server-uri'] = undefined;
+
+/**
+ * MongoDB server URI options
+ * @member {String} mongodb-uri-options
+ */
+CreateDBTarget.prototype['mongodb-uri-options'] = undefined;
+
+/**
+ * MongoDB server username
+ * @member {String} mongodb-username
+ */
+CreateDBTarget.prototype['mongodb-username'] = undefined;
 
 /**
  * Target name
@@ -125,20 +239,25 @@ CreateDBTarget.prototype['mongo_uri'] = undefined;
 CreateDBTarget.prototype['name'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+CreateDBTarget.prototype['password'] = undefined;
+
+/**
  * @member {String} port
  */
 CreateDBTarget.prototype['port'] = undefined;
 
 /**
- * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
- * @member {String} protection_key
- */
-CreateDBTarget.prototype['protection_key'] = undefined;
-
-/**
  * @member {String} pwd
  */
 CreateDBTarget.prototype['pwd'] = undefined;
+
+/**
+ * @member {String} snowflake-account
+ */
+CreateDBTarget.prototype['snowflake-account'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -153,9 +272,15 @@ CreateDBTarget.prototype['token'] = undefined;
 CreateDBTarget.prototype['uid-token'] = undefined;
 
 /**
- * @member {String} user_name
+ * @member {String} user-name
  */
-CreateDBTarget.prototype['user_name'] = undefined;
+CreateDBTarget.prototype['user-name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+CreateDBTarget.prototype['username'] = undefined;
 
 
 

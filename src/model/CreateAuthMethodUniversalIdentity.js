@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodUniversalIdentity model module.
  * @module model/CreateAuthMethodUniversalIdentity
- * @version 2.4.0
+ * @version 2.4.1
  */
 class CreateAuthMethodUniversalIdentity {
     /**
@@ -62,8 +62,14 @@ class CreateAuthMethodUniversalIdentity {
             if (data.hasOwnProperty('deny-rotate')) {
                 obj['deny-rotate'] = ApiClient.convertToType(data['deny-rotate'], 'Boolean');
             }
+            if (data.hasOwnProperty('force-sub-claims')) {
+                obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -73,6 +79,9 @@ class CreateAuthMethodUniversalIdentity {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -107,10 +116,22 @@ CreateAuthMethodUniversalIdentity.prototype['deny-inheritance'] = undefined;
 CreateAuthMethodUniversalIdentity.prototype['deny-rotate'] = undefined;
 
 /**
+ * if true: enforce role-association must include sub claims
+ * @member {Boolean} force-sub-claims
+ */
+CreateAuthMethodUniversalIdentity.prototype['force-sub-claims'] = undefined;
+
+/**
  * Auth Method name
  * @member {String} name
  */
 CreateAuthMethodUniversalIdentity.prototype['name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+CreateAuthMethodUniversalIdentity.prototype['password'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -129,6 +150,12 @@ CreateAuthMethodUniversalIdentity.prototype['ttl'] = undefined;
  * @member {String} uid-token
  */
 CreateAuthMethodUniversalIdentity.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+CreateAuthMethodUniversalIdentity.prototype['username'] = undefined;
 
 
 

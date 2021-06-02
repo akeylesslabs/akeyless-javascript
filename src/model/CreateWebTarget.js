@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateWebTarget model module.
  * @module model/CreateWebTarget
- * @version 2.4.0
+ * @version 2.4.1
  */
 class CreateWebTarget {
     /**
@@ -52,11 +52,14 @@ class CreateWebTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('protection_key')) {
-                obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -66,6 +69,9 @@ class CreateWebTarget {
             }
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -81,16 +87,22 @@ class CreateWebTarget {
 CreateWebTarget.prototype['comment'] = undefined;
 
 /**
+ * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
+ * @member {String} key
+ */
+CreateWebTarget.prototype['key'] = undefined;
+
+/**
  * Target name
  * @member {String} name
  */
 CreateWebTarget.prototype['name'] = undefined;
 
 /**
- * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
- * @member {String} protection_key
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
  */
-CreateWebTarget.prototype['protection_key'] = undefined;
+CreateWebTarget.prototype['password'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -109,6 +121,12 @@ CreateWebTarget.prototype['uid-token'] = undefined;
  * @member {String} url
  */
 CreateWebTarget.prototype['url'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+CreateWebTarget.prototype['username'] = undefined;
 
 
 

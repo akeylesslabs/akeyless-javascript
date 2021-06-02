@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidCreateChildToken model module.
  * @module model/UidCreateChildToken
- * @version 2.4.0
+ * @version 2.4.1
  */
 class UidCreateChildToken {
     /**
@@ -63,6 +63,9 @@ class UidCreateChildToken {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -71,6 +74,9 @@ class UidCreateChildToken {
             }
             if (data.hasOwnProperty('uid-token-id')) {
                 obj['uid-token-id'] = ApiClient.convertToType(data['uid-token-id'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -110,6 +116,12 @@ UidCreateChildToken.prototype['child-ttl'] = undefined;
 UidCreateChildToken.prototype['comment'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+UidCreateChildToken.prototype['password'] = undefined;
+
+/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -126,6 +138,12 @@ UidCreateChildToken.prototype['uid-token'] = undefined;
  * @member {String} uid-token-id
  */
 UidCreateChildToken.prototype['uid-token-id'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+UidCreateChildToken.prototype['username'] = undefined;
 
 
 

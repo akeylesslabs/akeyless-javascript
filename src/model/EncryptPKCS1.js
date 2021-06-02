@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptPKCS1 model module.
  * @module model/EncryptPKCS1
- * @version 2.4.0
+ * @version 2.4.1
  */
 class EncryptPKCS1 {
     /**
@@ -54,6 +54,9 @@ class EncryptPKCS1 {
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('plaintext')) {
                 obj['plaintext'] = ApiClient.convertToType(data['plaintext'], 'String');
             }
@@ -62,6 +65,9 @@ class EncryptPKCS1 {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -75,6 +81,12 @@ class EncryptPKCS1 {
  * @member {String} key-name
  */
 EncryptPKCS1.prototype['key-name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+EncryptPKCS1.prototype['password'] = undefined;
 
 /**
  * Data to be encrypted
@@ -93,6 +105,12 @@ EncryptPKCS1.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 EncryptPKCS1.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+EncryptPKCS1.prototype['username'] = undefined;
 
 
 

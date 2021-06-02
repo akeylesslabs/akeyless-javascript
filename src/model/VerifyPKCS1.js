@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyPKCS1 model module.
  * @module model/VerifyPKCS1
- * @version 2.4.0
+ * @version 2.4.1
  */
 class VerifyPKCS1 {
     /**
@@ -59,6 +59,9 @@ class VerifyPKCS1 {
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('signature')) {
                 obj['signature'] = ApiClient.convertToType(data['signature'], 'String');
             }
@@ -67,6 +70,9 @@ class VerifyPKCS1 {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -88,6 +94,12 @@ VerifyPKCS1.prototype['key-name'] = undefined;
 VerifyPKCS1.prototype['message'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+VerifyPKCS1.prototype['password'] = undefined;
+
+/**
  * The message's signature
  * @member {String} signature
  */
@@ -104,6 +116,12 @@ VerifyPKCS1.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 VerifyPKCS1.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+VerifyPKCS1.prototype['username'] = undefined;
 
 
 

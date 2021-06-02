@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRDPTargetDetails model module.
  * @module model/UpdateRDPTargetDetails
- * @version 2.4.0
+ * @version 2.4.1
  */
 class UpdateRDPTargetDetails {
     /**
@@ -67,6 +67,9 @@ class UpdateRDPTargetDetails {
             if (data.hasOwnProperty('new-version')) {
                 obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('protection_key')) {
                 obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
             }
@@ -75,6 +78,9 @@ class UpdateRDPTargetDetails {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -117,6 +123,12 @@ UpdateRDPTargetDetails.prototype['name'] = undefined;
 UpdateRDPTargetDetails.prototype['new-version'] = false;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+UpdateRDPTargetDetails.prototype['password'] = undefined;
+
+/**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
  * @member {String} protection_key
  */
@@ -133,6 +145,12 @@ UpdateRDPTargetDetails.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateRDPTargetDetails.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+UpdateRDPTargetDetails.prototype['username'] = undefined;
 
 
 

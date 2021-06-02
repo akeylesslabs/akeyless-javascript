@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteProducer model module.
  * @module model/GatewayDeleteProducer
- * @version 2.4.0
+ * @version 2.4.1
  */
 class GatewayDeleteProducer {
     /**
@@ -56,11 +56,17 @@ class GatewayDeleteProducer {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -83,6 +89,12 @@ GatewayDeleteProducer.prototype['gateway-url'] = 'http://localhost:8000';
 GatewayDeleteProducer.prototype['name'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+GatewayDeleteProducer.prototype['password'] = undefined;
+
+/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -93,6 +105,12 @@ GatewayDeleteProducer.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GatewayDeleteProducer.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+GatewayDeleteProducer.prototype['username'] = undefined;
 
 
 

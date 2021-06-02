@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGke model module.
  * @module model/GatewayCreateProducerGke
- * @version 2.4.0
+ * @version 2.4.1
  */
 class GatewayCreateProducerGke {
     /**
@@ -27,12 +27,11 @@ class GatewayCreateProducerGke {
      * @param gkeClusterEndpoint {String} GKE cluster URL endpoint
      * @param gkeClusterName {String} GKE cluster name
      * @param gkeServiceAccountEmail {String} GKE service account email
-     * @param gkeServiceAccountKeyFilePath {String} GKE Service Account key faile path
      * @param name {String} Producer name
      */
-    constructor(gkeClusterCert, gkeClusterEndpoint, gkeClusterName, gkeServiceAccountEmail, gkeServiceAccountKeyFilePath, name) { 
+    constructor(gkeClusterCert, gkeClusterEndpoint, gkeClusterName, gkeServiceAccountEmail, name) { 
         
-        GatewayCreateProducerGke.initialize(this, gkeClusterCert, gkeClusterEndpoint, gkeClusterName, gkeServiceAccountEmail, gkeServiceAccountKeyFilePath, name);
+        GatewayCreateProducerGke.initialize(this, gkeClusterCert, gkeClusterEndpoint, gkeClusterName, gkeServiceAccountEmail, name);
     }
 
     /**
@@ -40,12 +39,11 @@ class GatewayCreateProducerGke {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, gkeClusterCert, gkeClusterEndpoint, gkeClusterName, gkeServiceAccountEmail, gkeServiceAccountKeyFilePath, name) { 
+    static initialize(obj, gkeClusterCert, gkeClusterEndpoint, gkeClusterName, gkeServiceAccountEmail, name) { 
         obj['gke-cluster-cert'] = gkeClusterCert;
         obj['gke-cluster-endpoint'] = gkeClusterEndpoint;
         obj['gke-cluster-name'] = gkeClusterName;
         obj['gke-service-account-email'] = gkeServiceAccountEmail;
-        obj['gke-service-account-key-file-path'] = gkeServiceAccountKeyFilePath;
         obj['name'] = name;
     }
 
@@ -75,11 +73,11 @@ class GatewayCreateProducerGke {
             if (data.hasOwnProperty('gke-service-account-email')) {
                 obj['gke-service-account-email'] = ApiClient.convertToType(data['gke-service-account-email'], 'String');
             }
-            if (data.hasOwnProperty('gke-service-account-key-file-path')) {
-                obj['gke-service-account-key-file-path'] = ApiClient.convertToType(data['gke-service-account-key-file-path'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -92,6 +90,9 @@ class GatewayCreateProducerGke {
             }
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -132,16 +133,16 @@ GatewayCreateProducerGke.prototype['gke-cluster-name'] = undefined;
 GatewayCreateProducerGke.prototype['gke-service-account-email'] = undefined;
 
 /**
- * GKE Service Account key faile path
- * @member {String} gke-service-account-key-file-path
- */
-GatewayCreateProducerGke.prototype['gke-service-account-key-file-path'] = undefined;
-
-/**
  * Producer name
  * @member {String} name
  */
 GatewayCreateProducerGke.prototype['name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+GatewayCreateProducerGke.prototype['password'] = undefined;
 
 /**
  * Dynamic producer encryption key
@@ -167,6 +168,12 @@ GatewayCreateProducerGke.prototype['uid-token'] = undefined;
  * @default '60m'
  */
 GatewayCreateProducerGke.prototype['user-ttl'] = '60m';
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+GatewayCreateProducerGke.prototype['username'] = undefined;
 
 
 

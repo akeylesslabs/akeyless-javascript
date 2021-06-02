@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetKubeExecCreds model module.
  * @module model/GetKubeExecCreds
- * @version 2.4.0
+ * @version 2.4.1
  */
 class GetKubeExecCreds {
     /**
@@ -62,6 +62,9 @@ class GetKubeExecCreds {
             if (data.hasOwnProperty('key-data-base64')) {
                 obj['key-data-base64'] = ApiClient.convertToType(data['key-data-base64'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -70,6 +73,9 @@ class GetKubeExecCreds {
             }
             if (data.hasOwnProperty('uri-sans')) {
                 obj['uri-sans'] = ApiClient.convertToType(data['uri-sans'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -103,6 +109,12 @@ GetKubeExecCreds.prototype['common-name'] = undefined;
 GetKubeExecCreds.prototype['key-data-base64'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+GetKubeExecCreds.prototype['password'] = undefined;
+
+/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -119,6 +131,12 @@ GetKubeExecCreds.prototype['uid-token'] = undefined;
  * @member {String} uri-sans
  */
 GetKubeExecCreds.prototype['uri-sans'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+GetKubeExecCreds.prototype['username'] = undefined;
 
 
 

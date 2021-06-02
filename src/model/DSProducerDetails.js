@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import ItemTargetAssociation from './ItemTargetAssociation';
 
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.4.0
+ * @version 2.4.1
  */
 class DSProducerDetails {
     /**
@@ -248,17 +249,11 @@ class DSProducerDetails {
             if (data.hasOwnProperty('gke_cluster_ca_certificate')) {
                 obj['gke_cluster_ca_certificate'] = ApiClient.convertToType(data['gke_cluster_ca_certificate'], 'String');
             }
-            if (data.hasOwnProperty('gke_cluster_compute_zone')) {
-                obj['gke_cluster_compute_zone'] = ApiClient.convertToType(data['gke_cluster_compute_zone'], 'String');
-            }
             if (data.hasOwnProperty('gke_cluster_endpoint')) {
                 obj['gke_cluster_endpoint'] = ApiClient.convertToType(data['gke_cluster_endpoint'], 'String');
             }
             if (data.hasOwnProperty('gke_cluster_name')) {
                 obj['gke_cluster_name'] = ApiClient.convertToType(data['gke_cluster_name'], 'String');
-            }
-            if (data.hasOwnProperty('gke_project_id')) {
-                obj['gke_project_id'] = ApiClient.convertToType(data['gke_project_id'], 'String');
             }
             if (data.hasOwnProperty('gke_service_account_key')) {
                 obj['gke_service_account_key'] = ApiClient.convertToType(data['gke_service_account_key'], 'String');
@@ -275,8 +270,14 @@ class DSProducerDetails {
             if (data.hasOwnProperty('host_port')) {
                 obj['host_port'] = ApiClient.convertToType(data['host_port'], 'String');
             }
+            if (data.hasOwnProperty('item_targets_assoc')) {
+                obj['item_targets_assoc'] = ApiClient.convertToType(data['item_targets_assoc'], [ItemTargetAssociation]);
+            }
             if (data.hasOwnProperty('last_admin_rotation')) {
                 obj['last_admin_rotation'] = ApiClient.convertToType(data['last_admin_rotation'], 'Number');
+            }
+            if (data.hasOwnProperty('mongodb_atlas')) {
+                obj['mongodb_atlas'] = ApiClient.convertToType(data['mongodb_atlas'], 'Boolean');
             }
             if (data.hasOwnProperty('mongodb_atlas_api_private_key')) {
                 obj['mongodb_atlas_api_private_key'] = ApiClient.convertToType(data['mongodb_atlas_api_private_key'], 'String');
@@ -358,6 +359,15 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('rotate_sync_url')) {
                 obj['rotate_sync_url'] = ApiClient.convertToType(data['rotate_sync_url'], 'String');
+            }
+            if (data.hasOwnProperty('sf_account')) {
+                obj['sf_account'] = ApiClient.convertToType(data['sf_account'], 'String');
+            }
+            if (data.hasOwnProperty('sf_user_role')) {
+                obj['sf_user_role'] = ApiClient.convertToType(data['sf_user_role'], 'String');
+            }
+            if (data.hasOwnProperty('sf_warehouse_name')) {
+                obj['sf_warehouse_name'] = ApiClient.convertToType(data['sf_warehouse_name'], 'String');
             }
             if (data.hasOwnProperty('should_stop')) {
                 obj['should_stop'] = ApiClient.convertToType(data['should_stop'], 'String');
@@ -755,24 +765,15 @@ DSProducerDetails.prototype['gcp_token_type'] = undefined;
 DSProducerDetails.prototype['gke_cluster_ca_certificate'] = undefined;
 
 /**
- * @member {String} gke_cluster_compute_zone
- */
-DSProducerDetails.prototype['gke_cluster_compute_zone'] = undefined;
-
-/**
  * @member {String} gke_cluster_endpoint
  */
 DSProducerDetails.prototype['gke_cluster_endpoint'] = undefined;
 
 /**
+ * GKEProjectID            string `json:\"gke_project_id\"`
  * @member {String} gke_cluster_name
  */
 DSProducerDetails.prototype['gke_cluster_name'] = undefined;
-
-/**
- * @member {String} gke_project_id
- */
-DSProducerDetails.prototype['gke_project_id'] = undefined;
 
 /**
  * @member {String} gke_service_account_key
@@ -780,6 +781,7 @@ DSProducerDetails.prototype['gke_project_id'] = undefined;
 DSProducerDetails.prototype['gke_service_account_key'] = undefined;
 
 /**
+ * GKEClusterComputeZone   string `json:\"gke_cluster_compute_zone\"`
  * @member {String} gke_service_account_name
  */
 DSProducerDetails.prototype['gke_service_account_name'] = undefined;
@@ -800,9 +802,19 @@ DSProducerDetails.prototype['host_name'] = undefined;
 DSProducerDetails.prototype['host_port'] = undefined;
 
 /**
+ * @member {Array.<module:model/ItemTargetAssociation>} item_targets_assoc
+ */
+DSProducerDetails.prototype['item_targets_assoc'] = undefined;
+
+/**
  * @member {Number} last_admin_rotation
  */
 DSProducerDetails.prototype['last_admin_rotation'] = undefined;
+
+/**
+ * @member {Boolean} mongodb_atlas
+ */
+DSProducerDetails.prototype['mongodb_atlas'] = undefined;
 
 /**
  * @member {String} mongodb_atlas_api_private_key
@@ -847,6 +859,7 @@ DSProducerDetails.prototype['mongodb_is_atlas'] = undefined;
 DSProducerDetails.prototype['mongodb_password'] = undefined;
 
 /**
+ * common fields
  * @member {String} mongodb_roles
  */
 DSProducerDetails.prototype['mongodb_roles'] = undefined;
@@ -941,6 +954,22 @@ DSProducerDetails.prototype['revoke_sync_url'] = undefined;
  * @member {String} rotate_sync_url
  */
 DSProducerDetails.prototype['rotate_sync_url'] = undefined;
+
+/**
+ * @member {String} sf_account
+ */
+DSProducerDetails.prototype['sf_account'] = undefined;
+
+/**
+ * generated  users info
+ * @member {String} sf_user_role
+ */
+DSProducerDetails.prototype['sf_user_role'] = undefined;
+
+/**
+ * @member {String} sf_warehouse_name
+ */
+DSProducerDetails.prototype['sf_warehouse_name'] = undefined;
 
 /**
  * TODO delete this after migration

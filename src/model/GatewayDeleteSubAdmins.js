@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteSubAdmins model module.
  * @module model/GatewayDeleteSubAdmins
- * @version 2.4.0
+ * @version 2.4.1
  */
 class GatewayDeleteSubAdmins {
     /**
      * Constructs a new <code>GatewayDeleteSubAdmins</code>.
      * gatewayDeleteSubAdmins is a command that deletes sub-admins
      * @alias module:model/GatewayDeleteSubAdmins
-     * @param subAdmin {Array.<String>} SubAdmins to be removed
+     * @param subAdminId {String} SubAdminID to be removed
      */
-    constructor(subAdmin) { 
+    constructor(subAdminId) { 
         
-        GatewayDeleteSubAdmins.initialize(this, subAdmin);
+        GatewayDeleteSubAdmins.initialize(this, subAdminId);
     }
 
     /**
@@ -35,8 +35,8 @@ class GatewayDeleteSubAdmins {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, subAdmin) { 
-        obj['sub-admin'] = subAdmin;
+    static initialize(obj, subAdminId) { 
+        obj['sub-admin-id'] = subAdminId;
     }
 
     /**
@@ -53,14 +53,20 @@ class GatewayDeleteSubAdmins {
             if (data.hasOwnProperty('gateway-url')) {
                 obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
-            if (data.hasOwnProperty('sub-admin')) {
-                obj['sub-admin'] = ApiClient.convertToType(data['sub-admin'], ['String']);
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
+            if (data.hasOwnProperty('sub-admin-id')) {
+                obj['sub-admin-id'] = ApiClient.convertToType(data['sub-admin-id'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -77,10 +83,16 @@ class GatewayDeleteSubAdmins {
 GatewayDeleteSubAdmins.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
- * SubAdmins to be removed
- * @member {Array.<String>} sub-admin
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
  */
-GatewayDeleteSubAdmins.prototype['sub-admin'] = undefined;
+GatewayDeleteSubAdmins.prototype['password'] = undefined;
+
+/**
+ * SubAdminID to be removed
+ * @member {String} sub-admin-id
+ */
+GatewayDeleteSubAdmins.prototype['sub-admin-id'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -93,6 +105,12 @@ GatewayDeleteSubAdmins.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GatewayDeleteSubAdmins.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+GatewayDeleteSubAdmins.prototype['username'] = undefined;
 
 
 

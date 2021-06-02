@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodLDAP model module.
  * @module model/CreateAuthMethodLDAP
- * @version 2.4.0
+ * @version 2.4.1
  */
 class CreateAuthMethodLDAP {
     /**
@@ -24,11 +24,10 @@ class CreateAuthMethodLDAP {
      * createAuthMethodLDAP is a command that creates a new auth method that will be able to authenticate using LDAP.
      * @alias module:model/CreateAuthMethodLDAP
      * @param name {String} Auth Method name
-     * @param publicKeyFilePath {String} A public key generated for LDAP authentication method on Akeyless [RSA2048]
      */
-    constructor(name, publicKeyFilePath) { 
+    constructor(name) { 
         
-        CreateAuthMethodLDAP.initialize(this, name, publicKeyFilePath);
+        CreateAuthMethodLDAP.initialize(this, name);
     }
 
     /**
@@ -36,9 +35,8 @@ class CreateAuthMethodLDAP {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, publicKeyFilePath) { 
+    static initialize(obj, name) { 
         obj['name'] = name;
-        obj['public-key-file-path'] = publicKeyFilePath;
     }
 
     /**
@@ -58,17 +56,23 @@ class CreateAuthMethodLDAP {
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
             }
+            if (data.hasOwnProperty('force-sub-claims')) {
+                obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('public-key-file-path')) {
-                obj['public-key-file-path'] = ApiClient.convertToType(data['public-key-file-path'], 'String');
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -91,16 +95,22 @@ CreateAuthMethodLDAP.prototype['access-expires'] = 0;
 CreateAuthMethodLDAP.prototype['bound-ips'] = undefined;
 
 /**
+ * if true: enforce role-association must include sub claims
+ * @member {Boolean} force-sub-claims
+ */
+CreateAuthMethodLDAP.prototype['force-sub-claims'] = undefined;
+
+/**
  * Auth Method name
  * @member {String} name
  */
 CreateAuthMethodLDAP.prototype['name'] = undefined;
 
 /**
- * A public key generated for LDAP authentication method on Akeyless [RSA2048]
- * @member {String} public-key-file-path
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
  */
-CreateAuthMethodLDAP.prototype['public-key-file-path'] = undefined;
+CreateAuthMethodLDAP.prototype['password'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -113,6 +123,12 @@ CreateAuthMethodLDAP.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateAuthMethodLDAP.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+CreateAuthMethodLDAP.prototype['username'] = undefined;
 
 
 

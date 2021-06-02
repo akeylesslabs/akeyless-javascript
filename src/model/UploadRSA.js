@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadRSA model module.
  * @module model/UploadRSA
- * @version 2.4.0
+ * @version 2.4.1
  */
 class UploadRSA {
     /**
@@ -69,11 +69,11 @@ class UploadRSA {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('rsa-file-data')) {
                 obj['rsa-file-data'] = ApiClient.convertToType(data['rsa-file-data'], 'String');
-            }
-            if (data.hasOwnProperty('rsa-key-file-path')) {
-                obj['rsa-key-file-path'] = ApiClient.convertToType(data['rsa-key-file-path'], 'String');
             }
             if (data.hasOwnProperty('split-level')) {
                 obj['split-level'] = ApiClient.convertToType(data['split-level'], 'Number');
@@ -86,6 +86,9 @@ class UploadRSA {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -131,16 +134,16 @@ UploadRSA.prototype['metadata'] = undefined;
 UploadRSA.prototype['name'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+UploadRSA.prototype['password'] = undefined;
+
+/**
  * RSA private key data, base64 encoded
  * @member {String} rsa-file-data
  */
 UploadRSA.prototype['rsa-file-data'] = undefined;
-
-/**
- * RSA private key file path
- * @member {String} rsa-key-file-path
- */
-UploadRSA.prototype['rsa-key-file-path'] = undefined;
 
 /**
  * The number of fragments that the item will be split into
@@ -166,6 +169,12 @@ UploadRSA.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UploadRSA.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+UploadRSA.prototype['username'] = undefined;
 
 
 

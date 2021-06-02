@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAzure model module.
  * @module model/GatewayCreateProducerAzure
- * @version 2.4.0
+ * @version 2.4.1
  */
 class GatewayCreateProducerAzure {
     /**
@@ -71,6 +71,9 @@ class GatewayCreateProducerAzure {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
             }
@@ -100,6 +103,9 @@ class GatewayCreateProducerAzure {
             }
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -138,6 +144,12 @@ GatewayCreateProducerAzure.prototype['gateway-url'] = 'http://localhost:8000';
  * @member {String} name
  */
 GatewayCreateProducerAzure.prototype['name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+GatewayCreateProducerAzure.prototype['password'] = undefined;
 
 /**
  * Dynamic producer encryption key
@@ -201,6 +213,12 @@ GatewayCreateProducerAzure.prototype['user-role-template-id'] = undefined;
  * @default '60m'
  */
 GatewayCreateProducerAzure.prototype['user-ttl'] = '60m';
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+GatewayCreateProducerAzure.prototype['username'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocTargetItem model module.
  * @module model/AssocTargetItem
- * @version 2.4.0
+ * @version 2.4.1
  */
 class AssocTargetItem {
     /**
@@ -55,6 +55,9 @@ class AssocTargetItem {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
@@ -63,6 +66,9 @@ class AssocTargetItem {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -76,6 +82,12 @@ class AssocTargetItem {
  * @member {String} name
  */
 AssocTargetItem.prototype['name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+AssocTargetItem.prototype['password'] = undefined;
 
 /**
  * The target to associate
@@ -94,6 +106,12 @@ AssocTargetItem.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 AssocTargetItem.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+AssocTargetItem.prototype['username'] = undefined;
 
 
 

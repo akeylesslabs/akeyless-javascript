@@ -21,6 +21,10 @@ import AuthMethod from '../model/AuthMethod';
 import AuthOutput from '../model/AuthOutput';
 import Configure from '../model/Configure';
 import ConfigureOutput from '../model/ConfigureOutput';
+import CreateAWSTarget from '../model/CreateAWSTarget';
+import CreateAWSTargetOutput from '../model/CreateAWSTargetOutput';
+import CreateArtifactoryTarget from '../model/CreateArtifactoryTarget';
+import CreateArtifactoryTargetOutput from '../model/CreateArtifactoryTargetOutput';
 import CreateAuthMethod from '../model/CreateAuthMethod';
 import CreateAuthMethodAWSIAM from '../model/CreateAuthMethodAWSIAM';
 import CreateAuthMethodAWSIAMOutput from '../model/CreateAuthMethodAWSIAMOutput';
@@ -37,17 +41,27 @@ import CreateAuthMethodSAML from '../model/CreateAuthMethodSAML';
 import CreateAuthMethodSAMLOutput from '../model/CreateAuthMethodSAMLOutput';
 import CreateAuthMethodUniversalIdentity from '../model/CreateAuthMethodUniversalIdentity';
 import CreateAuthMethodUniversalIdentityOutput from '../model/CreateAuthMethodUniversalIdentityOutput';
-import CreateAwsTarget from '../model/CreateAwsTarget';
+import CreateAzureTarget from '../model/CreateAzureTarget';
+import CreateAzureTargetOutput from '../model/CreateAzureTargetOutput';
+import CreateClassicKey from '../model/CreateClassicKey';
+import CreateClassicKeyOutput from '../model/CreateClassicKeyOutput';
 import CreateDBTarget from '../model/CreateDBTarget';
+import CreateDBTargetOutput from '../model/CreateDBTargetOutput';
+import CreateDFCKey from '../model/CreateDFCKey';
+import CreateDFCKeyOutput from '../model/CreateDFCKeyOutput';
 import CreateDynamicSecret from '../model/CreateDynamicSecret';
+import CreateEKSTarget from '../model/CreateEKSTarget';
+import CreateEKSTargetOutput from '../model/CreateEKSTargetOutput';
+import CreateGKETarget from '../model/CreateGKETarget';
+import CreateGKETargetOutput from '../model/CreateGKETargetOutput';
+import CreateGcpTarget from '../model/CreateGcpTarget';
+import CreateGcpTargetOutput from '../model/CreateGcpTargetOutput';
 import CreateKey from '../model/CreateKey';
 import CreateKeyOutput from '../model/CreateKeyOutput';
-import CreateManagedKey from '../model/CreateManagedKey';
-import CreateManagedKeyOutput from '../model/CreateManagedKeyOutput';
 import CreatePKICertIssuer from '../model/CreatePKICertIssuer';
 import CreatePKICertIssuerOutput from '../model/CreatePKICertIssuerOutput';
 import CreateRabbitMQTarget from '../model/CreateRabbitMQTarget';
-import CreateRdpTarget from '../model/CreateRdpTarget';
+import CreateRabbitMQTargetOutput from '../model/CreateRabbitMQTargetOutput';
 import CreateRole from '../model/CreateRole';
 import CreateRoleAuthMethodAssocOutput from '../model/CreateRoleAuthMethodAssocOutput';
 import CreateRotatedSecret from '../model/CreateRotatedSecret';
@@ -55,11 +69,12 @@ import CreateRotatedSecretOutput from '../model/CreateRotatedSecretOutput';
 import CreateSSHCertIssuer from '../model/CreateSSHCertIssuer';
 import CreateSSHCertIssuerOutput from '../model/CreateSSHCertIssuerOutput';
 import CreateSSHTarget from '../model/CreateSSHTarget';
+import CreateSSHTargetOutput from '../model/CreateSSHTargetOutput';
 import CreateSecret from '../model/CreateSecret';
 import CreateSecretOutput from '../model/CreateSecretOutput';
 import CreateTargetItemAssocOutput from '../model/CreateTargetItemAssocOutput';
-import CreateTargetOutput from '../model/CreateTargetOutput';
 import CreateWebTarget from '../model/CreateWebTarget';
+import CreateWebTargetOutput from '../model/CreateWebTargetOutput';
 import DSProducerDetails from '../model/DSProducerDetails';
 import Decrypt from '../model/Decrypt';
 import DecryptOutput from '../model/DecryptOutput';
@@ -89,7 +104,6 @@ import EncryptOutput from '../model/EncryptOutput';
 import EncryptPKCS1 from '../model/EncryptPKCS1';
 import EncryptPKCS1Output from '../model/EncryptPKCS1Output';
 import GatewayAddSubAdmins from '../model/GatewayAddSubAdmins';
-import GatewayAddSubAdminsOutput from '../model/GatewayAddSubAdminsOutput';
 import GatewayCreateProducerArtifactory from '../model/GatewayCreateProducerArtifactory';
 import GatewayCreateProducerArtifactoryOutput from '../model/GatewayCreateProducerArtifactoryOutput';
 import GatewayCreateProducerAws from '../model/GatewayCreateProducerAws';
@@ -118,10 +132,11 @@ import GatewayCreateProducerRabbitMQ from '../model/GatewayCreateProducerRabbitM
 import GatewayCreateProducerRabbitMQOutput from '../model/GatewayCreateProducerRabbitMQOutput';
 import GatewayCreateProducerRdp from '../model/GatewayCreateProducerRdp';
 import GatewayCreateProducerRdpOutput from '../model/GatewayCreateProducerRdpOutput';
+import GatewayCreateProducerSnowflake from '../model/GatewayCreateProducerSnowflake';
+import GatewayCreateProducerSnowflakeOutput from '../model/GatewayCreateProducerSnowflakeOutput';
 import GatewayDeleteProducer from '../model/GatewayDeleteProducer';
 import GatewayDeleteProducerOutput from '../model/GatewayDeleteProducerOutput';
 import GatewayDeleteSubAdmins from '../model/GatewayDeleteSubAdmins';
-import GatewayDeleteSubAdminsOutput from '../model/GatewayDeleteSubAdminsOutput';
 import GatewayGetConfig from '../model/GatewayGetConfig';
 import GatewayGetProducer from '../model/GatewayGetProducer';
 import GatewayGetTmpUsers from '../model/GatewayGetTmpUsers';
@@ -137,6 +152,7 @@ import GetAuthMethod from '../model/GetAuthMethod';
 import GetDynamicSecretValue from '../model/GetDynamicSecretValue';
 import GetKubeExecCreds from '../model/GetKubeExecCreds';
 import GetKubeExecCredsOutput from '../model/GetKubeExecCredsOutput';
+import GetPKICertificate from '../model/GetPKICertificate';
 import GetPKICertificateOutput from '../model/GetPKICertificateOutput';
 import GetProducersListReplyObj from '../model/GetProducersListReplyObj';
 import GetRSAPublic from '../model/GetRSAPublic';
@@ -189,6 +205,7 @@ import UidRotateToken from '../model/UidRotateToken';
 import UidRotateTokenOutput from '../model/UidRotateTokenOutput';
 import UniversalIdentityDetails from '../model/UniversalIdentityDetails';
 import UpdateAWSTargetDetails from '../model/UpdateAWSTargetDetails';
+import UpdateAssoc from '../model/UpdateAssoc';
 import UpdateDBTargetDetails from '../model/UpdateDBTargetDetails';
 import UpdateItem from '../model/UpdateItem';
 import UpdateItemOutput from '../model/UpdateItemOutput';
@@ -211,7 +228,7 @@ import VerifyPKCS1 from '../model/VerifyPKCS1';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.4.0
+* @version 2.4.1
 */
 export default class V2Api {
 
@@ -394,6 +411,92 @@ export default class V2Api {
      */
     configure(body) {
       return this.configureWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateAWSTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAWSTargetOutput} and HTTP response
+     */
+    createAWSTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createAWSTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateAWSTargetOutput;
+      return this.apiClient.callApi(
+        '/create-aws-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateAWSTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAWSTargetOutput}
+     */
+    createAWSTarget(body) {
+      return this.createAWSTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateArtifactoryTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateArtifactoryTargetOutput} and HTTP response
+     */
+    createArtifactoryTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createArtifactoryTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateArtifactoryTargetOutput;
+      return this.apiClient.callApi(
+        '/create-artifactory-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateArtifactoryTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateArtifactoryTargetOutput}
+     */
+    createArtifactoryTarget(body) {
+      return this.createArtifactoryTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -745,14 +848,14 @@ export default class V2Api {
 
 
     /**
-     * @param {module:model/CreateAwsTarget} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateTargetOutput} and HTTP response
+     * @param {module:model/CreateAzureTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAzureTargetOutput} and HTTP response
      */
-    createAwsTargetWithHttpInfo(body) {
+    createAzureTargetWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createAwsTarget");
+        throw new Error("Missing the required parameter 'body' when calling createAzureTarget");
       }
 
       let pathParams = {
@@ -767,20 +870,63 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = CreateTargetOutput;
+      let returnType = CreateAzureTargetOutput;
       return this.apiClient.callApi(
-        '/create-aws-target', 'POST',
+        '/create-azure-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * @param {module:model/CreateAwsTarget} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateTargetOutput}
+     * @param {module:model/CreateAzureTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAzureTargetOutput}
      */
-    createAwsTarget(body) {
-      return this.createAwsTargetWithHttpInfo(body)
+    createAzureTarget(body) {
+      return this.createAzureTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateClassicKeyOutput} and HTTP response
+     */
+    createClassicKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createClassicKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateClassicKeyOutput;
+      return this.apiClient.callApi(
+        '/create-classic-key', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateClassicKeyOutput}
+     */
+    createClassicKey(body) {
+      return this.createClassicKeyWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -789,7 +935,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/CreateDBTarget} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateTargetOutput} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateDBTargetOutput} and HTTP response
      */
     createDBTargetWithHttpInfo(body) {
       let postBody = body;
@@ -810,7 +956,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = CreateTargetOutput;
+      let returnType = CreateDBTargetOutput;
       return this.apiClient.callApi(
         '/create-db-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -820,10 +966,53 @@ export default class V2Api {
 
     /**
      * @param {module:model/CreateDBTarget} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateTargetOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateDBTargetOutput}
      */
     createDBTarget(body) {
       return this.createDBTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateDFCKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateDFCKeyOutput} and HTTP response
+     */
+    createDFCKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createDFCKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateDFCKeyOutput;
+      return this.apiClient.callApi(
+        '/create-dfc-key', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateDFCKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateDFCKeyOutput}
+     */
+    createDFCKey(body) {
+      return this.createDFCKeyWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -874,6 +1063,135 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/CreateEKSTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateEKSTargetOutput} and HTTP response
+     */
+    createEKSTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createEKSTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateEKSTargetOutput;
+      return this.apiClient.callApi(
+        '/create-eks-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateEKSTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateEKSTargetOutput}
+     */
+    createEKSTarget(body) {
+      return this.createEKSTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateGKETarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateGKETargetOutput} and HTTP response
+     */
+    createGKETargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createGKETarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateGKETargetOutput;
+      return this.apiClient.callApi(
+        '/create-gke-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateGKETarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateGKETargetOutput}
+     */
+    createGKETarget(body) {
+      return this.createGKETargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateGcpTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateGcpTargetOutput} and HTTP response
+     */
+    createGcpTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createGcpTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateGcpTargetOutput;
+      return this.apiClient.callApi(
+        '/create-gcp-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateGcpTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateGcpTargetOutput}
+     */
+    createGcpTarget(body) {
+      return this.createGcpTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/CreateKey} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateKeyOutput} and HTTP response
      */
@@ -910,49 +1228,6 @@ export default class V2Api {
      */
     createKey(body) {
       return this.createKeyWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {module:model/CreateManagedKey} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateManagedKeyOutput} and HTTP response
-     */
-    createManagedKeyWithHttpInfo(body) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createManagedKey");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = CreateManagedKeyOutput;
-      return this.apiClient.callApi(
-        '/create-managed-key', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {module:model/CreateManagedKey} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateManagedKeyOutput}
-     */
-    createManagedKey(body) {
-      return this.createManagedKeyWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1004,7 +1279,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/CreateRabbitMQTarget} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateTargetOutput} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateRabbitMQTargetOutput} and HTTP response
      */
     createRabbitMQTargetWithHttpInfo(body) {
       let postBody = body;
@@ -1025,9 +1300,9 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = CreateTargetOutput;
+      let returnType = CreateRabbitMQTargetOutput;
       return this.apiClient.callApi(
-        '/create-rabbitMQ-target', 'POST',
+        '/create-rabbitmq-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -1035,53 +1310,10 @@ export default class V2Api {
 
     /**
      * @param {module:model/CreateRabbitMQTarget} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateTargetOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateRabbitMQTargetOutput}
      */
     createRabbitMQTarget(body) {
       return this.createRabbitMQTargetWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {module:model/CreateRdpTarget} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateTargetOutput} and HTTP response
-     */
-    createRdpTargetWithHttpInfo(body) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createRdpTarget");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = CreateTargetOutput;
-      return this.apiClient.callApi(
-        '/create-rdp-target', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {module:model/CreateRdpTarget} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateTargetOutput}
-     */
-    createRdpTarget(body) {
-      return this.createRdpTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1219,7 +1451,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/CreateSSHTarget} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateTargetOutput} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateSSHTargetOutput} and HTTP response
      */
     createSSHTargetWithHttpInfo(body) {
       let postBody = body;
@@ -1240,7 +1472,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = CreateTargetOutput;
+      let returnType = CreateSSHTargetOutput;
       return this.apiClient.callApi(
         '/create-ssh-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1250,7 +1482,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/CreateSSHTarget} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateTargetOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateSSHTargetOutput}
      */
     createSSHTarget(body) {
       return this.createSSHTargetWithHttpInfo(body)
@@ -1304,51 +1536,8 @@ export default class V2Api {
 
 
     /**
-     * @param {Object} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateTargetOutput} and HTTP response
-     */
-    createTargetWithHttpInfo(body) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createTarget");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = CreateTargetOutput;
-      return this.apiClient.callApi(
-        '/create-target', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {Object} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateTargetOutput}
-     */
-    createTarget(body) {
-      return this.createTargetWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * @param {module:model/CreateWebTarget} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateTargetOutput} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateWebTargetOutput} and HTTP response
      */
     createWebTargetWithHttpInfo(body) {
       let postBody = body;
@@ -1369,7 +1558,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = CreateTargetOutput;
+      let returnType = CreateWebTargetOutput;
       return this.apiClient.callApi(
         '/create-web-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1379,7 +1568,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/CreateWebTarget} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateTargetOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateWebTargetOutput}
      */
     createWebTarget(body) {
       return this.createWebTargetWithHttpInfo(body)
@@ -2122,7 +2311,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GatewayAddSubAdmins} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayAddSubAdminsOutput} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     gatewayAddSubAdminsWithHttpInfo(body) {
       let postBody = body;
@@ -2143,7 +2332,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = GatewayAddSubAdminsOutput;
+      let returnType = Object;
       return this.apiClient.callApi(
         '/gateway-add-sub-admins', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2153,7 +2342,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GatewayAddSubAdmins} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayAddSubAdminsOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     gatewayAddSubAdmins(body) {
       return this.gatewayAddSubAdminsWithHttpInfo(body)
@@ -2765,6 +2954,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayCreateProducerSnowflake} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerSnowflakeOutput} and HTTP response
+     */
+    gatewayCreateProducerSnowflakeWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateProducerSnowflake");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayCreateProducerSnowflakeOutput;
+      return this.apiClient.callApi(
+        '/gateway-create-producer-snowflake', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayCreateProducerSnowflake} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerSnowflakeOutput}
+     */
+    gatewayCreateProducerSnowflake(body) {
+      return this.gatewayCreateProducerSnowflakeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayDeleteProducer} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayDeleteProducerOutput} and HTTP response
      */
@@ -2809,7 +3041,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GatewayDeleteSubAdmins} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayDeleteSubAdminsOutput} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     gatewayDeleteSubAdminsWithHttpInfo(body) {
       let postBody = body;
@@ -2830,7 +3062,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = GatewayDeleteSubAdminsOutput;
+      let returnType = Object;
       return this.apiClient.callApi(
         '/gateway-delete-sub-admins', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2840,7 +3072,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GatewayDeleteSubAdmins} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayDeleteSubAdminsOutput}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     gatewayDeleteSubAdmins(body) {
       return this.gatewayDeleteSubAdminsWithHttpInfo(body)
@@ -3195,43 +3427,6 @@ export default class V2Api {
 
 
     /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    gatewayUpdateItemWithHttpInfo() {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/update-managed-key', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    gatewayUpdateItem() {
-      return this.gatewayUpdateItemWithHttpInfo()
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * @param {module:model/GatewayUpdateTmpUsers} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -3441,10 +3636,15 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GetPKICertificate} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetPKICertificateOutput} and HTTP response
      */
-    getPKICertificateWithHttpInfo() {
-      let postBody = null;
+    getPKICertificateWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling getPKICertificate");
+      }
 
       let pathParams = {
       };
@@ -3456,7 +3656,7 @@ export default class V2Api {
       };
 
       let authNames = [];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = GetPKICertificateOutput;
       return this.apiClient.callApi(
@@ -3467,10 +3667,11 @@ export default class V2Api {
     }
 
     /**
+     * @param {module:model/GetPKICertificate} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetPKICertificateOutput}
      */
-    getPKICertificate() {
-      return this.getPKICertificateWithHttpInfo()
+    getPKICertificate(body) {
+      return this.getPKICertificateWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4631,6 +4832,49 @@ export default class V2Api {
      */
     updateAWSTargetDetails(body) {
       return this.updateAWSTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateAssoc} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateAssocWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAssoc");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-assoc', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAssoc} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateAssoc(body) {
+      return this.updateAssocWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

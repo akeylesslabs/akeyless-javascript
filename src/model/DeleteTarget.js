@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTarget model module.
  * @module model/DeleteTarget
- * @version 2.4.0
+ * @version 2.4.1
  */
 class DeleteTarget {
     /**
@@ -55,6 +55,9 @@ class DeleteTarget {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('target-version')) {
                 obj['target-version'] = ApiClient.convertToType(data['target-version'], 'Number');
             }
@@ -63,6 +66,9 @@ class DeleteTarget {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -85,6 +91,12 @@ DeleteTarget.prototype['enforce-deletion'] = false;
 DeleteTarget.prototype['name'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+DeleteTarget.prototype['password'] = undefined;
+
+/**
  * Target version
  * @member {Number} target-version
  */
@@ -101,6 +113,12 @@ DeleteTarget.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 DeleteTarget.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+DeleteTarget.prototype['username'] = undefined;
 
 
 

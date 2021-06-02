@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetDynamicSecretValue model module.
  * @module model/GetDynamicSecretValue
- * @version 2.4.0
+ * @version 2.4.1
  */
 class GetDynamicSecretValue {
     /**
@@ -58,6 +58,9 @@ class GetDynamicSecretValue {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('target')) {
                 obj['target'] = ApiClient.convertToType(data['target'], 'String');
             }
@@ -69,6 +72,9 @@ class GetDynamicSecretValue {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -96,6 +102,12 @@ GetDynamicSecretValue.prototype['host'] = undefined;
 GetDynamicSecretValue.prototype['name'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+GetDynamicSecretValue.prototype['password'] = undefined;
+
+/**
  * Target Name
  * @member {String} target
  */
@@ -119,6 +131,12 @@ GetDynamicSecretValue.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GetDynamicSecretValue.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+GetDynamicSecretValue.prototype['username'] = undefined;
 
 
 

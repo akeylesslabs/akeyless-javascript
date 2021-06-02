@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateTmpUsers model module.
  * @module model/GatewayUpdateTmpUsers
- * @version 2.4.0
+ * @version 2.4.1
  */
 class GatewayUpdateTmpUsers {
     /**
@@ -63,6 +63,9 @@ class GatewayUpdateTmpUsers {
             if (data.hasOwnProperty('new-ttl-min')) {
                 obj['new-ttl-min'] = ApiClient.convertToType(data['new-ttl-min'], 'Number');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('tmp-creds-id')) {
                 obj['tmp-creds-id'] = ApiClient.convertToType(data['tmp-creds-id'], 'String');
             }
@@ -71,6 +74,9 @@ class GatewayUpdateTmpUsers {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -98,6 +104,12 @@ GatewayUpdateTmpUsers.prototype['name'] = undefined;
 GatewayUpdateTmpUsers.prototype['new-ttl-min'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+GatewayUpdateTmpUsers.prototype['password'] = undefined;
+
+/**
  * Tmp Creds ID
  * @member {String} tmp-creds-id
  */
@@ -114,6 +126,12 @@ GatewayUpdateTmpUsers.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GatewayUpdateTmpUsers.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+GatewayUpdateTmpUsers.prototype['username'] = undefined;
 
 
 

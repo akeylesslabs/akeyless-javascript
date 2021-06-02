@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOAuth2 model module.
  * @module model/CreateAuthMethodOAuth2
- * @version 2.4.0
+ * @version 2.4.1
  */
 class CreateAuthMethodOAuth2 {
     /**
@@ -66,6 +66,9 @@ class CreateAuthMethodOAuth2 {
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
             }
+            if (data.hasOwnProperty('force-sub-claims')) {
+                obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
             }
@@ -75,6 +78,9 @@ class CreateAuthMethodOAuth2 {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -83,6 +89,9 @@ class CreateAuthMethodOAuth2 {
             }
             if (data.hasOwnProperty('unique-identifier')) {
                 obj['unique-identifier'] = ApiClient.convertToType(data['unique-identifier'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -117,6 +126,12 @@ CreateAuthMethodOAuth2.prototype['bound-client-ids'] = undefined;
 CreateAuthMethodOAuth2.prototype['bound-ips'] = undefined;
 
 /**
+ * if true: enforce role-association must include sub claims
+ * @member {Boolean} force-sub-claims
+ */
+CreateAuthMethodOAuth2.prototype['force-sub-claims'] = undefined;
+
+/**
  * Issuer URL
  * @member {String} issuer
  */
@@ -135,6 +150,12 @@ CreateAuthMethodOAuth2.prototype['jwks-uri'] = undefined;
 CreateAuthMethodOAuth2.prototype['name'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+CreateAuthMethodOAuth2.prototype['password'] = undefined;
+
+/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -151,6 +172,12 @@ CreateAuthMethodOAuth2.prototype['uid-token'] = undefined;
  * @member {String} unique-identifier
  */
 CreateAuthMethodOAuth2.prototype['unique-identifier'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+CreateAuthMethodOAuth2.prototype['username'] = undefined;
 
 
 

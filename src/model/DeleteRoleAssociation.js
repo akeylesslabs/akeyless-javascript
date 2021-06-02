@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteRoleAssociation model module.
  * @module model/DeleteRoleAssociation
- * @version 2.4.0
+ * @version 2.4.1
  */
 class DeleteRoleAssociation {
     /**
@@ -53,11 +53,17 @@ class DeleteRoleAssociation {
             if (data.hasOwnProperty('assoc-id')) {
                 obj['assoc-id'] = ApiClient.convertToType(data['assoc-id'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -73,6 +79,12 @@ class DeleteRoleAssociation {
 DeleteRoleAssociation.prototype['assoc-id'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+DeleteRoleAssociation.prototype['password'] = undefined;
+
+/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -83,6 +95,12 @@ DeleteRoleAssociation.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 DeleteRoleAssociation.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+DeleteRoleAssociation.prototype['username'] = undefined;
 
 
 

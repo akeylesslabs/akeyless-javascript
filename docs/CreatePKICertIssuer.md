@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **notRequireCn** | **Boolean** | If set, clients can request certificates without a CN | [optional] 
 **organizationalUnits** | **String** | A comma-separated list of organizational units (OU) that will be set in the issued certificate | [optional] 
 **organizations** | **String** | A comma-separated list of organizations (O) that will be set in the issued certificate | [optional] 
+**password** | **String** | Required only when the authentication process requires a username and password | [optional] 
 **postalCode** | **String** | A comma-separated list of the postal code that will be set in the issued certificate | [optional] 
 **province** | **String** | A comma-separated list of the province that will be set in the issued certificate | [optional] 
 **serverFlag** | **Boolean** | If set, certificates will be flagged for server auth use | [optional] 
@@ -27,5 +28,6 @@ Name | Type | Description | Notes
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **ttl** | **Number** | The requested Time To Live for the certificate, use second units | 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**username** | **String** | Required only when the authentication process requires a username and password | [optional] 
 
 

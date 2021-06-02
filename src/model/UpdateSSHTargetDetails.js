@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHTargetDetails model module.
  * @module model/UpdateSSHTargetDetails
- * @version 2.4.0
+ * @version 2.4.1
  */
 class UpdateSSHTargetDetails {
     /**
@@ -58,6 +58,9 @@ class UpdateSSHTargetDetails {
             if (data.hasOwnProperty('new-version')) {
                 obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
             }
@@ -81,6 +84,9 @@ class UpdateSSHTargetDetails {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -106,6 +112,12 @@ UpdateSSHTargetDetails.prototype['name'] = undefined;
  * @default false
  */
 UpdateSSHTargetDetails.prototype['new-version'] = false;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+UpdateSSHTargetDetails.prototype['password'] = undefined;
 
 /**
  * @member {String} port
@@ -149,6 +161,12 @@ UpdateSSHTargetDetails.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateSSHTargetDetails.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+UpdateSSHTargetDetails.prototype['username'] = undefined;
 
 
 

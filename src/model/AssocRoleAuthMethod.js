@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocRoleAuthMethod model module.
  * @module model/AssocRoleAuthMethod
- * @version 2.4.0
+ * @version 2.4.1
  */
 class AssocRoleAuthMethod {
     /**
@@ -55,6 +55,9 @@ class AssocRoleAuthMethod {
             if (data.hasOwnProperty('am-name')) {
                 obj['am-name'] = ApiClient.convertToType(data['am-name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('role-name')) {
                 obj['role-name'] = ApiClient.convertToType(data['role-name'], 'String');
             }
@@ -66,6 +69,9 @@ class AssocRoleAuthMethod {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -79,6 +85,12 @@ class AssocRoleAuthMethod {
  * @member {String} am-name
  */
 AssocRoleAuthMethod.prototype['am-name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+AssocRoleAuthMethod.prototype['password'] = undefined;
 
 /**
  * The role to associate
@@ -103,6 +115,12 @@ AssocRoleAuthMethod.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 AssocRoleAuthMethod.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+AssocRoleAuthMethod.prototype['username'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRabbitMQ model module.
  * @module model/GatewayCreateProducerRabbitMQ
- * @version 2.4.0
+ * @version 2.4.1
  */
 class GatewayCreateProducerRabbitMQ {
     /**
@@ -68,6 +68,9 @@ class GatewayCreateProducerRabbitMQ {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
             }
@@ -104,6 +107,9 @@ class GatewayCreateProducerRabbitMQ {
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
             }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            }
         }
         return obj;
     }
@@ -123,6 +129,12 @@ GatewayCreateProducerRabbitMQ.prototype['gateway-url'] = 'http://localhost:8000'
  * @member {String} name
  */
 GatewayCreateProducerRabbitMQ.prototype['name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+GatewayCreateProducerRabbitMQ.prototype['password'] = undefined;
 
 /**
  * Dynamic producer encryption key
@@ -196,6 +208,12 @@ GatewayCreateProducerRabbitMQ.prototype['uid-token'] = undefined;
  * @default '60m'
  */
 GatewayCreateProducerRabbitMQ.prototype['user-ttl'] = '60m';
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+GatewayCreateProducerRabbitMQ.prototype['username'] = undefined;
 
 
 

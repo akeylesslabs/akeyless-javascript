@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodSAML model module.
  * @module model/CreateAuthMethodSAML
- * @version 2.4.0
+ * @version 2.4.1
  */
 class CreateAuthMethodSAML {
     /**
@@ -58,11 +58,17 @@ class CreateAuthMethodSAML {
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
             }
+            if (data.hasOwnProperty('force-sub-claims')) {
+                obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
             if (data.hasOwnProperty('idp-metadata-url')) {
                 obj['idp-metadata-url'] = ApiClient.convertToType(data['idp-metadata-url'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -72,6 +78,9 @@ class CreateAuthMethodSAML {
             }
             if (data.hasOwnProperty('unique-identifier')) {
                 obj['unique-identifier'] = ApiClient.convertToType(data['unique-identifier'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -94,6 +103,12 @@ CreateAuthMethodSAML.prototype['access-expires'] = 0;
 CreateAuthMethodSAML.prototype['bound-ips'] = undefined;
 
 /**
+ * if true: enforce role-association must include sub claims
+ * @member {Boolean} force-sub-claims
+ */
+CreateAuthMethodSAML.prototype['force-sub-claims'] = undefined;
+
+/**
  * IDP metadata url
  * @member {String} idp-metadata-url
  */
@@ -104,6 +119,12 @@ CreateAuthMethodSAML.prototype['idp-metadata-url'] = undefined;
  * @member {String} name
  */
 CreateAuthMethodSAML.prototype['name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+CreateAuthMethodSAML.prototype['password'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -122,6 +143,12 @@ CreateAuthMethodSAML.prototype['uid-token'] = undefined;
  * @member {String} unique-identifier
  */
 CreateAuthMethodSAML.prototype['unique-identifier'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+CreateAuthMethodSAML.prototype['username'] = undefined;
 
 
 

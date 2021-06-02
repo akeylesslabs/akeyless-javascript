@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Encrypt model module.
  * @module model/Encrypt
- * @version 2.4.0
+ * @version 2.4.1
  */
 class Encrypt {
     /**
@@ -57,6 +57,9 @@ class Encrypt {
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('plaintext')) {
                 obj['plaintext'] = ApiClient.convertToType(data['plaintext'], 'String');
             }
@@ -65,6 +68,9 @@ class Encrypt {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -86,6 +92,12 @@ Encrypt.prototype['encryption-context'] = undefined;
 Encrypt.prototype['key-name'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+Encrypt.prototype['password'] = undefined;
+
+/**
  * Data to be encrypted
  * @member {String} plaintext
  */
@@ -102,6 +114,12 @@ Encrypt.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 Encrypt.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+Encrypt.prototype['username'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTargetAssociation model module.
  * @module model/DeleteTargetAssociation
- * @version 2.4.0
+ * @version 2.4.1
  */
 class DeleteTargetAssociation {
     /**
@@ -56,6 +56,9 @@ class DeleteTargetAssociation {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
@@ -64,6 +67,9 @@ class DeleteTargetAssociation {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -85,6 +91,12 @@ DeleteTargetAssociation.prototype['assoc-id'] = undefined;
 DeleteTargetAssociation.prototype['name'] = undefined;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+DeleteTargetAssociation.prototype['password'] = undefined;
+
+/**
  * The target to associate
  * @member {String} target-name
  */
@@ -101,6 +113,12 @@ DeleteTargetAssociation.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 DeleteTargetAssociation.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+DeleteTargetAssociation.prototype['username'] = undefined;
 
 
 

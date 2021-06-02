@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHTarget model module.
  * @module model/CreateSSHTarget
- * @version 2.4.0
+ * @version 2.4.1
  */
 class CreateSSHTarget {
     /**
@@ -55,8 +55,14 @@ class CreateSSHTarget {
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
             }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
@@ -66,9 +72,6 @@ class CreateSSHTarget {
             }
             if (data.hasOwnProperty('private-key-password')) {
                 obj['private-key-password'] = ApiClient.convertToType(data['private-key-password'], 'String');
-            }
-            if (data.hasOwnProperty('protection_key')) {
-                obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
             }
             if (data.hasOwnProperty('ssh-password')) {
                 obj['ssh-password'] = ApiClient.convertToType(data['ssh-password'], 'String');
@@ -81,6 +84,9 @@ class CreateSSHTarget {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -101,10 +107,22 @@ CreateSSHTarget.prototype['comment'] = undefined;
 CreateSSHTarget.prototype['host'] = undefined;
 
 /**
+ * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
+ * @member {String} key
+ */
+CreateSSHTarget.prototype['key'] = undefined;
+
+/**
  * Target name
  * @member {String} name
  */
 CreateSSHTarget.prototype['name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+CreateSSHTarget.prototype['password'] = undefined;
 
 /**
  * @member {String} port
@@ -120,12 +138,6 @@ CreateSSHTarget.prototype['private-key'] = undefined;
  * @member {String} private-key-password
  */
 CreateSSHTarget.prototype['private-key-password'] = undefined;
-
-/**
- * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
- * @member {String} protection_key
- */
-CreateSSHTarget.prototype['protection_key'] = undefined;
 
 /**
  * @member {String} ssh-password
@@ -148,6 +160,12 @@ CreateSSHTarget.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateSSHTarget.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+CreateSSHTarget.prototype['username'] = undefined;
 
 
 

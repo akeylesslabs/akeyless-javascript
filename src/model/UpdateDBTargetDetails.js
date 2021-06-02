@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTargetDetails model module.
  * @module model/UpdateDBTargetDetails
- * @version 2.4.0
+ * @version 2.4.1
  */
 class UpdateDBTargetDetails {
     /**
@@ -67,6 +67,9 @@ class UpdateDBTargetDetails {
             if (data.hasOwnProperty('new-version')) {
                 obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
             }
@@ -84,6 +87,9 @@ class UpdateDBTargetDetails {
             }
             if (data.hasOwnProperty('user_name')) {
                 obj['user_name'] = ApiClient.convertToType(data['user_name'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -126,6 +132,12 @@ UpdateDBTargetDetails.prototype['name'] = undefined;
 UpdateDBTargetDetails.prototype['new-version'] = false;
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+UpdateDBTargetDetails.prototype['password'] = undefined;
+
+/**
  * @member {String} port
  */
 UpdateDBTargetDetails.prototype['port'] = undefined;
@@ -157,6 +169,12 @@ UpdateDBTargetDetails.prototype['uid-token'] = undefined;
  * @member {String} user_name
  */
 UpdateDBTargetDetails.prototype['user_name'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+UpdateDBTargetDetails.prototype['username'] = undefined;
 
 
 

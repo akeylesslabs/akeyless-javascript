@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import AllowedAccess from './AllowedAccess';
 
 /**
  * The GetSubAdminsListReplyObj model module.
  * @module model/GetSubAdminsListReplyObj
- * @version 2.4.0
+ * @version 2.4.1
  */
 class GetSubAdminsListReplyObj {
     /**
@@ -47,8 +48,8 @@ class GetSubAdminsListReplyObj {
         if (data) {
             obj = obj || new GetSubAdminsListReplyObj();
 
-            if (data.hasOwnProperty('sub_admins')) {
-                obj['sub_admins'] = ApiClient.convertToType(data['sub_admins'], ['String']);
+            if (data.hasOwnProperty('allowed_access')) {
+                obj['allowed_access'] = ApiClient.convertToType(data['allowed_access'], {'String': AllowedAccess});
             }
         }
         return obj;
@@ -58,9 +59,9 @@ class GetSubAdminsListReplyObj {
 }
 
 /**
- * @member {Array.<String>} sub_admins
+ * @member {Object.<String, module:model/AllowedAccess>} allowed_access
  */
-GetSubAdminsListReplyObj.prototype['sub_admins'] = undefined;
+GetSubAdminsListReplyObj.prototype['allowed_access'] = undefined;
 
 
 

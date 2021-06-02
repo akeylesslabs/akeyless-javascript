@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetConfig model module.
  * @module model/GatewayGetConfig
- * @version 2.4.0
+ * @version 2.4.1
  */
 class GatewayGetConfig {
     /**
@@ -51,11 +51,17 @@ class GatewayGetConfig {
             if (data.hasOwnProperty('gateway-url')) {
                 obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -72,6 +78,12 @@ class GatewayGetConfig {
 GatewayGetConfig.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
+ * Required only when the authentication process requires a username and password
+ * @member {String} password
+ */
+GatewayGetConfig.prototype['password'] = undefined;
+
+/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -82,6 +94,12 @@ GatewayGetConfig.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GatewayGetConfig.prototype['uid-token'] = undefined;
+
+/**
+ * Required only when the authentication process requires a username and password
+ * @member {String} username
+ */
+GatewayGetConfig.prototype['username'] = undefined;
 
 
 

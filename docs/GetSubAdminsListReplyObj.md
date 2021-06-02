@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subAdmins** | **[String]** |  | [optional] 
+**allowedAccess** | [**{String: AllowedAccess}**](AllowedAccess.md) |  | [optional] 
 
 
