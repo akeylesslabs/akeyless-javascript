@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteRoles model module.
  * @module model/DeleteRoles
- * @version 2.4.1
+ * @version 2.4.2
  */
 class DeleteRoles {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayListSubAdmins model module.
  * @module model/GatewayListSubAdmins
- * @version 2.4.1
+ * @version 2.4.2
  */
 class GatewayListSubAdmins {
     /**
