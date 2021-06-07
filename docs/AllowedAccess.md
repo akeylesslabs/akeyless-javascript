@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **allowedApi** | **Boolean** |  | [optional] 
 **allowedsLogin** | **Boolean** |  | [optional] 
 **errMsg** | **String** |  | [optional] 
+**hash** | **String** |  | [optional] 
 **isValid** | **Boolean** |  | [optional] 
 **name** | **String** |  | [optional] 
 **subClaims** | **{String: [String]}** |  | [optional] 

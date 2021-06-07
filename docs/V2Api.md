@@ -52,7 +52,6 @@ Method | HTTP request | Description
 [**describePermissions**](V2Api.md#describePermissions) | **POST** /describe-permissions | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
 [**encryptPKCS1**](V2Api.md#encryptPKCS1) | **POST** /encrypt-pkcs1 | 
-[**gatewayAddSubAdmins**](V2Api.md#gatewayAddSubAdmins) | **POST** /gateway-add-sub-admins | 
 [**gatewayCreateProducerArtifactory**](V2Api.md#gatewayCreateProducerArtifactory) | **POST** /gateway-create-producer-artifactory | 
 [**gatewayCreateProducerAws**](V2Api.md#gatewayCreateProducerAws) | **POST** /gateway-create-producer-aws | 
 [**gatewayCreateProducerAzure**](V2Api.md#gatewayCreateProducerAzure) | **POST** /gateway-create-producer-azure | 
@@ -68,13 +67,13 @@ Method | HTTP request | Description
 [**gatewayCreateProducerRabbitMQ**](V2Api.md#gatewayCreateProducerRabbitMQ) | **POST** /gateway-create-producer-rabbitmq | 
 [**gatewayCreateProducerRdp**](V2Api.md#gatewayCreateProducerRdp) | **POST** /gateway-create-producer-rdp | 
 [**gatewayCreateProducerSnowflake**](V2Api.md#gatewayCreateProducerSnowflake) | **POST** /gateway-create-producer-snowflake | 
+[**gatewayDeleteAllowedManagementAccess**](V2Api.md#gatewayDeleteAllowedManagementAccess) | **POST** /gateway-delete-allowed-management-access | 
 [**gatewayDeleteProducer**](V2Api.md#gatewayDeleteProducer) | **POST** /gateway-delete-producer | 
-[**gatewayDeleteSubAdmins**](V2Api.md#gatewayDeleteSubAdmins) | **POST** /gateway-delete-sub-admins | 
 [**gatewayGetConfig**](V2Api.md#gatewayGetConfig) | **POST** /gateway-get-config | 
 [**gatewayGetProducer**](V2Api.md#gatewayGetProducer) | **POST** /gateway-get-producer | 
 [**gatewayGetTmpUsers**](V2Api.md#gatewayGetTmpUsers) | **POST** /gateway-get-producer-tmp-creds | 
+[**gatewayListAllowedManagementAccess**](V2Api.md#gatewayListAllowedManagementAccess) | **POST** /gateway-list-allowed-management-access | 
 [**gatewayListProducers**](V2Api.md#gatewayListProducers) | **POST** /gateway-list-producers | 
-[**gatewayListSubAdmins**](V2Api.md#gatewayListSubAdmins) | **POST** /gateway-list-SubAdmins | 
 [**gatewayRevokeTmpUsers**](V2Api.md#gatewayRevokeTmpUsers) | **POST** /gateway-revoke-producer-tmp-creds | 
 [**gatewayStartProducer**](V2Api.md#gatewayStartProducer) | **POST** /gateway-start-producer | 
 [**gatewayStopProducer**](V2Api.md#gatewayStopProducer) | **POST** /gateway-stop-producer | 
@@ -2145,48 +2144,6 @@ No authorization required
 - **Accept**: application/json
 
 
-## gatewayAddSubAdmins
-
-> Object gatewayAddSubAdmins(body)
-
-
-
-### Example
-
-```javascript
-import akeyless from 'akeyless';
-
-let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayAddSubAdmins(); // GatewayAddSubAdmins | 
-apiInstance.gatewayAddSubAdmins(body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**GatewayAddSubAdmins**](GatewayAddSubAdmins.md)|  | 
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
 ## gatewayCreateProducerArtifactory
 
 > GatewayCreateProducerArtifactoryOutput gatewayCreateProducerArtifactory(body)
@@ -2819,6 +2776,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayDeleteAllowedManagementAccess
+
+> Object gatewayDeleteAllowedManagementAccess(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayDeleteAllowedManagementAccess(); // GatewayDeleteAllowedManagementAccess | 
+apiInstance.gatewayDeleteAllowedManagementAccess(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayDeleteAllowedManagementAccess**](GatewayDeleteAllowedManagementAccess.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayDeleteProducer
 
 > GatewayDeleteProducerOutput gatewayDeleteProducer(body)
@@ -2850,48 +2849,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayDeleteProducerOutput**](GatewayDeleteProducerOutput.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## gatewayDeleteSubAdmins
-
-> Object gatewayDeleteSubAdmins(body)
-
-
-
-### Example
-
-```javascript
-import akeyless from 'akeyless';
-
-let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayDeleteSubAdmins(); // GatewayDeleteSubAdmins | 
-apiInstance.gatewayDeleteSubAdmins(body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**GatewayDeleteSubAdmins**](GatewayDeleteSubAdmins.md)|  | 
-
-### Return type
-
-**Object**
 
 ### Authorization
 
@@ -3029,6 +2986,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayListAllowedManagementAccess
+
+> GetSubAdminsListReplyObj gatewayListAllowedManagementAccess(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayListAllowedManagementAccess(); // GatewayListAllowedManagementAccess | 
+apiInstance.gatewayListAllowedManagementAccess(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayListAllowedManagementAccess**](GatewayListAllowedManagementAccess.md)|  | 
+
+### Return type
+
+[**GetSubAdminsListReplyObj**](GetSubAdminsListReplyObj.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayListProducers
 
 > GetProducersListReplyObj gatewayListProducers(body)
@@ -3060,48 +3059,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetProducersListReplyObj**](GetProducersListReplyObj.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## gatewayListSubAdmins
-
-> GetSubAdminsListReplyObj gatewayListSubAdmins(body)
-
-
-
-### Example
-
-```javascript
-import akeyless from 'akeyless';
-
-let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayListSubAdmins(); // GatewayListSubAdmins | 
-apiInstance.gatewayListSubAdmins(body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**GatewayListSubAdmins**](GatewayListSubAdmins.md)|  | 
-
-### Return type
-
-[**GetSubAdminsListReplyObj**](GetSubAdminsListReplyObj.md)
 
 ### Authorization
 

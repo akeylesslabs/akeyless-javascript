@@ -137,7 +137,7 @@ import EncryptPKCS1 from './model/EncryptPKCS1';
 import EncryptPKCS1Output from './model/EncryptPKCS1Output';
 import ExternalKMSKeyId from './model/ExternalKMSKeyId';
 import GCPAccessRules from './model/GCPAccessRules';
-import GatewayAddSubAdmins from './model/GatewayAddSubAdmins';
+import GatewayAddAllowedManagementAccess from './model/GatewayAddAllowedManagementAccess';
 import GatewayCreateProducerArtifactory from './model/GatewayCreateProducerArtifactory';
 import GatewayCreateProducerArtifactoryOutput from './model/GatewayCreateProducerArtifactoryOutput';
 import GatewayCreateProducerAws from './model/GatewayCreateProducerAws';
@@ -170,14 +170,14 @@ import GatewayCreateProducerRdp from './model/GatewayCreateProducerRdp';
 import GatewayCreateProducerRdpOutput from './model/GatewayCreateProducerRdpOutput';
 import GatewayCreateProducerSnowflake from './model/GatewayCreateProducerSnowflake';
 import GatewayCreateProducerSnowflakeOutput from './model/GatewayCreateProducerSnowflakeOutput';
+import GatewayDeleteAllowedManagementAccess from './model/GatewayDeleteAllowedManagementAccess';
 import GatewayDeleteProducer from './model/GatewayDeleteProducer';
 import GatewayDeleteProducerOutput from './model/GatewayDeleteProducerOutput';
-import GatewayDeleteSubAdmins from './model/GatewayDeleteSubAdmins';
 import GatewayGetConfig from './model/GatewayGetConfig';
 import GatewayGetProducer from './model/GatewayGetProducer';
 import GatewayGetTmpUsers from './model/GatewayGetTmpUsers';
+import GatewayListAllowedManagementAccess from './model/GatewayListAllowedManagementAccess';
 import GatewayListProducers from './model/GatewayListProducers';
-import GatewayListSubAdmins from './model/GatewayListSubAdmins';
 import GatewayRevokeTmpUsers from './model/GatewayRevokeTmpUsers';
 import GatewayStartProducer from './model/GatewayStartProducer';
 import GatewayStartProducerOutput from './model/GatewayStartProducerOutput';
@@ -340,7 +340,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.4.2
+* @version 2.4.3
 */
 export {
     /**
@@ -1094,10 +1094,10 @@ export {
     GCPAccessRules,
 
     /**
-     * The GatewayAddSubAdmins model constructor.
-     * @property {module:model/GatewayAddSubAdmins}
+     * The GatewayAddAllowedManagementAccess model constructor.
+     * @property {module:model/GatewayAddAllowedManagementAccess}
      */
-    GatewayAddSubAdmins,
+    GatewayAddAllowedManagementAccess,
 
     /**
      * The GatewayCreateProducerArtifactory model constructor.
@@ -1292,6 +1292,12 @@ export {
     GatewayCreateProducerSnowflakeOutput,
 
     /**
+     * The GatewayDeleteAllowedManagementAccess model constructor.
+     * @property {module:model/GatewayDeleteAllowedManagementAccess}
+     */
+    GatewayDeleteAllowedManagementAccess,
+
+    /**
      * The GatewayDeleteProducer model constructor.
      * @property {module:model/GatewayDeleteProducer}
      */
@@ -1302,12 +1308,6 @@ export {
      * @property {module:model/GatewayDeleteProducerOutput}
      */
     GatewayDeleteProducerOutput,
-
-    /**
-     * The GatewayDeleteSubAdmins model constructor.
-     * @property {module:model/GatewayDeleteSubAdmins}
-     */
-    GatewayDeleteSubAdmins,
 
     /**
      * The GatewayGetConfig model constructor.
@@ -1328,16 +1328,16 @@ export {
     GatewayGetTmpUsers,
 
     /**
+     * The GatewayListAllowedManagementAccess model constructor.
+     * @property {module:model/GatewayListAllowedManagementAccess}
+     */
+    GatewayListAllowedManagementAccess,
+
+    /**
      * The GatewayListProducers model constructor.
      * @property {module:model/GatewayListProducers}
      */
     GatewayListProducers,
-
-    /**
-     * The GatewayListSubAdmins model constructor.
-     * @property {module:model/GatewayListSubAdmins}
-     */
-    GatewayListSubAdmins,
 
     /**
      * The GatewayRevokeTmpUsers model constructor.

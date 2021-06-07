@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 2.4.2
+ * @version 2.4.3
  */
 class UpdateRole {
     /**
@@ -84,13 +84,13 @@ class UpdateRole {
 }
 
 /**
- * Allow this role to view analytics. Currently only 'none' and 'self' values are supported, allowing associated auth methods to view reports produced by the same auth methods.
+ * Allow this role to view analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.
  * @member {String} analytics-access
  */
 UpdateRole.prototype['analytics-access'] = undefined;
 
 /**
- * Allow this role to view audit logs. Currently only 'none' and 'self' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.
+ * Allow this role to view audit logs. Currently only 'none', 'own' and 'all' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.
  * @member {String} audit-access
  */
 UpdateRole.prototype['audit-access'] = undefined;

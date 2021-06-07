@@ -103,7 +103,6 @@ import Encrypt from '../model/Encrypt';
 import EncryptOutput from '../model/EncryptOutput';
 import EncryptPKCS1 from '../model/EncryptPKCS1';
 import EncryptPKCS1Output from '../model/EncryptPKCS1Output';
-import GatewayAddSubAdmins from '../model/GatewayAddSubAdmins';
 import GatewayCreateProducerArtifactory from '../model/GatewayCreateProducerArtifactory';
 import GatewayCreateProducerArtifactoryOutput from '../model/GatewayCreateProducerArtifactoryOutput';
 import GatewayCreateProducerAws from '../model/GatewayCreateProducerAws';
@@ -134,14 +133,14 @@ import GatewayCreateProducerRdp from '../model/GatewayCreateProducerRdp';
 import GatewayCreateProducerRdpOutput from '../model/GatewayCreateProducerRdpOutput';
 import GatewayCreateProducerSnowflake from '../model/GatewayCreateProducerSnowflake';
 import GatewayCreateProducerSnowflakeOutput from '../model/GatewayCreateProducerSnowflakeOutput';
+import GatewayDeleteAllowedManagementAccess from '../model/GatewayDeleteAllowedManagementAccess';
 import GatewayDeleteProducer from '../model/GatewayDeleteProducer';
 import GatewayDeleteProducerOutput from '../model/GatewayDeleteProducerOutput';
-import GatewayDeleteSubAdmins from '../model/GatewayDeleteSubAdmins';
 import GatewayGetConfig from '../model/GatewayGetConfig';
 import GatewayGetProducer from '../model/GatewayGetProducer';
 import GatewayGetTmpUsers from '../model/GatewayGetTmpUsers';
+import GatewayListAllowedManagementAccess from '../model/GatewayListAllowedManagementAccess';
 import GatewayListProducers from '../model/GatewayListProducers';
-import GatewayListSubAdmins from '../model/GatewayListSubAdmins';
 import GatewayRevokeTmpUsers from '../model/GatewayRevokeTmpUsers';
 import GatewayStartProducer from '../model/GatewayStartProducer';
 import GatewayStartProducerOutput from '../model/GatewayStartProducerOutput';
@@ -228,7 +227,7 @@ import VerifyPKCS1 from '../model/VerifyPKCS1';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.4.2
+* @version 2.4.3
 */
 export default class V2Api {
 
@@ -2310,49 +2309,6 @@ export default class V2Api {
 
 
     /**
-     * @param {module:model/GatewayAddSubAdmins} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    gatewayAddSubAdminsWithHttpInfo(body) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling gatewayAddSubAdmins");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Object;
-      return this.apiClient.callApi(
-        '/gateway-add-sub-admins', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {module:model/GatewayAddSubAdmins} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    gatewayAddSubAdmins(body) {
-      return this.gatewayAddSubAdminsWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * @param {module:model/GatewayCreateProducerArtifactory} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerArtifactoryOutput} and HTTP response
      */
@@ -2997,6 +2953,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayDeleteAllowedManagementAccess} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    gatewayDeleteAllowedManagementAccessWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayDeleteAllowedManagementAccess");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/gateway-delete-allowed-management-access', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayDeleteAllowedManagementAccess} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    gatewayDeleteAllowedManagementAccess(body) {
+      return this.gatewayDeleteAllowedManagementAccessWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayDeleteProducer} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayDeleteProducerOutput} and HTTP response
      */
@@ -3033,49 +3032,6 @@ export default class V2Api {
      */
     gatewayDeleteProducer(body) {
       return this.gatewayDeleteProducerWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {module:model/GatewayDeleteSubAdmins} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    gatewayDeleteSubAdminsWithHttpInfo(body) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling gatewayDeleteSubAdmins");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Object;
-      return this.apiClient.callApi(
-        '/gateway-delete-sub-admins', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {module:model/GatewayDeleteSubAdmins} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    gatewayDeleteSubAdmins(body) {
-      return this.gatewayDeleteSubAdminsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3212,6 +3168,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayListAllowedManagementAccess} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetSubAdminsListReplyObj} and HTTP response
+     */
+    gatewayListAllowedManagementAccessWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayListAllowedManagementAccess");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GetSubAdminsListReplyObj;
+      return this.apiClient.callApi(
+        '/gateway-list-allowed-management-access', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayListAllowedManagementAccess} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetSubAdminsListReplyObj}
+     */
+    gatewayListAllowedManagementAccess(body) {
+      return this.gatewayListAllowedManagementAccessWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayListProducers} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetProducersListReplyObj} and HTTP response
      */
@@ -3248,49 +3247,6 @@ export default class V2Api {
      */
     gatewayListProducers(body) {
       return this.gatewayListProducersWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {module:model/GatewayListSubAdmins} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetSubAdminsListReplyObj} and HTTP response
-     */
-    gatewayListSubAdminsWithHttpInfo(body) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling gatewayListSubAdmins");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = GetSubAdminsListReplyObj;
-      return this.apiClient.callApi(
-        '/gateway-list-SubAdmins', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {module:model/GatewayListSubAdmins} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetSubAdminsListReplyObj}
-     */
-    gatewayListSubAdmins(body) {
-      return this.gatewayListSubAdminsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

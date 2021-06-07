@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteRoleRuleOutput model module.
  * @module model/DeleteRoleRuleOutput
- * @version 2.4.2
+ * @version 2.4.3
  */
 class DeleteRoleRuleOutput {
     /**
@@ -47,6 +47,9 @@ class DeleteRoleRuleOutput {
         if (data) {
             obj = obj || new DeleteRoleRuleOutput();
 
+            if (data.hasOwnProperty('deleted')) {
+                obj['deleted'] = ApiClient.convertToType(data['deleted'], 'Boolean');
+            }
             if (data.hasOwnProperty('result')) {
                 obj['result'] = ApiClient.convertToType(data['result'], 'String');
             }
@@ -56,6 +59,11 @@ class DeleteRoleRuleOutput {
 
 
 }
+
+/**
+ * @member {Boolean} deleted
+ */
+DeleteRoleRuleOutput.prototype['deleted'] = undefined;
 
 /**
  * @member {String} result
