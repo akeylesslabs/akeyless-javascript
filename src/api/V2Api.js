@@ -247,7 +247,7 @@ import VerifyPKCS1 from '../model/VerifyPKCS1';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.4.4
+* @version 2.4.5
 */
 export default class V2Api {
 
