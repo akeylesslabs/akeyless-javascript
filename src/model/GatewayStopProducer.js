@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayStopProducer model module.
  * @module model/GatewayStopProducer
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayStopProducer {
     /**
@@ -50,9 +50,6 @@ class GatewayStopProducer {
         if (data) {
             obj = obj || new GatewayStopProducer();
 
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -74,12 +71,6 @@ class GatewayStopProducer {
 
 
 }
-
-/**
- * Gateway url
- * @member {String} gateway-url
- */
-GatewayStopProducer.prototype['gateway-url'] = undefined;
 
 /**
  * Producer name

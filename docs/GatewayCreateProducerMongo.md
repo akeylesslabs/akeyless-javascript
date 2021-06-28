@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gatewayUrl** | **String** | Gateway url | [optional] [default to &#39;http://localhost:8000&#39;]
 **mongodbAtlasApiPrivateKey** | **String** | MongoDB Atlas private key | [optional] 
 **mongodbAtlasApiPublicKey** | **String** | MongoDB Atlas public key | [optional] 
 **mongodbAtlasProjectId** | **String** | MongoDB Atlas project ID | [optional] 

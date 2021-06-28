@@ -17,7 +17,7 @@ import ItemTargetAssociation from './ItemTargetAssociation';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.4.3
+ * @version 2.4.4
  */
 class DSProducerDetails {
     /**
@@ -273,11 +273,23 @@ class DSProducerDetails {
             if (data.hasOwnProperty('item_targets_assoc')) {
                 obj['item_targets_assoc'] = ApiClient.convertToType(data['item_targets_assoc'], [ItemTargetAssociation]);
             }
+            if (data.hasOwnProperty('k8s_bearer_token')) {
+                obj['k8s_bearer_token'] = ApiClient.convertToType(data['k8s_bearer_token'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_cluster_ca_certificate')) {
+                obj['k8s_cluster_ca_certificate'] = ApiClient.convertToType(data['k8s_cluster_ca_certificate'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_cluster_endpoint')) {
+                obj['k8s_cluster_endpoint'] = ApiClient.convertToType(data['k8s_cluster_endpoint'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_namespace')) {
+                obj['k8s_namespace'] = ApiClient.convertToType(data['k8s_namespace'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_service_account')) {
+                obj['k8s_service_account'] = ApiClient.convertToType(data['k8s_service_account'], 'String');
+            }
             if (data.hasOwnProperty('last_admin_rotation')) {
                 obj['last_admin_rotation'] = ApiClient.convertToType(data['last_admin_rotation'], 'Number');
-            }
-            if (data.hasOwnProperty('mongodb_atlas')) {
-                obj['mongodb_atlas'] = ApiClient.convertToType(data['mongodb_atlas'], 'Boolean');
             }
             if (data.hasOwnProperty('mongodb_atlas_api_private_key')) {
                 obj['mongodb_atlas_api_private_key'] = ApiClient.convertToType(data['mongodb_atlas_api_private_key'], 'String');
@@ -770,7 +782,6 @@ DSProducerDetails.prototype['gke_cluster_ca_certificate'] = undefined;
 DSProducerDetails.prototype['gke_cluster_endpoint'] = undefined;
 
 /**
- * GKEProjectID            string `json:\"gke_project_id\"`
  * @member {String} gke_cluster_name
  */
 DSProducerDetails.prototype['gke_cluster_name'] = undefined;
@@ -781,7 +792,6 @@ DSProducerDetails.prototype['gke_cluster_name'] = undefined;
 DSProducerDetails.prototype['gke_service_account_key'] = undefined;
 
 /**
- * GKEClusterComputeZone   string `json:\"gke_cluster_compute_zone\"`
  * @member {String} gke_service_account_name
  */
 DSProducerDetails.prototype['gke_service_account_name'] = undefined;
@@ -807,14 +817,34 @@ DSProducerDetails.prototype['host_port'] = undefined;
 DSProducerDetails.prototype['item_targets_assoc'] = undefined;
 
 /**
+ * @member {String} k8s_bearer_token
+ */
+DSProducerDetails.prototype['k8s_bearer_token'] = undefined;
+
+/**
+ * @member {String} k8s_cluster_ca_certificate
+ */
+DSProducerDetails.prototype['k8s_cluster_ca_certificate'] = undefined;
+
+/**
+ * @member {String} k8s_cluster_endpoint
+ */
+DSProducerDetails.prototype['k8s_cluster_endpoint'] = undefined;
+
+/**
+ * @member {String} k8s_namespace
+ */
+DSProducerDetails.prototype['k8s_namespace'] = undefined;
+
+/**
+ * @member {String} k8s_service_account
+ */
+DSProducerDetails.prototype['k8s_service_account'] = undefined;
+
+/**
  * @member {Number} last_admin_rotation
  */
 DSProducerDetails.prototype['last_admin_rotation'] = undefined;
-
-/**
- * @member {Boolean} mongodb_atlas
- */
-DSProducerDetails.prototype['mongodb_atlas'] = undefined;
 
 /**
  * @member {String} mongodb_atlas_api_private_key

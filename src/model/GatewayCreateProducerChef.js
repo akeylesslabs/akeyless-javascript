@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerChef model module.
  * @module model/GatewayCreateProducerChef
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerChef {
     /**
@@ -69,9 +69,6 @@ class GatewayCreateProducerChef {
             }
             if (data.hasOwnProperty('chef-server-username')) {
                 obj['chef-server-username'] = ApiClient.convertToType(data['chef-server-username'], 'String');
-            }
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -127,13 +124,6 @@ GatewayCreateProducerChef.prototype['chef-server-url'] = undefined;
  * @member {String} chef-server-username
  */
 GatewayCreateProducerChef.prototype['chef-server-username'] = undefined;
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayCreateProducerChef.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Producer name

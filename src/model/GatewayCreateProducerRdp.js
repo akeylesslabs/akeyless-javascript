@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRdp model module.
  * @module model/GatewayCreateProducerRdp
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerRdp {
     /**
@@ -60,9 +60,6 @@ class GatewayCreateProducerRdp {
 
             if (data.hasOwnProperty('fixed-user-only')) {
                 obj['fixed-user-only'] = ApiClient.convertToType(data['fixed-user-only'], 'String');
-            }
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -113,13 +110,6 @@ class GatewayCreateProducerRdp {
  * @default 'false'
  */
 GatewayCreateProducerRdp.prototype['fixed-user-only'] = 'false';
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayCreateProducerRdp.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Producer name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodUniversalIdentity model module.
  * @module model/CreateAuthMethodUniversalIdentity
- * @version 2.4.3
+ * @version 2.4.4
  */
 class CreateAuthMethodUniversalIdentity {
     /**
@@ -142,8 +142,9 @@ CreateAuthMethodUniversalIdentity.prototype['token'] = undefined;
 /**
  * Token ttl
  * @member {Number} ttl
+ * @default 60
  */
-CreateAuthMethodUniversalIdentity.prototype['ttl'] = undefined;
+CreateAuthMethodUniversalIdentity.prototype['ttl'] = 60;
 
 /**
  * The universal identity token, Required only for universal_identity authentication

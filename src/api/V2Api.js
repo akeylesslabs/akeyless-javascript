@@ -58,6 +58,7 @@ import CreateGcpTarget from '../model/CreateGcpTarget';
 import CreateGcpTargetOutput from '../model/CreateGcpTargetOutput';
 import CreateKey from '../model/CreateKey';
 import CreateKeyOutput from '../model/CreateKeyOutput';
+import CreateNativeK8STarget from '../model/CreateNativeK8STarget';
 import CreatePKICertIssuer from '../model/CreatePKICertIssuer';
 import CreatePKICertIssuerOutput from '../model/CreatePKICertIssuerOutput';
 import CreateRabbitMQTarget from '../model/CreateRabbitMQTarget';
@@ -125,6 +126,7 @@ import GatewayCreateProducerMongo from '../model/GatewayCreateProducerMongo';
 import GatewayCreateProducerMongoOutput from '../model/GatewayCreateProducerMongoOutput';
 import GatewayCreateProducerMySQL from '../model/GatewayCreateProducerMySQL';
 import GatewayCreateProducerMySQLOutput from '../model/GatewayCreateProducerMySQLOutput';
+import GatewayCreateProducerNativeK8SOutput from '../model/GatewayCreateProducerNativeK8SOutput';
 import GatewayCreateProducerPostgreSQL from '../model/GatewayCreateProducerPostgreSQL';
 import GatewayCreateProducerPostgreSQLOutput from '../model/GatewayCreateProducerPostgreSQLOutput';
 import GatewayCreateProducerRabbitMQ from '../model/GatewayCreateProducerRabbitMQ';
@@ -203,31 +205,49 @@ import UidRevokeToken from '../model/UidRevokeToken';
 import UidRotateToken from '../model/UidRotateToken';
 import UidRotateTokenOutput from '../model/UidRotateTokenOutput';
 import UniversalIdentityDetails from '../model/UniversalIdentityDetails';
+import UpdateAWSTarget from '../model/UpdateAWSTarget';
 import UpdateAWSTargetDetails from '../model/UpdateAWSTargetDetails';
 import UpdateAssoc from '../model/UpdateAssoc';
+import UpdateAzureTarget from '../model/UpdateAzureTarget';
+import UpdateAzureTargetOutput from '../model/UpdateAzureTargetOutput';
+import UpdateDBTarget from '../model/UpdateDBTarget';
 import UpdateDBTargetDetails from '../model/UpdateDBTargetDetails';
+import UpdateDBTargetOutput from '../model/UpdateDBTargetOutput';
+import UpdateEKSTarget from '../model/UpdateEKSTarget';
+import UpdateEKSTargetOutput from '../model/UpdateEKSTargetOutput';
+import UpdateGKETarget from '../model/UpdateGKETarget';
+import UpdateGKETargetOutput from '../model/UpdateGKETargetOutput';
+import UpdateGcpTarget from '../model/UpdateGcpTarget';
+import UpdateGcpTargetOutput from '../model/UpdateGcpTargetOutput';
 import UpdateItem from '../model/UpdateItem';
 import UpdateItemOutput from '../model/UpdateItemOutput';
+import UpdateNativeK8STarget from '../model/UpdateNativeK8STarget';
 import UpdateRDPTargetDetails from '../model/UpdateRDPTargetDetails';
+import UpdateRabbitMQTarget from '../model/UpdateRabbitMQTarget';
 import UpdateRabbitMQTargetDetails from '../model/UpdateRabbitMQTargetDetails';
+import UpdateRabbitMQTargetOutput from '../model/UpdateRabbitMQTargetOutput';
 import UpdateRole from '../model/UpdateRole';
 import UpdateRoleOutput from '../model/UpdateRoleOutput';
 import UpdateRotatedSecret from '../model/UpdateRotatedSecret';
 import UpdateRotatedSecretOutput from '../model/UpdateRotatedSecretOutput';
 import UpdateRotationSettings from '../model/UpdateRotationSettings';
+import UpdateSSHTarget from '../model/UpdateSSHTarget';
 import UpdateSSHTargetDetails from '../model/UpdateSSHTargetDetails';
+import UpdateSSHTargetOutput from '../model/UpdateSSHTargetOutput';
 import UpdateSecretVal from '../model/UpdateSecretVal';
 import UpdateSecretValOutput from '../model/UpdateSecretValOutput';
 import UpdateTarget from '../model/UpdateTarget';
 import UpdateTargetOutput from '../model/UpdateTargetOutput';
+import UpdateWebTarget from '../model/UpdateWebTarget';
 import UpdateWebTargetDetails from '../model/UpdateWebTargetDetails';
+import UpdateWebTargetOutput from '../model/UpdateWebTargetOutput';
 import UploadRSA from '../model/UploadRSA';
 import VerifyPKCS1 from '../model/VerifyPKCS1';
 
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.4.3
+* @version 2.4.4
 */
 export default class V2Api {
 
@@ -1227,6 +1247,43 @@ export default class V2Api {
      */
     createKey(body) {
       return this.createKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateNativeK8STarget} and HTTP response
+     */
+    createNativeK8STargetWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = CreateNativeK8STarget;
+      return this.apiClient.callApi(
+        '/create-k8s-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateNativeK8STarget}
+     */
+    createNativeK8STarget() {
+      return this.createNativeK8STargetWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2774,6 +2831,43 @@ export default class V2Api {
      */
     gatewayCreateProducerMySQL(body) {
       return this.gatewayCreateProducerMySQLWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerNativeK8SOutput} and HTTP response
+     */
+    gatewayCreateProducerNativeK8SWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = GatewayCreateProducerNativeK8SOutput;
+      return this.apiClient.callApi(
+        '/gateway-create-producer-k8s-native', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerNativeK8SOutput}
+     */
+    gatewayCreateProducerNativeK8S() {
+      return this.gatewayCreateProducerNativeK8SWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4752,6 +4846,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/UpdateAWSTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateAWSTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAWSTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-aws-target', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAWSTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateAWSTarget(body) {
+      return this.updateAWSTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/UpdateAWSTargetDetails} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTargetOutput} and HTTP response
      */
@@ -4838,6 +4975,92 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/UpdateAzureTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateAzureTargetOutput} and HTTP response
+     */
+    updateAzureTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAzureTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateAzureTargetOutput;
+      return this.apiClient.callApi(
+        '/update-azure-target', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAzureTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateAzureTargetOutput}
+     */
+    updateAzureTarget(body) {
+      return this.updateAzureTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateDBTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateDBTargetOutput} and HTTP response
+     */
+    updateDBTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateDBTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateDBTargetOutput;
+      return this.apiClient.callApi(
+        '/update-db-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateDBTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateDBTargetOutput}
+     */
+    updateDBTarget(body) {
+      return this.updateDBTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/UpdateDBTargetDetails} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTargetOutput} and HTTP response
      */
@@ -4874,6 +5097,135 @@ export default class V2Api {
      */
     updateDBTargetDetails(body) {
       return this.updateDBTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateEKSTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateEKSTargetOutput} and HTTP response
+     */
+    updateEKSTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateEKSTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateEKSTargetOutput;
+      return this.apiClient.callApi(
+        '/update-eks-target', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateEKSTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateEKSTargetOutput}
+     */
+    updateEKSTarget(body) {
+      return this.updateEKSTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateGKETarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateGKETargetOutput} and HTTP response
+     */
+    updateGKETargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateGKETarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateGKETargetOutput;
+      return this.apiClient.callApi(
+        '/update-gke-target', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateGKETarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateGKETargetOutput}
+     */
+    updateGKETarget(body) {
+      return this.updateGKETargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateGcpTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateGcpTargetOutput} and HTTP response
+     */
+    updateGcpTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateGcpTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateGcpTargetOutput;
+      return this.apiClient.callApi(
+        '/update-gcp-target', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateGcpTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateGcpTargetOutput}
+     */
+    updateGcpTarget(body) {
+      return this.updateGcpTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4924,6 +5276,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/UpdateNativeK8STarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateNativeK8STarget} and HTTP response
+     */
+    updateNativeK8STargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateNativeK8STarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateNativeK8STarget;
+      return this.apiClient.callApi(
+        '/update-k8s-target', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateNativeK8STarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateNativeK8STarget}
+     */
+    updateNativeK8STarget(body) {
+      return this.updateNativeK8STargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/UpdateRDPTargetDetails} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTargetOutput} and HTTP response
      */
@@ -4960,6 +5355,49 @@ export default class V2Api {
      */
     updateRDPTargetDetails(body) {
       return this.updateRDPTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateRabbitMQTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateRabbitMQTargetOutput} and HTTP response
+     */
+    updateRabbitMQTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateRabbitMQTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateRabbitMQTargetOutput;
+      return this.apiClient.callApi(
+        '/update-rabbitmq-target', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateRabbitMQTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateRabbitMQTargetOutput}
+     */
+    updateRabbitMQTarget(body) {
+      return this.updateRabbitMQTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5133,6 +5571,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/UpdateSSHTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateSSHTargetOutput} and HTTP response
+     */
+    updateSSHTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateSSHTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateSSHTargetOutput;
+      return this.apiClient.callApi(
+        '/update-ssh-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateSSHTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateSSHTargetOutput}
+     */
+    updateSSHTarget(body) {
+      return this.updateSSHTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/UpdateSSHTargetDetails} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTargetOutput} and HTTP response
      */
@@ -5298,6 +5779,49 @@ export default class V2Api {
      */
     updateTargetDetails(body) {
       return this.updateTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateWebTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateWebTargetOutput} and HTTP response
+     */
+    updateWebTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateWebTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateWebTargetOutput;
+      return this.apiClient.callApi(
+        '/update-web-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateWebTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateWebTargetOutput}
+     */
+    updateWebTarget(body) {
+      return this.updateWebTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gatewayUrl** | **String** | Gateway url | [optional] 
 **name** | **String** | Producer Name | 
 **newTtlMin** | **Number** | New TTL in Minutes | 
 **password** | **String** | Required only when the authentication process requires a username and password | [optional] 

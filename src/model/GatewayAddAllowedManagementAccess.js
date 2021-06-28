@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayAddAllowedManagementAccess model module.
  * @module model/GatewayAddAllowedManagementAccess
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayAddAllowedManagementAccess {
     /**
@@ -56,9 +56,6 @@ class GatewayAddAllowedManagementAccess {
             if (data.hasOwnProperty('allow-gw-login')) {
                 obj['allow-gw-login'] = ApiClient.convertToType(data['allow-gw-login'], 'Boolean');
             }
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
@@ -93,13 +90,6 @@ GatewayAddAllowedManagementAccess.prototype['allow-gw-api'] = undefined;
  * @member {Boolean} allow-gw-login
  */
 GatewayAddAllowedManagementAccess.prototype['allow-gw-login'] = undefined;
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayAddAllowedManagementAccess.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Required only when the authentication process requires a username and password

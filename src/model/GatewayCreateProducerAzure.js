@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAzure model module.
  * @module model/GatewayCreateProducerAzure
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerAzure {
     /**
@@ -64,9 +64,6 @@ class GatewayCreateProducerAzure {
             }
             if (data.hasOwnProperty('client-secret')) {
                 obj['client-secret'] = ApiClient.convertToType(data['client-secret'], 'String');
-            }
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -131,13 +128,6 @@ GatewayCreateProducerAzure.prototype['client-id'] = undefined;
  * @member {String} client-secret
  */
 GatewayCreateProducerAzure.prototype['client-secret'] = undefined;
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayCreateProducerAzure.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Producer name

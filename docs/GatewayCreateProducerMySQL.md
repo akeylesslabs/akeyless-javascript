@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dbServerCertificates** | **String** | (Optional) DB server certificates | [optional] 
 **dbServerName** | **String** | (Optional) Server name for certificate verification | [optional] 
-**gatewayUrl** | **String** | Gateway url | [optional] [default to &#39;http://localhost:8000&#39;]
 **mysqlDbname** | **String** | MySQL DB Name | 
 **mysqlHost** | **String** | MySQL Host | [optional] [default to &#39;127.0.0.1&#39;]
 **mysqlPassword** | **String** | MySQL Password | 

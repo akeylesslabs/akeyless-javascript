@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteProducer model module.
  * @module model/GatewayDeleteProducer
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayDeleteProducer {
     /**
@@ -50,9 +50,6 @@ class GatewayDeleteProducer {
         if (data) {
             obj = obj || new GatewayDeleteProducer();
 
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -74,13 +71,6 @@ class GatewayDeleteProducer {
 
 
 }
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayDeleteProducer.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Producer name

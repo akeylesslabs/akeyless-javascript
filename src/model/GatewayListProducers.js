@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayListProducers model module.
  * @module model/GatewayListProducers
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayListProducers {
     /**
@@ -48,9 +48,6 @@ class GatewayListProducers {
         if (data) {
             obj = obj || new GatewayListProducers();
 
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
@@ -69,13 +66,6 @@ class GatewayListProducers {
 
 
 }
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayListProducers.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Required only when the authentication process requires a username and password

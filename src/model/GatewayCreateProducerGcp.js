@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGcp model module.
  * @module model/GatewayCreateProducerGcp
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerGcp {
     /**
@@ -54,9 +54,6 @@ class GatewayCreateProducerGcp {
         if (data) {
             obj = obj || new GatewayCreateProducerGcp();
 
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('gcp-cred-type')) {
                 obj['gcp-cred-type'] = ApiClient.convertToType(data['gcp-cred-type'], 'String');
             }
@@ -99,13 +96,6 @@ class GatewayCreateProducerGcp {
 
 
 }
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayCreateProducerGcp.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * @member {String} gcp-cred-type

@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creationStatements** | **String** | PostgreSQL Creation statements | [optional] 
-**gatewayUrl** | **String** | Gateway url | [optional] [default to &#39;http://localhost:8000&#39;]
 **name** | **String** | Producer name | 
 **password** | **String** | Required only when the authentication process requires a username and password | [optional] 
 **postgresqlDbName** | **String** | PostgreSQL DB Name | 

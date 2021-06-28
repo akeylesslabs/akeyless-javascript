@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.4.3
+ * @version 2.4.4
  */
 class TargetTypeDetailsInput {
     /**
@@ -119,9 +119,6 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('eks_access_key_id')) {
                 obj['eks_access_key_id'] = ApiClient.convertToType(data['eks_access_key_id'], 'String');
             }
-            if (data.hasOwnProperty('eks_assume_role')) {
-                obj['eks_assume_role'] = ApiClient.convertToType(data['eks_assume_role'], 'String');
-            }
             if (data.hasOwnProperty('eks_cluster_ca_certificate')) {
                 obj['eks_cluster_ca_certificate'] = ApiClient.convertToType(data['eks_cluster_ca_certificate'], 'String');
             }
@@ -161,8 +158,14 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
             }
-            if (data.hasOwnProperty('mongodb_atlas')) {
-                obj['mongodb_atlas'] = ApiClient.convertToType(data['mongodb_atlas'], 'Boolean');
+            if (data.hasOwnProperty('k8s_bearer_token')) {
+                obj['k8s_bearer_token'] = ApiClient.convertToType(data['k8s_bearer_token'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_cluster_ca_certificate')) {
+                obj['k8s_cluster_ca_certificate'] = ApiClient.convertToType(data['k8s_cluster_ca_certificate'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_cluster_endpoint')) {
+                obj['k8s_cluster_endpoint'] = ApiClient.convertToType(data['k8s_cluster_endpoint'], 'String');
             }
             if (data.hasOwnProperty('mongodb_atlas_api_private_key')) {
                 obj['mongodb_atlas_api_private_key'] = ApiClient.convertToType(data['mongodb_atlas_api_private_key'], 'String');
@@ -181,6 +184,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('mongodb_host_port')) {
                 obj['mongodb_host_port'] = ApiClient.convertToType(data['mongodb_host_port'], 'String');
+            }
+            if (data.hasOwnProperty('mongodb_is_atlas')) {
+                obj['mongodb_is_atlas'] = ApiClient.convertToType(data['mongodb_is_atlas'], 'Boolean');
             }
             if (data.hasOwnProperty('mongodb_password')) {
                 obj['mongodb_password'] = ApiClient.convertToType(data['mongodb_password'], 'String');
@@ -372,11 +378,6 @@ TargetTypeDetailsInput.prototype['db_user_name'] = undefined;
 TargetTypeDetailsInput.prototype['eks_access_key_id'] = undefined;
 
 /**
- * @member {String} eks_assume_role
- */
-TargetTypeDetailsInput.prototype['eks_assume_role'] = undefined;
-
-/**
  * @member {String} eks_cluster_ca_certificate
  */
 TargetTypeDetailsInput.prototype['eks_cluster_ca_certificate'] = undefined;
@@ -422,7 +423,6 @@ TargetTypeDetailsInput.prototype['gke_cluster_ca_certificate'] = undefined;
 TargetTypeDetailsInput.prototype['gke_cluster_endpoint'] = undefined;
 
 /**
- * GKEProjectID            string `json:\"gke_project_id\"`
  * @member {String} gke_cluster_name
  */
 TargetTypeDetailsInput.prototype['gke_cluster_name'] = undefined;
@@ -433,7 +433,6 @@ TargetTypeDetailsInput.prototype['gke_cluster_name'] = undefined;
 TargetTypeDetailsInput.prototype['gke_service_account_key'] = undefined;
 
 /**
- * GKEClusterComputeZone   string `json:\"gke_cluster_compute_zone\"`
  * @member {String} gke_service_account_name
  */
 TargetTypeDetailsInput.prototype['gke_service_account_name'] = undefined;
@@ -444,9 +443,19 @@ TargetTypeDetailsInput.prototype['gke_service_account_name'] = undefined;
 TargetTypeDetailsInput.prototype['host'] = undefined;
 
 /**
- * @member {Boolean} mongodb_atlas
+ * @member {String} k8s_bearer_token
  */
-TargetTypeDetailsInput.prototype['mongodb_atlas'] = undefined;
+TargetTypeDetailsInput.prototype['k8s_bearer_token'] = undefined;
+
+/**
+ * @member {String} k8s_cluster_ca_certificate
+ */
+TargetTypeDetailsInput.prototype['k8s_cluster_ca_certificate'] = undefined;
+
+/**
+ * @member {String} k8s_cluster_endpoint
+ */
+TargetTypeDetailsInput.prototype['k8s_cluster_endpoint'] = undefined;
 
 /**
  * @member {String} mongodb_atlas_api_private_key
@@ -479,6 +488,11 @@ TargetTypeDetailsInput.prototype['mongodb_default_auth_db'] = undefined;
  * @member {String} mongodb_host_port
  */
 TargetTypeDetailsInput.prototype['mongodb_host_port'] = undefined;
+
+/**
+ * @member {Boolean} mongodb_is_atlas
+ */
+TargetTypeDetailsInput.prototype['mongodb_is_atlas'] = undefined;
 
 /**
  * @member {String} mongodb_password

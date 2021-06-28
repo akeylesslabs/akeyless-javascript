@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gatewayUrl** | **String** | Gateway url | [optional] [default to &#39;http://localhost:8000&#39;]
 **mssqlCreateStatements** | **String** | MSSQL Creation statements | [optional] 
 **mssqlDbname** | **String** | MSSQL Name | 
 **mssqlHost** | **String** | MSSQL Host | [optional] [default to &#39;127.0.0.1&#39;]

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerSnowflake model module.
  * @module model/GatewayCreateProducerSnowflake
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerSnowflake {
     /**
@@ -60,9 +60,6 @@ class GatewayCreateProducerSnowflake {
             if (data.hasOwnProperty('db-name')) {
                 obj['db-name'] = ApiClient.convertToType(data['db-name'], 'String');
             }
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -105,13 +102,6 @@ GatewayCreateProducerSnowflake.prototype['account'] = undefined;
  * @member {String} db-name
  */
 GatewayCreateProducerSnowflake.prototype['db-name'] = undefined;
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayCreateProducerSnowflake.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Producer name

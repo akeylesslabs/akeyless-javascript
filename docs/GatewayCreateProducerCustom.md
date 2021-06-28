@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createSyncUrl** | **String** | URL of an endpoint that implements /sync/create method, for example https://webhook.example.com/sync/create | 
-**gatewayUrl** | **String** | Gateway url | [optional] [default to &#39;http://localhost:8000&#39;]
 **name** | **String** | Producer name | 
 **password** | **String** | Required only when the authentication process requires a username and password | [optional] 
 **payload** | **String** | Secret payload to be sent with each create/revoke webhook request | [optional] 

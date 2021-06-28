@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerEks model module.
  * @module model/GatewayCreateProducerEks
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerEks {
     /**
@@ -80,9 +80,6 @@ class GatewayCreateProducerEks {
             }
             if (data.hasOwnProperty('eks-secret-access-key')) {
                 obj['eks-secret-access-key'] = ApiClient.convertToType(data['eks-secret-access-key'], 'String');
-            }
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -154,13 +151,6 @@ GatewayCreateProducerEks.prototype['eks-region'] = 'us-east-2';
  * @member {String} eks-secret-access-key
  */
 GatewayCreateProducerEks.prototype['eks-secret-access-key'] = undefined;
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayCreateProducerEks.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Producer name

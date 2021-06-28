@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAws model module.
  * @module model/GatewayCreateProducerAws
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerAws {
     /**
@@ -83,9 +83,6 @@ class GatewayCreateProducerAws {
             }
             if (data.hasOwnProperty('enable-admin-rotation')) {
                 obj['enable-admin-rotation'] = ApiClient.convertToType(data['enable-admin-rotation'], 'Boolean');
-            }
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -180,13 +177,6 @@ GatewayCreateProducerAws.prototype['aws-user-programmatic-access'] = true;
  * @default false
  */
 GatewayCreateProducerAws.prototype['enable-admin-rotation'] = false;
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayCreateProducerAws.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Producer name

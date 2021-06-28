@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateTmpUsers model module.
  * @module model/GatewayUpdateTmpUsers
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayUpdateTmpUsers {
     /**
@@ -54,9 +54,6 @@ class GatewayUpdateTmpUsers {
         if (data) {
             obj = obj || new GatewayUpdateTmpUsers();
 
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -84,12 +81,6 @@ class GatewayUpdateTmpUsers {
 
 
 }
-
-/**
- * Gateway url
- * @member {String} gateway-url
- */
-GatewayUpdateTmpUsers.prototype['gateway-url'] = undefined;
 
 /**
  * Producer Name

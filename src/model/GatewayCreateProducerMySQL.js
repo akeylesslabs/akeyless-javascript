@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMySQL model module.
  * @module model/GatewayCreateProducerMySQL
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerMySQL {
     /**
@@ -61,9 +61,6 @@ class GatewayCreateProducerMySQL {
             }
             if (data.hasOwnProperty('db-server-name')) {
                 obj['db-server-name'] = ApiClient.convertToType(data['db-server-name'], 'String');
-            }
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
             if (data.hasOwnProperty('mysql-dbname')) {
                 obj['mysql-dbname'] = ApiClient.convertToType(data['mysql-dbname'], 'String');
@@ -122,13 +119,6 @@ GatewayCreateProducerMySQL.prototype['db-server-certificates'] = undefined;
  * @member {String} db-server-name
  */
 GatewayCreateProducerMySQL.prototype['db-server-name'] = undefined;
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayCreateProducerMySQL.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * MySQL DB Name

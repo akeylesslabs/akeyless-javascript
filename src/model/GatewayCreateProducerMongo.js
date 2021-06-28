@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMongo model module.
  * @module model/GatewayCreateProducerMongo
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerMongo {
     /**
@@ -52,9 +52,6 @@ class GatewayCreateProducerMongo {
         if (data) {
             obj = obj || new GatewayCreateProducerMongo();
 
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('mongodb-atlas-api-private-key')) {
                 obj['mongodb-atlas-api-private-key'] = ApiClient.convertToType(data['mongodb-atlas-api-private-key'], 'String');
             }
@@ -115,13 +112,6 @@ class GatewayCreateProducerMongo {
 
 
 }
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayCreateProducerMongo.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * MongoDB Atlas private key

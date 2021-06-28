@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCertificateAutomation model module.
  * @module model/GatewayCreateProducerCertificateAutomation
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerCertificateAutomation {
     /**
@@ -66,9 +66,6 @@ class GatewayCreateProducerCertificateAutomation {
             }
             if (data.hasOwnProperty('enable-admin-rotation')) {
                 obj['enable-admin-rotation'] = ApiClient.convertToType(data['enable-admin-rotation'], 'Boolean');
-            }
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -159,13 +156,6 @@ GatewayCreateProducerCertificateAutomation.prototype['auto-generated-folder'] = 
  * @default false
  */
 GatewayCreateProducerCertificateAutomation.prototype['enable-admin-rotation'] = false;
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayCreateProducerCertificateAutomation.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Producer name

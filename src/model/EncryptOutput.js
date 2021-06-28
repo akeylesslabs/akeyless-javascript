@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptOutput model module.
  * @module model/EncryptOutput
- * @version 2.4.3
+ * @version 2.4.4
  */
 class EncryptOutput {
     /**
@@ -48,7 +48,7 @@ class EncryptOutput {
             obj = obj || new EncryptOutput();
 
             if (data.hasOwnProperty('result')) {
-                obj['result'] = ApiClient.convertToType(data['result'], ['Number']);
+                obj['result'] = ApiClient.convertToType(data['result'], 'String');
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class EncryptOutput {
 }
 
 /**
- * @member {Array.<Number>} result
+ * @member {String} result
  */
 EncryptOutput.prototype['result'] = undefined;
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCustom model module.
  * @module model/GatewayCreateProducerCustom
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerCustom {
     /**
@@ -55,9 +55,6 @@ class GatewayCreateProducerCustom {
 
             if (data.hasOwnProperty('create-sync-url')) {
                 obj['create-sync-url'] = ApiClient.convertToType(data['create-sync-url'], 'String');
-            }
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -104,13 +101,6 @@ class GatewayCreateProducerCustom {
  * @member {String} create-sync-url
  */
 GatewayCreateProducerCustom.prototype['create-sync-url'] = undefined;
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayCreateProducerCustom.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Producer name

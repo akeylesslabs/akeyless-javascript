@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gatewayUrl** | **String** | Gateway url | [optional] [default to &#39;http://localhost:8000&#39;]
 **gcpCredType** | **String** |  | 
 **gcpKey** | **String** | Base64-encoded service account private key text | [optional] 
 **gcpKeyAlgo** | **String** | Service account key algorithm, e.g. KEY_ALG_RSA_1024 | [optional] 

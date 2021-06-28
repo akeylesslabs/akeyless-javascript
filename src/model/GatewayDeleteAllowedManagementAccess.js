@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteAllowedManagementAccess model module.
  * @module model/GatewayDeleteAllowedManagementAccess
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayDeleteAllowedManagementAccess {
     /**
@@ -50,9 +50,6 @@ class GatewayDeleteAllowedManagementAccess {
         if (data) {
             obj = obj || new GatewayDeleteAllowedManagementAccess();
 
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
@@ -74,13 +71,6 @@ class GatewayDeleteAllowedManagementAccess {
 
 
 }
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayDeleteAllowedManagementAccess.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Required only when the authentication process requires a username and password

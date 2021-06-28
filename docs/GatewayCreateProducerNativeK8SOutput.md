@@ -1,0 +1,9 @@
+# akeyless.GatewayCreateProducerNativeK8SOutput
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**producerDetails** | [**DSProducerDetails**](DSProducerDetails.md) |  | [optional] 
+
+

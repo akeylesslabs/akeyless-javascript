@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayListAllowedManagementAccess model module.
  * @module model/GatewayListAllowedManagementAccess
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayListAllowedManagementAccess {
     /**
@@ -48,9 +48,6 @@ class GatewayListAllowedManagementAccess {
         if (data) {
             obj = obj || new GatewayListAllowedManagementAccess();
 
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
@@ -69,13 +66,6 @@ class GatewayListAllowedManagementAccess {
 
 
 }
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayListAllowedManagementAccess.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Required only when the authentication process requires a username and password

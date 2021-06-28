@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 2.4.3
+ * @version 2.4.4
  */
 class UpdateRotatedSecret {
     /**
@@ -53,11 +53,14 @@ class UpdateRotatedSecret {
             if (data.hasOwnProperty('add-tag')) {
                 obj['add-tag'] = ApiClient.convertToType(data['add-tag'], ['String']);
             }
+            if (data.hasOwnProperty('api-id')) {
+                obj['api-id'] = ApiClient.convertToType(data['api-id'], 'String');
+            }
+            if (data.hasOwnProperty('api-key')) {
+                obj['api-key'] = ApiClient.convertToType(data['api-key'], 'String');
+            }
             if (data.hasOwnProperty('auto-rotate')) {
                 obj['auto-rotate'] = ApiClient.convertToType(data['auto-rotate'], 'String');
-            }
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -118,17 +121,20 @@ class UpdateRotatedSecret {
 UpdateRotatedSecret.prototype['add-tag'] = undefined;
 
 /**
+ * @member {String} api-id
+ */
+UpdateRotatedSecret.prototype['api-id'] = undefined;
+
+/**
+ * @member {String} api-key
+ */
+UpdateRotatedSecret.prototype['api-key'] = undefined;
+
+/**
  * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation
  * @member {String} auto-rotate
  */
 UpdateRotatedSecret.prototype['auto-rotate'] = undefined;
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-UpdateRotatedSecret.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)

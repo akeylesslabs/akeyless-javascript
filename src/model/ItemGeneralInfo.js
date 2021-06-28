@@ -20,7 +20,7 @@ import RotatedSecretDetailsInfo from './RotatedSecretDetailsInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 2.4.3
+ * @version 2.4.4
  */
 class ItemGeneralInfo {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayRevokeTmpUsers model module.
  * @module model/GatewayRevokeTmpUsers
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayRevokeTmpUsers {
     /**
@@ -52,9 +52,6 @@ class GatewayRevokeTmpUsers {
         if (data) {
             obj = obj || new GatewayRevokeTmpUsers();
 
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
             }
@@ -85,12 +82,6 @@ class GatewayRevokeTmpUsers {
 
 
 }
-
-/**
- * Gateway url
- * @member {String} gateway-url
- */
-GatewayRevokeTmpUsers.prototype['gateway-url'] = undefined;
 
 /**
  * Host

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gatewayUrl** | **String** | Gateway url | [optional] 
 **host** | **String** | Host | [optional] 
 **name** | **String** | Producer Name | 
 **password** | **String** | Required only when the authentication process requires a username and password | [optional] 

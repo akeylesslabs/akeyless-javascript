@@ -17,6 +17,7 @@ import CFConfigPart from './CFConfigPart';
 import CacheConfigPart from './CacheConfigPart';
 import DefaultConfigPart from './DefaultConfigPart';
 import GeneralConfigPart from './GeneralConfigPart';
+import KMIPClientsConfigPart from './KMIPClientsConfigPart';
 import LdapConfigPart from './LdapConfigPart';
 import LeadershipConfigPart from './LeadershipConfigPart';
 import LogForwardingConfigPart from './LogForwardingConfigPart';
@@ -28,7 +29,7 @@ import UIdentityConfigPart from './UIdentityConfigPart';
 /**
  * The AkeylessGatewayConfig model module.
  * @module model/AkeylessGatewayConfig
- * @version 2.4.3
+ * @version 2.4.4
  */
 class AkeylessGatewayConfig {
     /**
@@ -73,6 +74,9 @@ class AkeylessGatewayConfig {
             }
             if (data.hasOwnProperty('general')) {
                 obj['general'] = GeneralConfigPart.constructFromObject(data['general']);
+            }
+            if (data.hasOwnProperty('kmip_clients')) {
+                obj['kmip_clients'] = KMIPClientsConfigPart.constructFromObject(data['kmip_clients']);
             }
             if (data.hasOwnProperty('ldap')) {
                 obj['ldap'] = LdapConfigPart.constructFromObject(data['ldap']);
@@ -132,6 +136,11 @@ AkeylessGatewayConfig.prototype['config_protection_key_name'] = undefined;
  * @member {module:model/GeneralConfigPart} general
  */
 AkeylessGatewayConfig.prototype['general'] = undefined;
+
+/**
+ * @member {module:model/KMIPClientsConfigPart} kmip_clients
+ */
+AkeylessGatewayConfig.prototype['kmip_clients'] = undefined;
 
 /**
  * @member {module:model/LdapConfigPart} ldap

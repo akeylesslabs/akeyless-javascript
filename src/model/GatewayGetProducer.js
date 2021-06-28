@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetProducer model module.
  * @module model/GatewayGetProducer
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayGetProducer {
     /**
@@ -50,9 +50,6 @@ class GatewayGetProducer {
         if (data) {
             obj = obj || new GatewayGetProducer();
 
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -74,13 +71,6 @@ class GatewayGetProducer {
 
 
 }
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayGetProducer.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Producer name

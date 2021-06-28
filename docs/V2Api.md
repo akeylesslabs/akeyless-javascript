@@ -27,6 +27,7 @@ Method | HTTP request | Description
 [**createGKETarget**](V2Api.md#createGKETarget) | **POST** /create-gke-target | 
 [**createGcpTarget**](V2Api.md#createGcpTarget) | **POST** /create-gcp-target | 
 [**createKey**](V2Api.md#createKey) | **POST** /create-key | 
+[**createNativeK8STarget**](V2Api.md#createNativeK8STarget) | **POST** /create-k8s-target | 
 [**createPKICertIssuer**](V2Api.md#createPKICertIssuer) | **POST** /create-pki-cert-issuer | 
 [**createRabbitMQTarget**](V2Api.md#createRabbitMQTarget) | **POST** /create-rabbitmq-target | 
 [**createRole**](V2Api.md#createRole) | **POST** /create-role | 
@@ -63,6 +64,7 @@ Method | HTTP request | Description
 [**gatewayCreateProducerMSSQL**](V2Api.md#gatewayCreateProducerMSSQL) | **POST** /gateway-create-producer-mssql | 
 [**gatewayCreateProducerMongo**](V2Api.md#gatewayCreateProducerMongo) | **POST** /gateway-create-producer-mongo | 
 [**gatewayCreateProducerMySQL**](V2Api.md#gatewayCreateProducerMySQL) | **POST** /gateway-create-producer-mysql | 
+[**gatewayCreateProducerNativeK8S**](V2Api.md#gatewayCreateProducerNativeK8S) | **POST** /gateway-create-producer-k8s-native | 
 [**gatewayCreateProducerPostgreSQL**](V2Api.md#gatewayCreateProducerPostgreSQL) | **POST** /gateway-create-producer-postgresql | 
 [**gatewayCreateProducerRabbitMQ**](V2Api.md#gatewayCreateProducerRabbitMQ) | **POST** /gateway-create-producer-rabbitmq | 
 [**gatewayCreateProducerRdp**](V2Api.md#gatewayCreateProducerRdp) | **POST** /gateway-create-producer-rdp | 
@@ -109,19 +111,29 @@ Method | HTTP request | Description
 [**uidListChildren**](V2Api.md#uidListChildren) | **POST** /uid-list-children | 
 [**uidRevokeToken**](V2Api.md#uidRevokeToken) | **POST** /uid-revoke-token | 
 [**uidRotateToken**](V2Api.md#uidRotateToken) | **POST** /uid-rotate-token | 
+[**updateAWSTarget**](V2Api.md#updateAWSTarget) | **PUT** /update-aws-target | 
 [**updateAWSTargetDetails**](V2Api.md#updateAWSTargetDetails) | **POST** /update-aws-target-details | 
 [**updateAssoc**](V2Api.md#updateAssoc) | **POST** /update-assoc | 
+[**updateAzureTarget**](V2Api.md#updateAzureTarget) | **PUT** /update-azure-target | 
+[**updateDBTarget**](V2Api.md#updateDBTarget) | **POST** /update-db-target | 
 [**updateDBTargetDetails**](V2Api.md#updateDBTargetDetails) | **POST** /update-db-target-details | 
+[**updateEKSTarget**](V2Api.md#updateEKSTarget) | **PUT** /update-eks-target | 
+[**updateGKETarget**](V2Api.md#updateGKETarget) | **PUT** /update-gke-target | 
+[**updateGcpTarget**](V2Api.md#updateGcpTarget) | **PUT** /update-gcp-target | 
 [**updateItem**](V2Api.md#updateItem) | **POST** /update-item | 
+[**updateNativeK8STarget**](V2Api.md#updateNativeK8STarget) | **PUT** /update-k8s-target | 
 [**updateRDPTargetDetails**](V2Api.md#updateRDPTargetDetails) | **POST** /update-rdp-target-details | 
+[**updateRabbitMQTarget**](V2Api.md#updateRabbitMQTarget) | **PUT** /update-rabbitmq-target | 
 [**updateRabbitMQTargetDetails**](V2Api.md#updateRabbitMQTargetDetails) | **POST** /update-rabbitmq-target-details | 
 [**updateRole**](V2Api.md#updateRole) | **POST** /update-role | 
 [**updateRotatedSecret**](V2Api.md#updateRotatedSecret) | **POST** /update-rotated-secret | 
 [**updateRotationSettings**](V2Api.md#updateRotationSettings) | **POST** /update-rotation-settingsrotate-key | 
+[**updateSSHTarget**](V2Api.md#updateSSHTarget) | **POST** /update-ssh-target | 
 [**updateSSHTargetDetails**](V2Api.md#updateSSHTargetDetails) | **POST** /update-ssh-target-details | 
 [**updateSecretVal**](V2Api.md#updateSecretVal) | **POST** /update-secret-val | 
 [**updateTarget**](V2Api.md#updateTarget) | **POST** /update-target | 
 [**updateTargetDetails**](V2Api.md#updateTargetDetails) | **POST** /update-target-details | 
+[**updateWebTarget**](V2Api.md#updateWebTarget) | **POST** /update-web-target | 
 [**updateWebTargetDetails**](V2Api.md#updateWebTargetDetails) | **POST** /update-web-target-details | 
 [**uploadRSA**](V2Api.md#uploadRSA) | **POST** /upload-rsa | 
 [**verifyPKCS1**](V2Api.md#verifyPKCS1) | **POST** /verify-pkcs1 | 
@@ -1091,6 +1103,44 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createNativeK8STarget
+
+> CreateNativeK8STarget createNativeK8STarget()
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+apiInstance.createNativeK8STarget().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CreateNativeK8STarget**](CreateNativeK8STarget.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -2605,6 +2655,44 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayCreateProducerNativeK8S
+
+> GatewayCreateProducerNativeK8SOutput gatewayCreateProducerNativeK8S()
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+apiInstance.gatewayCreateProducerNativeK8S().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GatewayCreateProducerNativeK8SOutput**](GatewayCreateProducerNativeK8SOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -4538,6 +4626,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## updateAWSTarget
+
+> Object updateAWSTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAWSTarget(); // UpdateAWSTarget | 
+apiInstance.updateAWSTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAWSTarget**](UpdateAWSTarget.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## updateAWSTargetDetails
 
 > UpdateTargetOutput updateAWSTargetDetails(body)
@@ -4622,6 +4752,90 @@ No authorization required
 - **Accept**: application/json
 
 
+## updateAzureTarget
+
+> UpdateAzureTargetOutput updateAzureTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAzureTarget(); // UpdateAzureTarget | 
+apiInstance.updateAzureTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAzureTarget**](UpdateAzureTarget.md)|  | 
+
+### Return type
+
+[**UpdateAzureTargetOutput**](UpdateAzureTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateDBTarget
+
+> UpdateDBTargetOutput updateDBTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateDBTarget(); // UpdateDBTarget | 
+apiInstance.updateDBTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateDBTarget**](UpdateDBTarget.md)|  | 
+
+### Return type
+
+[**UpdateDBTargetOutput**](UpdateDBTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## updateDBTargetDetails
 
 > UpdateTargetOutput updateDBTargetDetails(body)
@@ -4653,6 +4867,132 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateTargetOutput**](UpdateTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateEKSTarget
+
+> UpdateEKSTargetOutput updateEKSTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateEKSTarget(); // UpdateEKSTarget | 
+apiInstance.updateEKSTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateEKSTarget**](UpdateEKSTarget.md)|  | 
+
+### Return type
+
+[**UpdateEKSTargetOutput**](UpdateEKSTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateGKETarget
+
+> UpdateGKETargetOutput updateGKETarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateGKETarget(); // UpdateGKETarget | 
+apiInstance.updateGKETarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateGKETarget**](UpdateGKETarget.md)|  | 
+
+### Return type
+
+[**UpdateGKETargetOutput**](UpdateGKETargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateGcpTarget
+
+> UpdateGcpTargetOutput updateGcpTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateGcpTarget(); // UpdateGcpTarget | 
+apiInstance.updateGcpTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateGcpTarget**](UpdateGcpTarget.md)|  | 
+
+### Return type
+
+[**UpdateGcpTargetOutput**](UpdateGcpTargetOutput.md)
 
 ### Authorization
 
@@ -4706,6 +5046,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## updateNativeK8STarget
+
+> UpdateNativeK8STarget updateNativeK8STarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateNativeK8STarget(); // UpdateNativeK8STarget | 
+apiInstance.updateNativeK8STarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateNativeK8STarget**](UpdateNativeK8STarget.md)|  | 
+
+### Return type
+
+[**UpdateNativeK8STarget**](UpdateNativeK8STarget.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## updateRDPTargetDetails
 
 > UpdateTargetOutput updateRDPTargetDetails(body)
@@ -4737,6 +5119,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateTargetOutput**](UpdateTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateRabbitMQTarget
+
+> UpdateRabbitMQTargetOutput updateRabbitMQTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateRabbitMQTarget(); // UpdateRabbitMQTarget | 
+apiInstance.updateRabbitMQTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateRabbitMQTarget**](UpdateRabbitMQTarget.md)|  | 
+
+### Return type
+
+[**UpdateRabbitMQTargetOutput**](UpdateRabbitMQTargetOutput.md)
 
 ### Authorization
 
@@ -4912,6 +5336,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## updateSSHTarget
+
+> UpdateSSHTargetOutput updateSSHTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateSSHTarget(); // UpdateSSHTarget | 
+apiInstance.updateSSHTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateSSHTarget**](UpdateSSHTarget.md)|  | 
+
+### Return type
+
+[**UpdateSSHTargetOutput**](UpdateSSHTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## updateSSHTargetDetails
 
 > UpdateTargetOutput updateSSHTargetDetails(body)
@@ -5069,6 +5535,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateTargetOutput**](UpdateTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateWebTarget
+
+> UpdateWebTargetOutput updateWebTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateWebTarget(); // UpdateWebTarget | 
+apiInstance.updateWebTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateWebTarget**](UpdateWebTarget.md)|  | 
+
+### Return type
+
+[**UpdateWebTargetOutput**](UpdateWebTargetOutput.md)
 
 ### Authorization
 

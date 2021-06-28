@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerPostgreSQL model module.
  * @module model/GatewayCreateProducerPostgreSQL
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerPostgreSQL {
     /**
@@ -58,9 +58,6 @@ class GatewayCreateProducerPostgreSQL {
 
             if (data.hasOwnProperty('creation-statements')) {
                 obj['creation-statements'] = ApiClient.convertToType(data['creation-statements'], 'String');
-            }
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -110,13 +107,6 @@ class GatewayCreateProducerPostgreSQL {
  * @member {String} creation-statements
  */
 GatewayCreateProducerPostgreSQL.prototype['creation-statements'] = undefined;
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayCreateProducerPostgreSQL.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Producer name

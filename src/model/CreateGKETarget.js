@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGKETarget model module.
  * @module model/CreateGKETarget
- * @version 2.4.3
+ * @version 2.4.4
  */
 class CreateGKETarget {
     /**
@@ -60,6 +60,9 @@ class CreateGKETarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('gke-account-key')) {
+                obj['gke-account-key'] = ApiClient.convertToType(data['gke-account-key'], 'String');
+            }
             if (data.hasOwnProperty('gke-cluster-cert')) {
                 obj['gke-cluster-cert'] = ApiClient.convertToType(data['gke-cluster-cert'], 'String');
             }
@@ -102,6 +105,12 @@ class CreateGKETarget {
  * @member {String} comment
  */
 CreateGKETarget.prototype['comment'] = undefined;
+
+/**
+ * GKE Service Account key file path
+ * @member {String} gke-account-key
+ */
+CreateGKETarget.prototype['gke-account-key'] = undefined;
 
 /**
  * GKE cluster CA certificate

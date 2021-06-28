@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClientData model module.
  * @module model/ClientData
- * @version 2.4.3
+ * @version 2.4.4
  */
 class ClientData {
     /**
@@ -53,6 +53,9 @@ class ClientData {
             if (data.hasOwnProperty('clientKeyData')) {
                 obj['clientKeyData'] = ApiClient.convertToType(data['clientKeyData'], 'String');
             }
+            if (data.hasOwnProperty('parentCertificateData')) {
+                obj['parentCertificateData'] = ApiClient.convertToType(data['parentCertificateData'], 'String');
+            }
         }
         return obj;
     }
@@ -69,6 +72,11 @@ ClientData.prototype['clientCertificateData'] = undefined;
  * @member {String} clientKeyData
  */
 ClientData.prototype['clientKeyData'] = undefined;
+
+/**
+ * @member {String} parentCertificateData
+ */
+ClientData.prototype['parentCertificateData'] = undefined;
 
 
 

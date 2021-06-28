@@ -80,6 +80,8 @@ import CreateGcpTarget from './model/CreateGcpTarget';
 import CreateGcpTargetOutput from './model/CreateGcpTargetOutput';
 import CreateKey from './model/CreateKey';
 import CreateKeyOutput from './model/CreateKeyOutput';
+import CreateNativeK8STarget from './model/CreateNativeK8STarget';
+import CreateNativeK8STargetOutput from './model/CreateNativeK8STargetOutput';
 import CreatePKICertIssuer from './model/CreatePKICertIssuer';
 import CreatePKICertIssuerOutput from './model/CreatePKICertIssuerOutput';
 import CreateRabbitMQTarget from './model/CreateRabbitMQTarget';
@@ -162,6 +164,8 @@ import GatewayCreateProducerMongo from './model/GatewayCreateProducerMongo';
 import GatewayCreateProducerMongoOutput from './model/GatewayCreateProducerMongoOutput';
 import GatewayCreateProducerMySQL from './model/GatewayCreateProducerMySQL';
 import GatewayCreateProducerMySQLOutput from './model/GatewayCreateProducerMySQLOutput';
+import GatewayCreateProducerNativeK8S from './model/GatewayCreateProducerNativeK8S';
+import GatewayCreateProducerNativeK8SOutput from './model/GatewayCreateProducerNativeK8SOutput';
 import GatewayCreateProducerPostgreSQL from './model/GatewayCreateProducerPostgreSQL';
 import GatewayCreateProducerPostgreSQLOutput from './model/GatewayCreateProducerPostgreSQLOutput';
 import GatewayCreateProducerRabbitMQ from './model/GatewayCreateProducerRabbitMQ';
@@ -217,6 +221,8 @@ import ItemVersion from './model/ItemVersion';
 import JSONError from './model/JSONError';
 import K8SMigration from './model/K8SMigration';
 import K8SPayload from './model/K8SPayload';
+import KMIPClient from './model/KMIPClient';
+import KMIPClientsConfigPart from './model/KMIPClientsConfigPart';
 import LDAPAccessRules from './model/LDAPAccessRules';
 import LdapConfigPart from './model/LdapConfigPart';
 import LeadershipConfigPart from './model/LeadershipConfigPart';
@@ -285,26 +291,45 @@ import UidRotateTokenOutput from './model/UidRotateTokenOutput';
 import Unconfigure from './model/Unconfigure';
 import UniversalIdentityAccessRules from './model/UniversalIdentityAccessRules';
 import UniversalIdentityDetails from './model/UniversalIdentityDetails';
+import UpdateAWSTarget from './model/UpdateAWSTarget';
 import UpdateAWSTargetDetails from './model/UpdateAWSTargetDetails';
 import UpdateAssoc from './model/UpdateAssoc';
+import UpdateAzureTarget from './model/UpdateAzureTarget';
+import UpdateAzureTargetOutput from './model/UpdateAzureTargetOutput';
+import UpdateDBTarget from './model/UpdateDBTarget';
 import UpdateDBTargetDetails from './model/UpdateDBTargetDetails';
+import UpdateDBTargetOutput from './model/UpdateDBTargetOutput';
+import UpdateEKSTarget from './model/UpdateEKSTarget';
+import UpdateEKSTargetOutput from './model/UpdateEKSTargetOutput';
+import UpdateGKETarget from './model/UpdateGKETarget';
+import UpdateGKETargetOutput from './model/UpdateGKETargetOutput';
+import UpdateGcpTarget from './model/UpdateGcpTarget';
+import UpdateGcpTargetOutput from './model/UpdateGcpTargetOutput';
 import UpdateItem from './model/UpdateItem';
 import UpdateItemOutput from './model/UpdateItemOutput';
+import UpdateNativeK8STarget from './model/UpdateNativeK8STarget';
+import UpdateNativeK8STargetOutput from './model/UpdateNativeK8STargetOutput';
 import UpdateOutput from './model/UpdateOutput';
 import UpdateRDPTargetDetails from './model/UpdateRDPTargetDetails';
+import UpdateRabbitMQTarget from './model/UpdateRabbitMQTarget';
 import UpdateRabbitMQTargetDetails from './model/UpdateRabbitMQTargetDetails';
+import UpdateRabbitMQTargetOutput from './model/UpdateRabbitMQTargetOutput';
 import UpdateRole from './model/UpdateRole';
 import UpdateRoleOutput from './model/UpdateRoleOutput';
 import UpdateRotatedSecret from './model/UpdateRotatedSecret';
 import UpdateRotatedSecretOutput from './model/UpdateRotatedSecretOutput';
 import UpdateRotationSettings from './model/UpdateRotationSettings';
+import UpdateSSHTarget from './model/UpdateSSHTarget';
 import UpdateSSHTargetDetails from './model/UpdateSSHTargetDetails';
+import UpdateSSHTargetOutput from './model/UpdateSSHTargetOutput';
 import UpdateSecretVal from './model/UpdateSecretVal';
 import UpdateSecretValOutput from './model/UpdateSecretValOutput';
 import UpdateTarget from './model/UpdateTarget';
 import UpdateTargetDetailsOutput from './model/UpdateTargetDetailsOutput';
 import UpdateTargetOutput from './model/UpdateTargetOutput';
+import UpdateWebTarget from './model/UpdateWebTarget';
 import UpdateWebTargetDetails from './model/UpdateWebTargetDetails';
+import UpdateWebTargetOutput from './model/UpdateWebTargetOutput';
 import UploadPKCS12 from './model/UploadPKCS12';
 import UploadRSA from './model/UploadRSA';
 import VerifyPKCS1 from './model/VerifyPKCS1';
@@ -340,7 +365,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.4.3
+* @version 2.4.4
 */
 export {
     /**
@@ -750,6 +775,18 @@ export {
      * @property {module:model/CreateKeyOutput}
      */
     CreateKeyOutput,
+
+    /**
+     * The CreateNativeK8STarget model constructor.
+     * @property {module:model/CreateNativeK8STarget}
+     */
+    CreateNativeK8STarget,
+
+    /**
+     * The CreateNativeK8STargetOutput model constructor.
+     * @property {module:model/CreateNativeK8STargetOutput}
+     */
+    CreateNativeK8STargetOutput,
 
     /**
      * The CreatePKICertIssuer model constructor.
@@ -1244,6 +1281,18 @@ export {
     GatewayCreateProducerMySQLOutput,
 
     /**
+     * The GatewayCreateProducerNativeK8S model constructor.
+     * @property {module:model/GatewayCreateProducerNativeK8S}
+     */
+    GatewayCreateProducerNativeK8S,
+
+    /**
+     * The GatewayCreateProducerNativeK8SOutput model constructor.
+     * @property {module:model/GatewayCreateProducerNativeK8SOutput}
+     */
+    GatewayCreateProducerNativeK8SOutput,
+
+    /**
      * The GatewayCreateProducerPostgreSQL model constructor.
      * @property {module:model/GatewayCreateProducerPostgreSQL}
      */
@@ -1572,6 +1621,18 @@ export {
      * @property {module:model/K8SPayload}
      */
     K8SPayload,
+
+    /**
+     * The KMIPClient model constructor.
+     * @property {module:model/KMIPClient}
+     */
+    KMIPClient,
+
+    /**
+     * The KMIPClientsConfigPart model constructor.
+     * @property {module:model/KMIPClientsConfigPart}
+     */
+    KMIPClientsConfigPart,
 
     /**
      * The LDAPAccessRules model constructor.
@@ -1982,6 +2043,12 @@ export {
     UniversalIdentityDetails,
 
     /**
+     * The UpdateAWSTarget model constructor.
+     * @property {module:model/UpdateAWSTarget}
+     */
+    UpdateAWSTarget,
+
+    /**
      * The UpdateAWSTargetDetails model constructor.
      * @property {module:model/UpdateAWSTargetDetails}
      */
@@ -1994,10 +2061,70 @@ export {
     UpdateAssoc,
 
     /**
+     * The UpdateAzureTarget model constructor.
+     * @property {module:model/UpdateAzureTarget}
+     */
+    UpdateAzureTarget,
+
+    /**
+     * The UpdateAzureTargetOutput model constructor.
+     * @property {module:model/UpdateAzureTargetOutput}
+     */
+    UpdateAzureTargetOutput,
+
+    /**
+     * The UpdateDBTarget model constructor.
+     * @property {module:model/UpdateDBTarget}
+     */
+    UpdateDBTarget,
+
+    /**
      * The UpdateDBTargetDetails model constructor.
      * @property {module:model/UpdateDBTargetDetails}
      */
     UpdateDBTargetDetails,
+
+    /**
+     * The UpdateDBTargetOutput model constructor.
+     * @property {module:model/UpdateDBTargetOutput}
+     */
+    UpdateDBTargetOutput,
+
+    /**
+     * The UpdateEKSTarget model constructor.
+     * @property {module:model/UpdateEKSTarget}
+     */
+    UpdateEKSTarget,
+
+    /**
+     * The UpdateEKSTargetOutput model constructor.
+     * @property {module:model/UpdateEKSTargetOutput}
+     */
+    UpdateEKSTargetOutput,
+
+    /**
+     * The UpdateGKETarget model constructor.
+     * @property {module:model/UpdateGKETarget}
+     */
+    UpdateGKETarget,
+
+    /**
+     * The UpdateGKETargetOutput model constructor.
+     * @property {module:model/UpdateGKETargetOutput}
+     */
+    UpdateGKETargetOutput,
+
+    /**
+     * The UpdateGcpTarget model constructor.
+     * @property {module:model/UpdateGcpTarget}
+     */
+    UpdateGcpTarget,
+
+    /**
+     * The UpdateGcpTargetOutput model constructor.
+     * @property {module:model/UpdateGcpTargetOutput}
+     */
+    UpdateGcpTargetOutput,
 
     /**
      * The UpdateItem model constructor.
@@ -2012,6 +2139,18 @@ export {
     UpdateItemOutput,
 
     /**
+     * The UpdateNativeK8STarget model constructor.
+     * @property {module:model/UpdateNativeK8STarget}
+     */
+    UpdateNativeK8STarget,
+
+    /**
+     * The UpdateNativeK8STargetOutput model constructor.
+     * @property {module:model/UpdateNativeK8STargetOutput}
+     */
+    UpdateNativeK8STargetOutput,
+
+    /**
      * The UpdateOutput model constructor.
      * @property {module:model/UpdateOutput}
      */
@@ -2024,10 +2163,22 @@ export {
     UpdateRDPTargetDetails,
 
     /**
+     * The UpdateRabbitMQTarget model constructor.
+     * @property {module:model/UpdateRabbitMQTarget}
+     */
+    UpdateRabbitMQTarget,
+
+    /**
      * The UpdateRabbitMQTargetDetails model constructor.
      * @property {module:model/UpdateRabbitMQTargetDetails}
      */
     UpdateRabbitMQTargetDetails,
+
+    /**
+     * The UpdateRabbitMQTargetOutput model constructor.
+     * @property {module:model/UpdateRabbitMQTargetOutput}
+     */
+    UpdateRabbitMQTargetOutput,
 
     /**
      * The UpdateRole model constructor.
@@ -2060,10 +2211,22 @@ export {
     UpdateRotationSettings,
 
     /**
+     * The UpdateSSHTarget model constructor.
+     * @property {module:model/UpdateSSHTarget}
+     */
+    UpdateSSHTarget,
+
+    /**
      * The UpdateSSHTargetDetails model constructor.
      * @property {module:model/UpdateSSHTargetDetails}
      */
     UpdateSSHTargetDetails,
+
+    /**
+     * The UpdateSSHTargetOutput model constructor.
+     * @property {module:model/UpdateSSHTargetOutput}
+     */
+    UpdateSSHTargetOutput,
 
     /**
      * The UpdateSecretVal model constructor.
@@ -2096,10 +2259,22 @@ export {
     UpdateTargetOutput,
 
     /**
+     * The UpdateWebTarget model constructor.
+     * @property {module:model/UpdateWebTarget}
+     */
+    UpdateWebTarget,
+
+    /**
      * The UpdateWebTargetDetails model constructor.
      * @property {module:model/UpdateWebTargetDetails}
      */
     UpdateWebTargetDetails,
+
+    /**
+     * The UpdateWebTargetOutput model constructor.
+     * @property {module:model/UpdateWebTargetOutput}
+     */
+    UpdateWebTargetOutput,
 
     /**
      * The UploadPKCS12 model constructor.

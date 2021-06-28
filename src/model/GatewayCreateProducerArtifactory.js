@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerArtifactory model module.
  * @module model/GatewayCreateProducerArtifactory
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerArtifactory {
     /**
@@ -75,9 +75,6 @@ class GatewayCreateProducerArtifactory {
             if (data.hasOwnProperty('base-url')) {
                 obj['base-url'] = ApiClient.convertToType(data['base-url'], 'String');
             }
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -135,13 +132,6 @@ GatewayCreateProducerArtifactory.prototype['artifactory-token-scope'] = undefine
  * @member {String} base-url
  */
 GatewayCreateProducerArtifactory.prototype['base-url'] = undefined;
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayCreateProducerArtifactory.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Producer name

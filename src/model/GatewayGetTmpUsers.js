@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetTmpUsers model module.
  * @module model/GatewayGetTmpUsers
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayGetTmpUsers {
     /**
@@ -50,9 +50,6 @@ class GatewayGetTmpUsers {
         if (data) {
             obj = obj || new GatewayGetTmpUsers();
 
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -74,13 +71,6 @@ class GatewayGetTmpUsers {
 
 
 }
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayGetTmpUsers.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * Producer Name

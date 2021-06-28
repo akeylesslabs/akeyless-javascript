@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGke model module.
  * @module model/GatewayCreateProducerGke
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerGke {
     /**
@@ -58,8 +58,8 @@ class GatewayCreateProducerGke {
         if (data) {
             obj = obj || new GatewayCreateProducerGke();
 
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
+            if (data.hasOwnProperty('gke-account-key')) {
+                obj['gke-account-key'] = ApiClient.convertToType(data['gke-account-key'], 'String');
             }
             if (data.hasOwnProperty('gke-cluster-cert')) {
                 obj['gke-cluster-cert'] = ApiClient.convertToType(data['gke-cluster-cert'], 'String');
@@ -102,11 +102,10 @@ class GatewayCreateProducerGke {
 }
 
 /**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
+ * GKE Service Account key file path
+ * @member {String} gke-account-key
  */
-GatewayCreateProducerGke.prototype['gateway-url'] = 'http://localhost:8000';
+GatewayCreateProducerGke.prototype['gke-account-key'] = undefined;
 
 /**
  * GKE cluster CA certificate

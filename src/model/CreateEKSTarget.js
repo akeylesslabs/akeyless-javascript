@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEKSTarget model module.
  * @module model/CreateEKSTarget
- * @version 2.4.3
+ * @version 2.4.4
  */
 class CreateEKSTarget {
     /**
@@ -64,9 +64,6 @@ class CreateEKSTarget {
             }
             if (data.hasOwnProperty('eks-access-key-id')) {
                 obj['eks-access-key-id'] = ApiClient.convertToType(data['eks-access-key-id'], 'String');
-            }
-            if (data.hasOwnProperty('eks-assume-role')) {
-                obj['eks-assume-role'] = ApiClient.convertToType(data['eks-assume-role'], 'String');
             }
             if (data.hasOwnProperty('eks-cluster-cert')) {
                 obj['eks-cluster-cert'] = ApiClient.convertToType(data['eks-cluster-cert'], 'String');
@@ -119,12 +116,6 @@ CreateEKSTarget.prototype['comment'] = undefined;
  * @member {String} eks-access-key-id
  */
 CreateEKSTarget.prototype['eks-access-key-id'] = undefined;
-
-/**
- * IAM assume role
- * @member {String} eks-assume-role
- */
-CreateEKSTarget.prototype['eks-assume-role'] = undefined;
 
 /**
  * EKS cluster CA certificate

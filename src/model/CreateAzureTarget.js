@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAzureTarget model module.
  * @module model/CreateAzureTarget
- * @version 2.4.3
+ * @version 2.4.4
  */
 class CreateAzureTarget {
     /**
@@ -49,11 +49,11 @@ class CreateAzureTarget {
         if (data) {
             obj = obj || new CreateAzureTarget();
 
-            if (data.hasOwnProperty('client_id')) {
-                obj['client_id'] = ApiClient.convertToType(data['client_id'], 'String');
+            if (data.hasOwnProperty('client-id')) {
+                obj['client-id'] = ApiClient.convertToType(data['client-id'], 'String');
             }
-            if (data.hasOwnProperty('client_secret')) {
-                obj['client_secret'] = ApiClient.convertToType(data['client_secret'], 'String');
+            if (data.hasOwnProperty('client-secret')) {
+                obj['client-secret'] = ApiClient.convertToType(data['client-secret'], 'String');
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
@@ -67,8 +67,8 @@ class CreateAzureTarget {
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
-            if (data.hasOwnProperty('tenant_id')) {
-                obj['tenant_id'] = ApiClient.convertToType(data['tenant_id'], 'String');
+            if (data.hasOwnProperty('tenant-id')) {
+                obj['tenant-id'] = ApiClient.convertToType(data['tenant-id'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -87,14 +87,14 @@ class CreateAzureTarget {
 }
 
 /**
- * @member {String} client_id
+ * @member {String} client-id
  */
-CreateAzureTarget.prototype['client_id'] = undefined;
+CreateAzureTarget.prototype['client-id'] = undefined;
 
 /**
- * @member {String} client_secret
+ * @member {String} client-secret
  */
-CreateAzureTarget.prototype['client_secret'] = undefined;
+CreateAzureTarget.prototype['client-secret'] = undefined;
 
 /**
  * Comment about the target
@@ -121,9 +121,9 @@ CreateAzureTarget.prototype['name'] = undefined;
 CreateAzureTarget.prototype['password'] = undefined;
 
 /**
- * @member {String} tenant_id
+ * @member {String} tenant-id
  */
-CreateAzureTarget.prototype['tenant_id'] = undefined;
+CreateAzureTarget.prototype['tenant-id'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 2.4.3
+ * @version 2.4.4
  */
 class UpdateRole {
     /**
@@ -54,6 +54,9 @@ class UpdateRole {
             }
             if (data.hasOwnProperty('audit-access')) {
                 obj['audit-access'] = ApiClient.convertToType(data['audit-access'], 'String');
+            }
+            if (data.hasOwnProperty('gw-analytics-access')) {
+                obj['gw-analytics-access'] = ApiClient.convertToType(data['gw-analytics-access'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -94,6 +97,12 @@ UpdateRole.prototype['analytics-access'] = undefined;
  * @member {String} audit-access
  */
 UpdateRole.prototype['audit-access'] = undefined;
+
+/**
+ * Allow this role to view gw analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.
+ * @member {String} gw-analytics-access
+ */
+UpdateRole.prototype['gw-analytics-access'] = undefined;
 
 /**
  * Role name

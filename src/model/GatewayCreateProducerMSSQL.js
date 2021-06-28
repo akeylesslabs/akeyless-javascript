@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMSSQL model module.
  * @module model/GatewayCreateProducerMSSQL
- * @version 2.4.3
+ * @version 2.4.4
  */
 class GatewayCreateProducerMSSQL {
     /**
@@ -56,9 +56,6 @@ class GatewayCreateProducerMSSQL {
         if (data) {
             obj = obj || new GatewayCreateProducerMSSQL();
 
-            if (data.hasOwnProperty('gateway-url')) {
-                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
-            }
             if (data.hasOwnProperty('mssql-create-statements')) {
                 obj['mssql-create-statements'] = ApiClient.convertToType(data['mssql-create-statements'], 'String');
             }
@@ -107,13 +104,6 @@ class GatewayCreateProducerMSSQL {
 
 
 }
-
-/**
- * Gateway url
- * @member {String} gateway-url
- * @default 'http://localhost:8000'
- */
-GatewayCreateProducerMSSQL.prototype['gateway-url'] = 'http://localhost:8000';
 
 /**
  * MSSQL Creation statements
