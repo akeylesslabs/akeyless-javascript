@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuerOutput model module.
  * @module model/CreatePKICertIssuerOutput
- * @version 2.5.0
+ * @version 2.5.1
  */
 class CreatePKICertIssuerOutput {
     /**

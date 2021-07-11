@@ -20,7 +20,7 @@ import K8SMigration from './K8SMigration';
 /**
  * The MigrationsConfigPart model module.
  * @module model/MigrationsConfigPart
- * @version 2.5.0
+ * @version 2.5.1
  */
 class MigrationsConfigPart {
     /**
