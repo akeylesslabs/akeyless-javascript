@@ -16,20 +16,20 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAws model module.
  * @module model/GatewayCreateProducerAws
- * @version 2.4.5
+ * @version 2.5.0
  */
 class GatewayCreateProducerAws {
     /**
      * Constructs a new <code>GatewayCreateProducerAws</code>.
      * gatewayCreateProducerAws is a command that creates aws producer
      * @alias module:model/GatewayCreateProducerAws
-     * @param accessKeyId {String} Access Key ID
-     * @param accessSecretKey {String} Secret Access Key
+     * @param awsAccessKeyId {String} Access Key ID
+     * @param awsAccessSecretKey {String} Secret Access Key
      * @param name {String} Producer name
      */
-    constructor(accessKeyId, accessSecretKey, name) { 
+    constructor(awsAccessKeyId, awsAccessSecretKey, name) { 
         
-        GatewayCreateProducerAws.initialize(this, accessKeyId, accessSecretKey, name);
+        GatewayCreateProducerAws.initialize(this, awsAccessKeyId, awsAccessSecretKey, name);
     }
 
     /**
@@ -37,9 +37,9 @@ class GatewayCreateProducerAws {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, accessKeyId, accessSecretKey, name) { 
-        obj['access-key-id'] = accessKeyId;
-        obj['access-secret-key'] = accessSecretKey;
+    static initialize(obj, awsAccessKeyId, awsAccessSecretKey, name) { 
+        obj['aws-access-key-id'] = awsAccessKeyId;
+        obj['aws-access-secret-key'] = awsAccessSecretKey;
         obj['name'] = name;
     }
 
@@ -54,17 +54,17 @@ class GatewayCreateProducerAws {
         if (data) {
             obj = obj || new GatewayCreateProducerAws();
 
-            if (data.hasOwnProperty('access-key-id')) {
-                obj['access-key-id'] = ApiClient.convertToType(data['access-key-id'], 'String');
-            }
             if (data.hasOwnProperty('access-mode')) {
                 obj['access-mode'] = ApiClient.convertToType(data['access-mode'], 'String');
             }
-            if (data.hasOwnProperty('access-secret-key')) {
-                obj['access-secret-key'] = ApiClient.convertToType(data['access-secret-key'], 'String');
-            }
             if (data.hasOwnProperty('admin-rotation-interval-days')) {
                 obj['admin-rotation-interval-days'] = ApiClient.convertToType(data['admin-rotation-interval-days'], 'Number');
+            }
+            if (data.hasOwnProperty('aws-access-key-id')) {
+                obj['aws-access-key-id'] = ApiClient.convertToType(data['aws-access-key-id'], 'String');
+            }
+            if (data.hasOwnProperty('aws-access-secret-key')) {
+                obj['aws-access-secret-key'] = ApiClient.convertToType(data['aws-access-secret-key'], 'String');
             }
             if (data.hasOwnProperty('aws-role-arns')) {
                 obj['aws-role-arns'] = ApiClient.convertToType(data['aws-role-arns'], 'String');
@@ -116,21 +116,9 @@ class GatewayCreateProducerAws {
 }
 
 /**
- * Access Key ID
- * @member {String} access-key-id
- */
-GatewayCreateProducerAws.prototype['access-key-id'] = undefined;
-
-/**
  * @member {String} access-mode
  */
 GatewayCreateProducerAws.prototype['access-mode'] = undefined;
-
-/**
- * Secret Access Key
- * @member {String} access-secret-key
- */
-GatewayCreateProducerAws.prototype['access-secret-key'] = undefined;
 
 /**
  * Admin credentials rotation interval (days)
@@ -138,6 +126,18 @@ GatewayCreateProducerAws.prototype['access-secret-key'] = undefined;
  * @default 0
  */
 GatewayCreateProducerAws.prototype['admin-rotation-interval-days'] = 0;
+
+/**
+ * Access Key ID
+ * @member {String} aws-access-key-id
+ */
+GatewayCreateProducerAws.prototype['aws-access-key-id'] = undefined;
+
+/**
+ * Secret Access Key
+ * @member {String} aws-access-secret-key
+ */
+GatewayCreateProducerAws.prototype['aws-access-secret-key'] = undefined;
 
 /**
  * AWS Role ARNs to be used in the Assume Role operation (relevant only for assume_role mode)

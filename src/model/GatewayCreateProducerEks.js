@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerEks model module.
  * @module model/GatewayCreateProducerEks
- * @version 2.4.5
+ * @version 2.5.0
  */
 class GatewayCreateProducerEks {
     /**
@@ -24,15 +24,15 @@ class GatewayCreateProducerEks {
      * gatewayCreateProducerEks is a command that creates eks producer
      * @alias module:model/GatewayCreateProducerEks
      * @param eksAccessKeyId {String} Access Key ID
-     * @param eksClusterCert {String} EKS cluster CA certificate
+     * @param eksClusterCaCert {String} EKS cluster CA certificate
      * @param eksClusterEndpoint {String} EKS cluster URL endpoint
      * @param eksClusterName {String} EKS cluster name
      * @param eksSecretAccessKey {String} Secret Access Key
      * @param name {String} Producer name
      */
-    constructor(eksAccessKeyId, eksClusterCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name) { 
+    constructor(eksAccessKeyId, eksClusterCaCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name) { 
         
-        GatewayCreateProducerEks.initialize(this, eksAccessKeyId, eksClusterCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name);
+        GatewayCreateProducerEks.initialize(this, eksAccessKeyId, eksClusterCaCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name);
     }
 
     /**
@@ -40,9 +40,9 @@ class GatewayCreateProducerEks {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, eksAccessKeyId, eksClusterCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name) { 
+    static initialize(obj, eksAccessKeyId, eksClusterCaCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name) { 
         obj['eks-access-key-id'] = eksAccessKeyId;
-        obj['eks-cluster-cert'] = eksClusterCert;
+        obj['eks-cluster-ca-cert'] = eksClusterCaCert;
         obj['eks-cluster-endpoint'] = eksClusterEndpoint;
         obj['eks-cluster-name'] = eksClusterName;
         obj['eks-secret-access-key'] = eksSecretAccessKey;
@@ -66,8 +66,8 @@ class GatewayCreateProducerEks {
             if (data.hasOwnProperty('eks-assume-role')) {
                 obj['eks-assume-role'] = ApiClient.convertToType(data['eks-assume-role'], 'String');
             }
-            if (data.hasOwnProperty('eks-cluster-cert')) {
-                obj['eks-cluster-cert'] = ApiClient.convertToType(data['eks-cluster-cert'], 'String');
+            if (data.hasOwnProperty('eks-cluster-ca-cert')) {
+                obj['eks-cluster-ca-cert'] = ApiClient.convertToType(data['eks-cluster-ca-cert'], 'String');
             }
             if (data.hasOwnProperty('eks-cluster-endpoint')) {
                 obj['eks-cluster-endpoint'] = ApiClient.convertToType(data['eks-cluster-endpoint'], 'String');
@@ -123,9 +123,9 @@ GatewayCreateProducerEks.prototype['eks-assume-role'] = undefined;
 
 /**
  * EKS cluster CA certificate
- * @member {String} eks-cluster-cert
+ * @member {String} eks-cluster-ca-cert
  */
-GatewayCreateProducerEks.prototype['eks-cluster-cert'] = undefined;
+GatewayCreateProducerEks.prototype['eks-cluster-ca-cert'] = undefined;
 
 /**
  * EKS cluster URL endpoint

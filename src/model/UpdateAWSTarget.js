@@ -16,18 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAWSTarget model module.
  * @module model/UpdateAWSTarget
- * @version 2.4.5
+ * @version 2.5.0
  */
 class UpdateAWSTarget {
     /**
      * Constructs a new <code>UpdateAWSTarget</code>.
      * @alias module:model/UpdateAWSTarget
      * @param name {String} Target name
-     * @param newName {String} New target name
      */
-    constructor(name, newName) { 
+    constructor(name) { 
         
-        UpdateAWSTarget.initialize(this, name, newName);
+        UpdateAWSTarget.initialize(this, name);
     }
 
     /**
@@ -35,9 +34,8 @@ class UpdateAWSTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, newName) { 
+    static initialize(obj, name) { 
         obj['name'] = name;
-        obj['new-name'] = newName;
     }
 
     /**

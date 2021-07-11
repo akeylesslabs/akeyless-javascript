@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 2.4.5
+ * @version 2.5.0
  */
 class CreateClassicKey {
     /**
      * Constructs a new <code>CreateClassicKey</code>.
      * CreateClassicKey is a command that creates classic key
      * @alias module:model/CreateClassicKey
-     * @param alg {String} Classic Key type; options: [AES256GCM, RSA2048]
+     * @param alg {String} Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384]
      * @param name {String} ClassicKey name
      */
     constructor(alg, name) { 
@@ -54,6 +54,9 @@ class CreateClassicKey {
 
             if (data.hasOwnProperty('alg')) {
                 obj['alg'] = ApiClient.convertToType(data['alg'], 'String');
+            }
+            if (data.hasOwnProperty('cert-file-data')) {
+                obj['cert-file-data'] = ApiClient.convertToType(data['cert-file-data'], 'String');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -93,10 +96,16 @@ class CreateClassicKey {
 }
 
 /**
- * Classic Key type; options: [AES256GCM, RSA2048]
+ * Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384]
  * @member {String} alg
  */
 CreateClassicKey.prototype['alg'] = undefined;
+
+/**
+ * Certificate in a PEM format.
+ * @member {String} cert-file-data
+ */
+CreateClassicKey.prototype['cert-file-data'] = undefined;
 
 /**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)

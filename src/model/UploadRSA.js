@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadRSA model module.
  * @module model/UploadRSA
- * @version 2.4.5
+ * @version 2.5.0
  */
 class UploadRSA {
     /**
@@ -53,9 +53,6 @@ class UploadRSA {
 
             if (data.hasOwnProperty('alg')) {
                 obj['alg'] = ApiClient.convertToType(data['alg'], 'String');
-            }
-            if (data.hasOwnProperty('cert')) {
-                obj['cert'] = ApiClient.convertToType(data['cert'], 'String');
             }
             if (data.hasOwnProperty('cert-file-data')) {
                 obj['cert-file-data'] = ApiClient.convertToType(data['cert-file-data'], 'String');
@@ -102,12 +99,6 @@ class UploadRSA {
  * @member {String} alg
  */
 UploadRSA.prototype['alg'] = undefined;
-
-/**
- * Path to a file that contain the certificate in a PEM format.
- * @member {String} cert
- */
-UploadRSA.prototype['cert'] = undefined;
 
 /**
  * Certificate in a PEM format.

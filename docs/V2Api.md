@@ -38,6 +38,7 @@ Method | HTTP request | Description
 [**createWebTarget**](V2Api.md#createWebTarget) | **POST** /create-web-target | 
 [**decrypt**](V2Api.md#decrypt) | **POST** /decrypt | 
 [**decryptPKCS1**](V2Api.md#decryptPKCS1) | **POST** /decrypt-pkcs1 | 
+[**decryptWithClassicKey**](V2Api.md#decryptWithClassicKey) | **POST** /decrypt-with-classic-key | 
 [**deleteAuthMethod**](V2Api.md#deleteAuthMethod) | **POST** /delete-auth-method | 
 [**deleteAuthMethods**](V2Api.md#deleteAuthMethods) | **POST** /delete-auth-methods | 
 [**deleteItem**](V2Api.md#deleteItem) | **POST** /delete-item | 
@@ -53,6 +54,7 @@ Method | HTTP request | Description
 [**describePermissions**](V2Api.md#describePermissions) | **POST** /describe-permissions | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
 [**encryptPKCS1**](V2Api.md#encryptPKCS1) | **POST** /encrypt-pkcs1 | 
+[**encryptWithClassicKey**](V2Api.md#encryptWithClassicKey) | **POST** /encrypt-with-classic-key | 
 [**gatewayCreateProducerArtifactory**](V2Api.md#gatewayCreateProducerArtifactory) | **POST** /gateway-create-producer-artifactory | 
 [**gatewayCreateProducerAws**](V2Api.md#gatewayCreateProducerAws) | **POST** /gateway-create-producer-aws | 
 [**gatewayCreateProducerAzure**](V2Api.md#gatewayCreateProducerAzure) | **POST** /gateway-create-producer-azure | 
@@ -104,7 +106,9 @@ Method | HTTP request | Description
 [**rotateKey**](V2Api.md#rotateKey) | **POST** /rotate-key | 
 [**setItemState**](V2Api.md#setItemState) | **POST** /set-item-state | 
 [**setRoleRule**](V2Api.md#setRoleRule) | **POST** /set-role-rule | 
+[**signJWTWithClassicKey**](V2Api.md#signJWTWithClassicKey) | **POST** /sign-jwt-with-classic-key | 
 [**signPKCS1**](V2Api.md#signPKCS1) | **POST** /sign-pkcs1 | 
+[**signPKICertWithClassicKey**](V2Api.md#signPKICertWithClassicKey) | **POST** /sign-pki-cert-with-classic-key | 
 [**staticCredsAuth**](V2Api.md#staticCredsAuth) | **POST** /static-creds-auth | 
 [**uidCreateChildToken**](V2Api.md#uidCreateChildToken) | **POST** /uid-create-child-token | 
 [**uidGenerateToken**](V2Api.md#uidGenerateToken) | **POST** /uid-generate-token | 
@@ -136,7 +140,9 @@ Method | HTTP request | Description
 [**updateWebTarget**](V2Api.md#updateWebTarget) | **POST** /update-web-target | 
 [**updateWebTargetDetails**](V2Api.md#updateWebTargetDetails) | **POST** /update-web-target-details | 
 [**uploadRSA**](V2Api.md#uploadRSA) | **POST** /upload-rsa | 
+[**verifyJWTWithClassicKey**](V2Api.md#verifyJWTWithClassicKey) | **POST** /verify-jwt-with-classic-key | 
 [**verifyPKCS1**](V2Api.md#verifyPKCS1) | **POST** /verify-pkcs1 | 
+[**verifyPKICertWithClassicKey**](V2Api.md#verifyPKICertWithClassicKey) | **POST** /verify-pki-cert-with-classic-key | 
 
 
 
@@ -1564,6 +1570,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## decryptWithClassicKey
+
+> DecryptWithClassicKeyOutput decryptWithClassicKey(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DecryptWithClassicKey(); // DecryptWithClassicKey | 
+apiInstance.decryptWithClassicKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DecryptWithClassicKey**](DecryptWithClassicKey.md)|  | 
+
+### Return type
+
+[**DecryptWithClassicKeyOutput**](DecryptWithClassicKeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## deleteAuthMethod
 
 > DeleteAuthMethodOutput deleteAuthMethod(body)
@@ -2183,6 +2231,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EncryptPKCS1Output**](EncryptPKCS1Output.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## encryptWithClassicKey
+
+> EncryptOutput encryptWithClassicKey(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.EncryptWithClassicKey(); // EncryptWithClassicKey | 
+apiInstance.encryptWithClassicKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EncryptWithClassicKey**](EncryptWithClassicKey.md)|  | 
+
+### Return type
+
+[**EncryptOutput**](EncryptOutput.md)
 
 ### Authorization
 
@@ -4332,6 +4422,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## signJWTWithClassicKey
+
+> signJWTWithClassicKey(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.SignJWTWithClassicKey(); // SignJWTWithClassicKey | 
+apiInstance.signJWTWithClassicKey(body).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SignJWTWithClassicKey**](SignJWTWithClassicKey.md)|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## signPKCS1
 
 > SignPKCS1Output signPKCS1(body)
@@ -4363,6 +4495,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SignPKCS1Output**](SignPKCS1Output.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## signPKICertWithClassicKey
+
+> signPKICertWithClassicKey(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.SignPKICertWithClassicKey(); // SignPKICertWithClassicKey | 
+apiInstance.signPKICertWithClassicKey(body).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SignPKICertWithClassicKey**](SignPKICertWithClassicKey.md)|  | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 
@@ -5672,6 +5846,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## verifyJWTWithClassicKey
+
+> verifyJWTWithClassicKey(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.VerifyJWTWithClassicKey(); // VerifyJWTWithClassicKey | 
+apiInstance.verifyJWTWithClassicKey(body).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**VerifyJWTWithClassicKey**](VerifyJWTWithClassicKey.md)|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## verifyPKCS1
 
 > Object verifyPKCS1(body)
@@ -5703,6 +5919,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 **Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## verifyPKICertWithClassicKey
+
+> verifyPKICertWithClassicKey(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.VerifyPKICertWithClassicKey(); // VerifyPKICertWithClassicKey | 
+apiInstance.verifyPKICertWithClassicKey(body).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**VerifyPKICertWithClassicKey**](VerifyPKICertWithClassicKey.md)|  | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

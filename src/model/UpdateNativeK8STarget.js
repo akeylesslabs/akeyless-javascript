@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateNativeK8STarget model module.
  * @module model/UpdateNativeK8STarget
- * @version 2.4.5
+ * @version 2.5.0
  */
 class UpdateNativeK8STarget {
     /**
@@ -26,11 +26,10 @@ class UpdateNativeK8STarget {
      * @param k8sClusterEndpoint {String} K8S cluster URL endpoint
      * @param k8sClusterToken {String} K8S cluster Bearer token
      * @param name {String} Target name
-     * @param newName {String} New target name
      */
-    constructor(k8sClusterCaCert, k8sClusterEndpoint, k8sClusterToken, name, newName) { 
+    constructor(k8sClusterCaCert, k8sClusterEndpoint, k8sClusterToken, name) { 
         
-        UpdateNativeK8STarget.initialize(this, k8sClusterCaCert, k8sClusterEndpoint, k8sClusterToken, name, newName);
+        UpdateNativeK8STarget.initialize(this, k8sClusterCaCert, k8sClusterEndpoint, k8sClusterToken, name);
     }
 
     /**
@@ -38,12 +37,11 @@ class UpdateNativeK8STarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, k8sClusterCaCert, k8sClusterEndpoint, k8sClusterToken, name, newName) { 
+    static initialize(obj, k8sClusterCaCert, k8sClusterEndpoint, k8sClusterToken, name) { 
         obj['k8s-cluster-ca-cert'] = k8sClusterCaCert;
         obj['k8s-cluster-endpoint'] = k8sClusterEndpoint;
         obj['k8s-cluster-token'] = k8sClusterToken;
         obj['name'] = name;
-        obj['new-name'] = newName;
     }
 
     /**

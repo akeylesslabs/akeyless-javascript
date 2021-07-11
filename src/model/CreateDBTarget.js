@@ -16,17 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTarget model module.
  * @module model/CreateDBTarget
- * @version 2.4.5
+ * @version 2.5.0
  */
 class CreateDBTarget {
     /**
      * Constructs a new <code>CreateDBTarget</code>.
      * @alias module:model/CreateDBTarget
+     * @param dbType {String} 
      * @param name {String} Target name
      */
-    constructor(name) { 
+    constructor(dbType, name) { 
         
-        CreateDBTarget.initialize(this, name);
+        CreateDBTarget.initialize(this, dbType, name);
     }
 
     /**
@@ -34,7 +35,8 @@ class CreateDBTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name) { 
+    static initialize(obj, dbType, name) { 
+        obj['db-type'] = dbType;
         obj['name'] = name;
     }
 

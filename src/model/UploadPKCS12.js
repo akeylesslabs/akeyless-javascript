@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadPKCS12 model module.
  * @module model/UploadPKCS12
- * @version 2.4.5
+ * @version 2.5.0
  */
 class UploadPKCS12 {
     /**
@@ -53,9 +53,6 @@ class UploadPKCS12 {
         if (data) {
             obj = obj || new UploadPKCS12();
 
-            if (data.hasOwnProperty('cert')) {
-                obj['cert'] = ApiClient.convertToType(data['cert'], 'String');
-            }
             if (data.hasOwnProperty('customer-frg-id')) {
                 obj['customer-frg-id'] = ApiClient.convertToType(data['customer-frg-id'], 'String');
             }
@@ -95,12 +92,6 @@ class UploadPKCS12 {
 
 
 }
-
-/**
- * Path to a file that contain the certificate in a PEM format. If this parameter is not empty, the certificate will be taken from here and not from the PKCS#12 input file
- * @member {String} cert
- */
-UploadPKCS12.prototype['cert'] = undefined;
 
 /**
  * The customer fragment ID that will be used to split the key (if empty, the key will be created independently of a customer fragment)

@@ -16,17 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 2.4.5
+ * @version 2.5.0
  */
 class CreateRotatedSecret {
     /**
      * Constructs a new <code>CreateRotatedSecret</code>.
      * @alias module:model/CreateRotatedSecret
      * @param name {String} Secret name
+     * @param targetName {String} Target name
      */
-    constructor(name) { 
+    constructor(name, targetName) { 
         
-        CreateRotatedSecret.initialize(this, name);
+        CreateRotatedSecret.initialize(this, name, targetName);
     }
 
     /**
@@ -34,8 +35,9 @@ class CreateRotatedSecret {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name) { 
+    static initialize(obj, name, targetName) { 
         obj['name'] = name;
+        obj['target-name'] = targetName;
     }
 
     /**
@@ -188,6 +190,7 @@ CreateRotatedSecret.prototype['ssh-username'] = undefined;
 CreateRotatedSecret.prototype['tags'] = undefined;
 
 /**
+ * Target name
  * @member {String} target-name
  */
 CreateRotatedSecret.prototype['target-name'] = undefined;

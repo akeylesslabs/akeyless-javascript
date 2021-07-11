@@ -81,6 +81,8 @@ import Decrypt from '../model/Decrypt';
 import DecryptOutput from '../model/DecryptOutput';
 import DecryptPKCS1 from '../model/DecryptPKCS1';
 import DecryptPKCS1Output from '../model/DecryptPKCS1Output';
+import DecryptWithClassicKey from '../model/DecryptWithClassicKey';
+import DecryptWithClassicKeyOutput from '../model/DecryptWithClassicKeyOutput';
 import DeleteAuthMethod from '../model/DeleteAuthMethod';
 import DeleteAuthMethodOutput from '../model/DeleteAuthMethodOutput';
 import DeleteAuthMethods from '../model/DeleteAuthMethods';
@@ -104,6 +106,7 @@ import Encrypt from '../model/Encrypt';
 import EncryptOutput from '../model/EncryptOutput';
 import EncryptPKCS1 from '../model/EncryptPKCS1';
 import EncryptPKCS1Output from '../model/EncryptPKCS1Output';
+import EncryptWithClassicKey from '../model/EncryptWithClassicKey';
 import GatewayCreateProducerArtifactory from '../model/GatewayCreateProducerArtifactory';
 import GatewayCreateProducerArtifactoryOutput from '../model/GatewayCreateProducerArtifactoryOutput';
 import GatewayCreateProducerAws from '../model/GatewayCreateProducerAws';
@@ -189,8 +192,10 @@ import RollbackSecretOutput from '../model/RollbackSecretOutput';
 import RotateKeyOutput from '../model/RotateKeyOutput';
 import SetItemState from '../model/SetItemState';
 import SetRoleRule from '../model/SetRoleRule';
+import SignJWTWithClassicKey from '../model/SignJWTWithClassicKey';
 import SignPKCS1 from '../model/SignPKCS1';
 import SignPKCS1Output from '../model/SignPKCS1Output';
+import SignPKICertWithClassicKey from '../model/SignPKICertWithClassicKey';
 import StaticCredsAuth from '../model/StaticCredsAuth';
 import StaticCredsAuthOutput from '../model/StaticCredsAuthOutput';
 import SystemAccessCredentialsReplyObj from '../model/SystemAccessCredentialsReplyObj';
@@ -242,12 +247,14 @@ import UpdateWebTarget from '../model/UpdateWebTarget';
 import UpdateWebTargetDetails from '../model/UpdateWebTargetDetails';
 import UpdateWebTargetOutput from '../model/UpdateWebTargetOutput';
 import UploadRSA from '../model/UploadRSA';
+import VerifyJWTWithClassicKey from '../model/VerifyJWTWithClassicKey';
 import VerifyPKCS1 from '../model/VerifyPKCS1';
+import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.4.5
+* @version 2.5.0
 */
 export default class V2Api {
 
@@ -1721,6 +1728,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/DecryptWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DecryptWithClassicKeyOutput} and HTTP response
+     */
+    decryptWithClassicKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling decryptWithClassicKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DecryptWithClassicKeyOutput;
+      return this.apiClient.callApi(
+        '/decrypt-with-classic-key', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DecryptWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DecryptWithClassicKeyOutput}
+     */
+    decryptWithClassicKey(body) {
+      return this.decryptWithClassicKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/DeleteAuthMethod} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DeleteAuthMethodOutput} and HTTP response
      */
@@ -2359,6 +2409,49 @@ export default class V2Api {
      */
     encryptPKCS1(body) {
       return this.encryptPKCS1WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EncryptWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EncryptOutput} and HTTP response
+     */
+    encryptWithClassicKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling encryptWithClassicKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EncryptOutput;
+      return this.apiClient.callApi(
+        '/encrypt-with-classic-key', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EncryptWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EncryptOutput}
+     */
+    encryptWithClassicKey(body) {
+      return this.encryptWithClassicKeyWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4545,6 +4638,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/SignJWTWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    signJWTWithClassicKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling signJWTWithClassicKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/sign-jwt-with-classic-key', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/SignJWTWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    signJWTWithClassicKey(body) {
+      return this.signJWTWithClassicKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/SignPKCS1} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SignPKCS1Output} and HTTP response
      */
@@ -4581,6 +4717,49 @@ export default class V2Api {
      */
     signPKCS1(body) {
       return this.signPKCS1WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/SignPKICertWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    signPKICertWithClassicKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling signPKICertWithClassicKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/sign-pki-cert-with-classic-key', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/SignPKICertWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    signPKICertWithClassicKey(body) {
+      return this.signPKICertWithClassicKeyWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5915,6 +6094,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/VerifyJWTWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    verifyJWTWithClassicKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling verifyJWTWithClassicKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/verify-jwt-with-classic-key', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/VerifyJWTWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    verifyJWTWithClassicKey(body) {
+      return this.verifyJWTWithClassicKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/VerifyPKCS1} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
@@ -5951,6 +6173,49 @@ export default class V2Api {
      */
     verifyPKCS1(body) {
       return this.verifyPKCS1WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/VerifyPKICertWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    verifyPKICertWithClassicKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling verifyPKICertWithClassicKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/verify-pki-cert-with-classic-key', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/VerifyPKICertWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    verifyPKICertWithClassicKey(body) {
+      return this.verifyPKICertWithClassicKeyWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

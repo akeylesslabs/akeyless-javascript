@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerRdpOutput model module.
  * @module model/GatewayCreateProducerRdpOutput
- * @version 2.4.5
+ * @version 2.5.0
  */
 class GatewayCreateProducerRdpOutput {
     /**

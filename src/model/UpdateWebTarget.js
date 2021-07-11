@@ -16,18 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateWebTarget model module.
  * @module model/UpdateWebTarget
- * @version 2.4.5
+ * @version 2.5.0
  */
 class UpdateWebTarget {
     /**
      * Constructs a new <code>UpdateWebTarget</code>.
      * @alias module:model/UpdateWebTarget
      * @param name {String} Target name
-     * @param newName {String} New target name
      */
-    constructor(name, newName) { 
+    constructor(name) { 
         
-        UpdateWebTarget.initialize(this, name, newName);
+        UpdateWebTarget.initialize(this, name);
     }
 
     /**
@@ -35,9 +34,8 @@ class UpdateWebTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, newName) { 
+    static initialize(obj, name) { 
         obj['name'] = name;
-        obj['new-name'] = newName;
     }
 
     /**

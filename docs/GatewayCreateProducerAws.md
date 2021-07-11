@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accessKeyId** | **String** | Access Key ID | 
 **accessMode** | **String** |  | [optional] 
-**accessSecretKey** | **String** | Secret Access Key | 
 **adminRotationIntervalDays** | **Number** | Admin credentials rotation interval (days) | [optional] [default to 0]
+**awsAccessKeyId** | **String** | Access Key ID | 
+**awsAccessSecretKey** | **String** | Secret Access Key | 
 **awsRoleArns** | **String** | AWS Role ARNs to be used in the Assume Role operation (relevant only for assume_role mode) | [optional] 
 **awsUserConsoleAccess** | **Boolean** | AWS User console access | [optional] [default to false]
 **awsUserGroups** | **String** | AWS User groups | [optional] 

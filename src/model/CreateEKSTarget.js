@@ -16,22 +16,22 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEKSTarget model module.
  * @module model/CreateEKSTarget
- * @version 2.4.5
+ * @version 2.5.0
  */
 class CreateEKSTarget {
     /**
      * Constructs a new <code>CreateEKSTarget</code>.
      * @alias module:model/CreateEKSTarget
      * @param eksAccessKeyId {String} Access Key ID
-     * @param eksClusterCert {String} EKS cluster CA certificate
+     * @param eksClusterCaCert {String} EKS cluster CA certificate
      * @param eksClusterEndpoint {String} EKS cluster URL endpoint
      * @param eksClusterName {String} EKS cluster name
      * @param eksSecretAccessKey {String} Secret Access Key
      * @param name {String} Target name
      */
-    constructor(eksAccessKeyId, eksClusterCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name) { 
+    constructor(eksAccessKeyId, eksClusterCaCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name) { 
         
-        CreateEKSTarget.initialize(this, eksAccessKeyId, eksClusterCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name);
+        CreateEKSTarget.initialize(this, eksAccessKeyId, eksClusterCaCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name);
     }
 
     /**
@@ -39,9 +39,9 @@ class CreateEKSTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, eksAccessKeyId, eksClusterCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name) { 
+    static initialize(obj, eksAccessKeyId, eksClusterCaCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name) { 
         obj['eks-access-key-id'] = eksAccessKeyId;
-        obj['eks-cluster-cert'] = eksClusterCert;
+        obj['eks-cluster-ca-cert'] = eksClusterCaCert;
         obj['eks-cluster-endpoint'] = eksClusterEndpoint;
         obj['eks-cluster-name'] = eksClusterName;
         obj['eks-secret-access-key'] = eksSecretAccessKey;
@@ -65,8 +65,8 @@ class CreateEKSTarget {
             if (data.hasOwnProperty('eks-access-key-id')) {
                 obj['eks-access-key-id'] = ApiClient.convertToType(data['eks-access-key-id'], 'String');
             }
-            if (data.hasOwnProperty('eks-cluster-cert')) {
-                obj['eks-cluster-cert'] = ApiClient.convertToType(data['eks-cluster-cert'], 'String');
+            if (data.hasOwnProperty('eks-cluster-ca-cert')) {
+                obj['eks-cluster-ca-cert'] = ApiClient.convertToType(data['eks-cluster-ca-cert'], 'String');
             }
             if (data.hasOwnProperty('eks-cluster-endpoint')) {
                 obj['eks-cluster-endpoint'] = ApiClient.convertToType(data['eks-cluster-endpoint'], 'String');
@@ -119,9 +119,9 @@ CreateEKSTarget.prototype['eks-access-key-id'] = undefined;
 
 /**
  * EKS cluster CA certificate
- * @member {String} eks-cluster-cert
+ * @member {String} eks-cluster-ca-cert
  */
-CreateEKSTarget.prototype['eks-cluster-cert'] = undefined;
+CreateEKSTarget.prototype['eks-cluster-ca-cert'] = undefined;
 
 /**
  * EKS cluster URL endpoint

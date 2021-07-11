@@ -16,18 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRabbitMQTarget model module.
  * @module model/UpdateRabbitMQTarget
- * @version 2.4.5
+ * @version 2.5.0
  */
 class UpdateRabbitMQTarget {
     /**
      * Constructs a new <code>UpdateRabbitMQTarget</code>.
      * @alias module:model/UpdateRabbitMQTarget
      * @param name {String} Target name
-     * @param newName {String} New target name
      */
-    constructor(name, newName) { 
+    constructor(name) { 
         
-        UpdateRabbitMQTarget.initialize(this, name, newName);
+        UpdateRabbitMQTarget.initialize(this, name);
     }
 
     /**
@@ -35,9 +34,8 @@ class UpdateRabbitMQTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, newName) { 
+    static initialize(obj, name) { 
         obj['name'] = name;
-        obj['new-name'] = newName;
     }
 
     /**

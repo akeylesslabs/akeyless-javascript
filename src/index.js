@@ -108,6 +108,8 @@ import DecryptFileOutput from './model/DecryptFileOutput';
 import DecryptOutput from './model/DecryptOutput';
 import DecryptPKCS1 from './model/DecryptPKCS1';
 import DecryptPKCS1Output from './model/DecryptPKCS1Output';
+import DecryptWithClassicKey from './model/DecryptWithClassicKey';
+import DecryptWithClassicKeyOutput from './model/DecryptWithClassicKeyOutput';
 import DefaultConfigPart from './model/DefaultConfigPart';
 import DeleteAuthMethod from './model/DeleteAuthMethod';
 import DeleteAuthMethodOutput from './model/DeleteAuthMethodOutput';
@@ -137,6 +139,8 @@ import EncryptFileOutput from './model/EncryptFileOutput';
 import EncryptOutput from './model/EncryptOutput';
 import EncryptPKCS1 from './model/EncryptPKCS1';
 import EncryptPKCS1Output from './model/EncryptPKCS1Output';
+import EncryptWithClassicKey from './model/EncryptWithClassicKey';
+import EncryptWithClassicKeyOutput from './model/EncryptWithClassicKeyOutput';
 import ExternalKMSKeyId from './model/ExternalKMSKeyId';
 import GCPAccessRules from './model/GCPAccessRules';
 import GatewayAddAllowedManagementAccess from './model/GatewayAddAllowedManagementAccess';
@@ -267,8 +271,12 @@ import SAMLAttribute from './model/SAMLAttribute';
 import SSHCertificateIssueDetails from './model/SSHCertificateIssueDetails';
 import SetItemState from './model/SetItemState';
 import SetRoleRule from './model/SetRoleRule';
+import SignJWTOutput from './model/SignJWTOutput';
+import SignJWTWithClassicKey from './model/SignJWTWithClassicKey';
 import SignPKCS1 from './model/SignPKCS1';
 import SignPKCS1Output from './model/SignPKCS1Output';
+import SignPKICertOutput from './model/SignPKICertOutput';
+import SignPKICertWithClassicKey from './model/SignPKICertWithClassicKey';
 import SplunkLogForwardingConfig from './model/SplunkLogForwardingConfig';
 import StaticCredsAuth from './model/StaticCredsAuth';
 import StaticCredsAuthOutput from './model/StaticCredsAuthOutput';
@@ -332,7 +340,11 @@ import UpdateWebTargetDetails from './model/UpdateWebTargetDetails';
 import UpdateWebTargetOutput from './model/UpdateWebTargetOutput';
 import UploadPKCS12 from './model/UploadPKCS12';
 import UploadRSA from './model/UploadRSA';
+import VerifyJWTOutput from './model/VerifyJWTOutput';
+import VerifyJWTWithClassicKey from './model/VerifyJWTWithClassicKey';
 import VerifyPKCS1 from './model/VerifyPKCS1';
+import VerifyPKICertOutput from './model/VerifyPKICertOutput';
+import VerifyPKICertWithClassicKey from './model/VerifyPKICertWithClassicKey';
 import V2Api from './api/V2Api';
 
 
@@ -365,7 +377,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.4.5
+* @version 2.5.0
 */
 export {
     /**
@@ -945,6 +957,18 @@ export {
     DecryptPKCS1Output,
 
     /**
+     * The DecryptWithClassicKey model constructor.
+     * @property {module:model/DecryptWithClassicKey}
+     */
+    DecryptWithClassicKey,
+
+    /**
+     * The DecryptWithClassicKeyOutput model constructor.
+     * @property {module:model/DecryptWithClassicKeyOutput}
+     */
+    DecryptWithClassicKeyOutput,
+
+    /**
      * The DefaultConfigPart model constructor.
      * @property {module:model/DefaultConfigPart}
      */
@@ -1117,6 +1141,18 @@ export {
      * @property {module:model/EncryptPKCS1Output}
      */
     EncryptPKCS1Output,
+
+    /**
+     * The EncryptWithClassicKey model constructor.
+     * @property {module:model/EncryptWithClassicKey}
+     */
+    EncryptWithClassicKey,
+
+    /**
+     * The EncryptWithClassicKeyOutput model constructor.
+     * @property {module:model/EncryptWithClassicKeyOutput}
+     */
+    EncryptWithClassicKeyOutput,
 
     /**
      * The ExternalKMSKeyId model constructor.
@@ -1899,6 +1935,18 @@ export {
     SetRoleRule,
 
     /**
+     * The SignJWTOutput model constructor.
+     * @property {module:model/SignJWTOutput}
+     */
+    SignJWTOutput,
+
+    /**
+     * The SignJWTWithClassicKey model constructor.
+     * @property {module:model/SignJWTWithClassicKey}
+     */
+    SignJWTWithClassicKey,
+
+    /**
      * The SignPKCS1 model constructor.
      * @property {module:model/SignPKCS1}
      */
@@ -1909,6 +1957,18 @@ export {
      * @property {module:model/SignPKCS1Output}
      */
     SignPKCS1Output,
+
+    /**
+     * The SignPKICertOutput model constructor.
+     * @property {module:model/SignPKICertOutput}
+     */
+    SignPKICertOutput,
+
+    /**
+     * The SignPKICertWithClassicKey model constructor.
+     * @property {module:model/SignPKICertWithClassicKey}
+     */
+    SignPKICertWithClassicKey,
 
     /**
      * The SplunkLogForwardingConfig model constructor.
@@ -2289,10 +2349,34 @@ export {
     UploadRSA,
 
     /**
+     * The VerifyJWTOutput model constructor.
+     * @property {module:model/VerifyJWTOutput}
+     */
+    VerifyJWTOutput,
+
+    /**
+     * The VerifyJWTWithClassicKey model constructor.
+     * @property {module:model/VerifyJWTWithClassicKey}
+     */
+    VerifyJWTWithClassicKey,
+
+    /**
      * The VerifyPKCS1 model constructor.
      * @property {module:model/VerifyPKCS1}
      */
     VerifyPKCS1,
+
+    /**
+     * The VerifyPKICertOutput model constructor.
+     * @property {module:model/VerifyPKICertOutput}
+     */
+    VerifyPKICertOutput,
+
+    /**
+     * The VerifyPKICertWithClassicKey model constructor.
+     * @property {module:model/VerifyPKICertWithClassicKey}
+     */
+    VerifyPKICertWithClassicKey,
 
     /**
     * The V2Api service constructor.

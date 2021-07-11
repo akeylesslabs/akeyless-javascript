@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**classicKeyId** | **Number** |  | [optional] 
+**classicKeyId** | **String** |  | [optional] 
 **classicKeyName** | **String** |  | [optional] 
 **classicKeyType** | **String** |  | [optional] 
 

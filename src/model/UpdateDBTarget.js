@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTarget model module.
  * @module model/UpdateDBTarget
- * @version 2.4.5
+ * @version 2.5.0
  */
 class UpdateDBTarget {
     /**
      * Constructs a new <code>UpdateDBTarget</code>.
      * @alias module:model/UpdateDBTarget
+     * @param dbType {String} 
      * @param name {String} Target name
-     * @param newName {String} New target name
      */
-    constructor(name, newName) { 
+    constructor(dbType, name) { 
         
-        UpdateDBTarget.initialize(this, name, newName);
+        UpdateDBTarget.initialize(this, dbType, name);
     }
 
     /**
@@ -35,9 +35,9 @@ class UpdateDBTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, newName) { 
+    static initialize(obj, dbType, name) { 
+        obj['db-type'] = dbType;
         obj['name'] = name;
-        obj['new-name'] = newName;
     }
 
     /**

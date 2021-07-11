@@ -16,18 +16,20 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodGCP model module.
  * @module model/CreateAuthMethodGCP
- * @version 2.4.5
+ * @version 2.5.0
  */
 class CreateAuthMethodGCP {
     /**
      * Constructs a new <code>CreateAuthMethodGCP</code>.
      * createAuthMethodGCP is a command that creates a new auth method that will be able to authenticate using GCP IAM Service Account credentials or GCE instance credentials.
      * @alias module:model/CreateAuthMethodGCP
+     * @param audience {String} The audience to verify in the JWT received by the client
      * @param name {String} Auth Method name
+     * @param type {String} Type of the GCP Access Rules
      */
-    constructor(name) { 
+    constructor(audience, name, type) { 
         
-        CreateAuthMethodGCP.initialize(this, name);
+        CreateAuthMethodGCP.initialize(this, audience, name, type);
     }
 
     /**
@@ -35,8 +37,10 @@ class CreateAuthMethodGCP {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name) { 
+    static initialize(obj, audience, name, type) { 
+        obj['audience'] = audience;
         obj['name'] = name;
+        obj['type'] = type;
     }
 
     /**

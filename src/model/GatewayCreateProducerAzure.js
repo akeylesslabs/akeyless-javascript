@@ -16,21 +16,21 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAzure model module.
  * @module model/GatewayCreateProducerAzure
- * @version 2.4.5
+ * @version 2.5.0
  */
 class GatewayCreateProducerAzure {
     /**
      * Constructs a new <code>GatewayCreateProducerAzure</code>.
      * gatewayCreateProducerAzure is a command that creates azure producer
      * @alias module:model/GatewayCreateProducerAzure
-     * @param clientId {String} Azure Client ID
-     * @param clientSecret {String} Azure Client Secret
+     * @param azureClientId {String} Azure Client ID
+     * @param azureClientSecret {String} Azure Client Secret
+     * @param azureTenantId {String} Azure Tenant ID
      * @param name {String} Producer name
-     * @param tenantId {String} Azure Tenant ID
      */
-    constructor(clientId, clientSecret, name, tenantId) { 
+    constructor(azureClientId, azureClientSecret, azureTenantId, name) { 
         
-        GatewayCreateProducerAzure.initialize(this, clientId, clientSecret, name, tenantId);
+        GatewayCreateProducerAzure.initialize(this, azureClientId, azureClientSecret, azureTenantId, name);
     }
 
     /**
@@ -38,11 +38,11 @@ class GatewayCreateProducerAzure {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, clientId, clientSecret, name, tenantId) { 
-        obj['client-id'] = clientId;
-        obj['client-secret'] = clientSecret;
+    static initialize(obj, azureClientId, azureClientSecret, azureTenantId, name) { 
+        obj['azure-client-id'] = azureClientId;
+        obj['azure-client-secret'] = azureClientSecret;
+        obj['azure-tenant-id'] = azureTenantId;
         obj['name'] = name;
-        obj['tenant-id'] = tenantId;
     }
 
     /**
@@ -59,11 +59,14 @@ class GatewayCreateProducerAzure {
             if (data.hasOwnProperty('app-obj-id')) {
                 obj['app-obj-id'] = ApiClient.convertToType(data['app-obj-id'], 'String');
             }
-            if (data.hasOwnProperty('client-id')) {
-                obj['client-id'] = ApiClient.convertToType(data['client-id'], 'String');
+            if (data.hasOwnProperty('azure-client-id')) {
+                obj['azure-client-id'] = ApiClient.convertToType(data['azure-client-id'], 'String');
             }
-            if (data.hasOwnProperty('client-secret')) {
-                obj['client-secret'] = ApiClient.convertToType(data['client-secret'], 'String');
+            if (data.hasOwnProperty('azure-client-secret')) {
+                obj['azure-client-secret'] = ApiClient.convertToType(data['azure-client-secret'], 'String');
+            }
+            if (data.hasOwnProperty('azure-tenant-id')) {
+                obj['azure-tenant-id'] = ApiClient.convertToType(data['azure-tenant-id'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -73,9 +76,6 @@ class GatewayCreateProducerAzure {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
-            }
-            if (data.hasOwnProperty('tenant-id')) {
-                obj['tenant-id'] = ApiClient.convertToType(data['tenant-id'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -119,15 +119,21 @@ GatewayCreateProducerAzure.prototype['app-obj-id'] = undefined;
 
 /**
  * Azure Client ID
- * @member {String} client-id
+ * @member {String} azure-client-id
  */
-GatewayCreateProducerAzure.prototype['client-id'] = undefined;
+GatewayCreateProducerAzure.prototype['azure-client-id'] = undefined;
 
 /**
  * Azure Client Secret
- * @member {String} client-secret
+ * @member {String} azure-client-secret
  */
-GatewayCreateProducerAzure.prototype['client-secret'] = undefined;
+GatewayCreateProducerAzure.prototype['azure-client-secret'] = undefined;
+
+/**
+ * Azure Tenant ID
+ * @member {String} azure-tenant-id
+ */
+GatewayCreateProducerAzure.prototype['azure-tenant-id'] = undefined;
 
 /**
  * Producer name
@@ -146,12 +152,6 @@ GatewayCreateProducerAzure.prototype['password'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayCreateProducerAzure.prototype['producer-encryption-key-name'] = undefined;
-
-/**
- * Azure Tenant ID
- * @member {String} tenant-id
- */
-GatewayCreateProducerAzure.prototype['tenant-id'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
