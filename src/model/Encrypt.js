@@ -16,18 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The Encrypt model module.
  * @module model/Encrypt
- * @version 2.5.2
+ * @version 2.5.3
  */
 class Encrypt {
     /**
      * Constructs a new <code>Encrypt</code>.
      * @alias module:model/Encrypt
-     * @param keyName {String} The name of the key to use in the encryption process
      * @param plaintext {String} Data to be encrypted
      */
-    constructor(keyName, plaintext) { 
+    constructor(plaintext) { 
         
-        Encrypt.initialize(this, keyName, plaintext);
+        Encrypt.initialize(this, plaintext);
     }
 
     /**
@@ -35,8 +34,7 @@ class Encrypt {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, keyName, plaintext) { 
-        obj['key-name'] = keyName;
+    static initialize(obj, plaintext) { 
         obj['plaintext'] = plaintext;
     }
 
@@ -51,6 +49,9 @@ class Encrypt {
         if (data) {
             obj = obj || new Encrypt();
 
+            if (data.hasOwnProperty('display-id')) {
+                obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
+            }
             if (data.hasOwnProperty('encryption-context')) {
                 obj['encryption-context'] = ApiClient.convertToType(data['encryption-context'], {'String': 'String'});
             }
@@ -78,6 +79,12 @@ class Encrypt {
 
 
 }
+
+/**
+ * The display id of the key to use in the encryption process
+ * @member {String} display-id
+ */
+Encrypt.prototype['display-id'] = undefined;
 
 /**
  * name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the same value must be supplied to the decrypt command or decryption will fail

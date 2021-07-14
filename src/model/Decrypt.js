@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Decrypt model module.
  * @module model/Decrypt
- * @version 2.5.2
+ * @version 2.5.3
  */
 class Decrypt {
     /**
@@ -24,11 +24,10 @@ class Decrypt {
      * decrypt is a command that decrypts ciphertext into plaintext by using an AES key.
      * @alias module:model/Decrypt
      * @param ciphertext {String} Ciphertext to be decrypted in base64 encoded format
-     * @param keyName {String} The name of the key to use in the decryption process
      */
-    constructor(ciphertext, keyName) { 
+    constructor(ciphertext) { 
         
-        Decrypt.initialize(this, ciphertext, keyName);
+        Decrypt.initialize(this, ciphertext);
     }
 
     /**
@@ -36,9 +35,8 @@ class Decrypt {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, ciphertext, keyName) { 
+    static initialize(obj, ciphertext) { 
         obj['ciphertext'] = ciphertext;
-        obj['key-name'] = keyName;
     }
 
     /**
@@ -54,6 +52,9 @@ class Decrypt {
 
             if (data.hasOwnProperty('ciphertext')) {
                 obj['ciphertext'] = ApiClient.convertToType(data['ciphertext'], 'String');
+            }
+            if (data.hasOwnProperty('display-id')) {
+                obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
             }
             if (data.hasOwnProperty('encryption-context')) {
                 obj['encryption-context'] = ApiClient.convertToType(data['encryption-context'], {'String': 'String'});
@@ -85,6 +86,12 @@ class Decrypt {
  * @member {String} ciphertext
  */
 Decrypt.prototype['ciphertext'] = undefined;
+
+/**
+ * The display id of the key to use in the decryption process
+ * @member {String} display-id
+ */
+Decrypt.prototype['display-id'] = undefined;
 
 /**
  * The encryption context. If this was specified in the encrypt command, it must be specified here or the decryption operation will fail

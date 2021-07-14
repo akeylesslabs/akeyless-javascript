@@ -17,7 +17,7 @@ import KMIPClient from './KMIPClient';
 /**
  * The KMIPClientsConfigPart model module.
  * @module model/KMIPClientsConfigPart
- * @version 2.5.2
+ * @version 2.5.3
  */
 class KMIPClientsConfigPart {
     /**
@@ -51,6 +51,9 @@ class KMIPClientsConfigPart {
             if (data.hasOwnProperty('clients')) {
                 obj['clients'] = ApiClient.convertToType(data['clients'], {'String': KMIPClient});
             }
+            if (data.hasOwnProperty('environments')) {
+                obj['environments'] = ApiClient.convertToType(data['environments'], ['String']);
+            }
         }
         return obj;
     }
@@ -62,6 +65,11 @@ class KMIPClientsConfigPart {
  * @member {Object.<String, module:model/KMIPClient>} clients
  */
 KMIPClientsConfigPart.prototype['clients'] = undefined;
+
+/**
+ * @member {Array.<String>} environments
+ */
+KMIPClientsConfigPart.prototype['environments'] = undefined;
 
 
 
