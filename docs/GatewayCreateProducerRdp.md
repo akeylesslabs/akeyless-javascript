@@ -13,6 +13,9 @@ Name | Type | Description | Notes
 **rdpHostName** | **String** | Hostname | 
 **rdpHostPort** | **String** | Port | [optional] [default to &#39;22&#39;]
 **rdpUserGroups** | **String** | Groups | 
+**secureAccessEnable** | **String** |  | [optional] 
+**secureAccessHost** | **[String]** |  | [optional] 
+**secureAccessRdpDomain** | **String** |  | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **userTtl** | **String** | User TTL | [optional] [default to &#39;60m&#39;]

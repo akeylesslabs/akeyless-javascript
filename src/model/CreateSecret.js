@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 2.5.3
+ * @version 2.5.4
  */
 class CreateSecret {
     /**
@@ -65,6 +65,24 @@ class CreateSecret {
             }
             if (data.hasOwnProperty('protection_key')) {
                 obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-issuer')) {
+                obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-host')) {
+                obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('secure-access-ssh-creds')) {
+                obj['secure-access-ssh-creds'] = ApiClient.convertToType(data['secure-access-ssh-creds'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-url')) {
+                obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -117,6 +135,36 @@ CreateSecret.prototype['password'] = undefined;
  * @member {String} protection_key
  */
 CreateSecret.prototype['protection_key'] = undefined;
+
+/**
+ * @member {String} secure-access-bastion-issuer
+ */
+CreateSecret.prototype['secure-access-bastion-issuer'] = undefined;
+
+/**
+ * @member {String} secure-access-enable
+ */
+CreateSecret.prototype['secure-access-enable'] = undefined;
+
+/**
+ * @member {Array.<String>} secure-access-host
+ */
+CreateSecret.prototype['secure-access-host'] = undefined;
+
+/**
+ * @member {String} secure-access-ssh-creds
+ */
+CreateSecret.prototype['secure-access-ssh-creds'] = undefined;
+
+/**
+ * @member {String} secure-access-url
+ */
+CreateSecret.prototype['secure-access-url'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-web-browsing
+ */
+CreateSecret.prototype['secure-access-web-browsing'] = undefined;
 
 /**
  * List of the tags attached to this secret

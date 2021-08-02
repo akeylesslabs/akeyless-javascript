@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAzure model module.
  * @module model/GatewayCreateProducerAzure
- * @version 2.5.3
+ * @version 2.5.4
  */
 class GatewayCreateProducerAzure {
     /**
@@ -76,6 +76,12 @@ class GatewayCreateProducerAzure {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -152,6 +158,16 @@ GatewayCreateProducerAzure.prototype['password'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayCreateProducerAzure.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * @member {String} secure-access-enable
+ */
+GatewayCreateProducerAzure.prototype['secure-access-enable'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-web-browsing
+ */
+GatewayCreateProducerAzure.prototype['secure-access-web-browsing'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

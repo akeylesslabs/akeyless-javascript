@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRabbitMQ model module.
  * @module model/GatewayCreateProducerRabbitMQ
- * @version 2.5.3
+ * @version 2.5.4
  */
 class GatewayCreateProducerRabbitMQ {
     /**
@@ -94,6 +94,15 @@ class GatewayCreateProducerRabbitMQ {
             }
             if (data.hasOwnProperty('rabbitmq-user-write-permission')) {
                 obj['rabbitmq-user-write-permission'] = ApiClient.convertToType(data['rabbitmq-user-write-permission'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-url')) {
+                obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -179,6 +188,21 @@ GatewayCreateProducerRabbitMQ.prototype['rabbitmq-user-vhost'] = undefined;
  * @member {String} rabbitmq-user-write-permission
  */
 GatewayCreateProducerRabbitMQ.prototype['rabbitmq-user-write-permission'] = undefined;
+
+/**
+ * @member {String} secure-access-enable
+ */
+GatewayCreateProducerRabbitMQ.prototype['secure-access-enable'] = undefined;
+
+/**
+ * @member {String} secure-access-url
+ */
+GatewayCreateProducerRabbitMQ.prototype['secure-access-url'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-web-browsing
+ */
+GatewayCreateProducerRabbitMQ.prototype['secure-access-web-browsing'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

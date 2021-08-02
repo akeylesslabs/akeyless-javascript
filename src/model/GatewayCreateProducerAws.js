@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAws model module.
  * @module model/GatewayCreateProducerAws
- * @version 2.5.3
+ * @version 2.5.4
  */
 class GatewayCreateProducerAws {
     /**
@@ -95,6 +95,21 @@ class GatewayCreateProducerAws {
             }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-aws-account-id')) {
+                obj['secure-access-aws-account-id'] = ApiClient.convertToType(data['secure-access-aws-account-id'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-aws-native-cli')) {
+                obj['secure-access-aws-native-cli'] = ApiClient.convertToType(data['secure-access-aws-native-cli'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-issuer')) {
+                obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -202,6 +217,31 @@ GatewayCreateProducerAws.prototype['producer-encryption-key-name'] = undefined;
  * @default 'us-east-2'
  */
 GatewayCreateProducerAws.prototype['region'] = 'us-east-2';
+
+/**
+ * @member {String} secure-access-aws-account-id
+ */
+GatewayCreateProducerAws.prototype['secure-access-aws-account-id'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-aws-native-cli
+ */
+GatewayCreateProducerAws.prototype['secure-access-aws-native-cli'] = undefined;
+
+/**
+ * @member {String} secure-access-bastion-issuer
+ */
+GatewayCreateProducerAws.prototype['secure-access-bastion-issuer'] = undefined;
+
+/**
+ * @member {String} secure-access-enable
+ */
+GatewayCreateProducerAws.prototype['secure-access-enable'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-web-browsing
+ */
+GatewayCreateProducerAws.prototype['secure-access-web-browsing'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerPostgreSQL model module.
  * @module model/GatewayCreateProducerPostgreSQL
- * @version 2.5.3
+ * @version 2.5.4
  */
 class GatewayCreateProducerPostgreSQL {
     /**
@@ -82,6 +82,18 @@ class GatewayCreateProducerPostgreSQL {
             }
             if (data.hasOwnProperty('producer-encryption-key')) {
                 obj['producer-encryption-key'] = ApiClient.convertToType(data['producer-encryption-key'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-issuer')) {
+                obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-db-schema')) {
+                obj['secure-access-db-schema'] = ApiClient.convertToType(data['secure-access-db-schema'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-host')) {
+                obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -157,6 +169,26 @@ GatewayCreateProducerPostgreSQL.prototype['postgresql-username'] = undefined;
  * @member {String} producer-encryption-key
  */
 GatewayCreateProducerPostgreSQL.prototype['producer-encryption-key'] = undefined;
+
+/**
+ * @member {String} secure-access-bastion-issuer
+ */
+GatewayCreateProducerPostgreSQL.prototype['secure-access-bastion-issuer'] = undefined;
+
+/**
+ * @member {String} secure-access-db-schema
+ */
+GatewayCreateProducerPostgreSQL.prototype['secure-access-db-schema'] = undefined;
+
+/**
+ * @member {String} secure-access-enable
+ */
+GatewayCreateProducerPostgreSQL.prototype['secure-access-enable'] = undefined;
+
+/**
+ * @member {Array.<String>} secure-access-host
+ */
+GatewayCreateProducerPostgreSQL.prototype['secure-access-host'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

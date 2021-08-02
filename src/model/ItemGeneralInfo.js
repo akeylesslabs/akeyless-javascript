@@ -16,11 +16,12 @@ import CertificateIssueInfo from './CertificateIssueInfo';
 import ClassicKeyDetailsInfo from './ClassicKeyDetailsInfo';
 import DynamicSecretProducerInfo from './DynamicSecretProducerInfo';
 import RotatedSecretDetailsInfo from './RotatedSecretDetailsInfo';
+import SecureRemoteAccess from './SecureRemoteAccess';
 
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 2.5.3
+ * @version 2.5.4
  */
 class ItemGeneralInfo {
     /**
@@ -63,6 +64,9 @@ class ItemGeneralInfo {
             if (data.hasOwnProperty('rotated_secret_details')) {
                 obj['rotated_secret_details'] = RotatedSecretDetailsInfo.constructFromObject(data['rotated_secret_details']);
             }
+            if (data.hasOwnProperty('secure_remote_access_details')) {
+                obj['secure_remote_access_details'] = SecureRemoteAccess.constructFromObject(data['secure_remote_access_details']);
+            }
         }
         return obj;
     }
@@ -89,6 +93,11 @@ ItemGeneralInfo.prototype['dynamic_secret_producer_details'] = undefined;
  * @member {module:model/RotatedSecretDetailsInfo} rotated_secret_details
  */
 ItemGeneralInfo.prototype['rotated_secret_details'] = undefined;
+
+/**
+ * @member {module:model/SecureRemoteAccess} secure_remote_access_details
+ */
+ItemGeneralInfo.prototype['secure_remote_access_details'] = undefined;
 
 
 

@@ -17,7 +17,7 @@ import ClassicKeyTargetInfo from './ClassicKeyTargetInfo';
 /**
  * The ClassicKeyDetailsInfo model module.
  * @module model/ClassicKeyDetailsInfo
- * @version 2.5.3
+ * @version 2.5.4
  */
 class ClassicKeyDetailsInfo {
     /**
@@ -48,6 +48,9 @@ class ClassicKeyDetailsInfo {
         if (data) {
             obj = obj || new ClassicKeyDetailsInfo();
 
+            if (data.hasOwnProperty('classic_key_attributes')) {
+                obj['classic_key_attributes'] = ApiClient.convertToType(data['classic_key_attributes'], {'String': ['String']});
+            }
             if (data.hasOwnProperty('classic_key_id')) {
                 obj['classic_key_id'] = ApiClient.convertToType(data['classic_key_id'], 'String');
             }
@@ -81,6 +84,11 @@ class ClassicKeyDetailsInfo {
 
 
 }
+
+/**
+ * @member {Object.<String, Array.<String>>} classic_key_attributes
+ */
+ClassicKeyDetailsInfo.prototype['classic_key_attributes'] = undefined;
 
 /**
  * @member {String} classic_key_id

@@ -67,6 +67,7 @@ Method | HTTP request | Description
 [**gatewayCreateProducerMongo**](V2Api.md#gatewayCreateProducerMongo) | **POST** /gateway-create-producer-mongo | 
 [**gatewayCreateProducerMySQL**](V2Api.md#gatewayCreateProducerMySQL) | **POST** /gateway-create-producer-mysql | 
 [**gatewayCreateProducerNativeK8S**](V2Api.md#gatewayCreateProducerNativeK8S) | **POST** /gateway-create-producer-k8s-native | 
+[**gatewayCreateProducerOracleDb**](V2Api.md#gatewayCreateProducerOracleDb) | **POST** /gateway-create-producer-oracle | 
 [**gatewayCreateProducerPostgreSQL**](V2Api.md#gatewayCreateProducerPostgreSQL) | **POST** /gateway-create-producer-postgresql | 
 [**gatewayCreateProducerRabbitMQ**](V2Api.md#gatewayCreateProducerRabbitMQ) | **POST** /gateway-create-producer-rabbitmq | 
 [**gatewayCreateProducerRdp**](V2Api.md#gatewayCreateProducerRdp) | **POST** /gateway-create-producer-rdp | 
@@ -2783,6 +2784,48 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## gatewayCreateProducerOracleDb
+
+> GatewayCreateProducerOracleDbOutput gatewayCreateProducerOracleDb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayCreateProducerOracleDb(); // GatewayCreateProducerOracleDb | 
+apiInstance.gatewayCreateProducerOracleDb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerOracleDb**](GatewayCreateProducerOracleDb.md)|  | 
+
+### Return type
+
+[**GatewayCreateProducerOracleDbOutput**](GatewayCreateProducerOracleDbOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

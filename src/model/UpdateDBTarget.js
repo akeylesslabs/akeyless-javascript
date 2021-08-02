@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTarget model module.
  * @module model/UpdateDBTarget
- * @version 2.5.3
+ * @version 2.5.4
  */
 class UpdateDBTarget {
     /**
@@ -107,6 +107,9 @@ class UpdateDBTarget {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('oracle-service-name')) {
+                obj['oracle-service-name'] = ApiClient.convertToType(data['oracle-service-name'], 'String');
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
@@ -251,6 +254,11 @@ UpdateDBTarget.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateDBTarget.prototype['new-name'] = undefined;
+
+/**
+ * @member {String} oracle-service-name
+ */
+UpdateDBTarget.prototype['oracle-service-name'] = undefined;
 
 /**
  * Required only when the authentication process requires a username and password

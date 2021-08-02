@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 2.5.3
+ * @version 2.5.4
  */
 class UpdateItem {
     /**
@@ -66,6 +66,60 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('rm-tag')) {
                 obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
+            }
+            if (data.hasOwnProperty('secure-access-allow-port-forwading')) {
+                obj['secure-access-allow-port-forwading'] = ApiClient.convertToType(data['secure-access-allow-port-forwading'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-aws-account-id')) {
+                obj['secure-access-aws-account-id'] = ApiClient.convertToType(data['secure-access-aws-account-id'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-aws-native-cli')) {
+                obj['secure-access-aws-native-cli'] = ApiClient.convertToType(data['secure-access-aws-native-cli'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-aws-region')) {
+                obj['secure-access-aws-region'] = ApiClient.convertToType(data['secure-access-aws-region'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-api')) {
+                obj['secure-access-bastion-api'] = ApiClient.convertToType(data['secure-access-bastion-api'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-issuer')) {
+                obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-ssh')) {
+                obj['secure-access-bastion-ssh'] = ApiClient.convertToType(data['secure-access-bastion-ssh'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-cluster-endpoint')) {
+                obj['secure-access-cluster-endpoint'] = ApiClient.convertToType(data['secure-access-cluster-endpoint'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-dashboard-url')) {
+                obj['secure-access-dashboard-url'] = ApiClient.convertToType(data['secure-access-dashboard-url'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-db-name')) {
+                obj['secure-access-db-name'] = ApiClient.convertToType(data['secure-access-db-name'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-db-schema')) {
+                obj['secure-access-db-schema'] = ApiClient.convertToType(data['secure-access-db-schema'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-host')) {
+                obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('secure-access-rdp-domain')) {
+                obj['secure-access-rdp-domain'] = ApiClient.convertToType(data['secure-access-rdp-domain'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-ssh-creds')) {
+                obj['secure-access-ssh-creds'] = ApiClient.convertToType(data['secure-access-ssh-creds'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-ssh-creds-user')) {
+                obj['secure-access-ssh-creds-user'] = ApiClient.convertToType(data['secure-access-ssh-creds-user'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-url')) {
+                obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -119,6 +173,96 @@ UpdateItem.prototype['password'] = undefined;
  * @member {Array.<String>} rm-tag
  */
 UpdateItem.prototype['rm-tag'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-allow-port-forwading
+ */
+UpdateItem.prototype['secure-access-allow-port-forwading'] = undefined;
+
+/**
+ * @member {String} secure-access-aws-account-id
+ */
+UpdateItem.prototype['secure-access-aws-account-id'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-aws-native-cli
+ */
+UpdateItem.prototype['secure-access-aws-native-cli'] = undefined;
+
+/**
+ * @member {String} secure-access-aws-region
+ */
+UpdateItem.prototype['secure-access-aws-region'] = undefined;
+
+/**
+ * @member {String} secure-access-bastion-api
+ */
+UpdateItem.prototype['secure-access-bastion-api'] = undefined;
+
+/**
+ * @member {String} secure-access-bastion-issuer
+ */
+UpdateItem.prototype['secure-access-bastion-issuer'] = undefined;
+
+/**
+ * @member {String} secure-access-bastion-ssh
+ */
+UpdateItem.prototype['secure-access-bastion-ssh'] = undefined;
+
+/**
+ * @member {String} secure-access-cluster-endpoint
+ */
+UpdateItem.prototype['secure-access-cluster-endpoint'] = undefined;
+
+/**
+ * @member {String} secure-access-dashboard-url
+ */
+UpdateItem.prototype['secure-access-dashboard-url'] = undefined;
+
+/**
+ * @member {String} secure-access-db-name
+ */
+UpdateItem.prototype['secure-access-db-name'] = undefined;
+
+/**
+ * @member {String} secure-access-db-schema
+ */
+UpdateItem.prototype['secure-access-db-schema'] = undefined;
+
+/**
+ * @member {String} secure-access-enable
+ */
+UpdateItem.prototype['secure-access-enable'] = undefined;
+
+/**
+ * @member {Array.<String>} secure-access-host
+ */
+UpdateItem.prototype['secure-access-host'] = undefined;
+
+/**
+ * @member {String} secure-access-rdp-domain
+ */
+UpdateItem.prototype['secure-access-rdp-domain'] = undefined;
+
+/**
+ * @member {String} secure-access-ssh-creds
+ */
+UpdateItem.prototype['secure-access-ssh-creds'] = undefined;
+
+/**
+ * @member {String} secure-access-ssh-creds-user
+ */
+UpdateItem.prototype['secure-access-ssh-creds-user'] = undefined;
+
+/**
+ * @member {String} secure-access-url
+ */
+UpdateItem.prototype['secure-access-url'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-web-browsing
+ */
+UpdateItem.prototype['secure-access-web-browsing'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

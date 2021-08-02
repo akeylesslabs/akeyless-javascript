@@ -170,6 +170,8 @@ import GatewayCreateProducerMySQL from './model/GatewayCreateProducerMySQL';
 import GatewayCreateProducerMySQLOutput from './model/GatewayCreateProducerMySQLOutput';
 import GatewayCreateProducerNativeK8S from './model/GatewayCreateProducerNativeK8S';
 import GatewayCreateProducerNativeK8SOutput from './model/GatewayCreateProducerNativeK8SOutput';
+import GatewayCreateProducerOracleDb from './model/GatewayCreateProducerOracleDb';
+import GatewayCreateProducerOracleDbOutput from './model/GatewayCreateProducerOracleDbOutput';
 import GatewayCreateProducerPostgreSQL from './model/GatewayCreateProducerPostgreSQL';
 import GatewayCreateProducerPostgreSQLOutput from './model/GatewayCreateProducerPostgreSQLOutput';
 import GatewayCreateProducerRabbitMQ from './model/GatewayCreateProducerRabbitMQ';
@@ -226,7 +228,7 @@ import JSONError from './model/JSONError';
 import K8SMigration from './model/K8SMigration';
 import K8SPayload from './model/K8SPayload';
 import KMIPClient from './model/KMIPClient';
-import KMIPClientsConfigPart from './model/KMIPClientsConfigPart';
+import KMIPConfigPart from './model/KMIPConfigPart';
 import LDAPAccessRules from './model/LDAPAccessRules';
 import LdapConfigPart from './model/LdapConfigPart';
 import LeadershipConfigPart from './model/LeadershipConfigPart';
@@ -269,6 +271,7 @@ import Rules from './model/Rules';
 import SAMLAccessRules from './model/SAMLAccessRules';
 import SAMLAttribute from './model/SAMLAttribute';
 import SSHCertificateIssueDetails from './model/SSHCertificateIssueDetails';
+import SecureRemoteAccess from './model/SecureRemoteAccess';
 import SetItemState from './model/SetItemState';
 import SetRoleRule from './model/SetRoleRule';
 import SignJWTOutput from './model/SignJWTOutput';
@@ -377,7 +380,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.5.3
+* @version 2.5.4
 */
 export {
     /**
@@ -1329,6 +1332,18 @@ export {
     GatewayCreateProducerNativeK8SOutput,
 
     /**
+     * The GatewayCreateProducerOracleDb model constructor.
+     * @property {module:model/GatewayCreateProducerOracleDb}
+     */
+    GatewayCreateProducerOracleDb,
+
+    /**
+     * The GatewayCreateProducerOracleDbOutput model constructor.
+     * @property {module:model/GatewayCreateProducerOracleDbOutput}
+     */
+    GatewayCreateProducerOracleDbOutput,
+
+    /**
      * The GatewayCreateProducerPostgreSQL model constructor.
      * @property {module:model/GatewayCreateProducerPostgreSQL}
      */
@@ -1665,10 +1680,10 @@ export {
     KMIPClient,
 
     /**
-     * The KMIPClientsConfigPart model constructor.
-     * @property {module:model/KMIPClientsConfigPart}
+     * The KMIPConfigPart model constructor.
+     * @property {module:model/KMIPConfigPart}
      */
-    KMIPClientsConfigPart,
+    KMIPConfigPart,
 
     /**
      * The LDAPAccessRules model constructor.
@@ -1921,6 +1936,12 @@ export {
      * @property {module:model/SSHCertificateIssueDetails}
      */
     SSHCertificateIssueDetails,
+
+    /**
+     * The SecureRemoteAccess model constructor.
+     * @property {module:model/SecureRemoteAccess}
+     */
+    SecureRemoteAccess,
 
     /**
      * The SetItemState model constructor.

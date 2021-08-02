@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**classicKeyAttributes** | **{String: [String]}** |  | [optional] 
 **classicKeyId** | **String** |  | [optional] 
 **isProvidedByUser** | **Boolean** |  | [optional] 
 **isUnexportable** | **Boolean** |  | [optional] 

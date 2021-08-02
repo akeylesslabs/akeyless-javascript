@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRdp model module.
  * @module model/GatewayCreateProducerRdp
- * @version 2.5.3
+ * @version 2.5.4
  */
 class GatewayCreateProducerRdp {
     /**
@@ -84,6 +84,15 @@ class GatewayCreateProducerRdp {
             }
             if (data.hasOwnProperty('rdp-user-groups')) {
                 obj['rdp-user-groups'] = ApiClient.convertToType(data['rdp-user-groups'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-host')) {
+                obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('secure-access-rdp-domain')) {
+                obj['secure-access-rdp-domain'] = ApiClient.convertToType(data['secure-access-rdp-domain'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -159,6 +168,21 @@ GatewayCreateProducerRdp.prototype['rdp-host-port'] = '22';
  * @member {String} rdp-user-groups
  */
 GatewayCreateProducerRdp.prototype['rdp-user-groups'] = undefined;
+
+/**
+ * @member {String} secure-access-enable
+ */
+GatewayCreateProducerRdp.prototype['secure-access-enable'] = undefined;
+
+/**
+ * @member {Array.<String>} secure-access-host
+ */
+GatewayCreateProducerRdp.prototype['secure-access-host'] = undefined;
+
+/**
+ * @member {String} secure-access-rdp-domain
+ */
+GatewayCreateProducerRdp.prototype['secure-access-rdp-domain'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

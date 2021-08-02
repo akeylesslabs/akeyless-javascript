@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGke model module.
  * @module model/GatewayCreateProducerGke
- * @version 2.5.3
+ * @version 2.5.4
  */
 class GatewayCreateProducerGke {
     /**
@@ -81,6 +81,18 @@ class GatewayCreateProducerGke {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-allow-port-forwading')) {
+                obj['secure-access-allow-port-forwading'] = ApiClient.convertToType(data['secure-access-allow-port-forwading'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-issuer')) {
+                obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-cluster-endpoint')) {
+                obj['secure-access-cluster-endpoint'] = ApiClient.convertToType(data['secure-access-cluster-endpoint'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -148,6 +160,26 @@ GatewayCreateProducerGke.prototype['password'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayCreateProducerGke.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-allow-port-forwading
+ */
+GatewayCreateProducerGke.prototype['secure-access-allow-port-forwading'] = undefined;
+
+/**
+ * @member {String} secure-access-bastion-issuer
+ */
+GatewayCreateProducerGke.prototype['secure-access-bastion-issuer'] = undefined;
+
+/**
+ * @member {String} secure-access-cluster-endpoint
+ */
+GatewayCreateProducerGke.prototype['secure-access-cluster-endpoint'] = undefined;
+
+/**
+ * @member {String} secure-access-enable
+ */
+GatewayCreateProducerGke.prototype['secure-access-enable'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

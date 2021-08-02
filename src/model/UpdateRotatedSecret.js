@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 2.5.3
+ * @version 2.5.4
  */
 class UpdateRotatedSecret {
     /**
@@ -82,6 +82,12 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('rm-tag')) {
                 obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
+            }
+            if (data.hasOwnProperty('rotated-password')) {
+                obj['rotated-password'] = ApiClient.convertToType(data['rotated-password'], 'String');
+            }
+            if (data.hasOwnProperty('rotated-username')) {
+                obj['rotated-username'] = ApiClient.convertToType(data['rotated-username'], 'String');
             }
             if (data.hasOwnProperty('rotation-hour')) {
                 obj['rotation-hour'] = ApiClient.convertToType(data['rotation-hour'], 'Number');
@@ -181,6 +187,16 @@ UpdateRotatedSecret.prototype['password'] = undefined;
 UpdateRotatedSecret.prototype['rm-tag'] = undefined;
 
 /**
+ * @member {String} rotated-password
+ */
+UpdateRotatedSecret.prototype['rotated-password'] = undefined;
+
+/**
+ * @member {String} rotated-username
+ */
+UpdateRotatedSecret.prototype['rotated-username'] = undefined;
+
+/**
  * @member {Number} rotation-hour
  */
 UpdateRotatedSecret.prototype['rotation-hour'] = undefined;
@@ -197,11 +213,13 @@ UpdateRotatedSecret.prototype['rotation-interval'] = undefined;
 UpdateRotatedSecret.prototype['rotator-creds-type'] = undefined;
 
 /**
+ * Deprecated: use RotatedPassword
  * @member {String} ssh-password
  */
 UpdateRotatedSecret.prototype['ssh-password'] = undefined;
 
 /**
+ * Deprecated: use RotatedUser
  * @member {String} ssh-username
  */
 UpdateRotatedSecret.prototype['ssh-username'] = undefined;

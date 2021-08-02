@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTarget model module.
  * @module model/CreateDBTarget
- * @version 2.5.3
+ * @version 2.5.4
  */
 class CreateDBTarget {
     /**
@@ -104,6 +104,9 @@ class CreateDBTarget {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('oracle-service-name')) {
+                obj['oracle-service-name'] = ApiClient.convertToType(data['oracle-service-name'], 'String');
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
@@ -239,6 +242,11 @@ CreateDBTarget.prototype['mongodb-username'] = undefined;
  * @member {String} name
  */
 CreateDBTarget.prototype['name'] = undefined;
+
+/**
+ * @member {String} oracle-service-name
+ */
+CreateDBTarget.prototype['oracle-service-name'] = undefined;
 
 /**
  * Required only when the authentication process requires a username and password

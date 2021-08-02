@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerAzureOutput model module.
  * @module model/GatewayCreateProducerAzureOutput
- * @version 2.5.3
+ * @version 2.5.4
  */
 class GatewayCreateProducerAzureOutput {
     /**

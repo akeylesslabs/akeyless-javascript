@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHCertIssuer model module.
  * @module model/CreateSSHCertIssuer
- * @version 2.5.3
+ * @version 2.5.4
  */
 class CreateSSHCertIssuer {
     /**
@@ -72,6 +72,21 @@ class CreateSSHCertIssuer {
             }
             if (data.hasOwnProperty('principals')) {
                 obj['principals'] = ApiClient.convertToType(data['principals'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-api')) {
+                obj['secure-access-bastion-api'] = ApiClient.convertToType(data['secure-access-bastion-api'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-ssh')) {
+                obj['secure-access-bastion-ssh'] = ApiClient.convertToType(data['secure-access-bastion-ssh'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-host')) {
+                obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('secure-access-ssh-creds-user')) {
+                obj['secure-access-ssh-creds-user'] = ApiClient.convertToType(data['secure-access-ssh-creds-user'], 'String');
             }
             if (data.hasOwnProperty('signer-key-name')) {
                 obj['signer-key-name'] = ApiClient.convertToType(data['signer-key-name'], 'String');
@@ -130,6 +145,31 @@ CreateSSHCertIssuer.prototype['password'] = undefined;
  * @member {String} principals
  */
 CreateSSHCertIssuer.prototype['principals'] = undefined;
+
+/**
+ * @member {String} secure-access-bastion-api
+ */
+CreateSSHCertIssuer.prototype['secure-access-bastion-api'] = undefined;
+
+/**
+ * @member {String} secure-access-bastion-ssh
+ */
+CreateSSHCertIssuer.prototype['secure-access-bastion-ssh'] = undefined;
+
+/**
+ * @member {String} secure-access-enable
+ */
+CreateSSHCertIssuer.prototype['secure-access-enable'] = undefined;
+
+/**
+ * @member {Array.<String>} secure-access-host
+ */
+CreateSSHCertIssuer.prototype['secure-access-host'] = undefined;
+
+/**
+ * @member {String} secure-access-ssh-creds-user
+ */
+CreateSSHCertIssuer.prototype['secure-access-ssh-creds-user'] = undefined;
 
 /**
  * A key to sign the certificate with

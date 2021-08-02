@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClassicKeyStatusInfo model module.
  * @module model/ClassicKeyStatusInfo
- * @version 2.5.3
+ * @version 2.5.4
  */
 class ClassicKeyStatusInfo {
     /**
@@ -77,7 +77,7 @@ ClassicKeyStatusInfo.prototype['error_date'] = undefined;
 ClassicKeyStatusInfo.prototype['last_error'] = undefined;
 
 /**
- * ClassicKeyTargetStatus defines status of managed key target
+ * ClassicKeyTargetStatus defines status of classic key target
  * @member {String} last_status
  */
 ClassicKeyStatusInfo.prototype['last_status'] = undefined;

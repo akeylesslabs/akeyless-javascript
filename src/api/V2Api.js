@@ -130,6 +130,8 @@ import GatewayCreateProducerMongoOutput from '../model/GatewayCreateProducerMong
 import GatewayCreateProducerMySQL from '../model/GatewayCreateProducerMySQL';
 import GatewayCreateProducerMySQLOutput from '../model/GatewayCreateProducerMySQLOutput';
 import GatewayCreateProducerNativeK8SOutput from '../model/GatewayCreateProducerNativeK8SOutput';
+import GatewayCreateProducerOracleDb from '../model/GatewayCreateProducerOracleDb';
+import GatewayCreateProducerOracleDbOutput from '../model/GatewayCreateProducerOracleDbOutput';
 import GatewayCreateProducerPostgreSQL from '../model/GatewayCreateProducerPostgreSQL';
 import GatewayCreateProducerPostgreSQLOutput from '../model/GatewayCreateProducerPostgreSQLOutput';
 import GatewayCreateProducerRabbitMQ from '../model/GatewayCreateProducerRabbitMQ';
@@ -254,7 +256,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.5.3
+* @version 2.5.4
 */
 export default class V2Api {
 
@@ -2961,6 +2963,49 @@ export default class V2Api {
      */
     gatewayCreateProducerNativeK8S() {
       return this.gatewayCreateProducerNativeK8SWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayCreateProducerOracleDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerOracleDbOutput} and HTTP response
+     */
+    gatewayCreateProducerOracleDbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateProducerOracleDb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayCreateProducerOracleDbOutput;
+      return this.apiClient.callApi(
+        '/gateway-create-producer-oracle', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayCreateProducerOracleDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerOracleDbOutput}
+     */
+    gatewayCreateProducerOracleDb(body) {
+      return this.gatewayCreateProducerOracleDbWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMySQL model module.
  * @module model/GatewayCreateProducerMySQL
- * @version 2.5.3
+ * @version 2.5.4
  */
 class GatewayCreateProducerMySQL {
     /**
@@ -88,6 +88,15 @@ class GatewayCreateProducerMySQL {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-issuer')) {
+                obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-host')) {
+                obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -175,6 +184,21 @@ GatewayCreateProducerMySQL.prototype['password'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayCreateProducerMySQL.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * @member {String} secure-access-bastion-issuer
+ */
+GatewayCreateProducerMySQL.prototype['secure-access-bastion-issuer'] = undefined;
+
+/**
+ * @member {String} secure-access-enable
+ */
+GatewayCreateProducerMySQL.prototype['secure-access-enable'] = undefined;
+
+/**
+ * @member {Array.<String>} secure-access-host
+ */
+GatewayCreateProducerMySQL.prototype['secure-access-host'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

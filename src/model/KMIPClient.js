@@ -17,7 +17,7 @@ import PathRule from './PathRule';
 /**
  * The KMIPClient model module.
  * @module model/KMIPClient
- * @version 2.5.3
+ * @version 2.5.4
  */
 class KMIPClient {
     /**
@@ -48,9 +48,6 @@ class KMIPClient {
         if (data) {
             obj = obj || new KMIPClient();
 
-            if (data.hasOwnProperty('environment')) {
-                obj['environment'] = ApiClient.convertToType(data['environment'], 'String');
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
@@ -66,11 +63,6 @@ class KMIPClient {
 
 
 }
-
-/**
- * @member {String} environment
- */
-KMIPClient.prototype['environment'] = undefined;
 
 /**
  * @member {String} id

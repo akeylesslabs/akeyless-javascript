@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthOutput model module.
  * @module model/AuthOutput
- * @version 2.5.3
+ * @version 2.5.4
  */
 class AuthOutput {
     /**

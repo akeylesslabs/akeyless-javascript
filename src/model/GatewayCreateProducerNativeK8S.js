@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerNativeK8S model module.
  * @module model/GatewayCreateProducerNativeK8S
- * @version 2.5.3
+ * @version 2.5.4
  */
 class GatewayCreateProducerNativeK8S {
     /**
@@ -81,6 +81,24 @@ class GatewayCreateProducerNativeK8S {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-allow-port-forwading')) {
+                obj['secure-access-allow-port-forwading'] = ApiClient.convertToType(data['secure-access-allow-port-forwading'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-issuer')) {
+                obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-cluster-endpoint')) {
+                obj['secure-access-cluster-endpoint'] = ApiClient.convertToType(data['secure-access-cluster-endpoint'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-dashboard-url')) {
+                obj['secure-access-dashboard-url'] = ApiClient.convertToType(data['secure-access-dashboard-url'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -148,6 +166,36 @@ GatewayCreateProducerNativeK8S.prototype['password'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayCreateProducerNativeK8S.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-allow-port-forwading
+ */
+GatewayCreateProducerNativeK8S.prototype['secure-access-allow-port-forwading'] = undefined;
+
+/**
+ * @member {String} secure-access-bastion-issuer
+ */
+GatewayCreateProducerNativeK8S.prototype['secure-access-bastion-issuer'] = undefined;
+
+/**
+ * @member {String} secure-access-cluster-endpoint
+ */
+GatewayCreateProducerNativeK8S.prototype['secure-access-cluster-endpoint'] = undefined;
+
+/**
+ * @member {String} secure-access-dashboard-url
+ */
+GatewayCreateProducerNativeK8S.prototype['secure-access-dashboard-url'] = undefined;
+
+/**
+ * @member {String} secure-access-enable
+ */
+GatewayCreateProducerNativeK8S.prototype['secure-access-enable'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-web-browsing
+ */
+GatewayCreateProducerNativeK8S.prototype['secure-access-web-browsing'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

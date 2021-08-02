@@ -17,7 +17,7 @@ import ItemTargetAssociation from './ItemTargetAssociation';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.5.3
+ * @version 2.5.4
  */
 class DSProducerDetails {
     /**
@@ -335,6 +335,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('mysql_creation_statements')) {
                 obj['mysql_creation_statements'] = ApiClient.convertToType(data['mysql_creation_statements'], 'String');
+            }
+            if (data.hasOwnProperty('oracle_creation_statements')) {
+                obj['oracle_creation_statements'] = ApiClient.convertToType(data['oracle_creation_statements'], 'String');
             }
             if (data.hasOwnProperty('payload')) {
                 obj['payload'] = ApiClient.convertToType(data['payload'], 'String');
@@ -924,6 +927,11 @@ DSProducerDetails.prototype['mssql_revocation_statements'] = undefined;
  * @member {String} mysql_creation_statements
  */
 DSProducerDetails.prototype['mysql_creation_statements'] = undefined;
+
+/**
+ * @member {String} oracle_creation_statements
+ */
+DSProducerDetails.prototype['oracle_creation_statements'] = undefined;
 
 /**
  * @member {String} payload

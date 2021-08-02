@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretProducerInfo model module.
  * @module model/DynamicSecretProducerInfo
- * @version 2.5.3
+ * @version 2.5.4
  */
 class DynamicSecretProducerInfo {
     /**
@@ -51,6 +51,9 @@ class DynamicSecretProducerInfo {
             if (data.hasOwnProperty('gw_cluster_id')) {
                 obj['gw_cluster_id'] = ApiClient.convertToType(data['gw_cluster_id'], 'Number');
             }
+            if (data.hasOwnProperty('producer_last_keep_alive')) {
+                obj['producer_last_keep_alive'] = ApiClient.convertToType(data['producer_last_keep_alive'], 'String');
+            }
             if (data.hasOwnProperty('producer_metadata')) {
                 obj['producer_metadata'] = ApiClient.convertToType(data['producer_metadata'], 'String');
             }
@@ -71,6 +74,11 @@ class DynamicSecretProducerInfo {
  * @member {Number} gw_cluster_id
  */
 DynamicSecretProducerInfo.prototype['gw_cluster_id'] = undefined;
+
+/**
+ * @member {String} producer_last_keep_alive
+ */
+DynamicSecretProducerInfo.prototype['producer_last_keep_alive'] = undefined;
 
 /**
  * @member {String} producer_metadata
