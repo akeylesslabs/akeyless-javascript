@@ -16,20 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAws model module.
  * @module model/GatewayCreateProducerAws
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerAws {
     /**
      * Constructs a new <code>GatewayCreateProducerAws</code>.
      * gatewayCreateProducerAws is a command that creates aws producer
      * @alias module:model/GatewayCreateProducerAws
-     * @param awsAccessKeyId {String} Access Key ID
-     * @param awsAccessSecretKey {String} Secret Access Key
      * @param name {String} Producer name
      */
-    constructor(awsAccessKeyId, awsAccessSecretKey, name) { 
+    constructor(name) { 
         
-        GatewayCreateProducerAws.initialize(this, awsAccessKeyId, awsAccessSecretKey, name);
+        GatewayCreateProducerAws.initialize(this, name);
     }
 
     /**
@@ -37,9 +35,7 @@ class GatewayCreateProducerAws {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, awsAccessKeyId, awsAccessSecretKey, name) { 
-        obj['aws-access-key-id'] = awsAccessKeyId;
-        obj['aws-access-secret-key'] = awsAccessSecretKey;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 
@@ -110,6 +106,9 @@ class GatewayCreateProducerAws {
             }
             if (data.hasOwnProperty('secure-access-web-browsing')) {
                 obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -242,6 +241,12 @@ GatewayCreateProducerAws.prototype['secure-access-enable'] = undefined;
  * @member {Boolean} secure-access-web-browsing
  */
 GatewayCreateProducerAws.prototype['secure-access-web-browsing'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerAws.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

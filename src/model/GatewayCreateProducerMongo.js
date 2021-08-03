@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMongo model module.
  * @module model/GatewayCreateProducerMongo
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerMongo {
     /**
@@ -102,6 +102,9 @@ class GatewayCreateProducerMongo {
             }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -221,6 +224,12 @@ GatewayCreateProducerMongo.prototype['secure-access-enable'] = undefined;
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerMongo.prototype['secure-access-host'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerMongo.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

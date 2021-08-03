@@ -29,7 +29,7 @@ import UIdentityConfigPart from './UIdentityConfigPart';
 /**
  * The AkeylessGatewayConfig model module.
  * @module model/AkeylessGatewayConfig
- * @version 2.5.5
+ * @version 2.5.6
  */
 class AkeylessGatewayConfig {
     /**

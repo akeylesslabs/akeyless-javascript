@@ -16,21 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAzure model module.
  * @module model/GatewayCreateProducerAzure
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerAzure {
     /**
      * Constructs a new <code>GatewayCreateProducerAzure</code>.
      * gatewayCreateProducerAzure is a command that creates azure producer
      * @alias module:model/GatewayCreateProducerAzure
-     * @param azureClientId {String} Azure Client ID
-     * @param azureClientSecret {String} Azure Client Secret
-     * @param azureTenantId {String} Azure Tenant ID
      * @param name {String} Producer name
      */
-    constructor(azureClientId, azureClientSecret, azureTenantId, name) { 
+    constructor(name) { 
         
-        GatewayCreateProducerAzure.initialize(this, azureClientId, azureClientSecret, azureTenantId, name);
+        GatewayCreateProducerAzure.initialize(this, name);
     }
 
     /**
@@ -38,10 +35,7 @@ class GatewayCreateProducerAzure {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, azureClientId, azureClientSecret, azureTenantId, name) { 
-        obj['azure-client-id'] = azureClientId;
-        obj['azure-client-secret'] = azureClientSecret;
-        obj['azure-tenant-id'] = azureTenantId;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 
@@ -82,6 +76,9 @@ class GatewayCreateProducerAzure {
             }
             if (data.hasOwnProperty('secure-access-web-browsing')) {
                 obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -168,6 +165,12 @@ GatewayCreateProducerAzure.prototype['secure-access-enable'] = undefined;
  * @member {Boolean} secure-access-web-browsing
  */
 GatewayCreateProducerAzure.prototype['secure-access-web-browsing'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerAzure.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

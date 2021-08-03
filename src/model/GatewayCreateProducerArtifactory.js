@@ -16,23 +16,20 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerArtifactory model module.
  * @module model/GatewayCreateProducerArtifactory
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerArtifactory {
     /**
      * Constructs a new <code>GatewayCreateProducerArtifactory</code>.
      * gatewayCreateProducerArtifactory is a command that creates artifactory producer
      * @alias module:model/GatewayCreateProducerArtifactory
-     * @param artifactoryAdminName {String} Artifactory Admin Name
-     * @param artifactoryAdminPwd {String} Artifactory Admin password
      * @param artifactoryTokenAudience {String} Token Audience
      * @param artifactoryTokenScope {String} Token Scope
-     * @param baseUrl {String} Base URL
      * @param name {String} Producer name
      */
-    constructor(artifactoryAdminName, artifactoryAdminPwd, artifactoryTokenAudience, artifactoryTokenScope, baseUrl, name) { 
+    constructor(artifactoryTokenAudience, artifactoryTokenScope, name) { 
         
-        GatewayCreateProducerArtifactory.initialize(this, artifactoryAdminName, artifactoryAdminPwd, artifactoryTokenAudience, artifactoryTokenScope, baseUrl, name);
+        GatewayCreateProducerArtifactory.initialize(this, artifactoryTokenAudience, artifactoryTokenScope, name);
     }
 
     /**
@@ -40,12 +37,9 @@ class GatewayCreateProducerArtifactory {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, artifactoryAdminName, artifactoryAdminPwd, artifactoryTokenAudience, artifactoryTokenScope, baseUrl, name) { 
-        obj['artifactory-admin-name'] = artifactoryAdminName;
-        obj['artifactory-admin-pwd'] = artifactoryAdminPwd;
+    static initialize(obj, artifactoryTokenAudience, artifactoryTokenScope, name) { 
         obj['artifactory-token-audience'] = artifactoryTokenAudience;
         obj['artifactory-token-scope'] = artifactoryTokenScope;
-        obj['base-url'] = baseUrl;
         obj['name'] = name;
     }
 
@@ -83,6 +77,9 @@ class GatewayCreateProducerArtifactory {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -150,6 +147,12 @@ GatewayCreateProducerArtifactory.prototype['password'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayCreateProducerArtifactory.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerArtifactory.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

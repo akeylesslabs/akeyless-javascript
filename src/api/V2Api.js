@@ -194,9 +194,11 @@ import RollbackSecretOutput from '../model/RollbackSecretOutput';
 import RotateKeyOutput from '../model/RotateKeyOutput';
 import SetItemState from '../model/SetItemState';
 import SetRoleRule from '../model/SetRoleRule';
+import SignJWTOutput from '../model/SignJWTOutput';
 import SignJWTWithClassicKey from '../model/SignJWTWithClassicKey';
 import SignPKCS1 from '../model/SignPKCS1';
 import SignPKCS1Output from '../model/SignPKCS1Output';
+import SignPKICertOutput from '../model/SignPKICertOutput';
 import SignPKICertWithClassicKey from '../model/SignPKICertWithClassicKey';
 import StaticCredsAuth from '../model/StaticCredsAuth';
 import StaticCredsAuthOutput from '../model/StaticCredsAuthOutput';
@@ -249,14 +251,16 @@ import UpdateWebTarget from '../model/UpdateWebTarget';
 import UpdateWebTargetDetails from '../model/UpdateWebTargetDetails';
 import UpdateWebTargetOutput from '../model/UpdateWebTargetOutput';
 import UploadRSA from '../model/UploadRSA';
+import VerifyJWTOutput from '../model/VerifyJWTOutput';
 import VerifyJWTWithClassicKey from '../model/VerifyJWTWithClassicKey';
 import VerifyPKCS1 from '../model/VerifyPKCS1';
+import VerifyPKICertOutput from '../model/VerifyPKICertOutput';
 import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.5.5
+* @version 2.5.6
 */
 export default class V2Api {
 
@@ -4684,7 +4688,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/SignJWTWithClassicKey} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SignJWTOutput} and HTTP response
      */
     signJWTWithClassicKeyWithHttpInfo(body) {
       let postBody = body;
@@ -4705,7 +4709,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = null;
+      let returnType = SignJWTOutput;
       return this.apiClient.callApi(
         '/sign-jwt-with-classic-key', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4715,7 +4719,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/SignJWTWithClassicKey} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SignJWTOutput}
      */
     signJWTWithClassicKey(body) {
       return this.signJWTWithClassicKeyWithHttpInfo(body)
@@ -4770,7 +4774,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/SignPKICertWithClassicKey} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SignPKICertOutput} and HTTP response
      */
     signPKICertWithClassicKeyWithHttpInfo(body) {
       let postBody = body;
@@ -4791,7 +4795,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = null;
+      let returnType = SignPKICertOutput;
       return this.apiClient.callApi(
         '/sign-pki-cert-with-classic-key', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4801,7 +4805,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/SignPKICertWithClassicKey} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SignPKICertOutput}
      */
     signPKICertWithClassicKey(body) {
       return this.signPKICertWithClassicKeyWithHttpInfo(body)
@@ -6140,7 +6144,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/VerifyJWTWithClassicKey} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VerifyJWTOutput} and HTTP response
      */
     verifyJWTWithClassicKeyWithHttpInfo(body) {
       let postBody = body;
@@ -6161,7 +6165,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = null;
+      let returnType = VerifyJWTOutput;
       return this.apiClient.callApi(
         '/verify-jwt-with-classic-key', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -6171,7 +6175,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/VerifyJWTWithClassicKey} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VerifyJWTOutput}
      */
     verifyJWTWithClassicKey(body) {
       return this.verifyJWTWithClassicKeyWithHttpInfo(body)
@@ -6226,7 +6230,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/VerifyPKICertWithClassicKey} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VerifyPKICertOutput} and HTTP response
      */
     verifyPKICertWithClassicKeyWithHttpInfo(body) {
       let postBody = body;
@@ -6247,7 +6251,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = null;
+      let returnType = VerifyPKICertOutput;
       return this.apiClient.callApi(
         '/verify-pki-cert-with-classic-key', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -6257,7 +6261,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/VerifyPKICertWithClassicKey} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VerifyPKICertOutput}
      */
     verifyPKICertWithClassicKey(body) {
       return this.verifyPKICertWithClassicKeyWithHttpInfo(body)

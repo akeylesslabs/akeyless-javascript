@@ -16,21 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGKETarget model module.
  * @module model/UpdateGKETarget
- * @version 2.5.5
+ * @version 2.5.6
  */
 class UpdateGKETarget {
     /**
      * Constructs a new <code>UpdateGKETarget</code>.
      * @alias module:model/UpdateGKETarget
-     * @param gkeClusterCert {String} GKE cluster CA certificate
-     * @param gkeClusterEndpoint {String} GKE cluster URL endpoint
      * @param gkeClusterName {String} GKE cluster name
-     * @param gkeServiceAccountEmail {String} GKE service account email
      * @param name {String} Target name
      */
-    constructor(gkeClusterCert, gkeClusterEndpoint, gkeClusterName, gkeServiceAccountEmail, name) { 
+    constructor(gkeClusterName, name) { 
         
-        UpdateGKETarget.initialize(this, gkeClusterCert, gkeClusterEndpoint, gkeClusterName, gkeServiceAccountEmail, name);
+        UpdateGKETarget.initialize(this, gkeClusterName, name);
     }
 
     /**
@@ -38,11 +35,8 @@ class UpdateGKETarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, gkeClusterCert, gkeClusterEndpoint, gkeClusterName, gkeServiceAccountEmail, name) { 
-        obj['gke-cluster-cert'] = gkeClusterCert;
-        obj['gke-cluster-endpoint'] = gkeClusterEndpoint;
+    static initialize(obj, gkeClusterName, name) { 
         obj['gke-cluster-name'] = gkeClusterName;
-        obj['gke-service-account-email'] = gkeServiceAccountEmail;
         obj['name'] = name;
     }
 

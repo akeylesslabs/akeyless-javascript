@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRabbitMQ model module.
  * @module model/GatewayCreateProducerRabbitMQ
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerRabbitMQ {
     /**
@@ -24,16 +24,10 @@ class GatewayCreateProducerRabbitMQ {
      * gatewayCreateProducerRabbitMQ is a command that creates rabbitmq producer
      * @alias module:model/GatewayCreateProducerRabbitMQ
      * @param name {String} Producer name
-     * @param rabbitmqAdminPwd {String} RabbitMQ Admin password
-     * @param rabbitmqAdminUser {String} RabbitMQ Admin User
-     * @param rabbitmqServerUri {String} Server URI
-     * @param rabbitmqUserConfPermission {String} User configuration permission
-     * @param rabbitmqUserReadPermission {String} User read permission
-     * @param rabbitmqUserWritePermission {String} User write permission
      */
-    constructor(name, rabbitmqAdminPwd, rabbitmqAdminUser, rabbitmqServerUri, rabbitmqUserConfPermission, rabbitmqUserReadPermission, rabbitmqUserWritePermission) { 
+    constructor(name) { 
         
-        GatewayCreateProducerRabbitMQ.initialize(this, name, rabbitmqAdminPwd, rabbitmqAdminUser, rabbitmqServerUri, rabbitmqUserConfPermission, rabbitmqUserReadPermission, rabbitmqUserWritePermission);
+        GatewayCreateProducerRabbitMQ.initialize(this, name);
     }
 
     /**
@@ -41,14 +35,8 @@ class GatewayCreateProducerRabbitMQ {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, rabbitmqAdminPwd, rabbitmqAdminUser, rabbitmqServerUri, rabbitmqUserConfPermission, rabbitmqUserReadPermission, rabbitmqUserWritePermission) { 
+    static initialize(obj, name) { 
         obj['name'] = name;
-        obj['rabbitmq-admin-pwd'] = rabbitmqAdminPwd;
-        obj['rabbitmq-admin-user'] = rabbitmqAdminUser;
-        obj['rabbitmq-server-uri'] = rabbitmqServerUri;
-        obj['rabbitmq-user-conf-permission'] = rabbitmqUserConfPermission;
-        obj['rabbitmq-user-read-permission'] = rabbitmqUserReadPermission;
-        obj['rabbitmq-user-write-permission'] = rabbitmqUserWritePermission;
     }
 
     /**
@@ -103,6 +91,9 @@ class GatewayCreateProducerRabbitMQ {
             }
             if (data.hasOwnProperty('secure-access-web-browsing')) {
                 obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -203,6 +194,12 @@ GatewayCreateProducerRabbitMQ.prototype['secure-access-url'] = undefined;
  * @member {Boolean} secure-access-web-browsing
  */
 GatewayCreateProducerRabbitMQ.prototype['secure-access-web-browsing'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerRabbitMQ.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

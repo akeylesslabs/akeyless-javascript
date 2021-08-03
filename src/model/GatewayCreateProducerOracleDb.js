@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerOracleDb model module.
  * @module model/GatewayCreateProducerOracleDb
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerOracleDb {
     /**
@@ -24,13 +24,10 @@ class GatewayCreateProducerOracleDb {
      * gatewayCreateProducerOracleDb is a command that creates oracle db producer
      * @alias module:model/GatewayCreateProducerOracleDb
      * @param name {String} Producer name
-     * @param oraclePassword {String} Oracle Password
-     * @param oracleServiceName {String} Oracle DB Name
-     * @param oracleUsername {String} Oracle Username
      */
-    constructor(name, oraclePassword, oracleServiceName, oracleUsername) { 
+    constructor(name) { 
         
-        GatewayCreateProducerOracleDb.initialize(this, name, oraclePassword, oracleServiceName, oracleUsername);
+        GatewayCreateProducerOracleDb.initialize(this, name);
     }
 
     /**
@@ -38,11 +35,8 @@ class GatewayCreateProducerOracleDb {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, oraclePassword, oracleServiceName, oracleUsername) { 
+    static initialize(obj, name) { 
         obj['name'] = name;
-        obj['oracle-password'] = oraclePassword;
-        obj['oracle-service-name'] = oracleServiceName;
-        obj['oracle-username'] = oracleUsername;
     }
 
     /**
@@ -88,6 +82,9 @@ class GatewayCreateProducerOracleDb {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -175,6 +172,12 @@ GatewayCreateProducerOracleDb.prototype['password'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayCreateProducerOracleDb.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerOracleDb.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

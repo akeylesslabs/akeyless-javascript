@@ -16,20 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerSnowflake model module.
  * @module model/GatewayCreateProducerSnowflake
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerSnowflake {
     /**
      * Constructs a new <code>GatewayCreateProducerSnowflake</code>.
      * gatewayCreateProducerSnowflakeCmd is a command that creates a Snowflake producer
      * @alias module:model/GatewayCreateProducerSnowflake
-     * @param account {String} Account name
-     * @param dbName {String} Database name
      * @param name {String} Producer name
      */
-    constructor(account, dbName, name) { 
+    constructor(name) { 
         
-        GatewayCreateProducerSnowflake.initialize(this, account, dbName, name);
+        GatewayCreateProducerSnowflake.initialize(this, name);
     }
 
     /**
@@ -37,9 +35,7 @@ class GatewayCreateProducerSnowflake {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, account, dbName, name) { 
-        obj['account'] = account;
-        obj['db-name'] = dbName;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 
@@ -68,6 +64,9 @@ class GatewayCreateProducerSnowflake {
             }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'String');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -120,6 +119,12 @@ GatewayCreateProducerSnowflake.prototype['password'] = undefined;
  * @member {String} role
  */
 GatewayCreateProducerSnowflake.prototype['role'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerSnowflake.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

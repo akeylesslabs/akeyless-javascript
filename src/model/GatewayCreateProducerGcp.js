@@ -16,20 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGcp model module.
  * @module model/GatewayCreateProducerGcp
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerGcp {
     /**
      * Constructs a new <code>GatewayCreateProducerGcp</code>.
      * gatewayCreateProducerGcp is a command that creates a GCP producer
      * @alias module:model/GatewayCreateProducerGcp
-     * @param gcpCredType {String} 
-     * @param gcpSaEmail {String} GCP service account email
      * @param name {String} Producer name
      */
-    constructor(gcpCredType, gcpSaEmail, name) { 
+    constructor(name) { 
         
-        GatewayCreateProducerGcp.initialize(this, gcpCredType, gcpSaEmail, name);
+        GatewayCreateProducerGcp.initialize(this, name);
     }
 
     /**
@@ -37,9 +35,7 @@ class GatewayCreateProducerGcp {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, gcpCredType, gcpSaEmail, name) { 
-        obj['gcp-cred-type'] = gcpCredType;
-        obj['gcp-sa-email'] = gcpSaEmail;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 
@@ -77,6 +73,9 @@ class GatewayCreateProducerGcp {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -143,6 +142,12 @@ GatewayCreateProducerGcp.prototype['password'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayCreateProducerGcp.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerGcp.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

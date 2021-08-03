@@ -16,22 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerChef model module.
  * @module model/GatewayCreateProducerChef
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerChef {
     /**
      * Constructs a new <code>GatewayCreateProducerChef</code>.
      * gatewayCreateProducerChef is a command that creates chef producer
      * @alias module:model/GatewayCreateProducerChef
-     * @param chefOrgs {String} Organizations
-     * @param chefServerKey {String} Server key
-     * @param chefServerUrl {String} Server URL
-     * @param chefServerUsername {String} Server username
      * @param name {String} Producer name
      */
-    constructor(chefOrgs, chefServerKey, chefServerUrl, chefServerUsername, name) { 
+    constructor(name) { 
         
-        GatewayCreateProducerChef.initialize(this, chefOrgs, chefServerKey, chefServerUrl, chefServerUsername, name);
+        GatewayCreateProducerChef.initialize(this, name);
     }
 
     /**
@@ -39,11 +35,7 @@ class GatewayCreateProducerChef {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, chefOrgs, chefServerKey, chefServerUrl, chefServerUsername, name) { 
-        obj['chef-orgs'] = chefOrgs;
-        obj['chef-server-key'] = chefServerKey;
-        obj['chef-server-url'] = chefServerUrl;
-        obj['chef-server-username'] = chefServerUsername;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 
@@ -81,6 +73,9 @@ class GatewayCreateProducerChef {
             }
             if (data.hasOwnProperty('skip-ssl')) {
                 obj['skip-ssl'] = ApiClient.convertToType(data['skip-ssl'], 'Boolean');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -149,6 +144,12 @@ GatewayCreateProducerChef.prototype['producer-encryption-key-name'] = undefined;
  * @default true
  */
 GatewayCreateProducerChef.prototype['skip-ssl'] = true;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerChef.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -16,21 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMySQL model module.
  * @module model/GatewayCreateProducerMySQL
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerMySQL {
     /**
      * Constructs a new <code>GatewayCreateProducerMySQL</code>.
      * gatewayCreateProducerMySQL is a command that creates mysql producer
      * @alias module:model/GatewayCreateProducerMySQL
-     * @param mysqlDbname {String} MySQL DB Name
-     * @param mysqlPassword {String} MySQL Password
-     * @param mysqlUsername {String} MySQL Username
      * @param name {String} Producer name
      */
-    constructor(mysqlDbname, mysqlPassword, mysqlUsername, name) { 
+    constructor(name) { 
         
-        GatewayCreateProducerMySQL.initialize(this, mysqlDbname, mysqlPassword, mysqlUsername, name);
+        GatewayCreateProducerMySQL.initialize(this, name);
     }
 
     /**
@@ -38,10 +35,7 @@ class GatewayCreateProducerMySQL {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mysqlDbname, mysqlPassword, mysqlUsername, name) { 
-        obj['mysql-dbname'] = mysqlDbname;
-        obj['mysql-password'] = mysqlPassword;
-        obj['mysql-username'] = mysqlUsername;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 
@@ -97,6 +91,9 @@ class GatewayCreateProducerMySQL {
             }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -199,6 +196,12 @@ GatewayCreateProducerMySQL.prototype['secure-access-enable'] = undefined;
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerMySQL.prototype['secure-access-host'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerMySQL.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

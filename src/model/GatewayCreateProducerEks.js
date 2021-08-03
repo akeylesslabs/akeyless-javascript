@@ -16,23 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerEks model module.
  * @module model/GatewayCreateProducerEks
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerEks {
     /**
      * Constructs a new <code>GatewayCreateProducerEks</code>.
      * gatewayCreateProducerEks is a command that creates eks producer
      * @alias module:model/GatewayCreateProducerEks
-     * @param eksAccessKeyId {String} Access Key ID
-     * @param eksClusterCaCert {String} EKS cluster CA certificate
-     * @param eksClusterEndpoint {String} EKS cluster URL endpoint
-     * @param eksClusterName {String} EKS cluster name
-     * @param eksSecretAccessKey {String} Secret Access Key
      * @param name {String} Producer name
      */
-    constructor(eksAccessKeyId, eksClusterCaCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name) { 
+    constructor(name) { 
         
-        GatewayCreateProducerEks.initialize(this, eksAccessKeyId, eksClusterCaCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name);
+        GatewayCreateProducerEks.initialize(this, name);
     }
 
     /**
@@ -40,12 +35,7 @@ class GatewayCreateProducerEks {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, eksAccessKeyId, eksClusterCaCert, eksClusterEndpoint, eksClusterName, eksSecretAccessKey, name) { 
-        obj['eks-access-key-id'] = eksAccessKeyId;
-        obj['eks-cluster-ca-cert'] = eksClusterCaCert;
-        obj['eks-cluster-endpoint'] = eksClusterEndpoint;
-        obj['eks-cluster-name'] = eksClusterName;
-        obj['eks-secret-access-key'] = eksSecretAccessKey;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 
@@ -101,6 +91,9 @@ class GatewayCreateProducerEks {
             }
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -201,6 +194,12 @@ GatewayCreateProducerEks.prototype['secure-access-cluster-endpoint'] = undefined
  * @member {String} secure-access-enable
  */
 GatewayCreateProducerEks.prototype['secure-access-enable'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerEks.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

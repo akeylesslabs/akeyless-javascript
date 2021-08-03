@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignJWTOutput model module.
  * @module model/SignJWTOutput
- * @version 2.5.5
+ * @version 2.5.6
  */
 class SignJWTOutput {
     /**

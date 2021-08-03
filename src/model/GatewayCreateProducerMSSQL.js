@@ -16,21 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMSSQL model module.
  * @module model/GatewayCreateProducerMSSQL
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerMSSQL {
     /**
      * Constructs a new <code>GatewayCreateProducerMSSQL</code>.
      * gatewayCreateProducerMSSQL is a command that creates mssql producer
      * @alias module:model/GatewayCreateProducerMSSQL
-     * @param mssqlDbname {String} MSSQL Name
-     * @param mssqlPassword {String} MSSQL Password
-     * @param mssqlUsername {String} MSSQL Username
      * @param name {String} Producer name
      */
-    constructor(mssqlDbname, mssqlPassword, mssqlUsername, name) { 
+    constructor(name) { 
         
-        GatewayCreateProducerMSSQL.initialize(this, mssqlDbname, mssqlPassword, mssqlUsername, name);
+        GatewayCreateProducerMSSQL.initialize(this, name);
     }
 
     /**
@@ -38,10 +35,7 @@ class GatewayCreateProducerMSSQL {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mssqlDbname, mssqlPassword, mssqlUsername, name) { 
-        obj['mssql-dbname'] = mssqlDbname;
-        obj['mssql-password'] = mssqlPassword;
-        obj['mssql-username'] = mssqlUsername;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 
@@ -97,6 +91,9 @@ class GatewayCreateProducerMSSQL {
             }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -198,6 +195,12 @@ GatewayCreateProducerMSSQL.prototype['secure-access-enable'] = undefined;
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerMSSQL.prototype['secure-access-host'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerMSSQL.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

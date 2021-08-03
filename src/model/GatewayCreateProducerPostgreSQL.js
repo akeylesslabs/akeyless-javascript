@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerPostgreSQL model module.
  * @module model/GatewayCreateProducerPostgreSQL
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerPostgreSQL {
     /**
@@ -24,13 +24,10 @@ class GatewayCreateProducerPostgreSQL {
      * gatewayCreateProducerPostgreSQL is a command that creates postgresql producer
      * @alias module:model/GatewayCreateProducerPostgreSQL
      * @param name {String} Producer name
-     * @param postgresqlDbName {String} PostgreSQL DB Name
-     * @param postgresqlPassword {String} PostgreSQL Password
-     * @param postgresqlUsername {String} PostgreSQL Username
      */
-    constructor(name, postgresqlDbName, postgresqlPassword, postgresqlUsername) { 
+    constructor(name) { 
         
-        GatewayCreateProducerPostgreSQL.initialize(this, name, postgresqlDbName, postgresqlPassword, postgresqlUsername);
+        GatewayCreateProducerPostgreSQL.initialize(this, name);
     }
 
     /**
@@ -38,11 +35,8 @@ class GatewayCreateProducerPostgreSQL {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, postgresqlDbName, postgresqlPassword, postgresqlUsername) { 
+    static initialize(obj, name) { 
         obj['name'] = name;
-        obj['postgresql-db-name'] = postgresqlDbName;
-        obj['postgresql-password'] = postgresqlPassword;
-        obj['postgresql-username'] = postgresqlUsername;
     }
 
     /**
@@ -94,6 +88,9 @@ class GatewayCreateProducerPostgreSQL {
             }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -189,6 +186,12 @@ GatewayCreateProducerPostgreSQL.prototype['secure-access-enable'] = undefined;
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerPostgreSQL.prototype['secure-access-host'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerPostgreSQL.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

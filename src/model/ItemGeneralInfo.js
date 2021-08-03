@@ -21,7 +21,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 2.5.5
+ * @version 2.5.6
  */
 class ItemGeneralInfo {
     /**

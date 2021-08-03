@@ -16,22 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerNativeK8S model module.
  * @module model/GatewayCreateProducerNativeK8S
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerNativeK8S {
     /**
      * Constructs a new <code>GatewayCreateProducerNativeK8S</code>.
      * gatewayCreateProducerNativeK8S is a command that creates k8s producer
      * @alias module:model/GatewayCreateProducerNativeK8S
-     * @param k8sClusterCaCert {String} K8S cluster CA certificate
-     * @param k8sClusterEndpoint {String} K8S cluster URL endpoint
      * @param k8sClusterToken {String} K8S cluster Bearer token
-     * @param k8sServiceAccount {String} K8S service account
      * @param name {String} Producer name
      */
-    constructor(k8sClusterCaCert, k8sClusterEndpoint, k8sClusterToken, k8sServiceAccount, name) { 
+    constructor(k8sClusterToken, name) { 
         
-        GatewayCreateProducerNativeK8S.initialize(this, k8sClusterCaCert, k8sClusterEndpoint, k8sClusterToken, k8sServiceAccount, name);
+        GatewayCreateProducerNativeK8S.initialize(this, k8sClusterToken, name);
     }
 
     /**
@@ -39,11 +36,8 @@ class GatewayCreateProducerNativeK8S {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, k8sClusterCaCert, k8sClusterEndpoint, k8sClusterToken, k8sServiceAccount, name) { 
-        obj['k8s-cluster-ca-cert'] = k8sClusterCaCert;
-        obj['k8s-cluster-endpoint'] = k8sClusterEndpoint;
+    static initialize(obj, k8sClusterToken, name) { 
         obj['k8s-cluster-token'] = k8sClusterToken;
-        obj['k8s-service-account'] = k8sServiceAccount;
         obj['name'] = name;
     }
 
@@ -99,6 +93,9 @@ class GatewayCreateProducerNativeK8S {
             }
             if (data.hasOwnProperty('secure-access-web-browsing')) {
                 obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -196,6 +193,12 @@ GatewayCreateProducerNativeK8S.prototype['secure-access-enable'] = undefined;
  * @member {Boolean} secure-access-web-browsing
  */
 GatewayCreateProducerNativeK8S.prototype['secure-access-web-browsing'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerNativeK8S.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

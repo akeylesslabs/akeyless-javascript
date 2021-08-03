@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateWebTarget model module.
  * @module model/CreateWebTarget
- * @version 2.5.5
+ * @version 2.5.6
  */
 class CreateWebTarget {
     /**

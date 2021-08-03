@@ -17,7 +17,7 @@ import ItemTargetAssociation from './ItemTargetAssociation';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.5.5
+ * @version 2.5.6
  */
 class DSProducerDetails {
     /**

@@ -16,22 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGke model module.
  * @module model/GatewayCreateProducerGke
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerGke {
     /**
      * Constructs a new <code>GatewayCreateProducerGke</code>.
      * gatewayCreateProducerGke is a command that creates gke producer
      * @alias module:model/GatewayCreateProducerGke
-     * @param gkeClusterCert {String} GKE cluster CA certificate
-     * @param gkeClusterEndpoint {String} GKE cluster URL endpoint
      * @param gkeClusterName {String} GKE cluster name
-     * @param gkeServiceAccountEmail {String} GKE service account email
      * @param name {String} Producer name
      */
-    constructor(gkeClusterCert, gkeClusterEndpoint, gkeClusterName, gkeServiceAccountEmail, name) { 
+    constructor(gkeClusterName, name) { 
         
-        GatewayCreateProducerGke.initialize(this, gkeClusterCert, gkeClusterEndpoint, gkeClusterName, gkeServiceAccountEmail, name);
+        GatewayCreateProducerGke.initialize(this, gkeClusterName, name);
     }
 
     /**
@@ -39,11 +36,8 @@ class GatewayCreateProducerGke {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, gkeClusterCert, gkeClusterEndpoint, gkeClusterName, gkeServiceAccountEmail, name) { 
-        obj['gke-cluster-cert'] = gkeClusterCert;
-        obj['gke-cluster-endpoint'] = gkeClusterEndpoint;
+    static initialize(obj, gkeClusterName, name) { 
         obj['gke-cluster-name'] = gkeClusterName;
-        obj['gke-service-account-email'] = gkeServiceAccountEmail;
         obj['name'] = name;
     }
 
@@ -93,6 +87,9 @@ class GatewayCreateProducerGke {
             }
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -180,6 +177,12 @@ GatewayCreateProducerGke.prototype['secure-access-cluster-endpoint'] = undefined
  * @member {String} secure-access-enable
  */
 GatewayCreateProducerGke.prototype['secure-access-enable'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerGke.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -4467,7 +4467,7 @@ No authorization required
 
 ## signJWTWithClassicKey
 
-> signJWTWithClassicKey(body)
+> SignJWTOutput signJWTWithClassicKey(body)
 
 
 
@@ -4478,8 +4478,8 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.SignJWTWithClassicKey(); // SignJWTWithClassicKey | 
-apiInstance.signJWTWithClassicKey(body).then(() => {
-  console.log('API called successfully.');
+apiInstance.signJWTWithClassicKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -4495,7 +4495,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**SignJWTOutput**](SignJWTOutput.md)
 
 ### Authorization
 
@@ -4551,7 +4551,7 @@ No authorization required
 
 ## signPKICertWithClassicKey
 
-> signPKICertWithClassicKey(body)
+> SignPKICertOutput signPKICertWithClassicKey(body)
 
 
 
@@ -4562,8 +4562,8 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.SignPKICertWithClassicKey(); // SignPKICertWithClassicKey | 
-apiInstance.signPKICertWithClassicKey(body).then(() => {
-  console.log('API called successfully.');
+apiInstance.signPKICertWithClassicKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -4579,7 +4579,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**SignPKICertOutput**](SignPKICertOutput.md)
 
 ### Authorization
 
@@ -5891,7 +5891,7 @@ No authorization required
 
 ## verifyJWTWithClassicKey
 
-> verifyJWTWithClassicKey(body)
+> VerifyJWTOutput verifyJWTWithClassicKey(body)
 
 
 
@@ -5902,8 +5902,8 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.VerifyJWTWithClassicKey(); // VerifyJWTWithClassicKey | 
-apiInstance.verifyJWTWithClassicKey(body).then(() => {
-  console.log('API called successfully.');
+apiInstance.verifyJWTWithClassicKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -5919,7 +5919,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**VerifyJWTOutput**](VerifyJWTOutput.md)
 
 ### Authorization
 
@@ -5975,7 +5975,7 @@ No authorization required
 
 ## verifyPKICertWithClassicKey
 
-> verifyPKICertWithClassicKey(body)
+> VerifyPKICertOutput verifyPKICertWithClassicKey(body)
 
 
 
@@ -5986,8 +5986,8 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let body = new akeyless.VerifyPKICertWithClassicKey(); // VerifyPKICertWithClassicKey | 
-apiInstance.verifyPKICertWithClassicKey(body).then(() => {
-  console.log('API called successfully.');
+apiInstance.verifyPKICertWithClassicKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -6003,7 +6003,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**VerifyPKICertOutput**](VerifyPKICertOutput.md)
 
 ### Authorization
 

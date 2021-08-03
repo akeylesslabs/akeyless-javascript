@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRdp model module.
  * @module model/GatewayCreateProducerRdp
- * @version 2.5.5
+ * @version 2.5.6
  */
 class GatewayCreateProducerRdp {
     /**
@@ -26,12 +26,10 @@ class GatewayCreateProducerRdp {
      * @param name {String} Producer name
      * @param rdpAdminName {String} RDP Admin Name
      * @param rdpAdminPwd {String} RDP Admin password
-     * @param rdpHostName {String} Hostname
-     * @param rdpUserGroups {String} Groups
      */
-    constructor(name, rdpAdminName, rdpAdminPwd, rdpHostName, rdpUserGroups) { 
+    constructor(name, rdpAdminName, rdpAdminPwd) { 
         
-        GatewayCreateProducerRdp.initialize(this, name, rdpAdminName, rdpAdminPwd, rdpHostName, rdpUserGroups);
+        GatewayCreateProducerRdp.initialize(this, name, rdpAdminName, rdpAdminPwd);
     }
 
     /**
@@ -39,12 +37,10 @@ class GatewayCreateProducerRdp {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, rdpAdminName, rdpAdminPwd, rdpHostName, rdpUserGroups) { 
+    static initialize(obj, name, rdpAdminName, rdpAdminPwd) { 
         obj['name'] = name;
         obj['rdp-admin-name'] = rdpAdminName;
         obj['rdp-admin-pwd'] = rdpAdminPwd;
-        obj['rdp-host-name'] = rdpHostName;
-        obj['rdp-user-groups'] = rdpUserGroups;
     }
 
     /**
@@ -93,6 +89,9 @@ class GatewayCreateProducerRdp {
             }
             if (data.hasOwnProperty('secure-access-rdp-domain')) {
                 obj['secure-access-rdp-domain'] = ApiClient.convertToType(data['secure-access-rdp-domain'], 'String');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -183,6 +182,12 @@ GatewayCreateProducerRdp.prototype['secure-access-host'] = undefined;
  * @member {String} secure-access-rdp-domain
  */
 GatewayCreateProducerRdp.prototype['secure-access-rdp-domain'] = undefined;
+
+/**
+ * Target name
+ * @member {String} target-name
+ */
+GatewayCreateProducerRdp.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
