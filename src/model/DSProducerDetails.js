@@ -17,7 +17,7 @@ import ItemTargetAssociation from './ItemTargetAssociation';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.5.6
+ * @version 2.5.7
  */
 class DSProducerDetails {
     /**
@@ -128,6 +128,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('azure_user_roles_template_id')) {
                 obj['azure_user_roles_template_id'] = ApiClient.convertToType(data['azure_user_roles_template_id'], 'String');
+            }
+            if (data.hasOwnProperty('cassandra_creation_statements')) {
+                obj['cassandra_creation_statements'] = ApiClient.convertToType(data['cassandra_creation_statements'], 'String');
             }
             if (data.hasOwnProperty('chef_organizations')) {
                 obj['chef_organizations'] = ApiClient.convertToType(data['chef_organizations'], 'String');
@@ -576,6 +579,11 @@ DSProducerDetails.prototype['azure_user_programmatic_access'] = undefined;
  * @member {String} azure_user_roles_template_id
  */
 DSProducerDetails.prototype['azure_user_roles_template_id'] = undefined;
+
+/**
+ * @member {String} cassandra_creation_statements
+ */
+DSProducerDetails.prototype['cassandra_creation_statements'] = undefined;
 
 /**
  * @member {String} chef_organizations

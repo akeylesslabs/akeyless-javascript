@@ -16,19 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMongo model module.
  * @module model/GatewayCreateProducerMongo
- * @version 2.5.6
+ * @version 2.5.7
  */
 class GatewayCreateProducerMongo {
     /**
      * Constructs a new <code>GatewayCreateProducerMongo</code>.
      * gatewayCreateProducerMongo is a command that creates either mongodb  producer or mongodb atlas producer
      * @alias module:model/GatewayCreateProducerMongo
-     * @param mongodbName {String} MongoDB Name
      * @param name {String} Producer name
      */
-    constructor(mongodbName, name) { 
+    constructor(name) { 
         
-        GatewayCreateProducerMongo.initialize(this, mongodbName, name);
+        GatewayCreateProducerMongo.initialize(this, name);
     }
 
     /**
@@ -36,8 +35,7 @@ class GatewayCreateProducerMongo {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mongodbName, name) { 
-        obj['mongodb-name'] = mongodbName;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 

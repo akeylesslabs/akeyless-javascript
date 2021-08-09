@@ -16,19 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerNativeK8S model module.
  * @module model/GatewayCreateProducerNativeK8S
- * @version 2.5.6
+ * @version 2.5.7
  */
 class GatewayCreateProducerNativeK8S {
     /**
      * Constructs a new <code>GatewayCreateProducerNativeK8S</code>.
      * gatewayCreateProducerNativeK8S is a command that creates k8s producer
      * @alias module:model/GatewayCreateProducerNativeK8S
-     * @param k8sClusterToken {String} K8S cluster Bearer token
      * @param name {String} Producer name
      */
-    constructor(k8sClusterToken, name) { 
+    constructor(name) { 
         
-        GatewayCreateProducerNativeK8S.initialize(this, k8sClusterToken, name);
+        GatewayCreateProducerNativeK8S.initialize(this, name);
     }
 
     /**
@@ -36,8 +35,7 @@ class GatewayCreateProducerNativeK8S {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, k8sClusterToken, name) { 
-        obj['k8s-cluster-token'] = k8sClusterToken;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 

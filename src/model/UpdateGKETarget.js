@@ -16,18 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGKETarget model module.
  * @module model/UpdateGKETarget
- * @version 2.5.6
+ * @version 2.5.7
  */
 class UpdateGKETarget {
     /**
      * Constructs a new <code>UpdateGKETarget</code>.
      * @alias module:model/UpdateGKETarget
-     * @param gkeClusterName {String} GKE cluster name
      * @param name {String} Target name
      */
-    constructor(gkeClusterName, name) { 
+    constructor(name) { 
         
-        UpdateGKETarget.initialize(this, gkeClusterName, name);
+        UpdateGKETarget.initialize(this, name);
     }
 
     /**
@@ -35,8 +34,7 @@ class UpdateGKETarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, gkeClusterName, name) { 
-        obj['gke-cluster-name'] = gkeClusterName;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 

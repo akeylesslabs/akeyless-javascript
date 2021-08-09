@@ -21,6 +21,7 @@ import AuthMethod from '../model/AuthMethod';
 import AuthOutput from '../model/AuthOutput';
 import Configure from '../model/Configure';
 import ConfigureOutput from '../model/ConfigureOutput';
+import Connect from '../model/Connect';
 import CreateAWSTarget from '../model/CreateAWSTarget';
 import CreateAWSTargetOutput from '../model/CreateAWSTargetOutput';
 import CreateArtifactoryTarget from '../model/CreateArtifactoryTarget';
@@ -113,6 +114,8 @@ import GatewayCreateProducerAws from '../model/GatewayCreateProducerAws';
 import GatewayCreateProducerAwsOutput from '../model/GatewayCreateProducerAwsOutput';
 import GatewayCreateProducerAzure from '../model/GatewayCreateProducerAzure';
 import GatewayCreateProducerAzureOutput from '../model/GatewayCreateProducerAzureOutput';
+import GatewayCreateProducerCassandra from '../model/GatewayCreateProducerCassandra';
+import GatewayCreateProducerCassandraOutput from '../model/GatewayCreateProducerCassandraOutput';
 import GatewayCreateProducerCertificateAutomation from '../model/GatewayCreateProducerCertificateAutomation';
 import GatewayCreateProducerCertificateAutomationOutput from '../model/GatewayCreateProducerCertificateAutomationOutput';
 import GatewayCreateProducerCustom from '../model/GatewayCreateProducerCustom';
@@ -129,6 +132,7 @@ import GatewayCreateProducerMongo from '../model/GatewayCreateProducerMongo';
 import GatewayCreateProducerMongoOutput from '../model/GatewayCreateProducerMongoOutput';
 import GatewayCreateProducerMySQL from '../model/GatewayCreateProducerMySQL';
 import GatewayCreateProducerMySQLOutput from '../model/GatewayCreateProducerMySQLOutput';
+import GatewayCreateProducerNativeK8S from '../model/GatewayCreateProducerNativeK8S';
 import GatewayCreateProducerNativeK8SOutput from '../model/GatewayCreateProducerNativeK8SOutput';
 import GatewayCreateProducerOracleDb from '../model/GatewayCreateProducerOracleDb';
 import GatewayCreateProducerOracleDbOutput from '../model/GatewayCreateProducerOracleDbOutput';
@@ -174,6 +178,26 @@ import GetTargetDetails from '../model/GetTargetDetails';
 import GetTargetDetailsOutput from '../model/GetTargetDetailsOutput';
 import Item from '../model/Item';
 import JSONError from '../model/JSONError';
+import KMIPClientGetResponse from '../model/KMIPClientGetResponse';
+import KMIPClientListResponse from '../model/KMIPClientListResponse';
+import KMIPClientUpdateResponse from '../model/KMIPClientUpdateResponse';
+import KMIPEnvironmentCreateResponse from '../model/KMIPEnvironmentCreateResponse';
+import KmipClientDeleteRule from '../model/KmipClientDeleteRule';
+import KmipClientSetRule from '../model/KmipClientSetRule';
+import KmipCreateClient from '../model/KmipCreateClient';
+import KmipCreateClientOutput from '../model/KmipCreateClientOutput';
+import KmipDeleteClient from '../model/KmipDeleteClient';
+import KmipDescribeClient from '../model/KmipDescribeClient';
+import KmipDescribeServer from '../model/KmipDescribeServer';
+import KmipDescribeServerOutput from '../model/KmipDescribeServerOutput';
+import KmipListClients from '../model/KmipListClients';
+import KmipRenewClientCertificate from '../model/KmipRenewClientCertificate';
+import KmipRenewClientCertificateOutput from '../model/KmipRenewClientCertificateOutput';
+import KmipRenewServerCertificate from '../model/KmipRenewServerCertificate';
+import KmipRenewServerCertificateOutput from '../model/KmipRenewServerCertificateOutput';
+import KmipServerSetup from '../model/KmipServerSetup';
+import KmipSetServerState from '../model/KmipSetServerState';
+import KmipSetServerStateOutput from '../model/KmipSetServerStateOutput';
 import ListAuthMethods from '../model/ListAuthMethods';
 import ListAuthMethodsOutput from '../model/ListAuthMethodsOutput';
 import ListItems from '../model/ListItems';
@@ -260,7 +284,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.5.6
+* @version 2.5.7
 */
 export default class V2Api {
 
@@ -443,6 +467,49 @@ export default class V2Api {
      */
     configure(body) {
       return this.configureWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/Connect} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    connectWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling connect");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/connect', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/Connect} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    connect(body) {
+      return this.connectWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2594,6 +2661,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayCreateProducerCassandra} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerCassandraOutput} and HTTP response
+     */
+    gatewayCreateProducerCassandraWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateProducerCassandra");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayCreateProducerCassandraOutput;
+      return this.apiClient.callApi(
+        '/gateway-create-producer-cassandra', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayCreateProducerCassandra} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerCassandraOutput}
+     */
+    gatewayCreateProducerCassandra(body) {
+      return this.gatewayCreateProducerCassandraWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayCreateProducerCertificateAutomation} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerCertificateAutomationOutput} and HTTP response
      */
@@ -2937,10 +3047,15 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayCreateProducerNativeK8S} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerNativeK8SOutput} and HTTP response
      */
-    gatewayCreateProducerNativeK8SWithHttpInfo() {
-      let postBody = null;
+    gatewayCreateProducerNativeK8SWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateProducerNativeK8S");
+      }
 
       let pathParams = {
       };
@@ -2952,7 +3067,7 @@ export default class V2Api {
       };
 
       let authNames = [];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = GatewayCreateProducerNativeK8SOutput;
       return this.apiClient.callApi(
@@ -2963,10 +3078,11 @@ export default class V2Api {
     }
 
     /**
+     * @param {module:model/GatewayCreateProducerNativeK8S} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerNativeK8SOutput}
      */
-    gatewayCreateProducerNativeK8S() {
-      return this.gatewayCreateProducerNativeK8SWithHttpInfo()
+    gatewayCreateProducerNativeK8S(body) {
+      return this.gatewayCreateProducerNativeK8SWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4165,6 +4281,468 @@ export default class V2Api {
      */
     getTargetDetails(body) {
       return this.getTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipClientDeleteRule} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KMIPClientUpdateResponse} and HTTP response
+     */
+    kmipClientDeleteRuleWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KMIPClientUpdateResponse;
+      return this.apiClient.callApi(
+        '/kmip-client-delete-rule', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipClientDeleteRule} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KMIPClientUpdateResponse}
+     */
+    kmipClientDeleteRule(opts) {
+      return this.kmipClientDeleteRuleWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipClientSetRule} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KMIPClientUpdateResponse} and HTTP response
+     */
+    kmipClientSetRuleWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KMIPClientUpdateResponse;
+      return this.apiClient.callApi(
+        '/kmip-client-set-rule', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipClientSetRule} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KMIPClientUpdateResponse}
+     */
+    kmipClientSetRule(opts) {
+      return this.kmipClientSetRuleWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipCreateClient} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KmipCreateClientOutput} and HTTP response
+     */
+    kmipCreateClientWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KmipCreateClientOutput;
+      return this.apiClient.callApi(
+        '/kmip-create-client', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipCreateClient} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KmipCreateClientOutput}
+     */
+    kmipCreateClient(opts) {
+      return this.kmipCreateClientWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipDeleteClient} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    kmipDeleteClientWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/kmip-delete-client', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipDeleteClient} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    kmipDeleteClient(opts) {
+      return this.kmipDeleteClientWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipDescribeClient} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KMIPClientGetResponse} and HTTP response
+     */
+    kmipDescribeClientWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KMIPClientGetResponse;
+      return this.apiClient.callApi(
+        '/kmip-get-client', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipDescribeClient} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KMIPClientGetResponse}
+     */
+    kmipDescribeClient(opts) {
+      return this.kmipDescribeClientWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipDescribeServer} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KmipDescribeServerOutput} and HTTP response
+     */
+    kmipDescribeServerWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KmipDescribeServerOutput;
+      return this.apiClient.callApi(
+        '/kmip-get-environment', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipDescribeServer} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KmipDescribeServerOutput}
+     */
+    kmipDescribeServer(opts) {
+      return this.kmipDescribeServerWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipListClients} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KMIPClientListResponse} and HTTP response
+     */
+    kmipListClientsWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KMIPClientListResponse;
+      return this.apiClient.callApi(
+        '/kmip-list-clients', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipListClients} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KMIPClientListResponse}
+     */
+    kmipListClients(opts) {
+      return this.kmipListClientsWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipRenewClientCertificate} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KmipRenewClientCertificateOutput} and HTTP response
+     */
+    kmipRenewClientCertificateWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KmipRenewClientCertificateOutput;
+      return this.apiClient.callApi(
+        '/kmip-renew-client', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipRenewClientCertificate} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KmipRenewClientCertificateOutput}
+     */
+    kmipRenewClientCertificate(opts) {
+      return this.kmipRenewClientCertificateWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipRenewServerCertificate} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KmipRenewServerCertificateOutput} and HTTP response
+     */
+    kmipRenewServerCertificateWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KmipRenewServerCertificateOutput;
+      return this.apiClient.callApi(
+        '/kmip-renew-environment', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipRenewServerCertificate} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KmipRenewServerCertificateOutput}
+     */
+    kmipRenewServerCertificate(opts) {
+      return this.kmipRenewServerCertificateWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipServerSetup} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KMIPEnvironmentCreateResponse} and HTTP response
+     */
+    kmipServerSetupWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KMIPEnvironmentCreateResponse;
+      return this.apiClient.callApi(
+        '/kmip-create-environment', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipServerSetup} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KMIPEnvironmentCreateResponse}
+     */
+    kmipServerSetup(opts) {
+      return this.kmipServerSetupWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipSetServerState} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KmipSetServerStateOutput} and HTTP response
+     */
+    kmipSetServerStateWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KmipSetServerStateOutput;
+      return this.apiClient.callApi(
+        '/kmip-set-environment-state', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipSetServerState} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KmipSetServerStateOutput}
+     */
+    kmipSetServerState(opts) {
+      return this.kmipSetServerStateWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

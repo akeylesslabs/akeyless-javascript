@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**assocTargetItem**](V2Api.md#assocTargetItem) | **POST** /assoc-target-item | 
 [**auth**](V2Api.md#auth) | **POST** /auth | 
 [**configure**](V2Api.md#configure) | **POST** /configure | 
+[**connect**](V2Api.md#connect) | **POST** /connect | 
 [**createAWSTarget**](V2Api.md#createAWSTarget) | **POST** /create-aws-target | 
 [**createArtifactoryTarget**](V2Api.md#createArtifactoryTarget) | **POST** /create-artifactory-target | 
 [**createAuthMethod**](V2Api.md#createAuthMethod) | **POST** /create-auth-method | 
@@ -58,6 +59,7 @@ Method | HTTP request | Description
 [**gatewayCreateProducerArtifactory**](V2Api.md#gatewayCreateProducerArtifactory) | **POST** /gateway-create-producer-artifactory | 
 [**gatewayCreateProducerAws**](V2Api.md#gatewayCreateProducerAws) | **POST** /gateway-create-producer-aws | 
 [**gatewayCreateProducerAzure**](V2Api.md#gatewayCreateProducerAzure) | **POST** /gateway-create-producer-azure | 
+[**gatewayCreateProducerCassandra**](V2Api.md#gatewayCreateProducerCassandra) | **POST** /gateway-create-producer-cassandra | 
 [**gatewayCreateProducerCertificateAutomation**](V2Api.md#gatewayCreateProducerCertificateAutomation) | **POST** /gateway-create-producer-certificate-automation | 
 [**gatewayCreateProducerCustom**](V2Api.md#gatewayCreateProducerCustom) | **POST** /gateway-create-producer-custom | 
 [**gatewayCreateProducerEks**](V2Api.md#gatewayCreateProducerEks) | **POST** /gateway-create-producer-eks | 
@@ -95,6 +97,17 @@ Method | HTTP request | Description
 [**getSecretValue**](V2Api.md#getSecretValue) | **POST** /get-secret-value | 
 [**getTarget**](V2Api.md#getTarget) | **POST** /get-target | 
 [**getTargetDetails**](V2Api.md#getTargetDetails) | **POST** /get-target-details | 
+[**kmipClientDeleteRule**](V2Api.md#kmipClientDeleteRule) | **POST** /kmip-client-delete-rule | 
+[**kmipClientSetRule**](V2Api.md#kmipClientSetRule) | **POST** /kmip-client-set-rule | 
+[**kmipCreateClient**](V2Api.md#kmipCreateClient) | **POST** /kmip-create-client | 
+[**kmipDeleteClient**](V2Api.md#kmipDeleteClient) | **POST** /kmip-delete-client | 
+[**kmipDescribeClient**](V2Api.md#kmipDescribeClient) | **POST** /kmip-get-client | 
+[**kmipDescribeServer**](V2Api.md#kmipDescribeServer) | **POST** /kmip-get-environment | 
+[**kmipListClients**](V2Api.md#kmipListClients) | **POST** /kmip-list-clients | 
+[**kmipRenewClientCertificate**](V2Api.md#kmipRenewClientCertificate) | **POST** /kmip-renew-client | 
+[**kmipRenewServerCertificate**](V2Api.md#kmipRenewServerCertificate) | **POST** /kmip-renew-environment | 
+[**kmipServerSetup**](V2Api.md#kmipServerSetup) | **POST** /kmip-create-environment | 
+[**kmipSetServerState**](V2Api.md#kmipSetServerState) | **POST** /kmip-set-environment-state | 
 [**listAuthMethods**](V2Api.md#listAuthMethods) | **POST** /list-auth-methods | 
 [**listItems**](V2Api.md#listItems) | **POST** /list-items | 
 [**listRoles**](V2Api.md#listRoles) | **POST** /list-roles | 
@@ -304,6 +317,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ConfigureOutput**](ConfigureOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## connect
+
+> Object connect(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.Connect(); // Connect | 
+apiInstance.connect(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Connect**](Connect.md)|  | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 
@@ -2411,6 +2466,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayCreateProducerCassandra
+
+> GatewayCreateProducerCassandraOutput gatewayCreateProducerCassandra(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayCreateProducerCassandra(); // GatewayCreateProducerCassandra | 
+apiInstance.gatewayCreateProducerCassandra(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerCassandra**](GatewayCreateProducerCassandra.md)|  | 
+
+### Return type
+
+[**GatewayCreateProducerCassandraOutput**](GatewayCreateProducerCassandraOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayCreateProducerCertificateAutomation
 
 > GatewayCreateProducerCertificateAutomationOutput gatewayCreateProducerCertificateAutomation(body)
@@ -2751,7 +2848,7 @@ No authorization required
 
 ## gatewayCreateProducerNativeK8S
 
-> GatewayCreateProducerNativeK8SOutput gatewayCreateProducerNativeK8S()
+> GatewayCreateProducerNativeK8SOutput gatewayCreateProducerNativeK8S(body)
 
 
 
@@ -2761,7 +2858,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-apiInstance.gatewayCreateProducerNativeK8S().then((data) => {
+let body = new akeyless.GatewayCreateProducerNativeK8S(); // GatewayCreateProducerNativeK8S | 
+apiInstance.gatewayCreateProducerNativeK8S(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2771,7 +2869,10 @@ apiInstance.gatewayCreateProducerNativeK8S().then((data) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerNativeK8S**](GatewayCreateProducerNativeK8S.md)|  | 
 
 ### Return type
 
@@ -2783,7 +2884,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -3948,6 +4049,490 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetTargetDetailsOutput**](GetTargetDetailsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## kmipClientDeleteRule
+
+> KMIPClientUpdateResponse kmipClientDeleteRule(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.KmipClientDeleteRule() // KmipClientDeleteRule | 
+};
+apiInstance.kmipClientDeleteRule(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipClientDeleteRule**](KmipClientDeleteRule.md)|  | [optional] 
+
+### Return type
+
+[**KMIPClientUpdateResponse**](KMIPClientUpdateResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## kmipClientSetRule
+
+> KMIPClientUpdateResponse kmipClientSetRule(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.KmipClientSetRule() // KmipClientSetRule | 
+};
+apiInstance.kmipClientSetRule(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipClientSetRule**](KmipClientSetRule.md)|  | [optional] 
+
+### Return type
+
+[**KMIPClientUpdateResponse**](KMIPClientUpdateResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## kmipCreateClient
+
+> KmipCreateClientOutput kmipCreateClient(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.KmipCreateClient() // KmipCreateClient | 
+};
+apiInstance.kmipCreateClient(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipCreateClient**](KmipCreateClient.md)|  | [optional] 
+
+### Return type
+
+[**KmipCreateClientOutput**](KmipCreateClientOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## kmipDeleteClient
+
+> Object kmipDeleteClient(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.KmipDeleteClient() // KmipDeleteClient | 
+};
+apiInstance.kmipDeleteClient(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipDeleteClient**](KmipDeleteClient.md)|  | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## kmipDescribeClient
+
+> KMIPClientGetResponse kmipDescribeClient(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.KmipDescribeClient() // KmipDescribeClient | 
+};
+apiInstance.kmipDescribeClient(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipDescribeClient**](KmipDescribeClient.md)|  | [optional] 
+
+### Return type
+
+[**KMIPClientGetResponse**](KMIPClientGetResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## kmipDescribeServer
+
+> KmipDescribeServerOutput kmipDescribeServer(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.KmipDescribeServer() // KmipDescribeServer | 
+};
+apiInstance.kmipDescribeServer(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipDescribeServer**](KmipDescribeServer.md)|  | [optional] 
+
+### Return type
+
+[**KmipDescribeServerOutput**](KmipDescribeServerOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## kmipListClients
+
+> KMIPClientListResponse kmipListClients(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.KmipListClients() // KmipListClients | 
+};
+apiInstance.kmipListClients(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipListClients**](KmipListClients.md)|  | [optional] 
+
+### Return type
+
+[**KMIPClientListResponse**](KMIPClientListResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## kmipRenewClientCertificate
+
+> KmipRenewClientCertificateOutput kmipRenewClientCertificate(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.KmipRenewClientCertificate() // KmipRenewClientCertificate | 
+};
+apiInstance.kmipRenewClientCertificate(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipRenewClientCertificate**](KmipRenewClientCertificate.md)|  | [optional] 
+
+### Return type
+
+[**KmipRenewClientCertificateOutput**](KmipRenewClientCertificateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## kmipRenewServerCertificate
+
+> KmipRenewServerCertificateOutput kmipRenewServerCertificate(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.KmipRenewServerCertificate() // KmipRenewServerCertificate | 
+};
+apiInstance.kmipRenewServerCertificate(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipRenewServerCertificate**](KmipRenewServerCertificate.md)|  | [optional] 
+
+### Return type
+
+[**KmipRenewServerCertificateOutput**](KmipRenewServerCertificateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## kmipServerSetup
+
+> KMIPEnvironmentCreateResponse kmipServerSetup(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.KmipServerSetup() // KmipServerSetup | 
+};
+apiInstance.kmipServerSetup(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipServerSetup**](KmipServerSetup.md)|  | [optional] 
+
+### Return type
+
+[**KMIPEnvironmentCreateResponse**](KMIPEnvironmentCreateResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## kmipSetServerState
+
+> KmipSetServerStateOutput kmipSetServerState(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.KmipSetServerState() // KmipSetServerState | 
+};
+apiInstance.kmipSetServerState(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipSetServerState**](KmipSetServerState.md)|  | [optional] 
+
+### Return type
+
+[**KmipSetServerStateOutput**](KmipSetServerStateOutput.md)
 
 ### Authorization
 

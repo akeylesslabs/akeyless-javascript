@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRdp model module.
  * @module model/GatewayCreateProducerRdp
- * @version 2.5.6
+ * @version 2.5.7
  */
 class GatewayCreateProducerRdp {
     /**
@@ -24,12 +24,10 @@ class GatewayCreateProducerRdp {
      * gatewayCreateProducerRdp is a command that creates rdp producer
      * @alias module:model/GatewayCreateProducerRdp
      * @param name {String} Producer name
-     * @param rdpAdminName {String} RDP Admin Name
-     * @param rdpAdminPwd {String} RDP Admin password
      */
-    constructor(name, rdpAdminName, rdpAdminPwd) { 
+    constructor(name) { 
         
-        GatewayCreateProducerRdp.initialize(this, name, rdpAdminName, rdpAdminPwd);
+        GatewayCreateProducerRdp.initialize(this, name);
     }
 
     /**
@@ -37,10 +35,8 @@ class GatewayCreateProducerRdp {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, rdpAdminName, rdpAdminPwd) { 
+    static initialize(obj, name) { 
         obj['name'] = name;
-        obj['rdp-admin-name'] = rdpAdminName;
-        obj['rdp-admin-pwd'] = rdpAdminPwd;
     }
 
     /**

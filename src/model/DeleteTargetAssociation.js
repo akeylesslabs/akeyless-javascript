@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTargetAssociation model module.
  * @module model/DeleteTargetAssociation
- * @version 2.5.6
+ * @version 2.5.7
  */
 class DeleteTargetAssociation {
     /**

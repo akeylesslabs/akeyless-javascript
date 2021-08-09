@@ -41,6 +41,7 @@ import ClassicKeyTargetInfo from './model/ClassicKeyTargetInfo';
 import ClientData from './model/ClientData';
 import Configure from './model/Configure';
 import ConfigureOutput from './model/ConfigureOutput';
+import Connect from './model/Connect';
 import CreateAWSTarget from './model/CreateAWSTarget';
 import CreateAWSTargetOutput from './model/CreateAWSTargetOutput';
 import CreateArtifactoryTarget from './model/CreateArtifactoryTarget';
@@ -150,6 +151,8 @@ import GatewayCreateProducerAws from './model/GatewayCreateProducerAws';
 import GatewayCreateProducerAwsOutput from './model/GatewayCreateProducerAwsOutput';
 import GatewayCreateProducerAzure from './model/GatewayCreateProducerAzure';
 import GatewayCreateProducerAzureOutput from './model/GatewayCreateProducerAzureOutput';
+import GatewayCreateProducerCassandra from './model/GatewayCreateProducerCassandra';
+import GatewayCreateProducerCassandraOutput from './model/GatewayCreateProducerCassandraOutput';
 import GatewayCreateProducerCertificateAutomation from './model/GatewayCreateProducerCertificateAutomation';
 import GatewayCreateProducerCertificateAutomationOutput from './model/GatewayCreateProducerCertificateAutomationOutput';
 import GatewayCreateProducerChef from './model/GatewayCreateProducerChef';
@@ -228,7 +231,27 @@ import JSONError from './model/JSONError';
 import K8SMigration from './model/K8SMigration';
 import K8SPayload from './model/K8SPayload';
 import KMIPClient from './model/KMIPClient';
+import KMIPClientGetResponse from './model/KMIPClientGetResponse';
+import KMIPClientListResponse from './model/KMIPClientListResponse';
+import KMIPClientUpdateResponse from './model/KMIPClientUpdateResponse';
 import KMIPConfigPart from './model/KMIPConfigPart';
+import KMIPEnvironmentCreateResponse from './model/KMIPEnvironmentCreateResponse';
+import KmipClientDeleteRule from './model/KmipClientDeleteRule';
+import KmipClientSetRule from './model/KmipClientSetRule';
+import KmipCreateClient from './model/KmipCreateClient';
+import KmipCreateClientOutput from './model/KmipCreateClientOutput';
+import KmipDeleteClient from './model/KmipDeleteClient';
+import KmipDescribeClient from './model/KmipDescribeClient';
+import KmipDescribeServer from './model/KmipDescribeServer';
+import KmipDescribeServerOutput from './model/KmipDescribeServerOutput';
+import KmipListClients from './model/KmipListClients';
+import KmipRenewClientCertificate from './model/KmipRenewClientCertificate';
+import KmipRenewClientCertificateOutput from './model/KmipRenewClientCertificateOutput';
+import KmipRenewServerCertificate from './model/KmipRenewServerCertificate';
+import KmipRenewServerCertificateOutput from './model/KmipRenewServerCertificateOutput';
+import KmipServerSetup from './model/KmipServerSetup';
+import KmipSetServerState from './model/KmipSetServerState';
+import KmipSetServerStateOutput from './model/KmipSetServerStateOutput';
 import LDAPAccessRules from './model/LDAPAccessRules';
 import LdapConfigPart from './model/LdapConfigPart';
 import LeadershipConfigPart from './model/LeadershipConfigPart';
@@ -380,7 +403,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.5.6
+* @version 2.5.7
 */
 export {
     /**
@@ -556,6 +579,12 @@ export {
      * @property {module:model/ConfigureOutput}
      */
     ConfigureOutput,
+
+    /**
+     * The Connect model constructor.
+     * @property {module:model/Connect}
+     */
+    Connect,
 
     /**
      * The CreateAWSTarget model constructor.
@@ -1212,6 +1241,18 @@ export {
     GatewayCreateProducerAzureOutput,
 
     /**
+     * The GatewayCreateProducerCassandra model constructor.
+     * @property {module:model/GatewayCreateProducerCassandra}
+     */
+    GatewayCreateProducerCassandra,
+
+    /**
+     * The GatewayCreateProducerCassandraOutput model constructor.
+     * @property {module:model/GatewayCreateProducerCassandraOutput}
+     */
+    GatewayCreateProducerCassandraOutput,
+
+    /**
      * The GatewayCreateProducerCertificateAutomation model constructor.
      * @property {module:model/GatewayCreateProducerCertificateAutomation}
      */
@@ -1680,10 +1721,130 @@ export {
     KMIPClient,
 
     /**
+     * The KMIPClientGetResponse model constructor.
+     * @property {module:model/KMIPClientGetResponse}
+     */
+    KMIPClientGetResponse,
+
+    /**
+     * The KMIPClientListResponse model constructor.
+     * @property {module:model/KMIPClientListResponse}
+     */
+    KMIPClientListResponse,
+
+    /**
+     * The KMIPClientUpdateResponse model constructor.
+     * @property {module:model/KMIPClientUpdateResponse}
+     */
+    KMIPClientUpdateResponse,
+
+    /**
      * The KMIPConfigPart model constructor.
      * @property {module:model/KMIPConfigPart}
      */
     KMIPConfigPart,
+
+    /**
+     * The KMIPEnvironmentCreateResponse model constructor.
+     * @property {module:model/KMIPEnvironmentCreateResponse}
+     */
+    KMIPEnvironmentCreateResponse,
+
+    /**
+     * The KmipClientDeleteRule model constructor.
+     * @property {module:model/KmipClientDeleteRule}
+     */
+    KmipClientDeleteRule,
+
+    /**
+     * The KmipClientSetRule model constructor.
+     * @property {module:model/KmipClientSetRule}
+     */
+    KmipClientSetRule,
+
+    /**
+     * The KmipCreateClient model constructor.
+     * @property {module:model/KmipCreateClient}
+     */
+    KmipCreateClient,
+
+    /**
+     * The KmipCreateClientOutput model constructor.
+     * @property {module:model/KmipCreateClientOutput}
+     */
+    KmipCreateClientOutput,
+
+    /**
+     * The KmipDeleteClient model constructor.
+     * @property {module:model/KmipDeleteClient}
+     */
+    KmipDeleteClient,
+
+    /**
+     * The KmipDescribeClient model constructor.
+     * @property {module:model/KmipDescribeClient}
+     */
+    KmipDescribeClient,
+
+    /**
+     * The KmipDescribeServer model constructor.
+     * @property {module:model/KmipDescribeServer}
+     */
+    KmipDescribeServer,
+
+    /**
+     * The KmipDescribeServerOutput model constructor.
+     * @property {module:model/KmipDescribeServerOutput}
+     */
+    KmipDescribeServerOutput,
+
+    /**
+     * The KmipListClients model constructor.
+     * @property {module:model/KmipListClients}
+     */
+    KmipListClients,
+
+    /**
+     * The KmipRenewClientCertificate model constructor.
+     * @property {module:model/KmipRenewClientCertificate}
+     */
+    KmipRenewClientCertificate,
+
+    /**
+     * The KmipRenewClientCertificateOutput model constructor.
+     * @property {module:model/KmipRenewClientCertificateOutput}
+     */
+    KmipRenewClientCertificateOutput,
+
+    /**
+     * The KmipRenewServerCertificate model constructor.
+     * @property {module:model/KmipRenewServerCertificate}
+     */
+    KmipRenewServerCertificate,
+
+    /**
+     * The KmipRenewServerCertificateOutput model constructor.
+     * @property {module:model/KmipRenewServerCertificateOutput}
+     */
+    KmipRenewServerCertificateOutput,
+
+    /**
+     * The KmipServerSetup model constructor.
+     * @property {module:model/KmipServerSetup}
+     */
+    KmipServerSetup,
+
+    /**
+     * The KmipSetServerState model constructor.
+     * @property {module:model/KmipSetServerState}
+     */
+    KmipSetServerState,
+
+    /**
+     * The KmipSetServerStateOutput model constructor.
+     * @property {module:model/KmipSetServerStateOutput}
+     */
+    KmipSetServerStateOutput,
 
     /**
      * The LDAPAccessRules model constructor.

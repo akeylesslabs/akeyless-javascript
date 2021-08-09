@@ -16,19 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGke model module.
  * @module model/GatewayCreateProducerGke
- * @version 2.5.6
+ * @version 2.5.7
  */
 class GatewayCreateProducerGke {
     /**
      * Constructs a new <code>GatewayCreateProducerGke</code>.
      * gatewayCreateProducerGke is a command that creates gke producer
      * @alias module:model/GatewayCreateProducerGke
-     * @param gkeClusterName {String} GKE cluster name
      * @param name {String} Producer name
      */
-    constructor(gkeClusterName, name) { 
+    constructor(name) { 
         
-        GatewayCreateProducerGke.initialize(this, gkeClusterName, name);
+        GatewayCreateProducerGke.initialize(this, name);
     }
 
     /**
@@ -36,8 +35,7 @@ class GatewayCreateProducerGke {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, gkeClusterName, name) { 
-        obj['gke-cluster-name'] = gkeClusterName;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 
