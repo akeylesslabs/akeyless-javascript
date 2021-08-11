@@ -16,20 +16,20 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyJWTWithClassicKey model module.
  * @module model/VerifyJWTWithClassicKey
- * @version 2.5.7
+ * @version 2.4.5
  */
 class VerifyJWTWithClassicKey {
     /**
      * Constructs a new <code>VerifyJWTWithClassicKey</code>.
      * @alias module:model/VerifyJWTWithClassicKey
      * @param displayId {String} The name of the key to use in the verify JWT process
-     * @param jwtClaims {String} JWTClaims
-     * @param signature {String} Signature
+     * @param jwt {String} JWT
+     * @param requiredClaims {String} RequiredClaims
      * @param version {Number} classic key version
      */
-    constructor(displayId, jwtClaims, signature, version) { 
+    constructor(displayId, jwt, requiredClaims, version) { 
         
-        VerifyJWTWithClassicKey.initialize(this, displayId, jwtClaims, signature, version);
+        VerifyJWTWithClassicKey.initialize(this, displayId, jwt, requiredClaims, version);
     }
 
     /**
@@ -37,10 +37,10 @@ class VerifyJWTWithClassicKey {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, displayId, jwtClaims, signature, version) { 
+    static initialize(obj, displayId, jwt, requiredClaims, version) { 
         obj['display-id'] = displayId;
-        obj['jwt-claims'] = jwtClaims;
-        obj['signature'] = signature;
+        obj['jwt'] = jwt;
+        obj['required-claims'] = requiredClaims;
         obj['version'] = version;
     }
 
@@ -58,14 +58,14 @@ class VerifyJWTWithClassicKey {
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
             }
-            if (data.hasOwnProperty('jwt-claims')) {
-                obj['jwt-claims'] = ApiClient.convertToType(data['jwt-claims'], 'String');
+            if (data.hasOwnProperty('jwt')) {
+                obj['jwt'] = ApiClient.convertToType(data['jwt'], 'String');
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
-            if (data.hasOwnProperty('signature')) {
-                obj['signature'] = ApiClient.convertToType(data['signature'], 'String');
+            if (data.hasOwnProperty('required-claims')) {
+                obj['required-claims'] = ApiClient.convertToType(data['required-claims'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -93,10 +93,10 @@ class VerifyJWTWithClassicKey {
 VerifyJWTWithClassicKey.prototype['display-id'] = undefined;
 
 /**
- * JWTClaims
- * @member {String} jwt-claims
+ * JWT
+ * @member {String} jwt
  */
-VerifyJWTWithClassicKey.prototype['jwt-claims'] = undefined;
+VerifyJWTWithClassicKey.prototype['jwt'] = undefined;
 
 /**
  * Required only when the authentication process requires a username and password
@@ -105,10 +105,10 @@ VerifyJWTWithClassicKey.prototype['jwt-claims'] = undefined;
 VerifyJWTWithClassicKey.prototype['password'] = undefined;
 
 /**
- * Signature
- * @member {String} signature
+ * RequiredClaims
+ * @member {String} required-claims
  */
-VerifyJWTWithClassicKey.prototype['signature'] = undefined;
+VerifyJWTWithClassicKey.prototype['required-claims'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

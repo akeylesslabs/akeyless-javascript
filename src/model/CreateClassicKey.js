@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 2.5.7
+ * @version 2.4.5
  */
 class CreateClassicKey {
     /**
@@ -58,9 +58,6 @@ class CreateClassicKey {
             if (data.hasOwnProperty('cert-file-data')) {
                 obj['cert-file-data'] = ApiClient.convertToType(data['cert-file-data'], 'String');
             }
-            if (data.hasOwnProperty('key')) {
-                obj['key'] = ApiClient.convertToType(data['key'], 'String');
-            }
             if (data.hasOwnProperty('key-data')) {
                 obj['key-data'] = ApiClient.convertToType(data['key-data'], 'String');
             }
@@ -72,6 +69,9 @@ class CreateClassicKey {
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
+            if (data.hasOwnProperty('protection-key-name')) {
+                obj['protection-key-name'] = ApiClient.convertToType(data['protection-key-name'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -108,12 +108,6 @@ CreateClassicKey.prototype['alg'] = undefined;
 CreateClassicKey.prototype['cert-file-data'] = undefined;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
- * @member {String} key
- */
-CreateClassicKey.prototype['key'] = undefined;
-
-/**
  * Base64-encoded classic key value
  * @member {String} key-data
  */
@@ -136,6 +130,12 @@ CreateClassicKey.prototype['name'] = undefined;
  * @member {String} password
  */
 CreateClassicKey.prototype['password'] = undefined;
+
+/**
+ * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
+ * @member {String} protection-key-name
+ */
+CreateClassicKey.prototype['protection-key-name'] = undefined;
 
 /**
  * List of the tags attached to this classic key

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetConfig model module.
  * @module model/GatewayGetConfig
- * @version 2.5.7
+ * @version 2.4.5
  */
 class GatewayGetConfig {
     /**
