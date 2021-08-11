@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SAMLAttribute model module.
  * @module model/SAMLAttribute
- * @version 2.4.5
+ * @version 2.4.6
  */
 class SAMLAttribute {
     /**

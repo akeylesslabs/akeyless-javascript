@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptPKCS1Output model module.
  * @module model/EncryptPKCS1Output
- * @version 2.4.5
+ * @version 2.4.6
  */
 class EncryptPKCS1Output {
     /**

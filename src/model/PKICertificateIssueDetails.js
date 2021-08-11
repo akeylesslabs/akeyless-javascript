@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PKICertificateIssueDetails model module.
  * @module model/PKICertificateIssueDetails
- * @version 2.4.5
+ * @version 2.4.6
  */
 class PKICertificateIssueDetails {
     /**

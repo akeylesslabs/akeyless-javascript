@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAzureTargetOutput model module.
  * @module model/UpdateAzureTargetOutput
- * @version 2.4.5
+ * @version 2.4.6
  */
 class UpdateAzureTargetOutput {
     /**
