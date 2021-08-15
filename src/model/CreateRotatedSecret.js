@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 2.4.6
+ * @version 2.4.7
  */
 class CreateRotatedSecret {
     /**
@@ -86,6 +86,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('rotator-creds-type')) {
                 obj['rotator-creds-type'] = ApiClient.convertToType(data['rotator-creds-type'], 'String');
+            }
+            if (data.hasOwnProperty('rotator-custom-cmd')) {
+                obj['rotator-custom-cmd'] = ApiClient.convertToType(data['rotator-custom-cmd'], 'String');
             }
             if (data.hasOwnProperty('rotator-type')) {
                 obj['rotator-type'] = ApiClient.convertToType(data['rotator-type'], 'String');
@@ -183,6 +186,11 @@ CreateRotatedSecret.prototype['rotation-interval'] = undefined;
  * @member {String} rotator-creds-type
  */
 CreateRotatedSecret.prototype['rotator-creds-type'] = undefined;
+
+/**
+ * @member {String} rotator-custom-cmd
+ */
+CreateRotatedSecret.prototype['rotator-custom-cmd'] = undefined;
 
 /**
  * @member {String} rotator-type

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHTargetDetails model module.
  * @module model/UpdateSSHTargetDetails
- * @version 2.4.6
+ * @version 2.4.7
  */
 class UpdateSSHTargetDetails {
     /**

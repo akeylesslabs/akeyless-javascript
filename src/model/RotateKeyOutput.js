@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotateKeyOutput model module.
  * @module model/RotateKeyOutput
- * @version 2.4.6
+ * @version 2.4.7
  */
 class RotateKeyOutput {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGKETarget model module.
  * @module model/CreateGKETarget
- * @version 2.4.6
+ * @version 2.4.7
  */
 class CreateGKETarget {
     /**

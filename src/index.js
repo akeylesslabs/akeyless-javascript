@@ -403,7 +403,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.4.6
+* @version 2.4.7
 */
 export {
     /**

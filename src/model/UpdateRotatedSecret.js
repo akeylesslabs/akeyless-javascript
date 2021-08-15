@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 2.4.6
+ * @version 2.4.7
  */
 class UpdateRotatedSecret {
     /**
@@ -97,6 +97,9 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('rotator-creds-type')) {
                 obj['rotator-creds-type'] = ApiClient.convertToType(data['rotator-creds-type'], 'String');
+            }
+            if (data.hasOwnProperty('rotator-custom-cmd')) {
+                obj['rotator-custom-cmd'] = ApiClient.convertToType(data['rotator-custom-cmd'], 'String');
             }
             if (data.hasOwnProperty('ssh-password')) {
                 obj['ssh-password'] = ApiClient.convertToType(data['ssh-password'], 'String');
@@ -211,6 +214,11 @@ UpdateRotatedSecret.prototype['rotation-interval'] = undefined;
  * @member {String} rotator-creds-type
  */
 UpdateRotatedSecret.prototype['rotator-creds-type'] = undefined;
+
+/**
+ * @member {String} rotator-custom-cmd
+ */
+UpdateRotatedSecret.prototype['rotator-custom-cmd'] = undefined;
 
 /**
  * Deprecated: use RotatedPassword

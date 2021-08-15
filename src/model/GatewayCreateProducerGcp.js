@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGcp model module.
  * @module model/GatewayCreateProducerGcp
- * @version 2.4.6
+ * @version 2.4.7
  */
 class GatewayCreateProducerGcp {
     /**
