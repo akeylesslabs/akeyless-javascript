@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayRevokeTmpUsers model module.
  * @module model/GatewayRevokeTmpUsers
- * @version 2.4.7
+ * @version 2.5.8
  */
 class GatewayRevokeTmpUsers {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LdapConfigPart model module.
  * @module model/LdapConfigPart
- * @version 2.4.7
+ * @version 2.5.8
  */
 class LdapConfigPart {
     /**

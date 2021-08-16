@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHCertIssuer model module.
  * @module model/CreateSSHCertIssuer
- * @version 2.4.7
+ * @version 2.5.8
  */
 class CreateSSHCertIssuer {
     /**

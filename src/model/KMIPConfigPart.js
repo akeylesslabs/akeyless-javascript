@@ -17,7 +17,7 @@ import KMIPClient from './KMIPClient';
 /**
  * The KMIPConfigPart model module.
  * @module model/KMIPConfigPart
- * @version 2.4.7
+ * @version 2.5.8
  */
 class KMIPConfigPart {
     /**
