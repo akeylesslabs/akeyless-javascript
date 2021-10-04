@@ -16,18 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGcpTarget model module.
  * @module model/CreateGcpTarget
- * @version 2.5.8
+ * @version 2.5.9
  */
 class CreateGcpTarget {
     /**
      * Constructs a new <code>CreateGcpTarget</code>.
      * @alias module:model/CreateGcpTarget
-     * @param gcpSaEmail {String} GCP service account email
      * @param name {String} Target name
      */
-    constructor(gcpSaEmail, name) { 
+    constructor(name) { 
         
-        CreateGcpTarget.initialize(this, gcpSaEmail, name);
+        CreateGcpTarget.initialize(this, name);
     }
 
     /**
@@ -35,8 +34,7 @@ class CreateGcpTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, gcpSaEmail, name) { 
-        obj['gcp-sa-email'] = gcpSaEmail;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 
@@ -74,6 +72,9 @@ class CreateGcpTarget {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('use-gw-cloud-identity')) {
+                obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
             }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
@@ -132,6 +133,11 @@ CreateGcpTarget.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateGcpTarget.prototype['uid-token'] = undefined;
+
+/**
+ * @member {Boolean} use-gw-cloud-identity
+ */
+CreateGcpTarget.prototype['use-gw-cloud-identity'] = undefined;
 
 /**
  * Required only when the authentication process requires a username and password

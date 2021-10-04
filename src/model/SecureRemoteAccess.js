@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecureRemoteAccess model module.
  * @module model/SecureRemoteAccess
- * @version 2.5.8
+ * @version 2.5.9
  */
 class SecureRemoteAccess {
     /**
@@ -115,6 +115,9 @@ class SecureRemoteAccess {
             }
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            }
+            if (data.hasOwnProperty('use_internal_bastion')) {
+                obj['use_internal_bastion'] = ApiClient.convertToType(data['use_internal_bastion'], 'Boolean');
             }
         }
         return obj;
@@ -237,6 +240,11 @@ SecureRemoteAccess.prototype['ssh_user'] = undefined;
  * @member {String} url
  */
 SecureRemoteAccess.prototype['url'] = undefined;
+
+/**
+ * @member {Boolean} use_internal_bastion
+ */
+SecureRemoteAccess.prototype['use_internal_bastion'] = undefined;
 
 
 

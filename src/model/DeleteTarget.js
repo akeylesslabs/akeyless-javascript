@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTarget model module.
  * @module model/DeleteTarget
- * @version 2.5.8
+ * @version 2.5.9
  */
 class DeleteTarget {
     /**
@@ -49,8 +49,8 @@ class DeleteTarget {
         if (data) {
             obj = obj || new DeleteTarget();
 
-            if (data.hasOwnProperty('enforce-deletion')) {
-                obj['enforce-deletion'] = ApiClient.convertToType(data['enforce-deletion'], 'Boolean');
+            if (data.hasOwnProperty('force-deletion')) {
+                obj['force-deletion'] = ApiClient.convertToType(data['force-deletion'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -79,10 +79,10 @@ class DeleteTarget {
 
 /**
  * Enforce deletion
- * @member {Boolean} enforce-deletion
+ * @member {Boolean} force-deletion
  * @default false
  */
-DeleteTarget.prototype['enforce-deletion'] = false;
+DeleteTarget.prototype['force-deletion'] = false;
 
 /**
  * Target name

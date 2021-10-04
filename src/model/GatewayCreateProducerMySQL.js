@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMySQL model module.
  * @module model/GatewayCreateProducerMySQL
- * @version 2.5.8
+ * @version 2.5.9
  */
 class GatewayCreateProducerMySQL {
     /**
@@ -91,6 +91,9 @@ class GatewayCreateProducerMySQL {
             }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('secure-access-web')) {
+                obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -196,6 +199,11 @@ GatewayCreateProducerMySQL.prototype['secure-access-enable'] = undefined;
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerMySQL.prototype['secure-access-host'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-web
+ */
+GatewayCreateProducerMySQL.prototype['secure-access-web'] = undefined;
 
 /**
  * Target name

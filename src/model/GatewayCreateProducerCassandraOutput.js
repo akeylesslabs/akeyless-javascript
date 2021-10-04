@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerCassandraOutput model module.
  * @module model/GatewayCreateProducerCassandraOutput
- * @version 2.5.8
+ * @version 2.5.9
  */
 class GatewayCreateProducerCassandraOutput {
     /**

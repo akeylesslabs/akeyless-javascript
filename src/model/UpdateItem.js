@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 2.5.8
+ * @version 2.5.9
  */
 class UpdateItem {
     /**
@@ -117,6 +117,9 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('secure-access-url')) {
                 obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-use-internal-bastion')) {
+                obj['secure-access-use-internal-bastion'] = ApiClient.convertToType(data['secure-access-use-internal-bastion'], 'Boolean');
             }
             if (data.hasOwnProperty('secure-access-web-browsing')) {
                 obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
@@ -258,6 +261,11 @@ UpdateItem.prototype['secure-access-ssh-creds-user'] = undefined;
  * @member {String} secure-access-url
  */
 UpdateItem.prototype['secure-access-url'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-use-internal-bastion
+ */
+UpdateItem.prototype['secure-access-use-internal-bastion'] = undefined;
 
 /**
  * @member {Boolean} secure-access-web-browsing

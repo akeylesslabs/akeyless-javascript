@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGke model module.
  * @module model/GatewayCreateProducerGke
- * @version 2.5.8
+ * @version 2.5.9
  */
 class GatewayCreateProducerGke {
     /**
@@ -85,6 +85,9 @@ class GatewayCreateProducerGke {
             }
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web')) {
+                obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -175,6 +178,11 @@ GatewayCreateProducerGke.prototype['secure-access-cluster-endpoint'] = undefined
  * @member {String} secure-access-enable
  */
 GatewayCreateProducerGke.prototype['secure-access-enable'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-web
+ */
+GatewayCreateProducerGke.prototype['secure-access-web'] = undefined;
 
 /**
  * Target name

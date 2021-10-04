@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DefaultConfigPart model module.
  * @module model/DefaultConfigPart
- * @version 2.5.8
+ * @version 2.5.9
  */
 class DefaultConfigPart {
     /**
@@ -53,8 +53,8 @@ class DefaultConfigPart {
             if (data.hasOwnProperty('default_secret_location')) {
                 obj['default_secret_location'] = ApiClient.convertToType(data['default_secret_location'], 'String');
             }
-            if (data.hasOwnProperty('open_id_connect_access_id')) {
-                obj['open_id_connect_access_id'] = ApiClient.convertToType(data['open_id_connect_access_id'], 'String');
+            if (data.hasOwnProperty('oidc_access_id')) {
+                obj['oidc_access_id'] = ApiClient.convertToType(data['oidc_access_id'], 'String');
             }
             if (data.hasOwnProperty('saml_access_id')) {
                 obj['saml_access_id'] = ApiClient.convertToType(data['saml_access_id'], 'String');
@@ -77,9 +77,9 @@ DefaultConfigPart.prototype['default_protection_key_id'] = undefined;
 DefaultConfigPart.prototype['default_secret_location'] = undefined;
 
 /**
- * @member {String} open_id_connect_access_id
+ * @member {String} oidc_access_id
  */
-DefaultConfigPart.prototype['open_id_connect_access_id'] = undefined;
+DefaultConfigPart.prototype['oidc_access_id'] = undefined;
 
 /**
  * @member {String} saml_access_id

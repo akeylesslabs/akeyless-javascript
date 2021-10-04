@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 2.5.8
+ * @version 2.5.9
  */
 class CreatePKICertIssuer {
     /**
@@ -24,7 +24,7 @@ class CreatePKICertIssuer {
      * @alias module:model/CreatePKICertIssuer
      * @param name {String} PKI certificate issuer name
      * @param signerKeyName {String} A key to sign the certificate with
-     * @param ttl {Number} The requested Time To Live for the certificate, use second units
+     * @param ttl {Number} he requested Time To Live for the certificate, in seconds
      */
     constructor(name, signerKeyName, ttl) { 
         
@@ -269,7 +269,7 @@ CreatePKICertIssuer.prototype['street-address'] = undefined;
 CreatePKICertIssuer.prototype['token'] = undefined;
 
 /**
- * The requested Time To Live for the certificate, use second units
+ * he requested Time To Live for the certificate, in seconds
  * @member {Number} ttl
  */
 CreatePKICertIssuer.prototype['ttl'] = undefined;

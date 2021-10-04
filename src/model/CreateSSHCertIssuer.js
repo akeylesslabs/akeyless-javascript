@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHCertIssuer model module.
  * @module model/CreateSSHCertIssuer
- * @version 2.5.8
+ * @version 2.5.9
  */
 class CreateSSHCertIssuer {
     /**
@@ -25,7 +25,7 @@ class CreateSSHCertIssuer {
      * @param allowedUsers {String} Users allowed to fetch the certificate, e.g root,ubuntu
      * @param name {String} SSH certificate issuer name
      * @param signerKeyName {String} A key to sign the certificate with
-     * @param ttl {Number} The requested Time To Live for the certificate, use second units
+     * @param ttl {Number} he requested Time To Live for the certificate, in seconds
      */
     constructor(allowedUsers, name, signerKeyName, ttl) { 
         
@@ -87,6 +87,9 @@ class CreateSSHCertIssuer {
             }
             if (data.hasOwnProperty('secure-access-ssh-creds-user')) {
                 obj['secure-access-ssh-creds-user'] = ApiClient.convertToType(data['secure-access-ssh-creds-user'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-use-internal-bastion')) {
+                obj['secure-access-use-internal-bastion'] = ApiClient.convertToType(data['secure-access-use-internal-bastion'], 'Boolean');
             }
             if (data.hasOwnProperty('signer-key-name')) {
                 obj['signer-key-name'] = ApiClient.convertToType(data['signer-key-name'], 'String');
@@ -172,6 +175,11 @@ CreateSSHCertIssuer.prototype['secure-access-host'] = undefined;
 CreateSSHCertIssuer.prototype['secure-access-ssh-creds-user'] = undefined;
 
 /**
+ * @member {Boolean} secure-access-use-internal-bastion
+ */
+CreateSSHCertIssuer.prototype['secure-access-use-internal-bastion'] = undefined;
+
+/**
  * A key to sign the certificate with
  * @member {String} signer-key-name
  */
@@ -184,7 +192,7 @@ CreateSSHCertIssuer.prototype['signer-key-name'] = undefined;
 CreateSSHCertIssuer.prototype['token'] = undefined;
 
 /**
- * The requested Time To Live for the certificate, use second units
+ * he requested Time To Live for the certificate, in seconds
  * @member {Number} ttl
  */
 CreateSSHCertIssuer.prototype['ttl'] = undefined;

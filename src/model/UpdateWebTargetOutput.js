@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateWebTargetOutput model module.
  * @module model/UpdateWebTargetOutput
- * @version 2.5.8
+ * @version 2.5.9
  */
 class UpdateWebTargetOutput {
     /**

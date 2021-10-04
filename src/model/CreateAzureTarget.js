@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAzureTarget model module.
  * @module model/CreateAzureTarget
- * @version 2.5.8
+ * @version 2.5.9
  */
 class CreateAzureTarget {
     /**
@@ -75,6 +75,9 @@ class CreateAzureTarget {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('use-gw-cloud-identity')) {
+                obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
             }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
@@ -136,6 +139,11 @@ CreateAzureTarget.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateAzureTarget.prototype['uid-token'] = undefined;
+
+/**
+ * @member {Boolean} use-gw-cloud-identity
+ */
+CreateAzureTarget.prototype['use-gw-cloud-identity'] = undefined;
 
 /**
  * Required only when the authentication process requires a username and password

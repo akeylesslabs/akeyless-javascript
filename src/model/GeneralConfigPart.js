@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GeneralConfigPart model module.
  * @module model/GeneralConfigPart
- * @version 2.5.8
+ * @version 2.5.9
  */
 class GeneralConfigPart {
     /**
@@ -52,6 +52,9 @@ class GeneralConfigPart {
             }
             if (data.hasOwnProperty('api_token_ttl')) {
                 obj['api_token_ttl'] = ApiClient.convertToType(data['api_token_ttl'], 'String');
+            }
+            if (data.hasOwnProperty('display_name')) {
+                obj['display_name'] = ApiClient.convertToType(data['display_name'], 'String');
             }
             if (data.hasOwnProperty('enable_tls')) {
                 obj['enable_tls'] = ApiClient.convertToType(data['enable_tls'], 'Boolean');
@@ -93,6 +96,11 @@ GeneralConfigPart.prototype['akeyless_url'] = undefined;
  * @member {String} api_token_ttl
  */
 GeneralConfigPart.prototype['api_token_ttl'] = undefined;
+
+/**
+ * @member {String} display_name
+ */
+GeneralConfigPart.prototype['display_name'] = undefined;
 
 /**
  * @member {Boolean} enable_tls

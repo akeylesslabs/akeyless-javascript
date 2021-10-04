@@ -27,5 +27,6 @@ Name | Type | Description | Notes
 **sshPrivateKey** | **Boolean** |  | [optional] 
 **sshUser** | **String** |  | [optional] 
 **url** | **String** |  | [optional] 
+**useInternalBastion** | **Boolean** |  | [optional] 
 
 

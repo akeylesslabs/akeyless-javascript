@@ -20,13 +20,14 @@ import GCPAccessRules from './GCPAccessRules';
 import HuaweiAccessRules from './HuaweiAccessRules';
 import LDAPAccessRules from './LDAPAccessRules';
 import OAuth2AccessRules from './OAuth2AccessRules';
+import OIDCAccessRules from './OIDCAccessRules';
 import SAMLAccessRules from './SAMLAccessRules';
 import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 2.5.8
+ * @version 2.5.9
  */
 class AuthMethodAccessInfo {
     /**
@@ -92,6 +93,9 @@ class AuthMethodAccessInfo {
             }
             if (data.hasOwnProperty('oauth2_access_rules')) {
                 obj['oauth2_access_rules'] = OAuth2AccessRules.constructFromObject(data['oauth2_access_rules']);
+            }
+            if (data.hasOwnProperty('oidc_access_rules')) {
+                obj['oidc_access_rules'] = OIDCAccessRules.constructFromObject(data['oidc_access_rules']);
             }
             if (data.hasOwnProperty('rules_type')) {
                 obj['rules_type'] = ApiClient.convertToType(data['rules_type'], 'String');
@@ -170,6 +174,11 @@ AuthMethodAccessInfo.prototype['ldap_access_rules'] = undefined;
  * @member {module:model/OAuth2AccessRules} oauth2_access_rules
  */
 AuthMethodAccessInfo.prototype['oauth2_access_rules'] = undefined;
+
+/**
+ * @member {module:model/OIDCAccessRules} oidc_access_rules
+ */
+AuthMethodAccessInfo.prototype['oidc_access_rules'] = undefined;
 
 /**
  * @member {String} rules_type

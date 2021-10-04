@@ -59,6 +59,8 @@ import CreateAuthMethodLDAP from './model/CreateAuthMethodLDAP';
 import CreateAuthMethodLDAPOutput from './model/CreateAuthMethodLDAPOutput';
 import CreateAuthMethodOAuth2 from './model/CreateAuthMethodOAuth2';
 import CreateAuthMethodOAuth2Output from './model/CreateAuthMethodOAuth2Output';
+import CreateAuthMethodOIDC from './model/CreateAuthMethodOIDC';
+import CreateAuthMethodOIDCOutput from './model/CreateAuthMethodOIDCOutput';
 import CreateAuthMethodOutput from './model/CreateAuthMethodOutput';
 import CreateAuthMethodSAML from './model/CreateAuthMethodSAML';
 import CreateAuthMethodSAMLOutput from './model/CreateAuthMethodSAMLOutput';
@@ -81,6 +83,8 @@ import CreateGcpTarget from './model/CreateGcpTarget';
 import CreateGcpTargetOutput from './model/CreateGcpTargetOutput';
 import CreateKey from './model/CreateKey';
 import CreateKeyOutput from './model/CreateKeyOutput';
+import CreateLdapTarget from './model/CreateLdapTarget';
+import CreateLdapTargetOutput from './model/CreateLdapTargetOutput';
 import CreateNativeK8STarget from './model/CreateNativeK8STarget';
 import CreateNativeK8STargetOutput from './model/CreateNativeK8STargetOutput';
 import CreatePKICertIssuer from './model/CreatePKICertIssuer';
@@ -181,6 +185,8 @@ import GatewayCreateProducerRabbitMQ from './model/GatewayCreateProducerRabbitMQ
 import GatewayCreateProducerRabbitMQOutput from './model/GatewayCreateProducerRabbitMQOutput';
 import GatewayCreateProducerRdp from './model/GatewayCreateProducerRdp';
 import GatewayCreateProducerRdpOutput from './model/GatewayCreateProducerRdpOutput';
+import GatewayCreateProducerRedshift from './model/GatewayCreateProducerRedshift';
+import GatewayCreateProducerRedshiftOutput from './model/GatewayCreateProducerRedshiftOutput';
 import GatewayCreateProducerSnowflake from './model/GatewayCreateProducerSnowflake';
 import GatewayCreateProducerSnowflakeOutput from './model/GatewayCreateProducerSnowflakeOutput';
 import GatewayDeleteAllowedManagementAccess from './model/GatewayDeleteAllowedManagementAccess';
@@ -271,6 +277,8 @@ import MigrationsConfigPart from './model/MigrationsConfigPart';
 import MoveObjects from './model/MoveObjects';
 import OAuth2AccessRules from './model/OAuth2AccessRules';
 import OAuth2CustomClaim from './model/OAuth2CustomClaim';
+import OIDCAccessRules from './model/OIDCAccessRules';
+import OIDCCustomClaim from './model/OIDCCustomClaim';
 import PKICertificateIssueDetails from './model/PKICertificateIssueDetails';
 import PathRule from './model/PathRule';
 import Producer from './model/Producer';
@@ -403,7 +411,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.5.8
+* @version 2.5.9
 */
 export {
     /**
@@ -689,6 +697,18 @@ export {
     CreateAuthMethodOAuth2Output,
 
     /**
+     * The CreateAuthMethodOIDC model constructor.
+     * @property {module:model/CreateAuthMethodOIDC}
+     */
+    CreateAuthMethodOIDC,
+
+    /**
+     * The CreateAuthMethodOIDCOutput model constructor.
+     * @property {module:model/CreateAuthMethodOIDCOutput}
+     */
+    CreateAuthMethodOIDCOutput,
+
+    /**
      * The CreateAuthMethodOutput model constructor.
      * @property {module:model/CreateAuthMethodOutput}
      */
@@ -819,6 +839,18 @@ export {
      * @property {module:model/CreateKeyOutput}
      */
     CreateKeyOutput,
+
+    /**
+     * The CreateLdapTarget model constructor.
+     * @property {module:model/CreateLdapTarget}
+     */
+    CreateLdapTarget,
+
+    /**
+     * The CreateLdapTargetOutput model constructor.
+     * @property {module:model/CreateLdapTargetOutput}
+     */
+    CreateLdapTargetOutput,
 
     /**
      * The CreateNativeK8STarget model constructor.
@@ -1421,6 +1453,18 @@ export {
     GatewayCreateProducerRdpOutput,
 
     /**
+     * The GatewayCreateProducerRedshift model constructor.
+     * @property {module:model/GatewayCreateProducerRedshift}
+     */
+    GatewayCreateProducerRedshift,
+
+    /**
+     * The GatewayCreateProducerRedshiftOutput model constructor.
+     * @property {module:model/GatewayCreateProducerRedshiftOutput}
+     */
+    GatewayCreateProducerRedshiftOutput,
+
+    /**
      * The GatewayCreateProducerSnowflake model constructor.
      * @property {module:model/GatewayCreateProducerSnowflake}
      */
@@ -1959,6 +2003,18 @@ export {
      * @property {module:model/OAuth2CustomClaim}
      */
     OAuth2CustomClaim,
+
+    /**
+     * The OIDCAccessRules model constructor.
+     * @property {module:model/OIDCAccessRules}
+     */
+    OIDCAccessRules,
+
+    /**
+     * The OIDCCustomClaim model constructor.
+     * @property {module:model/OIDCCustomClaim}
+     */
+    OIDCCustomClaim,
 
     /**
      * The PKICertificateIssueDetails model constructor.

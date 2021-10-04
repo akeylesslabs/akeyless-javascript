@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOAuth2 model module.
  * @module model/CreateAuthMethodOAuth2
- * @version 2.5.8
+ * @version 2.5.9
  */
 class CreateAuthMethodOAuth2 {
     /**
      * Constructs a new <code>CreateAuthMethodOAuth2</code>.
-     * createAuthMethodOAuth2 is a command that creates a new auth method that will be able to authenticate using OpenID/Oauth2.
+     * createAuthMethodOAuth2 is a command that creates a new auth method that will be able to authenticate using Oauth2.
      * @alias module:model/CreateAuthMethodOAuth2
      * @param jwksUri {String} The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server.
      * @param name {String} Auth Method name

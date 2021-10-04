@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTarget model module.
  * @module model/CreateDBTarget
- * @version 2.5.8
+ * @version 2.5.9
  */
 class CreateDBTarget {
     /**
@@ -87,20 +87,8 @@ class CreateDBTarget {
             if (data.hasOwnProperty('mongodb-default-auth-db')) {
                 obj['mongodb-default-auth-db'] = ApiClient.convertToType(data['mongodb-default-auth-db'], 'String');
             }
-            if (data.hasOwnProperty('mongodb-host-port')) {
-                obj['mongodb-host-port'] = ApiClient.convertToType(data['mongodb-host-port'], 'String');
-            }
-            if (data.hasOwnProperty('mongodb-password')) {
-                obj['mongodb-password'] = ApiClient.convertToType(data['mongodb-password'], 'String');
-            }
-            if (data.hasOwnProperty('mongodb-server-uri')) {
-                obj['mongodb-server-uri'] = ApiClient.convertToType(data['mongodb-server-uri'], 'String');
-            }
             if (data.hasOwnProperty('mongodb-uri-options')) {
                 obj['mongodb-uri-options'] = ApiClient.convertToType(data['mongodb-uri-options'], 'String');
-            }
-            if (data.hasOwnProperty('mongodb-username')) {
-                obj['mongodb-username'] = ApiClient.convertToType(data['mongodb-username'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -208,34 +196,10 @@ CreateDBTarget.prototype['mongodb-atlas-project-id'] = undefined;
 CreateDBTarget.prototype['mongodb-default-auth-db'] = undefined;
 
 /**
- * MongoDB server host and port
- * @member {String} mongodb-host-port
- */
-CreateDBTarget.prototype['mongodb-host-port'] = undefined;
-
-/**
- * MongoDB server password. You will prompted to provide a password if it will not appear in CLI parameters
- * @member {String} mongodb-password
- */
-CreateDBTarget.prototype['mongodb-password'] = undefined;
-
-/**
- * MongoDB server URI
- * @member {String} mongodb-server-uri
- */
-CreateDBTarget.prototype['mongodb-server-uri'] = undefined;
-
-/**
  * MongoDB server URI options
  * @member {String} mongodb-uri-options
  */
 CreateDBTarget.prototype['mongodb-uri-options'] = undefined;
-
-/**
- * MongoDB server username
- * @member {String} mongodb-username
- */
-CreateDBTarget.prototype['mongodb-username'] = undefined;
 
 /**
  * Target name

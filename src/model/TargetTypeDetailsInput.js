@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.5.8
+ * @version 2.5.9
  */
 class TargetTypeDetailsInput {
     /**
@@ -167,6 +167,48 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('k8s_cluster_endpoint')) {
                 obj['k8s_cluster_endpoint'] = ApiClient.convertToType(data['k8s_cluster_endpoint'], 'String');
             }
+            if (data.hasOwnProperty('ldap_access_id')) {
+                obj['ldap_access_id'] = ApiClient.convertToType(data['ldap_access_id'], 'String');
+            }
+            if (data.hasOwnProperty('ldap_anonymous_search')) {
+                obj['ldap_anonymous_search'] = ApiClient.convertToType(data['ldap_anonymous_search'], 'Boolean');
+            }
+            if (data.hasOwnProperty('ldap_audience')) {
+                obj['ldap_audience'] = ApiClient.convertToType(data['ldap_audience'], 'String');
+            }
+            if (data.hasOwnProperty('ldap_bind_dn')) {
+                obj['ldap_bind_dn'] = ApiClient.convertToType(data['ldap_bind_dn'], 'String');
+            }
+            if (data.hasOwnProperty('ldap_bind_password')) {
+                obj['ldap_bind_password'] = ApiClient.convertToType(data['ldap_bind_password'], 'String');
+            }
+            if (data.hasOwnProperty('ldap_certificate')) {
+                obj['ldap_certificate'] = ApiClient.convertToType(data['ldap_certificate'], 'String');
+            }
+            if (data.hasOwnProperty('ldap_group_attr')) {
+                obj['ldap_group_attr'] = ApiClient.convertToType(data['ldap_group_attr'], 'String');
+            }
+            if (data.hasOwnProperty('ldap_group_dn')) {
+                obj['ldap_group_dn'] = ApiClient.convertToType(data['ldap_group_dn'], 'String');
+            }
+            if (data.hasOwnProperty('ldap_group_filter')) {
+                obj['ldap_group_filter'] = ApiClient.convertToType(data['ldap_group_filter'], 'String');
+            }
+            if (data.hasOwnProperty('ldap_private_key')) {
+                obj['ldap_private_key'] = ApiClient.convertToType(data['ldap_private_key'], 'String');
+            }
+            if (data.hasOwnProperty('ldap_token_expiration')) {
+                obj['ldap_token_expiration'] = ApiClient.convertToType(data['ldap_token_expiration'], 'String');
+            }
+            if (data.hasOwnProperty('ldap_url')) {
+                obj['ldap_url'] = ApiClient.convertToType(data['ldap_url'], 'String');
+            }
+            if (data.hasOwnProperty('ldap_user_attr')) {
+                obj['ldap_user_attr'] = ApiClient.convertToType(data['ldap_user_attr'], 'String');
+            }
+            if (data.hasOwnProperty('ldap_user_dn')) {
+                obj['ldap_user_dn'] = ApiClient.convertToType(data['ldap_user_dn'], 'String');
+            }
             if (data.hasOwnProperty('mongodb_atlas_api_private_key')) {
                 obj['mongodb_atlas_api_private_key'] = ApiClient.convertToType(data['mongodb_atlas_api_private_key'], 'String');
             }
@@ -226,6 +268,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            }
+            if (data.hasOwnProperty('use_gw_cloud_identity')) {
+                obj['use_gw_cloud_identity'] = ApiClient.convertToType(data['use_gw_cloud_identity'], 'Boolean');
             }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
@@ -458,6 +503,76 @@ TargetTypeDetailsInput.prototype['k8s_cluster_ca_certificate'] = undefined;
 TargetTypeDetailsInput.prototype['k8s_cluster_endpoint'] = undefined;
 
 /**
+ * @member {String} ldap_access_id
+ */
+TargetTypeDetailsInput.prototype['ldap_access_id'] = undefined;
+
+/**
+ * @member {Boolean} ldap_anonymous_search
+ */
+TargetTypeDetailsInput.prototype['ldap_anonymous_search'] = undefined;
+
+/**
+ * @member {String} ldap_audience
+ */
+TargetTypeDetailsInput.prototype['ldap_audience'] = undefined;
+
+/**
+ * @member {String} ldap_bind_dn
+ */
+TargetTypeDetailsInput.prototype['ldap_bind_dn'] = undefined;
+
+/**
+ * @member {String} ldap_bind_password
+ */
+TargetTypeDetailsInput.prototype['ldap_bind_password'] = undefined;
+
+/**
+ * @member {String} ldap_certificate
+ */
+TargetTypeDetailsInput.prototype['ldap_certificate'] = undefined;
+
+/**
+ * @member {String} ldap_group_attr
+ */
+TargetTypeDetailsInput.prototype['ldap_group_attr'] = undefined;
+
+/**
+ * @member {String} ldap_group_dn
+ */
+TargetTypeDetailsInput.prototype['ldap_group_dn'] = undefined;
+
+/**
+ * @member {String} ldap_group_filter
+ */
+TargetTypeDetailsInput.prototype['ldap_group_filter'] = undefined;
+
+/**
+ * @member {String} ldap_private_key
+ */
+TargetTypeDetailsInput.prototype['ldap_private_key'] = undefined;
+
+/**
+ * @member {String} ldap_token_expiration
+ */
+TargetTypeDetailsInput.prototype['ldap_token_expiration'] = undefined;
+
+/**
+ * @member {String} ldap_url
+ */
+TargetTypeDetailsInput.prototype['ldap_url'] = undefined;
+
+/**
+ * @member {String} ldap_user_attr
+ */
+TargetTypeDetailsInput.prototype['ldap_user_attr'] = undefined;
+
+/**
+ * @member {String} ldap_user_dn
+ */
+TargetTypeDetailsInput.prototype['ldap_user_dn'] = undefined;
+
+/**
  * @member {String} mongodb_atlas_api_private_key
  */
 TargetTypeDetailsInput.prototype['mongodb_atlas_api_private_key'] = undefined;
@@ -559,6 +674,11 @@ TargetTypeDetailsInput.prototype['sf_account'] = undefined;
  * @member {String} url
  */
 TargetTypeDetailsInput.prototype['url'] = undefined;
+
+/**
+ * @member {Boolean} use_gw_cloud_identity
+ */
+TargetTypeDetailsInput.prototype['use_gw_cloud_identity'] = undefined;
 
 /**
  * @member {String} username

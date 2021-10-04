@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGKETarget model module.
  * @module model/CreateGKETarget
- * @version 2.5.8
+ * @version 2.5.9
  */
 class CreateGKETarget {
     /**
@@ -81,6 +81,9 @@ class CreateGKETarget {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('use-gw-cloud-identity')) {
+                obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
             }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
@@ -157,6 +160,11 @@ CreateGKETarget.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateGKETarget.prototype['uid-token'] = undefined;
+
+/**
+ * @member {Boolean} use-gw-cloud-identity
+ */
+CreateGKETarget.prototype['use-gw-cloud-identity'] = undefined;
 
 /**
  * Required only when the authentication process requires a username and password

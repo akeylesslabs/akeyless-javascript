@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateEKSTarget model module.
  * @module model/UpdateEKSTarget
- * @version 2.5.8
+ * @version 2.5.9
  */
 class UpdateEKSTarget {
     /**
@@ -100,6 +100,9 @@ class UpdateEKSTarget {
             }
             if (data.hasOwnProperty('update-version')) {
                 obj['update-version'] = ApiClient.convertToType(data['update-version'], 'Boolean');
+            }
+            if (data.hasOwnProperty('use-gw-cloud-identity')) {
+                obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
             }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
@@ -196,6 +199,11 @@ UpdateEKSTarget.prototype['uid-token'] = undefined;
  * @default false
  */
 UpdateEKSTarget.prototype['update-version'] = false;
+
+/**
+ * @member {Boolean} use-gw-cloud-identity
+ */
+UpdateEKSTarget.prototype['use-gw-cloud-identity'] = undefined;
 
 /**
  * Required only when the authentication process requires a username and password

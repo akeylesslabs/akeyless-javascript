@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEKSTarget model module.
  * @module model/CreateEKSTarget
- * @version 2.5.8
+ * @version 2.5.9
  */
 class CreateEKSTarget {
     /**
@@ -94,6 +94,9 @@ class CreateEKSTarget {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('use-gw-cloud-identity')) {
+                obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
             }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
@@ -177,6 +180,11 @@ CreateEKSTarget.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateEKSTarget.prototype['uid-token'] = undefined;
+
+/**
+ * @member {Boolean} use-gw-cloud-identity
+ */
+CreateEKSTarget.prototype['use-gw-cloud-identity'] = undefined;
 
 /**
  * Required only when the authentication process requires a username and password

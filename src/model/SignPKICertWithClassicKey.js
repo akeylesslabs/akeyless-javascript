@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignPKICertWithClassicKey model module.
  * @module model/SignPKICertWithClassicKey
- * @version 2.5.8
+ * @version 2.5.9
  */
 class SignPKICertWithClassicKey {
     /**
@@ -24,7 +24,7 @@ class SignPKICertWithClassicKey {
      * @alias module:model/SignPKICertWithClassicKey
      * @param displayId {String} The name of the key to use in the sign PKI Cert process
      * @param signingMethod {String} SigningMethod
-     * @param ttl {Number} The requested Time To Live for the certificate, use second units
+     * @param ttl {Number} he requested Time To Live for the certificate, in seconds
      * @param version {Number} classic key version
      */
     constructor(displayId, signingMethod, ttl, version) { 
@@ -214,7 +214,7 @@ SignPKICertWithClassicKey.prototype['street-address'] = undefined;
 SignPKICertWithClassicKey.prototype['token'] = undefined;
 
 /**
- * The requested Time To Live for the certificate, use second units
+ * he requested Time To Live for the certificate, in seconds
  * @member {Number} ttl
  */
 SignPKICertWithClassicKey.prototype['ttl'] = undefined;

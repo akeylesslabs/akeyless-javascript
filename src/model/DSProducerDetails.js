@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import ItemTargetAssociation from './ItemTargetAssociation';
+import SecureRemoteAccess from './SecureRemoteAccess';
 
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.5.8
+ * @version 2.5.9
  */
 class DSProducerDetails {
     /**
@@ -372,11 +373,17 @@ class DSProducerDetails {
             if (data.hasOwnProperty('rabbitmq_user_write_permission')) {
                 obj['rabbitmq_user_write_permission'] = ApiClient.convertToType(data['rabbitmq_user_write_permission'], 'String');
             }
+            if (data.hasOwnProperty('redshift_creation_statements')) {
+                obj['redshift_creation_statements'] = ApiClient.convertToType(data['redshift_creation_statements'], 'String');
+            }
             if (data.hasOwnProperty('revoke_sync_url')) {
                 obj['revoke_sync_url'] = ApiClient.convertToType(data['revoke_sync_url'], 'String');
             }
             if (data.hasOwnProperty('rotate_sync_url')) {
                 obj['rotate_sync_url'] = ApiClient.convertToType(data['rotate_sync_url'], 'String');
+            }
+            if (data.hasOwnProperty('secure_remote_access_details')) {
+                obj['secure_remote_access_details'] = SecureRemoteAccess.constructFromObject(data['secure_remote_access_details']);
             }
             if (data.hasOwnProperty('sf_account')) {
                 obj['sf_account'] = ApiClient.convertToType(data['sf_account'], 'String');
@@ -392,6 +399,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('timeout_seconds')) {
                 obj['timeout_seconds'] = ApiClient.convertToType(data['timeout_seconds'], 'Number');
+            }
+            if (data.hasOwnProperty('use_gw_cloud_identity')) {
+                obj['use_gw_cloud_identity'] = ApiClient.convertToType(data['use_gw_cloud_identity'], 'Boolean');
             }
             if (data.hasOwnProperty('user_principal_name')) {
                 obj['user_principal_name'] = ApiClient.convertToType(data['user_principal_name'], 'String');
@@ -992,6 +1002,11 @@ DSProducerDetails.prototype['rabbitmq_user_vhost'] = undefined;
 DSProducerDetails.prototype['rabbitmq_user_write_permission'] = undefined;
 
 /**
+ * @member {String} redshift_creation_statements
+ */
+DSProducerDetails.prototype['redshift_creation_statements'] = undefined;
+
+/**
  * @member {String} revoke_sync_url
  */
 DSProducerDetails.prototype['revoke_sync_url'] = undefined;
@@ -1000,6 +1015,11 @@ DSProducerDetails.prototype['revoke_sync_url'] = undefined;
  * @member {String} rotate_sync_url
  */
 DSProducerDetails.prototype['rotate_sync_url'] = undefined;
+
+/**
+ * @member {module:model/SecureRemoteAccess} secure_remote_access_details
+ */
+DSProducerDetails.prototype['secure_remote_access_details'] = undefined;
 
 /**
  * @member {String} sf_account
@@ -1027,6 +1047,11 @@ DSProducerDetails.prototype['should_stop'] = undefined;
  * @member {Number} timeout_seconds
  */
 DSProducerDetails.prototype['timeout_seconds'] = undefined;
+
+/**
+ * @member {Boolean} use_gw_cloud_identity
+ */
+DSProducerDetails.prototype['use_gw_cloud_identity'] = undefined;
 
 /**
  * @member {String} user_principal_name

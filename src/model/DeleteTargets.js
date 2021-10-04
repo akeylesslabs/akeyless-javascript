@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTargets model module.
  * @module model/DeleteTargets
- * @version 2.5.8
+ * @version 2.5.9
  */
 class DeleteTargets {
     /**
@@ -49,8 +49,8 @@ class DeleteTargets {
         if (data) {
             obj = obj || new DeleteTargets();
 
-            if (data.hasOwnProperty('enforce-deletion')) {
-                obj['enforce-deletion'] = ApiClient.convertToType(data['enforce-deletion'], 'Boolean');
+            if (data.hasOwnProperty('force-deletion')) {
+                obj['force-deletion'] = ApiClient.convertToType(data['force-deletion'], 'Boolean');
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
@@ -76,10 +76,10 @@ class DeleteTargets {
 
 /**
  * Enforce deletion
- * @member {Boolean} enforce-deletion
+ * @member {Boolean} force-deletion
  * @default false
  */
-DeleteTargets.prototype['enforce-deletion'] = false;
+DeleteTargets.prototype['force-deletion'] = false;
 
 /**
  * Required only when the authentication process requires a username and password

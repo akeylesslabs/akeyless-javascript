@@ -37,6 +37,8 @@ import CreateAuthMethodHuawei from '../model/CreateAuthMethodHuawei';
 import CreateAuthMethodHuaweiOutput from '../model/CreateAuthMethodHuaweiOutput';
 import CreateAuthMethodOAuth2 from '../model/CreateAuthMethodOAuth2';
 import CreateAuthMethodOAuth2Output from '../model/CreateAuthMethodOAuth2Output';
+import CreateAuthMethodOIDC from '../model/CreateAuthMethodOIDC';
+import CreateAuthMethodOIDCOutput from '../model/CreateAuthMethodOIDCOutput';
 import CreateAuthMethodOutput from '../model/CreateAuthMethodOutput';
 import CreateAuthMethodSAML from '../model/CreateAuthMethodSAML';
 import CreateAuthMethodSAMLOutput from '../model/CreateAuthMethodSAMLOutput';
@@ -59,6 +61,8 @@ import CreateGcpTarget from '../model/CreateGcpTarget';
 import CreateGcpTargetOutput from '../model/CreateGcpTargetOutput';
 import CreateKey from '../model/CreateKey';
 import CreateKeyOutput from '../model/CreateKeyOutput';
+import CreateLdapTarget from '../model/CreateLdapTarget';
+import CreateLdapTargetOutput from '../model/CreateLdapTargetOutput';
 import CreateNativeK8STarget from '../model/CreateNativeK8STarget';
 import CreatePKICertIssuer from '../model/CreatePKICertIssuer';
 import CreatePKICertIssuerOutput from '../model/CreatePKICertIssuerOutput';
@@ -142,6 +146,8 @@ import GatewayCreateProducerRabbitMQ from '../model/GatewayCreateProducerRabbitM
 import GatewayCreateProducerRabbitMQOutput from '../model/GatewayCreateProducerRabbitMQOutput';
 import GatewayCreateProducerRdp from '../model/GatewayCreateProducerRdp';
 import GatewayCreateProducerRdpOutput from '../model/GatewayCreateProducerRdpOutput';
+import GatewayCreateProducerRedshift from '../model/GatewayCreateProducerRedshift';
+import GatewayCreateProducerRedshiftOutput from '../model/GatewayCreateProducerRedshiftOutput';
 import GatewayCreateProducerSnowflake from '../model/GatewayCreateProducerSnowflake';
 import GatewayCreateProducerSnowflakeOutput from '../model/GatewayCreateProducerSnowflakeOutput';
 import GatewayDeleteAllowedManagementAccess from '../model/GatewayDeleteAllowedManagementAccess';
@@ -284,7 +290,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.5.8
+* @version 2.5.9
 */
 export default class V2Api {
 
@@ -854,6 +860,49 @@ export default class V2Api {
      */
     createAuthMethodOAuth2(body) {
       return this.createAuthMethodOAuth2WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateAuthMethodOIDC} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAuthMethodOIDCOutput} and HTTP response
+     */
+    createAuthMethodOIDCWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createAuthMethodOIDC");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateAuthMethodOIDCOutput;
+      return this.apiClient.callApi(
+        '/create-auth-method-oidc', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateAuthMethodOIDC} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAuthMethodOIDCOutput}
+     */
+    createAuthMethodOIDC(body) {
+      return this.createAuthMethodOIDCWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1708,6 +1757,49 @@ export default class V2Api {
      */
     createWebTarget(body) {
       return this.createWebTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateLdapTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateLdapTargetOutput} and HTTP response
+     */
+    createldapTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createldapTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateLdapTargetOutput;
+      return this.apiClient.callApi(
+        '/create-ldap-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateLdapTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateLdapTargetOutput}
+     */
+    createldapTarget(body) {
+      return this.createldapTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3255,6 +3347,49 @@ export default class V2Api {
      */
     gatewayCreateProducerRdp(body) {
       return this.gatewayCreateProducerRdpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayCreateProducerRedshift} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerRedshiftOutput} and HTTP response
+     */
+    gatewayCreateProducerRedshiftWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateProducerRedshift");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayCreateProducerRedshiftOutput;
+      return this.apiClient.callApi(
+        '/gateway-create-producer-redshift', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayCreateProducerRedshift} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerRedshiftOutput}
+     */
+    gatewayCreateProducerRedshift(body) {
+      return this.gatewayCreateProducerRedshiftWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

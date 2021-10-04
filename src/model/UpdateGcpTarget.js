@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGcpTarget model module.
  * @module model/UpdateGcpTarget
- * @version 2.5.8
+ * @version 2.5.9
  */
 class UpdateGcpTarget {
     /**
@@ -80,6 +80,9 @@ class UpdateGcpTarget {
             }
             if (data.hasOwnProperty('update-version')) {
                 obj['update-version'] = ApiClient.convertToType(data['update-version'], 'Boolean');
+            }
+            if (data.hasOwnProperty('use-gw-cloud-identity')) {
+                obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
             }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
@@ -151,6 +154,11 @@ UpdateGcpTarget.prototype['uid-token'] = undefined;
  * @default false
  */
 UpdateGcpTarget.prototype['update-version'] = false;
+
+/**
+ * @member {Boolean} use-gw-cloud-identity
+ */
+UpdateGcpTarget.prototype['use-gw-cloud-identity'] = undefined;
 
 /**
  * Required only when the authentication process requires a username and password
