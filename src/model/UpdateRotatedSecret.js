@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 2.5.9
+ * @version 2.5.10
  */
 class UpdateRotatedSecret {
     /**
@@ -61,6 +61,9 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('auto-rotate')) {
                 obj['auto-rotate'] = ApiClient.convertToType(data['auto-rotate'], 'String');
+            }
+            if (data.hasOwnProperty('custom-payload')) {
+                obj['custom-payload'] = ApiClient.convertToType(data['custom-payload'], 'String');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -144,6 +147,11 @@ UpdateRotatedSecret.prototype['api-key'] = undefined;
  * @member {String} auto-rotate
  */
 UpdateRotatedSecret.prototype['auto-rotate'] = undefined;
+
+/**
+ * @member {String} custom-payload
+ */
+UpdateRotatedSecret.prototype['custom-payload'] = undefined;
 
 /**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)

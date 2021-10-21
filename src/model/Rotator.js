@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Rotator model module.
  * @module model/Rotator
- * @version 2.5.9
+ * @version 2.5.10
  */
 class Rotator {
     /**
@@ -56,6 +56,9 @@ class Rotator {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('rotation_interval')) {
+                obj['rotation_interval'] = ApiClient.convertToType(data['rotation_interval'], 'Number');
+            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
@@ -80,6 +83,11 @@ Rotator.prototype['last_error'] = undefined;
  * @member {String} name
  */
 Rotator.prototype['name'] = undefined;
+
+/**
+ * @member {Number} rotation_interval
+ */
+Rotator.prototype['rotation_interval'] = undefined;
 
 /**
  * @member {String} type

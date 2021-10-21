@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretDetailsInfo model module.
  * @module model/RotatedSecretDetailsInfo
- * @version 2.5.9
+ * @version 2.5.10
  */
 class RotatedSecretDetailsInfo {
     /**
@@ -63,6 +63,9 @@ class RotatedSecretDetailsInfo {
             if (data.hasOwnProperty('rotation_hour')) {
                 obj['rotation_hour'] = ApiClient.convertToType(data['rotation_hour'], 'Number');
             }
+            if (data.hasOwnProperty('rotation_interval_min')) {
+                obj['rotation_interval_min'] = ApiClient.convertToType(data['rotation_interval_min'], 'Boolean');
+            }
             if (data.hasOwnProperty('rotation_statement')) {
                 obj['rotation_statement'] = ApiClient.convertToType(data['rotation_statement'], 'String');
             }
@@ -106,6 +109,11 @@ RotatedSecretDetailsInfo.prototype['number_of_versions_to_save'] = undefined;
  * @member {Number} rotation_hour
  */
 RotatedSecretDetailsInfo.prototype['rotation_hour'] = undefined;
+
+/**
+ * @member {Boolean} rotation_interval_min
+ */
+RotatedSecretDetailsInfo.prototype['rotation_interval_min'] = undefined;
 
 /**
  * @member {String} rotation_statement

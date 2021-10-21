@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 2.5.9
+ * @version 2.5.10
  */
 class CreateRotatedSecret {
     /**
@@ -61,6 +61,18 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('auto-rotate')) {
                 obj['auto-rotate'] = ApiClient.convertToType(data['auto-rotate'], 'String');
+            }
+            if (data.hasOwnProperty('custom-payload')) {
+                obj['custom-payload'] = ApiClient.convertToType(data['custom-payload'], 'String');
+            }
+            if (data.hasOwnProperty('group-attribute')) {
+                obj['group-attribute'] = ApiClient.convertToType(data['group-attribute'], 'String');
+            }
+            if (data.hasOwnProperty('group-dn')) {
+                obj['group-dn'] = ApiClient.convertToType(data['group-dn'], 'String');
+            }
+            if (data.hasOwnProperty('group-filter')) {
+                obj['group-filter'] = ApiClient.convertToType(data['group-filter'], 'String');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -113,6 +125,12 @@ class CreateRotatedSecret {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
+            if (data.hasOwnProperty('user-attribute')) {
+                obj['user-attribute'] = ApiClient.convertToType(data['user-attribute'], 'String');
+            }
+            if (data.hasOwnProperty('user-dn')) {
+                obj['user-dn'] = ApiClient.convertToType(data['user-dn'], 'String');
+            }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
@@ -138,6 +156,29 @@ CreateRotatedSecret.prototype['api-key'] = undefined;
  * @member {String} auto-rotate
  */
 CreateRotatedSecret.prototype['auto-rotate'] = undefined;
+
+/**
+ * @member {String} custom-payload
+ */
+CreateRotatedSecret.prototype['custom-payload'] = undefined;
+
+/**
+ * Group attribute
+ * @member {String} group-attribute
+ */
+CreateRotatedSecret.prototype['group-attribute'] = undefined;
+
+/**
+ * Group DN
+ * @member {String} group-dn
+ */
+CreateRotatedSecret.prototype['group-dn'] = undefined;
+
+/**
+ * Group attribute
+ * @member {String} group-filter
+ */
+CreateRotatedSecret.prototype['group-filter'] = undefined;
 
 /**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
@@ -179,7 +220,7 @@ CreateRotatedSecret.prototype['rotated-username'] = undefined;
 CreateRotatedSecret.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (7-365)
+ * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 CreateRotatedSecret.prototype['rotation-interval'] = undefined;
@@ -235,6 +276,18 @@ CreateRotatedSecret.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateRotatedSecret.prototype['uid-token'] = undefined;
+
+/**
+ * User Attribute
+ * @member {String} user-attribute
+ */
+CreateRotatedSecret.prototype['user-attribute'] = undefined;
+
+/**
+ * User DN
+ * @member {String} user-dn
+ */
+CreateRotatedSecret.prototype['user-dn'] = undefined;
 
 /**
  * Required only when the authentication process requires a username and password

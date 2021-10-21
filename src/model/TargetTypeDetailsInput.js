@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.5.9
+ * @version 2.5.10
  */
 class TargetTypeDetailsInput {
     /**
@@ -185,15 +185,6 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('ldap_certificate')) {
                 obj['ldap_certificate'] = ApiClient.convertToType(data['ldap_certificate'], 'String');
             }
-            if (data.hasOwnProperty('ldap_group_attr')) {
-                obj['ldap_group_attr'] = ApiClient.convertToType(data['ldap_group_attr'], 'String');
-            }
-            if (data.hasOwnProperty('ldap_group_dn')) {
-                obj['ldap_group_dn'] = ApiClient.convertToType(data['ldap_group_dn'], 'String');
-            }
-            if (data.hasOwnProperty('ldap_group_filter')) {
-                obj['ldap_group_filter'] = ApiClient.convertToType(data['ldap_group_filter'], 'String');
-            }
             if (data.hasOwnProperty('ldap_private_key')) {
                 obj['ldap_private_key'] = ApiClient.convertToType(data['ldap_private_key'], 'String');
             }
@@ -202,12 +193,6 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('ldap_url')) {
                 obj['ldap_url'] = ApiClient.convertToType(data['ldap_url'], 'String');
-            }
-            if (data.hasOwnProperty('ldap_user_attr')) {
-                obj['ldap_user_attr'] = ApiClient.convertToType(data['ldap_user_attr'], 'String');
-            }
-            if (data.hasOwnProperty('ldap_user_dn')) {
-                obj['ldap_user_dn'] = ApiClient.convertToType(data['ldap_user_dn'], 'String');
             }
             if (data.hasOwnProperty('mongodb_atlas_api_private_key')) {
                 obj['mongodb_atlas_api_private_key'] = ApiClient.convertToType(data['mongodb_atlas_api_private_key'], 'String');
@@ -244,6 +229,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
+            if (data.hasOwnProperty('payload')) {
+                obj['payload'] = ApiClient.convertToType(data['payload'], 'String');
             }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
@@ -533,21 +521,6 @@ TargetTypeDetailsInput.prototype['ldap_bind_password'] = undefined;
 TargetTypeDetailsInput.prototype['ldap_certificate'] = undefined;
 
 /**
- * @member {String} ldap_group_attr
- */
-TargetTypeDetailsInput.prototype['ldap_group_attr'] = undefined;
-
-/**
- * @member {String} ldap_group_dn
- */
-TargetTypeDetailsInput.prototype['ldap_group_dn'] = undefined;
-
-/**
- * @member {String} ldap_group_filter
- */
-TargetTypeDetailsInput.prototype['ldap_group_filter'] = undefined;
-
-/**
  * @member {String} ldap_private_key
  */
 TargetTypeDetailsInput.prototype['ldap_private_key'] = undefined;
@@ -561,16 +534,6 @@ TargetTypeDetailsInput.prototype['ldap_token_expiration'] = undefined;
  * @member {String} ldap_url
  */
 TargetTypeDetailsInput.prototype['ldap_url'] = undefined;
-
-/**
- * @member {String} ldap_user_attr
- */
-TargetTypeDetailsInput.prototype['ldap_user_attr'] = undefined;
-
-/**
- * @member {String} ldap_user_dn
- */
-TargetTypeDetailsInput.prototype['ldap_user_dn'] = undefined;
 
 /**
  * @member {String} mongodb_atlas_api_private_key
@@ -634,6 +597,11 @@ TargetTypeDetailsInput.prototype['mongodb_username'] = undefined;
  * @member {String} password
  */
 TargetTypeDetailsInput.prototype['password'] = undefined;
+
+/**
+ * @member {String} payload
+ */
+TargetTypeDetailsInput.prototype['payload'] = undefined;
 
 /**
  * @member {String} port

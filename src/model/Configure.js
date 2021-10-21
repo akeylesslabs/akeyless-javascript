@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Configure model module.
  * @module model/Configure
- * @version 2.5.9
+ * @version 2.5.10
  */
 class Configure {
     /**
@@ -68,6 +68,9 @@ class Configure {
             if (data.hasOwnProperty('gcp-audience')) {
                 obj['gcp-audience'] = ApiClient.convertToType(data['gcp-audience'], 'String');
             }
+            if (data.hasOwnProperty('k8s-auth-config-name')) {
+                obj['k8s-auth-config-name'] = ApiClient.convertToType(data['k8s-auth-config-name'], 'String');
+            }
         }
         return obj;
     }
@@ -88,7 +91,7 @@ Configure.prototype['access-id'] = undefined;
 Configure.prototype['access-key'] = undefined;
 
 /**
- * Access Type (access_key/password/azure_ad/saml/oidc/ldap/aws_iam)
+ * Access Type (access_key/password/azure_ad/saml/oidc/ldap/aws_iam/k8s)
  * @member {String} access-type
  * @default 'access_key'
  */
@@ -117,6 +120,12 @@ Configure.prototype['azure_ad_object_id'] = undefined;
  * @member {String} gcp-audience
  */
 Configure.prototype['gcp-audience'] = undefined;
+
+/**
+ * The K8S Auth config name (relevant only for access-type=k8s)
+ * @member {String} k8s-auth-config-name
+ */
+Configure.prototype['k8s-auth-config-name'] = undefined;
 
 
 

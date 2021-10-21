@@ -17,7 +17,7 @@ import OIDCCustomClaim from './OIDCCustomClaim';
 /**
  * The OIDCAccessRules model module.
  * @module model/OIDCAccessRules
- * @version 2.5.9
+ * @version 2.5.10
  */
 class OIDCAccessRules {
     /**
@@ -49,6 +49,9 @@ class OIDCAccessRules {
         if (data) {
             obj = obj || new OIDCAccessRules();
 
+            if (data.hasOwnProperty('allowed_redirect_URIs')) {
+                obj['allowed_redirect_URIs'] = ApiClient.convertToType(data['allowed_redirect_URIs'], ['String']);
+            }
             if (data.hasOwnProperty('bound_claims')) {
                 obj['bound_claims'] = ApiClient.convertToType(data['bound_claims'], [OIDCCustomClaim]);
             }
@@ -70,6 +73,12 @@ class OIDCAccessRules {
 
 
 }
+
+/**
+ * Allowed redirect URIs after the authentication
+ * @member {Array.<String>} allowed_redirect_URIs
+ */
+OIDCAccessRules.prototype['allowed_redirect_URIs'] = undefined;
 
 /**
  * The claims that login is restricted to.

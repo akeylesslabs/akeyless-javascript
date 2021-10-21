@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 2.5.9
+ * @version 2.5.10
  */
 class Auth {
     /**
@@ -71,6 +71,12 @@ class Auth {
             if (data.hasOwnProperty('jwt')) {
                 obj['jwt'] = ApiClient.convertToType(data['jwt'], 'String');
             }
+            if (data.hasOwnProperty('k8s-auth-config-name')) {
+                obj['k8s-auth-config-name'] = ApiClient.convertToType(data['k8s-auth-config-name'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-service-account-token')) {
+                obj['k8s-service-account-token'] = ApiClient.convertToType(data['k8s-service-account-token'], 'String');
+            }
             if (data.hasOwnProperty('ldap_password')) {
                 obj['ldap_password'] = ApiClient.convertToType(data['ldap_password'], 'String');
             }
@@ -100,7 +106,7 @@ Auth.prototype['access-id'] = undefined;
 Auth.prototype['access-key'] = undefined;
 
 /**
- * Access Type (access_key/password/saml/ldap/azure_ad/aws_iam/universal_identity/jwt/gcp)
+ * Access Type (access_key/password/saml/ldap/k8s/azure_ad/aws_iam/universal_identity/jwt/gcp)
  * @member {String} access-type
  * @default 'access_key'
  */
@@ -135,6 +141,18 @@ Auth.prototype['gcp-audience'] = undefined;
  * @member {String} jwt
  */
 Auth.prototype['jwt'] = undefined;
+
+/**
+ * The K8S Auth config name (relevant only for access-type=k8s)
+ * @member {String} k8s-auth-config-name
+ */
+Auth.prototype['k8s-auth-config-name'] = undefined;
+
+/**
+ * The K8S service account token. (relevant only for access-type=k8s)
+ * @member {String} k8s-service-account-token
+ */
+Auth.prototype['k8s-service-account-token'] = undefined;
 
 /**
  * LDAP password (relevant only for access-type=ldap)

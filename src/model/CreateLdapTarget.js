@@ -16,20 +16,21 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLdapTarget model module.
  * @module model/CreateLdapTarget
- * @version 2.5.9
+ * @version 2.5.10
  */
 class CreateLdapTarget {
     /**
      * Constructs a new <code>CreateLdapTarget</code>.
      * @alias module:model/CreateLdapTarget
      * @param accessId {String} Access ID
+     * @param bindDn {String} Bind DN
+     * @param bindDnPassword {String} Bind DN Password
      * @param ldapUrl {String} LDAP Server URL
      * @param name {String} Target name
-     * @param userDn {String} User DN
      */
-    constructor(accessId, ldapUrl, name, userDn) { 
+    constructor(accessId, bindDn, bindDnPassword, ldapUrl, name) { 
         
-        CreateLdapTarget.initialize(this, accessId, ldapUrl, name, userDn);
+        CreateLdapTarget.initialize(this, accessId, bindDn, bindDnPassword, ldapUrl, name);
     }
 
     /**
@@ -37,11 +38,12 @@ class CreateLdapTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, accessId, ldapUrl, name, userDn) { 
+    static initialize(obj, accessId, bindDn, bindDnPassword, ldapUrl, name) { 
         obj['access-id'] = accessId;
+        obj['bind-dn'] = bindDn;
+        obj['bind-dn-password'] = bindDnPassword;
         obj['ldap-url'] = ldapUrl;
         obj['name'] = name;
-        obj['user-dn'] = userDn;
     }
 
     /**
@@ -70,15 +72,6 @@ class CreateLdapTarget {
             if (data.hasOwnProperty('enable-anonym-search')) {
                 obj['enable-anonym-search'] = ApiClient.convertToType(data['enable-anonym-search'], 'Boolean');
             }
-            if (data.hasOwnProperty('group-attribute')) {
-                obj['group-attribute'] = ApiClient.convertToType(data['group-attribute'], 'String');
-            }
-            if (data.hasOwnProperty('group-dn')) {
-                obj['group-dn'] = ApiClient.convertToType(data['group-dn'], 'String');
-            }
-            if (data.hasOwnProperty('group-filter')) {
-                obj['group-filter'] = ApiClient.convertToType(data['group-filter'], 'String');
-            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -105,12 +98,6 @@ class CreateLdapTarget {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('user-attribute')) {
-                obj['user-attribute'] = ApiClient.convertToType(data['user-attribute'], 'String');
-            }
-            if (data.hasOwnProperty('user-dn')) {
-                obj['user-dn'] = ApiClient.convertToType(data['user-dn'], 'String');
             }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
@@ -151,24 +138,6 @@ CreateLdapTarget.prototype['comment'] = undefined;
  * @member {Boolean} enable-anonym-search
  */
 CreateLdapTarget.prototype['enable-anonym-search'] = undefined;
-
-/**
- * Group attribute
- * @member {String} group-attribute
- */
-CreateLdapTarget.prototype['group-attribute'] = undefined;
-
-/**
- * Group DN
- * @member {String} group-dn
- */
-CreateLdapTarget.prototype['group-dn'] = undefined;
-
-/**
- * Group attribute
- * @member {String} group-filter
- */
-CreateLdapTarget.prototype['group-filter'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
@@ -223,18 +192,6 @@ CreateLdapTarget.prototype['token-expiration'] = undefined;
  * @member {String} uid-token
  */
 CreateLdapTarget.prototype['uid-token'] = undefined;
-
-/**
- * User Attribute
- * @member {String} user-attribute
- */
-CreateLdapTarget.prototype['user-attribute'] = undefined;
-
-/**
- * User DN
- * @member {String} user-dn
- */
-CreateLdapTarget.prototype['user-dn'] = undefined;
 
 /**
  * Required only when the authentication process requires a username and password

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodSAML model module.
  * @module model/CreateAuthMethodSAML
- * @version 2.5.9
+ * @version 2.5.10
  */
 class CreateAuthMethodSAML {
     /**
@@ -54,6 +54,9 @@ class CreateAuthMethodSAML {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('allowed-redirect-uri')) {
+                obj['allowed-redirect-uri'] = ApiClient.convertToType(data['allowed-redirect-uri'], ['String']);
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -95,6 +98,12 @@ class CreateAuthMethodSAML {
  * @default 0
  */
 CreateAuthMethodSAML.prototype['access-expires'] = 0;
+
+/**
+ * Allowed redirect URIs after the authentication
+ * @member {Array.<String>} allowed-redirect-uri
+ */
+CreateAuthMethodSAML.prototype['allowed-redirect-uri'] = undefined;
 
 /**
  * A CIDR whitelist of the IPs that the access is restricted to

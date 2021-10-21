@@ -17,7 +17,7 @@ import SAMLAttribute from './SAMLAttribute';
 /**
  * The SAMLAccessRules model module.
  * @module model/SAMLAccessRules
- * @version 2.5.9
+ * @version 2.5.10
  */
 class SAMLAccessRules {
     /**
@@ -48,6 +48,9 @@ class SAMLAccessRules {
         if (data) {
             obj = obj || new SAMLAccessRules();
 
+            if (data.hasOwnProperty('allowed_redirect_URIs')) {
+                obj['allowed_redirect_URIs'] = ApiClient.convertToType(data['allowed_redirect_URIs'], ['String']);
+            }
             if (data.hasOwnProperty('bound_attributes')) {
                 obj['bound_attributes'] = ApiClient.convertToType(data['bound_attributes'], [SAMLAttribute]);
             }
@@ -66,6 +69,12 @@ class SAMLAccessRules {
 
 
 }
+
+/**
+ * Allowed redirect URIs after the authentication
+ * @member {Array.<String>} allowed_redirect_URIs
+ */
+SAMLAccessRules.prototype['allowed_redirect_URIs'] = undefined;
 
 /**
  * The attributes that login is restricted to.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ItemVersion model module.
  * @module model/ItemVersion
- * @version 2.5.9
+ * @version 2.5.10
  */
 class ItemVersion {
     /**
@@ -50,6 +50,9 @@ class ItemVersion {
             if (data.hasOwnProperty('creation_date')) {
                 obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
             }
+            if (data.hasOwnProperty('customer_fragment_id')) {
+                obj['customer_fragment_id'] = ApiClient.convertToType(data['customer_fragment_id'], 'String');
+            }
             if (data.hasOwnProperty('deletion_date')) {
                 obj['deletion_date'] = ApiClient.convertToType(data['deletion_date'], 'Date');
             }
@@ -76,6 +79,11 @@ class ItemVersion {
  * @member {Date} creation_date
  */
 ItemVersion.prototype['creation_date'] = undefined;
+
+/**
+ * @member {String} customer_fragment_id
+ */
+ItemVersion.prototype['customer_fragment_id'] = undefined;
 
 /**
  * @member {Date} deletion_date

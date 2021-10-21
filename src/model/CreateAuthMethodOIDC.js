@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOIDC model module.
  * @module model/CreateAuthMethodOIDC
- * @version 2.5.9
+ * @version 2.5.10
  */
 class CreateAuthMethodOIDC {
     /**
@@ -54,6 +54,9 @@ class CreateAuthMethodOIDC {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('allowed-redirect-uri')) {
+                obj['allowed-redirect-uri'] = ApiClient.convertToType(data['allowed-redirect-uri'], ['String']);
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -101,6 +104,12 @@ class CreateAuthMethodOIDC {
  * @default 0
  */
 CreateAuthMethodOIDC.prototype['access-expires'] = 0;
+
+/**
+ * Allowed redirect URIs after the authentication
+ * @member {Array.<String>} allowed-redirect-uri
+ */
+CreateAuthMethodOIDC.prototype['allowed-redirect-uri'] = undefined;
 
 /**
  * A CIDR whitelist of the IPs that the access is restricted to

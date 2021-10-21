@@ -17,6 +17,7 @@ import CFConfigPart from './CFConfigPart';
 import CacheConfigPart from './CacheConfigPart';
 import DefaultConfigPart from './DefaultConfigPart';
 import GeneralConfigPart from './GeneralConfigPart';
+import K8SAuthsConfigPart from './K8SAuthsConfigPart';
 import KMIPConfigPart from './KMIPConfigPart';
 import LdapConfigPart from './LdapConfigPart';
 import LeadershipConfigPart from './LeadershipConfigPart';
@@ -29,7 +30,7 @@ import UIdentityConfigPart from './UIdentityConfigPart';
 /**
  * The AkeylessGatewayConfig model module.
  * @module model/AkeylessGatewayConfig
- * @version 2.5.9
+ * @version 2.5.10
  */
 class AkeylessGatewayConfig {
     /**
@@ -74,6 +75,9 @@ class AkeylessGatewayConfig {
             }
             if (data.hasOwnProperty('general')) {
                 obj['general'] = GeneralConfigPart.constructFromObject(data['general']);
+            }
+            if (data.hasOwnProperty('k8s_auths')) {
+                obj['k8s_auths'] = K8SAuthsConfigPart.constructFromObject(data['k8s_auths']);
             }
             if (data.hasOwnProperty('kmip_clients')) {
                 obj['kmip_clients'] = KMIPConfigPart.constructFromObject(data['kmip_clients']);
@@ -136,6 +140,11 @@ AkeylessGatewayConfig.prototype['config_protection_key_name'] = undefined;
  * @member {module:model/GeneralConfigPart} general
  */
 AkeylessGatewayConfig.prototype['general'] = undefined;
+
+/**
+ * @member {module:model/K8SAuthsConfigPart} k8s_auths
+ */
+AkeylessGatewayConfig.prototype['k8s_auths'] = undefined;
 
 /**
  * @member {module:model/KMIPConfigPart} kmip_clients

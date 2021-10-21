@@ -18,6 +18,7 @@ import AzureADAccessRules from './AzureADAccessRules';
 import EmailPassAccessRules from './EmailPassAccessRules';
 import GCPAccessRules from './GCPAccessRules';
 import HuaweiAccessRules from './HuaweiAccessRules';
+import KubernetesAccessRules from './KubernetesAccessRules';
 import LDAPAccessRules from './LDAPAccessRules';
 import OAuth2AccessRules from './OAuth2AccessRules';
 import OIDCAccessRules from './OIDCAccessRules';
@@ -27,7 +28,7 @@ import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 2.5.9
+ * @version 2.5.10
  */
 class AuthMethodAccessInfo {
     /**
@@ -87,6 +88,9 @@ class AuthMethodAccessInfo {
             }
             if (data.hasOwnProperty('huawei_access_rules')) {
                 obj['huawei_access_rules'] = HuaweiAccessRules.constructFromObject(data['huawei_access_rules']);
+            }
+            if (data.hasOwnProperty('k8s_access_rules')) {
+                obj['k8s_access_rules'] = KubernetesAccessRules.constructFromObject(data['k8s_access_rules']);
             }
             if (data.hasOwnProperty('ldap_access_rules')) {
                 obj['ldap_access_rules'] = LDAPAccessRules.constructFromObject(data['ldap_access_rules']);
@@ -164,6 +168,11 @@ AuthMethodAccessInfo.prototype['gcp_access_rules'] = undefined;
  * @member {module:model/HuaweiAccessRules} huawei_access_rules
  */
 AuthMethodAccessInfo.prototype['huawei_access_rules'] = undefined;
+
+/**
+ * @member {module:model/KubernetesAccessRules} k8s_access_rules
+ */
+AuthMethodAccessInfo.prototype['k8s_access_rules'] = undefined;
 
 /**
  * @member {module:model/LDAPAccessRules} ldap_access_rules

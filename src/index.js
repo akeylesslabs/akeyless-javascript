@@ -39,6 +39,8 @@ import ClassicKeyDetailsInfo from './model/ClassicKeyDetailsInfo';
 import ClassicKeyStatusInfo from './model/ClassicKeyStatusInfo';
 import ClassicKeyTargetInfo from './model/ClassicKeyTargetInfo';
 import ClientData from './model/ClientData';
+import ConfigChange from './model/ConfigChange';
+import ConfigHash from './model/ConfigHash';
 import Configure from './model/Configure';
 import ConfigureOutput from './model/ConfigureOutput';
 import Connect from './model/Connect';
@@ -55,6 +57,8 @@ import CreateAuthMethodGCP from './model/CreateAuthMethodGCP';
 import CreateAuthMethodGCPOutput from './model/CreateAuthMethodGCPOutput';
 import CreateAuthMethodHuawei from './model/CreateAuthMethodHuawei';
 import CreateAuthMethodHuaweiOutput from './model/CreateAuthMethodHuaweiOutput';
+import CreateAuthMethodK8S from './model/CreateAuthMethodK8S';
+import CreateAuthMethodK8SOutput from './model/CreateAuthMethodK8SOutput';
 import CreateAuthMethodLDAP from './model/CreateAuthMethodLDAP';
 import CreateAuthMethodLDAPOutput from './model/CreateAuthMethodLDAPOutput';
 import CreateAuthMethodOAuth2 from './model/CreateAuthMethodOAuth2';
@@ -149,6 +153,8 @@ import EncryptWithClassicKeyOutput from './model/EncryptWithClassicKeyOutput';
 import ExternalKMSKeyId from './model/ExternalKMSKeyId';
 import GCPAccessRules from './model/GCPAccessRules';
 import GatewayAddAllowedManagementAccess from './model/GatewayAddAllowedManagementAccess';
+import GatewayCreateK8SAuthConfig from './model/GatewayCreateK8SAuthConfig';
+import GatewayCreateK8SAuthConfigOutput from './model/GatewayCreateK8SAuthConfigOutput';
 import GatewayCreateProducerArtifactory from './model/GatewayCreateProducerArtifactory';
 import GatewayCreateProducerArtifactoryOutput from './model/GatewayCreateProducerArtifactoryOutput';
 import GatewayCreateProducerAws from './model/GatewayCreateProducerAws';
@@ -169,6 +175,8 @@ import GatewayCreateProducerGcp from './model/GatewayCreateProducerGcp';
 import GatewayCreateProducerGcpOutput from './model/GatewayCreateProducerGcpOutput';
 import GatewayCreateProducerGke from './model/GatewayCreateProducerGke';
 import GatewayCreateProducerGkeOutput from './model/GatewayCreateProducerGkeOutput';
+import GatewayCreateProducerLdap from './model/GatewayCreateProducerLdap';
+import GatewayCreateProducerLdapOutput from './model/GatewayCreateProducerLdapOutput';
 import GatewayCreateProducerMSSQL from './model/GatewayCreateProducerMSSQL';
 import GatewayCreateProducerMSSQLOutput from './model/GatewayCreateProducerMSSQLOutput';
 import GatewayCreateProducerMongo from './model/GatewayCreateProducerMongo';
@@ -190,9 +198,13 @@ import GatewayCreateProducerRedshiftOutput from './model/GatewayCreateProducerRe
 import GatewayCreateProducerSnowflake from './model/GatewayCreateProducerSnowflake';
 import GatewayCreateProducerSnowflakeOutput from './model/GatewayCreateProducerSnowflakeOutput';
 import GatewayDeleteAllowedManagementAccess from './model/GatewayDeleteAllowedManagementAccess';
+import GatewayDeleteK8SAuthConfig from './model/GatewayDeleteK8SAuthConfig';
+import GatewayDeleteK8SAuthConfigOutput from './model/GatewayDeleteK8SAuthConfigOutput';
 import GatewayDeleteProducer from './model/GatewayDeleteProducer';
 import GatewayDeleteProducerOutput from './model/GatewayDeleteProducerOutput';
 import GatewayGetConfig from './model/GatewayGetConfig';
+import GatewayGetK8SAuthConfig from './model/GatewayGetK8SAuthConfig';
+import GatewayGetK8SAuthConfigOutput from './model/GatewayGetK8SAuthConfigOutput';
 import GatewayGetProducer from './model/GatewayGetProducer';
 import GatewayGetTmpUsers from './model/GatewayGetTmpUsers';
 import GatewayListAllowedManagementAccess from './model/GatewayListAllowedManagementAccess';
@@ -234,6 +246,9 @@ import ItemGeneralInfo from './model/ItemGeneralInfo';
 import ItemTargetAssociation from './model/ItemTargetAssociation';
 import ItemVersion from './model/ItemVersion';
 import JSONError from './model/JSONError';
+import K8SAuth from './model/K8SAuth';
+import K8SAuthsConfigLastChange from './model/K8SAuthsConfigLastChange';
+import K8SAuthsConfigPart from './model/K8SAuthsConfigPart';
 import K8SMigration from './model/K8SMigration';
 import K8SPayload from './model/K8SPayload';
 import KMIPClient from './model/KMIPClient';
@@ -258,7 +273,10 @@ import KmipRenewServerCertificateOutput from './model/KmipRenewServerCertificate
 import KmipServerSetup from './model/KmipServerSetup';
 import KmipSetServerState from './model/KmipSetServerState';
 import KmipSetServerStateOutput from './model/KmipSetServerStateOutput';
+import KubernetesAccessRules from './model/KubernetesAccessRules';
 import LDAPAccessRules from './model/LDAPAccessRules';
+import LastConfigChange from './model/LastConfigChange';
+import LastStatusInfo from './model/LastStatusInfo';
 import LdapConfigPart from './model/LdapConfigPart';
 import LeadershipConfigPart from './model/LeadershipConfigPart';
 import ListAuthMethods from './model/ListAuthMethods';
@@ -273,6 +291,8 @@ import LogForwardingConfigPart from './model/LogForwardingConfigPart';
 import LogstashLogForwardingConfig from './model/LogstashLogForwardingConfig';
 import LogzIoLogForwardingConfig from './model/LogzIoLogForwardingConfig';
 import MigrationGeneral from './model/MigrationGeneral';
+import MigrationStatus from './model/MigrationStatus';
+import MigrationsConfigLastChange from './model/MigrationsConfigLastChange';
 import MigrationsConfigPart from './model/MigrationsConfigPart';
 import MoveObjects from './model/MoveObjects';
 import OAuth2AccessRules from './model/OAuth2AccessRules';
@@ -286,6 +306,7 @@ import ProducersConfigPart from './model/ProducersConfigPart';
 import RawCreds from './model/RawCreds';
 import RefreshKey from './model/RefreshKey';
 import RefreshKeyOutput from './model/RefreshKeyOutput';
+import RequiredActivity from './model/RequiredActivity';
 import ReverseRBAC from './model/ReverseRBAC';
 import ReverseRBACClient from './model/ReverseRBACClient';
 import ReverseRBACOutput from './model/ReverseRBACOutput';
@@ -411,7 +432,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.5.9
+* @version 2.5.10
 */
 export {
     /**
@@ -577,6 +598,18 @@ export {
     ClientData,
 
     /**
+     * The ConfigChange model constructor.
+     * @property {module:model/ConfigChange}
+     */
+    ConfigChange,
+
+    /**
+     * The ConfigHash model constructor.
+     * @property {module:model/ConfigHash}
+     */
+    ConfigHash,
+
+    /**
      * The Configure model constructor.
      * @property {module:model/Configure}
      */
@@ -671,6 +704,18 @@ export {
      * @property {module:model/CreateAuthMethodHuaweiOutput}
      */
     CreateAuthMethodHuaweiOutput,
+
+    /**
+     * The CreateAuthMethodK8S model constructor.
+     * @property {module:model/CreateAuthMethodK8S}
+     */
+    CreateAuthMethodK8S,
+
+    /**
+     * The CreateAuthMethodK8SOutput model constructor.
+     * @property {module:model/CreateAuthMethodK8SOutput}
+     */
+    CreateAuthMethodK8SOutput,
 
     /**
      * The CreateAuthMethodLDAP model constructor.
@@ -1237,6 +1282,18 @@ export {
     GatewayAddAllowedManagementAccess,
 
     /**
+     * The GatewayCreateK8SAuthConfig model constructor.
+     * @property {module:model/GatewayCreateK8SAuthConfig}
+     */
+    GatewayCreateK8SAuthConfig,
+
+    /**
+     * The GatewayCreateK8SAuthConfigOutput model constructor.
+     * @property {module:model/GatewayCreateK8SAuthConfigOutput}
+     */
+    GatewayCreateK8SAuthConfigOutput,
+
+    /**
      * The GatewayCreateProducerArtifactory model constructor.
      * @property {module:model/GatewayCreateProducerArtifactory}
      */
@@ -1355,6 +1412,18 @@ export {
      * @property {module:model/GatewayCreateProducerGkeOutput}
      */
     GatewayCreateProducerGkeOutput,
+
+    /**
+     * The GatewayCreateProducerLdap model constructor.
+     * @property {module:model/GatewayCreateProducerLdap}
+     */
+    GatewayCreateProducerLdap,
+
+    /**
+     * The GatewayCreateProducerLdapOutput model constructor.
+     * @property {module:model/GatewayCreateProducerLdapOutput}
+     */
+    GatewayCreateProducerLdapOutput,
 
     /**
      * The GatewayCreateProducerMSSQL model constructor.
@@ -1483,6 +1552,18 @@ export {
     GatewayDeleteAllowedManagementAccess,
 
     /**
+     * The GatewayDeleteK8SAuthConfig model constructor.
+     * @property {module:model/GatewayDeleteK8SAuthConfig}
+     */
+    GatewayDeleteK8SAuthConfig,
+
+    /**
+     * The GatewayDeleteK8SAuthConfigOutput model constructor.
+     * @property {module:model/GatewayDeleteK8SAuthConfigOutput}
+     */
+    GatewayDeleteK8SAuthConfigOutput,
+
+    /**
      * The GatewayDeleteProducer model constructor.
      * @property {module:model/GatewayDeleteProducer}
      */
@@ -1499,6 +1580,18 @@ export {
      * @property {module:model/GatewayGetConfig}
      */
     GatewayGetConfig,
+
+    /**
+     * The GatewayGetK8SAuthConfig model constructor.
+     * @property {module:model/GatewayGetK8SAuthConfig}
+     */
+    GatewayGetK8SAuthConfig,
+
+    /**
+     * The GatewayGetK8SAuthConfigOutput model constructor.
+     * @property {module:model/GatewayGetK8SAuthConfigOutput}
+     */
+    GatewayGetK8SAuthConfigOutput,
 
     /**
      * The GatewayGetProducer model constructor.
@@ -1747,6 +1840,24 @@ export {
     JSONError,
 
     /**
+     * The K8SAuth model constructor.
+     * @property {module:model/K8SAuth}
+     */
+    K8SAuth,
+
+    /**
+     * The K8SAuthsConfigLastChange model constructor.
+     * @property {module:model/K8SAuthsConfigLastChange}
+     */
+    K8SAuthsConfigLastChange,
+
+    /**
+     * The K8SAuthsConfigPart model constructor.
+     * @property {module:model/K8SAuthsConfigPart}
+     */
+    K8SAuthsConfigPart,
+
+    /**
      * The K8SMigration model constructor.
      * @property {module:model/K8SMigration}
      */
@@ -1891,10 +2002,28 @@ export {
     KmipSetServerStateOutput,
 
     /**
+     * The KubernetesAccessRules model constructor.
+     * @property {module:model/KubernetesAccessRules}
+     */
+    KubernetesAccessRules,
+
+    /**
      * The LDAPAccessRules model constructor.
      * @property {module:model/LDAPAccessRules}
      */
     LDAPAccessRules,
+
+    /**
+     * The LastConfigChange model constructor.
+     * @property {module:model/LastConfigChange}
+     */
+    LastConfigChange,
+
+    /**
+     * The LastStatusInfo model constructor.
+     * @property {module:model/LastStatusInfo}
+     */
+    LastStatusInfo,
 
     /**
      * The LdapConfigPart model constructor.
@@ -1981,6 +2110,18 @@ export {
     MigrationGeneral,
 
     /**
+     * The MigrationStatus model constructor.
+     * @property {module:model/MigrationStatus}
+     */
+    MigrationStatus,
+
+    /**
+     * The MigrationsConfigLastChange model constructor.
+     * @property {module:model/MigrationsConfigLastChange}
+     */
+    MigrationsConfigLastChange,
+
+    /**
      * The MigrationsConfigPart model constructor.
      * @property {module:model/MigrationsConfigPart}
      */
@@ -2057,6 +2198,12 @@ export {
      * @property {module:model/RefreshKeyOutput}
      */
     RefreshKeyOutput,
+
+    /**
+     * The RequiredActivity model constructor.
+     * @property {module:model/RequiredActivity}
+     */
+    RequiredActivity,
 
     /**
      * The ReverseRBAC model constructor.

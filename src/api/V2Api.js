@@ -112,6 +112,8 @@ import EncryptOutput from '../model/EncryptOutput';
 import EncryptPKCS1 from '../model/EncryptPKCS1';
 import EncryptPKCS1Output from '../model/EncryptPKCS1Output';
 import EncryptWithClassicKey from '../model/EncryptWithClassicKey';
+import GatewayCreateK8SAuthConfig from '../model/GatewayCreateK8SAuthConfig';
+import GatewayCreateK8SAuthConfigOutput from '../model/GatewayCreateK8SAuthConfigOutput';
 import GatewayCreateProducerArtifactory from '../model/GatewayCreateProducerArtifactory';
 import GatewayCreateProducerArtifactoryOutput from '../model/GatewayCreateProducerArtifactoryOutput';
 import GatewayCreateProducerAws from '../model/GatewayCreateProducerAws';
@@ -130,6 +132,8 @@ import GatewayCreateProducerGcp from '../model/GatewayCreateProducerGcp';
 import GatewayCreateProducerGcpOutput from '../model/GatewayCreateProducerGcpOutput';
 import GatewayCreateProducerGke from '../model/GatewayCreateProducerGke';
 import GatewayCreateProducerGkeOutput from '../model/GatewayCreateProducerGkeOutput';
+import GatewayCreateProducerLdap from '../model/GatewayCreateProducerLdap';
+import GatewayCreateProducerLdapOutput from '../model/GatewayCreateProducerLdapOutput';
 import GatewayCreateProducerMSSQL from '../model/GatewayCreateProducerMSSQL';
 import GatewayCreateProducerMSSQLOutput from '../model/GatewayCreateProducerMSSQLOutput';
 import GatewayCreateProducerMongo from '../model/GatewayCreateProducerMongo';
@@ -151,9 +155,13 @@ import GatewayCreateProducerRedshiftOutput from '../model/GatewayCreateProducerR
 import GatewayCreateProducerSnowflake from '../model/GatewayCreateProducerSnowflake';
 import GatewayCreateProducerSnowflakeOutput from '../model/GatewayCreateProducerSnowflakeOutput';
 import GatewayDeleteAllowedManagementAccess from '../model/GatewayDeleteAllowedManagementAccess';
+import GatewayDeleteK8SAuthConfig from '../model/GatewayDeleteK8SAuthConfig';
+import GatewayDeleteK8SAuthConfigOutput from '../model/GatewayDeleteK8SAuthConfigOutput';
 import GatewayDeleteProducer from '../model/GatewayDeleteProducer';
 import GatewayDeleteProducerOutput from '../model/GatewayDeleteProducerOutput';
 import GatewayGetConfig from '../model/GatewayGetConfig';
+import GatewayGetK8SAuthConfig from '../model/GatewayGetK8SAuthConfig';
+import GatewayGetK8SAuthConfigOutput from '../model/GatewayGetK8SAuthConfigOutput';
 import GatewayGetProducer from '../model/GatewayGetProducer';
 import GatewayGetTmpUsers from '../model/GatewayGetTmpUsers';
 import GatewayListAllowedManagementAccess from '../model/GatewayListAllowedManagementAccess';
@@ -290,7 +298,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.5.9
+* @version 2.5.10
 */
 export default class V2Api {
 
@@ -2624,6 +2632,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayCreateK8SAuthConfig} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateK8SAuthConfigOutput} and HTTP response
+     */
+    gatewayCreateK8SAuthConfigWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateK8SAuthConfig");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayCreateK8SAuthConfigOutput;
+      return this.apiClient.callApi(
+        '/gateway-create-k8s-auth-config', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayCreateK8SAuthConfig} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateK8SAuthConfigOutput}
+     */
+    gatewayCreateK8SAuthConfig(body) {
+      return this.gatewayCreateK8SAuthConfigWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayCreateProducerArtifactory} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerArtifactoryOutput} and HTTP response
      */
@@ -3003,6 +3054,49 @@ export default class V2Api {
      */
     gatewayCreateProducerGke(body) {
       return this.gatewayCreateProducerGkeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayCreateProducerLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerLdapOutput} and HTTP response
+     */
+    gatewayCreateProducerLdapWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateProducerLdap");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayCreateProducerLdapOutput;
+      return this.apiClient.callApi(
+        '/gateway-create-producer-ldap', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayCreateProducerLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerLdapOutput}
+     */
+    gatewayCreateProducerLdap(body) {
+      return this.gatewayCreateProducerLdapWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3483,6 +3577,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayDeleteK8SAuthConfig} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayDeleteK8SAuthConfigOutput} and HTTP response
+     */
+    gatewayDeleteK8SAuthConfigWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayDeleteK8SAuthConfig");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayDeleteK8SAuthConfigOutput;
+      return this.apiClient.callApi(
+        '/gateway-delete-k8s-auth-config', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayDeleteK8SAuthConfig} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayDeleteK8SAuthConfigOutput}
+     */
+    gatewayDeleteK8SAuthConfig(body) {
+      return this.gatewayDeleteK8SAuthConfigWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayDeleteProducer} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayDeleteProducerOutput} and HTTP response
      */
@@ -3562,6 +3699,49 @@ export default class V2Api {
      */
     gatewayGetConfig(body) {
       return this.gatewayGetConfigWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayGetK8SAuthConfig} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayGetK8SAuthConfigOutput} and HTTP response
+     */
+    gatewayGetK8SAuthConfigWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayGetK8SAuthConfig");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayGetK8SAuthConfigOutput;
+      return this.apiClient.callApi(
+        '/gateway-get-k8s-auth-config', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayGetK8SAuthConfig} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayGetK8SAuthConfigOutput}
+     */
+    gatewayGetK8SAuthConfig(body) {
+      return this.gatewayGetK8SAuthConfigWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4209,7 +4389,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetRotatedSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: Object}>} and HTTP response
      */
     getRotatedSecretValueWithHttpInfo(body) {
       let postBody = body;
@@ -4230,7 +4410,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = {'String': 'String'};
+      let returnType = {'String': Object};
       return this.apiClient.callApi(
         '/get-rotated-secret-value', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -4240,7 +4420,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetRotatedSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: Object}>}
      */
     getRotatedSecretValue(body) {
       return this.getRotatedSecretValueWithHttpInfo(body)

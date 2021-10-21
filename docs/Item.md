@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **certificateIssueDetails** | [**CertificateIssueInfo**](CertificateIssueInfo.md) |  | [optional] 
 **certificates** | **String** |  | [optional] 
 **clientPermissions** | **[String]** |  | [optional] 
+**customerFragmentId** | **String** |  | [optional] 
 **deletionDate** | **Date** |  | [optional] 
 **displayId** | **String** |  | [optional] 
 **isEnabled** | **Boolean** |  | [optional] 

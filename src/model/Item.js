@@ -20,7 +20,7 @@ import ItemVersion from './ItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 2.5.9
+ * @version 2.5.10
  */
 class Item {
     /**
@@ -65,6 +65,9 @@ class Item {
             }
             if (data.hasOwnProperty('client_permissions')) {
                 obj['client_permissions'] = ApiClient.convertToType(data['client_permissions'], ['String']);
+            }
+            if (data.hasOwnProperty('customer_fragment_id')) {
+                obj['customer_fragment_id'] = ApiClient.convertToType(data['customer_fragment_id'], 'String');
             }
             if (data.hasOwnProperty('deletion_date')) {
                 obj['deletion_date'] = ApiClient.convertToType(data['deletion_date'], 'Date');
@@ -154,6 +157,11 @@ Item.prototype['certificates'] = undefined;
  * @member {Array.<String>} client_permissions
  */
 Item.prototype['client_permissions'] = undefined;
+
+/**
+ * @member {String} customer_fragment_id
+ */
+Item.prototype['customer_fragment_id'] = undefined;
 
 /**
  * @member {Date} deletion_date
