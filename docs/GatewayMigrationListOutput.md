@@ -1,0 +1,9 @@
+# akeyless.GatewayMigrationListOutput
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**body** | [**MigrationsConfigPart**](MigrationsConfigPart.md) |  | [optional] 
+
+

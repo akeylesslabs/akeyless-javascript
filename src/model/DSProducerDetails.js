@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.5.10
+ * @version 2.5.11
  */
 class DSProducerDetails {
     /**
@@ -225,6 +225,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('enable_admin_rotation')) {
                 obj['enable_admin_rotation'] = ApiClient.convertToType(data['enable_admin_rotation'], 'Boolean');
+            }
+            if (data.hasOwnProperty('externally_provided_user')) {
+                obj['externally_provided_user'] = ApiClient.convertToType(data['externally_provided_user'], 'String');
             }
             if (data.hasOwnProperty('failure_message')) {
                 obj['failure_message'] = ApiClient.convertToType(data['failure_message'], 'String');
@@ -796,6 +799,11 @@ DSProducerDetails.prototype['eks_secret_access_key'] = undefined;
  * @member {Boolean} enable_admin_rotation
  */
 DSProducerDetails.prototype['enable_admin_rotation'] = undefined;
+
+/**
+ * @member {String} externally_provided_user
+ */
+DSProducerDetails.prototype['externally_provided_user'] = undefined;
 
 /**
  * @member {String} failure_message

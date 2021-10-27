@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **secureAccessEnable** | **String** |  | [optional] 
 **secureAccessHost** | **[String]** |  | [optional] 
 **secureAccessRdpDomain** | **String** |  | [optional] 
+**secureAccessRdpUser** | **String** |  | [optional] 
 **targetName** | **String** | Target name | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 

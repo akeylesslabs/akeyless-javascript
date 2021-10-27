@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecureRemoteAccess model module.
  * @module model/SecureRemoteAccess
- * @version 2.5.10
+ * @version 2.5.11
  */
 class SecureRemoteAccess {
     /**
@@ -52,6 +52,9 @@ class SecureRemoteAccess {
             }
             if (data.hasOwnProperty('allow_port_forwarding')) {
                 obj['allow_port_forwarding'] = ApiClient.convertToType(data['allow_port_forwarding'], 'Boolean');
+            }
+            if (data.hasOwnProperty('allow_providing_external_username')) {
+                obj['allow_providing_external_username'] = ApiClient.convertToType(data['allow_providing_external_username'], 'Boolean');
             }
             if (data.hasOwnProperty('bastion_api')) {
                 obj['bastion_api'] = ApiClient.convertToType(data['bastion_api'], 'String');
@@ -98,6 +101,9 @@ class SecureRemoteAccess {
             if (data.hasOwnProperty('native')) {
                 obj['native'] = ApiClient.convertToType(data['native'], 'Boolean');
             }
+            if (data.hasOwnProperty('rdp_user')) {
+                obj['rdp_user'] = ApiClient.convertToType(data['rdp_user'], 'String');
+            }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
@@ -135,6 +141,11 @@ SecureRemoteAccess.prototype['account_id'] = undefined;
  * @member {Boolean} allow_port_forwarding
  */
 SecureRemoteAccess.prototype['allow_port_forwarding'] = undefined;
+
+/**
+ * @member {Boolean} allow_providing_external_username
+ */
+SecureRemoteAccess.prototype['allow_providing_external_username'] = undefined;
 
 /**
  * @member {String} bastion_api
@@ -210,6 +221,11 @@ SecureRemoteAccess.prototype['isolated'] = undefined;
  * @member {Boolean} native
  */
 SecureRemoteAccess.prototype['native'] = undefined;
+
+/**
+ * @member {String} rdp_user
+ */
+SecureRemoteAccess.prototype['rdp_user'] = undefined;
 
 /**
  * @member {String} region

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConfigHash model module.
  * @module model/ConfigHash
- * @version 2.5.10
+ * @version 2.5.11
  */
 class ConfigHash {
     /**
@@ -73,6 +73,9 @@ class ConfigHash {
             }
             if (data.hasOwnProperty('log_forwarding')) {
                 obj['log_forwarding'] = ApiClient.convertToType(data['log_forwarding'], 'String');
+            }
+            if (data.hasOwnProperty('m_queue')) {
+                obj['m_queue'] = ApiClient.convertToType(data['m_queue'], 'String');
             }
             if (data.hasOwnProperty('migrations')) {
                 obj['migrations'] = ApiClient.convertToType(data['migrations'], 'String');
@@ -140,6 +143,11 @@ ConfigHash.prototype['leadership'] = undefined;
  * @member {String} log_forwarding
  */
 ConfigHash.prototype['log_forwarding'] = undefined;
+
+/**
+ * @member {String} m_queue
+ */
+ConfigHash.prototype['m_queue'] = undefined;
 
 /**
  * @member {String} migrations

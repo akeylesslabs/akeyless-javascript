@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 2.5.10
+ * @version 2.5.11
  */
 class UpdateItem {
     /**
@@ -67,6 +67,9 @@ class UpdateItem {
             if (data.hasOwnProperty('rm-tag')) {
                 obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
             }
+            if (data.hasOwnProperty('secure-access-add-host')) {
+                obj['secure-access-add-host'] = ApiClient.convertToType(data['secure-access-add-host'], ['String']);
+            }
             if (data.hasOwnProperty('secure-access-allow-port-forwading')) {
                 obj['secure-access-allow-port-forwading'] = ApiClient.convertToType(data['secure-access-allow-port-forwading'], 'Boolean');
             }
@@ -108,6 +111,12 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('secure-access-rdp-domain')) {
                 obj['secure-access-rdp-domain'] = ApiClient.convertToType(data['secure-access-rdp-domain'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-rdp-user')) {
+                obj['secure-access-rdp-user'] = ApiClient.convertToType(data['secure-access-rdp-user'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-rm-host')) {
+                obj['secure-access-rm-host'] = ApiClient.convertToType(data['secure-access-rm-host'], ['String']);
             }
             if (data.hasOwnProperty('secure-access-ssh-creds')) {
                 obj['secure-access-ssh-creds'] = ApiClient.convertToType(data['secure-access-ssh-creds'], 'String');
@@ -178,6 +187,11 @@ UpdateItem.prototype['password'] = undefined;
 UpdateItem.prototype['rm-tag'] = undefined;
 
 /**
+ * @member {Array.<String>} secure-access-add-host
+ */
+UpdateItem.prototype['secure-access-add-host'] = undefined;
+
+/**
  * @member {Boolean} secure-access-allow-port-forwading
  */
 UpdateItem.prototype['secure-access-allow-port-forwading'] = undefined;
@@ -246,6 +260,16 @@ UpdateItem.prototype['secure-access-host'] = undefined;
  * @member {String} secure-access-rdp-domain
  */
 UpdateItem.prototype['secure-access-rdp-domain'] = undefined;
+
+/**
+ * @member {String} secure-access-rdp-user
+ */
+UpdateItem.prototype['secure-access-rdp-user'] = undefined;
+
+/**
+ * @member {Array.<String>} secure-access-rm-host
+ */
+UpdateItem.prototype['secure-access-rm-host'] = undefined;
 
 /**
  * @member {String} secure-access-ssh-creds

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 2.5.10
+ * @version 2.5.11
  */
 class CreateSecret {
     /**
@@ -77,6 +77,9 @@ class CreateSecret {
             }
             if (data.hasOwnProperty('secure-access-ssh-creds')) {
                 obj['secure-access-ssh-creds'] = ApiClient.convertToType(data['secure-access-ssh-creds'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-ssh-user')) {
+                obj['secure-access-ssh-user'] = ApiClient.convertToType(data['secure-access-ssh-user'], 'String');
             }
             if (data.hasOwnProperty('secure-access-url')) {
                 obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
@@ -155,6 +158,11 @@ CreateSecret.prototype['secure-access-host'] = undefined;
  * @member {String} secure-access-ssh-creds
  */
 CreateSecret.prototype['secure-access-ssh-creds'] = undefined;
+
+/**
+ * @member {String} secure-access-ssh-user
+ */
+CreateSecret.prototype['secure-access-ssh-user'] = undefined;
 
 /**
  * @member {String} secure-access-url

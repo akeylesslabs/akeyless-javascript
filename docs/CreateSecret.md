@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **secureAccessEnable** | **String** |  | [optional] 
 **secureAccessHost** | **[String]** |  | [optional] 
 **secureAccessSshCreds** | **String** |  | [optional] 
+**secureAccessSshUser** | **String** |  | [optional] 
 **secureAccessUrl** | **String** |  | [optional] 
 **secureAccessWebBrowsing** | **Boolean** |  | [optional] 
 **tags** | **[String]** | List of the tags attached to this secret | [optional] 

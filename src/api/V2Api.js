@@ -165,12 +165,16 @@ import GatewayGetK8SAuthConfigOutput from '../model/GatewayGetK8SAuthConfigOutpu
 import GatewayGetProducer from '../model/GatewayGetProducer';
 import GatewayGetTmpUsers from '../model/GatewayGetTmpUsers';
 import GatewayListAllowedManagementAccess from '../model/GatewayListAllowedManagementAccess';
+import GatewayListMigration from '../model/GatewayListMigration';
 import GatewayListProducers from '../model/GatewayListProducers';
+import GatewayMigrationListOutput from '../model/GatewayMigrationListOutput';
+import GatewayMigrationSyncOutput from '../model/GatewayMigrationSyncOutput';
 import GatewayRevokeTmpUsers from '../model/GatewayRevokeTmpUsers';
 import GatewayStartProducer from '../model/GatewayStartProducer';
 import GatewayStartProducerOutput from '../model/GatewayStartProducerOutput';
 import GatewayStopProducer from '../model/GatewayStopProducer';
 import GatewayStopProducerOutput from '../model/GatewayStopProducerOutput';
+import GatewaySyncMigration from '../model/GatewaySyncMigration';
 import GatewayUpdateTmpUsers from '../model/GatewayUpdateTmpUsers';
 import GetAuthMethod from '../model/GetAuthMethod';
 import GetDynamicSecretValue from '../model/GetDynamicSecretValue';
@@ -298,7 +302,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.5.10
+* @version 2.5.11
 */
 export default class V2Api {
 
@@ -3878,6 +3882,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayListMigration} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayMigrationListOutput} and HTTP response
+     */
+    gatewayListMigrationWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayListMigration");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayMigrationListOutput;
+      return this.apiClient.callApi(
+        '/gateway-list-migration', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayListMigration} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayMigrationListOutput}
+     */
+    gatewayListMigration(body) {
+      return this.gatewayListMigrationWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayListProducers} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetProducersListReplyObj} and HTTP response
      */
@@ -4043,6 +4090,49 @@ export default class V2Api {
      */
     gatewayStopProducer(body) {
       return this.gatewayStopProducerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewaySyncMigration} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayMigrationSyncOutput} and HTTP response
+     */
+    gatewaySyncMigrationWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewaySyncMigration");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayMigrationSyncOutput;
+      return this.apiClient.callApi(
+        '/gateway-sync-migration', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewaySyncMigration} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayMigrationSyncOutput}
+     */
+    gatewaySyncMigration(body) {
+      return this.gatewaySyncMigrationWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

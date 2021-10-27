@@ -87,10 +87,12 @@ Method | HTTP request | Description
 [**gatewayGetProducer**](V2Api.md#gatewayGetProducer) | **POST** /gateway-get-producer | 
 [**gatewayGetTmpUsers**](V2Api.md#gatewayGetTmpUsers) | **POST** /gateway-get-producer-tmp-creds | 
 [**gatewayListAllowedManagementAccess**](V2Api.md#gatewayListAllowedManagementAccess) | **POST** /gateway-list-allowed-management-access | 
+[**gatewayListMigration**](V2Api.md#gatewayListMigration) | **POST** /gateway-list-migration | 
 [**gatewayListProducers**](V2Api.md#gatewayListProducers) | **POST** /gateway-list-producers | 
 [**gatewayRevokeTmpUsers**](V2Api.md#gatewayRevokeTmpUsers) | **POST** /gateway-revoke-producer-tmp-creds | 
 [**gatewayStartProducer**](V2Api.md#gatewayStartProducer) | **POST** /gateway-start-producer | 
 [**gatewayStopProducer**](V2Api.md#gatewayStopProducer) | **POST** /gateway-stop-producer | 
+[**gatewaySyncMigration**](V2Api.md#gatewaySyncMigration) | **POST** /gateway-sync-migration | 
 [**gatewayUpdateTmpUsers**](V2Api.md#gatewayUpdateTmpUsers) | **POST** /gateway-update-producer-tmp-creds | 
 [**getAccountLogo**](V2Api.md#getAccountLogo) | **POST** /get-account-logo | 
 [**getAuthMethod**](V2Api.md#getAuthMethod) | **POST** /get-auth-method | 
@@ -3651,6 +3653,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayListMigration
+
+> GatewayMigrationListOutput gatewayListMigration(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayListMigration(); // GatewayListMigration | 
+apiInstance.gatewayListMigration(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayListMigration**](GatewayListMigration.md)|  | 
+
+### Return type
+
+[**GatewayMigrationListOutput**](GatewayMigrationListOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayListProducers
 
 > GetProducersListReplyObj gatewayListProducers(body)
@@ -3808,6 +3852,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayStopProducerOutput**](GatewayStopProducerOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewaySyncMigration
+
+> GatewayMigrationSyncOutput gatewaySyncMigration(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewaySyncMigration(); // GatewaySyncMigration | 
+apiInstance.gatewaySyncMigration(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewaySyncMigration**](GatewaySyncMigration.md)|  | 
+
+### Return type
+
+[**GatewayMigrationSyncOutput**](GatewayMigrationSyncOutput.md)
 
 ### Authorization
 

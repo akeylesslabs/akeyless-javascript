@@ -16,6 +16,7 @@ import AdminsConfigPart from './AdminsConfigPart';
 import CFConfigPart from './CFConfigPart';
 import CacheConfigPart from './CacheConfigPart';
 import DefaultConfigPart from './DefaultConfigPart';
+import GatewayMessageQueueInfo from './GatewayMessageQueueInfo';
 import GeneralConfigPart from './GeneralConfigPart';
 import K8SAuthsConfigPart from './K8SAuthsConfigPart';
 import KMIPConfigPart from './KMIPConfigPart';
@@ -30,7 +31,7 @@ import UIdentityConfigPart from './UIdentityConfigPart';
 /**
  * The AkeylessGatewayConfig model module.
  * @module model/AkeylessGatewayConfig
- * @version 2.5.10
+ * @version 2.5.11
  */
 class AkeylessGatewayConfig {
     /**
@@ -90,6 +91,9 @@ class AkeylessGatewayConfig {
             }
             if (data.hasOwnProperty('log_forwarding')) {
                 obj['log_forwarding'] = LogForwardingConfigPart.constructFromObject(data['log_forwarding']);
+            }
+            if (data.hasOwnProperty('message_queue_info')) {
+                obj['message_queue_info'] = GatewayMessageQueueInfo.constructFromObject(data['message_queue_info']);
             }
             if (data.hasOwnProperty('migrations')) {
                 obj['migrations'] = MigrationsConfigPart.constructFromObject(data['migrations']);
@@ -165,6 +169,11 @@ AkeylessGatewayConfig.prototype['leadership'] = undefined;
  * @member {module:model/LogForwardingConfigPart} log_forwarding
  */
 AkeylessGatewayConfig.prototype['log_forwarding'] = undefined;
+
+/**
+ * @member {module:model/GatewayMessageQueueInfo} message_queue_info
+ */
+AkeylessGatewayConfig.prototype['message_queue_info'] = undefined;
 
 /**
  * @member {module:model/MigrationsConfigPart} migrations

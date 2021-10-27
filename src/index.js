@@ -208,12 +208,17 @@ import GatewayGetK8SAuthConfigOutput from './model/GatewayGetK8SAuthConfigOutput
 import GatewayGetProducer from './model/GatewayGetProducer';
 import GatewayGetTmpUsers from './model/GatewayGetTmpUsers';
 import GatewayListAllowedManagementAccess from './model/GatewayListAllowedManagementAccess';
+import GatewayListMigration from './model/GatewayListMigration';
 import GatewayListProducers from './model/GatewayListProducers';
+import GatewayMessageQueueInfo from './model/GatewayMessageQueueInfo';
+import GatewayMigrationListOutput from './model/GatewayMigrationListOutput';
+import GatewayMigrationSyncOutput from './model/GatewayMigrationSyncOutput';
 import GatewayRevokeTmpUsers from './model/GatewayRevokeTmpUsers';
 import GatewayStartProducer from './model/GatewayStartProducer';
 import GatewayStartProducerOutput from './model/GatewayStartProducerOutput';
 import GatewayStopProducer from './model/GatewayStopProducer';
 import GatewayStopProducerOutput from './model/GatewayStopProducerOutput';
+import GatewaySyncMigration from './model/GatewaySyncMigration';
 import GatewayUpdateItemOutput from './model/GatewayUpdateItemOutput';
 import GatewayUpdateTmpUsers from './model/GatewayUpdateTmpUsers';
 import GenCustomerFragment from './model/GenCustomerFragment';
@@ -432,7 +437,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.5.10
+* @version 2.5.11
 */
 export {
     /**
@@ -1612,10 +1617,34 @@ export {
     GatewayListAllowedManagementAccess,
 
     /**
+     * The GatewayListMigration model constructor.
+     * @property {module:model/GatewayListMigration}
+     */
+    GatewayListMigration,
+
+    /**
      * The GatewayListProducers model constructor.
      * @property {module:model/GatewayListProducers}
      */
     GatewayListProducers,
+
+    /**
+     * The GatewayMessageQueueInfo model constructor.
+     * @property {module:model/GatewayMessageQueueInfo}
+     */
+    GatewayMessageQueueInfo,
+
+    /**
+     * The GatewayMigrationListOutput model constructor.
+     * @property {module:model/GatewayMigrationListOutput}
+     */
+    GatewayMigrationListOutput,
+
+    /**
+     * The GatewayMigrationSyncOutput model constructor.
+     * @property {module:model/GatewayMigrationSyncOutput}
+     */
+    GatewayMigrationSyncOutput,
 
     /**
      * The GatewayRevokeTmpUsers model constructor.
@@ -1646,6 +1675,12 @@ export {
      * @property {module:model/GatewayStopProducerOutput}
      */
     GatewayStopProducerOutput,
+
+    /**
+     * The GatewaySyncMigration model constructor.
+     * @property {module:model/GatewaySyncMigration}
+     */
+    GatewaySyncMigration,
 
     /**
      * The GatewayUpdateItemOutput model constructor.

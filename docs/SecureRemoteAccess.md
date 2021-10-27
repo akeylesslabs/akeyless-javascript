@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountId** | **String** |  | [optional] 
 **allowPortForwarding** | **Boolean** |  | [optional] 
+**allowProvidingExternalUsername** | **Boolean** |  | [optional] 
 **bastionApi** | **String** |  | [optional] 
 **bastionIssuer** | **String** |  | [optional] 
 **bastionIssuerId** | **Number** |  | [optional] 
@@ -21,6 +22,7 @@ Name | Type | Description | Notes
 **isWeb** | **Boolean** |  | [optional] 
 **isolated** | **Boolean** |  | [optional] 
 **_native** | **Boolean** |  | [optional] 
+**rdpUser** | **String** |  | [optional] 
 **region** | **String** |  | [optional] 
 **schema** | **String** |  | [optional] 
 **sshPassword** | **Boolean** |  | [optional] 
