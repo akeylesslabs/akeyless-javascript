@@ -302,7 +302,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.5.11
+* @version 2.5.12
 */
 export default class V2Api {
 

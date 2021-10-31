@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptOutput model module.
  * @module model/EncryptOutput
- * @version 2.5.11
+ * @version 2.5.12
  */
 class EncryptOutput {
     /**

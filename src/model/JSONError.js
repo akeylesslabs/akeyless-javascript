@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The JSONError model module.
  * @module model/JSONError
- * @version 2.5.11
+ * @version 2.5.12
  */
 class JSONError {
     /**

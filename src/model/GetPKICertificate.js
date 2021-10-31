@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPKICertificate model module.
  * @module model/GetPKICertificate
- * @version 2.5.11
+ * @version 2.5.12
  */
 class GetPKICertificate {
     /**
