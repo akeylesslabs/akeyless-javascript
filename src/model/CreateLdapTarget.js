@@ -16,21 +16,20 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLdapTarget model module.
  * @module model/CreateLdapTarget
- * @version 2.5.12
+ * @version 2.5.13
  */
 class CreateLdapTarget {
     /**
      * Constructs a new <code>CreateLdapTarget</code>.
      * @alias module:model/CreateLdapTarget
-     * @param accessId {String} Access ID
      * @param bindDn {String} Bind DN
      * @param bindDnPassword {String} Bind DN Password
      * @param ldapUrl {String} LDAP Server URL
      * @param name {String} Target name
      */
-    constructor(accessId, bindDn, bindDnPassword, ldapUrl, name) { 
+    constructor(bindDn, bindDnPassword, ldapUrl, name) { 
         
-        CreateLdapTarget.initialize(this, accessId, bindDn, bindDnPassword, ldapUrl, name);
+        CreateLdapTarget.initialize(this, bindDn, bindDnPassword, ldapUrl, name);
     }
 
     /**
@@ -38,8 +37,7 @@ class CreateLdapTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, accessId, bindDn, bindDnPassword, ldapUrl, name) { 
-        obj['access-id'] = accessId;
+    static initialize(obj, bindDn, bindDnPassword, ldapUrl, name) { 
         obj['bind-dn'] = bindDn;
         obj['bind-dn-password'] = bindDnPassword;
         obj['ldap-url'] = ldapUrl;
@@ -57,9 +55,6 @@ class CreateLdapTarget {
         if (data) {
             obj = obj || new CreateLdapTarget();
 
-            if (data.hasOwnProperty('access-id')) {
-                obj['access-id'] = ApiClient.convertToType(data['access-id'], 'String');
-            }
             if (data.hasOwnProperty('bind-dn')) {
                 obj['bind-dn'] = ApiClient.convertToType(data['bind-dn'], 'String');
             }
@@ -68,9 +63,6 @@ class CreateLdapTarget {
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
-            }
-            if (data.hasOwnProperty('enable-anonym-search')) {
-                obj['enable-anonym-search'] = ApiClient.convertToType(data['enable-anonym-search'], 'Boolean');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -86,9 +78,6 @@ class CreateLdapTarget {
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
-            if (data.hasOwnProperty('private-key')) {
-                obj['private-key'] = ApiClient.convertToType(data['private-key'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -110,12 +99,6 @@ class CreateLdapTarget {
 }
 
 /**
- * Access ID
- * @member {String} access-id
- */
-CreateLdapTarget.prototype['access-id'] = undefined;
-
-/**
  * Bind DN
  * @member {String} bind-dn
  */
@@ -132,12 +115,6 @@ CreateLdapTarget.prototype['bind-dn-password'] = undefined;
  * @member {String} comment
  */
 CreateLdapTarget.prototype['comment'] = undefined;
-
-/**
- * EnableAnonymousSearch
- * @member {Boolean} enable-anonym-search
- */
-CreateLdapTarget.prototype['enable-anonym-search'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
@@ -168,12 +145,6 @@ CreateLdapTarget.prototype['name'] = undefined;
  * @member {String} password
  */
 CreateLdapTarget.prototype['password'] = undefined;
-
-/**
- * Base64-encoded ldap private key text
- * @member {String} private-key
- */
-CreateLdapTarget.prototype['private-key'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

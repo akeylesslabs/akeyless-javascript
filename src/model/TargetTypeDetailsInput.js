@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.5.12
+ * @version 2.5.13
  */
 class TargetTypeDetailsInput {
     /**
@@ -167,12 +167,6 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('k8s_cluster_endpoint')) {
                 obj['k8s_cluster_endpoint'] = ApiClient.convertToType(data['k8s_cluster_endpoint'], 'String');
             }
-            if (data.hasOwnProperty('ldap_access_id')) {
-                obj['ldap_access_id'] = ApiClient.convertToType(data['ldap_access_id'], 'String');
-            }
-            if (data.hasOwnProperty('ldap_anonymous_search')) {
-                obj['ldap_anonymous_search'] = ApiClient.convertToType(data['ldap_anonymous_search'], 'Boolean');
-            }
             if (data.hasOwnProperty('ldap_audience')) {
                 obj['ldap_audience'] = ApiClient.convertToType(data['ldap_audience'], 'String');
             }
@@ -184,9 +178,6 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('ldap_certificate')) {
                 obj['ldap_certificate'] = ApiClient.convertToType(data['ldap_certificate'], 'String');
-            }
-            if (data.hasOwnProperty('ldap_private_key')) {
-                obj['ldap_private_key'] = ApiClient.convertToType(data['ldap_private_key'], 'String');
             }
             if (data.hasOwnProperty('ldap_token_expiration')) {
                 obj['ldap_token_expiration'] = ApiClient.convertToType(data['ldap_token_expiration'], 'String');
@@ -491,16 +482,6 @@ TargetTypeDetailsInput.prototype['k8s_cluster_ca_certificate'] = undefined;
 TargetTypeDetailsInput.prototype['k8s_cluster_endpoint'] = undefined;
 
 /**
- * @member {String} ldap_access_id
- */
-TargetTypeDetailsInput.prototype['ldap_access_id'] = undefined;
-
-/**
- * @member {Boolean} ldap_anonymous_search
- */
-TargetTypeDetailsInput.prototype['ldap_anonymous_search'] = undefined;
-
-/**
  * @member {String} ldap_audience
  */
 TargetTypeDetailsInput.prototype['ldap_audience'] = undefined;
@@ -519,11 +500,6 @@ TargetTypeDetailsInput.prototype['ldap_bind_password'] = undefined;
  * @member {String} ldap_certificate
  */
 TargetTypeDetailsInput.prototype['ldap_certificate'] = undefined;
-
-/**
- * @member {String} ldap_private_key
- */
-TargetTypeDetailsInput.prototype['ldap_private_key'] = undefined;
 
 /**
  * @member {String} ldap_token_expiration

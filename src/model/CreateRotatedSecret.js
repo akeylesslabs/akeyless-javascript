@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 2.5.12
+ * @version 2.5.13
  */
 class CreateRotatedSecret {
     /**
@@ -64,15 +64,6 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('custom-payload')) {
                 obj['custom-payload'] = ApiClient.convertToType(data['custom-payload'], 'String');
-            }
-            if (data.hasOwnProperty('group-attribute')) {
-                obj['group-attribute'] = ApiClient.convertToType(data['group-attribute'], 'String');
-            }
-            if (data.hasOwnProperty('group-dn')) {
-                obj['group-dn'] = ApiClient.convertToType(data['group-dn'], 'String');
-            }
-            if (data.hasOwnProperty('group-filter')) {
-                obj['group-filter'] = ApiClient.convertToType(data['group-filter'], 'String');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -161,24 +152,6 @@ CreateRotatedSecret.prototype['auto-rotate'] = undefined;
  * @member {String} custom-payload
  */
 CreateRotatedSecret.prototype['custom-payload'] = undefined;
-
-/**
- * Group attribute
- * @member {String} group-attribute
- */
-CreateRotatedSecret.prototype['group-attribute'] = undefined;
-
-/**
- * Group DN
- * @member {String} group-dn
- */
-CreateRotatedSecret.prototype['group-dn'] = undefined;
-
-/**
- * Group attribute
- * @member {String} group-filter
- */
-CreateRotatedSecret.prototype['group-filter'] = undefined;
 
 /**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)

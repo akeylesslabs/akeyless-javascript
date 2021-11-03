@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.5.12
+ * @version 2.5.13
  */
 class DSProducerDetails {
     /**
@@ -301,12 +301,6 @@ class DSProducerDetails {
             if (data.hasOwnProperty('last_admin_rotation')) {
                 obj['last_admin_rotation'] = ApiClient.convertToType(data['last_admin_rotation'], 'Number');
             }
-            if (data.hasOwnProperty('ldap_access_id')) {
-                obj['ldap_access_id'] = ApiClient.convertToType(data['ldap_access_id'], 'String');
-            }
-            if (data.hasOwnProperty('ldap_anonymous_search')) {
-                obj['ldap_anonymous_search'] = ApiClient.convertToType(data['ldap_anonymous_search'], 'Boolean');
-            }
             if (data.hasOwnProperty('ldap_audience')) {
                 obj['ldap_audience'] = ApiClient.convertToType(data['ldap_audience'], 'String');
             }
@@ -318,18 +312,6 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('ldap_certificate')) {
                 obj['ldap_certificate'] = ApiClient.convertToType(data['ldap_certificate'], 'String');
-            }
-            if (data.hasOwnProperty('ldap_group_attr')) {
-                obj['ldap_group_attr'] = ApiClient.convertToType(data['ldap_group_attr'], 'String');
-            }
-            if (data.hasOwnProperty('ldap_group_dn')) {
-                obj['ldap_group_dn'] = ApiClient.convertToType(data['ldap_group_dn'], 'String');
-            }
-            if (data.hasOwnProperty('ldap_group_filter')) {
-                obj['ldap_group_filter'] = ApiClient.convertToType(data['ldap_group_filter'], 'String');
-            }
-            if (data.hasOwnProperty('ldap_private_key')) {
-                obj['ldap_private_key'] = ApiClient.convertToType(data['ldap_private_key'], 'String');
             }
             if (data.hasOwnProperty('ldap_token_expiration')) {
                 obj['ldap_token_expiration'] = ApiClient.convertToType(data['ldap_token_expiration'], 'String');
@@ -926,16 +908,6 @@ DSProducerDetails.prototype['k8s_service_account'] = undefined;
 DSProducerDetails.prototype['last_admin_rotation'] = undefined;
 
 /**
- * @member {String} ldap_access_id
- */
-DSProducerDetails.prototype['ldap_access_id'] = undefined;
-
-/**
- * @member {Boolean} ldap_anonymous_search
- */
-DSProducerDetails.prototype['ldap_anonymous_search'] = undefined;
-
-/**
  * @member {String} ldap_audience
  */
 DSProducerDetails.prototype['ldap_audience'] = undefined;
@@ -954,26 +926,6 @@ DSProducerDetails.prototype['ldap_bind_password'] = undefined;
  * @member {String} ldap_certificate
  */
 DSProducerDetails.prototype['ldap_certificate'] = undefined;
-
-/**
- * @member {String} ldap_group_attr
- */
-DSProducerDetails.prototype['ldap_group_attr'] = undefined;
-
-/**
- * @member {String} ldap_group_dn
- */
-DSProducerDetails.prototype['ldap_group_dn'] = undefined;
-
-/**
- * @member {String} ldap_group_filter
- */
-DSProducerDetails.prototype['ldap_group_filter'] = undefined;
-
-/**
- * @member {String} ldap_private_key
- */
-DSProducerDetails.prototype['ldap_private_key'] = undefined;
 
 /**
  * @member {String} ldap_token_expiration

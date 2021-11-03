@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerLdap model module.
  * @module model/GatewayCreateProducerLdap
- * @version 2.5.12
+ * @version 2.5.13
  */
 class GatewayCreateProducerLdap {
     /**
@@ -50,29 +50,14 @@ class GatewayCreateProducerLdap {
         if (data) {
             obj = obj || new GatewayCreateProducerLdap();
 
-            if (data.hasOwnProperty('access-id')) {
-                obj['access-id'] = ApiClient.convertToType(data['access-id'], 'String');
-            }
             if (data.hasOwnProperty('bind-dn')) {
                 obj['bind-dn'] = ApiClient.convertToType(data['bind-dn'], 'String');
             }
             if (data.hasOwnProperty('bind-dn-password')) {
                 obj['bind-dn-password'] = ApiClient.convertToType(data['bind-dn-password'], 'String');
             }
-            if (data.hasOwnProperty('enable-anonym-search')) {
-                obj['enable-anonym-search'] = ApiClient.convertToType(data['enable-anonym-search'], 'Boolean');
-            }
-            if (data.hasOwnProperty('fixed-user-only')) {
-                obj['fixed-user-only'] = ApiClient.convertToType(data['fixed-user-only'], 'String');
-            }
-            if (data.hasOwnProperty('group-attribute')) {
-                obj['group-attribute'] = ApiClient.convertToType(data['group-attribute'], 'String');
-            }
-            if (data.hasOwnProperty('group-dn')) {
-                obj['group-dn'] = ApiClient.convertToType(data['group-dn'], 'String');
-            }
-            if (data.hasOwnProperty('group-filter')) {
-                obj['group-filter'] = ApiClient.convertToType(data['group-filter'], 'String');
+            if (data.hasOwnProperty('external-username')) {
+                obj['external-username'] = ApiClient.convertToType(data['external-username'], 'String');
             }
             if (data.hasOwnProperty('ldap-ca-cert')) {
                 obj['ldap-ca-cert'] = ApiClient.convertToType(data['ldap-ca-cert'], 'String');
@@ -85,9 +70,6 @@ class GatewayCreateProducerLdap {
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
-            if (data.hasOwnProperty('private-key')) {
-                obj['private-key'] = ApiClient.convertToType(data['private-key'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -124,12 +106,6 @@ class GatewayCreateProducerLdap {
 }
 
 /**
- * Access ID
- * @member {String} access-id
- */
-GatewayCreateProducerLdap.prototype['access-id'] = undefined;
-
-/**
  * Bind DN
  * @member {String} bind-dn
  */
@@ -142,35 +118,11 @@ GatewayCreateProducerLdap.prototype['bind-dn'] = undefined;
 GatewayCreateProducerLdap.prototype['bind-dn-password'] = undefined;
 
 /**
- * EnableAnonymousSearch
- * @member {Boolean} enable-anonym-search
- */
-GatewayCreateProducerLdap.prototype['enable-anonym-search'] = undefined;
-
-/**
  * Fixed user
- * @member {String} fixed-user-only
+ * @member {String} external-username
  * @default 'false'
  */
-GatewayCreateProducerLdap.prototype['fixed-user-only'] = 'false';
-
-/**
- * Group attribute
- * @member {String} group-attribute
- */
-GatewayCreateProducerLdap.prototype['group-attribute'] = undefined;
-
-/**
- * Group DN
- * @member {String} group-dn
- */
-GatewayCreateProducerLdap.prototype['group-dn'] = undefined;
-
-/**
- * Group attribute
- * @member {String} group-filter
- */
-GatewayCreateProducerLdap.prototype['group-filter'] = undefined;
+GatewayCreateProducerLdap.prototype['external-username'] = 'false';
 
 /**
  * CA Certificate File Content
@@ -195,12 +147,6 @@ GatewayCreateProducerLdap.prototype['name'] = undefined;
  * @member {String} password
  */
 GatewayCreateProducerLdap.prototype['password'] = undefined;
-
-/**
- * Base64-encoded ldap private key text
- * @member {String} private-key
- */
-GatewayCreateProducerLdap.prototype['private-key'] = undefined;
 
 /**
  * Dynamic producer encryption key

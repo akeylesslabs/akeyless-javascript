@@ -17,7 +17,7 @@ import ConfigChange from './ConfigChange';
 /**
  * The GatewayDeleteK8SAuthConfigOutput model module.
  * @module model/GatewayDeleteK8SAuthConfigOutput
- * @version 2.5.12
+ * @version 2.5.13
  */
 class GatewayDeleteK8SAuthConfigOutput {
     /**
