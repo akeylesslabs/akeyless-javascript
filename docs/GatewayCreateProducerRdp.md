@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **rdpHostName** | **String** | Hostname | [optional] 
 **rdpHostPort** | **String** | Port | [optional] [default to &#39;22&#39;]
 **rdpUserGroups** | **String** | Groups | [optional] 
+**secureAccessAllowExternalUser** | **Boolean** |  | [optional] 
 **secureAccessEnable** | **String** |  | [optional] 
 **secureAccessHost** | **[String]** |  | [optional] 
 **secureAccessRdpDomain** | **String** |  | [optional] 

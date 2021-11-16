@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 2.5.13
+ * @version 2.5.14
  */
 class UpdateItem {
     /**
@@ -69,6 +69,9 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('secure-access-add-host')) {
                 obj['secure-access-add-host'] = ApiClient.convertToType(data['secure-access-add-host'], ['String']);
+            }
+            if (data.hasOwnProperty('secure-access-allow-external-user')) {
+                obj['secure-access-allow-external-user'] = ApiClient.convertToType(data['secure-access-allow-external-user'], 'String');
             }
             if (data.hasOwnProperty('secure-access-allow-port-forwading')) {
                 obj['secure-access-allow-port-forwading'] = ApiClient.convertToType(data['secure-access-allow-port-forwading'], 'Boolean');
@@ -190,6 +193,11 @@ UpdateItem.prototype['rm-tag'] = undefined;
  * @member {Array.<String>} secure-access-add-host
  */
 UpdateItem.prototype['secure-access-add-host'] = undefined;
+
+/**
+ * @member {String} secure-access-allow-external-user
+ */
+UpdateItem.prototype['secure-access-allow-external-user'] = undefined;
 
 /**
  * @member {Boolean} secure-access-allow-port-forwading

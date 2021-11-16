@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **password** | **String** | Required only when the authentication process requires a username and password | [optional] 
 **rmTag** | **[String]** | List of the existent tags that will be removed from this item | [optional] 
 **secureAccessAddHost** | **[String]** |  | [optional] 
+**secureAccessAllowExternalUser** | **String** |  | [optional] 
 **secureAccessAllowPortForwading** | **Boolean** |  | [optional] 
 **secureAccessAwsAccountId** | **String** |  | [optional] 
 **secureAccessAwsNativeCli** | **Boolean** |  | [optional] 

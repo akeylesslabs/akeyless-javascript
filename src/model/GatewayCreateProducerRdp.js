@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRdp model module.
  * @module model/GatewayCreateProducerRdp
- * @version 2.5.13
+ * @version 2.5.14
  */
 class GatewayCreateProducerRdp {
     /**
@@ -76,6 +76,9 @@ class GatewayCreateProducerRdp {
             }
             if (data.hasOwnProperty('rdp-user-groups')) {
                 obj['rdp-user-groups'] = ApiClient.convertToType(data['rdp-user-groups'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-allow-external-user')) {
+                obj['secure-access-allow-external-user'] = ApiClient.convertToType(data['secure-access-allow-external-user'], 'Boolean');
             }
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
@@ -166,6 +169,11 @@ GatewayCreateProducerRdp.prototype['rdp-host-port'] = '22';
  * @member {String} rdp-user-groups
  */
 GatewayCreateProducerRdp.prototype['rdp-user-groups'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-allow-external-user
+ */
+GatewayCreateProducerRdp.prototype['secure-access-allow-external-user'] = undefined;
 
 /**
  * @member {String} secure-access-enable

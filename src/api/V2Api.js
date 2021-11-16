@@ -175,6 +175,18 @@ import GatewayStartProducerOutput from '../model/GatewayStartProducerOutput';
 import GatewayStopProducer from '../model/GatewayStopProducer';
 import GatewayStopProducerOutput from '../model/GatewayStopProducerOutput';
 import GatewaySyncMigration from '../model/GatewaySyncMigration';
+import GatewayUpdateProducerAws from '../model/GatewayUpdateProducerAws';
+import GatewayUpdateProducerAwsOutput from '../model/GatewayUpdateProducerAwsOutput';
+import GatewayUpdateProducerGcp from '../model/GatewayUpdateProducerGcp';
+import GatewayUpdateProducerGcpOutput from '../model/GatewayUpdateProducerGcpOutput';
+import GatewayUpdateProducerMSSQL from '../model/GatewayUpdateProducerMSSQL';
+import GatewayUpdateProducerMSSQLOutput from '../model/GatewayUpdateProducerMSSQLOutput';
+import GatewayUpdateProducerMongo from '../model/GatewayUpdateProducerMongo';
+import GatewayUpdateProducerMongoOutput from '../model/GatewayUpdateProducerMongoOutput';
+import GatewayUpdateProducerMySQL from '../model/GatewayUpdateProducerMySQL';
+import GatewayUpdateProducerMySQLOutput from '../model/GatewayUpdateProducerMySQLOutput';
+import GatewayUpdateProducerRdp from '../model/GatewayUpdateProducerRdp';
+import GatewayUpdateProducerRdpOutput from '../model/GatewayUpdateProducerRdpOutput';
 import GatewayUpdateTmpUsers from '../model/GatewayUpdateTmpUsers';
 import GetAuthMethod from '../model/GetAuthMethod';
 import GetDynamicSecretValue from '../model/GetDynamicSecretValue';
@@ -302,7 +314,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.5.13
+* @version 2.5.14
 */
 export default class V2Api {
 
@@ -4133,6 +4145,264 @@ export default class V2Api {
      */
     gatewaySyncMigration(body) {
       return this.gatewaySyncMigrationWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerAwsOutput} and HTTP response
+     */
+    gatewayUpdateProducerAwsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerAws");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerAwsOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-aws', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerAwsOutput}
+     */
+    gatewayUpdateProducerAws(body) {
+      return this.gatewayUpdateProducerAwsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerGcpOutput} and HTTP response
+     */
+    gatewayUpdateProducerGcpWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerGcp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerGcpOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-gcp', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerGcpOutput}
+     */
+    gatewayUpdateProducerGcp(body) {
+      return this.gatewayUpdateProducerGcpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerMSSQL} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerMSSQLOutput} and HTTP response
+     */
+    gatewayUpdateProducerMSSQLWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerMSSQL");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerMSSQLOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-mssql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerMSSQL} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerMSSQLOutput}
+     */
+    gatewayUpdateProducerMSSQL(body) {
+      return this.gatewayUpdateProducerMSSQLWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerMongo} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerMongoOutput} and HTTP response
+     */
+    gatewayUpdateProducerMongoWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerMongo");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerMongoOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-mongo', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerMongo} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerMongoOutput}
+     */
+    gatewayUpdateProducerMongo(body) {
+      return this.gatewayUpdateProducerMongoWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerMySQL} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerMySQLOutput} and HTTP response
+     */
+    gatewayUpdateProducerMySQLWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerMySQL");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerMySQLOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-mysql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerMySQL} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerMySQLOutput}
+     */
+    gatewayUpdateProducerMySQL(body) {
+      return this.gatewayUpdateProducerMySQLWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerRdp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerRdpOutput} and HTTP response
+     */
+    gatewayUpdateProducerRdpWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerRdp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerRdpOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-rdp', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerRdp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerRdpOutput}
+     */
+    gatewayUpdateProducerRdp(body) {
+      return this.gatewayUpdateProducerRdpWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

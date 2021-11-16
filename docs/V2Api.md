@@ -93,6 +93,12 @@ Method | HTTP request | Description
 [**gatewayStartProducer**](V2Api.md#gatewayStartProducer) | **POST** /gateway-start-producer | 
 [**gatewayStopProducer**](V2Api.md#gatewayStopProducer) | **POST** /gateway-stop-producer | 
 [**gatewaySyncMigration**](V2Api.md#gatewaySyncMigration) | **POST** /gateway-sync-migration | 
+[**gatewayUpdateProducerAws**](V2Api.md#gatewayUpdateProducerAws) | **POST** /gateway-update-producer-aws | 
+[**gatewayUpdateProducerGcp**](V2Api.md#gatewayUpdateProducerGcp) | **POST** /gateway-update-producer-gcp | 
+[**gatewayUpdateProducerMSSQL**](V2Api.md#gatewayUpdateProducerMSSQL) | **POST** /gateway-update-producer-mssql | 
+[**gatewayUpdateProducerMongo**](V2Api.md#gatewayUpdateProducerMongo) | **POST** /gateway-update-producer-mongo | 
+[**gatewayUpdateProducerMySQL**](V2Api.md#gatewayUpdateProducerMySQL) | **POST** /gateway-update-producer-mysql | 
+[**gatewayUpdateProducerRdp**](V2Api.md#gatewayUpdateProducerRdp) | **POST** /gateway-update-producer-rdp | 
 [**gatewayUpdateTmpUsers**](V2Api.md#gatewayUpdateTmpUsers) | **POST** /gateway-update-producer-tmp-creds | 
 [**getAccountLogo**](V2Api.md#getAccountLogo) | **POST** /get-account-logo | 
 [**getAuthMethod**](V2Api.md#getAuthMethod) | **POST** /get-auth-method | 
@@ -3894,6 +3900,258 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayMigrationSyncOutput**](GatewayMigrationSyncOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerAws
+
+> GatewayUpdateProducerAwsOutput gatewayUpdateProducerAws(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerAws(); // GatewayUpdateProducerAws | 
+apiInstance.gatewayUpdateProducerAws(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerAws**](GatewayUpdateProducerAws.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerAwsOutput**](GatewayUpdateProducerAwsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerGcp
+
+> GatewayUpdateProducerGcpOutput gatewayUpdateProducerGcp(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerGcp(); // GatewayUpdateProducerGcp | 
+apiInstance.gatewayUpdateProducerGcp(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerGcp**](GatewayUpdateProducerGcp.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerGcpOutput**](GatewayUpdateProducerGcpOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerMSSQL
+
+> GatewayUpdateProducerMSSQLOutput gatewayUpdateProducerMSSQL(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerMSSQL(); // GatewayUpdateProducerMSSQL | 
+apiInstance.gatewayUpdateProducerMSSQL(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerMSSQL**](GatewayUpdateProducerMSSQL.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerMSSQLOutput**](GatewayUpdateProducerMSSQLOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerMongo
+
+> GatewayUpdateProducerMongoOutput gatewayUpdateProducerMongo(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerMongo(); // GatewayUpdateProducerMongo | 
+apiInstance.gatewayUpdateProducerMongo(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerMongo**](GatewayUpdateProducerMongo.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerMongoOutput**](GatewayUpdateProducerMongoOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerMySQL
+
+> GatewayUpdateProducerMySQLOutput gatewayUpdateProducerMySQL(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerMySQL(); // GatewayUpdateProducerMySQL | 
+apiInstance.gatewayUpdateProducerMySQL(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerMySQL**](GatewayUpdateProducerMySQL.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerMySQLOutput**](GatewayUpdateProducerMySQLOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerRdp
+
+> GatewayUpdateProducerRdpOutput gatewayUpdateProducerRdp(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerRdp(); // GatewayUpdateProducerRdp | 
+apiInstance.gatewayUpdateProducerRdp(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerRdp**](GatewayUpdateProducerRdp.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerRdpOutput**](GatewayUpdateProducerRdpOutput.md)
 
 ### Authorization
 

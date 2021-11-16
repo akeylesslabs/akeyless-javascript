@@ -220,6 +220,18 @@ import GatewayStopProducer from './model/GatewayStopProducer';
 import GatewayStopProducerOutput from './model/GatewayStopProducerOutput';
 import GatewaySyncMigration from './model/GatewaySyncMigration';
 import GatewayUpdateItemOutput from './model/GatewayUpdateItemOutput';
+import GatewayUpdateProducerAws from './model/GatewayUpdateProducerAws';
+import GatewayUpdateProducerAwsOutput from './model/GatewayUpdateProducerAwsOutput';
+import GatewayUpdateProducerGcp from './model/GatewayUpdateProducerGcp';
+import GatewayUpdateProducerGcpOutput from './model/GatewayUpdateProducerGcpOutput';
+import GatewayUpdateProducerMSSQL from './model/GatewayUpdateProducerMSSQL';
+import GatewayUpdateProducerMSSQLOutput from './model/GatewayUpdateProducerMSSQLOutput';
+import GatewayUpdateProducerMongo from './model/GatewayUpdateProducerMongo';
+import GatewayUpdateProducerMongoOutput from './model/GatewayUpdateProducerMongoOutput';
+import GatewayUpdateProducerMySQL from './model/GatewayUpdateProducerMySQL';
+import GatewayUpdateProducerMySQLOutput from './model/GatewayUpdateProducerMySQLOutput';
+import GatewayUpdateProducerRdp from './model/GatewayUpdateProducerRdp';
+import GatewayUpdateProducerRdpOutput from './model/GatewayUpdateProducerRdpOutput';
 import GatewayUpdateTmpUsers from './model/GatewayUpdateTmpUsers';
 import GenCustomerFragment from './model/GenCustomerFragment';
 import GeneralConfigPart from './model/GeneralConfigPart';
@@ -437,7 +449,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.5.13
+* @version 2.5.14
 */
 export {
     /**
@@ -1687,6 +1699,78 @@ export {
      * @property {module:model/GatewayUpdateItemOutput}
      */
     GatewayUpdateItemOutput,
+
+    /**
+     * The GatewayUpdateProducerAws model constructor.
+     * @property {module:model/GatewayUpdateProducerAws}
+     */
+    GatewayUpdateProducerAws,
+
+    /**
+     * The GatewayUpdateProducerAwsOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerAwsOutput}
+     */
+    GatewayUpdateProducerAwsOutput,
+
+    /**
+     * The GatewayUpdateProducerGcp model constructor.
+     * @property {module:model/GatewayUpdateProducerGcp}
+     */
+    GatewayUpdateProducerGcp,
+
+    /**
+     * The GatewayUpdateProducerGcpOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerGcpOutput}
+     */
+    GatewayUpdateProducerGcpOutput,
+
+    /**
+     * The GatewayUpdateProducerMSSQL model constructor.
+     * @property {module:model/GatewayUpdateProducerMSSQL}
+     */
+    GatewayUpdateProducerMSSQL,
+
+    /**
+     * The GatewayUpdateProducerMSSQLOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerMSSQLOutput}
+     */
+    GatewayUpdateProducerMSSQLOutput,
+
+    /**
+     * The GatewayUpdateProducerMongo model constructor.
+     * @property {module:model/GatewayUpdateProducerMongo}
+     */
+    GatewayUpdateProducerMongo,
+
+    /**
+     * The GatewayUpdateProducerMongoOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerMongoOutput}
+     */
+    GatewayUpdateProducerMongoOutput,
+
+    /**
+     * The GatewayUpdateProducerMySQL model constructor.
+     * @property {module:model/GatewayUpdateProducerMySQL}
+     */
+    GatewayUpdateProducerMySQL,
+
+    /**
+     * The GatewayUpdateProducerMySQLOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerMySQLOutput}
+     */
+    GatewayUpdateProducerMySQLOutput,
+
+    /**
+     * The GatewayUpdateProducerRdp model constructor.
+     * @property {module:model/GatewayUpdateProducerRdp}
+     */
+    GatewayUpdateProducerRdp,
+
+    /**
+     * The GatewayUpdateProducerRdpOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerRdpOutput}
+     */
+    GatewayUpdateProducerRdpOutput,
 
     /**
      * The GatewayUpdateTmpUsers model constructor.
