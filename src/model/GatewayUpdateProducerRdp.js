@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRdp model module.
  * @module model/GatewayUpdateProducerRdp
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayUpdateProducerRdp {
     /**
@@ -94,6 +94,9 @@ class GatewayUpdateProducerRdp {
             }
             if (data.hasOwnProperty('secure-access-rdp-user')) {
                 obj['secure-access-rdp-user'] = ApiClient.convertToType(data['secure-access-rdp-user'], 'String');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -203,6 +206,12 @@ GatewayUpdateProducerRdp.prototype['secure-access-rdp-domain'] = undefined;
  * @member {String} secure-access-rdp-user
  */
 GatewayUpdateProducerRdp.prototype['secure-access-rdp-user'] = undefined;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayUpdateProducerRdp.prototype['tags'] = undefined;
 
 /**
  * Target name

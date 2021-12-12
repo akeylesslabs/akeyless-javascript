@@ -35,6 +35,10 @@ import CreateAuthMethodGCP from '../model/CreateAuthMethodGCP';
 import CreateAuthMethodGCPOutput from '../model/CreateAuthMethodGCPOutput';
 import CreateAuthMethodHuawei from '../model/CreateAuthMethodHuawei';
 import CreateAuthMethodHuaweiOutput from '../model/CreateAuthMethodHuaweiOutput';
+import CreateAuthMethodK8S from '../model/CreateAuthMethodK8S';
+import CreateAuthMethodK8SOutput from '../model/CreateAuthMethodK8SOutput';
+import CreateAuthMethodLDAP from '../model/CreateAuthMethodLDAP';
+import CreateAuthMethodLDAPOutput from '../model/CreateAuthMethodLDAPOutput';
 import CreateAuthMethodOAuth2 from '../model/CreateAuthMethodOAuth2';
 import CreateAuthMethodOAuth2Output from '../model/CreateAuthMethodOAuth2Output';
 import CreateAuthMethodOIDC from '../model/CreateAuthMethodOIDC';
@@ -64,6 +68,7 @@ import CreateKeyOutput from '../model/CreateKeyOutput';
 import CreateLdapTarget from '../model/CreateLdapTarget';
 import CreateLdapTargetOutput from '../model/CreateLdapTargetOutput';
 import CreateNativeK8STarget from '../model/CreateNativeK8STarget';
+import CreateNativeK8STargetOutput from '../model/CreateNativeK8STargetOutput';
 import CreatePKICertIssuer from '../model/CreatePKICertIssuer';
 import CreatePKICertIssuerOutput from '../model/CreatePKICertIssuerOutput';
 import CreateRabbitMQTarget from '../model/CreateRabbitMQTarget';
@@ -175,18 +180,44 @@ import GatewayStartProducerOutput from '../model/GatewayStartProducerOutput';
 import GatewayStopProducer from '../model/GatewayStopProducer';
 import GatewayStopProducerOutput from '../model/GatewayStopProducerOutput';
 import GatewaySyncMigration from '../model/GatewaySyncMigration';
+import GatewayUpdateItem from '../model/GatewayUpdateItem';
+import GatewayUpdateItemOutput from '../model/GatewayUpdateItemOutput';
+import GatewayUpdateProducerArtifactory from '../model/GatewayUpdateProducerArtifactory';
+import GatewayUpdateProducerArtifactoryOutput from '../model/GatewayUpdateProducerArtifactoryOutput';
 import GatewayUpdateProducerAws from '../model/GatewayUpdateProducerAws';
 import GatewayUpdateProducerAwsOutput from '../model/GatewayUpdateProducerAwsOutput';
+import GatewayUpdateProducerAzure from '../model/GatewayUpdateProducerAzure';
+import GatewayUpdateProducerAzureOutput from '../model/GatewayUpdateProducerAzureOutput';
+import GatewayUpdateProducerCassandra from '../model/GatewayUpdateProducerCassandra';
+import GatewayUpdateProducerCassandraOutput from '../model/GatewayUpdateProducerCassandraOutput';
+import GatewayUpdateProducerCustom from '../model/GatewayUpdateProducerCustom';
+import GatewayUpdateProducerCustomOutput from '../model/GatewayUpdateProducerCustomOutput';
+import GatewayUpdateProducerEks from '../model/GatewayUpdateProducerEks';
+import GatewayUpdateProducerEksOutput from '../model/GatewayUpdateProducerEksOutput';
 import GatewayUpdateProducerGcp from '../model/GatewayUpdateProducerGcp';
 import GatewayUpdateProducerGcpOutput from '../model/GatewayUpdateProducerGcpOutput';
+import GatewayUpdateProducerGke from '../model/GatewayUpdateProducerGke';
+import GatewayUpdateProducerGkeOutput from '../model/GatewayUpdateProducerGkeOutput';
+import GatewayUpdateProducerLdap from '../model/GatewayUpdateProducerLdap';
+import GatewayUpdateProducerLdapOutput from '../model/GatewayUpdateProducerLdapOutput';
 import GatewayUpdateProducerMSSQL from '../model/GatewayUpdateProducerMSSQL';
 import GatewayUpdateProducerMSSQLOutput from '../model/GatewayUpdateProducerMSSQLOutput';
 import GatewayUpdateProducerMongo from '../model/GatewayUpdateProducerMongo';
 import GatewayUpdateProducerMongoOutput from '../model/GatewayUpdateProducerMongoOutput';
 import GatewayUpdateProducerMySQL from '../model/GatewayUpdateProducerMySQL';
 import GatewayUpdateProducerMySQLOutput from '../model/GatewayUpdateProducerMySQLOutput';
+import GatewayUpdateProducerNativeK8S from '../model/GatewayUpdateProducerNativeK8S';
+import GatewayUpdateProducerNativeK8SOutput from '../model/GatewayUpdateProducerNativeK8SOutput';
+import GatewayUpdateProducerOracleDb from '../model/GatewayUpdateProducerOracleDb';
+import GatewayUpdateProducerOracleDbOutput from '../model/GatewayUpdateProducerOracleDbOutput';
+import GatewayUpdateProducerPostgreSQL from '../model/GatewayUpdateProducerPostgreSQL';
+import GatewayUpdateProducerPostgreSQLOutput from '../model/GatewayUpdateProducerPostgreSQLOutput';
+import GatewayUpdateProducerRabbitMQ from '../model/GatewayUpdateProducerRabbitMQ';
+import GatewayUpdateProducerRabbitMQOutput from '../model/GatewayUpdateProducerRabbitMQOutput';
 import GatewayUpdateProducerRdp from '../model/GatewayUpdateProducerRdp';
 import GatewayUpdateProducerRdpOutput from '../model/GatewayUpdateProducerRdpOutput';
+import GatewayUpdateProducerRedshift from '../model/GatewayUpdateProducerRedshift';
+import GatewayUpdateProducerRedshiftOutput from '../model/GatewayUpdateProducerRedshiftOutput';
 import GatewayUpdateTmpUsers from '../model/GatewayUpdateTmpUsers';
 import GetAuthMethod from '../model/GetAuthMethod';
 import GetDynamicSecretValue from '../model/GetDynamicSecretValue';
@@ -203,6 +234,7 @@ import GetSSHCertificate from '../model/GetSSHCertificate';
 import GetSSHCertificateOutput from '../model/GetSSHCertificateOutput';
 import GetSecretValue from '../model/GetSecretValue';
 import GetSubAdminsListReplyObj from '../model/GetSubAdminsListReplyObj';
+import GetTags from '../model/GetTags';
 import GetTarget from '../model/GetTarget';
 import GetTargetDetails from '../model/GetTargetDetails';
 import GetTargetDetailsOutput from '../model/GetTargetDetailsOutput';
@@ -270,7 +302,21 @@ import UidRotateTokenOutput from '../model/UidRotateTokenOutput';
 import UniversalIdentityDetails from '../model/UniversalIdentityDetails';
 import UpdateAWSTarget from '../model/UpdateAWSTarget';
 import UpdateAWSTargetDetails from '../model/UpdateAWSTargetDetails';
+import UpdateArtifactoryTarget from '../model/UpdateArtifactoryTarget';
+import UpdateArtifactoryTargetOutput from '../model/UpdateArtifactoryTargetOutput';
 import UpdateAssoc from '../model/UpdateAssoc';
+import UpdateAuthMethod from '../model/UpdateAuthMethod';
+import UpdateAuthMethodAWSIAM from '../model/UpdateAuthMethodAWSIAM';
+import UpdateAuthMethodAzureAD from '../model/UpdateAuthMethodAzureAD';
+import UpdateAuthMethodGCP from '../model/UpdateAuthMethodGCP';
+import UpdateAuthMethodK8S from '../model/UpdateAuthMethodK8S';
+import UpdateAuthMethodK8SOutput from '../model/UpdateAuthMethodK8SOutput';
+import UpdateAuthMethodLDAP from '../model/UpdateAuthMethodLDAP';
+import UpdateAuthMethodOAuth2 from '../model/UpdateAuthMethodOAuth2';
+import UpdateAuthMethodOIDC from '../model/UpdateAuthMethodOIDC';
+import UpdateAuthMethodOutput from '../model/UpdateAuthMethodOutput';
+import UpdateAuthMethodSAML from '../model/UpdateAuthMethodSAML';
+import UpdateAuthMethodUniversalIdentity from '../model/UpdateAuthMethodUniversalIdentity';
 import UpdateAzureTarget from '../model/UpdateAzureTarget';
 import UpdateAzureTargetOutput from '../model/UpdateAzureTargetOutput';
 import UpdateDBTarget from '../model/UpdateDBTarget';
@@ -285,6 +331,8 @@ import UpdateGcpTargetOutput from '../model/UpdateGcpTargetOutput';
 import UpdateItem from '../model/UpdateItem';
 import UpdateItemOutput from '../model/UpdateItemOutput';
 import UpdateNativeK8STarget from '../model/UpdateNativeK8STarget';
+import UpdatePKICertIssuer from '../model/UpdatePKICertIssuer';
+import UpdatePKICertIssuerOutput from '../model/UpdatePKICertIssuerOutput';
 import UpdateRDPTargetDetails from '../model/UpdateRDPTargetDetails';
 import UpdateRabbitMQTarget from '../model/UpdateRabbitMQTarget';
 import UpdateRabbitMQTargetDetails from '../model/UpdateRabbitMQTargetDetails';
@@ -294,6 +342,8 @@ import UpdateRoleOutput from '../model/UpdateRoleOutput';
 import UpdateRotatedSecret from '../model/UpdateRotatedSecret';
 import UpdateRotatedSecretOutput from '../model/UpdateRotatedSecretOutput';
 import UpdateRotationSettings from '../model/UpdateRotationSettings';
+import UpdateSSHCertIssuer from '../model/UpdateSSHCertIssuer';
+import UpdateSSHCertIssuerOutput from '../model/UpdateSSHCertIssuerOutput';
 import UpdateSSHTarget from '../model/UpdateSSHTarget';
 import UpdateSSHTargetDetails from '../model/UpdateSSHTargetDetails';
 import UpdateSSHTargetOutput from '../model/UpdateSSHTargetOutput';
@@ -314,7 +364,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.5.14
+* @version 2.5.15
 */
 export default class V2Api {
 
@@ -841,6 +891,92 @@ export default class V2Api {
      */
     createAuthMethodHuawei(body) {
       return this.createAuthMethodHuaweiWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateAuthMethodK8S} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAuthMethodK8SOutput} and HTTP response
+     */
+    createAuthMethodK8SWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createAuthMethodK8S");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateAuthMethodK8SOutput;
+      return this.apiClient.callApi(
+        '/create-auth-method-k8s', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateAuthMethodK8S} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAuthMethodK8SOutput}
+     */
+    createAuthMethodK8S(body) {
+      return this.createAuthMethodK8SWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateAuthMethodLDAP} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAuthMethodLDAPOutput} and HTTP response
+     */
+    createAuthMethodLDAPWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createAuthMethodLDAP");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateAuthMethodLDAPOutput;
+      return this.apiClient.callApi(
+        '/create-auth-method-ldap', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateAuthMethodLDAP} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAuthMethodLDAPOutput}
+     */
+    createAuthMethodLDAP(body) {
+      return this.createAuthMethodLDAPWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1407,10 +1543,15 @@ export default class V2Api {
 
 
     /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateNativeK8STarget} and HTTP response
+     * @param {module:model/CreateNativeK8STarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateNativeK8STargetOutput} and HTTP response
      */
-    createNativeK8STargetWithHttpInfo() {
-      let postBody = null;
+    createNativeK8STargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createNativeK8STarget");
+      }
 
       let pathParams = {
       };
@@ -1422,9 +1563,9 @@ export default class V2Api {
       };
 
       let authNames = [];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = CreateNativeK8STarget;
+      let returnType = CreateNativeK8STargetOutput;
       return this.apiClient.callApi(
         '/create-k8s-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1433,10 +1574,11 @@ export default class V2Api {
     }
 
     /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateNativeK8STarget}
+     * @param {module:model/CreateNativeK8STarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateNativeK8STargetOutput}
      */
-    createNativeK8STarget() {
-      return this.createNativeK8STargetWithHttpInfo()
+    createNativeK8STarget(body) {
+      return this.createNativeK8STargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4152,6 +4294,92 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayUpdateItem} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateItemOutput} and HTTP response
+     */
+    gatewayUpdateItemWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateItem");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateItemOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-item', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateItem} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateItemOutput}
+     */
+    gatewayUpdateItem(body) {
+      return this.gatewayUpdateItemWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerArtifactory} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerArtifactoryOutput} and HTTP response
+     */
+    gatewayUpdateProducerArtifactoryWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerArtifactory");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerArtifactoryOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-artifactory', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerArtifactory} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerArtifactoryOutput}
+     */
+    gatewayUpdateProducerArtifactory(body) {
+      return this.gatewayUpdateProducerArtifactoryWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayUpdateProducerAws} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerAwsOutput} and HTTP response
      */
@@ -4195,6 +4423,177 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayUpdateProducerAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerAzureOutput} and HTTP response
+     */
+    gatewayUpdateProducerAzureWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerAzure");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerAzureOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-azure', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerAzureOutput}
+     */
+    gatewayUpdateProducerAzure(body) {
+      return this.gatewayUpdateProducerAzureWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerCassandra} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerCassandraOutput} and HTTP response
+     */
+    gatewayUpdateProducerCassandraWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerCassandra");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerCassandraOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-cassandra', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerCassandra} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerCassandraOutput}
+     */
+    gatewayUpdateProducerCassandra(body) {
+      return this.gatewayUpdateProducerCassandraWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/GatewayUpdateProducerCustom} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerCustomOutput} and HTTP response
+     */
+    gatewayUpdateProducerCustomWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerCustomOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-custom', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/GatewayUpdateProducerCustom} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerCustomOutput}
+     */
+    gatewayUpdateProducerCustom(opts) {
+      return this.gatewayUpdateProducerCustomWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerEks} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerEksOutput} and HTTP response
+     */
+    gatewayUpdateProducerEksWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerEks");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerEksOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-eks', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerEks} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerEksOutput}
+     */
+    gatewayUpdateProducerEks(body) {
+      return this.gatewayUpdateProducerEksWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayUpdateProducerGcp} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerGcpOutput} and HTTP response
      */
@@ -4231,6 +4630,92 @@ export default class V2Api {
      */
     gatewayUpdateProducerGcp(body) {
       return this.gatewayUpdateProducerGcpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerGke} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerGkeOutput} and HTTP response
+     */
+    gatewayUpdateProducerGkeWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerGke");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerGkeOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-gke', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerGke} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerGkeOutput}
+     */
+    gatewayUpdateProducerGke(body) {
+      return this.gatewayUpdateProducerGkeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerLdapOutput} and HTTP response
+     */
+    gatewayUpdateProducerLdapWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerLdap");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerLdapOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-ldap', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerLdapOutput}
+     */
+    gatewayUpdateProducerLdap(body) {
+      return this.gatewayUpdateProducerLdapWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4367,6 +4852,178 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayUpdateProducerNativeK8S} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerNativeK8SOutput} and HTTP response
+     */
+    gatewayUpdateProducerNativeK8SWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerNativeK8S");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerNativeK8SOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-k8s-native', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerNativeK8S} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerNativeK8SOutput}
+     */
+    gatewayUpdateProducerNativeK8S(body) {
+      return this.gatewayUpdateProducerNativeK8SWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerOracleDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerOracleDbOutput} and HTTP response
+     */
+    gatewayUpdateProducerOracleDbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerOracleDb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerOracleDbOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-oracle', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerOracleDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerOracleDbOutput}
+     */
+    gatewayUpdateProducerOracleDb(body) {
+      return this.gatewayUpdateProducerOracleDbWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerPostgreSQL} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerPostgreSQLOutput} and HTTP response
+     */
+    gatewayUpdateProducerPostgreSQLWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerPostgreSQL");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerPostgreSQLOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-postgresql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerPostgreSQL} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerPostgreSQLOutput}
+     */
+    gatewayUpdateProducerPostgreSQL(body) {
+      return this.gatewayUpdateProducerPostgreSQLWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerRabbitMQ} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerRabbitMQOutput} and HTTP response
+     */
+    gatewayUpdateProducerRabbitMQWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerRabbitMQ");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerRabbitMQOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-rabbitmq', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerRabbitMQ} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerRabbitMQOutput}
+     */
+    gatewayUpdateProducerRabbitMQ(body) {
+      return this.gatewayUpdateProducerRabbitMQWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayUpdateProducerRdp} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerRdpOutput} and HTTP response
      */
@@ -4403,6 +5060,49 @@ export default class V2Api {
      */
     gatewayUpdateProducerRdp(body) {
       return this.gatewayUpdateProducerRdpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerRedshift} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerRedshiftOutput} and HTTP response
+     */
+    gatewayUpdateProducerRedshiftWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerRedshift");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerRedshiftOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-redshift', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerRedshift} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerRedshiftOutput}
+     */
+    gatewayUpdateProducerRedshift(body) {
+      return this.gatewayUpdateProducerRedshiftWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4870,6 +5570,49 @@ export default class V2Api {
      */
     getSecretValue(body) {
       return this.getSecretValueWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GetTags} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
+     */
+    getTagsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling getTags");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ['String'];
+      return this.apiClient.callApi(
+        '/get-tags', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GetTags} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
+     */
+    getTags(body) {
+      return this.getTagsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6351,7 +7094,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = Object;
       return this.apiClient.callApi(
-        '/update-aws-target', 'PUT',
+        '/update-aws-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6413,6 +7156,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/UpdateArtifactoryTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateArtifactoryTargetOutput} and HTTP response
+     */
+    updateArtifactoryTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateArtifactoryTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateArtifactoryTargetOutput;
+      return this.apiClient.callApi(
+        '/update-artifactory-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateArtifactoryTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateArtifactoryTargetOutput}
+     */
+    updateArtifactoryTarget(body) {
+      return this.updateArtifactoryTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/UpdateAssoc} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
@@ -6456,6 +7242,436 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/UpdateAuthMethod} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateAuthMethodOutput} and HTTP response
+     */
+    updateAuthMethodWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAuthMethod");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateAuthMethodOutput;
+      return this.apiClient.callApi(
+        '/update-auth-method', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAuthMethod} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateAuthMethodOutput}
+     */
+    updateAuthMethod(body) {
+      return this.updateAuthMethodWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateAuthMethodAWSIAM} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateAuthMethodAWSIAMWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAuthMethodAWSIAM");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-auth-method-aws-iam', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAuthMethodAWSIAM} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateAuthMethodAWSIAM(body) {
+      return this.updateAuthMethodAWSIAMWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateAuthMethodAzureAD} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateAuthMethodAzureADWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAuthMethodAzureAD");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-auth-method-azure-ad', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAuthMethodAzureAD} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateAuthMethodAzureAD(body) {
+      return this.updateAuthMethodAzureADWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateAuthMethodGCP} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateAuthMethodGCPWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAuthMethodGCP");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-auth-method-gcp', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAuthMethodGCP} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateAuthMethodGCP(body) {
+      return this.updateAuthMethodGCPWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateAuthMethodK8S} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateAuthMethodK8SOutput} and HTTP response
+     */
+    updateAuthMethodK8SWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAuthMethodK8S");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateAuthMethodK8SOutput;
+      return this.apiClient.callApi(
+        '/update-auth-method-k8s', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAuthMethodK8S} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateAuthMethodK8SOutput}
+     */
+    updateAuthMethodK8S(body) {
+      return this.updateAuthMethodK8SWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateAuthMethodLDAP} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateAuthMethodLDAPWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAuthMethodLDAP");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-auth-method-ldap', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAuthMethodLDAP} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateAuthMethodLDAP(body) {
+      return this.updateAuthMethodLDAPWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateAuthMethodOAuth2} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateAuthMethodOAuth2WithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAuthMethodOAuth2");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-auth-method-oauth2', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAuthMethodOAuth2} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateAuthMethodOAuth2(body) {
+      return this.updateAuthMethodOAuth2WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateAuthMethodOIDC} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateAuthMethodOIDCWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAuthMethodOIDC");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-auth-method-oidc', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAuthMethodOIDC} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateAuthMethodOIDC(body) {
+      return this.updateAuthMethodOIDCWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateAuthMethodSAML} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateAuthMethodSAMLWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAuthMethodSAML");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-auth-method-saml', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAuthMethodSAML} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateAuthMethodSAML(body) {
+      return this.updateAuthMethodSAMLWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateAuthMethodUniversalIdentity} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateAuthMethodUniversalIdentityWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAuthMethodUniversalIdentity");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-auth-method-universal-identity', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAuthMethodUniversalIdentity} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateAuthMethodUniversalIdentity(body) {
+      return this.updateAuthMethodUniversalIdentityWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/UpdateAzureTarget} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateAzureTargetOutput} and HTTP response
      */
@@ -6480,7 +7696,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = UpdateAzureTargetOutput;
       return this.apiClient.callApi(
-        '/update-azure-target', 'PUT',
+        '/update-azure-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6609,7 +7825,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = UpdateEKSTargetOutput;
       return this.apiClient.callApi(
-        '/update-eks-target', 'PUT',
+        '/update-eks-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6652,7 +7868,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = UpdateGKETargetOutput;
       return this.apiClient.callApi(
-        '/update-gke-target', 'PUT',
+        '/update-gke-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6695,7 +7911,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = UpdateGcpTargetOutput;
       return this.apiClient.callApi(
-        '/update-gcp-target', 'PUT',
+        '/update-gcp-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6781,7 +7997,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = UpdateNativeK8STarget;
       return this.apiClient.callApi(
-        '/update-k8s-target', 'PUT',
+        '/update-k8s-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -6793,6 +8009,49 @@ export default class V2Api {
      */
     updateNativeK8STarget(body) {
       return this.updateNativeK8STargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdatePKICertIssuer} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdatePKICertIssuerOutput} and HTTP response
+     */
+    updatePKICertIssuerWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updatePKICertIssuer");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdatePKICertIssuerOutput;
+      return this.apiClient.callApi(
+        '/update-pki-cert-issuer', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdatePKICertIssuer} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdatePKICertIssuerOutput}
+     */
+    updatePKICertIssuer(body) {
+      return this.updatePKICertIssuerWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6867,7 +8126,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = UpdateRabbitMQTargetOutput;
       return this.apiClient.callApi(
-        '/update-rabbitmq-target', 'PUT',
+        '/update-rabbitmq-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7045,6 +8304,49 @@ export default class V2Api {
      */
     updateRotationSettings() {
       return this.updateRotationSettingsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateSSHCertIssuer} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateSSHCertIssuerOutput} and HTTP response
+     */
+    updateSSHCertIssuerWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateSSHCertIssuer");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateSSHCertIssuerOutput;
+      return this.apiClient.callApi(
+        '/update-ssh-cert-issuer', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateSSHCertIssuer} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateSSHCertIssuerOutput}
+     */
+    updateSSHCertIssuer(body) {
+      return this.updateSSHCertIssuerWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

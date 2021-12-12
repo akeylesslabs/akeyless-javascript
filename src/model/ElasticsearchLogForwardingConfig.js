@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ElasticsearchLogForwardingConfig model module.
  * @module model/ElasticsearchLogForwardingConfig
- * @version 2.5.14
+ * @version 2.5.15
  */
 class ElasticsearchLogForwardingConfig {
     /**
@@ -47,14 +47,29 @@ class ElasticsearchLogForwardingConfig {
         if (data) {
             obj = obj || new ElasticsearchLogForwardingConfig();
 
-            if (data.hasOwnProperty('elasticsearch_host')) {
-                obj['elasticsearch_host'] = ApiClient.convertToType(data['elasticsearch_host'], 'String');
+            if (data.hasOwnProperty('elasticsearch_api_key')) {
+                obj['elasticsearch_api_key'] = ApiClient.convertToType(data['elasticsearch_api_key'], 'String');
+            }
+            if (data.hasOwnProperty('elasticsearch_auth_type')) {
+                obj['elasticsearch_auth_type'] = ApiClient.convertToType(data['elasticsearch_auth_type'], 'String');
+            }
+            if (data.hasOwnProperty('elasticsearch_cloud_id')) {
+                obj['elasticsearch_cloud_id'] = ApiClient.convertToType(data['elasticsearch_cloud_id'], 'String');
             }
             if (data.hasOwnProperty('elasticsearch_index')) {
                 obj['elasticsearch_index'] = ApiClient.convertToType(data['elasticsearch_index'], 'String');
             }
             if (data.hasOwnProperty('elasticsearch_nodes')) {
                 obj['elasticsearch_nodes'] = ApiClient.convertToType(data['elasticsearch_nodes'], 'String');
+            }
+            if (data.hasOwnProperty('elasticsearch_password')) {
+                obj['elasticsearch_password'] = ApiClient.convertToType(data['elasticsearch_password'], 'String');
+            }
+            if (data.hasOwnProperty('elasticsearch_server_type')) {
+                obj['elasticsearch_server_type'] = ApiClient.convertToType(data['elasticsearch_server_type'], 'String');
+            }
+            if (data.hasOwnProperty('elasticsearch_user_name')) {
+                obj['elasticsearch_user_name'] = ApiClient.convertToType(data['elasticsearch_user_name'], 'String');
             }
         }
         return obj;
@@ -64,9 +79,19 @@ class ElasticsearchLogForwardingConfig {
 }
 
 /**
- * @member {String} elasticsearch_host
+ * @member {String} elasticsearch_api_key
  */
-ElasticsearchLogForwardingConfig.prototype['elasticsearch_host'] = undefined;
+ElasticsearchLogForwardingConfig.prototype['elasticsearch_api_key'] = undefined;
+
+/**
+ * @member {String} elasticsearch_auth_type
+ */
+ElasticsearchLogForwardingConfig.prototype['elasticsearch_auth_type'] = undefined;
+
+/**
+ * @member {String} elasticsearch_cloud_id
+ */
+ElasticsearchLogForwardingConfig.prototype['elasticsearch_cloud_id'] = undefined;
 
 /**
  * @member {String} elasticsearch_index
@@ -77,6 +102,21 @@ ElasticsearchLogForwardingConfig.prototype['elasticsearch_index'] = undefined;
  * @member {String} elasticsearch_nodes
  */
 ElasticsearchLogForwardingConfig.prototype['elasticsearch_nodes'] = undefined;
+
+/**
+ * @member {String} elasticsearch_password
+ */
+ElasticsearchLogForwardingConfig.prototype['elasticsearch_password'] = undefined;
+
+/**
+ * @member {String} elasticsearch_server_type
+ */
+ElasticsearchLogForwardingConfig.prototype['elasticsearch_server_type'] = undefined;
+
+/**
+ * @member {String} elasticsearch_user_name
+ */
+ElasticsearchLogForwardingConfig.prototype['elasticsearch_user_name'] = undefined;
 
 
 

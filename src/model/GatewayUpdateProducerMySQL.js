@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMySQL model module.
  * @module model/GatewayUpdateProducerMySQL
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayUpdateProducerMySQL {
     /**
@@ -97,6 +97,9 @@ class GatewayUpdateProducerMySQL {
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -213,6 +216,12 @@ GatewayUpdateProducerMySQL.prototype['secure-access-host'] = undefined;
  * @member {Boolean} secure-access-web
  */
 GatewayUpdateProducerMySQL.prototype['secure-access-web'] = undefined;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayUpdateProducerMySQL.prototype['tags'] = undefined;
 
 /**
  * Target name

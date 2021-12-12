@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerNativeK8S model module.
  * @module model/GatewayCreateProducerNativeK8S
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayCreateProducerNativeK8S {
     /**
@@ -94,6 +94,9 @@ class GatewayCreateProducerNativeK8S {
             }
             if (data.hasOwnProperty('secure-access-web-browsing')) {
                 obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -199,6 +202,12 @@ GatewayCreateProducerNativeK8S.prototype['secure-access-web'] = undefined;
  * @member {Boolean} secure-access-web-browsing
  */
 GatewayCreateProducerNativeK8S.prototype['secure-access-web-browsing'] = undefined;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayCreateProducerNativeK8S.prototype['tags'] = undefined;
 
 /**
  * Target name

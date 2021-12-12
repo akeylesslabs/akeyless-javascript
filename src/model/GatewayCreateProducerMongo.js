@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMongo model module.
  * @module model/GatewayCreateProducerMongo
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayCreateProducerMongo {
     /**
@@ -103,6 +103,9 @@ class GatewayCreateProducerMongo {
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -230,6 +233,12 @@ GatewayCreateProducerMongo.prototype['secure-access-host'] = undefined;
  * @member {Boolean} secure-access-web
  */
 GatewayCreateProducerMongo.prototype['secure-access-web'] = undefined;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayCreateProducerMongo.prototype['tags'] = undefined;
 
 /**
  * Target name

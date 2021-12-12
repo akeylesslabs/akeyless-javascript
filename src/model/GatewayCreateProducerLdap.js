@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerLdap model module.
  * @module model/GatewayCreateProducerLdap
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayCreateProducerLdap {
     /**
@@ -73,6 +73,9 @@ class GatewayCreateProducerLdap {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -153,6 +156,12 @@ GatewayCreateProducerLdap.prototype['password'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayCreateProducerLdap.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayCreateProducerLdap.prototype['tags'] = undefined;
 
 /**
  * Target name

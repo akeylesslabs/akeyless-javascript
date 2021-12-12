@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodSAML model module.
  * @module model/CreateAuthMethodSAML
- * @version 2.5.14
+ * @version 2.5.15
  */
 class CreateAuthMethodSAML {
     /**
@@ -106,7 +106,7 @@ CreateAuthMethodSAML.prototype['access-expires'] = 0;
 CreateAuthMethodSAML.prototype['allowed-redirect-uri'] = undefined;
 
 /**
- * A CIDR whitelist of the IPs that the access is restricted to
+ * A CIDR whitelist with the IPs that the access is restricted to
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodSAML.prototype['bound-ips'] = undefined;

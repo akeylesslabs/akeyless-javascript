@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGke model module.
  * @module model/GatewayCreateProducerGke
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayCreateProducerGke {
     /**
@@ -88,6 +88,9 @@ class GatewayCreateProducerGke {
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -183,6 +186,12 @@ GatewayCreateProducerGke.prototype['secure-access-enable'] = undefined;
  * @member {Boolean} secure-access-web
  */
 GatewayCreateProducerGke.prototype['secure-access-web'] = undefined;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayCreateProducerGke.prototype['tags'] = undefined;
 
 /**
  * Target name

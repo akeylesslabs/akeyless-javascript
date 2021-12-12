@@ -111,6 +111,7 @@ import CreateWebTargetOutput from './model/CreateWebTargetOutput';
 import CustomerFragment from './model/CustomerFragment';
 import CustomerFragmentsJson from './model/CustomerFragmentsJson';
 import DSProducerDetails from './model/DSProducerDetails';
+import DatadogForwardingConfig from './model/DatadogForwardingConfig';
 import Decrypt from './model/Decrypt';
 import DecryptFile from './model/DecryptFile';
 import DecryptFileOutput from './model/DecryptFileOutput';
@@ -219,19 +220,44 @@ import GatewayStartProducerOutput from './model/GatewayStartProducerOutput';
 import GatewayStopProducer from './model/GatewayStopProducer';
 import GatewayStopProducerOutput from './model/GatewayStopProducerOutput';
 import GatewaySyncMigration from './model/GatewaySyncMigration';
+import GatewayUpdateItem from './model/GatewayUpdateItem';
 import GatewayUpdateItemOutput from './model/GatewayUpdateItemOutput';
+import GatewayUpdateProducerArtifactory from './model/GatewayUpdateProducerArtifactory';
+import GatewayUpdateProducerArtifactoryOutput from './model/GatewayUpdateProducerArtifactoryOutput';
 import GatewayUpdateProducerAws from './model/GatewayUpdateProducerAws';
 import GatewayUpdateProducerAwsOutput from './model/GatewayUpdateProducerAwsOutput';
+import GatewayUpdateProducerAzure from './model/GatewayUpdateProducerAzure';
+import GatewayUpdateProducerAzureOutput from './model/GatewayUpdateProducerAzureOutput';
+import GatewayUpdateProducerCassandra from './model/GatewayUpdateProducerCassandra';
+import GatewayUpdateProducerCassandraOutput from './model/GatewayUpdateProducerCassandraOutput';
+import GatewayUpdateProducerCustom from './model/GatewayUpdateProducerCustom';
+import GatewayUpdateProducerCustomOutput from './model/GatewayUpdateProducerCustomOutput';
+import GatewayUpdateProducerEks from './model/GatewayUpdateProducerEks';
+import GatewayUpdateProducerEksOutput from './model/GatewayUpdateProducerEksOutput';
 import GatewayUpdateProducerGcp from './model/GatewayUpdateProducerGcp';
 import GatewayUpdateProducerGcpOutput from './model/GatewayUpdateProducerGcpOutput';
+import GatewayUpdateProducerGke from './model/GatewayUpdateProducerGke';
+import GatewayUpdateProducerGkeOutput from './model/GatewayUpdateProducerGkeOutput';
+import GatewayUpdateProducerLdap from './model/GatewayUpdateProducerLdap';
+import GatewayUpdateProducerLdapOutput from './model/GatewayUpdateProducerLdapOutput';
 import GatewayUpdateProducerMSSQL from './model/GatewayUpdateProducerMSSQL';
 import GatewayUpdateProducerMSSQLOutput from './model/GatewayUpdateProducerMSSQLOutput';
 import GatewayUpdateProducerMongo from './model/GatewayUpdateProducerMongo';
 import GatewayUpdateProducerMongoOutput from './model/GatewayUpdateProducerMongoOutput';
 import GatewayUpdateProducerMySQL from './model/GatewayUpdateProducerMySQL';
 import GatewayUpdateProducerMySQLOutput from './model/GatewayUpdateProducerMySQLOutput';
+import GatewayUpdateProducerNativeK8S from './model/GatewayUpdateProducerNativeK8S';
+import GatewayUpdateProducerNativeK8SOutput from './model/GatewayUpdateProducerNativeK8SOutput';
+import GatewayUpdateProducerOracleDb from './model/GatewayUpdateProducerOracleDb';
+import GatewayUpdateProducerOracleDbOutput from './model/GatewayUpdateProducerOracleDbOutput';
+import GatewayUpdateProducerPostgreSQL from './model/GatewayUpdateProducerPostgreSQL';
+import GatewayUpdateProducerPostgreSQLOutput from './model/GatewayUpdateProducerPostgreSQLOutput';
+import GatewayUpdateProducerRabbitMQ from './model/GatewayUpdateProducerRabbitMQ';
+import GatewayUpdateProducerRabbitMQOutput from './model/GatewayUpdateProducerRabbitMQOutput';
 import GatewayUpdateProducerRdp from './model/GatewayUpdateProducerRdp';
 import GatewayUpdateProducerRdpOutput from './model/GatewayUpdateProducerRdpOutput';
+import GatewayUpdateProducerRedshift from './model/GatewayUpdateProducerRedshift';
+import GatewayUpdateProducerRedshiftOutput from './model/GatewayUpdateProducerRedshiftOutput';
 import GatewayUpdateTmpUsers from './model/GatewayUpdateTmpUsers';
 import GenCustomerFragment from './model/GenCustomerFragment';
 import GeneralConfigPart from './model/GeneralConfigPart';
@@ -252,6 +278,7 @@ import GetSSHCertificate from './model/GetSSHCertificate';
 import GetSSHCertificateOutput from './model/GetSSHCertificateOutput';
 import GetSecretValue from './model/GetSecretValue';
 import GetSubAdminsListReplyObj from './model/GetSubAdminsListReplyObj';
+import GetTags from './model/GetTags';
 import GetTarget from './model/GetTarget';
 import GetTargetDetails from './model/GetTargetDetails';
 import GetTargetDetailsOutput from './model/GetTargetDetailsOutput';
@@ -373,7 +400,21 @@ import UniversalIdentityAccessRules from './model/UniversalIdentityAccessRules';
 import UniversalIdentityDetails from './model/UniversalIdentityDetails';
 import UpdateAWSTarget from './model/UpdateAWSTarget';
 import UpdateAWSTargetDetails from './model/UpdateAWSTargetDetails';
+import UpdateArtifactoryTarget from './model/UpdateArtifactoryTarget';
+import UpdateArtifactoryTargetOutput from './model/UpdateArtifactoryTargetOutput';
 import UpdateAssoc from './model/UpdateAssoc';
+import UpdateAuthMethod from './model/UpdateAuthMethod';
+import UpdateAuthMethodAWSIAM from './model/UpdateAuthMethodAWSIAM';
+import UpdateAuthMethodAzureAD from './model/UpdateAuthMethodAzureAD';
+import UpdateAuthMethodGCP from './model/UpdateAuthMethodGCP';
+import UpdateAuthMethodK8S from './model/UpdateAuthMethodK8S';
+import UpdateAuthMethodK8SOutput from './model/UpdateAuthMethodK8SOutput';
+import UpdateAuthMethodLDAP from './model/UpdateAuthMethodLDAP';
+import UpdateAuthMethodOAuth2 from './model/UpdateAuthMethodOAuth2';
+import UpdateAuthMethodOIDC from './model/UpdateAuthMethodOIDC';
+import UpdateAuthMethodOutput from './model/UpdateAuthMethodOutput';
+import UpdateAuthMethodSAML from './model/UpdateAuthMethodSAML';
+import UpdateAuthMethodUniversalIdentity from './model/UpdateAuthMethodUniversalIdentity';
 import UpdateAzureTarget from './model/UpdateAzureTarget';
 import UpdateAzureTargetOutput from './model/UpdateAzureTargetOutput';
 import UpdateDBTarget from './model/UpdateDBTarget';
@@ -390,6 +431,8 @@ import UpdateItemOutput from './model/UpdateItemOutput';
 import UpdateNativeK8STarget from './model/UpdateNativeK8STarget';
 import UpdateNativeK8STargetOutput from './model/UpdateNativeK8STargetOutput';
 import UpdateOutput from './model/UpdateOutput';
+import UpdatePKICertIssuer from './model/UpdatePKICertIssuer';
+import UpdatePKICertIssuerOutput from './model/UpdatePKICertIssuerOutput';
 import UpdateRDPTargetDetails from './model/UpdateRDPTargetDetails';
 import UpdateRabbitMQTarget from './model/UpdateRabbitMQTarget';
 import UpdateRabbitMQTargetDetails from './model/UpdateRabbitMQTargetDetails';
@@ -399,6 +442,8 @@ import UpdateRoleOutput from './model/UpdateRoleOutput';
 import UpdateRotatedSecret from './model/UpdateRotatedSecret';
 import UpdateRotatedSecretOutput from './model/UpdateRotatedSecretOutput';
 import UpdateRotationSettings from './model/UpdateRotationSettings';
+import UpdateSSHCertIssuer from './model/UpdateSSHCertIssuer';
+import UpdateSSHCertIssuerOutput from './model/UpdateSSHCertIssuerOutput';
 import UpdateSSHTarget from './model/UpdateSSHTarget';
 import UpdateSSHTargetDetails from './model/UpdateSSHTargetDetails';
 import UpdateSSHTargetOutput from './model/UpdateSSHTargetOutput';
@@ -449,7 +494,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.5.14
+* @version 2.5.15
 */
 export {
     /**
@@ -1045,6 +1090,12 @@ export {
      * @property {module:model/DSProducerDetails}
      */
     DSProducerDetails,
+
+    /**
+     * The DatadogForwardingConfig model constructor.
+     * @property {module:model/DatadogForwardingConfig}
+     */
+    DatadogForwardingConfig,
 
     /**
      * The Decrypt model constructor.
@@ -1695,10 +1746,28 @@ export {
     GatewaySyncMigration,
 
     /**
+     * The GatewayUpdateItem model constructor.
+     * @property {module:model/GatewayUpdateItem}
+     */
+    GatewayUpdateItem,
+
+    /**
      * The GatewayUpdateItemOutput model constructor.
      * @property {module:model/GatewayUpdateItemOutput}
      */
     GatewayUpdateItemOutput,
+
+    /**
+     * The GatewayUpdateProducerArtifactory model constructor.
+     * @property {module:model/GatewayUpdateProducerArtifactory}
+     */
+    GatewayUpdateProducerArtifactory,
+
+    /**
+     * The GatewayUpdateProducerArtifactoryOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerArtifactoryOutput}
+     */
+    GatewayUpdateProducerArtifactoryOutput,
 
     /**
      * The GatewayUpdateProducerAws model constructor.
@@ -1713,6 +1782,54 @@ export {
     GatewayUpdateProducerAwsOutput,
 
     /**
+     * The GatewayUpdateProducerAzure model constructor.
+     * @property {module:model/GatewayUpdateProducerAzure}
+     */
+    GatewayUpdateProducerAzure,
+
+    /**
+     * The GatewayUpdateProducerAzureOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerAzureOutput}
+     */
+    GatewayUpdateProducerAzureOutput,
+
+    /**
+     * The GatewayUpdateProducerCassandra model constructor.
+     * @property {module:model/GatewayUpdateProducerCassandra}
+     */
+    GatewayUpdateProducerCassandra,
+
+    /**
+     * The GatewayUpdateProducerCassandraOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerCassandraOutput}
+     */
+    GatewayUpdateProducerCassandraOutput,
+
+    /**
+     * The GatewayUpdateProducerCustom model constructor.
+     * @property {module:model/GatewayUpdateProducerCustom}
+     */
+    GatewayUpdateProducerCustom,
+
+    /**
+     * The GatewayUpdateProducerCustomOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerCustomOutput}
+     */
+    GatewayUpdateProducerCustomOutput,
+
+    /**
+     * The GatewayUpdateProducerEks model constructor.
+     * @property {module:model/GatewayUpdateProducerEks}
+     */
+    GatewayUpdateProducerEks,
+
+    /**
+     * The GatewayUpdateProducerEksOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerEksOutput}
+     */
+    GatewayUpdateProducerEksOutput,
+
+    /**
      * The GatewayUpdateProducerGcp model constructor.
      * @property {module:model/GatewayUpdateProducerGcp}
      */
@@ -1723,6 +1840,30 @@ export {
      * @property {module:model/GatewayUpdateProducerGcpOutput}
      */
     GatewayUpdateProducerGcpOutput,
+
+    /**
+     * The GatewayUpdateProducerGke model constructor.
+     * @property {module:model/GatewayUpdateProducerGke}
+     */
+    GatewayUpdateProducerGke,
+
+    /**
+     * The GatewayUpdateProducerGkeOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerGkeOutput}
+     */
+    GatewayUpdateProducerGkeOutput,
+
+    /**
+     * The GatewayUpdateProducerLdap model constructor.
+     * @property {module:model/GatewayUpdateProducerLdap}
+     */
+    GatewayUpdateProducerLdap,
+
+    /**
+     * The GatewayUpdateProducerLdapOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerLdapOutput}
+     */
+    GatewayUpdateProducerLdapOutput,
 
     /**
      * The GatewayUpdateProducerMSSQL model constructor.
@@ -1761,6 +1902,54 @@ export {
     GatewayUpdateProducerMySQLOutput,
 
     /**
+     * The GatewayUpdateProducerNativeK8S model constructor.
+     * @property {module:model/GatewayUpdateProducerNativeK8S}
+     */
+    GatewayUpdateProducerNativeK8S,
+
+    /**
+     * The GatewayUpdateProducerNativeK8SOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerNativeK8SOutput}
+     */
+    GatewayUpdateProducerNativeK8SOutput,
+
+    /**
+     * The GatewayUpdateProducerOracleDb model constructor.
+     * @property {module:model/GatewayUpdateProducerOracleDb}
+     */
+    GatewayUpdateProducerOracleDb,
+
+    /**
+     * The GatewayUpdateProducerOracleDbOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerOracleDbOutput}
+     */
+    GatewayUpdateProducerOracleDbOutput,
+
+    /**
+     * The GatewayUpdateProducerPostgreSQL model constructor.
+     * @property {module:model/GatewayUpdateProducerPostgreSQL}
+     */
+    GatewayUpdateProducerPostgreSQL,
+
+    /**
+     * The GatewayUpdateProducerPostgreSQLOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerPostgreSQLOutput}
+     */
+    GatewayUpdateProducerPostgreSQLOutput,
+
+    /**
+     * The GatewayUpdateProducerRabbitMQ model constructor.
+     * @property {module:model/GatewayUpdateProducerRabbitMQ}
+     */
+    GatewayUpdateProducerRabbitMQ,
+
+    /**
+     * The GatewayUpdateProducerRabbitMQOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerRabbitMQOutput}
+     */
+    GatewayUpdateProducerRabbitMQOutput,
+
+    /**
      * The GatewayUpdateProducerRdp model constructor.
      * @property {module:model/GatewayUpdateProducerRdp}
      */
@@ -1771,6 +1960,18 @@ export {
      * @property {module:model/GatewayUpdateProducerRdpOutput}
      */
     GatewayUpdateProducerRdpOutput,
+
+    /**
+     * The GatewayUpdateProducerRedshift model constructor.
+     * @property {module:model/GatewayUpdateProducerRedshift}
+     */
+    GatewayUpdateProducerRedshift,
+
+    /**
+     * The GatewayUpdateProducerRedshiftOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerRedshiftOutput}
+     */
+    GatewayUpdateProducerRedshiftOutput,
 
     /**
      * The GatewayUpdateTmpUsers model constructor.
@@ -1891,6 +2092,12 @@ export {
      * @property {module:model/GetSubAdminsListReplyObj}
      */
     GetSubAdminsListReplyObj,
+
+    /**
+     * The GetTags model constructor.
+     * @property {module:model/GetTags}
+     */
+    GetTags,
 
     /**
      * The GetTarget model constructor.
@@ -2619,10 +2826,94 @@ export {
     UpdateAWSTargetDetails,
 
     /**
+     * The UpdateArtifactoryTarget model constructor.
+     * @property {module:model/UpdateArtifactoryTarget}
+     */
+    UpdateArtifactoryTarget,
+
+    /**
+     * The UpdateArtifactoryTargetOutput model constructor.
+     * @property {module:model/UpdateArtifactoryTargetOutput}
+     */
+    UpdateArtifactoryTargetOutput,
+
+    /**
      * The UpdateAssoc model constructor.
      * @property {module:model/UpdateAssoc}
      */
     UpdateAssoc,
+
+    /**
+     * The UpdateAuthMethod model constructor.
+     * @property {module:model/UpdateAuthMethod}
+     */
+    UpdateAuthMethod,
+
+    /**
+     * The UpdateAuthMethodAWSIAM model constructor.
+     * @property {module:model/UpdateAuthMethodAWSIAM}
+     */
+    UpdateAuthMethodAWSIAM,
+
+    /**
+     * The UpdateAuthMethodAzureAD model constructor.
+     * @property {module:model/UpdateAuthMethodAzureAD}
+     */
+    UpdateAuthMethodAzureAD,
+
+    /**
+     * The UpdateAuthMethodGCP model constructor.
+     * @property {module:model/UpdateAuthMethodGCP}
+     */
+    UpdateAuthMethodGCP,
+
+    /**
+     * The UpdateAuthMethodK8S model constructor.
+     * @property {module:model/UpdateAuthMethodK8S}
+     */
+    UpdateAuthMethodK8S,
+
+    /**
+     * The UpdateAuthMethodK8SOutput model constructor.
+     * @property {module:model/UpdateAuthMethodK8SOutput}
+     */
+    UpdateAuthMethodK8SOutput,
+
+    /**
+     * The UpdateAuthMethodLDAP model constructor.
+     * @property {module:model/UpdateAuthMethodLDAP}
+     */
+    UpdateAuthMethodLDAP,
+
+    /**
+     * The UpdateAuthMethodOAuth2 model constructor.
+     * @property {module:model/UpdateAuthMethodOAuth2}
+     */
+    UpdateAuthMethodOAuth2,
+
+    /**
+     * The UpdateAuthMethodOIDC model constructor.
+     * @property {module:model/UpdateAuthMethodOIDC}
+     */
+    UpdateAuthMethodOIDC,
+
+    /**
+     * The UpdateAuthMethodOutput model constructor.
+     * @property {module:model/UpdateAuthMethodOutput}
+     */
+    UpdateAuthMethodOutput,
+
+    /**
+     * The UpdateAuthMethodSAML model constructor.
+     * @property {module:model/UpdateAuthMethodSAML}
+     */
+    UpdateAuthMethodSAML,
+
+    /**
+     * The UpdateAuthMethodUniversalIdentity model constructor.
+     * @property {module:model/UpdateAuthMethodUniversalIdentity}
+     */
+    UpdateAuthMethodUniversalIdentity,
 
     /**
      * The UpdateAzureTarget model constructor.
@@ -2721,6 +3012,18 @@ export {
     UpdateOutput,
 
     /**
+     * The UpdatePKICertIssuer model constructor.
+     * @property {module:model/UpdatePKICertIssuer}
+     */
+    UpdatePKICertIssuer,
+
+    /**
+     * The UpdatePKICertIssuerOutput model constructor.
+     * @property {module:model/UpdatePKICertIssuerOutput}
+     */
+    UpdatePKICertIssuerOutput,
+
+    /**
      * The UpdateRDPTargetDetails model constructor.
      * @property {module:model/UpdateRDPTargetDetails}
      */
@@ -2773,6 +3076,18 @@ export {
      * @property {module:model/UpdateRotationSettings}
      */
     UpdateRotationSettings,
+
+    /**
+     * The UpdateSSHCertIssuer model constructor.
+     * @property {module:model/UpdateSSHCertIssuer}
+     */
+    UpdateSSHCertIssuer,
+
+    /**
+     * The UpdateSSHCertIssuerOutput model constructor.
+     * @property {module:model/UpdateSSHCertIssuerOutput}
+     */
+    UpdateSSHCertIssuerOutput,
 
     /**
      * The UpdateSSHTarget model constructor.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerSnowflake model module.
  * @module model/GatewayCreateProducerSnowflake
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayCreateProducerSnowflake {
     /**
@@ -64,6 +64,9 @@ class GatewayCreateProducerSnowflake {
             }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'String');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -119,6 +122,12 @@ GatewayCreateProducerSnowflake.prototype['password'] = undefined;
  * @member {String} role
  */
 GatewayCreateProducerSnowflake.prototype['role'] = undefined;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayCreateProducerSnowflake.prototype['tags'] = undefined;
 
 /**
  * Target name

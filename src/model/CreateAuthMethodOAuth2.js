@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOAuth2 model module.
  * @module model/CreateAuthMethodOAuth2
- * @version 2.5.14
+ * @version 2.5.15
  */
 class CreateAuthMethodOAuth2 {
     /**
@@ -120,7 +120,7 @@ CreateAuthMethodOAuth2.prototype['audience'] = undefined;
 CreateAuthMethodOAuth2.prototype['bound-client-ids'] = undefined;
 
 /**
- * A CIDR whitelist of the IPs that the access is restricted to
+ * A CIDR whitelist with the IPs that the access is restricted to
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodOAuth2.prototype['bound-ips'] = undefined;

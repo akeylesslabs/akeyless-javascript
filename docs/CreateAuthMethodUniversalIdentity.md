@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessExpires** | **Number** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
-**boundIps** | **[String]** | A CIDR whitelist of the IPs that the access is restricted to | [optional] 
+**boundIps** | **[String]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
 **denyInheritance** | **Boolean** | Deny from root to create children | [optional] 
 **denyRotate** | **Boolean** | Deny from the token to rotate | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 

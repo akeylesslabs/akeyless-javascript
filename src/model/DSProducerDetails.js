@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.5.14
+ * @version 2.5.15
  */
 class DSProducerDetails {
     /**
@@ -426,6 +426,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('should_stop')) {
                 obj['should_stop'] = ApiClient.convertToType(data['should_stop'], 'String');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('timeout_seconds')) {
                 obj['timeout_seconds'] = ApiClient.convertToType(data['timeout_seconds'], 'Number');
@@ -1122,6 +1125,11 @@ DSProducerDetails.prototype['sf_warehouse_name'] = undefined;
  * @member {String} should_stop
  */
 DSProducerDetails.prototype['should_stop'] = undefined;
+
+/**
+ * @member {Array.<String>} tags
+ */
+DSProducerDetails.prototype['tags'] = undefined;
 
 /**
  * @member {Number} timeout_seconds

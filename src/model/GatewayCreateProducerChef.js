@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerChef model module.
  * @module model/GatewayCreateProducerChef
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayCreateProducerChef {
     /**
@@ -73,6 +73,9 @@ class GatewayCreateProducerChef {
             }
             if (data.hasOwnProperty('skip-ssl')) {
                 obj['skip-ssl'] = ApiClient.convertToType(data['skip-ssl'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -144,6 +147,12 @@ GatewayCreateProducerChef.prototype['producer-encryption-key-name'] = undefined;
  * @default true
  */
 GatewayCreateProducerChef.prototype['skip-ssl'] = true;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayCreateProducerChef.prototype['tags'] = undefined;
 
 /**
  * Target name

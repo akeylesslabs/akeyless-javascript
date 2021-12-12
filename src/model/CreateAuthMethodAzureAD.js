@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAzureAD model module.
  * @module model/CreateAuthMethodAzureAD
- * @version 2.5.14
+ * @version 2.5.15
  */
 class CreateAuthMethodAzureAD {
     /**
@@ -140,7 +140,7 @@ CreateAuthMethodAzureAD.prototype['audience'] = 'https://management.azure.com/';
 CreateAuthMethodAzureAD.prototype['bound-group-id'] = undefined;
 
 /**
- * A CIDR whitelist of the IPs that the access is restricted to
+ * A CIDR whitelist with the IPs that the access is restricted to
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodAzureAD.prototype['bound-ips'] = undefined;

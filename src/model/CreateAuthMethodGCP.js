@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodGCP model module.
  * @module model/CreateAuthMethodGCP
- * @version 2.5.14
+ * @version 2.5.15
  */
 class CreateAuthMethodGCP {
     /**
@@ -124,7 +124,7 @@ CreateAuthMethodGCP.prototype['access-expires'] = 0;
 CreateAuthMethodGCP.prototype['audience'] = 'akeyless.io';
 
 /**
- * A CIDR whitelist of the IPs that the access is restricted to
+ * A CIDR whitelist with the IPs that the access is restricted to
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodGCP.prototype['bound-ips'] = undefined;
@@ -148,7 +148,7 @@ CreateAuthMethodGCP.prototype['bound-projects'] = undefined;
 CreateAuthMethodGCP.prototype['bound-regions'] = undefined;
 
 /**
- * === Human authentication section === List of service accounts the service account must be part of in order to be authenticated.
+ * List of service accounts the service account must be part of in order to be authenticated.
  * @member {Array.<String>} bound-service-accounts
  */
 CreateAuthMethodGCP.prototype['bound-service-accounts'] = undefined;

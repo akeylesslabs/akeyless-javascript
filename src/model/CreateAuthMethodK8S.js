@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodK8S model module.
  * @module model/CreateAuthMethodK8S
- * @version 2.5.14
+ * @version 2.5.15
  */
 class CreateAuthMethodK8S {
     /**
@@ -80,6 +80,9 @@ class CreateAuthMethodK8S {
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
+            if (data.hasOwnProperty('public-key')) {
+                obj['public-key'] = ApiClient.convertToType(data['public-key'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -110,7 +113,7 @@ CreateAuthMethodK8S.prototype['access-expires'] = 0;
 CreateAuthMethodK8S.prototype['audience'] = undefined;
 
 /**
- * A CIDR whitelist of the IPs that the access is restricted to
+ * A CIDR whitelist with the IPs that the access is restricted to
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodK8S.prototype['bound-ips'] = undefined;
@@ -157,6 +160,12 @@ CreateAuthMethodK8S.prototype['name'] = undefined;
  * @member {String} password
  */
 CreateAuthMethodK8S.prototype['password'] = undefined;
+
+/**
+ * Base64-encoded public key text for K8S authentication method is required [RSA2048]
+ * @member {String} public-key
+ */
+CreateAuthMethodK8S.prototype['public-key'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

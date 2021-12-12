@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAzure model module.
  * @module model/GatewayCreateProducerAzure
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayCreateProducerAzure {
     /**
@@ -79,6 +79,9 @@ class GatewayCreateProducerAzure {
             }
             if (data.hasOwnProperty('secure-access-web-browsing')) {
                 obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -173,6 +176,12 @@ GatewayCreateProducerAzure.prototype['secure-access-web'] = undefined;
  * @member {Boolean} secure-access-web-browsing
  */
 GatewayCreateProducerAzure.prototype['secure-access-web-browsing'] = undefined;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayCreateProducerAzure.prototype['tags'] = undefined;
 
 /**
  * Target name

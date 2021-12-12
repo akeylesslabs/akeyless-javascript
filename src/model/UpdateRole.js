@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 2.5.14
+ * @version 2.5.15
  */
 class UpdateRole {
     /**

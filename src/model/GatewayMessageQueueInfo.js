@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayMessageQueueInfo model module.
  * @module model/GatewayMessageQueueInfo
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayMessageQueueInfo {
     /**
@@ -56,6 +56,9 @@ class GatewayMessageQueueInfo {
             if (data.hasOwnProperty('queue_url')) {
                 obj['queue_url'] = ApiClient.convertToType(data['queue_url'], 'String');
             }
+            if (data.hasOwnProperty('use_new_queue')) {
+                obj['use_new_queue'] = ApiClient.convertToType(data['use_new_queue'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -77,6 +80,11 @@ GatewayMessageQueueInfo.prototype['queue_name'] = undefined;
  * @member {String} queue_url
  */
 GatewayMessageQueueInfo.prototype['queue_url'] = undefined;
+
+/**
+ * @member {Boolean} use_new_queue
+ */
+GatewayMessageQueueInfo.prototype['use_new_queue'] = undefined;
 
 
 

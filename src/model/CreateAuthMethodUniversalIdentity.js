@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodUniversalIdentity model module.
  * @module model/CreateAuthMethodUniversalIdentity
- * @version 2.5.14
+ * @version 2.5.15
  */
 class CreateAuthMethodUniversalIdentity {
     /**
@@ -98,7 +98,7 @@ class CreateAuthMethodUniversalIdentity {
 CreateAuthMethodUniversalIdentity.prototype['access-expires'] = 0;
 
 /**
- * A CIDR whitelist of the IPs that the access is restricted to
+ * A CIDR whitelist with the IPs that the access is restricted to
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodUniversalIdentity.prototype['bound-ips'] = undefined;

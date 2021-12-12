@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRedshift model module.
  * @module model/GatewayCreateProducerRedshift
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayCreateProducerRedshift {
     /**
@@ -76,6 +76,15 @@ class GatewayCreateProducerRedshift {
             }
             if (data.hasOwnProperty('redshift-username')) {
                 obj['redshift-username'] = ApiClient.convertToType(data['redshift-username'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-host')) {
+                obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -154,6 +163,22 @@ GatewayCreateProducerRedshift.prototype['redshift-port'] = '5439';
  * @member {String} redshift-username
  */
 GatewayCreateProducerRedshift.prototype['redshift-username'] = undefined;
+
+/**
+ * @member {String} secure-access-enable
+ */
+GatewayCreateProducerRedshift.prototype['secure-access-enable'] = undefined;
+
+/**
+ * @member {Array.<String>} secure-access-host
+ */
+GatewayCreateProducerRedshift.prototype['secure-access-host'] = undefined;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayCreateProducerRedshift.prototype['tags'] = undefined;
 
 /**
  * Target name

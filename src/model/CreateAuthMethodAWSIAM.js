@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAWSIAM model module.
  * @module model/CreateAuthMethodAWSIAM
- * @version 2.5.14
+ * @version 2.5.15
  */
 class CreateAuthMethodAWSIAM {
     /**
@@ -127,7 +127,7 @@ CreateAuthMethodAWSIAM.prototype['bound-arn'] = undefined;
 CreateAuthMethodAWSIAM.prototype['bound-aws-account-id'] = undefined;
 
 /**
- * A CIDR whitelist of the IPs that the access is restricted to
+ * A CIDR whitelist with the IPs that the access is restricted to
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodAWSIAM.prototype['bound-ips'] = undefined;

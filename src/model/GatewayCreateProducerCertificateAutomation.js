@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCertificateAutomation model module.
  * @module model/GatewayCreateProducerCertificateAutomation
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayCreateProducerCertificateAutomation {
     /**
@@ -85,6 +85,9 @@ class GatewayCreateProducerCertificateAutomation {
             }
             if (data.hasOwnProperty('store-private-key')) {
                 obj['store-private-key'] = ApiClient.convertToType(data['store-private-key'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -199,6 +202,12 @@ GatewayCreateProducerCertificateAutomation.prototype['signer-key-name'] = undefi
  * @member {Boolean} store-private-key
  */
 GatewayCreateProducerCertificateAutomation.prototype['store-private-key'] = undefined;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayCreateProducerCertificateAutomation.prototype['tags'] = undefined;
 
 /**
  * Target name

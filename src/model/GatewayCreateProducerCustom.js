@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCustom model module.
  * @module model/GatewayCreateProducerCustom
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayCreateProducerCustom {
     /**
@@ -73,6 +73,9 @@ class GatewayCreateProducerCustom {
             }
             if (data.hasOwnProperty('rotate-sync-url')) {
                 obj['rotate-sync-url'] = ApiClient.convertToType(data['rotate-sync-url'], 'String');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('timeout-sec')) {
                 obj['timeout-sec'] = ApiClient.convertToType(data['timeout-sec'], 'Number');
@@ -137,6 +140,12 @@ GatewayCreateProducerCustom.prototype['revoke-sync-url'] = undefined;
  * @member {String} rotate-sync-url
  */
 GatewayCreateProducerCustom.prototype['rotate-sync-url'] = undefined;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayCreateProducerCustom.prototype['tags'] = undefined;
 
 /**
  * Maximum allowed time in seconds for the webhook to return the results

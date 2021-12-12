@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRabbitMQ model module.
  * @module model/GatewayCreateProducerRabbitMQ
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayCreateProducerRabbitMQ {
     /**
@@ -91,6 +91,9 @@ class GatewayCreateProducerRabbitMQ {
             }
             if (data.hasOwnProperty('secure-access-web-browsing')) {
                 obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -194,6 +197,12 @@ GatewayCreateProducerRabbitMQ.prototype['secure-access-url'] = undefined;
  * @member {Boolean} secure-access-web-browsing
  */
 GatewayCreateProducerRabbitMQ.prototype['secure-access-web-browsing'] = undefined;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayCreateProducerRabbitMQ.prototype['tags'] = undefined;
 
 /**
  * Target name

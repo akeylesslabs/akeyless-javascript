@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHCertIssuer model module.
  * @module model/CreateSSHCertIssuer
- * @version 2.5.14
+ * @version 2.5.15
  */
 class CreateSSHCertIssuer {
     /**
@@ -93,6 +93,9 @@ class CreateSSHCertIssuer {
             }
             if (data.hasOwnProperty('signer-key-name')) {
                 obj['signer-key-name'] = ApiClient.convertToType(data['signer-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('tag')) {
+                obj['tag'] = ApiClient.convertToType(data['tag'], ['String']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -184,6 +187,12 @@ CreateSSHCertIssuer.prototype['secure-access-use-internal-bastion'] = undefined;
  * @member {String} signer-key-name
  */
 CreateSSHCertIssuer.prototype['signer-key-name'] = undefined;
+
+/**
+ * List of the tags attached to this key
+ * @member {Array.<String>} tag
+ */
+CreateSSHCertIssuer.prototype['tag'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

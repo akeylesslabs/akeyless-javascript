@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOIDC model module.
  * @module model/CreateAuthMethodOIDC
- * @version 2.5.14
+ * @version 2.5.15
  */
 class CreateAuthMethodOIDC {
     /**
@@ -112,7 +112,7 @@ CreateAuthMethodOIDC.prototype['access-expires'] = 0;
 CreateAuthMethodOIDC.prototype['allowed-redirect-uri'] = undefined;
 
 /**
- * A CIDR whitelist of the IPs that the access is restricted to
+ * A CIDR whitelist with the IPs that the access is restricted to
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodOIDC.prototype['bound-ips'] = undefined;

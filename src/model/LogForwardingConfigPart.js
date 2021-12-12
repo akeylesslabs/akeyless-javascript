@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import AwsS3LogForwardingConfig from './AwsS3LogForwardingConfig';
 import AzureLogAnalyticsForwardingConfig from './AzureLogAnalyticsForwardingConfig';
+import DatadogForwardingConfig from './DatadogForwardingConfig';
 import ElasticsearchLogForwardingConfig from './ElasticsearchLogForwardingConfig';
 import LogstashLogForwardingConfig from './LogstashLogForwardingConfig';
 import LogzIoLogForwardingConfig from './LogzIoLogForwardingConfig';
@@ -23,7 +24,7 @@ import SyslogLogForwardingConfig from './SyslogLogForwardingConfig';
 /**
  * The LogForwardingConfigPart model module.
  * @module model/LogForwardingConfigPart
- * @version 2.5.14
+ * @version 2.5.15
  */
 class LogForwardingConfigPart {
     /**
@@ -59,6 +60,9 @@ class LogForwardingConfigPart {
             }
             if (data.hasOwnProperty('azure_analytics_config')) {
                 obj['azure_analytics_config'] = AzureLogAnalyticsForwardingConfig.constructFromObject(data['azure_analytics_config']);
+            }
+            if (data.hasOwnProperty('datadog_config')) {
+                obj['datadog_config'] = DatadogForwardingConfig.constructFromObject(data['datadog_config']);
             }
             if (data.hasOwnProperty('elasticsearch_config')) {
                 obj['elasticsearch_config'] = ElasticsearchLogForwardingConfig.constructFromObject(data['elasticsearch_config']);
@@ -106,6 +110,11 @@ LogForwardingConfigPart.prototype['aws_s3_config'] = undefined;
  * @member {module:model/AzureLogAnalyticsForwardingConfig} azure_analytics_config
  */
 LogForwardingConfigPart.prototype['azure_analytics_config'] = undefined;
+
+/**
+ * @member {module:model/DatadogForwardingConfig} datadog_config
+ */
+LogForwardingConfigPart.prototype['datadog_config'] = undefined;
 
 /**
  * @member {module:model/ElasticsearchLogForwardingConfig} elasticsearch_config

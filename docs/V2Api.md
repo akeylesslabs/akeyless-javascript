@@ -16,6 +16,8 @@ Method | HTTP request | Description
 [**createAuthMethodAzureAD**](V2Api.md#createAuthMethodAzureAD) | **POST** /create-auth-method-azure-ad | 
 [**createAuthMethodGCP**](V2Api.md#createAuthMethodGCP) | **POST** /create-auth-method-gcp | 
 [**createAuthMethodHuawei**](V2Api.md#createAuthMethodHuawei) | **POST** /create-auth-method-huawei | 
+[**createAuthMethodK8S**](V2Api.md#createAuthMethodK8S) | **POST** /create-auth-method-k8s | 
+[**createAuthMethodLDAP**](V2Api.md#createAuthMethodLDAP) | **POST** /create-auth-method-ldap | 
 [**createAuthMethodOAuth2**](V2Api.md#createAuthMethodOAuth2) | **POST** /create-auth-method-oauth2 | 
 [**createAuthMethodOIDC**](V2Api.md#createAuthMethodOIDC) | **POST** /create-auth-method-oidc | 
 [**createAuthMethodSAML**](V2Api.md#createAuthMethodSAML) | **POST** /create-auth-method-saml | 
@@ -93,12 +95,25 @@ Method | HTTP request | Description
 [**gatewayStartProducer**](V2Api.md#gatewayStartProducer) | **POST** /gateway-start-producer | 
 [**gatewayStopProducer**](V2Api.md#gatewayStopProducer) | **POST** /gateway-stop-producer | 
 [**gatewaySyncMigration**](V2Api.md#gatewaySyncMigration) | **POST** /gateway-sync-migration | 
+[**gatewayUpdateItem**](V2Api.md#gatewayUpdateItem) | **POST** /gateway-update-item | 
+[**gatewayUpdateProducerArtifactory**](V2Api.md#gatewayUpdateProducerArtifactory) | **POST** /gateway-update-producer-artifactory | 
 [**gatewayUpdateProducerAws**](V2Api.md#gatewayUpdateProducerAws) | **POST** /gateway-update-producer-aws | 
+[**gatewayUpdateProducerAzure**](V2Api.md#gatewayUpdateProducerAzure) | **POST** /gateway-update-producer-azure | 
+[**gatewayUpdateProducerCassandra**](V2Api.md#gatewayUpdateProducerCassandra) | **POST** /gateway-update-producer-cassandra | 
+[**gatewayUpdateProducerCustom**](V2Api.md#gatewayUpdateProducerCustom) | **POST** /gateway-update-producer-custom | 
+[**gatewayUpdateProducerEks**](V2Api.md#gatewayUpdateProducerEks) | **POST** /gateway-update-producer-eks | 
 [**gatewayUpdateProducerGcp**](V2Api.md#gatewayUpdateProducerGcp) | **POST** /gateway-update-producer-gcp | 
+[**gatewayUpdateProducerGke**](V2Api.md#gatewayUpdateProducerGke) | **POST** /gateway-update-producer-gke | 
+[**gatewayUpdateProducerLdap**](V2Api.md#gatewayUpdateProducerLdap) | **POST** /gateway-update-producer-ldap | 
 [**gatewayUpdateProducerMSSQL**](V2Api.md#gatewayUpdateProducerMSSQL) | **POST** /gateway-update-producer-mssql | 
 [**gatewayUpdateProducerMongo**](V2Api.md#gatewayUpdateProducerMongo) | **POST** /gateway-update-producer-mongo | 
 [**gatewayUpdateProducerMySQL**](V2Api.md#gatewayUpdateProducerMySQL) | **POST** /gateway-update-producer-mysql | 
+[**gatewayUpdateProducerNativeK8S**](V2Api.md#gatewayUpdateProducerNativeK8S) | **POST** /gateway-update-producer-k8s-native | 
+[**gatewayUpdateProducerOracleDb**](V2Api.md#gatewayUpdateProducerOracleDb) | **POST** /gateway-update-producer-oracle | 
+[**gatewayUpdateProducerPostgreSQL**](V2Api.md#gatewayUpdateProducerPostgreSQL) | **POST** /gateway-update-producer-postgresql | 
+[**gatewayUpdateProducerRabbitMQ**](V2Api.md#gatewayUpdateProducerRabbitMQ) | **POST** /gateway-update-producer-rabbitmq | 
 [**gatewayUpdateProducerRdp**](V2Api.md#gatewayUpdateProducerRdp) | **POST** /gateway-update-producer-rdp | 
+[**gatewayUpdateProducerRedshift**](V2Api.md#gatewayUpdateProducerRedshift) | **POST** /gateway-update-producer-redshift | 
 [**gatewayUpdateTmpUsers**](V2Api.md#gatewayUpdateTmpUsers) | **POST** /gateway-update-producer-tmp-creds | 
 [**getAccountLogo**](V2Api.md#getAccountLogo) | **POST** /get-account-logo | 
 [**getAuthMethod**](V2Api.md#getAuthMethod) | **POST** /get-auth-method | 
@@ -110,6 +125,7 @@ Method | HTTP request | Description
 [**getRotatedSecretValue**](V2Api.md#getRotatedSecretValue) | **POST** /get-rotated-secret-value | 
 [**getSSHCertificate**](V2Api.md#getSSHCertificate) | **POST** /get-ssh-certificate | 
 [**getSecretValue**](V2Api.md#getSecretValue) | **POST** /get-secret-value | 
+[**getTags**](V2Api.md#getTags) | **POST** /get-tags | 
 [**getTarget**](V2Api.md#getTarget) | **POST** /get-target | 
 [**getTargetDetails**](V2Api.md#getTargetDetails) | **POST** /get-target-details | 
 [**kmipClientDeleteRule**](V2Api.md#kmipClientDeleteRule) | **POST** /kmip-client-delete-rule | 
@@ -144,23 +160,36 @@ Method | HTTP request | Description
 [**uidListChildren**](V2Api.md#uidListChildren) | **POST** /uid-list-children | 
 [**uidRevokeToken**](V2Api.md#uidRevokeToken) | **POST** /uid-revoke-token | 
 [**uidRotateToken**](V2Api.md#uidRotateToken) | **POST** /uid-rotate-token | 
-[**updateAWSTarget**](V2Api.md#updateAWSTarget) | **PUT** /update-aws-target | 
+[**updateAWSTarget**](V2Api.md#updateAWSTarget) | **POST** /update-aws-target | 
 [**updateAWSTargetDetails**](V2Api.md#updateAWSTargetDetails) | **POST** /update-aws-target-details | 
+[**updateArtifactoryTarget**](V2Api.md#updateArtifactoryTarget) | **POST** /update-artifactory-target | 
 [**updateAssoc**](V2Api.md#updateAssoc) | **POST** /update-assoc | 
-[**updateAzureTarget**](V2Api.md#updateAzureTarget) | **PUT** /update-azure-target | 
+[**updateAuthMethod**](V2Api.md#updateAuthMethod) | **POST** /update-auth-method | 
+[**updateAuthMethodAWSIAM**](V2Api.md#updateAuthMethodAWSIAM) | **POST** /update-auth-method-aws-iam | 
+[**updateAuthMethodAzureAD**](V2Api.md#updateAuthMethodAzureAD) | **POST** /update-auth-method-azure-ad | 
+[**updateAuthMethodGCP**](V2Api.md#updateAuthMethodGCP) | **POST** /update-auth-method-gcp | 
+[**updateAuthMethodK8S**](V2Api.md#updateAuthMethodK8S) | **POST** /update-auth-method-k8s | 
+[**updateAuthMethodLDAP**](V2Api.md#updateAuthMethodLDAP) | **POST** /update-auth-method-ldap | 
+[**updateAuthMethodOAuth2**](V2Api.md#updateAuthMethodOAuth2) | **POST** /update-auth-method-oauth2 | 
+[**updateAuthMethodOIDC**](V2Api.md#updateAuthMethodOIDC) | **POST** /update-auth-method-oidc | 
+[**updateAuthMethodSAML**](V2Api.md#updateAuthMethodSAML) | **POST** /update-auth-method-saml | 
+[**updateAuthMethodUniversalIdentity**](V2Api.md#updateAuthMethodUniversalIdentity) | **POST** /update-auth-method-universal-identity | 
+[**updateAzureTarget**](V2Api.md#updateAzureTarget) | **POST** /update-azure-target | 
 [**updateDBTarget**](V2Api.md#updateDBTarget) | **POST** /update-db-target | 
 [**updateDBTargetDetails**](V2Api.md#updateDBTargetDetails) | **POST** /update-db-target-details | 
-[**updateEKSTarget**](V2Api.md#updateEKSTarget) | **PUT** /update-eks-target | 
-[**updateGKETarget**](V2Api.md#updateGKETarget) | **PUT** /update-gke-target | 
-[**updateGcpTarget**](V2Api.md#updateGcpTarget) | **PUT** /update-gcp-target | 
+[**updateEKSTarget**](V2Api.md#updateEKSTarget) | **POST** /update-eks-target | 
+[**updateGKETarget**](V2Api.md#updateGKETarget) | **POST** /update-gke-target | 
+[**updateGcpTarget**](V2Api.md#updateGcpTarget) | **POST** /update-gcp-target | 
 [**updateItem**](V2Api.md#updateItem) | **POST** /update-item | 
-[**updateNativeK8STarget**](V2Api.md#updateNativeK8STarget) | **PUT** /update-k8s-target | 
+[**updateNativeK8STarget**](V2Api.md#updateNativeK8STarget) | **POST** /update-k8s-target | 
+[**updatePKICertIssuer**](V2Api.md#updatePKICertIssuer) | **POST** /update-pki-cert-issuer | 
 [**updateRDPTargetDetails**](V2Api.md#updateRDPTargetDetails) | **POST** /update-rdp-target-details | 
-[**updateRabbitMQTarget**](V2Api.md#updateRabbitMQTarget) | **PUT** /update-rabbitmq-target | 
+[**updateRabbitMQTarget**](V2Api.md#updateRabbitMQTarget) | **POST** /update-rabbitmq-target | 
 [**updateRabbitMQTargetDetails**](V2Api.md#updateRabbitMQTargetDetails) | **POST** /update-rabbitmq-target-details | 
 [**updateRole**](V2Api.md#updateRole) | **POST** /update-role | 
 [**updateRotatedSecret**](V2Api.md#updateRotatedSecret) | **POST** /update-rotated-secret | 
 [**updateRotationSettings**](V2Api.md#updateRotationSettings) | **POST** /update-rotation-settingsrotate-key | 
+[**updateSSHCertIssuer**](V2Api.md#updateSSHCertIssuer) | **POST** /update-ssh-cert-issuer | 
 [**updateSSHTarget**](V2Api.md#updateSSHTarget) | **POST** /update-ssh-target | 
 [**updateSSHTargetDetails**](V2Api.md#updateSSHTargetDetails) | **POST** /update-ssh-target-details | 
 [**updateSecretVal**](V2Api.md#updateSecretVal) | **POST** /update-secret-val | 
@@ -668,6 +697,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateAuthMethodHuaweiOutput**](CreateAuthMethodHuaweiOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createAuthMethodK8S
+
+> CreateAuthMethodK8SOutput createAuthMethodK8S(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateAuthMethodK8S(); // CreateAuthMethodK8S | 
+apiInstance.createAuthMethodK8S(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateAuthMethodK8S**](CreateAuthMethodK8S.md)|  | 
+
+### Return type
+
+[**CreateAuthMethodK8SOutput**](CreateAuthMethodK8SOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createAuthMethodLDAP
+
+> CreateAuthMethodLDAPOutput createAuthMethodLDAP(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateAuthMethodLDAP(); // CreateAuthMethodLDAP | 
+apiInstance.createAuthMethodLDAP(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateAuthMethodLDAP**](CreateAuthMethodLDAP.md)|  | 
+
+### Return type
+
+[**CreateAuthMethodLDAPOutput**](CreateAuthMethodLDAPOutput.md)
 
 ### Authorization
 
@@ -1227,7 +1340,7 @@ No authorization required
 
 ## createNativeK8STarget
 
-> CreateNativeK8STarget createNativeK8STarget()
+> CreateNativeK8STargetOutput createNativeK8STarget(body)
 
 
 
@@ -1237,7 +1350,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-apiInstance.createNativeK8STarget().then((data) => {
+let body = new akeyless.CreateNativeK8STarget(); // CreateNativeK8STarget | 
+apiInstance.createNativeK8STarget(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1247,11 +1361,14 @@ apiInstance.createNativeK8STarget().then((data) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateNativeK8STarget**](CreateNativeK8STarget.md)|  | 
 
 ### Return type
 
-[**CreateNativeK8STarget**](CreateNativeK8STarget.md)
+[**CreateNativeK8STargetOutput**](CreateNativeK8STargetOutput.md)
 
 ### Authorization
 
@@ -1259,7 +1376,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -3911,6 +4028,90 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayUpdateItem
+
+> GatewayUpdateItemOutput gatewayUpdateItem(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateItem(); // GatewayUpdateItem | 
+apiInstance.gatewayUpdateItem(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateItem**](GatewayUpdateItem.md)|  | 
+
+### Return type
+
+[**GatewayUpdateItemOutput**](GatewayUpdateItemOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerArtifactory
+
+> GatewayUpdateProducerArtifactoryOutput gatewayUpdateProducerArtifactory(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerArtifactory(); // GatewayUpdateProducerArtifactory | 
+apiInstance.gatewayUpdateProducerArtifactory(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerArtifactory**](GatewayUpdateProducerArtifactory.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerArtifactoryOutput**](GatewayUpdateProducerArtifactoryOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayUpdateProducerAws
 
 > GatewayUpdateProducerAwsOutput gatewayUpdateProducerAws(body)
@@ -3953,6 +4154,176 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayUpdateProducerAzure
+
+> GatewayUpdateProducerAzureOutput gatewayUpdateProducerAzure(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerAzure(); // GatewayUpdateProducerAzure | 
+apiInstance.gatewayUpdateProducerAzure(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerAzure**](GatewayUpdateProducerAzure.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerAzureOutput**](GatewayUpdateProducerAzureOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerCassandra
+
+> GatewayUpdateProducerCassandraOutput gatewayUpdateProducerCassandra(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerCassandra(); // GatewayUpdateProducerCassandra | 
+apiInstance.gatewayUpdateProducerCassandra(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerCassandra**](GatewayUpdateProducerCassandra.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerCassandraOutput**](GatewayUpdateProducerCassandraOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerCustom
+
+> GatewayUpdateProducerCustomOutput gatewayUpdateProducerCustom(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.GatewayUpdateProducerCustom() // GatewayUpdateProducerCustom | 
+};
+apiInstance.gatewayUpdateProducerCustom(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerCustom**](GatewayUpdateProducerCustom.md)|  | [optional] 
+
+### Return type
+
+[**GatewayUpdateProducerCustomOutput**](GatewayUpdateProducerCustomOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerEks
+
+> GatewayUpdateProducerEksOutput gatewayUpdateProducerEks(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerEks(); // GatewayUpdateProducerEks | 
+apiInstance.gatewayUpdateProducerEks(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerEks**](GatewayUpdateProducerEks.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerEksOutput**](GatewayUpdateProducerEksOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayUpdateProducerGcp
 
 > GatewayUpdateProducerGcpOutput gatewayUpdateProducerGcp(body)
@@ -3984,6 +4355,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayUpdateProducerGcpOutput**](GatewayUpdateProducerGcpOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerGke
+
+> GatewayUpdateProducerGkeOutput gatewayUpdateProducerGke(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerGke(); // GatewayUpdateProducerGke | 
+apiInstance.gatewayUpdateProducerGke(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerGke**](GatewayUpdateProducerGke.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerGkeOutput**](GatewayUpdateProducerGkeOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerLdap
+
+> GatewayUpdateProducerLdapOutput gatewayUpdateProducerLdap(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerLdap(); // GatewayUpdateProducerLdap | 
+apiInstance.gatewayUpdateProducerLdap(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerLdap**](GatewayUpdateProducerLdap.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerLdapOutput**](GatewayUpdateProducerLdapOutput.md)
 
 ### Authorization
 
@@ -4121,6 +4576,174 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayUpdateProducerNativeK8S
+
+> GatewayUpdateProducerNativeK8SOutput gatewayUpdateProducerNativeK8S(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerNativeK8S(); // GatewayUpdateProducerNativeK8S | 
+apiInstance.gatewayUpdateProducerNativeK8S(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerNativeK8S**](GatewayUpdateProducerNativeK8S.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerNativeK8SOutput**](GatewayUpdateProducerNativeK8SOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerOracleDb
+
+> GatewayUpdateProducerOracleDbOutput gatewayUpdateProducerOracleDb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerOracleDb(); // GatewayUpdateProducerOracleDb | 
+apiInstance.gatewayUpdateProducerOracleDb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerOracleDb**](GatewayUpdateProducerOracleDb.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerOracleDbOutput**](GatewayUpdateProducerOracleDbOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerPostgreSQL
+
+> GatewayUpdateProducerPostgreSQLOutput gatewayUpdateProducerPostgreSQL(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerPostgreSQL(); // GatewayUpdateProducerPostgreSQL | 
+apiInstance.gatewayUpdateProducerPostgreSQL(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerPostgreSQL**](GatewayUpdateProducerPostgreSQL.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerPostgreSQLOutput**](GatewayUpdateProducerPostgreSQLOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerRabbitMQ
+
+> GatewayUpdateProducerRabbitMQOutput gatewayUpdateProducerRabbitMQ(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerRabbitMQ(); // GatewayUpdateProducerRabbitMQ | 
+apiInstance.gatewayUpdateProducerRabbitMQ(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerRabbitMQ**](GatewayUpdateProducerRabbitMQ.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerRabbitMQOutput**](GatewayUpdateProducerRabbitMQOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayUpdateProducerRdp
 
 > GatewayUpdateProducerRdpOutput gatewayUpdateProducerRdp(body)
@@ -4152,6 +4775,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayUpdateProducerRdpOutput**](GatewayUpdateProducerRdpOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerRedshift
+
+> GatewayUpdateProducerRedshiftOutput gatewayUpdateProducerRedshift(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerRedshift(); // GatewayUpdateProducerRedshift | 
+apiInstance.gatewayUpdateProducerRedshift(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerRedshift**](GatewayUpdateProducerRedshift.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerRedshiftOutput**](GatewayUpdateProducerRedshiftOutput.md)
 
 ### Authorization
 
@@ -4610,6 +5275,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 **{String: String}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## getTags
+
+> [String] getTags(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GetTags(); // GetTags | 
+apiInstance.getTags(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetTags**](GetTags.md)|  | 
+
+### Return type
+
+**[String]**
 
 ### Authorization
 
@@ -6157,6 +6864,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## updateArtifactoryTarget
+
+> UpdateArtifactoryTargetOutput updateArtifactoryTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateArtifactoryTarget(); // UpdateArtifactoryTarget | 
+apiInstance.updateArtifactoryTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateArtifactoryTarget**](UpdateArtifactoryTarget.md)|  | 
+
+### Return type
+
+[**UpdateArtifactoryTargetOutput**](UpdateArtifactoryTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## updateAssoc
 
 > Object updateAssoc(body)
@@ -6184,6 +6933,426 @@ apiInstance.updateAssoc(body).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**UpdateAssoc**](UpdateAssoc.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAuthMethod
+
+> UpdateAuthMethodOutput updateAuthMethod(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAuthMethod(); // UpdateAuthMethod | 
+apiInstance.updateAuthMethod(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAuthMethod**](UpdateAuthMethod.md)|  | 
+
+### Return type
+
+[**UpdateAuthMethodOutput**](UpdateAuthMethodOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAuthMethodAWSIAM
+
+> Object updateAuthMethodAWSIAM(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAuthMethodAWSIAM(); // UpdateAuthMethodAWSIAM | 
+apiInstance.updateAuthMethodAWSIAM(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAuthMethodAWSIAM**](UpdateAuthMethodAWSIAM.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAuthMethodAzureAD
+
+> Object updateAuthMethodAzureAD(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAuthMethodAzureAD(); // UpdateAuthMethodAzureAD | 
+apiInstance.updateAuthMethodAzureAD(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAuthMethodAzureAD**](UpdateAuthMethodAzureAD.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAuthMethodGCP
+
+> Object updateAuthMethodGCP(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAuthMethodGCP(); // UpdateAuthMethodGCP | 
+apiInstance.updateAuthMethodGCP(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAuthMethodGCP**](UpdateAuthMethodGCP.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAuthMethodK8S
+
+> UpdateAuthMethodK8SOutput updateAuthMethodK8S(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAuthMethodK8S(); // UpdateAuthMethodK8S | 
+apiInstance.updateAuthMethodK8S(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAuthMethodK8S**](UpdateAuthMethodK8S.md)|  | 
+
+### Return type
+
+[**UpdateAuthMethodK8SOutput**](UpdateAuthMethodK8SOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAuthMethodLDAP
+
+> Object updateAuthMethodLDAP(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAuthMethodLDAP(); // UpdateAuthMethodLDAP | 
+apiInstance.updateAuthMethodLDAP(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAuthMethodLDAP**](UpdateAuthMethodLDAP.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAuthMethodOAuth2
+
+> Object updateAuthMethodOAuth2(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAuthMethodOAuth2(); // UpdateAuthMethodOAuth2 | 
+apiInstance.updateAuthMethodOAuth2(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAuthMethodOAuth2**](UpdateAuthMethodOAuth2.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAuthMethodOIDC
+
+> Object updateAuthMethodOIDC(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAuthMethodOIDC(); // UpdateAuthMethodOIDC | 
+apiInstance.updateAuthMethodOIDC(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAuthMethodOIDC**](UpdateAuthMethodOIDC.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAuthMethodSAML
+
+> Object updateAuthMethodSAML(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAuthMethodSAML(); // UpdateAuthMethodSAML | 
+apiInstance.updateAuthMethodSAML(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAuthMethodSAML**](UpdateAuthMethodSAML.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAuthMethodUniversalIdentity
+
+> Object updateAuthMethodUniversalIdentity(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAuthMethodUniversalIdentity(); // UpdateAuthMethodUniversalIdentity | 
+apiInstance.updateAuthMethodUniversalIdentity(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAuthMethodUniversalIdentity**](UpdateAuthMethodUniversalIdentity.md)|  | 
 
 ### Return type
 
@@ -6535,6 +7704,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## updatePKICertIssuer
+
+> UpdatePKICertIssuerOutput updatePKICertIssuer(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdatePKICertIssuer(); // UpdatePKICertIssuer | 
+apiInstance.updatePKICertIssuer(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdatePKICertIssuer**](UpdatePKICertIssuer.md)|  | 
+
+### Return type
+
+[**UpdatePKICertIssuerOutput**](UpdatePKICertIssuerOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## updateRDPTargetDetails
 
 > UpdateTargetOutput updateRDPTargetDetails(body)
@@ -6780,6 +7991,48 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## updateSSHCertIssuer
+
+> UpdateSSHCertIssuerOutput updateSSHCertIssuer(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateSSHCertIssuer(); // UpdateSSHCertIssuer | 
+apiInstance.updateSSHCertIssuer(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateSSHCertIssuer**](UpdateSSHCertIssuer.md)|  | 
+
+### Return type
+
+[**UpdateSSHCertIssuerOutput**](UpdateSSHCertIssuerOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

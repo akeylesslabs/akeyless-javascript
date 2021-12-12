@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGKETargetOutput model module.
  * @module model/CreateGKETargetOutput
- * @version 2.5.14
+ * @version 2.5.15
  */
 class CreateGKETargetOutput {
     /**

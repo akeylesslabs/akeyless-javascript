@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GCPAccessRules model module.
  * @module model/GCPAccessRules
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GCPAccessRules {
     /**
@@ -104,7 +104,7 @@ GCPAccessRules.prototype['bound_projects'] = undefined;
 GCPAccessRules.prototype['bound_regions'] = undefined;
 
 /**
- * === Human authentication section === List of service accounts the service account must be part of in order to be authenticated
+ * List of service accounts the service account must be part of in order to be authenticated
  * @member {Array.<String>} bound_service_accounts
  */
 GCPAccessRules.prototype['bound_service_accounts'] = undefined;

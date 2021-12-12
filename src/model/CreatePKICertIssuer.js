@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 2.5.14
+ * @version 2.5.15
  */
 class CreatePKICertIssuer {
     /**
@@ -115,6 +115,9 @@ class CreatePKICertIssuer {
             }
             if (data.hasOwnProperty('street-address')) {
                 obj['street-address'] = ApiClient.convertToType(data['street-address'], 'String');
+            }
+            if (data.hasOwnProperty('tag')) {
+                obj['tag'] = ApiClient.convertToType(data['tag'], ['String']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -261,6 +264,12 @@ CreatePKICertIssuer.prototype['signer-key-name'] = undefined;
  * @member {String} street-address
  */
 CreatePKICertIssuer.prototype['street-address'] = undefined;
+
+/**
+ * List of the tags attached to this key
+ * @member {Array.<String>} tag
+ */
+CreatePKICertIssuer.prototype['tag'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

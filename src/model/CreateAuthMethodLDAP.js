@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodLDAP model module.
  * @module model/CreateAuthMethodLDAP
- * @version 2.5.14
+ * @version 2.5.15
  */
 class CreateAuthMethodLDAP {
     /**
@@ -89,7 +89,7 @@ class CreateAuthMethodLDAP {
 CreateAuthMethodLDAP.prototype['access-expires'] = 0;
 
 /**
- * A CIDR whitelist of the IPs that the access is restricted to
+ * A CIDR whitelist with the IPs that the access is restricted to
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodLDAP.prototype['bound-ips'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerPostgreSQL model module.
  * @module model/GatewayCreateProducerPostgreSQL
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayCreateProducerPostgreSQL {
     /**
@@ -91,6 +91,9 @@ class GatewayCreateProducerPostgreSQL {
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -194,6 +197,12 @@ GatewayCreateProducerPostgreSQL.prototype['secure-access-host'] = undefined;
  * @member {Boolean} secure-access-web
  */
 GatewayCreateProducerPostgreSQL.prototype['secure-access-web'] = undefined;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayCreateProducerPostgreSQL.prototype['tags'] = undefined;
 
 /**
  * Target name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerGcp model module.
  * @module model/GatewayUpdateProducerGcp
- * @version 2.5.14
+ * @version 2.5.15
  */
 class GatewayUpdateProducerGcp {
     /**
@@ -76,6 +76,9 @@ class GatewayUpdateProducerGcp {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -151,6 +154,12 @@ GatewayUpdateProducerGcp.prototype['password'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayUpdateProducerGcp.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * List of the tags attached to this secret
+ * @member {Array.<String>} tags
+ */
+GatewayUpdateProducerGcp.prototype['tags'] = undefined;
 
 /**
  * Target name
