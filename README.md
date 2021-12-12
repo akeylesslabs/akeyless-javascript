@@ -15,6 +15,8 @@ To install this package, use:
 npm install akeyless
 ```
 
+For more info and documentation please visit [here](https://docs.akeyless.io/docs/javascript-sdk)
+
 ## Getting started
 
 ```js
