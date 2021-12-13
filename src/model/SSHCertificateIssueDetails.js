@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SSHCertificateIssueDetails model module.
  * @module model/SSHCertificateIssueDetails
- * @version 2.5.17
+ * @version 2.5.19
  */
 class SSHCertificateIssueDetails {
     /**

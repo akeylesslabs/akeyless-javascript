@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodK8SOutput model module.
  * @module model/UpdateAuthMethodK8SOutput
- * @version 2.5.17
+ * @version 2.5.19
  */
 class UpdateAuthMethodK8SOutput {
     /**

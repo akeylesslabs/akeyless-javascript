@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayUpdateProducerRdpOutput model module.
  * @module model/GatewayUpdateProducerRdpOutput
- * @version 2.5.17
+ * @version 2.5.19
  */
 class GatewayUpdateProducerRdpOutput {
     /**

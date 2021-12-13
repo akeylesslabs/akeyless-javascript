@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateNativeK8STarget model module.
  * @module model/CreateNativeK8STarget
- * @version 2.5.17
+ * @version 2.5.19
  */
 class CreateNativeK8STarget {
     /**
