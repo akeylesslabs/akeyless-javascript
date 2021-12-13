@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClassicKeyStatusInfo model module.
  * @module model/ClassicKeyStatusInfo
- * @version 2.15.17
+ * @version 2.5.17
  */
 class ClassicKeyStatusInfo {
     /**

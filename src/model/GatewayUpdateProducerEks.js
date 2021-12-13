@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerEks model module.
  * @module model/GatewayUpdateProducerEks
- * @version 2.15.17
+ * @version 2.5.17
  */
 class GatewayUpdateProducerEks {
     /**
