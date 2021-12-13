@@ -198,6 +198,7 @@ Method | HTTP request | Description
 [**updateWebTarget**](V2Api.md#updateWebTarget) | **POST** /update-web-target | 
 [**updateWebTargetDetails**](V2Api.md#updateWebTargetDetails) | **POST** /update-web-target-details | 
 [**uploadRSA**](V2Api.md#uploadRSA) | **POST** /upload-rsa | 
+[**validateToken**](V2Api.md#validateToken) | **POST** /validate-token | 
 [**verifyJWTWithClassicKey**](V2Api.md#verifyJWTWithClassicKey) | **POST** /verify-jwt-with-classic-key | 
 [**verifyPKCS1**](V2Api.md#verifyPKCS1) | **POST** /verify-pkcs1 | 
 [**verifyPKICertWithClassicKey**](V2Api.md#verifyPKICertWithClassicKey) | **POST** /verify-pki-cert-with-classic-key | 
@@ -8361,6 +8362,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 **Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## validateToken
+
+> ValidateTokenOutput validateToken(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ValidateToken(); // ValidateToken | 
+apiInstance.validateToken(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ValidateToken**](ValidateToken.md)|  | 
+
+### Return type
+
+[**ValidateTokenOutput**](ValidateTokenOutput.md)
 
 ### Authorization
 

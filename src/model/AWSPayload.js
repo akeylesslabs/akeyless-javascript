@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AWSPayload model module.
  * @module model/AWSPayload
- * @version 2.5.15
+ * @version 2.5.16
  */
 class AWSPayload {
     /**

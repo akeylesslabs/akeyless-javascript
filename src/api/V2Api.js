@@ -355,6 +355,8 @@ import UpdateWebTarget from '../model/UpdateWebTarget';
 import UpdateWebTargetDetails from '../model/UpdateWebTargetDetails';
 import UpdateWebTargetOutput from '../model/UpdateWebTargetOutput';
 import UploadRSA from '../model/UploadRSA';
+import ValidateToken from '../model/ValidateToken';
+import ValidateTokenOutput from '../model/ValidateTokenOutput';
 import VerifyJWTOutput from '../model/VerifyJWTOutput';
 import VerifyJWTWithClassicKey from '../model/VerifyJWTWithClassicKey';
 import VerifyPKCS1 from '../model/VerifyPKCS1';
@@ -364,7 +366,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.5.15
+* @version 2.5.16
 */
 export default class V2Api {
 
@@ -8691,6 +8693,49 @@ export default class V2Api {
      */
     uploadRSA(body) {
       return this.uploadRSAWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/ValidateToken} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ValidateTokenOutput} and HTTP response
+     */
+    validateTokenWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling validateToken");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ValidateTokenOutput;
+      return this.apiClient.callApi(
+        '/validate-token', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ValidateToken} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ValidateTokenOutput}
+     */
+    validateToken(body) {
+      return this.validateTokenWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

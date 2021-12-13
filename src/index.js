@@ -457,6 +457,8 @@ import UpdateWebTargetDetails from './model/UpdateWebTargetDetails';
 import UpdateWebTargetOutput from './model/UpdateWebTargetOutput';
 import UploadPKCS12 from './model/UploadPKCS12';
 import UploadRSA from './model/UploadRSA';
+import ValidateToken from './model/ValidateToken';
+import ValidateTokenOutput from './model/ValidateTokenOutput';
 import VerifyJWTOutput from './model/VerifyJWTOutput';
 import VerifyJWTWithClassicKey from './model/VerifyJWTWithClassicKey';
 import VerifyPKCS1 from './model/VerifyPKCS1';
@@ -494,7 +496,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.5.15
+* @version 2.5.16
 */
 export {
     /**
@@ -3166,6 +3168,18 @@ export {
      * @property {module:model/UploadRSA}
      */
     UploadRSA,
+
+    /**
+     * The ValidateToken model constructor.
+     * @property {module:model/ValidateToken}
+     */
+    ValidateToken,
+
+    /**
+     * The ValidateTokenOutput model constructor.
+     * @property {module:model/ValidateTokenOutput}
+     */
+    ValidateTokenOutput,
 
     /**
      * The VerifyJWTOutput model constructor.

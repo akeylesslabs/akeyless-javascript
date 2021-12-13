@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMySQL model module.
  * @module model/GatewayUpdateProducerMySQL
- * @version 2.5.15
+ * @version 2.5.16
  */
 class GatewayUpdateProducerMySQL {
     /**

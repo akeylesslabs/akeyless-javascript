@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KubernetesAccessRules model module.
  * @module model/KubernetesAccessRules
- * @version 2.5.15
+ * @version 2.5.16
  */
 class KubernetesAccessRules {
     /**
