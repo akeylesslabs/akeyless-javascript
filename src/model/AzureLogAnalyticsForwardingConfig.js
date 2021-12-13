@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AzureLogAnalyticsForwardingConfig model module.
  * @module model/AzureLogAnalyticsForwardingConfig
- * @version 2.5.19
+ * @version 2.5.20
  */
 class AzureLogAnalyticsForwardingConfig {
     /**

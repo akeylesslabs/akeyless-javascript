@@ -20,7 +20,7 @@ import ItemVersion from './ItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 2.5.19
+ * @version 2.5.20
  */
 class Item {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConfigHash model module.
  * @module model/ConfigHash
- * @version 2.5.19
+ * @version 2.5.20
  */
 class ConfigHash {
     /**
