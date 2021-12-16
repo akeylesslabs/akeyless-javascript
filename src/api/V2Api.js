@@ -190,6 +190,8 @@ import GatewayUpdateProducerAzure from '../model/GatewayUpdateProducerAzure';
 import GatewayUpdateProducerAzureOutput from '../model/GatewayUpdateProducerAzureOutput';
 import GatewayUpdateProducerCassandra from '../model/GatewayUpdateProducerCassandra';
 import GatewayUpdateProducerCassandraOutput from '../model/GatewayUpdateProducerCassandraOutput';
+import GatewayUpdateProducerCertificateAutomation from '../model/GatewayUpdateProducerCertificateAutomation';
+import GatewayUpdateProducerCertificateAutomationOutput from '../model/GatewayUpdateProducerCertificateAutomationOutput';
 import GatewayUpdateProducerCustom from '../model/GatewayUpdateProducerCustom';
 import GatewayUpdateProducerCustomOutput from '../model/GatewayUpdateProducerCustomOutput';
 import GatewayUpdateProducerEks from '../model/GatewayUpdateProducerEks';
@@ -218,6 +220,8 @@ import GatewayUpdateProducerRdp from '../model/GatewayUpdateProducerRdp';
 import GatewayUpdateProducerRdpOutput from '../model/GatewayUpdateProducerRdpOutput';
 import GatewayUpdateProducerRedshift from '../model/GatewayUpdateProducerRedshift';
 import GatewayUpdateProducerRedshiftOutput from '../model/GatewayUpdateProducerRedshiftOutput';
+import GatewayUpdateProducerSnowflake from '../model/GatewayUpdateProducerSnowflake';
+import GatewayUpdateProducerSnowflakeOutput from '../model/GatewayUpdateProducerSnowflakeOutput';
 import GatewayUpdateTmpUsers from '../model/GatewayUpdateTmpUsers';
 import GetAuthMethod from '../model/GetAuthMethod';
 import GetDynamicSecretValue from '../model/GetDynamicSecretValue';
@@ -366,7 +370,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.5.20
+* @version 2.5.21
 */
 export default class V2Api {
 
@@ -4511,6 +4515,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayUpdateProducerCertificateAutomation} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerCertificateAutomationOutput} and HTTP response
+     */
+    gatewayUpdateProducerCertificateAutomationWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerCertificateAutomation");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerCertificateAutomationOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-certificate-automation', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerCertificateAutomation} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerCertificateAutomationOutput}
+     */
+    gatewayUpdateProducerCertificateAutomation(body) {
+      return this.gatewayUpdateProducerCertificateAutomationWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {Object} opts Optional parameters
      * @param {module:model/GatewayUpdateProducerCustom} opts.body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerCustomOutput} and HTTP response
@@ -5105,6 +5152,49 @@ export default class V2Api {
      */
     gatewayUpdateProducerRedshift(body) {
       return this.gatewayUpdateProducerRedshiftWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerSnowflake} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerSnowflakeOutput} and HTTP response
+     */
+    gatewayUpdateProducerSnowflakeWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerSnowflake");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerSnowflakeOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-snowflake', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerSnowflake} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerSnowflakeOutput}
+     */
+    gatewayUpdateProducerSnowflake(body) {
+      return this.gatewayUpdateProducerSnowflakeWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

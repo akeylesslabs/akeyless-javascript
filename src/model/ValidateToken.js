@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidateToken model module.
  * @module model/ValidateToken
- * @version 2.5.20
+ * @version 2.5.21
  */
 class ValidateToken {
     /**
@@ -48,8 +48,8 @@ class ValidateToken {
         if (data) {
             obj = obj || new ValidateToken();
 
-            if (data.hasOwnProperty('validate-token')) {
-                obj['validate-token'] = ApiClient.convertToType(data['validate-token'], 'String');
+            if (data.hasOwnProperty('token')) {
+                obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
         }
         return obj;
@@ -60,9 +60,9 @@ class ValidateToken {
 
 /**
  * Token
- * @member {String} validate-token
+ * @member {String} token
  */
-ValidateToken.prototype['validate-token'] = undefined;
+ValidateToken.prototype['token'] = undefined;
 
 
 

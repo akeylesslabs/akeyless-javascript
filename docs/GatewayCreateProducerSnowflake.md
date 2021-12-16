@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account** | **String** | Account name | [optional] 
+**accountPassword** | **String** | Database Password | [optional] 
+**accountUsername** | **String** | Database Username | [optional] 
 **dbName** | **String** | Database name | [optional] 
 **name** | **String** | Producer name | 
 **password** | **String** | Required only when the authentication process requires a username and password | [optional] 

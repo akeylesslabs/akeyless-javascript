@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **protectionKeyName** | **String** |  | [optional] 
 **publicValue** | **String** |  | [optional] 
 **rotationInterval** | **Number** |  | [optional] 
+**targetVersions** | [**[TargetItemVersion]**](TargetItemVersion.md) |  | [optional] 
 **withCustomerFragment** | **Boolean** |  | [optional] 
 
 

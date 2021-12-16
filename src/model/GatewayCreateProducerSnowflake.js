@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerSnowflake model module.
  * @module model/GatewayCreateProducerSnowflake
- * @version 2.5.20
+ * @version 2.5.21
  */
 class GatewayCreateProducerSnowflake {
     /**
@@ -52,6 +52,12 @@ class GatewayCreateProducerSnowflake {
 
             if (data.hasOwnProperty('account')) {
                 obj['account'] = ApiClient.convertToType(data['account'], 'String');
+            }
+            if (data.hasOwnProperty('account-password')) {
+                obj['account-password'] = ApiClient.convertToType(data['account-password'], 'String');
+            }
+            if (data.hasOwnProperty('account-username')) {
+                obj['account-username'] = ApiClient.convertToType(data['account-username'], 'String');
             }
             if (data.hasOwnProperty('db-name')) {
                 obj['db-name'] = ApiClient.convertToType(data['db-name'], 'String');
@@ -98,6 +104,18 @@ class GatewayCreateProducerSnowflake {
  * @member {String} account
  */
 GatewayCreateProducerSnowflake.prototype['account'] = undefined;
+
+/**
+ * Database Password
+ * @member {String} account-password
+ */
+GatewayCreateProducerSnowflake.prototype['account-password'] = undefined;
+
+/**
+ * Database Username
+ * @member {String} account-username
+ */
+GatewayCreateProducerSnowflake.prototype['account-username'] = undefined;
 
 /**
  * Database name

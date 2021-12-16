@@ -100,6 +100,7 @@ Method | HTTP request | Description
 [**gatewayUpdateProducerAws**](V2Api.md#gatewayUpdateProducerAws) | **POST** /gateway-update-producer-aws | 
 [**gatewayUpdateProducerAzure**](V2Api.md#gatewayUpdateProducerAzure) | **POST** /gateway-update-producer-azure | 
 [**gatewayUpdateProducerCassandra**](V2Api.md#gatewayUpdateProducerCassandra) | **POST** /gateway-update-producer-cassandra | 
+[**gatewayUpdateProducerCertificateAutomation**](V2Api.md#gatewayUpdateProducerCertificateAutomation) | **POST** /gateway-update-producer-certificate-automation | 
 [**gatewayUpdateProducerCustom**](V2Api.md#gatewayUpdateProducerCustom) | **POST** /gateway-update-producer-custom | 
 [**gatewayUpdateProducerEks**](V2Api.md#gatewayUpdateProducerEks) | **POST** /gateway-update-producer-eks | 
 [**gatewayUpdateProducerGcp**](V2Api.md#gatewayUpdateProducerGcp) | **POST** /gateway-update-producer-gcp | 
@@ -114,6 +115,7 @@ Method | HTTP request | Description
 [**gatewayUpdateProducerRabbitMQ**](V2Api.md#gatewayUpdateProducerRabbitMQ) | **POST** /gateway-update-producer-rabbitmq | 
 [**gatewayUpdateProducerRdp**](V2Api.md#gatewayUpdateProducerRdp) | **POST** /gateway-update-producer-rdp | 
 [**gatewayUpdateProducerRedshift**](V2Api.md#gatewayUpdateProducerRedshift) | **POST** /gateway-update-producer-redshift | 
+[**gatewayUpdateProducerSnowflake**](V2Api.md#gatewayUpdateProducerSnowflake) | **POST** /gateway-update-producer-snowflake | 
 [**gatewayUpdateTmpUsers**](V2Api.md#gatewayUpdateTmpUsers) | **POST** /gateway-update-producer-tmp-creds | 
 [**getAccountLogo**](V2Api.md#getAccountLogo) | **POST** /get-account-logo | 
 [**getAuthMethod**](V2Api.md#getAuthMethod) | **POST** /get-auth-method | 
@@ -4239,6 +4241,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayUpdateProducerCertificateAutomation
+
+> GatewayUpdateProducerCertificateAutomationOutput gatewayUpdateProducerCertificateAutomation(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerCertificateAutomation(); // GatewayUpdateProducerCertificateAutomation | 
+apiInstance.gatewayUpdateProducerCertificateAutomation(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerCertificateAutomation**](GatewayUpdateProducerCertificateAutomation.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerCertificateAutomationOutput**](GatewayUpdateProducerCertificateAutomationOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayUpdateProducerCustom
 
 > GatewayUpdateProducerCustomOutput gatewayUpdateProducerCustom(opts)
@@ -4818,6 +4862,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayUpdateProducerRedshiftOutput**](GatewayUpdateProducerRedshiftOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerSnowflake
+
+> GatewayUpdateProducerSnowflakeOutput gatewayUpdateProducerSnowflake(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerSnowflake(); // GatewayUpdateProducerSnowflake | 
+apiInstance.gatewayUpdateProducerSnowflake(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerSnowflake**](GatewayUpdateProducerSnowflake.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerSnowflakeOutput**](GatewayUpdateProducerSnowflakeOutput.md)
 
 ### Authorization
 

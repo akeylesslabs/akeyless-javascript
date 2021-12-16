@@ -230,6 +230,10 @@ import GatewayUpdateProducerAzure from './model/GatewayUpdateProducerAzure';
 import GatewayUpdateProducerAzureOutput from './model/GatewayUpdateProducerAzureOutput';
 import GatewayUpdateProducerCassandra from './model/GatewayUpdateProducerCassandra';
 import GatewayUpdateProducerCassandraOutput from './model/GatewayUpdateProducerCassandraOutput';
+import GatewayUpdateProducerCertificateAutomation from './model/GatewayUpdateProducerCertificateAutomation';
+import GatewayUpdateProducerCertificateAutomationOutput from './model/GatewayUpdateProducerCertificateAutomationOutput';
+import GatewayUpdateProducerChef from './model/GatewayUpdateProducerChef';
+import GatewayUpdateProducerChefOutput from './model/GatewayUpdateProducerChefOutput';
 import GatewayUpdateProducerCustom from './model/GatewayUpdateProducerCustom';
 import GatewayUpdateProducerCustomOutput from './model/GatewayUpdateProducerCustomOutput';
 import GatewayUpdateProducerEks from './model/GatewayUpdateProducerEks';
@@ -258,6 +262,8 @@ import GatewayUpdateProducerRdp from './model/GatewayUpdateProducerRdp';
 import GatewayUpdateProducerRdpOutput from './model/GatewayUpdateProducerRdpOutput';
 import GatewayUpdateProducerRedshift from './model/GatewayUpdateProducerRedshift';
 import GatewayUpdateProducerRedshiftOutput from './model/GatewayUpdateProducerRedshiftOutput';
+import GatewayUpdateProducerSnowflake from './model/GatewayUpdateProducerSnowflake';
+import GatewayUpdateProducerSnowflakeOutput from './model/GatewayUpdateProducerSnowflakeOutput';
 import GatewayUpdateTmpUsers from './model/GatewayUpdateTmpUsers';
 import GenCustomerFragment from './model/GenCustomerFragment';
 import GeneralConfigPart from './model/GeneralConfigPart';
@@ -383,6 +389,7 @@ import SyslogLogForwardingConfig from './model/SyslogLogForwardingConfig';
 import SystemAccessCredentialsReplyObj from './model/SystemAccessCredentialsReplyObj';
 import Target from './model/Target';
 import TargetItemAssociation from './model/TargetItemAssociation';
+import TargetItemVersion from './model/TargetItemVersion';
 import TargetTypeDetailsInput from './model/TargetTypeDetailsInput';
 import TmpUserData from './model/TmpUserData';
 import UIDTokenDetails from './model/UIDTokenDetails';
@@ -496,7 +503,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.5.20
+* @version 2.5.21
 */
 export {
     /**
@@ -1808,6 +1815,30 @@ export {
     GatewayUpdateProducerCassandraOutput,
 
     /**
+     * The GatewayUpdateProducerCertificateAutomation model constructor.
+     * @property {module:model/GatewayUpdateProducerCertificateAutomation}
+     */
+    GatewayUpdateProducerCertificateAutomation,
+
+    /**
+     * The GatewayUpdateProducerCertificateAutomationOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerCertificateAutomationOutput}
+     */
+    GatewayUpdateProducerCertificateAutomationOutput,
+
+    /**
+     * The GatewayUpdateProducerChef model constructor.
+     * @property {module:model/GatewayUpdateProducerChef}
+     */
+    GatewayUpdateProducerChef,
+
+    /**
+     * The GatewayUpdateProducerChefOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerChefOutput}
+     */
+    GatewayUpdateProducerChefOutput,
+
+    /**
      * The GatewayUpdateProducerCustom model constructor.
      * @property {module:model/GatewayUpdateProducerCustom}
      */
@@ -1974,6 +2005,18 @@ export {
      * @property {module:model/GatewayUpdateProducerRedshiftOutput}
      */
     GatewayUpdateProducerRedshiftOutput,
+
+    /**
+     * The GatewayUpdateProducerSnowflake model constructor.
+     * @property {module:model/GatewayUpdateProducerSnowflake}
+     */
+    GatewayUpdateProducerSnowflake,
+
+    /**
+     * The GatewayUpdateProducerSnowflakeOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerSnowflakeOutput}
+     */
+    GatewayUpdateProducerSnowflakeOutput,
 
     /**
      * The GatewayUpdateTmpUsers model constructor.
@@ -2724,6 +2767,12 @@ export {
      * @property {module:model/TargetItemAssociation}
      */
     TargetItemAssociation,
+
+    /**
+     * The TargetItemVersion model constructor.
+     * @property {module:model/TargetItemVersion}
+     */
+    TargetItemVersion,
 
     /**
      * The TargetTypeDetailsInput model constructor.

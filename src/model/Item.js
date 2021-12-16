@@ -16,11 +16,12 @@ import CertificateIssueInfo from './CertificateIssueInfo';
 import ItemGeneralInfo from './ItemGeneralInfo';
 import ItemTargetAssociation from './ItemTargetAssociation';
 import ItemVersion from './ItemVersion';
+import TargetItemVersion from './TargetItemVersion';
 
 /**
  * The Item model module.
  * @module model/Item
- * @version 2.5.20
+ * @version 2.5.21
  */
 class Item {
     /**
@@ -122,6 +123,9 @@ class Item {
             }
             if (data.hasOwnProperty('rotation_interval')) {
                 obj['rotation_interval'] = ApiClient.convertToType(data['rotation_interval'], 'Number');
+            }
+            if (data.hasOwnProperty('target_versions')) {
+                obj['target_versions'] = ApiClient.convertToType(data['target_versions'], [TargetItemVersion]);
             }
             if (data.hasOwnProperty('with_customer_fragment')) {
                 obj['with_customer_fragment'] = ApiClient.convertToType(data['with_customer_fragment'], 'Boolean');
@@ -253,6 +257,11 @@ Item.prototype['public_value'] = undefined;
  * @member {Number} rotation_interval
  */
 Item.prototype['rotation_interval'] = undefined;
+
+/**
+ * @member {Array.<module:model/TargetItemVersion>} target_versions
+ */
+Item.prototype['target_versions'] = undefined;
 
 /**
  * @member {Boolean} with_customer_fragment

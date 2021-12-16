@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipServerSetup model module.
  * @module model/KmipServerSetup
- * @version 2.5.20
+ * @version 2.5.21
  */
 class KmipServerSetup {
     /**

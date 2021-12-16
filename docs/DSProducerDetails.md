@@ -68,7 +68,7 @@ Name | Type | Description | Notes
 **fixedUserOnly** | **String** |  | [optional] 
 **gcpKeyAlgo** | **String** |  | [optional] 
 **gcpServiceAccountEmail** | **String** |  | [optional] 
-**gcpServiceAccountKey** | **[Number]** |  | [optional] 
+**gcpServiceAccountKey** | **String** |  | [optional] 
 **gcpTokenLifetime** | **String** |  | [optional] 
 **gcpTokenScope** | **String** |  | [optional] 
 **gcpTokenType** | **String** |  | [optional] 

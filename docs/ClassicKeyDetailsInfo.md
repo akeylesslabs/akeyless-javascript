@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **classicKeyAttributes** | **{String: [String]}** |  | [optional] 
 **classicKeyId** | **String** |  | [optional] 
+**gwClusterId** | **Number** |  | [optional] 
 **isProvidedByUser** | **Boolean** |  | [optional] 
 **isUnexportable** | **Boolean** |  | [optional] 
 **keyState** | **String** | ItemState defines the different states an Item can be in | [optional] 

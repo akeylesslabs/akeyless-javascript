@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.5.20
+ * @version 2.5.21
  */
 class TargetTypeDetailsInput {
     /**
@@ -138,7 +138,7 @@ class TargetTypeDetailsInput {
                 obj['gcp_service_account_email'] = ApiClient.convertToType(data['gcp_service_account_email'], 'String');
             }
             if (data.hasOwnProperty('gcp_service_account_key')) {
-                obj['gcp_service_account_key'] = ApiClient.convertToType(data['gcp_service_account_key'], ['Number']);
+                obj['gcp_service_account_key'] = ApiClient.convertToType(data['gcp_service_account_key'], 'String');
             }
             if (data.hasOwnProperty('gke_cluster_ca_certificate')) {
                 obj['gke_cluster_ca_certificate'] = ApiClient.convertToType(data['gke_cluster_ca_certificate'], 'String');
@@ -432,7 +432,7 @@ TargetTypeDetailsInput.prototype['eks_secret_access_key'] = undefined;
 TargetTypeDetailsInput.prototype['gcp_service_account_email'] = undefined;
 
 /**
- * @member {Array.<Number>} gcp_service_account_key
+ * @member {String} gcp_service_account_key
  */
 TargetTypeDetailsInput.prototype['gcp_service_account_key'] = undefined;
 

@@ -17,7 +17,7 @@ import ClassicKeyTargetInfo from './ClassicKeyTargetInfo';
 /**
  * The ClassicKeyDetailsInfo model module.
  * @module model/ClassicKeyDetailsInfo
- * @version 2.5.20
+ * @version 2.5.21
  */
 class ClassicKeyDetailsInfo {
     /**
@@ -53,6 +53,9 @@ class ClassicKeyDetailsInfo {
             }
             if (data.hasOwnProperty('classic_key_id')) {
                 obj['classic_key_id'] = ApiClient.convertToType(data['classic_key_id'], 'String');
+            }
+            if (data.hasOwnProperty('gw_cluster_id')) {
+                obj['gw_cluster_id'] = ApiClient.convertToType(data['gw_cluster_id'], 'Number');
             }
             if (data.hasOwnProperty('is_provided_by_user')) {
                 obj['is_provided_by_user'] = ApiClient.convertToType(data['is_provided_by_user'], 'Boolean');
@@ -94,6 +97,11 @@ ClassicKeyDetailsInfo.prototype['classic_key_attributes'] = undefined;
  * @member {String} classic_key_id
  */
 ClassicKeyDetailsInfo.prototype['classic_key_id'] = undefined;
+
+/**
+ * @member {Number} gw_cluster_id
+ */
+ClassicKeyDetailsInfo.prototype['gw_cluster_id'] = undefined;
 
 /**
  * @member {Boolean} is_provided_by_user

@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**validateToken** | **String** | Token | [optional] 
+**token** | **String** | Token | [optional] 
 
 

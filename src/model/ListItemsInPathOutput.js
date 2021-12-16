@@ -17,7 +17,7 @@ import Item from './Item';
 /**
  * The ListItemsInPathOutput model module.
  * @module model/ListItemsInPathOutput
- * @version 2.5.20
+ * @version 2.5.21
  */
 class ListItemsInPathOutput {
     /**
