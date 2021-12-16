@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 2.5.21
+ * @version 2.5.22
  */
 class UpdateRotatedSecret {
     /**

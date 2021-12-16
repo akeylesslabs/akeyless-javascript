@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodLDAP model module.
  * @module model/UpdateAuthMethodLDAP
- * @version 2.5.21
+ * @version 2.5.22
  */
 class UpdateAuthMethodLDAP {
     /**

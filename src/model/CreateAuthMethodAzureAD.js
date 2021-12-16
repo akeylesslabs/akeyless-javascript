@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAzureAD model module.
  * @module model/CreateAuthMethodAzureAD
- * @version 2.5.21
+ * @version 2.5.22
  */
 class CreateAuthMethodAzureAD {
     /**

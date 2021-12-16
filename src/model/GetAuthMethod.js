@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetAuthMethod model module.
  * @module model/GetAuthMethod
- * @version 2.5.21
+ * @version 2.5.22
  */
 class GetAuthMethod {
     /**

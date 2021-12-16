@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLdapTarget model module.
  * @module model/CreateLdapTarget
- * @version 2.5.21
+ * @version 2.5.22
  */
 class CreateLdapTarget {
     /**

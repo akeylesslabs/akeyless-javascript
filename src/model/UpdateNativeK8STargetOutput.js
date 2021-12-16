@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateNativeK8STargetOutput model module.
  * @module model/UpdateNativeK8STargetOutput
- * @version 2.5.21
+ * @version 2.5.22
  */
 class UpdateNativeK8STargetOutput {
     /**
