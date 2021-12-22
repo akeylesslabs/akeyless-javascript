@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayListProducers model module.
  * @module model/GatewayListProducers
- * @version 2.5.22
+ * @version 2.15.23
  */
 class GatewayListProducers {
     /**

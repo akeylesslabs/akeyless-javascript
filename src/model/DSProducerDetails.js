@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.5.22
+ * @version 2.15.23
  */
 class DSProducerDetails {
     /**
@@ -373,6 +373,12 @@ class DSProducerDetails {
             if (data.hasOwnProperty('oracle_creation_statements')) {
                 obj['oracle_creation_statements'] = ApiClient.convertToType(data['oracle_creation_statements'], 'String');
             }
+            if (data.hasOwnProperty('password_length')) {
+                obj['password_length'] = ApiClient.convertToType(data['password_length'], 'Number');
+            }
+            if (data.hasOwnProperty('password_policy')) {
+                obj['password_policy'] = ApiClient.convertToType(data['password_policy'], 'String');
+            }
             if (data.hasOwnProperty('payload')) {
                 obj['payload'] = ApiClient.convertToType(data['payload'], 'String');
             }
@@ -441,6 +447,12 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('user_ttl')) {
                 obj['user_ttl'] = ApiClient.convertToType(data['user_ttl'], 'String');
+            }
+            if (data.hasOwnProperty('username_length')) {
+                obj['username_length'] = ApiClient.convertToType(data['username_length'], 'Number');
+            }
+            if (data.hasOwnProperty('username_policy')) {
+                obj['username_policy'] = ApiClient.convertToType(data['username_policy'], 'String');
             }
             if (data.hasOwnProperty('venafi_allow_subdomains')) {
                 obj['venafi_allow_subdomains'] = ApiClient.convertToType(data['venafi_allow_subdomains'], 'Boolean');
@@ -1035,6 +1047,16 @@ DSProducerDetails.prototype['mysql_creation_statements'] = undefined;
 DSProducerDetails.prototype['oracle_creation_statements'] = undefined;
 
 /**
+ * @member {Number} password_length
+ */
+DSProducerDetails.prototype['password_length'] = undefined;
+
+/**
+ * @member {String} password_policy
+ */
+DSProducerDetails.prototype['password_policy'] = undefined;
+
+/**
  * @member {String} payload
  */
 DSProducerDetails.prototype['payload'] = undefined;
@@ -1150,6 +1172,16 @@ DSProducerDetails.prototype['user_principal_name'] = undefined;
  * @member {String} user_ttl
  */
 DSProducerDetails.prototype['user_ttl'] = undefined;
+
+/**
+ * @member {Number} username_length
+ */
+DSProducerDetails.prototype['username_length'] = undefined;
+
+/**
+ * @member {String} username_policy
+ */
+DSProducerDetails.prototype['username_policy'] = undefined;
 
 /**
  * @member {Boolean} venafi_allow_subdomains

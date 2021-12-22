@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GeneralConfigPart model module.
  * @module model/GeneralConfigPart
- * @version 2.5.22
+ * @version 2.15.23
  */
 class GeneralConfigPart {
     /**

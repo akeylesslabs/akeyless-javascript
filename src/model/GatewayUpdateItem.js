@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateItem model module.
  * @module model/GatewayUpdateItem
- * @version 2.5.22
+ * @version 2.15.23
  */
 class GatewayUpdateItem {
     /**
