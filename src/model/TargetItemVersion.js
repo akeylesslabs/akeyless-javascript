@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetItemVersion model module.
  * @module model/TargetItemVersion
- * @version 2.15.23
+ * @version 2.15.24
  */
 class TargetItemVersion {
     /**
@@ -59,6 +59,9 @@ class TargetItemVersion {
             if (data.hasOwnProperty('item_version_state')) {
                 obj['item_version_state'] = ApiClient.convertToType(data['item_version_state'], 'String');
             }
+            if (data.hasOwnProperty('latest_version')) {
+                obj['latest_version'] = ApiClient.convertToType(data['latest_version'], 'Boolean');
+            }
             if (data.hasOwnProperty('protection_key_name')) {
                 obj['protection_key_name'] = ApiClient.convertToType(data['protection_key_name'], 'String');
             }
@@ -98,6 +101,11 @@ TargetItemVersion.prototype['deletion_date'] = undefined;
  * @member {String} item_version_state
  */
 TargetItemVersion.prototype['item_version_state'] = undefined;
+
+/**
+ * @member {Boolean} latest_version
+ */
+TargetItemVersion.prototype['latest_version'] = undefined;
 
 /**
  * @member {String} protection_key_name

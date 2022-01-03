@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocTargetItem model module.
  * @module model/AssocTargetItem
- * @version 2.15.23
+ * @version 2.15.24
  */
 class AssocTargetItem {
     /**

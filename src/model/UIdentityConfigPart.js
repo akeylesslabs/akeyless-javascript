@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UIdentityConfigPart model module.
  * @module model/UIdentityConfigPart
- * @version 2.15.23
+ * @version 2.15.24
  */
 class UIdentityConfigPart {
     /**

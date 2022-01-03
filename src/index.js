@@ -503,7 +503,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.15.23
+* @version 2.15.24
 */
 export {
     /**

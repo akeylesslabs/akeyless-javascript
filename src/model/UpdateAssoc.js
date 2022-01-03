@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAssoc model module.
  * @module model/UpdateAssoc
- * @version 2.15.23
+ * @version 2.15.24
  */
 class UpdateAssoc {
     /**

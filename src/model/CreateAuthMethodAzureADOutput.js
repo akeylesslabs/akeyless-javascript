@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAzureADOutput model module.
  * @module model/CreateAuthMethodAzureADOutput
- * @version 2.15.23
+ * @version 2.15.24
  */
 class CreateAuthMethodAzureADOutput {
     /**

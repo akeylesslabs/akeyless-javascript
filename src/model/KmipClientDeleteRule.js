@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipClientDeleteRule model module.
  * @module model/KmipClientDeleteRule
- * @version 2.15.23
+ * @version 2.15.24
  */
 class KmipClientDeleteRule {
     /**

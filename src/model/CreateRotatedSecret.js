@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 2.15.23
+ * @version 2.15.24
  */
 class CreateRotatedSecret {
     /**
@@ -58,6 +58,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('api-key')) {
                 obj['api-key'] = ApiClient.convertToType(data['api-key'], 'String');
+            }
+            if (data.hasOwnProperty('authentication-credentials')) {
+                obj['authentication-credentials'] = ApiClient.convertToType(data['authentication-credentials'], 'String');
             }
             if (data.hasOwnProperty('auto-rotate')) {
                 obj['auto-rotate'] = ApiClient.convertToType(data['auto-rotate'], 'String');
@@ -141,6 +144,11 @@ CreateRotatedSecret.prototype['api-id'] = undefined;
  * @member {String} api-key
  */
 CreateRotatedSecret.prototype['api-key'] = undefined;
+
+/**
+ * @member {String} authentication-credentials
+ */
+CreateRotatedSecret.prototype['authentication-credentials'] = undefined;
 
 /**
  * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation
