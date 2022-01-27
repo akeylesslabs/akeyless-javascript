@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayAddAllowedManagementAccess model module.
  * @module model/GatewayAddAllowedManagementAccess
- * @version 2.15.24
+ * @version 2.15.25
  */
 class GatewayAddAllowedManagementAccess {
     /**

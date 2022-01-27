@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocRoleAuthMethod model module.
  * @module model/AssocRoleAuthMethod
- * @version 2.15.24
+ * @version 2.15.25
  */
 class AssocRoleAuthMethod {
     /**
@@ -55,6 +55,9 @@ class AssocRoleAuthMethod {
             if (data.hasOwnProperty('am-name')) {
                 obj['am-name'] = ApiClient.convertToType(data['am-name'], 'String');
             }
+            if (data.hasOwnProperty('case-sensitive')) {
+                obj['case-sensitive'] = ApiClient.convertToType(data['case-sensitive'], 'String');
+            }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
@@ -85,6 +88,11 @@ class AssocRoleAuthMethod {
  * @member {String} am-name
  */
 AssocRoleAuthMethod.prototype['am-name'] = undefined;
+
+/**
+ * @member {String} case-sensitive
+ */
+AssocRoleAuthMethod.prototype['case-sensitive'] = undefined;
 
 /**
  * Required only when the authentication process requires a username and password

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAzureAD model module.
  * @module model/CreateAuthMethodAzureAD
- * @version 2.15.24
+ * @version 2.15.25
  */
 class CreateAuthMethodAzureAD {
     /**
@@ -96,6 +96,9 @@ class CreateAuthMethodAzureAD {
             }
             if (data.hasOwnProperty('jwks-uri')) {
                 obj['jwks-uri'] = ApiClient.convertToType(data['jwks-uri'], 'String');
+            }
+            if (data.hasOwnProperty('jwt-ttl')) {
+                obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -212,6 +215,13 @@ CreateAuthMethodAzureAD.prototype['issuer'] = 'https://sts.windows.net/---bound_
  * @default 'https://login.microsoftonline.com/common/discovery/keys'
  */
 CreateAuthMethodAzureAD.prototype['jwks-uri'] = 'https://login.microsoftonline.com/common/discovery/keys';
+
+/**
+ * Jwt TTL
+ * @member {Number} jwt-ttl
+ * @default 0
+ */
+CreateAuthMethodAzureAD.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

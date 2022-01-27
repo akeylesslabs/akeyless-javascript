@@ -96,6 +96,7 @@ Method | HTTP request | Description
 [**gatewayStopProducer**](V2Api.md#gatewayStopProducer) | **POST** /gateway-stop-producer | 
 [**gatewaySyncMigration**](V2Api.md#gatewaySyncMigration) | **POST** /gateway-sync-migration | 
 [**gatewayUpdateItem**](V2Api.md#gatewayUpdateItem) | **POST** /gateway-update-item | 
+[**gatewayUpdateK8SAuthConfig**](V2Api.md#gatewayUpdateK8SAuthConfig) | **POST** /gateway-update-k8s-auth-config | 
 [**gatewayUpdateProducerArtifactory**](V2Api.md#gatewayUpdateProducerArtifactory) | **POST** /gateway-update-producer-artifactory | 
 [**gatewayUpdateProducerAws**](V2Api.md#gatewayUpdateProducerAws) | **POST** /gateway-update-producer-aws | 
 [**gatewayUpdateProducerAzure**](V2Api.md#gatewayUpdateProducerAzure) | **POST** /gateway-update-producer-azure | 
@@ -118,6 +119,7 @@ Method | HTTP request | Description
 [**gatewayUpdateProducerSnowflake**](V2Api.md#gatewayUpdateProducerSnowflake) | **POST** /gateway-update-producer-snowflake | 
 [**gatewayUpdateTmpUsers**](V2Api.md#gatewayUpdateTmpUsers) | **POST** /gateway-update-producer-tmp-creds | 
 [**getAccountLogo**](V2Api.md#getAccountLogo) | **POST** /get-account-logo | 
+[**getAccountSettings**](V2Api.md#getAccountSettings) | **POST** /get-account-settings | 
 [**getAuthMethod**](V2Api.md#getAuthMethod) | **POST** /get-auth-method | 
 [**getDynamicSecretValue**](V2Api.md#getDynamicSecretValue) | **POST** /get-dynamic-secret-value | 
 [**getKubeExecCreds**](V2Api.md#getKubeExecCreds) | **POST** /get-kube-exec-creds | 
@@ -149,6 +151,7 @@ Method | HTTP request | Description
 [**rawCreds**](V2Api.md#rawCreds) | **POST** /raw-creds | 
 [**refreshKey**](V2Api.md#refreshKey) | **POST** /refresh-key | 
 [**reverseRBAC**](V2Api.md#reverseRBAC) | **POST** /reverse-rbac | 
+[**revokeCreds**](V2Api.md#revokeCreds) | **POST** /revoke-creds | 
 [**rollbackSecret**](V2Api.md#rollbackSecret) | **POST** /rollback-secret | 
 [**rotateKey**](V2Api.md#rotateKey) | **POST** /rotate-key | 
 [**setItemState**](V2Api.md#setItemState) | **POST** /set-item-state | 
@@ -164,6 +167,7 @@ Method | HTTP request | Description
 [**uidRotateToken**](V2Api.md#uidRotateToken) | **POST** /uid-rotate-token | 
 [**updateAWSTarget**](V2Api.md#updateAWSTarget) | **POST** /update-aws-target | 
 [**updateAWSTargetDetails**](V2Api.md#updateAWSTargetDetails) | **POST** /update-aws-target-details | 
+[**updateAccountSettings**](V2Api.md#updateAccountSettings) | **POST** /update-account-settings | 
 [**updateArtifactoryTarget**](V2Api.md#updateArtifactoryTarget) | **POST** /update-artifactory-target | 
 [**updateAssoc**](V2Api.md#updateAssoc) | **POST** /update-assoc | 
 [**updateAuthMethod**](V2Api.md#updateAuthMethod) | **POST** /update-auth-method | 
@@ -4073,6 +4077,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayUpdateK8SAuthConfig
+
+> GatewayUpdateK8SAuthConfigOutput gatewayUpdateK8SAuthConfig(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateK8SAuthConfig(); // GatewayUpdateK8SAuthConfig | 
+apiInstance.gatewayUpdateK8SAuthConfig(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateK8SAuthConfig**](GatewayUpdateK8SAuthConfig.md)|  | 
+
+### Return type
+
+[**GatewayUpdateK8SAuthConfigOutput**](GatewayUpdateK8SAuthConfigOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayUpdateProducerArtifactory
 
 > GatewayUpdateProducerArtifactoryOutput gatewayUpdateProducerArtifactory(body)
@@ -4992,6 +5038,48 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getAccountSettings
+
+> GetAccountSettingsCommandOutput getAccountSettings(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GetAccountSettings(); // GetAccountSettings | 
+apiInstance.getAccountSettings(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetAccountSettings**](GetAccountSettings.md)|  | 
+
+### Return type
+
+[**GetAccountSettingsCommandOutput**](GetAccountSettingsCommandOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -6321,6 +6409,44 @@ No authorization required
 - **Accept**: application/json
 
 
+## revokeCreds
+
+> Object revokeCreds()
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+apiInstance.revokeCreds().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## rollbackSecret
 
 > RollbackSecretOutput rollbackSecret(body)
@@ -6940,6 +7066,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateTargetOutput**](UpdateTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAccountSettings
+
+> UpdateAccountSettingsOutput updateAccountSettings(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAccountSettings(); // UpdateAccountSettings | 
+apiInstance.updateAccountSettings(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAccountSettings**](UpdateAccountSettings.md)|  | 
+
+### Return type
+
+[**UpdateAccountSettingsOutput**](UpdateAccountSettingsOutput.md)
 
 ### Authorization
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOIDC model module.
  * @module model/UpdateAuthMethodOIDC
- * @version 2.15.24
+ * @version 2.15.25
  */
 class UpdateAuthMethodOIDC {
     /**
@@ -72,6 +72,9 @@ class UpdateAuthMethodOIDC {
             }
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
+            }
+            if (data.hasOwnProperty('jwt-ttl')) {
+                obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -143,6 +146,13 @@ UpdateAuthMethodOIDC.prototype['force-sub-claims'] = undefined;
  * @member {String} issuer
  */
 UpdateAuthMethodOIDC.prototype['issuer'] = undefined;
+
+/**
+ * Jwt TTL
+ * @member {Number} jwt-ttl
+ * @default 0
+ */
+UpdateAuthMethodOIDC.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

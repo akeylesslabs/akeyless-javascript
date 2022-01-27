@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodGCPOutput model module.
  * @module model/CreateAuthMethodGCPOutput
- * @version 2.15.24
+ * @version 2.15.25
  */
 class CreateAuthMethodGCPOutput {
     /**

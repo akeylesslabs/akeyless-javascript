@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethod model module.
  * @module model/CreateAuthMethod
- * @version 2.15.24
+ * @version 2.15.25
  */
 class CreateAuthMethod {
     /**
@@ -58,6 +58,9 @@ class CreateAuthMethod {
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
             }
+            if (data.hasOwnProperty('jwt-ttl')) {
+                obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -98,6 +101,13 @@ CreateAuthMethod.prototype['bound-ips'] = undefined;
  * @member {Boolean} force-sub-claims
  */
 CreateAuthMethod.prototype['force-sub-claims'] = undefined;
+
+/**
+ * Jwt TTL
+ * @member {Number} jwt-ttl
+ * @default 0
+ */
+CreateAuthMethod.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

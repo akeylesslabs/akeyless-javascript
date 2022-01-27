@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodK8S model module.
  * @module model/CreateAuthMethodK8S
- * @version 2.15.24
+ * @version 2.15.25
  */
 class CreateAuthMethodK8S {
     /**
@@ -73,6 +73,9 @@ class CreateAuthMethodK8S {
             }
             if (data.hasOwnProperty('gen-key')) {
                 obj['gen-key'] = ApiClient.convertToType(data['gen-key'], 'String');
+            }
+            if (data.hasOwnProperty('jwt-ttl')) {
+                obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -148,6 +151,13 @@ CreateAuthMethodK8S.prototype['force-sub-claims'] = undefined;
  * @default 'true'
  */
 CreateAuthMethodK8S.prototype['gen-key'] = 'true';
+
+/**
+ * Jwt TTL
+ * @member {Number} jwt-ttl
+ * @default 0
+ */
+CreateAuthMethodK8S.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

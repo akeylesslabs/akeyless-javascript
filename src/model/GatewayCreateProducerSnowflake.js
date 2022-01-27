@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerSnowflake model module.
  * @module model/GatewayCreateProducerSnowflake
- * @version 2.15.24
+ * @version 2.15.25
  */
 class GatewayCreateProducerSnowflake {
     /**

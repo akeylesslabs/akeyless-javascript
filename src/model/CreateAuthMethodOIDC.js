@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOIDC model module.
  * @module model/CreateAuthMethodOIDC
- * @version 2.15.24
+ * @version 2.15.25
  */
 class CreateAuthMethodOIDC {
     /**
@@ -72,6 +72,9 @@ class CreateAuthMethodOIDC {
             }
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
+            }
+            if (data.hasOwnProperty('jwt-ttl')) {
+                obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -140,6 +143,13 @@ CreateAuthMethodOIDC.prototype['force-sub-claims'] = undefined;
  * @member {String} issuer
  */
 CreateAuthMethodOIDC.prototype['issuer'] = undefined;
+
+/**
+ * Jwt TTL
+ * @member {Number} jwt-ttl
+ * @default 0
+ */
+CreateAuthMethodOIDC.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

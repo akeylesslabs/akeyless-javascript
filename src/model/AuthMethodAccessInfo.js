@@ -28,7 +28,7 @@ import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 2.15.24
+ * @version 2.15.25
  */
 class AuthMethodAccessInfo {
     /**
@@ -88,6 +88,9 @@ class AuthMethodAccessInfo {
             }
             if (data.hasOwnProperty('huawei_access_rules')) {
                 obj['huawei_access_rules'] = HuaweiAccessRules.constructFromObject(data['huawei_access_rules']);
+            }
+            if (data.hasOwnProperty('jwt_ttl')) {
+                obj['jwt_ttl'] = ApiClient.convertToType(data['jwt_ttl'], 'Number');
             }
             if (data.hasOwnProperty('k8s_access_rules')) {
                 obj['k8s_access_rules'] = KubernetesAccessRules.constructFromObject(data['k8s_access_rules']);
@@ -168,6 +171,11 @@ AuthMethodAccessInfo.prototype['gcp_access_rules'] = undefined;
  * @member {module:model/HuaweiAccessRules} huawei_access_rules
  */
 AuthMethodAccessInfo.prototype['huawei_access_rules'] = undefined;
+
+/**
+ * @member {Number} jwt_ttl
+ */
+AuthMethodAccessInfo.prototype['jwt_ttl'] = undefined;
 
 /**
  * @member {module:model/KubernetesAccessRules} k8s_access_rules

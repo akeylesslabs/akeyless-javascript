@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodGCP model module.
  * @module model/UpdateAuthMethodGCP
- * @version 2.15.24
+ * @version 2.15.25
  */
 class UpdateAuthMethodGCP {
     /**
@@ -80,6 +80,9 @@ class UpdateAuthMethodGCP {
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
+            if (data.hasOwnProperty('jwt-ttl')) {
+                obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -167,6 +170,13 @@ UpdateAuthMethodGCP.prototype['bound-zones'] = undefined;
  * @member {Boolean} force-sub-claims
  */
 UpdateAuthMethodGCP.prototype['force-sub-claims'] = undefined;
+
+/**
+ * Jwt TTL
+ * @member {Number} jwt-ttl
+ * @default 0
+ */
+UpdateAuthMethodGCP.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

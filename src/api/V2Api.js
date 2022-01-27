@@ -182,6 +182,8 @@ import GatewayStopProducerOutput from '../model/GatewayStopProducerOutput';
 import GatewaySyncMigration from '../model/GatewaySyncMigration';
 import GatewayUpdateItem from '../model/GatewayUpdateItem';
 import GatewayUpdateItemOutput from '../model/GatewayUpdateItemOutput';
+import GatewayUpdateK8SAuthConfig from '../model/GatewayUpdateK8SAuthConfig';
+import GatewayUpdateK8SAuthConfigOutput from '../model/GatewayUpdateK8SAuthConfigOutput';
 import GatewayUpdateProducerArtifactory from '../model/GatewayUpdateProducerArtifactory';
 import GatewayUpdateProducerArtifactoryOutput from '../model/GatewayUpdateProducerArtifactoryOutput';
 import GatewayUpdateProducerAws from '../model/GatewayUpdateProducerAws';
@@ -223,6 +225,8 @@ import GatewayUpdateProducerRedshiftOutput from '../model/GatewayUpdateProducerR
 import GatewayUpdateProducerSnowflake from '../model/GatewayUpdateProducerSnowflake';
 import GatewayUpdateProducerSnowflakeOutput from '../model/GatewayUpdateProducerSnowflakeOutput';
 import GatewayUpdateTmpUsers from '../model/GatewayUpdateTmpUsers';
+import GetAccountSettings from '../model/GetAccountSettings';
+import GetAccountSettingsCommandOutput from '../model/GetAccountSettingsCommandOutput';
 import GetAuthMethod from '../model/GetAuthMethod';
 import GetDynamicSecretValue from '../model/GetDynamicSecretValue';
 import GetKubeExecCreds from '../model/GetKubeExecCreds';
@@ -306,6 +310,8 @@ import UidRotateTokenOutput from '../model/UidRotateTokenOutput';
 import UniversalIdentityDetails from '../model/UniversalIdentityDetails';
 import UpdateAWSTarget from '../model/UpdateAWSTarget';
 import UpdateAWSTargetDetails from '../model/UpdateAWSTargetDetails';
+import UpdateAccountSettings from '../model/UpdateAccountSettings';
+import UpdateAccountSettingsOutput from '../model/UpdateAccountSettingsOutput';
 import UpdateArtifactoryTarget from '../model/UpdateArtifactoryTarget';
 import UpdateArtifactoryTargetOutput from '../model/UpdateArtifactoryTargetOutput';
 import UpdateAssoc from '../model/UpdateAssoc';
@@ -370,7 +376,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.15.24
+* @version 2.15.25
 */
 export default class V2Api {
 
@@ -4343,6 +4349,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayUpdateK8SAuthConfig} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateK8SAuthConfigOutput} and HTTP response
+     */
+    gatewayUpdateK8SAuthConfigWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateK8SAuthConfig");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateK8SAuthConfigOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-k8s-auth-config', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateK8SAuthConfig} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateK8SAuthConfigOutput}
+     */
+    gatewayUpdateK8SAuthConfig(body) {
+      return this.gatewayUpdateK8SAuthConfigWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayUpdateProducerArtifactory} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerArtifactoryOutput} and HTTP response
      */
@@ -5275,6 +5324,49 @@ export default class V2Api {
      */
     getAccountLogo() {
       return this.getAccountLogoWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GetAccountSettings} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetAccountSettingsCommandOutput} and HTTP response
+     */
+    getAccountSettingsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling getAccountSettings");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GetAccountSettingsCommandOutput;
+      return this.apiClient.callApi(
+        '/get-account-settings', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GetAccountSettings} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetAccountSettingsCommandOutput}
+     */
+    getAccountSettings(body) {
+      return this.getAccountSettingsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6603,6 +6695,43 @@ export default class V2Api {
 
 
     /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    revokeCredsWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/revoke-creds', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    revokeCreds() {
+      return this.revokeCredsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/RollbackSecret} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RollbackSecretOutput} and HTTP response
      */
@@ -7241,6 +7370,49 @@ export default class V2Api {
      */
     updateAWSTargetDetails(body) {
       return this.updateAWSTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateAccountSettings} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateAccountSettingsOutput} and HTTP response
+     */
+    updateAccountSettingsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAccountSettings");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateAccountSettingsOutput;
+      return this.apiClient.callApi(
+        '/update-account-settings', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAccountSettings} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateAccountSettingsOutput}
+     */
+    updateAccountSettings(body) {
+      return this.updateAccountSettingsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

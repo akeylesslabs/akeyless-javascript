@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodUniversalIdentity model module.
  * @module model/CreateAuthMethodUniversalIdentity
- * @version 2.15.24
+ * @version 2.15.25
  */
 class CreateAuthMethodUniversalIdentity {
     /**
@@ -64,6 +64,9 @@ class CreateAuthMethodUniversalIdentity {
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
+            if (data.hasOwnProperty('jwt-ttl')) {
+                obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -120,6 +123,13 @@ CreateAuthMethodUniversalIdentity.prototype['deny-rotate'] = undefined;
  * @member {Boolean} force-sub-claims
  */
 CreateAuthMethodUniversalIdentity.prototype['force-sub-claims'] = undefined;
+
+/**
+ * Jwt TTL
+ * @member {Number} jwt-ttl
+ * @default 0
+ */
+CreateAuthMethodUniversalIdentity.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

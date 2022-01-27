@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 2.15.24
+ * @version 2.15.25
  */
 class UpdateRole {
     /**
@@ -69,6 +69,9 @@ class UpdateRole {
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
+            if (data.hasOwnProperty('sra-reports-access')) {
+                obj['sra-reports-access'] = ApiClient.convertToType(data['sra-reports-access'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -128,6 +131,12 @@ UpdateRole.prototype['new-name'] = undefined;
  * @member {String} password
  */
 UpdateRole.prototype['password'] = undefined;
+
+/**
+ * Allow this role to view SRA Clusters. Currently only 'none', 'own', 'all' values are supported.
+ * @member {String} sra-reports-access
+ */
+UpdateRole.prototype['sra-reports-access'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

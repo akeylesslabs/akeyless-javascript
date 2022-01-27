@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOAuth2 model module.
  * @module model/UpdateAuthMethodOAuth2
- * @version 2.15.24
+ * @version 2.15.25
  */
 class UpdateAuthMethodOAuth2 {
     /**
@@ -74,6 +74,9 @@ class UpdateAuthMethodOAuth2 {
             }
             if (data.hasOwnProperty('jwks-uri')) {
                 obj['jwks-uri'] = ApiClient.convertToType(data['jwks-uri'], 'String');
+            }
+            if (data.hasOwnProperty('jwt-ttl')) {
+                obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -145,6 +148,13 @@ UpdateAuthMethodOAuth2.prototype['issuer'] = undefined;
  * @member {String} jwks-uri
  */
 UpdateAuthMethodOAuth2.prototype['jwks-uri'] = undefined;
+
+/**
+ * Jwt TTL
+ * @member {Number} jwt-ttl
+ * @default 0
+ */
+UpdateAuthMethodOAuth2.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

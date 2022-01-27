@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerPostgreSQL model module.
  * @module model/GatewayUpdateProducerPostgreSQL
- * @version 2.15.24
+ * @version 2.15.25
  */
 class GatewayUpdateProducerPostgreSQL {
     /**

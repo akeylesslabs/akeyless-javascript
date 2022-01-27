@@ -31,7 +31,7 @@ import UIdentityConfigPart from './UIdentityConfigPart';
 /**
  * The AkeylessGatewayConfig model module.
  * @module model/AkeylessGatewayConfig
- * @version 2.15.24
+ * @version 2.15.25
  */
 class AkeylessGatewayConfig {
     /**

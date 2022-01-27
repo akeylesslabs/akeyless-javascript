@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAWSIAM model module.
  * @module model/CreateAuthMethodAWSIAM
- * @version 2.15.24
+ * @version 2.15.25
  */
 class CreateAuthMethodAWSIAM {
     /**
@@ -81,6 +81,9 @@ class CreateAuthMethodAWSIAM {
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
+            if (data.hasOwnProperty('jwt-ttl')) {
+                obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -167,6 +170,13 @@ CreateAuthMethodAWSIAM.prototype['bound-user-name'] = undefined;
  * @member {Boolean} force-sub-claims
  */
 CreateAuthMethodAWSIAM.prototype['force-sub-claims'] = undefined;
+
+/**
+ * Jwt TTL
+ * @member {Number} jwt-ttl
+ * @default 0
+ */
+CreateAuthMethodAWSIAM.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

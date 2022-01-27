@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodHuawei model module.
  * @module model/CreateAuthMethodHuawei
- * @version 2.15.24
+ * @version 2.15.25
  */
 class CreateAuthMethodHuawei {
     /**
@@ -80,6 +80,9 @@ class CreateAuthMethodHuawei {
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
             }
+            if (data.hasOwnProperty('jwt-ttl')) {
+                obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -129,7 +132,7 @@ CreateAuthMethodHuawei.prototype['bound-domain-id'] = undefined;
 CreateAuthMethodHuawei.prototype['bound-domain-name'] = undefined;
 
 /**
- * A CIDR whitelist of the IPs that the access is restricted to
+ * A CIDR whitelist with the IPs that the access is restricted to
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodHuawei.prototype['bound-ips'] = undefined;
@@ -163,6 +166,13 @@ CreateAuthMethodHuawei.prototype['bound-user-name'] = undefined;
  * @member {Boolean} force-sub-claims
  */
 CreateAuthMethodHuawei.prototype['force-sub-claims'] = undefined;
+
+/**
+ * Jwt TTL
+ * @member {Number} jwt-ttl
+ * @default 0
+ */
+CreateAuthMethodHuawei.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

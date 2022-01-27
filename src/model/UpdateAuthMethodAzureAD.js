@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAzureAD model module.
  * @module model/UpdateAuthMethodAzureAD
- * @version 2.15.24
+ * @version 2.15.25
  */
 class UpdateAuthMethodAzureAD {
     /**
@@ -96,6 +96,9 @@ class UpdateAuthMethodAzureAD {
             }
             if (data.hasOwnProperty('jwks-uri')) {
                 obj['jwks-uri'] = ApiClient.convertToType(data['jwks-uri'], 'String');
+            }
+            if (data.hasOwnProperty('jwt-ttl')) {
+                obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -215,6 +218,13 @@ UpdateAuthMethodAzureAD.prototype['issuer'] = 'https://sts.windows.net/---bound_
  * @default 'https://login.microsoftonline.com/common/discovery/keys'
  */
 UpdateAuthMethodAzureAD.prototype['jwks-uri'] = 'https://login.microsoftonline.com/common/discovery/keys';
+
+/**
+ * Jwt TTL
+ * @member {Number} jwt-ttl
+ * @default 0
+ */
+UpdateAuthMethodAzureAD.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

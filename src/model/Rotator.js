@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Rotator model module.
  * @module model/Rotator
- * @version 2.15.24
+ * @version 2.15.25
  */
 class Rotator {
     /**

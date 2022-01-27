@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodSAML model module.
  * @module model/CreateAuthMethodSAML
- * @version 2.15.24
+ * @version 2.15.25
  */
 class CreateAuthMethodSAML {
     /**
@@ -66,6 +66,9 @@ class CreateAuthMethodSAML {
             }
             if (data.hasOwnProperty('idp-metadata-url')) {
                 obj['idp-metadata-url'] = ApiClient.convertToType(data['idp-metadata-url'], 'String');
+            }
+            if (data.hasOwnProperty('jwt-ttl')) {
+                obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -122,6 +125,13 @@ CreateAuthMethodSAML.prototype['force-sub-claims'] = undefined;
  * @member {String} idp-metadata-url
  */
 CreateAuthMethodSAML.prototype['idp-metadata-url'] = undefined;
+
+/**
+ * Jwt TTL
+ * @member {Number} jwt-ttl
+ * @default 0
+ */
+CreateAuthMethodSAML.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

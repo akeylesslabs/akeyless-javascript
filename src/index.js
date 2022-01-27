@@ -110,6 +110,7 @@ import CreateWebTarget from './model/CreateWebTarget';
 import CreateWebTargetOutput from './model/CreateWebTargetOutput';
 import CustomerFragment from './model/CustomerFragment';
 import CustomerFragmentsJson from './model/CustomerFragmentsJson';
+import CustomerFullAddress from './model/CustomerFullAddress';
 import DSProducerDetails from './model/DSProducerDetails';
 import DatadogForwardingConfig from './model/DatadogForwardingConfig';
 import Decrypt from './model/Decrypt';
@@ -222,6 +223,8 @@ import GatewayStopProducerOutput from './model/GatewayStopProducerOutput';
 import GatewaySyncMigration from './model/GatewaySyncMigration';
 import GatewayUpdateItem from './model/GatewayUpdateItem';
 import GatewayUpdateItemOutput from './model/GatewayUpdateItemOutput';
+import GatewayUpdateK8SAuthConfig from './model/GatewayUpdateK8SAuthConfig';
+import GatewayUpdateK8SAuthConfigOutput from './model/GatewayUpdateK8SAuthConfigOutput';
 import GatewayUpdateProducerArtifactory from './model/GatewayUpdateProducerArtifactory';
 import GatewayUpdateProducerArtifactoryOutput from './model/GatewayUpdateProducerArtifactoryOutput';
 import GatewayUpdateProducerAws from './model/GatewayUpdateProducerAws';
@@ -267,6 +270,8 @@ import GatewayUpdateProducerSnowflakeOutput from './model/GatewayUpdateProducerS
 import GatewayUpdateTmpUsers from './model/GatewayUpdateTmpUsers';
 import GenCustomerFragment from './model/GenCustomerFragment';
 import GeneralConfigPart from './model/GeneralConfigPart';
+import GetAccountSettings from './model/GetAccountSettings';
+import GetAccountSettingsCommandOutput from './model/GetAccountSettingsCommandOutput';
 import GetAuthMethod from './model/GetAuthMethod';
 import GetCloudIdentity from './model/GetCloudIdentity';
 import GetCloudIdentityOutput from './model/GetCloudIdentityOutput';
@@ -360,6 +365,7 @@ import RequiredActivity from './model/RequiredActivity';
 import ReverseRBAC from './model/ReverseRBAC';
 import ReverseRBACClient from './model/ReverseRBACClient';
 import ReverseRBACOutput from './model/ReverseRBACOutput';
+import RevokeCreds from './model/RevokeCreds';
 import Role from './model/Role';
 import RoleAuthMethodAssociation from './model/RoleAuthMethodAssociation';
 import RollbackSecret from './model/RollbackSecret';
@@ -382,11 +388,14 @@ import SignPKCS1 from './model/SignPKCS1';
 import SignPKCS1Output from './model/SignPKCS1Output';
 import SignPKICertOutput from './model/SignPKICertOutput';
 import SignPKICertWithClassicKey from './model/SignPKICertWithClassicKey';
+import SmInfo from './model/SmInfo';
 import SplunkLogForwardingConfig from './model/SplunkLogForwardingConfig';
+import SraInfo from './model/SraInfo';
 import StaticCredsAuth from './model/StaticCredsAuth';
 import StaticCredsAuthOutput from './model/StaticCredsAuthOutput';
 import SyslogLogForwardingConfig from './model/SyslogLogForwardingConfig';
 import SystemAccessCredentialsReplyObj from './model/SystemAccessCredentialsReplyObj';
+import SystemAccessCredsSettings from './model/SystemAccessCredsSettings';
 import Target from './model/Target';
 import TargetItemAssociation from './model/TargetItemAssociation';
 import TargetItemVersion from './model/TargetItemVersion';
@@ -407,6 +416,8 @@ import UniversalIdentityAccessRules from './model/UniversalIdentityAccessRules';
 import UniversalIdentityDetails from './model/UniversalIdentityDetails';
 import UpdateAWSTarget from './model/UpdateAWSTarget';
 import UpdateAWSTargetDetails from './model/UpdateAWSTargetDetails';
+import UpdateAccountSettings from './model/UpdateAccountSettings';
+import UpdateAccountSettingsOutput from './model/UpdateAccountSettingsOutput';
 import UpdateArtifactoryTarget from './model/UpdateArtifactoryTarget';
 import UpdateArtifactoryTargetOutput from './model/UpdateArtifactoryTargetOutput';
 import UpdateAssoc from './model/UpdateAssoc';
@@ -503,7 +514,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.15.24
+* @version 2.15.25
 */
 export {
     /**
@@ -1093,6 +1104,12 @@ export {
      * @property {module:model/CustomerFragmentsJson}
      */
     CustomerFragmentsJson,
+
+    /**
+     * The CustomerFullAddress model constructor.
+     * @property {module:model/CustomerFullAddress}
+     */
+    CustomerFullAddress,
 
     /**
      * The DSProducerDetails model constructor.
@@ -1767,6 +1784,18 @@ export {
     GatewayUpdateItemOutput,
 
     /**
+     * The GatewayUpdateK8SAuthConfig model constructor.
+     * @property {module:model/GatewayUpdateK8SAuthConfig}
+     */
+    GatewayUpdateK8SAuthConfig,
+
+    /**
+     * The GatewayUpdateK8SAuthConfigOutput model constructor.
+     * @property {module:model/GatewayUpdateK8SAuthConfigOutput}
+     */
+    GatewayUpdateK8SAuthConfigOutput,
+
+    /**
      * The GatewayUpdateProducerArtifactory model constructor.
      * @property {module:model/GatewayUpdateProducerArtifactory}
      */
@@ -2035,6 +2064,18 @@ export {
      * @property {module:model/GeneralConfigPart}
      */
     GeneralConfigPart,
+
+    /**
+     * The GetAccountSettings model constructor.
+     * @property {module:model/GetAccountSettings}
+     */
+    GetAccountSettings,
+
+    /**
+     * The GetAccountSettingsCommandOutput model constructor.
+     * @property {module:model/GetAccountSettingsCommandOutput}
+     */
+    GetAccountSettingsCommandOutput,
 
     /**
      * The GetAuthMethod model constructor.
@@ -2595,6 +2636,12 @@ export {
     ReverseRBACOutput,
 
     /**
+     * The RevokeCreds model constructor.
+     * @property {module:model/RevokeCreds}
+     */
+    RevokeCreds,
+
+    /**
      * The Role model constructor.
      * @property {module:model/Role}
      */
@@ -2727,10 +2774,22 @@ export {
     SignPKICertWithClassicKey,
 
     /**
+     * The SmInfo model constructor.
+     * @property {module:model/SmInfo}
+     */
+    SmInfo,
+
+    /**
      * The SplunkLogForwardingConfig model constructor.
      * @property {module:model/SplunkLogForwardingConfig}
      */
     SplunkLogForwardingConfig,
+
+    /**
+     * The SraInfo model constructor.
+     * @property {module:model/SraInfo}
+     */
+    SraInfo,
 
     /**
      * The StaticCredsAuth model constructor.
@@ -2755,6 +2814,12 @@ export {
      * @property {module:model/SystemAccessCredentialsReplyObj}
      */
     SystemAccessCredentialsReplyObj,
+
+    /**
+     * The SystemAccessCredsSettings model constructor.
+     * @property {module:model/SystemAccessCredsSettings}
+     */
+    SystemAccessCredsSettings,
 
     /**
      * The Target model constructor.
@@ -2875,6 +2940,18 @@ export {
      * @property {module:model/UpdateAWSTargetDetails}
      */
     UpdateAWSTargetDetails,
+
+    /**
+     * The UpdateAccountSettings model constructor.
+     * @property {module:model/UpdateAccountSettings}
+     */
+    UpdateAccountSettings,
+
+    /**
+     * The UpdateAccountSettingsOutput model constructor.
+     * @property {module:model/UpdateAccountSettingsOutput}
+     */
+    UpdateAccountSettingsOutput,
 
     /**
      * The UpdateArtifactoryTarget model constructor.

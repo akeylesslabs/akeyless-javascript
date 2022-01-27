@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amName** | **String** | The auth method to associate | 
+**caseSensitive** | **String** |  | [optional] 
 **password** | **String** | Required only when the authentication process requires a username and password | [optional] 
 **roleName** | **String** | The role to associate | 
 **subClaims** | **{String: String}** | key/val of sub claims, e.g group&#x3D;admins,developers | [optional] 
