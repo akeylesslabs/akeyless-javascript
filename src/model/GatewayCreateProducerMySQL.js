@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMySQL model module.
  * @module model/GatewayCreateProducerMySQL
- * @version 2.15.25
+ * @version 2.15.26
  */
 class GatewayCreateProducerMySQL {
     /**
@@ -94,6 +94,12 @@ class GatewayCreateProducerMySQL {
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('ssl')) {
+                obj['ssl'] = ApiClient.convertToType(data['ssl'], 'Boolean');
+            }
+            if (data.hasOwnProperty('ssl-certificate')) {
+                obj['ssl-certificate'] = ApiClient.convertToType(data['ssl-certificate'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -207,6 +213,18 @@ GatewayCreateProducerMySQL.prototype['secure-access-host'] = undefined;
  * @member {Boolean} secure-access-web
  */
 GatewayCreateProducerMySQL.prototype['secure-access-web'] = undefined;
+
+/**
+ * SSL connection mode
+ * @member {Boolean} ssl
+ */
+GatewayCreateProducerMySQL.prototype['ssl'] = undefined;
+
+/**
+ * SSL connection certificate
+ * @member {String} ssl-certificate
+ */
+GatewayCreateProducerMySQL.prototype['ssl-certificate'] = undefined;
 
 /**
  * List of the tags attached to this secret

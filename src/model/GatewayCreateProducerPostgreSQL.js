@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerPostgreSQL model module.
  * @module model/GatewayCreateProducerPostgreSQL
- * @version 2.15.25
+ * @version 2.15.26
  */
 class GatewayCreateProducerPostgreSQL {
     /**
@@ -77,6 +77,9 @@ class GatewayCreateProducerPostgreSQL {
             if (data.hasOwnProperty('producer-encryption-key')) {
                 obj['producer-encryption-key'] = ApiClient.convertToType(data['producer-encryption-key'], 'String');
             }
+            if (data.hasOwnProperty('revocation-statement')) {
+                obj['revocation-statement'] = ApiClient.convertToType(data['revocation-statement'], 'String');
+            }
             if (data.hasOwnProperty('secure-access-bastion-issuer')) {
                 obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
             }
@@ -91,6 +94,9 @@ class GatewayCreateProducerPostgreSQL {
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('ssl')) {
+                obj['ssl'] = ApiClient.convertToType(data['ssl'], 'Boolean');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -174,6 +180,12 @@ GatewayCreateProducerPostgreSQL.prototype['postgresql-username'] = undefined;
 GatewayCreateProducerPostgreSQL.prototype['producer-encryption-key'] = undefined;
 
 /**
+ * PostgreSQL Revocation statements
+ * @member {String} revocation-statement
+ */
+GatewayCreateProducerPostgreSQL.prototype['revocation-statement'] = undefined;
+
+/**
  * @member {String} secure-access-bastion-issuer
  */
 GatewayCreateProducerPostgreSQL.prototype['secure-access-bastion-issuer'] = undefined;
@@ -197,6 +209,12 @@ GatewayCreateProducerPostgreSQL.prototype['secure-access-host'] = undefined;
  * @member {Boolean} secure-access-web
  */
 GatewayCreateProducerPostgreSQL.prototype['secure-access-web'] = undefined;
+
+/**
+ * SSL connection mode
+ * @member {Boolean} ssl
+ */
+GatewayCreateProducerPostgreSQL.prototype['ssl'] = undefined;
 
 /**
  * List of the tags attached to this secret

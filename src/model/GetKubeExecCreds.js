@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetKubeExecCreds model module.
  * @module model/GetKubeExecCreds
- * @version 2.15.25
+ * @version 2.15.26
  */
 class GetKubeExecCreds {
     /**

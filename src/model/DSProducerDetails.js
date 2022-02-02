@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.15.25
+ * @version 2.15.26
  */
 class DSProducerDetails {
     /**
@@ -385,6 +385,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('postgres_creation_statements')) {
                 obj['postgres_creation_statements'] = ApiClient.convertToType(data['postgres_creation_statements'], 'String');
             }
+            if (data.hasOwnProperty('postgres_revocation_statements')) {
+                obj['postgres_revocation_statements'] = ApiClient.convertToType(data['postgres_revocation_statements'], 'String');
+            }
             if (data.hasOwnProperty('rabbitmq_server_password')) {
                 obj['rabbitmq_server_password'] = ApiClient.convertToType(data['rabbitmq_server_password'], 'String');
             }
@@ -432,6 +435,12 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('should_stop')) {
                 obj['should_stop'] = ApiClient.convertToType(data['should_stop'], 'String');
+            }
+            if (data.hasOwnProperty('ssl_connection_certificate')) {
+                obj['ssl_connection_certificate'] = ApiClient.convertToType(data['ssl_connection_certificate'], 'String');
+            }
+            if (data.hasOwnProperty('ssl_connection_mode')) {
+                obj['ssl_connection_mode'] = ApiClient.convertToType(data['ssl_connection_mode'], 'Boolean');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -1067,6 +1076,11 @@ DSProducerDetails.prototype['payload'] = undefined;
 DSProducerDetails.prototype['postgres_creation_statements'] = undefined;
 
 /**
+ * @member {String} postgres_revocation_statements
+ */
+DSProducerDetails.prototype['postgres_revocation_statements'] = undefined;
+
+/**
  * @member {String} rabbitmq_server_password
  */
 DSProducerDetails.prototype['rabbitmq_server_password'] = undefined;
@@ -1147,6 +1161,18 @@ DSProducerDetails.prototype['sf_warehouse_name'] = undefined;
  * @member {String} should_stop
  */
 DSProducerDetails.prototype['should_stop'] = undefined;
+
+/**
+ * (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field
+ * @member {String} ssl_connection_certificate
+ */
+DSProducerDetails.prototype['ssl_connection_certificate'] = undefined;
+
+/**
+ * (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB
+ * @member {Boolean} ssl_connection_mode
+ */
+DSProducerDetails.prototype['ssl_connection_mode'] = undefined;
 
 /**
  * @member {Array.<String>} tags

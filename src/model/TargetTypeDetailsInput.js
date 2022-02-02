@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.15.25
+ * @version 2.15.26
  */
 class TargetTypeDetailsInput {
     /**
@@ -244,6 +244,12 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('sf_account')) {
                 obj['sf_account'] = ApiClient.convertToType(data['sf_account'], 'String');
+            }
+            if (data.hasOwnProperty('ssl_connection_certificate')) {
+                obj['ssl_connection_certificate'] = ApiClient.convertToType(data['ssl_connection_certificate'], 'String');
+            }
+            if (data.hasOwnProperty('ssl_connection_mode')) {
+                obj['ssl_connection_mode'] = ApiClient.convertToType(data['ssl_connection_mode'], 'Boolean');
             }
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
@@ -613,6 +619,18 @@ TargetTypeDetailsInput.prototype['rabbitmq_server_user'] = undefined;
  * @member {String} sf_account
  */
 TargetTypeDetailsInput.prototype['sf_account'] = undefined;
+
+/**
+ * (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field
+ * @member {String} ssl_connection_certificate
+ */
+TargetTypeDetailsInput.prototype['ssl_connection_certificate'] = undefined;
+
+/**
+ * (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB
+ * @member {Boolean} ssl_connection_mode
+ */
+TargetTypeDetailsInput.prototype['ssl_connection_mode'] = undefined;
 
 /**
  * @member {String} url

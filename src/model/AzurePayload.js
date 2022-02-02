@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AzurePayload model module.
  * @module model/AzurePayload
- * @version 2.15.25
+ * @version 2.15.26
  */
 class AzurePayload {
     /**

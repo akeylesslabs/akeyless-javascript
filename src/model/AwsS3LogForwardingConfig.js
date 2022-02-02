@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AwsS3LogForwardingConfig model module.
  * @module model/AwsS3LogForwardingConfig
- * @version 2.15.25
+ * @version 2.15.26
  */
 class AwsS3LogForwardingConfig {
     /**

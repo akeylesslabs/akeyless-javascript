@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTarget model module.
  * @module model/CreateDBTarget
- * @version 2.15.25
+ * @version 2.15.26
  */
 class CreateDBTarget {
     /**
@@ -107,6 +107,12 @@ class CreateDBTarget {
             }
             if (data.hasOwnProperty('snowflake-account')) {
                 obj['snowflake-account'] = ApiClient.convertToType(data['snowflake-account'], 'String');
+            }
+            if (data.hasOwnProperty('ssl')) {
+                obj['ssl'] = ApiClient.convertToType(data['ssl'], 'Boolean');
+            }
+            if (data.hasOwnProperty('ssl-certificate')) {
+                obj['ssl-certificate'] = ApiClient.convertToType(data['ssl-certificate'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -232,6 +238,18 @@ CreateDBTarget.prototype['pwd'] = undefined;
  * @member {String} snowflake-account
  */
 CreateDBTarget.prototype['snowflake-account'] = undefined;
+
+/**
+ * SSL connection mode
+ * @member {Boolean} ssl
+ */
+CreateDBTarget.prototype['ssl'] = undefined;
+
+/**
+ * SSL connection certificate
+ * @member {String} ssl-certificate
+ */
+CreateDBTarget.prototype['ssl-certificate'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
