@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerEksOutput model module.
  * @module model/GatewayCreateProducerEksOutput
- * @version 2.15.26
+ * @version 2.15.27
  */
 class GatewayCreateProducerEksOutput {
     /**

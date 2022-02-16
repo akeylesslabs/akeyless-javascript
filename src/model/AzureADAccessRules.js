@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AzureADAccessRules model module.
  * @module model/AzureADAccessRules
- * @version 2.15.26
+ * @version 2.15.27
  */
 class AzureADAccessRules {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateWebTargetOutput model module.
  * @module model/CreateWebTargetOutput
- * @version 2.15.26
+ * @version 2.15.27
  */
 class CreateWebTargetOutput {
     /**

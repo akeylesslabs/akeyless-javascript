@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**rcFileOverride** | **String** | used to override .akeyless-connect.rc in tests | [optional] 
 **bastionCtrlPath** | **String** | The Bastion API path | [optional] 
 **bastionCtrlPort** | **String** | The Bastion API Port | [optional] [default to &#39;9900&#39;]
 **bastionCtrlProto** | **String** | The Bastion API protocol | [optional] [default to &#39;http&#39;]

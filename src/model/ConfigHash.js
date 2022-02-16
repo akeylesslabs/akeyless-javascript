@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConfigHash model module.
  * @module model/ConfigHash
- * @version 2.15.26
+ * @version 2.15.27
  */
 class ConfigHash {
     /**
@@ -82,6 +82,9 @@ class ConfigHash {
             }
             if (data.hasOwnProperty('producers')) {
                 obj['producers'] = ApiClient.convertToType(data['producers'], Object);
+            }
+            if (data.hasOwnProperty('producers_status')) {
+                obj['producers_status'] = ApiClient.convertToType(data['producers_status'], 'String');
             }
             if (data.hasOwnProperty('rotators')) {
                 obj['rotators'] = ApiClient.convertToType(data['rotators'], Object);
@@ -158,6 +161,11 @@ ConfigHash.prototype['migrations'] = undefined;
  * @member {Object} producers
  */
 ConfigHash.prototype['producers'] = undefined;
+
+/**
+ * @member {String} producers_status
+ */
+ConfigHash.prototype['producers_status'] = undefined;
 
 /**
  * @member {Object} rotators

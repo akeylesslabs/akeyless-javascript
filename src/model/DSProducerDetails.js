@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.15.26
+ * @version 2.15.27
  */
 class DSProducerDetails {
     /**
@@ -252,6 +252,30 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('gcp_token_type')) {
                 obj['gcp_token_type'] = ApiClient.convertToType(data['gcp_token_type'], 'String');
+            }
+            if (data.hasOwnProperty('github_app_id')) {
+                obj['github_app_id'] = ApiClient.convertToType(data['github_app_id'], 'Number');
+            }
+            if (data.hasOwnProperty('github_app_private_key')) {
+                obj['github_app_private_key'] = ApiClient.convertToType(data['github_app_private_key'], 'String');
+            }
+            if (data.hasOwnProperty('github_base_url')) {
+                obj['github_base_url'] = ApiClient.convertToType(data['github_base_url'], 'String');
+            }
+            if (data.hasOwnProperty('github_installation_id')) {
+                obj['github_installation_id'] = ApiClient.convertToType(data['github_installation_id'], 'Number');
+            }
+            if (data.hasOwnProperty('github_installation_token_permissions')) {
+                obj['github_installation_token_permissions'] = ApiClient.convertToType(data['github_installation_token_permissions'], {'String': 'String'});
+            }
+            if (data.hasOwnProperty('github_installation_token_repositories')) {
+                obj['github_installation_token_repositories'] = ApiClient.convertToType(data['github_installation_token_repositories'], ['String']);
+            }
+            if (data.hasOwnProperty('github_installation_token_repositories_ids')) {
+                obj['github_installation_token_repositories_ids'] = ApiClient.convertToType(data['github_installation_token_repositories_ids'], ['Number']);
+            }
+            if (data.hasOwnProperty('github_repository_path')) {
+                obj['github_repository_path'] = ApiClient.convertToType(data['github_repository_path'], 'String');
             }
             if (data.hasOwnProperty('gke_cluster_ca_certificate')) {
                 obj['gke_cluster_ca_certificate'] = ApiClient.convertToType(data['gke_cluster_ca_certificate'], 'String');
@@ -850,6 +874,46 @@ DSProducerDetails.prototype['gcp_token_scope'] = undefined;
  * @member {String} gcp_token_type
  */
 DSProducerDetails.prototype['gcp_token_type'] = undefined;
+
+/**
+ * @member {Number} github_app_id
+ */
+DSProducerDetails.prototype['github_app_id'] = undefined;
+
+/**
+ * @member {String} github_app_private_key
+ */
+DSProducerDetails.prototype['github_app_private_key'] = undefined;
+
+/**
+ * @member {String} github_base_url
+ */
+DSProducerDetails.prototype['github_base_url'] = undefined;
+
+/**
+ * @member {Number} github_installation_id
+ */
+DSProducerDetails.prototype['github_installation_id'] = undefined;
+
+/**
+ * @member {Object.<String, String>} github_installation_token_permissions
+ */
+DSProducerDetails.prototype['github_installation_token_permissions'] = undefined;
+
+/**
+ * @member {Array.<String>} github_installation_token_repositories
+ */
+DSProducerDetails.prototype['github_installation_token_repositories'] = undefined;
+
+/**
+ * @member {Array.<Number>} github_installation_token_repositories_ids
+ */
+DSProducerDetails.prototype['github_installation_token_repositories_ids'] = undefined;
+
+/**
+ * @member {String} github_repository_path
+ */
+DSProducerDetails.prototype['github_repository_path'] = undefined;
 
 /**
  * @member {String} gke_cluster_ca_certificate

@@ -63,6 +63,8 @@ import CreateGKETarget from '../model/CreateGKETarget';
 import CreateGKETargetOutput from '../model/CreateGKETargetOutput';
 import CreateGcpTarget from '../model/CreateGcpTarget';
 import CreateGcpTargetOutput from '../model/CreateGcpTargetOutput';
+import CreateGithubTarget from '../model/CreateGithubTarget';
+import CreateGithubTargetOutput from '../model/CreateGithubTargetOutput';
 import CreateKey from '../model/CreateKey';
 import CreateKeyOutput from '../model/CreateKeyOutput';
 import CreateLdapTarget from '../model/CreateLdapTarget';
@@ -135,6 +137,8 @@ import GatewayCreateProducerEks from '../model/GatewayCreateProducerEks';
 import GatewayCreateProducerEksOutput from '../model/GatewayCreateProducerEksOutput';
 import GatewayCreateProducerGcp from '../model/GatewayCreateProducerGcp';
 import GatewayCreateProducerGcpOutput from '../model/GatewayCreateProducerGcpOutput';
+import GatewayCreateProducerGithub from '../model/GatewayCreateProducerGithub';
+import GatewayCreateProducerGithubOutput from '../model/GatewayCreateProducerGithubOutput';
 import GatewayCreateProducerGke from '../model/GatewayCreateProducerGke';
 import GatewayCreateProducerGkeOutput from '../model/GatewayCreateProducerGkeOutput';
 import GatewayCreateProducerLdap from '../model/GatewayCreateProducerLdap';
@@ -200,6 +204,8 @@ import GatewayUpdateProducerEks from '../model/GatewayUpdateProducerEks';
 import GatewayUpdateProducerEksOutput from '../model/GatewayUpdateProducerEksOutput';
 import GatewayUpdateProducerGcp from '../model/GatewayUpdateProducerGcp';
 import GatewayUpdateProducerGcpOutput from '../model/GatewayUpdateProducerGcpOutput';
+import GatewayUpdateProducerGithub from '../model/GatewayUpdateProducerGithub';
+import GatewayUpdateProducerGithubOutput from '../model/GatewayUpdateProducerGithubOutput';
 import GatewayUpdateProducerGke from '../model/GatewayUpdateProducerGke';
 import GatewayUpdateProducerGkeOutput from '../model/GatewayUpdateProducerGkeOutput';
 import GatewayUpdateProducerLdap from '../model/GatewayUpdateProducerLdap';
@@ -338,6 +344,8 @@ import UpdateGKETarget from '../model/UpdateGKETarget';
 import UpdateGKETargetOutput from '../model/UpdateGKETargetOutput';
 import UpdateGcpTarget from '../model/UpdateGcpTarget';
 import UpdateGcpTargetOutput from '../model/UpdateGcpTargetOutput';
+import UpdateGithubTarget from '../model/UpdateGithubTarget';
+import UpdateGithubTargetOutput from '../model/UpdateGithubTargetOutput';
 import UpdateItem from '../model/UpdateItem';
 import UpdateItemOutput from '../model/UpdateItemOutput';
 import UpdateNativeK8STarget from '../model/UpdateNativeK8STarget';
@@ -376,7 +384,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.15.26
+* @version 2.15.27
 */
 export default class V2Api {
 
@@ -1505,6 +1513,49 @@ export default class V2Api {
      */
     createGcpTarget(body) {
       return this.createGcpTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateGithubTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateGithubTargetOutput} and HTTP response
+     */
+    createGithubTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createGithubTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateGithubTargetOutput;
+      return this.apiClient.callApi(
+        '/create-github-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateGithubTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateGithubTargetOutput}
+     */
+    createGithubTarget(body) {
+      return this.createGithubTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3188,6 +3239,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayCreateProducerGithub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerGithubOutput} and HTTP response
+     */
+    gatewayCreateProducerGithubWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateProducerGithub");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayCreateProducerGithubOutput;
+      return this.apiClient.callApi(
+        '/gateway-create-producer-github', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayCreateProducerGithub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerGithubOutput}
+     */
+    gatewayCreateProducerGithub(body) {
+      return this.gatewayCreateProducerGithubWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayCreateProducerGke} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerGkeOutput} and HTTP response
      */
@@ -4728,6 +4822,49 @@ export default class V2Api {
      */
     gatewayUpdateProducerGcp(body) {
       return this.gatewayUpdateProducerGcpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerGithub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerGithubOutput} and HTTP response
+     */
+    gatewayUpdateProducerGithubWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerGithub");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerGithubOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-github', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerGithub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerGithubOutput}
+     */
+    gatewayUpdateProducerGithub(body) {
+      return this.gatewayUpdateProducerGithubWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8187,6 +8324,49 @@ export default class V2Api {
      */
     updateGcpTarget(body) {
       return this.updateGcpTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateGithubTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateGithubTargetOutput} and HTTP response
+     */
+    updateGithubTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateGithubTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateGithubTargetOutput;
+      return this.apiClient.callApi(
+        '/update-github-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateGithubTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateGithubTargetOutput}
+     */
+    updateGithubTarget(body) {
+      return this.updateGithubTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -30,6 +30,7 @@ Method | HTTP request | Description
 [**createEKSTarget**](V2Api.md#createEKSTarget) | **POST** /create-eks-target | 
 [**createGKETarget**](V2Api.md#createGKETarget) | **POST** /create-gke-target | 
 [**createGcpTarget**](V2Api.md#createGcpTarget) | **POST** /create-gcp-target | 
+[**createGithubTarget**](V2Api.md#createGithubTarget) | **POST** /create-github-target | 
 [**createKey**](V2Api.md#createKey) | **POST** /create-key | 
 [**createNativeK8STarget**](V2Api.md#createNativeK8STarget) | **POST** /create-k8s-target | 
 [**createPKICertIssuer**](V2Api.md#createPKICertIssuer) | **POST** /create-pki-cert-issuer | 
@@ -69,6 +70,7 @@ Method | HTTP request | Description
 [**gatewayCreateProducerCustom**](V2Api.md#gatewayCreateProducerCustom) | **POST** /gateway-create-producer-custom | 
 [**gatewayCreateProducerEks**](V2Api.md#gatewayCreateProducerEks) | **POST** /gateway-create-producer-eks | 
 [**gatewayCreateProducerGcp**](V2Api.md#gatewayCreateProducerGcp) | **POST** /gateway-create-producer-gcp | 
+[**gatewayCreateProducerGithub**](V2Api.md#gatewayCreateProducerGithub) | **POST** /gateway-create-producer-github | 
 [**gatewayCreateProducerGke**](V2Api.md#gatewayCreateProducerGke) | **POST** /gateway-create-producer-gke | 
 [**gatewayCreateProducerLdap**](V2Api.md#gatewayCreateProducerLdap) | **POST** /gateway-create-producer-ldap | 
 [**gatewayCreateProducerMSSQL**](V2Api.md#gatewayCreateProducerMSSQL) | **POST** /gateway-create-producer-mssql | 
@@ -105,6 +107,7 @@ Method | HTTP request | Description
 [**gatewayUpdateProducerCustom**](V2Api.md#gatewayUpdateProducerCustom) | **POST** /gateway-update-producer-custom | 
 [**gatewayUpdateProducerEks**](V2Api.md#gatewayUpdateProducerEks) | **POST** /gateway-update-producer-eks | 
 [**gatewayUpdateProducerGcp**](V2Api.md#gatewayUpdateProducerGcp) | **POST** /gateway-update-producer-gcp | 
+[**gatewayUpdateProducerGithub**](V2Api.md#gatewayUpdateProducerGithub) | **POST** /gateway-update-producer-github | 
 [**gatewayUpdateProducerGke**](V2Api.md#gatewayUpdateProducerGke) | **POST** /gateway-update-producer-gke | 
 [**gatewayUpdateProducerLdap**](V2Api.md#gatewayUpdateProducerLdap) | **POST** /gateway-update-producer-ldap | 
 [**gatewayUpdateProducerMSSQL**](V2Api.md#gatewayUpdateProducerMSSQL) | **POST** /gateway-update-producer-mssql | 
@@ -186,6 +189,7 @@ Method | HTTP request | Description
 [**updateEKSTarget**](V2Api.md#updateEKSTarget) | **POST** /update-eks-target | 
 [**updateGKETarget**](V2Api.md#updateGKETarget) | **POST** /update-gke-target | 
 [**updateGcpTarget**](V2Api.md#updateGcpTarget) | **POST** /update-gcp-target | 
+[**updateGithubTarget**](V2Api.md#updateGithubTarget) | **POST** /update-github-target | 
 [**updateItem**](V2Api.md#updateItem) | **POST** /update-item | 
 [**updateNativeK8STarget**](V2Api.md#updateNativeK8STarget) | **POST** /update-k8s-target | 
 [**updatePKICertIssuer**](V2Api.md#updatePKICertIssuer) | **POST** /update-pki-cert-issuer | 
@@ -1292,6 +1296,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateGcpTargetOutput**](CreateGcpTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createGithubTarget
+
+> CreateGithubTargetOutput createGithubTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateGithubTarget(); // CreateGithubTarget | 
+apiInstance.createGithubTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateGithubTarget**](CreateGithubTarget.md)|  | 
+
+### Return type
+
+[**CreateGithubTargetOutput**](CreateGithubTargetOutput.md)
 
 ### Authorization
 
@@ -2943,6 +2989,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayCreateProducerGithub
+
+> GatewayCreateProducerGithubOutput gatewayCreateProducerGithub(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayCreateProducerGithub(); // GatewayCreateProducerGithub | 
+apiInstance.gatewayCreateProducerGithub(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerGithub**](GatewayCreateProducerGithub.md)|  | 
+
+### Return type
+
+[**GatewayCreateProducerGithubOutput**](GatewayCreateProducerGithubOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayCreateProducerGke
 
 > GatewayCreateProducerGkeOutput gatewayCreateProducerGke(body)
@@ -4446,6 +4534,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayUpdateProducerGcpOutput**](GatewayUpdateProducerGcpOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerGithub
+
+> GatewayUpdateProducerGithubOutput gatewayUpdateProducerGithub(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerGithub(); // GatewayUpdateProducerGithub | 
+apiInstance.gatewayUpdateProducerGithub(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerGithub**](GatewayUpdateProducerGithub.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerGithubOutput**](GatewayUpdateProducerGithubOutput.md)
 
 ### Authorization
 
@@ -7864,6 +7994,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateGcpTargetOutput**](UpdateGcpTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateGithubTarget
+
+> UpdateGithubTargetOutput updateGithubTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateGithubTarget(); // UpdateGithubTarget | 
+apiInstance.updateGithubTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateGithubTarget**](UpdateGithubTarget.md)|  | 
+
+### Return type
+
+[**UpdateGithubTargetOutput**](UpdateGithubTargetOutput.md)
 
 ### Authorization
 

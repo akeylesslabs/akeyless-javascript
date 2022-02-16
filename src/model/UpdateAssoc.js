@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAssoc model module.
  * @module model/UpdateAssoc
- * @version 2.15.26
+ * @version 2.15.27
  */
 class UpdateAssoc {
     /**
@@ -53,6 +53,9 @@ class UpdateAssoc {
             if (data.hasOwnProperty('assoc-id')) {
                 obj['assoc-id'] = ApiClient.convertToType(data['assoc-id'], 'String');
             }
+            if (data.hasOwnProperty('case-sensitive')) {
+                obj['case-sensitive'] = ApiClient.convertToType(data['case-sensitive'], 'String');
+            }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
@@ -80,6 +83,11 @@ class UpdateAssoc {
  * @member {String} assoc-id
  */
 UpdateAssoc.prototype['assoc-id'] = undefined;
+
+/**
+ * @member {String} case-sensitive
+ */
+UpdateAssoc.prototype['case-sensitive'] = undefined;
 
 /**
  * Required only when the authentication process requires a username and password

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipCreateClientOutput model module.
  * @module model/KmipCreateClientOutput
- * @version 2.15.26
+ * @version 2.15.27
  */
 class KmipCreateClientOutput {
     /**

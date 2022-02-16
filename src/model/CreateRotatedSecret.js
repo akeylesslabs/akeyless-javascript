@@ -16,19 +16,20 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 2.15.26
+ * @version 2.15.27
  */
 class CreateRotatedSecret {
     /**
      * Constructs a new <code>CreateRotatedSecret</code>.
      * @alias module:model/CreateRotatedSecret
+     * @param applicationId {String} ApplicationId (used in azure)
      * @param name {String} Secret name
      * @param rotatorType {String} Rotator Type
      * @param targetName {String} Target name
      */
-    constructor(name, rotatorType, targetName) { 
+    constructor(applicationId, name, rotatorType, targetName) { 
         
-        CreateRotatedSecret.initialize(this, name, rotatorType, targetName);
+        CreateRotatedSecret.initialize(this, applicationId, name, rotatorType, targetName);
     }
 
     /**
@@ -36,7 +37,8 @@ class CreateRotatedSecret {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, rotatorType, targetName) { 
+    static initialize(obj, applicationId, name, rotatorType, targetName) { 
+        obj['application-id'] = applicationId;
         obj['name'] = name;
         obj['rotator-type'] = rotatorType;
         obj['target-name'] = targetName;
@@ -58,6 +60,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('api-key')) {
                 obj['api-key'] = ApiClient.convertToType(data['api-key'], 'String');
+            }
+            if (data.hasOwnProperty('application-id')) {
+                obj['application-id'] = ApiClient.convertToType(data['application-id'], 'String');
             }
             if (data.hasOwnProperty('authentication-credentials')) {
                 obj['authentication-credentials'] = ApiClient.convertToType(data['authentication-credentials'], 'String');
@@ -144,6 +149,12 @@ CreateRotatedSecret.prototype['api-id'] = undefined;
  * @member {String} api-key
  */
 CreateRotatedSecret.prototype['api-key'] = undefined;
+
+/**
+ * ApplicationId (used in azure)
+ * @member {String} application-id
+ */
+CreateRotatedSecret.prototype['application-id'] = undefined;
 
 /**
  * @member {String} authentication-credentials

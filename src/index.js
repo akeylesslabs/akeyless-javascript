@@ -85,6 +85,8 @@ import CreateGKETarget from './model/CreateGKETarget';
 import CreateGKETargetOutput from './model/CreateGKETargetOutput';
 import CreateGcpTarget from './model/CreateGcpTarget';
 import CreateGcpTargetOutput from './model/CreateGcpTargetOutput';
+import CreateGithubTarget from './model/CreateGithubTarget';
+import CreateGithubTargetOutput from './model/CreateGithubTargetOutput';
 import CreateKey from './model/CreateKey';
 import CreateKeyOutput from './model/CreateKeyOutput';
 import CreateLdapTarget from './model/CreateLdapTarget';
@@ -175,6 +177,8 @@ import GatewayCreateProducerEks from './model/GatewayCreateProducerEks';
 import GatewayCreateProducerEksOutput from './model/GatewayCreateProducerEksOutput';
 import GatewayCreateProducerGcp from './model/GatewayCreateProducerGcp';
 import GatewayCreateProducerGcpOutput from './model/GatewayCreateProducerGcpOutput';
+import GatewayCreateProducerGithub from './model/GatewayCreateProducerGithub';
+import GatewayCreateProducerGithubOutput from './model/GatewayCreateProducerGithubOutput';
 import GatewayCreateProducerGke from './model/GatewayCreateProducerGke';
 import GatewayCreateProducerGkeOutput from './model/GatewayCreateProducerGkeOutput';
 import GatewayCreateProducerLdap from './model/GatewayCreateProducerLdap';
@@ -243,6 +247,8 @@ import GatewayUpdateProducerEks from './model/GatewayUpdateProducerEks';
 import GatewayUpdateProducerEksOutput from './model/GatewayUpdateProducerEksOutput';
 import GatewayUpdateProducerGcp from './model/GatewayUpdateProducerGcp';
 import GatewayUpdateProducerGcpOutput from './model/GatewayUpdateProducerGcpOutput';
+import GatewayUpdateProducerGithub from './model/GatewayUpdateProducerGithub';
+import GatewayUpdateProducerGithubOutput from './model/GatewayUpdateProducerGithubOutput';
 import GatewayUpdateProducerGke from './model/GatewayUpdateProducerGke';
 import GatewayUpdateProducerGkeOutput from './model/GatewayUpdateProducerGkeOutput';
 import GatewayUpdateProducerLdap from './model/GatewayUpdateProducerLdap';
@@ -444,6 +450,8 @@ import UpdateGKETarget from './model/UpdateGKETarget';
 import UpdateGKETargetOutput from './model/UpdateGKETargetOutput';
 import UpdateGcpTarget from './model/UpdateGcpTarget';
 import UpdateGcpTargetOutput from './model/UpdateGcpTargetOutput';
+import UpdateGithubTarget from './model/UpdateGithubTarget';
+import UpdateGithubTargetOutput from './model/UpdateGithubTargetOutput';
 import UpdateItem from './model/UpdateItem';
 import UpdateItemOutput from './model/UpdateItemOutput';
 import UpdateNativeK8STarget from './model/UpdateNativeK8STarget';
@@ -514,7 +522,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.15.26
+* @version 2.15.27
 */
 export {
     /**
@@ -954,6 +962,18 @@ export {
      * @property {module:model/CreateGcpTargetOutput}
      */
     CreateGcpTargetOutput,
+
+    /**
+     * The CreateGithubTarget model constructor.
+     * @property {module:model/CreateGithubTarget}
+     */
+    CreateGithubTarget,
+
+    /**
+     * The CreateGithubTargetOutput model constructor.
+     * @property {module:model/CreateGithubTargetOutput}
+     */
+    CreateGithubTargetOutput,
 
     /**
      * The CreateKey model constructor.
@@ -1496,6 +1516,18 @@ export {
     GatewayCreateProducerGcpOutput,
 
     /**
+     * The GatewayCreateProducerGithub model constructor.
+     * @property {module:model/GatewayCreateProducerGithub}
+     */
+    GatewayCreateProducerGithub,
+
+    /**
+     * The GatewayCreateProducerGithubOutput model constructor.
+     * @property {module:model/GatewayCreateProducerGithubOutput}
+     */
+    GatewayCreateProducerGithubOutput,
+
+    /**
      * The GatewayCreateProducerGke model constructor.
      * @property {module:model/GatewayCreateProducerGke}
      */
@@ -1902,6 +1934,18 @@ export {
      * @property {module:model/GatewayUpdateProducerGcpOutput}
      */
     GatewayUpdateProducerGcpOutput,
+
+    /**
+     * The GatewayUpdateProducerGithub model constructor.
+     * @property {module:model/GatewayUpdateProducerGithub}
+     */
+    GatewayUpdateProducerGithub,
+
+    /**
+     * The GatewayUpdateProducerGithubOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerGithubOutput}
+     */
+    GatewayUpdateProducerGithubOutput,
 
     /**
      * The GatewayUpdateProducerGke model constructor.
@@ -3108,6 +3152,18 @@ export {
      * @property {module:model/UpdateGcpTargetOutput}
      */
     UpdateGcpTargetOutput,
+
+    /**
+     * The UpdateGithubTarget model constructor.
+     * @property {module:model/UpdateGithubTarget}
+     */
+    UpdateGithubTarget,
+
+    /**
+     * The UpdateGithubTargetOutput model constructor.
+     * @property {module:model/UpdateGithubTargetOutput}
+     */
+    UpdateGithubTargetOutput,
 
     /**
      * The UpdateItem model constructor.

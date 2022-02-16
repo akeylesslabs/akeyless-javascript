@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.15.26
+ * @version 2.15.27
  */
 class TargetTypeDetailsInput {
     /**
@@ -139,6 +139,15 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('gcp_service_account_key')) {
                 obj['gcp_service_account_key'] = ApiClient.convertToType(data['gcp_service_account_key'], 'String');
+            }
+            if (data.hasOwnProperty('github_app_id')) {
+                obj['github_app_id'] = ApiClient.convertToType(data['github_app_id'], 'Number');
+            }
+            if (data.hasOwnProperty('github_app_private_key')) {
+                obj['github_app_private_key'] = ApiClient.convertToType(data['github_app_private_key'], 'String');
+            }
+            if (data.hasOwnProperty('github_base_url')) {
+                obj['github_base_url'] = ApiClient.convertToType(data['github_base_url'], 'String');
             }
             if (data.hasOwnProperty('gke_cluster_ca_certificate')) {
                 obj['gke_cluster_ca_certificate'] = ApiClient.convertToType(data['gke_cluster_ca_certificate'], 'String');
@@ -441,6 +450,21 @@ TargetTypeDetailsInput.prototype['gcp_service_account_email'] = undefined;
  * @member {String} gcp_service_account_key
  */
 TargetTypeDetailsInput.prototype['gcp_service_account_key'] = undefined;
+
+/**
+ * @member {Number} github_app_id
+ */
+TargetTypeDetailsInput.prototype['github_app_id'] = undefined;
+
+/**
+ * @member {String} github_app_private_key
+ */
+TargetTypeDetailsInput.prototype['github_app_private_key'] = undefined;
+
+/**
+ * @member {String} github_base_url
+ */
+TargetTypeDetailsInput.prototype['github_base_url'] = undefined;
 
 /**
  * @member {String} gke_cluster_ca_certificate

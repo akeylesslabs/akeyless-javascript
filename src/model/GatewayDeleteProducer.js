@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteProducer model module.
  * @module model/GatewayDeleteProducer
- * @version 2.15.26
+ * @version 2.15.27
  */
 class GatewayDeleteProducer {
     /**

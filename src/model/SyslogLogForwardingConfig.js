@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SyslogLogForwardingConfig model module.
  * @module model/SyslogLogForwardingConfig
- * @version 2.15.26
+ * @version 2.15.27
  */
 class SyslogLogForwardingConfig {
     /**
@@ -47,6 +47,9 @@ class SyslogLogForwardingConfig {
         if (data) {
             obj = obj || new SyslogLogForwardingConfig();
 
+            if (data.hasOwnProperty('syslog_formatter')) {
+                obj['syslog_formatter'] = ApiClient.convertToType(data['syslog_formatter'], 'String');
+            }
             if (data.hasOwnProperty('syslog_host')) {
                 obj['syslog_host'] = ApiClient.convertToType(data['syslog_host'], 'String');
             }
@@ -62,6 +65,11 @@ class SyslogLogForwardingConfig {
 
 
 }
+
+/**
+ * @member {String} syslog_formatter
+ */
+SyslogLogForwardingConfig.prototype['syslog_formatter'] = undefined;
 
 /**
  * @member {String} syslog_host

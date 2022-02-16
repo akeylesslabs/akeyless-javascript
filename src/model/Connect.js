@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The Connect model module.
  * @module model/Connect
- * @version 2.15.26
+ * @version 2.15.27
  */
 class Connect {
     /**
      * Constructs a new <code>Connect</code>.
-     * connect is a command that performs secure remote access
+     * Connect is a command that performs secure remote access
      * @alias module:model/Connect
      */
     constructor() { 
@@ -48,6 +48,9 @@ class Connect {
         if (data) {
             obj = obj || new Connect();
 
+            if (data.hasOwnProperty('RcFileOverride')) {
+                obj['RcFileOverride'] = ApiClient.convertToType(data['RcFileOverride'], 'String');
+            }
             if (data.hasOwnProperty('bastion-ctrl-path')) {
                 obj['bastion-ctrl-path'] = ApiClient.convertToType(data['bastion-ctrl-path'], 'String');
             }
@@ -96,6 +99,12 @@ class Connect {
 
 
 }
+
+/**
+ * used to override .akeyless-connect.rc in tests
+ * @member {String} RcFileOverride
+ */
+Connect.prototype['RcFileOverride'] = undefined;
 
 /**
  * The Bastion API path

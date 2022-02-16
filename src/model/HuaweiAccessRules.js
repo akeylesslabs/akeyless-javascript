@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HuaweiAccessRules model module.
  * @module model/HuaweiAccessRules
- * @version 2.15.26
+ * @version 2.15.27
  */
 class HuaweiAccessRules {
     /**
