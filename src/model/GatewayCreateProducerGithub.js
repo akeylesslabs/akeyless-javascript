@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGithub model module.
  * @module model/GatewayCreateProducerGithub
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayCreateProducerGithub {
     /**
@@ -68,9 +68,6 @@ class GatewayCreateProducerGithub {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
@@ -85,9 +82,6 @@ class GatewayCreateProducerGithub {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -133,12 +127,6 @@ GatewayCreateProducerGithub.prototype['installation-repository'] = undefined;
 GatewayCreateProducerGithub.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayCreateProducerGithub.prototype['password'] = undefined;
-
-/**
  * Target name
  * @member {String} target-name
  */
@@ -167,12 +155,6 @@ GatewayCreateProducerGithub.prototype['token-repositories'] = undefined;
  * @member {String} uid-token
  */
 GatewayCreateProducerGithub.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayCreateProducerGithub.prototype['username'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetRole model module.
  * @module model/GetRole
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GetRole {
     /**
@@ -52,17 +52,11 @@ class GetRole {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -78,12 +72,6 @@ class GetRole {
 GetRole.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GetRole.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -94,12 +82,6 @@ GetRole.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GetRole.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GetRole.prototype['username'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAzureTarget model module.
  * @module model/UpdateAzureTarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateAzureTarget {
     /**
@@ -58,6 +58,9 @@ class UpdateAzureTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -66,9 +69,6 @@ class UpdateAzureTarget {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('tenant-id')) {
                 obj['tenant-id'] = ApiClient.convertToType(data['tenant-id'], 'String');
@@ -84,9 +84,6 @@ class UpdateAzureTarget {
             }
             if (data.hasOwnProperty('use-gw-cloud-identity')) {
                 obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -112,6 +109,11 @@ UpdateAzureTarget.prototype['client-secret'] = undefined;
 UpdateAzureTarget.prototype['comment'] = undefined;
 
 /**
+ * @member {String} keep-prev-version
+ */
+UpdateAzureTarget.prototype['keep-prev-version'] = undefined;
+
+/**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
@@ -128,12 +130,6 @@ UpdateAzureTarget.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateAzureTarget.prototype['new-name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateAzureTarget.prototype['password'] = undefined;
 
 /**
  * @member {String} tenant-id
@@ -153,22 +149,15 @@ UpdateAzureTarget.prototype['token'] = undefined;
 UpdateAzureTarget.prototype['uid-token'] = undefined;
 
 /**
- * Create new version for the target
+ * Deprecated
  * @member {Boolean} update-version
- * @default false
  */
-UpdateAzureTarget.prototype['update-version'] = false;
+UpdateAzureTarget.prototype['update-version'] = undefined;
 
 /**
  * @member {Boolean} use-gw-cloud-identity
  */
 UpdateAzureTarget.prototype['use-gw-cloud-identity'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateAzureTarget.prototype['username'] = undefined;
 
 
 

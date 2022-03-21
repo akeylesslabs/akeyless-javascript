@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Connect model module.
  * @module model/Connect
- * @version 2.15.27
+ * @version 2.15.28
  */
 class Connect {
     /**
@@ -48,6 +48,9 @@ class Connect {
         if (data) {
             obj = obj || new Connect();
 
+            if (data.hasOwnProperty('Helper')) {
+                obj['Helper'] = ApiClient.convertToType(data['Helper'], Object);
+            }
             if (data.hasOwnProperty('RcFileOverride')) {
                 obj['RcFileOverride'] = ApiClient.convertToType(data['RcFileOverride'], 'String');
             }
@@ -72,9 +75,6 @@ class Connect {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('ssh-extra-args')) {
                 obj['ssh-extra-args'] = ApiClient.convertToType(data['ssh-extra-args'], 'String');
             }
@@ -87,9 +87,6 @@ class Connect {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
             if (data.hasOwnProperty('via-bastion')) {
                 obj['via-bastion'] = ApiClient.convertToType(data['via-bastion'], 'String');
             }
@@ -99,6 +96,11 @@ class Connect {
 
 
 }
+
+/**
+ * @member {Object} Helper
+ */
+Connect.prototype['Helper'] = undefined;
 
 /**
  * used to override .akeyless-connect.rc in tests
@@ -151,12 +153,6 @@ Connect.prototype['identity-file'] = undefined;
 Connect.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-Connect.prototype['password'] = undefined;
-
-/**
  * The Use to add offical SSH arguments (except -i)
  * @member {String} ssh-extra-args
  */
@@ -179,12 +175,6 @@ Connect.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 Connect.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-Connect.prototype['username'] = undefined;
 
 /**
  * The jump box server

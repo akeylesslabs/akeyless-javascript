@@ -56,6 +56,8 @@ import CreateDBTarget from '../model/CreateDBTarget';
 import CreateDBTargetOutput from '../model/CreateDBTargetOutput';
 import CreateDFCKey from '../model/CreateDFCKey';
 import CreateDFCKeyOutput from '../model/CreateDFCKeyOutput';
+import CreateDockerhubTarget from '../model/CreateDockerhubTarget';
+import CreateDockerhubTargetOutput from '../model/CreateDockerhubTargetOutput';
 import CreateDynamicSecret from '../model/CreateDynamicSecret';
 import CreateEKSTarget from '../model/CreateEKSTarget';
 import CreateEKSTargetOutput from '../model/CreateEKSTargetOutput';
@@ -133,6 +135,8 @@ import GatewayCreateProducerCertificateAutomation from '../model/GatewayCreatePr
 import GatewayCreateProducerCertificateAutomationOutput from '../model/GatewayCreateProducerCertificateAutomationOutput';
 import GatewayCreateProducerCustom from '../model/GatewayCreateProducerCustom';
 import GatewayCreateProducerCustomOutput from '../model/GatewayCreateProducerCustomOutput';
+import GatewayCreateProducerDockerhub from '../model/GatewayCreateProducerDockerhub';
+import GatewayCreateProducerDockerhubOutput from '../model/GatewayCreateProducerDockerhubOutput';
 import GatewayCreateProducerEks from '../model/GatewayCreateProducerEks';
 import GatewayCreateProducerEksOutput from '../model/GatewayCreateProducerEksOutput';
 import GatewayCreateProducerGcp from '../model/GatewayCreateProducerGcp';
@@ -200,6 +204,8 @@ import GatewayUpdateProducerCertificateAutomation from '../model/GatewayUpdatePr
 import GatewayUpdateProducerCertificateAutomationOutput from '../model/GatewayUpdateProducerCertificateAutomationOutput';
 import GatewayUpdateProducerCustom from '../model/GatewayUpdateProducerCustom';
 import GatewayUpdateProducerCustomOutput from '../model/GatewayUpdateProducerCustomOutput';
+import GatewayUpdateProducerDockerhub from '../model/GatewayUpdateProducerDockerhub';
+import GatewayUpdateProducerDockerhubOutput from '../model/GatewayUpdateProducerDockerhubOutput';
 import GatewayUpdateProducerEks from '../model/GatewayUpdateProducerEks';
 import GatewayUpdateProducerEksOutput from '../model/GatewayUpdateProducerEksOutput';
 import GatewayUpdateProducerGcp from '../model/GatewayUpdateProducerGcp';
@@ -338,6 +344,8 @@ import UpdateAzureTargetOutput from '../model/UpdateAzureTargetOutput';
 import UpdateDBTarget from '../model/UpdateDBTarget';
 import UpdateDBTargetDetails from '../model/UpdateDBTargetDetails';
 import UpdateDBTargetOutput from '../model/UpdateDBTargetOutput';
+import UpdateDockerhubTarget from '../model/UpdateDockerhubTarget';
+import UpdateDockerhubTargetOutput from '../model/UpdateDockerhubTargetOutput';
 import UpdateEKSTarget from '../model/UpdateEKSTarget';
 import UpdateEKSTargetOutput from '../model/UpdateEKSTargetOutput';
 import UpdateGKETarget from '../model/UpdateGKETarget';
@@ -384,7 +392,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.15.27
+* @version 2.15.28
 */
 export default class V2Api {
 
@@ -1341,6 +1349,49 @@ export default class V2Api {
      */
     createDFCKey(body) {
       return this.createDFCKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateDockerhubTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateDockerhubTargetOutput} and HTTP response
+     */
+    createDockerhubTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createDockerhubTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateDockerhubTargetOutput;
+      return this.apiClient.callApi(
+        '/create-dockerhub-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateDockerhubTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateDockerhubTargetOutput}
+     */
+    createDockerhubTarget(body) {
+      return this.createDockerhubTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3153,6 +3204,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayCreateProducerDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerDockerhubOutput} and HTTP response
+     */
+    gatewayCreateProducerDockerhubWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateProducerDockerhub");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayCreateProducerDockerhubOutput;
+      return this.apiClient.callApi(
+        '/gateway-create-producer-dockerhub', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayCreateProducerDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerDockerhubOutput}
+     */
+    gatewayCreateProducerDockerhub(body) {
+      return this.gatewayCreateProducerDockerhubWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayCreateProducerEks} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerEksOutput} and HTTP response
      */
@@ -4736,6 +4830,49 @@ export default class V2Api {
      */
     gatewayUpdateProducerCustom(opts) {
       return this.gatewayUpdateProducerCustomWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerDockerhubOutput} and HTTP response
+     */
+    gatewayUpdateProducerDockerhubWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerDockerhub");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerDockerhubOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-dockerhub', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerDockerhubOutput}
+     */
+    gatewayUpdateProducerDockerhub(body) {
+      return this.gatewayUpdateProducerDockerhubWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8195,6 +8332,49 @@ export default class V2Api {
      */
     updateDBTargetDetails(body) {
       return this.updateDBTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateDockerhubTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateDockerhubTargetOutput} and HTTP response
+     */
+    updateDockerhubTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateDockerhubTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateDockerhubTargetOutput;
+      return this.apiClient.callApi(
+        '/update-dockerhub-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateDockerhubTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateDockerhubTargetOutput}
+     */
+    updateDockerhubTarget(body) {
+      return this.updateDockerhubTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

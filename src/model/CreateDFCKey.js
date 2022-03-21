@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDFCKey model module.
  * @module model/CreateDFCKey
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateDFCKey {
     /**
@@ -63,9 +63,6 @@ class CreateDFCKey {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('split-level')) {
                 obj['split-level'] = ApiClient.convertToType(data['split-level'], 'Number');
             }
@@ -77,9 +74,6 @@ class CreateDFCKey {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -113,12 +107,6 @@ CreateDFCKey.prototype['metadata'] = undefined;
 CreateDFCKey.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateDFCKey.prototype['password'] = undefined;
-
-/**
  * The number of fragments that the item will be split into (not includes customer fragment)
  * @member {Number} split-level
  * @default 2
@@ -142,12 +130,6 @@ CreateDFCKey.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateDFCKey.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateDFCKey.prototype['username'] = undefined;
 
 
 

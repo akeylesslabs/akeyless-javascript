@@ -17,7 +17,7 @@ import OIDCCustomClaim from './OIDCCustomClaim';
 /**
  * The OIDCAccessRules model module.
  * @module model/OIDCAccessRules
- * @version 2.15.27
+ * @version 2.15.28
  */
 class OIDCAccessRules {
     /**
@@ -61,6 +61,9 @@ class OIDCAccessRules {
             if (data.hasOwnProperty('client_secret')) {
                 obj['client_secret'] = ApiClient.convertToType(data['client_secret'], 'String');
             }
+            if (data.hasOwnProperty('is_internal')) {
+                obj['is_internal'] = ApiClient.convertToType(data['is_internal'], 'Boolean');
+            }
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
             }
@@ -97,6 +100,12 @@ OIDCAccessRules.prototype['client_id'] = undefined;
  * @member {String} client_secret
  */
 OIDCAccessRules.prototype['client_secret'] = undefined;
+
+/**
+ * IsInternal indicates whether this is an internal Auth Method where the client has no control over it, or it was created by the client e.g - Sign In with Google will create an OIDC Auth Method with IsInternal=true
+ * @member {Boolean} is_internal
+ */
+OIDCAccessRules.prototype['is_internal'] = undefined;
 
 /**
  * Issuer URL

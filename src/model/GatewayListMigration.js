@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayListMigration model module.
  * @module model/GatewayListMigration
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayListMigration {
     /**
@@ -48,17 +48,11 @@ class GatewayListMigration {
         if (data) {
             obj = obj || new GatewayListMigration();
 
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -66,12 +60,6 @@ class GatewayListMigration {
 
 
 }
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayListMigration.prototype['password'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -84,12 +72,6 @@ GatewayListMigration.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GatewayListMigration.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayListMigration.prototype['username'] = undefined;
 
 
 

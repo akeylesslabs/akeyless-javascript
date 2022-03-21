@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAWSTarget model module.
  * @module model/CreateAWSTarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateAWSTarget {
     /**
@@ -64,9 +64,6 @@ class CreateAWSTarget {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
@@ -81,9 +78,6 @@ class CreateAWSTarget {
             }
             if (data.hasOwnProperty('use-gw-cloud-identity')) {
                 obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -121,12 +115,6 @@ CreateAWSTarget.prototype['key'] = undefined;
 CreateAWSTarget.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateAWSTarget.prototype['password'] = undefined;
-
-/**
  * @member {String} region
  */
 CreateAWSTarget.prototype['region'] = undefined;
@@ -152,12 +140,6 @@ CreateAWSTarget.prototype['uid-token'] = undefined;
  * @member {Boolean} use-gw-cloud-identity
  */
 CreateAWSTarget.prototype['use-gw-cloud-identity'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateAWSTarget.prototype['username'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMongo model module.
  * @module model/GatewayCreateProducerMongo
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayCreateProducerMongo {
     /**
@@ -86,9 +86,6 @@ class GatewayCreateProducerMongo {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
             }
@@ -118,9 +115,6 @@ class GatewayCreateProducerMongo {
             }
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -203,12 +197,6 @@ GatewayCreateProducerMongo.prototype['mongodb-username'] = undefined;
 GatewayCreateProducerMongo.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayCreateProducerMongo.prototype['password'] = undefined;
-
-/**
  * Encrypt producer with following key
  * @member {String} producer-encryption-key-name
  */
@@ -264,12 +252,6 @@ GatewayCreateProducerMongo.prototype['uid-token'] = undefined;
  * @default '60m'
  */
 GatewayCreateProducerMongo.prototype['user-ttl'] = '60m';
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayCreateProducerMongo.prototype['username'] = undefined;
 
 
 

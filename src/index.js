@@ -17,6 +17,7 @@ import APIKeyAccessRules from './model/APIKeyAccessRules';
 import AWSIAMAccessRules from './model/AWSIAMAccessRules';
 import AWSPayload from './model/AWSPayload';
 import AWSSecretsMigration from './model/AWSSecretsMigration';
+import AccountObjectVersionSettingsOutput from './model/AccountObjectVersionSettingsOutput';
 import AdminsConfigPart from './model/AdminsConfigPart';
 import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
 import AllowedAccess from './model/AllowedAccess';
@@ -78,6 +79,8 @@ import CreateDBTarget from './model/CreateDBTarget';
 import CreateDBTargetOutput from './model/CreateDBTargetOutput';
 import CreateDFCKey from './model/CreateDFCKey';
 import CreateDFCKeyOutput from './model/CreateDFCKeyOutput';
+import CreateDockerhubTarget from './model/CreateDockerhubTarget';
+import CreateDockerhubTargetOutput from './model/CreateDockerhubTargetOutput';
 import CreateDynamicSecret from './model/CreateDynamicSecret';
 import CreateEKSTarget from './model/CreateEKSTarget';
 import CreateEKSTargetOutput from './model/CreateEKSTargetOutput';
@@ -173,6 +176,8 @@ import GatewayCreateProducerChef from './model/GatewayCreateProducerChef';
 import GatewayCreateProducerChefOutput from './model/GatewayCreateProducerChefOutput';
 import GatewayCreateProducerCustom from './model/GatewayCreateProducerCustom';
 import GatewayCreateProducerCustomOutput from './model/GatewayCreateProducerCustomOutput';
+import GatewayCreateProducerDockerhub from './model/GatewayCreateProducerDockerhub';
+import GatewayCreateProducerDockerhubOutput from './model/GatewayCreateProducerDockerhubOutput';
 import GatewayCreateProducerEks from './model/GatewayCreateProducerEks';
 import GatewayCreateProducerEksOutput from './model/GatewayCreateProducerEksOutput';
 import GatewayCreateProducerGcp from './model/GatewayCreateProducerGcp';
@@ -243,6 +248,8 @@ import GatewayUpdateProducerChef from './model/GatewayUpdateProducerChef';
 import GatewayUpdateProducerChefOutput from './model/GatewayUpdateProducerChefOutput';
 import GatewayUpdateProducerCustom from './model/GatewayUpdateProducerCustom';
 import GatewayUpdateProducerCustomOutput from './model/GatewayUpdateProducerCustomOutput';
+import GatewayUpdateProducerDockerhub from './model/GatewayUpdateProducerDockerhub';
+import GatewayUpdateProducerDockerhubOutput from './model/GatewayUpdateProducerDockerhubOutput';
 import GatewayUpdateProducerEks from './model/GatewayUpdateProducerEks';
 import GatewayUpdateProducerEksOutput from './model/GatewayUpdateProducerEksOutput';
 import GatewayUpdateProducerGcp from './model/GatewayUpdateProducerGcp';
@@ -360,7 +367,9 @@ import OAuth2AccessRules from './model/OAuth2AccessRules';
 import OAuth2CustomClaim from './model/OAuth2CustomClaim';
 import OIDCAccessRules from './model/OIDCAccessRules';
 import OIDCCustomClaim from './model/OIDCCustomClaim';
+import ObjectVersionSettingsOutput from './model/ObjectVersionSettingsOutput';
 import PKICertificateIssueDetails from './model/PKICertificateIssueDetails';
+import PasswordPolicyInfo from './model/PasswordPolicyInfo';
 import PathRule from './model/PathRule';
 import Producer from './model/Producer';
 import ProducersConfigPart from './model/ProducersConfigPart';
@@ -399,6 +408,7 @@ import SplunkLogForwardingConfig from './model/SplunkLogForwardingConfig';
 import SraInfo from './model/SraInfo';
 import StaticCredsAuth from './model/StaticCredsAuth';
 import StaticCredsAuthOutput from './model/StaticCredsAuthOutput';
+import StaticSecretDetailsInfo from './model/StaticSecretDetailsInfo';
 import SyslogLogForwardingConfig from './model/SyslogLogForwardingConfig';
 import SystemAccessCredentialsReplyObj from './model/SystemAccessCredentialsReplyObj';
 import SystemAccessCredsSettings from './model/SystemAccessCredsSettings';
@@ -408,7 +418,6 @@ import TargetItemVersion from './model/TargetItemVersion';
 import TargetTypeDetailsInput from './model/TargetTypeDetailsInput';
 import TmpUserData from './model/TmpUserData';
 import UIDTokenDetails from './model/UIDTokenDetails';
-import UIdentityConfigPart from './model/UIdentityConfigPart';
 import UidCreateChildToken from './model/UidCreateChildToken';
 import UidCreateChildTokenOutput from './model/UidCreateChildTokenOutput';
 import UidGenerateToken from './model/UidGenerateToken';
@@ -420,6 +429,7 @@ import UidRotateTokenOutput from './model/UidRotateTokenOutput';
 import Unconfigure from './model/Unconfigure';
 import UniversalIdentityAccessRules from './model/UniversalIdentityAccessRules';
 import UniversalIdentityDetails from './model/UniversalIdentityDetails';
+import Update from './model/Update';
 import UpdateAWSTarget from './model/UpdateAWSTarget';
 import UpdateAWSTargetDetails from './model/UpdateAWSTargetDetails';
 import UpdateAccountSettings from './model/UpdateAccountSettings';
@@ -444,6 +454,8 @@ import UpdateAzureTargetOutput from './model/UpdateAzureTargetOutput';
 import UpdateDBTarget from './model/UpdateDBTarget';
 import UpdateDBTargetDetails from './model/UpdateDBTargetDetails';
 import UpdateDBTargetOutput from './model/UpdateDBTargetOutput';
+import UpdateDockerhubTarget from './model/UpdateDockerhubTarget';
+import UpdateDockerhubTargetOutput from './model/UpdateDockerhubTargetOutput';
 import UpdateEKSTarget from './model/UpdateEKSTarget';
 import UpdateEKSTargetOutput from './model/UpdateEKSTargetOutput';
 import UpdateGKETarget from './model/UpdateGKETarget';
@@ -522,7 +534,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.15.27
+* @version 2.15.28
 */
 export {
     /**
@@ -554,6 +566,12 @@ export {
      * @property {module:model/AWSSecretsMigration}
      */
     AWSSecretsMigration,
+
+    /**
+     * The AccountObjectVersionSettingsOutput model constructor.
+     * @property {module:model/AccountObjectVersionSettingsOutput}
+     */
+    AccountObjectVersionSettingsOutput,
 
     /**
      * The AdminsConfigPart model constructor.
@@ -920,6 +938,18 @@ export {
      * @property {module:model/CreateDFCKeyOutput}
      */
     CreateDFCKeyOutput,
+
+    /**
+     * The CreateDockerhubTarget model constructor.
+     * @property {module:model/CreateDockerhubTarget}
+     */
+    CreateDockerhubTarget,
+
+    /**
+     * The CreateDockerhubTargetOutput model constructor.
+     * @property {module:model/CreateDockerhubTargetOutput}
+     */
+    CreateDockerhubTargetOutput,
 
     /**
      * The CreateDynamicSecret model constructor.
@@ -1492,6 +1522,18 @@ export {
     GatewayCreateProducerCustomOutput,
 
     /**
+     * The GatewayCreateProducerDockerhub model constructor.
+     * @property {module:model/GatewayCreateProducerDockerhub}
+     */
+    GatewayCreateProducerDockerhub,
+
+    /**
+     * The GatewayCreateProducerDockerhubOutput model constructor.
+     * @property {module:model/GatewayCreateProducerDockerhubOutput}
+     */
+    GatewayCreateProducerDockerhubOutput,
+
+    /**
      * The GatewayCreateProducerEks model constructor.
      * @property {module:model/GatewayCreateProducerEks}
      */
@@ -1910,6 +1952,18 @@ export {
      * @property {module:model/GatewayUpdateProducerCustomOutput}
      */
     GatewayUpdateProducerCustomOutput,
+
+    /**
+     * The GatewayUpdateProducerDockerhub model constructor.
+     * @property {module:model/GatewayUpdateProducerDockerhub}
+     */
+    GatewayUpdateProducerDockerhub,
+
+    /**
+     * The GatewayUpdateProducerDockerhubOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerDockerhubOutput}
+     */
+    GatewayUpdateProducerDockerhubOutput,
 
     /**
      * The GatewayUpdateProducerEks model constructor.
@@ -2614,10 +2668,22 @@ export {
     OIDCCustomClaim,
 
     /**
+     * The ObjectVersionSettingsOutput model constructor.
+     * @property {module:model/ObjectVersionSettingsOutput}
+     */
+    ObjectVersionSettingsOutput,
+
+    /**
      * The PKICertificateIssueDetails model constructor.
      * @property {module:model/PKICertificateIssueDetails}
      */
     PKICertificateIssueDetails,
+
+    /**
+     * The PasswordPolicyInfo model constructor.
+     * @property {module:model/PasswordPolicyInfo}
+     */
+    PasswordPolicyInfo,
 
     /**
      * The PathRule model constructor.
@@ -2848,6 +2914,12 @@ export {
     StaticCredsAuthOutput,
 
     /**
+     * The StaticSecretDetailsInfo model constructor.
+     * @property {module:model/StaticSecretDetailsInfo}
+     */
+    StaticSecretDetailsInfo,
+
+    /**
      * The SyslogLogForwardingConfig model constructor.
      * @property {module:model/SyslogLogForwardingConfig}
      */
@@ -2900,12 +2972,6 @@ export {
      * @property {module:model/UIDTokenDetails}
      */
     UIDTokenDetails,
-
-    /**
-     * The UIdentityConfigPart model constructor.
-     * @property {module:model/UIdentityConfigPart}
-     */
-    UIdentityConfigPart,
 
     /**
      * The UidCreateChildToken model constructor.
@@ -2972,6 +3038,12 @@ export {
      * @property {module:model/UniversalIdentityDetails}
      */
     UniversalIdentityDetails,
+
+    /**
+     * The Update model constructor.
+     * @property {module:model/Update}
+     */
+    Update,
 
     /**
      * The UpdateAWSTarget model constructor.
@@ -3116,6 +3188,18 @@ export {
      * @property {module:model/UpdateDBTargetOutput}
      */
     UpdateDBTargetOutput,
+
+    /**
+     * The UpdateDockerhubTarget model constructor.
+     * @property {module:model/UpdateDockerhubTarget}
+     */
+    UpdateDockerhubTarget,
+
+    /**
+     * The UpdateDockerhubTargetOutput model constructor.
+     * @property {module:model/UpdateDockerhubTargetOutput}
+     */
+    UpdateDockerhubTargetOutput,
 
     /**
      * The UpdateEKSTarget model constructor.

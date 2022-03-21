@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodGCP model module.
  * @module model/CreateAuthMethodGCP
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateAuthMethodGCP {
     /**
@@ -87,9 +87,6 @@ class CreateAuthMethodGCP {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('service-account-creds-data')) {
                 obj['service-account-creds-data'] = ApiClient.convertToType(data['service-account-creds-data'], 'String');
             }
@@ -101,9 +98,6 @@ class CreateAuthMethodGCP {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -182,12 +176,6 @@ CreateAuthMethodGCP.prototype['jwt-ttl'] = 0;
 CreateAuthMethodGCP.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateAuthMethodGCP.prototype['password'] = undefined;
-
-/**
  * ServiceAccount credentials data instead of giving a file path, base64 encoded
  * @member {String} service-account-creds-data
  */
@@ -210,12 +198,6 @@ CreateAuthMethodGCP.prototype['type'] = undefined;
  * @member {String} uid-token
  */
 CreateAuthMethodGCP.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateAuthMethodGCP.prototype['username'] = undefined;
 
 
 

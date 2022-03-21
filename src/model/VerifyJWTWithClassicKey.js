@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyJWTWithClassicKey model module.
  * @module model/VerifyJWTWithClassicKey
- * @version 2.15.27
+ * @version 2.15.28
  */
 class VerifyJWTWithClassicKey {
     /**
@@ -61,9 +61,6 @@ class VerifyJWTWithClassicKey {
             if (data.hasOwnProperty('jwt')) {
                 obj['jwt'] = ApiClient.convertToType(data['jwt'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('required-claims')) {
                 obj['required-claims'] = ApiClient.convertToType(data['required-claims'], 'String');
             }
@@ -72,9 +69,6 @@ class VerifyJWTWithClassicKey {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
             if (data.hasOwnProperty('version')) {
                 obj['version'] = ApiClient.convertToType(data['version'], 'Number');
@@ -99,12 +93,6 @@ VerifyJWTWithClassicKey.prototype['display-id'] = undefined;
 VerifyJWTWithClassicKey.prototype['jwt'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-VerifyJWTWithClassicKey.prototype['password'] = undefined;
-
-/**
  * RequiredClaims
  * @member {String} required-claims
  */
@@ -121,12 +109,6 @@ VerifyJWTWithClassicKey.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 VerifyJWTWithClassicKey.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-VerifyJWTWithClassicKey.prototype['username'] = undefined;
 
 /**
  * classic key version

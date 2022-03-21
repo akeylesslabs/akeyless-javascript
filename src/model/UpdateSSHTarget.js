@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHTarget model module.
  * @module model/UpdateSSHTarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateSSHTarget {
     /**
@@ -55,6 +55,9 @@ class UpdateSSHTarget {
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
             }
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -63,9 +66,6 @@ class UpdateSSHTarget {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
@@ -91,9 +91,6 @@ class UpdateSSHTarget {
             if (data.hasOwnProperty('update-version')) {
                 obj['update-version'] = ApiClient.convertToType(data['update-version'], 'Boolean');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
@@ -113,6 +110,11 @@ UpdateSSHTarget.prototype['comment'] = undefined;
 UpdateSSHTarget.prototype['host'] = undefined;
 
 /**
+ * @member {String} keep-prev-version
+ */
+UpdateSSHTarget.prototype['keep-prev-version'] = undefined;
+
+/**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
@@ -129,12 +131,6 @@ UpdateSSHTarget.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateSSHTarget.prototype['new-name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateSSHTarget.prototype['password'] = undefined;
 
 /**
  * @member {String} port
@@ -174,17 +170,10 @@ UpdateSSHTarget.prototype['token'] = undefined;
 UpdateSSHTarget.prototype['uid-token'] = undefined;
 
 /**
- * Create new version for the target
+ * Deprecated
  * @member {Boolean} update-version
- * @default false
  */
-UpdateSSHTarget.prototype['update-version'] = false;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateSSHTarget.prototype['username'] = undefined;
+UpdateSSHTarget.prototype['update-version'] = undefined;
 
 
 

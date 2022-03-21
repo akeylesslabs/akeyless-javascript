@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPKICertificate model module.
  * @module model/GetPKICertificate
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GetPKICertificate {
     /**
@@ -61,9 +61,6 @@ class GetPKICertificate {
             if (data.hasOwnProperty('key-data-base64')) {
                 obj['key-data-base64'] = ApiClient.convertToType(data['key-data-base64'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -72,9 +69,6 @@ class GetPKICertificate {
             }
             if (data.hasOwnProperty('uri-sans')) {
                 obj['uri-sans'] = ApiClient.convertToType(data['uri-sans'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -108,12 +102,6 @@ GetPKICertificate.prototype['common-name'] = undefined;
 GetPKICertificate.prototype['key-data-base64'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GetPKICertificate.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -130,12 +118,6 @@ GetPKICertificate.prototype['uid-token'] = undefined;
  * @member {String} uri-sans
  */
 GetPKICertificate.prototype['uri-sans'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GetPKICertificate.prototype['username'] = undefined;
 
 
 

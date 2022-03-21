@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateClassicKey {
     /**
@@ -67,9 +67,6 @@ class CreateClassicKey {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('protection-key-name')) {
                 obj['protection-key-name'] = ApiClient.convertToType(data['protection-key-name'], 'String');
             }
@@ -84,9 +81,6 @@ class CreateClassicKey {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -126,12 +120,6 @@ CreateClassicKey.prototype['metadata'] = undefined;
 CreateClassicKey.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateClassicKey.prototype['password'] = undefined;
-
-/**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} protection-key-name
  */
@@ -160,12 +148,6 @@ CreateClassicKey.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateClassicKey.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateClassicKey.prototype['username'] = undefined;
 
 
 

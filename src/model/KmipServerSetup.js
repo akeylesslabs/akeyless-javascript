@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipServerSetup model module.
  * @module model/KmipServerSetup
- * @version 2.15.27
+ * @version 2.15.28
  */
 class KmipServerSetup {
     /**
@@ -55,9 +55,6 @@ class KmipServerSetup {
             if (data.hasOwnProperty('hostname')) {
                 obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('root')) {
                 obj['root'] = ApiClient.convertToType(data['root'], 'String');
             }
@@ -66,9 +63,6 @@ class KmipServerSetup {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -89,12 +83,6 @@ KmipServerSetup.prototype['certificate-ttl'] = undefined;
 KmipServerSetup.prototype['hostname'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-KmipServerSetup.prototype['password'] = undefined;
-
-/**
  * @member {String} root
  */
 KmipServerSetup.prototype['root'] = undefined;
@@ -110,12 +98,6 @@ KmipServerSetup.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 KmipServerSetup.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-KmipServerSetup.prototype['username'] = undefined;
 
 
 

@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import AccountObjectVersionSettingsOutput from './AccountObjectVersionSettingsOutput';
 import CustomerFullAddress from './CustomerFullAddress';
 import SmInfo from './SmInfo';
 import SraInfo from './SraInfo';
@@ -20,7 +21,7 @@ import SystemAccessCredsSettings from './SystemAccessCredsSettings';
 /**
  * The GetAccountSettingsCommandOutput model module.
  * @module model/GetAccountSettingsCommandOutput
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GetAccountSettingsCommandOutput {
     /**
@@ -63,6 +64,9 @@ class GetAccountSettingsCommandOutput {
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
+            if (data.hasOwnProperty('object_version_settings')) {
+                obj['object_version_settings'] = AccountObjectVersionSettingsOutput.constructFromObject(data['object_version_settings']);
+            }
             if (data.hasOwnProperty('phone')) {
                 obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
             }
@@ -101,6 +105,11 @@ GetAccountSettingsCommandOutput.prototype['company_name'] = undefined;
  * @member {String} email
  */
 GetAccountSettingsCommandOutput.prototype['email'] = undefined;
+
+/**
+ * @member {module:model/AccountObjectVersionSettingsOutput} object_version_settings
+ */
+GetAccountSettingsCommandOutput.prototype['object_version_settings'] = undefined;
 
 /**
  * @member {String} phone

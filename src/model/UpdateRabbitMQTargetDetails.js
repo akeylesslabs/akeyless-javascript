@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRabbitMQTargetDetails model module.
  * @module model/UpdateRabbitMQTargetDetails
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateRabbitMQTargetDetails {
     /**
@@ -49,14 +49,14 @@ class UpdateRabbitMQTargetDetails {
         if (data) {
             obj = obj || new UpdateRabbitMQTargetDetails();
 
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('new-version')) {
                 obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('protection_key')) {
                 obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
@@ -76,9 +76,6 @@ class UpdateRabbitMQTargetDetails {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
@@ -87,23 +84,21 @@ class UpdateRabbitMQTargetDetails {
 }
 
 /**
+ * @member {String} keep-prev-version
+ */
+UpdateRabbitMQTargetDetails.prototype['keep-prev-version'] = undefined;
+
+/**
  * Target name
  * @member {String} name
  */
 UpdateRabbitMQTargetDetails.prototype['name'] = undefined;
 
 /**
- * Whether to create a new version of not
+ * Deprecated
  * @member {Boolean} new-version
- * @default false
  */
-UpdateRabbitMQTargetDetails.prototype['new-version'] = false;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateRabbitMQTargetDetails.prototype['password'] = undefined;
+UpdateRabbitMQTargetDetails.prototype['new-version'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
@@ -137,12 +132,6 @@ UpdateRabbitMQTargetDetails.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateRabbitMQTargetDetails.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateRabbitMQTargetDetails.prototype['username'] = undefined;
 
 
 

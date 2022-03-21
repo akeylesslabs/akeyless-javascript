@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **creationStatements** | **String** | PostgreSQL Creation statements | [optional] 
 **name** | **String** | Producer name | 
 **newName** | **String** | Producer name | [optional] 
-**password** | **String** | Required only when the authentication process requires a username and password | [optional] 
 **postgresqlDbName** | **String** | PostgreSQL DB Name | [optional] 
 **postgresqlHost** | **String** | PostgreSQL Host | [optional] [default to &#39;127.0.0.1&#39;]
 **postgresqlPassword** | **String** | PostgreSQL Password | [optional] 
@@ -26,6 +25,5 @@ Name | Type | Description | Notes
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **userTtl** | **String** | User TTL | [optional] [default to &#39;60m&#39;]
-**username** | **String** | Required only when the authentication process requires a username and password | [optional] 
 
 

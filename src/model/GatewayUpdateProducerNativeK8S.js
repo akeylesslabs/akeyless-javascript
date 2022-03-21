@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerNativeK8S model module.
  * @module model/GatewayUpdateProducerNativeK8S
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayUpdateProducerNativeK8S {
     /**
@@ -71,9 +71,6 @@ class GatewayUpdateProducerNativeK8S {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
             }
@@ -98,6 +95,9 @@ class GatewayUpdateProducerNativeK8S {
             if (data.hasOwnProperty('secure-access-web-browsing')) {
                 obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
             }
+            if (data.hasOwnProperty('secure-access-web-proxy')) {
+                obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
+            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
@@ -112,9 +112,6 @@ class GatewayUpdateProducerNativeK8S {
             }
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -166,12 +163,6 @@ GatewayUpdateProducerNativeK8S.prototype['name'] = undefined;
 GatewayUpdateProducerNativeK8S.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayUpdateProducerNativeK8S.prototype['password'] = undefined;
-
-/**
  * Dynamic producer encryption key
  * @member {String} producer-encryption-key-name
  */
@@ -213,6 +204,11 @@ GatewayUpdateProducerNativeK8S.prototype['secure-access-web'] = undefined;
 GatewayUpdateProducerNativeK8S.prototype['secure-access-web-browsing'] = undefined;
 
 /**
+ * @member {Boolean} secure-access-web-proxy
+ */
+GatewayUpdateProducerNativeK8S.prototype['secure-access-web-proxy'] = undefined;
+
+/**
  * List of the tags attached to this secret
  * @member {Array.<String>} tags
  */
@@ -242,12 +238,6 @@ GatewayUpdateProducerNativeK8S.prototype['uid-token'] = undefined;
  * @default '60m'
  */
 GatewayUpdateProducerNativeK8S.prototype['user-ttl'] = '60m';
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayUpdateProducerNativeK8S.prototype['username'] = undefined;
 
 
 

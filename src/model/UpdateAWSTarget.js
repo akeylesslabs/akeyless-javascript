@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAWSTarget model module.
  * @module model/UpdateAWSTarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateAWSTarget {
     /**
@@ -58,6 +58,9 @@ class UpdateAWSTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -66,9 +69,6 @@ class UpdateAWSTarget {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
@@ -87,9 +87,6 @@ class UpdateAWSTarget {
             }
             if (data.hasOwnProperty('use-gw-cloud-identity')) {
                 obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -115,6 +112,11 @@ UpdateAWSTarget.prototype['access-key-id'] = undefined;
 UpdateAWSTarget.prototype['comment'] = undefined;
 
 /**
+ * @member {String} keep-prev-version
+ */
+UpdateAWSTarget.prototype['keep-prev-version'] = undefined;
+
+/**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
@@ -131,12 +133,6 @@ UpdateAWSTarget.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateAWSTarget.prototype['new-name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateAWSTarget.prototype['password'] = undefined;
 
 /**
  * @member {String} region
@@ -161,22 +157,15 @@ UpdateAWSTarget.prototype['token'] = undefined;
 UpdateAWSTarget.prototype['uid-token'] = undefined;
 
 /**
- * Create new version for the target
+ * Deprecated
  * @member {Boolean} update-version
- * @default false
  */
-UpdateAWSTarget.prototype['update-version'] = false;
+UpdateAWSTarget.prototype['update-version'] = undefined;
 
 /**
  * @member {Boolean} use-gw-cloud-identity
  */
 UpdateAWSTarget.prototype['use-gw-cloud-identity'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateAWSTarget.prototype['username'] = undefined;
 
 
 

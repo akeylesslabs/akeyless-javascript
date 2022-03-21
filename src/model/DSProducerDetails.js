@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.15.27
+ * @version 2.15.28
  */
 class DSProducerDetails {
     /**
@@ -114,6 +114,12 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('azure_client_secret')) {
                 obj['azure_client_secret'] = ApiClient.convertToType(data['azure_client_secret'], 'String');
+            }
+            if (data.hasOwnProperty('azure_fixed_user_name_sub_claim_key')) {
+                obj['azure_fixed_user_name_sub_claim_key'] = ApiClient.convertToType(data['azure_fixed_user_name_sub_claim_key'], 'String');
+            }
+            if (data.hasOwnProperty('azure_fixed_user_only')) {
+                obj['azure_fixed_user_only'] = ApiClient.convertToType(data['azure_fixed_user_only'], 'Boolean');
             }
             if (data.hasOwnProperty('azure_tenant_id')) {
                 obj['azure_tenant_id'] = ApiClient.convertToType(data['azure_tenant_id'], 'String');
@@ -397,6 +403,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('oracle_creation_statements')) {
                 obj['oracle_creation_statements'] = ApiClient.convertToType(data['oracle_creation_statements'], 'String');
             }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
             if (data.hasOwnProperty('password_length')) {
                 obj['password_length'] = ApiClient.convertToType(data['password_length'], 'Number');
             }
@@ -445,6 +454,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('rotate_sync_url')) {
                 obj['rotate_sync_url'] = ApiClient.convertToType(data['rotate_sync_url'], 'String');
             }
+            if (data.hasOwnProperty('scopes')) {
+                obj['scopes'] = ApiClient.convertToType(data['scopes'], ['String']);
+            }
             if (data.hasOwnProperty('secure_remote_access_details')) {
                 obj['secure_remote_access_details'] = SecureRemoteAccess.constructFromObject(data['secure_remote_access_details']);
             }
@@ -474,6 +486,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('use_gw_cloud_identity')) {
                 obj['use_gw_cloud_identity'] = ApiClient.convertToType(data['use_gw_cloud_identity'], 'Boolean');
+            }
+            if (data.hasOwnProperty('user_name')) {
+                obj['user_name'] = ApiClient.convertToType(data['user_name'], 'String');
             }
             if (data.hasOwnProperty('user_principal_name')) {
                 obj['user_principal_name'] = ApiClient.convertToType(data['user_principal_name'], 'String');
@@ -525,6 +540,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('venafi_zone')) {
                 obj['venafi_zone'] = ApiClient.convertToType(data['venafi_zone'], 'String');
+            }
+            if (data.hasOwnProperty('warn_before_user_expiration_min')) {
+                obj['warn_before_user_expiration_min'] = ApiClient.convertToType(data['warn_before_user_expiration_min'], 'Number');
             }
         }
         return obj;
@@ -642,6 +660,16 @@ DSProducerDetails.prototype['azure_client_id'] = undefined;
  * @member {String} azure_client_secret
  */
 DSProducerDetails.prototype['azure_client_secret'] = undefined;
+
+/**
+ * @member {String} azure_fixed_user_name_sub_claim_key
+ */
+DSProducerDetails.prototype['azure_fixed_user_name_sub_claim_key'] = undefined;
+
+/**
+ * @member {Boolean} azure_fixed_user_only
+ */
+DSProducerDetails.prototype['azure_fixed_user_only'] = undefined;
 
 /**
  * @member {String} azure_tenant_id
@@ -1120,6 +1148,11 @@ DSProducerDetails.prototype['mysql_creation_statements'] = undefined;
 DSProducerDetails.prototype['oracle_creation_statements'] = undefined;
 
 /**
+ * @member {String} password
+ */
+DSProducerDetails.prototype['password'] = undefined;
+
+/**
  * @member {Number} password_length
  */
 DSProducerDetails.prototype['password_length'] = undefined;
@@ -1200,6 +1233,11 @@ DSProducerDetails.prototype['revoke_sync_url'] = undefined;
 DSProducerDetails.prototype['rotate_sync_url'] = undefined;
 
 /**
+ * @member {Array.<String>} scopes
+ */
+DSProducerDetails.prototype['scopes'] = undefined;
+
+/**
  * @member {module:model/SecureRemoteAccess} secure_remote_access_details
  */
 DSProducerDetails.prototype['secure_remote_access_details'] = undefined;
@@ -1252,6 +1290,11 @@ DSProducerDetails.prototype['timeout_seconds'] = undefined;
  * @member {Boolean} use_gw_cloud_identity
  */
 DSProducerDetails.prototype['use_gw_cloud_identity'] = undefined;
+
+/**
+ * @member {String} user_name
+ */
+DSProducerDetails.prototype['user_name'] = undefined;
 
 /**
  * @member {String} user_principal_name
@@ -1337,6 +1380,11 @@ DSProducerDetails.prototype['venafi_use_tpp'] = undefined;
  * @member {String} venafi_zone
  */
 DSProducerDetails.prototype['venafi_zone'] = undefined;
+
+/**
+ * @member {Number} warn_before_user_expiration_min
+ */
+DSProducerDetails.prototype['warn_before_user_expiration_min'] = undefined;
 
 
 

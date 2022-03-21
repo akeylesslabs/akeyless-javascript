@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetAccountSettings model module.
  * @module model/GetAccountSettings
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GetAccountSettings {
     /**
@@ -47,17 +47,11 @@ class GetAccountSettings {
         if (data) {
             obj = obj || new GetAccountSettings();
 
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -65,12 +59,6 @@ class GetAccountSettings {
 
 
 }
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GetAccountSettings.prototype['password'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -83,12 +71,6 @@ GetAccountSettings.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GetAccountSettings.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GetAccountSettings.prototype['username'] = undefined;
 
 
 

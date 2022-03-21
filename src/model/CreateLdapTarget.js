@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLdapTarget model module.
  * @module model/CreateLdapTarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateLdapTarget {
     /**
@@ -76,9 +76,6 @@ class CreateLdapTarget {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -87,9 +84,6 @@ class CreateLdapTarget {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -141,12 +135,6 @@ CreateLdapTarget.prototype['ldap-url'] = undefined;
 CreateLdapTarget.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateLdapTarget.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -163,12 +151,6 @@ CreateLdapTarget.prototype['token-expiration'] = undefined;
  * @member {String} uid-token
  */
 CreateLdapTarget.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateLdapTarget.prototype['username'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerOracleDb model module.
  * @module model/GatewayUpdateProducerOracleDb
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayUpdateProducerOracleDb {
     /**
@@ -80,9 +80,6 @@ class GatewayUpdateProducerOracleDb {
             if (data.hasOwnProperty('oracle-username')) {
                 obj['oracle-username'] = ApiClient.convertToType(data['oracle-username'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
             }
@@ -100,9 +97,6 @@ class GatewayUpdateProducerOracleDb {
             }
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -174,12 +168,6 @@ GatewayUpdateProducerOracleDb.prototype['oracle-service-name'] = undefined;
 GatewayUpdateProducerOracleDb.prototype['oracle-username'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayUpdateProducerOracleDb.prototype['password'] = undefined;
-
-/**
  * Dynamic producer encryption key
  * @member {String} producer-encryption-key-name
  */
@@ -215,12 +203,6 @@ GatewayUpdateProducerOracleDb.prototype['uid-token'] = undefined;
  * @default '60m'
  */
 GatewayUpdateProducerOracleDb.prototype['user-ttl'] = '60m';
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayUpdateProducerOracleDb.prototype['username'] = undefined;
 
 
 

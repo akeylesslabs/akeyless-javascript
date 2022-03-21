@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateSecret {
     /**
@@ -60,9 +60,6 @@ class CreateSecret {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('protection_key')) {
                 obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
             }
@@ -87,6 +84,9 @@ class CreateSecret {
             if (data.hasOwnProperty('secure-access-web-browsing')) {
                 obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
             }
+            if (data.hasOwnProperty('secure-access-web-proxy')) {
+                obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
+            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
@@ -95,9 +95,6 @@ class CreateSecret {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'String');
@@ -126,12 +123,6 @@ CreateSecret.prototype['multiline_value'] = undefined;
  * @member {String} name
  */
 CreateSecret.prototype['name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateSecret.prototype['password'] = undefined;
 
 /**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
@@ -175,6 +166,11 @@ CreateSecret.prototype['secure-access-url'] = undefined;
 CreateSecret.prototype['secure-access-web-browsing'] = undefined;
 
 /**
+ * @member {Boolean} secure-access-web-proxy
+ */
+CreateSecret.prototype['secure-access-web-proxy'] = undefined;
+
+/**
  * List of the tags attached to this secret
  * @member {Array.<String>} tags
  */
@@ -191,12 +187,6 @@ CreateSecret.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateSecret.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateSecret.prototype['username'] = undefined;
 
 /**
  * The secret value

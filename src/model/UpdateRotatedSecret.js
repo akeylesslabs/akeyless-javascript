@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateRotatedSecret {
     /**
@@ -65,6 +65,9 @@ class UpdateRotatedSecret {
             if (data.hasOwnProperty('custom-payload')) {
                 obj['custom-payload'] = ApiClient.convertToType(data['custom-payload'], 'String');
             }
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -79,9 +82,6 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('new-version')) {
                 obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('rm-tag')) {
                 obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
@@ -115,9 +115,6 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -154,6 +151,11 @@ UpdateRotatedSecret.prototype['auto-rotate'] = undefined;
 UpdateRotatedSecret.prototype['custom-payload'] = undefined;
 
 /**
+ * @member {String} keep-prev-version
+ */
+UpdateRotatedSecret.prototype['keep-prev-version'] = undefined;
+
+/**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
@@ -179,17 +181,10 @@ UpdateRotatedSecret.prototype['new-metadata'] = 'default_metadata';
 UpdateRotatedSecret.prototype['new-name'] = undefined;
 
 /**
- * Whether to create a new version of not
+ * Deprecated
  * @member {Boolean} new-version
- * @default false
  */
-UpdateRotatedSecret.prototype['new-version'] = false;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateRotatedSecret.prototype['password'] = undefined;
+UpdateRotatedSecret.prototype['new-version'] = undefined;
 
 /**
  * List of the existent tags that will be removed from this item
@@ -251,12 +246,6 @@ UpdateRotatedSecret.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateRotatedSecret.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateRotatedSecret.prototype['username'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRabbitMQTarget model module.
  * @module model/CreateRabbitMQTarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateRabbitMQTarget {
     /**
@@ -58,9 +58,6 @@ class CreateRabbitMQTarget {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('rabbitmq-server-password')) {
                 obj['rabbitmq-server-password'] = ApiClient.convertToType(data['rabbitmq-server-password'], 'String');
             }
@@ -75,9 +72,6 @@ class CreateRabbitMQTarget {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -105,12 +99,6 @@ CreateRabbitMQTarget.prototype['key'] = undefined;
 CreateRabbitMQTarget.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateRabbitMQTarget.prototype['password'] = undefined;
-
-/**
  * @member {String} rabbitmq-server-password
  */
 CreateRabbitMQTarget.prototype['rabbitmq-server-password'] = undefined;
@@ -136,12 +124,6 @@ CreateRabbitMQTarget.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateRabbitMQTarget.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateRabbitMQTarget.prototype['username'] = undefined;
 
 
 

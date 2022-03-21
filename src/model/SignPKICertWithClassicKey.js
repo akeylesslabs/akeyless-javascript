@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignPKICertWithClassicKey model module.
  * @module model/SignPKICertWithClassicKey
- * @version 2.15.27
+ * @version 2.15.28
  */
 class SignPKICertWithClassicKey {
     /**
@@ -79,9 +79,6 @@ class SignPKICertWithClassicKey {
             if (data.hasOwnProperty('organizations')) {
                 obj['organizations'] = ApiClient.convertToType(data['organizations'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('postal-code')) {
                 obj['postal-code'] = ApiClient.convertToType(data['postal-code'], 'String');
             }
@@ -108,9 +105,6 @@ class SignPKICertWithClassicKey {
             }
             if (data.hasOwnProperty('uri-sans')) {
                 obj['uri-sans'] = ApiClient.convertToType(data['uri-sans'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
             if (data.hasOwnProperty('version')) {
                 obj['version'] = ApiClient.convertToType(data['version'], 'Number');
@@ -172,12 +166,6 @@ SignPKICertWithClassicKey.prototype['organizational-units'] = undefined;
 SignPKICertWithClassicKey.prototype['organizations'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-SignPKICertWithClassicKey.prototype['password'] = undefined;
-
-/**
  * A comma-separated list of the postal code that will be set in the issued certificate
  * @member {String} postal-code
  */
@@ -230,12 +218,6 @@ SignPKICertWithClassicKey.prototype['uid-token'] = undefined;
  * @member {String} uri-sans
  */
 SignPKICertWithClassicKey.prototype['uri-sans'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-SignPKICertWithClassicKey.prototype['username'] = undefined;
 
 /**
  * classic key version

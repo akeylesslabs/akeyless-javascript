@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateK8SAuthConfig model module.
  * @module model/GatewayCreateK8SAuthConfig
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayCreateK8SAuthConfig {
     /**
@@ -74,9 +74,6 @@ class GatewayCreateK8SAuthConfig {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('signing-key')) {
                 obj['signing-key'] = ApiClient.convertToType(data['signing-key'], 'String');
             }
@@ -91,9 +88,6 @@ class GatewayCreateK8SAuthConfig {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -139,12 +133,6 @@ GatewayCreateK8SAuthConfig.prototype['k8s-issuer'] = undefined;
 GatewayCreateK8SAuthConfig.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayCreateK8SAuthConfig.prototype['password'] = undefined;
-
-/**
  * The private key (in base64 encoded of the PEM format) associated with the public key defined in the Kubernetes auth
  * @member {String} signing-key
  */
@@ -173,12 +161,6 @@ GatewayCreateK8SAuthConfig.prototype['token-reviewer-jwt'] = undefined;
  * @member {String} uid-token
  */
 GatewayCreateK8SAuthConfig.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayCreateK8SAuthConfig.prototype['username'] = undefined;
 
 
 

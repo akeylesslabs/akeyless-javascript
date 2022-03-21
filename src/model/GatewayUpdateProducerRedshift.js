@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRedshift model module.
  * @module model/GatewayUpdateProducerRedshift
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayUpdateProducerRedshift {
     /**
@@ -59,9 +59,6 @@ class GatewayUpdateProducerRedshift {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('producer-encryption-key')) {
                 obj['producer-encryption-key'] = ApiClient.convertToType(data['producer-encryption-key'], 'String');
             }
@@ -101,9 +98,6 @@ class GatewayUpdateProducerRedshift {
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
@@ -128,12 +122,6 @@ GatewayUpdateProducerRedshift.prototype['name'] = undefined;
  * @member {String} new-name
  */
 GatewayUpdateProducerRedshift.prototype['new-name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayUpdateProducerRedshift.prototype['password'] = undefined;
 
 /**
  * Dynamic producer encryption key
@@ -213,12 +201,6 @@ GatewayUpdateProducerRedshift.prototype['uid-token'] = undefined;
  * @default '60m'
  */
 GatewayUpdateProducerRedshift.prototype['user-ttl'] = '60m';
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayUpdateProducerRedshift.prototype['username'] = undefined;
 
 
 

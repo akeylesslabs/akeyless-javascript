@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTargetDetails model module.
  * @module model/UpdateDBTargetDetails
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateDBTargetDetails {
     /**
@@ -55,6 +55,9 @@ class UpdateDBTargetDetails {
             if (data.hasOwnProperty('host_name')) {
                 obj['host_name'] = ApiClient.convertToType(data['host_name'], 'String');
             }
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('mongo_db_name')) {
                 obj['mongo_db_name'] = ApiClient.convertToType(data['mongo_db_name'], 'String');
             }
@@ -66,9 +69,6 @@ class UpdateDBTargetDetails {
             }
             if (data.hasOwnProperty('new-version')) {
                 obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
@@ -88,9 +88,6 @@ class UpdateDBTargetDetails {
             if (data.hasOwnProperty('user_name')) {
                 obj['user_name'] = ApiClient.convertToType(data['user_name'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
@@ -109,6 +106,11 @@ UpdateDBTargetDetails.prototype['db_type'] = undefined;
 UpdateDBTargetDetails.prototype['host_name'] = undefined;
 
 /**
+ * @member {String} keep-prev-version
+ */
+UpdateDBTargetDetails.prototype['keep-prev-version'] = undefined;
+
+/**
  * @member {String} mongo_db_name
  */
 UpdateDBTargetDetails.prototype['mongo_db_name'] = undefined;
@@ -125,17 +127,10 @@ UpdateDBTargetDetails.prototype['mongo_uri'] = undefined;
 UpdateDBTargetDetails.prototype['name'] = undefined;
 
 /**
- * Whether to create a new version of not
+ * Deprecated
  * @member {Boolean} new-version
- * @default false
  */
-UpdateDBTargetDetails.prototype['new-version'] = false;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateDBTargetDetails.prototype['password'] = undefined;
+UpdateDBTargetDetails.prototype['new-version'] = undefined;
 
 /**
  * @member {String} port
@@ -169,12 +164,6 @@ UpdateDBTargetDetails.prototype['uid-token'] = undefined;
  * @member {String} user_name
  */
 UpdateDBTargetDetails.prototype['user_name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateDBTargetDetails.prototype['username'] = undefined;
 
 
 

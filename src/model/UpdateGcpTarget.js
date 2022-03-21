@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGcpTarget model module.
  * @module model/UpdateGcpTarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateGcpTarget {
     /**
@@ -60,6 +60,9 @@ class UpdateGcpTarget {
             if (data.hasOwnProperty('gcp-sa-email')) {
                 obj['gcp-sa-email'] = ApiClient.convertToType(data['gcp-sa-email'], 'String');
             }
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -68,9 +71,6 @@ class UpdateGcpTarget {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -83,9 +83,6 @@ class UpdateGcpTarget {
             }
             if (data.hasOwnProperty('use-gw-cloud-identity')) {
                 obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -113,6 +110,11 @@ UpdateGcpTarget.prototype['gcp-key'] = undefined;
 UpdateGcpTarget.prototype['gcp-sa-email'] = undefined;
 
 /**
+ * @member {String} keep-prev-version
+ */
+UpdateGcpTarget.prototype['keep-prev-version'] = undefined;
+
+/**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
@@ -131,12 +133,6 @@ UpdateGcpTarget.prototype['name'] = undefined;
 UpdateGcpTarget.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateGcpTarget.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -149,22 +145,15 @@ UpdateGcpTarget.prototype['token'] = undefined;
 UpdateGcpTarget.prototype['uid-token'] = undefined;
 
 /**
- * Create new version for the target
+ * Deprecated
  * @member {Boolean} update-version
- * @default false
  */
-UpdateGcpTarget.prototype['update-version'] = false;
+UpdateGcpTarget.prototype['update-version'] = undefined;
 
 /**
  * @member {Boolean} use-gw-cloud-identity
  */
 UpdateGcpTarget.prototype['use-gw-cloud-identity'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateGcpTarget.prototype['username'] = undefined;
 
 
 

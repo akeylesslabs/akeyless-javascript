@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateAccountSettings {
     /**
@@ -59,6 +59,12 @@ class UpdateAccountSettings {
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
             }
+            if (data.hasOwnProperty('default-versioning')) {
+                obj['default-versioning'] = ApiClient.convertToType(data['default-versioning'], 'String');
+            }
+            if (data.hasOwnProperty('item-type')) {
+                obj['item-type'] = ApiClient.convertToType(data['item-type'], 'String');
+            }
             if (data.hasOwnProperty('jwt-ttl-default')) {
                 obj['jwt-ttl-default'] = ApiClient.convertToType(data['jwt-ttl-default'], 'Number');
             }
@@ -68,8 +74,8 @@ class UpdateAccountSettings {
             if (data.hasOwnProperty('jwt-ttl-min')) {
                 obj['jwt-ttl-min'] = ApiClient.convertToType(data['jwt-ttl-min'], 'Number');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('phone')) {
                 obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
@@ -82,9 +88,6 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -118,6 +121,18 @@ UpdateAccountSettings.prototype['company-name'] = undefined;
 UpdateAccountSettings.prototype['country'] = undefined;
 
 /**
+ * Should create version by default
+ * @member {String} default-versioning
+ */
+UpdateAccountSettings.prototype['default-versioning'] = undefined;
+
+/**
+ * VersionSettingsObjectType defines object types for account version settings
+ * @member {String} item-type
+ */
+UpdateAccountSettings.prototype['item-type'] = undefined;
+
+/**
  * Default ttl
  * @member {Number} jwt-ttl-default
  */
@@ -136,10 +151,10 @@ UpdateAccountSettings.prototype['jwt-ttl-max'] = undefined;
 UpdateAccountSettings.prototype['jwt-ttl-min'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
+ * Max versions
+ * @member {String} max-versions
  */
-UpdateAccountSettings.prototype['password'] = undefined;
+UpdateAccountSettings.prototype['max-versions'] = undefined;
 
 /**
  * Phone number
@@ -164,12 +179,6 @@ UpdateAccountSettings.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateAccountSettings.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateAccountSettings.prototype['username'] = undefined;
 
 
 

@@ -26,6 +26,7 @@ Method | HTTP request | Description
 [**createClassicKey**](V2Api.md#createClassicKey) | **POST** /create-classic-key | 
 [**createDBTarget**](V2Api.md#createDBTarget) | **POST** /create-db-target | 
 [**createDFCKey**](V2Api.md#createDFCKey) | **POST** /create-dfc-key | 
+[**createDockerhubTarget**](V2Api.md#createDockerhubTarget) | **POST** /create-dockerhub-target | 
 [**createDynamicSecret**](V2Api.md#createDynamicSecret) | **POST** /create-dynamic-secret | 
 [**createEKSTarget**](V2Api.md#createEKSTarget) | **POST** /create-eks-target | 
 [**createGKETarget**](V2Api.md#createGKETarget) | **POST** /create-gke-target | 
@@ -68,6 +69,7 @@ Method | HTTP request | Description
 [**gatewayCreateProducerCassandra**](V2Api.md#gatewayCreateProducerCassandra) | **POST** /gateway-create-producer-cassandra | 
 [**gatewayCreateProducerCertificateAutomation**](V2Api.md#gatewayCreateProducerCertificateAutomation) | **POST** /gateway-create-producer-certificate-automation | 
 [**gatewayCreateProducerCustom**](V2Api.md#gatewayCreateProducerCustom) | **POST** /gateway-create-producer-custom | 
+[**gatewayCreateProducerDockerhub**](V2Api.md#gatewayCreateProducerDockerhub) | **POST** /gateway-create-producer-dockerhub | 
 [**gatewayCreateProducerEks**](V2Api.md#gatewayCreateProducerEks) | **POST** /gateway-create-producer-eks | 
 [**gatewayCreateProducerGcp**](V2Api.md#gatewayCreateProducerGcp) | **POST** /gateway-create-producer-gcp | 
 [**gatewayCreateProducerGithub**](V2Api.md#gatewayCreateProducerGithub) | **POST** /gateway-create-producer-github | 
@@ -105,6 +107,7 @@ Method | HTTP request | Description
 [**gatewayUpdateProducerCassandra**](V2Api.md#gatewayUpdateProducerCassandra) | **POST** /gateway-update-producer-cassandra | 
 [**gatewayUpdateProducerCertificateAutomation**](V2Api.md#gatewayUpdateProducerCertificateAutomation) | **POST** /gateway-update-producer-certificate-automation | 
 [**gatewayUpdateProducerCustom**](V2Api.md#gatewayUpdateProducerCustom) | **POST** /gateway-update-producer-custom | 
+[**gatewayUpdateProducerDockerhub**](V2Api.md#gatewayUpdateProducerDockerhub) | **POST** /gateway-update-producer-dockerhub | 
 [**gatewayUpdateProducerEks**](V2Api.md#gatewayUpdateProducerEks) | **POST** /gateway-update-producer-eks | 
 [**gatewayUpdateProducerGcp**](V2Api.md#gatewayUpdateProducerGcp) | **POST** /gateway-update-producer-gcp | 
 [**gatewayUpdateProducerGithub**](V2Api.md#gatewayUpdateProducerGithub) | **POST** /gateway-update-producer-github | 
@@ -186,6 +189,7 @@ Method | HTTP request | Description
 [**updateAzureTarget**](V2Api.md#updateAzureTarget) | **POST** /update-azure-target | 
 [**updateDBTarget**](V2Api.md#updateDBTarget) | **POST** /update-db-target | 
 [**updateDBTargetDetails**](V2Api.md#updateDBTargetDetails) | **POST** /update-db-target-details | 
+[**updateDockerhubTarget**](V2Api.md#updateDockerhubTarget) | **POST** /update-dockerhub-target | 
 [**updateEKSTarget**](V2Api.md#updateEKSTarget) | **POST** /update-eks-target | 
 [**updateGKETarget**](V2Api.md#updateGKETarget) | **POST** /update-gke-target | 
 [**updateGcpTarget**](V2Api.md#updateGcpTarget) | **POST** /update-gcp-target | 
@@ -1128,6 +1132,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateDFCKeyOutput**](CreateDFCKeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createDockerhubTarget
+
+> CreateDockerhubTargetOutput createDockerhubTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateDockerhubTarget(); // CreateDockerhubTarget | 
+apiInstance.createDockerhubTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateDockerhubTarget**](CreateDockerhubTarget.md)|  | 
+
+### Return type
+
+[**CreateDockerhubTargetOutput**](CreateDockerhubTargetOutput.md)
 
 ### Authorization
 
@@ -2905,6 +2951,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayCreateProducerDockerhub
+
+> GatewayCreateProducerDockerhubOutput gatewayCreateProducerDockerhub(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayCreateProducerDockerhub(); // GatewayCreateProducerDockerhub | 
+apiInstance.gatewayCreateProducerDockerhub(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerDockerhub**](GatewayCreateProducerDockerhub.md)|  | 
+
+### Return type
+
+[**GatewayCreateProducerDockerhubOutput**](GatewayCreateProducerDockerhubOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayCreateProducerEks
 
 > GatewayCreateProducerEksOutput gatewayCreateProducerEks(body)
@@ -4450,6 +4538,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayUpdateProducerCustomOutput**](GatewayUpdateProducerCustomOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerDockerhub
+
+> GatewayUpdateProducerDockerhubOutput gatewayUpdateProducerDockerhub(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerDockerhub(); // GatewayUpdateProducerDockerhub | 
+apiInstance.gatewayUpdateProducerDockerhub(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerDockerhub**](GatewayUpdateProducerDockerhub.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerDockerhubOutput**](GatewayUpdateProducerDockerhubOutput.md)
 
 ### Authorization
 
@@ -7868,6 +7998,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateTargetOutput**](UpdateTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateDockerhubTarget
+
+> UpdateDockerhubTargetOutput updateDockerhubTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateDockerhubTarget(); // UpdateDockerhubTarget | 
+apiInstance.updateDockerhubTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateDockerhubTarget**](UpdateDockerhubTarget.md)|  | 
+
+### Return type
+
+[**UpdateDockerhubTargetOutput**](UpdateDockerhubTargetOutput.md)
 
 ### Authorization
 

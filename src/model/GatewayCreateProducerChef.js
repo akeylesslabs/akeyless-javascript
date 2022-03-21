@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerChef model module.
  * @module model/GatewayCreateProducerChef
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayCreateProducerChef {
     /**
@@ -65,9 +65,6 @@ class GatewayCreateProducerChef {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
             }
@@ -88,9 +85,6 @@ class GatewayCreateProducerChef {
             }
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -128,12 +122,6 @@ GatewayCreateProducerChef.prototype['chef-server-username'] = undefined;
  * @member {String} name
  */
 GatewayCreateProducerChef.prototype['name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayCreateProducerChef.prototype['password'] = undefined;
 
 /**
  * Dynamic producer encryption key
@@ -178,12 +166,6 @@ GatewayCreateProducerChef.prototype['uid-token'] = undefined;
  * @default '60m'
  */
 GatewayCreateProducerChef.prototype['user-ttl'] = '60m';
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayCreateProducerChef.prototype['username'] = undefined;
 
 
 

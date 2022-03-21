@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MoveObjects model module.
  * @module model/MoveObjects
- * @version 2.15.27
+ * @version 2.15.28
  */
 class MoveObjects {
     /**
@@ -54,9 +54,6 @@ class MoveObjects {
             if (data.hasOwnProperty('objects-type')) {
                 obj['objects-type'] = ApiClient.convertToType(data['objects-type'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('source')) {
                 obj['source'] = ApiClient.convertToType(data['source'], 'String');
             }
@@ -68,9 +65,6 @@ class MoveObjects {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -85,12 +79,6 @@ class MoveObjects {
  * @default 'item'
  */
 MoveObjects.prototype['objects-type'] = 'item';
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-MoveObjects.prototype['password'] = undefined;
 
 /**
  * Source path to move the objects from
@@ -115,12 +103,6 @@ MoveObjects.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 MoveObjects.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-MoveObjects.prototype['username'] = undefined;
 
 
 

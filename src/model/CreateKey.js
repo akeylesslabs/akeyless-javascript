@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateKey model module.
  * @module model/CreateKey
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateKey {
     /**
@@ -64,9 +64,6 @@ class CreateKey {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('split-level')) {
                 obj['split-level'] = ApiClient.convertToType(data['split-level'], 'Number');
             }
@@ -78,9 +75,6 @@ class CreateKey {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -114,12 +108,6 @@ CreateKey.prototype['metadata'] = undefined;
 CreateKey.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateKey.prototype['password'] = undefined;
-
-/**
  * The number of fragments that the item will be split into (not includes customer fragment)
  * @member {Number} split-level
  * @default 2
@@ -143,12 +131,6 @@ CreateKey.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateKey.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateKey.prototype['username'] = undefined;
 
 
 

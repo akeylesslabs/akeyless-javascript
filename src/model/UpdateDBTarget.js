@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTarget model module.
  * @module model/UpdateDBTarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateDBTarget {
     /**
@@ -69,6 +69,9 @@ class UpdateDBTarget {
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
             }
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -99,9 +102,6 @@ class UpdateDBTarget {
             if (data.hasOwnProperty('oracle-service-name')) {
                 obj['oracle-service-name'] = ApiClient.convertToType(data['oracle-service-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
             }
@@ -122,9 +122,6 @@ class UpdateDBTarget {
             }
             if (data.hasOwnProperty('user-name')) {
                 obj['user-name'] = ApiClient.convertToType(data['user-name'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -165,6 +162,11 @@ UpdateDBTarget.prototype['db-type'] = undefined;
  * @member {String} host
  */
 UpdateDBTarget.prototype['host'] = undefined;
+
+/**
+ * @member {String} keep-prev-version
+ */
+UpdateDBTarget.prototype['keep-prev-version'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
@@ -225,12 +227,6 @@ UpdateDBTarget.prototype['new-name'] = undefined;
 UpdateDBTarget.prototype['oracle-service-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateDBTarget.prototype['password'] = undefined;
-
-/**
  * @member {String} port
  */
 UpdateDBTarget.prototype['port'] = undefined;
@@ -258,22 +254,15 @@ UpdateDBTarget.prototype['token'] = undefined;
 UpdateDBTarget.prototype['uid-token'] = undefined;
 
 /**
- * Create new version for the target
+ * Deprecated
  * @member {Boolean} update-version
- * @default false
  */
-UpdateDBTarget.prototype['update-version'] = false;
+UpdateDBTarget.prototype['update-version'] = undefined;
 
 /**
  * @member {String} user-name
  */
 UpdateDBTarget.prototype['user-name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateDBTarget.prototype['username'] = undefined;
 
 
 

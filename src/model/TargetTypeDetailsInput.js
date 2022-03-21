@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.15.27
+ * @version 2.15.28
  */
 class TargetTypeDetailsInput {
     /**
@@ -265,6 +265,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('use_gw_cloud_identity')) {
                 obj['use_gw_cloud_identity'] = ApiClient.convertToType(data['use_gw_cloud_identity'], 'Boolean');
+            }
+            if (data.hasOwnProperty('user_name')) {
+                obj['user_name'] = ApiClient.convertToType(data['user_name'], 'String');
             }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
@@ -665,6 +668,11 @@ TargetTypeDetailsInput.prototype['url'] = undefined;
  * @member {Boolean} use_gw_cloud_identity
  */
 TargetTypeDetailsInput.prototype['use_gw_cloud_identity'] = undefined;
+
+/**
+ * @member {String} user_name
+ */
+TargetTypeDetailsInput.prototype['user_name'] = undefined;
 
 /**
  * @member {String} username

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteAllowedManagementAccess model module.
  * @module model/GatewayDeleteAllowedManagementAccess
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayDeleteAllowedManagementAccess {
     /**
@@ -50,9 +50,6 @@ class GatewayDeleteAllowedManagementAccess {
         if (data) {
             obj = obj || new GatewayDeleteAllowedManagementAccess();
 
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('sub-admin-id')) {
                 obj['sub-admin-id'] = ApiClient.convertToType(data['sub-admin-id'], 'String');
             }
@@ -62,21 +59,12 @@ class GatewayDeleteAllowedManagementAccess {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
 
 
 }
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayDeleteAllowedManagementAccess.prototype['password'] = undefined;
 
 /**
  * SubAdminID to be removed
@@ -95,12 +83,6 @@ GatewayDeleteAllowedManagementAccess.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GatewayDeleteAllowedManagementAccess.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayDeleteAllowedManagementAccess.prototype['username'] = undefined;
 
 
 

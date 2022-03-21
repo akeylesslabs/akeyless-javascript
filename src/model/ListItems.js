@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 2.15.27
+ * @version 2.15.28
  */
 class ListItems {
     /**
@@ -53,9 +53,6 @@ class ListItems {
             if (data.hasOwnProperty('pagination-token')) {
                 obj['pagination-token'] = ApiClient.convertToType(data['pagination-token'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
@@ -70,9 +67,6 @@ class ListItems {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -92,12 +86,6 @@ ListItems.prototype['filter'] = undefined;
  * @member {String} pagination-token
  */
 ListItems.prototype['pagination-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-ListItems.prototype['password'] = undefined;
 
 /**
  * Path to folder
@@ -128,12 +116,6 @@ ListItems.prototype['type'] = undefined;
  * @member {String} uid-token
  */
 ListItems.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-ListItems.prototype['username'] = undefined;
 
 
 

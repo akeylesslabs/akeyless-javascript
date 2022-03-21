@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAws model module.
  * @module model/GatewayCreateProducerAws
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayCreateProducerAws {
     /**
@@ -83,9 +83,6 @@ class GatewayCreateProducerAws {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
             }
@@ -110,6 +107,9 @@ class GatewayCreateProducerAws {
             if (data.hasOwnProperty('secure-access-web-browsing')) {
                 obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
             }
+            if (data.hasOwnProperty('secure-access-web-proxy')) {
+                obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
+            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
@@ -124,9 +124,6 @@ class GatewayCreateProducerAws {
             }
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -205,12 +202,6 @@ GatewayCreateProducerAws.prototype['enable-admin-rotation'] = false;
 GatewayCreateProducerAws.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayCreateProducerAws.prototype['password'] = undefined;
-
-/**
  * Dynamic producer encryption key
  * @member {String} producer-encryption-key-name
  */
@@ -254,6 +245,11 @@ GatewayCreateProducerAws.prototype['secure-access-web'] = undefined;
 GatewayCreateProducerAws.prototype['secure-access-web-browsing'] = undefined;
 
 /**
+ * @member {Boolean} secure-access-web-proxy
+ */
+GatewayCreateProducerAws.prototype['secure-access-web-proxy'] = undefined;
+
+/**
  * List of the tags attached to this secret
  * @member {Array.<String>} tags
  */
@@ -283,12 +279,6 @@ GatewayCreateProducerAws.prototype['uid-token'] = undefined;
  * @default '60m'
  */
 GatewayCreateProducerAws.prototype['user-ttl'] = '60m';
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayCreateProducerAws.prototype['username'] = undefined;
 
 
 

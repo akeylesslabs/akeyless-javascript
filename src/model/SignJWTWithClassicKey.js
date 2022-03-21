@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignJWTWithClassicKey model module.
  * @module model/SignJWTWithClassicKey
- * @version 2.15.27
+ * @version 2.15.28
  */
 class SignJWTWithClassicKey {
     /**
@@ -61,9 +61,6 @@ class SignJWTWithClassicKey {
             if (data.hasOwnProperty('jwt-claims')) {
                 obj['jwt-claims'] = ApiClient.convertToType(data['jwt-claims'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('signing-method')) {
                 obj['signing-method'] = ApiClient.convertToType(data['signing-method'], 'String');
             }
@@ -72,9 +69,6 @@ class SignJWTWithClassicKey {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
             if (data.hasOwnProperty('version')) {
                 obj['version'] = ApiClient.convertToType(data['version'], 'Number');
@@ -99,12 +93,6 @@ SignJWTWithClassicKey.prototype['display-id'] = undefined;
 SignJWTWithClassicKey.prototype['jwt-claims'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-SignJWTWithClassicKey.prototype['password'] = undefined;
-
-/**
  * SigningMethod
  * @member {String} signing-method
  */
@@ -121,12 +109,6 @@ SignJWTWithClassicKey.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 SignJWTWithClassicKey.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-SignJWTWithClassicKey.prototype['username'] = undefined;
 
 /**
  * classic key version

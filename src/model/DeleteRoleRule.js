@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteRoleRule model module.
  * @module model/DeleteRoleRule
- * @version 2.15.27
+ * @version 2.15.28
  */
 class DeleteRoleRule {
     /**
@@ -51,9 +51,6 @@ class DeleteRoleRule {
         if (data) {
             obj = obj || new DeleteRoleRule();
 
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
@@ -69,21 +66,12 @@ class DeleteRoleRule {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
 
 
 }
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-DeleteRoleRule.prototype['password'] = undefined;
 
 /**
  * The path the rule refers to
@@ -115,12 +103,6 @@ DeleteRoleRule.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 DeleteRoleRule.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-DeleteRoleRule.prototype['username'] = undefined;
 
 
 

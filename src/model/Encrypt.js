@@ -16,17 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The Encrypt model module.
  * @module model/Encrypt
- * @version 2.15.27
+ * @version 2.15.28
  */
 class Encrypt {
     /**
      * Constructs a new <code>Encrypt</code>.
      * @alias module:model/Encrypt
-     * @param plaintext {String} Data to be encrypted
      */
-    constructor(plaintext) { 
+    constructor() { 
         
-        Encrypt.initialize(this, plaintext);
+        Encrypt.initialize(this);
     }
 
     /**
@@ -34,8 +33,7 @@ class Encrypt {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, plaintext) { 
-        obj['plaintext'] = plaintext;
+    static initialize(obj) { 
     }
 
     /**
@@ -58,9 +56,6 @@ class Encrypt {
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('plaintext')) {
                 obj['plaintext'] = ApiClient.convertToType(data['plaintext'], 'String');
             }
@@ -69,9 +64,6 @@ class Encrypt {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -99,12 +91,6 @@ Encrypt.prototype['encryption-context'] = undefined;
 Encrypt.prototype['key-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-Encrypt.prototype['password'] = undefined;
-
-/**
  * Data to be encrypted
  * @member {String} plaintext
  */
@@ -121,12 +107,6 @@ Encrypt.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 Encrypt.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-Encrypt.prototype['username'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptWithClassicKey model module.
  * @module model/DecryptWithClassicKey
- * @version 2.15.27
+ * @version 2.15.28
  */
 class DecryptWithClassicKey {
     /**
@@ -59,17 +59,11 @@ class DecryptWithClassicKey {
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
             if (data.hasOwnProperty('version')) {
                 obj['version'] = ApiClient.convertToType(data['version'], 'Number');
@@ -94,12 +88,6 @@ DecryptWithClassicKey.prototype['ciphertext'] = undefined;
 DecryptWithClassicKey.prototype['display-id'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-DecryptWithClassicKey.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -110,12 +98,6 @@ DecryptWithClassicKey.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 DecryptWithClassicKey.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-DecryptWithClassicKey.prototype['username'] = undefined;
 
 /**
  * classic key version

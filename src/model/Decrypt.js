@@ -16,18 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The Decrypt model module.
  * @module model/Decrypt
- * @version 2.15.27
+ * @version 2.15.28
  */
 class Decrypt {
     /**
      * Constructs a new <code>Decrypt</code>.
      * decrypt is a command that decrypts ciphertext into plaintext by using an AES key.
      * @alias module:model/Decrypt
-     * @param ciphertext {String} Ciphertext to be decrypted in base64 encoded format
      */
-    constructor(ciphertext) { 
+    constructor() { 
         
-        Decrypt.initialize(this, ciphertext);
+        Decrypt.initialize(this);
     }
 
     /**
@@ -35,8 +34,7 @@ class Decrypt {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, ciphertext) { 
-        obj['ciphertext'] = ciphertext;
+    static initialize(obj) { 
     }
 
     /**
@@ -62,17 +60,11 @@ class Decrypt {
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -106,12 +98,6 @@ Decrypt.prototype['encryption-context'] = undefined;
 Decrypt.prototype['key-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-Decrypt.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -122,12 +108,6 @@ Decrypt.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 Decrypt.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-Decrypt.prototype['username'] = undefined;
 
 
 

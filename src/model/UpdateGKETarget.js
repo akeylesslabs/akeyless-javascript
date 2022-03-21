@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGKETarget model module.
  * @module model/UpdateGKETarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateGKETarget {
     /**
@@ -67,6 +67,9 @@ class UpdateGKETarget {
             if (data.hasOwnProperty('gke-service-account-email')) {
                 obj['gke-service-account-email'] = ApiClient.convertToType(data['gke-service-account-email'], 'String');
             }
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -75,9 +78,6 @@ class UpdateGKETarget {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -90,9 +90,6 @@ class UpdateGKETarget {
             }
             if (data.hasOwnProperty('use-gw-cloud-identity')) {
                 obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -138,6 +135,11 @@ UpdateGKETarget.prototype['gke-cluster-name'] = undefined;
 UpdateGKETarget.prototype['gke-service-account-email'] = undefined;
 
 /**
+ * @member {String} keep-prev-version
+ */
+UpdateGKETarget.prototype['keep-prev-version'] = undefined;
+
+/**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
@@ -156,12 +158,6 @@ UpdateGKETarget.prototype['name'] = undefined;
 UpdateGKETarget.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateGKETarget.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -174,22 +170,15 @@ UpdateGKETarget.prototype['token'] = undefined;
 UpdateGKETarget.prototype['uid-token'] = undefined;
 
 /**
- * Create new version for the target
+ * Deprecated
  * @member {Boolean} update-version
- * @default false
  */
-UpdateGKETarget.prototype['update-version'] = false;
+UpdateGKETarget.prototype['update-version'] = undefined;
 
 /**
  * @member {Boolean} use-gw-cloud-identity
  */
 UpdateGKETarget.prototype['use-gw-cloud-identity'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateGKETarget.prototype['username'] = undefined;
 
 
 

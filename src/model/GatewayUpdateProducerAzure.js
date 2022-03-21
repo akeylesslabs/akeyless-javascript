@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerAzure model module.
  * @module model/GatewayUpdateProducerAzure
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayUpdateProducerAzure {
     /**
@@ -62,14 +62,17 @@ class GatewayUpdateProducerAzure {
             if (data.hasOwnProperty('azure-tenant-id')) {
                 obj['azure-tenant-id'] = ApiClient.convertToType(data['azure-tenant-id'], 'String');
             }
+            if (data.hasOwnProperty('fixed-user-claim-keyname')) {
+                obj['fixed-user-claim-keyname'] = ApiClient.convertToType(data['fixed-user-claim-keyname'], 'String');
+            }
+            if (data.hasOwnProperty('fixed-user-only')) {
+                obj['fixed-user-only'] = ApiClient.convertToType(data['fixed-user-only'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -82,6 +85,9 @@ class GatewayUpdateProducerAzure {
             }
             if (data.hasOwnProperty('secure-access-web-browsing')) {
                 obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-proxy')) {
+                obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -112,9 +118,6 @@ class GatewayUpdateProducerAzure {
             }
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -148,6 +151,20 @@ GatewayUpdateProducerAzure.prototype['azure-client-secret'] = undefined;
 GatewayUpdateProducerAzure.prototype['azure-tenant-id'] = undefined;
 
 /**
+ * FixedUserClaimKeyname
+ * @member {String} fixed-user-claim-keyname
+ * @default 'false'
+ */
+GatewayUpdateProducerAzure.prototype['fixed-user-claim-keyname'] = 'false';
+
+/**
+ * Fixed user
+ * @member {Boolean} fixed-user-only
+ * @default false
+ */
+GatewayUpdateProducerAzure.prototype['fixed-user-only'] = false;
+
+/**
  * Producer name
  * @member {String} name
  */
@@ -158,12 +175,6 @@ GatewayUpdateProducerAzure.prototype['name'] = undefined;
  * @member {String} new-name
  */
 GatewayUpdateProducerAzure.prototype['new-name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayUpdateProducerAzure.prototype['password'] = undefined;
 
 /**
  * Dynamic producer encryption key
@@ -185,6 +196,11 @@ GatewayUpdateProducerAzure.prototype['secure-access-web'] = undefined;
  * @member {Boolean} secure-access-web-browsing
  */
 GatewayUpdateProducerAzure.prototype['secure-access-web-browsing'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-web-proxy
+ */
+GatewayUpdateProducerAzure.prototype['secure-access-web-proxy'] = undefined;
 
 /**
  * List of the tags attached to this secret
@@ -232,9 +248,9 @@ GatewayUpdateProducerAzure.prototype['user-principal-name'] = undefined;
 /**
  * Azure User programmatic access
  * @member {Boolean} user-programmatic-access
- * @default true
+ * @default false
  */
-GatewayUpdateProducerAzure.prototype['user-programmatic-access'] = true;
+GatewayUpdateProducerAzure.prototype['user-programmatic-access'] = false;
 
 /**
  * User Role Template Id
@@ -248,12 +264,6 @@ GatewayUpdateProducerAzure.prototype['user-role-template-id'] = undefined;
  * @default '60m'
  */
 GatewayUpdateProducerAzure.prototype['user-ttl'] = '60m';
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayUpdateProducerAzure.prototype['username'] = undefined;
 
 
 

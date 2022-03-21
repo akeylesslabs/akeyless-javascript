@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHTarget model module.
  * @module model/CreateSSHTarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateSSHTarget {
     /**
@@ -61,9 +61,6 @@ class CreateSSHTarget {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
             }
@@ -84,9 +81,6 @@ class CreateSSHTarget {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -117,12 +111,6 @@ CreateSSHTarget.prototype['key'] = undefined;
  * @member {String} name
  */
 CreateSSHTarget.prototype['name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateSSHTarget.prototype['password'] = undefined;
 
 /**
  * @member {String} port
@@ -160,12 +148,6 @@ CreateSSHTarget.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateSSHTarget.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateSSHTarget.prototype['username'] = undefined;
 
 
 

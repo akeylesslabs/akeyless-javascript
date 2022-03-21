@@ -26,12 +26,11 @@ import LogForwardingConfigPart from './LogForwardingConfigPart';
 import MigrationsConfigPart from './MigrationsConfigPart';
 import ProducersConfigPart from './ProducersConfigPart';
 import RotatorsConfigPart from './RotatorsConfigPart';
-import UIdentityConfigPart from './UIdentityConfigPart';
 
 /**
  * The AkeylessGatewayConfig model module.
  * @module model/AkeylessGatewayConfig
- * @version 2.15.27
+ * @version 2.15.28
  */
 class AkeylessGatewayConfig {
     /**
@@ -106,9 +105,6 @@ class AkeylessGatewayConfig {
             }
             if (data.hasOwnProperty('saml')) {
                 obj['saml'] = DefaultConfigPart.constructFromObject(data['saml']);
-            }
-            if (data.hasOwnProperty('uidentity')) {
-                obj['uidentity'] = UIdentityConfigPart.constructFromObject(data['uidentity']);
             }
             if (data.hasOwnProperty('version')) {
                 obj['version'] = ApiClient.convertToType(data['version'], 'Number');
@@ -194,11 +190,6 @@ AkeylessGatewayConfig.prototype['rotators'] = undefined;
  * @member {module:model/DefaultConfigPart} saml
  */
 AkeylessGatewayConfig.prototype['saml'] = undefined;
-
-/**
- * @member {module:model/UIdentityConfigPart} uidentity
- */
-AkeylessGatewayConfig.prototype['uidentity'] = undefined;
 
 /**
  * @member {Number} version

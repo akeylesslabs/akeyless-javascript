@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateEKSTarget model module.
  * @module model/UpdateEKSTarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateEKSTarget {
     /**
@@ -80,6 +80,9 @@ class UpdateEKSTarget {
             if (data.hasOwnProperty('eks-secret-access-key')) {
                 obj['eks-secret-access-key'] = ApiClient.convertToType(data['eks-secret-access-key'], 'String');
             }
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -88,9 +91,6 @@ class UpdateEKSTarget {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -103,9 +103,6 @@ class UpdateEKSTarget {
             }
             if (data.hasOwnProperty('use-gw-cloud-identity')) {
                 obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -158,6 +155,11 @@ UpdateEKSTarget.prototype['eks-region'] = 'us-east-2';
 UpdateEKSTarget.prototype['eks-secret-access-key'] = undefined;
 
 /**
+ * @member {String} keep-prev-version
+ */
+UpdateEKSTarget.prototype['keep-prev-version'] = undefined;
+
+/**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
@@ -176,12 +178,6 @@ UpdateEKSTarget.prototype['name'] = undefined;
 UpdateEKSTarget.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateEKSTarget.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -194,22 +190,15 @@ UpdateEKSTarget.prototype['token'] = undefined;
 UpdateEKSTarget.prototype['uid-token'] = undefined;
 
 /**
- * Create new version for the target
+ * Deprecated
  * @member {Boolean} update-version
- * @default false
  */
-UpdateEKSTarget.prototype['update-version'] = false;
+UpdateEKSTarget.prototype['update-version'] = undefined;
 
 /**
  * @member {Boolean} use-gw-cloud-identity
  */
 UpdateEKSTarget.prototype['use-gw-cloud-identity'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateEKSTarget.prototype['username'] = undefined;
 
 
 

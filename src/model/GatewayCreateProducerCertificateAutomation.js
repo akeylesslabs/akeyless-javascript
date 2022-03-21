@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCertificateAutomation model module.
  * @module model/GatewayCreateProducerCertificateAutomation
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayCreateProducerCertificateAutomation {
     /**
@@ -68,9 +68,6 @@ class GatewayCreateProducerCertificateAutomation {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
             }
@@ -100,9 +97,6 @@ class GatewayCreateProducerCertificateAutomation {
             }
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
             if (data.hasOwnProperty('venafi-api-key')) {
                 obj['venafi-api-key'] = ApiClient.convertToType(data['venafi-api-key'], 'String');
@@ -168,12 +162,6 @@ GatewayCreateProducerCertificateAutomation.prototype['enable-admin-rotation'] = 
 GatewayCreateProducerCertificateAutomation.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayCreateProducerCertificateAutomation.prototype['password'] = undefined;
-
-/**
  * Dynamic producer encryption key
  * @member {String} producer-encryption-key-name
  */
@@ -232,12 +220,6 @@ GatewayCreateProducerCertificateAutomation.prototype['uid-token'] = undefined;
  * @member {String} user-ttl
  */
 GatewayCreateProducerCertificateAutomation.prototype['user-ttl'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayCreateProducerCertificateAutomation.prototype['username'] = undefined;
 
 /**
  * Venafi API key

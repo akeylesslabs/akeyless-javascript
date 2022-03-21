@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHCertIssuer model module.
  * @module model/UpdateSSHCertIssuer
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateSSHCertIssuer {
     /**
@@ -73,9 +73,6 @@ class UpdateSSHCertIssuer {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('principals')) {
                 obj['principals'] = ApiClient.convertToType(data['principals'], 'String');
             }
@@ -111,9 +108,6 @@ class UpdateSSHCertIssuer {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -157,12 +151,6 @@ UpdateSSHCertIssuer.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateSSHCertIssuer.prototype['new-name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateSSHCertIssuer.prototype['password'] = undefined;
 
 /**
  * Signed certificates with principal, e.g example_role1,example_role2
@@ -229,12 +217,6 @@ UpdateSSHCertIssuer.prototype['ttl'] = undefined;
  * @member {String} uid-token
  */
 UpdateSSHCertIssuer.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateSSHCertIssuer.prototype['username'] = undefined;
 
 
 

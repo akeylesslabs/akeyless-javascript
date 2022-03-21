@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerCustom model module.
  * @module model/GatewayUpdateProducerCustom
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayUpdateProducerCustom {
     /**
@@ -62,9 +62,6 @@ class GatewayUpdateProducerCustom {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('payload')) {
                 obj['payload'] = ApiClient.convertToType(data['payload'], 'String');
             }
@@ -92,9 +89,6 @@ class GatewayUpdateProducerCustom {
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
@@ -119,12 +113,6 @@ GatewayUpdateProducerCustom.prototype['name'] = undefined;
  * @member {String} new-name
  */
 GatewayUpdateProducerCustom.prototype['new-name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayUpdateProducerCustom.prototype['password'] = undefined;
 
 /**
  * Secret payload to be sent with each create/revoke webhook request
@@ -181,12 +169,6 @@ GatewayUpdateProducerCustom.prototype['uid-token'] = undefined;
  * @default '60m'
  */
 GatewayUpdateProducerCustom.prototype['user-ttl'] = '60m';
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayUpdateProducerCustom.prototype['username'] = undefined;
 
 
 

@@ -21,7 +21,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 2.15.27
+ * @version 2.15.28
  */
 class Item {
     /**
@@ -96,6 +96,9 @@ class Item {
             }
             if (data.hasOwnProperty('item_state')) {
                 obj['item_state'] = ApiClient.convertToType(data['item_state'], 'String');
+            }
+            if (data.hasOwnProperty('item_sub_type')) {
+                obj['item_sub_type'] = ApiClient.convertToType(data['item_sub_type'], 'String');
             }
             if (data.hasOwnProperty('item_tags')) {
                 obj['item_tags'] = ApiClient.convertToType(data['item_tags'], ['String']);
@@ -212,6 +215,11 @@ Item.prototype['item_size'] = undefined;
  * @member {String} item_state
  */
 Item.prototype['item_state'] = undefined;
+
+/**
+ * @member {String} item_sub_type
+ */
+Item.prototype['item_sub_type'] = undefined;
 
 /**
  * @member {Array.<String>} item_tags

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDynamicSecret model module.
  * @module model/CreateDynamicSecret
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateDynamicSecret {
     /**
@@ -58,9 +58,6 @@ class CreateDynamicSecret {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
@@ -69,9 +66,6 @@ class CreateDynamicSecret {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -100,12 +94,6 @@ CreateDynamicSecret.prototype['metadata'] = 'None';
 CreateDynamicSecret.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateDynamicSecret.prototype['password'] = undefined;
-
-/**
  * List of the tags attached to this secret
  * @member {Array.<String>} tags
  */
@@ -122,12 +110,6 @@ CreateDynamicSecret.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateDynamicSecret.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateDynamicSecret.prototype['username'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeItem model module.
  * @module model/DescribeItem
- * @version 2.15.27
+ * @version 2.15.28
  */
 class DescribeItem {
     /**
@@ -52,9 +52,6 @@ class DescribeItem {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('show-versions')) {
                 obj['show-versions'] = ApiClient.convertToType(data['show-versions'], 'Boolean');
             }
@@ -63,9 +60,6 @@ class DescribeItem {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -79,12 +73,6 @@ class DescribeItem {
  * @member {String} name
  */
 DescribeItem.prototype['name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-DescribeItem.prototype['password'] = undefined;
 
 /**
  * Include all item versions in reply
@@ -104,12 +92,6 @@ DescribeItem.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 DescribeItem.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-DescribeItem.prototype['username'] = undefined;
 
 
 

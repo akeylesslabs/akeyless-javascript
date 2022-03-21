@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidListChildren model module.
  * @module model/UidListChildren
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UidListChildren {
     /**
@@ -51,17 +51,11 @@ class UidListChildren {
             if (data.hasOwnProperty('auth-method-name')) {
                 obj['auth-method-name'] = ApiClient.convertToType(data['auth-method-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -77,12 +71,6 @@ class UidListChildren {
 UidListChildren.prototype['auth-method-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UidListChildren.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -93,12 +81,6 @@ UidListChildren.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UidListChildren.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UidListChildren.prototype['username'] = undefined;
 
 
 

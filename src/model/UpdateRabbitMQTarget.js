@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRabbitMQTarget model module.
  * @module model/UpdateRabbitMQTarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateRabbitMQTarget {
     /**
@@ -52,6 +52,9 @@ class UpdateRabbitMQTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -60,9 +63,6 @@ class UpdateRabbitMQTarget {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('rabbitmq-server-password')) {
                 obj['rabbitmq-server-password'] = ApiClient.convertToType(data['rabbitmq-server-password'], 'String');
@@ -82,9 +82,6 @@ class UpdateRabbitMQTarget {
             if (data.hasOwnProperty('update-version')) {
                 obj['update-version'] = ApiClient.convertToType(data['update-version'], 'Boolean');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
@@ -97,6 +94,11 @@ class UpdateRabbitMQTarget {
  * @member {String} comment
  */
 UpdateRabbitMQTarget.prototype['comment'] = undefined;
+
+/**
+ * @member {String} keep-prev-version
+ */
+UpdateRabbitMQTarget.prototype['keep-prev-version'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
@@ -115,12 +117,6 @@ UpdateRabbitMQTarget.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateRabbitMQTarget.prototype['new-name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateRabbitMQTarget.prototype['password'] = undefined;
 
 /**
  * @member {String} rabbitmq-server-password
@@ -150,17 +146,10 @@ UpdateRabbitMQTarget.prototype['token'] = undefined;
 UpdateRabbitMQTarget.prototype['uid-token'] = undefined;
 
 /**
- * Create new version for the target
+ * Deprecated
  * @member {Boolean} update-version
- * @default false
  */
-UpdateRabbitMQTarget.prototype['update-version'] = false;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateRabbitMQTarget.prototype['username'] = undefined;
+UpdateRabbitMQTarget.prototype['update-version'] = undefined;
 
 
 

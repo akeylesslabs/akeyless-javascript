@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **producers** | [**ProducersConfigPart**](ProducersConfigPart.md) |  | [optional] 
 **rotators** | [**RotatorsConfigPart**](RotatorsConfigPart.md) |  | [optional] 
 **saml** | [**DefaultConfigPart**](DefaultConfigPart.md) |  | [optional] 
-**uidentity** | [**UIdentityConfigPart**](UIdentityConfigPart.md) |  | [optional] 
 **version** | **Number** |  | [optional] 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayListProducers model module.
  * @module model/GatewayListProducers
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayListProducers {
     /**
@@ -48,17 +48,11 @@ class GatewayListProducers {
         if (data) {
             obj = obj || new GatewayListProducers();
 
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -66,12 +60,6 @@ class GatewayListProducers {
 
 
 }
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayListProducers.prototype['password'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -84,12 +72,6 @@ GatewayListProducers.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GatewayListProducers.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayListProducers.prototype['username'] = undefined;
 
 
 

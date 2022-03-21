@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptFile model module.
  * @module model/EncryptFile
- * @version 2.15.27
+ * @version 2.15.28
  */
 class EncryptFile {
     /**
@@ -63,17 +63,11 @@ class EncryptFile {
             if (data.hasOwnProperty('out')) {
                 obj['out'] = ApiClient.convertToType(data['out'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -107,12 +101,6 @@ EncryptFile.prototype['key-name'] = undefined;
 EncryptFile.prototype['out'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-EncryptFile.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -123,12 +111,6 @@ EncryptFile.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 EncryptFile.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-EncryptFile.prototype['username'] = undefined;
 
 
 

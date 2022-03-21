@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipSetServerState model module.
  * @module model/KmipSetServerState
- * @version 2.15.27
+ * @version 2.15.28
  */
 class KmipSetServerState {
     /**
@@ -50,9 +50,6 @@ class KmipSetServerState {
         if (data) {
             obj = obj || new KmipSetServerState();
 
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('state')) {
                 obj['state'] = ApiClient.convertToType(data['state'], 'String');
             }
@@ -62,21 +59,12 @@ class KmipSetServerState {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
 
 
 }
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-KmipSetServerState.prototype['password'] = undefined;
 
 /**
  * @member {String} state
@@ -94,12 +82,6 @@ KmipSetServerState.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 KmipSetServerState.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-KmipSetServerState.prototype['username'] = undefined;
 
 
 

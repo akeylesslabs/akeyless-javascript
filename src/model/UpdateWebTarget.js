@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateWebTarget model module.
  * @module model/UpdateWebTarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateWebTarget {
     /**
@@ -52,6 +52,9 @@ class UpdateWebTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -60,9 +63,6 @@ class UpdateWebTarget {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -76,9 +76,6 @@ class UpdateWebTarget {
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
@@ -91,6 +88,11 @@ class UpdateWebTarget {
  * @member {String} comment
  */
 UpdateWebTarget.prototype['comment'] = undefined;
+
+/**
+ * @member {String} keep-prev-version
+ */
+UpdateWebTarget.prototype['keep-prev-version'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
@@ -111,12 +113,6 @@ UpdateWebTarget.prototype['name'] = undefined;
 UpdateWebTarget.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateWebTarget.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -129,23 +125,16 @@ UpdateWebTarget.prototype['token'] = undefined;
 UpdateWebTarget.prototype['uid-token'] = undefined;
 
 /**
- * Create new version for the target
+ * Deprecated
  * @member {Boolean} update-version
- * @default false
  */
-UpdateWebTarget.prototype['update-version'] = false;
+UpdateWebTarget.prototype['update-version'] = undefined;
 
 /**
  * The url
  * @member {String} url
  */
 UpdateWebTarget.prototype['url'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateWebTarget.prototype['username'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteAuthMethods model module.
  * @module model/DeleteAuthMethods
- * @version 2.15.27
+ * @version 2.15.28
  */
 class DeleteAuthMethods {
     /**
@@ -50,9 +50,6 @@ class DeleteAuthMethods {
         if (data) {
             obj = obj || new DeleteAuthMethods();
 
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
@@ -62,21 +59,12 @@ class DeleteAuthMethods {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
 
 
 }
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-DeleteAuthMethods.prototype['password'] = undefined;
 
 /**
  * Path to delete the auth methods from
@@ -95,12 +83,6 @@ DeleteAuthMethods.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 DeleteAuthMethods.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-DeleteAuthMethods.prototype['username'] = undefined;
 
 
 

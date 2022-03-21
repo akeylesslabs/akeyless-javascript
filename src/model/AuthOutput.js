@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import SystemAccessCredentialsReplyObj from './SystemAccessCredentialsReplyObj';
 
 /**
  * The AuthOutput model module.
  * @module model/AuthOutput
- * @version 2.15.27
+ * @version 2.15.28
  */
 class AuthOutput {
     /**
@@ -47,6 +48,9 @@ class AuthOutput {
         if (data) {
             obj = obj || new AuthOutput();
 
+            if (data.hasOwnProperty('creds')) {
+                obj['creds'] = SystemAccessCredentialsReplyObj.constructFromObject(data['creds']);
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -56,6 +60,11 @@ class AuthOutput {
 
 
 }
+
+/**
+ * @member {module:model/SystemAccessCredentialsReplyObj} creds
+ */
+AuthOutput.prototype['creds'] = undefined;
 
 /**
  * @member {String} token

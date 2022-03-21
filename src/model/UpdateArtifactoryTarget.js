@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateArtifactoryTarget model module.
  * @module model/UpdateArtifactoryTarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateArtifactoryTarget {
     /**
@@ -67,6 +67,9 @@ class UpdateArtifactoryTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -76,9 +79,6 @@ class UpdateArtifactoryTarget {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -87,9 +87,6 @@ class UpdateArtifactoryTarget {
             }
             if (data.hasOwnProperty('update-version')) {
                 obj['update-version'] = ApiClient.convertToType(data['update-version'], 'Boolean');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -123,6 +120,11 @@ UpdateArtifactoryTarget.prototype['base-url'] = undefined;
 UpdateArtifactoryTarget.prototype['comment'] = undefined;
 
 /**
+ * @member {String} keep-prev-version
+ */
+UpdateArtifactoryTarget.prototype['keep-prev-version'] = undefined;
+
+/**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
@@ -141,12 +143,6 @@ UpdateArtifactoryTarget.prototype['name'] = undefined;
 UpdateArtifactoryTarget.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateArtifactoryTarget.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -159,17 +155,10 @@ UpdateArtifactoryTarget.prototype['token'] = undefined;
 UpdateArtifactoryTarget.prototype['uid-token'] = undefined;
 
 /**
- * Create new version for the target
+ * Deprecated
  * @member {Boolean} update-version
- * @default false
  */
-UpdateArtifactoryTarget.prototype['update-version'] = false;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateArtifactoryTarget.prototype['username'] = undefined;
+UpdateArtifactoryTarget.prototype['update-version'] = undefined;
 
 
 

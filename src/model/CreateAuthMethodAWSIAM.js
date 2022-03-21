@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAWSIAM model module.
  * @module model/CreateAuthMethodAWSIAM
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateAuthMethodAWSIAM {
     /**
@@ -88,9 +88,6 @@ class CreateAuthMethodAWSIAM {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('sts-url')) {
                 obj['sts-url'] = ApiClient.convertToType(data['sts-url'], 'String');
             }
@@ -99,9 +96,6 @@ class CreateAuthMethodAWSIAM {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -185,12 +179,6 @@ CreateAuthMethodAWSIAM.prototype['jwt-ttl'] = 0;
 CreateAuthMethodAWSIAM.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateAuthMethodAWSIAM.prototype['password'] = undefined;
-
-/**
  * sts URL
  * @member {String} sts-url
  * @default 'https://sts.amazonaws.com'
@@ -208,12 +196,6 @@ CreateAuthMethodAWSIAM.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateAuthMethodAWSIAM.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateAuthMethodAWSIAM.prototype['username'] = undefined;
 
 
 

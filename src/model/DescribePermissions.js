@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribePermissions model module.
  * @module model/DescribePermissions
- * @version 2.15.27
+ * @version 2.15.28
  */
 class DescribePermissions {
     /**
@@ -52,9 +52,6 @@ class DescribePermissions {
         if (data) {
             obj = obj || new DescribePermissions();
 
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
@@ -67,21 +64,12 @@ class DescribePermissions {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
 
 
 }
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-DescribePermissions.prototype['password'] = undefined;
 
 /**
  * Path to an object
@@ -106,12 +94,6 @@ DescribePermissions.prototype['type'] = undefined;
  * @member {String} uid-token
  */
 DescribePermissions.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-DescribePermissions.prototype['username'] = undefined;
 
 
 

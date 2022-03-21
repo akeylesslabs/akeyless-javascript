@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerSnowflake model module.
  * @module model/GatewayCreateProducerSnowflake
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayCreateProducerSnowflake {
     /**
@@ -65,9 +65,6 @@ class GatewayCreateProducerSnowflake {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'String');
             }
@@ -85,9 +82,6 @@ class GatewayCreateProducerSnowflake {
             }
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
             if (data.hasOwnProperty('warehouse')) {
                 obj['warehouse'] = ApiClient.convertToType(data['warehouse'], 'String');
@@ -130,12 +124,6 @@ GatewayCreateProducerSnowflake.prototype['db-name'] = undefined;
 GatewayCreateProducerSnowflake.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayCreateProducerSnowflake.prototype['password'] = undefined;
-
-/**
  * User role
  * @member {String} role
  */
@@ -171,12 +159,6 @@ GatewayCreateProducerSnowflake.prototype['uid-token'] = undefined;
  * @default '24h'
  */
 GatewayCreateProducerSnowflake.prototype['user-ttl'] = '24h';
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayCreateProducerSnowflake.prototype['username'] = undefined;
 
 /**
  * Warehouse name

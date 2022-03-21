@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdatePKICertIssuer {
     /**
@@ -104,9 +104,6 @@ class UpdatePKICertIssuer {
             if (data.hasOwnProperty('organizations')) {
                 obj['organizations'] = ApiClient.convertToType(data['organizations'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('postal-code')) {
                 obj['postal-code'] = ApiClient.convertToType(data['postal-code'], 'String');
             }
@@ -133,9 +130,6 @@ class UpdatePKICertIssuer {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -248,12 +242,6 @@ UpdatePKICertIssuer.prototype['organizational-units'] = undefined;
 UpdatePKICertIssuer.prototype['organizations'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdatePKICertIssuer.prototype['password'] = undefined;
-
-/**
  * A comma-separated list of the postal code that will be set in the issued certificate
  * @member {String} postal-code
  */
@@ -306,12 +294,6 @@ UpdatePKICertIssuer.prototype['ttl'] = undefined;
  * @member {String} uid-token
  */
 UpdatePKICertIssuer.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdatePKICertIssuer.prototype['username'] = undefined;
 
 
 

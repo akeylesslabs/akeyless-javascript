@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSecretVal model module.
  * @module model/UpdateSecretVal
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateSecretVal {
     /**
@@ -51,6 +51,9 @@ class UpdateSecretVal {
         if (data) {
             obj = obj || new UpdateSecretVal();
 
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -63,17 +66,11 @@ class UpdateSecretVal {
             if (data.hasOwnProperty('new-version')) {
                 obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'String');
@@ -84,6 +81,11 @@ class UpdateSecretVal {
 
 
 }
+
+/**
+ * @member {String} keep-prev-version
+ */
+UpdateSecretVal.prototype['keep-prev-version'] = undefined;
 
 /**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
@@ -104,17 +106,10 @@ UpdateSecretVal.prototype['multiline'] = undefined;
 UpdateSecretVal.prototype['name'] = undefined;
 
 /**
- * Whether to create a new version of not
+ * Deprecated
  * @member {Boolean} new-version
- * @default false
  */
-UpdateSecretVal.prototype['new-version'] = false;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateSecretVal.prototype['password'] = undefined;
+UpdateSecretVal.prototype['new-version'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -127,12 +122,6 @@ UpdateSecretVal.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateSecretVal.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateSecretVal.prototype['username'] = undefined;
 
 /**
  * The new secret value

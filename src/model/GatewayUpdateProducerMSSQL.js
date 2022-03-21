@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMSSQL model module.
  * @module model/GatewayUpdateProducerMSSQL
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayUpdateProducerMSSQL {
     /**
@@ -77,9 +77,6 @@ class GatewayUpdateProducerMSSQL {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
             }
@@ -112,9 +109,6 @@ class GatewayUpdateProducerMSSQL {
             }
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -180,12 +174,6 @@ GatewayUpdateProducerMSSQL.prototype['name'] = undefined;
 GatewayUpdateProducerMSSQL.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayUpdateProducerMSSQL.prototype['password'] = undefined;
-
-/**
  * Dynamic producer encryption key
  * @member {String} producer-encryption-key-name
  */
@@ -246,12 +234,6 @@ GatewayUpdateProducerMSSQL.prototype['uid-token'] = undefined;
  * @default '60m'
  */
 GatewayUpdateProducerMSSQL.prototype['user-ttl'] = '60m';
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayUpdateProducerMSSQL.prototype['username'] = undefined;
 
 
 

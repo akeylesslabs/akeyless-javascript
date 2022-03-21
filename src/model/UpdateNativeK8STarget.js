@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateNativeK8STarget model module.
  * @module model/UpdateNativeK8STarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateNativeK8STarget {
     /**
@@ -67,6 +67,9 @@ class UpdateNativeK8STarget {
             if (data.hasOwnProperty('k8s-cluster-token')) {
                 obj['k8s-cluster-token'] = ApiClient.convertToType(data['k8s-cluster-token'], 'String');
             }
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -76,9 +79,6 @@ class UpdateNativeK8STarget {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -87,9 +87,6 @@ class UpdateNativeK8STarget {
             }
             if (data.hasOwnProperty('update-version')) {
                 obj['update-version'] = ApiClient.convertToType(data['update-version'], 'Boolean');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -123,6 +120,11 @@ UpdateNativeK8STarget.prototype['k8s-cluster-endpoint'] = undefined;
 UpdateNativeK8STarget.prototype['k8s-cluster-token'] = undefined;
 
 /**
+ * @member {String} keep-prev-version
+ */
+UpdateNativeK8STarget.prototype['keep-prev-version'] = undefined;
+
+/**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
@@ -141,12 +143,6 @@ UpdateNativeK8STarget.prototype['name'] = undefined;
 UpdateNativeK8STarget.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateNativeK8STarget.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -159,17 +155,10 @@ UpdateNativeK8STarget.prototype['token'] = undefined;
 UpdateNativeK8STarget.prototype['uid-token'] = undefined;
 
 /**
- * Create new version for the target
+ * Deprecated
  * @member {Boolean} update-version
- * @default false
  */
-UpdateNativeK8STarget.prototype['update-version'] = false;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateNativeK8STarget.prototype['username'] = undefined;
+UpdateNativeK8STarget.prototype['update-version'] = undefined;
 
 
 

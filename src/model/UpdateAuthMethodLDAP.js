@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodLDAP model module.
  * @module model/UpdateAuthMethodLDAP
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateAuthMethodLDAP {
     /**
@@ -68,17 +68,14 @@ class UpdateAuthMethodLDAP {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            if (data.hasOwnProperty('public-key-data')) {
+                obj['public-key-data'] = ApiClient.convertToType(data['public-key-data'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -126,10 +123,10 @@ UpdateAuthMethodLDAP.prototype['name'] = undefined;
 UpdateAuthMethodLDAP.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
+ * A public key generated for LDAP authentication method on Akeyless in base64 format [RSA2048]
+ * @member {String} public-key-data
  */
-UpdateAuthMethodLDAP.prototype['password'] = undefined;
+UpdateAuthMethodLDAP.prototype['public-key-data'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -142,12 +139,6 @@ UpdateAuthMethodLDAP.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateAuthMethodLDAP.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateAuthMethodLDAP.prototype['username'] = undefined;
 
 
 

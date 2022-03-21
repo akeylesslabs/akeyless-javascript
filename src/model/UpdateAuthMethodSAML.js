@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodSAML model module.
  * @module model/UpdateAuthMethodSAML
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateAuthMethodSAML {
     /**
@@ -67,6 +67,9 @@ class UpdateAuthMethodSAML {
             if (data.hasOwnProperty('idp-metadata-url')) {
                 obj['idp-metadata-url'] = ApiClient.convertToType(data['idp-metadata-url'], 'String');
             }
+            if (data.hasOwnProperty('idp-metadata-xml-data')) {
+                obj['idp-metadata-xml-data'] = ApiClient.convertToType(data['idp-metadata-xml-data'], 'String');
+            }
             if (data.hasOwnProperty('jwt-ttl')) {
                 obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
             }
@@ -76,9 +79,6 @@ class UpdateAuthMethodSAML {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -87,9 +87,6 @@ class UpdateAuthMethodSAML {
             }
             if (data.hasOwnProperty('unique-identifier')) {
                 obj['unique-identifier'] = ApiClient.convertToType(data['unique-identifier'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -130,6 +127,12 @@ UpdateAuthMethodSAML.prototype['force-sub-claims'] = undefined;
 UpdateAuthMethodSAML.prototype['idp-metadata-url'] = undefined;
 
 /**
+ * IDP metadata xml data
+ * @member {String} idp-metadata-xml-data
+ */
+UpdateAuthMethodSAML.prototype['idp-metadata-xml-data'] = undefined;
+
+/**
  * Jwt TTL
  * @member {Number} jwt-ttl
  * @default 0
@@ -149,12 +152,6 @@ UpdateAuthMethodSAML.prototype['name'] = undefined;
 UpdateAuthMethodSAML.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateAuthMethodSAML.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -171,12 +168,6 @@ UpdateAuthMethodSAML.prototype['uid-token'] = undefined;
  * @member {String} unique-identifier
  */
 UpdateAuthMethodSAML.prototype['unique-identifier'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateAuthMethodSAML.prototype['username'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTarget model module.
  * @module model/CreateDBTarget
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateDBTarget {
     /**
@@ -96,9 +96,6 @@ class CreateDBTarget {
             if (data.hasOwnProperty('oracle-service-name')) {
                 obj['oracle-service-name'] = ApiClient.convertToType(data['oracle-service-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
             }
@@ -122,9 +119,6 @@ class CreateDBTarget {
             }
             if (data.hasOwnProperty('user-name')) {
                 obj['user-name'] = ApiClient.convertToType(data['user-name'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -219,12 +213,6 @@ CreateDBTarget.prototype['name'] = undefined;
 CreateDBTarget.prototype['oracle-service-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateDBTarget.prototype['password'] = undefined;
-
-/**
  * @member {String} port
  */
 CreateDBTarget.prototype['port'] = undefined;
@@ -267,12 +255,6 @@ CreateDBTarget.prototype['uid-token'] = undefined;
  * @member {String} user-name
  */
 CreateDBTarget.prototype['user-name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateDBTarget.prototype['username'] = undefined;
 
 
 

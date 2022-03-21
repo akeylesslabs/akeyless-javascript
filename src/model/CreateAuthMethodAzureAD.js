@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAzureAD model module.
  * @module model/CreateAuthMethodAzureAD
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateAuthMethodAzureAD {
     /**
@@ -103,17 +103,11 @@ class CreateAuthMethodAzureAD {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -230,12 +224,6 @@ CreateAuthMethodAzureAD.prototype['jwt-ttl'] = 0;
 CreateAuthMethodAzureAD.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateAuthMethodAzureAD.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -246,12 +234,6 @@ CreateAuthMethodAzureAD.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateAuthMethodAzureAD.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateAuthMethodAzureAD.prototype['username'] = undefined;
 
 
 

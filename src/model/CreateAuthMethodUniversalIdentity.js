@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodUniversalIdentity model module.
  * @module model/CreateAuthMethodUniversalIdentity
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateAuthMethodUniversalIdentity {
     /**
@@ -71,9 +71,6 @@ class CreateAuthMethodUniversalIdentity {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -82,9 +79,6 @@ class CreateAuthMethodUniversalIdentity {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -138,12 +132,6 @@ CreateAuthMethodUniversalIdentity.prototype['jwt-ttl'] = 0;
 CreateAuthMethodUniversalIdentity.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateAuthMethodUniversalIdentity.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -161,12 +149,6 @@ CreateAuthMethodUniversalIdentity.prototype['ttl'] = 60;
  * @member {String} uid-token
  */
 CreateAuthMethodUniversalIdentity.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateAuthMethodUniversalIdentity.prototype['username'] = undefined;
 
 
 

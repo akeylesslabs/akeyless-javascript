@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateItem {
     /**
@@ -60,9 +60,6 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('rm-tag')) {
                 obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
@@ -136,14 +133,14 @@ class UpdateItem {
             if (data.hasOwnProperty('secure-access-web-browsing')) {
                 obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
             }
+            if (data.hasOwnProperty('secure-access-web-proxy')) {
+                obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -176,12 +173,6 @@ UpdateItem.prototype['new-metadata'] = 'default_metadata';
  * @member {String} new-name
  */
 UpdateItem.prototype['new-name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateItem.prototype['password'] = undefined;
 
 /**
  * List of the existent tags that will be removed from this item
@@ -305,6 +296,11 @@ UpdateItem.prototype['secure-access-use-internal-bastion'] = undefined;
 UpdateItem.prototype['secure-access-web-browsing'] = undefined;
 
 /**
+ * @member {Boolean} secure-access-web-proxy
+ */
+UpdateItem.prototype['secure-access-web-proxy'] = undefined;
+
+/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -315,12 +311,6 @@ UpdateItem.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateItem.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateItem.prototype['username'] = undefined;
 
 
 

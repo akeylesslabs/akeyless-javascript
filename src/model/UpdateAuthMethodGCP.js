@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodGCP model module.
  * @module model/UpdateAuthMethodGCP
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateAuthMethodGCP {
     /**
@@ -90,9 +90,6 @@ class UpdateAuthMethodGCP {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('service-account-creds-data')) {
                 obj['service-account-creds-data'] = ApiClient.convertToType(data['service-account-creds-data'], 'String');
             }
@@ -104,9 +101,6 @@ class UpdateAuthMethodGCP {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -191,12 +185,6 @@ UpdateAuthMethodGCP.prototype['name'] = undefined;
 UpdateAuthMethodGCP.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateAuthMethodGCP.prototype['password'] = undefined;
-
-/**
  * ServiceAccount credentials data instead of giving a file path, base64 encoded
  * @member {String} service-account-creds-data
  */
@@ -219,12 +207,6 @@ UpdateAuthMethodGCP.prototype['type'] = undefined;
  * @member {String} uid-token
  */
 UpdateAuthMethodGCP.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateAuthMethodGCP.prototype['username'] = undefined;
 
 
 

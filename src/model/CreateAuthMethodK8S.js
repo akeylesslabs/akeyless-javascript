@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodK8S model module.
  * @module model/CreateAuthMethodK8S
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateAuthMethodK8S {
     /**
@@ -80,9 +80,6 @@ class CreateAuthMethodK8S {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('public-key')) {
                 obj['public-key'] = ApiClient.convertToType(data['public-key'], 'String');
             }
@@ -91,9 +88,6 @@ class CreateAuthMethodK8S {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -166,12 +160,6 @@ CreateAuthMethodK8S.prototype['jwt-ttl'] = 0;
 CreateAuthMethodK8S.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateAuthMethodK8S.prototype['password'] = undefined;
-
-/**
  * Base64-encoded public key text for K8S authentication method is required [RSA2048]
  * @member {String} public-key
  */
@@ -188,12 +176,6 @@ CreateAuthMethodK8S.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateAuthMethodK8S.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateAuthMethodK8S.prototype['username'] = undefined;
 
 
 

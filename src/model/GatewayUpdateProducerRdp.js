@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRdp model module.
  * @module model/GatewayUpdateProducerRdp
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayUpdateProducerRdp {
     /**
@@ -58,9 +58,6 @@ class GatewayUpdateProducerRdp {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -110,9 +107,6 @@ class GatewayUpdateProducerRdp {
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
@@ -138,12 +132,6 @@ GatewayUpdateProducerRdp.prototype['name'] = undefined;
  * @member {String} new-name
  */
 GatewayUpdateProducerRdp.prototype['new-name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayUpdateProducerRdp.prototype['password'] = undefined;
 
 /**
  * Dynamic producer encryption key
@@ -237,12 +225,6 @@ GatewayUpdateProducerRdp.prototype['uid-token'] = undefined;
  * @default '60m'
  */
 GatewayUpdateProducerRdp.prototype['user-ttl'] = '60m';
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayUpdateProducerRdp.prototype['username'] = undefined;
 
 
 

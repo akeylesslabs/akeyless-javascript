@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateRotatedSecret {
     /**
@@ -82,9 +82,6 @@ class CreateRotatedSecret {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('rotated-password')) {
                 obj['rotated-password'] = ApiClient.convertToType(data['rotated-password'], 'String');
             }
@@ -129,9 +126,6 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('user-dn')) {
                 obj['user-dn'] = ApiClient.convertToType(data['user-dn'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -189,12 +183,6 @@ CreateRotatedSecret.prototype['metadata'] = undefined;
  * @member {String} name
  */
 CreateRotatedSecret.prototype['name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateRotatedSecret.prototype['password'] = undefined;
 
 /**
  * @member {String} rotated-password
@@ -280,12 +268,6 @@ CreateRotatedSecret.prototype['user-attribute'] = undefined;
  * @member {String} user-dn
  */
 CreateRotatedSecret.prototype['user-dn'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateRotatedSecret.prototype['username'] = undefined;
 
 
 

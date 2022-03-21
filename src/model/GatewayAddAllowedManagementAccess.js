@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayAddAllowedManagementAccess model module.
  * @module model/GatewayAddAllowedManagementAccess
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayAddAllowedManagementAccess {
     /**
@@ -56,9 +56,6 @@ class GatewayAddAllowedManagementAccess {
             if (data.hasOwnProperty('allow-gw-login')) {
                 obj['allow-gw-login'] = ApiClient.convertToType(data['allow-gw-login'], 'Boolean');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('sub-admin-access-id')) {
                 obj['sub-admin-access-id'] = ApiClient.convertToType(data['sub-admin-access-id'], 'String');
             }
@@ -70,9 +67,6 @@ class GatewayAddAllowedManagementAccess {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -90,12 +84,6 @@ GatewayAddAllowedManagementAccess.prototype['allow-gw-api'] = undefined;
  * @member {Boolean} allow-gw-login
  */
 GatewayAddAllowedManagementAccess.prototype['allow-gw-login'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayAddAllowedManagementAccess.prototype['password'] = undefined;
 
 /**
  * SubAdmins to add
@@ -120,12 +108,6 @@ GatewayAddAllowedManagementAccess.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GatewayAddAllowedManagementAccess.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayAddAllowedManagementAccess.prototype['username'] = undefined;
 
 
 

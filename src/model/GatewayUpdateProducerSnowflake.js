@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerSnowflake model module.
  * @module model/GatewayUpdateProducerSnowflake
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayUpdateProducerSnowflake {
     /**
@@ -68,9 +68,6 @@ class GatewayUpdateProducerSnowflake {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'String');
             }
@@ -88,9 +85,6 @@ class GatewayUpdateProducerSnowflake {
             }
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
             if (data.hasOwnProperty('warehouse')) {
                 obj['warehouse'] = ApiClient.convertToType(data['warehouse'], 'String');
@@ -139,12 +133,6 @@ GatewayUpdateProducerSnowflake.prototype['name'] = undefined;
 GatewayUpdateProducerSnowflake.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayUpdateProducerSnowflake.prototype['password'] = undefined;
-
-/**
  * User role
  * @member {String} role
  */
@@ -180,12 +168,6 @@ GatewayUpdateProducerSnowflake.prototype['uid-token'] = undefined;
  * @default '24h'
  */
 GatewayUpdateProducerSnowflake.prototype['user-ttl'] = '24h';
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayUpdateProducerSnowflake.prototype['username'] = undefined;
 
 /**
  * Warehouse name

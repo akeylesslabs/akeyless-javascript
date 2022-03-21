@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateK8SAuthConfig model module.
  * @module model/GatewayUpdateK8SAuthConfig
- * @version 2.15.27
+ * @version 2.15.28
  */
 class GatewayUpdateK8SAuthConfig {
     /**
@@ -79,9 +79,6 @@ class GatewayUpdateK8SAuthConfig {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('signing-key')) {
                 obj['signing-key'] = ApiClient.convertToType(data['signing-key'], 'String');
             }
@@ -96,9 +93,6 @@ class GatewayUpdateK8SAuthConfig {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -150,12 +144,6 @@ GatewayUpdateK8SAuthConfig.prototype['name'] = undefined;
 GatewayUpdateK8SAuthConfig.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-GatewayUpdateK8SAuthConfig.prototype['password'] = undefined;
-
-/**
  * The private key (in base64 encoded of the PEM format) associated with the public key defined in the Kubernetes auth
  * @member {String} signing-key
  */
@@ -184,12 +172,6 @@ GatewayUpdateK8SAuthConfig.prototype['token-reviewer-jwt'] = undefined;
  * @member {String} uid-token
  */
 GatewayUpdateK8SAuthConfig.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-GatewayUpdateK8SAuthConfig.prototype['username'] = undefined;
 
 
 

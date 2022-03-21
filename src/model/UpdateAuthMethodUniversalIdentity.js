@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodUniversalIdentity model module.
  * @module model/UpdateAuthMethodUniversalIdentity
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateAuthMethodUniversalIdentity {
     /**
@@ -74,9 +74,6 @@ class UpdateAuthMethodUniversalIdentity {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -85,9 +82,6 @@ class UpdateAuthMethodUniversalIdentity {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -147,12 +141,6 @@ UpdateAuthMethodUniversalIdentity.prototype['name'] = undefined;
 UpdateAuthMethodUniversalIdentity.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateAuthMethodUniversalIdentity.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -170,12 +158,6 @@ UpdateAuthMethodUniversalIdentity.prototype['ttl'] = 60;
  * @member {String} uid-token
  */
 UpdateAuthMethodUniversalIdentity.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateAuthMethodUniversalIdentity.prototype['username'] = undefined;
 
 
 

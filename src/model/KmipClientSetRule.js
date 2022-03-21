@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipClientSetRule model module.
  * @module model/KmipClientSetRule
- * @version 2.15.27
+ * @version 2.15.28
  */
 class KmipClientSetRule {
     /**
@@ -60,9 +60,6 @@ class KmipClientSetRule {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
@@ -71,9 +68,6 @@ class KmipClientSetRule {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -99,12 +93,6 @@ KmipClientSetRule.prototype['client-id'] = undefined;
 KmipClientSetRule.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-KmipClientSetRule.prototype['password'] = undefined;
-
-/**
  * Access path
  * @member {String} path
  */
@@ -121,12 +109,6 @@ KmipClientSetRule.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 KmipClientSetRule.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-KmipClientSetRule.prototype['username'] = undefined;
 
 
 

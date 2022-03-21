@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 2.15.27
+ * @version 2.15.28
  */
 class Auth {
     /**
@@ -64,6 +64,9 @@ class Auth {
             }
             if (data.hasOwnProperty('cloud-id')) {
                 obj['cloud-id'] = ApiClient.convertToType(data['cloud-id'], 'String');
+            }
+            if (data.hasOwnProperty('debug')) {
+                obj['debug'] = ApiClient.convertToType(data['debug'], 'Boolean');
             }
             if (data.hasOwnProperty('gcp-audience')) {
                 obj['gcp-audience'] = ApiClient.convertToType(data['gcp-audience'], 'String');
@@ -129,6 +132,11 @@ Auth.prototype['admin-password'] = undefined;
  * @member {String} cloud-id
  */
 Auth.prototype['cloud-id'] = undefined;
+
+/**
+ * @member {Boolean} debug
+ */
+Auth.prototype['debug'] = undefined;
 
 /**
  * GCP JWT audience

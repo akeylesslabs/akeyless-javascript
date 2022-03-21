@@ -15,13 +15,15 @@ import ApiClient from '../ApiClient';
 import CertificateIssueInfo from './CertificateIssueInfo';
 import ClassicKeyDetailsInfo from './ClassicKeyDetailsInfo';
 import DynamicSecretProducerInfo from './DynamicSecretProducerInfo';
+import PasswordPolicyInfo from './PasswordPolicyInfo';
 import RotatedSecretDetailsInfo from './RotatedSecretDetailsInfo';
 import SecureRemoteAccess from './SecureRemoteAccess';
+import StaticSecretDetailsInfo from './StaticSecretDetailsInfo';
 
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 2.15.27
+ * @version 2.15.28
  */
 class ItemGeneralInfo {
     /**
@@ -61,11 +63,17 @@ class ItemGeneralInfo {
             if (data.hasOwnProperty('dynamic_secret_producer_details')) {
                 obj['dynamic_secret_producer_details'] = DynamicSecretProducerInfo.constructFromObject(data['dynamic_secret_producer_details']);
             }
+            if (data.hasOwnProperty('password_policy')) {
+                obj['password_policy'] = PasswordPolicyInfo.constructFromObject(data['password_policy']);
+            }
             if (data.hasOwnProperty('rotated_secret_details')) {
                 obj['rotated_secret_details'] = RotatedSecretDetailsInfo.constructFromObject(data['rotated_secret_details']);
             }
             if (data.hasOwnProperty('secure_remote_access_details')) {
                 obj['secure_remote_access_details'] = SecureRemoteAccess.constructFromObject(data['secure_remote_access_details']);
+            }
+            if (data.hasOwnProperty('static_secret_info')) {
+                obj['static_secret_info'] = StaticSecretDetailsInfo.constructFromObject(data['static_secret_info']);
             }
         }
         return obj;
@@ -90,6 +98,11 @@ ItemGeneralInfo.prototype['classic_key_details'] = undefined;
 ItemGeneralInfo.prototype['dynamic_secret_producer_details'] = undefined;
 
 /**
+ * @member {module:model/PasswordPolicyInfo} password_policy
+ */
+ItemGeneralInfo.prototype['password_policy'] = undefined;
+
+/**
  * @member {module:model/RotatedSecretDetailsInfo} rotated_secret_details
  */
 ItemGeneralInfo.prototype['rotated_secret_details'] = undefined;
@@ -98,6 +111,11 @@ ItemGeneralInfo.prototype['rotated_secret_details'] = undefined;
  * @member {module:model/SecureRemoteAccess} secure_remote_access_details
  */
 ItemGeneralInfo.prototype['secure_remote_access_details'] = undefined;
+
+/**
+ * @member {module:model/StaticSecretDetailsInfo} static_secret_info
+ */
+ItemGeneralInfo.prototype['static_secret_info'] = undefined;
 
 
 

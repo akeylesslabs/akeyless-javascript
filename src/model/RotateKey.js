@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotateKey model module.
  * @module model/RotateKey
- * @version 2.15.27
+ * @version 2.15.28
  */
 class RotateKey {
     /**
@@ -56,9 +56,6 @@ class RotateKey {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('rotation-interval')) {
                 obj['rotation-interval'] = ApiClient.convertToType(data['rotation-interval'], 'String');
             }
@@ -67,9 +64,6 @@ class RotateKey {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -91,12 +85,6 @@ RotateKey.prototype['auto-rotate'] = undefined;
 RotateKey.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-RotateKey.prototype['password'] = undefined;
-
-/**
  * The number of days to wait between every automatic key rotation (7-365)
  * @member {String} rotation-interval
  */
@@ -113,12 +101,6 @@ RotateKey.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 RotateKey.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-RotateKey.prototype['username'] = undefined;
 
 
 

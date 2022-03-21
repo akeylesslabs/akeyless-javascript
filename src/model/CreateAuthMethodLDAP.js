@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodLDAP model module.
  * @module model/CreateAuthMethodLDAP
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateAuthMethodLDAP {
     /**
@@ -65,17 +65,14 @@ class CreateAuthMethodLDAP {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            if (data.hasOwnProperty('public-key-data')) {
+                obj['public-key-data'] = ApiClient.convertToType(data['public-key-data'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -117,10 +114,10 @@ CreateAuthMethodLDAP.prototype['jwt-ttl'] = 0;
 CreateAuthMethodLDAP.prototype['name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
+ * A public key generated for LDAP authentication method on Akeyless in base64 format [RSA2048]
+ * @member {String} public-key-data
  */
-CreateAuthMethodLDAP.prototype['password'] = undefined;
+CreateAuthMethodLDAP.prototype['public-key-data'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -133,12 +130,6 @@ CreateAuthMethodLDAP.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateAuthMethodLDAP.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateAuthMethodLDAP.prototype['username'] = undefined;
 
 
 

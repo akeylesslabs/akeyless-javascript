@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHCertIssuer model module.
  * @module model/CreateSSHCertIssuer
- * @version 2.15.27
+ * @version 2.15.28
  */
 class CreateSSHCertIssuer {
     /**
@@ -67,9 +67,6 @@ class CreateSSHCertIssuer {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('principals')) {
                 obj['principals'] = ApiClient.convertToType(data['principals'], 'String');
             }
@@ -106,9 +103,6 @@ class CreateSSHCertIssuer {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
@@ -139,12 +133,6 @@ CreateSSHCertIssuer.prototype['metadata'] = undefined;
  * @member {String} name
  */
 CreateSSHCertIssuer.prototype['name'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-CreateSSHCertIssuer.prototype['password'] = undefined;
 
 /**
  * Signed certificates with principal, e.g example_role1,example_role2
@@ -211,12 +199,6 @@ CreateSSHCertIssuer.prototype['ttl'] = undefined;
  * @member {String} uid-token
  */
 CreateSSHCertIssuer.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-CreateSSHCertIssuer.prototype['username'] = undefined;
 
 
 

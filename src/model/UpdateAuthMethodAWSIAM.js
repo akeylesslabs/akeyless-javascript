@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAWSIAM model module.
  * @module model/UpdateAuthMethodAWSIAM
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateAuthMethodAWSIAM {
     /**
@@ -91,9 +91,6 @@ class UpdateAuthMethodAWSIAM {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('sts-url')) {
                 obj['sts-url'] = ApiClient.convertToType(data['sts-url'], 'String');
             }
@@ -102,9 +99,6 @@ class UpdateAuthMethodAWSIAM {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -194,12 +188,6 @@ UpdateAuthMethodAWSIAM.prototype['name'] = undefined;
 UpdateAuthMethodAWSIAM.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateAuthMethodAWSIAM.prototype['password'] = undefined;
-
-/**
  * sts URL
  * @member {String} sts-url
  * @default 'https://sts.amazonaws.com'
@@ -217,12 +205,6 @@ UpdateAuthMethodAWSIAM.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateAuthMethodAWSIAM.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateAuthMethodAWSIAM.prototype['username'] = undefined;
 
 
 

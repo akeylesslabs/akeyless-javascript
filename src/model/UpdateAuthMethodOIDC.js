@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOIDC model module.
  * @module model/UpdateAuthMethodOIDC
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateAuthMethodOIDC {
     /**
@@ -82,9 +82,6 @@ class UpdateAuthMethodOIDC {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -93,9 +90,6 @@ class UpdateAuthMethodOIDC {
             }
             if (data.hasOwnProperty('unique-identifier')) {
                 obj['unique-identifier'] = ApiClient.convertToType(data['unique-identifier'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -167,12 +161,6 @@ UpdateAuthMethodOIDC.prototype['name'] = undefined;
 UpdateAuthMethodOIDC.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateAuthMethodOIDC.prototype['password'] = undefined;
-
-/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -189,12 +177,6 @@ UpdateAuthMethodOIDC.prototype['uid-token'] = undefined;
  * @member {String} unique-identifier
  */
 UpdateAuthMethodOIDC.prototype['unique-identifier'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateAuthMethodOIDC.prototype['username'] = undefined;
 
 
 

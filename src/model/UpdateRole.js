@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateRole {
     /**
@@ -67,9 +67,6 @@ class UpdateRole {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
             if (data.hasOwnProperty('sra-reports-access')) {
                 obj['sra-reports-access'] = ApiClient.convertToType(data['sra-reports-access'], 'String');
             }
@@ -78,9 +75,6 @@ class UpdateRole {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -127,12 +121,6 @@ UpdateRole.prototype['new-comment'] = 'default_comment';
 UpdateRole.prototype['new-name'] = undefined;
 
 /**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateRole.prototype['password'] = undefined;
-
-/**
  * Allow this role to view SRA Clusters. Currently only 'none', 'own', 'all' values are supported.
  * @member {String} sra-reports-access
  */
@@ -149,12 +137,6 @@ UpdateRole.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateRole.prototype['uid-token'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateRole.prototype['username'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateWebTargetDetails model module.
  * @module model/UpdateWebTargetDetails
- * @version 2.15.27
+ * @version 2.15.28
  */
 class UpdateWebTargetDetails {
     /**
@@ -49,14 +49,14 @@ class UpdateWebTargetDetails {
         if (data) {
             obj = obj || new UpdateWebTargetDetails();
 
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('new-version')) {
                 obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('protection_key')) {
                 obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
@@ -70,9 +70,6 @@ class UpdateWebTargetDetails {
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
         }
         return obj;
     }
@@ -81,23 +78,21 @@ class UpdateWebTargetDetails {
 }
 
 /**
+ * @member {String} keep-prev-version
+ */
+UpdateWebTargetDetails.prototype['keep-prev-version'] = undefined;
+
+/**
  * Target name
  * @member {String} name
  */
 UpdateWebTargetDetails.prototype['name'] = undefined;
 
 /**
- * Whether to create a new version of not
+ * Deprecated
  * @member {Boolean} new-version
- * @default false
  */
-UpdateWebTargetDetails.prototype['new-version'] = false;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} password
- */
-UpdateWebTargetDetails.prototype['password'] = undefined;
+UpdateWebTargetDetails.prototype['new-version'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
@@ -121,12 +116,6 @@ UpdateWebTargetDetails.prototype['uid-token'] = undefined;
  * @member {String} url
  */
 UpdateWebTargetDetails.prototype['url'] = undefined;
-
-/**
- * Required only when the authentication process requires a username and password
- * @member {String} username
- */
-UpdateWebTargetDetails.prototype['username'] = undefined;
 
 
 
