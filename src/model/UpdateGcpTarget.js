@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGcpTarget model module.
  * @module model/UpdateGcpTarget
- * @version 2.15.28
+ * @version 2.15.29
  */
 class UpdateGcpTarget {
     /**

@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.15.28
+ * @version 2.15.29
  */
 class DSProducerDetails {
     /**
@@ -364,6 +364,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('mongodb_atlas_project_id')) {
                 obj['mongodb_atlas_project_id'] = ApiClient.convertToType(data['mongodb_atlas_project_id'], 'String');
             }
+            if (data.hasOwnProperty('mongodb_custom_data')) {
+                obj['mongodb_custom_data'] = ApiClient.convertToType(data['mongodb_custom_data'], 'String');
+            }
             if (data.hasOwnProperty('mongodb_db_name')) {
                 obj['mongodb_db_name'] = ApiClient.convertToType(data['mongodb_db_name'], 'String');
             }
@@ -459,6 +462,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('secure_remote_access_details')) {
                 obj['secure_remote_access_details'] = SecureRemoteAccess.constructFromObject(data['secure_remote_access_details']);
+            }
+            if (data.hasOwnProperty('session_extension_warn_interval_min')) {
+                obj['session_extension_warn_interval_min'] = ApiClient.convertToType(data['session_extension_warn_interval_min'], 'Number');
             }
             if (data.hasOwnProperty('sf_account')) {
                 obj['sf_account'] = ApiClient.convertToType(data['sf_account'], 'String');
@@ -1080,6 +1086,11 @@ DSProducerDetails.prototype['mongodb_atlas_api_public_key'] = undefined;
 DSProducerDetails.prototype['mongodb_atlas_project_id'] = undefined;
 
 /**
+ * @member {String} mongodb_custom_data
+ */
+DSProducerDetails.prototype['mongodb_custom_data'] = undefined;
+
+/**
  * common fields
  * @member {String} mongodb_db_name
  */
@@ -1241,6 +1252,11 @@ DSProducerDetails.prototype['scopes'] = undefined;
  * @member {module:model/SecureRemoteAccess} secure_remote_access_details
  */
 DSProducerDetails.prototype['secure_remote_access_details'] = undefined;
+
+/**
+ * @member {Number} session_extension_warn_interval_min
+ */
+DSProducerDetails.prototype['session_extension_warn_interval_min'] = undefined;
 
 /**
  * @member {String} sf_account

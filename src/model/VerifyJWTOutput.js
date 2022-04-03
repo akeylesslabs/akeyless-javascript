@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyJWTOutput model module.
  * @module model/VerifyJWTOutput
- * @version 2.15.28
+ * @version 2.15.29
  */
 class VerifyJWTOutput {
     /**

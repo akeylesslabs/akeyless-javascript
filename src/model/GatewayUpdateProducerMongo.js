@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMongo model module.
  * @module model/GatewayUpdateProducerMongo
- * @version 2.15.28
+ * @version 2.15.29
  */
 class GatewayUpdateProducerMongo {
     /**
@@ -58,6 +58,9 @@ class GatewayUpdateProducerMongo {
             }
             if (data.hasOwnProperty('mongodb-atlas-project-id')) {
                 obj['mongodb-atlas-project-id'] = ApiClient.convertToType(data['mongodb-atlas-project-id'], 'String');
+            }
+            if (data.hasOwnProperty('mongodb-custom-data')) {
+                obj['mongodb-custom-data'] = ApiClient.convertToType(data['mongodb-custom-data'], 'String');
             }
             if (data.hasOwnProperty('mongodb-default-auth-db')) {
                 obj['mongodb-default-auth-db'] = ApiClient.convertToType(data['mongodb-default-auth-db'], 'String');
@@ -143,6 +146,12 @@ GatewayUpdateProducerMongo.prototype['mongodb-atlas-api-public-key'] = undefined
  * @member {String} mongodb-atlas-project-id
  */
 GatewayUpdateProducerMongo.prototype['mongodb-atlas-project-id'] = undefined;
+
+/**
+ * MongoDB custom data
+ * @member {String} mongodb-custom-data
+ */
+GatewayUpdateProducerMongo.prototype['mongodb-custom-data'] = undefined;
 
 /**
  * MongoDB server default authentication database

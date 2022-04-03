@@ -16,20 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 2.15.28
+ * @version 2.15.29
  */
 class CreateRotatedSecret {
     /**
      * Constructs a new <code>CreateRotatedSecret</code>.
      * @alias module:model/CreateRotatedSecret
-     * @param applicationId {String} ApplicationId (used in azure)
      * @param name {String} Secret name
      * @param rotatorType {String} Rotator Type
      * @param targetName {String} Target name
      */
-    constructor(applicationId, name, rotatorType, targetName) { 
+    constructor(name, rotatorType, targetName) { 
         
-        CreateRotatedSecret.initialize(this, applicationId, name, rotatorType, targetName);
+        CreateRotatedSecret.initialize(this, name, rotatorType, targetName);
     }
 
     /**
@@ -37,8 +36,7 @@ class CreateRotatedSecret {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, applicationId, name, rotatorType, targetName) { 
-        obj['application-id'] = applicationId;
+    static initialize(obj, name, rotatorType, targetName) { 
         obj['name'] = name;
         obj['rotator-type'] = rotatorType;
         obj['target-name'] = targetName;

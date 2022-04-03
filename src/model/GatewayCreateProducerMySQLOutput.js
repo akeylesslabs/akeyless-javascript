@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerMySQLOutput model module.
  * @module model/GatewayCreateProducerMySQLOutput
- * @version 2.15.28
+ * @version 2.15.29
  */
 class GatewayCreateProducerMySQLOutput {
     /**

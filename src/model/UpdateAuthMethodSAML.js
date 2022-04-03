@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodSAML model module.
  * @module model/UpdateAuthMethodSAML
- * @version 2.15.28
+ * @version 2.15.29
  */
 class UpdateAuthMethodSAML {
     /**

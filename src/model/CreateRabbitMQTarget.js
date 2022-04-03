@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRabbitMQTarget model module.
  * @module model/CreateRabbitMQTarget
- * @version 2.15.28
+ * @version 2.15.29
  */
 class CreateRabbitMQTarget {
     /**

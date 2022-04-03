@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRdp model module.
  * @module model/GatewayUpdateProducerRdp
- * @version 2.15.28
+ * @version 2.15.29
  */
 class GatewayUpdateProducerRdp {
     /**
@@ -50,6 +50,9 @@ class GatewayUpdateProducerRdp {
         if (data) {
             obj = obj || new GatewayUpdateProducerRdp();
 
+            if (data.hasOwnProperty('allow-user-extend-session')) {
+                obj['allow-user-extend-session'] = ApiClient.convertToType(data['allow-user-extend-session'], 'Number');
+            }
             if (data.hasOwnProperty('fixed-user-only')) {
                 obj['fixed-user-only'] = ApiClient.convertToType(data['fixed-user-only'], 'String');
             }
@@ -107,12 +110,21 @@ class GatewayUpdateProducerRdp {
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
             }
+            if (data.hasOwnProperty('warn-user-before-expiration')) {
+                obj['warn-user-before-expiration'] = ApiClient.convertToType(data['warn-user-before-expiration'], 'Number');
+            }
         }
         return obj;
     }
 
 
 }
+
+/**
+ * AllowUserExtendSession
+ * @member {Number} allow-user-extend-session
+ */
+GatewayUpdateProducerRdp.prototype['allow-user-extend-session'] = undefined;
 
 /**
  * Fixed user
@@ -225,6 +237,12 @@ GatewayUpdateProducerRdp.prototype['uid-token'] = undefined;
  * @default '60m'
  */
 GatewayUpdateProducerRdp.prototype['user-ttl'] = '60m';
+
+/**
+ * WarnBeforeUserExpiration
+ * @member {Number} warn-user-before-expiration
+ */
+GatewayUpdateProducerRdp.prototype['warn-user-before-expiration'] = undefined;
 
 
 
