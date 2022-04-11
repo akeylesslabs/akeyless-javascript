@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretProducerInfo model module.
  * @module model/DynamicSecretProducerInfo
- * @version 2.15.31
+ * @version 2.15.32
  */
 class DynamicSecretProducerInfo {
     /**

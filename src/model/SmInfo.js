@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SmInfo model module.
  * @module model/SmInfo
- * @version 2.15.31
+ * @version 2.15.32
  */
 class SmInfo {
     /**
