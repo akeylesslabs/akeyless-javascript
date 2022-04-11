@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListAuthMethods model module.
  * @module model/ListAuthMethods
- * @version 2.15.29
+ * @version 2.15.30
  */
 class ListAuthMethods {
     /**
@@ -54,6 +54,9 @@ class ListAuthMethods {
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], ['String']);
+            }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
@@ -75,6 +78,12 @@ ListAuthMethods.prototype['pagination-token'] = undefined;
  * @member {String} token
  */
 ListAuthMethods.prototype['token'] = undefined;
+
+/**
+ * The Auth method types list of the requested method. In case it is empty, all types of auth methods will be returned. options: [api_key, azure_ad, oauth2/jwt, saml2, ldap, aws_iam, oidc, universal_identity, gcp, k8s]
+ * @member {Array.<String>} type
+ */
+ListAuthMethods.prototype['type'] = undefined;
 
 /**
  * The universal identity token, Required only for universal_identity authentication

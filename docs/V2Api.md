@@ -74,6 +74,7 @@ Method | HTTP request | Description
 [**gatewayCreateProducerGcp**](V2Api.md#gatewayCreateProducerGcp) | **POST** /gateway-create-producer-gcp | 
 [**gatewayCreateProducerGithub**](V2Api.md#gatewayCreateProducerGithub) | **POST** /gateway-create-producer-github | 
 [**gatewayCreateProducerGke**](V2Api.md#gatewayCreateProducerGke) | **POST** /gateway-create-producer-gke | 
+[**gatewayCreateProducerHanaDb**](V2Api.md#gatewayCreateProducerHanaDb) | **POST** /gateway-create-producer-hanadb | 
 [**gatewayCreateProducerLdap**](V2Api.md#gatewayCreateProducerLdap) | **POST** /gateway-create-producer-ldap | 
 [**gatewayCreateProducerMSSQL**](V2Api.md#gatewayCreateProducerMSSQL) | **POST** /gateway-create-producer-mssql | 
 [**gatewayCreateProducerMongo**](V2Api.md#gatewayCreateProducerMongo) | **POST** /gateway-create-producer-mongo | 
@@ -3150,6 +3151,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayCreateProducerGkeOutput**](GatewayCreateProducerGkeOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayCreateProducerHanaDb
+
+> GatewayCreateProducerHanaDbOutput gatewayCreateProducerHanaDb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayCreateProducerHanaDb(); // GatewayCreateProducerHanaDb | 
+apiInstance.gatewayCreateProducerHanaDb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerHanaDb**](GatewayCreateProducerHanaDb.md)|  | 
+
+### Return type
+
+[**GatewayCreateProducerHanaDbOutput**](GatewayCreateProducerHanaDbOutput.md)
 
 ### Authorization
 

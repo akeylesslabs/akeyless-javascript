@@ -17,7 +17,7 @@ import Rules from './Rules';
 /**
  * The AuthMethodRoleAssociation model module.
  * @module model/AuthMethodRoleAssociation
- * @version 2.15.29
+ * @version 2.15.30
  */
 class AuthMethodRoleAssociation {
     /**

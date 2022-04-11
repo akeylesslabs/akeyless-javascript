@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetRSAPublicOutput model module.
  * @module model/GetRSAPublicOutput
- * @version 2.15.29
+ * @version 2.15.30
  */
 class GetRSAPublicOutput {
     /**

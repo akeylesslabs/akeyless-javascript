@@ -186,6 +186,8 @@ import GatewayCreateProducerGithub from './model/GatewayCreateProducerGithub';
 import GatewayCreateProducerGithubOutput from './model/GatewayCreateProducerGithubOutput';
 import GatewayCreateProducerGke from './model/GatewayCreateProducerGke';
 import GatewayCreateProducerGkeOutput from './model/GatewayCreateProducerGkeOutput';
+import GatewayCreateProducerHanaDb from './model/GatewayCreateProducerHanaDb';
+import GatewayCreateProducerHanaDbOutput from './model/GatewayCreateProducerHanaDbOutput';
 import GatewayCreateProducerLdap from './model/GatewayCreateProducerLdap';
 import GatewayCreateProducerLdapOutput from './model/GatewayCreateProducerLdapOutput';
 import GatewayCreateProducerMSSQL from './model/GatewayCreateProducerMSSQL';
@@ -258,6 +260,8 @@ import GatewayUpdateProducerGithub from './model/GatewayUpdateProducerGithub';
 import GatewayUpdateProducerGithubOutput from './model/GatewayUpdateProducerGithubOutput';
 import GatewayUpdateProducerGke from './model/GatewayUpdateProducerGke';
 import GatewayUpdateProducerGkeOutput from './model/GatewayUpdateProducerGkeOutput';
+import GatewayUpdateProducerHanaDb from './model/GatewayUpdateProducerHanaDb';
+import GatewayUpdateProducerHanaDbOutput from './model/GatewayUpdateProducerHanaDbOutput';
 import GatewayUpdateProducerLdap from './model/GatewayUpdateProducerLdap';
 import GatewayUpdateProducerLdapOutput from './model/GatewayUpdateProducerLdapOutput';
 import GatewayUpdateProducerMSSQL from './model/GatewayUpdateProducerMSSQL';
@@ -325,6 +329,7 @@ import KMIPClientListResponse from './model/KMIPClientListResponse';
 import KMIPClientUpdateResponse from './model/KMIPClientUpdateResponse';
 import KMIPConfigPart from './model/KMIPConfigPart';
 import KMIPEnvironmentCreateResponse from './model/KMIPEnvironmentCreateResponse';
+import KMIPServer from './model/KMIPServer';
 import KmipClientDeleteRule from './model/KmipClientDeleteRule';
 import KmipClientSetRule from './model/KmipClientSetRule';
 import KmipCreateClient from './model/KmipCreateClient';
@@ -534,7 +539,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.15.29
+* @version 2.15.30
 */
 export {
     /**
@@ -1582,6 +1587,18 @@ export {
     GatewayCreateProducerGkeOutput,
 
     /**
+     * The GatewayCreateProducerHanaDb model constructor.
+     * @property {module:model/GatewayCreateProducerHanaDb}
+     */
+    GatewayCreateProducerHanaDb,
+
+    /**
+     * The GatewayCreateProducerHanaDbOutput model constructor.
+     * @property {module:model/GatewayCreateProducerHanaDbOutput}
+     */
+    GatewayCreateProducerHanaDbOutput,
+
+    /**
      * The GatewayCreateProducerLdap model constructor.
      * @property {module:model/GatewayCreateProducerLdap}
      */
@@ -2014,6 +2031,18 @@ export {
     GatewayUpdateProducerGkeOutput,
 
     /**
+     * The GatewayUpdateProducerHanaDb model constructor.
+     * @property {module:model/GatewayUpdateProducerHanaDb}
+     */
+    GatewayUpdateProducerHanaDb,
+
+    /**
+     * The GatewayUpdateProducerHanaDbOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerHanaDbOutput}
+     */
+    GatewayUpdateProducerHanaDbOutput,
+
+    /**
      * The GatewayUpdateProducerLdap model constructor.
      * @property {module:model/GatewayUpdateProducerLdap}
      */
@@ -2414,6 +2443,12 @@ export {
      * @property {module:model/KMIPEnvironmentCreateResponse}
      */
     KMIPEnvironmentCreateResponse,
+
+    /**
+     * The KMIPServer model constructor.
+     * @property {module:model/KMIPServer}
+     */
+    KMIPServer,
 
     /**
      * The KmipClientDeleteRule model constructor.

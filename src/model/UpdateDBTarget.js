@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTarget model module.
  * @module model/UpdateDBTarget
- * @version 2.15.29
+ * @version 2.15.30
  */
 class UpdateDBTarget {
     /**
@@ -110,6 +110,12 @@ class UpdateDBTarget {
             }
             if (data.hasOwnProperty('snowflake-account')) {
                 obj['snowflake-account'] = ApiClient.convertToType(data['snowflake-account'], 'String');
+            }
+            if (data.hasOwnProperty('ssl')) {
+                obj['ssl'] = ApiClient.convertToType(data['ssl'], 'Boolean');
+            }
+            if (data.hasOwnProperty('ssl-certificate')) {
+                obj['ssl-certificate'] = ApiClient.convertToType(data['ssl-certificate'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -240,6 +246,18 @@ UpdateDBTarget.prototype['pwd'] = undefined;
  * @member {String} snowflake-account
  */
 UpdateDBTarget.prototype['snowflake-account'] = undefined;
+
+/**
+ * SSL connection mode
+ * @member {Boolean} ssl
+ */
+UpdateDBTarget.prototype['ssl'] = undefined;
+
+/**
+ * SSL connection certificate
+ * @member {String} ssl-certificate
+ */
+UpdateDBTarget.prototype['ssl-certificate'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

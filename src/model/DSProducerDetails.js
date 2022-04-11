@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.15.29
+ * @version 2.15.30
  */
 class DSProducerDetails {
     /**
@@ -300,6 +300,12 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('groups')) {
                 obj['groups'] = ApiClient.convertToType(data['groups'], 'String');
+            }
+            if (data.hasOwnProperty('hanadb_creation_statements')) {
+                obj['hanadb_creation_statements'] = ApiClient.convertToType(data['hanadb_creation_statements'], 'String');
+            }
+            if (data.hasOwnProperty('hanadb_revocation_statements')) {
+                obj['hanadb_revocation_statements'] = ApiClient.convertToType(data['hanadb_revocation_statements'], 'String');
             }
             if (data.hasOwnProperty('host_name')) {
                 obj['host_name'] = ApiClient.convertToType(data['host_name'], 'String');
@@ -978,6 +984,16 @@ DSProducerDetails.prototype['gke_service_account_name'] = undefined;
  * @member {String} groups
  */
 DSProducerDetails.prototype['groups'] = undefined;
+
+/**
+ * @member {String} hanadb_creation_statements
+ */
+DSProducerDetails.prototype['hanadb_creation_statements'] = undefined;
+
+/**
+ * @member {String} hanadb_revocation_statements
+ */
+DSProducerDetails.prototype['hanadb_revocation_statements'] = undefined;
 
 /**
  * @member {String} host_name

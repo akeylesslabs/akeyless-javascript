@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 2.15.29
+ * @version 2.15.30
  */
 class Auth {
     /**
@@ -109,7 +109,7 @@ Auth.prototype['access-id'] = undefined;
 Auth.prototype['access-key'] = undefined;
 
 /**
- * Access Type (access_key/password/saml/ldap/k8s/azure_ad/aws_iam/universal_identity/jwt/gcp/k8s)
+ * Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/universal_identity/jwt/gcp/k8s)
  * @member {String} access-type
  * @default 'access_key'
  */

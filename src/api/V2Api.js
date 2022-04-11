@@ -145,6 +145,8 @@ import GatewayCreateProducerGithub from '../model/GatewayCreateProducerGithub';
 import GatewayCreateProducerGithubOutput from '../model/GatewayCreateProducerGithubOutput';
 import GatewayCreateProducerGke from '../model/GatewayCreateProducerGke';
 import GatewayCreateProducerGkeOutput from '../model/GatewayCreateProducerGkeOutput';
+import GatewayCreateProducerHanaDb from '../model/GatewayCreateProducerHanaDb';
+import GatewayCreateProducerHanaDbOutput from '../model/GatewayCreateProducerHanaDbOutput';
 import GatewayCreateProducerLdap from '../model/GatewayCreateProducerLdap';
 import GatewayCreateProducerLdapOutput from '../model/GatewayCreateProducerLdapOutput';
 import GatewayCreateProducerMSSQL from '../model/GatewayCreateProducerMSSQL';
@@ -392,7 +394,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.15.29
+* @version 2.15.30
 */
 export default class V2Api {
 
@@ -3412,6 +3414,49 @@ export default class V2Api {
      */
     gatewayCreateProducerGke(body) {
       return this.gatewayCreateProducerGkeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayCreateProducerHanaDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerHanaDbOutput} and HTTP response
+     */
+    gatewayCreateProducerHanaDbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateProducerHanaDb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayCreateProducerHanaDbOutput;
+      return this.apiClient.callApi(
+        '/gateway-create-producer-hanadb', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayCreateProducerHanaDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerHanaDbOutput}
+     */
+    gatewayCreateProducerHanaDb(body) {
+      return this.gatewayCreateProducerHanaDbWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

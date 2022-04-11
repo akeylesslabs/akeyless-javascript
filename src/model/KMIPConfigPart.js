@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import KMIPClient from './KMIPClient';
+import KMIPServer from './KMIPServer';
 
 /**
  * The KMIPConfigPart model module.
  * @module model/KMIPConfigPart
- * @version 2.15.29
+ * @version 2.15.30
  */
 class KMIPConfigPart {
     /**
@@ -51,6 +52,12 @@ class KMIPConfigPart {
             if (data.hasOwnProperty('clients')) {
                 obj['clients'] = ApiClient.convertToType(data['clients'], {'String': KMIPClient});
             }
+            if (data.hasOwnProperty('key_enc')) {
+                obj['key_enc'] = ApiClient.convertToType(data['key_enc'], ['Number']);
+            }
+            if (data.hasOwnProperty('server')) {
+                obj['server'] = KMIPServer.constructFromObject(data['server']);
+            }
             if (data.hasOwnProperty('server_enc')) {
                 obj['server_enc'] = ApiClient.convertToType(data['server_enc'], ['Number']);
             }
@@ -67,6 +74,18 @@ class KMIPConfigPart {
 KMIPConfigPart.prototype['clients'] = undefined;
 
 /**
+ * Saves the private key of the cert issuer in encypted form
+ * @member {Array.<Number>} key_enc
+ */
+KMIPConfigPart.prototype['key_enc'] = undefined;
+
+/**
+ * @member {module:model/KMIPServer} server
+ */
+KMIPConfigPart.prototype['server'] = undefined;
+
+/**
+ * Saved for backward compatibility TODO: remove this after all clients upgrade
  * @member {Array.<Number>} server_enc
  */
 KMIPConfigPart.prototype['server_enc'] = undefined;

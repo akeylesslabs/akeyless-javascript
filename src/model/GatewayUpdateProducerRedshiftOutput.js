@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayUpdateProducerRedshiftOutput model module.
  * @module model/GatewayUpdateProducerRedshiftOutput
- * @version 2.15.29
+ * @version 2.15.30
  */
 class GatewayUpdateProducerRedshiftOutput {
     /**
