@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetSSHCertificate model module.
  * @module model/GetSSHCertificate
- * @version 2.15.30
+ * @version 2.15.31
  */
 class GetSSHCertificate {
     /**

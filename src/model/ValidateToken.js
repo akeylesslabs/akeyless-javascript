@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidateToken model module.
  * @module model/ValidateToken
- * @version 2.15.30
+ * @version 2.15.31
  */
 class ValidateToken {
     /**

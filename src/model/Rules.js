@@ -17,7 +17,7 @@ import PathRule from './PathRule';
 /**
  * The Rules model module.
  * @module model/Rules
- * @version 2.15.30
+ * @version 2.15.31
  */
 class Rules {
     /**

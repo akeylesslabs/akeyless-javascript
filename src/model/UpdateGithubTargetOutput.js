@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGithubTargetOutput model module.
  * @module model/UpdateGithubTargetOutput
- * @version 2.15.30
+ * @version 2.15.31
  */
 class UpdateGithubTargetOutput {
     /**
