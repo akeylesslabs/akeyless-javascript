@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipDescribeServerOutput model module.
  * @module model/KmipDescribeServerOutput
- * @version 2.15.32
+ * @version 2.16.0
  */
 class KmipDescribeServerOutput {
     /**
@@ -53,6 +53,12 @@ class KmipDescribeServerOutput {
             if (data.hasOwnProperty('ca_cert')) {
                 obj['ca_cert'] = ApiClient.convertToType(data['ca_cert'], ['Number']);
             }
+            if (data.hasOwnProperty('certificate_issue_date')) {
+                obj['certificate_issue_date'] = ApiClient.convertToType(data['certificate_issue_date'], 'Date');
+            }
+            if (data.hasOwnProperty('certificate_ttl_in_seconds')) {
+                obj['certificate_ttl_in_seconds'] = ApiClient.convertToType(data['certificate_ttl_in_seconds'], 'Number');
+            }
             if (data.hasOwnProperty('hostname')) {
                 obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
             }
@@ -75,6 +81,16 @@ KmipDescribeServerOutput.prototype['active'] = undefined;
  * @member {Array.<Number>} ca_cert
  */
 KmipDescribeServerOutput.prototype['ca_cert'] = undefined;
+
+/**
+ * @member {Date} certificate_issue_date
+ */
+KmipDescribeServerOutput.prototype['certificate_issue_date'] = undefined;
+
+/**
+ * @member {Number} certificate_ttl_in_seconds
+ */
+KmipDescribeServerOutput.prototype['certificate_ttl_in_seconds'] = undefined;
 
 /**
  * @member {String} hostname

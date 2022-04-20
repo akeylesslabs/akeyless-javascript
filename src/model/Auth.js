@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 2.15.32
+ * @version 2.16.0
  */
 class Auth {
     /**
@@ -62,6 +62,9 @@ class Auth {
             if (data.hasOwnProperty('admin-password')) {
                 obj['admin-password'] = ApiClient.convertToType(data['admin-password'], 'String');
             }
+            if (data.hasOwnProperty('cert-data')) {
+                obj['cert-data'] = ApiClient.convertToType(data['cert-data'], 'String');
+            }
             if (data.hasOwnProperty('cloud-id')) {
                 obj['cloud-id'] = ApiClient.convertToType(data['cloud-id'], 'String');
             }
@@ -79,6 +82,9 @@ class Auth {
             }
             if (data.hasOwnProperty('k8s-service-account-token')) {
                 obj['k8s-service-account-token'] = ApiClient.convertToType(data['k8s-service-account-token'], 'String');
+            }
+            if (data.hasOwnProperty('key-data')) {
+                obj['key-data'] = ApiClient.convertToType(data['key-data'], 'String');
             }
             if (data.hasOwnProperty('ldap_password')) {
                 obj['ldap_password'] = ApiClient.convertToType(data['ldap_password'], 'String');
@@ -109,7 +115,7 @@ Auth.prototype['access-id'] = undefined;
 Auth.prototype['access-key'] = undefined;
 
 /**
- * Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/universal_identity/jwt/gcp/k8s)
+ * Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/universal_identity/jwt/gcp/cert)
  * @member {String} access-type
  * @default 'access_key'
  */
@@ -126,6 +132,12 @@ Auth.prototype['admin-email'] = undefined;
  * @member {String} admin-password
  */
 Auth.prototype['admin-password'] = undefined;
+
+/**
+ * Certificate data encoded in base64. Used if file was not provided. (relevant only for access-type=cert)
+ * @member {String} cert-data
+ */
+Auth.prototype['cert-data'] = undefined;
 
 /**
  * The cloud identity (relevant only for access-type=azure_ad,aws_iam,gcp)
@@ -161,6 +173,12 @@ Auth.prototype['k8s-auth-config-name'] = undefined;
  * @member {String} k8s-service-account-token
  */
 Auth.prototype['k8s-service-account-token'] = undefined;
+
+/**
+ * Private key data encoded in base64. Used if file was not provided.(relevant only for access-type=cert)
+ * @member {String} key-data
+ */
+Auth.prototype['key-data'] = undefined;
 
 /**
  * LDAP password (relevant only for access-type=ldap)

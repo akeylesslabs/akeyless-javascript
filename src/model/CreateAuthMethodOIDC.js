@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOIDC model module.
  * @module model/CreateAuthMethodOIDC
- * @version 2.15.32
+ * @version 2.16.0
  */
 class CreateAuthMethodOIDC {
     /**
@@ -78,6 +78,12 @@ class CreateAuthMethodOIDC {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('required-scopes')) {
+                obj['required-scopes'] = ApiClient.convertToType(data['required-scopes'], ['String']);
+            }
+            if (data.hasOwnProperty('required-scopes-prefix')) {
+                obj['required-scopes-prefix'] = ApiClient.convertToType(data['required-scopes-prefix'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -150,6 +156,18 @@ CreateAuthMethodOIDC.prototype['jwt-ttl'] = 0;
  * @member {String} name
  */
 CreateAuthMethodOIDC.prototype['name'] = undefined;
+
+/**
+ * RequiredScopes is a list of required scopes that the oidc method will request from the oidc provider and the user must approve
+ * @member {Array.<String>} required-scopes
+ */
+CreateAuthMethodOIDC.prototype['required-scopes'] = undefined;
+
+/**
+ * RequiredScopesPrefix is a a prefix to add to all required-scopes when requesting them from the oidc server (for example, azures' Application ID URI)
+ * @member {String} required-scopes-prefix
+ */
+CreateAuthMethodOIDC.prototype['required-scopes-prefix'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

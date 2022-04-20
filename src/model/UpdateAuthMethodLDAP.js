@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodLDAP model module.
  * @module model/UpdateAuthMethodLDAP
- * @version 2.15.32
+ * @version 2.16.0
  */
 class UpdateAuthMethodLDAP {
     /**
@@ -76,6 +76,9 @@ class UpdateAuthMethodLDAP {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('unique-identifier')) {
+                obj['unique-identifier'] = ApiClient.convertToType(data['unique-identifier'], 'String');
             }
         }
         return obj;
@@ -139,6 +142,12 @@ UpdateAuthMethodLDAP.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateAuthMethodLDAP.prototype['uid-token'] = undefined;
+
+/**
+ * A unique identifier (ID) value should be configured for OAuth2, LDAP and SAML authentication method types and is usually a value such as the email, username, or upn for example. Whenever a user logs in with a token, these authentication types issue a \"sub claim\" that contains details uniquely identifying that user. This sub claim includes a key containing the ID value that you configured, and is used to distinguish between different users from within the same organization.
+ * @member {String} unique-identifier
+ */
+UpdateAuthMethodLDAP.prototype['unique-identifier'] = undefined;
 
 
 

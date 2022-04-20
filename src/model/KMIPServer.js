@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KMIPServer model module.
  * @module model/KMIPServer
- * @version 2.15.32
+ * @version 2.16.0
  */
 class KMIPServer {
     /**
@@ -56,6 +56,12 @@ class KMIPServer {
             if (data.hasOwnProperty('certificate')) {
                 obj['certificate'] = ApiClient.convertToType(data['certificate'], ['Number']);
             }
+            if (data.hasOwnProperty('certificate_issue_date')) {
+                obj['certificate_issue_date'] = ApiClient.convertToType(data['certificate_issue_date'], 'Date');
+            }
+            if (data.hasOwnProperty('certificate_ttl_in_seconds')) {
+                obj['certificate_ttl_in_seconds'] = ApiClient.convertToType(data['certificate_ttl_in_seconds'], 'Number');
+            }
             if (data.hasOwnProperty('hostname')) {
                 obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
             }
@@ -83,6 +89,16 @@ KMIPServer.prototype['ca'] = undefined;
  * @member {Array.<Number>} certificate
  */
 KMIPServer.prototype['certificate'] = undefined;
+
+/**
+ * @member {Date} certificate_issue_date
+ */
+KMIPServer.prototype['certificate_issue_date'] = undefined;
+
+/**
+ * @member {Number} certificate_ttl_in_seconds
+ */
+KMIPServer.prototype['certificate_ttl_in_seconds'] = undefined;
 
 /**
  * @member {String} hostname

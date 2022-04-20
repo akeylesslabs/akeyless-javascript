@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 import APIKeyAccessRules from './APIKeyAccessRules';
 import AWSIAMAccessRules from './AWSIAMAccessRules';
 import AzureADAccessRules from './AzureADAccessRules';
+import CertAccessRules from './CertAccessRules';
 import EmailPassAccessRules from './EmailPassAccessRules';
 import GCPAccessRules from './GCPAccessRules';
 import HuaweiAccessRules from './HuaweiAccessRules';
@@ -28,7 +29,7 @@ import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 2.15.32
+ * @version 2.16.0
  */
 class AuthMethodAccessInfo {
     /**
@@ -73,6 +74,9 @@ class AuthMethodAccessInfo {
             }
             if (data.hasOwnProperty('azure_ad_access_rules')) {
                 obj['azure_ad_access_rules'] = AzureADAccessRules.constructFromObject(data['azure_ad_access_rules']);
+            }
+            if (data.hasOwnProperty('cert_access_rules')) {
+                obj['cert_access_rules'] = CertAccessRules.constructFromObject(data['cert_access_rules']);
             }
             if (data.hasOwnProperty('cidr_whitelist')) {
                 obj['cidr_whitelist'] = ApiClient.convertToType(data['cidr_whitelist'], 'String');
@@ -145,6 +149,11 @@ AuthMethodAccessInfo.prototype['aws_iam_access_rules'] = undefined;
  * @member {module:model/AzureADAccessRules} azure_ad_access_rules
  */
 AuthMethodAccessInfo.prototype['azure_ad_access_rules'] = undefined;
+
+/**
+ * @member {module:model/CertAccessRules} cert_access_rules
+ */
+AuthMethodAccessInfo.prototype['cert_access_rules'] = undefined;
 
 /**
  * @member {String} cidr_whitelist

@@ -35,6 +35,7 @@ import AzureLogAnalyticsForwardingConfig from './model/AzureLogAnalyticsForwardi
 import AzurePayload from './model/AzurePayload';
 import CFConfigPart from './model/CFConfigPart';
 import CacheConfigPart from './model/CacheConfigPart';
+import CertAccessRules from './model/CertAccessRules';
 import CertificateIssueInfo from './model/CertificateIssueInfo';
 import ClassicKeyDetailsInfo from './model/ClassicKeyDetailsInfo';
 import ClassicKeyStatusInfo from './model/ClassicKeyStatusInfo';
@@ -54,6 +55,8 @@ import CreateAuthMethodAWSIAM from './model/CreateAuthMethodAWSIAM';
 import CreateAuthMethodAWSIAMOutput from './model/CreateAuthMethodAWSIAMOutput';
 import CreateAuthMethodAzureAD from './model/CreateAuthMethodAzureAD';
 import CreateAuthMethodAzureADOutput from './model/CreateAuthMethodAzureADOutput';
+import CreateAuthMethodCert from './model/CreateAuthMethodCert';
+import CreateAuthMethodCertOutput from './model/CreateAuthMethodCertOutput';
 import CreateAuthMethodGCP from './model/CreateAuthMethodGCP';
 import CreateAuthMethodGCPOutput from './model/CreateAuthMethodGCPOutput';
 import CreateAuthMethodHuawei from './model/CreateAuthMethodHuawei';
@@ -335,10 +338,13 @@ import KmipClientSetRule from './model/KmipClientSetRule';
 import KmipCreateClient from './model/KmipCreateClient';
 import KmipCreateClientOutput from './model/KmipCreateClientOutput';
 import KmipDeleteClient from './model/KmipDeleteClient';
+import KmipDeleteServer from './model/KmipDeleteServer';
 import KmipDescribeClient from './model/KmipDescribeClient';
 import KmipDescribeServer from './model/KmipDescribeServer';
 import KmipDescribeServerOutput from './model/KmipDescribeServerOutput';
 import KmipListClients from './model/KmipListClients';
+import KmipMoveServer from './model/KmipMoveServer';
+import KmipMoveServerOutput from './model/KmipMoveServerOutput';
 import KmipRenewClientCertificate from './model/KmipRenewClientCertificate';
 import KmipRenewClientCertificateOutput from './model/KmipRenewClientCertificateOutput';
 import KmipRenewServerCertificate from './model/KmipRenewServerCertificate';
@@ -445,6 +451,8 @@ import UpdateAssoc from './model/UpdateAssoc';
 import UpdateAuthMethod from './model/UpdateAuthMethod';
 import UpdateAuthMethodAWSIAM from './model/UpdateAuthMethodAWSIAM';
 import UpdateAuthMethodAzureAD from './model/UpdateAuthMethodAzureAD';
+import UpdateAuthMethodCert from './model/UpdateAuthMethodCert';
+import UpdateAuthMethodCertOutput from './model/UpdateAuthMethodCertOutput';
 import UpdateAuthMethodGCP from './model/UpdateAuthMethodGCP';
 import UpdateAuthMethodK8S from './model/UpdateAuthMethodK8S';
 import UpdateAuthMethodK8SOutput from './model/UpdateAuthMethodK8SOutput';
@@ -539,7 +547,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.15.32
+* @version 2.16.0
 */
 export {
     /**
@@ -681,6 +689,12 @@ export {
     CacheConfigPart,
 
     /**
+     * The CertAccessRules model constructor.
+     * @property {module:model/CertAccessRules}
+     */
+    CertAccessRules,
+
+    /**
      * The CertificateIssueInfo model constructor.
      * @property {module:model/CertificateIssueInfo}
      */
@@ -793,6 +807,18 @@ export {
      * @property {module:model/CreateAuthMethodAzureADOutput}
      */
     CreateAuthMethodAzureADOutput,
+
+    /**
+     * The CreateAuthMethodCert model constructor.
+     * @property {module:model/CreateAuthMethodCert}
+     */
+    CreateAuthMethodCert,
+
+    /**
+     * The CreateAuthMethodCertOutput model constructor.
+     * @property {module:model/CreateAuthMethodCertOutput}
+     */
+    CreateAuthMethodCertOutput,
 
     /**
      * The CreateAuthMethodGCP model constructor.
@@ -2481,6 +2507,12 @@ export {
     KmipDeleteClient,
 
     /**
+     * The KmipDeleteServer model constructor.
+     * @property {module:model/KmipDeleteServer}
+     */
+    KmipDeleteServer,
+
+    /**
      * The KmipDescribeClient model constructor.
      * @property {module:model/KmipDescribeClient}
      */
@@ -2503,6 +2535,18 @@ export {
      * @property {module:model/KmipListClients}
      */
     KmipListClients,
+
+    /**
+     * The KmipMoveServer model constructor.
+     * @property {module:model/KmipMoveServer}
+     */
+    KmipMoveServer,
+
+    /**
+     * The KmipMoveServerOutput model constructor.
+     * @property {module:model/KmipMoveServerOutput}
+     */
+    KmipMoveServerOutput,
 
     /**
      * The KmipRenewClientCertificate model constructor.
@@ -3139,6 +3183,18 @@ export {
      * @property {module:model/UpdateAuthMethodAzureAD}
      */
     UpdateAuthMethodAzureAD,
+
+    /**
+     * The UpdateAuthMethodCert model constructor.
+     * @property {module:model/UpdateAuthMethodCert}
+     */
+    UpdateAuthMethodCert,
+
+    /**
+     * The UpdateAuthMethodCertOutput model constructor.
+     * @property {module:model/UpdateAuthMethodCertOutput}
+     */
+    UpdateAuthMethodCertOutput,
 
     /**
      * The UpdateAuthMethodGCP model constructor.

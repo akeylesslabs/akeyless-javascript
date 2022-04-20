@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**createAuthMethod**](V2Api.md#createAuthMethod) | **POST** /create-auth-method | 
 [**createAuthMethodAWSIAM**](V2Api.md#createAuthMethodAWSIAM) | **POST** /create-auth-method-aws-iam | 
 [**createAuthMethodAzureAD**](V2Api.md#createAuthMethodAzureAD) | **POST** /create-auth-method-azure-ad | 
+[**createAuthMethodCert**](V2Api.md#createAuthMethodCert) | **POST** /create-auth-method-cert | 
 [**createAuthMethodGCP**](V2Api.md#createAuthMethodGCP) | **POST** /create-auth-method-gcp | 
 [**createAuthMethodHuawei**](V2Api.md#createAuthMethodHuawei) | **POST** /create-auth-method-huawei | 
 [**createAuthMethodK8S**](V2Api.md#createAuthMethodK8S) | **POST** /create-auth-method-k8s | 
@@ -143,9 +144,11 @@ Method | HTTP request | Description
 [**kmipClientSetRule**](V2Api.md#kmipClientSetRule) | **POST** /kmip-client-set-rule | 
 [**kmipCreateClient**](V2Api.md#kmipCreateClient) | **POST** /kmip-create-client | 
 [**kmipDeleteClient**](V2Api.md#kmipDeleteClient) | **POST** /kmip-delete-client | 
+[**kmipDeleteServer**](V2Api.md#kmipDeleteServer) | **DELETE** /kmip-delete-environment | 
 [**kmipDescribeClient**](V2Api.md#kmipDescribeClient) | **POST** /kmip-get-client | 
 [**kmipDescribeServer**](V2Api.md#kmipDescribeServer) | **POST** /kmip-get-environment | 
 [**kmipListClients**](V2Api.md#kmipListClients) | **POST** /kmip-list-clients | 
+[**kmipMoveServer**](V2Api.md#kmipMoveServer) | **POST** /kmip-move-environment | 
 [**kmipRenewClientCertificate**](V2Api.md#kmipRenewClientCertificate) | **POST** /kmip-renew-client | 
 [**kmipRenewServerCertificate**](V2Api.md#kmipRenewServerCertificate) | **POST** /kmip-renew-environment | 
 [**kmipServerSetup**](V2Api.md#kmipServerSetup) | **POST** /kmip-create-environment | 
@@ -180,6 +183,7 @@ Method | HTTP request | Description
 [**updateAuthMethod**](V2Api.md#updateAuthMethod) | **POST** /update-auth-method | 
 [**updateAuthMethodAWSIAM**](V2Api.md#updateAuthMethodAWSIAM) | **POST** /update-auth-method-aws-iam | 
 [**updateAuthMethodAzureAD**](V2Api.md#updateAuthMethodAzureAD) | **POST** /update-auth-method-azure-ad | 
+[**updateAuthMethodCert**](V2Api.md#updateAuthMethodCert) | **POST** /update-auth-method-cert | 
 [**updateAuthMethodGCP**](V2Api.md#updateAuthMethodGCP) | **POST** /update-auth-method-gcp | 
 [**updateAuthMethodK8S**](V2Api.md#updateAuthMethodK8S) | **POST** /update-auth-method-k8s | 
 [**updateAuthMethodLDAP**](V2Api.md#updateAuthMethodLDAP) | **POST** /update-auth-method-ldap | 
@@ -629,6 +633,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateAuthMethodAzureADOutput**](CreateAuthMethodAzureADOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createAuthMethodCert
+
+> CreateAuthMethodCertOutput createAuthMethodCert(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateAuthMethodCert(); // CreateAuthMethodCert | 
+apiInstance.createAuthMethodCert(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateAuthMethodCert**](CreateAuthMethodCert.md)|  | 
+
+### Return type
+
+[**CreateAuthMethodCertOutput**](CreateAuthMethodCertOutput.md)
 
 ### Authorization
 
@@ -6066,6 +6112,50 @@ No authorization required
 - **Accept**: application/json
 
 
+## kmipDeleteServer
+
+> Object kmipDeleteServer(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.KmipDeleteServer() // KmipDeleteServer | 
+};
+apiInstance.kmipDeleteServer(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipDeleteServer**](KmipDeleteServer.md)|  | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## kmipDescribeClient
 
 > KMIPClientGetResponse kmipDescribeClient(opts)
@@ -6187,6 +6277,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**KMIPClientListResponse**](KMIPClientListResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## kmipMoveServer
+
+> KmipMoveServerOutput kmipMoveServer(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.KmipMoveServer() // KmipMoveServer | 
+};
+apiInstance.kmipMoveServer(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipMoveServer**](KmipMoveServer.md)|  | [optional] 
+
+### Return type
+
+[**KmipMoveServerOutput**](KmipMoveServerOutput.md)
 
 ### Authorization
 
@@ -7621,6 +7755,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 **Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAuthMethodCert
+
+> UpdateAuthMethodCertOutput updateAuthMethodCert(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAuthMethodCert(); // UpdateAuthMethodCert | 
+apiInstance.updateAuthMethodCert(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAuthMethodCert**](UpdateAuthMethodCert.md)|  | 
+
+### Return type
+
+[**UpdateAuthMethodCertOutput**](UpdateAuthMethodCertOutput.md)
 
 ### Authorization
 

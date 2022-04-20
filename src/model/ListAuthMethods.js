@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListAuthMethods model module.
  * @module model/ListAuthMethods
- * @version 2.15.32
+ * @version 2.16.0
  */
 class ListAuthMethods {
     /**
@@ -48,6 +48,9 @@ class ListAuthMethods {
         if (data) {
             obj = obj || new ListAuthMethods();
 
+            if (data.hasOwnProperty('filter')) {
+                obj['filter'] = ApiClient.convertToType(data['filter'], 'String');
+            }
             if (data.hasOwnProperty('pagination-token')) {
                 obj['pagination-token'] = ApiClient.convertToType(data['pagination-token'], 'String');
             }
@@ -68,6 +71,12 @@ class ListAuthMethods {
 }
 
 /**
+ * Filter by auth method name or part of it
+ * @member {String} filter
+ */
+ListAuthMethods.prototype['filter'] = undefined;
+
+/**
  * Next page reference
  * @member {String} pagination-token
  */
@@ -80,7 +89,7 @@ ListAuthMethods.prototype['pagination-token'] = undefined;
 ListAuthMethods.prototype['token'] = undefined;
 
 /**
- * The Auth method types list of the requested method. In case it is empty, all types of auth methods will be returned. options: [api_key, azure_ad, oauth2/jwt, saml2, ldap, aws_iam, oidc, universal_identity, gcp, k8s]
+ * The Auth method types list of the requested method. In case it is empty, all types of auth methods will be returned. options: [api_key, azure_ad, oauth2/jwt, saml2, ldap, aws_iam, oidc, universal_identity, gcp, k8s, cert]
  * @member {Array.<String>} type
  */
 ListAuthMethods.prototype['type'] = undefined;

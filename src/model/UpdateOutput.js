@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateOutput model module.
  * @module model/UpdateOutput
- * @version 2.15.32
+ * @version 2.16.0
  */
 class UpdateOutput {
     /**
@@ -47,6 +47,9 @@ class UpdateOutput {
         if (data) {
             obj = obj || new UpdateOutput();
 
+            if (data.hasOwnProperty('changelog')) {
+                obj['changelog'] = ApiClient.convertToType(data['changelog'], 'String');
+            }
             if (data.hasOwnProperty('latest')) {
                 obj['latest'] = ApiClient.convertToType(data['latest'], 'String');
             }
@@ -59,6 +62,11 @@ class UpdateOutput {
 
 
 }
+
+/**
+ * @member {String} changelog
+ */
+UpdateOutput.prototype['changelog'] = undefined;
 
 /**
  * @member {String} latest

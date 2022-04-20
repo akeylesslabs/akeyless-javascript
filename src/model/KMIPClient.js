@@ -17,7 +17,7 @@ import PathRule from './PathRule';
 /**
  * The KMIPClient model module.
  * @module model/KMIPClient
- * @version 2.15.32
+ * @version 2.16.0
  */
 class KMIPClient {
     /**
@@ -51,6 +51,9 @@ class KMIPClient {
             if (data.hasOwnProperty('certificate_issue_date')) {
                 obj['certificate_issue_date'] = ApiClient.convertToType(data['certificate_issue_date'], 'Date');
             }
+            if (data.hasOwnProperty('certificate_ttl_in_seconds')) {
+                obj['certificate_ttl_in_seconds'] = ApiClient.convertToType(data['certificate_ttl_in_seconds'], 'Number');
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
@@ -71,6 +74,11 @@ class KMIPClient {
  * @member {Date} certificate_issue_date
  */
 KMIPClient.prototype['certificate_issue_date'] = undefined;
+
+/**
+ * @member {Number} certificate_ttl_in_seconds
+ */
+KMIPClient.prototype['certificate_ttl_in_seconds'] = undefined;
 
 /**
  * @member {String} id

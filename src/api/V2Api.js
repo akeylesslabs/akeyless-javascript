@@ -31,6 +31,8 @@ import CreateAuthMethodAWSIAM from '../model/CreateAuthMethodAWSIAM';
 import CreateAuthMethodAWSIAMOutput from '../model/CreateAuthMethodAWSIAMOutput';
 import CreateAuthMethodAzureAD from '../model/CreateAuthMethodAzureAD';
 import CreateAuthMethodAzureADOutput from '../model/CreateAuthMethodAzureADOutput';
+import CreateAuthMethodCert from '../model/CreateAuthMethodCert';
+import CreateAuthMethodCertOutput from '../model/CreateAuthMethodCertOutput';
 import CreateAuthMethodGCP from '../model/CreateAuthMethodGCP';
 import CreateAuthMethodGCPOutput from '../model/CreateAuthMethodGCPOutput';
 import CreateAuthMethodHuawei from '../model/CreateAuthMethodHuawei';
@@ -271,10 +273,13 @@ import KmipClientSetRule from '../model/KmipClientSetRule';
 import KmipCreateClient from '../model/KmipCreateClient';
 import KmipCreateClientOutput from '../model/KmipCreateClientOutput';
 import KmipDeleteClient from '../model/KmipDeleteClient';
+import KmipDeleteServer from '../model/KmipDeleteServer';
 import KmipDescribeClient from '../model/KmipDescribeClient';
 import KmipDescribeServer from '../model/KmipDescribeServer';
 import KmipDescribeServerOutput from '../model/KmipDescribeServerOutput';
 import KmipListClients from '../model/KmipListClients';
+import KmipMoveServer from '../model/KmipMoveServer';
+import KmipMoveServerOutput from '../model/KmipMoveServerOutput';
 import KmipRenewClientCertificate from '../model/KmipRenewClientCertificate';
 import KmipRenewClientCertificateOutput from '../model/KmipRenewClientCertificateOutput';
 import KmipRenewServerCertificate from '../model/KmipRenewServerCertificate';
@@ -332,6 +337,8 @@ import UpdateAssoc from '../model/UpdateAssoc';
 import UpdateAuthMethod from '../model/UpdateAuthMethod';
 import UpdateAuthMethodAWSIAM from '../model/UpdateAuthMethodAWSIAM';
 import UpdateAuthMethodAzureAD from '../model/UpdateAuthMethodAzureAD';
+import UpdateAuthMethodCert from '../model/UpdateAuthMethodCert';
+import UpdateAuthMethodCertOutput from '../model/UpdateAuthMethodCertOutput';
 import UpdateAuthMethodGCP from '../model/UpdateAuthMethodGCP';
 import UpdateAuthMethodK8S from '../model/UpdateAuthMethodK8S';
 import UpdateAuthMethodK8SOutput from '../model/UpdateAuthMethodK8SOutput';
@@ -394,7 +401,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.15.32
+* @version 2.16.0
 */
 export default class V2Api {
 
@@ -835,6 +842,49 @@ export default class V2Api {
      */
     createAuthMethodAzureAD(body) {
       return this.createAuthMethodAzureADWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateAuthMethodCert} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAuthMethodCertOutput} and HTTP response
+     */
+    createAuthMethodCertWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createAuthMethodCert");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateAuthMethodCertOutput;
+      return this.apiClient.callApi(
+        '/create-auth-method-cert', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateAuthMethodCert} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAuthMethodCertOutput}
+     */
+    createAuthMethodCert(body) {
+      return this.createAuthMethodCertWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6378,6 +6428,48 @@ export default class V2Api {
 
     /**
      * @param {Object} opts Optional parameters
+     * @param {module:model/KmipDeleteServer} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    kmipDeleteServerWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/kmip-delete-environment', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipDeleteServer} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    kmipDeleteServer(opts) {
+      return this.kmipDeleteServerWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
      * @param {module:model/KmipDescribeClient} opts.body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KMIPClientGetResponse} and HTTP response
      */
@@ -6496,6 +6588,48 @@ export default class V2Api {
      */
     kmipListClients(opts) {
       return this.kmipListClientsWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipMoveServer} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KmipMoveServerOutput} and HTTP response
+     */
+    kmipMoveServerWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KmipMoveServerOutput;
+      return this.apiClient.callApi(
+        '/kmip-move-environment', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipMoveServer} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KmipMoveServerOutput}
+     */
+    kmipMoveServer(opts) {
+      return this.kmipMoveServerWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7947,6 +8081,49 @@ export default class V2Api {
      */
     updateAuthMethodAzureAD(body) {
       return this.updateAuthMethodAzureADWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateAuthMethodCert} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateAuthMethodCertOutput} and HTTP response
+     */
+    updateAuthMethodCertWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAuthMethodCert");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateAuthMethodCertOutput;
+      return this.apiClient.callApi(
+        '/update-auth-method-cert', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAuthMethodCert} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateAuthMethodCertOutput}
+     */
+    updateAuthMethodCert(body) {
+      return this.updateAuthMethodCertWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

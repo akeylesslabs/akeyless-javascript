@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListTargets model module.
  * @module model/ListTargets
- * @version 2.15.32
+ * @version 2.16.0
  */
 class ListTargets {
     /**
@@ -47,6 +47,9 @@ class ListTargets {
         if (data) {
             obj = obj || new ListTargets();
 
+            if (data.hasOwnProperty('filter')) {
+                obj['filter'] = ApiClient.convertToType(data['filter'], 'String');
+            }
             if (data.hasOwnProperty('pagination-token')) {
                 obj['pagination-token'] = ApiClient.convertToType(data['pagination-token'], 'String');
             }
@@ -62,6 +65,12 @@ class ListTargets {
 
 
 }
+
+/**
+ * Filter by auth method name or part of it
+ * @member {String} filter
+ */
+ListTargets.prototype['filter'] = undefined;
 
 /**
  * Next page reference

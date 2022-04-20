@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCustom model module.
  * @module model/GatewayCreateProducerCustom
- * @version 2.15.32
+ * @version 2.16.0
  */
 class GatewayCreateProducerCustom {
     /**
@@ -53,8 +53,14 @@ class GatewayCreateProducerCustom {
         if (data) {
             obj = obj || new GatewayCreateProducerCustom();
 
+            if (data.hasOwnProperty('admin_rotation_interval_days')) {
+                obj['admin_rotation_interval_days'] = ApiClient.convertToType(data['admin_rotation_interval_days'], 'Number');
+            }
             if (data.hasOwnProperty('create-sync-url')) {
                 obj['create-sync-url'] = ApiClient.convertToType(data['create-sync-url'], 'String');
+            }
+            if (data.hasOwnProperty('enable_admin_rotation')) {
+                obj['enable_admin_rotation'] = ApiClient.convertToType(data['enable_admin_rotation'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -94,10 +100,23 @@ class GatewayCreateProducerCustom {
 }
 
 /**
+ * Define rotation interval in days
+ * @member {Number} admin_rotation_interval_days
+ */
+GatewayCreateProducerCustom.prototype['admin_rotation_interval_days'] = undefined;
+
+/**
  * URL of an endpoint that implements /sync/create method, for example https://webhook.example.com/sync/create
  * @member {String} create-sync-url
  */
 GatewayCreateProducerCustom.prototype['create-sync-url'] = undefined;
+
+/**
+ * Should admin credentials be rotated
+ * @member {Boolean} enable_admin_rotation
+ * @default false
+ */
+GatewayCreateProducerCustom.prototype['enable_admin_rotation'] = false;
 
 /**
  * Producer name

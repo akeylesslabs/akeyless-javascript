@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListRoles model module.
  * @module model/ListRoles
- * @version 2.15.32
+ * @version 2.16.0
  */
 class ListRoles {
     /**
@@ -47,6 +47,9 @@ class ListRoles {
         if (data) {
             obj = obj || new ListRoles();
 
+            if (data.hasOwnProperty('filter')) {
+                obj['filter'] = ApiClient.convertToType(data['filter'], 'String');
+            }
             if (data.hasOwnProperty('pagination-token')) {
                 obj['pagination-token'] = ApiClient.convertToType(data['pagination-token'], 'String');
             }
@@ -62,6 +65,12 @@ class ListRoles {
 
 
 }
+
+/**
+ * Filter by item name or part of it
+ * @member {String} filter
+ */
+ListRoles.prototype['filter'] = undefined;
 
 /**
  * Next page reference

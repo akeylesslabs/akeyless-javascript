@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerOracleDb model module.
  * @module model/GatewayCreateProducerOracleDb
- * @version 2.15.32
+ * @version 2.16.0
  */
 class GatewayCreateProducerOracleDb {
     /**
@@ -79,6 +79,18 @@ class GatewayCreateProducerOracleDb {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-issuer')) {
+                obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-host')) {
+                obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('secure-access-web')) {
+                obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -163,6 +175,26 @@ GatewayCreateProducerOracleDb.prototype['oracle-username'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayCreateProducerOracleDb.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * @member {String} secure-access-bastion-issuer
+ */
+GatewayCreateProducerOracleDb.prototype['secure-access-bastion-issuer'] = undefined;
+
+/**
+ * @member {String} secure-access-enable
+ */
+GatewayCreateProducerOracleDb.prototype['secure-access-enable'] = undefined;
+
+/**
+ * @member {Array.<String>} secure-access-host
+ */
+GatewayCreateProducerOracleDb.prototype['secure-access-host'] = undefined;
+
+/**
+ * @member {Boolean} secure-access-web
+ */
+GatewayCreateProducerOracleDb.prototype['secure-access-web'] = undefined;
 
 /**
  * List of the tags attached to this secret

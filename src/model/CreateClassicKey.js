@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 2.15.32
+ * @version 2.16.0
  */
 class CreateClassicKey {
     /**
@@ -61,6 +61,9 @@ class CreateClassicKey {
             if (data.hasOwnProperty('key-data')) {
                 obj['key-data'] = ApiClient.convertToType(data['key-data'], 'String');
             }
+            if (data.hasOwnProperty('key-operations')) {
+                obj['key-operations'] = ApiClient.convertToType(data['key-operations'], ['String']);
+            }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
             }
@@ -81,6 +84,9 @@ class CreateClassicKey {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('vault-name')) {
+                obj['vault-name'] = ApiClient.convertToType(data['vault-name'], 'String');
             }
         }
         return obj;
@@ -106,6 +112,12 @@ CreateClassicKey.prototype['cert-file-data'] = undefined;
  * @member {String} key-data
  */
 CreateClassicKey.prototype['key-data'] = undefined;
+
+/**
+ * A list of allowed operations for the key (required for azure targets)
+ * @member {Array.<String>} key-operations
+ */
+CreateClassicKey.prototype['key-operations'] = undefined;
 
 /**
  * Metadata about the classic key
@@ -148,6 +160,12 @@ CreateClassicKey.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateClassicKey.prototype['uid-token'] = undefined;
+
+/**
+ * Name of the vault used (required for azure targets)
+ * @member {String} vault-name
+ */
+CreateClassicKey.prototype['vault-name'] = undefined;
 
 
 

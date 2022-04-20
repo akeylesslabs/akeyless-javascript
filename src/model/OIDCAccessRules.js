@@ -17,7 +17,7 @@ import OIDCCustomClaim from './OIDCCustomClaim';
 /**
  * The OIDCAccessRules model module.
  * @module model/OIDCAccessRules
- * @version 2.15.32
+ * @version 2.16.0
  */
 class OIDCAccessRules {
     /**
@@ -67,6 +67,12 @@ class OIDCAccessRules {
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
             }
+            if (data.hasOwnProperty('required_scopes')) {
+                obj['required_scopes'] = ApiClient.convertToType(data['required_scopes'], ['String']);
+            }
+            if (data.hasOwnProperty('required_scopes_prefix')) {
+                obj['required_scopes_prefix'] = ApiClient.convertToType(data['required_scopes_prefix'], 'String');
+            }
             if (data.hasOwnProperty('unique_identifier')) {
                 obj['unique_identifier'] = ApiClient.convertToType(data['unique_identifier'], 'String');
             }
@@ -112,6 +118,18 @@ OIDCAccessRules.prototype['is_internal'] = undefined;
  * @member {String} issuer
  */
 OIDCAccessRules.prototype['issuer'] = undefined;
+
+/**
+ * A list of required scopes to request from the oidc provider, and to check on the token
+ * @member {Array.<String>} required_scopes
+ */
+OIDCAccessRules.prototype['required_scopes'] = undefined;
+
+/**
+ * A prefix to add to the required scopes (for example, azures' Application ID URI)
+ * @member {String} required_scopes_prefix
+ */
+OIDCAccessRules.prototype['required_scopes_prefix'] = undefined;
 
 /**
  * A unique identifier to distinguish different users
