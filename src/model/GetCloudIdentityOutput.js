@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCloudIdentityOutput model module.
  * @module model/GetCloudIdentityOutput
- * @version 2.16.2
+ * @version 2.16.3
  */
 class GetCloudIdentityOutput {
     /**

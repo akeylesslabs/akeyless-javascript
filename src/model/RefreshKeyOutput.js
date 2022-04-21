@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RefreshKeyOutput model module.
  * @module model/RefreshKeyOutput
- * @version 2.16.2
+ * @version 2.16.3
  */
 class RefreshKeyOutput {
     /**

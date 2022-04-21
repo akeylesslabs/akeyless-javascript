@@ -1,6 +1,6 @@
 {
   "name": "akeyless",
-  "version": "2.16.2",
+  "version": "2.16.3",
   "description": "The_purpose_of_this_application_is_to_provide_access_to_Akeyless_API_",
   "license": "Unlicense",
   "main": "dist/index.js",
@@ -37,7 +37,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/register": "^7.0.0",
     "expect.js": "^0.3.1",
-    "mocha": "^9.2.2",
+    "mocha": "^5.2.0",
     "sinon": "^7.2.0"
   },
   "files": [
