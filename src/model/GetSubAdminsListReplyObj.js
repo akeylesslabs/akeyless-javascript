@@ -17,7 +17,7 @@ import AllowedAccess from './AllowedAccess';
 /**
  * The GetSubAdminsListReplyObj model module.
  * @module model/GetSubAdminsListReplyObj
- * @version 2.16.0
+ * @version 2.16.1
  */
 class GetSubAdminsListReplyObj {
     /**

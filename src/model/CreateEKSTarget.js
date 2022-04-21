@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEKSTarget model module.
  * @module model/CreateEKSTarget
- * @version 2.16.0
+ * @version 2.16.1
  */
 class CreateEKSTarget {
     /**

@@ -23,7 +23,7 @@ import StaticSecretDetailsInfo from './StaticSecretDetailsInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 2.16.0
+ * @version 2.16.1
  */
 class ItemGeneralInfo {
     /**
