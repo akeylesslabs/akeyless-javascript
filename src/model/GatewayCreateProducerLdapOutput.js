@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerLdapOutput model module.
  * @module model/GatewayCreateProducerLdapOutput
- * @version 2.16.1
+ * @version 2.16.2
  */
 class GatewayCreateProducerLdapOutput {
     /**

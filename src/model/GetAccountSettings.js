@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetAccountSettings model module.
  * @module model/GetAccountSettings
- * @version 2.16.1
+ * @version 2.16.2
  */
 class GetAccountSettings {
     /**

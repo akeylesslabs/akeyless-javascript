@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTarget model module.
  * @module model/DeleteTarget
- * @version 2.16.1
+ * @version 2.16.2
  */
 class DeleteTarget {
     /**

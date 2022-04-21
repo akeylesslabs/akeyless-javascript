@@ -17,7 +17,7 @@ import CustomerFragment from './CustomerFragment';
 /**
  * The CustomerFragmentsJson model module.
  * @module model/CustomerFragmentsJson
- * @version 2.16.1
+ * @version 2.16.2
  */
 class CustomerFragmentsJson {
     /**
