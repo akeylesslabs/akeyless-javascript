@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRdp model module.
  * @module model/GatewayUpdateProducerRdp
- * @version 2.16.3
+ * @version 2.16.4
  */
 class GatewayUpdateProducerRdp {
     /**

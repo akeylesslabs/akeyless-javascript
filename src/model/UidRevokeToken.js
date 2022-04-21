@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidRevokeToken model module.
  * @module model/UidRevokeToken
- * @version 2.16.3
+ * @version 2.16.4
  */
 class UidRevokeToken {
     /**

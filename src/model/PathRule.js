@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PathRule model module.
  * @module model/PathRule
- * @version 2.16.3
+ * @version 2.16.4
  */
 class PathRule {
     /**
