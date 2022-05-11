@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.16.4
+ * @version 2.16.5
  */
 class TargetTypeDetailsInput {
     /**
@@ -77,6 +77,12 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('azure_tenant_id')) {
                 obj['azure_tenant_id'] = ApiClient.convertToType(data['azure_tenant_id'], 'String');
             }
+            if (data.hasOwnProperty('ca_cert_data')) {
+                obj['ca_cert_data'] = ApiClient.convertToType(data['ca_cert_data'], ['Number']);
+            }
+            if (data.hasOwnProperty('ca_cert_name')) {
+                obj['ca_cert_name'] = ApiClient.convertToType(data['ca_cert_name'], 'String');
+            }
             if (data.hasOwnProperty('chef_server_host_name')) {
                 obj['chef_server_host_name'] = ApiClient.convertToType(data['chef_server_host_name'], 'String');
             }
@@ -94,6 +100,12 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('chef_skip_ssl')) {
                 obj['chef_skip_ssl'] = ApiClient.convertToType(data['chef_skip_ssl'], 'Boolean');
+            }
+            if (data.hasOwnProperty('client_id')) {
+                obj['client_id'] = ApiClient.convertToType(data['client_id'], 'String');
+            }
+            if (data.hasOwnProperty('client_secret')) {
+                obj['client_secret'] = ApiClient.convertToType(data['client_secret'], 'String');
             }
             if (data.hasOwnProperty('db_host_name')) {
                 obj['db_host_name'] = ApiClient.convertToType(data['db_host_name'], 'String');
@@ -251,6 +263,9 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('rabbitmq_server_user')) {
                 obj['rabbitmq_server_user'] = ApiClient.convertToType(data['rabbitmq_server_user'], 'String');
             }
+            if (data.hasOwnProperty('security_token')) {
+                obj['security_token'] = ApiClient.convertToType(data['security_token'], 'String');
+            }
             if (data.hasOwnProperty('sf_account')) {
                 obj['sf_account'] = ApiClient.convertToType(data['sf_account'], 'String');
             }
@@ -259,6 +274,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('ssl_connection_mode')) {
                 obj['ssl_connection_mode'] = ApiClient.convertToType(data['ssl_connection_mode'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tenant_url')) {
+                obj['tenant_url'] = ApiClient.convertToType(data['tenant_url'], 'String');
             }
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
@@ -348,6 +366,18 @@ TargetTypeDetailsInput.prototype['azure_client_secret'] = undefined;
 TargetTypeDetailsInput.prototype['azure_tenant_id'] = undefined;
 
 /**
+ * CACertData is the rsa 4096 certificate data in PEM format
+ * @member {Array.<Number>} ca_cert_data
+ */
+TargetTypeDetailsInput.prototype['ca_cert_data'] = undefined;
+
+/**
+ * CACertName is the name of the certificate in SalesForce tenant
+ * @member {String} ca_cert_name
+ */
+TargetTypeDetailsInput.prototype['ca_cert_name'] = undefined;
+
+/**
  * @member {String} chef_server_host_name
  */
 TargetTypeDetailsInput.prototype['chef_server_host_name'] = undefined;
@@ -376,6 +406,16 @@ TargetTypeDetailsInput.prototype['chef_server_username'] = undefined;
  * @member {Boolean} chef_skip_ssl
  */
 TargetTypeDetailsInput.prototype['chef_skip_ssl'] = undefined;
+
+/**
+ * @member {String} client_id
+ */
+TargetTypeDetailsInput.prototype['client_id'] = undefined;
+
+/**
+ * @member {String} client_secret
+ */
+TargetTypeDetailsInput.prototype['client_secret'] = undefined;
 
 /**
  * @member {String} db_host_name
@@ -643,6 +683,11 @@ TargetTypeDetailsInput.prototype['rabbitmq_server_uri'] = undefined;
 TargetTypeDetailsInput.prototype['rabbitmq_server_user'] = undefined;
 
 /**
+ * @member {String} security_token
+ */
+TargetTypeDetailsInput.prototype['security_token'] = undefined;
+
+/**
  * @member {String} sf_account
  */
 TargetTypeDetailsInput.prototype['sf_account'] = undefined;
@@ -658,6 +703,11 @@ TargetTypeDetailsInput.prototype['ssl_connection_certificate'] = undefined;
  * @member {Boolean} ssl_connection_mode
  */
 TargetTypeDetailsInput.prototype['ssl_connection_mode'] = undefined;
+
+/**
+ * @member {String} tenant_url
+ */
+TargetTypeDetailsInput.prototype['tenant_url'] = undefined;
 
 /**
  * @member {String} url

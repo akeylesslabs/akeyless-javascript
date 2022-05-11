@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAzureAD model module.
  * @module model/UpdateAuthMethodAzureAD
- * @version 2.16.4
+ * @version 2.16.5
  */
 class UpdateAuthMethodAzureAD {
     /**
@@ -216,9 +216,8 @@ UpdateAuthMethodAzureAD.prototype['jwks-uri'] = 'https://login.microsoftonline.c
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
- * @default 0
  */
-UpdateAuthMethodAzureAD.prototype['jwt-ttl'] = 0;
+UpdateAuthMethodAzureAD.prototype['jwt-ttl'] = undefined;
 
 /**
  * Auth Method name

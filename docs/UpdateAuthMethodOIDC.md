@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **clientSecret** | **String** | Client Secret | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **issuer** | **String** | Issuer URL | [optional] 
-**jwtTtl** | **Number** | Jwt TTL | [optional] [default to 0]
+**jwtTtl** | **Number** | Jwt TTL | [optional] 
 **name** | **String** | Auth Method name | 
 **newName** | **String** | Auth Method new name | [optional] 
 **requiredScopes** | **[String]** | RequiredScopes is a list of required scopes that the oidc method will request from the oidc provider and the user must approve | [optional] 

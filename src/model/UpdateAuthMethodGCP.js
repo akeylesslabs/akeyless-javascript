@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodGCP model module.
  * @module model/UpdateAuthMethodGCP
- * @version 2.16.4
+ * @version 2.16.5
  */
 class UpdateAuthMethodGCP {
     /**
@@ -168,9 +168,8 @@ UpdateAuthMethodGCP.prototype['force-sub-claims'] = undefined;
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
- * @default 0
  */
-UpdateAuthMethodGCP.prototype['jwt-ttl'] = 0;
+UpdateAuthMethodGCP.prototype['jwt-ttl'] = undefined;
 
 /**
  * Auth Method name

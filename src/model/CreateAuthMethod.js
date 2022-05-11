@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethod model module.
  * @module model/CreateAuthMethod
- * @version 2.16.4
+ * @version 2.16.5
  */
 class CreateAuthMethod {
     /**
@@ -99,9 +99,8 @@ CreateAuthMethod.prototype['force-sub-claims'] = undefined;
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
- * @default 0
  */
-CreateAuthMethod.prototype['jwt-ttl'] = 0;
+CreateAuthMethod.prototype['jwt-ttl'] = undefined;
 
 /**
  * Auth Method name

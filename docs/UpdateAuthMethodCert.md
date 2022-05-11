@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **boundUriSans** | **[String]** | A list of URIs. At least one must exist in the SANs. Supports globbing. | [optional] 
 **certificateData** | **String** | The certificate data in base64, if no file was provided | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
-**jwtTtl** | **Number** | Jwt TTL | [optional] [default to 0]
+**jwtTtl** | **Number** | Jwt TTL | [optional] 
 **name** | **String** | Auth Method name | 
 **newName** | **String** | Auth Method new name | [optional] 
 **revokedCertIds** | **[String]** | A list of revoked cert ids | [optional] 

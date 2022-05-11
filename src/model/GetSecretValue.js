@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetSecretValue model module.
  * @module model/GetSecretValue
- * @version 2.16.4
+ * @version 2.16.5
  */
 class GetSecretValue {
     /**
@@ -52,6 +52,9 @@ class GetSecretValue {
             if (data.hasOwnProperty('names')) {
                 obj['names'] = ApiClient.convertToType(data['names'], ['String']);
             }
+            if (data.hasOwnProperty('pretty-print')) {
+                obj['pretty-print'] = ApiClient.convertToType(data['pretty-print'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -73,6 +76,11 @@ class GetSecretValue {
  * @member {Array.<String>} names
  */
 GetSecretValue.prototype['names'] = undefined;
+
+/**
+ * @member {Boolean} pretty-print
+ */
+GetSecretValue.prototype['pretty-print'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

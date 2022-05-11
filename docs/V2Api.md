@@ -41,6 +41,7 @@ Method | HTTP request | Description
 [**createRotatedSecret**](V2Api.md#createRotatedSecret) | **POST** /create-rotated-secret | 
 [**createSSHCertIssuer**](V2Api.md#createSSHCertIssuer) | **POST** /create-ssh-cert-issuer | 
 [**createSSHTarget**](V2Api.md#createSSHTarget) | **POST** /create-ssh-target | 
+[**createSalesforceTarget**](V2Api.md#createSalesforceTarget) | **POST** /create-salesforce-target | 
 [**createSecret**](V2Api.md#createSecret) | **POST** /create-secret | 
 [**createWebTarget**](V2Api.md#createWebTarget) | **POST** /create-web-target | 
 [**createldapTarget**](V2Api.md#createldapTarget) | **POST** /create-ldap-target | 
@@ -64,6 +65,7 @@ Method | HTTP request | Description
 [**encryptPKCS1**](V2Api.md#encryptPKCS1) | **POST** /encrypt-pkcs1 | 
 [**encryptWithClassicKey**](V2Api.md#encryptWithClassicKey) | **POST** /encrypt-with-classic-key | 
 [**gatewayCreateK8SAuthConfig**](V2Api.md#gatewayCreateK8SAuthConfig) | **POST** /gateway-create-k8s-auth-config | 
+[**gatewayCreateMigration**](V2Api.md#gatewayCreateMigration) | **POST** /gateway-create-migration | 
 [**gatewayCreateProducerArtifactory**](V2Api.md#gatewayCreateProducerArtifactory) | **POST** /gateway-create-producer-artifactory | 
 [**gatewayCreateProducerAws**](V2Api.md#gatewayCreateProducerAws) | **POST** /gateway-create-producer-aws | 
 [**gatewayCreateProducerAzure**](V2Api.md#gatewayCreateProducerAzure) | **POST** /gateway-create-producer-azure | 
@@ -89,9 +91,11 @@ Method | HTTP request | Description
 [**gatewayCreateProducerSnowflake**](V2Api.md#gatewayCreateProducerSnowflake) | **POST** /gateway-create-producer-snowflake | 
 [**gatewayDeleteAllowedManagementAccess**](V2Api.md#gatewayDeleteAllowedManagementAccess) | **POST** /gateway-delete-allowed-management-access | 
 [**gatewayDeleteK8SAuthConfig**](V2Api.md#gatewayDeleteK8SAuthConfig) | **POST** /gateway-delete-k8s-auth-config | 
+[**gatewayDeleteMigration**](V2Api.md#gatewayDeleteMigration) | **POST** /gateway-delete-migration | 
 [**gatewayDeleteProducer**](V2Api.md#gatewayDeleteProducer) | **POST** /gateway-delete-producer | 
 [**gatewayGetConfig**](V2Api.md#gatewayGetConfig) | **POST** /gateway-get-config | 
 [**gatewayGetK8SAuthConfig**](V2Api.md#gatewayGetK8SAuthConfig) | **POST** /gateway-get-k8s-auth-config | 
+[**gatewayGetMigration**](V2Api.md#gatewayGetMigration) | **POST** /gateway-get-migration | 
 [**gatewayGetProducer**](V2Api.md#gatewayGetProducer) | **POST** /gateway-get-producer | 
 [**gatewayGetTmpUsers**](V2Api.md#gatewayGetTmpUsers) | **POST** /gateway-get-producer-tmp-creds | 
 [**gatewayListAllowedManagementAccess**](V2Api.md#gatewayListAllowedManagementAccess) | **POST** /gateway-list-allowed-management-access | 
@@ -103,6 +107,7 @@ Method | HTTP request | Description
 [**gatewaySyncMigration**](V2Api.md#gatewaySyncMigration) | **POST** /gateway-sync-migration | 
 [**gatewayUpdateItem**](V2Api.md#gatewayUpdateItem) | **POST** /gateway-update-item | 
 [**gatewayUpdateK8SAuthConfig**](V2Api.md#gatewayUpdateK8SAuthConfig) | **POST** /gateway-update-k8s-auth-config | 
+[**gatewayUpdateMigration**](V2Api.md#gatewayUpdateMigration) | **POST** /gateway-update-migration | 
 [**gatewayUpdateProducerArtifactory**](V2Api.md#gatewayUpdateProducerArtifactory) | **POST** /gateway-update-producer-artifactory | 
 [**gatewayUpdateProducerAws**](V2Api.md#gatewayUpdateProducerAws) | **POST** /gateway-update-producer-aws | 
 [**gatewayUpdateProducerAzure**](V2Api.md#gatewayUpdateProducerAzure) | **POST** /gateway-update-producer-azure | 
@@ -114,6 +119,7 @@ Method | HTTP request | Description
 [**gatewayUpdateProducerGcp**](V2Api.md#gatewayUpdateProducerGcp) | **POST** /gateway-update-producer-gcp | 
 [**gatewayUpdateProducerGithub**](V2Api.md#gatewayUpdateProducerGithub) | **POST** /gateway-update-producer-github | 
 [**gatewayUpdateProducerGke**](V2Api.md#gatewayUpdateProducerGke) | **POST** /gateway-update-producer-gke | 
+[**gatewayUpdateProducerHanaDb**](V2Api.md#gatewayUpdateProducerHanaDb) | **POST** /gateway-update-producer-hana | 
 [**gatewayUpdateProducerLdap**](V2Api.md#gatewayUpdateProducerLdap) | **POST** /gateway-update-producer-ldap | 
 [**gatewayUpdateProducerMSSQL**](V2Api.md#gatewayUpdateProducerMSSQL) | **POST** /gateway-update-producer-mssql | 
 [**gatewayUpdateProducerMongo**](V2Api.md#gatewayUpdateProducerMongo) | **POST** /gateway-update-producer-mongo | 
@@ -211,6 +217,7 @@ Method | HTTP request | Description
 [**updateSSHCertIssuer**](V2Api.md#updateSSHCertIssuer) | **POST** /update-ssh-cert-issuer | 
 [**updateSSHTarget**](V2Api.md#updateSSHTarget) | **POST** /update-ssh-target | 
 [**updateSSHTargetDetails**](V2Api.md#updateSSHTargetDetails) | **POST** /update-ssh-target-details | 
+[**updateSalesforceTarget**](V2Api.md#updateSalesforceTarget) | **POST** /update-salesforce-target | 
 [**updateSecretVal**](V2Api.md#updateSecretVal) | **POST** /update-secret-val | 
 [**updateTarget**](V2Api.md#updateTarget) | **POST** /update-target | 
 [**updateTargetDetails**](V2Api.md#updateTargetDetails) | **POST** /update-target-details | 
@@ -1778,6 +1785,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## createSalesforceTarget
+
+> CreateSalesforceTargetOutput createSalesforceTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateSalesforceTarget(); // CreateSalesforceTarget | 
+apiInstance.createSalesforceTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateSalesforceTarget**](CreateSalesforceTarget.md)|  | 
+
+### Return type
+
+[**CreateSalesforceTargetOutput**](CreateSalesforceTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## createSecret
 
 > CreateSecretOutput createSecret(body)
@@ -2733,6 +2782,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayCreateK8SAuthConfigOutput**](GatewayCreateK8SAuthConfigOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayCreateMigration
+
+> GatewayMigrationCreateOutput gatewayCreateMigration(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayCreateMigration(); // GatewayCreateMigration | 
+apiInstance.gatewayCreateMigration(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateMigration**](GatewayCreateMigration.md)|  | 
+
+### Return type
+
+[**GatewayMigrationCreateOutput**](GatewayMigrationCreateOutput.md)
 
 ### Authorization
 
@@ -3796,6 +3887,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayDeleteMigration
+
+> GatewayMigrationDeleteOutput gatewayDeleteMigration(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayDeleteMigration(); // GatewayDeleteMigration | 
+apiInstance.gatewayDeleteMigration(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayDeleteMigration**](GatewayDeleteMigration.md)|  | 
+
+### Return type
+
+[**GatewayMigrationDeleteOutput**](GatewayMigrationDeleteOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayDeleteProducer
 
 > GatewayDeleteProducerOutput gatewayDeleteProducer(body)
@@ -3911,6 +4044,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayGetK8SAuthConfigOutput**](GatewayGetK8SAuthConfigOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayGetMigration
+
+> GatewayMigrationGetOutput gatewayGetMigration(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayGetMigration(); // GatewayGetMigration | 
+apiInstance.gatewayGetMigration(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayGetMigration**](GatewayGetMigration.md)|  | 
+
+### Return type
+
+[**GatewayMigrationGetOutput**](GatewayMigrationGetOutput.md)
 
 ### Authorization
 
@@ -4384,6 +4559,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayUpdateMigration
+
+> GatewayMigrationUpdateOutput gatewayUpdateMigration(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateMigration(); // GatewayUpdateMigration | 
+apiInstance.gatewayUpdateMigration(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateMigration**](GatewayUpdateMigration.md)|  | 
+
+### Return type
+
+[**GatewayMigrationUpdateOutput**](GatewayMigrationUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayUpdateProducerArtifactory
 
 > GatewayUpdateProducerArtifactoryOutput gatewayUpdateProducerArtifactory(body)
@@ -4837,6 +5054,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayUpdateProducerGkeOutput**](GatewayUpdateProducerGkeOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerHanaDb
+
+> GatewayUpdateProducerHanaDbOutput gatewayUpdateProducerHanaDb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerHanaDb(); // GatewayUpdateProducerHanaDb | 
+apiInstance.gatewayUpdateProducerHanaDb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerHanaDb**](GatewayUpdateProducerHanaDb.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerHanaDbOutput**](GatewayUpdateProducerHanaDbOutput.md)
 
 ### Authorization
 
@@ -8927,6 +9186,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateTargetOutput**](UpdateTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateSalesforceTarget
+
+> UpdateSalesforceTargetOutput updateSalesforceTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateSalesforceTarget(); // UpdateSalesforceTarget | 
+apiInstance.updateSalesforceTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateSalesforceTarget**](UpdateSalesforceTarget.md)|  | 
+
+### Return type
+
+[**UpdateSalesforceTargetOutput**](UpdateSalesforceTargetOutput.md)
 
 ### Authorization
 

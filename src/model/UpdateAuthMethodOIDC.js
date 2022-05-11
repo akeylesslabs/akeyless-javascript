@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOIDC model module.
  * @module model/UpdateAuthMethodOIDC
- * @version 2.16.4
+ * @version 2.16.5
  */
 class UpdateAuthMethodOIDC {
     /**
@@ -150,9 +150,8 @@ UpdateAuthMethodOIDC.prototype['issuer'] = undefined;
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
- * @default 0
  */
-UpdateAuthMethodOIDC.prototype['jwt-ttl'] = 0;
+UpdateAuthMethodOIDC.prototype['jwt-ttl'] = undefined;
 
 /**
  * Auth Method name

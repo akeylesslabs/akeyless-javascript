@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOAuth2 model module.
  * @module model/UpdateAuthMethodOAuth2
- * @version 2.16.4
+ * @version 2.16.5
  */
 class UpdateAuthMethodOAuth2 {
     /**
@@ -146,9 +146,8 @@ UpdateAuthMethodOAuth2.prototype['jwks-uri'] = undefined;
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
- * @default 0
  */
-UpdateAuthMethodOAuth2.prototype['jwt-ttl'] = 0;
+UpdateAuthMethodOAuth2.prototype['jwt-ttl'] = undefined;
 
 /**
  * Auth Method name

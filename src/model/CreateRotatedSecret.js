@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 2.16.4
+ * @version 2.16.5
  */
 class CreateRotatedSecret {
     /**
@@ -68,6 +68,9 @@ class CreateRotatedSecret {
             if (data.hasOwnProperty('auto-rotate')) {
                 obj['auto-rotate'] = ApiClient.convertToType(data['auto-rotate'], 'String');
             }
+            if (data.hasOwnProperty('aws-region')) {
+                obj['aws-region'] = ApiClient.convertToType(data['aws-region'], 'String');
+            }
             if (data.hasOwnProperty('custom-payload')) {
                 obj['custom-payload'] = ApiClient.convertToType(data['custom-payload'], 'String');
             }
@@ -100,6 +103,45 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('rotator-type')) {
                 obj['rotator-type'] = ApiClient.convertToType(data['rotator-type'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-allow-external-user')) {
+                obj['secure-access-allow-external-user'] = ApiClient.convertToType(data['secure-access-allow-external-user'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-aws-account-id')) {
+                obj['secure-access-aws-account-id'] = ApiClient.convertToType(data['secure-access-aws-account-id'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-aws-native-cli')) {
+                obj['secure-access-aws-native-cli'] = ApiClient.convertToType(data['secure-access-aws-native-cli'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-issuer')) {
+                obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-db-name')) {
+                obj['secure-access-db-name'] = ApiClient.convertToType(data['secure-access-db-name'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-db-schema')) {
+                obj['secure-access-db-schema'] = ApiClient.convertToType(data['secure-access-db-schema'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-host')) {
+                obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('secure-access-rdp-domain')) {
+                obj['secure-access-rdp-domain'] = ApiClient.convertToType(data['secure-access-rdp-domain'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-rdp-user')) {
+                obj['secure-access-rdp-user'] = ApiClient.convertToType(data['secure-access-rdp-user'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web')) {
+                obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-proxy')) {
+                obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
             if (data.hasOwnProperty('ssh-password')) {
                 obj['ssh-password'] = ApiClient.convertToType(data['ssh-password'], 'String');
@@ -160,6 +202,13 @@ CreateRotatedSecret.prototype['authentication-credentials'] = undefined;
 CreateRotatedSecret.prototype['auto-rotate'] = undefined;
 
 /**
+ * Region (used in aws)
+ * @member {String} aws-region
+ * @default 'us-east-2'
+ */
+CreateRotatedSecret.prototype['aws-region'] = 'us-east-2';
+
+/**
  * @member {String} custom-payload
  */
 CreateRotatedSecret.prototype['custom-payload'] = undefined;
@@ -218,6 +267,88 @@ CreateRotatedSecret.prototype['rotator-custom-cmd'] = undefined;
  * @member {String} rotator-type
  */
 CreateRotatedSecret.prototype['rotator-type'] = undefined;
+
+/**
+ * Secure Access Allow Providing External User (used in ssh)
+ * @member {Boolean} secure-access-allow-external-user
+ * @default false
+ */
+CreateRotatedSecret.prototype['secure-access-allow-external-user'] = false;
+
+/**
+ * Secure Access Account Id (used in aws)
+ * @member {String} secure-access-aws-account-id
+ */
+CreateRotatedSecret.prototype['secure-access-aws-account-id'] = undefined;
+
+/**
+ * Secure Access Aws Native Cli (used in aws)
+ * @member {Boolean} secure-access-aws-native-cli
+ */
+CreateRotatedSecret.prototype['secure-access-aws-native-cli'] = undefined;
+
+/**
+ * Secure Access Bastion Issuer
+ * @member {String} secure-access-bastion-issuer
+ */
+CreateRotatedSecret.prototype['secure-access-bastion-issuer'] = undefined;
+
+/**
+ * Secure Access DB Name (used in data bases)
+ * @member {String} secure-access-db-name
+ */
+CreateRotatedSecret.prototype['secure-access-db-name'] = undefined;
+
+/**
+ * Secure Access Schema (used in mssql, postgresql)
+ * @member {String} secure-access-db-schema
+ */
+CreateRotatedSecret.prototype['secure-access-db-schema'] = undefined;
+
+/**
+ * Secure Access Enabled
+ * @member {String} secure-access-enable
+ */
+CreateRotatedSecret.prototype['secure-access-enable'] = undefined;
+
+/**
+ * Secure Access Host
+ * @member {Array.<String>} secure-access-host
+ */
+CreateRotatedSecret.prototype['secure-access-host'] = undefined;
+
+/**
+ * Secure Access Domain (used in ssh)
+ * @member {String} secure-access-rdp-domain
+ */
+CreateRotatedSecret.prototype['secure-access-rdp-domain'] = undefined;
+
+/**
+ * Secure Access Override User (used in ssh)
+ * @member {String} secure-access-rdp-user
+ */
+CreateRotatedSecret.prototype['secure-access-rdp-user'] = undefined;
+
+/**
+ * Secure Access Web
+ * @member {Boolean} secure-access-web
+ * @default false
+ */
+CreateRotatedSecret.prototype['secure-access-web'] = false;
+
+/**
+ * Secure Access Isolated (used in aws, azure)
+ * @member {Boolean} secure-access-web-browsing
+ * @default false
+ */
+CreateRotatedSecret.prototype['secure-access-web-browsing'] = false;
+
+/**
+ * Secure Access Web Proxy (used in aws, azure)
+ * @member {Boolean} secure-access-web-proxy
+ * @default false
+ */
+CreateRotatedSecret.prototype['secure-access-web-proxy'] = false;
 
 /**
  * Deprecated: use RotatedPassword

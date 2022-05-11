@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethod model module.
  * @module model/UpdateAuthMethod
- * @version 2.16.4
+ * @version 2.16.5
  */
 class UpdateAuthMethod {
     /**
@@ -102,9 +102,8 @@ UpdateAuthMethod.prototype['force-sub-claims'] = undefined;
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
- * @default 0
  */
-UpdateAuthMethod.prototype['jwt-ttl'] = 0;
+UpdateAuthMethod.prototype['jwt-ttl'] = undefined;
 
 /**
  * Auth Method name

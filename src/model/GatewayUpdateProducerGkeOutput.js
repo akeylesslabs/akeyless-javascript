@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayUpdateProducerGkeOutput model module.
  * @module model/GatewayUpdateProducerGkeOutput
- * @version 2.16.4
+ * @version 2.16.5
  */
 class GatewayUpdateProducerGkeOutput {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HashiPayload model module.
  * @module model/HashiPayload
- * @version 2.16.4
+ * @version 2.16.5
  */
 class HashiPayload {
     /**
@@ -47,6 +47,9 @@ class HashiPayload {
         if (data) {
             obj = obj || new HashiPayload();
 
+            if (data.hasOwnProperty('import_as_json')) {
+                obj['import_as_json'] = ApiClient.convertToType(data['import_as_json'], 'Boolean');
+            }
             if (data.hasOwnProperty('namespaces')) {
                 obj['namespaces'] = ApiClient.convertToType(data['namespaces'], ['String']);
             }
@@ -62,6 +65,11 @@ class HashiPayload {
 
 
 }
+
+/**
+ * @member {Boolean} import_as_json
+ */
+HashiPayload.prototype['import_as_json'] = undefined;
 
 /**
  * @member {Array.<String>} namespaces

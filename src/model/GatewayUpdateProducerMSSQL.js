@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMSSQL model module.
  * @module model/GatewayUpdateProducerMSSQL
- * @version 2.16.4
+ * @version 2.16.5
  */
 class GatewayUpdateProducerMSSQL {
     /**

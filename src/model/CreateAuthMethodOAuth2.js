@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOAuth2 model module.
  * @module model/CreateAuthMethodOAuth2
- * @version 2.16.4
+ * @version 2.16.5
  */
 class CreateAuthMethodOAuth2 {
     /**
@@ -143,9 +143,8 @@ CreateAuthMethodOAuth2.prototype['jwks-uri'] = undefined;
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
- * @default 0
  */
-CreateAuthMethodOAuth2.prototype['jwt-ttl'] = 0;
+CreateAuthMethodOAuth2.prototype['jwt-ttl'] = undefined;
 
 /**
  * Auth Method name

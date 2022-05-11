@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodUniversalIdentity model module.
  * @module model/CreateAuthMethodUniversalIdentity
- * @version 2.16.4
+ * @version 2.16.5
  */
 class CreateAuthMethodUniversalIdentity {
     /**
@@ -121,9 +121,8 @@ CreateAuthMethodUniversalIdentity.prototype['force-sub-claims'] = undefined;
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
- * @default 0
  */
-CreateAuthMethodUniversalIdentity.prototype['jwt-ttl'] = 0;
+CreateAuthMethodUniversalIdentity.prototype['jwt-ttl'] = undefined;
 
 /**
  * Auth Method name

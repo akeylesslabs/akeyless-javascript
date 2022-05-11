@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **boundUserId** | **[String]** | A list of full user ids that the access is restricted to | [optional] 
 **boundUserName** | **[String]** | A list of full user-name that the access is restricted to | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
-**jwtTtl** | **Number** | Jwt TTL | [optional] [default to 0]
+**jwtTtl** | **Number** | Jwt TTL | [optional] 
 **name** | **String** | Auth Method name | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 

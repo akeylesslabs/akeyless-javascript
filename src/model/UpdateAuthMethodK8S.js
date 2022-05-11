@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodK8S model module.
  * @module model/UpdateAuthMethodK8S
- * @version 2.16.4
+ * @version 2.16.5
  */
 class UpdateAuthMethodK8S {
     /**
@@ -152,9 +152,8 @@ UpdateAuthMethodK8S.prototype['gen-key'] = 'true';
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
- * @default 0
  */
-UpdateAuthMethodK8S.prototype['jwt-ttl'] = 0;
+UpdateAuthMethodK8S.prototype['jwt-ttl'] = undefined;
 
 /**
  * Auth Method name

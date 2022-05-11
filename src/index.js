@@ -111,6 +111,8 @@ import CreateSSHCertIssuer from './model/CreateSSHCertIssuer';
 import CreateSSHCertIssuerOutput from './model/CreateSSHCertIssuerOutput';
 import CreateSSHTarget from './model/CreateSSHTarget';
 import CreateSSHTargetOutput from './model/CreateSSHTargetOutput';
+import CreateSalesforceTarget from './model/CreateSalesforceTarget';
+import CreateSalesforceTargetOutput from './model/CreateSalesforceTargetOutput';
 import CreateSecret from './model/CreateSecret';
 import CreateSecretOutput from './model/CreateSecretOutput';
 import CreateTargetItemAssocOutput from './model/CreateTargetItemAssocOutput';
@@ -165,6 +167,7 @@ import GCPAccessRules from './model/GCPAccessRules';
 import GatewayAddAllowedManagementAccess from './model/GatewayAddAllowedManagementAccess';
 import GatewayCreateK8SAuthConfig from './model/GatewayCreateK8SAuthConfig';
 import GatewayCreateK8SAuthConfigOutput from './model/GatewayCreateK8SAuthConfigOutput';
+import GatewayCreateMigration from './model/GatewayCreateMigration';
 import GatewayCreateProducerArtifactory from './model/GatewayCreateProducerArtifactory';
 import GatewayCreateProducerArtifactoryOutput from './model/GatewayCreateProducerArtifactoryOutput';
 import GatewayCreateProducerAws from './model/GatewayCreateProducerAws';
@@ -216,19 +219,25 @@ import GatewayCreateProducerSnowflakeOutput from './model/GatewayCreateProducerS
 import GatewayDeleteAllowedManagementAccess from './model/GatewayDeleteAllowedManagementAccess';
 import GatewayDeleteK8SAuthConfig from './model/GatewayDeleteK8SAuthConfig';
 import GatewayDeleteK8SAuthConfigOutput from './model/GatewayDeleteK8SAuthConfigOutput';
+import GatewayDeleteMigration from './model/GatewayDeleteMigration';
 import GatewayDeleteProducer from './model/GatewayDeleteProducer';
 import GatewayDeleteProducerOutput from './model/GatewayDeleteProducerOutput';
 import GatewayGetConfig from './model/GatewayGetConfig';
 import GatewayGetK8SAuthConfig from './model/GatewayGetK8SAuthConfig';
 import GatewayGetK8SAuthConfigOutput from './model/GatewayGetK8SAuthConfigOutput';
+import GatewayGetMigration from './model/GatewayGetMigration';
 import GatewayGetProducer from './model/GatewayGetProducer';
 import GatewayGetTmpUsers from './model/GatewayGetTmpUsers';
 import GatewayListAllowedManagementAccess from './model/GatewayListAllowedManagementAccess';
 import GatewayListMigration from './model/GatewayListMigration';
 import GatewayListProducers from './model/GatewayListProducers';
 import GatewayMessageQueueInfo from './model/GatewayMessageQueueInfo';
+import GatewayMigrationCreateOutput from './model/GatewayMigrationCreateOutput';
+import GatewayMigrationDeleteOutput from './model/GatewayMigrationDeleteOutput';
+import GatewayMigrationGetOutput from './model/GatewayMigrationGetOutput';
 import GatewayMigrationListOutput from './model/GatewayMigrationListOutput';
 import GatewayMigrationSyncOutput from './model/GatewayMigrationSyncOutput';
+import GatewayMigrationUpdateOutput from './model/GatewayMigrationUpdateOutput';
 import GatewayRevokeTmpUsers from './model/GatewayRevokeTmpUsers';
 import GatewayStartProducer from './model/GatewayStartProducer';
 import GatewayStartProducerOutput from './model/GatewayStartProducerOutput';
@@ -239,6 +248,7 @@ import GatewayUpdateItem from './model/GatewayUpdateItem';
 import GatewayUpdateItemOutput from './model/GatewayUpdateItemOutput';
 import GatewayUpdateK8SAuthConfig from './model/GatewayUpdateK8SAuthConfig';
 import GatewayUpdateK8SAuthConfigOutput from './model/GatewayUpdateK8SAuthConfigOutput';
+import GatewayUpdateMigration from './model/GatewayUpdateMigration';
 import GatewayUpdateProducerArtifactory from './model/GatewayUpdateProducerArtifactory';
 import GatewayUpdateProducerArtifactoryOutput from './model/GatewayUpdateProducerArtifactoryOutput';
 import GatewayUpdateProducerAws from './model/GatewayUpdateProducerAws';
@@ -498,6 +508,8 @@ import UpdateSSHCertIssuerOutput from './model/UpdateSSHCertIssuerOutput';
 import UpdateSSHTarget from './model/UpdateSSHTarget';
 import UpdateSSHTargetDetails from './model/UpdateSSHTargetDetails';
 import UpdateSSHTargetOutput from './model/UpdateSSHTargetOutput';
+import UpdateSalesforceTarget from './model/UpdateSalesforceTarget';
+import UpdateSalesforceTargetOutput from './model/UpdateSalesforceTargetOutput';
 import UpdateSecretVal from './model/UpdateSecretVal';
 import UpdateSecretValOutput from './model/UpdateSecretValOutput';
 import UpdateTarget from './model/UpdateTarget';
@@ -547,7 +559,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.16.4
+* @version 2.16.5
 */
 export {
     /**
@@ -1145,6 +1157,18 @@ export {
     CreateSSHTargetOutput,
 
     /**
+     * The CreateSalesforceTarget model constructor.
+     * @property {module:model/CreateSalesforceTarget}
+     */
+    CreateSalesforceTarget,
+
+    /**
+     * The CreateSalesforceTargetOutput model constructor.
+     * @property {module:model/CreateSalesforceTargetOutput}
+     */
+    CreateSalesforceTargetOutput,
+
+    /**
      * The CreateSecret model constructor.
      * @property {module:model/CreateSecret}
      */
@@ -1469,6 +1493,12 @@ export {
     GatewayCreateK8SAuthConfigOutput,
 
     /**
+     * The GatewayCreateMigration model constructor.
+     * @property {module:model/GatewayCreateMigration}
+     */
+    GatewayCreateMigration,
+
+    /**
      * The GatewayCreateProducerArtifactory model constructor.
      * @property {module:model/GatewayCreateProducerArtifactory}
      */
@@ -1775,6 +1805,12 @@ export {
     GatewayDeleteK8SAuthConfigOutput,
 
     /**
+     * The GatewayDeleteMigration model constructor.
+     * @property {module:model/GatewayDeleteMigration}
+     */
+    GatewayDeleteMigration,
+
+    /**
      * The GatewayDeleteProducer model constructor.
      * @property {module:model/GatewayDeleteProducer}
      */
@@ -1803,6 +1839,12 @@ export {
      * @property {module:model/GatewayGetK8SAuthConfigOutput}
      */
     GatewayGetK8SAuthConfigOutput,
+
+    /**
+     * The GatewayGetMigration model constructor.
+     * @property {module:model/GatewayGetMigration}
+     */
+    GatewayGetMigration,
 
     /**
      * The GatewayGetProducer model constructor.
@@ -1841,6 +1883,24 @@ export {
     GatewayMessageQueueInfo,
 
     /**
+     * The GatewayMigrationCreateOutput model constructor.
+     * @property {module:model/GatewayMigrationCreateOutput}
+     */
+    GatewayMigrationCreateOutput,
+
+    /**
+     * The GatewayMigrationDeleteOutput model constructor.
+     * @property {module:model/GatewayMigrationDeleteOutput}
+     */
+    GatewayMigrationDeleteOutput,
+
+    /**
+     * The GatewayMigrationGetOutput model constructor.
+     * @property {module:model/GatewayMigrationGetOutput}
+     */
+    GatewayMigrationGetOutput,
+
+    /**
      * The GatewayMigrationListOutput model constructor.
      * @property {module:model/GatewayMigrationListOutput}
      */
@@ -1851,6 +1911,12 @@ export {
      * @property {module:model/GatewayMigrationSyncOutput}
      */
     GatewayMigrationSyncOutput,
+
+    /**
+     * The GatewayMigrationUpdateOutput model constructor.
+     * @property {module:model/GatewayMigrationUpdateOutput}
+     */
+    GatewayMigrationUpdateOutput,
 
     /**
      * The GatewayRevokeTmpUsers model constructor.
@@ -1911,6 +1977,12 @@ export {
      * @property {module:model/GatewayUpdateK8SAuthConfigOutput}
      */
     GatewayUpdateK8SAuthConfigOutput,
+
+    /**
+     * The GatewayUpdateMigration model constructor.
+     * @property {module:model/GatewayUpdateMigration}
+     */
+    GatewayUpdateMigration,
 
     /**
      * The GatewayUpdateProducerArtifactory model constructor.
@@ -3465,6 +3537,18 @@ export {
      * @property {module:model/UpdateSSHTargetOutput}
      */
     UpdateSSHTargetOutput,
+
+    /**
+     * The UpdateSalesforceTarget model constructor.
+     * @property {module:model/UpdateSalesforceTarget}
+     */
+    UpdateSalesforceTarget,
+
+    /**
+     * The UpdateSalesforceTargetOutput model constructor.
+     * @property {module:model/UpdateSalesforceTargetOutput}
+     */
+    UpdateSalesforceTargetOutput,
 
     /**
      * The UpdateSecretVal model constructor.

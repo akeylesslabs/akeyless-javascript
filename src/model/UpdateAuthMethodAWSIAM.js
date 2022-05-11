@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAWSIAM model module.
  * @module model/UpdateAuthMethodAWSIAM
- * @version 2.16.4
+ * @version 2.16.5
  */
 class UpdateAuthMethodAWSIAM {
     /**
@@ -171,9 +171,8 @@ UpdateAuthMethodAWSIAM.prototype['force-sub-claims'] = undefined;
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
- * @default 0
  */
-UpdateAuthMethodAWSIAM.prototype['jwt-ttl'] = 0;
+UpdateAuthMethodAWSIAM.prototype['jwt-ttl'] = undefined;
 
 /**
  * Auth Method name

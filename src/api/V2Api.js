@@ -87,6 +87,8 @@ import CreateSSHCertIssuer from '../model/CreateSSHCertIssuer';
 import CreateSSHCertIssuerOutput from '../model/CreateSSHCertIssuerOutput';
 import CreateSSHTarget from '../model/CreateSSHTarget';
 import CreateSSHTargetOutput from '../model/CreateSSHTargetOutput';
+import CreateSalesforceTarget from '../model/CreateSalesforceTarget';
+import CreateSalesforceTargetOutput from '../model/CreateSalesforceTargetOutput';
 import CreateSecret from '../model/CreateSecret';
 import CreateSecretOutput from '../model/CreateSecretOutput';
 import CreateTargetItemAssocOutput from '../model/CreateTargetItemAssocOutput';
@@ -125,6 +127,7 @@ import EncryptPKCS1Output from '../model/EncryptPKCS1Output';
 import EncryptWithClassicKey from '../model/EncryptWithClassicKey';
 import GatewayCreateK8SAuthConfig from '../model/GatewayCreateK8SAuthConfig';
 import GatewayCreateK8SAuthConfigOutput from '../model/GatewayCreateK8SAuthConfigOutput';
+import GatewayCreateMigration from '../model/GatewayCreateMigration';
 import GatewayCreateProducerArtifactory from '../model/GatewayCreateProducerArtifactory';
 import GatewayCreateProducerArtifactoryOutput from '../model/GatewayCreateProducerArtifactoryOutput';
 import GatewayCreateProducerAws from '../model/GatewayCreateProducerAws';
@@ -174,18 +177,24 @@ import GatewayCreateProducerSnowflakeOutput from '../model/GatewayCreateProducer
 import GatewayDeleteAllowedManagementAccess from '../model/GatewayDeleteAllowedManagementAccess';
 import GatewayDeleteK8SAuthConfig from '../model/GatewayDeleteK8SAuthConfig';
 import GatewayDeleteK8SAuthConfigOutput from '../model/GatewayDeleteK8SAuthConfigOutput';
+import GatewayDeleteMigration from '../model/GatewayDeleteMigration';
 import GatewayDeleteProducer from '../model/GatewayDeleteProducer';
 import GatewayDeleteProducerOutput from '../model/GatewayDeleteProducerOutput';
 import GatewayGetConfig from '../model/GatewayGetConfig';
 import GatewayGetK8SAuthConfig from '../model/GatewayGetK8SAuthConfig';
 import GatewayGetK8SAuthConfigOutput from '../model/GatewayGetK8SAuthConfigOutput';
+import GatewayGetMigration from '../model/GatewayGetMigration';
 import GatewayGetProducer from '../model/GatewayGetProducer';
 import GatewayGetTmpUsers from '../model/GatewayGetTmpUsers';
 import GatewayListAllowedManagementAccess from '../model/GatewayListAllowedManagementAccess';
 import GatewayListMigration from '../model/GatewayListMigration';
 import GatewayListProducers from '../model/GatewayListProducers';
+import GatewayMigrationCreateOutput from '../model/GatewayMigrationCreateOutput';
+import GatewayMigrationDeleteOutput from '../model/GatewayMigrationDeleteOutput';
+import GatewayMigrationGetOutput from '../model/GatewayMigrationGetOutput';
 import GatewayMigrationListOutput from '../model/GatewayMigrationListOutput';
 import GatewayMigrationSyncOutput from '../model/GatewayMigrationSyncOutput';
+import GatewayMigrationUpdateOutput from '../model/GatewayMigrationUpdateOutput';
 import GatewayRevokeTmpUsers from '../model/GatewayRevokeTmpUsers';
 import GatewayStartProducer from '../model/GatewayStartProducer';
 import GatewayStartProducerOutput from '../model/GatewayStartProducerOutput';
@@ -196,6 +205,7 @@ import GatewayUpdateItem from '../model/GatewayUpdateItem';
 import GatewayUpdateItemOutput from '../model/GatewayUpdateItemOutput';
 import GatewayUpdateK8SAuthConfig from '../model/GatewayUpdateK8SAuthConfig';
 import GatewayUpdateK8SAuthConfigOutput from '../model/GatewayUpdateK8SAuthConfigOutput';
+import GatewayUpdateMigration from '../model/GatewayUpdateMigration';
 import GatewayUpdateProducerArtifactory from '../model/GatewayUpdateProducerArtifactory';
 import GatewayUpdateProducerArtifactoryOutput from '../model/GatewayUpdateProducerArtifactoryOutput';
 import GatewayUpdateProducerAws from '../model/GatewayUpdateProducerAws';
@@ -218,6 +228,8 @@ import GatewayUpdateProducerGithub from '../model/GatewayUpdateProducerGithub';
 import GatewayUpdateProducerGithubOutput from '../model/GatewayUpdateProducerGithubOutput';
 import GatewayUpdateProducerGke from '../model/GatewayUpdateProducerGke';
 import GatewayUpdateProducerGkeOutput from '../model/GatewayUpdateProducerGkeOutput';
+import GatewayUpdateProducerHanaDb from '../model/GatewayUpdateProducerHanaDb';
+import GatewayUpdateProducerHanaDbOutput from '../model/GatewayUpdateProducerHanaDbOutput';
 import GatewayUpdateProducerLdap from '../model/GatewayUpdateProducerLdap';
 import GatewayUpdateProducerLdapOutput from '../model/GatewayUpdateProducerLdapOutput';
 import GatewayUpdateProducerMSSQL from '../model/GatewayUpdateProducerMSSQL';
@@ -382,6 +394,8 @@ import UpdateSSHCertIssuerOutput from '../model/UpdateSSHCertIssuerOutput';
 import UpdateSSHTarget from '../model/UpdateSSHTarget';
 import UpdateSSHTargetDetails from '../model/UpdateSSHTargetDetails';
 import UpdateSSHTargetOutput from '../model/UpdateSSHTargetOutput';
+import UpdateSalesforceTarget from '../model/UpdateSalesforceTarget';
+import UpdateSalesforceTargetOutput from '../model/UpdateSalesforceTargetOutput';
 import UpdateSecretVal from '../model/UpdateSecretVal';
 import UpdateSecretValOutput from '../model/UpdateSecretValOutput';
 import UpdateTarget from '../model/UpdateTarget';
@@ -401,7 +415,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.16.4
+* @version 2.16.5
 */
 export default class V2Api {
 
@@ -2010,6 +2024,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/CreateSalesforceTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateSalesforceTargetOutput} and HTTP response
+     */
+    createSalesforceTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createSalesforceTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateSalesforceTargetOutput;
+      return this.apiClient.callApi(
+        '/create-salesforce-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateSalesforceTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateSalesforceTargetOutput}
+     */
+    createSalesforceTarget(body) {
+      return this.createSalesforceTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/CreateSecret} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateSecretOutput} and HTTP response
      */
@@ -2992,6 +3049,49 @@ export default class V2Api {
      */
     gatewayCreateK8SAuthConfig(body) {
       return this.gatewayCreateK8SAuthConfigWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayCreateMigration} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayMigrationCreateOutput} and HTTP response
+     */
+    gatewayCreateMigrationWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateMigration");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayMigrationCreateOutput;
+      return this.apiClient.callApi(
+        '/gateway-create-migration', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayCreateMigration} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayMigrationCreateOutput}
+     */
+    gatewayCreateMigration(body) {
+      return this.gatewayCreateMigrationWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4073,6 +4173,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayDeleteMigration} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayMigrationDeleteOutput} and HTTP response
+     */
+    gatewayDeleteMigrationWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayDeleteMigration");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayMigrationDeleteOutput;
+      return this.apiClient.callApi(
+        '/gateway-delete-migration', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayDeleteMigration} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayMigrationDeleteOutput}
+     */
+    gatewayDeleteMigration(body) {
+      return this.gatewayDeleteMigrationWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayDeleteProducer} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayDeleteProducerOutput} and HTTP response
      */
@@ -4195,6 +4338,49 @@ export default class V2Api {
      */
     gatewayGetK8SAuthConfig(body) {
       return this.gatewayGetK8SAuthConfigWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayGetMigration} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayMigrationGetOutput} and HTTP response
+     */
+    gatewayGetMigrationWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayGetMigration");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayMigrationGetOutput;
+      return this.apiClient.callApi(
+        '/gateway-get-migration', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayGetMigration} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayMigrationGetOutput}
+     */
+    gatewayGetMigration(body) {
+      return this.gatewayGetMigrationWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4675,6 +4861,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayUpdateMigration} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayMigrationUpdateOutput} and HTTP response
+     */
+    gatewayUpdateMigrationWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateMigration");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayMigrationUpdateOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-migration', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateMigration} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayMigrationUpdateOutput}
+     */
+    gatewayUpdateMigration(body) {
+      return this.gatewayUpdateMigrationWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayUpdateProducerArtifactory} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerArtifactoryOutput} and HTTP response
      */
@@ -5140,6 +5369,49 @@ export default class V2Api {
      */
     gatewayUpdateProducerGke(body) {
       return this.gatewayUpdateProducerGkeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerHanaDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerHanaDbOutput} and HTTP response
+     */
+    gatewayUpdateProducerHanaDbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerHanaDb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerHanaDbOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-hana', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerHanaDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerHanaDbOutput}
+     */
+    gatewayUpdateProducerHanaDb(body) {
+      return this.gatewayUpdateProducerHanaDbWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9279,6 +9551,49 @@ export default class V2Api {
      */
     updateSSHTargetDetails(body) {
       return this.updateSSHTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateSalesforceTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateSalesforceTargetOutput} and HTTP response
+     */
+    updateSalesforceTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateSalesforceTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateSalesforceTargetOutput;
+      return this.apiClient.callApi(
+        '/update-salesforce-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateSalesforceTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateSalesforceTargetOutput}
+     */
+    updateSalesforceTarget(body) {
+      return this.updateSalesforceTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

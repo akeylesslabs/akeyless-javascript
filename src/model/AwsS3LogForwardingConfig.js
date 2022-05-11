@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AwsS3LogForwardingConfig model module.
  * @module model/AwsS3LogForwardingConfig
- * @version 2.16.4
+ * @version 2.16.5
  */
 class AwsS3LogForwardingConfig {
     /**
@@ -56,6 +56,9 @@ class AwsS3LogForwardingConfig {
             if (data.hasOwnProperty('aws_region')) {
                 obj['aws_region'] = ApiClient.convertToType(data['aws_region'], 'String');
             }
+            if (data.hasOwnProperty('aws_use_gateway_cloud_identity')) {
+                obj['aws_use_gateway_cloud_identity'] = ApiClient.convertToType(data['aws_use_gateway_cloud_identity'], 'Boolean');
+            }
             if (data.hasOwnProperty('bucket_name')) {
                 obj['bucket_name'] = ApiClient.convertToType(data['bucket_name'], 'String');
             }
@@ -83,6 +86,11 @@ AwsS3LogForwardingConfig.prototype['aws_access_key'] = undefined;
  * @member {String} aws_region
  */
 AwsS3LogForwardingConfig.prototype['aws_region'] = undefined;
+
+/**
+ * @member {Boolean} aws_use_gateway_cloud_identity
+ */
+AwsS3LogForwardingConfig.prototype['aws_use_gateway_cloud_identity'] = undefined;
 
 /**
  * @member {String} bucket_name

@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerHanaDb model module.
  * @module model/GatewayUpdateProducerHanaDb
- * @version 2.16.4
+ * @version 2.16.5
  */
 class GatewayUpdateProducerHanaDb {
     /**
      * Constructs a new <code>GatewayUpdateProducerHanaDb</code>.
-     * gatewayUpdateProducerHanaDb is a command that updates mssql producer
+     * gatewayUpdateProducerHanaDb is a command that updates hanadb producer
      * @alias module:model/GatewayUpdateProducerHanaDb
      * @param name {String} Producer name
      */

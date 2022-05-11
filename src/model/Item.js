@@ -21,7 +21,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 2.16.4
+ * @version 2.16.5
  */
 class Item {
     /**
@@ -78,6 +78,9 @@ class Item {
             }
             if (data.hasOwnProperty('is_enabled')) {
                 obj['is_enabled'] = ApiClient.convertToType(data['is_enabled'], 'Boolean');
+            }
+            if (data.hasOwnProperty('item_accessibility')) {
+                obj['item_accessibility'] = ApiClient.convertToType(data['item_accessibility'], 'Number');
             }
             if (data.hasOwnProperty('item_general_info')) {
                 obj['item_general_info'] = ItemGeneralInfo.constructFromObject(data['item_general_info']);
@@ -184,6 +187,11 @@ Item.prototype['display_id'] = undefined;
  * @member {Boolean} is_enabled
  */
 Item.prototype['is_enabled'] = undefined;
+
+/**
+ * @member {Number} item_accessibility
+ */
+Item.prototype['item_accessibility'] = undefined;
 
 /**
  * @member {module:model/ItemGeneralInfo} item_general_info

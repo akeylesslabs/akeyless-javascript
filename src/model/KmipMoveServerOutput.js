@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipMoveServerOutput model module.
  * @module model/KmipMoveServerOutput
- * @version 2.16.4
+ * @version 2.16.5
  */
 class KmipMoveServerOutput {
     /**
