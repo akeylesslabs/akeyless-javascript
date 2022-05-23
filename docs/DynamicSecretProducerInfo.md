@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**failureMessage** | **String** |  | [optional] 
 **gwClusterId** | **Number** |  | [optional] 
 **producerLastKeepAlive** | **String** |  | [optional] 
 **producerMetadata** | **String** |  | [optional] 

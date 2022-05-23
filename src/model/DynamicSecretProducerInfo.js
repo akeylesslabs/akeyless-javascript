@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretProducerInfo model module.
  * @module model/DynamicSecretProducerInfo
- * @version 2.16.5
+ * @version 2.16.6
  */
 class DynamicSecretProducerInfo {
     /**
@@ -48,6 +48,9 @@ class DynamicSecretProducerInfo {
         if (data) {
             obj = obj || new DynamicSecretProducerInfo();
 
+            if (data.hasOwnProperty('failure_message')) {
+                obj['failure_message'] = ApiClient.convertToType(data['failure_message'], 'String');
+            }
             if (data.hasOwnProperty('gw_cluster_id')) {
                 obj['gw_cluster_id'] = ApiClient.convertToType(data['gw_cluster_id'], 'Number');
             }
@@ -69,6 +72,11 @@ class DynamicSecretProducerInfo {
 
 
 }
+
+/**
+ * @member {String} failure_message
+ */
+DynamicSecretProducerInfo.prototype['failure_message'] = undefined;
 
 /**
  * @member {Number} gw_cluster_id

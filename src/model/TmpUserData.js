@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TmpUserData model module.
  * @module model/TmpUserData
- * @version 2.16.5
+ * @version 2.16.6
  */
 class TmpUserData {
     /**

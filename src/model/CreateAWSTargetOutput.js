@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAWSTargetOutput model module.
  * @module model/CreateAWSTargetOutput
- * @version 2.16.5
+ * @version 2.16.6
  */
 class CreateAWSTargetOutput {
     /**

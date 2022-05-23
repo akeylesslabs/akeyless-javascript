@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Producer model module.
  * @module model/Producer
- * @version 2.16.5
+ * @version 2.16.6
  */
 class Producer {
     /**
@@ -50,6 +50,9 @@ class Producer {
             if (data.hasOwnProperty('active')) {
                 obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
             }
+            if (data.hasOwnProperty('failure_message')) {
+                obj['failure_message'] = ApiClient.convertToType(data['failure_message'], 'String');
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
@@ -73,6 +76,11 @@ class Producer {
  * @member {Boolean} active
  */
 Producer.prototype['active'] = undefined;
+
+/**
+ * @member {String} failure_message
+ */
+Producer.prototype['failure_message'] = undefined;
 
 /**
  * @member {Number} id

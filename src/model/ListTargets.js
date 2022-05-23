@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListTargets model module.
  * @module model/ListTargets
- * @version 2.16.5
+ * @version 2.16.6
  */
 class ListTargets {
     /**
@@ -56,6 +56,9 @@ class ListTargets {
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], ['String']);
+            }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
@@ -83,6 +86,12 @@ ListTargets.prototype['pagination-token'] = undefined;
  * @member {String} token
  */
 ListTargets.prototype['token'] = undefined;
+
+/**
+ * The target types list . In case it is empty, all types of targets will be returned. options: [hanadb cassandra aws ssh gke eks mysql mongodb snowflake mssql redshift artifactory azure rabbitmq k8s venafi gcp oracle dockerhub ldap github chef web salesforce postgres]
+ * @member {Array.<String>} type
+ */
+ListTargets.prototype['type'] = undefined;
 
 /**
  * The universal identity token, Required only for universal_identity authentication

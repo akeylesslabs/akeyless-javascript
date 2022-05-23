@@ -116,6 +116,8 @@ import CreateSalesforceTargetOutput from './model/CreateSalesforceTargetOutput';
 import CreateSecret from './model/CreateSecret';
 import CreateSecretOutput from './model/CreateSecretOutput';
 import CreateTargetItemAssocOutput from './model/CreateTargetItemAssocOutput';
+import CreateTokenizer from './model/CreateTokenizer';
+import CreateTokenizerOutput from './model/CreateTokenizerOutput';
 import CreateWebTarget from './model/CreateWebTarget';
 import CreateWebTargetOutput from './model/CreateWebTargetOutput';
 import CustomerFragment from './model/CustomerFragment';
@@ -151,9 +153,12 @@ import DeleteTargets from './model/DeleteTargets';
 import DescribeItem from './model/DescribeItem';
 import DescribePermissions from './model/DescribePermissions';
 import DescribePermissionsOutput from './model/DescribePermissionsOutput';
+import Detokenize from './model/Detokenize';
+import DetokenizeOutput from './model/DetokenizeOutput';
 import DynamicSecretProducerInfo from './model/DynamicSecretProducerInfo';
 import ElasticsearchLogForwardingConfig from './model/ElasticsearchLogForwardingConfig';
 import EmailPassAccessRules from './model/EmailPassAccessRules';
+import EmailTokenizerInfo from './model/EmailTokenizerInfo';
 import Encrypt from './model/Encrypt';
 import EncryptFile from './model/EncryptFile';
 import EncryptFileOutput from './model/EncryptFileOutput';
@@ -397,6 +402,7 @@ import ProducersConfigPart from './model/ProducersConfigPart';
 import RawCreds from './model/RawCreds';
 import RefreshKey from './model/RefreshKey';
 import RefreshKeyOutput from './model/RefreshKeyOutput';
+import RegexpTokenizerInfo from './model/RegexpTokenizerInfo';
 import RequiredActivity from './model/RequiredActivity';
 import ReverseRBAC from './model/ReverseRBAC';
 import ReverseRBACClient from './model/ReverseRBACClient';
@@ -408,7 +414,9 @@ import RollbackSecret from './model/RollbackSecret';
 import RollbackSecretOutput from './model/RollbackSecretOutput';
 import RotateKey from './model/RotateKey';
 import RotateKeyOutput from './model/RotateKeyOutput';
+import RotateSecret from './model/RotateSecret';
 import RotatedSecretDetailsInfo from './model/RotatedSecretDetailsInfo';
+import RotatedSecretOutput from './model/RotatedSecretOutput';
 import Rotator from './model/Rotator';
 import RotatorsConfigPart from './model/RotatorsConfigPart';
 import Rules from './model/Rules';
@@ -438,6 +446,9 @@ import TargetItemAssociation from './model/TargetItemAssociation';
 import TargetItemVersion from './model/TargetItemVersion';
 import TargetTypeDetailsInput from './model/TargetTypeDetailsInput';
 import TmpUserData from './model/TmpUserData';
+import Tokenize from './model/Tokenize';
+import TokenizeOutput from './model/TokenizeOutput';
+import TokenizerInfo from './model/TokenizerInfo';
 import UIDTokenDetails from './model/UIDTokenDetails';
 import UidCreateChildToken from './model/UidCreateChildToken';
 import UidCreateChildTokenOutput from './model/UidCreateChildTokenOutput';
@@ -515,6 +526,8 @@ import UpdateSecretValOutput from './model/UpdateSecretValOutput';
 import UpdateTarget from './model/UpdateTarget';
 import UpdateTargetDetailsOutput from './model/UpdateTargetDetailsOutput';
 import UpdateTargetOutput from './model/UpdateTargetOutput';
+import UpdateTokenizer from './model/UpdateTokenizer';
+import UpdateTokenizerOutput from './model/UpdateTokenizerOutput';
 import UpdateWebTarget from './model/UpdateWebTarget';
 import UpdateWebTargetDetails from './model/UpdateWebTargetDetails';
 import UpdateWebTargetOutput from './model/UpdateWebTargetOutput';
@@ -522,6 +535,7 @@ import UploadPKCS12 from './model/UploadPKCS12';
 import UploadRSA from './model/UploadRSA';
 import ValidateToken from './model/ValidateToken';
 import ValidateTokenOutput from './model/ValidateTokenOutput';
+import VaultlessTokenizerInfo from './model/VaultlessTokenizerInfo';
 import VerifyJWTOutput from './model/VerifyJWTOutput';
 import VerifyJWTWithClassicKey from './model/VerifyJWTWithClassicKey';
 import VerifyPKCS1 from './model/VerifyPKCS1';
@@ -559,7 +573,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.16.5
+* @version 2.16.6
 */
 export {
     /**
@@ -1187,6 +1201,18 @@ export {
     CreateTargetItemAssocOutput,
 
     /**
+     * The CreateTokenizer model constructor.
+     * @property {module:model/CreateTokenizer}
+     */
+    CreateTokenizer,
+
+    /**
+     * The CreateTokenizerOutput model constructor.
+     * @property {module:model/CreateTokenizerOutput}
+     */
+    CreateTokenizerOutput,
+
+    /**
      * The CreateWebTarget model constructor.
      * @property {module:model/CreateWebTarget}
      */
@@ -1397,6 +1423,18 @@ export {
     DescribePermissionsOutput,
 
     /**
+     * The Detokenize model constructor.
+     * @property {module:model/Detokenize}
+     */
+    Detokenize,
+
+    /**
+     * The DetokenizeOutput model constructor.
+     * @property {module:model/DetokenizeOutput}
+     */
+    DetokenizeOutput,
+
+    /**
      * The DynamicSecretProducerInfo model constructor.
      * @property {module:model/DynamicSecretProducerInfo}
      */
@@ -1413,6 +1451,12 @@ export {
      * @property {module:model/EmailPassAccessRules}
      */
     EmailPassAccessRules,
+
+    /**
+     * The EmailTokenizerInfo model constructor.
+     * @property {module:model/EmailTokenizerInfo}
+     */
+    EmailTokenizerInfo,
 
     /**
      * The Encrypt model constructor.
@@ -2873,6 +2917,12 @@ export {
     RefreshKeyOutput,
 
     /**
+     * The RegexpTokenizerInfo model constructor.
+     * @property {module:model/RegexpTokenizerInfo}
+     */
+    RegexpTokenizerInfo,
+
+    /**
      * The RequiredActivity model constructor.
      * @property {module:model/RequiredActivity}
      */
@@ -2939,10 +2989,22 @@ export {
     RotateKeyOutput,
 
     /**
+     * The RotateSecret model constructor.
+     * @property {module:model/RotateSecret}
+     */
+    RotateSecret,
+
+    /**
      * The RotatedSecretDetailsInfo model constructor.
      * @property {module:model/RotatedSecretDetailsInfo}
      */
     RotatedSecretDetailsInfo,
+
+    /**
+     * The RotatedSecretOutput model constructor.
+     * @property {module:model/RotatedSecretOutput}
+     */
+    RotatedSecretOutput,
 
     /**
      * The Rotator model constructor.
@@ -3117,6 +3179,24 @@ export {
      * @property {module:model/TmpUserData}
      */
     TmpUserData,
+
+    /**
+     * The Tokenize model constructor.
+     * @property {module:model/Tokenize}
+     */
+    Tokenize,
+
+    /**
+     * The TokenizeOutput model constructor.
+     * @property {module:model/TokenizeOutput}
+     */
+    TokenizeOutput,
+
+    /**
+     * The TokenizerInfo model constructor.
+     * @property {module:model/TokenizerInfo}
+     */
+    TokenizerInfo,
 
     /**
      * The UIDTokenDetails model constructor.
@@ -3581,6 +3661,18 @@ export {
     UpdateTargetOutput,
 
     /**
+     * The UpdateTokenizer model constructor.
+     * @property {module:model/UpdateTokenizer}
+     */
+    UpdateTokenizer,
+
+    /**
+     * The UpdateTokenizerOutput model constructor.
+     * @property {module:model/UpdateTokenizerOutput}
+     */
+    UpdateTokenizerOutput,
+
+    /**
      * The UpdateWebTarget model constructor.
      * @property {module:model/UpdateWebTarget}
      */
@@ -3621,6 +3713,12 @@ export {
      * @property {module:model/ValidateTokenOutput}
      */
     ValidateTokenOutput,
+
+    /**
+     * The VaultlessTokenizerInfo model constructor.
+     * @property {module:model/VaultlessTokenizerInfo}
+     */
+    VaultlessTokenizerInfo,
 
     /**
      * The VerifyJWTOutput model constructor.

@@ -43,6 +43,7 @@ Method | HTTP request | Description
 [**createSSHTarget**](V2Api.md#createSSHTarget) | **POST** /create-ssh-target | 
 [**createSalesforceTarget**](V2Api.md#createSalesforceTarget) | **POST** /create-salesforce-target | 
 [**createSecret**](V2Api.md#createSecret) | **POST** /create-secret | 
+[**createTokenizer**](V2Api.md#createTokenizer) | **POST** /create-tokenizer | 
 [**createWebTarget**](V2Api.md#createWebTarget) | **POST** /create-web-target | 
 [**createldapTarget**](V2Api.md#createldapTarget) | **POST** /create-ldap-target | 
 [**decrypt**](V2Api.md#decrypt) | **POST** /decrypt | 
@@ -61,6 +62,7 @@ Method | HTTP request | Description
 [**deleteTargets**](V2Api.md#deleteTargets) | **POST** /delete-targets | 
 [**describeItem**](V2Api.md#describeItem) | **POST** /describe-item | 
 [**describePermissions**](V2Api.md#describePermissions) | **POST** /describe-permissions | 
+[**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
 [**encryptPKCS1**](V2Api.md#encryptPKCS1) | **POST** /encrypt-pkcs1 | 
 [**encryptWithClassicKey**](V2Api.md#encryptWithClassicKey) | **POST** /encrypt-with-classic-key | 
@@ -170,12 +172,14 @@ Method | HTTP request | Description
 [**revokeCreds**](V2Api.md#revokeCreds) | **POST** /revoke-creds | 
 [**rollbackSecret**](V2Api.md#rollbackSecret) | **POST** /rollback-secret | 
 [**rotateKey**](V2Api.md#rotateKey) | **POST** /rotate-key | 
+[**rotateSecret**](V2Api.md#rotateSecret) | **POST** /gateway-rotate-secret | 
 [**setItemState**](V2Api.md#setItemState) | **POST** /set-item-state | 
 [**setRoleRule**](V2Api.md#setRoleRule) | **POST** /set-role-rule | 
 [**signJWTWithClassicKey**](V2Api.md#signJWTWithClassicKey) | **POST** /sign-jwt-with-classic-key | 
 [**signPKCS1**](V2Api.md#signPKCS1) | **POST** /sign-pkcs1 | 
 [**signPKICertWithClassicKey**](V2Api.md#signPKICertWithClassicKey) | **POST** /sign-pki-cert-with-classic-key | 
 [**staticCredsAuth**](V2Api.md#staticCredsAuth) | **POST** /static-creds-auth | 
+[**tokenize**](V2Api.md#tokenize) | **POST** /tokenize | 
 [**uidCreateChildToken**](V2Api.md#uidCreateChildToken) | **POST** /uid-create-child-token | 
 [**uidGenerateToken**](V2Api.md#uidGenerateToken) | **POST** /uid-generate-token | 
 [**uidListChildren**](V2Api.md#uidListChildren) | **POST** /uid-list-children | 
@@ -221,6 +225,7 @@ Method | HTTP request | Description
 [**updateSecretVal**](V2Api.md#updateSecretVal) | **POST** /update-secret-val | 
 [**updateTarget**](V2Api.md#updateTarget) | **POST** /update-target | 
 [**updateTargetDetails**](V2Api.md#updateTargetDetails) | **POST** /update-target-details | 
+[**updateTokenizer**](V2Api.md#updateTokenizer) | **POST** /update-tokenizer | 
 [**updateWebTarget**](V2Api.md#updateWebTarget) | **POST** /update-web-target | 
 [**updateWebTargetDetails**](V2Api.md#updateWebTargetDetails) | **POST** /update-web-target-details | 
 [**uploadRSA**](V2Api.md#uploadRSA) | **POST** /upload-rsa | 
@@ -1869,6 +1874,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## createTokenizer
+
+> CreateTokenizerOutput createTokenizer(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateTokenizer(); // CreateTokenizer | 
+apiInstance.createTokenizer(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateTokenizer**](CreateTokenizer.md)|  | 
+
+### Return type
+
+[**CreateTokenizerOutput**](CreateTokenizerOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## createWebTarget
 
 > CreateWebTargetOutput createWebTarget(body)
@@ -2614,6 +2661,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DescribePermissionsOutput**](DescribePermissionsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## detokenize
+
+> DetokenizeOutput detokenize(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.Detokenize(); // Detokenize | 
+apiInstance.detokenize(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Detokenize**](Detokenize.md)|  | 
+
+### Return type
+
+[**DetokenizeOutput**](DetokenizeOutput.md)
 
 ### Authorization
 
@@ -7227,6 +7316,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## rotateSecret
+
+> RotatedSecretOutput rotateSecret(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotateSecret(); // RotateSecret | 
+apiInstance.rotateSecret(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotateSecret**](RotateSecret.md)|  | 
+
+### Return type
+
+[**RotatedSecretOutput**](RotatedSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## setItemState
 
 > Object setItemState(body)
@@ -7468,6 +7599,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**StaticCredsAuthOutput**](StaticCredsAuthOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## tokenize
+
+> TokenizeOutput tokenize(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.Tokenize(); // Tokenize | 
+apiInstance.tokenize(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Tokenize**](Tokenize.md)|  | 
+
+### Return type
+
+[**TokenizeOutput**](TokenizeOutput.md)
 
 ### Authorization
 
@@ -9354,6 +9527,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateTargetOutput**](UpdateTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateTokenizer
+
+> UpdateTokenizerOutput updateTokenizer(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateTokenizer(); // UpdateTokenizer | 
+apiInstance.updateTokenizer(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateTokenizer**](UpdateTokenizer.md)|  | 
+
+### Return type
+
+[**UpdateTokenizerOutput**](UpdateTokenizerOutput.md)
 
 ### Authorization
 

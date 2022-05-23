@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodCert model module.
  * @module model/UpdateAuthMethodCert
- * @version 2.16.5
+ * @version 2.16.6
  */
 class UpdateAuthMethodCert {
     /**

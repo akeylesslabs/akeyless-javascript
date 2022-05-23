@@ -92,6 +92,8 @@ import CreateSalesforceTargetOutput from '../model/CreateSalesforceTargetOutput'
 import CreateSecret from '../model/CreateSecret';
 import CreateSecretOutput from '../model/CreateSecretOutput';
 import CreateTargetItemAssocOutput from '../model/CreateTargetItemAssocOutput';
+import CreateTokenizer from '../model/CreateTokenizer';
+import CreateTokenizerOutput from '../model/CreateTokenizerOutput';
 import CreateWebTarget from '../model/CreateWebTarget';
 import CreateWebTargetOutput from '../model/CreateWebTargetOutput';
 import DSProducerDetails from '../model/DSProducerDetails';
@@ -120,6 +122,8 @@ import DeleteTargets from '../model/DeleteTargets';
 import DescribeItem from '../model/DescribeItem';
 import DescribePermissions from '../model/DescribePermissions';
 import DescribePermissionsOutput from '../model/DescribePermissionsOutput';
+import Detokenize from '../model/Detokenize';
+import DetokenizeOutput from '../model/DetokenizeOutput';
 import Encrypt from '../model/Encrypt';
 import EncryptOutput from '../model/EncryptOutput';
 import EncryptPKCS1 from '../model/EncryptPKCS1';
@@ -317,6 +321,8 @@ import Role from '../model/Role';
 import RollbackSecret from '../model/RollbackSecret';
 import RollbackSecretOutput from '../model/RollbackSecretOutput';
 import RotateKeyOutput from '../model/RotateKeyOutput';
+import RotateSecret from '../model/RotateSecret';
+import RotatedSecretOutput from '../model/RotatedSecretOutput';
 import SetItemState from '../model/SetItemState';
 import SetRoleRule from '../model/SetRoleRule';
 import SignJWTOutput from '../model/SignJWTOutput';
@@ -330,6 +336,8 @@ import StaticCredsAuthOutput from '../model/StaticCredsAuthOutput';
 import SystemAccessCredentialsReplyObj from '../model/SystemAccessCredentialsReplyObj';
 import Target from '../model/Target';
 import TmpUserData from '../model/TmpUserData';
+import Tokenize from '../model/Tokenize';
+import TokenizeOutput from '../model/TokenizeOutput';
 import UidCreateChildToken from '../model/UidCreateChildToken';
 import UidCreateChildTokenOutput from '../model/UidCreateChildTokenOutput';
 import UidGenerateToken from '../model/UidGenerateToken';
@@ -400,6 +408,8 @@ import UpdateSecretVal from '../model/UpdateSecretVal';
 import UpdateSecretValOutput from '../model/UpdateSecretValOutput';
 import UpdateTarget from '../model/UpdateTarget';
 import UpdateTargetOutput from '../model/UpdateTargetOutput';
+import UpdateTokenizer from '../model/UpdateTokenizer';
+import UpdateTokenizerOutput from '../model/UpdateTokenizerOutput';
 import UpdateWebTarget from '../model/UpdateWebTarget';
 import UpdateWebTargetDetails from '../model/UpdateWebTargetDetails';
 import UpdateWebTargetOutput from '../model/UpdateWebTargetOutput';
@@ -415,7 +425,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.16.5
+* @version 2.16.6
 */
 export default class V2Api {
 
@@ -2110,6 +2120,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/CreateTokenizer} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateTokenizerOutput} and HTTP response
+     */
+    createTokenizerWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createTokenizer");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateTokenizerOutput;
+      return this.apiClient.callApi(
+        '/create-tokenizer', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateTokenizer} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateTokenizerOutput}
+     */
+    createTokenizer(body) {
+      return this.createTokenizerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/CreateWebTarget} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateWebTargetOutput} and HTTP response
      */
@@ -2877,6 +2930,49 @@ export default class V2Api {
      */
     describePermissions(body) {
       return this.describePermissionsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/Detokenize} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DetokenizeOutput} and HTTP response
+     */
+    detokenizeWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling detokenize");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DetokenizeOutput;
+      return this.apiClient.callApi(
+        '/detokenize', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/Detokenize} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DetokenizeOutput}
+     */
+    detokenize(body) {
+      return this.detokenizeWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7543,6 +7639,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/RotateSecret} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretOutput} and HTTP response
+     */
+    rotateSecretWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotateSecret");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretOutput;
+      return this.apiClient.callApi(
+        '/gateway-rotate-secret', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotateSecret} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretOutput}
+     */
+    rotateSecret(body) {
+      return this.rotateSecretWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/SetItemState} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
@@ -7794,6 +7933,49 @@ export default class V2Api {
      */
     staticCredsAuth(body) {
       return this.staticCredsAuthWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/Tokenize} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenizeOutput} and HTTP response
+     */
+    tokenizeWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling tokenize");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TokenizeOutput;
+      return this.apiClient.callApi(
+        '/tokenize', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/Tokenize} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenizeOutput}
+     */
+    tokenize(body) {
+      return this.tokenizeWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9723,6 +9905,49 @@ export default class V2Api {
      */
     updateTargetDetails(body) {
       return this.updateTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateTokenizer} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTokenizerOutput} and HTTP response
+     */
+    updateTokenizerWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateTokenizer");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateTokenizerOutput;
+      return this.apiClient.callApi(
+        '/update-tokenizer', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateTokenizer} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateTokenizerOutput}
+     */
+    updateTokenizer(body) {
+      return this.updateTokenizerWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -24,7 +24,7 @@ import SyslogLogForwardingConfig from './SyslogLogForwardingConfig';
 /**
  * The LogForwardingConfigPart model module.
  * @module model/LogForwardingConfigPart
- * @version 2.16.5
+ * @version 2.16.6
  */
 class LogForwardingConfigPart {
     /**
@@ -84,9 +84,6 @@ class LogForwardingConfigPart {
             }
             if (data.hasOwnProperty('splunk_config')) {
                 obj['splunk_config'] = SplunkLogForwardingConfig.constructFromObject(data['splunk_config']);
-            }
-            if (data.hasOwnProperty('std_out')) {
-                obj['std_out'] = ApiClient.convertToType(data['std_out'], 'Boolean');
             }
             if (data.hasOwnProperty('syslog_config')) {
                 obj['syslog_config'] = SyslogLogForwardingConfig.constructFromObject(data['syslog_config']);
@@ -150,11 +147,6 @@ LogForwardingConfigPart.prototype['pull_interval_sec'] = undefined;
  * @member {module:model/SplunkLogForwardingConfig} splunk_config
  */
 LogForwardingConfigPart.prototype['splunk_config'] = undefined;
-
-/**
- * @member {Boolean} std_out
- */
-LogForwardingConfigPart.prototype['std_out'] = undefined;
 
 /**
  * @member {module:model/SyslogLogForwardingConfig} syslog_config

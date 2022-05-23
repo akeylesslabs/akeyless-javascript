@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The K8SAuth model module.
  * @module model/K8SAuth
- * @version 2.16.5
+ * @version 2.16.6
  */
 class K8SAuth {
     /**

@@ -19,11 +19,12 @@ import PasswordPolicyInfo from './PasswordPolicyInfo';
 import RotatedSecretDetailsInfo from './RotatedSecretDetailsInfo';
 import SecureRemoteAccess from './SecureRemoteAccess';
 import StaticSecretDetailsInfo from './StaticSecretDetailsInfo';
+import TokenizerInfo from './TokenizerInfo';
 
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 2.16.5
+ * @version 2.16.6
  */
 class ItemGeneralInfo {
     /**
@@ -60,6 +61,9 @@ class ItemGeneralInfo {
             if (data.hasOwnProperty('classic_key_details')) {
                 obj['classic_key_details'] = ClassicKeyDetailsInfo.constructFromObject(data['classic_key_details']);
             }
+            if (data.hasOwnProperty('display_metadata')) {
+                obj['display_metadata'] = ApiClient.convertToType(data['display_metadata'], 'String');
+            }
             if (data.hasOwnProperty('dynamic_secret_producer_details')) {
                 obj['dynamic_secret_producer_details'] = DynamicSecretProducerInfo.constructFromObject(data['dynamic_secret_producer_details']);
             }
@@ -74,6 +78,9 @@ class ItemGeneralInfo {
             }
             if (data.hasOwnProperty('static_secret_info')) {
                 obj['static_secret_info'] = StaticSecretDetailsInfo.constructFromObject(data['static_secret_info']);
+            }
+            if (data.hasOwnProperty('tokenizer_info')) {
+                obj['tokenizer_info'] = TokenizerInfo.constructFromObject(data['tokenizer_info']);
             }
         }
         return obj;
@@ -91,6 +98,11 @@ ItemGeneralInfo.prototype['cert_issue_details'] = undefined;
  * @member {module:model/ClassicKeyDetailsInfo} classic_key_details
  */
 ItemGeneralInfo.prototype['classic_key_details'] = undefined;
+
+/**
+ * @member {String} display_metadata
+ */
+ItemGeneralInfo.prototype['display_metadata'] = undefined;
 
 /**
  * @member {module:model/DynamicSecretProducerInfo} dynamic_secret_producer_details
@@ -116,6 +128,11 @@ ItemGeneralInfo.prototype['secure_remote_access_details'] = undefined;
  * @member {module:model/StaticSecretDetailsInfo} static_secret_info
  */
 ItemGeneralInfo.prototype['static_secret_info'] = undefined;
+
+/**
+ * @member {module:model/TokenizerInfo} tokenizer_info
+ */
+ItemGeneralInfo.prototype['tokenizer_info'] = undefined;
 
 
 

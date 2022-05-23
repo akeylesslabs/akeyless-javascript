@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SystemAccessCredentialsReplyObj model module.
  * @module model/SystemAccessCredentialsReplyObj
- * @version 2.16.5
+ * @version 2.16.6
  */
 class SystemAccessCredentialsReplyObj {
     /**
@@ -56,6 +56,9 @@ class SystemAccessCredentialsReplyObj {
             if (data.hasOwnProperty('kfm_creds')) {
                 obj['kfm_creds'] = ApiClient.convertToType(data['kfm_creds'], 'String');
             }
+            if (data.hasOwnProperty('token')) {
+                obj['token'] = ApiClient.convertToType(data['token'], 'String');
+            }
             if (data.hasOwnProperty('uam_creds')) {
                 obj['uam_creds'] = ApiClient.convertToType(data['uam_creds'], 'String');
             }
@@ -83,6 +86,12 @@ SystemAccessCredentialsReplyObj.prototype['expiry'] = undefined;
  * @member {String} kfm_creds
  */
 SystemAccessCredentialsReplyObj.prototype['kfm_creds'] = undefined;
+
+/**
+ * Credentials tmp token
+ * @member {String} token
+ */
+SystemAccessCredentialsReplyObj.prototype['token'] = undefined;
 
 /**
  * Temporary credentials for accessing the UAM service
