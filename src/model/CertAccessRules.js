@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CertAccessRules model module.
  * @module model/CertAccessRules
- * @version 2.16.6
+ * @version 2.16.7
  */
 class CertAccessRules {
     /**
@@ -66,7 +66,7 @@ class CertAccessRules {
                 obj['bound_uri_sans'] = ApiClient.convertToType(data['bound_uri_sans'], ['String']);
             }
             if (data.hasOwnProperty('certificate')) {
-                obj['certificate'] = ApiClient.convertToType(data['certificate'], ['Number']);
+                obj['certificate'] = ApiClient.convertToType(data['certificate'], 'String');
             }
             if (data.hasOwnProperty('revoked_cert_ids')) {
                 obj['revoked_cert_ids'] = ApiClient.convertToType(data['revoked_cert_ids'], ['String']);
@@ -119,7 +119,7 @@ CertAccessRules.prototype['bound_uri_sans'] = undefined;
 
 /**
  * Base64 encdoed PEM certificate
- * @member {Array.<Number>} certificate
+ * @member {String} certificate
  */
 CertAccessRules.prototype['certificate'] = undefined;
 

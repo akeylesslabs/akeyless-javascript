@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 2.16.6
+ * @version 2.16.7
  */
 class UpdateRotatedSecret {
     /**
@@ -151,6 +151,9 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('ssh-username')) {
                 obj['ssh-username'] = ApiClient.convertToType(data['ssh-username'], 'String');
+            }
+            if (data.hasOwnProperty('storage-account-key-name')) {
+                obj['storage-account-key-name'] = ApiClient.convertToType(data['storage-account-key-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -365,6 +368,12 @@ UpdateRotatedSecret.prototype['ssh-password'] = undefined;
  * @member {String} ssh-username
  */
 UpdateRotatedSecret.prototype['ssh-username'] = undefined;
+
+/**
+ * The name of the storage account key to rotate [key1/key2/kerb1/kerb2]
+ * @member {String} storage-account-key-name
+ */
+UpdateRotatedSecret.prototype['storage-account-key-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

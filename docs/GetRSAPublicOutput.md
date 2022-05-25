@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **raw** | **String** |  | [optional] 
-**ssh** | **[Number]** |  | [optional] 
+**ssh** | **String** |  | [optional] 
 
 

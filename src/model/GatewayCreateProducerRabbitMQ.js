@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRabbitMQ model module.
  * @module model/GatewayCreateProducerRabbitMQ
- * @version 2.16.6
+ * @version 2.16.7
  */
 class GatewayCreateProducerRabbitMQ {
     /**
@@ -85,6 +85,9 @@ class GatewayCreateProducerRabbitMQ {
             }
             if (data.hasOwnProperty('secure-access-url')) {
                 obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web')) {
+                obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
             }
             if (data.hasOwnProperty('secure-access-web-browsing')) {
                 obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
@@ -183,6 +186,13 @@ GatewayCreateProducerRabbitMQ.prototype['secure-access-enable'] = undefined;
  * @member {String} secure-access-url
  */
 GatewayCreateProducerRabbitMQ.prototype['secure-access-url'] = undefined;
+
+/**
+ * Secure Access Web Category
+ * @member {Boolean} secure-access-web
+ * @default true
+ */
+GatewayCreateProducerRabbitMQ.prototype['secure-access-web'] = true;
 
 /**
  * @member {Boolean} secure-access-web-browsing

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **redshiftUsername** | **String** | Redshift Username | [optional] 
 **secureAccessEnable** | **String** |  | [optional] 
 **secureAccessHost** | **[String]** |  | [optional] 
+**ssl** | **Boolean** | SSL connection mode | [optional] 
 **tags** | **[String]** | List of the tags attached to this secret | [optional] 
 **targetName** | **String** | Target name | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

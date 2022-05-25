@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**attributes** | **{String: Object}** | this is not \&quot;omitempty\&quot; since an empty value causes no update while an empty map will clear the attributes | [optional] 
 **clientPermissions** | **[String]** |  | [optional] 
 **comment** | **String** |  | [optional] 
 **lastVersion** | **Number** |  | [optional] 

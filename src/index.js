@@ -500,6 +500,9 @@ import UpdateGithubTarget from './model/UpdateGithubTarget';
 import UpdateGithubTargetOutput from './model/UpdateGithubTargetOutput';
 import UpdateItem from './model/UpdateItem';
 import UpdateItemOutput from './model/UpdateItemOutput';
+import UpdateLdapTarget from './model/UpdateLdapTarget';
+import UpdateLdapTargetDetails from './model/UpdateLdapTargetDetails';
+import UpdateLdapTargetOutput from './model/UpdateLdapTargetOutput';
 import UpdateNativeK8STarget from './model/UpdateNativeK8STarget';
 import UpdateNativeK8STargetOutput from './model/UpdateNativeK8STargetOutput';
 import UpdateOutput from './model/UpdateOutput';
@@ -573,7 +576,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.16.6
+* @version 2.16.7
 */
 export {
     /**
@@ -3503,6 +3506,24 @@ export {
      * @property {module:model/UpdateItemOutput}
      */
     UpdateItemOutput,
+
+    /**
+     * The UpdateLdapTarget model constructor.
+     * @property {module:model/UpdateLdapTarget}
+     */
+    UpdateLdapTarget,
+
+    /**
+     * The UpdateLdapTargetDetails model constructor.
+     * @property {module:model/UpdateLdapTargetDetails}
+     */
+    UpdateLdapTargetDetails,
+
+    /**
+     * The UpdateLdapTargetOutput model constructor.
+     * @property {module:model/UpdateLdapTargetOutput}
+     */
+    UpdateLdapTargetOutput,
 
     /**
      * The UpdateNativeK8STarget model constructor.

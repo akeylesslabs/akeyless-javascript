@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.16.6
+ * @version 2.16.7
  */
 class DSProducerDetails {
     /**
@@ -120,6 +120,15 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('azure_fixed_user_only')) {
                 obj['azure_fixed_user_only'] = ApiClient.convertToType(data['azure_fixed_user_only'], 'Boolean');
+            }
+            if (data.hasOwnProperty('azure_resource_group_name')) {
+                obj['azure_resource_group_name'] = ApiClient.convertToType(data['azure_resource_group_name'], 'String');
+            }
+            if (data.hasOwnProperty('azure_resource_name')) {
+                obj['azure_resource_name'] = ApiClient.convertToType(data['azure_resource_name'], 'String');
+            }
+            if (data.hasOwnProperty('azure_subscription_id')) {
+                obj['azure_subscription_id'] = ApiClient.convertToType(data['azure_subscription_id'], 'String');
             }
             if (data.hasOwnProperty('azure_tenant_id')) {
                 obj['azure_tenant_id'] = ApiClient.convertToType(data['azure_tenant_id'], 'String');
@@ -682,6 +691,21 @@ DSProducerDetails.prototype['azure_fixed_user_name_sub_claim_key'] = undefined;
  * @member {Boolean} azure_fixed_user_only
  */
 DSProducerDetails.prototype['azure_fixed_user_only'] = undefined;
+
+/**
+ * @member {String} azure_resource_group_name
+ */
+DSProducerDetails.prototype['azure_resource_group_name'] = undefined;
+
+/**
+ * @member {String} azure_resource_name
+ */
+DSProducerDetails.prototype['azure_resource_name'] = undefined;
+
+/**
+ * @member {String} azure_subscription_id
+ */
+DSProducerDetails.prototype['azure_subscription_id'] = undefined;
 
 /**
  * @member {String} azure_tenant_id

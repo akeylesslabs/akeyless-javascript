@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RegexpTokenizerInfo model module.
  * @module model/RegexpTokenizerInfo
- * @version 2.16.6
+ * @version 2.16.7
  */
 class RegexpTokenizerInfo {
     /**

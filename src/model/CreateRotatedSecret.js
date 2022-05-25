@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 2.16.6
+ * @version 2.16.7
  */
 class CreateRotatedSecret {
     /**
@@ -148,6 +148,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('ssh-username')) {
                 obj['ssh-username'] = ApiClient.convertToType(data['ssh-username'], 'String');
+            }
+            if (data.hasOwnProperty('storage-account-key-name')) {
+                obj['storage-account-key-name'] = ApiClient.convertToType(data['storage-account-key-name'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -361,6 +364,12 @@ CreateRotatedSecret.prototype['ssh-password'] = undefined;
  * @member {String} ssh-username
  */
 CreateRotatedSecret.prototype['ssh-username'] = undefined;
+
+/**
+ * The name of the storage account key to rotate [key1/key2/kerb1/kerb2] (relevat to azure-storage-account)
+ * @member {String} storage-account-key-name
+ */
+CreateRotatedSecret.prototype['storage-account-key-name'] = undefined;
 
 /**
  * List of the tags attached to this secret

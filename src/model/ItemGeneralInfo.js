@@ -24,7 +24,7 @@ import TokenizerInfo from './TokenizerInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 2.16.6
+ * @version 2.16.7
  */
 class ItemGeneralInfo {
     /**

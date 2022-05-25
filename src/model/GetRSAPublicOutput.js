@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetRSAPublicOutput model module.
  * @module model/GetRSAPublicOutput
- * @version 2.16.6
+ * @version 2.16.7
  */
 class GetRSAPublicOutput {
     /**
@@ -51,7 +51,7 @@ class GetRSAPublicOutput {
                 obj['raw'] = ApiClient.convertToType(data['raw'], 'String');
             }
             if (data.hasOwnProperty('ssh')) {
-                obj['ssh'] = ApiClient.convertToType(data['ssh'], ['Number']);
+                obj['ssh'] = ApiClient.convertToType(data['ssh'], 'String');
             }
         }
         return obj;
@@ -66,7 +66,7 @@ class GetRSAPublicOutput {
 GetRSAPublicOutput.prototype['raw'] = undefined;
 
 /**
- * @member {Array.<Number>} ssh
+ * @member {String} ssh
  */
 GetRSAPublicOutput.prototype['ssh'] = undefined;
 

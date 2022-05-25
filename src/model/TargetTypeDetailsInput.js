@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.16.6
+ * @version 2.16.7
  */
 class TargetTypeDetailsInput {
     /**
@@ -73,6 +73,15 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('azure_client_secret')) {
                 obj['azure_client_secret'] = ApiClient.convertToType(data['azure_client_secret'], 'String');
+            }
+            if (data.hasOwnProperty('azure_resource_group_name')) {
+                obj['azure_resource_group_name'] = ApiClient.convertToType(data['azure_resource_group_name'], 'String');
+            }
+            if (data.hasOwnProperty('azure_resource_name')) {
+                obj['azure_resource_name'] = ApiClient.convertToType(data['azure_resource_name'], 'String');
+            }
+            if (data.hasOwnProperty('azure_subscription_id')) {
+                obj['azure_subscription_id'] = ApiClient.convertToType(data['azure_subscription_id'], 'String');
             }
             if (data.hasOwnProperty('azure_tenant_id')) {
                 obj['azure_tenant_id'] = ApiClient.convertToType(data['azure_tenant_id'], 'String');
@@ -359,6 +368,21 @@ TargetTypeDetailsInput.prototype['azure_client_id'] = undefined;
  * @member {String} azure_client_secret
  */
 TargetTypeDetailsInput.prototype['azure_client_secret'] = undefined;
+
+/**
+ * @member {String} azure_resource_group_name
+ */
+TargetTypeDetailsInput.prototype['azure_resource_group_name'] = undefined;
+
+/**
+ * @member {String} azure_resource_name
+ */
+TargetTypeDetailsInput.prototype['azure_resource_name'] = undefined;
+
+/**
+ * @member {String} azure_subscription_id
+ */
+TargetTypeDetailsInput.prototype['azure_subscription_id'] = undefined;
 
 /**
  * @member {String} azure_tenant_id

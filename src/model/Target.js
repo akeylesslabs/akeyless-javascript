@@ -18,7 +18,7 @@ import TargetItemAssociation from './TargetItemAssociation';
 /**
  * The Target model module.
  * @module model/Target
- * @version 2.16.6
+ * @version 2.16.7
  */
 class Target {
     /**
@@ -49,6 +49,9 @@ class Target {
         if (data) {
             obj = obj || new Target();
 
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], {'String': Object});
+            }
             if (data.hasOwnProperty('client_permissions')) {
                 obj['client_permissions'] = ApiClient.convertToType(data['client_permissions'], ['String']);
             }
@@ -85,6 +88,12 @@ class Target {
 
 
 }
+
+/**
+ * this is not \"omitempty\" since an empty value causes no update while an empty map will clear the attributes
+ * @member {Object.<String, Object>} attributes
+ */
+Target.prototype['attributes'] = undefined;
 
 /**
  * @member {Array.<String>} client_permissions

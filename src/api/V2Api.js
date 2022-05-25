@@ -385,6 +385,9 @@ import UpdateGithubTarget from '../model/UpdateGithubTarget';
 import UpdateGithubTargetOutput from '../model/UpdateGithubTargetOutput';
 import UpdateItem from '../model/UpdateItem';
 import UpdateItemOutput from '../model/UpdateItemOutput';
+import UpdateLdapTarget from '../model/UpdateLdapTarget';
+import UpdateLdapTargetDetails from '../model/UpdateLdapTargetDetails';
+import UpdateLdapTargetOutput from '../model/UpdateLdapTargetOutput';
 import UpdateNativeK8STarget from '../model/UpdateNativeK8STarget';
 import UpdatePKICertIssuer from '../model/UpdatePKICertIssuer';
 import UpdatePKICertIssuerOutput from '../model/UpdatePKICertIssuerOutput';
@@ -425,7 +428,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.16.6
+* @version 2.16.7
 */
 export default class V2Api {
 
@@ -9266,6 +9269,92 @@ export default class V2Api {
      */
     updateItem(body) {
       return this.updateItemWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateLdapTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateLdapTargetOutput} and HTTP response
+     */
+    updateLdapTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateLdapTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateLdapTargetOutput;
+      return this.apiClient.callApi(
+        '/update-ldap-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateLdapTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateLdapTargetOutput}
+     */
+    updateLdapTarget(body) {
+      return this.updateLdapTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateLdapTargetDetails} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTargetOutput} and HTTP response
+     */
+    updateLdapTargetDetailsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateLdapTargetDetails");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateTargetOutput;
+      return this.apiClient.callApi(
+        '/update-ldap-target-details', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateLdapTargetDetails} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateTargetOutput}
+     */
+    updateLdapTargetDetails(body) {
+      return this.updateLdapTargetDetailsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

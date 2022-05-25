@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetRoleRule model module.
  * @module model/SetRoleRule
- * @version 2.16.6
+ * @version 2.16.7
  */
 class SetRoleRule {
     /**
@@ -97,7 +97,7 @@ SetRoleRule.prototype['path'] = undefined;
 SetRoleRule.prototype['role-name'] = undefined;
 
 /**
- * item-rule, target-rule, role-rule, auth-method-rule, search-rule or reports-rule
+ * item-rule, target-rule, role-rule, auth-method-rule, search-rule, reports-rule, gw-reports-rule or sra-reports-rule
  * @member {String} rule-type
  * @default 'item-rule'
  */

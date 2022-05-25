@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRedshift model module.
  * @module model/GatewayCreateProducerRedshift
- * @version 2.16.6
+ * @version 2.16.7
  */
 class GatewayCreateProducerRedshift {
     /**
@@ -79,6 +79,9 @@ class GatewayCreateProducerRedshift {
             }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('ssl')) {
+                obj['ssl'] = ApiClient.convertToType(data['ssl'], 'Boolean');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -161,6 +164,12 @@ GatewayCreateProducerRedshift.prototype['secure-access-enable'] = undefined;
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerRedshift.prototype['secure-access-host'] = undefined;
+
+/**
+ * SSL connection mode
+ * @member {Boolean} ssl
+ */
+GatewayCreateProducerRedshift.prototype['ssl'] = undefined;
 
 /**
  * List of the tags attached to this secret

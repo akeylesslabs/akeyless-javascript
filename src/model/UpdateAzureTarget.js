@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAzureTarget model module.
  * @module model/UpdateAzureTarget
- * @version 2.16.6
+ * @version 2.16.7
  */
 class UpdateAzureTarget {
     /**
@@ -69,6 +69,15 @@ class UpdateAzureTarget {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('resource-group-name')) {
+                obj['resource-group-name'] = ApiClient.convertToType(data['resource-group-name'], 'String');
+            }
+            if (data.hasOwnProperty('resource-name')) {
+                obj['resource-name'] = ApiClient.convertToType(data['resource-name'], 'String');
+            }
+            if (data.hasOwnProperty('subscription-id')) {
+                obj['subscription-id'] = ApiClient.convertToType(data['subscription-id'], 'String');
             }
             if (data.hasOwnProperty('tenant-id')) {
                 obj['tenant-id'] = ApiClient.convertToType(data['tenant-id'], 'String');
@@ -130,6 +139,24 @@ UpdateAzureTarget.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateAzureTarget.prototype['new-name'] = undefined;
+
+/**
+ * The Resource Group name in your Azure subscription
+ * @member {String} resource-group-name
+ */
+UpdateAzureTarget.prototype['resource-group-name'] = undefined;
+
+/**
+ * The name of the relevant Resource
+ * @member {String} resource-name
+ */
+UpdateAzureTarget.prototype['resource-name'] = undefined;
+
+/**
+ * Azure Subscription Id
+ * @member {String} subscription-id
+ */
+UpdateAzureTarget.prototype['subscription-id'] = undefined;
 
 /**
  * @member {String} tenant-id
