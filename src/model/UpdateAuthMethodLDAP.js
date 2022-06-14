@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodLDAP model module.
  * @module model/UpdateAuthMethodLDAP
- * @version 2.16.7
+ * @version 2.16.8
  */
 class UpdateAuthMethodLDAP {
     /**
@@ -58,6 +58,9 @@ class UpdateAuthMethodLDAP {
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
+            if (data.hasOwnProperty('gw-bound-ips')) {
+                obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
             }
             if (data.hasOwnProperty('jwt-ttl')) {
                 obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
@@ -105,6 +108,12 @@ UpdateAuthMethodLDAP.prototype['bound-ips'] = undefined;
  * @member {Boolean} force-sub-claims
  */
 UpdateAuthMethodLDAP.prototype['force-sub-claims'] = undefined;
+
+/**
+ * A CIDR whitelist with the GW IPs that the access is restricted to
+ * @member {Array.<String>} gw-bound-ips
+ */
+UpdateAuthMethodLDAP.prototype['gw-bound-ips'] = undefined;
 
 /**
  * Jwt TTL

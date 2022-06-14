@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **accessExpires** | **Number** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
 **boundIps** | **[String]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
+**gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **jwtTtl** | **Number** | Jwt TTL | [optional] 
 **name** | **String** | Auth Method name | 
 **publicKeyData** | **String** | A public key generated for LDAP authentication method on Akeyless in base64 format [RSA2048] | [optional] 

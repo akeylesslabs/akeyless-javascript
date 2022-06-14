@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The RotateKey model module.
  * @module model/RotateKey
- * @version 2.16.7
+ * @version 2.16.8
  */
 class RotateKey {
     /**
      * Constructs a new <code>RotateKey</code>.
-     * rotateKey is a command that rotates an existing key, creating a new version. [Deprecated: Use command update-rotation-settings] of it.
+     * of it.
      * @alias module:model/RotateKey
      * @param name {String} Key name
      */
@@ -50,14 +50,11 @@ class RotateKey {
         if (data) {
             obj = obj || new RotateKey();
 
-            if (data.hasOwnProperty('auto-rotate')) {
-                obj['auto-rotate'] = ApiClient.convertToType(data['auto-rotate'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('rotation-interval')) {
-                obj['rotation-interval'] = ApiClient.convertToType(data['rotation-interval'], 'String');
+            if (data.hasOwnProperty('new-key-data')) {
+                obj['new-key-data'] = ApiClient.convertToType(data['new-key-data'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -73,22 +70,16 @@ class RotateKey {
 }
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation
- * @member {String} auto-rotate
- */
-RotateKey.prototype['auto-rotate'] = undefined;
-
-/**
  * Key name
  * @member {String} name
  */
 RotateKey.prototype['name'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (7-365)
- * @member {String} rotation-interval
+ * The new base64 encoded value for the classic key. relevant only for keys provided by user ('bring-your-own-key')
+ * @member {String} new-key-data
  */
-RotateKey.prototype['rotation-interval'] = undefined;
+RotateKey.prototype['new-key-data'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

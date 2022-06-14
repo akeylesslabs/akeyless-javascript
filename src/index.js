@@ -169,6 +169,8 @@ import EncryptWithClassicKey from './model/EncryptWithClassicKey';
 import EncryptWithClassicKeyOutput from './model/EncryptWithClassicKeyOutput';
 import ExternalKMSKeyId from './model/ExternalKMSKeyId';
 import GCPAccessRules from './model/GCPAccessRules';
+import GCPPayload from './model/GCPPayload';
+import GCPSecretsMigration from './model/GCPSecretsMigration';
 import GatewayAddAllowedManagementAccess from './model/GatewayAddAllowedManagementAccess';
 import GatewayCreateK8SAuthConfig from './model/GatewayCreateK8SAuthConfig';
 import GatewayCreateK8SAuthConfigOutput from './model/GatewayCreateK8SAuthConfigOutput';
@@ -230,6 +232,8 @@ import GatewayDeleteProducerOutput from './model/GatewayDeleteProducerOutput';
 import GatewayGetConfig from './model/GatewayGetConfig';
 import GatewayGetK8SAuthConfig from './model/GatewayGetK8SAuthConfig';
 import GatewayGetK8SAuthConfigOutput from './model/GatewayGetK8SAuthConfigOutput';
+import GatewayGetLdapAuthConfig from './model/GatewayGetLdapAuthConfig';
+import GatewayGetLdapAuthConfigOutput from './model/GatewayGetLdapAuthConfigOutput';
 import GatewayGetMigration from './model/GatewayGetMigration';
 import GatewayGetProducer from './model/GatewayGetProducer';
 import GatewayGetTmpUsers from './model/GatewayGetTmpUsers';
@@ -253,6 +257,8 @@ import GatewayUpdateItem from './model/GatewayUpdateItem';
 import GatewayUpdateItemOutput from './model/GatewayUpdateItemOutput';
 import GatewayUpdateK8SAuthConfig from './model/GatewayUpdateK8SAuthConfig';
 import GatewayUpdateK8SAuthConfigOutput from './model/GatewayUpdateK8SAuthConfigOutput';
+import GatewayUpdateLdapAuthConfig from './model/GatewayUpdateLdapAuthConfig';
+import GatewayUpdateLdapAuthConfigOutput from './model/GatewayUpdateLdapAuthConfigOutput';
 import GatewayUpdateMigration from './model/GatewayUpdateMigration';
 import GatewayUpdateProducerArtifactory from './model/GatewayUpdateProducerArtifactory';
 import GatewayUpdateProducerArtifactoryOutput from './model/GatewayUpdateProducerArtifactoryOutput';
@@ -576,7 +582,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.16.7
+* @version 2.16.8
 */
 export {
     /**
@@ -1522,6 +1528,18 @@ export {
     GCPAccessRules,
 
     /**
+     * The GCPPayload model constructor.
+     * @property {module:model/GCPPayload}
+     */
+    GCPPayload,
+
+    /**
+     * The GCPSecretsMigration model constructor.
+     * @property {module:model/GCPSecretsMigration}
+     */
+    GCPSecretsMigration,
+
+    /**
      * The GatewayAddAllowedManagementAccess model constructor.
      * @property {module:model/GatewayAddAllowedManagementAccess}
      */
@@ -1888,6 +1906,18 @@ export {
     GatewayGetK8SAuthConfigOutput,
 
     /**
+     * The GatewayGetLdapAuthConfig model constructor.
+     * @property {module:model/GatewayGetLdapAuthConfig}
+     */
+    GatewayGetLdapAuthConfig,
+
+    /**
+     * The GatewayGetLdapAuthConfigOutput model constructor.
+     * @property {module:model/GatewayGetLdapAuthConfigOutput}
+     */
+    GatewayGetLdapAuthConfigOutput,
+
+    /**
      * The GatewayGetMigration model constructor.
      * @property {module:model/GatewayGetMigration}
      */
@@ -2024,6 +2054,18 @@ export {
      * @property {module:model/GatewayUpdateK8SAuthConfigOutput}
      */
     GatewayUpdateK8SAuthConfigOutput,
+
+    /**
+     * The GatewayUpdateLdapAuthConfig model constructor.
+     * @property {module:model/GatewayUpdateLdapAuthConfig}
+     */
+    GatewayUpdateLdapAuthConfig,
+
+    /**
+     * The GatewayUpdateLdapAuthConfigOutput model constructor.
+     * @property {module:model/GatewayUpdateLdapAuthConfigOutput}
+     */
+    GatewayUpdateLdapAuthConfigOutput,
 
     /**
      * The GatewayUpdateMigration model constructor.

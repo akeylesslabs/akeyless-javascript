@@ -30,7 +30,7 @@ import RotatorsConfigPart from './RotatorsConfigPart';
 /**
  * The AkeylessGatewayConfig model module.
  * @module model/AkeylessGatewayConfig
- * @version 2.16.7
+ * @version 2.16.8
  */
 class AkeylessGatewayConfig {
     /**

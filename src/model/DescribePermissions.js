@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribePermissions model module.
  * @module model/DescribePermissions
- * @version 2.16.7
+ * @version 2.16.8
  */
 class DescribePermissions {
     /**

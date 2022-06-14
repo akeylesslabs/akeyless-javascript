@@ -21,7 +21,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 2.16.7
+ * @version 2.16.8
  */
 class Item {
     /**
@@ -69,6 +69,9 @@ class Item {
             }
             if (data.hasOwnProperty('customer_fragment_id')) {
                 obj['customer_fragment_id'] = ApiClient.convertToType(data['customer_fragment_id'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'Boolean');
             }
             if (data.hasOwnProperty('deletion_date')) {
                 obj['deletion_date'] = ApiClient.convertToType(data['deletion_date'], 'Date');
@@ -172,6 +175,11 @@ Item.prototype['client_permissions'] = undefined;
  * @member {String} customer_fragment_id
  */
 Item.prototype['customer_fragment_id'] = undefined;
+
+/**
+ * @member {Boolean} delete_protection
+ */
+Item.prototype['delete_protection'] = undefined;
 
 /**
  * @member {Date} deletion_date

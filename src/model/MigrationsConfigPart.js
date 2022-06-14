@@ -14,13 +14,14 @@
 import ApiClient from '../ApiClient';
 import AWSSecretsMigration from './AWSSecretsMigration';
 import AzureKeyVaultMigration from './AzureKeyVaultMigration';
+import GCPSecretsMigration from './GCPSecretsMigration';
 import HashiMigration from './HashiMigration';
 import K8SMigration from './K8SMigration';
 
 /**
  * The MigrationsConfigPart model module.
  * @module model/MigrationsConfigPart
- * @version 2.16.7
+ * @version 2.16.8
  */
 class MigrationsConfigPart {
     /**
@@ -57,6 +58,9 @@ class MigrationsConfigPart {
             if (data.hasOwnProperty('azure_kv_migrations')) {
                 obj['azure_kv_migrations'] = ApiClient.convertToType(data['azure_kv_migrations'], [AzureKeyVaultMigration]);
             }
+            if (data.hasOwnProperty('gcp_secrets_migrations')) {
+                obj['gcp_secrets_migrations'] = ApiClient.convertToType(data['gcp_secrets_migrations'], [GCPSecretsMigration]);
+            }
             if (data.hasOwnProperty('hashi_migrations')) {
                 obj['hashi_migrations'] = ApiClient.convertToType(data['hashi_migrations'], [HashiMigration]);
             }
@@ -79,6 +83,11 @@ MigrationsConfigPart.prototype['aws_secrets_migrations'] = undefined;
  * @member {Array.<module:model/AzureKeyVaultMigration>} azure_kv_migrations
  */
 MigrationsConfigPart.prototype['azure_kv_migrations'] = undefined;
+
+/**
+ * @member {Array.<module:model/GCPSecretsMigration>} gcp_secrets_migrations
+ */
+MigrationsConfigPart.prototype['gcp_secrets_migrations'] = undefined;
 
 /**
  * @member {Array.<module:model/HashiMigration>} hashi_migrations

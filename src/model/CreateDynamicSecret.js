@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDynamicSecret model module.
  * @module model/CreateDynamicSecret
- * @version 2.16.7
+ * @version 2.16.8
  */
 class CreateDynamicSecret {
     /**
@@ -49,6 +49,9 @@ class CreateDynamicSecret {
         if (data) {
             obj = obj || new CreateDynamicSecret();
 
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -73,6 +76,12 @@ class CreateDynamicSecret {
 
 
 }
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+CreateDynamicSecret.prototype['delete_protection'] = undefined;
 
 /**
  * The name of a key that used to encrypt the dynamic secret values (if empty, the account default protectionKey key will be used)

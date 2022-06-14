@@ -97,6 +97,7 @@ Method | HTTP request | Description
 [**gatewayDeleteProducer**](V2Api.md#gatewayDeleteProducer) | **POST** /gateway-delete-producer | 
 [**gatewayGetConfig**](V2Api.md#gatewayGetConfig) | **POST** /gateway-get-config | 
 [**gatewayGetK8SAuthConfig**](V2Api.md#gatewayGetK8SAuthConfig) | **POST** /gateway-get-k8s-auth-config | 
+[**gatewayGetLdapAuthConfig**](V2Api.md#gatewayGetLdapAuthConfig) | **POST** /gateway-get-ldap-auth-config | 
 [**gatewayGetMigration**](V2Api.md#gatewayGetMigration) | **POST** /gateway-get-migration | 
 [**gatewayGetProducer**](V2Api.md#gatewayGetProducer) | **POST** /gateway-get-producer | 
 [**gatewayGetTmpUsers**](V2Api.md#gatewayGetTmpUsers) | **POST** /gateway-get-producer-tmp-creds | 
@@ -109,6 +110,7 @@ Method | HTTP request | Description
 [**gatewaySyncMigration**](V2Api.md#gatewaySyncMigration) | **POST** /gateway-sync-migration | 
 [**gatewayUpdateItem**](V2Api.md#gatewayUpdateItem) | **POST** /gateway-update-item | 
 [**gatewayUpdateK8SAuthConfig**](V2Api.md#gatewayUpdateK8SAuthConfig) | **POST** /gateway-update-k8s-auth-config | 
+[**gatewayUpdateLdapAuthConfig**](V2Api.md#gatewayUpdateLdapAuthConfig) | **POST** /gateway-update-ldap-auth-config | 
 [**gatewayUpdateMigration**](V2Api.md#gatewayUpdateMigration) | **POST** /gateway-update-migration | 
 [**gatewayUpdateProducerArtifactory**](V2Api.md#gatewayUpdateProducerArtifactory) | **POST** /gateway-update-producer-artifactory | 
 [**gatewayUpdateProducerAws**](V2Api.md#gatewayUpdateProducerAws) | **POST** /gateway-update-producer-aws | 
@@ -4146,6 +4148,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayGetLdapAuthConfig
+
+> GatewayGetLdapAuthConfigOutput gatewayGetLdapAuthConfig(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayGetLdapAuthConfig(); // GatewayGetLdapAuthConfig | 
+apiInstance.gatewayGetLdapAuthConfig(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayGetLdapAuthConfig**](GatewayGetLdapAuthConfig.md)|  | 
+
+### Return type
+
+[**GatewayGetLdapAuthConfigOutput**](GatewayGetLdapAuthConfigOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayGetMigration
 
 > GatewayMigrationGetOutput gatewayGetMigration(body)
@@ -4639,6 +4683,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayUpdateK8SAuthConfigOutput**](GatewayUpdateK8SAuthConfigOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateLdapAuthConfig
+
+> GatewayUpdateLdapAuthConfigOutput gatewayUpdateLdapAuthConfig(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateLdapAuthConfig(); // GatewayUpdateLdapAuthConfig | 
+apiInstance.gatewayUpdateLdapAuthConfig(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateLdapAuthConfig**](GatewayUpdateLdapAuthConfig.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLdapAuthConfigOutput**](GatewayUpdateLdapAuthConfigOutput.md)
 
 ### Authorization
 

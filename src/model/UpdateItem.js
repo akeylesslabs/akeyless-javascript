@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 2.16.7
+ * @version 2.16.8
  */
 class UpdateItem {
     /**
@@ -51,6 +51,9 @@ class UpdateItem {
 
             if (data.hasOwnProperty('add-tag')) {
                 obj['add-tag'] = ApiClient.convertToType(data['add-tag'], ['String']);
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -154,6 +157,11 @@ class UpdateItem {
  * @member {Array.<String>} add-tag
  */
 UpdateItem.prototype['add-tag'] = undefined;
+
+/**
+ * @member {String} delete_protection
+ */
+UpdateItem.prototype['delete_protection'] = undefined;
 
 /**
  * Current item name

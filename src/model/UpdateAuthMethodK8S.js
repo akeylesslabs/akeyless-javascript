@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodK8S model module.
  * @module model/UpdateAuthMethodK8S
- * @version 2.16.7
+ * @version 2.16.8
  */
 class UpdateAuthMethodK8S {
     /**
@@ -73,6 +73,9 @@ class UpdateAuthMethodK8S {
             }
             if (data.hasOwnProperty('gen-key')) {
                 obj['gen-key'] = ApiClient.convertToType(data['gen-key'], 'String');
+            }
+            if (data.hasOwnProperty('gw-bound-ips')) {
+                obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
             }
             if (data.hasOwnProperty('jwt-ttl')) {
                 obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
@@ -148,6 +151,12 @@ UpdateAuthMethodK8S.prototype['force-sub-claims'] = undefined;
  * @default 'true'
  */
 UpdateAuthMethodK8S.prototype['gen-key'] = 'true';
+
+/**
+ * A CIDR whitelist with the GW IPs that the access is restricted to
+ * @member {Array.<String>} gw-bound-ips
+ */
+UpdateAuthMethodK8S.prototype['gw-bound-ips'] = undefined;
 
 /**
  * Jwt TTL

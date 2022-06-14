@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **certificates** | **String** |  | [optional] 
 **clientPermissions** | **[String]** |  | [optional] 
 **customerFragmentId** | **String** |  | [optional] 
+**deleteProtection** | **Boolean** |  | [optional] 
 **deletionDate** | **Date** |  | [optional] 
 **displayId** | **String** |  | [optional] 
 **isEnabled** | **Boolean** |  | [optional] 

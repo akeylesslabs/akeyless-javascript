@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 2.16.7
+ * @version 2.16.8
  */
 class CreateRotatedSecret {
     /**
@@ -73,6 +73,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('custom-payload')) {
                 obj['custom-payload'] = ApiClient.convertToType(data['custom-payload'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -215,6 +218,12 @@ CreateRotatedSecret.prototype['aws-region'] = 'us-east-2';
  * @member {String} custom-payload
  */
 CreateRotatedSecret.prototype['custom-payload'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+CreateRotatedSecret.prototype['delete_protection'] = undefined;
 
 /**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)

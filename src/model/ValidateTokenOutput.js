@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidateTokenOutput model module.
  * @module model/ValidateTokenOutput
- * @version 2.16.7
+ * @version 2.16.8
  */
 class ValidateTokenOutput {
     /**

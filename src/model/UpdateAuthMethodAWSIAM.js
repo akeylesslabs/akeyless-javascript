@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAWSIAM model module.
  * @module model/UpdateAuthMethodAWSIAM
- * @version 2.16.7
+ * @version 2.16.8
  */
 class UpdateAuthMethodAWSIAM {
     /**
@@ -81,6 +81,9 @@ class UpdateAuthMethodAWSIAM {
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
+            if (data.hasOwnProperty('gw-bound-ips')) {
+                obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
             }
             if (data.hasOwnProperty('jwt-ttl')) {
                 obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
@@ -167,6 +170,12 @@ UpdateAuthMethodAWSIAM.prototype['bound-user-name'] = undefined;
  * @member {Boolean} force-sub-claims
  */
 UpdateAuthMethodAWSIAM.prototype['force-sub-claims'] = undefined;
+
+/**
+ * A CIDR whitelist with the GW IPs that the access is restricted to
+ * @member {Array.<String>} gw-bound-ips
+ */
+UpdateAuthMethodAWSIAM.prototype['gw-bound-ips'] = undefined;
 
 /**
  * Jwt TTL

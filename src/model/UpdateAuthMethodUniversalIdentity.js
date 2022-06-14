@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodUniversalIdentity model module.
  * @module model/UpdateAuthMethodUniversalIdentity
- * @version 2.16.7
+ * @version 2.16.8
  */
 class UpdateAuthMethodUniversalIdentity {
     /**
@@ -64,6 +64,9 @@ class UpdateAuthMethodUniversalIdentity {
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
+            if (data.hasOwnProperty('gw-bound-ips')) {
+                obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
             }
             if (data.hasOwnProperty('jwt-ttl')) {
                 obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
@@ -120,6 +123,12 @@ UpdateAuthMethodUniversalIdentity.prototype['deny-rotate'] = undefined;
  * @member {Boolean} force-sub-claims
  */
 UpdateAuthMethodUniversalIdentity.prototype['force-sub-claims'] = undefined;
+
+/**
+ * A CIDR whitelist with the GW IPs that the access is restricted to
+ * @member {Array.<String>} gw-bound-ips
+ */
+UpdateAuthMethodUniversalIdentity.prototype['gw-bound-ips'] = undefined;
 
 /**
  * Jwt TTL

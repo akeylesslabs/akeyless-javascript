@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateTokenizer model module.
  * @module model/CreateTokenizer
- * @version 2.16.7
+ * @version 2.16.8
  */
 class CreateTokenizer {
     /**
@@ -59,6 +59,9 @@ class CreateTokenizer {
             }
             if (data.hasOwnProperty('decryption-template')) {
                 obj['decryption-template'] = ApiClient.convertToType(data['decryption-template'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('encryption-key-name')) {
                 obj['encryption-key-name'] = ApiClient.convertToType(data['encryption-key-name'], 'String');
@@ -111,6 +114,12 @@ CreateTokenizer.prototype['alphabet'] = undefined;
  * @member {String} decryption-template
  */
 CreateTokenizer.prototype['decryption-template'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+CreateTokenizer.prototype['delete_protection'] = undefined;
 
 /**
  * AES key name to use in vaultless tokenization

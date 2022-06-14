@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateKey model module.
  * @module model/CreateKey
- * @version 2.16.7
+ * @version 2.16.8
  */
 class CreateKey {
     /**
@@ -58,6 +58,9 @@ class CreateKey {
             if (data.hasOwnProperty('customer-frg-id')) {
                 obj['customer-frg-id'] = ApiClient.convertToType(data['customer-frg-id'], 'String');
             }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
             }
@@ -94,6 +97,12 @@ CreateKey.prototype['alg'] = undefined;
  * @member {String} customer-frg-id
  */
 CreateKey.prototype['customer-frg-id'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+CreateKey.prototype['delete_protection'] = undefined;
 
 /**
  * Metadata about the key

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 2.16.7
+ * @version 2.16.8
  */
 class GatewayUpdateMigration {
     /**
@@ -71,6 +71,9 @@ class GatewayUpdateMigration {
             if (data.hasOwnProperty('azure-tenant-id')) {
                 obj['azure-tenant-id'] = ApiClient.convertToType(data['azure-tenant-id'], 'String');
             }
+            if (data.hasOwnProperty('gcp-key')) {
+                obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
+            }
             if (data.hasOwnProperty('hashi-json')) {
                 obj['hashi-json'] = ApiClient.convertToType(data['hashi-json'], 'String');
             }
@@ -85,6 +88,33 @@ class GatewayUpdateMigration {
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-ca-certificate')) {
+                obj['k8s-ca-certificate'] = ApiClient.convertToType(data['k8s-ca-certificate'], ['Number']);
+            }
+            if (data.hasOwnProperty('k8s-client-certificate')) {
+                obj['k8s-client-certificate'] = ApiClient.convertToType(data['k8s-client-certificate'], ['Number']);
+            }
+            if (data.hasOwnProperty('k8s-client-key')) {
+                obj['k8s-client-key'] = ApiClient.convertToType(data['k8s-client-key'], ['Number']);
+            }
+            if (data.hasOwnProperty('k8s-namespace')) {
+                obj['k8s-namespace'] = ApiClient.convertToType(data['k8s-namespace'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-password')) {
+                obj['k8s-password'] = ApiClient.convertToType(data['k8s-password'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-skip-system')) {
+                obj['k8s-skip-system'] = ApiClient.convertToType(data['k8s-skip-system'], 'Boolean');
+            }
+            if (data.hasOwnProperty('k8s-token')) {
+                obj['k8s-token'] = ApiClient.convertToType(data['k8s-token'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-url')) {
+                obj['k8s-url'] = ApiClient.convertToType(data['k8s-url'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-username')) {
+                obj['k8s-username'] = ApiClient.convertToType(data['k8s-username'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -112,64 +142,136 @@ class GatewayUpdateMigration {
 }
 
 /**
+ * AWS Secret Access Key
  * @member {String} aws-key
  */
 GatewayUpdateMigration.prototype['aws-key'] = undefined;
 
 /**
+ * AWS Access Key ID
  * @member {String} aws-key-id
  */
 GatewayUpdateMigration.prototype['aws-key-id'] = undefined;
 
 /**
+ * AWS region
  * @member {String} aws-region
  */
 GatewayUpdateMigration.prototype['aws-region'] = undefined;
 
 /**
+ * Azure KV Access client ID
  * @member {String} azure-client-id
  */
 GatewayUpdateMigration.prototype['azure-client-id'] = undefined;
 
 /**
+ * Azure Key Vault Name
  * @member {String} azure-kv-name
  */
 GatewayUpdateMigration.prototype['azure-kv-name'] = undefined;
 
 /**
+ * Azure KV secret
  * @member {String} azure-secret
  */
 GatewayUpdateMigration.prototype['azure-secret'] = undefined;
 
 /**
+ * Azure KV Access tenant ID
  * @member {String} azure-tenant-id
  */
 GatewayUpdateMigration.prototype['azure-tenant-id'] = undefined;
 
 /**
+ * Base64-encoded service account private key text
+ * @member {String} gcp-key
+ */
+GatewayUpdateMigration.prototype['gcp-key'] = undefined;
+
+/**
+ * Import secret key as json value or independent secrets
  * @member {String} hashi-json
  */
 GatewayUpdateMigration.prototype['hashi-json'] = undefined;
 
 /**
+ * Hashi namespaces
  * @member {Array.<String>} hashi-ns
  */
 GatewayUpdateMigration.prototype['hashi-ns'] = undefined;
 
 /**
+ * Hashi token
  * @member {String} hashi-token
  */
 GatewayUpdateMigration.prototype['hashi-token'] = undefined;
 
 /**
+ * Hashi url
  * @member {String} hashi-url
  */
 GatewayUpdateMigration.prototype['hashi-url'] = undefined;
 
 /**
+ * Migration ID
  * @member {String} id
  */
 GatewayUpdateMigration.prototype['id'] = undefined;
+
+/**
+ * For Certificate Authentication method K8s Cluster CA certificate
+ * @member {Array.<Number>} k8s-ca-certificate
+ */
+GatewayUpdateMigration.prototype['k8s-ca-certificate'] = undefined;
+
+/**
+ * K8s Client certificate
+ * @member {Array.<Number>} k8s-client-certificate
+ */
+GatewayUpdateMigration.prototype['k8s-client-certificate'] = undefined;
+
+/**
+ * K8s Client key
+ * @member {Array.<Number>} k8s-client-key
+ */
+GatewayUpdateMigration.prototype['k8s-client-key'] = undefined;
+
+/**
+ * K8s Namespace
+ * @member {String} k8s-namespace
+ */
+GatewayUpdateMigration.prototype['k8s-namespace'] = undefined;
+
+/**
+ * K8s client password
+ * @member {String} k8s-password
+ */
+GatewayUpdateMigration.prototype['k8s-password'] = undefined;
+
+/**
+ * K8s Skip Control Plane Secrets
+ * @member {Boolean} k8s-skip-system
+ */
+GatewayUpdateMigration.prototype['k8s-skip-system'] = undefined;
+
+/**
+ * For Token Authentication method K8s Bearer Token
+ * @member {String} k8s-token
+ */
+GatewayUpdateMigration.prototype['k8s-token'] = undefined;
+
+/**
+ * K8s Endpoint URL
+ * @member {String} k8s-url
+ */
+GatewayUpdateMigration.prototype['k8s-url'] = undefined;
+
+/**
+ * For Password Authentication method K8s client username
+ * @member {String} k8s-username
+ */
+GatewayUpdateMigration.prototype['k8s-username'] = undefined;
 
 /**
  * Migration name
@@ -178,11 +280,13 @@ GatewayUpdateMigration.prototype['id'] = undefined;
 GatewayUpdateMigration.prototype['name'] = undefined;
 
 /**
+ * The name of the key that protects the classic key value (if empty, the account default key will be used)
  * @member {String} protection-key
  */
 GatewayUpdateMigration.prototype['protection-key'] = undefined;
 
 /**
+ * Target location in Akeyless for imported secrets
  * @member {String} target-location
  */
 GatewayUpdateMigration.prototype['target-location'] = undefined;
@@ -194,6 +298,7 @@ GatewayUpdateMigration.prototype['target-location'] = undefined;
 GatewayUpdateMigration.prototype['token'] = undefined;
 
 /**
+ * Migration type, can be: hashi/aws/gcp/k8s/azure_kv
  * @member {String} type
  */
 GatewayUpdateMigration.prototype['type'] = undefined;

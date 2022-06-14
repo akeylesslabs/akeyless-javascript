@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewaySyncMigration model module.
  * @module model/GatewaySyncMigration
- * @version 2.16.7
+ * @version 2.16.8
  */
 class GatewaySyncMigration {
     /**
@@ -76,6 +76,7 @@ class GatewaySyncMigration {
 GatewaySyncMigration.prototype['name'] = undefined;
 
 /**
+ * true, for starting synchronization, false for stopping
  * @member {Boolean} start-sync
  */
 GatewaySyncMigration.prototype['start-sync'] = undefined;

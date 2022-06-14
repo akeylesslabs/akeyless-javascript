@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOAuth2 model module.
  * @module model/UpdateAuthMethodOAuth2
- * @version 2.16.7
+ * @version 2.16.8
  */
 class UpdateAuthMethodOAuth2 {
     /**
@@ -68,6 +68,9 @@ class UpdateAuthMethodOAuth2 {
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
+            if (data.hasOwnProperty('gw-bound-ips')) {
+                obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
             }
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
@@ -130,6 +133,12 @@ UpdateAuthMethodOAuth2.prototype['bound-ips'] = undefined;
  * @member {Boolean} force-sub-claims
  */
 UpdateAuthMethodOAuth2.prototype['force-sub-claims'] = undefined;
+
+/**
+ * A CIDR whitelist with the GW IPs that the access is restricted to
+ * @member {Array.<String>} gw-bound-ips
+ */
+UpdateAuthMethodOAuth2.prototype['gw-bound-ips'] = undefined;
 
 /**
  * Issuer URL

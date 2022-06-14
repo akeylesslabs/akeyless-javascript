@@ -17,7 +17,7 @@ import OAuth2CustomClaim from './OAuth2CustomClaim';
 /**
  * The OAuth2AccessRules model module.
  * @module model/OAuth2AccessRules
- * @version 2.16.7
+ * @version 2.16.8
  */
 class OAuth2AccessRules {
     /**

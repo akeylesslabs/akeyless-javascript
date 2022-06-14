@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **clientId** | **String** | Client ID | [optional] 
 **clientSecret** | **String** | Client Secret | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
+**gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **issuer** | **String** | Issuer URL | [optional] 
 **jwtTtl** | **Number** | Jwt TTL | [optional] 
 **name** | **String** | Auth Method name | 

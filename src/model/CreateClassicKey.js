@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 2.16.7
+ * @version 2.16.8
  */
 class CreateClassicKey {
     /**
@@ -58,20 +58,11 @@ class CreateClassicKey {
             if (data.hasOwnProperty('cert-file-data')) {
                 obj['cert-file-data'] = ApiClient.convertToType(data['cert-file-data'], 'String');
             }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('key-data')) {
                 obj['key-data'] = ApiClient.convertToType(data['key-data'], 'String');
-            }
-            if (data.hasOwnProperty('key-operations')) {
-                obj['key-operations'] = ApiClient.convertToType(data['key-operations'], ['String']);
-            }
-            if (data.hasOwnProperty('keyring-name')) {
-                obj['keyring-name'] = ApiClient.convertToType(data['keyring-name'], 'String');
-            }
-            if (data.hasOwnProperty('kms-algorithm')) {
-                obj['kms-algorithm'] = ApiClient.convertToType(data['kms-algorithm'], 'String');
-            }
-            if (data.hasOwnProperty('location-id')) {
-                obj['location-id'] = ApiClient.convertToType(data['location-id'], 'String');
             }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
@@ -79,32 +70,17 @@ class CreateClassicKey {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('project-id')) {
-                obj['project-id'] = ApiClient.convertToType(data['project-id'], 'String');
-            }
             if (data.hasOwnProperty('protection-key-name')) {
                 obj['protection-key-name'] = ApiClient.convertToType(data['protection-key-name'], 'String');
             }
-            if (data.hasOwnProperty('purpose')) {
-                obj['purpose'] = ApiClient.convertToType(data['purpose'], 'String');
-            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
-            }
-            if (data.hasOwnProperty('target-name')) {
-                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
-            }
-            if (data.hasOwnProperty('tenant-secret-type')) {
-                obj['tenant-secret-type'] = ApiClient.convertToType(data['tenant-secret-type'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
-            }
-            if (data.hasOwnProperty('vault-name')) {
-                obj['vault-name'] = ApiClient.convertToType(data['vault-name'], 'String');
             }
         }
         return obj;
@@ -126,34 +102,16 @@ CreateClassicKey.prototype['alg'] = undefined;
 CreateClassicKey.prototype['cert-file-data'] = undefined;
 
 /**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+CreateClassicKey.prototype['delete_protection'] = undefined;
+
+/**
  * Base64-encoded classic key value
  * @member {String} key-data
  */
 CreateClassicKey.prototype['key-data'] = undefined;
-
-/**
- * A list of allowed operations for the key (required for azure targets)
- * @member {Array.<String>} key-operations
- */
-CreateClassicKey.prototype['key-operations'] = undefined;
-
-/**
- * Keyring name of the GCP KMS (required for gcp targets)
- * @member {String} keyring-name
- */
-CreateClassicKey.prototype['keyring-name'] = undefined;
-
-/**
- * Algorithm of the key in GCP KMS (required for gcp targets)
- * @member {String} kms-algorithm
- */
-CreateClassicKey.prototype['kms-algorithm'] = undefined;
-
-/**
- * Location id of the GCP KMS (required for gcp targets)
- * @member {String} location-id
- */
-CreateClassicKey.prototype['location-id'] = undefined;
 
 /**
  * Metadata about the classic key
@@ -168,40 +126,16 @@ CreateClassicKey.prototype['metadata'] = undefined;
 CreateClassicKey.prototype['name'] = undefined;
 
 /**
- * Project id of the GCP KMS (required for gcp targets)
- * @member {String} project-id
- */
-CreateClassicKey.prototype['project-id'] = undefined;
-
-/**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} protection-key-name
  */
 CreateClassicKey.prototype['protection-key-name'] = undefined;
 
 /**
- * Purpose of the key in GCP KMS (required for gcp targets)
- * @member {String} purpose
- */
-CreateClassicKey.prototype['purpose'] = undefined;
-
-/**
  * List of the tags attached to this classic key
  * @member {Array.<String>} tags
  */
 CreateClassicKey.prototype['tags'] = undefined;
-
-/**
- * Target name
- * @member {String} target-name
- */
-CreateClassicKey.prototype['target-name'] = undefined;
-
-/**
- * The tenant secret type [Data/SearchIndex/Analytics] (required for salesforce targets)
- * @member {String} tenant-secret-type
- */
-CreateClassicKey.prototype['tenant-secret-type'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -214,12 +148,6 @@ CreateClassicKey.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateClassicKey.prototype['uid-token'] = undefined;
-
-/**
- * Name of the vault used (required for azure targets)
- * @member {String} vault-name
- */
-CreateClassicKey.prototype['vault-name'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHCertIssuer model module.
  * @module model/CreateSSHCertIssuer
- * @version 2.16.7
+ * @version 2.16.8
  */
 class CreateSSHCertIssuer {
     /**
@@ -57,6 +57,9 @@ class CreateSSHCertIssuer {
 
             if (data.hasOwnProperty('allowed-users')) {
                 obj['allowed-users'] = ApiClient.convertToType(data['allowed-users'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('extensions')) {
                 obj['extensions'] = ApiClient.convertToType(data['extensions'], {'String': 'String'});
@@ -115,6 +118,12 @@ class CreateSSHCertIssuer {
  * @member {String} allowed-users
  */
 CreateSSHCertIssuer.prototype['allowed-users'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+CreateSSHCertIssuer.prototype['delete_protection'] = undefined;
 
 /**
  * Signed certificates with extensions, e.g permit-port-forwarding=\\\"\\\"

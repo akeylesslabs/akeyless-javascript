@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 2.16.7
+ * @version 2.16.8
  */
 class CreatePKICertIssuer {
     /**
@@ -73,6 +73,9 @@ class CreatePKICertIssuer {
             }
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('key-usage')) {
                 obj['key-usage'] = ApiClient.convertToType(data['key-usage'], 'String');
@@ -173,6 +176,12 @@ CreatePKICertIssuer.prototype['code-signing-flag'] = undefined;
  * @member {String} country
  */
 CreatePKICertIssuer.prototype['country'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+CreatePKICertIssuer.prototype['delete_protection'] = undefined;
 
 /**
  * key-usage

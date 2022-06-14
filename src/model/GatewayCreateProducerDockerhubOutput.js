@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerDockerhubOutput model module.
  * @module model/GatewayCreateProducerDockerhubOutput
- * @version 2.16.7
+ * @version 2.16.8
  */
 class GatewayCreateProducerDockerhubOutput {
     /**

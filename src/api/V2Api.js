@@ -187,6 +187,8 @@ import GatewayDeleteProducerOutput from '../model/GatewayDeleteProducerOutput';
 import GatewayGetConfig from '../model/GatewayGetConfig';
 import GatewayGetK8SAuthConfig from '../model/GatewayGetK8SAuthConfig';
 import GatewayGetK8SAuthConfigOutput from '../model/GatewayGetK8SAuthConfigOutput';
+import GatewayGetLdapAuthConfig from '../model/GatewayGetLdapAuthConfig';
+import GatewayGetLdapAuthConfigOutput from '../model/GatewayGetLdapAuthConfigOutput';
 import GatewayGetMigration from '../model/GatewayGetMigration';
 import GatewayGetProducer from '../model/GatewayGetProducer';
 import GatewayGetTmpUsers from '../model/GatewayGetTmpUsers';
@@ -209,6 +211,8 @@ import GatewayUpdateItem from '../model/GatewayUpdateItem';
 import GatewayUpdateItemOutput from '../model/GatewayUpdateItemOutput';
 import GatewayUpdateK8SAuthConfig from '../model/GatewayUpdateK8SAuthConfig';
 import GatewayUpdateK8SAuthConfigOutput from '../model/GatewayUpdateK8SAuthConfigOutput';
+import GatewayUpdateLdapAuthConfig from '../model/GatewayUpdateLdapAuthConfig';
+import GatewayUpdateLdapAuthConfigOutput from '../model/GatewayUpdateLdapAuthConfigOutput';
 import GatewayUpdateMigration from '../model/GatewayUpdateMigration';
 import GatewayUpdateProducerArtifactory from '../model/GatewayUpdateProducerArtifactory';
 import GatewayUpdateProducerArtifactoryOutput from '../model/GatewayUpdateProducerArtifactoryOutput';
@@ -428,7 +432,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.16.7
+* @version 2.16.8
 */
 export default class V2Api {
 
@@ -4444,6 +4448,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayGetLdapAuthConfig} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayGetLdapAuthConfigOutput} and HTTP response
+     */
+    gatewayGetLdapAuthConfigWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayGetLdapAuthConfig");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayGetLdapAuthConfigOutput;
+      return this.apiClient.callApi(
+        '/gateway-get-ldap-auth-config', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayGetLdapAuthConfig} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayGetLdapAuthConfigOutput}
+     */
+    gatewayGetLdapAuthConfig(body) {
+      return this.gatewayGetLdapAuthConfigWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayGetMigration} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayMigrationGetOutput} and HTTP response
      */
@@ -4953,6 +5000,49 @@ export default class V2Api {
      */
     gatewayUpdateK8SAuthConfig(body) {
       return this.gatewayUpdateK8SAuthConfigWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateLdapAuthConfig} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLdapAuthConfigOutput} and HTTP response
+     */
+    gatewayUpdateLdapAuthConfigWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateLdapAuthConfig");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLdapAuthConfigOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-ldap-auth-config', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateLdapAuthConfig} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLdapAuthConfigOutput}
+     */
+    gatewayUpdateLdapAuthConfig(body) {
+      return this.gatewayUpdateLdapAuthConfigWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

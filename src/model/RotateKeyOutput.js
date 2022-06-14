@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotateKeyOutput model module.
  * @module model/RotateKeyOutput
- * @version 2.16.7
+ * @version 2.16.8
  */
 class RotateKeyOutput {
     /**
@@ -48,6 +48,12 @@ class RotateKeyOutput {
         if (data) {
             obj = obj || new RotateKeyOutput();
 
+            if (data.hasOwnProperty('classic_key_gw_url')) {
+                obj['classic_key_gw_url'] = ApiClient.convertToType(data['classic_key_gw_url'], 'String');
+            }
+            if (data.hasOwnProperty('item_type')) {
+                obj['item_type'] = ApiClient.convertToType(data['item_type'], 'String');
+            }
             if (data.hasOwnProperty('new_item_version')) {
                 obj['new_item_version'] = ApiClient.convertToType(data['new_item_version'], 'Number');
             }
@@ -60,6 +66,16 @@ class RotateKeyOutput {
 
 
 }
+
+/**
+ * @member {String} classic_key_gw_url
+ */
+RotateKeyOutput.prototype['classic_key_gw_url'] = undefined;
+
+/**
+ * @member {String} item_type
+ */
+RotateKeyOutput.prototype['item_type'] = undefined;
 
 /**
  * @member {Number} new_item_version

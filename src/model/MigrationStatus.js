@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MigrationStatus model module.
  * @module model/MigrationStatus
- * @version 2.16.7
+ * @version 2.16.8
  */
 class MigrationStatus {
     /**
@@ -50,6 +50,9 @@ class MigrationStatus {
             if (data.hasOwnProperty('last_messages')) {
                 obj['last_messages'] = ApiClient.convertToType(data['last_messages'], {'String': 'String'});
             }
+            if (data.hasOwnProperty('last_reports')) {
+                obj['last_reports'] = ApiClient.convertToType(data['last_reports'], {'String': 'String'});
+            }
             if (data.hasOwnProperty('last_statuses')) {
                 obj['last_statuses'] = ApiClient.convertToType(data['last_statuses'], {'String': 'String'});
             }
@@ -64,6 +67,11 @@ class MigrationStatus {
  * @member {Object.<String, String>} last_messages
  */
 MigrationStatus.prototype['last_messages'] = undefined;
+
+/**
+ * @member {Object.<String, String>} last_reports
+ */
+MigrationStatus.prototype['last_reports'] = undefined;
 
 /**
  * @member {Object.<String, String>} last_statuses

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetRSAPublicOutput model module.
  * @module model/GetRSAPublicOutput
- * @version 2.16.7
+ * @version 2.16.8
  */
 class GetRSAPublicOutput {
     /**
@@ -47,6 +47,9 @@ class GetRSAPublicOutput {
         if (data) {
             obj = obj || new GetRSAPublicOutput();
 
+            if (data.hasOwnProperty('pem')) {
+                obj['pem'] = ApiClient.convertToType(data['pem'], 'String');
+            }
             if (data.hasOwnProperty('raw')) {
                 obj['raw'] = ApiClient.convertToType(data['raw'], 'String');
             }
@@ -59,6 +62,11 @@ class GetRSAPublicOutput {
 
 
 }
+
+/**
+ * @member {String} pem
+ */
+GetRSAPublicOutput.prototype['pem'] = undefined;
 
 /**
  * @member {String} raw

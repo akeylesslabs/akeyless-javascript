@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetTags model module.
  * @module model/GetTags
- * @version 2.16.7
+ * @version 2.16.8
  */
 class GetTags {
     /**

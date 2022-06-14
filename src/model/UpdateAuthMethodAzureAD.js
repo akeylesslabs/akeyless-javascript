@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAzureAD model module.
  * @module model/UpdateAuthMethodAzureAD
- * @version 2.16.7
+ * @version 2.16.8
  */
 class UpdateAuthMethodAzureAD {
     /**
@@ -90,6 +90,9 @@ class UpdateAuthMethodAzureAD {
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
+            if (data.hasOwnProperty('gw-bound-ips')) {
+                obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
             }
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
@@ -198,6 +201,12 @@ UpdateAuthMethodAzureAD.prototype['bound-tenant-id'] = undefined;
  * @member {Boolean} force-sub-claims
  */
 UpdateAuthMethodAzureAD.prototype['force-sub-claims'] = undefined;
+
+/**
+ * A CIDR whitelist with the GW IPs that the access is restricted to
+ * @member {Array.<String>} gw-bound-ips
+ */
+UpdateAuthMethodAzureAD.prototype['gw-bound-ips'] = undefined;
 
 /**
  * Issuer URL

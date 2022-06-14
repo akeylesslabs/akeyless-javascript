@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerPostgreSQL model module.
  * @module model/GatewayCreateProducerPostgreSQL
- * @version 2.16.7
+ * @version 2.16.8
  */
 class GatewayCreateProducerPostgreSQL {
     /**

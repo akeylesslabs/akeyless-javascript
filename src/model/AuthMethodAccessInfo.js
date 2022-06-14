@@ -29,7 +29,7 @@ import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 2.16.7
+ * @version 2.16.8
  */
 class AuthMethodAccessInfo {
     /**
@@ -89,6 +89,9 @@ class AuthMethodAccessInfo {
             }
             if (data.hasOwnProperty('gcp_access_rules')) {
                 obj['gcp_access_rules'] = GCPAccessRules.constructFromObject(data['gcp_access_rules']);
+            }
+            if (data.hasOwnProperty('gw_cidr_whitelist')) {
+                obj['gw_cidr_whitelist'] = ApiClient.convertToType(data['gw_cidr_whitelist'], 'String');
             }
             if (data.hasOwnProperty('huawei_access_rules')) {
                 obj['huawei_access_rules'] = HuaweiAccessRules.constructFromObject(data['huawei_access_rules']);
@@ -175,6 +178,11 @@ AuthMethodAccessInfo.prototype['force_sub_claims'] = undefined;
  * @member {module:model/GCPAccessRules} gcp_access_rules
  */
 AuthMethodAccessInfo.prototype['gcp_access_rules'] = undefined;
+
+/**
+ * @member {String} gw_cidr_whitelist
+ */
+AuthMethodAccessInfo.prototype['gw_cidr_whitelist'] = undefined;
 
 /**
  * @member {module:model/HuaweiAccessRules} huawei_access_rules

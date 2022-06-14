@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodSAML model module.
  * @module model/UpdateAuthMethodSAML
- * @version 2.16.7
+ * @version 2.16.8
  */
 class UpdateAuthMethodSAML {
     /**
@@ -63,6 +63,9 @@ class UpdateAuthMethodSAML {
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
+            if (data.hasOwnProperty('gw-bound-ips')) {
+                obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
             }
             if (data.hasOwnProperty('idp-metadata-url')) {
                 obj['idp-metadata-url'] = ApiClient.convertToType(data['idp-metadata-url'], 'String');
@@ -119,6 +122,12 @@ UpdateAuthMethodSAML.prototype['bound-ips'] = undefined;
  * @member {Boolean} force-sub-claims
  */
 UpdateAuthMethodSAML.prototype['force-sub-claims'] = undefined;
+
+/**
+ * A CIDR whitelist with the GW IPs that the access is restricted to
+ * @member {Array.<String>} gw-bound-ips
+ */
+UpdateAuthMethodSAML.prototype['gw-bound-ips'] = undefined;
 
 /**
  * IDP metadata url

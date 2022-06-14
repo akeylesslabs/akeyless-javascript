@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocTargetItem model module.
  * @module model/AssocTargetItem
- * @version 2.16.7
+ * @version 2.16.8
  */
 class AssocTargetItem {
     /**
@@ -52,17 +52,41 @@ class AssocTargetItem {
         if (data) {
             obj = obj || new AssocTargetItem();
 
+            if (data.hasOwnProperty('key-operations')) {
+                obj['key-operations'] = ApiClient.convertToType(data['key-operations'], ['String']);
+            }
+            if (data.hasOwnProperty('keyring-name')) {
+                obj['keyring-name'] = ApiClient.convertToType(data['keyring-name'], 'String');
+            }
+            if (data.hasOwnProperty('kms-algorithm')) {
+                obj['kms-algorithm'] = ApiClient.convertToType(data['kms-algorithm'], 'String');
+            }
+            if (data.hasOwnProperty('location-id')) {
+                obj['location-id'] = ApiClient.convertToType(data['location-id'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('project-id')) {
+                obj['project-id'] = ApiClient.convertToType(data['project-id'], 'String');
+            }
+            if (data.hasOwnProperty('purpose')) {
+                obj['purpose'] = ApiClient.convertToType(data['purpose'], 'String');
+            }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
+            }
+            if (data.hasOwnProperty('tenant-secret-type')) {
+                obj['tenant-secret-type'] = ApiClient.convertToType(data['tenant-secret-type'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('vault-name')) {
+                obj['vault-name'] = ApiClient.convertToType(data['vault-name'], 'String');
             }
         }
         return obj;
@@ -72,16 +96,58 @@ class AssocTargetItem {
 }
 
 /**
+ * A list of allowed operations for the key (required for azure targets)
+ * @member {Array.<String>} key-operations
+ */
+AssocTargetItem.prototype['key-operations'] = undefined;
+
+/**
+ * Keyring name of the GCP KMS (required for gcp targets)
+ * @member {String} keyring-name
+ */
+AssocTargetItem.prototype['keyring-name'] = undefined;
+
+/**
+ * Algorithm of the key in GCP KMS (required for gcp targets)
+ * @member {String} kms-algorithm
+ */
+AssocTargetItem.prototype['kms-algorithm'] = undefined;
+
+/**
+ * Location id of the GCP KMS (required for gcp targets)
+ * @member {String} location-id
+ */
+AssocTargetItem.prototype['location-id'] = undefined;
+
+/**
  * The item to associate
  * @member {String} name
  */
 AssocTargetItem.prototype['name'] = undefined;
 
 /**
+ * Project id of the GCP KMS (required for gcp targets)
+ * @member {String} project-id
+ */
+AssocTargetItem.prototype['project-id'] = undefined;
+
+/**
+ * Purpose of the key in GCP KMS (required for gcp targets)
+ * @member {String} purpose
+ */
+AssocTargetItem.prototype['purpose'] = undefined;
+
+/**
  * The target to associate
  * @member {String} target-name
  */
 AssocTargetItem.prototype['target-name'] = undefined;
+
+/**
+ * The tenant secret type [Data/SearchIndex/Analytics] (required for salesforce targets)
+ * @member {String} tenant-secret-type
+ */
+AssocTargetItem.prototype['tenant-secret-type'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -94,6 +160,12 @@ AssocTargetItem.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 AssocTargetItem.prototype['uid-token'] = undefined;
+
+/**
+ * Name of the vault used (required for azure targets)
+ * @member {String} vault-name
+ */
+AssocTargetItem.prototype['vault-name'] = undefined;
 
 
 

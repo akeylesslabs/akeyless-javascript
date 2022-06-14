@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.16.7
+ * @version 2.16.8
  */
 class DSProducerDetails {
     /**
@@ -205,6 +205,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('db_user_name')) {
                 obj['db_user_name'] = ApiClient.convertToType(data['db_user_name'], 'String');
             }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'Boolean');
+            }
             if (data.hasOwnProperty('dynamic_secret_id')) {
                 obj['dynamic_secret_id'] = ApiClient.convertToType(data['dynamic_secret_id'], 'Number');
             }
@@ -369,6 +372,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('ldap_user_dn')) {
                 obj['ldap_user_dn'] = ApiClient.convertToType(data['ldap_user_dn'], 'String');
+            }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
             }
             if (data.hasOwnProperty('mongodb_atlas_api_private_key')) {
                 obj['mongodb_atlas_api_private_key'] = ApiClient.convertToType(data['mongodb_atlas_api_private_key'], 'String');
@@ -835,6 +841,11 @@ DSProducerDetails.prototype['db_server_name'] = undefined;
 DSProducerDetails.prototype['db_user_name'] = undefined;
 
 /**
+ * @member {Boolean} delete_protection
+ */
+DSProducerDetails.prototype['delete_protection'] = undefined;
+
+/**
  * @member {Number} dynamic_secret_id
  */
 DSProducerDetails.prototype['dynamic_secret_id'] = undefined;
@@ -1108,6 +1119,11 @@ DSProducerDetails.prototype['ldap_user_attr'] = undefined;
  * @member {String} ldap_user_dn
  */
 DSProducerDetails.prototype['ldap_user_dn'] = undefined;
+
+/**
+ * @member {String} metadata
+ */
+DSProducerDetails.prototype['metadata'] = undefined;
 
 /**
  * @member {String} mongodb_atlas_api_private_key

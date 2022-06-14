@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadRSA model module.
  * @module model/UploadRSA
- * @version 2.16.7
+ * @version 2.16.8
  */
 class UploadRSA {
     /**
@@ -59,6 +59,9 @@ class UploadRSA {
             }
             if (data.hasOwnProperty('customer-frg-id')) {
                 obj['customer-frg-id'] = ApiClient.convertToType(data['customer-frg-id'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
@@ -105,6 +108,12 @@ UploadRSA.prototype['cert-file-data'] = undefined;
  * @member {String} customer-frg-id
  */
 UploadRSA.prototype['customer-frg-id'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+UploadRSA.prototype['delete_protection'] = undefined;
 
 /**
  * A metadata about the key

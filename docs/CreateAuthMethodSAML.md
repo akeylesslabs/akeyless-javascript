@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **allowedRedirectUri** | **[String]** | Allowed redirect URIs after the authentication | [optional] 
 **boundIps** | **[String]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
+**gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **idpMetadataUrl** | **String** | IDP metadata url | [optional] 
 **idpMetadataXmlData** | **String** | IDP metadata xml data | [optional] 
 **jwtTtl** | **Number** | Jwt TTL | [optional] 

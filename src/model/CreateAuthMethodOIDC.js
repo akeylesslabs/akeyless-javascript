@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOIDC model module.
  * @module model/CreateAuthMethodOIDC
- * @version 2.16.7
+ * @version 2.16.8
  */
 class CreateAuthMethodOIDC {
     /**
@@ -69,6 +69,9 @@ class CreateAuthMethodOIDC {
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
+            if (data.hasOwnProperty('gw-bound-ips')) {
+                obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
             }
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
@@ -137,6 +140,12 @@ CreateAuthMethodOIDC.prototype['client-secret'] = undefined;
  * @member {Boolean} force-sub-claims
  */
 CreateAuthMethodOIDC.prototype['force-sub-claims'] = undefined;
+
+/**
+ * A CIDR whitelist with the GW IPs that the access is restricted to
+ * @member {Array.<String>} gw-bound-ips
+ */
+CreateAuthMethodOIDC.prototype['gw-bound-ips'] = undefined;
 
 /**
  * Issuer URL
