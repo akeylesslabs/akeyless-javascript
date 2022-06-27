@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerChef model module.
  * @module model/GatewayCreateProducerChef
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayCreateProducerChef {
     /**
@@ -61,6 +61,9 @@ class GatewayCreateProducerChef {
             }
             if (data.hasOwnProperty('chef-server-username')) {
                 obj['chef-server-username'] = ApiClient.convertToType(data['chef-server-username'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -116,6 +119,12 @@ GatewayCreateProducerChef.prototype['chef-server-url'] = undefined;
  * @member {String} chef-server-username
  */
 GatewayCreateProducerChef.prototype['chef-server-username'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayCreateProducerChef.prototype['delete_protection'] = undefined;
 
 /**
  * Producer name

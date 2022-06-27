@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bindDn** | **String** | Bind DN | [optional] 
 **bindDnPassword** | **String** | Bind DN Password | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
 **externalUsername** | **String** | Fixed user | [optional] [default to &#39;false&#39;]
 **ldapCaCert** | **String** | CA Certificate File Content | [optional] 
 **ldapUrl** | **String** | LDAP Server URL | [optional] 

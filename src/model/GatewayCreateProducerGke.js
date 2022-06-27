@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGke model module.
  * @module model/GatewayCreateProducerGke
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayCreateProducerGke {
     /**
@@ -50,6 +50,9 @@ class GatewayCreateProducerGke {
         if (data) {
             obj = obj || new GatewayCreateProducerGke();
 
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('gke-account-key')) {
                 obj['gke-account-key'] = ApiClient.convertToType(data['gke-account-key'], 'String');
             }
@@ -107,6 +110,12 @@ class GatewayCreateProducerGke {
 
 
 }
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayCreateProducerGke.prototype['delete_protection'] = undefined;
 
 /**
  * GKE Service Account key file path

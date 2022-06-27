@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerCertificateAutomation model module.
  * @module model/GatewayUpdateProducerCertificateAutomation
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayUpdateProducerCertificateAutomation {
     /**
@@ -61,6 +61,9 @@ class GatewayUpdateProducerCertificateAutomation {
             }
             if (data.hasOwnProperty('auto-generated-folder')) {
                 obj['auto-generated-folder'] = ApiClient.convertToType(data['auto-generated-folder'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('enable-admin-rotation')) {
                 obj['enable-admin-rotation'] = ApiClient.convertToType(data['enable-admin-rotation'], 'Boolean');
@@ -150,6 +153,12 @@ GatewayUpdateProducerCertificateAutomation.prototype['allowed-domains'] = undefi
  * @member {String} auto-generated-folder
  */
 GatewayUpdateProducerCertificateAutomation.prototype['auto-generated-folder'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayUpdateProducerCertificateAutomation.prototype['delete_protection'] = undefined;
 
 /**
  * Automatic admin credentials rotation

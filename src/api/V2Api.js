@@ -204,6 +204,7 @@ import GatewayMigrationUpdateOutput from '../model/GatewayMigrationUpdateOutput'
 import GatewayRevokeTmpUsers from '../model/GatewayRevokeTmpUsers';
 import GatewayStartProducer from '../model/GatewayStartProducer';
 import GatewayStartProducerOutput from '../model/GatewayStartProducerOutput';
+import GatewayStatusMigration from '../model/GatewayStatusMigration';
 import GatewayStopProducer from '../model/GatewayStopProducer';
 import GatewayStopProducerOutput from '../model/GatewayStopProducerOutput';
 import GatewaySyncMigration from '../model/GatewaySyncMigration';
@@ -315,6 +316,7 @@ import ListRoles from '../model/ListRoles';
 import ListRolesOutput from '../model/ListRolesOutput';
 import ListTargets from '../model/ListTargets';
 import ListTargetsOutput from '../model/ListTargetsOutput';
+import MigrationStatusReplyObj from '../model/MigrationStatusReplyObj';
 import MoveObjects from '../model/MoveObjects';
 import RawCreds from '../model/RawCreds';
 import RefreshKey from '../model/RefreshKey';
@@ -432,7 +434,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.16.8
+* @version 2.16.9
 */
 export default class V2Api {
 
@@ -4828,6 +4830,49 @@ export default class V2Api {
      */
     gatewayStartProducer(body) {
       return this.gatewayStartProducerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayStatusMigration} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MigrationStatusReplyObj} and HTTP response
+     */
+    gatewayStatusMigrationWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayStatusMigration");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = MigrationStatusReplyObj;
+      return this.apiClient.callApi(
+        '/gateway-migration-status', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayStatusMigration} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MigrationStatusReplyObj}
+     */
+    gatewayStatusMigration(body) {
+      return this.gatewayStatusMigrationWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

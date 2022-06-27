@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creationStatements** | **String** | PostgreSQL Creation statements | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
 **name** | **String** | Producer name | 
 **newName** | **String** | Producer name | [optional] 
 **postgresqlDbName** | **String** | PostgreSQL DB Name | [optional] 

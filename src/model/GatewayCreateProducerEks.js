@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerEks model module.
  * @module model/GatewayCreateProducerEks
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayCreateProducerEks {
     /**
@@ -50,6 +50,9 @@ class GatewayCreateProducerEks {
         if (data) {
             obj = obj || new GatewayCreateProducerEks();
 
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('eks-access-key-id')) {
                 obj['eks-access-key-id'] = ApiClient.convertToType(data['eks-access-key-id'], 'String');
             }
@@ -113,6 +116,12 @@ class GatewayCreateProducerEks {
 
 
 }
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayCreateProducerEks.prototype['delete_protection'] = undefined;
 
 /**
  * Access Key ID

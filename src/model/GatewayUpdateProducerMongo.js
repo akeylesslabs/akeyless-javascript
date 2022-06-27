@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMongo model module.
  * @module model/GatewayUpdateProducerMongo
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayUpdateProducerMongo {
     /**
@@ -50,6 +50,9 @@ class GatewayUpdateProducerMongo {
         if (data) {
             obj = obj || new GatewayUpdateProducerMongo();
 
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('mongodb-atlas-api-private-key')) {
                 obj['mongodb-atlas-api-private-key'] = ApiClient.convertToType(data['mongodb-atlas-api-private-key'], 'String');
             }
@@ -128,6 +131,12 @@ class GatewayUpdateProducerMongo {
 
 
 }
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayUpdateProducerMongo.prototype['delete_protection'] = undefined;
 
 /**
  * MongoDB Atlas private key

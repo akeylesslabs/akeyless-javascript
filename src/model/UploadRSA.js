@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadRSA model module.
  * @module model/UploadRSA
- * @version 2.16.8
+ * @version 2.16.9
  */
 class UploadRSA {
     /**
@@ -68,6 +68,9 @@ class UploadRSA {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('overwrite')) {
+                obj['overwrite'] = ApiClient.convertToType(data['overwrite'], 'String');
             }
             if (data.hasOwnProperty('rsa-file-data')) {
                 obj['rsa-file-data'] = ApiClient.convertToType(data['rsa-file-data'], 'String');
@@ -126,6 +129,12 @@ UploadRSA.prototype['metadata'] = undefined;
  * @member {String} name
  */
 UploadRSA.prototype['name'] = undefined;
+
+/**
+ * When the overwrite flag is set, this command will only update an existing key. [true, false]
+ * @member {String} overwrite
+ */
+UploadRSA.prototype['overwrite'] = undefined;
 
 /**
  * RSA private key data, base64 encoded

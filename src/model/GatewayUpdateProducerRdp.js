@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRdp model module.
  * @module model/GatewayUpdateProducerRdp
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayUpdateProducerRdp {
     /**
@@ -52,6 +52,9 @@ class GatewayUpdateProducerRdp {
 
             if (data.hasOwnProperty('allow-user-extend-session')) {
                 obj['allow-user-extend-session'] = ApiClient.convertToType(data['allow-user-extend-session'], 'Number');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('fixed-user-only')) {
                 obj['fixed-user-only'] = ApiClient.convertToType(data['fixed-user-only'], 'String');
@@ -125,6 +128,12 @@ class GatewayUpdateProducerRdp {
  * @member {Number} allow-user-extend-session
  */
 GatewayUpdateProducerRdp.prototype['allow-user-extend-session'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayUpdateProducerRdp.prototype['delete_protection'] = undefined;
 
 /**
  * Fixed user

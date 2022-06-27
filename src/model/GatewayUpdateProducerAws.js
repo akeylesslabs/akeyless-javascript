@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerAws model module.
  * @module model/GatewayUpdateProducerAws
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayUpdateProducerAws {
     /**
@@ -76,6 +76,9 @@ class GatewayUpdateProducerAws {
             }
             if (data.hasOwnProperty('aws-user-programmatic-access')) {
                 obj['aws-user-programmatic-access'] = ApiClient.convertToType(data['aws-user-programmatic-access'], 'Boolean');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('enable-admin-rotation')) {
                 obj['enable-admin-rotation'] = ApiClient.convertToType(data['enable-admin-rotation'], 'Boolean');
@@ -190,6 +193,12 @@ GatewayUpdateProducerAws.prototype['aws-user-policies'] = undefined;
  * @default true
  */
 GatewayUpdateProducerAws.prototype['aws-user-programmatic-access'] = true;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayUpdateProducerAws.prototype['delete_protection'] = undefined;
 
 /**
  * Automatic admin credentials rotation

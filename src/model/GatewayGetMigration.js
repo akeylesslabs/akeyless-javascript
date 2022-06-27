@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetMigration model module.
  * @module model/GatewayGetMigration
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayGetMigration {
     /**
@@ -65,6 +65,7 @@ class GatewayGetMigration {
 }
 
 /**
+ * Migration name to display
  * @member {String} name
  */
 GatewayGetMigration.prototype['name'] = undefined;

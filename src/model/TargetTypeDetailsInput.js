@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.16.8
+ * @version 2.16.9
  */
 class TargetTypeDetailsInput {
     /**
@@ -55,6 +55,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('artifactory_base_url')) {
                 obj['artifactory_base_url'] = ApiClient.convertToType(data['artifactory_base_url'], 'String');
+            }
+            if (data.hasOwnProperty('auth_flow')) {
+                obj['auth_flow'] = ApiClient.convertToType(data['auth_flow'], 'String');
             }
             if (data.hasOwnProperty('aws_access_key_id')) {
                 obj['aws_access_key_id'] = ApiClient.convertToType(data['aws_access_key_id'], 'String');
@@ -338,6 +341,11 @@ TargetTypeDetailsInput.prototype['artifactory_admin_username'] = undefined;
  * @member {String} artifactory_base_url
  */
 TargetTypeDetailsInput.prototype['artifactory_base_url'] = undefined;
+
+/**
+ * @member {String} auth_flow
+ */
+TargetTypeDetailsInput.prototype['auth_flow'] = undefined;
 
 /**
  * @member {String} aws_access_key_id

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMSSQL model module.
  * @module model/GatewayUpdateProducerMSSQL
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayUpdateProducerMSSQL {
     /**
@@ -50,6 +50,9 @@ class GatewayUpdateProducerMSSQL {
         if (data) {
             obj = obj || new GatewayUpdateProducerMSSQL();
 
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('mssql-create-statements')) {
                 obj['mssql-create-statements'] = ApiClient.convertToType(data['mssql-create-statements'], 'String');
             }
@@ -116,6 +119,12 @@ class GatewayUpdateProducerMSSQL {
 
 
 }
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayUpdateProducerMSSQL.prototype['delete_protection'] = undefined;
 
 /**
  * MSSQL Creation statements

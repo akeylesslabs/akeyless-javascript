@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteMigration model module.
  * @module model/GatewayDeleteMigration
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayDeleteMigration {
     /**
      * Constructs a new <code>GatewayDeleteMigration</code>.
      * gatewayDeleteMigration is a command that delete migration
      * @alias module:model/GatewayDeleteMigration
-     * @param id {String} Migration name
+     * @param id {String} Migration ID
      */
     constructor(id) { 
         
@@ -67,7 +67,7 @@ class GatewayDeleteMigration {
 }
 
 /**
- * Migration name
+ * Migration ID
  * @member {String} id
  */
 GatewayDeleteMigration.prototype['id'] = undefined;

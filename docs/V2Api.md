@@ -106,6 +106,7 @@ Method | HTTP request | Description
 [**gatewayListProducers**](V2Api.md#gatewayListProducers) | **POST** /gateway-list-producers | 
 [**gatewayRevokeTmpUsers**](V2Api.md#gatewayRevokeTmpUsers) | **POST** /gateway-revoke-producer-tmp-creds | 
 [**gatewayStartProducer**](V2Api.md#gatewayStartProducer) | **POST** /gateway-start-producer | 
+[**gatewayStatusMigration**](V2Api.md#gatewayStatusMigration) | **POST** /gateway-migration-status | 
 [**gatewayStopProducer**](V2Api.md#gatewayStopProducer) | **POST** /gateway-stop-producer | 
 [**gatewaySyncMigration**](V2Api.md#gatewaySyncMigration) | **POST** /gateway-sync-migration | 
 [**gatewayUpdateItem**](V2Api.md#gatewayUpdateItem) | **POST** /gateway-update-item | 
@@ -4515,6 +4516,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayStartProducerOutput**](GatewayStartProducerOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayStatusMigration
+
+> MigrationStatusReplyObj gatewayStatusMigration(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayStatusMigration(); // GatewayStatusMigration | 
+apiInstance.gatewayStatusMigration(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayStatusMigration**](GatewayStatusMigration.md)|  | 
+
+### Return type
+
+[**MigrationStatusReplyObj**](MigrationStatusReplyObj.md)
 
 ### Authorization
 

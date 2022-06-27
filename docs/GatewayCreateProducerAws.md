@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **awsUserGroups** | **String** | AWS User groups | [optional] 
 **awsUserPolicies** | **String** | AWS User policies | [optional] 
 **awsUserProgrammaticAccess** | **Boolean** | AWS User programmatic access | [optional] [default to true]
+**deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
 **enableAdminRotation** | **Boolean** | Automatic admin credentials rotation | [optional] [default to false]
 **name** | **String** | Producer name | 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 

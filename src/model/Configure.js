@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Configure model module.
  * @module model/Configure
- * @version 2.16.8
+ * @version 2.16.9
  */
 class Configure {
     /**
@@ -65,11 +65,17 @@ class Configure {
             if (data.hasOwnProperty('azure_ad_object_id')) {
                 obj['azure_ad_object_id'] = ApiClient.convertToType(data['azure_ad_object_id'], 'String');
             }
+            if (data.hasOwnProperty('cert-data')) {
+                obj['cert-data'] = ApiClient.convertToType(data['cert-data'], 'String');
+            }
             if (data.hasOwnProperty('gcp-audience')) {
                 obj['gcp-audience'] = ApiClient.convertToType(data['gcp-audience'], 'String');
             }
             if (data.hasOwnProperty('k8s-auth-config-name')) {
                 obj['k8s-auth-config-name'] = ApiClient.convertToType(data['k8s-auth-config-name'], 'String');
+            }
+            if (data.hasOwnProperty('key-data')) {
+                obj['key-data'] = ApiClient.convertToType(data['key-data'], 'String');
             }
         }
         return obj;
@@ -116,6 +122,12 @@ Configure.prototype['admin-password'] = undefined;
 Configure.prototype['azure_ad_object_id'] = undefined;
 
 /**
+ * Certificate data encoded in base64. Used if file was not provided. (relevant only for access-type=cert in Curl Context)
+ * @member {String} cert-data
+ */
+Configure.prototype['cert-data'] = undefined;
+
+/**
  * GCP JWT audience
  * @member {String} gcp-audience
  */
@@ -126,6 +138,12 @@ Configure.prototype['gcp-audience'] = undefined;
  * @member {String} k8s-auth-config-name
  */
 Configure.prototype['k8s-auth-config-name'] = undefined;
+
+/**
+ * Private key data encoded in base64. Used if file was not provided.(relevant only for access-type=cert in Curl Context)
+ * @member {String} key-data
+ */
+Configure.prototype['key-data'] = undefined;
 
 
 

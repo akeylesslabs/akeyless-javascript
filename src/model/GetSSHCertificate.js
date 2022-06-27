@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetSSHCertificate model module.
  * @module model/GetSSHCertificate
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GetSSHCertificate {
     /**
@@ -57,11 +57,17 @@ class GetSSHCertificate {
             if (data.hasOwnProperty('cert-username')) {
                 obj['cert-username'] = ApiClient.convertToType(data['cert-username'], 'String');
             }
+            if (data.hasOwnProperty('legacy-signing-alg-name')) {
+                obj['legacy-signing-alg-name'] = ApiClient.convertToType(data['legacy-signing-alg-name'], 'Boolean');
+            }
             if (data.hasOwnProperty('public-key-data')) {
                 obj['public-key-data'] = ApiClient.convertToType(data['public-key-data'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
+            }
+            if (data.hasOwnProperty('ttl')) {
+                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
@@ -86,6 +92,12 @@ GetSSHCertificate.prototype['cert-issuer-name'] = undefined;
 GetSSHCertificate.prototype['cert-username'] = undefined;
 
 /**
+ * Set this option to output legacy ('ssh-rsa-cert-v01@openssh.com') signing algorithm name in the certificate.
+ * @member {Boolean} legacy-signing-alg-name
+ */
+GetSSHCertificate.prototype['legacy-signing-alg-name'] = undefined;
+
+/**
  * SSH public key file contents. If this option is used, the certificate will be printed to stdout
  * @member {String} public-key-data
  */
@@ -96,6 +108,12 @@ GetSSHCertificate.prototype['public-key-data'] = undefined;
  * @member {String} token
  */
 GetSSHCertificate.prototype['token'] = undefined;
+
+/**
+ * Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL)
+ * @member {Number} ttl
+ */
+GetSSHCertificate.prototype['ttl'] = undefined;
 
 /**
  * The universal identity token, Required only for universal_identity authentication

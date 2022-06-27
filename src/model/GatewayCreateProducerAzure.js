@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAzure model module.
  * @module model/GatewayCreateProducerAzure
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayCreateProducerAzure {
     /**
@@ -61,6 +61,9 @@ class GatewayCreateProducerAzure {
             }
             if (data.hasOwnProperty('azure-tenant-id')) {
                 obj['azure-tenant-id'] = ApiClient.convertToType(data['azure-tenant-id'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('fixed-user-claim-keyname')) {
                 obj['fixed-user-claim-keyname'] = ApiClient.convertToType(data['fixed-user-claim-keyname'], 'String');
@@ -146,6 +149,12 @@ GatewayCreateProducerAzure.prototype['azure-client-secret'] = undefined;
  * @member {String} azure-tenant-id
  */
 GatewayCreateProducerAzure.prototype['azure-tenant-id'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayCreateProducerAzure.prototype['delete_protection'] = undefined;
 
 /**
  * FixedUserClaimKeyname

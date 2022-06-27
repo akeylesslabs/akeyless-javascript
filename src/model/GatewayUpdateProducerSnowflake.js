@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerSnowflake model module.
  * @module model/GatewayUpdateProducerSnowflake
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayUpdateProducerSnowflake {
     /**
@@ -61,6 +61,9 @@ class GatewayUpdateProducerSnowflake {
             }
             if (data.hasOwnProperty('db-name')) {
                 obj['db-name'] = ApiClient.convertToType(data['db-name'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -119,6 +122,12 @@ GatewayUpdateProducerSnowflake.prototype['account-username'] = undefined;
  * @member {String} db-name
  */
 GatewayUpdateProducerSnowflake.prototype['db-name'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayUpdateProducerSnowflake.prototype['delete_protection'] = undefined;
 
 /**
  * Producer name

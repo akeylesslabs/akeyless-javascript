@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptWithClassicKeyOutput model module.
  * @module model/EncryptWithClassicKeyOutput
- * @version 2.16.8
+ * @version 2.16.9
  */
 class EncryptWithClassicKeyOutput {
     /**

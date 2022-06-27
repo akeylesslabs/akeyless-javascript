@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGithub model module.
  * @module model/GatewayCreateProducerGithub
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayCreateProducerGithub {
     /**
@@ -50,6 +50,9 @@ class GatewayCreateProducerGithub {
         if (data) {
             obj = obj || new GatewayCreateProducerGithub();
 
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('github-app-id')) {
                 obj['github-app-id'] = ApiClient.convertToType(data['github-app-id'], 'Number');
             }
@@ -89,6 +92,12 @@ class GatewayCreateProducerGithub {
 
 
 }
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayCreateProducerGithub.prototype['delete_protection'] = undefined;
 
 /**
  * Github app id

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerArtifactory model module.
  * @module model/GatewayUpdateProducerArtifactory
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayUpdateProducerArtifactory {
     /**
@@ -68,6 +68,9 @@ class GatewayUpdateProducerArtifactory {
             }
             if (data.hasOwnProperty('base-url')) {
                 obj['base-url'] = ApiClient.convertToType(data['base-url'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -129,6 +132,12 @@ GatewayUpdateProducerArtifactory.prototype['artifactory-token-scope'] = undefine
  * @member {String} base-url
  */
 GatewayUpdateProducerArtifactory.prototype['base-url'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayUpdateProducerArtifactory.prototype['delete_protection'] = undefined;
 
 /**
  * Producer name

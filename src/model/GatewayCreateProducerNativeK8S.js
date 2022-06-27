@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerNativeK8S model module.
  * @module model/GatewayCreateProducerNativeK8S
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayCreateProducerNativeK8S {
     /**
@@ -50,6 +50,9 @@ class GatewayCreateProducerNativeK8S {
         if (data) {
             obj = obj || new GatewayCreateProducerNativeK8S();
 
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('k8s-cluster-ca-cert')) {
                 obj['k8s-cluster-ca-cert'] = ApiClient.convertToType(data['k8s-cluster-ca-cert'], 'String');
             }
@@ -116,6 +119,12 @@ class GatewayCreateProducerNativeK8S {
 
 
 }
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayCreateProducerNativeK8S.prototype['delete_protection'] = undefined;
 
 /**
  * K8S cluster CA certificate

@@ -250,6 +250,7 @@ import GatewayMigrationUpdateOutput from './model/GatewayMigrationUpdateOutput';
 import GatewayRevokeTmpUsers from './model/GatewayRevokeTmpUsers';
 import GatewayStartProducer from './model/GatewayStartProducer';
 import GatewayStartProducerOutput from './model/GatewayStartProducerOutput';
+import GatewayStatusMigration from './model/GatewayStatusMigration';
 import GatewayStopProducer from './model/GatewayStopProducer';
 import GatewayStopProducerOutput from './model/GatewayStopProducerOutput';
 import GatewaySyncMigration from './model/GatewaySyncMigration';
@@ -391,7 +392,9 @@ import LogForwardingConfigPart from './model/LogForwardingConfigPart';
 import LogstashLogForwardingConfig from './model/LogstashLogForwardingConfig';
 import LogzIoLogForwardingConfig from './model/LogzIoLogForwardingConfig';
 import MigrationGeneral from './model/MigrationGeneral';
+import MigrationItems from './model/MigrationItems';
 import MigrationStatus from './model/MigrationStatus';
+import MigrationStatusReplyObj from './model/MigrationStatusReplyObj';
 import MigrationsConfigLastChange from './model/MigrationsConfigLastChange';
 import MigrationsConfigPart from './model/MigrationsConfigPart';
 import MoveObjects from './model/MoveObjects';
@@ -582,7 +585,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.16.8
+* @version 2.16.9
 */
 export {
     /**
@@ -2014,6 +2017,12 @@ export {
     GatewayStartProducerOutput,
 
     /**
+     * The GatewayStatusMigration model constructor.
+     * @property {module:model/GatewayStatusMigration}
+     */
+    GatewayStatusMigration,
+
+    /**
      * The GatewayStopProducer model constructor.
      * @property {module:model/GatewayStopProducer}
      */
@@ -2860,10 +2869,22 @@ export {
     MigrationGeneral,
 
     /**
+     * The MigrationItems model constructor.
+     * @property {module:model/MigrationItems}
+     */
+    MigrationItems,
+
+    /**
      * The MigrationStatus model constructor.
      * @property {module:model/MigrationStatus}
      */
     MigrationStatus,
+
+    /**
+     * The MigrationStatusReplyObj model constructor.
+     * @property {module:model/MigrationStatusReplyObj}
+     */
+    MigrationStatusReplyObj,
 
     /**
      * The MigrationsConfigLastChange model constructor.

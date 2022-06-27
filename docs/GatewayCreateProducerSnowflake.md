@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **accountPassword** | **String** | Database Password | [optional] 
 **accountUsername** | **String** | Database Username | [optional] 
 **dbName** | **String** | Database name | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
 **name** | **String** | Producer name | 
 **role** | **String** | User role | [optional] 
 **tags** | **[String]** | List of the tags attached to this secret | [optional] 

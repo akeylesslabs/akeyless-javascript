@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateMigration model module.
  * @module model/GatewayCreateMigration
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayCreateMigration {
     /**
@@ -139,127 +139,127 @@ class GatewayCreateMigration {
 }
 
 /**
- * AWS Secret Access Key
+ * AWS Secret Access Key (relevant only for AWS migration)
  * @member {String} aws-key
  */
 GatewayCreateMigration.prototype['aws-key'] = undefined;
 
 /**
- * AWS Access Key ID
+ * AWS Access Key ID with sufficient permissions to get all secrets, e.g. 'arn:aws:secretsmanager:[Region]:[AccountId]:secret:[/path/to/secrets/_*]' (relevant only for AWS migration)
  * @member {String} aws-key-id
  */
 GatewayCreateMigration.prototype['aws-key-id'] = undefined;
 
 /**
- * AWS region
+ * AWS region of the required Secrets Manager (relevant only for AWS migration)
  * @member {String} aws-region
  */
 GatewayCreateMigration.prototype['aws-region'] = undefined;
 
 /**
- * Azure KV Access client ID
+ * Azure Key Vault Access client ID, should be Azure AD App with a service principal (relevant only for Azure Key Vault migration)
  * @member {String} azure-client-id
  */
 GatewayCreateMigration.prototype['azure-client-id'] = undefined;
 
 /**
- * Azure Key Vault Name
+ * Azure Key Vault Name (relevant only for Azure Key Vault migration)
  * @member {String} azure-kv-name
  */
 GatewayCreateMigration.prototype['azure-kv-name'] = undefined;
 
 /**
- * Azure KV secret
+ * Azure Key Vault secret (relevant only for Azure Key Vault migration)
  * @member {String} azure-secret
  */
 GatewayCreateMigration.prototype['azure-secret'] = undefined;
 
 /**
- * Azure KV Access tenant ID
+ * Azure Key Vault Access tenant ID (relevant only for Azure Key Vault migration)
  * @member {String} azure-tenant-id
  */
 GatewayCreateMigration.prototype['azure-tenant-id'] = undefined;
 
 /**
- * Base64-encoded service account private key text
+ * Base64-encoded GCP Service Account private key text with sufficient permissions to Secrets Manager, Minimum required permission is Secret Manager Secret Accessor, e.g. 'roles/secretmanager.secretAccessor' (relevant only for GCP migration)
  * @member {String} gcp-key
  */
 GatewayCreateMigration.prototype['gcp-key'] = undefined;
 
 /**
- * Import secret key as json value or independent secrets
+ * Import secret key as json value or independent secrets (relevant only for HasiCorp Vault migration)
  * @member {String} hashi-json
  */
 GatewayCreateMigration.prototype['hashi-json'] = undefined;
 
 /**
- * Hashi namespaces
+ * HashiCorp Vault Namespaces is a comma-separated list of namespaces which need to be imported into Akeyless Vault. For every provided namespace, all its child namespaces are imported as well, e.g. nmsp/subnmsp1/subnmsp2,nmsp/anothernmsp. By default, import all namespaces (relevant only for HasiCorp Vault migration)
  * @member {Array.<String>} hashi-ns
  */
 GatewayCreateMigration.prototype['hashi-ns'] = undefined;
 
 /**
- * Hashi token
+ * HashiCorp Vault access token with sufficient permissions to preform list & read operations on secrets objects (relevant only for HasiCorp Vault migration)
  * @member {String} hashi-token
  */
 GatewayCreateMigration.prototype['hashi-token'] = undefined;
 
 /**
- * Hashi url
+ * HashiCorp Vault API URL, e.g. https://vault-mgr01:8200 (relevant only for HasiCorp Vault migration)
  * @member {String} hashi-url
  */
 GatewayCreateMigration.prototype['hashi-url'] = undefined;
 
 /**
- * For Certificate Authentication method K8s Cluster CA certificate
+ * For Certificate Authentication method K8s Cluster CA certificate (relevant only for K8s migration with Certificate Authentication method)
  * @member {Array.<Number>} k8s-ca-certificate
  */
 GatewayCreateMigration.prototype['k8s-ca-certificate'] = undefined;
 
 /**
- * K8s Client certificate
+ * K8s Client certificate with sufficient permission to list and get secrets in the namespace(s) you selected (relevant only for K8s migration with Certificate Authentication method)
  * @member {Array.<Number>} k8s-client-certificate
  */
 GatewayCreateMigration.prototype['k8s-client-certificate'] = undefined;
 
 /**
- * K8s Client key
+ * K8s Client key (relevant only for K8s migration with Certificate Authentication method)
  * @member {Array.<Number>} k8s-client-key
  */
 GatewayCreateMigration.prototype['k8s-client-key'] = undefined;
 
 /**
- * K8s Namespace
+ * K8s Namespace, Use this field to import secrets from a particular namespace only. By default, the secrets are imported from all namespaces (relevant only for K8s migration)
  * @member {String} k8s-namespace
  */
 GatewayCreateMigration.prototype['k8s-namespace'] = undefined;
 
 /**
- * K8s client password
+ * K8s Client password (relevant only for K8s migration with Password Authentication method)
  * @member {String} k8s-password
  */
 GatewayCreateMigration.prototype['k8s-password'] = undefined;
 
 /**
- * K8s Skip Control Plane Secrets
+ * K8s Skip Control Plane Secrets, This option allows to avoid importing secrets from system namespaces (relevant only for K8s migration)
  * @member {Boolean} k8s-skip-system
  */
 GatewayCreateMigration.prototype['k8s-skip-system'] = undefined;
 
 /**
- * For Token Authentication method K8s Bearer Token
+ * For Token Authentication method K8s Bearer Token with sufficient permission to list and get secrets in the namespace(s) you selected (relevant only for K8s migration with Token Authentication method)
  * @member {String} k8s-token
  */
 GatewayCreateMigration.prototype['k8s-token'] = undefined;
 
 /**
- * K8s Endpoint URL
+ * K8s API Server URL, e.g. https://k8s-api.mycompany.com:6443 (relevant only for K8s migration)
  * @member {String} k8s-url
  */
 GatewayCreateMigration.prototype['k8s-url'] = undefined;
 
 /**
- * For Password Authentication method K8s client username
+ * For Password Authentication method K8s Client username with sufficient permission to list and get secrets in the namespace(s) you selected (relevant only for K8s migration with Password Authentication method)
  * @member {String} k8s-username
  */
 GatewayCreateMigration.prototype['k8s-username'] = undefined;
@@ -289,7 +289,7 @@ GatewayCreateMigration.prototype['target-location'] = undefined;
 GatewayCreateMigration.prototype['token'] = undefined;
 
 /**
- * Migration type, can be: hashi/aws/gcp/k8s/azure_kv
+ * Migration type (hashi/aws/gcp/k8s/azure_kv)
  * @member {String} type
  */
 GatewayCreateMigration.prototype['type'] = undefined;

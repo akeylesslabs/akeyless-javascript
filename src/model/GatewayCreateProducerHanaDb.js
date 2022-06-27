@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerHanaDb model module.
  * @module model/GatewayCreateProducerHanaDb
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayCreateProducerHanaDb {
     /**
@@ -50,6 +50,9 @@ class GatewayCreateProducerHanaDb {
         if (data) {
             obj = obj || new GatewayCreateProducerHanaDb();
 
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('hana-dbname')) {
                 obj['hana-dbname'] = ApiClient.convertToType(data['hana-dbname'], 'String');
             }
@@ -113,6 +116,12 @@ class GatewayCreateProducerHanaDb {
 
 
 }
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayCreateProducerHanaDb.prototype['delete_protection'] = undefined;
 
 /**
  * HanaDb Name

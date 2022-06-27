@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerCustom model module.
  * @module model/GatewayUpdateProducerCustom
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayUpdateProducerCustom {
     /**
@@ -58,6 +58,9 @@ class GatewayUpdateProducerCustom {
             }
             if (data.hasOwnProperty('create-sync-url')) {
                 obj['create-sync-url'] = ApiClient.convertToType(data['create-sync-url'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('enable_admin_rotation')) {
                 obj['enable_admin_rotation'] = ApiClient.convertToType(data['enable_admin_rotation'], 'Boolean');
@@ -113,6 +116,12 @@ GatewayUpdateProducerCustom.prototype['admin_rotation_interval_days'] = undefine
  * @member {String} create-sync-url
  */
 GatewayUpdateProducerCustom.prototype['create-sync-url'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayUpdateProducerCustom.prototype['delete_protection'] = undefined;
 
 /**
  * Should admin credentials be rotated

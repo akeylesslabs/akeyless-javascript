@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerCassandra model module.
  * @module model/GatewayUpdateProducerCassandra
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayUpdateProducerCassandra {
     /**
@@ -64,6 +64,9 @@ class GatewayUpdateProducerCassandra {
             }
             if (data.hasOwnProperty('cassandra-username')) {
                 obj['cassandra-username'] = ApiClient.convertToType(data['cassandra-username'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -126,6 +129,12 @@ GatewayUpdateProducerCassandra.prototype['cassandra-port'] = '9042';
  * @member {String} cassandra-username
  */
 GatewayUpdateProducerCassandra.prototype['cassandra-username'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayUpdateProducerCassandra.prototype['delete_protection'] = undefined;
 
 /**
  * Producer name

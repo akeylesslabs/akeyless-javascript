@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerOracleDb model module.
  * @module model/GatewayCreateProducerOracleDb
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayCreateProducerOracleDb {
     /**
@@ -55,6 +55,9 @@ class GatewayCreateProducerOracleDb {
             }
             if (data.hasOwnProperty('db-server-name')) {
                 obj['db-server-name'] = ApiClient.convertToType(data['db-server-name'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -125,6 +128,12 @@ GatewayCreateProducerOracleDb.prototype['db-server-certificates'] = undefined;
  * @member {String} db-server-name
  */
 GatewayCreateProducerOracleDb.prototype['db-server-name'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayCreateProducerOracleDb.prototype['delete_protection'] = undefined;
 
 /**
  * Producer name

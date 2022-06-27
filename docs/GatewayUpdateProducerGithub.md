@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
 **githubAppId** | **Number** | Github app id | [optional] 
 **githubAppPrivateKey** | **String** | App private key | [optional] 
 **githubBaseUrl** | **String** | Base URL | [optional] 

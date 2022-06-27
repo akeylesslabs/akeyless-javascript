@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerDockerhub model module.
  * @module model/GatewayCreateProducerDockerhub
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayCreateProducerDockerhub {
     /**
@@ -50,6 +50,9 @@ class GatewayCreateProducerDockerhub {
         if (data) {
             obj = obj || new GatewayCreateProducerDockerhub();
 
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('dockerhub-password')) {
                 obj['dockerhub-password'] = ApiClient.convertToType(data['dockerhub-password'], 'String');
             }
@@ -86,6 +89,12 @@ class GatewayCreateProducerDockerhub {
 
 
 }
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayCreateProducerDockerhub.prototype['delete_protection'] = undefined;
 
 /**
  * DockerhubPassword is either the user's password access token to manage the repository

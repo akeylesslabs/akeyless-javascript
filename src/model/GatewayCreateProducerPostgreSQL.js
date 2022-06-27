@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerPostgreSQL model module.
  * @module model/GatewayCreateProducerPostgreSQL
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayCreateProducerPostgreSQL {
     /**
@@ -52,6 +52,9 @@ class GatewayCreateProducerPostgreSQL {
 
             if (data.hasOwnProperty('creation-statements')) {
                 obj['creation-statements'] = ApiClient.convertToType(data['creation-statements'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -122,6 +125,12 @@ class GatewayCreateProducerPostgreSQL {
  * @member {String} creation-statements
  */
 GatewayCreateProducerPostgreSQL.prototype['creation-statements'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayCreateProducerPostgreSQL.prototype['delete_protection'] = undefined;
 
 /**
  * Producer name

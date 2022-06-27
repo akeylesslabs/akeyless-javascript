@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateItem model module.
  * @module model/GatewayUpdateItem
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayUpdateItem {
     /**
@@ -66,6 +66,9 @@ class GatewayUpdateItem {
             }
             if (data.hasOwnProperty('custom-payload')) {
                 obj['custom-payload'] = ApiClient.convertToType(data['custom-payload'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
@@ -145,6 +148,12 @@ GatewayUpdateItem.prototype['auto-rotate'] = undefined;
  * @member {String} custom-payload
  */
 GatewayUpdateItem.prototype['custom-payload'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayUpdateItem.prototype['delete_protection'] = undefined;
 
 /**
  * @member {String} keep-prev-version

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGcp model module.
  * @module model/GatewayCreateProducerGcp
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayCreateProducerGcp {
     /**
@@ -50,6 +50,9 @@ class GatewayCreateProducerGcp {
         if (data) {
             obj = obj || new GatewayCreateProducerGcp();
 
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('gcp-cred-type')) {
                 obj['gcp-cred-type'] = ApiClient.convertToType(data['gcp-cred-type'], 'String');
             }
@@ -92,6 +95,12 @@ class GatewayCreateProducerGcp {
 
 
 }
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayCreateProducerGcp.prototype['delete_protection'] = undefined;
 
 /**
  * @member {String} gcp-cred-type

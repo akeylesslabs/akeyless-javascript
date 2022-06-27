@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetKubeExecCreds model module.
  * @module model/GetKubeExecCreds
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GetKubeExecCreds {
     /**
@@ -59,11 +59,17 @@ class GetKubeExecCreds {
             if (data.hasOwnProperty('common-name')) {
                 obj['common-name'] = ApiClient.convertToType(data['common-name'], 'String');
             }
+            if (data.hasOwnProperty('extended-key-usage')) {
+                obj['extended-key-usage'] = ApiClient.convertToType(data['extended-key-usage'], 'String');
+            }
             if (data.hasOwnProperty('key-data-base64')) {
                 obj['key-data-base64'] = ApiClient.convertToType(data['key-data-base64'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
+            }
+            if (data.hasOwnProperty('ttl')) {
+                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
@@ -97,6 +103,12 @@ GetKubeExecCreds.prototype['cert-issuer-name'] = undefined;
 GetKubeExecCreds.prototype['common-name'] = undefined;
 
 /**
+ * A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: 'clientauth', 'serverauth'.
+ * @member {String} extended-key-usage
+ */
+GetKubeExecCreds.prototype['extended-key-usage'] = undefined;
+
+/**
  * PKI key file contents. If this option is used, the certificate will be printed to stdout
  * @member {String} key-data-base64
  */
@@ -107,6 +119,12 @@ GetKubeExecCreds.prototype['key-data-base64'] = undefined;
  * @member {String} token
  */
 GetKubeExecCreds.prototype['token'] = undefined;
+
+/**
+ * Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL)
+ * @member {Number} ttl
+ */
+GetKubeExecCreds.prototype['ttl'] = undefined;
 
 /**
  * The universal identity token, Required only for universal_identity authentication

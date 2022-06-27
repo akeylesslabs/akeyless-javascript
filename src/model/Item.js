@@ -21,7 +21,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 2.16.8
+ * @version 2.16.9
  */
 class Item {
     /**
@@ -126,6 +126,9 @@ class Item {
             }
             if (data.hasOwnProperty('protection_key_name')) {
                 obj['protection_key_name'] = ApiClient.convertToType(data['protection_key_name'], 'String');
+            }
+            if (data.hasOwnProperty('protection_key_type')) {
+                obj['protection_key_type'] = ApiClient.convertToType(data['protection_key_type'], 'String');
             }
             if (data.hasOwnProperty('public_value')) {
                 obj['public_value'] = ApiClient.convertToType(data['public_value'], 'String');
@@ -271,6 +274,11 @@ Item.prototype['next_rotation_date'] = undefined;
  * @member {String} protection_key_name
  */
 Item.prototype['protection_key_name'] = undefined;
+
+/**
+ * @member {String} protection_key_type
+ */
+Item.prototype['protection_key_type'] = undefined;
 
 /**
  * @member {String} public_value

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerLdap model module.
  * @module model/GatewayUpdateProducerLdap
- * @version 2.16.8
+ * @version 2.16.9
  */
 class GatewayUpdateProducerLdap {
     /**
@@ -55,6 +55,9 @@ class GatewayUpdateProducerLdap {
             }
             if (data.hasOwnProperty('bind-dn-password')) {
                 obj['bind-dn-password'] = ApiClient.convertToType(data['bind-dn-password'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('external-username')) {
                 obj['external-username'] = ApiClient.convertToType(data['external-username'], 'String');
@@ -116,6 +119,12 @@ GatewayUpdateProducerLdap.prototype['bind-dn'] = undefined;
  * @member {String} bind-dn-password
  */
 GatewayUpdateProducerLdap.prototype['bind-dn-password'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item
+ * @member {String} delete_protection
+ */
+GatewayUpdateProducerLdap.prototype['delete_protection'] = undefined;
 
 /**
  * Fixed user

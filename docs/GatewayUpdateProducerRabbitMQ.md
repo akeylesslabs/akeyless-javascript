@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
 **name** | **String** | Producer name | 
 **newName** | **String** | Producer name | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 

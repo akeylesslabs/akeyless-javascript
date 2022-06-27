@@ -24,7 +24,7 @@ import TokenizerInfo from './TokenizerInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 2.16.8
+ * @version 2.16.9
  */
 class ItemGeneralInfo {
     /**
@@ -60,6 +60,9 @@ class ItemGeneralInfo {
             }
             if (data.hasOwnProperty('classic_key_details')) {
                 obj['classic_key_details'] = ClassicKeyDetailsInfo.constructFromObject(data['classic_key_details']);
+            }
+            if (data.hasOwnProperty('cluster_gw_url')) {
+                obj['cluster_gw_url'] = ApiClient.convertToType(data['cluster_gw_url'], 'String');
             }
             if (data.hasOwnProperty('display_metadata')) {
                 obj['display_metadata'] = ApiClient.convertToType(data['display_metadata'], 'String');
@@ -98,6 +101,11 @@ ItemGeneralInfo.prototype['cert_issue_details'] = undefined;
  * @member {module:model/ClassicKeyDetailsInfo} classic_key_details
  */
 ItemGeneralInfo.prototype['classic_key_details'] = undefined;
+
+/**
+ * @member {String} cluster_gw_url
+ */
+ItemGeneralInfo.prototype['cluster_gw_url'] = undefined;
 
 /**
  * @member {String} display_metadata
