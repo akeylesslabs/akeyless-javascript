@@ -17,7 +17,7 @@ import MigrationItems from './MigrationItems';
 /**
  * The MigrationStatusReplyObj model module.
  * @module model/MigrationStatusReplyObj
- * @version 2.16.9
+ * @version 2.16.10
  */
 class MigrationStatusReplyObj {
     /**

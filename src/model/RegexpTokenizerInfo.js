@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RegexpTokenizerInfo model module.
  * @module model/RegexpTokenizerInfo
- * @version 2.16.9
+ * @version 2.16.10
  */
 class RegexpTokenizerInfo {
     /**
@@ -51,11 +51,11 @@ class RegexpTokenizerInfo {
             if (data.hasOwnProperty('alphabet')) {
                 obj['alphabet'] = ApiClient.convertToType(data['alphabet'], 'String');
             }
-            if (data.hasOwnProperty('decryption_template')) {
-                obj['decryption_template'] = ApiClient.convertToType(data['decryption_template'], 'String');
+            if (data.hasOwnProperty('decoding_template')) {
+                obj['decoding_template'] = ApiClient.convertToType(data['decoding_template'], 'String');
             }
-            if (data.hasOwnProperty('encryption_template')) {
-                obj['encryption_template'] = ApiClient.convertToType(data['encryption_template'], 'String');
+            if (data.hasOwnProperty('encoding_template')) {
+                obj['encoding_template'] = ApiClient.convertToType(data['encoding_template'], 'String');
             }
             if (data.hasOwnProperty('pattern')) {
                 obj['pattern'] = ApiClient.convertToType(data['pattern'], 'String');
@@ -75,15 +75,15 @@ RegexpTokenizerInfo.prototype['alphabet'] = undefined;
 
 /**
  * Transformation to perform on the decrypted data
- * @member {String} decryption_template
+ * @member {String} decoding_template
  */
-RegexpTokenizerInfo.prototype['decryption_template'] = undefined;
+RegexpTokenizerInfo.prototype['decoding_template'] = undefined;
 
 /**
  * Transformation to perform on the encrypted data, if the required output template doesn't match the input string The output Should still be valid for the Pattern, otherwise the secret would be able to be decrypted.
- * @member {String} encryption_template
+ * @member {String} encoding_template
  */
-RegexpTokenizerInfo.prototype['encryption_template'] = undefined;
+RegexpTokenizerInfo.prototype['encoding_template'] = undefined;
 
 /**
  * Regexp pattern to extract and deposit the text/encdata

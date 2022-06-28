@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidListChildren model module.
  * @module model/UidListChildren
- * @version 2.16.9
+ * @version 2.16.10
  */
 class UidListChildren {
     /**

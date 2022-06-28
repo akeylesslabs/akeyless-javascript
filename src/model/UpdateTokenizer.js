@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateTokenizer model module.
  * @module model/UpdateTokenizer
- * @version 2.16.9
+ * @version 2.16.10
  */
 class UpdateTokenizer {
     /**
@@ -60,17 +60,17 @@ class UpdateTokenizer {
             if (data.hasOwnProperty('alphabet')) {
                 obj['alphabet'] = ApiClient.convertToType(data['alphabet'], 'String');
             }
-            if (data.hasOwnProperty('decryption-template')) {
-                obj['decryption-template'] = ApiClient.convertToType(data['decryption-template'], 'String');
+            if (data.hasOwnProperty('decoding-template')) {
+                obj['decoding-template'] = ApiClient.convertToType(data['decoding-template'], 'String');
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
+            if (data.hasOwnProperty('encoding-template')) {
+                obj['encoding-template'] = ApiClient.convertToType(data['encoding-template'], 'String');
+            }
             if (data.hasOwnProperty('encryption-key-name')) {
                 obj['encryption-key-name'] = ApiClient.convertToType(data['encryption-key-name'], 'String');
-            }
-            if (data.hasOwnProperty('encryption-template')) {
-                obj['encryption-template'] = ApiClient.convertToType(data['encryption-template'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -122,10 +122,10 @@ UpdateTokenizer.prototype['add-tag'] = undefined;
 UpdateTokenizer.prototype['alphabet'] = undefined;
 
 /**
- * The Decryption output template to use in regexp vaultless tokenization
- * @member {String} decryption-template
+ * The Decoding output template to use in regexp vaultless tokenization
+ * @member {String} decoding-template
  */
-UpdateTokenizer.prototype['decryption-template'] = undefined;
+UpdateTokenizer.prototype['decoding-template'] = undefined;
 
 /**
  * @member {String} delete_protection
@@ -133,16 +133,16 @@ UpdateTokenizer.prototype['decryption-template'] = undefined;
 UpdateTokenizer.prototype['delete_protection'] = undefined;
 
 /**
+ * The Encoding output template to use in regexp vaultless tokenization
+ * @member {String} encoding-template
+ */
+UpdateTokenizer.prototype['encoding-template'] = undefined;
+
+/**
  * AES key name to use in vaultless tokenization
  * @member {String} encryption-key-name
  */
 UpdateTokenizer.prototype['encryption-key-name'] = undefined;
-
-/**
- * The Encryption output template to use in regexp vaultless tokenization
- * @member {String} encryption-template
- */
-UpdateTokenizer.prototype['encryption-template'] = undefined;
 
 /**
  * Current item name

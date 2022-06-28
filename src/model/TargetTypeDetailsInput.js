@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.16.9
+ * @version 2.16.10
  */
 class TargetTypeDetailsInput {
     /**

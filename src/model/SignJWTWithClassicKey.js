@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignJWTWithClassicKey model module.
  * @module model/SignJWTWithClassicKey
- * @version 2.16.9
+ * @version 2.16.10
  */
 class SignJWTWithClassicKey {
     /**
