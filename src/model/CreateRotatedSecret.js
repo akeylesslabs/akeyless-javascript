@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 2.16.10
+ * @version 2.16.11
  */
 class CreateRotatedSecret {
     /**
@@ -405,13 +405,13 @@ CreateRotatedSecret.prototype['token'] = undefined;
 CreateRotatedSecret.prototype['uid-token'] = undefined;
 
 /**
- * User Attribute
+ * LDAP User Attribute, Default value \"cn\"
  * @member {String} user-attribute
  */
 CreateRotatedSecret.prototype['user-attribute'] = undefined;
 
 /**
- * User DN
+ * LDAP User Base DN
  * @member {String} user-dn
  */
 CreateRotatedSecret.prototype['user-dn'] = undefined;

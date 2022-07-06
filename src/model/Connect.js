@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Connect model module.
  * @module model/Connect
- * @version 2.16.10
+ * @version 2.16.11
  */
 class Connect {
     /**
@@ -77,6 +77,9 @@ class Connect {
             }
             if (data.hasOwnProperty('ssh-extra-args')) {
                 obj['ssh-extra-args'] = ApiClient.convertToType(data['ssh-extra-args'], 'String');
+            }
+            if (data.hasOwnProperty('ssh-legacy-signing-alg')) {
+                obj['ssh-legacy-signing-alg'] = ApiClient.convertToType(data['ssh-legacy-signing-alg'], 'Boolean');
             }
             if (data.hasOwnProperty('target')) {
                 obj['target'] = ApiClient.convertToType(data['target'], 'String');
@@ -157,6 +160,12 @@ Connect.prototype['name'] = undefined;
  * @member {String} ssh-extra-args
  */
 Connect.prototype['ssh-extra-args'] = undefined;
+
+/**
+ * Set this option to output legacy ('ssh-rsa-cert-v01@openssh.com') signing algorithm name in the ssh certificate.
+ * @member {Boolean} ssh-legacy-signing-alg
+ */
+Connect.prototype['ssh-legacy-signing-alg'] = undefined;
 
 /**
  * The target

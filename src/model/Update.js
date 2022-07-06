@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Update model module.
  * @module model/Update
- * @version 2.16.10
+ * @version 2.16.11
  */
 class Update {
     /**

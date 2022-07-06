@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 2.16.10
+ * @version 2.16.11
  */
 class ListItems {
     /**
@@ -50,6 +50,9 @@ class ListItems {
             if (data.hasOwnProperty('filter')) {
                 obj['filter'] = ApiClient.convertToType(data['filter'], 'String');
             }
+            if (data.hasOwnProperty('item-accessibility')) {
+                obj['item-accessibility'] = ApiClient.convertToType(data['item-accessibility'], 'String');
+            }
             if (data.hasOwnProperty('minimal-view')) {
                 obj['minimal-view'] = ApiClient.convertToType(data['minimal-view'], 'Boolean');
             }
@@ -58,6 +61,9 @@ class ListItems {
             }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
+            }
+            if (data.hasOwnProperty('sub_types')) {
+                obj['sub_types'] = ApiClient.convertToType(data['sub_types'], ['String']);
             }
             if (data.hasOwnProperty('tag')) {
                 obj['tag'] = ApiClient.convertToType(data['tag'], 'String');
@@ -85,6 +91,12 @@ class ListItems {
 ListItems.prototype['filter'] = undefined;
 
 /**
+ * for personal password manager
+ * @member {String} item-accessibility
+ */
+ListItems.prototype['item-accessibility'] = undefined;
+
+/**
  * @member {Boolean} minimal-view
  */
 ListItems.prototype['minimal-view'] = undefined;
@@ -100,6 +112,11 @@ ListItems.prototype['pagination-token'] = undefined;
  * @member {String} path
  */
 ListItems.prototype['path'] = undefined;
+
+/**
+ * @member {Array.<String>} sub_types
+ */
+ListItems.prototype['sub_types'] = undefined;
 
 /**
  * Filter by item tag

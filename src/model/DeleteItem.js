@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteItem model module.
  * @module model/DeleteItem
- * @version 2.16.10
+ * @version 2.16.11
  */
 class DeleteItem {
     /**
@@ -55,6 +55,9 @@ class DeleteItem {
             if (data.hasOwnProperty('delete-in-days')) {
                 obj['delete-in-days'] = ApiClient.convertToType(data['delete-in-days'], 'Number');
             }
+            if (data.hasOwnProperty('item-accessibility')) {
+                obj['item-accessibility'] = ApiClient.convertToType(data['item-accessibility'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -87,6 +90,12 @@ DeleteItem.prototype['delete-immediately'] = false;
  * @default 7
  */
 DeleteItem.prototype['delete-in-days'] = 7;
+
+/**
+ * for personal password manager
+ * @member {String} item-accessibility
+ */
+DeleteItem.prototype['item-accessibility'] = undefined;
 
 /**
  * Item name

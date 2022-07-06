@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PathRule model module.
  * @module model/PathRule
- * @version 2.16.10
+ * @version 2.16.11
  */
 class PathRule {
     /**
@@ -53,6 +53,9 @@ class PathRule {
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
+            if (data.hasOwnProperty('ttl')) {
+                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
+            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
@@ -74,6 +77,11 @@ PathRule.prototype['capabilities'] = undefined;
  * @member {String} path
  */
 PathRule.prototype['path'] = undefined;
+
+/**
+ * @member {Number} ttl
+ */
+PathRule.prototype['ttl'] = undefined;
 
 /**
  * @member {String} type

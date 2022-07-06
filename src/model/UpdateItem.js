@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 2.16.10
+ * @version 2.16.11
  */
 class UpdateItem {
     /**
@@ -57,6 +57,9 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('item-accessibility')) {
+                obj['item-accessibility'] = ApiClient.convertToType(data['item-accessibility'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -171,6 +174,12 @@ UpdateItem.prototype['cert-file-data'] = undefined;
  * @member {String} delete_protection
  */
 UpdateItem.prototype['delete_protection'] = undefined;
+
+/**
+ * for personal password manager
+ * @member {String} item-accessibility
+ */
+UpdateItem.prototype['item-accessibility'] = undefined;
 
 /**
  * Current item name

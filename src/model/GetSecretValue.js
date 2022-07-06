@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetSecretValue model module.
  * @module model/GetSecretValue
- * @version 2.16.10
+ * @version 2.16.11
  */
 class GetSecretValue {
     /**
@@ -49,6 +49,9 @@ class GetSecretValue {
         if (data) {
             obj = obj || new GetSecretValue();
 
+            if (data.hasOwnProperty('item-accessibility')) {
+                obj['item-accessibility'] = ApiClient.convertToType(data['item-accessibility'], 'String');
+            }
             if (data.hasOwnProperty('names')) {
                 obj['names'] = ApiClient.convertToType(data['names'], ['String']);
             }
@@ -70,6 +73,12 @@ class GetSecretValue {
 
 
 }
+
+/**
+ * for personal password manager
+ * @member {String} item-accessibility
+ */
+GetSecretValue.prototype['item-accessibility'] = undefined;
 
 /**
  * Secret name
