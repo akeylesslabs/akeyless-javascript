@@ -24,7 +24,7 @@ import SyslogLogForwardingConfig from './SyslogLogForwardingConfig';
 /**
  * The LogForwardingConfigPart model module.
  * @module model/LogForwardingConfigPart
- * @version 2.16.11
+ * @version 2.16.12
  */
 class LogForwardingConfigPart {
     /**
@@ -66,6 +66,9 @@ class LogForwardingConfigPart {
             }
             if (data.hasOwnProperty('elasticsearch_config')) {
                 obj['elasticsearch_config'] = ElasticsearchLogForwardingConfig.constructFromObject(data['elasticsearch_config']);
+            }
+            if (data.hasOwnProperty('json_output')) {
+                obj['json_output'] = ApiClient.convertToType(data['json_output'], 'Boolean');
             }
             if (data.hasOwnProperty('logan_enable')) {
                 obj['logan_enable'] = ApiClient.convertToType(data['logan_enable'], 'Boolean');
@@ -117,6 +120,11 @@ LogForwardingConfigPart.prototype['datadog_config'] = undefined;
  * @member {module:model/ElasticsearchLogForwardingConfig} elasticsearch_config
  */
 LogForwardingConfigPart.prototype['elasticsearch_config'] = undefined;
+
+/**
+ * @member {Boolean} json_output
+ */
+LogForwardingConfigPart.prototype['json_output'] = undefined;
 
 /**
  * @member {Boolean} logan_enable

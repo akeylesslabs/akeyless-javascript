@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**accessibility** | **String** | for personal password manager | [optional] 
 **addTag** | **[String]** | List of the new tags that will be attached to this item | [optional] 
 **certFileData** | **String** | PEM Certificate in a Base64 format. Used for updating RSA keys&#39; certificates. | [optional] 
 **deleteProtection** | **String** |  | [optional] 
-**itemAccessibility** | **String** | for personal password manager | [optional] 
 **name** | **String** | Current item name | 
 **newMetadata** | **String** | New item metadata | [optional] [default to &#39;default_metadata&#39;]
 **newName** | **String** | New item name | [optional] 

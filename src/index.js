@@ -17,6 +17,7 @@ import APIKeyAccessRules from './model/APIKeyAccessRules';
 import AWSIAMAccessRules from './model/AWSIAMAccessRules';
 import AWSPayload from './model/AWSPayload';
 import AWSSecretsMigration from './model/AWSSecretsMigration';
+import AccountGeneralSettings from './model/AccountGeneralSettings';
 import AccountObjectVersionSettingsOutput from './model/AccountObjectVersionSettingsOutput';
 import AdminsConfigPart from './model/AdminsConfigPart';
 import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
@@ -124,6 +125,7 @@ import CustomerFragment from './model/CustomerFragment';
 import CustomerFragmentsJson from './model/CustomerFragmentsJson';
 import CustomerFullAddress from './model/CustomerFullAddress';
 import DSProducerDetails from './model/DSProducerDetails';
+import DataProtectionSection from './model/DataProtectionSection';
 import DatadogForwardingConfig from './model/DatadogForwardingConfig';
 import Decrypt from './model/Decrypt';
 import DecryptFile from './model/DecryptFile';
@@ -585,7 +587,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.16.11
+* @version 2.16.12
 */
 export {
     /**
@@ -617,6 +619,12 @@ export {
      * @property {module:model/AWSSecretsMigration}
      */
     AWSSecretsMigration,
+
+    /**
+     * The AccountGeneralSettings model constructor.
+     * @property {module:model/AccountGeneralSettings}
+     */
+    AccountGeneralSettings,
 
     /**
      * The AccountObjectVersionSettingsOutput model constructor.
@@ -1259,6 +1267,12 @@ export {
      * @property {module:model/DSProducerDetails}
      */
     DSProducerDetails,
+
+    /**
+     * The DataProtectionSection model constructor.
+     * @property {module:model/DataProtectionSection}
+     */
+    DataProtectionSection,
 
     /**
      * The DatadogForwardingConfig model constructor.

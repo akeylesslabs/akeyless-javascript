@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 2.16.11
+ * @version 2.16.12
  */
 class CreateSecret {
     /**
@@ -51,14 +51,11 @@ class CreateSecret {
         if (data) {
             obj = obj || new CreateSecret();
 
-            if (data.hasOwnProperty('custom-fields')) {
-                obj['custom-fields'] = ApiClient.convertToType(data['custom-fields'], {'String': 'String'});
+            if (data.hasOwnProperty('accessibility')) {
+                obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
-            }
-            if (data.hasOwnProperty('item-accessibility')) {
-                obj['item-accessibility'] = ApiClient.convertToType(data['item-accessibility'], 'String');
             }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
@@ -69,8 +66,17 @@ class CreateSecret {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password-length')) {
-                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'Number');
+            if (data.hasOwnProperty('password-manager-custom-field')) {
+                obj['password-manager-custom-field'] = ApiClient.convertToType(data['password-manager-custom-field'], {'String': 'String'});
+            }
+            if (data.hasOwnProperty('password-manager-inject-url')) {
+                obj['password-manager-inject-url'] = ApiClient.convertToType(data['password-manager-inject-url'], 'String');
+            }
+            if (data.hasOwnProperty('password-manager-password')) {
+                obj['password-manager-password'] = ApiClient.convertToType(data['password-manager-password'], 'String');
+            }
+            if (data.hasOwnProperty('password-manager-username')) {
+                obj['password-manager-username'] = ApiClient.convertToType(data['password-manager-username'], 'String');
             }
             if (data.hasOwnProperty('protection_key')) {
                 obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
@@ -111,26 +117,8 @@ class CreateSecret {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
-            if (data.hasOwnProperty('use-lower-letters')) {
-                obj['use-lower-letters'] = ApiClient.convertToType(data['use-lower-letters'], 'String');
-            }
-            if (data.hasOwnProperty('use-numbers')) {
-                obj['use-numbers'] = ApiClient.convertToType(data['use-numbers'], 'String');
-            }
-            if (data.hasOwnProperty('use-special-characters')) {
-                obj['use-special-characters'] = ApiClient.convertToType(data['use-special-characters'], 'String');
-            }
-            if (data.hasOwnProperty('use_capital-letters')) {
-                obj['use_capital-letters'] = ApiClient.convertToType(data['use_capital-letters'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
-            }
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'String');
-            }
-            if (data.hasOwnProperty('website')) {
-                obj['website'] = ApiClient.convertToType(data['website'], 'String');
             }
         }
         return obj;
@@ -140,22 +128,16 @@ class CreateSecret {
 }
 
 /**
- * For Password Management use, additional fields
- * @member {Object.<String, String>} custom-fields
+ * for personal password manager
+ * @member {String} accessibility
  */
-CreateSecret.prototype['custom-fields'] = undefined;
+CreateSecret.prototype['accessibility'] = undefined;
 
 /**
  * Protection from accidental deletion of this item
  * @member {String} delete_protection
  */
 CreateSecret.prototype['delete_protection'] = undefined;
-
-/**
- * for personal password manager
- * @member {String} item-accessibility
- */
-CreateSecret.prototype['item-accessibility'] = undefined;
 
 /**
  * Metadata about the secret
@@ -176,10 +158,28 @@ CreateSecret.prototype['multiline_value'] = undefined;
 CreateSecret.prototype['name'] = undefined;
 
 /**
- * For PasswordPolicy use
- * @member {Number} password-length
+ * For Password Management use, additional fields
+ * @member {Object.<String, String>} password-manager-custom-field
  */
-CreateSecret.prototype['password-length'] = undefined;
+CreateSecret.prototype['password-manager-custom-field'] = undefined;
+
+/**
+ * For Password Management use, reflect the website context
+ * @member {String} password-manager-inject-url
+ */
+CreateSecret.prototype['password-manager-inject-url'] = undefined;
+
+/**
+ * For Password Management use, additional fields
+ * @member {String} password-manager-password
+ */
+CreateSecret.prototype['password-manager-password'] = undefined;
+
+/**
+ * For Password Management use
+ * @member {String} password-manager-username
+ */
+CreateSecret.prototype['password-manager-username'] = undefined;
 
 /**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
@@ -252,46 +252,10 @@ CreateSecret.prototype['type'] = undefined;
 CreateSecret.prototype['uid-token'] = undefined;
 
 /**
- * For PasswordPolicy use
- * @member {String} use-lower-letters
- */
-CreateSecret.prototype['use-lower-letters'] = undefined;
-
-/**
- * For PasswordPolicy use
- * @member {String} use-numbers
- */
-CreateSecret.prototype['use-numbers'] = undefined;
-
-/**
- * For PasswordPolicy use
- * @member {String} use-special-characters
- */
-CreateSecret.prototype['use-special-characters'] = undefined;
-
-/**
- * For PasswordPolicy use
- * @member {String} use_capital-letters
- */
-CreateSecret.prototype['use_capital-letters'] = undefined;
-
-/**
- * For Password Management use
- * @member {String} username
- */
-CreateSecret.prototype['username'] = undefined;
-
-/**
  * The secret value
  * @member {String} value
  */
 CreateSecret.prototype['value'] = undefined;
-
-/**
- * For Password Management use, reflect the website context
- * @member {String} website
- */
-CreateSecret.prototype['website'] = undefined;
 
 
 

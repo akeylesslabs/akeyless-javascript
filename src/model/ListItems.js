@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 2.16.11
+ * @version 2.16.12
  */
 class ListItems {
     /**
@@ -47,11 +47,11 @@ class ListItems {
         if (data) {
             obj = obj || new ListItems();
 
+            if (data.hasOwnProperty('accessibility')) {
+                obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
+            }
             if (data.hasOwnProperty('filter')) {
                 obj['filter'] = ApiClient.convertToType(data['filter'], 'String');
-            }
-            if (data.hasOwnProperty('item-accessibility')) {
-                obj['item-accessibility'] = ApiClient.convertToType(data['item-accessibility'], 'String');
             }
             if (data.hasOwnProperty('minimal-view')) {
                 obj['minimal-view'] = ApiClient.convertToType(data['minimal-view'], 'Boolean');
@@ -85,16 +85,16 @@ class ListItems {
 }
 
 /**
+ * for personal password manager
+ * @member {String} accessibility
+ */
+ListItems.prototype['accessibility'] = undefined;
+
+/**
  * Filter by item name or part of it
  * @member {String} filter
  */
 ListItems.prototype['filter'] = undefined;
-
-/**
- * for personal password manager
- * @member {String} item-accessibility
- */
-ListItems.prototype['item-accessibility'] = undefined;
 
 /**
  * @member {Boolean} minimal-view

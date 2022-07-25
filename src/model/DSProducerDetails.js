@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.16.11
+ * @version 2.16.12
  */
 class DSProducerDetails {
     /**
@@ -324,6 +324,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('host_port')) {
                 obj['host_port'] = ApiClient.convertToType(data['host_port'], 'String');
+            }
+            if (data.hasOwnProperty('implementation_type')) {
+                obj['implementation_type'] = ApiClient.convertToType(data['implementation_type'], 'String');
             }
             if (data.hasOwnProperty('is_fixed_user')) {
                 obj['is_fixed_user'] = ApiClient.convertToType(data['is_fixed_user'], 'String');
@@ -1039,6 +1042,11 @@ DSProducerDetails.prototype['host_name'] = undefined;
  * @member {String} host_port
  */
 DSProducerDetails.prototype['host_port'] = undefined;
+
+/**
+ * @member {String} implementation_type
+ */
+DSProducerDetails.prototype['implementation_type'] = undefined;
 
 /**
  * @member {String} is_fixed_user

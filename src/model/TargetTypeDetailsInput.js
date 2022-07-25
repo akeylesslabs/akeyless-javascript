@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.16.11
+ * @version 2.16.12
  */
 class TargetTypeDetailsInput {
     /**
@@ -190,6 +190,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
+            }
+            if (data.hasOwnProperty('implementation_type')) {
+                obj['implementation_type'] = ApiClient.convertToType(data['implementation_type'], 'String');
             }
             if (data.hasOwnProperty('k8s_bearer_token')) {
                 obj['k8s_bearer_token'] = ApiClient.convertToType(data['k8s_bearer_token'], 'String');
@@ -570,6 +573,11 @@ TargetTypeDetailsInput.prototype['gke_service_account_name'] = undefined;
  * @member {String} host
  */
 TargetTypeDetailsInput.prototype['host'] = undefined;
+
+/**
+ * @member {String} implementation_type
+ */
+TargetTypeDetailsInput.prototype['implementation_type'] = undefined;
 
 /**
  * @member {String} k8s_bearer_token

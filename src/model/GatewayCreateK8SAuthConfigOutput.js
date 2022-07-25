@@ -17,7 +17,7 @@ import ConfigChange from './ConfigChange';
 /**
  * The GatewayCreateK8SAuthConfigOutput model module.
  * @module model/GatewayCreateK8SAuthConfigOutput
- * @version 2.16.11
+ * @version 2.16.12
  */
 class GatewayCreateK8SAuthConfigOutput {
     /**

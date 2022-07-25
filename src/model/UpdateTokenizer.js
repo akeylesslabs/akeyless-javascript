@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateTokenizer model module.
  * @module model/UpdateTokenizer
- * @version 2.16.11
+ * @version 2.16.12
  */
 class UpdateTokenizer {
     /**

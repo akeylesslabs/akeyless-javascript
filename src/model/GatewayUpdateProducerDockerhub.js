@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerDockerhub model module.
  * @module model/GatewayUpdateProducerDockerhub
- * @version 2.16.11
+ * @version 2.16.12
  */
 class GatewayUpdateProducerDockerhub {
     /**

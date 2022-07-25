@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **companyName** | **String** | Company name | [optional] 
 **country** | **String** | Country | [optional] 
 **defaultVersioning** | **String** | Should create version by default | [optional] 
+**dpEnableClassicKeyProtection** | **String** | Enable classic key protection [\&quot;true\&quot;/\&quot;false\&quot;] | [optional] 
 **itemType** | **String** | VersionSettingsObjectType defines object types for account version settings | [optional] 
 **jwtTtlDefault** | **Number** | Default ttl | [optional] 
 **jwtTtlMax** | **Number** | Maximum ttl | [optional] 

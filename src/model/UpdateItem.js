@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 2.16.11
+ * @version 2.16.12
  */
 class UpdateItem {
     /**
@@ -49,6 +49,9 @@ class UpdateItem {
         if (data) {
             obj = obj || new UpdateItem();
 
+            if (data.hasOwnProperty('accessibility')) {
+                obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
+            }
             if (data.hasOwnProperty('add-tag')) {
                 obj['add-tag'] = ApiClient.convertToType(data['add-tag'], ['String']);
             }
@@ -57,9 +60,6 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
-            }
-            if (data.hasOwnProperty('item-accessibility')) {
-                obj['item-accessibility'] = ApiClient.convertToType(data['item-accessibility'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -159,6 +159,12 @@ class UpdateItem {
 }
 
 /**
+ * for personal password manager
+ * @member {String} accessibility
+ */
+UpdateItem.prototype['accessibility'] = undefined;
+
+/**
  * List of the new tags that will be attached to this item
  * @member {Array.<String>} add-tag
  */
@@ -174,12 +180,6 @@ UpdateItem.prototype['cert-file-data'] = undefined;
  * @member {String} delete_protection
  */
 UpdateItem.prototype['delete_protection'] = undefined;
-
-/**
- * for personal password manager
- * @member {String} item-accessibility
- */
-UpdateItem.prototype['item-accessibility'] = undefined;
 
 /**
  * Current item name

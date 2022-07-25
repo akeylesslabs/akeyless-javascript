@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 2.16.11
+ * @version 2.16.12
  */
 class UpdateAccountSettings {
     /**
@@ -61,6 +61,9 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('default-versioning')) {
                 obj['default-versioning'] = ApiClient.convertToType(data['default-versioning'], 'String');
+            }
+            if (data.hasOwnProperty('dp-enable-classic-key-protection')) {
+                obj['dp-enable-classic-key-protection'] = ApiClient.convertToType(data['dp-enable-classic-key-protection'], 'String');
             }
             if (data.hasOwnProperty('item-type')) {
                 obj['item-type'] = ApiClient.convertToType(data['item-type'], 'String');
@@ -125,6 +128,12 @@ UpdateAccountSettings.prototype['country'] = undefined;
  * @member {String} default-versioning
  */
 UpdateAccountSettings.prototype['default-versioning'] = undefined;
+
+/**
+ * Enable classic key protection [\"true\"/\"false\"]
+ * @member {String} dp-enable-classic-key-protection
+ */
+UpdateAccountSettings.prototype['dp-enable-classic-key-protection'] = undefined;
 
 /**
  * VersionSettingsObjectType defines object types for account version settings

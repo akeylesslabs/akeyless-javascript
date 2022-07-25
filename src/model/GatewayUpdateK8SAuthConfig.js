@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateK8SAuthConfig model module.
  * @module model/GatewayUpdateK8SAuthConfig
- * @version 2.16.11
+ * @version 2.16.12
  */
 class GatewayUpdateK8SAuthConfig {
     /**
@@ -158,8 +158,9 @@ GatewayUpdateK8SAuthConfig.prototype['token'] = undefined;
 /**
  * Time in seconds of expiration of the Akeyless Kube Auth Method token
  * @member {Number} token-exp
+ * @default 300
  */
-GatewayUpdateK8SAuthConfig.prototype['token-exp'] = undefined;
+GatewayUpdateK8SAuthConfig.prototype['token-exp'] = 300;
 
 /**
  * A Kubernetes service account JWT used to access the TokenReview API to validate other JWTs. If not set, the JWT submitted in the authentication process will be used to access the Kubernetes TokenReview API.
