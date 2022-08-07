@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptPKCS1 model module.
  * @module model/EncryptPKCS1
- * @version 2.16.12
+ * @version 2.17.0
  */
 class EncryptPKCS1 {
     /**
      * Constructs a new <code>EncryptPKCS1</code>.
      * @alias module:model/EncryptPKCS1
-     * @param keyName {String} The name of the RSA key to use in the encryption process
+     * @param keyName {String} The name of the key to use in the encryption process
      * @param plaintext {String} Data to be encrypted
      */
     constructor(keyName, plaintext) { 
@@ -51,6 +51,12 @@ class EncryptPKCS1 {
         if (data) {
             obj = obj || new EncryptPKCS1();
 
+            if (data.hasOwnProperty('display-id')) {
+                obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
+            }
+            if (data.hasOwnProperty('item-id')) {
+                obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
+            }
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
             }
@@ -71,7 +77,19 @@ class EncryptPKCS1 {
 }
 
 /**
- * The name of the RSA key to use in the encryption process
+ * The display id of the key to use in the encryption process
+ * @member {String} display-id
+ */
+EncryptPKCS1.prototype['display-id'] = undefined;
+
+/**
+ * The item id of the key to use in the encryption process
+ * @member {Number} item-id
+ */
+EncryptPKCS1.prototype['item-id'] = undefined;
+
+/**
+ * The name of the key to use in the encryption process
  * @member {String} key-name
  */
 EncryptPKCS1.prototype['key-name'] = undefined;

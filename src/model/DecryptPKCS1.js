@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptPKCS1 model module.
  * @module model/DecryptPKCS1
- * @version 2.16.12
+ * @version 2.17.0
  */
 class DecryptPKCS1 {
     /**
      * Constructs a new <code>DecryptPKCS1</code>.
      * @alias module:model/DecryptPKCS1
      * @param ciphertext {String} Ciphertext to be decrypted in base64 encoded format
-     * @param keyName {String} The name of the RSA key to use in the decryption process
+     * @param keyName {String} The name of the key to use in the decryption process
      */
     constructor(ciphertext, keyName) { 
         
@@ -54,6 +54,12 @@ class DecryptPKCS1 {
             if (data.hasOwnProperty('ciphertext')) {
                 obj['ciphertext'] = ApiClient.convertToType(data['ciphertext'], 'String');
             }
+            if (data.hasOwnProperty('display-id')) {
+                obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
+            }
+            if (data.hasOwnProperty('item-id')) {
+                obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
+            }
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
             }
@@ -77,7 +83,19 @@ class DecryptPKCS1 {
 DecryptPKCS1.prototype['ciphertext'] = undefined;
 
 /**
- * The name of the RSA key to use in the decryption process
+ * The display id of the key to use in the decryption process
+ * @member {String} display-id
+ */
+DecryptPKCS1.prototype['display-id'] = undefined;
+
+/**
+ * The item id of the key to use in the decryption process
+ * @member {Number} item-id
+ */
+DecryptPKCS1.prototype['item-id'] = undefined;
+
+/**
+ * The name of the key to use in the decryption process
  * @member {String} key-name
  */
 DecryptPKCS1.prototype['key-name'] = undefined;

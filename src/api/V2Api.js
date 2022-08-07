@@ -122,6 +122,8 @@ import DeleteTargets from '../model/DeleteTargets';
 import DescribeItem from '../model/DescribeItem';
 import DescribePermissions from '../model/DescribePermissions';
 import DescribePermissionsOutput from '../model/DescribePermissionsOutput';
+import DescribeSubClaims from '../model/DescribeSubClaims';
+import DescribeSubClaimsOutput from '../model/DescribeSubClaimsOutput';
 import Detokenize from '../model/Detokenize';
 import DetokenizeOutput from '../model/DetokenizeOutput';
 import Encrypt from '../model/Encrypt';
@@ -417,8 +419,6 @@ import UpdateSecretVal from '../model/UpdateSecretVal';
 import UpdateSecretValOutput from '../model/UpdateSecretValOutput';
 import UpdateTarget from '../model/UpdateTarget';
 import UpdateTargetOutput from '../model/UpdateTargetOutput';
-import UpdateTokenizer from '../model/UpdateTokenizer';
-import UpdateTokenizerOutput from '../model/UpdateTokenizerOutput';
 import UpdateWebTarget from '../model/UpdateWebTarget';
 import UpdateWebTargetDetails from '../model/UpdateWebTargetDetails';
 import UpdateWebTargetOutput from '../model/UpdateWebTargetOutput';
@@ -434,7 +434,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.16.12
+* @version 2.17.0
 */
 export default class V2Api {
 
@@ -2946,6 +2946,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/DescribeSubClaims} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DescribeSubClaimsOutput} and HTTP response
+     */
+    describeSubClaimsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling describeSubClaims");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DescribeSubClaimsOutput;
+      return this.apiClient.callApi(
+        '/describe-sub-claims', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DescribeSubClaims} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DescribeSubClaimsOutput}
+     */
+    describeSubClaims(body) {
+      return this.describeSubClaimsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/Detokenize} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DetokenizeOutput} and HTTP response
      */
@@ -3915,7 +3958,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = GatewayCreateProducerNativeK8SOutput;
       return this.apiClient.callApi(
-        '/gateway-create-producer-k8s-native', 'POST',
+        '/gateway-create-producer-k8s', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -10129,49 +10172,6 @@ export default class V2Api {
      */
     updateTargetDetails(body) {
       return this.updateTargetDetailsWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {module:model/UpdateTokenizer} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTokenizerOutput} and HTTP response
-     */
-    updateTokenizerWithHttpInfo(body) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling updateTokenizer");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = UpdateTokenizerOutput;
-      return this.apiClient.callApi(
-        '/update-tokenizer', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {module:model/UpdateTokenizer} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateTokenizerOutput}
-     */
-    updateTokenizer(body) {
-      return this.updateTokenizerWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

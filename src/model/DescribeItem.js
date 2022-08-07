@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeItem model module.
  * @module model/DescribeItem
- * @version 2.16.12
+ * @version 2.17.0
  */
 class DescribeItem {
     /**
@@ -49,6 +49,12 @@ class DescribeItem {
         if (data) {
             obj = obj || new DescribeItem();
 
+            if (data.hasOwnProperty('display-id')) {
+                obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
+            }
+            if (data.hasOwnProperty('item-id')) {
+                obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -67,6 +73,18 @@ class DescribeItem {
 
 
 }
+
+/**
+ * The display id of the item
+ * @member {String} display-id
+ */
+DescribeItem.prototype['display-id'] = undefined;
+
+/**
+ * Item id of the item
+ * @member {Number} item-id
+ */
+DescribeItem.prototype['item-id'] = undefined;
 
 /**
  * Item name

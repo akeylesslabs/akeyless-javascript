@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateKeyOutput model module.
  * @module model/CreateKeyOutput
- * @version 2.16.12
+ * @version 2.17.0
  */
 class CreateKeyOutput {
     /**
@@ -47,8 +47,14 @@ class CreateKeyOutput {
         if (data) {
             obj = obj || new CreateKeyOutput();
 
+            if (data.hasOwnProperty('display_id')) {
+                obj['display_id'] = ApiClient.convertToType(data['display_id'], 'String');
+            }
             if (data.hasOwnProperty('fragment_results')) {
                 obj['fragment_results'] = ApiClient.convertToType(data['fragment_results'], ['Number']);
+            }
+            if (data.hasOwnProperty('item_id')) {
+                obj['item_id'] = ApiClient.convertToType(data['item_id'], 'Number');
             }
         }
         return obj;
@@ -58,9 +64,19 @@ class CreateKeyOutput {
 }
 
 /**
+ * @member {String} display_id
+ */
+CreateKeyOutput.prototype['display_id'] = undefined;
+
+/**
  * @member {Array.<Number>} fragment_results
  */
 CreateKeyOutput.prototype['fragment_results'] = undefined;
+
+/**
+ * @member {Number} item_id
+ */
+CreateKeyOutput.prototype['item_id'] = undefined;
 
 
 

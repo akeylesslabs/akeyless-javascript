@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerDockerhub model module.
  * @module model/GatewayCreateProducerDockerhub
- * @version 2.16.12
+ * @version 2.17.0
  */
 class GatewayCreateProducerDockerhub {
     /**
@@ -103,7 +103,7 @@ GatewayCreateProducerDockerhub.prototype['delete_protection'] = undefined;
 GatewayCreateProducerDockerhub.prototype['dockerhub-password'] = undefined;
 
 /**
- * Access token scopes list (comma seperated) to give the dynamic secret valid options are in \"repo:admin\", \"repo:write\", \"repo:read\", \"repo:public_read\"
+ * Access token scopes list (comma-separated) to give the dynamic secret valid options are in \"repo:admin\", \"repo:write\", \"repo:read\", \"repo:public_read\"
  * @member {String} dockerhub-token-scopes
  */
 GatewayCreateProducerDockerhub.prototype['dockerhub-token-scopes'] = undefined;

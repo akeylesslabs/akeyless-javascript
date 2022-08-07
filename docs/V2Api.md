@@ -62,6 +62,7 @@ Method | HTTP request | Description
 [**deleteTargets**](V2Api.md#deleteTargets) | **POST** /delete-targets | 
 [**describeItem**](V2Api.md#describeItem) | **POST** /describe-item | 
 [**describePermissions**](V2Api.md#describePermissions) | **POST** /describe-permissions | 
+[**describeSubClaims**](V2Api.md#describeSubClaims) | **POST** /describe-sub-claims | 
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
 [**encryptPKCS1**](V2Api.md#encryptPKCS1) | **POST** /encrypt-pkcs1 | 
@@ -84,7 +85,7 @@ Method | HTTP request | Description
 [**gatewayCreateProducerMSSQL**](V2Api.md#gatewayCreateProducerMSSQL) | **POST** /gateway-create-producer-mssql | 
 [**gatewayCreateProducerMongo**](V2Api.md#gatewayCreateProducerMongo) | **POST** /gateway-create-producer-mongo | 
 [**gatewayCreateProducerMySQL**](V2Api.md#gatewayCreateProducerMySQL) | **POST** /gateway-create-producer-mysql | 
-[**gatewayCreateProducerNativeK8S**](V2Api.md#gatewayCreateProducerNativeK8S) | **POST** /gateway-create-producer-k8s-native | 
+[**gatewayCreateProducerNativeK8S**](V2Api.md#gatewayCreateProducerNativeK8S) | **POST** /gateway-create-producer-k8s | 
 [**gatewayCreateProducerOracleDb**](V2Api.md#gatewayCreateProducerOracleDb) | **POST** /gateway-create-producer-oracle | 
 [**gatewayCreateProducerPostgreSQL**](V2Api.md#gatewayCreateProducerPostgreSQL) | **POST** /gateway-create-producer-postgresql | 
 [**gatewayCreateProducerRabbitMQ**](V2Api.md#gatewayCreateProducerRabbitMQ) | **POST** /gateway-create-producer-rabbitmq | 
@@ -230,7 +231,6 @@ Method | HTTP request | Description
 [**updateSecretVal**](V2Api.md#updateSecretVal) | **POST** /update-secret-val | 
 [**updateTarget**](V2Api.md#updateTarget) | **POST** /update-target | 
 [**updateTargetDetails**](V2Api.md#updateTargetDetails) | **POST** /update-target-details | 
-[**updateTokenizer**](V2Api.md#updateTokenizer) | **POST** /update-tokenizer | 
 [**updateWebTarget**](V2Api.md#updateWebTarget) | **POST** /update-web-target | 
 [**updateWebTargetDetails**](V2Api.md#updateWebTargetDetails) | **POST** /update-web-target-details | 
 [**uploadRSA**](V2Api.md#uploadRSA) | **POST** /upload-rsa | 
@@ -2666,6 +2666,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DescribePermissionsOutput**](DescribePermissionsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## describeSubClaims
+
+> DescribeSubClaimsOutput describeSubClaims(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DescribeSubClaims(); // DescribeSubClaims | 
+apiInstance.describeSubClaims(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DescribeSubClaims**](DescribeSubClaims.md)|  | 
+
+### Return type
+
+[**DescribeSubClaimsOutput**](DescribeSubClaimsOutput.md)
 
 ### Authorization
 
@@ -9742,48 +9784,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateTargetOutput**](UpdateTargetOutput.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## updateTokenizer
-
-> UpdateTokenizerOutput updateTokenizer(body)
-
-
-
-### Example
-
-```javascript
-import akeyless from 'akeyless';
-
-let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateTokenizer(); // UpdateTokenizer | 
-apiInstance.updateTokenizer(body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**UpdateTokenizer**](UpdateTokenizer.md)|  | 
-
-### Return type
-
-[**UpdateTokenizerOutput**](UpdateTokenizerOutput.md)
 
 ### Authorization
 

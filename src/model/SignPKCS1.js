@@ -16,19 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The SignPKCS1 model module.
  * @module model/SignPKCS1
- * @version 2.16.12
+ * @version 2.17.0
  */
 class SignPKCS1 {
     /**
      * Constructs a new <code>SignPKCS1</code>.
      * signPKCS1 is a command that calculates the signature of hashed data using RSASSA-PKCS1-V1_5-SIGN from RSA PKCS#1 v1.5.
      * @alias module:model/SignPKCS1
-     * @param keyName {String} The name of the RSA key to use in the signing process
      * @param message {String} The message to be signed
      */
-    constructor(keyName, message) { 
+    constructor(message) { 
         
-        SignPKCS1.initialize(this, keyName, message);
+        SignPKCS1.initialize(this, message);
     }
 
     /**
@@ -36,8 +35,7 @@ class SignPKCS1 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, keyName, message) { 
-        obj['key-name'] = keyName;
+    static initialize(obj, message) { 
         obj['message'] = message;
     }
 
@@ -52,6 +50,12 @@ class SignPKCS1 {
         if (data) {
             obj = obj || new SignPKCS1();
 
+            if (data.hasOwnProperty('display-id')) {
+                obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
+            }
+            if (data.hasOwnProperty('item-id')) {
+                obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
+            }
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
             }
@@ -70,6 +74,18 @@ class SignPKCS1 {
 
 
 }
+
+/**
+ * The display id of the key to use in the signing process
+ * @member {String} display-id
+ */
+SignPKCS1.prototype['display-id'] = undefined;
+
+/**
+ * The item id of the key to use in the signing process
+ * @member {Number} item-id
+ */
+SignPKCS1.prototype['item-id'] = undefined;
 
 /**
  * The name of the RSA key to use in the signing process

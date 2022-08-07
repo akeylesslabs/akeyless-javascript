@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLdapTarget model module.
  * @module model/UpdateLdapTarget
- * @version 2.16.12
+ * @version 2.17.0
  */
 class UpdateLdapTarget {
     /**
@@ -75,6 +75,9 @@ class UpdateLdapTarget {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('server-type')) {
+                obj['server-type'] = ApiClient.convertToType(data['server-type'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -143,6 +146,12 @@ UpdateLdapTarget.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateLdapTarget.prototype['new-name'] = undefined;
+
+/**
+ * Set Ldap server type, Options:[OpenLDAP, ActiveDirectory]
+ * @member {String} server-type
+ */
+UpdateLdapTarget.prototype['server-type'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -16,23 +16,21 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSalesforceTarget model module.
  * @module model/UpdateSalesforceTarget
- * @version 2.16.12
+ * @version 2.17.0
  */
 class UpdateSalesforceTarget {
     /**
      * Constructs a new <code>UpdateSalesforceTarget</code>.
      * @alias module:model/UpdateSalesforceTarget
+     * @param authFlow {String} type of the auth flow ('jwt' / 'user-password')
      * @param clientId {String} Client ID of the oauth2 app to use for connecting to Salesforce
-     * @param clientSecret {String} Client secret of the oauth2 app to use for connecting to Salesforce
      * @param email {String} The email of the user attached to the oauth2 app used for connecting to Salesforce
      * @param name {String} Target name
-     * @param password {String} The password of the user attached to the oauth2 app used for connecting to Salesforce
-     * @param securityToken {String} The security token of the user attached to the oauth2 app used for connecting to Salesforce
      * @param tenantUrl {String} Url of the Salesforce tenant
      */
-    constructor(clientId, clientSecret, email, name, password, securityToken, tenantUrl) { 
+    constructor(authFlow, clientId, email, name, tenantUrl) { 
         
-        UpdateSalesforceTarget.initialize(this, clientId, clientSecret, email, name, password, securityToken, tenantUrl);
+        UpdateSalesforceTarget.initialize(this, authFlow, clientId, email, name, tenantUrl);
     }
 
     /**
@@ -40,13 +38,11 @@ class UpdateSalesforceTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, clientId, clientSecret, email, name, password, securityToken, tenantUrl) { 
+    static initialize(obj, authFlow, clientId, email, name, tenantUrl) { 
+        obj['auth-flow'] = authFlow;
         obj['client-id'] = clientId;
-        obj['client-secret'] = clientSecret;
         obj['email'] = email;
         obj['name'] = name;
-        obj['password'] = password;
-        obj['security-token'] = securityToken;
         obj['tenant-url'] = tenantUrl;
     }
 
@@ -61,6 +57,12 @@ class UpdateSalesforceTarget {
         if (data) {
             obj = obj || new UpdateSalesforceTarget();
 
+            if (data.hasOwnProperty('app-private-key-data')) {
+                obj['app-private-key-data'] = ApiClient.convertToType(data['app-private-key-data'], 'String');
+            }
+            if (data.hasOwnProperty('auth-flow')) {
+                obj['auth-flow'] = ApiClient.convertToType(data['auth-flow'], 'String');
+            }
             if (data.hasOwnProperty('ca-cert-data')) {
                 obj['ca-cert-data'] = ApiClient.convertToType(data['ca-cert-data'], 'String');
             }
@@ -117,6 +119,18 @@ class UpdateSalesforceTarget {
 }
 
 /**
+ * Base64 encoded PEM of the connected app private key (relevant for JWT auth only)
+ * @member {String} app-private-key-data
+ */
+UpdateSalesforceTarget.prototype['app-private-key-data'] = undefined;
+
+/**
+ * type of the auth flow ('jwt' / 'user-password')
+ * @member {String} auth-flow
+ */
+UpdateSalesforceTarget.prototype['auth-flow'] = undefined;
+
+/**
  * Base64 encoded PEM cert to use when uploading a new key to Salesforce
  * @member {String} ca-cert-data
  */
@@ -135,7 +149,7 @@ UpdateSalesforceTarget.prototype['ca-cert-name'] = undefined;
 UpdateSalesforceTarget.prototype['client-id'] = undefined;
 
 /**
- * Client secret of the oauth2 app to use for connecting to Salesforce
+ * Client secret of the oauth2 app to use for connecting to Salesforce (required for password flow)
  * @member {String} client-secret
  */
 UpdateSalesforceTarget.prototype['client-secret'] = undefined;
@@ -176,13 +190,13 @@ UpdateSalesforceTarget.prototype['name'] = undefined;
 UpdateSalesforceTarget.prototype['new-name'] = undefined;
 
 /**
- * The password of the user attached to the oauth2 app used for connecting to Salesforce
+ * The password of the user attached to the oauth2 app used for connecting to Salesforce (required for user-password flow)
  * @member {String} password
  */
 UpdateSalesforceTarget.prototype['password'] = undefined;
 
 /**
- * The security token of the user attached to the oauth2 app used for connecting to Salesforce
+ * The security token of the user attached to the oauth2 app used for connecting to Salesforce  (required for user-password flow)
  * @member {String} security-token
  */
 UpdateSalesforceTarget.prototype['security-token'] = undefined;

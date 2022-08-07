@@ -16,16 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The Encrypt model module.
  * @module model/Encrypt
- * @version 2.16.12
+ * @version 2.17.0
  */
 class Encrypt {
     /**
      * Constructs a new <code>Encrypt</code>.
      * @alias module:model/Encrypt
+     * @param keyName {String} The name of the key to use in the encryption process
      */
-    constructor() { 
+    constructor(keyName) { 
         
-        Encrypt.initialize(this);
+        Encrypt.initialize(this, keyName);
     }
 
     /**
@@ -33,7 +34,8 @@ class Encrypt {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, keyName) { 
+        obj['key-name'] = keyName;
     }
 
     /**
@@ -52,6 +54,9 @@ class Encrypt {
             }
             if (data.hasOwnProperty('encryption-context')) {
                 obj['encryption-context'] = ApiClient.convertToType(data['encryption-context'], {'String': 'String'});
+            }
+            if (data.hasOwnProperty('item-id')) {
+                obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
             }
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
@@ -83,6 +88,12 @@ Encrypt.prototype['display-id'] = undefined;
  * @member {Object.<String, String>} encryption-context
  */
 Encrypt.prototype['encryption-context'] = undefined;
+
+/**
+ * The item id of the key to use in the encryption process
+ * @member {Number} item-id
+ */
+Encrypt.prototype['item-id'] = undefined;
 
 /**
  * The name of the key to use in the encryption process

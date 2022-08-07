@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLdapTarget model module.
  * @module model/CreateLdapTarget
- * @version 2.16.12
+ * @version 2.17.0
  */
 class CreateLdapTarget {
     /**
@@ -76,6 +76,9 @@ class CreateLdapTarget {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('server-type')) {
+                obj['server-type'] = ApiClient.convertToType(data['server-type'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -133,6 +136,13 @@ CreateLdapTarget.prototype['ldap-url'] = undefined;
  * @member {String} name
  */
 CreateLdapTarget.prototype['name'] = undefined;
+
+/**
+ * Set Ldap server type, Options:[OpenLDAP, ActiveDirectory]. Default is OpenLDAP
+ * @member {String} server-type
+ * @default 'OpenLDAP'
+ */
+CreateLdapTarget.prototype['server-type'] = 'OpenLDAP';
 
 /**
  * Authentication token (see `/auth` and `/configure`)

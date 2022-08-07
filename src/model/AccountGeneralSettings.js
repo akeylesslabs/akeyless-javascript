@@ -17,7 +17,7 @@ import DataProtectionSection from './DataProtectionSection';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 2.16.12
+ * @version 2.17.0
  */
 class AccountGeneralSettings {
     /**

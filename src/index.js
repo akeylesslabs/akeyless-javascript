@@ -155,6 +155,8 @@ import DeleteTargets from './model/DeleteTargets';
 import DescribeItem from './model/DescribeItem';
 import DescribePermissions from './model/DescribePermissions';
 import DescribePermissionsOutput from './model/DescribePermissionsOutput';
+import DescribeSubClaims from './model/DescribeSubClaims';
+import DescribeSubClaimsOutput from './model/DescribeSubClaimsOutput';
 import Detokenize from './model/Detokenize';
 import DetokenizeOutput from './model/DetokenizeOutput';
 import DynamicSecretProducerInfo from './model/DynamicSecretProducerInfo';
@@ -540,8 +542,6 @@ import UpdateSecretValOutput from './model/UpdateSecretValOutput';
 import UpdateTarget from './model/UpdateTarget';
 import UpdateTargetDetailsOutput from './model/UpdateTargetDetailsOutput';
 import UpdateTargetOutput from './model/UpdateTargetOutput';
-import UpdateTokenizer from './model/UpdateTokenizer';
-import UpdateTokenizerOutput from './model/UpdateTokenizerOutput';
 import UpdateWebTarget from './model/UpdateWebTarget';
 import UpdateWebTargetDetails from './model/UpdateWebTargetDetails';
 import UpdateWebTargetOutput from './model/UpdateWebTargetOutput';
@@ -587,7 +587,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.16.12
+* @version 2.17.0
 */
 export {
     /**
@@ -1447,6 +1447,18 @@ export {
      * @property {module:model/DescribePermissionsOutput}
      */
     DescribePermissionsOutput,
+
+    /**
+     * The DescribeSubClaims model constructor.
+     * @property {module:model/DescribeSubClaims}
+     */
+    DescribeSubClaims,
+
+    /**
+     * The DescribeSubClaimsOutput model constructor.
+     * @property {module:model/DescribeSubClaimsOutput}
+     */
+    DescribeSubClaimsOutput,
 
     /**
      * The Detokenize model constructor.
@@ -3757,18 +3769,6 @@ export {
      * @property {module:model/UpdateTargetOutput}
      */
     UpdateTargetOutput,
-
-    /**
-     * The UpdateTokenizer model constructor.
-     * @property {module:model/UpdateTokenizer}
-     */
-    UpdateTokenizer,
-
-    /**
-     * The UpdateTokenizerOutput model constructor.
-     * @property {module:model/UpdateTokenizerOutput}
-     */
-    UpdateTokenizerOutput,
 
     /**
      * The UpdateWebTarget model constructor.

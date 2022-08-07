@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateK8SAuthConfig model module.
  * @module model/GatewayCreateK8SAuthConfig
- * @version 2.16.12
+ * @version 2.17.0
  */
 class GatewayCreateK8SAuthConfig {
     /**
@@ -59,6 +59,9 @@ class GatewayCreateK8SAuthConfig {
             if (data.hasOwnProperty('access-id')) {
                 obj['access-id'] = ApiClient.convertToType(data['access-id'], 'String');
             }
+            if (data.hasOwnProperty('cluster-api-type')) {
+                obj['cluster-api-type'] = ApiClient.convertToType(data['cluster-api-type'], 'String');
+            }
             if (data.hasOwnProperty('config-encryption-key-name')) {
                 obj['config-encryption-key-name'] = ApiClient.convertToType(data['config-encryption-key-name'], 'String');
             }
@@ -73,6 +76,12 @@ class GatewayCreateK8SAuthConfig {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('rancher-api-key')) {
+                obj['rancher-api-key'] = ApiClient.convertToType(data['rancher-api-key'], 'String');
+            }
+            if (data.hasOwnProperty('rancher-cluster-id')) {
+                obj['rancher-cluster-id'] = ApiClient.convertToType(data['rancher-cluster-id'], 'String');
             }
             if (data.hasOwnProperty('signing-key')) {
                 obj['signing-key'] = ApiClient.convertToType(data['signing-key'], 'String');
@@ -101,6 +110,13 @@ class GatewayCreateK8SAuthConfig {
  * @member {String} access-id
  */
 GatewayCreateK8SAuthConfig.prototype['access-id'] = undefined;
+
+/**
+ * Cluster access type. options: [native_k8s, rancher]
+ * @member {String} cluster-api-type
+ * @default 'native_k8s'
+ */
+GatewayCreateK8SAuthConfig.prototype['cluster-api-type'] = 'native_k8s';
 
 /**
  * Config encryption key
@@ -133,6 +149,18 @@ GatewayCreateK8SAuthConfig.prototype['k8s-issuer'] = undefined;
 GatewayCreateK8SAuthConfig.prototype['name'] = undefined;
 
 /**
+ * The api key used to access the TokenReview API to validate other JWTs (relevant for \"rancher\" only)
+ * @member {String} rancher-api-key
+ */
+GatewayCreateK8SAuthConfig.prototype['rancher-api-key'] = undefined;
+
+/**
+ * The cluster id as define in rancher (relevant for \"rancher\" only)
+ * @member {String} rancher-cluster-id
+ */
+GatewayCreateK8SAuthConfig.prototype['rancher-cluster-id'] = undefined;
+
+/**
  * The private key (in base64 encoded of the PEM format) associated with the public key defined in the Kubernetes auth
  * @member {String} signing-key
  */
@@ -152,7 +180,7 @@ GatewayCreateK8SAuthConfig.prototype['token'] = undefined;
 GatewayCreateK8SAuthConfig.prototype['token-exp'] = 300;
 
 /**
- * A Kubernetes service account JWT used to access the TokenReview API to validate other JWTs. If not set, the JWT submitted in the authentication process will be used to access the Kubernetes TokenReview API.
+ * A Kubernetes service account JWT used to access the TokenReview API to validate other JWTs (relevant for \"native_k8s\" only). If not set, the JWT submitted in the authentication process will be used to access the Kubernetes TokenReview API.
  * @member {String} token-reviewer-jwt
  */
 GatewayCreateK8SAuthConfig.prototype['token-reviewer-jwt'] = undefined;

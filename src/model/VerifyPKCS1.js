@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyPKCS1 model module.
  * @module model/VerifyPKCS1
- * @version 2.16.12
+ * @version 2.17.0
  */
 class VerifyPKCS1 {
     /**
@@ -53,6 +53,12 @@ class VerifyPKCS1 {
         if (data) {
             obj = obj || new VerifyPKCS1();
 
+            if (data.hasOwnProperty('display-id')) {
+                obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
+            }
+            if (data.hasOwnProperty('item-id')) {
+                obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
+            }
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
             }
@@ -74,6 +80,18 @@ class VerifyPKCS1 {
 
 
 }
+
+/**
+ * The display id of the key to use in the verification process
+ * @member {String} display-id
+ */
+VerifyPKCS1.prototype['display-id'] = undefined;
+
+/**
+ * The item id of the key to use in the verification process
+ * @member {Number} item-id
+ */
+VerifyPKCS1.prototype['item-id'] = undefined;
 
 /**
  * The name of the RSA key to use in the verification process

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptFile model module.
  * @module model/EncryptFile
- * @version 2.16.12
+ * @version 2.17.0
  */
 class EncryptFile {
     /**
@@ -51,11 +51,17 @@ class EncryptFile {
         if (data) {
             obj = obj || new EncryptFile();
 
+            if (data.hasOwnProperty('display-id')) {
+                obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
+            }
             if (data.hasOwnProperty('encryption-context')) {
                 obj['encryption-context'] = ApiClient.convertToType(data['encryption-context'], {'String': 'String'});
             }
             if (data.hasOwnProperty('in')) {
                 obj['in'] = ApiClient.convertToType(data['in'], 'String');
+            }
+            if (data.hasOwnProperty('item-id')) {
+                obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
             }
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
@@ -77,6 +83,12 @@ class EncryptFile {
 }
 
 /**
+ * The display id of the key to use in the encryption process
+ * @member {String} display-id
+ */
+EncryptFile.prototype['display-id'] = undefined;
+
+/**
  * name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the same value must be supplied to the decrypt command or decryption will fail
  * @member {Object.<String, String>} encryption-context
  */
@@ -87,6 +99,12 @@ EncryptFile.prototype['encryption-context'] = undefined;
  * @member {String} in
  */
 EncryptFile.prototype['in'] = undefined;
+
+/**
+ * The item id of the key to use in the encryption process
+ * @member {Number} item-id
+ */
+EncryptFile.prototype['item-id'] = undefined;
 
 /**
  * The name of the key to use in the encryption process

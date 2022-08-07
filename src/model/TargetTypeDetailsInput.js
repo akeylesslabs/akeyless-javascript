@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.16.12
+ * @version 2.17.0
  */
 class TargetTypeDetailsInput {
     /**
@@ -47,6 +47,9 @@ class TargetTypeDetailsInput {
         if (data) {
             obj = obj || new TargetTypeDetailsInput();
 
+            if (data.hasOwnProperty('app_private_key')) {
+                obj['app_private_key'] = ApiClient.convertToType(data['app_private_key'], ['Number']);
+            }
             if (data.hasOwnProperty('artifactory_admin_apikey')) {
                 obj['artifactory_admin_apikey'] = ApiClient.convertToType(data['artifactory_admin_apikey'], 'String');
             }
@@ -331,6 +334,12 @@ class TargetTypeDetailsInput {
 }
 
 /**
+ * params needed for jwt auth AppPrivateKey is the rsa private key in PEM format
+ * @member {Array.<Number>} app_private_key
+ */
+TargetTypeDetailsInput.prototype['app_private_key'] = undefined;
+
+/**
  * @member {String} artifactory_admin_apikey
  */
 TargetTypeDetailsInput.prototype['artifactory_admin_apikey'] = undefined;
@@ -448,6 +457,7 @@ TargetTypeDetailsInput.prototype['chef_skip_ssl'] = undefined;
 TargetTypeDetailsInput.prototype['client_id'] = undefined;
 
 /**
+ * params needed for password auth
  * @member {String} client_secret
  */
 TargetTypeDetailsInput.prototype['client_secret'] = undefined;

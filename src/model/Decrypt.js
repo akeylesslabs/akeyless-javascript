@@ -16,17 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The Decrypt model module.
  * @module model/Decrypt
- * @version 2.16.12
+ * @version 2.17.0
  */
 class Decrypt {
     /**
      * Constructs a new <code>Decrypt</code>.
      * decrypt is a command that decrypts ciphertext into plaintext by using an AES key.
      * @alias module:model/Decrypt
+     * @param keyName {String} The name of the key to use in the decryption process
      */
-    constructor() { 
+    constructor(keyName) { 
         
-        Decrypt.initialize(this);
+        Decrypt.initialize(this, keyName);
     }
 
     /**
@@ -34,7 +35,8 @@ class Decrypt {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, keyName) { 
+        obj['key-name'] = keyName;
     }
 
     /**
@@ -56,6 +58,9 @@ class Decrypt {
             }
             if (data.hasOwnProperty('encryption-context')) {
                 obj['encryption-context'] = ApiClient.convertToType(data['encryption-context'], {'String': 'String'});
+            }
+            if (data.hasOwnProperty('item-id')) {
+                obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
             }
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
@@ -90,6 +95,12 @@ Decrypt.prototype['display-id'] = undefined;
  * @member {Object.<String, String>} encryption-context
  */
 Decrypt.prototype['encryption-context'] = undefined;
+
+/**
+ * The item id of the key to use in the decryption process
+ * @member {Number} item-id
+ */
+Decrypt.prototype['item-id'] = undefined;
 
 /**
  * The name of the key to use in the decryption process

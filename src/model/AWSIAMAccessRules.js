@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AWSIAMAccessRules model module.
  * @module model/AWSIAMAccessRules
- * @version 2.16.12
+ * @version 2.17.0
  */
 class AWSIAMAccessRules {
     /**

@@ -16,16 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptFile model module.
  * @module model/DecryptFile
- * @version 2.16.12
+ * @version 2.17.0
  */
 class DecryptFile {
     /**
      * Constructs a new <code>DecryptFile</code>.
      * @alias module:model/DecryptFile
+     * @param keyName {String} The name of the key to use in the decryption process
      */
-    constructor() { 
+    constructor(keyName) { 
         
-        DecryptFile.initialize(this);
+        DecryptFile.initialize(this, keyName);
     }
 
     /**
@@ -33,7 +34,8 @@ class DecryptFile {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, keyName) { 
+        obj['key-name'] = keyName;
     }
 
     /**
@@ -47,6 +49,15 @@ class DecryptFile {
         if (data) {
             obj = obj || new DecryptFile();
 
+            if (data.hasOwnProperty('display-id')) {
+                obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
+            }
+            if (data.hasOwnProperty('item-id')) {
+                obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
+            }
+            if (data.hasOwnProperty('key-name')) {
+                obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -59,6 +70,24 @@ class DecryptFile {
 
 
 }
+
+/**
+ * The display id of the key to use in the decryption process
+ * @member {String} display-id
+ */
+DecryptFile.prototype['display-id'] = undefined;
+
+/**
+ * The item id of the key to use in the decryption process
+ * @member {Number} item-id
+ */
+DecryptFile.prototype['item-id'] = undefined;
+
+/**
+ * The name of the key to use in the decryption process
+ * @member {String} key-name
+ */
+DecryptFile.prototype['key-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

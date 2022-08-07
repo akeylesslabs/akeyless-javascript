@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateArtifactoryTarget model module.
  * @module model/CreateArtifactoryTarget
- * @version 2.16.12
+ * @version 2.17.0
  */
 class CreateArtifactoryTarget {
     /**
@@ -111,7 +111,7 @@ CreateArtifactoryTarget.prototype['base-url'] = undefined;
 CreateArtifactoryTarget.prototype['comment'] = undefined;
 
 /**
- * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
+ * The name of a key used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 CreateArtifactoryTarget.prototype['key'] = undefined;

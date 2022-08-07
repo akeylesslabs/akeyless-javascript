@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The K8SAuth model module.
  * @module model/K8SAuth
- * @version 2.16.12
+ * @version 2.17.0
  */
 class K8SAuth {
     /**
@@ -56,6 +56,9 @@ class K8SAuth {
             if (data.hasOwnProperty('auth_method_prv_key_pem')) {
                 obj['auth_method_prv_key_pem'] = ApiClient.convertToType(data['auth_method_prv_key_pem'], 'String');
             }
+            if (data.hasOwnProperty('cluster_api_type')) {
+                obj['cluster_api_type'] = ApiClient.convertToType(data['cluster_api_type'], 'String');
+            }
             if (data.hasOwnProperty('disable_iss_validation')) {
                 obj['disable_iss_validation'] = ApiClient.convertToType(data['disable_iss_validation'], 'Boolean');
             }
@@ -82,6 +85,12 @@ class K8SAuth {
             }
             if (data.hasOwnProperty('protection_key')) {
                 obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
+            }
+            if (data.hasOwnProperty('rancher_api_key')) {
+                obj['rancher_api_key'] = ApiClient.convertToType(data['rancher_api_key'], 'String');
+            }
+            if (data.hasOwnProperty('rancher_cluster_id')) {
+                obj['rancher_cluster_id'] = ApiClient.convertToType(data['rancher_cluster_id'], 'String');
             }
             if (data.hasOwnProperty('use_local_ca_jwt')) {
                 obj['use_local_ca_jwt'] = ApiClient.convertToType(data['use_local_ca_jwt'], 'Boolean');
@@ -110,6 +119,12 @@ K8SAuth.prototype['auth_method_access_id'] = undefined;
  * @member {String} auth_method_prv_key_pem
  */
 K8SAuth.prototype['auth_method_prv_key_pem'] = undefined;
+
+/**
+ * ClusterApiType defines types of API access to cluster
+ * @member {String} cluster_api_type
+ */
+K8SAuth.prototype['cluster_api_type'] = undefined;
 
 /**
  * DisableISSValidation is optional parameter to disable ISS validation
@@ -147,7 +162,7 @@ K8SAuth.prototype['k8s_issuer'] = undefined;
 K8SAuth.prototype['k8s_pub_keys_pem'] = undefined;
 
 /**
- * K8STokenReviewerJW\"K8S Auth config %v successfully created\\n\", clictx.Color().Bold(c.K8SAuthConfigName)T is the bearer to use during the TokenReview API call
+ * K8STokenReviewerJWT is the bearer for clusterApiTypeK8s, used during TokenReview API call
  * @member {String} k8s_token_reviewer_jwt
  */
 K8SAuth.prototype['k8s_token_reviewer_jwt'] = undefined;
@@ -161,6 +176,18 @@ K8SAuth.prototype['name'] = undefined;
  * @member {String} protection_key
  */
 K8SAuth.prototype['protection_key'] = undefined;
+
+/**
+ * RancherApiKey the bear token for clusterApiTypeRancher
+ * @member {String} rancher_api_key
+ */
+K8SAuth.prototype['rancher_api_key'] = undefined;
+
+/**
+ * RancherClusterId cluster id as define in rancher (in case of clusterApiTypeRancher)
+ * @member {String} rancher_cluster_id
+ */
+K8SAuth.prototype['rancher_cluster_id'] = undefined;
 
 /**
  * UseLocalCAJwt is an optional parameter to set defaulting to using the local CA cert and service account jwt when running in a Kubernetes pod

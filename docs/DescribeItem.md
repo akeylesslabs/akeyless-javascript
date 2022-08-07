@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**displayId** | **String** | The display id of the item | [optional] 
+**itemId** | **Number** | Item id of the item | [optional] 
 **name** | **String** | Item name | 
 **showVersions** | **Boolean** | Include all item versions in reply | [optional] [default to false]
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
