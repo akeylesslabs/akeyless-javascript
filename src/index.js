@@ -167,8 +167,6 @@ import Encrypt from './model/Encrypt';
 import EncryptFile from './model/EncryptFile';
 import EncryptFileOutput from './model/EncryptFileOutput';
 import EncryptOutput from './model/EncryptOutput';
-import EncryptPKCS1 from './model/EncryptPKCS1';
-import EncryptPKCS1Output from './model/EncryptPKCS1Output';
 import EncryptWithClassicKey from './model/EncryptWithClassicKey';
 import EncryptWithClassicKeyOutput from './model/EncryptWithClassicKeyOutput';
 import ExternalKMSKeyId from './model/ExternalKMSKeyId';
@@ -432,6 +430,7 @@ import RotatedSecretDetailsInfo from './model/RotatedSecretDetailsInfo';
 import RotatedSecretOutput from './model/RotatedSecretOutput';
 import Rotator from './model/Rotator';
 import RotatorsConfigPart from './model/RotatorsConfigPart';
+import RuleAssigner from './model/RuleAssigner';
 import Rules from './model/Rules';
 import SAMLAccessRules from './model/SAMLAccessRules';
 import SAMLAttribute from './model/SAMLAttribute';
@@ -491,6 +490,7 @@ import UpdateAuthMethodGCP from './model/UpdateAuthMethodGCP';
 import UpdateAuthMethodK8S from './model/UpdateAuthMethodK8S';
 import UpdateAuthMethodK8SOutput from './model/UpdateAuthMethodK8SOutput';
 import UpdateAuthMethodLDAP from './model/UpdateAuthMethodLDAP';
+import UpdateAuthMethodLDAPOutput from './model/UpdateAuthMethodLDAPOutput';
 import UpdateAuthMethodOAuth2 from './model/UpdateAuthMethodOAuth2';
 import UpdateAuthMethodOIDC from './model/UpdateAuthMethodOIDC';
 import UpdateAuthMethodOutput from './model/UpdateAuthMethodOutput';
@@ -587,7 +587,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.17.0
+* @version 2.18.0
 */
 export {
     /**
@@ -1519,18 +1519,6 @@ export {
      * @property {module:model/EncryptOutput}
      */
     EncryptOutput,
-
-    /**
-     * The EncryptPKCS1 model constructor.
-     * @property {module:model/EncryptPKCS1}
-     */
-    EncryptPKCS1,
-
-    /**
-     * The EncryptPKCS1Output model constructor.
-     * @property {module:model/EncryptPKCS1Output}
-     */
-    EncryptPKCS1Output,
 
     /**
      * The EncryptWithClassicKey model constructor.
@@ -3111,6 +3099,12 @@ export {
     RotatorsConfigPart,
 
     /**
+     * The RuleAssigner model constructor.
+     * @property {module:model/RuleAssigner}
+     */
+    RuleAssigner,
+
+    /**
      * The Rules model constructor.
      * @property {module:model/Rules}
      */
@@ -3463,6 +3457,12 @@ export {
      * @property {module:model/UpdateAuthMethodLDAP}
      */
     UpdateAuthMethodLDAP,
+
+    /**
+     * The UpdateAuthMethodLDAPOutput model constructor.
+     * @property {module:model/UpdateAuthMethodLDAPOutput}
+     */
+    UpdateAuthMethodLDAPOutput,
 
     /**
      * The UpdateAuthMethodOAuth2 model constructor.

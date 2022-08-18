@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHCertIssuer model module.
  * @module model/CreateSSHCertIssuer
- * @version 2.17.0
+ * @version 2.18.0
  */
 class CreateSSHCertIssuer {
     /**
@@ -25,7 +25,7 @@ class CreateSSHCertIssuer {
      * @param allowedUsers {String} Users allowed to fetch the certificate, e.g root,ubuntu
      * @param name {String} SSH certificate issuer name
      * @param signerKeyName {String} A key to sign the certificate with
-     * @param ttl {Number} he requested Time To Live for the certificate, in seconds
+     * @param ttl {Number} The requested Time To Live for the certificate, in seconds
      */
     constructor(allowedUsers, name, signerKeyName, ttl) { 
         
@@ -198,7 +198,7 @@ CreateSSHCertIssuer.prototype['tag'] = undefined;
 CreateSSHCertIssuer.prototype['token'] = undefined;
 
 /**
- * he requested Time To Live for the certificate, in seconds
+ * The requested Time To Live for the certificate, in seconds
  * @member {Number} ttl
  */
 CreateSSHCertIssuer.prototype['ttl'] = undefined;

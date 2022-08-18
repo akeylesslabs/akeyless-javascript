@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignPKICertWithClassicKey model module.
  * @module model/SignPKICertWithClassicKey
- * @version 2.17.0
+ * @version 2.18.0
  */
 class SignPKICertWithClassicKey {
     /**

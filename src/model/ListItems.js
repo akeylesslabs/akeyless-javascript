@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 2.17.0
+ * @version 2.18.0
  */
 class ListItems {
     /**

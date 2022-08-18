@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodLDAPOutput model module.
  * @module model/CreateAuthMethodLDAPOutput
- * @version 2.17.0
+ * @version 2.18.0
  */
 class CreateAuthMethodLDAPOutput {
     /**
@@ -50,6 +50,9 @@ class CreateAuthMethodLDAPOutput {
             if (data.hasOwnProperty('access_id')) {
                 obj['access_id'] = ApiClient.convertToType(data['access_id'], 'String');
             }
+            if (data.hasOwnProperty('prv_key')) {
+                obj['prv_key'] = ApiClient.convertToType(data['prv_key'], 'String');
+            }
         }
         return obj;
     }
@@ -61,6 +64,11 @@ class CreateAuthMethodLDAPOutput {
  * @member {String} access_id
  */
 CreateAuthMethodLDAPOutput.prototype['access_id'] = undefined;
+
+/**
+ * @member {String} prv_key
+ */
+CreateAuthMethodLDAPOutput.prototype['prv_key'] = undefined;
 
 
 

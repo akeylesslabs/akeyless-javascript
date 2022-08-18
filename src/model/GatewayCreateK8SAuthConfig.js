@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateK8SAuthConfig model module.
  * @module model/GatewayCreateK8SAuthConfig
- * @version 2.17.0
+ * @version 2.18.0
  */
 class GatewayCreateK8SAuthConfig {
     /**
@@ -26,7 +26,7 @@ class GatewayCreateK8SAuthConfig {
      * @param accessId {String} The access ID of the Kubernetes auth method
      * @param k8sHost {String} The URL of the kubernetes API server
      * @param name {String} K8S Auth config name
-     * @param signingKey {String} The private key (in base64 encoded of the PEM format) associated with the public key defined in the Kubernetes auth
+     * @param signingKey {String} The private key (base64 encoded) associated with the public key defined in the Kubernetes auth
      */
     constructor(accessId, k8sHost, name, signingKey) { 
         
@@ -125,7 +125,7 @@ GatewayCreateK8SAuthConfig.prototype['cluster-api-type'] = 'native_k8s';
 GatewayCreateK8SAuthConfig.prototype['config-encryption-key-name'] = undefined;
 
 /**
- * The CA Cert (in PEM format) to use to call into the kubernetes API server
+ * The CA Certificate (base64 encoded) to use to call into the kubernetes API server
  * @member {String} k8s-ca-cert
  */
 GatewayCreateK8SAuthConfig.prototype['k8s-ca-cert'] = undefined;
@@ -161,7 +161,7 @@ GatewayCreateK8SAuthConfig.prototype['rancher-api-key'] = undefined;
 GatewayCreateK8SAuthConfig.prototype['rancher-cluster-id'] = undefined;
 
 /**
- * The private key (in base64 encoded of the PEM format) associated with the public key defined in the Kubernetes auth
+ * The private key (base64 encoded) associated with the public key defined in the Kubernetes auth
  * @member {String} signing-key
  */
 GatewayCreateK8SAuthConfig.prototype['signing-key'] = undefined;

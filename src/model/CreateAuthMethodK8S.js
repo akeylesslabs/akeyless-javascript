@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodK8S model module.
  * @module model/CreateAuthMethodK8S
- * @version 2.17.0
+ * @version 2.18.0
  */
 class CreateAuthMethodK8S {
     /**
@@ -143,7 +143,7 @@ CreateAuthMethodK8S.prototype['bound-sa-names'] = undefined;
 CreateAuthMethodK8S.prototype['force-sub-claims'] = undefined;
 
 /**
- * If this flag is set to true, there is no need to manually provide a public key for the Kubernetes Auth Method, and instead, a key pair, will be generated as part of the command and the private part of the key will be returned (the private key is required for the K8S Auth Config in the Akeyless Gateway)
+ * Automatically generate key-pair for K8S configuration. If set to false, a public key needs to be provided
  * @member {String} gen-key
  * @default 'true'
  */
@@ -168,7 +168,7 @@ CreateAuthMethodK8S.prototype['jwt-ttl'] = undefined;
 CreateAuthMethodK8S.prototype['name'] = undefined;
 
 /**
- * Base64-encoded public key text for K8S authentication method is required [RSA2048]
+ * Base64-encoded or PEM formatted public key data for K8S authentication method is required [RSA2048]
  * @member {String} public-key
  */
 CreateAuthMethodK8S.prototype['public-key'] = undefined;

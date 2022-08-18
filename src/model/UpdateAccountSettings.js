@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 2.17.0
+ * @version 2.18.0
  */
 class UpdateAccountSettings {
     /**
@@ -80,6 +80,9 @@ class UpdateAccountSettings {
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'Number');
+            }
             if (data.hasOwnProperty('phone')) {
                 obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
             }
@@ -91,6 +94,18 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('use-lower-letters')) {
+                obj['use-lower-letters'] = ApiClient.convertToType(data['use-lower-letters'], 'String');
+            }
+            if (data.hasOwnProperty('use-numbers')) {
+                obj['use-numbers'] = ApiClient.convertToType(data['use-numbers'], 'String');
+            }
+            if (data.hasOwnProperty('use-special-characters')) {
+                obj['use-special-characters'] = ApiClient.convertToType(data['use-special-characters'], 'String');
+            }
+            if (data.hasOwnProperty('use_capital-letters')) {
+                obj['use_capital-letters'] = ApiClient.convertToType(data['use_capital-letters'], 'String');
             }
         }
         return obj;
@@ -166,6 +181,12 @@ UpdateAccountSettings.prototype['jwt-ttl-min'] = undefined;
 UpdateAccountSettings.prototype['max-versions'] = undefined;
 
 /**
+ * For PasswordPolicy use
+ * @member {Number} password-length
+ */
+UpdateAccountSettings.prototype['password-length'] = undefined;
+
+/**
  * Phone number
  * @member {String} phone
  */
@@ -188,6 +209,30 @@ UpdateAccountSettings.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateAccountSettings.prototype['uid-token'] = undefined;
+
+/**
+ * For PasswordPolicy use
+ * @member {String} use-lower-letters
+ */
+UpdateAccountSettings.prototype['use-lower-letters'] = undefined;
+
+/**
+ * For PasswordPolicy use
+ * @member {String} use-numbers
+ */
+UpdateAccountSettings.prototype['use-numbers'] = undefined;
+
+/**
+ * For PasswordPolicy use
+ * @member {String} use-special-characters
+ */
+UpdateAccountSettings.prototype['use-special-characters'] = undefined;
+
+/**
+ * For PasswordPolicy use
+ * @member {String} use_capital-letters
+ */
+UpdateAccountSettings.prototype['use_capital-letters'] = undefined;
 
 
 

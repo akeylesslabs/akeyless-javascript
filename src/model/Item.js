@@ -16,12 +16,13 @@ import CertificateIssueInfo from './CertificateIssueInfo';
 import ItemGeneralInfo from './ItemGeneralInfo';
 import ItemTargetAssociation from './ItemTargetAssociation';
 import ItemVersion from './ItemVersion';
+import RuleAssigner from './RuleAssigner';
 import TargetItemVersion from './TargetItemVersion';
 
 /**
  * The Item model module.
  * @module model/Item
- * @version 2.17.0
+ * @version 2.18.0
  */
 class Item {
     /**
@@ -135,6 +136,9 @@ class Item {
             }
             if (data.hasOwnProperty('rotation_interval')) {
                 obj['rotation_interval'] = ApiClient.convertToType(data['rotation_interval'], 'Number');
+            }
+            if (data.hasOwnProperty('shared_by')) {
+                obj['shared_by'] = RuleAssigner.constructFromObject(data['shared_by']);
             }
             if (data.hasOwnProperty('target_versions')) {
                 obj['target_versions'] = ApiClient.convertToType(data['target_versions'], [TargetItemVersion]);
@@ -289,6 +293,11 @@ Item.prototype['public_value'] = undefined;
  * @member {Number} rotation_interval
  */
 Item.prototype['rotation_interval'] = undefined;
+
+/**
+ * @member {module:model/RuleAssigner} shared_by
+ */
+Item.prototype['shared_by'] = undefined;
 
 /**
  * @member {Array.<module:model/TargetItemVersion>} target_versions

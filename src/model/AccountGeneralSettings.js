@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import DataProtectionSection from './DataProtectionSection';
+import PasswordPolicyInfo from './PasswordPolicyInfo';
 
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 2.17.0
+ * @version 2.18.0
  */
 class AccountGeneralSettings {
     /**
@@ -52,6 +53,9 @@ class AccountGeneralSettings {
             if (data.hasOwnProperty('data_protection_section')) {
                 obj['data_protection_section'] = DataProtectionSection.constructFromObject(data['data_protection_section']);
             }
+            if (data.hasOwnProperty('password_policy')) {
+                obj['password_policy'] = PasswordPolicyInfo.constructFromObject(data['password_policy']);
+            }
         }
         return obj;
     }
@@ -63,6 +67,11 @@ class AccountGeneralSettings {
  * @member {module:model/DataProtectionSection} data_protection_section
  */
 AccountGeneralSettings.prototype['data_protection_section'] = undefined;
+
+/**
+ * @member {module:model/PasswordPolicyInfo} password_policy
+ */
+AccountGeneralSettings.prototype['password_policy'] = undefined;
 
 
 

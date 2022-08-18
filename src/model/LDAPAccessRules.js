@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LDAPAccessRules model module.
  * @module model/LDAPAccessRules
- * @version 2.17.0
+ * @version 2.18.0
  */
 class LDAPAccessRules {
     /**
@@ -50,6 +50,9 @@ class LDAPAccessRules {
             if (data.hasOwnProperty('alg')) {
                 obj['alg'] = ApiClient.convertToType(data['alg'], 'String');
             }
+            if (data.hasOwnProperty('gen_key_pair')) {
+                obj['gen_key_pair'] = ApiClient.convertToType(data['gen_key_pair'], 'String');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -67,6 +70,12 @@ class LDAPAccessRules {
  * @member {String} alg
  */
 LDAPAccessRules.prototype['alg'] = undefined;
+
+/**
+ * Generate public/private key (the private key is required for the LDAP Auth Config in the Akeyless Gateway)
+ * @member {String} gen_key_pair
+ */
+LDAPAccessRules.prototype['gen_key_pair'] = undefined;
 
 /**
  * The public key value of LDAP.

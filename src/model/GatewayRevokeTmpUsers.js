@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayRevokeTmpUsers model module.
  * @module model/GatewayRevokeTmpUsers
- * @version 2.17.0
+ * @version 2.18.0
  */
 class GatewayRevokeTmpUsers {
     /**
@@ -58,6 +58,9 @@ class GatewayRevokeTmpUsers {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('revoke-all')) {
+                obj['revoke-all'] = ApiClient.convertToType(data['revoke-all'], 'Boolean');
+            }
             if (data.hasOwnProperty('soft-delete')) {
                 obj['soft-delete'] = ApiClient.convertToType(data['soft-delete'], 'Boolean');
             }
@@ -78,7 +81,7 @@ class GatewayRevokeTmpUsers {
 }
 
 /**
- * Host
+ * Deprecated: has no effect
  * @member {String} host
  */
 GatewayRevokeTmpUsers.prototype['host'] = undefined;
@@ -90,6 +93,12 @@ GatewayRevokeTmpUsers.prototype['host'] = undefined;
 GatewayRevokeTmpUsers.prototype['name'] = undefined;
 
 /**
+ * Revoke All Temp Creds
+ * @member {Boolean} revoke-all
+ */
+GatewayRevokeTmpUsers.prototype['revoke-all'] = undefined;
+
+/**
  * Soft Delete
  * @member {Boolean} soft-delete
  */
@@ -98,8 +107,9 @@ GatewayRevokeTmpUsers.prototype['soft-delete'] = undefined;
 /**
  * Tmp Creds ID
  * @member {String} tmp-creds-id
+ * @default 'demo_default_tmp_creds_id_for_sdk_bc'
  */
-GatewayRevokeTmpUsers.prototype['tmp-creds-id'] = undefined;
+GatewayRevokeTmpUsers.prototype['tmp-creds-id'] = 'demo_default_tmp_creds_id_for_sdk_bc';
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayUpdateProducerRabbitMQOutput model module.
  * @module model/GatewayUpdateProducerRabbitMQOutput
- * @version 2.17.0
+ * @version 2.18.0
  */
 class GatewayUpdateProducerRabbitMQOutput {
     /**

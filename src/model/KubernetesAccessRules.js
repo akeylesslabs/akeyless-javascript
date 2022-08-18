@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KubernetesAccessRules model module.
  * @module model/KubernetesAccessRules
- * @version 2.17.0
+ * @version 2.18.0
  */
 class KubernetesAccessRules {
     /**
@@ -62,6 +62,9 @@ class KubernetesAccessRules {
             if (data.hasOwnProperty('bound_service_account_names')) {
                 obj['bound_service_account_names'] = ApiClient.convertToType(data['bound_service_account_names'], ['String']);
             }
+            if (data.hasOwnProperty('gen_key_pair')) {
+                obj['gen_key_pair'] = ApiClient.convertToType(data['gen_key_pair'], 'String');
+            }
             if (data.hasOwnProperty('pub_key')) {
                 obj['pub_key'] = ApiClient.convertToType(data['pub_key'], 'String');
             }
@@ -100,6 +103,12 @@ KubernetesAccessRules.prototype['bound_pod_names'] = undefined;
  * @member {Array.<String>} bound_service_account_names
  */
 KubernetesAccessRules.prototype['bound_service_account_names'] = undefined;
+
+/**
+ * Generate public/private key (the private key is required for the K8S Auth Config in the Akeyless Gateway)
+ * @member {String} gen_key_pair
+ */
+KubernetesAccessRules.prototype['gen_key_pair'] = undefined;
 
 /**
  * The public key value of the Kubernetes auth method configuration in the Akeyless Gateway.

@@ -128,8 +128,6 @@ import Detokenize from '../model/Detokenize';
 import DetokenizeOutput from '../model/DetokenizeOutput';
 import Encrypt from '../model/Encrypt';
 import EncryptOutput from '../model/EncryptOutput';
-import EncryptPKCS1 from '../model/EncryptPKCS1';
-import EncryptPKCS1Output from '../model/EncryptPKCS1Output';
 import EncryptWithClassicKey from '../model/EncryptWithClassicKey';
 import GatewayCreateK8SAuthConfig from '../model/GatewayCreateK8SAuthConfig';
 import GatewayCreateK8SAuthConfigOutput from '../model/GatewayCreateK8SAuthConfigOutput';
@@ -371,6 +369,7 @@ import UpdateAuthMethodGCP from '../model/UpdateAuthMethodGCP';
 import UpdateAuthMethodK8S from '../model/UpdateAuthMethodK8S';
 import UpdateAuthMethodK8SOutput from '../model/UpdateAuthMethodK8SOutput';
 import UpdateAuthMethodLDAP from '../model/UpdateAuthMethodLDAP';
+import UpdateAuthMethodLDAPOutput from '../model/UpdateAuthMethodLDAPOutput';
 import UpdateAuthMethodOAuth2 from '../model/UpdateAuthMethodOAuth2';
 import UpdateAuthMethodOIDC from '../model/UpdateAuthMethodOIDC';
 import UpdateAuthMethodOutput from '../model/UpdateAuthMethodOutput';
@@ -434,7 +433,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.17.0
+* @version 2.18.0
 */
 export default class V2Api {
 
@@ -3068,49 +3067,6 @@ export default class V2Api {
      */
     encrypt(body) {
       return this.encryptWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {module:model/EncryptPKCS1} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EncryptPKCS1Output} and HTTP response
-     */
-    encryptPKCS1WithHttpInfo(body) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling encryptPKCS1");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = EncryptPKCS1Output;
-      return this.apiClient.callApi(
-        '/encrypt-pkcs1', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {module:model/EncryptPKCS1} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EncryptPKCS1Output}
-     */
-    encryptPKCS1(body) {
-      return this.encryptPKCS1WithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8853,7 +8809,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/UpdateAuthMethodLDAP} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateAuthMethodLDAPOutput} and HTTP response
      */
     updateAuthMethodLDAPWithHttpInfo(body) {
       let postBody = body;
@@ -8874,7 +8830,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = UpdateAuthMethodLDAPOutput;
       return this.apiClient.callApi(
         '/update-auth-method-ldap', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -8884,7 +8840,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/UpdateAuthMethodLDAP} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateAuthMethodLDAPOutput}
      */
     updateAuthMethodLDAP(body) {
       return this.updateAuthMethodLDAPWithHttpInfo(body)

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 2.17.0
+ * @version 2.18.0
  */
 class CreatePKICertIssuer {
     /**
@@ -172,7 +172,7 @@ CreatePKICertIssuer.prototype['client-flag'] = undefined;
 CreatePKICertIssuer.prototype['code-signing-flag'] = undefined;
 
 /**
- * A comma-separated list of the country that will be set in the issued certificate
+ * A comma-separated list of countries that will be set in the issued certificate
  * @member {String} country
  */
 CreatePKICertIssuer.prototype['country'] = undefined;
@@ -191,7 +191,7 @@ CreatePKICertIssuer.prototype['delete_protection'] = undefined;
 CreatePKICertIssuer.prototype['key-usage'] = 'DigitalSignature,KeyAgreement,KeyEncipherment';
 
 /**
- * A comma-separated list of the locality that will be set in the issued certificate
+ * A comma-separated list of localities that will be set in the issued certificate
  * @member {String} locality
  */
 CreatePKICertIssuer.prototype['locality'] = undefined;
@@ -233,13 +233,13 @@ CreatePKICertIssuer.prototype['organizational-units'] = undefined;
 CreatePKICertIssuer.prototype['organizations'] = undefined;
 
 /**
- * A comma-separated list of the postal code that will be set in the issued certificate
+ * A comma-separated list of postal codes that will be set in the issued certificate
  * @member {String} postal-code
  */
 CreatePKICertIssuer.prototype['postal-code'] = undefined;
 
 /**
- * A comma-separated list of the province that will be set in the issued certificate
+ * A comma-separated list of provinces that will be set in the issued certificate
  * @member {String} province
  */
 CreatePKICertIssuer.prototype['province'] = undefined;
@@ -257,7 +257,7 @@ CreatePKICertIssuer.prototype['server-flag'] = undefined;
 CreatePKICertIssuer.prototype['signer-key-name'] = undefined;
 
 /**
- * A comma-separated list of the street address that will be set in the issued certificate
+ * A comma-separated list of street addresses that will be set in the issued certificate
  * @member {String} street-address
  */
 CreatePKICertIssuer.prototype['street-address'] = undefined;

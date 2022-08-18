@@ -65,7 +65,6 @@ Method | HTTP request | Description
 [**describeSubClaims**](V2Api.md#describeSubClaims) | **POST** /describe-sub-claims | 
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
-[**encryptPKCS1**](V2Api.md#encryptPKCS1) | **POST** /encrypt-pkcs1 | 
 [**encryptWithClassicKey**](V2Api.md#encryptWithClassicKey) | **POST** /encrypt-with-classic-key | 
 [**gatewayCreateK8SAuthConfig**](V2Api.md#gatewayCreateK8SAuthConfig) | **POST** /gateway-create-k8s-auth-config | 
 [**gatewayCreateMigration**](V2Api.md#gatewayCreateMigration) | **POST** /gateway-create-migration | 
@@ -2792,48 +2791,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EncryptOutput**](EncryptOutput.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## encryptPKCS1
-
-> EncryptPKCS1Output encryptPKCS1(body)
-
-
-
-### Example
-
-```javascript
-import akeyless from 'akeyless';
-
-let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EncryptPKCS1(); // EncryptPKCS1 | 
-apiInstance.encryptPKCS1(body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EncryptPKCS1**](EncryptPKCS1.md)|  | 
-
-### Return type
-
-[**EncryptPKCS1Output**](EncryptPKCS1Output.md)
 
 ### Authorization
 
@@ -8499,7 +8456,7 @@ No authorization required
 
 ## updateAuthMethodLDAP
 
-> Object updateAuthMethodLDAP(body)
+> UpdateAuthMethodLDAPOutput updateAuthMethodLDAP(body)
 
 
 
@@ -8527,7 +8484,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**UpdateAuthMethodLDAPOutput**](UpdateAuthMethodLDAPOutput.md)
 
 ### Authorization
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodLDAP model module.
  * @module model/CreateAuthMethodLDAP
- * @version 2.17.0
+ * @version 2.18.0
  */
 class CreateAuthMethodLDAP {
     /**
@@ -58,6 +58,9 @@ class CreateAuthMethodLDAP {
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
+            if (data.hasOwnProperty('gen-key')) {
+                obj['gen-key'] = ApiClient.convertToType(data['gen-key'], 'String');
             }
             if (data.hasOwnProperty('gw-bound-ips')) {
                 obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
@@ -107,6 +110,13 @@ CreateAuthMethodLDAP.prototype['bound-ips'] = undefined;
 CreateAuthMethodLDAP.prototype['force-sub-claims'] = undefined;
 
 /**
+ * Automatically generate key-pair for LDAP configuration. If set to false, a public key needs to be provided
+ * @member {String} gen-key
+ * @default 'true'
+ */
+CreateAuthMethodLDAP.prototype['gen-key'] = 'true';
+
+/**
  * A CIDR whitelist with the GW IPs that the access is restricted to
  * @member {Array.<String>} gw-bound-ips
  */
@@ -125,7 +135,7 @@ CreateAuthMethodLDAP.prototype['jwt-ttl'] = undefined;
 CreateAuthMethodLDAP.prototype['name'] = undefined;
 
 /**
- * A public key generated for LDAP authentication method on Akeyless in base64 format [RSA2048]
+ * A public key generated for LDAP authentication method on Akeyless in base64 or PEM format [RSA2048]
  * @member {String} public-key-data
  */
 CreateAuthMethodLDAP.prototype['public-key-data'] = undefined;

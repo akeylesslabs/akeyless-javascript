@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLdapAuthConfig model module.
  * @module model/GatewayUpdateLdapAuthConfig
- * @version 2.17.0
+ * @version 2.18.0
  */
 class GatewayUpdateLdapAuthConfig {
     /**
@@ -137,7 +137,7 @@ GatewayUpdateLdapAuthConfig.prototype['group-dn'] = undefined;
 GatewayUpdateLdapAuthConfig.prototype['group-filter'] = undefined;
 
 /**
- * The CA Cert (in PEM format) to use to call into the ldap API server
+ * LDAP CA Certificate (base64 encoded)
  * @member {String} ldap-ca-cert
  */
 GatewayUpdateLdapAuthConfig.prototype['ldap-ca-cert'] = undefined;
@@ -161,7 +161,7 @@ GatewayUpdateLdapAuthConfig.prototype['ldap-url'] = undefined;
 GatewayUpdateLdapAuthConfig.prototype['ldap_anonymous_search'] = undefined;
 
 /**
- * The private key (in PEM format) associated with the public key defined in the Ldap auth
+ * The private key (base64 encoded), associated with the public key defined in the Ldap auth
  * @member {String} signing-key-data
  */
 GatewayUpdateLdapAuthConfig.prototype['signing-key-data'] = undefined;
