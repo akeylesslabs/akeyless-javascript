@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **certificateIssueDetails** | [**CertificateIssueInfo**](CertificateIssueInfo.md) |  | [optional] 
 **certificates** | **String** |  | [optional] 
 **clientPermissions** | **[String]** |  | [optional] 
+**creationDate** | **Date** |  | [optional] 
 **customerFragmentId** | **String** |  | [optional] 
 **deleteProtection** | **Boolean** |  | [optional] 
 **deletionDate** | **Date** |  | [optional] 
@@ -27,6 +28,7 @@ Name | Type | Description | Notes
 **itemType** | **String** |  | [optional] 
 **itemVersions** | [**[ItemVersion]**](ItemVersion.md) |  | [optional] 
 **lastVersion** | **Number** |  | [optional] 
+**modificationDate** | **Date** |  | [optional] 
 **nextRotationDate** | **Date** |  | [optional] 
 **protectionKeyName** | **String** |  | [optional] 
 **protectionKeyType** | **String** |  | [optional] 
@@ -34,6 +36,7 @@ Name | Type | Description | Notes
 **rotationInterval** | **Number** |  | [optional] 
 **sharedBy** | [**RuleAssigner**](RuleAssigner.md) |  | [optional] 
 **targetVersions** | [**[TargetItemVersion]**](TargetItemVersion.md) |  | [optional] 
+**usageDate** | **Date** |  | [optional] 
 **withCustomerFragment** | **Boolean** |  | [optional] 
 
 

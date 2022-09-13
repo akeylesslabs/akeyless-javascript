@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetRSAPublic model module.
  * @module model/GetRSAPublic
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GetRSAPublic {
     /**
@@ -50,6 +50,9 @@ class GetRSAPublic {
         if (data) {
             obj = obj || new GetRSAPublic();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -65,6 +68,12 @@ class GetRSAPublic {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GetRSAPublic.prototype['json'] = undefined;
 
 /**
  * Name of RSA key to extract the public key from

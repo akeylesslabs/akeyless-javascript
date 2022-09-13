@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteRoleRule model module.
  * @module model/DeleteRoleRule
- * @version 2.18.0
+ * @version 2.19.0
  */
 class DeleteRoleRule {
     /**
@@ -51,6 +51,9 @@ class DeleteRoleRule {
         if (data) {
             obj = obj || new DeleteRoleRule();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
@@ -72,6 +75,12 @@ class DeleteRoleRule {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+DeleteRoleRule.prototype['json'] = undefined;
 
 /**
  * The path the rule refers to

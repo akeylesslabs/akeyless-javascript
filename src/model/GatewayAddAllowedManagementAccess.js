@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayAddAllowedManagementAccess model module.
  * @module model/GatewayAddAllowedManagementAccess
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayAddAllowedManagementAccess {
     /**
@@ -56,6 +56,9 @@ class GatewayAddAllowedManagementAccess {
             if (data.hasOwnProperty('allow-gw-login')) {
                 obj['allow-gw-login'] = ApiClient.convertToType(data['allow-gw-login'], 'Boolean');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('sub-admin-access-id')) {
                 obj['sub-admin-access-id'] = ApiClient.convertToType(data['sub-admin-access-id'], 'String');
             }
@@ -84,6 +87,12 @@ GatewayAddAllowedManagementAccess.prototype['allow-gw-api'] = undefined;
  * @member {Boolean} allow-gw-login
  */
 GatewayAddAllowedManagementAccess.prototype['allow-gw-login'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayAddAllowedManagementAccess.prototype['json'] = undefined;
 
 /**
  * SubAdmins to add

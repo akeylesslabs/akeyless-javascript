@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSecretVal model module.
  * @module model/UpdateSecretVal
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateSecretVal {
     /**
@@ -54,6 +54,9 @@ class UpdateSecretVal {
             if (data.hasOwnProperty('accessibility')) {
                 obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
             }
@@ -73,7 +76,7 @@ class UpdateSecretVal {
                 obj['password-manager-custom-field'] = ApiClient.convertToType(data['password-manager-custom-field'], {'String': 'String'});
             }
             if (data.hasOwnProperty('password-manager-inject-url')) {
-                obj['password-manager-inject-url'] = ApiClient.convertToType(data['password-manager-inject-url'], 'String');
+                obj['password-manager-inject-url'] = ApiClient.convertToType(data['password-manager-inject-url'], ['String']);
             }
             if (data.hasOwnProperty('password-manager-password')) {
                 obj['password-manager-password'] = ApiClient.convertToType(data['password-manager-password'], 'String');
@@ -102,6 +105,12 @@ class UpdateSecretVal {
  * @member {String} accessibility
  */
 UpdateSecretVal.prototype['accessibility'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateSecretVal.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version
@@ -140,7 +149,7 @@ UpdateSecretVal.prototype['password-manager-custom-field'] = undefined;
 
 /**
  * For Password Management use, reflect the website context
- * @member {String} password-manager-inject-url
+ * @member {Array.<String>} password-manager-inject-url
  */
 UpdateSecretVal.prototype['password-manager-inject-url'] = undefined;
 

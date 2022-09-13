@@ -66,6 +66,7 @@ Method | HTTP request | Description
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
 [**encryptWithClassicKey**](V2Api.md#encryptWithClassicKey) | **POST** /encrypt-with-classic-key | 
+[**gatewayAddAllowedManagementAccess**](V2Api.md#gatewayAddAllowedManagementAccess) | **POST** /gateway-add-allow-management-access | 
 [**gatewayCreateK8SAuthConfig**](V2Api.md#gatewayCreateK8SAuthConfig) | **POST** /gateway-create-k8s-auth-config | 
 [**gatewayCreateMigration**](V2Api.md#gatewayCreateMigration) | **POST** /gateway-create-migration | 
 [**gatewayCreateProducerArtifactory**](V2Api.md#gatewayCreateProducerArtifactory) | **POST** /gateway-create-producer-artifactory | 
@@ -165,8 +166,10 @@ Method | HTTP request | Description
 [**kmipServerSetup**](V2Api.md#kmipServerSetup) | **POST** /kmip-create-environment | 
 [**kmipSetServerState**](V2Api.md#kmipSetServerState) | **POST** /kmip-set-environment-state | 
 [**listAuthMethods**](V2Api.md#listAuthMethods) | **POST** /list-auth-methods | 
+[**listGateways**](V2Api.md#listGateways) | **POST** /list-gateways | 
 [**listItems**](V2Api.md#listItems) | **POST** /list-items | 
 [**listRoles**](V2Api.md#listRoles) | **POST** /list-roles | 
+[**listSRABastions**](V2Api.md#listSRABastions) | **POST** /list-sra-bastions | 
 [**listTargets**](V2Api.md#listTargets) | **POST** /list-targets | 
 [**moveObjects**](V2Api.md#moveObjects) | **POST** /move-objects | 
 [**rawCreds**](V2Api.md#rawCreds) | **POST** /raw-creds | 
@@ -2833,6 +2836,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EncryptOutput**](EncryptOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayAddAllowedManagementAccess
+
+> Object gatewayAddAllowedManagementAccess(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayAddAllowedManagementAccess(); // GatewayAddAllowedManagementAccess | 
+apiInstance.gatewayAddAllowedManagementAccess(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayAddAllowedManagementAccess**](GatewayAddAllowedManagementAccess.md)|  | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 
@@ -7028,6 +7073,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## listGateways
+
+> GatewaysListResponse listGateways(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ListGateways(); // ListGateways | 
+apiInstance.listGateways(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ListGateways**](ListGateways.md)|  | 
+
+### Return type
+
+[**GatewaysListResponse**](GatewaysListResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## listItems
 
 > ListItemsInPathOutput listItems(body)
@@ -7101,6 +7188,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListRolesOutput**](ListRolesOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## listSRABastions
+
+> BastionsList listSRABastions(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ListSRABastions(); // ListSRABastions | 
+apiInstance.listSRABastions(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ListSRABastions**](ListSRABastions.md)|  | 
+
+### Return type
+
+[**BastionsList**](BastionsList.md)
 
 ### Authorization
 
@@ -9128,7 +9257,7 @@ No authorization required
 
 ## updateNativeK8STarget
 
-> UpdateNativeK8STarget updateNativeK8STarget(body)
+> UpdateNativeK8STargetOutput updateNativeK8STarget(body)
 
 
 
@@ -9156,7 +9285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateNativeK8STarget**](UpdateNativeK8STarget.md)
+[**UpdateNativeK8STargetOutput**](UpdateNativeK8STargetOutput.md)
 
 ### Authorization
 
@@ -9722,7 +9851,7 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = null; // Object | 
+let body = new akeyless.UpdateTargetDetails(); // UpdateTargetDetails | 
 apiInstance.updateTargetDetails(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -9736,7 +9865,7 @@ apiInstance.updateTargetDetails(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**|  | 
+ **body** | [**UpdateTargetDetails**](UpdateTargetDetails.md)|  | 
 
 ### Return type
 

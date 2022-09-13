@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerAzure model module.
  * @module model/GatewayUpdateProducerAzure
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayUpdateProducerAzure {
     /**
@@ -70,6 +70,9 @@ class GatewayUpdateProducerAzure {
             }
             if (data.hasOwnProperty('fixed-user-only')) {
                 obj['fixed-user-only'] = ApiClient.convertToType(data['fixed-user-only'], 'Boolean');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -172,6 +175,12 @@ GatewayUpdateProducerAzure.prototype['fixed-user-claim-keyname'] = 'false';
  * @default false
  */
 GatewayUpdateProducerAzure.prototype['fixed-user-only'] = false;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayUpdateProducerAzure.prototype['json'] = undefined;
 
 /**
  * Producer name

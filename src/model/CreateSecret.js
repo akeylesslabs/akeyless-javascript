@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateSecret {
     /**
@@ -57,6 +57,9 @@ class CreateSecret {
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
             }
@@ -70,7 +73,7 @@ class CreateSecret {
                 obj['password-manager-custom-field'] = ApiClient.convertToType(data['password-manager-custom-field'], {'String': 'String'});
             }
             if (data.hasOwnProperty('password-manager-inject-url')) {
-                obj['password-manager-inject-url'] = ApiClient.convertToType(data['password-manager-inject-url'], 'String');
+                obj['password-manager-inject-url'] = ApiClient.convertToType(data['password-manager-inject-url'], ['String']);
             }
             if (data.hasOwnProperty('password-manager-password')) {
                 obj['password-manager-password'] = ApiClient.convertToType(data['password-manager-password'], 'String');
@@ -140,6 +143,12 @@ CreateSecret.prototype['accessibility'] = undefined;
 CreateSecret.prototype['delete_protection'] = undefined;
 
 /**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateSecret.prototype['json'] = undefined;
+
+/**
  * Metadata about the secret
  * @member {String} metadata
  */
@@ -165,7 +174,7 @@ CreateSecret.prototype['password-manager-custom-field'] = undefined;
 
 /**
  * For Password Management use, reflect the website context
- * @member {String} password-manager-inject-url
+ * @member {Array.<String>} password-manager-inject-url
  */
 CreateSecret.prototype['password-manager-inject-url'] = undefined;
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayStatusMigration model module.
  * @module model/GatewayStatusMigration
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayStatusMigration {
     /**
@@ -51,6 +51,9 @@ class GatewayStatusMigration {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -72,6 +75,12 @@ class GatewayStatusMigration {
  * @member {String} id
  */
 GatewayStatusMigration.prototype['id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayStatusMigration.prototype['json'] = undefined;
 
 /**
  * Migration name to display

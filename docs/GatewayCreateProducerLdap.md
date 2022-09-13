@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **bindDnPassword** | **String** | Bind DN Password | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
 **externalUsername** | **String** | Fixed user | [optional] [default to &#39;false&#39;]
+**json** | **Boolean** | Set output format to JSON | [optional] 
 **ldapCaCert** | **String** | CA Certificate File Content | [optional] 
 **ldapUrl** | **String** | LDAP Server URL | [optional] 
 **name** | **String** | Producer name | 

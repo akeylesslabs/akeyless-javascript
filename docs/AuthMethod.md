@@ -10,5 +10,8 @@ Name | Type | Description | Notes
 **authMethodName** | **String** |  | [optional] 
 **authMethodRolesAssoc** | [**[AuthMethodRoleAssociation]**](AuthMethodRoleAssociation.md) |  | [optional] 
 **clientPermissions** | **[String]** |  | [optional] 
+**creationDate** | **Date** |  | [optional] 
+**modificationDate** | **Date** |  | [optional] 
+**usageDate** | **Date** |  | [optional] 
 
 

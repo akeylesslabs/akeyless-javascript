@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEKSTarget model module.
  * @module model/CreateEKSTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateEKSTarget {
     /**
@@ -79,6 +79,9 @@ class CreateEKSTarget {
             }
             if (data.hasOwnProperty('eks-secret-access-key')) {
                 obj['eks-secret-access-key'] = ApiClient.convertToType(data['eks-secret-access-key'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -144,6 +147,12 @@ CreateEKSTarget.prototype['eks-region'] = 'us-east-2';
  * @member {String} eks-secret-access-key
  */
 CreateEKSTarget.prototype['eks-secret-access-key'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateEKSTarget.prototype['json'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)

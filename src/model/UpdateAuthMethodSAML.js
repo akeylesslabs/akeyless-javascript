@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodSAML model module.
  * @module model/UpdateAuthMethodSAML
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateAuthMethodSAML {
     /**
@@ -72,6 +72,9 @@ class UpdateAuthMethodSAML {
             }
             if (data.hasOwnProperty('idp-metadata-xml-data')) {
                 obj['idp-metadata-xml-data'] = ApiClient.convertToType(data['idp-metadata-xml-data'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('jwt-ttl')) {
                 obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
@@ -140,6 +143,12 @@ UpdateAuthMethodSAML.prototype['idp-metadata-url'] = undefined;
  * @member {String} idp-metadata-xml-data
  */
 UpdateAuthMethodSAML.prototype['idp-metadata-xml-data'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateAuthMethodSAML.prototype['json'] = undefined;
 
 /**
  * Jwt TTL

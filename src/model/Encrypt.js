@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Encrypt model module.
  * @module model/Encrypt
- * @version 2.18.0
+ * @version 2.19.0
  */
 class Encrypt {
     /**
@@ -55,8 +55,14 @@ class Encrypt {
             if (data.hasOwnProperty('encryption-context')) {
                 obj['encryption-context'] = ApiClient.convertToType(data['encryption-context'], {'String': 'String'});
             }
+            if (data.hasOwnProperty('input-format')) {
+                obj['input-format'] = ApiClient.convertToType(data['input-format'], 'String');
+            }
             if (data.hasOwnProperty('item-id')) {
                 obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
@@ -90,10 +96,22 @@ Encrypt.prototype['display-id'] = undefined;
 Encrypt.prototype['encryption-context'] = undefined;
 
 /**
+ * If specified, the plaintext input is assumed to be formatted accordingly. Current supported options: [base64]
+ * @member {String} input-format
+ */
+Encrypt.prototype['input-format'] = undefined;
+
+/**
  * The item id of the key to use in the encryption process
  * @member {Number} item-id
  */
 Encrypt.prototype['item-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+Encrypt.prototype['json'] = undefined;
 
 /**
  * The name of the key to use in the encryption process

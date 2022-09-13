@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTargetAssociation model module.
  * @module model/DeleteTargetAssociation
- * @version 2.18.0
+ * @version 2.19.0
  */
 class DeleteTargetAssociation {
     /**
@@ -53,6 +53,9 @@ class DeleteTargetAssociation {
             if (data.hasOwnProperty('assoc-id')) {
                 obj['assoc-id'] = ApiClient.convertToType(data['assoc-id'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -77,6 +80,12 @@ class DeleteTargetAssociation {
  * @member {String} assoc-id
  */
 DeleteTargetAssociation.prototype['assoc-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+DeleteTargetAssociation.prototype['json'] = undefined;
 
 /**
  * Item name

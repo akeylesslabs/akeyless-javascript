@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayListProducers model module.
  * @module model/GatewayListProducers
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayListProducers {
     /**
@@ -48,6 +48,9 @@ class GatewayListProducers {
         if (data) {
             obj = obj || new GatewayListProducers();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -60,6 +63,12 @@ class GatewayListProducers {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayListProducers.prototype['json'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **idpMetadataUrl** | **String** | IDP metadata url | [optional] 
 **idpMetadataXmlData** | **String** | IDP metadata xml data | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] 
 **jwtTtl** | **Number** | Jwt TTL | [optional] 
 **name** | **String** | Auth Method name | 
 **newName** | **String** | Auth Method new name | [optional] 

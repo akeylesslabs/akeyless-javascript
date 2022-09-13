@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAWSTargetDetails model module.
  * @module model/UpdateAWSTargetDetails
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateAWSTargetDetails {
     /**
@@ -54,6 +54,9 @@ class UpdateAWSTargetDetails {
             }
             if (data.hasOwnProperty('access-key-id')) {
                 obj['access-key-id'] = ApiClient.convertToType(data['access-key-id'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
@@ -95,6 +98,12 @@ UpdateAWSTargetDetails.prototype['access-key'] = undefined;
  * @member {String} access-key-id
  */
 UpdateAWSTargetDetails.prototype['access-key-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateAWSTargetDetails.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version

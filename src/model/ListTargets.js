@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListTargets model module.
  * @module model/ListTargets
- * @version 2.18.0
+ * @version 2.19.0
  */
 class ListTargets {
     /**
@@ -50,6 +50,9 @@ class ListTargets {
             if (data.hasOwnProperty('filter')) {
                 obj['filter'] = ApiClient.convertToType(data['filter'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('pagination-token')) {
                 obj['pagination-token'] = ApiClient.convertToType(data['pagination-token'], 'String');
             }
@@ -74,6 +77,12 @@ class ListTargets {
  * @member {String} filter
  */
 ListTargets.prototype['filter'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+ListTargets.prototype['json'] = undefined;
 
 /**
  * Next page reference

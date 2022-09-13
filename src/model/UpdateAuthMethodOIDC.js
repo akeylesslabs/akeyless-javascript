@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOIDC model module.
  * @module model/UpdateAuthMethodOIDC
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateAuthMethodOIDC {
     /**
@@ -75,6 +75,9 @@ class UpdateAuthMethodOIDC {
             }
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('jwt-ttl')) {
                 obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
@@ -155,6 +158,12 @@ UpdateAuthMethodOIDC.prototype['gw-bound-ips'] = undefined;
  * @member {String} issuer
  */
 UpdateAuthMethodOIDC.prototype['issuer'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateAuthMethodOIDC.prototype['json'] = undefined;
 
 /**
  * Jwt TTL

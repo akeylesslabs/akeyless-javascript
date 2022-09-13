@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteRoles model module.
  * @module model/DeleteRoles
- * @version 2.18.0
+ * @version 2.19.0
  */
 class DeleteRoles {
     /**
@@ -49,6 +49,9 @@ class DeleteRoles {
         if (data) {
             obj = obj || new DeleteRoles();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
@@ -64,6 +67,12 @@ class DeleteRoles {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+DeleteRoles.prototype['json'] = undefined;
 
 /**
  * Path to delete the auth methods from

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Detokenize model module.
  * @module model/Detokenize
- * @version 2.18.0
+ * @version 2.19.0
  */
 class Detokenize {
     /**
@@ -55,6 +55,9 @@ class Detokenize {
             if (data.hasOwnProperty('ciphertext')) {
                 obj['ciphertext'] = ApiClient.convertToType(data['ciphertext'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -79,6 +82,12 @@ class Detokenize {
  * @member {String} ciphertext
  */
 Detokenize.prototype['ciphertext'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+Detokenize.prototype['json'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

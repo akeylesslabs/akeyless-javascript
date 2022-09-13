@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRdp model module.
  * @module model/GatewayUpdateProducerRdp
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayUpdateProducerRdp {
     /**
@@ -58,6 +58,9 @@ class GatewayUpdateProducerRdp {
             }
             if (data.hasOwnProperty('fixed-user-only')) {
                 obj['fixed-user-only'] = ApiClient.convertToType(data['fixed-user-only'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -141,6 +144,12 @@ GatewayUpdateProducerRdp.prototype['delete_protection'] = undefined;
  * @default 'false'
  */
 GatewayUpdateProducerRdp.prototype['fixed-user-only'] = 'false';
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayUpdateProducerRdp.prototype['json'] = undefined;
 
 /**
  * Producer name

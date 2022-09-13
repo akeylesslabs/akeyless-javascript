@@ -19,6 +19,7 @@ import AssocTargetItem from '../model/AssocTargetItem';
 import Auth from '../model/Auth';
 import AuthMethod from '../model/AuthMethod';
 import AuthOutput from '../model/AuthOutput';
+import BastionsList from '../model/BastionsList';
 import Configure from '../model/Configure';
 import ConfigureOutput from '../model/ConfigureOutput';
 import Connect from '../model/Connect';
@@ -129,6 +130,7 @@ import DetokenizeOutput from '../model/DetokenizeOutput';
 import Encrypt from '../model/Encrypt';
 import EncryptOutput from '../model/EncryptOutput';
 import EncryptWithClassicKey from '../model/EncryptWithClassicKey';
+import GatewayAddAllowedManagementAccess from '../model/GatewayAddAllowedManagementAccess';
 import GatewayCreateK8SAuthConfig from '../model/GatewayCreateK8SAuthConfig';
 import GatewayCreateK8SAuthConfigOutput from '../model/GatewayCreateK8SAuthConfigOutput';
 import GatewayCreateMigration from '../model/GatewayCreateMigration';
@@ -262,6 +264,7 @@ import GatewayUpdateProducerRedshiftOutput from '../model/GatewayUpdateProducerR
 import GatewayUpdateProducerSnowflake from '../model/GatewayUpdateProducerSnowflake';
 import GatewayUpdateProducerSnowflakeOutput from '../model/GatewayUpdateProducerSnowflakeOutput';
 import GatewayUpdateTmpUsers from '../model/GatewayUpdateTmpUsers';
+import GatewaysListResponse from '../model/GatewaysListResponse';
 import GetAccountSettings from '../model/GetAccountSettings';
 import GetAccountSettingsCommandOutput from '../model/GetAccountSettingsCommandOutput';
 import GetAuthMethod from '../model/GetAuthMethod';
@@ -310,10 +313,12 @@ import KmipSetServerState from '../model/KmipSetServerState';
 import KmipSetServerStateOutput from '../model/KmipSetServerStateOutput';
 import ListAuthMethods from '../model/ListAuthMethods';
 import ListAuthMethodsOutput from '../model/ListAuthMethodsOutput';
+import ListGateways from '../model/ListGateways';
 import ListItems from '../model/ListItems';
 import ListItemsInPathOutput from '../model/ListItemsInPathOutput';
 import ListRoles from '../model/ListRoles';
 import ListRolesOutput from '../model/ListRolesOutput';
+import ListSRABastions from '../model/ListSRABastions';
 import ListTargets from '../model/ListTargets';
 import ListTargetsOutput from '../model/ListTargetsOutput';
 import MigrationStatusReplyObj from '../model/MigrationStatusReplyObj';
@@ -396,6 +401,7 @@ import UpdateLdapTarget from '../model/UpdateLdapTarget';
 import UpdateLdapTargetDetails from '../model/UpdateLdapTargetDetails';
 import UpdateLdapTargetOutput from '../model/UpdateLdapTargetOutput';
 import UpdateNativeK8STarget from '../model/UpdateNativeK8STarget';
+import UpdateNativeK8STargetOutput from '../model/UpdateNativeK8STargetOutput';
 import UpdatePKICertIssuer from '../model/UpdatePKICertIssuer';
 import UpdatePKICertIssuerOutput from '../model/UpdatePKICertIssuerOutput';
 import UpdateRDPTargetDetails from '../model/UpdateRDPTargetDetails';
@@ -417,6 +423,7 @@ import UpdateSalesforceTargetOutput from '../model/UpdateSalesforceTargetOutput'
 import UpdateSecretVal from '../model/UpdateSecretVal';
 import UpdateSecretValOutput from '../model/UpdateSecretValOutput';
 import UpdateTarget from '../model/UpdateTarget';
+import UpdateTargetDetails from '../model/UpdateTargetDetails';
 import UpdateTargetOutput from '../model/UpdateTargetOutput';
 import UpdateWebTarget from '../model/UpdateWebTarget';
 import UpdateWebTargetDetails from '../model/UpdateWebTargetDetails';
@@ -433,7 +440,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.18.0
+* @version 2.19.0
 */
 export default class V2Api {
 
@@ -3110,6 +3117,49 @@ export default class V2Api {
      */
     encryptWithClassicKey(body) {
       return this.encryptWithClassicKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayAddAllowedManagementAccess} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    gatewayAddAllowedManagementAccessWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayAddAllowedManagementAccess");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/gateway-add-allow-management-access', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayAddAllowedManagementAccess} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    gatewayAddAllowedManagementAccess(body) {
+      return this.gatewayAddAllowedManagementAccessWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7353,6 +7403,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/ListGateways} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewaysListResponse} and HTTP response
+     */
+    listGatewaysWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling listGateways");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewaysListResponse;
+      return this.apiClient.callApi(
+        '/list-gateways', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ListGateways} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewaysListResponse}
+     */
+    listGateways(body) {
+      return this.listGatewaysWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/ListItems} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListItemsInPathOutput} and HTTP response
      */
@@ -7432,6 +7525,49 @@ export default class V2Api {
      */
     listRoles(body) {
       return this.listRolesWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/ListSRABastions} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BastionsList} and HTTP response
+     */
+    listSRABastionsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling listSRABastions");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = BastionsList;
+      return this.apiClient.callApi(
+        '/list-sra-bastions', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ListSRABastions} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BastionsList}
+     */
+    listSRABastions(body) {
+      return this.listSRABastionsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9497,7 +9633,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/UpdateNativeK8STarget} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateNativeK8STarget} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateNativeK8STargetOutput} and HTTP response
      */
     updateNativeK8STargetWithHttpInfo(body) {
       let postBody = body;
@@ -9518,7 +9654,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = UpdateNativeK8STarget;
+      let returnType = UpdateNativeK8STargetOutput;
       return this.apiClient.callApi(
         '/update-k8s-target', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -9528,7 +9664,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/UpdateNativeK8STarget} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateNativeK8STarget}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateNativeK8STargetOutput}
      */
     updateNativeK8STarget(body) {
       return this.updateNativeK8STargetWithHttpInfo(body)
@@ -10092,7 +10228,7 @@ export default class V2Api {
 
 
     /**
-     * @param {Object} body 
+     * @param {module:model/UpdateTargetDetails} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateTargetOutput} and HTTP response
      */
     updateTargetDetailsWithHttpInfo(body) {
@@ -10123,7 +10259,7 @@ export default class V2Api {
     }
 
     /**
-     * @param {Object} body 
+     * @param {module:model/UpdateTargetDetails} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateTargetOutput}
      */
     updateTargetDetails(body) {

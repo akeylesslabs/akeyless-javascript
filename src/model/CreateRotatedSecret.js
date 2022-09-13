@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateRotatedSecret {
     /**
@@ -76,6 +76,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -224,6 +227,12 @@ CreateRotatedSecret.prototype['custom-payload'] = undefined;
  * @member {String} delete_protection
  */
 CreateRotatedSecret.prototype['delete_protection'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateRotatedSecret.prototype['json'] = undefined;
 
 /**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)

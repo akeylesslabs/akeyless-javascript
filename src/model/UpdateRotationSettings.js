@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotationSettings model module.
  * @module model/UpdateRotationSettings
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateRotationSettings {
     /**
@@ -55,6 +55,9 @@ class UpdateRotationSettings {
             if (data.hasOwnProperty('auto-rotate')) {
                 obj['auto-rotate'] = ApiClient.convertToType(data['auto-rotate'], 'Boolean');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -79,6 +82,12 @@ class UpdateRotationSettings {
  * @member {Boolean} auto-rotate
  */
 UpdateRotationSettings.prototype['auto-rotate'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateRotationSettings.prototype['json'] = undefined;
 
 /**
  * Key name

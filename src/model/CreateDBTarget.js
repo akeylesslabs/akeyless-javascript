@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTarget model module.
  * @module model/CreateDBTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateDBTarget {
     /**
@@ -68,6 +68,9 @@ class CreateDBTarget {
             }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -159,6 +162,12 @@ CreateDBTarget.prototype['db-type'] = undefined;
  * @member {String} host
  */
 CreateDBTarget.prototype['host'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateDBTarget.prototype['json'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetProducer model module.
  * @module model/GatewayGetProducer
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayGetProducer {
     /**
@@ -50,6 +50,9 @@ class GatewayGetProducer {
         if (data) {
             obj = obj || new GatewayGetProducer();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -65,6 +68,12 @@ class GatewayGetProducer {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayGetProducer.prototype['json'] = undefined;
 
 /**
  * Producer name

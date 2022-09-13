@@ -14,11 +14,12 @@
 import ApiClient from '../ApiClient';
 import ItemVersion from './ItemVersion';
 import TargetItemAssociation from './TargetItemAssociation';
+import TargetObjectAssociation from './TargetObjectAssociation';
 
 /**
  * The Target model module.
  * @module model/Target
- * @version 2.18.0
+ * @version 2.19.0
  */
 class Target {
     /**
@@ -72,6 +73,9 @@ class Target {
             }
             if (data.hasOwnProperty('target_name')) {
                 obj['target_name'] = ApiClient.convertToType(data['target_name'], 'String');
+            }
+            if (data.hasOwnProperty('target_objects_assoc')) {
+                obj['target_objects_assoc'] = ApiClient.convertToType(data['target_objects_assoc'], [TargetObjectAssociation]);
             }
             if (data.hasOwnProperty('target_type')) {
                 obj['target_type'] = ApiClient.convertToType(data['target_type'], 'String');
@@ -129,6 +133,11 @@ Target.prototype['target_items_assoc'] = undefined;
  * @member {String} target_name
  */
 Target.prototype['target_name'] = undefined;
+
+/**
+ * @member {Array.<module:model/TargetObjectAssociation>} target_objects_assoc
+ */
+Target.prototype['target_objects_assoc'] = undefined;
 
 /**
  * @member {String} target_type

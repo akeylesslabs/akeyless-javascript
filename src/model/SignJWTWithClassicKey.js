@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignJWTWithClassicKey model module.
  * @module model/SignJWTWithClassicKey
- * @version 2.18.0
+ * @version 2.19.0
  */
 class SignJWTWithClassicKey {
     /**
@@ -58,6 +58,9 @@ class SignJWTWithClassicKey {
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('jwt-claims')) {
                 obj['jwt-claims'] = ApiClient.convertToType(data['jwt-claims'], 'String');
             }
@@ -85,6 +88,12 @@ class SignJWTWithClassicKey {
  * @member {String} display-id
  */
 SignJWTWithClassicKey.prototype['display-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+SignJWTWithClassicKey.prototype['json'] = undefined;
 
 /**
  * JWTClaims

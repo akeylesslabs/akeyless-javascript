@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetSSHCertificate model module.
  * @module model/GetSSHCertificate
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GetSSHCertificate {
     /**
@@ -57,6 +57,9 @@ class GetSSHCertificate {
             if (data.hasOwnProperty('cert-username')) {
                 obj['cert-username'] = ApiClient.convertToType(data['cert-username'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('legacy-signing-alg-name')) {
                 obj['legacy-signing-alg-name'] = ApiClient.convertToType(data['legacy-signing-alg-name'], 'Boolean');
             }
@@ -90,6 +93,12 @@ GetSSHCertificate.prototype['cert-issuer-name'] = undefined;
  * @member {String} cert-username
  */
 GetSSHCertificate.prototype['cert-username'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GetSSHCertificate.prototype['json'] = undefined;
 
 /**
  * Set this option to output legacy ('ssh-rsa-cert-v01@openssh.com') signing algorithm name in the certificate.

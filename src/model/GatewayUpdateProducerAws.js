@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerAws model module.
  * @module model/GatewayUpdateProducerAws
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayUpdateProducerAws {
     /**
@@ -82,6 +82,9 @@ class GatewayUpdateProducerAws {
             }
             if (data.hasOwnProperty('enable-admin-rotation')) {
                 obj['enable-admin-rotation'] = ApiClient.convertToType(data['enable-admin-rotation'], 'Boolean');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -206,6 +209,12 @@ GatewayUpdateProducerAws.prototype['delete_protection'] = undefined;
  * @default false
  */
 GatewayUpdateProducerAws.prototype['enable-admin-rotation'] = false;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayUpdateProducerAws.prototype['json'] = undefined;
 
 /**
  * Producer name

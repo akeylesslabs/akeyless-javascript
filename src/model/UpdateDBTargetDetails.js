@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTargetDetails model module.
  * @module model/UpdateDBTargetDetails
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateDBTargetDetails {
     /**
@@ -54,6 +54,9 @@ class UpdateDBTargetDetails {
             }
             if (data.hasOwnProperty('host_name')) {
                 obj['host_name'] = ApiClient.convertToType(data['host_name'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
@@ -104,6 +107,12 @@ UpdateDBTargetDetails.prototype['db_type'] = undefined;
  * @member {String} host_name
  */
 UpdateDBTargetDetails.prototype['host_name'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateDBTargetDetails.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version

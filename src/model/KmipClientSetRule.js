@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipClientSetRule model module.
  * @module model/KmipClientSetRule
- * @version 2.18.0
+ * @version 2.19.0
  */
 class KmipClientSetRule {
     /**
@@ -57,6 +57,9 @@ class KmipClientSetRule {
             if (data.hasOwnProperty('client-id')) {
                 obj['client-id'] = ApiClient.convertToType(data['client-id'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -86,6 +89,12 @@ KmipClientSetRule.prototype['capability'] = undefined;
  * @member {String} client-id
  */
 KmipClientSetRule.prototype['client-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+KmipClientSetRule.prototype['json'] = undefined;
 
 /**
  * @member {String} name

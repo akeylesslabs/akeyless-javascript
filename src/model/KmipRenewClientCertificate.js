@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipRenewClientCertificate model module.
  * @module model/KmipRenewClientCertificate
- * @version 2.18.0
+ * @version 2.19.0
  */
 class KmipRenewClientCertificate {
     /**
@@ -50,6 +50,9 @@ class KmipRenewClientCertificate {
             if (data.hasOwnProperty('client-id')) {
                 obj['client-id'] = ApiClient.convertToType(data['client-id'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -70,6 +73,12 @@ class KmipRenewClientCertificate {
  * @member {String} client-id
  */
 KmipRenewClientCertificate.prototype['client-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+KmipRenewClientCertificate.prototype['json'] = undefined;
 
 /**
  * @member {String} name

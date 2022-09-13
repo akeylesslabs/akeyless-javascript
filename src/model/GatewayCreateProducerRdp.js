@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRdp model module.
  * @module model/GatewayCreateProducerRdp
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayCreateProducerRdp {
     /**
@@ -58,6 +58,9 @@ class GatewayCreateProducerRdp {
             }
             if (data.hasOwnProperty('fixed-user-only')) {
                 obj['fixed-user-only'] = ApiClient.convertToType(data['fixed-user-only'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -138,6 +141,12 @@ GatewayCreateProducerRdp.prototype['delete_protection'] = undefined;
  * @default 'false'
  */
 GatewayCreateProducerRdp.prototype['fixed-user-only'] = 'false';
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayCreateProducerRdp.prototype['json'] = undefined;
 
 /**
  * Producer name

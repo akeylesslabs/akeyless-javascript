@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptWithClassicKey model module.
  * @module model/EncryptWithClassicKey
- * @version 2.18.0
+ * @version 2.19.0
  */
 class EncryptWithClassicKey {
     /**
@@ -56,6 +56,9 @@ class EncryptWithClassicKey {
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('plaintext')) {
                 obj['plaintext'] = ApiClient.convertToType(data['plaintext'], 'String');
             }
@@ -80,6 +83,12 @@ class EncryptWithClassicKey {
  * @member {String} display-id
  */
 EncryptWithClassicKey.prototype['display-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+EncryptWithClassicKey.prototype['json'] = undefined;
 
 /**
  * Data to be encrypted

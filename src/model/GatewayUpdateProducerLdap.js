@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerLdap model module.
  * @module model/GatewayUpdateProducerLdap
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayUpdateProducerLdap {
     /**
@@ -61,6 +61,9 @@ class GatewayUpdateProducerLdap {
             }
             if (data.hasOwnProperty('external-username')) {
                 obj['external-username'] = ApiClient.convertToType(data['external-username'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('ldap-ca-cert')) {
                 obj['ldap-ca-cert'] = ApiClient.convertToType(data['ldap-ca-cert'], 'String');
@@ -132,6 +135,12 @@ GatewayUpdateProducerLdap.prototype['delete_protection'] = undefined;
  * @default 'false'
  */
 GatewayUpdateProducerLdap.prototype['external-username'] = 'false';
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayUpdateProducerLdap.prototype['json'] = undefined;
 
 /**
  * CA Certificate File Content

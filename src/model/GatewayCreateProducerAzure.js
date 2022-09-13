@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAzure model module.
  * @module model/GatewayCreateProducerAzure
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayCreateProducerAzure {
     /**
@@ -70,6 +70,9 @@ class GatewayCreateProducerAzure {
             }
             if (data.hasOwnProperty('fixed-user-only')) {
                 obj['fixed-user-only'] = ApiClient.convertToType(data['fixed-user-only'], 'Boolean');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -169,6 +172,12 @@ GatewayCreateProducerAzure.prototype['fixed-user-claim-keyname'] = 'false';
  * @default false
  */
 GatewayCreateProducerAzure.prototype['fixed-user-only'] = false;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayCreateProducerAzure.prototype['json'] = undefined;
 
 /**
  * Producer name

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**json** | **Boolean** | Set output format to JSON | [optional] 
 **name** | **String** | Target name | 
 **showVersions** | **Boolean** | Include all target versions in reply | [optional] [default to false]
 **targetVersion** | **Number** | Target version | [optional] 

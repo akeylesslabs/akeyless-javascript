@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadPKCS12 model module.
  * @module model/UploadPKCS12
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UploadPKCS12 {
     /**
@@ -61,6 +61,9 @@ class UploadPKCS12 {
             }
             if (data.hasOwnProperty('in')) {
                 obj['in'] = ApiClient.convertToType(data['in'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
@@ -107,6 +110,12 @@ UploadPKCS12.prototype['delete_protection'] = undefined;
  * @member {String} in
  */
 UploadPKCS12.prototype['in'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UploadPKCS12.prototype['json'] = undefined;
 
 /**
  * A metadata about the key

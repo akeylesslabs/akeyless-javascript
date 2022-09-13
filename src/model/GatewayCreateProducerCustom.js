@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCustom model module.
  * @module model/GatewayCreateProducerCustom
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayCreateProducerCustom {
     /**
@@ -64,6 +64,9 @@ class GatewayCreateProducerCustom {
             }
             if (data.hasOwnProperty('enable_admin_rotation')) {
                 obj['enable_admin_rotation'] = ApiClient.convertToType(data['enable_admin_rotation'], 'Boolean');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -126,6 +129,12 @@ GatewayCreateProducerCustom.prototype['delete_protection'] = undefined;
  * @default false
  */
 GatewayCreateProducerCustom.prototype['enable_admin_rotation'] = false;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayCreateProducerCustom.prototype['json'] = undefined;
 
 /**
  * Producer name

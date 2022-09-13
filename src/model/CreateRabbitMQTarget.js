@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRabbitMQTarget model module.
  * @module model/CreateRabbitMQTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateRabbitMQTarget {
     /**
@@ -52,6 +52,9 @@ class CreateRabbitMQTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -85,6 +88,12 @@ class CreateRabbitMQTarget {
  * @member {String} comment
  */
 CreateRabbitMQTarget.prototype['comment'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateRabbitMQTarget.prototype['json'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)

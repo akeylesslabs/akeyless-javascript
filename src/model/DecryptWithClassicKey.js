@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptWithClassicKey model module.
  * @module model/DecryptWithClassicKey
- * @version 2.18.0
+ * @version 2.19.0
  */
 class DecryptWithClassicKey {
     /**
@@ -59,6 +59,9 @@ class DecryptWithClassicKey {
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -86,6 +89,12 @@ DecryptWithClassicKey.prototype['ciphertext'] = undefined;
  * @member {String} display-id
  */
 DecryptWithClassicKey.prototype['display-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+DecryptWithClassicKey.prototype['json'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

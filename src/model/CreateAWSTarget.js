@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAWSTarget model module.
  * @module model/CreateAWSTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateAWSTarget {
     /**
@@ -57,6 +57,9 @@ class CreateAWSTarget {
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -101,6 +104,12 @@ CreateAWSTarget.prototype['access-key-id'] = undefined;
  * @member {String} comment
  */
 CreateAWSTarget.prototype['comment'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateAWSTarget.prototype['json'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **genKey** | **String** | Automatically generate key-pair for LDAP configuration. If set to false, a public key needs to be provided | [optional] [default to &#39;true&#39;]
 **gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] 
 **jwtTtl** | **Number** | Jwt TTL | [optional] 
 **name** | **String** | Auth Method name | 
 **publicKeyData** | **String** | A public key generated for LDAP authentication method on Akeyless in base64 or PEM format [RSA2048] | [optional] 

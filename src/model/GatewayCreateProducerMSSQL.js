@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMSSQL model module.
  * @module model/GatewayCreateProducerMSSQL
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayCreateProducerMSSQL {
     /**
@@ -52,6 +52,9 @@ class GatewayCreateProducerMSSQL {
 
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('mssql-create-statements')) {
                 obj['mssql-create-statements'] = ApiClient.convertToType(data['mssql-create-statements'], 'String');
@@ -122,6 +125,12 @@ class GatewayCreateProducerMSSQL {
  * @member {String} delete_protection
  */
 GatewayCreateProducerMSSQL.prototype['delete_protection'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayCreateProducerMSSQL.prototype['json'] = undefined;
 
 /**
  * MSSQL Creation statements

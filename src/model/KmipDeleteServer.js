@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipDeleteServer model module.
  * @module model/KmipDeleteServer
- * @version 2.18.0
+ * @version 2.19.0
  */
 class KmipDeleteServer {
     /**
@@ -48,6 +48,9 @@ class KmipDeleteServer {
         if (data) {
             obj = obj || new KmipDeleteServer();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -60,6 +63,12 @@ class KmipDeleteServer {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+KmipDeleteServer.prototype['json'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateNativeK8STarget model module.
  * @module model/UpdateNativeK8STarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateNativeK8STarget {
     /**
@@ -57,6 +57,9 @@ class UpdateNativeK8STarget {
 
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('k8s-cluster-ca-cert')) {
                 obj['k8s-cluster-ca-cert'] = ApiClient.convertToType(data['k8s-cluster-ca-cert'], 'String');
@@ -100,6 +103,12 @@ class UpdateNativeK8STarget {
  * @member {String} comment
  */
 UpdateNativeK8STarget.prototype['comment'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateNativeK8STarget.prototype['json'] = undefined;
 
 /**
  * K8S cluster CA certificate

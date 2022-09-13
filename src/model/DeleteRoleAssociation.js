@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteRoleAssociation model module.
  * @module model/DeleteRoleAssociation
- * @version 2.18.0
+ * @version 2.19.0
  */
 class DeleteRoleAssociation {
     /**
@@ -53,6 +53,9 @@ class DeleteRoleAssociation {
             if (data.hasOwnProperty('assoc-id')) {
                 obj['assoc-id'] = ApiClient.convertToType(data['assoc-id'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -71,6 +74,12 @@ class DeleteRoleAssociation {
  * @member {String} assoc-id
  */
 DeleteRoleAssociation.prototype['assoc-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+DeleteRoleAssociation.prototype['json'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

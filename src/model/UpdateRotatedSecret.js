@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateRotatedSecret {
     /**
@@ -67,6 +67,9 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('custom-payload')) {
                 obj['custom-payload'] = ApiClient.convertToType(data['custom-payload'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
@@ -201,6 +204,12 @@ UpdateRotatedSecret.prototype['aws-region'] = 'us-east-2';
  * @member {String} custom-payload
  */
 UpdateRotatedSecret.prototype['custom-payload'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateRotatedSecret.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version

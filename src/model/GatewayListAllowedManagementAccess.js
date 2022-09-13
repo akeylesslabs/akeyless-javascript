@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayListAllowedManagementAccess model module.
  * @module model/GatewayListAllowedManagementAccess
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayListAllowedManagementAccess {
     /**
@@ -48,6 +48,9 @@ class GatewayListAllowedManagementAccess {
         if (data) {
             obj = obj || new GatewayListAllowedManagementAccess();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -60,6 +63,12 @@ class GatewayListAllowedManagementAccess {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayListAllowedManagementAccess.prototype['json'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

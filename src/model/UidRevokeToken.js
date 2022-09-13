@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidRevokeToken model module.
  * @module model/UidRevokeToken
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UidRevokeToken {
     /**
@@ -54,6 +54,9 @@ class UidRevokeToken {
             if (data.hasOwnProperty('auth-method-name')) {
                 obj['auth-method-name'] = ApiClient.convertToType(data['auth-method-name'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('revoke-token')) {
                 obj['revoke-token'] = ApiClient.convertToType(data['revoke-token'], 'String');
             }
@@ -78,6 +81,12 @@ class UidRevokeToken {
  * @member {String} auth-method-name
  */
 UidRevokeToken.prototype['auth-method-name'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UidRevokeToken.prototype['json'] = undefined;
 
 /**
  * the universal identity token/token-id to revoke

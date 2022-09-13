@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGithubTarget model module.
  * @module model/UpdateGithubTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateGithubTarget {
     /**
@@ -60,6 +60,9 @@ class UpdateGithubTarget {
             }
             if (data.hasOwnProperty('github-base-url')) {
                 obj['github-base-url'] = ApiClient.convertToType(data['github-base-url'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
@@ -112,6 +115,12 @@ UpdateGithubTarget.prototype['github-app-private-key'] = undefined;
  * @member {String} github-base-url
  */
 UpdateGithubTarget.prototype['github-base-url'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateGithubTarget.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version

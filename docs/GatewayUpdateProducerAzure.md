@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
 **fixedUserClaimKeyname** | **String** | FixedUserClaimKeyname | [optional] [default to &#39;false&#39;]
 **fixedUserOnly** | **Boolean** | Fixed user | [optional] [default to false]
+**json** | **Boolean** | Set output format to JSON | [optional] 
 **name** | **String** | Producer name | 
 **newName** | **String** | Producer name | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 

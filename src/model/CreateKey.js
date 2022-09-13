@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateKey model module.
  * @module model/CreateKey
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateKey {
     /**
      * Constructs a new <code>CreateKey</code>.
      * createKey is a command that creates a new key. [Deprecated: Use command create-dfc-key]
      * @alias module:model/CreateKey
-     * @param alg {String} Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096]
+     * @param alg {String} Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, AES128CBC, AES256CBC, RSA1024, RSA2048, RSA3072, RSA4096]
      * @param name {String} Key name
      */
     constructor(alg, name) { 
@@ -61,6 +61,9 @@ class CreateKey {
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
             }
@@ -87,7 +90,7 @@ class CreateKey {
 }
 
 /**
- * Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096]
+ * Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, AES128CBC, AES256CBC, RSA1024, RSA2048, RSA3072, RSA4096]
  * @member {String} alg
  */
 CreateKey.prototype['alg'] = undefined;
@@ -103,6 +106,12 @@ CreateKey.prototype['customer-frg-id'] = undefined;
  * @member {String} delete_protection
  */
 CreateKey.prototype['delete_protection'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateKey.prototype['json'] = undefined;
 
 /**
  * Metadata about the key

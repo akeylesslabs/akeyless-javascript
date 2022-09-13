@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SystemAccessCredsSettings model module.
  * @module model/SystemAccessCredsSettings
- * @version 2.18.0
+ * @version 2.19.0
  */
 class SystemAccessCredsSettings {
     /**

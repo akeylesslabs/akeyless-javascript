@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetItemState model module.
  * @module model/SetItemState
- * @version 2.18.0
+ * @version 2.19.0
  */
 class SetItemState {
     /**
@@ -54,6 +54,9 @@ class SetItemState {
             if (data.hasOwnProperty('desired-state')) {
                 obj['desired-state'] = ApiClient.convertToType(data['desired-state'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -78,6 +81,12 @@ class SetItemState {
  * @member {String} desired-state
  */
 SetItemState.prototype['desired-state'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+SetItemState.prototype['json'] = undefined;
 
 /**
  * Current item name

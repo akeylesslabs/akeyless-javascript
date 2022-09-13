@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Tokenize model module.
  * @module model/Tokenize
- * @version 2.18.0
+ * @version 2.19.0
  */
 class Tokenize {
     /**
@@ -52,6 +52,9 @@ class Tokenize {
         if (data) {
             obj = obj || new Tokenize();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('plaintext')) {
                 obj['plaintext'] = ApiClient.convertToType(data['plaintext'], 'String');
             }
@@ -73,6 +76,12 @@ class Tokenize {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+Tokenize.prototype['json'] = undefined;
 
 /**
  * Data to be encrypted

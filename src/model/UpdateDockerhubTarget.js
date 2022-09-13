@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDockerhubTarget model module.
  * @module model/UpdateDockerhubTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateDockerhubTarget {
     /**
@@ -57,6 +57,9 @@ class UpdateDockerhubTarget {
             }
             if (data.hasOwnProperty('dockerhub-username')) {
                 obj['dockerhub-username'] = ApiClient.convertToType(data['dockerhub-username'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
@@ -101,6 +104,12 @@ UpdateDockerhubTarget.prototype['dockerhub-password'] = undefined;
  * @member {String} dockerhub-username
  */
 UpdateDockerhubTarget.prototype['dockerhub-username'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateDockerhubTarget.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version

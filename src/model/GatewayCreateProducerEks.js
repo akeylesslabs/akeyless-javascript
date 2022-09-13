@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerEks model module.
  * @module model/GatewayCreateProducerEks
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayCreateProducerEks {
     /**
@@ -73,6 +73,9 @@ class GatewayCreateProducerEks {
             }
             if (data.hasOwnProperty('eks-secret-access-key')) {
                 obj['eks-secret-access-key'] = ApiClient.convertToType(data['eks-secret-access-key'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -165,6 +168,12 @@ GatewayCreateProducerEks.prototype['eks-region'] = 'us-east-2';
  * @member {String} eks-secret-access-key
  */
 GatewayCreateProducerEks.prototype['eks-secret-access-key'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayCreateProducerEks.prototype['json'] = undefined;
 
 /**
  * Producer name

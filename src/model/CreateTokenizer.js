@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateTokenizer model module.
  * @module model/CreateTokenizer
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateTokenizer {
     /**
@@ -68,6 +68,9 @@ class CreateTokenizer {
             }
             if (data.hasOwnProperty('encryption-key-name')) {
                 obj['encryption-key-name'] = ApiClient.convertToType(data['encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
@@ -132,6 +135,12 @@ CreateTokenizer.prototype['encoding-template'] = undefined;
  * @member {String} encryption-key-name
  */
 CreateTokenizer.prototype['encryption-key-name'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateTokenizer.prototype['json'] = undefined;
 
 /**
  * A metadata about the tokenizer

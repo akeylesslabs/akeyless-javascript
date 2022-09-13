@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Decrypt model module.
  * @module model/Decrypt
- * @version 2.18.0
+ * @version 2.19.0
  */
 class Decrypt {
     /**
@@ -62,8 +62,14 @@ class Decrypt {
             if (data.hasOwnProperty('item-id')) {
                 obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
+            }
+            if (data.hasOwnProperty('output-format')) {
+                obj['output-format'] = ApiClient.convertToType(data['output-format'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -103,10 +109,22 @@ Decrypt.prototype['encryption-context'] = undefined;
 Decrypt.prototype['item-id'] = undefined;
 
 /**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+Decrypt.prototype['json'] = undefined;
+
+/**
  * The name of the key to use in the decryption process
  * @member {String} key-name
  */
 Decrypt.prototype['key-name'] = undefined;
+
+/**
+ * If specified, the output will be formatted accordingly. options: [base64]
+ * @member {String} output-format
+ */
+Decrypt.prototype['output-format'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

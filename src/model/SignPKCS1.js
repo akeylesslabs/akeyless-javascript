@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignPKCS1 model module.
  * @module model/SignPKCS1
- * @version 2.18.0
+ * @version 2.19.0
  */
 class SignPKCS1 {
     /**
@@ -56,6 +56,9 @@ class SignPKCS1 {
             if (data.hasOwnProperty('item-id')) {
                 obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
             }
@@ -86,6 +89,12 @@ SignPKCS1.prototype['display-id'] = undefined;
  * @member {Number} item-id
  */
 SignPKCS1.prototype['item-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+SignPKCS1.prototype['json'] = undefined;
 
 /**
  * The name of the RSA key to use in the signing process

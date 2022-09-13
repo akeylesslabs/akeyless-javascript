@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipDescribeServer model module.
  * @module model/KmipDescribeServer
- * @version 2.18.0
+ * @version 2.19.0
  */
 class KmipDescribeServer {
     /**
@@ -47,6 +47,9 @@ class KmipDescribeServer {
         if (data) {
             obj = obj || new KmipDescribeServer();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -59,6 +62,12 @@ class KmipDescribeServer {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+KmipDescribeServer.prototype['json'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

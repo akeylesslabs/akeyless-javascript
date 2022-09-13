@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **targetId** | **Number** |  | [optional] 
 **targetItemsAssoc** | [**[TargetItemAssociation]**](TargetItemAssociation.md) |  | [optional] 
 **targetName** | **String** |  | [optional] 
+**targetObjectsAssoc** | [**[TargetObjectAssociation]**](TargetObjectAssociation.md) |  | [optional] 
 **targetType** | **String** |  | [optional] 
 **targetVersions** | [**[ItemVersion]**](ItemVersion.md) |  | [optional] 
 **withCustomerFragment** | **Boolean** |  | [optional] 

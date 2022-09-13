@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipSetServerState model module.
  * @module model/KmipSetServerState
- * @version 2.18.0
+ * @version 2.19.0
  */
 class KmipSetServerState {
     /**
@@ -50,6 +50,9 @@ class KmipSetServerState {
         if (data) {
             obj = obj || new KmipSetServerState();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('state')) {
                 obj['state'] = ApiClient.convertToType(data['state'], 'String');
             }
@@ -65,6 +68,12 @@ class KmipSetServerState {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+KmipSetServerState.prototype['json'] = undefined;
 
 /**
  * @member {String} state

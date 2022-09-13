@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteMigration model module.
  * @module model/GatewayDeleteMigration
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayDeleteMigration {
     /**
@@ -53,6 +53,9 @@ class GatewayDeleteMigration {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -71,6 +74,12 @@ class GatewayDeleteMigration {
  * @member {String} id
  */
 GatewayDeleteMigration.prototype['id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayDeleteMigration.prototype['json'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerCertificateAutomation model module.
  * @module model/GatewayUpdateProducerCertificateAutomation
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayUpdateProducerCertificateAutomation {
     /**
@@ -67,6 +67,9 @@ class GatewayUpdateProducerCertificateAutomation {
             }
             if (data.hasOwnProperty('enable-admin-rotation')) {
                 obj['enable-admin-rotation'] = ApiClient.convertToType(data['enable-admin-rotation'], 'Boolean');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -166,6 +169,12 @@ GatewayUpdateProducerCertificateAutomation.prototype['delete_protection'] = unde
  * @default false
  */
 GatewayUpdateProducerCertificateAutomation.prototype['enable-admin-rotation'] = false;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayUpdateProducerCertificateAutomation.prototype['json'] = undefined;
 
 /**
  * Producer name

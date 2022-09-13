@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayStopProducer model module.
  * @module model/GatewayStopProducer
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayStopProducer {
     /**
@@ -50,6 +50,9 @@ class GatewayStopProducer {
         if (data) {
             obj = obj || new GatewayStopProducer();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -65,6 +68,12 @@ class GatewayStopProducer {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayStopProducer.prototype['json'] = undefined;
 
 /**
  * Producer name

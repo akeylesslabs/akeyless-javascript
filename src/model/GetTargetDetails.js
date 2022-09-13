@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetTargetDetails model module.
  * @module model/GetTargetDetails
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GetTargetDetails {
     /**
@@ -49,6 +49,9 @@ class GetTargetDetails {
         if (data) {
             obj = obj || new GetTargetDetails();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -70,6 +73,12 @@ class GetTargetDetails {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GetTargetDetails.prototype['json'] = undefined;
 
 /**
  * Target name

@@ -18,7 +18,7 @@ import AuthMethodRoleAssociation from './AuthMethodRoleAssociation';
 /**
  * The AuthMethod model module.
  * @module model/AuthMethod
- * @version 2.18.0
+ * @version 2.19.0
  */
 class AuthMethod {
     /**
@@ -67,6 +67,15 @@ class AuthMethod {
             if (data.hasOwnProperty('client_permissions')) {
                 obj['client_permissions'] = ApiClient.convertToType(data['client_permissions'], ['String']);
             }
+            if (data.hasOwnProperty('creation_date')) {
+                obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
+            }
+            if (data.hasOwnProperty('modification_date')) {
+                obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
+            }
+            if (data.hasOwnProperty('usage_date')) {
+                obj['usage_date'] = ApiClient.convertToType(data['usage_date'], 'Date');
+            }
         }
         return obj;
     }
@@ -103,6 +112,21 @@ AuthMethod.prototype['auth_method_roles_assoc'] = undefined;
  * @member {Array.<String>} client_permissions
  */
 AuthMethod.prototype['client_permissions'] = undefined;
+
+/**
+ * @member {Date} creation_date
+ */
+AuthMethod.prototype['creation_date'] = undefined;
+
+/**
+ * @member {Date} modification_date
+ */
+AuthMethod.prototype['modification_date'] = undefined;
+
+/**
+ * @member {Date} usage_date
+ */
+AuthMethod.prototype['usage_date'] = undefined;
 
 
 

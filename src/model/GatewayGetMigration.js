@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetMigration model module.
  * @module model/GatewayGetMigration
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayGetMigration {
     /**
@@ -48,6 +48,9 @@ class GatewayGetMigration {
         if (data) {
             obj = obj || new GatewayGetMigration();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -63,6 +66,12 @@ class GatewayGetMigration {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayGetMigration.prototype['json'] = undefined;
 
 /**
  * Migration name to display

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptFile model module.
  * @module model/EncryptFile
- * @version 2.18.0
+ * @version 2.19.0
  */
 class EncryptFile {
     /**
@@ -63,6 +63,9 @@ class EncryptFile {
             if (data.hasOwnProperty('item-id')) {
                 obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
             }
@@ -105,6 +108,12 @@ EncryptFile.prototype['in'] = undefined;
  * @member {Number} item-id
  */
 EncryptFile.prototype['item-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+EncryptFile.prototype['json'] = undefined;
 
 /**
  * The name of the key to use in the encryption process

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayUpdateMigration {
     /**
@@ -87,6 +87,9 @@ class GatewayUpdateMigration {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('k8s-ca-certificate')) {
                 obj['k8s-ca-certificate'] = ApiClient.convertToType(data['k8s-ca-certificate'], ['Number']);
             }
@@ -119,6 +122,21 @@ class GatewayUpdateMigration {
             }
             if (data.hasOwnProperty('new_name')) {
                 obj['new_name'] = ApiClient.convertToType(data['new_name'], 'String');
+            }
+            if (data.hasOwnProperty('op-email')) {
+                obj['op-email'] = ApiClient.convertToType(data['op-email'], 'String');
+            }
+            if (data.hasOwnProperty('op-password')) {
+                obj['op-password'] = ApiClient.convertToType(data['op-password'], 'String');
+            }
+            if (data.hasOwnProperty('op-secret-key')) {
+                obj['op-secret-key'] = ApiClient.convertToType(data['op-secret-key'], 'String');
+            }
+            if (data.hasOwnProperty('op-url')) {
+                obj['op-url'] = ApiClient.convertToType(data['op-url'], 'String');
+            }
+            if (data.hasOwnProperty('op-vaults')) {
+                obj['op-vaults'] = ApiClient.convertToType(data['op-vaults'], ['String']);
             }
             if (data.hasOwnProperty('protection-key')) {
                 obj['protection-key'] = ApiClient.convertToType(data['protection-key'], 'String');
@@ -218,6 +236,12 @@ GatewayUpdateMigration.prototype['hashi-url'] = undefined;
 GatewayUpdateMigration.prototype['id'] = undefined;
 
 /**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayUpdateMigration.prototype['json'] = undefined;
+
+/**
  * For Certificate Authentication method K8s Cluster CA certificate (relevant only for K8s migration with Certificate Authentication method)
  * @member {Array.<Number>} k8s-ca-certificate
  */
@@ -282,6 +306,36 @@ GatewayUpdateMigration.prototype['name'] = undefined;
  * @member {String} new_name
  */
 GatewayUpdateMigration.prototype['new_name'] = undefined;
+
+/**
+ * 1Password user email to connect to the API
+ * @member {String} op-email
+ */
+GatewayUpdateMigration.prototype['op-email'] = undefined;
+
+/**
+ * 1Password user password to connect to the API
+ * @member {String} op-password
+ */
+GatewayUpdateMigration.prototype['op-password'] = undefined;
+
+/**
+ * 1Password user secret key to connect to the API
+ * @member {String} op-secret-key
+ */
+GatewayUpdateMigration.prototype['op-secret-key'] = undefined;
+
+/**
+ * 1Password api container url
+ * @member {String} op-url
+ */
+GatewayUpdateMigration.prototype['op-url'] = undefined;
+
+/**
+ * 1Password list of vault to get the items from
+ * @member {Array.<String>} op-vaults
+ */
+GatewayUpdateMigration.prototype['op-vaults'] = undefined;
 
 /**
  * The name of the key that protects the classic key value (if empty, the account default key will be used)

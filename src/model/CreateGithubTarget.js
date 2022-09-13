@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGithubTarget model module.
  * @module model/CreateGithubTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateGithubTarget {
     /**
@@ -61,6 +61,9 @@ class CreateGithubTarget {
             if (data.hasOwnProperty('github-base-url')) {
                 obj['github-base-url'] = ApiClient.convertToType(data['github-base-url'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -103,6 +106,12 @@ CreateGithubTarget.prototype['github-app-private-key'] = undefined;
  * @member {String} github-base-url
  */
 CreateGithubTarget.prototype['github-base-url'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateGithubTarget.prototype['json'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)

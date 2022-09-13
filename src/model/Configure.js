@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Configure model module.
  * @module model/Configure
- * @version 2.18.0
+ * @version 2.19.0
  */
 class Configure {
     /**
@@ -70,6 +70,9 @@ class Configure {
             }
             if (data.hasOwnProperty('gcp-audience')) {
                 obj['gcp-audience'] = ApiClient.convertToType(data['gcp-audience'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('k8s-auth-config-name')) {
                 obj['k8s-auth-config-name'] = ApiClient.convertToType(data['k8s-auth-config-name'], 'String');
@@ -132,6 +135,12 @@ Configure.prototype['cert-data'] = undefined;
  * @member {String} gcp-audience
  */
 Configure.prototype['gcp-audience'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+Configure.prototype['json'] = undefined;
 
 /**
  * The K8S Auth config name (relevant only for access-type=k8s)

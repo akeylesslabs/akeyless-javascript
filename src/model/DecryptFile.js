@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptFile model module.
  * @module model/DecryptFile
- * @version 2.18.0
+ * @version 2.19.0
  */
 class DecryptFile {
     /**
@@ -55,6 +55,9 @@ class DecryptFile {
             if (data.hasOwnProperty('item-id')) {
                 obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
             }
@@ -82,6 +85,12 @@ DecryptFile.prototype['display-id'] = undefined;
  * @member {Number} item-id
  */
 DecryptFile.prototype['item-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+DecryptFile.prototype['json'] = undefined;
 
 /**
  * The name of the key to use in the decryption process

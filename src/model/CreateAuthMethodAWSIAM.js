@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAWSIAM model module.
  * @module model/CreateAuthMethodAWSIAM
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateAuthMethodAWSIAM {
     /**
@@ -84,6 +84,9 @@ class CreateAuthMethodAWSIAM {
             }
             if (data.hasOwnProperty('gw-bound-ips')) {
                 obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('jwt-ttl')) {
                 obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
@@ -173,6 +176,12 @@ CreateAuthMethodAWSIAM.prototype['force-sub-claims'] = undefined;
  * @member {Array.<String>} gw-bound-ips
  */
 CreateAuthMethodAWSIAM.prototype['gw-bound-ips'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateAuthMethodAWSIAM.prototype['json'] = undefined;
 
 /**
  * Jwt TTL

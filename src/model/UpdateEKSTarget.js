@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateEKSTarget model module.
  * @module model/UpdateEKSTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateEKSTarget {
     /**
@@ -79,6 +79,9 @@ class UpdateEKSTarget {
             }
             if (data.hasOwnProperty('eks-secret-access-key')) {
                 obj['eks-secret-access-key'] = ApiClient.convertToType(data['eks-secret-access-key'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
@@ -153,6 +156,12 @@ UpdateEKSTarget.prototype['eks-region'] = 'us-east-2';
  * @member {String} eks-secret-access-key
  */
 UpdateEKSTarget.prototype['eks-secret-access-key'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateEKSTarget.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version

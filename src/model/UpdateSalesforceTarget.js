@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSalesforceTarget model module.
  * @module model/UpdateSalesforceTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateSalesforceTarget {
     /**
@@ -80,6 +80,9 @@ class UpdateSalesforceTarget {
             }
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
@@ -165,6 +168,12 @@ UpdateSalesforceTarget.prototype['comment'] = undefined;
  * @member {String} email
  */
 UpdateSalesforceTarget.prototype['email'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateSalesforceTarget.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version

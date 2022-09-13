@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCloudIdentity model module.
  * @module model/GetCloudIdentity
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GetCloudIdentity {
     /**
@@ -57,6 +57,9 @@ class GetCloudIdentity {
             if (data.hasOwnProperty('gcp-audience')) {
                 obj['gcp-audience'] = ApiClient.convertToType(data['gcp-audience'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('url_safe')) {
                 obj['url_safe'] = ApiClient.convertToType(data['url_safe'], 'Boolean');
             }
@@ -83,6 +86,12 @@ GetCloudIdentity.prototype['debug'] = undefined;
  * @member {String} gcp-audience
  */
 GetCloudIdentity.prototype['gcp-audience'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GetCloudIdentity.prototype['json'] = undefined;
 
 /**
  * Escapes the token so it can be safely placed inside a URL query

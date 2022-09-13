@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteItem model module.
  * @module model/DeleteItem
- * @version 2.18.0
+ * @version 2.19.0
  */
 class DeleteItem {
     /**
@@ -58,6 +58,9 @@ class DeleteItem {
             if (data.hasOwnProperty('delete-in-days')) {
                 obj['delete-in-days'] = ApiClient.convertToType(data['delete-in-days'], 'Number');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -96,6 +99,12 @@ DeleteItem.prototype['delete-immediately'] = false;
  * @default 7
  */
 DeleteItem.prototype['delete-in-days'] = 7;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+DeleteItem.prototype['json'] = undefined;
 
 /**
  * Item name

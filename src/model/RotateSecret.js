@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotateSecret model module.
  * @module model/RotateSecret
- * @version 2.18.0
+ * @version 2.19.0
  */
 class RotateSecret {
     /**
@@ -49,6 +49,9 @@ class RotateSecret {
         if (data) {
             obj = obj || new RotateSecret();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -64,6 +67,12 @@ class RotateSecret {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+RotateSecret.prototype['json'] = undefined;
 
 /**
  * Rotated Secret name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateArtifactoryTarget model module.
  * @module model/CreateArtifactoryTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateArtifactoryTarget {
     /**
@@ -67,6 +67,9 @@ class CreateArtifactoryTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -109,6 +112,12 @@ CreateArtifactoryTarget.prototype['base-url'] = undefined;
  * @member {String} comment
  */
 CreateArtifactoryTarget.prototype['comment'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateArtifactoryTarget.prototype['json'] = undefined;
 
 /**
  * The name of a key used to encrypt the target secret value (if empty, the account default protectionKey key will be used)

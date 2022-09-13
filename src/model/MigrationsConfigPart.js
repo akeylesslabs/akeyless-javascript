@@ -17,11 +17,12 @@ import AzureKeyVaultMigration from './AzureKeyVaultMigration';
 import GCPSecretsMigration from './GCPSecretsMigration';
 import HashiMigration from './HashiMigration';
 import K8SMigration from './K8SMigration';
+import OnePasswordMigration from './OnePasswordMigration';
 
 /**
  * The MigrationsConfigPart model module.
  * @module model/MigrationsConfigPart
- * @version 2.18.0
+ * @version 2.19.0
  */
 class MigrationsConfigPart {
     /**
@@ -67,6 +68,9 @@ class MigrationsConfigPart {
             if (data.hasOwnProperty('k8s_migrations')) {
                 obj['k8s_migrations'] = ApiClient.convertToType(data['k8s_migrations'], [K8SMigration]);
             }
+            if (data.hasOwnProperty('one_password_migrations')) {
+                obj['one_password_migrations'] = ApiClient.convertToType(data['one_password_migrations'], [OnePasswordMigration]);
+            }
         }
         return obj;
     }
@@ -98,6 +102,11 @@ MigrationsConfigPart.prototype['hashi_migrations'] = undefined;
  * @member {Array.<module:model/K8SMigration>} k8s_migrations
  */
 MigrationsConfigPart.prototype['k8s_migrations'] = undefined;
+
+/**
+ * @member {Array.<module:model/OnePasswordMigration>} one_password_migrations
+ */
+MigrationsConfigPart.prototype['one_password_migrations'] = undefined;
 
 
 

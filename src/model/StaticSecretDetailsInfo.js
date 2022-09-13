@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StaticSecretDetailsInfo model module.
  * @module model/StaticSecretDetailsInfo
- * @version 2.18.0
+ * @version 2.19.0
  */
 class StaticSecretDetailsInfo {
     /**
@@ -53,6 +53,9 @@ class StaticSecretDetailsInfo {
             if (data.hasOwnProperty('website')) {
                 obj['website'] = ApiClient.convertToType(data['website'], 'String');
             }
+            if (data.hasOwnProperty('websites')) {
+                obj['websites'] = ApiClient.convertToType(data['websites'], ['String']);
+            }
         }
         return obj;
     }
@@ -66,9 +69,15 @@ class StaticSecretDetailsInfo {
 StaticSecretDetailsInfo.prototype['username'] = undefined;
 
 /**
+ * deprecated
  * @member {String} website
  */
 StaticSecretDetailsInfo.prototype['website'] = undefined;
+
+/**
+ * @member {Array.<String>} websites
+ */
+StaticSecretDetailsInfo.prototype['websites'] = undefined;
 
 
 

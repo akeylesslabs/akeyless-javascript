@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRabbitMQTargetDetails model module.
  * @module model/UpdateRabbitMQTargetDetails
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateRabbitMQTargetDetails {
     /**
@@ -49,6 +49,9 @@ class UpdateRabbitMQTargetDetails {
         if (data) {
             obj = obj || new UpdateRabbitMQTargetDetails();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
             }
@@ -82,6 +85,12 @@ class UpdateRabbitMQTargetDetails {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateRabbitMQTargetDetails.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidCreateChildToken model module.
  * @module model/UidCreateChildToken
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UidCreateChildToken {
     /**
@@ -63,6 +63,9 @@ class UidCreateChildToken {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -108,6 +111,12 @@ UidCreateChildToken.prototype['child-ttl'] = undefined;
  * @member {String} comment
  */
 UidCreateChildToken.prototype['comment'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UidCreateChildToken.prototype['json'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

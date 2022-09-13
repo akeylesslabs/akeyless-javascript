@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidGenerateToken model module.
  * @module model/UidGenerateToken
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UidGenerateToken {
     /**
@@ -53,6 +53,9 @@ class UidGenerateToken {
             if (data.hasOwnProperty('auth-method-name')) {
                 obj['auth-method-name'] = ApiClient.convertToType(data['auth-method-name'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -71,6 +74,12 @@ class UidGenerateToken {
  * @member {String} auth-method-name
  */
 UidGenerateToken.prototype['auth-method-name'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UidGenerateToken.prototype['json'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

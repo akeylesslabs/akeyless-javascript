@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackSecret model module.
  * @module model/RollbackSecret
- * @version 2.18.0
+ * @version 2.19.0
  */
 class RollbackSecret {
     /**
@@ -51,6 +51,9 @@ class RollbackSecret {
         if (data) {
             obj = obj || new RollbackSecret();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -69,6 +72,12 @@ class RollbackSecret {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+RollbackSecret.prototype['json'] = undefined;
 
 /**
  * Secret name

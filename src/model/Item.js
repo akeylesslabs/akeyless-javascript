@@ -22,7 +22,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 2.18.0
+ * @version 2.19.0
  */
 class Item {
     /**
@@ -67,6 +67,9 @@ class Item {
             }
             if (data.hasOwnProperty('client_permissions')) {
                 obj['client_permissions'] = ApiClient.convertToType(data['client_permissions'], ['String']);
+            }
+            if (data.hasOwnProperty('creation_date')) {
+                obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
             }
             if (data.hasOwnProperty('customer_fragment_id')) {
                 obj['customer_fragment_id'] = ApiClient.convertToType(data['customer_fragment_id'], 'String');
@@ -122,6 +125,9 @@ class Item {
             if (data.hasOwnProperty('last_version')) {
                 obj['last_version'] = ApiClient.convertToType(data['last_version'], 'Number');
             }
+            if (data.hasOwnProperty('modification_date')) {
+                obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
+            }
             if (data.hasOwnProperty('next_rotation_date')) {
                 obj['next_rotation_date'] = ApiClient.convertToType(data['next_rotation_date'], 'Date');
             }
@@ -142,6 +148,9 @@ class Item {
             }
             if (data.hasOwnProperty('target_versions')) {
                 obj['target_versions'] = ApiClient.convertToType(data['target_versions'], [TargetItemVersion]);
+            }
+            if (data.hasOwnProperty('usage_date')) {
+                obj['usage_date'] = ApiClient.convertToType(data['usage_date'], 'Date');
             }
             if (data.hasOwnProperty('with_customer_fragment')) {
                 obj['with_customer_fragment'] = ApiClient.convertToType(data['with_customer_fragment'], 'Boolean');
@@ -177,6 +186,11 @@ Item.prototype['certificates'] = undefined;
  * @member {Array.<String>} client_permissions
  */
 Item.prototype['client_permissions'] = undefined;
+
+/**
+ * @member {Date} creation_date
+ */
+Item.prototype['creation_date'] = undefined;
 
 /**
  * @member {String} customer_fragment_id
@@ -270,6 +284,11 @@ Item.prototype['item_versions'] = undefined;
 Item.prototype['last_version'] = undefined;
 
 /**
+ * @member {Date} modification_date
+ */
+Item.prototype['modification_date'] = undefined;
+
+/**
  * @member {Date} next_rotation_date
  */
 Item.prototype['next_rotation_date'] = undefined;
@@ -303,6 +322,11 @@ Item.prototype['shared_by'] = undefined;
  * @member {Array.<module:model/TargetItemVersion>} target_versions
  */
 Item.prototype['target_versions'] = undefined;
+
+/**
+ * @member {Date} usage_date
+ */
+Item.prototype['usage_date'] = undefined;
 
 /**
  * @member {Boolean} with_customer_fragment

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHTargetDetails model module.
  * @module model/UpdateSSHTargetDetails
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateSSHTargetDetails {
     /**
@@ -51,6 +51,9 @@ class UpdateSSHTargetDetails {
 
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
@@ -96,6 +99,12 @@ class UpdateSSHTargetDetails {
  * @member {String} host
  */
 UpdateSSHTargetDetails.prototype['host'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateSSHTargetDetails.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipDeleteClient model module.
  * @module model/KmipDeleteClient
- * @version 2.18.0
+ * @version 2.19.0
  */
 class KmipDeleteClient {
     /**
@@ -50,6 +50,9 @@ class KmipDeleteClient {
             if (data.hasOwnProperty('client-id')) {
                 obj['client-id'] = ApiClient.convertToType(data['client-id'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -70,6 +73,12 @@ class KmipDeleteClient {
  * @member {String} client-id
  */
 KmipDeleteClient.prototype['client-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+KmipDeleteClient.prototype['json'] = undefined;
 
 /**
  * @member {String} name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipMoveServer model module.
  * @module model/KmipMoveServer
- * @version 2.18.0
+ * @version 2.19.0
  */
 class KmipMoveServer {
     /**
@@ -48,6 +48,9 @@ class KmipMoveServer {
         if (data) {
             obj = obj || new KmipMoveServer();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('new-root')) {
                 obj['new-root'] = ApiClient.convertToType(data['new-root'], 'String');
             }
@@ -63,6 +66,12 @@ class KmipMoveServer {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+KmipMoveServer.prototype['json'] = undefined;
 
 /**
  * @member {String} new-root

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerGithub model module.
  * @module model/GatewayUpdateProducerGithub
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayUpdateProducerGithub {
     /**
@@ -67,6 +67,9 @@ class GatewayUpdateProducerGithub {
             }
             if (data.hasOwnProperty('installation-repository')) {
                 obj['installation-repository'] = ApiClient.convertToType(data['installation-repository'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -131,6 +134,12 @@ GatewayUpdateProducerGithub.prototype['installation-id'] = undefined;
  * @member {String} installation-repository
  */
 GatewayUpdateProducerGithub.prototype['installation-repository'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayUpdateProducerGithub.prototype['json'] = undefined;
 
 /**
  * Producer name

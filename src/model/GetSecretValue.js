@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetSecretValue model module.
  * @module model/GetSecretValue
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GetSecretValue {
     /**
@@ -52,6 +52,9 @@ class GetSecretValue {
             if (data.hasOwnProperty('accessibility')) {
                 obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('names')) {
                 obj['names'] = ApiClient.convertToType(data['names'], ['String']);
             }
@@ -79,6 +82,12 @@ class GetSecretValue {
  * @member {String} accessibility
  */
 GetSecretValue.prototype['accessibility'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GetSecretValue.prototype['json'] = undefined;
 
 /**
  * Secret name

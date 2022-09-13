@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **allowUserExtendSession** | **Number** | AllowUserExtendSession | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
 **fixedUserOnly** | **String** | Fixed user | [optional] [default to &#39;false&#39;]
+**json** | **Boolean** | Set output format to JSON | [optional] 
 **name** | **String** | Producer name | 
 **newName** | **String** | Producer name | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 

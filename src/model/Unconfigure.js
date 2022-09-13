@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Unconfigure model module.
  * @module model/Unconfigure
- * @version 2.18.0
+ * @version 2.19.0
  */
 class Unconfigure {
     /**
@@ -47,6 +47,9 @@ class Unconfigure {
         if (data) {
             obj = obj || new Unconfigure();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('profile')) {
                 obj['profile'] = ApiClient.convertToType(data['profile'], 'String');
             }
@@ -56,6 +59,12 @@ class Unconfigure {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+Unconfigure.prototype['json'] = undefined;
 
 /**
  * The profile name to be removed

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 2.18.0
+ * @version 2.19.0
  */
 class Auth {
     /**
@@ -73,6 +73,9 @@ class Auth {
             }
             if (data.hasOwnProperty('gcp-audience')) {
                 obj['gcp-audience'] = ApiClient.convertToType(data['gcp-audience'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('jwt')) {
                 obj['jwt'] = ApiClient.convertToType(data['jwt'], 'String');
@@ -155,6 +158,12 @@ Auth.prototype['debug'] = undefined;
  * @member {String} gcp-audience
  */
 Auth.prototype['gcp-audience'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+Auth.prototype['json'] = undefined;
 
 /**
  * The Json Web Token (relevant only for access-type=jwt/oidc)

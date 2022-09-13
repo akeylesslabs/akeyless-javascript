@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAzureAD model module.
  * @module model/UpdateAuthMethodAzureAD
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateAuthMethodAzureAD {
     /**
@@ -96,6 +96,9 @@ class UpdateAuthMethodAzureAD {
             }
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('jwks-uri')) {
                 obj['jwks-uri'] = ApiClient.convertToType(data['jwks-uri'], 'String');
@@ -214,6 +217,12 @@ UpdateAuthMethodAzureAD.prototype['gw-bound-ips'] = undefined;
  * @default 'https://sts.windows.net/---bound_tenant_id---'
  */
 UpdateAuthMethodAzureAD.prototype['issuer'] = 'https://sts.windows.net/---bound_tenant_id---';
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateAuthMethodAzureAD.prototype['json'] = undefined;
 
 /**
  * The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server.

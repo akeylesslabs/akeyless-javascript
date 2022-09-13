@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGke model module.
  * @module model/GatewayCreateProducerGke
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayCreateProducerGke {
     /**
@@ -67,6 +67,9 @@ class GatewayCreateProducerGke {
             }
             if (data.hasOwnProperty('gke-service-account-email')) {
                 obj['gke-service-account-email'] = ApiClient.convertToType(data['gke-service-account-email'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -146,6 +149,12 @@ GatewayCreateProducerGke.prototype['gke-cluster-name'] = undefined;
  * @member {String} gke-service-account-email
  */
 GatewayCreateProducerGke.prototype['gke-service-account-email'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayCreateProducerGke.prototype['json'] = undefined;
 
 /**
  * Producer name

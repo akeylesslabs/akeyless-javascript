@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateK8SAuthConfig model module.
  * @module model/GatewayCreateK8SAuthConfig
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayCreateK8SAuthConfig {
     /**
@@ -64,6 +64,9 @@ class GatewayCreateK8SAuthConfig {
             }
             if (data.hasOwnProperty('config-encryption-key-name')) {
                 obj['config-encryption-key-name'] = ApiClient.convertToType(data['config-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('k8s-ca-cert')) {
                 obj['k8s-ca-cert'] = ApiClient.convertToType(data['k8s-ca-cert'], 'String');
@@ -123,6 +126,12 @@ GatewayCreateK8SAuthConfig.prototype['cluster-api-type'] = 'native_k8s';
  * @member {String} config-encryption-key-name
  */
 GatewayCreateK8SAuthConfig.prototype['config-encryption-key-name'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayCreateK8SAuthConfig.prototype['json'] = undefined;
 
 /**
  * The CA Certificate (base64 encoded) to use to call into the kubernetes API server

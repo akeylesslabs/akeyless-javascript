@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StaticCredsAuth model module.
  * @module model/StaticCredsAuth
- * @version 2.18.0
+ * @version 2.19.0
  */
 class StaticCredsAuth {
     /**
@@ -57,6 +57,9 @@ class StaticCredsAuth {
             if (data.hasOwnProperty('creds')) {
                 obj['creds'] = ApiClient.convertToType(data['creds'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -81,6 +84,12 @@ StaticCredsAuth.prototype['admin-email'] = undefined;
  * @member {String} creds
  */
 StaticCredsAuth.prototype['creds'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+StaticCredsAuth.prototype['json'] = undefined;
 
 
 

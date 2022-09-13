@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KMIPEnvironmentCreateResponse model module.
  * @module model/KMIPEnvironmentCreateResponse
- * @version 2.18.0
+ * @version 2.19.0
  */
 class KMIPEnvironmentCreateResponse {
     /**

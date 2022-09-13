@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayRevokeTmpUsers model module.
  * @module model/GatewayRevokeTmpUsers
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayRevokeTmpUsers {
     /**
@@ -55,6 +55,9 @@ class GatewayRevokeTmpUsers {
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -85,6 +88,12 @@ class GatewayRevokeTmpUsers {
  * @member {String} host
  */
 GatewayRevokeTmpUsers.prototype['host'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayRevokeTmpUsers.prototype['json'] = undefined;
 
 /**
  * Producer Name

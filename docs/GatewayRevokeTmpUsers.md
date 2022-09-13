@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **host** | **String** | Deprecated: has no effect | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] 
 **name** | **String** | Producer Name | 
 **revokeAll** | **Boolean** | Revoke All Temp Creds | [optional] 
 **softDelete** | **Boolean** | Soft Delete | [optional] 

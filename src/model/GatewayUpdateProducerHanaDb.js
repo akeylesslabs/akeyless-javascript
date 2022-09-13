@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerHanaDb model module.
  * @module model/GatewayUpdateProducerHanaDb
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayUpdateProducerHanaDb {
     /**
@@ -73,6 +73,9 @@ class GatewayUpdateProducerHanaDb {
             }
             if (data.hasOwnProperty('hanadb-username')) {
                 obj['hanadb-username'] = ApiClient.convertToType(data['hanadb-username'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -169,6 +172,12 @@ GatewayUpdateProducerHanaDb.prototype['hanadb-revocation-statements'] = undefine
  * @member {String} hanadb-username
  */
 GatewayUpdateProducerHanaDb.prototype['hanadb-username'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayUpdateProducerHanaDb.prototype['json'] = undefined;
 
 /**
  * Producer name

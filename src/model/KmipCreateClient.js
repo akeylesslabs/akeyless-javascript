@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipCreateClient model module.
  * @module model/KmipCreateClient
- * @version 2.18.0
+ * @version 2.19.0
  */
 class KmipCreateClient {
     /**
@@ -52,6 +52,9 @@ class KmipCreateClient {
             if (data.hasOwnProperty('certificate-ttl')) {
                 obj['certificate-ttl'] = ApiClient.convertToType(data['certificate-ttl'], 'Number');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -72,6 +75,12 @@ class KmipCreateClient {
  * @member {Number} certificate-ttl
  */
 KmipCreateClient.prototype['certificate-ttl'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+KmipCreateClient.prototype['json'] = undefined;
 
 /**
  * Client name

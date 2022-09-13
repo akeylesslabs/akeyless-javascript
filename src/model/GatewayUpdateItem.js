@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateItem model module.
  * @module model/GatewayUpdateItem
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayUpdateItem {
     /**
@@ -69,6 +69,9 @@ class GatewayUpdateItem {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
@@ -154,6 +157,12 @@ GatewayUpdateItem.prototype['custom-payload'] = undefined;
  * @member {String} delete_protection
  */
 GatewayUpdateItem.prototype['delete_protection'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayUpdateItem.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version

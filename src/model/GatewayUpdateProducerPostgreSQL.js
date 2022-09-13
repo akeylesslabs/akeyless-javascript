@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerPostgreSQL model module.
  * @module model/GatewayUpdateProducerPostgreSQL
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayUpdateProducerPostgreSQL {
     /**
@@ -55,6 +55,9 @@ class GatewayUpdateProducerPostgreSQL {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -134,6 +137,12 @@ GatewayUpdateProducerPostgreSQL.prototype['creation-statements'] = undefined;
  * @member {String} delete_protection
  */
 GatewayUpdateProducerPostgreSQL.prototype['delete_protection'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayUpdateProducerPostgreSQL.prototype['json'] = undefined;
 
 /**
  * Producer name

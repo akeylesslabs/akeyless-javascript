@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MoveObjects model module.
  * @module model/MoveObjects
- * @version 2.18.0
+ * @version 2.19.0
  */
 class MoveObjects {
     /**
@@ -51,6 +51,9 @@ class MoveObjects {
         if (data) {
             obj = obj || new MoveObjects();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('objects-type')) {
                 obj['objects-type'] = ApiClient.convertToType(data['objects-type'], 'String');
             }
@@ -72,6 +75,12 @@ class MoveObjects {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+MoveObjects.prototype['json'] = undefined;
 
 /**
  * The objects type to move (item/auth_method/role)

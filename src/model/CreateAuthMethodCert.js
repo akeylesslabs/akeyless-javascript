@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodCert model module.
  * @module model/CreateAuthMethodCert
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateAuthMethodCert {
     /**
@@ -84,6 +84,9 @@ class CreateAuthMethodCert {
             }
             if (data.hasOwnProperty('gw-bound-ips')) {
                 obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('jwt-ttl')) {
                 obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
@@ -176,6 +179,12 @@ CreateAuthMethodCert.prototype['force-sub-claims'] = undefined;
  * @member {Array.<String>} gw-bound-ips
  */
 CreateAuthMethodCert.prototype['gw-bound-ips'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateAuthMethodCert.prototype['json'] = undefined;
 
 /**
  * Jwt TTL

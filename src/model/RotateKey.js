@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotateKey model module.
  * @module model/RotateKey
- * @version 2.18.0
+ * @version 2.19.0
  */
 class RotateKey {
     /**
@@ -50,6 +50,9 @@ class RotateKey {
         if (data) {
             obj = obj || new RotateKey();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -68,6 +71,12 @@ class RotateKey {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+RotateKey.prototype['json'] = undefined;
 
 /**
  * Key name

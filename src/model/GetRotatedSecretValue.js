@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetRotatedSecretValue model module.
  * @module model/GetRotatedSecretValue
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GetRotatedSecretValue {
     /**
@@ -49,6 +49,9 @@ class GetRotatedSecretValue {
         if (data) {
             obj = obj || new GetRotatedSecretValue();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('names')) {
                 obj['names'] = ApiClient.convertToType(data['names'], 'String');
             }
@@ -67,6 +70,12 @@ class GetRotatedSecretValue {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GetRotatedSecretValue.prototype['json'] = undefined;
 
 /**
  * Secret name

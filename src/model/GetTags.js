@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetTags model module.
  * @module model/GetTags
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GetTags {
     /**
@@ -49,6 +49,9 @@ class GetTags {
         if (data) {
             obj = obj || new GetTags();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -64,6 +67,12 @@ class GetTags {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GetTags.prototype['json'] = undefined;
 
 /**
  * Item name

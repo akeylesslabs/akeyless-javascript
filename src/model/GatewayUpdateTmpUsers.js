@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateTmpUsers model module.
  * @module model/GatewayUpdateTmpUsers
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayUpdateTmpUsers {
     /**
@@ -54,6 +54,9 @@ class GatewayUpdateTmpUsers {
         if (data) {
             obj = obj || new GatewayUpdateTmpUsers();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -75,6 +78,12 @@ class GatewayUpdateTmpUsers {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayUpdateTmpUsers.prototype['json'] = undefined;
 
 /**
  * Producer Name

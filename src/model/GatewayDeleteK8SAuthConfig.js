@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteK8SAuthConfig model module.
  * @module model/GatewayDeleteK8SAuthConfig
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayDeleteK8SAuthConfig {
     /**
@@ -50,6 +50,9 @@ class GatewayDeleteK8SAuthConfig {
         if (data) {
             obj = obj || new GatewayDeleteK8SAuthConfig();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -65,6 +68,12 @@ class GatewayDeleteK8SAuthConfig {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayDeleteK8SAuthConfig.prototype['json'] = undefined;
 
 /**
  * K8S Auth config name

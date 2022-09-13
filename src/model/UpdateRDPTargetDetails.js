@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRDPTargetDetails model module.
  * @module model/UpdateRDPTargetDetails
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateRDPTargetDetails {
     /**
@@ -60,6 +60,9 @@ class UpdateRDPTargetDetails {
             }
             if (data.hasOwnProperty('host_port')) {
                 obj['host_port'] = ApiClient.convertToType(data['host_port'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
@@ -105,6 +108,12 @@ UpdateRDPTargetDetails.prototype['host_name'] = undefined;
  * @member {String} host_port
  */
 UpdateRDPTargetDetails.prototype['host_port'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateRDPTargetDetails.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version

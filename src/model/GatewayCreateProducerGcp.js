@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGcp model module.
  * @module model/GatewayCreateProducerGcp
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayCreateProducerGcp {
     /**
@@ -67,6 +67,9 @@ class GatewayCreateProducerGcp {
             }
             if (data.hasOwnProperty('gcp-token-scopes')) {
                 obj['gcp-token-scopes'] = ApiClient.convertToType(data['gcp-token-scopes'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -130,6 +133,12 @@ GatewayCreateProducerGcp.prototype['gcp-sa-email'] = undefined;
  * @member {String} gcp-token-scopes
  */
 GatewayCreateProducerGcp.prototype['gcp-token-scopes'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayCreateProducerGcp.prototype['json'] = undefined;
 
 /**
  * Producer name

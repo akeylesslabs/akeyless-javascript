@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPKICertificate model module.
  * @module model/GetPKICertificate
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GetPKICertificate {
     /**
@@ -60,6 +60,9 @@ class GetPKICertificate {
             }
             if (data.hasOwnProperty('extended-key-usage')) {
                 obj['extended-key-usage'] = ApiClient.convertToType(data['extended-key-usage'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('key-data-base64')) {
                 obj['key-data-base64'] = ApiClient.convertToType(data['key-data-base64'], 'String');
@@ -106,6 +109,12 @@ GetPKICertificate.prototype['common-name'] = undefined;
  * @member {String} extended-key-usage
  */
 GetPKICertificate.prototype['extended-key-usage'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GetPKICertificate.prototype['json'] = undefined;
 
 /**
  * PKI key file contents. If this option is used, the certificate will be printed to stdout

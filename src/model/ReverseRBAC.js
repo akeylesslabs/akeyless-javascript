@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReverseRBAC model module.
  * @module model/ReverseRBAC
- * @version 2.18.0
+ * @version 2.19.0
  */
 class ReverseRBAC {
     /**
@@ -52,6 +52,9 @@ class ReverseRBAC {
         if (data) {
             obj = obj || new ReverseRBAC();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
@@ -70,6 +73,12 @@ class ReverseRBAC {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+ReverseRBAC.prototype['json'] = undefined;
 
 /**
  * Path to an object

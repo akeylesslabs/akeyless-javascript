@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOAuth2 model module.
  * @module model/CreateAuthMethodOAuth2
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateAuthMethodOAuth2 {
     /**
@@ -74,6 +74,9 @@ class CreateAuthMethodOAuth2 {
             }
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('jwks-uri')) {
                 obj['jwks-uri'] = ApiClient.convertToType(data['jwks-uri'], 'String');
@@ -142,6 +145,12 @@ CreateAuthMethodOAuth2.prototype['gw-bound-ips'] = undefined;
  * @member {String} issuer
  */
 CreateAuthMethodOAuth2.prototype['issuer'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateAuthMethodOAuth2.prototype['json'] = undefined;
 
 /**
  * The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server.

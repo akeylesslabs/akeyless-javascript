@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGcpTarget model module.
  * @module model/UpdateGcpTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateGcpTarget {
     /**
@@ -59,6 +59,9 @@ class UpdateGcpTarget {
             }
             if (data.hasOwnProperty('gcp-sa-email')) {
                 obj['gcp-sa-email'] = ApiClient.convertToType(data['gcp-sa-email'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
@@ -108,6 +111,12 @@ UpdateGcpTarget.prototype['gcp-key'] = undefined;
  * @member {String} gcp-sa-email
  */
 UpdateGcpTarget.prototype['gcp-sa-email'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateGcpTarget.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version

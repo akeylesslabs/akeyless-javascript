@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidListChildren model module.
  * @module model/UidListChildren
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UidListChildren {
     /**
@@ -51,6 +51,9 @@ class UidListChildren {
             if (data.hasOwnProperty('auth-method-name')) {
                 obj['auth-method-name'] = ApiClient.convertToType(data['auth-method-name'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -69,6 +72,12 @@ class UidListChildren {
  * @member {String} auth-method-name
  */
 UidListChildren.prototype['auth-method-name'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UidListChildren.prototype['json'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipRenewServerCertificate model module.
  * @module model/KmipRenewServerCertificate
- * @version 2.18.0
+ * @version 2.19.0
  */
 class KmipRenewServerCertificate {
     /**
@@ -47,6 +47,9 @@ class KmipRenewServerCertificate {
         if (data) {
             obj = obj || new KmipRenewServerCertificate();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -59,6 +62,12 @@ class KmipRenewServerCertificate {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+KmipRenewServerCertificate.prototype['json'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

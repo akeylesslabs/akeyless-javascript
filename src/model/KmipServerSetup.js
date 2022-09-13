@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipServerSetup model module.
  * @module model/KmipServerSetup
- * @version 2.18.0
+ * @version 2.19.0
  */
 class KmipServerSetup {
     /**
@@ -55,6 +55,9 @@ class KmipServerSetup {
             if (data.hasOwnProperty('hostname')) {
                 obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('root')) {
                 obj['root'] = ApiClient.convertToType(data['root'], 'String');
             }
@@ -81,6 +84,12 @@ KmipServerSetup.prototype['certificate-ttl'] = undefined;
  * @member {String} hostname
  */
 KmipServerSetup.prototype['hostname'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+KmipServerSetup.prototype['json'] = undefined;
 
 /**
  * @member {String} root

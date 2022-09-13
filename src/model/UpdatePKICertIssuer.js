@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdatePKICertIssuer {
     /**
@@ -76,6 +76,9 @@ class UpdatePKICertIssuer {
             }
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('key-usage')) {
                 obj['key-usage'] = ApiClient.convertToType(data['key-usage'], 'String');
@@ -185,6 +188,12 @@ UpdatePKICertIssuer.prototype['code-signing-flag'] = undefined;
  * @member {String} country
  */
 UpdatePKICertIssuer.prototype['country'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdatePKICertIssuer.prototype['json'] = undefined;
 
 /**
  * key-usage

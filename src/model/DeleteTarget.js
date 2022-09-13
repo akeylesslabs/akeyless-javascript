@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTarget model module.
  * @module model/DeleteTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class DeleteTarget {
     /**
@@ -52,6 +52,9 @@ class DeleteTarget {
             if (data.hasOwnProperty('force-deletion')) {
                 obj['force-deletion'] = ApiClient.convertToType(data['force-deletion'], 'Boolean');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -77,6 +80,12 @@ class DeleteTarget {
  * @default false
  */
 DeleteTarget.prototype['force-deletion'] = false;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+DeleteTarget.prototype['json'] = undefined;
 
 /**
  * Target name

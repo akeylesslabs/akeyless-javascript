@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 2.18.0
+ * @version 2.19.0
  */
 class ListItems {
     /**
@@ -52,6 +52,9 @@ class ListItems {
             }
             if (data.hasOwnProperty('filter')) {
                 obj['filter'] = ApiClient.convertToType(data['filter'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('minimal-view')) {
                 obj['minimal-view'] = ApiClient.convertToType(data['minimal-view'], 'Boolean');
@@ -95,6 +98,12 @@ ListItems.prototype['accessibility'] = undefined;
  * @member {String} filter
  */
 ListItems.prototype['filter'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+ListItems.prototype['json'] = undefined;
 
 /**
  * @member {Boolean} minimal-view

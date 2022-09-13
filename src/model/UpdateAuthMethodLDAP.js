@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodLDAP model module.
  * @module model/UpdateAuthMethodLDAP
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateAuthMethodLDAP {
     /**
@@ -64,6 +64,9 @@ class UpdateAuthMethodLDAP {
             }
             if (data.hasOwnProperty('gw-bound-ips')) {
                 obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('jwt-ttl')) {
                 obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
@@ -123,6 +126,12 @@ UpdateAuthMethodLDAP.prototype['gen-key'] = undefined;
  * @member {Array.<String>} gw-bound-ips
  */
 UpdateAuthMethodLDAP.prototype['gw-bound-ips'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateAuthMethodLDAP.prototype['json'] = undefined;
 
 /**
  * Jwt TTL

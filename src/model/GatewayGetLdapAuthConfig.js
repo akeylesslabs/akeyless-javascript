@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetLdapAuthConfig model module.
  * @module model/GatewayGetLdapAuthConfig
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayGetLdapAuthConfig {
     /**
@@ -48,6 +48,9 @@ class GatewayGetLdapAuthConfig {
         if (data) {
             obj = obj || new GatewayGetLdapAuthConfig();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -60,6 +63,12 @@ class GatewayGetLdapAuthConfig {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayGetLdapAuthConfig.prototype['json'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

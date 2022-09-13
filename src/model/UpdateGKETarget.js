@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGKETarget model module.
  * @module model/UpdateGKETarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateGKETarget {
     /**
@@ -66,6 +66,9 @@ class UpdateGKETarget {
             }
             if (data.hasOwnProperty('gke-service-account-email')) {
                 obj['gke-service-account-email'] = ApiClient.convertToType(data['gke-service-account-email'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
@@ -133,6 +136,12 @@ UpdateGKETarget.prototype['gke-cluster-name'] = undefined;
  * @member {String} gke-service-account-email
  */
 UpdateGKETarget.prototype['gke-service-account-email'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateGKETarget.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version

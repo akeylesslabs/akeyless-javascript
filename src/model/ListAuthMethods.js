@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListAuthMethods model module.
  * @module model/ListAuthMethods
- * @version 2.18.0
+ * @version 2.19.0
  */
 class ListAuthMethods {
     /**
@@ -51,6 +51,9 @@ class ListAuthMethods {
             if (data.hasOwnProperty('filter')) {
                 obj['filter'] = ApiClient.convertToType(data['filter'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('pagination-token')) {
                 obj['pagination-token'] = ApiClient.convertToType(data['pagination-token'], 'String');
             }
@@ -75,6 +78,12 @@ class ListAuthMethods {
  * @member {String} filter
  */
 ListAuthMethods.prototype['filter'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+ListAuthMethods.prototype['json'] = undefined;
 
 /**
  * Next page reference

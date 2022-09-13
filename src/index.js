@@ -34,6 +34,8 @@ import AzureADAccessRules from './model/AzureADAccessRules';
 import AzureKeyVaultMigration from './model/AzureKeyVaultMigration';
 import AzureLogAnalyticsForwardingConfig from './model/AzureLogAnalyticsForwardingConfig';
 import AzurePayload from './model/AzurePayload';
+import BastionListEntry from './model/BastionListEntry';
+import BastionsList from './model/BastionsList';
 import CFConfigPart from './model/CFConfigPart';
 import CacheConfigPart from './model/CacheConfigPart';
 import CertAccessRules from './model/CertAccessRules';
@@ -312,6 +314,7 @@ import GatewayUpdateProducerRedshiftOutput from './model/GatewayUpdateProducerRe
 import GatewayUpdateProducerSnowflake from './model/GatewayUpdateProducerSnowflake';
 import GatewayUpdateProducerSnowflakeOutput from './model/GatewayUpdateProducerSnowflakeOutput';
 import GatewayUpdateTmpUsers from './model/GatewayUpdateTmpUsers';
+import GatewaysListResponse from './model/GatewaysListResponse';
 import GenCustomerFragment from './model/GenCustomerFragment';
 import GeneralConfigPart from './model/GeneralConfigPart';
 import GetAccountSettings from './model/GetAccountSettings';
@@ -337,6 +340,7 @@ import GetTags from './model/GetTags';
 import GetTarget from './model/GetTarget';
 import GetTargetDetails from './model/GetTargetDetails';
 import GetTargetDetailsOutput from './model/GetTargetDetailsOutput';
+import GwClusterIdentity from './model/GwClusterIdentity';
 import HashiMigration from './model/HashiMigration';
 import HashiPayload from './model/HashiPayload';
 import HuaweiAccessRules from './model/HuaweiAccessRules';
@@ -384,10 +388,12 @@ import LdapConfigPart from './model/LdapConfigPart';
 import LeadershipConfigPart from './model/LeadershipConfigPart';
 import ListAuthMethods from './model/ListAuthMethods';
 import ListAuthMethodsOutput from './model/ListAuthMethodsOutput';
+import ListGateways from './model/ListGateways';
 import ListItems from './model/ListItems';
 import ListItemsInPathOutput from './model/ListItemsInPathOutput';
 import ListRoles from './model/ListRoles';
 import ListRolesOutput from './model/ListRolesOutput';
+import ListSRABastions from './model/ListSRABastions';
 import ListTargets from './model/ListTargets';
 import ListTargetsOutput from './model/ListTargetsOutput';
 import LogForwardingConfigPart from './model/LogForwardingConfigPart';
@@ -405,6 +411,8 @@ import OAuth2CustomClaim from './model/OAuth2CustomClaim';
 import OIDCAccessRules from './model/OIDCAccessRules';
 import OIDCCustomClaim from './model/OIDCCustomClaim';
 import ObjectVersionSettingsOutput from './model/ObjectVersionSettingsOutput';
+import OnePasswordMigration from './model/OnePasswordMigration';
+import OnePasswordPayload from './model/OnePasswordPayload';
 import PKICertificateIssueDetails from './model/PKICertificateIssueDetails';
 import PasswordPolicyInfo from './model/PasswordPolicyInfo';
 import PathRule from './model/PathRule';
@@ -456,6 +464,7 @@ import SystemAccessCredsSettings from './model/SystemAccessCredsSettings';
 import Target from './model/Target';
 import TargetItemAssociation from './model/TargetItemAssociation';
 import TargetItemVersion from './model/TargetItemVersion';
+import TargetObjectAssociation from './model/TargetObjectAssociation';
 import TargetTypeDetailsInput from './model/TargetTypeDetailsInput';
 import TmpUserData from './model/TmpUserData';
 import Tokenize from './model/Tokenize';
@@ -540,6 +549,7 @@ import UpdateSalesforceTargetOutput from './model/UpdateSalesforceTargetOutput';
 import UpdateSecretVal from './model/UpdateSecretVal';
 import UpdateSecretValOutput from './model/UpdateSecretValOutput';
 import UpdateTarget from './model/UpdateTarget';
+import UpdateTargetDetails from './model/UpdateTargetDetails';
 import UpdateTargetDetailsOutput from './model/UpdateTargetDetailsOutput';
 import UpdateTargetOutput from './model/UpdateTargetOutput';
 import UpdateWebTarget from './model/UpdateWebTarget';
@@ -587,7 +597,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.18.0
+* @version 2.19.0
 */
 export {
     /**
@@ -721,6 +731,18 @@ export {
      * @property {module:model/AzurePayload}
      */
     AzurePayload,
+
+    /**
+     * The BastionListEntry model constructor.
+     * @property {module:model/BastionListEntry}
+     */
+    BastionListEntry,
+
+    /**
+     * The BastionsList model constructor.
+     * @property {module:model/BastionsList}
+     */
+    BastionsList,
 
     /**
      * The CFConfigPart model constructor.
@@ -2391,6 +2413,12 @@ export {
     GatewayUpdateTmpUsers,
 
     /**
+     * The GatewaysListResponse model constructor.
+     * @property {module:model/GatewaysListResponse}
+     */
+    GatewaysListResponse,
+
+    /**
      * The GenCustomerFragment model constructor.
      * @property {module:model/GenCustomerFragment}
      */
@@ -2539,6 +2567,12 @@ export {
      * @property {module:model/GetTargetDetailsOutput}
      */
     GetTargetDetailsOutput,
+
+    /**
+     * The GwClusterIdentity model constructor.
+     * @property {module:model/GwClusterIdentity}
+     */
+    GwClusterIdentity,
 
     /**
      * The HashiMigration model constructor.
@@ -2823,6 +2857,12 @@ export {
     ListAuthMethodsOutput,
 
     /**
+     * The ListGateways model constructor.
+     * @property {module:model/ListGateways}
+     */
+    ListGateways,
+
+    /**
      * The ListItems model constructor.
      * @property {module:model/ListItems}
      */
@@ -2845,6 +2885,12 @@ export {
      * @property {module:model/ListRolesOutput}
      */
     ListRolesOutput,
+
+    /**
+     * The ListSRABastions model constructor.
+     * @property {module:model/ListSRABastions}
+     */
+    ListSRABastions,
 
     /**
      * The ListTargets model constructor.
@@ -2947,6 +2993,18 @@ export {
      * @property {module:model/ObjectVersionSettingsOutput}
      */
     ObjectVersionSettingsOutput,
+
+    /**
+     * The OnePasswordMigration model constructor.
+     * @property {module:model/OnePasswordMigration}
+     */
+    OnePasswordMigration,
+
+    /**
+     * The OnePasswordPayload model constructor.
+     * @property {module:model/OnePasswordPayload}
+     */
+    OnePasswordPayload,
 
     /**
      * The PKICertificateIssueDetails model constructor.
@@ -3253,6 +3311,12 @@ export {
      * @property {module:model/TargetItemVersion}
      */
     TargetItemVersion,
+
+    /**
+     * The TargetObjectAssociation model constructor.
+     * @property {module:model/TargetObjectAssociation}
+     */
+    TargetObjectAssociation,
 
     /**
      * The TargetTypeDetailsInput model constructor.
@@ -3757,6 +3821,12 @@ export {
      * @property {module:model/UpdateTarget}
      */
     UpdateTarget,
+
+    /**
+     * The UpdateTargetDetails model constructor.
+     * @property {module:model/UpdateTargetDetails}
+     */
+    UpdateTargetDetails,
 
     /**
      * The UpdateTargetDetailsOutput model constructor.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateRole {
     /**
@@ -57,6 +57,9 @@ class UpdateRole {
             }
             if (data.hasOwnProperty('gw-analytics-access')) {
                 obj['gw-analytics-access'] = ApiClient.convertToType(data['gw-analytics-access'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -100,6 +103,12 @@ UpdateRole.prototype['audit-access'] = undefined;
  * @member {String} gw-analytics-access
  */
 UpdateRole.prototype['gw-analytics-access'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateRole.prototype['json'] = undefined;
 
 /**
  * Role name

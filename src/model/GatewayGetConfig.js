@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetConfig model module.
  * @module model/GatewayGetConfig
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayGetConfig {
     /**
@@ -48,6 +48,9 @@ class GatewayGetConfig {
         if (data) {
             obj = obj || new GatewayGetConfig();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -60,6 +63,12 @@ class GatewayGetConfig {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayGetConfig.prototype['json'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

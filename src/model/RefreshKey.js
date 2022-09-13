@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RefreshKey model module.
  * @module model/RefreshKey
- * @version 2.18.0
+ * @version 2.19.0
  */
 class RefreshKey {
     /**
@@ -49,6 +49,9 @@ class RefreshKey {
         if (data) {
             obj = obj || new RefreshKey();
 
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -64,6 +67,12 @@ class RefreshKey {
 
 
 }
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+RefreshKey.prototype['json'] = undefined;
 
 /**
  * Key name

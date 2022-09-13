@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateWebTarget model module.
  * @module model/UpdateWebTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateWebTarget {
     /**
@@ -51,6 +51,9 @@ class UpdateWebTarget {
 
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
@@ -88,6 +91,12 @@ class UpdateWebTarget {
  * @member {String} comment
  */
 UpdateWebTarget.prototype['comment'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateWebTarget.prototype['json'] = undefined;
 
 /**
  * @member {String} keep-prev-version

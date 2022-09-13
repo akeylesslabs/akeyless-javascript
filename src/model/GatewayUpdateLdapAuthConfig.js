@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLdapAuthConfig model module.
  * @module model/GatewayUpdateLdapAuthConfig
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayUpdateLdapAuthConfig {
     /**
@@ -65,6 +65,9 @@ class GatewayUpdateLdapAuthConfig {
             }
             if (data.hasOwnProperty('group-filter')) {
                 obj['group-filter'] = ApiClient.convertToType(data['group-filter'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('ldap-ca-cert')) {
                 obj['ldap-ca-cert'] = ApiClient.convertToType(data['ldap-ca-cert'], 'String');
@@ -135,6 +138,12 @@ GatewayUpdateLdapAuthConfig.prototype['group-dn'] = undefined;
  * @member {String} group-filter
  */
 GatewayUpdateLdapAuthConfig.prototype['group-filter'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayUpdateLdapAuthConfig.prototype['json'] = undefined;
 
 /**
  * LDAP CA Certificate (base64 encoded)

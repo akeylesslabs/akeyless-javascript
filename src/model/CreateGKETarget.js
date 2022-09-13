@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGKETarget model module.
  * @module model/CreateGKETarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateGKETarget {
     /**
@@ -66,6 +66,9 @@ class CreateGKETarget {
             }
             if (data.hasOwnProperty('gke-service-account-email')) {
                 obj['gke-service-account-email'] = ApiClient.convertToType(data['gke-service-account-email'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -124,6 +127,12 @@ CreateGKETarget.prototype['gke-cluster-name'] = undefined;
  * @member {String} gke-service-account-email
  */
 CreateGKETarget.prototype['gke-service-account-email'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateGKETarget.prototype['json'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)

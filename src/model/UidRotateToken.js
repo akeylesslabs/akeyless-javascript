@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidRotateToken model module.
  * @module model/UidRotateToken
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UidRotateToken {
     /**
@@ -51,6 +51,9 @@ class UidRotateToken {
             if (data.hasOwnProperty('fork')) {
                 obj['fork'] = ApiClient.convertToType(data['fork'], 'Boolean');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('send-manual-ack-token')) {
                 obj['send-manual-ack-token'] = ApiClient.convertToType(data['send-manual-ack-token'], 'String');
             }
@@ -72,6 +75,12 @@ class UidRotateToken {
  * @member {Boolean} fork
  */
 UidRotateToken.prototype['fork'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UidRotateToken.prototype['json'] = undefined;
 
 /**
  * The new rotated token to send manual ack for (with uid-token=the-orig-token)

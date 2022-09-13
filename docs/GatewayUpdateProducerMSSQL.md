@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] 
 **mssqlCreateStatements** | **String** | MSSQL Creation statements | [optional] 
 **mssqlDbname** | **String** | MSSQL Name | [optional] 
 **mssqlHost** | **String** | MSSQL Host | [optional] [default to &#39;127.0.0.1&#39;]

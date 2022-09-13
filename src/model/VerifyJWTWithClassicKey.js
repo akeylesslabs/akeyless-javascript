@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyJWTWithClassicKey model module.
  * @module model/VerifyJWTWithClassicKey
- * @version 2.18.0
+ * @version 2.19.0
  */
 class VerifyJWTWithClassicKey {
     /**
@@ -58,6 +58,9 @@ class VerifyJWTWithClassicKey {
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('jwt')) {
                 obj['jwt'] = ApiClient.convertToType(data['jwt'], 'String');
             }
@@ -85,6 +88,12 @@ class VerifyJWTWithClassicKey {
  * @member {String} display-id
  */
 VerifyJWTWithClassicKey.prototype['display-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+VerifyJWTWithClassicKey.prototype['json'] = undefined;
 
 /**
  * JWT

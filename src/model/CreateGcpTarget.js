@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGcpTarget model module.
  * @module model/CreateGcpTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateGcpTarget {
     /**
@@ -58,6 +58,9 @@ class CreateGcpTarget {
             if (data.hasOwnProperty('gcp-sa-email')) {
                 obj['gcp-sa-email'] = ApiClient.convertToType(data['gcp-sa-email'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -97,6 +100,12 @@ CreateGcpTarget.prototype['gcp-key'] = undefined;
  * @member {String} gcp-sa-email
  */
 CreateGcpTarget.prototype['gcp-sa-email'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateGcpTarget.prototype['json'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)

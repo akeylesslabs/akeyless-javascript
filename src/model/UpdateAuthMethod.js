@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethod model module.
  * @module model/UpdateAuthMethod
- * @version 2.18.0
+ * @version 2.19.0
  */
 class UpdateAuthMethod {
     /**
@@ -60,6 +60,9 @@ class UpdateAuthMethod {
             }
             if (data.hasOwnProperty('gw-bound-ips')) {
                 obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('jwt-ttl')) {
                 obj['jwt-ttl'] = ApiClient.convertToType(data['jwt-ttl'], 'Number');
@@ -107,6 +110,12 @@ UpdateAuthMethod.prototype['force-sub-claims'] = undefined;
  * @member {Array.<String>} gw-bound-ips
  */
 UpdateAuthMethod.prototype['gw-bound-ips'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+UpdateAuthMethod.prototype['json'] = undefined;
 
 /**
  * Jwt TTL

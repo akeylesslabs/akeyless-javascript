@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMySQL model module.
  * @module model/GatewayUpdateProducerMySQL
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayUpdateProducerMySQL {
     /**
@@ -58,6 +58,9 @@ class GatewayUpdateProducerMySQL {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('mysql-dbname')) {
                 obj['mysql-dbname'] = ApiClient.convertToType(data['mysql-dbname'], 'String');
@@ -143,6 +146,12 @@ GatewayUpdateProducerMySQL.prototype['db-server-name'] = undefined;
  * @member {String} delete_protection
  */
 GatewayUpdateProducerMySQL.prototype['delete_protection'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayUpdateProducerMySQL.prototype['json'] = undefined;
 
 /**
  * MySQL DB Name

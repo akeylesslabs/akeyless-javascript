@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerDockerhub model module.
  * @module model/GatewayCreateProducerDockerhub
- * @version 2.18.0
+ * @version 2.19.0
  */
 class GatewayCreateProducerDockerhub {
     /**
@@ -61,6 +61,9 @@ class GatewayCreateProducerDockerhub {
             }
             if (data.hasOwnProperty('dockerhub-username')) {
                 obj['dockerhub-username'] = ApiClient.convertToType(data['dockerhub-username'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -113,6 +116,12 @@ GatewayCreateProducerDockerhub.prototype['dockerhub-token-scopes'] = undefined;
  * @member {String} dockerhub-username
  */
 GatewayCreateProducerDockerhub.prototype['dockerhub-username'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+GatewayCreateProducerDockerhub.prototype['json'] = undefined;
 
 /**
  * Producer name

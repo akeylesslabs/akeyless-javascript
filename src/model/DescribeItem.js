@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeItem model module.
  * @module model/DescribeItem
- * @version 2.18.0
+ * @version 2.19.0
  */
 class DescribeItem {
     /**
@@ -55,6 +55,9 @@ class DescribeItem {
             if (data.hasOwnProperty('item-id')) {
                 obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -85,6 +88,12 @@ DescribeItem.prototype['display-id'] = undefined;
  * @member {Number} item-id
  */
 DescribeItem.prototype['item-id'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+DescribeItem.prototype['json'] = undefined;
 
 /**
  * Item name

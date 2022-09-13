@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetRoleRule model module.
  * @module model/SetRoleRule
- * @version 2.18.0
+ * @version 2.19.0
  */
 class SetRoleRule {
     /**
@@ -56,6 +56,9 @@ class SetRoleRule {
             if (data.hasOwnProperty('capability')) {
                 obj['capability'] = ApiClient.convertToType(data['capability'], ['String']);
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
@@ -83,6 +86,12 @@ class SetRoleRule {
  * @member {Array.<String>} capability
  */
 SetRoleRule.prototype['capability'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+SetRoleRule.prototype['json'] = undefined;
 
 /**
  * The path the rule refers to

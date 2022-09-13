@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignPKICertWithClassicKey model module.
  * @module model/SignPKICertWithClassicKey
- * @version 2.18.0
+ * @version 2.19.0
  */
 class SignPKICertWithClassicKey {
     /**
@@ -66,6 +66,9 @@ class SignPKICertWithClassicKey {
             }
             if (data.hasOwnProperty('dns-names')) {
                 obj['dns-names'] = ApiClient.convertToType(data['dns-names'], 'String');
+            }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('key-usage')) {
                 obj['key-usage'] = ApiClient.convertToType(data['key-usage'], 'String');
@@ -139,6 +142,12 @@ SignPKICertWithClassicKey.prototype['display-id'] = undefined;
  * @member {String} dns-names
  */
 SignPKICertWithClassicKey.prototype['dns-names'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+SignPKICertWithClassicKey.prototype['json'] = undefined;
 
 /**
  * key-usage

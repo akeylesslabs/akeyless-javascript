@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDockerhubTarget model module.
  * @module model/CreateDockerhubTarget
- * @version 2.18.0
+ * @version 2.19.0
  */
 class CreateDockerhubTarget {
     /**
@@ -58,6 +58,9 @@ class CreateDockerhubTarget {
             if (data.hasOwnProperty('dockerhub-username')) {
                 obj['dockerhub-username'] = ApiClient.convertToType(data['dockerhub-username'], 'String');
             }
+            if (data.hasOwnProperty('json')) {
+                obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -94,6 +97,12 @@ CreateDockerhubTarget.prototype['dockerhub-password'] = undefined;
  * @member {String} dockerhub-username
  */
 CreateDockerhubTarget.prototype['dockerhub-username'] = undefined;
+
+/**
+ * Set output format to JSON
+ * @member {Boolean} json
+ */
+CreateDockerhubTarget.prototype['json'] = undefined;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
