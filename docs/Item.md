@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**accessDate** | **Date** |  | [optional] 
 **autoRotate** | **Boolean** |  | [optional] 
 **certIssuerSignerKeyName** | **String** |  | [optional] 
 **certificateIssueDetails** | [**CertificateIssueInfo**](CertificateIssueInfo.md) |  | [optional] 
@@ -36,7 +37,6 @@ Name | Type | Description | Notes
 **rotationInterval** | **Number** |  | [optional] 
 **sharedBy** | [**RuleAssigner**](RuleAssigner.md) |  | [optional] 
 **targetVersions** | [**[TargetItemVersion]**](TargetItemVersion.md) |  | [optional] 
-**usageDate** | **Date** |  | [optional] 
 **withCustomerFragment** | **Boolean** |  | [optional] 
 
 

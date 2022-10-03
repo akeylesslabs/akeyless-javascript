@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GwClusterIdentity model module.
  * @module model/GwClusterIdentity
- * @version 2.19.0
+ * @version 2.20.0
  */
 class GwClusterIdentity {
     /**

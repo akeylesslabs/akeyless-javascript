@@ -22,7 +22,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 2.19.0
+ * @version 2.20.0
  */
 class Item {
     /**
@@ -53,6 +53,9 @@ class Item {
         if (data) {
             obj = obj || new Item();
 
+            if (data.hasOwnProperty('access_date')) {
+                obj['access_date'] = ApiClient.convertToType(data['access_date'], 'Date');
+            }
             if (data.hasOwnProperty('auto_rotate')) {
                 obj['auto_rotate'] = ApiClient.convertToType(data['auto_rotate'], 'Boolean');
             }
@@ -149,9 +152,6 @@ class Item {
             if (data.hasOwnProperty('target_versions')) {
                 obj['target_versions'] = ApiClient.convertToType(data['target_versions'], [TargetItemVersion]);
             }
-            if (data.hasOwnProperty('usage_date')) {
-                obj['usage_date'] = ApiClient.convertToType(data['usage_date'], 'Date');
-            }
             if (data.hasOwnProperty('with_customer_fragment')) {
                 obj['with_customer_fragment'] = ApiClient.convertToType(data['with_customer_fragment'], 'Boolean');
             }
@@ -161,6 +161,11 @@ class Item {
 
 
 }
+
+/**
+ * @member {Date} access_date
+ */
+Item.prototype['access_date'] = undefined;
 
 /**
  * @member {Boolean} auto_rotate
@@ -322,11 +327,6 @@ Item.prototype['shared_by'] = undefined;
  * @member {Array.<module:model/TargetItemVersion>} target_versions
  */
 Item.prototype['target_versions'] = undefined;
-
-/**
- * @member {Date} usage_date
- */
-Item.prototype['usage_date'] = undefined;
 
 /**
  * @member {Boolean} with_customer_fragment

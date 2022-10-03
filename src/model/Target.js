@@ -14,12 +14,11 @@
 import ApiClient from '../ApiClient';
 import ItemVersion from './ItemVersion';
 import TargetItemAssociation from './TargetItemAssociation';
-import TargetObjectAssociation from './TargetObjectAssociation';
 
 /**
  * The Target model module.
  * @module model/Target
- * @version 2.19.0
+ * @version 2.20.0
  */
 class Target {
     /**
@@ -50,6 +49,9 @@ class Target {
         if (data) {
             obj = obj || new Target();
 
+            if (data.hasOwnProperty('access_date')) {
+                obj['access_date'] = ApiClient.convertToType(data['access_date'], 'Date');
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], {'String': Object});
             }
@@ -59,8 +61,17 @@ class Target {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('creation_date')) {
+                obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
+            }
+            if (data.hasOwnProperty('credentials_less')) {
+                obj['credentials_less'] = ApiClient.convertToType(data['credentials_less'], 'Boolean');
+            }
             if (data.hasOwnProperty('last_version')) {
                 obj['last_version'] = ApiClient.convertToType(data['last_version'], 'Number');
+            }
+            if (data.hasOwnProperty('modification_date')) {
+                obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
             }
             if (data.hasOwnProperty('protection_key_name')) {
                 obj['protection_key_name'] = ApiClient.convertToType(data['protection_key_name'], 'String');
@@ -73,9 +84,6 @@ class Target {
             }
             if (data.hasOwnProperty('target_name')) {
                 obj['target_name'] = ApiClient.convertToType(data['target_name'], 'String');
-            }
-            if (data.hasOwnProperty('target_objects_assoc')) {
-                obj['target_objects_assoc'] = ApiClient.convertToType(data['target_objects_assoc'], [TargetObjectAssociation]);
             }
             if (data.hasOwnProperty('target_type')) {
                 obj['target_type'] = ApiClient.convertToType(data['target_type'], 'String');
@@ -94,6 +102,11 @@ class Target {
 }
 
 /**
+ * @member {Date} access_date
+ */
+Target.prototype['access_date'] = undefined;
+
+/**
  * this is not \"omitempty\" since an empty value causes no update while an empty map will clear the attributes
  * @member {Object.<String, Object>} attributes
  */
@@ -110,9 +123,24 @@ Target.prototype['client_permissions'] = undefined;
 Target.prototype['comment'] = undefined;
 
 /**
+ * @member {Date} creation_date
+ */
+Target.prototype['creation_date'] = undefined;
+
+/**
+ * @member {Boolean} credentials_less
+ */
+Target.prototype['credentials_less'] = undefined;
+
+/**
  * @member {Number} last_version
  */
 Target.prototype['last_version'] = undefined;
+
+/**
+ * @member {Date} modification_date
+ */
+Target.prototype['modification_date'] = undefined;
 
 /**
  * @member {String} protection_key_name
@@ -133,11 +161,6 @@ Target.prototype['target_items_assoc'] = undefined;
  * @member {String} target_name
  */
 Target.prototype['target_name'] = undefined;
-
-/**
- * @member {Array.<module:model/TargetObjectAssociation>} target_objects_assoc
- */
-Target.prototype['target_objects_assoc'] = undefined;
 
 /**
  * @member {String} target_type

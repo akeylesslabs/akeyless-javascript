@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RefreshKey model module.
  * @module model/RefreshKey
- * @version 2.19.0
+ * @version 2.20.0
  */
 class RefreshKey {
     /**

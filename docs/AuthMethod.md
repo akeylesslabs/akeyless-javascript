@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**accessDate** | **Date** |  | [optional] 
 **accessInfo** | [**AuthMethodAccessInfo**](AuthMethodAccessInfo.md) |  | [optional] 
 **accountId** | **String** |  | [optional] 
 **authMethodAccessId** | **String** |  | [optional] 
@@ -12,6 +13,5 @@ Name | Type | Description | Notes
 **clientPermissions** | **[String]** |  | [optional] 
 **creationDate** | **Date** |  | [optional] 
 **modificationDate** | **Date** |  | [optional] 
-**usageDate** | **Date** |  | [optional] 
 
 

@@ -18,7 +18,7 @@ import AuthMethodRoleAssociation from './AuthMethodRoleAssociation';
 /**
  * The AuthMethod model module.
  * @module model/AuthMethod
- * @version 2.19.0
+ * @version 2.20.0
  */
 class AuthMethod {
     /**
@@ -49,6 +49,9 @@ class AuthMethod {
         if (data) {
             obj = obj || new AuthMethod();
 
+            if (data.hasOwnProperty('access_date')) {
+                obj['access_date'] = ApiClient.convertToType(data['access_date'], 'Date');
+            }
             if (data.hasOwnProperty('access_info')) {
                 obj['access_info'] = AuthMethodAccessInfo.constructFromObject(data['access_info']);
             }
@@ -73,15 +76,17 @@ class AuthMethod {
             if (data.hasOwnProperty('modification_date')) {
                 obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
             }
-            if (data.hasOwnProperty('usage_date')) {
-                obj['usage_date'] = ApiClient.convertToType(data['usage_date'], 'Date');
-            }
         }
         return obj;
     }
 
 
 }
+
+/**
+ * @member {Date} access_date
+ */
+AuthMethod.prototype['access_date'] = undefined;
 
 /**
  * @member {module:model/AuthMethodAccessInfo} access_info
@@ -122,11 +127,6 @@ AuthMethod.prototype['creation_date'] = undefined;
  * @member {Date} modification_date
  */
 AuthMethod.prototype['modification_date'] = undefined;
-
-/**
- * @member {Date} usage_date
- */
-AuthMethod.prototype['usage_date'] = undefined;
 
 
 

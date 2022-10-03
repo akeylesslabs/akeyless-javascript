@@ -16,17 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 2.19.0
+ * @version 2.20.0
  */
 class GatewayUpdateMigration {
     /**
      * Constructs a new <code>GatewayUpdateMigration</code>.
      * gatewayUpdateMigration is a command that update migration
      * @alias module:model/GatewayUpdateMigration
+     * @param targetLocation {String} Target location in Akeyless for imported secrets
      */
-    constructor() { 
+    constructor(targetLocation) { 
         
-        GatewayUpdateMigration.initialize(this);
+        GatewayUpdateMigration.initialize(this, targetLocation);
     }
 
     /**
@@ -34,7 +35,8 @@ class GatewayUpdateMigration {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, targetLocation) { 
+        obj['target-location'] = targetLocation;
     }
 
     /**
@@ -48,6 +50,78 @@ class GatewayUpdateMigration {
         if (data) {
             obj = obj || new GatewayUpdateMigration();
 
+            if (data.hasOwnProperty('1password-email')) {
+                obj['1password-email'] = ApiClient.convertToType(data['1password-email'], 'String');
+            }
+            if (data.hasOwnProperty('1password-password')) {
+                obj['1password-password'] = ApiClient.convertToType(data['1password-password'], 'String');
+            }
+            if (data.hasOwnProperty('1password-secret-key')) {
+                obj['1password-secret-key'] = ApiClient.convertToType(data['1password-secret-key'], 'String');
+            }
+            if (data.hasOwnProperty('1password-url')) {
+                obj['1password-url'] = ApiClient.convertToType(data['1password-url'], 'String');
+            }
+            if (data.hasOwnProperty('1password-vaults')) {
+                obj['1password-vaults'] = ApiClient.convertToType(data['1password-vaults'], ['String']);
+            }
+            if (data.hasOwnProperty('AdAutoRotateBoolean')) {
+                obj['AdAutoRotateBoolean'] = ApiClient.convertToType(data['AdAutoRotateBoolean'], 'Boolean');
+            }
+            if (data.hasOwnProperty('AdDiscoverLocalUsersBoolean')) {
+                obj['AdDiscoverLocalUsersBoolean'] = ApiClient.convertToType(data['AdDiscoverLocalUsersBoolean'], 'Boolean');
+            }
+            if (data.hasOwnProperty('AdLocalUsersIgnoreList')) {
+                obj['AdLocalUsersIgnoreList'] = ApiClient.convertToType(data['AdLocalUsersIgnoreList'], {'String': 'Boolean'});
+            }
+            if (data.hasOwnProperty('AdSRAEnableRDPBoolean')) {
+                obj['AdSRAEnableRDPBoolean'] = ApiClient.convertToType(data['AdSRAEnableRDPBoolean'], 'Boolean');
+            }
+            if (data.hasOwnProperty('ad_auto_rotate')) {
+                obj['ad_auto_rotate'] = ApiClient.convertToType(data['ad_auto_rotate'], 'String');
+            }
+            if (data.hasOwnProperty('ad_computer_base_dn')) {
+                obj['ad_computer_base_dn'] = ApiClient.convertToType(data['ad_computer_base_dn'], 'String');
+            }
+            if (data.hasOwnProperty('ad_discover_local_users')) {
+                obj['ad_discover_local_users'] = ApiClient.convertToType(data['ad_discover_local_users'], 'String');
+            }
+            if (data.hasOwnProperty('ad_domain_name')) {
+                obj['ad_domain_name'] = ApiClient.convertToType(data['ad_domain_name'], 'String');
+            }
+            if (data.hasOwnProperty('ad_domain_users_path_template')) {
+                obj['ad_domain_users_path_template'] = ApiClient.convertToType(data['ad_domain_users_path_template'], 'String');
+            }
+            if (data.hasOwnProperty('ad_local_users_ignore')) {
+                obj['ad_local_users_ignore'] = ApiClient.convertToType(data['ad_local_users_ignore'], 'String');
+            }
+            if (data.hasOwnProperty('ad_local_users_path_template')) {
+                obj['ad_local_users_path_template'] = ApiClient.convertToType(data['ad_local_users_path_template'], 'String');
+            }
+            if (data.hasOwnProperty('ad_rotation_hour')) {
+                obj['ad_rotation_hour'] = ApiClient.convertToType(data['ad_rotation_hour'], 'Number');
+            }
+            if (data.hasOwnProperty('ad_rotation_interval')) {
+                obj['ad_rotation_interval'] = ApiClient.convertToType(data['ad_rotation_interval'], 'Number');
+            }
+            if (data.hasOwnProperty('ad_sra_enable_rdp')) {
+                obj['ad_sra_enable_rdp'] = ApiClient.convertToType(data['ad_sra_enable_rdp'], 'String');
+            }
+            if (data.hasOwnProperty('ad_target_name')) {
+                obj['ad_target_name'] = ApiClient.convertToType(data['ad_target_name'], 'String');
+            }
+            if (data.hasOwnProperty('ad_targets_path_template')) {
+                obj['ad_targets_path_template'] = ApiClient.convertToType(data['ad_targets_path_template'], 'String');
+            }
+            if (data.hasOwnProperty('ad_user_base_dn')) {
+                obj['ad_user_base_dn'] = ApiClient.convertToType(data['ad_user_base_dn'], 'String');
+            }
+            if (data.hasOwnProperty('ad_user_groups')) {
+                obj['ad_user_groups'] = ApiClient.convertToType(data['ad_user_groups'], 'String');
+            }
+            if (data.hasOwnProperty('as_ssh_port')) {
+                obj['as_ssh_port'] = ApiClient.convertToType(data['as_ssh_port'], 'String');
+            }
             if (data.hasOwnProperty('aws-key')) {
                 obj['aws-key'] = ApiClient.convertToType(data['aws-key'], 'String');
             }
@@ -123,21 +197,6 @@ class GatewayUpdateMigration {
             if (data.hasOwnProperty('new_name')) {
                 obj['new_name'] = ApiClient.convertToType(data['new_name'], 'String');
             }
-            if (data.hasOwnProperty('op-email')) {
-                obj['op-email'] = ApiClient.convertToType(data['op-email'], 'String');
-            }
-            if (data.hasOwnProperty('op-password')) {
-                obj['op-password'] = ApiClient.convertToType(data['op-password'], 'String');
-            }
-            if (data.hasOwnProperty('op-secret-key')) {
-                obj['op-secret-key'] = ApiClient.convertToType(data['op-secret-key'], 'String');
-            }
-            if (data.hasOwnProperty('op-url')) {
-                obj['op-url'] = ApiClient.convertToType(data['op-url'], 'String');
-            }
-            if (data.hasOwnProperty('op-vaults')) {
-                obj['op-vaults'] = ApiClient.convertToType(data['op-vaults'], ['String']);
-            }
             if (data.hasOwnProperty('protection-key')) {
                 obj['protection-key'] = ApiClient.convertToType(data['protection-key'], 'String');
             }
@@ -156,6 +215,146 @@ class GatewayUpdateMigration {
 
 
 }
+
+/**
+ * 1Password user email to connect to the API
+ * @member {String} 1password-email
+ */
+GatewayUpdateMigration.prototype['1password-email'] = undefined;
+
+/**
+ * 1Password user password to connect to the API
+ * @member {String} 1password-password
+ */
+GatewayUpdateMigration.prototype['1password-password'] = undefined;
+
+/**
+ * 1Password user secret key to connect to the API
+ * @member {String} 1password-secret-key
+ */
+GatewayUpdateMigration.prototype['1password-secret-key'] = undefined;
+
+/**
+ * 1Password api container url
+ * @member {String} 1password-url
+ */
+GatewayUpdateMigration.prototype['1password-url'] = undefined;
+
+/**
+ * 1Password list of vault to get the items from
+ * @member {Array.<String>} 1password-vaults
+ */
+GatewayUpdateMigration.prototype['1password-vaults'] = undefined;
+
+/**
+ * @member {Boolean} AdAutoRotateBoolean
+ */
+GatewayUpdateMigration.prototype['AdAutoRotateBoolean'] = undefined;
+
+/**
+ * @member {Boolean} AdDiscoverLocalUsersBoolean
+ */
+GatewayUpdateMigration.prototype['AdDiscoverLocalUsersBoolean'] = undefined;
+
+/**
+ * @member {Object.<String, Boolean>} AdLocalUsersIgnoreList
+ */
+GatewayUpdateMigration.prototype['AdLocalUsersIgnoreList'] = undefined;
+
+/**
+ * @member {Boolean} AdSRAEnableRDPBoolean
+ */
+GatewayUpdateMigration.prototype['AdSRAEnableRDPBoolean'] = undefined;
+
+/**
+ * Enable/Disable automatic/recurrent rotation for migrated secrets. Default is false: only manual rotation is allowed for migrated secrets. If set to true, this command should be combined with --ad-rotation-interval and --ad-rotation-hour parameters (Relevant only for Active Directory migration)
+ * @member {String} ad_auto_rotate
+ */
+GatewayUpdateMigration.prototype['ad_auto_rotate'] = undefined;
+
+/**
+ * Distinguished Name of Computer objects (servers) to search in Active Directory e.g.: CN=Computers,DC=example,DC=com (Relevant only for Active Directory migration)
+ * @member {String} ad_computer_base_dn
+ */
+GatewayUpdateMigration.prototype['ad_computer_base_dn'] = undefined;
+
+/**
+ * Enable/Disable discovery of local users from each domain server and migrate them as SSH Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration)
+ * @member {String} ad_discover_local_users
+ */
+GatewayUpdateMigration.prototype['ad_discover_local_users'] = undefined;
+
+/**
+ * Active Directory Domain Name (Relevant only for Active Directory migration)
+ * @member {String} ad_domain_name
+ */
+GatewayUpdateMigration.prototype['ad_domain_name'] = undefined;
+
+/**
+ * Path location template for migrating domain users as Rotated Secrets e.g.: .../DomainUsers/{{USERNAME}} (Relevant only for Active Directory migration)
+ * @member {String} ad_domain_users_path_template
+ */
+GatewayUpdateMigration.prototype['ad_domain_users_path_template'] = undefined;
+
+/**
+ * Comma-separated list of Local Users which should not be migrated (Relevant only for Active Directory migration)
+ * @member {String} ad_local_users_ignore
+ */
+GatewayUpdateMigration.prototype['ad_local_users_ignore'] = undefined;
+
+/**
+ * Path location template for migrating domain users as Rotated Secrets e.g.: .../LocalUsers/{{COMPUTER_NAME}}/{{USERNAME}} (Relevant only for Active Directory migration)
+ * @member {String} ad_local_users_path_template
+ */
+GatewayUpdateMigration.prototype['ad_local_users_path_template'] = undefined;
+
+/**
+ * The hour of the scheduled rotation in UTC (Relevant only for Active Directory migration)
+ * @member {Number} ad_rotation_hour
+ */
+GatewayUpdateMigration.prototype['ad_rotation_hour'] = undefined;
+
+/**
+ * The number of days to wait between every automatic rotation [1-365] (Relevant only for Active Directory migration)
+ * @member {Number} ad_rotation_interval
+ */
+GatewayUpdateMigration.prototype['ad_rotation_interval'] = undefined;
+
+/**
+ * Enable/Disable RDP Secure Remote Access for the migrated local users rotated secrets. Default is false: rotated secrets will not be created with SRA (Relevant only for Active Directory migration)
+ * @member {String} ad_sra_enable_rdp
+ */
+GatewayUpdateMigration.prototype['ad_sra_enable_rdp'] = undefined;
+
+/**
+ * Active Directory LDAP Target Name. Server type should be Active Directory (Relevant only for Active Directory migration)
+ * @member {String} ad_target_name
+ */
+GatewayUpdateMigration.prototype['ad_target_name'] = undefined;
+
+/**
+ * Path location template for migrating domain servers as SSH Targets e.g.: .../Servers/{{COMPUTER_NAME}} (Relevant only for Active Directory migration)
+ * @member {String} ad_targets_path_template
+ */
+GatewayUpdateMigration.prototype['ad_targets_path_template'] = undefined;
+
+/**
+ * Distinguished Name of User objects to search in Active Directory, e.g.: CN=Users,DC=example,DC=com (Relevant only for Active Directory migration)
+ * @member {String} ad_user_base_dn
+ */
+GatewayUpdateMigration.prototype['ad_user_base_dn'] = undefined;
+
+/**
+ * Comma-separated list of domain groups from which privileged domain users will be migrated (Relevant only for Active Directory migration)
+ * @member {String} ad_user_groups
+ */
+GatewayUpdateMigration.prototype['ad_user_groups'] = undefined;
+
+/**
+ * Set the SSH Port for further connection to the domain servers. Default is port 22 (Relevant only for Active Directory migration)
+ * @member {String} as_ssh_port
+ */
+GatewayUpdateMigration.prototype['as_ssh_port'] = undefined;
 
 /**
  * AWS Secret Access Key (relevant only for AWS migration)
@@ -306,36 +505,6 @@ GatewayUpdateMigration.prototype['name'] = undefined;
  * @member {String} new_name
  */
 GatewayUpdateMigration.prototype['new_name'] = undefined;
-
-/**
- * 1Password user email to connect to the API
- * @member {String} op-email
- */
-GatewayUpdateMigration.prototype['op-email'] = undefined;
-
-/**
- * 1Password user password to connect to the API
- * @member {String} op-password
- */
-GatewayUpdateMigration.prototype['op-password'] = undefined;
-
-/**
- * 1Password user secret key to connect to the API
- * @member {String} op-secret-key
- */
-GatewayUpdateMigration.prototype['op-secret-key'] = undefined;
-
-/**
- * 1Password api container url
- * @member {String} op-url
- */
-GatewayUpdateMigration.prototype['op-url'] = undefined;
-
-/**
- * 1Password list of vault to get the items from
- * @member {Array.<String>} op-vaults
- */
-GatewayUpdateMigration.prototype['op-vaults'] = undefined;
 
 /**
  * The name of the key that protects the classic key value (if empty, the account default key will be used)

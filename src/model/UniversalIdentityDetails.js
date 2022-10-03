@@ -17,7 +17,7 @@ import UIDTokenDetails from './UIDTokenDetails';
 /**
  * The UniversalIdentityDetails model module.
  * @module model/UniversalIdentityDetails
- * @version 2.19.0
+ * @version 2.20.0
  */
 class UniversalIdentityDetails {
     /**

@@ -197,6 +197,8 @@ import GatewayGetTmpUsers from '../model/GatewayGetTmpUsers';
 import GatewayListAllowedManagementAccess from '../model/GatewayListAllowedManagementAccess';
 import GatewayListMigration from '../model/GatewayListMigration';
 import GatewayListProducers from '../model/GatewayListProducers';
+import GatewayMigratePersonalItems from '../model/GatewayMigratePersonalItems';
+import GatewayMigratePersonalItemsOutput from '../model/GatewayMigratePersonalItemsOutput';
 import GatewayMigrationCreateOutput from '../model/GatewayMigrationCreateOutput';
 import GatewayMigrationDeleteOutput from '../model/GatewayMigrationDeleteOutput';
 import GatewayMigrationGetOutput from '../model/GatewayMigrationGetOutput';
@@ -440,7 +442,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.19.0
+* @version 2.20.0
 */
 export default class V2Api {
 
@@ -4793,6 +4795,48 @@ export default class V2Api {
      */
     gatewayListProducers(body) {
       return this.gatewayListProducersWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/GatewayMigratePersonalItems} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayMigratePersonalItemsOutput} and HTTP response
+     */
+    gatewayMigratePersonalItemsWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayMigratePersonalItemsOutput;
+      return this.apiClient.callApi(
+        '/gateway-migrate-personal-items', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/GatewayMigratePersonalItems} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayMigratePersonalItemsOutput}
+     */
+    gatewayMigratePersonalItems(opts) {
+      return this.gatewayMigratePersonalItemsWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

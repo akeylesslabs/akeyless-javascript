@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptOutput model module.
  * @module model/DecryptOutput
- * @version 2.19.0
+ * @version 2.20.0
  */
 class DecryptOutput {
     /**

@@ -19,6 +19,8 @@ import AWSPayload from './model/AWSPayload';
 import AWSSecretsMigration from './model/AWSSecretsMigration';
 import AccountGeneralSettings from './model/AccountGeneralSettings';
 import AccountObjectVersionSettingsOutput from './model/AccountObjectVersionSettingsOutput';
+import ActiveDirectoryMigration from './model/ActiveDirectoryMigration';
+import ActiveDirectoryPayload from './model/ActiveDirectoryPayload';
 import AdminsConfigPart from './model/AdminsConfigPart';
 import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
 import AllowedAccess from './model/AllowedAccess';
@@ -245,6 +247,8 @@ import GatewayListAllowedManagementAccess from './model/GatewayListAllowedManage
 import GatewayListMigration from './model/GatewayListMigration';
 import GatewayListProducers from './model/GatewayListProducers';
 import GatewayMessageQueueInfo from './model/GatewayMessageQueueInfo';
+import GatewayMigratePersonalItems from './model/GatewayMigratePersonalItems';
+import GatewayMigratePersonalItemsOutput from './model/GatewayMigratePersonalItemsOutput';
 import GatewayMigrationCreateOutput from './model/GatewayMigrationCreateOutput';
 import GatewayMigrationDeleteOutput from './model/GatewayMigrationDeleteOutput';
 import GatewayMigrationGetOutput from './model/GatewayMigrationGetOutput';
@@ -464,7 +468,6 @@ import SystemAccessCredsSettings from './model/SystemAccessCredsSettings';
 import Target from './model/Target';
 import TargetItemAssociation from './model/TargetItemAssociation';
 import TargetItemVersion from './model/TargetItemVersion';
-import TargetObjectAssociation from './model/TargetObjectAssociation';
 import TargetTypeDetailsInput from './model/TargetTypeDetailsInput';
 import TmpUserData from './model/TmpUserData';
 import Tokenize from './model/Tokenize';
@@ -597,7 +600,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.19.0
+* @version 2.20.0
 */
 export {
     /**
@@ -641,6 +644,18 @@ export {
      * @property {module:model/AccountObjectVersionSettingsOutput}
      */
     AccountObjectVersionSettingsOutput,
+
+    /**
+     * The ActiveDirectoryMigration model constructor.
+     * @property {module:model/ActiveDirectoryMigration}
+     */
+    ActiveDirectoryMigration,
+
+    /**
+     * The ActiveDirectoryPayload model constructor.
+     * @property {module:model/ActiveDirectoryPayload}
+     */
+    ActiveDirectoryPayload,
 
     /**
      * The AdminsConfigPart model constructor.
@@ -1999,6 +2014,18 @@ export {
     GatewayMessageQueueInfo,
 
     /**
+     * The GatewayMigratePersonalItems model constructor.
+     * @property {module:model/GatewayMigratePersonalItems}
+     */
+    GatewayMigratePersonalItems,
+
+    /**
+     * The GatewayMigratePersonalItemsOutput model constructor.
+     * @property {module:model/GatewayMigratePersonalItemsOutput}
+     */
+    GatewayMigratePersonalItemsOutput,
+
+    /**
      * The GatewayMigrationCreateOutput model constructor.
      * @property {module:model/GatewayMigrationCreateOutput}
      */
@@ -3311,12 +3338,6 @@ export {
      * @property {module:model/TargetItemVersion}
      */
     TargetItemVersion,
-
-    /**
-     * The TargetObjectAssociation model constructor.
-     * @property {module:model/TargetObjectAssociation}
-     */
-    TargetObjectAssociation,
 
     /**
      * The TargetTypeDetailsInput model constructor.

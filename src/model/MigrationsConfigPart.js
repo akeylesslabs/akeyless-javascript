@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import AWSSecretsMigration from './AWSSecretsMigration';
+import ActiveDirectoryMigration from './ActiveDirectoryMigration';
 import AzureKeyVaultMigration from './AzureKeyVaultMigration';
 import GCPSecretsMigration from './GCPSecretsMigration';
 import HashiMigration from './HashiMigration';
@@ -22,7 +23,7 @@ import OnePasswordMigration from './OnePasswordMigration';
 /**
  * The MigrationsConfigPart model module.
  * @module model/MigrationsConfigPart
- * @version 2.19.0
+ * @version 2.20.0
  */
 class MigrationsConfigPart {
     /**
@@ -53,6 +54,9 @@ class MigrationsConfigPart {
         if (data) {
             obj = obj || new MigrationsConfigPart();
 
+            if (data.hasOwnProperty('active_directory_migrations')) {
+                obj['active_directory_migrations'] = ApiClient.convertToType(data['active_directory_migrations'], [ActiveDirectoryMigration]);
+            }
             if (data.hasOwnProperty('aws_secrets_migrations')) {
                 obj['aws_secrets_migrations'] = ApiClient.convertToType(data['aws_secrets_migrations'], [AWSSecretsMigration]);
             }
@@ -77,6 +81,11 @@ class MigrationsConfigPart {
 
 
 }
+
+/**
+ * @member {Array.<module:model/ActiveDirectoryMigration>} active_directory_migrations
+ */
+MigrationsConfigPart.prototype['active_directory_migrations'] = undefined;
 
 /**
  * @member {Array.<module:model/AWSSecretsMigration>} aws_secrets_migrations

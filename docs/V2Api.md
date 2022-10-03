@@ -105,6 +105,7 @@ Method | HTTP request | Description
 [**gatewayListAllowedManagementAccess**](V2Api.md#gatewayListAllowedManagementAccess) | **POST** /gateway-list-allowed-management-access | 
 [**gatewayListMigration**](V2Api.md#gatewayListMigration) | **POST** /gateway-list-migration | 
 [**gatewayListProducers**](V2Api.md#gatewayListProducers) | **POST** /gateway-list-producers | 
+[**gatewayMigratePersonalItems**](V2Api.md#gatewayMigratePersonalItems) | **POST** /gateway-migrate-personal-items | 
 [**gatewayRevokeTmpUsers**](V2Api.md#gatewayRevokeTmpUsers) | **POST** /gateway-revoke-producer-tmp-creds | 
 [**gatewayStartProducer**](V2Api.md#gatewayStartProducer) | **POST** /gateway-start-producer | 
 [**gatewayStatusMigration**](V2Api.md#gatewayStatusMigration) | **POST** /gateway-migration-status | 
@@ -4476,6 +4477,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetProducersListReplyObj**](GetProducersListReplyObj.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayMigratePersonalItems
+
+> GatewayMigratePersonalItemsOutput gatewayMigratePersonalItems(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.GatewayMigratePersonalItems() // GatewayMigratePersonalItems | 
+};
+apiInstance.gatewayMigratePersonalItems(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayMigratePersonalItems**](GatewayMigratePersonalItems.md)|  | [optional] 
+
+### Return type
+
+[**GatewayMigratePersonalItemsOutput**](GatewayMigratePersonalItemsOutput.md)
 
 ### Authorization
 
