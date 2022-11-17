@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BastionListEntry model module.
  * @module model/BastionListEntry
- * @version 2.20.0
+ * @version 2.20.1
  */
 class BastionListEntry {
     /**
@@ -56,6 +56,9 @@ class BastionListEntry {
             if (data.hasOwnProperty('allowed_urls')) {
                 obj['allowed_urls'] = ApiClient.convertToType(data['allowed_urls'], ['String']);
             }
+            if (data.hasOwnProperty('allowed_urls_per_instance')) {
+                obj['allowed_urls_per_instance'] = ApiClient.convertToType(data['allowed_urls_per_instance'], {'String': ['String']});
+            }
             if (data.hasOwnProperty('cluster_name')) {
                 obj['cluster_name'] = ApiClient.convertToType(data['cluster_name'], 'String');
             }
@@ -86,6 +89,11 @@ BastionListEntry.prototype['allowed_access_ids'] = undefined;
  * @member {Array.<String>} allowed_urls
  */
 BastionListEntry.prototype['allowed_urls'] = undefined;
+
+/**
+ * @member {Object.<String, Array.<String>>} allowed_urls_per_instance
+ */
+BastionListEntry.prototype['allowed_urls_per_instance'] = undefined;
 
 /**
  * @member {String} cluster_name

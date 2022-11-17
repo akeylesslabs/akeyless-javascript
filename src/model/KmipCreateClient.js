@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipCreateClient model module.
  * @module model/KmipCreateClient
- * @version 2.20.0
+ * @version 2.20.1
  */
 class KmipCreateClient {
     /**
@@ -49,6 +49,9 @@ class KmipCreateClient {
         if (data) {
             obj = obj || new KmipCreateClient();
 
+            if (data.hasOwnProperty('activate-keys-on-creation')) {
+                obj['activate-keys-on-creation'] = ApiClient.convertToType(data['activate-keys-on-creation'], 'String');
+            }
             if (data.hasOwnProperty('certificate-ttl')) {
                 obj['certificate-ttl'] = ApiClient.convertToType(data['certificate-ttl'], 'Number');
             }
@@ -70,6 +73,11 @@ class KmipCreateClient {
 
 
 }
+
+/**
+ * @member {String} activate-keys-on-creation
+ */
+KmipCreateClient.prototype['activate-keys-on-creation'] = undefined;
 
 /**
  * @member {Number} certificate-ttl

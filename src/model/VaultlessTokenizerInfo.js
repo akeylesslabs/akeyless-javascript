@@ -18,7 +18,7 @@ import RegexpTokenizerInfo from './RegexpTokenizerInfo';
 /**
  * The VaultlessTokenizerInfo model module.
  * @module model/VaultlessTokenizerInfo
- * @version 2.20.0
+ * @version 2.20.1
  */
 class VaultlessTokenizerInfo {
     /**

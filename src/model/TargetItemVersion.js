@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetItemVersion model module.
  * @module model/TargetItemVersion
- * @version 2.20.0
+ * @version 2.20.1
  */
 class TargetItemVersion {
     /**
@@ -47,6 +47,9 @@ class TargetItemVersion {
         if (data) {
             obj = obj || new TargetItemVersion();
 
+            if (data.hasOwnProperty('access_date')) {
+                obj['access_date'] = ApiClient.convertToType(data['access_date'], 'Date');
+            }
             if (data.hasOwnProperty('creation_date')) {
                 obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
             }
@@ -61,6 +64,9 @@ class TargetItemVersion {
             }
             if (data.hasOwnProperty('latest_version')) {
                 obj['latest_version'] = ApiClient.convertToType(data['latest_version'], 'Boolean');
+            }
+            if (data.hasOwnProperty('modification_date')) {
+                obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
             }
             if (data.hasOwnProperty('protection_key_name')) {
                 obj['protection_key_name'] = ApiClient.convertToType(data['protection_key_name'], 'String');
@@ -80,6 +86,11 @@ class TargetItemVersion {
 
 
 }
+
+/**
+ * @member {Date} access_date
+ */
+TargetItemVersion.prototype['access_date'] = undefined;
 
 /**
  * @member {Date} creation_date
@@ -106,6 +117,11 @@ TargetItemVersion.prototype['item_version_state'] = undefined;
  * @member {Boolean} latest_version
  */
 TargetItemVersion.prototype['latest_version'] = undefined;
+
+/**
+ * @member {Date} modification_date
+ */
+TargetItemVersion.prototype['modification_date'] = undefined;
 
 /**
  * @member {String} protection_key_name

@@ -409,6 +409,8 @@ import MigrationStatus from './model/MigrationStatus';
 import MigrationStatusReplyObj from './model/MigrationStatusReplyObj';
 import MigrationsConfigLastChange from './model/MigrationsConfigLastChange';
 import MigrationsConfigPart from './model/MigrationsConfigPart';
+import MockMigration from './model/MockMigration';
+import MockPayload from './model/MockPayload';
 import MoveObjects from './model/MoveObjects';
 import OAuth2AccessRules from './model/OAuth2AccessRules';
 import OAuth2CustomClaim from './model/OAuth2CustomClaim';
@@ -600,7 +602,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.20.0
+* @version 2.20.1
 */
 export {
     /**
@@ -2984,6 +2986,18 @@ export {
      * @property {module:model/MigrationsConfigPart}
      */
     MigrationsConfigPart,
+
+    /**
+     * The MockMigration model constructor.
+     * @property {module:model/MockMigration}
+     */
+    MockMigration,
+
+    /**
+     * The MockPayload model constructor.
+     * @property {module:model/MockPayload}
+     */
+    MockPayload,
 
     /**
      * The MoveObjects model constructor.

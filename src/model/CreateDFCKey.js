@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDFCKey model module.
  * @module model/CreateDFCKey
- * @version 2.20.0
+ * @version 2.20.1
  */
 class CreateDFCKey {
     /**
@@ -127,9 +127,9 @@ CreateDFCKey.prototype['name'] = undefined;
 /**
  * The number of fragments that the item will be split into (not includes customer fragment)
  * @member {Number} split-level
- * @default 2
+ * @default 3
  */
-CreateDFCKey.prototype['split-level'] = 2;
+CreateDFCKey.prototype['split-level'] = 3;
 
 /**
  * List of the tags attached to this DFC key

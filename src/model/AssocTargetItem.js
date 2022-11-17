@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocTargetItem model module.
  * @module model/AssocTargetItem
- * @version 2.20.0
+ * @version 2.20.1
  */
 class AssocTargetItem {
     /**
@@ -67,6 +67,9 @@ class AssocTargetItem {
             if (data.hasOwnProperty('location-id')) {
                 obj['location-id'] = ApiClient.convertToType(data['location-id'], 'String');
             }
+            if (data.hasOwnProperty('multi-region')) {
+                obj['multi-region'] = ApiClient.convertToType(data['multi-region'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -75,6 +78,9 @@ class AssocTargetItem {
             }
             if (data.hasOwnProperty('purpose')) {
                 obj['purpose'] = ApiClient.convertToType(data['purpose'], 'String');
+            }
+            if (data.hasOwnProperty('regions')) {
+                obj['regions'] = ApiClient.convertToType(data['regions'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -129,6 +135,13 @@ AssocTargetItem.prototype['kms-algorithm'] = undefined;
 AssocTargetItem.prototype['location-id'] = undefined;
 
 /**
+ * Set to 'true' to create a multi region managed key (relevant for aws targets)
+ * @member {String} multi-region
+ * @default 'false'
+ */
+AssocTargetItem.prototype['multi-region'] = 'false';
+
+/**
  * The item to associate
  * @member {String} name
  */
@@ -145,6 +158,12 @@ AssocTargetItem.prototype['project-id'] = undefined;
  * @member {String} purpose
  */
 AssocTargetItem.prototype['purpose'] = undefined;
+
+/**
+ * The list of regions to create a copy of the key in (relevant for aws targets)
+ * @member {Array.<String>} regions
+ */
+AssocTargetItem.prototype['regions'] = undefined;
 
 /**
  * The target to associate

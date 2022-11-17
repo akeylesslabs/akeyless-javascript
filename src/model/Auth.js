@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 2.20.0
+ * @version 2.20.1
  */
 class Auth {
     /**
@@ -70,6 +70,9 @@ class Auth {
             }
             if (data.hasOwnProperty('debug')) {
                 obj['debug'] = ApiClient.convertToType(data['debug'], 'Boolean');
+            }
+            if (data.hasOwnProperty('gateway-url')) {
+                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
             if (data.hasOwnProperty('gcp-audience')) {
                 obj['gcp-audience'] = ApiClient.convertToType(data['gcp-audience'], 'String');
@@ -152,6 +155,12 @@ Auth.prototype['cloud-id'] = undefined;
  * @member {Boolean} debug
  */
 Auth.prototype['debug'] = undefined;
+
+/**
+ * Gateway URL for the K8S authenticated (relevant only for access-type=k8s)
+ * @member {String} gateway-url
+ */
+Auth.prototype['gateway-url'] = undefined;
 
 /**
  * GCP JWT audience

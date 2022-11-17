@@ -18,7 +18,7 @@ import Rules from './Rules';
 /**
  * The Role model module.
  * @module model/Role
- * @version 2.20.0
+ * @version 2.20.1
  */
 class Role {
     /**
@@ -49,11 +49,20 @@ class Role {
         if (data) {
             obj = obj || new Role();
 
+            if (data.hasOwnProperty('access_date')) {
+                obj['access_date'] = ApiClient.convertToType(data['access_date'], 'Date');
+            }
             if (data.hasOwnProperty('client_permissions')) {
                 obj['client_permissions'] = ApiClient.convertToType(data['client_permissions'], ['String']);
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('creation_date')) {
+                obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
+            }
+            if (data.hasOwnProperty('modification_date')) {
+                obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
             }
             if (data.hasOwnProperty('role_auth_methods_assoc')) {
                 obj['role_auth_methods_assoc'] = ApiClient.convertToType(data['role_auth_methods_assoc'], [RoleAuthMethodAssociation]);
@@ -72,6 +81,11 @@ class Role {
 }
 
 /**
+ * @member {Date} access_date
+ */
+Role.prototype['access_date'] = undefined;
+
+/**
  * @member {Array.<String>} client_permissions
  */
 Role.prototype['client_permissions'] = undefined;
@@ -80,6 +94,16 @@ Role.prototype['client_permissions'] = undefined;
  * @member {String} comment
  */
 Role.prototype['comment'] = undefined;
+
+/**
+ * @member {Date} creation_date
+ */
+Role.prototype['creation_date'] = undefined;
+
+/**
+ * @member {Date} modification_date
+ */
+Role.prototype['modification_date'] = undefined;
 
 /**
  * @member {Array.<module:model/RoleAuthMethodAssociation>} role_auth_methods_assoc

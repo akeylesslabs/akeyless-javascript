@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 2.20.0
+ * @version 2.20.1
  */
 class DSProducerDetails {
     /**
@@ -256,11 +256,20 @@ class DSProducerDetails {
             if (data.hasOwnProperty('gcp_key_algo')) {
                 obj['gcp_key_algo'] = ApiClient.convertToType(data['gcp_key_algo'], 'String');
             }
+            if (data.hasOwnProperty('gcp_role_bindings')) {
+                obj['gcp_role_bindings'] = ApiClient.convertToType(data['gcp_role_bindings'], {'String': ['String']});
+            }
             if (data.hasOwnProperty('gcp_service_account_email')) {
                 obj['gcp_service_account_email'] = ApiClient.convertToType(data['gcp_service_account_email'], 'String');
             }
             if (data.hasOwnProperty('gcp_service_account_key')) {
                 obj['gcp_service_account_key'] = ApiClient.convertToType(data['gcp_service_account_key'], 'String');
+            }
+            if (data.hasOwnProperty('gcp_service_account_type')) {
+                obj['gcp_service_account_type'] = ApiClient.convertToType(data['gcp_service_account_type'], 'String');
+            }
+            if (data.hasOwnProperty('gcp_tmp_service_account_name')) {
+                obj['gcp_tmp_service_account_name'] = ApiClient.convertToType(data['gcp_tmp_service_account_name'], 'String');
             }
             if (data.hasOwnProperty('gcp_token_lifetime')) {
                 obj['gcp_token_lifetime'] = ApiClient.convertToType(data['gcp_token_lifetime'], 'String');
@@ -929,6 +938,12 @@ DSProducerDetails.prototype['fixed_user_only'] = undefined;
 DSProducerDetails.prototype['gcp_key_algo'] = undefined;
 
 /**
+ * @member {Object.<String, Array.<String>>} gcp_role_bindings
+ */
+DSProducerDetails.prototype['gcp_role_bindings'] = undefined;
+
+/**
+ * GCPServiceAccountEmail overrides the deprecated field from the target
  * @member {String} gcp_service_account_email
  */
 DSProducerDetails.prototype['gcp_service_account_email'] = undefined;
@@ -937,6 +952,16 @@ DSProducerDetails.prototype['gcp_service_account_email'] = undefined;
  * @member {String} gcp_service_account_key
  */
 DSProducerDetails.prototype['gcp_service_account_key'] = undefined;
+
+/**
+ * @member {String} gcp_service_account_type
+ */
+DSProducerDetails.prototype['gcp_service_account_type'] = undefined;
+
+/**
+ * @member {String} gcp_tmp_service_account_name
+ */
+DSProducerDetails.prototype['gcp_tmp_service_account_name'] = undefined;
 
 /**
  * @member {String} gcp_token_lifetime

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGcpTarget model module.
  * @module model/CreateGcpTarget
- * @version 2.20.0
+ * @version 2.20.1
  */
 class CreateGcpTarget {
     /**
@@ -55,9 +55,6 @@ class CreateGcpTarget {
             if (data.hasOwnProperty('gcp-key')) {
                 obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
             }
-            if (data.hasOwnProperty('gcp-sa-email')) {
-                obj['gcp-sa-email'] = ApiClient.convertToType(data['gcp-sa-email'], 'String');
-            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -94,12 +91,6 @@ CreateGcpTarget.prototype['comment'] = undefined;
  * @member {String} gcp-key
  */
 CreateGcpTarget.prototype['gcp-key'] = undefined;
-
-/**
- * GCP service account email
- * @member {String} gcp-sa-email
- */
-CreateGcpTarget.prototype['gcp-sa-email'] = undefined;
 
 /**
  * Set output format to JSON

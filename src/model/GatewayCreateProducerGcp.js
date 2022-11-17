@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGcp model module.
  * @module model/GatewayCreateProducerGcp
- * @version 2.20.0
+ * @version 2.20.1
  */
 class GatewayCreateProducerGcp {
     /**
@@ -24,10 +24,11 @@ class GatewayCreateProducerGcp {
      * gatewayCreateProducerGcp is a command that creates a GCP producer
      * @alias module:model/GatewayCreateProducerGcp
      * @param name {String} Producer name
+     * @param serviceAccountType {String} The type of the gcp dynamic secret. Options[fixed, dynamic]
      */
-    constructor(name) { 
+    constructor(name, serviceAccountType) { 
         
-        GatewayCreateProducerGcp.initialize(this, name);
+        GatewayCreateProducerGcp.initialize(this, name, serviceAccountType);
     }
 
     /**
@@ -35,8 +36,9 @@ class GatewayCreateProducerGcp {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name) { 
+    static initialize(obj, name, serviceAccountType) { 
         obj['name'] = name;
+        obj['service-account-type'] = serviceAccountType;
     }
 
     /**
@@ -76,6 +78,12 @@ class GatewayCreateProducerGcp {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('role-binding')) {
+                obj['role-binding'] = ApiClient.convertToType(data['role-binding'], 'String');
+            }
+            if (data.hasOwnProperty('service-account-type')) {
+                obj['service-account-type'] = ApiClient.convertToType(data['service-account-type'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -123,7 +131,7 @@ GatewayCreateProducerGcp.prototype['gcp-key'] = undefined;
 GatewayCreateProducerGcp.prototype['gcp-key-algo'] = undefined;
 
 /**
- * GCP service account email
+ * The email of the fixed service acocunt to generate keys or tokens for. (revelant for service-account-type=fixed)
  * @member {String} gcp-sa-email
  */
 GatewayCreateProducerGcp.prototype['gcp-sa-email'] = undefined;
@@ -151,6 +159,19 @@ GatewayCreateProducerGcp.prototype['name'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayCreateProducerGcp.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * Role binding definitions in json format
+ * @member {String} role-binding
+ */
+GatewayCreateProducerGcp.prototype['role-binding'] = undefined;
+
+/**
+ * The type of the gcp dynamic secret. Options[fixed, dynamic]
+ * @member {String} service-account-type
+ * @default 'fixed'
+ */
+GatewayCreateProducerGcp.prototype['service-account-type'] = 'fixed';
 
 /**
  * List of the tags attached to this secret

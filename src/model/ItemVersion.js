@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ItemVersion model module.
  * @module model/ItemVersion
- * @version 2.20.0
+ * @version 2.20.1
  */
 class ItemVersion {
     /**
@@ -47,6 +47,9 @@ class ItemVersion {
         if (data) {
             obj = obj || new ItemVersion();
 
+            if (data.hasOwnProperty('access_date')) {
+                obj['access_date'] = ApiClient.convertToType(data['access_date'], 'Date');
+            }
             if (data.hasOwnProperty('creation_date')) {
                 obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
             }
@@ -58,6 +61,9 @@ class ItemVersion {
             }
             if (data.hasOwnProperty('item_version_state')) {
                 obj['item_version_state'] = ApiClient.convertToType(data['item_version_state'], 'String');
+            }
+            if (data.hasOwnProperty('modification_date')) {
+                obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
             }
             if (data.hasOwnProperty('protection_key_name')) {
                 obj['protection_key_name'] = ApiClient.convertToType(data['protection_key_name'], 'String');
@@ -74,6 +80,11 @@ class ItemVersion {
 
 
 }
+
+/**
+ * @member {Date} access_date
+ */
+ItemVersion.prototype['access_date'] = undefined;
 
 /**
  * @member {Date} creation_date
@@ -95,6 +106,11 @@ ItemVersion.prototype['deletion_date'] = undefined;
  * @member {String} item_version_state
  */
 ItemVersion.prototype['item_version_state'] = undefined;
+
+/**
+ * @member {Date} modification_date
+ */
+ItemVersion.prototype['modification_date'] = undefined;
 
 /**
  * @member {String} protection_key_name

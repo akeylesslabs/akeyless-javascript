@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **newName** | **String** |  | [optional] 
 **prefix** | **String** |  | [optional] 
 **protectionKey** | **String** |  | [optional] 
+**status** | **String** |  | [optional] 
 
 

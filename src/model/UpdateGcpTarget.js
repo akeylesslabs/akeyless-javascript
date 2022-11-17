@@ -16,18 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGcpTarget model module.
  * @module model/UpdateGcpTarget
- * @version 2.20.0
+ * @version 2.20.1
  */
 class UpdateGcpTarget {
     /**
      * Constructs a new <code>UpdateGcpTarget</code>.
      * @alias module:model/UpdateGcpTarget
-     * @param gcpSaEmail {String} GCP service account email
      * @param name {String} Target name
      */
-    constructor(gcpSaEmail, name) { 
+    constructor(name) { 
         
-        UpdateGcpTarget.initialize(this, gcpSaEmail, name);
+        UpdateGcpTarget.initialize(this, name);
     }
 
     /**
@@ -35,8 +34,7 @@ class UpdateGcpTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, gcpSaEmail, name) { 
-        obj['gcp-sa-email'] = gcpSaEmail;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 
@@ -56,9 +54,6 @@ class UpdateGcpTarget {
             }
             if (data.hasOwnProperty('gcp-key')) {
                 obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
-            }
-            if (data.hasOwnProperty('gcp-sa-email')) {
-                obj['gcp-sa-email'] = ApiClient.convertToType(data['gcp-sa-email'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -105,12 +100,6 @@ UpdateGcpTarget.prototype['comment'] = undefined;
  * @member {String} gcp-key
  */
 UpdateGcpTarget.prototype['gcp-key'] = undefined;
-
-/**
- * GCP service account email
- * @member {String} gcp-sa-email
- */
-UpdateGcpTarget.prototype['gcp-sa-email'] = undefined;
 
 /**
  * Set output format to JSON

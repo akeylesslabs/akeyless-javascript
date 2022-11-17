@@ -442,7 +442,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.20.0
+* @version 2.20.1
 */
 export default class V2Api {
 
@@ -5942,7 +5942,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = GatewayUpdateProducerNativeK8SOutput;
       return this.apiClient.callApi(
-        '/gateway-update-producer-k8s-native', 'POST',
+        '/gateway-update-producer-k8s', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );

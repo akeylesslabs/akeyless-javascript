@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import RuleAssigner from './RuleAssigner';
 
 /**
  * The PathRule model module.
  * @module model/PathRule
- * @version 2.20.0
+ * @version 2.20.1
  */
 class PathRule {
     /**
@@ -47,11 +48,26 @@ class PathRule {
         if (data) {
             obj = obj || new PathRule();
 
+            if (data.hasOwnProperty('assigners')) {
+                obj['assigners'] = ApiClient.convertToType(data['assigners'], [RuleAssigner]);
+            }
             if (data.hasOwnProperty('capabilities')) {
                 obj['capabilities'] = ApiClient.convertToType(data['capabilities'], ['String']);
             }
+            if (data.hasOwnProperty('is_limit_access')) {
+                obj['is_limit_access'] = ApiClient.convertToType(data['is_limit_access'], 'Boolean');
+            }
+            if (data.hasOwnProperty('number_of_access_used')) {
+                obj['number_of_access_used'] = ApiClient.convertToType(data['number_of_access_used'], 'Number');
+            }
+            if (data.hasOwnProperty('number_of_allowed_access')) {
+                obj['number_of_allowed_access'] = ApiClient.convertToType(data['number_of_allowed_access'], 'Number');
+            }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
+            }
+            if (data.hasOwnProperty('start_time')) {
+                obj['start_time'] = ApiClient.convertToType(data['start_time'], 'Number');
             }
             if (data.hasOwnProperty('ttl')) {
                 obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
@@ -67,16 +83,42 @@ class PathRule {
 }
 
 /**
+ * @member {Array.<module:model/RuleAssigner>} assigners
+ */
+PathRule.prototype['assigners'] = undefined;
+
+/**
  * The approved/denied capabilities in the path
  * @member {Array.<String>} capabilities
  */
 PathRule.prototype['capabilities'] = undefined;
 
 /**
+ * flag that indicate that this rule is allowed to be access RemainingAccess of times.
+ * @member {Boolean} is_limit_access
+ */
+PathRule.prototype['is_limit_access'] = undefined;
+
+/**
+ * @member {Number} number_of_access_used
+ */
+PathRule.prototype['number_of_access_used'] = undefined;
+
+/**
+ * @member {Number} number_of_allowed_access
+ */
+PathRule.prototype['number_of_allowed_access'] = undefined;
+
+/**
  * The path the rule refers to
  * @member {String} path
  */
 PathRule.prototype['path'] = undefined;
+
+/**
+ * @member {Number} start_time
+ */
+PathRule.prototype['start_time'] = undefined;
 
 /**
  * @member {Number} ttl

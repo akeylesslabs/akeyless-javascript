@@ -18,7 +18,7 @@ import PasswordPolicyInfo from './PasswordPolicyInfo';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 2.20.0
+ * @version 2.20.1
  */
 class AccountGeneralSettings {
     /**
@@ -53,6 +53,9 @@ class AccountGeneralSettings {
             if (data.hasOwnProperty('data_protection_section')) {
                 obj['data_protection_section'] = DataProtectionSection.constructFromObject(data['data_protection_section']);
             }
+            if (data.hasOwnProperty('enable_request_for_access')) {
+                obj['enable_request_for_access'] = ApiClient.convertToType(data['enable_request_for_access'], 'Boolean');
+            }
             if (data.hasOwnProperty('password_policy')) {
                 obj['password_policy'] = PasswordPolicyInfo.constructFromObject(data['password_policy']);
             }
@@ -67,6 +70,11 @@ class AccountGeneralSettings {
  * @member {module:model/DataProtectionSection} data_protection_section
  */
 AccountGeneralSettings.prototype['data_protection_section'] = undefined;
+
+/**
+ * @member {Boolean} enable_request_for_access
+ */
+AccountGeneralSettings.prototype['enable_request_for_access'] = undefined;
 
 /**
  * @member {module:model/PasswordPolicyInfo} password_policy

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackSecret model module.
  * @module model/RollbackSecret
- * @version 2.20.0
+ * @version 2.20.1
  */
 class RollbackSecret {
     /**

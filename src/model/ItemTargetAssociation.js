@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ItemTargetAssociation model module.
  * @module model/ItemTargetAssociation
- * @version 2.20.0
+ * @version 2.20.1
  */
 class ItemTargetAssociation {
     /**
@@ -51,6 +51,9 @@ class ItemTargetAssociation {
             if (data.hasOwnProperty('assoc_id')) {
                 obj['assoc_id'] = ApiClient.convertToType(data['assoc_id'], 'String');
             }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], {'String': 'String'});
+            }
             if (data.hasOwnProperty('target_id')) {
                 obj['target_id'] = ApiClient.convertToType(data['target_id'], 'Number');
             }
@@ -71,6 +74,11 @@ class ItemTargetAssociation {
  * @member {String} assoc_id
  */
 ItemTargetAssociation.prototype['assoc_id'] = undefined;
+
+/**
+ * @member {Object.<String, String>} attributes
+ */
+ItemTargetAssociation.prototype['attributes'] = undefined;
 
 /**
  * @member {Number} target_id

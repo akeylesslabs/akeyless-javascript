@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 2.20.0
+ * @version 2.20.1
  */
 class TargetTypeDetailsInput {
     /**
@@ -530,6 +530,7 @@ TargetTypeDetailsInput.prototype['eks_region'] = undefined;
 TargetTypeDetailsInput.prototype['eks_secret_access_key'] = undefined;
 
 /**
+ * deprecated
  * @member {String} gcp_service_account_email
  */
 TargetTypeDetailsInput.prototype['gcp_service_account_email'] = undefined;

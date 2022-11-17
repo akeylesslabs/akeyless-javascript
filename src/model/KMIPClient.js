@@ -17,7 +17,7 @@ import PathRule from './PathRule';
 /**
  * The KMIPClient model module.
  * @module model/KMIPClient
- * @version 2.20.0
+ * @version 2.20.1
  */
 class KMIPClient {
     /**
@@ -48,6 +48,9 @@ class KMIPClient {
         if (data) {
             obj = obj || new KMIPClient();
 
+            if (data.hasOwnProperty('activate_keys_on_creation')) {
+                obj['activate_keys_on_creation'] = ApiClient.convertToType(data['activate_keys_on_creation'], 'Boolean');
+            }
             if (data.hasOwnProperty('certificate_issue_date')) {
                 obj['certificate_issue_date'] = ApiClient.convertToType(data['certificate_issue_date'], 'Date');
             }
@@ -69,6 +72,11 @@ class KMIPClient {
 
 
 }
+
+/**
+ * @member {Boolean} activate_keys_on_creation
+ */
+KMIPClient.prototype['activate_keys_on_creation'] = undefined;
 
 /**
  * @member {Date} certificate_issue_date

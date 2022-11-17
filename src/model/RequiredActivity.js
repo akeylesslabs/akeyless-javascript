@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RequiredActivity model module.
  * @module model/RequiredActivity
- * @version 2.20.0
+ * @version 2.20.1
  */
 class RequiredActivity {
     /**

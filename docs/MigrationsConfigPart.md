@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **gcpSecretsMigrations** | [**[GCPSecretsMigration]**](GCPSecretsMigration.md) |  | [optional] 
 **hashiMigrations** | [**[HashiMigration]**](HashiMigration.md) |  | [optional] 
 **k8sMigrations** | [**[K8SMigration]**](K8SMigration.md) |  | [optional] 
+**mockMigrations** | [**[MockMigration]**](MockMigration.md) |  | [optional] 
 **onePasswordMigrations** | [**[OnePasswordMigration]**](OnePasswordMigration.md) |  | [optional] 
 
 

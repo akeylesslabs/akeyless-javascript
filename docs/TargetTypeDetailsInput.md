@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 **eksClusterName** | **String** |  | [optional] 
 **eksRegion** | **String** |  | [optional] 
 **eksSecretAccessKey** | **String** |  | [optional] 
-**gcpServiceAccountEmail** | **String** |  | [optional] 
+**gcpServiceAccountEmail** | **String** | deprecated | [optional] 
 **gcpServiceAccountKey** | **String** |  | [optional] 
 **githubAppId** | **Number** |  | [optional] 
 **githubAppPrivateKey** | **String** |  | [optional] 
