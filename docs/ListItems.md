@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accessibility** | **String** | for personal password manager | [optional] 
+**accessibility** | **String** | for personal password manager | [optional] [default to &#39;regular&#39;]
 **filter** | **String** | Filter by item name or part of it | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] 
 **minimalView** | **Boolean** |  | [optional] 

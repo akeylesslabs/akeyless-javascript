@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetSecretValue model module.
  * @module model/GetSecretValue
- * @version 2.20.1
+ * @version 2.20.2
  */
 class GetSecretValue {
     /**
@@ -49,9 +49,6 @@ class GetSecretValue {
         if (data) {
             obj = obj || new GetSecretValue();
 
-            if (data.hasOwnProperty('IgnoreCacheBoolean')) {
-                obj['IgnoreCacheBoolean'] = ApiClient.convertToType(data['IgnoreCacheBoolean'], 'Boolean');
-            }
             if (data.hasOwnProperty('accessibility')) {
                 obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
             }
@@ -84,15 +81,11 @@ class GetSecretValue {
 }
 
 /**
- * @member {Boolean} IgnoreCacheBoolean
- */
-GetSecretValue.prototype['IgnoreCacheBoolean'] = undefined;
-
-/**
  * for personal password manager
  * @member {String} accessibility
+ * @default 'regular'
  */
-GetSecretValue.prototype['accessibility'] = undefined;
+GetSecretValue.prototype['accessibility'] = 'regular';
 
 /**
  * Ignore Cache Retrieve the Secret value without checking the Gateway's cache. This flag is only relevant when using the RestAPI

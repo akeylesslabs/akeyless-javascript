@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteRoleAssociation model module.
  * @module model/DeleteRoleAssociation
- * @version 2.20.1
+ * @version 2.20.2
  */
 class DeleteRoleAssociation {
     /**

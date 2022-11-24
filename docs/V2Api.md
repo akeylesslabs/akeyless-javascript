@@ -66,6 +66,7 @@ Method | HTTP request | Description
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
 [**encryptWithClassicKey**](V2Api.md#encryptWithClassicKey) | **POST** /encrypt-with-classic-key | 
+[**exportClassicKey**](V2Api.md#exportClassicKey) | **GET** /export-classic-key | 
 [**gatewayAddAllowedManagementAccess**](V2Api.md#gatewayAddAllowedManagementAccess) | **POST** /gateway-add-allow-management-access | 
 [**gatewayCreateK8SAuthConfig**](V2Api.md#gatewayCreateK8SAuthConfig) | **POST** /gateway-create-k8s-auth-config | 
 [**gatewayCreateMigration**](V2Api.md#gatewayCreateMigration) | **POST** /gateway-create-migration | 
@@ -182,6 +183,7 @@ Method | HTTP request | Description
 [**rotateSecret**](V2Api.md#rotateSecret) | **POST** /gateway-rotate-secret | 
 [**setItemState**](V2Api.md#setItemState) | **POST** /set-item-state | 
 [**setRoleRule**](V2Api.md#setRoleRule) | **POST** /set-role-rule | 
+[**shareItem**](V2Api.md#shareItem) | **POST** /share-item | 
 [**signJWTWithClassicKey**](V2Api.md#signJWTWithClassicKey) | **POST** /sign-jwt-with-classic-key | 
 [**signPKCS1**](V2Api.md#signPKCS1) | **POST** /sign-pkcs1 | 
 [**signPKICertWithClassicKey**](V2Api.md#signPKICertWithClassicKey) | **POST** /sign-pki-cert-with-classic-key | 
@@ -2837,6 +2839,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EncryptOutput**](EncryptOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## exportClassicKey
+
+> ExportClassicKeyOutput exportClassicKey(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ExportClassicKey(); // ExportClassicKey | 
+apiInstance.exportClassicKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ExportClassicKey**](ExportClassicKey.md)|  | 
+
+### Return type
+
+[**ExportClassicKeyOutput**](ExportClassicKeyOutput.md)
 
 ### Authorization
 
@@ -7735,6 +7779,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 **Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## shareItem
+
+> shareItem(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ShareItem(); // ShareItem | 
+apiInstance.shareItem(body).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ShareItem**](ShareItem.md)|  | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

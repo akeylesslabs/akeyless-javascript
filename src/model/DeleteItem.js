@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteItem model module.
  * @module model/DeleteItem
- * @version 2.20.1
+ * @version 2.20.2
  */
 class DeleteItem {
     /**
@@ -83,8 +83,9 @@ class DeleteItem {
 /**
  * for personal password manager
  * @member {String} accessibility
+ * @default 'regular'
  */
-DeleteItem.prototype['accessibility'] = undefined;
+DeleteItem.prototype['accessibility'] = 'regular';
 
 /**
  * When delete-in-days=-1, must be set

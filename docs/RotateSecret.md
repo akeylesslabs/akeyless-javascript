@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json** | **Boolean** | Set output format to JSON | [optional] 
-**name** | **String** | Rotated Secret name | 
+**name** | **String** | Secret name (Rotated Secret or Custom Dynamic Secret) | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 

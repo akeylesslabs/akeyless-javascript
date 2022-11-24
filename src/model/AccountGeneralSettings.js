@@ -18,7 +18,7 @@ import PasswordPolicyInfo from './PasswordPolicyInfo';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 2.20.1
+ * @version 2.20.2
  */
 class AccountGeneralSettings {
     /**

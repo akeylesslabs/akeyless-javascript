@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ignoreCacheBoolean** | **Boolean** |  | [optional] 
-**accessibility** | **String** | for personal password manager | [optional] 
+**accessibility** | **String** | for personal password manager | [optional] [default to &#39;regular&#39;]
 **ignoreCache** | **String** | Ignore Cache Retrieve the Secret value without checking the Gateway&#39;s cache. This flag is only relevant when using the RestAPI | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] 
 **names** | **[String]** | Secret name | 

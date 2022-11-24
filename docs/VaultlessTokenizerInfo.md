@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **keyName** | **String** |  | [optional] 
 **regexpTokenizerInfo** | [**RegexpTokenizerInfo**](RegexpTokenizerInfo.md) |  | [optional] 
 **templateType** | **String** |  | [optional] 
-**tweak** | **[Number]** | Tweak used in the case of internal tweak type | [optional] 
+**tweak** | **String** | Tweak used in the case of internal tweak type | [optional] 
 **tweakType** | **String** |  | [optional] 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 2.20.1
+ * @version 2.20.2
  */
 class UpdateItem {
     /**
@@ -164,8 +164,9 @@ class UpdateItem {
 /**
  * for personal password manager
  * @member {String} accessibility
+ * @default 'regular'
  */
-UpdateItem.prototype['accessibility'] = undefined;
+UpdateItem.prototype['accessibility'] = 'regular';
 
 /**
  * List of the new tags that will be attached to this item

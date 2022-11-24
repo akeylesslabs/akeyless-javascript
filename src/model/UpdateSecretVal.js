@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSecretVal model module.
  * @module model/UpdateSecretVal
- * @version 2.20.1
+ * @version 2.20.2
  */
 class UpdateSecretVal {
     /**
@@ -103,8 +103,9 @@ class UpdateSecretVal {
 /**
  * for personal password manager
  * @member {String} accessibility
+ * @default 'regular'
  */
-UpdateSecretVal.prototype['accessibility'] = undefined;
+UpdateSecretVal.prototype['accessibility'] = 'regular';
 
 /**
  * Set output format to JSON

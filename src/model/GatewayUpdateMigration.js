@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 2.20.1
+ * @version 2.20.2
  */
 class GatewayUpdateMigration {
     /**
@@ -64,18 +64,6 @@ class GatewayUpdateMigration {
             }
             if (data.hasOwnProperty('1password-vaults')) {
                 obj['1password-vaults'] = ApiClient.convertToType(data['1password-vaults'], ['String']);
-            }
-            if (data.hasOwnProperty('AdAutoRotateBoolean')) {
-                obj['AdAutoRotateBoolean'] = ApiClient.convertToType(data['AdAutoRotateBoolean'], 'Boolean');
-            }
-            if (data.hasOwnProperty('AdDiscoverLocalUsersBoolean')) {
-                obj['AdDiscoverLocalUsersBoolean'] = ApiClient.convertToType(data['AdDiscoverLocalUsersBoolean'], 'Boolean');
-            }
-            if (data.hasOwnProperty('AdLocalUsersIgnoreList')) {
-                obj['AdLocalUsersIgnoreList'] = ApiClient.convertToType(data['AdLocalUsersIgnoreList'], {'String': 'Boolean'});
-            }
-            if (data.hasOwnProperty('AdSRAEnableRDPBoolean')) {
-                obj['AdSRAEnableRDPBoolean'] = ApiClient.convertToType(data['AdSRAEnableRDPBoolean'], 'Boolean');
             }
             if (data.hasOwnProperty('ad_auto_rotate')) {
                 obj['ad_auto_rotate'] = ApiClient.convertToType(data['ad_auto_rotate'], 'String');
@@ -245,26 +233,6 @@ GatewayUpdateMigration.prototype['1password-url'] = undefined;
  * @member {Array.<String>} 1password-vaults
  */
 GatewayUpdateMigration.prototype['1password-vaults'] = undefined;
-
-/**
- * @member {Boolean} AdAutoRotateBoolean
- */
-GatewayUpdateMigration.prototype['AdAutoRotateBoolean'] = undefined;
-
-/**
- * @member {Boolean} AdDiscoverLocalUsersBoolean
- */
-GatewayUpdateMigration.prototype['AdDiscoverLocalUsersBoolean'] = undefined;
-
-/**
- * @member {Object.<String, Boolean>} AdLocalUsersIgnoreList
- */
-GatewayUpdateMigration.prototype['AdLocalUsersIgnoreList'] = undefined;
-
-/**
- * @member {Boolean} AdSRAEnableRDPBoolean
- */
-GatewayUpdateMigration.prototype['AdSRAEnableRDPBoolean'] = undefined;
 
 /**
  * Enable/Disable automatic/recurrent rotation for migrated secrets. Default is false: only manual rotation is allowed for migrated secrets. If set to true, this command should be combined with --ad-rotation-interval and --ad-rotation-hour parameters (Relevant only for Active Directory migration)

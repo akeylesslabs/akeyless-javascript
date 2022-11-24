@@ -130,6 +130,8 @@ import DetokenizeOutput from '../model/DetokenizeOutput';
 import Encrypt from '../model/Encrypt';
 import EncryptOutput from '../model/EncryptOutput';
 import EncryptWithClassicKey from '../model/EncryptWithClassicKey';
+import ExportClassicKey from '../model/ExportClassicKey';
+import ExportClassicKeyOutput from '../model/ExportClassicKeyOutput';
 import GatewayAddAllowedManagementAccess from '../model/GatewayAddAllowedManagementAccess';
 import GatewayCreateK8SAuthConfig from '../model/GatewayCreateK8SAuthConfig';
 import GatewayCreateK8SAuthConfigOutput from '../model/GatewayCreateK8SAuthConfigOutput';
@@ -338,6 +340,7 @@ import RotateSecret from '../model/RotateSecret';
 import RotatedSecretOutput from '../model/RotatedSecretOutput';
 import SetItemState from '../model/SetItemState';
 import SetRoleRule from '../model/SetRoleRule';
+import ShareItem from '../model/ShareItem';
 import SignJWTOutput from '../model/SignJWTOutput';
 import SignJWTWithClassicKey from '../model/SignJWTWithClassicKey';
 import SignPKCS1 from '../model/SignPKCS1';
@@ -442,7 +445,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.20.1
+* @version 2.20.2
 */
 export default class V2Api {
 
@@ -3119,6 +3122,49 @@ export default class V2Api {
      */
     encryptWithClassicKey(body) {
       return this.encryptWithClassicKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/ExportClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ExportClassicKeyOutput} and HTTP response
+     */
+    exportClassicKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling exportClassicKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ExportClassicKeyOutput;
+      return this.apiClient.callApi(
+        '/export-classic-key', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ExportClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ExportClassicKeyOutput}
+     */
+    exportClassicKey(body) {
+      return this.exportClassicKeyWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8078,6 +8124,49 @@ export default class V2Api {
      */
     setRoleRule(body) {
       return this.setRoleRuleWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/ShareItem} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    shareItemWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling shareItem");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/share-item', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ShareItem} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    shareItem(body) {
+      return this.shareItemWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

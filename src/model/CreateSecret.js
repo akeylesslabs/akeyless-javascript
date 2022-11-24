@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 2.20.1
+ * @version 2.20.2
  */
 class CreateSecret {
     /**
@@ -133,8 +133,9 @@ class CreateSecret {
 /**
  * for personal password manager
  * @member {String} accessibility
+ * @default 'regular'
  */
-CreateSecret.prototype['accessibility'] = undefined;
+CreateSecret.prototype['accessibility'] = 'regular';
 
 /**
  * Protection from accidental deletion of this item

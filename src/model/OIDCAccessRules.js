@@ -17,7 +17,7 @@ import OIDCCustomClaim from './OIDCCustomClaim';
 /**
  * The OIDCAccessRules model module.
  * @module model/OIDCAccessRules
- * @version 2.20.1
+ * @version 2.20.2
  */
 class OIDCAccessRules {
     /**
@@ -51,6 +51,9 @@ class OIDCAccessRules {
 
             if (data.hasOwnProperty('allowed_redirect_URIs')) {
                 obj['allowed_redirect_URIs'] = ApiClient.convertToType(data['allowed_redirect_URIs'], ['String']);
+            }
+            if (data.hasOwnProperty('audience')) {
+                obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
             }
             if (data.hasOwnProperty('bound_claims')) {
                 obj['bound_claims'] = ApiClient.convertToType(data['bound_claims'], [OIDCCustomClaim]);
@@ -88,6 +91,12 @@ class OIDCAccessRules {
  * @member {Array.<String>} allowed_redirect_URIs
  */
 OIDCAccessRules.prototype['allowed_redirect_URIs'] = undefined;
+
+/**
+ * Audience claim to be used as part of the authentication flow. In case set, it must match the one configured on the Identity Provider's Application
+ * @member {String} audience
+ */
+OIDCAccessRules.prototype['audience'] = undefined;
 
 /**
  * The claims that login is restricted to.

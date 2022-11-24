@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SraInfo model module.
  * @module model/SraInfo
- * @version 2.20.1
+ * @version 2.20.2
  */
 class SraInfo {
     /**
@@ -47,8 +47,8 @@ class SraInfo {
         if (data) {
             obj = obj || new SraInfo();
 
-            if (data.hasOwnProperty('package')) {
-                obj['package'] = ApiClient.convertToType(data['package'], 'String');
+            if (data.hasOwnProperty('sla')) {
+                obj['sla'] = ApiClient.convertToType(data['sla'], 'String');
             }
             if (data.hasOwnProperty('tier')) {
                 obj['tier'] = ApiClient.convertToType(data['tier'], 'String');
@@ -64,11 +64,12 @@ class SraInfo {
 }
 
 /**
- * @member {String} package
+ * @member {String} sla
  */
-SraInfo.prototype['package'] = undefined;
+SraInfo.prototype['sla'] = undefined;
 
 /**
+ * Tier represents a level of extensibility the account will have, defined by various limits for different resources of Akeyless e.g - A StarterTier may have a limit of 3 Client resources and 50 Secret resources
  * @member {String} tier
  */
 SraInfo.prototype['tier'] = undefined;

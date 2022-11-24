@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SmInfo model module.
  * @module model/SmInfo
- * @version 2.20.1
+ * @version 2.20.2
  */
 class SmInfo {
     /**
@@ -47,8 +47,8 @@ class SmInfo {
         if (data) {
             obj = obj || new SmInfo();
 
-            if (data.hasOwnProperty('package')) {
-                obj['package'] = ApiClient.convertToType(data['package'], 'String');
+            if (data.hasOwnProperty('sla')) {
+                obj['sla'] = ApiClient.convertToType(data['sla'], 'String');
             }
             if (data.hasOwnProperty('tier')) {
                 obj['tier'] = ApiClient.convertToType(data['tier'], 'String');
@@ -61,11 +61,12 @@ class SmInfo {
 }
 
 /**
- * @member {String} package
+ * @member {String} sla
  */
-SmInfo.prototype['package'] = undefined;
+SmInfo.prototype['sla'] = undefined;
 
 /**
+ * Tier represents a level of extensibility the account will have, defined by various limits for different resources of Akeyless e.g - A StarterTier may have a limit of 3 Client resources and 50 Secret resources
  * @member {String} tier
  */
 SmInfo.prototype['tier'] = undefined;

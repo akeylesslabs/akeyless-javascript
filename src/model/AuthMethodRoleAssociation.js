@@ -17,7 +17,7 @@ import Rules from './Rules';
 /**
  * The AuthMethodRoleAssociation model module.
  * @module model/AuthMethodRoleAssociation
- * @version 2.20.1
+ * @version 2.20.2
  */
 class AuthMethodRoleAssociation {
     /**
@@ -49,6 +49,9 @@ class AuthMethodRoleAssociation {
         if (data) {
             obj = obj || new AuthMethodRoleAssociation();
 
+            if (data.hasOwnProperty('allowed_ops')) {
+                obj['allowed_ops'] = ApiClient.convertToType(data['allowed_ops'], ['String']);
+            }
             if (data.hasOwnProperty('assoc_id')) {
                 obj['assoc_id'] = ApiClient.convertToType(data['assoc_id'], 'String');
             }
@@ -67,6 +70,11 @@ class AuthMethodRoleAssociation {
 
 
 }
+
+/**
+ * @member {Array.<String>} allowed_ops
+ */
+AuthMethodRoleAssociation.prototype['allowed_ops'] = undefined;
 
 /**
  * @member {String} assoc_id

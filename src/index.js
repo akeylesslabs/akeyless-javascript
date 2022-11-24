@@ -173,6 +173,8 @@ import EncryptFileOutput from './model/EncryptFileOutput';
 import EncryptOutput from './model/EncryptOutput';
 import EncryptWithClassicKey from './model/EncryptWithClassicKey';
 import EncryptWithClassicKeyOutput from './model/EncryptWithClassicKeyOutput';
+import ExportClassicKey from './model/ExportClassicKey';
+import ExportClassicKeyOutput from './model/ExportClassicKeyOutput';
 import ExternalKMSKeyId from './model/ExternalKMSKeyId';
 import GCPAccessRules from './model/GCPAccessRules';
 import GCPPayload from './model/GCPPayload';
@@ -324,8 +326,6 @@ import GeneralConfigPart from './model/GeneralConfigPart';
 import GetAccountSettings from './model/GetAccountSettings';
 import GetAccountSettingsCommandOutput from './model/GetAccountSettingsCommandOutput';
 import GetAuthMethod from './model/GetAuthMethod';
-import GetCloudIdentity from './model/GetCloudIdentity';
-import GetCloudIdentityOutput from './model/GetCloudIdentityOutput';
 import GetDynamicSecretValue from './model/GetDynamicSecretValue';
 import GetKubeExecCreds from './model/GetKubeExecCreds';
 import GetKubeExecCredsOutput from './model/GetKubeExecCredsOutput';
@@ -452,6 +452,7 @@ import SSHCertificateIssueDetails from './model/SSHCertificateIssueDetails';
 import SecureRemoteAccess from './model/SecureRemoteAccess';
 import SetItemState from './model/SetItemState';
 import SetRoleRule from './model/SetRoleRule';
+import ShareItem from './model/ShareItem';
 import SignJWTOutput from './model/SignJWTOutput';
 import SignJWTWithClassicKey from './model/SignJWTWithClassicKey';
 import SignPKCS1 from './model/SignPKCS1';
@@ -602,7 +603,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 2.20.1
+* @version 2.20.2
 */
 export {
     /**
@@ -1572,6 +1573,18 @@ export {
     EncryptWithClassicKeyOutput,
 
     /**
+     * The ExportClassicKey model constructor.
+     * @property {module:model/ExportClassicKey}
+     */
+    ExportClassicKey,
+
+    /**
+     * The ExportClassicKeyOutput model constructor.
+     * @property {module:model/ExportClassicKeyOutput}
+     */
+    ExportClassicKeyOutput,
+
+    /**
      * The ExternalKMSKeyId model constructor.
      * @property {module:model/ExternalKMSKeyId}
      */
@@ -2478,18 +2491,6 @@ export {
     GetAuthMethod,
 
     /**
-     * The GetCloudIdentity model constructor.
-     * @property {module:model/GetCloudIdentity}
-     */
-    GetCloudIdentity,
-
-    /**
-     * The GetCloudIdentityOutput model constructor.
-     * @property {module:model/GetCloudIdentityOutput}
-     */
-    GetCloudIdentityOutput,
-
-    /**
      * The GetDynamicSecretValue model constructor.
      * @property {module:model/GetDynamicSecretValue}
      */
@@ -3244,6 +3245,12 @@ export {
      * @property {module:model/SetRoleRule}
      */
     SetRoleRule,
+
+    /**
+     * The ShareItem model constructor.
+     * @property {module:model/ShareItem}
+     */
+    ShareItem,
 
     /**
      * The SignJWTOutput model constructor.

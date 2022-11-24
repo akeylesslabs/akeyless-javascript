@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The RotateSecret model module.
  * @module model/RotateSecret
- * @version 2.20.1
+ * @version 2.20.2
  */
 class RotateSecret {
     /**
      * Constructs a new <code>RotateSecret</code>.
      * @alias module:model/RotateSecret
-     * @param name {String} Rotated Secret name
+     * @param name {String} Secret name (Rotated Secret or Custom Dynamic Secret)
      */
     constructor(name) { 
         
@@ -75,7 +75,7 @@ class RotateSecret {
 RotateSecret.prototype['json'] = undefined;
 
 /**
- * Rotated Secret name
+ * Secret name (Rotated Secret or Custom Dynamic Secret)
  * @member {String} name
  */
 RotateSecret.prototype['name'] = undefined;

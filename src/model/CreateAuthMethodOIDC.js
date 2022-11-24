@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOIDC model module.
  * @module model/CreateAuthMethodOIDC
- * @version 2.20.1
+ * @version 2.20.2
  */
 class CreateAuthMethodOIDC {
     /**
@@ -57,6 +57,9 @@ class CreateAuthMethodOIDC {
             }
             if (data.hasOwnProperty('allowed-redirect-uri')) {
                 obj['allowed-redirect-uri'] = ApiClient.convertToType(data['allowed-redirect-uri'], ['String']);
+            }
+            if (data.hasOwnProperty('audience')) {
+                obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -119,6 +122,12 @@ CreateAuthMethodOIDC.prototype['access-expires'] = 0;
  * @member {Array.<String>} allowed-redirect-uri
  */
 CreateAuthMethodOIDC.prototype['allowed-redirect-uri'] = undefined;
+
+/**
+ * Audience claim to be used as part of the authentication flow. In case set, it must match the one configured on the Identity Provider's Application
+ * @member {String} audience
+ */
+CreateAuthMethodOIDC.prototype['audience'] = undefined;
 
 /**
  * A CIDR whitelist with the IPs that the access is restricted to

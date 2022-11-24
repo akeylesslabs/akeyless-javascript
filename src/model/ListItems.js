@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 2.20.1
+ * @version 2.20.2
  */
 class ListItems {
     /**
@@ -90,8 +90,9 @@ class ListItems {
 /**
  * for personal password manager
  * @member {String} accessibility
+ * @default 'regular'
  */
-ListItems.prototype['accessibility'] = undefined;
+ListItems.prototype['accessibility'] = 'regular';
 
 /**
  * Filter by item name or part of it

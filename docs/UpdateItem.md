@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accessibility** | **String** | for personal password manager | [optional] 
+**accessibility** | **String** | for personal password manager | [optional] [default to &#39;regular&#39;]
 **addTag** | **[String]** | List of the new tags that will be attached to this item | [optional] 
 **certFileData** | **String** | PEM Certificate in a Base64 format. Used for updating RSA keys&#39; certificates. | [optional] 
 **deleteProtection** | **String** |  | [optional] 

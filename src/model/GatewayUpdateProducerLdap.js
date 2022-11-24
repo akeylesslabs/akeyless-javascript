@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerLdap model module.
  * @module model/GatewayUpdateProducerLdap
- * @version 2.20.1
+ * @version 2.20.2
  */
 class GatewayUpdateProducerLdap {
     /**

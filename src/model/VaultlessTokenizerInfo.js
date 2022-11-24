@@ -18,7 +18,7 @@ import RegexpTokenizerInfo from './RegexpTokenizerInfo';
 /**
  * The VaultlessTokenizerInfo model module.
  * @module model/VaultlessTokenizerInfo
- * @version 2.20.1
+ * @version 2.20.2
  */
 class VaultlessTokenizerInfo {
     /**
@@ -62,7 +62,7 @@ class VaultlessTokenizerInfo {
                 obj['template_type'] = ApiClient.convertToType(data['template_type'], 'String');
             }
             if (data.hasOwnProperty('tweak')) {
-                obj['tweak'] = ApiClient.convertToType(data['tweak'], ['Number']);
+                obj['tweak'] = ApiClient.convertToType(data['tweak'], 'String');
             }
             if (data.hasOwnProperty('tweak_type')) {
                 obj['tweak_type'] = ApiClient.convertToType(data['tweak_type'], 'String');
@@ -96,7 +96,7 @@ VaultlessTokenizerInfo.prototype['template_type'] = undefined;
 
 /**
  * Tweak used in the case of internal tweak type
- * @member {Array.<Number>} tweak
+ * @member {String} tweak
  */
 VaultlessTokenizerInfo.prototype['tweak'] = undefined;
 
