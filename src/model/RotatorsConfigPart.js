@@ -17,7 +17,7 @@ import Rotator from './Rotator';
 /**
  * The RotatorsConfigPart model module.
  * @module model/RotatorsConfigPart
- * @version 2.20.2
+ * @version 1.57.0
  */
 class RotatorsConfigPart {
     /**

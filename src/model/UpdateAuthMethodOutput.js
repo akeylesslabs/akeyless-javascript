@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOutput model module.
  * @module model/UpdateAuthMethodOutput
- * @version 2.20.2
+ * @version 1.57.0
  */
 class UpdateAuthMethodOutput {
     /**

@@ -17,7 +17,7 @@ import Producer from './Producer';
 /**
  * The ProducersConfigPart model module.
  * @module model/ProducersConfigPart
- * @version 2.20.2
+ * @version 1.57.0
  */
 class ProducersConfigPart {
     /**

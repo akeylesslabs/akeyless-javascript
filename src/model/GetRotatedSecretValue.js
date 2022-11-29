@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetRotatedSecretValue model module.
  * @module model/GetRotatedSecretValue
- * @version 2.20.2
+ * @version 1.57.0
  */
 class GetRotatedSecretValue {
     /**
@@ -49,6 +49,9 @@ class GetRotatedSecretValue {
         if (data) {
             obj = obj || new GetRotatedSecretValue();
 
+            if (data.hasOwnProperty('ignore-cache')) {
+                obj['ignore-cache'] = ApiClient.convertToType(data['ignore-cache'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -70,6 +73,12 @@ class GetRotatedSecretValue {
 
 
 }
+
+/**
+ * Ignore Cache Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI
+ * @member {String} ignore-cache
+ */
+GetRotatedSecretValue.prototype['ignore-cache'] = undefined;
 
 /**
  * Set output format to JSON

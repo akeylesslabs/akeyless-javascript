@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetSecretValue model module.
  * @module model/GetSecretValue
- * @version 2.20.2
+ * @version 1.57.0
  */
 class GetSecretValue {
     /**
@@ -88,7 +88,7 @@ class GetSecretValue {
 GetSecretValue.prototype['accessibility'] = 'regular';
 
 /**
- * Ignore Cache Retrieve the Secret value without checking the Gateway's cache. This flag is only relevant when using the RestAPI
+ * Ignore Cache Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI
  * @member {String} ignore-cache
  */
 GetSecretValue.prototype['ignore-cache'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 2.20.2
+ * @version 1.57.0
  */
 class ListItems {
     /**
@@ -141,7 +141,7 @@ ListItems.prototype['tag'] = undefined;
 ListItems.prototype['token'] = undefined;
 
 /**
- * The item types list of the requested items. In case it is empty, all types of items will be returned. options: [key, static-secret, dynamic-secret]
+ * The item types list of the requested items. In case it is empty, all types of items will be returned. options: [key, static-secret, dynamic-secret, classic-key]
  * @member {Array.<String>} type
  */
 ListItems.prototype['type'] = undefined;

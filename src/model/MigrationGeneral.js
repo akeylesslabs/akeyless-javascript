@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MigrationGeneral model module.
  * @module model/MigrationGeneral
- * @version 2.20.2
+ * @version 1.57.0
  */
 class MigrationGeneral {
     /**

@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayUpdateProducerAwsOutput model module.
  * @module model/GatewayUpdateProducerAwsOutput
- * @version 2.20.2
+ * @version 1.57.0
  */
 class GatewayUpdateProducerAwsOutput {
     /**

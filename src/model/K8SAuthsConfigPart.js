@@ -17,7 +17,7 @@ import K8SAuth from './K8SAuth';
 /**
  * The K8SAuthsConfigPart model module.
  * @module model/K8SAuthsConfigPart
- * @version 2.20.2
+ * @version 1.57.0
  */
 class K8SAuthsConfigPart {
     /**

@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerHanaDbOutput model module.
  * @module model/GatewayCreateProducerHanaDbOutput
- * @version 2.20.2
+ * @version 1.57.0
  */
 class GatewayCreateProducerHanaDbOutput {
     /**
