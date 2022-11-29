@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MockPayload model module.
  * @module model/MockPayload
- * @version 1.57.0
+ * @version 2.20.3
  */
 class MockPayload {
     /**

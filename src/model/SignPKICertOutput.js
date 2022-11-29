@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignPKICertOutput model module.
  * @module model/SignPKICertOutput
- * @version 1.57.0
+ * @version 2.20.3
  */
 class SignPKICertOutput {
     /**

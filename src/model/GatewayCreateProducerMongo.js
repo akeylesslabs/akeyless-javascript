@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMongo model module.
  * @module model/GatewayCreateProducerMongo
- * @version 1.57.0
+ * @version 2.20.3
  */
 class GatewayCreateProducerMongo {
     /**

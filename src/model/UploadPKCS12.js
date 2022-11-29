@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadPKCS12 model module.
  * @module model/UploadPKCS12
- * @version 1.57.0
+ * @version 2.20.3
  */
 class UploadPKCS12 {
     /**

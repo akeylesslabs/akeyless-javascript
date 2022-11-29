@@ -17,7 +17,7 @@ import ClassicKeyTargetInfo from './ClassicKeyTargetInfo';
 /**
  * The ClassicKeyDetailsInfo model module.
  * @module model/ClassicKeyDetailsInfo
- * @version 1.57.0
+ * @version 2.20.3
  */
 class ClassicKeyDetailsInfo {
     /**

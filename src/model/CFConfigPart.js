@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CFConfigPart model module.
  * @module model/CFConfigPart
- * @version 1.57.0
+ * @version 2.20.3
  */
 class CFConfigPart {
     /**
