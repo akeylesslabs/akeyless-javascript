@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayMigratePersonalItems model module.
  * @module model/GatewayMigratePersonalItems
- * @version 2.20.3
+ * @version 3.0.0
  */
 class GatewayMigratePersonalItems {
     /**
@@ -131,7 +131,7 @@ GatewayMigratePersonalItems.prototype['json'] = undefined;
 GatewayMigratePersonalItems.prototype['protection-key'] = undefined;
 
 /**
- * Target location in Akeyless for migrated secrets
+ * Target location in your Akeyless personal folder for migrated secrets
  * @member {String} target-location
  */
 GatewayMigratePersonalItems.prototype['target-location'] = undefined;

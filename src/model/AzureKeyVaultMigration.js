@@ -18,7 +18,7 @@ import MigrationGeneral from './MigrationGeneral';
 /**
  * The AzureKeyVaultMigration model module.
  * @module model/AzureKeyVaultMigration
- * @version 2.20.3
+ * @version 3.0.0
  */
 class AzureKeyVaultMigration {
     /**

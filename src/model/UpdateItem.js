@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 2.20.3
+ * @version 3.0.0
  */
 class UpdateItem {
     /**

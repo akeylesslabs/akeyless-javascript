@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayUpdateProducerMySQLOutput model module.
  * @module model/GatewayUpdateProducerMySQLOutput
- * @version 2.20.3
+ * @version 3.0.0
  */
 class GatewayUpdateProducerMySQLOutput {
     /**

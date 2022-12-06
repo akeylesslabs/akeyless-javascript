@@ -445,7 +445,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 2.20.3
+* @version 3.0.0
 */
 export default class V2Api {
 
@@ -3153,7 +3153,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = ExportClassicKeyOutput;
       return this.apiClient.callApi(
-        '/export-classic-key', 'GET',
+        '/export-classic-key', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );

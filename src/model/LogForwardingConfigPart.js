@@ -24,7 +24,7 @@ import SyslogLogForwardingConfig from './SyslogLogForwardingConfig';
 /**
  * The LogForwardingConfigPart model module.
  * @module model/LogForwardingConfigPart
- * @version 2.20.3
+ * @version 3.0.0
  */
 class LogForwardingConfigPart {
     /**

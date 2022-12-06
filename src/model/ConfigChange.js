@@ -20,7 +20,7 @@ import RequiredActivity from './RequiredActivity';
 /**
  * The ConfigChange model module.
  * @module model/ConfigChange
- * @version 2.20.3
+ * @version 3.0.0
  */
 class ConfigChange {
     /**

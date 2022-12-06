@@ -17,7 +17,7 @@ import OIDCCustomClaim from './OIDCCustomClaim';
 /**
  * The OIDCAccessRules model module.
  * @module model/OIDCAccessRules
- * @version 2.20.3
+ * @version 3.0.0
  */
 class OIDCAccessRules {
     /**

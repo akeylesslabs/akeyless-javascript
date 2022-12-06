@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetRoleRule model module.
  * @module model/SetRoleRule
- * @version 2.20.3
+ * @version 3.0.0
  */
 class SetRoleRule {
     /**
@@ -71,6 +71,9 @@ class SetRoleRule {
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
+            if (data.hasOwnProperty('ttl')) {
+                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
+            }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
@@ -117,6 +120,12 @@ SetRoleRule.prototype['rule-type'] = 'item-rule';
  * @member {String} token
  */
 SetRoleRule.prototype['token'] = undefined;
+
+/**
+ * RoleRule ttl
+ * @member {Number} ttl
+ */
+SetRoleRule.prototype['ttl'] = undefined;
 
 /**
  * The universal identity token, Required only for universal_identity authentication
