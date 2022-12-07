@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignPKCS1Output model module.
  * @module model/SignPKCS1Output
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SignPKCS1Output {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerCertificateAutomation model module.
  * @module model/GatewayUpdateProducerCertificateAutomation
- * @version 3.0.0
+ * @version 3.0.1
  */
 class GatewayUpdateProducerCertificateAutomation {
     /**

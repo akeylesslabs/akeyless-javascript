@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MigrationsConfigLastChange model module.
  * @module model/MigrationsConfigLastChange
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MigrationsConfigLastChange {
     /**

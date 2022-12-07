@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerMongoOutput model module.
  * @module model/GatewayCreateProducerMongoOutput
- * @version 3.0.0
+ * @version 3.0.1
  */
 class GatewayCreateProducerMongoOutput {
     /**
