@@ -30,6 +30,7 @@ Method | HTTP request | Description
 [**createDockerhubTarget**](V2Api.md#createDockerhubTarget) | **POST** /create-dockerhub-target | 
 [**createDynamicSecret**](V2Api.md#createDynamicSecret) | **POST** /create-dynamic-secret | 
 [**createEKSTarget**](V2Api.md#createEKSTarget) | **POST** /create-eks-target | 
+[**createEventForwarder**](V2Api.md#createEventForwarder) | **POST** /create-event-forwarder | 
 [**createGKETarget**](V2Api.md#createGKETarget) | **POST** /create-gke-target | 
 [**createGcpTarget**](V2Api.md#createGcpTarget) | **POST** /create-gcp-target | 
 [**createGithubTarget**](V2Api.md#createGithubTarget) | **POST** /create-github-target | 
@@ -51,6 +52,7 @@ Method | HTTP request | Description
 [**decryptWithClassicKey**](V2Api.md#decryptWithClassicKey) | **POST** /decrypt-with-classic-key | 
 [**deleteAuthMethod**](V2Api.md#deleteAuthMethod) | **POST** /delete-auth-method | 
 [**deleteAuthMethods**](V2Api.md#deleteAuthMethods) | **POST** /delete-auth-methods | 
+[**deleteEventForwarder**](V2Api.md#deleteEventForwarder) | **POST** /delete-event-forwarder | 
 [**deleteItem**](V2Api.md#deleteItem) | **POST** /delete-item | 
 [**deleteItems**](V2Api.md#deleteItems) | **POST** /delete-items | 
 [**deleteRole**](V2Api.md#deleteRole) | **POST** /delete-role | 
@@ -67,7 +69,6 @@ Method | HTTP request | Description
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
 [**encryptWithClassicKey**](V2Api.md#encryptWithClassicKey) | **POST** /encrypt-with-classic-key | 
 [**exportClassicKey**](V2Api.md#exportClassicKey) | **POST** /export-classic-key | 
-[**gatewayAddAllowedManagementAccess**](V2Api.md#gatewayAddAllowedManagementAccess) | **POST** /gateway-add-allow-management-access | 
 [**gatewayCreateK8SAuthConfig**](V2Api.md#gatewayCreateK8SAuthConfig) | **POST** /gateway-create-k8s-auth-config | 
 [**gatewayCreateMigration**](V2Api.md#gatewayCreateMigration) | **POST** /gateway-create-migration | 
 [**gatewayCreateProducerArtifactory**](V2Api.md#gatewayCreateProducerArtifactory) | **POST** /gateway-create-producer-artifactory | 
@@ -144,6 +145,7 @@ Method | HTTP request | Description
 [**getAccountSettings**](V2Api.md#getAccountSettings) | **POST** /get-account-settings | 
 [**getAuthMethod**](V2Api.md#getAuthMethod) | **POST** /get-auth-method | 
 [**getDynamicSecretValue**](V2Api.md#getDynamicSecretValue) | **POST** /get-dynamic-secret-value | 
+[**getEventForwarder**](V2Api.md#getEventForwarder) | **POST** /get-event-forwarder | 
 [**getKubeExecCreds**](V2Api.md#getKubeExecCreds) | **POST** /get-kube-exec-creds | 
 [**getPKICertificate**](V2Api.md#getPKICertificate) | **POST** /get-pki-certificate | 
 [**getRSAPublic**](V2Api.md#getRSAPublic) | **POST** /get-rsa-public | 
@@ -172,10 +174,12 @@ Method | HTTP request | Description
 [**listItems**](V2Api.md#listItems) | **POST** /list-items | 
 [**listRoles**](V2Api.md#listRoles) | **POST** /list-roles | 
 [**listSRABastions**](V2Api.md#listSRABastions) | **POST** /list-sra-bastions | 
+[**listSharedItems**](V2Api.md#listSharedItems) | **POST** /list-shared-items | 
 [**listTargets**](V2Api.md#listTargets) | **POST** /list-targets | 
 [**moveObjects**](V2Api.md#moveObjects) | **POST** /move-objects | 
 [**rawCreds**](V2Api.md#rawCreds) | **POST** /raw-creds | 
 [**refreshKey**](V2Api.md#refreshKey) | **POST** /refresh-key | 
+[**requestAccess**](V2Api.md#requestAccess) | **POST** /request-access | 
 [**reverseRBAC**](V2Api.md#reverseRBAC) | **POST** /reverse-rbac | 
 [**revokeCreds**](V2Api.md#revokeCreds) | **POST** /revoke-creds | 
 [**rollbackSecret**](V2Api.md#rollbackSecret) | **POST** /rollback-secret | 
@@ -215,6 +219,7 @@ Method | HTTP request | Description
 [**updateDBTargetDetails**](V2Api.md#updateDBTargetDetails) | **POST** /update-db-target-details | 
 [**updateDockerhubTarget**](V2Api.md#updateDockerhubTarget) | **POST** /update-dockerhub-target | 
 [**updateEKSTarget**](V2Api.md#updateEKSTarget) | **POST** /update-eks-target | 
+[**updateEventForwarder**](V2Api.md#updateEventForwarder) | **POST** /update-event-forwarder | 
 [**updateGKETarget**](V2Api.md#updateGKETarget) | **POST** /update-gke-target | 
 [**updateGcpTarget**](V2Api.md#updateGcpTarget) | **POST** /update-gcp-target | 
 [**updateGithubTarget**](V2Api.md#updateGithubTarget) | **POST** /update-github-target | 
@@ -1338,6 +1343,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## createEventForwarder
+
+> CreateEventForwarderOutput createEventForwarder(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateEventForwarder(); // CreateEventForwarder | 
+apiInstance.createEventForwarder(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateEventForwarder**](CreateEventForwarder.md)|  | 
+
+### Return type
+
+[**CreateEventForwarderOutput**](CreateEventForwarderOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## createGKETarget
 
 > CreateGKETargetOutput createGKETarget(body)
@@ -2220,6 +2267,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## deleteEventForwarder
+
+> Object deleteEventForwarder(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DeleteEventForwarder(); // DeleteEventForwarder | 
+apiInstance.deleteEventForwarder(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DeleteEventForwarder**](DeleteEventForwarder.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## deleteItem
 
 > DeleteItemOutput deleteItem(body)
@@ -2881,48 +2970,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ExportClassicKeyOutput**](ExportClassicKeyOutput.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## gatewayAddAllowedManagementAccess
-
-> Object gatewayAddAllowedManagementAccess(body)
-
-
-
-### Example
-
-```javascript
-import akeyless from 'akeyless';
-
-let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayAddAllowedManagementAccess(); // GatewayAddAllowedManagementAccess | 
-apiInstance.gatewayAddAllowedManagementAccess(body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**GatewayAddAllowedManagementAccess**](GatewayAddAllowedManagementAccess.md)|  | 
-
-### Return type
-
-**Object**
 
 ### Authorization
 
@@ -6128,6 +6175,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## getEventForwarder
+
+> GetEventForwarderOutput getEventForwarder(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GetEventForwarder(); // GetEventForwarder | 
+apiInstance.getEventForwarder(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetEventForwarder**](GetEventForwarder.md)|  | 
+
+### Return type
+
+[**GetEventForwarderOutput**](GetEventForwarderOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## getKubeExecCreds
 
 > GetKubeExecCredsOutput getKubeExecCreds(body)
@@ -7330,6 +7419,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## listSharedItems
+
+> listSharedItems(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ListSharedItems(); // ListSharedItems | 
+apiInstance.listSharedItems(body).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ListSharedItems**](ListSharedItems.md)|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## listTargets
 
 > ListTargetsOutput listTargets(body)
@@ -7489,6 +7620,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RefreshKeyOutput**](RefreshKeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## requestAccess
+
+> RequestAccessOutput requestAccess(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RequestAccess(); // RequestAccess | 
+apiInstance.requestAccess(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RequestAccess**](RequestAccess.md)|  | 
+
+### Return type
+
+[**RequestAccessOutput**](RequestAccessOutput.md)
 
 ### Authorization
 
@@ -9123,6 +9296,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateEKSTargetOutput**](UpdateEKSTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateEventForwarder
+
+> Object updateEventForwarder(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateEventForwarder(); // UpdateEventForwarder | 
+apiInstance.updateEventForwarder(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateEventForwarder**](UpdateEventForwarder.md)|  | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 

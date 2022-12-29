@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClientData model module.
  * @module model/ClientData
- * @version 3.0.1
+ * @version 3.1.0
  */
 class ClientData {
     /**

@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import CertificateChainInfo from './CertificateChainInfo';
 import CertificateIssueInfo from './CertificateIssueInfo';
 import ClassicKeyDetailsInfo from './ClassicKeyDetailsInfo';
 import DynamicSecretProducerInfo from './DynamicSecretProducerInfo';
@@ -24,7 +25,7 @@ import TokenizerInfo from './TokenizerInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 3.0.1
+ * @version 3.1.0
  */
 class ItemGeneralInfo {
     /**
@@ -57,6 +58,9 @@ class ItemGeneralInfo {
 
             if (data.hasOwnProperty('cert_issue_details')) {
                 obj['cert_issue_details'] = CertificateIssueInfo.constructFromObject(data['cert_issue_details']);
+            }
+            if (data.hasOwnProperty('certificate_chain_info')) {
+                obj['certificate_chain_info'] = CertificateChainInfo.constructFromObject(data['certificate_chain_info']);
             }
             if (data.hasOwnProperty('classic_key_details')) {
                 obj['classic_key_details'] = ClassicKeyDetailsInfo.constructFromObject(data['classic_key_details']);
@@ -96,6 +100,11 @@ class ItemGeneralInfo {
  * @member {module:model/CertificateIssueInfo} cert_issue_details
  */
 ItemGeneralInfo.prototype['cert_issue_details'] = undefined;
+
+/**
+ * @member {module:model/CertificateChainInfo} certificate_chain_info
+ */
+ItemGeneralInfo.prototype['certificate_chain_info'] = undefined;
 
 /**
  * @member {module:model/ClassicKeyDetailsInfo} classic_key_details

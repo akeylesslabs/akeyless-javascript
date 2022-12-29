@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerArtifactory model module.
  * @module model/GatewayUpdateProducerArtifactory
- * @version 3.0.1
+ * @version 3.1.0
  */
 class GatewayUpdateProducerArtifactory {
     /**

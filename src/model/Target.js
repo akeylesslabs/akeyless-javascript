@@ -18,7 +18,7 @@ import TargetItemAssociation from './TargetItemAssociation';
 /**
  * The Target model module.
  * @module model/Target
- * @version 3.0.1
+ * @version 3.1.0
  */
 class Target {
     /**
@@ -52,6 +52,9 @@ class Target {
             if (data.hasOwnProperty('access_date')) {
                 obj['access_date'] = ApiClient.convertToType(data['access_date'], 'Date');
             }
+            if (data.hasOwnProperty('access_request_status')) {
+                obj['access_request_status'] = ApiClient.convertToType(data['access_request_status'], 'String');
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], {'String': Object});
             }
@@ -66,6 +69,9 @@ class Target {
             }
             if (data.hasOwnProperty('credentials_less')) {
                 obj['credentials_less'] = ApiClient.convertToType(data['credentials_less'], 'Boolean');
+            }
+            if (data.hasOwnProperty('is_access_request_enabled')) {
+                obj['is_access_request_enabled'] = ApiClient.convertToType(data['is_access_request_enabled'], 'Boolean');
             }
             if (data.hasOwnProperty('last_version')) {
                 obj['last_version'] = ApiClient.convertToType(data['last_version'], 'Number');
@@ -107,6 +113,11 @@ class Target {
 Target.prototype['access_date'] = undefined;
 
 /**
+ * @member {String} access_request_status
+ */
+Target.prototype['access_request_status'] = undefined;
+
+/**
  * this is not \"omitempty\" since an empty value causes no update while an empty map will clear the attributes
  * @member {Object.<String, Object>} attributes
  */
@@ -131,6 +142,11 @@ Target.prototype['creation_date'] = undefined;
  * @member {Boolean} credentials_less
  */
 Target.prototype['credentials_less'] = undefined;
+
+/**
+ * @member {Boolean} is_access_request_enabled
+ */
+Target.prototype['is_access_request_enabled'] = undefined;
 
 /**
  * @member {Number} last_version

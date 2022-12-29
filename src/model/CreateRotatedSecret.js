@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 3.0.1
+ * @version 3.1.0
  */
 class CreateRotatedSecret {
     /**
@@ -76,6 +76,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('gcp-key')) {
+                obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -227,6 +230,12 @@ CreateRotatedSecret.prototype['custom-payload'] = undefined;
  * @member {String} delete_protection
  */
 CreateRotatedSecret.prototype['delete_protection'] = undefined;
+
+/**
+ * Base64-encoded service account private key text
+ * @member {String} gcp-key
+ */
+CreateRotatedSecret.prototype['gcp-key'] = undefined;
 
 /**
  * Set output format to JSON

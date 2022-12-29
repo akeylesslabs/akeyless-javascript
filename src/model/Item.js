@@ -22,7 +22,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 3.0.1
+ * @version 3.1.0
  */
 class Item {
     /**
@@ -56,6 +56,9 @@ class Item {
             if (data.hasOwnProperty('access_date')) {
                 obj['access_date'] = ApiClient.convertToType(data['access_date'], 'Date');
             }
+            if (data.hasOwnProperty('access_request_status')) {
+                obj['access_request_status'] = ApiClient.convertToType(data['access_request_status'], 'String');
+            }
             if (data.hasOwnProperty('auto_rotate')) {
                 obj['auto_rotate'] = ApiClient.convertToType(data['auto_rotate'], 'Boolean');
             }
@@ -85,6 +88,9 @@ class Item {
             }
             if (data.hasOwnProperty('display_id')) {
                 obj['display_id'] = ApiClient.convertToType(data['display_id'], 'String');
+            }
+            if (data.hasOwnProperty('is_access_request_enabled')) {
+                obj['is_access_request_enabled'] = ApiClient.convertToType(data['is_access_request_enabled'], 'Boolean');
             }
             if (data.hasOwnProperty('is_enabled')) {
                 obj['is_enabled'] = ApiClient.convertToType(data['is_enabled'], 'Boolean');
@@ -168,6 +174,11 @@ class Item {
 Item.prototype['access_date'] = undefined;
 
 /**
+ * @member {String} access_request_status
+ */
+Item.prototype['access_request_status'] = undefined;
+
+/**
  * @member {Boolean} auto_rotate
  */
 Item.prototype['auto_rotate'] = undefined;
@@ -216,6 +227,11 @@ Item.prototype['deletion_date'] = undefined;
  * @member {String} display_id
  */
 Item.prototype['display_id'] = undefined;
+
+/**
+ * @member {Boolean} is_access_request_enabled
+ */
+Item.prototype['is_access_request_enabled'] = undefined;
 
 /**
  * @member {Boolean} is_enabled

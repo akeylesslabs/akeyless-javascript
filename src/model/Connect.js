@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Connect model module.
  * @module model/Connect
- * @version 3.0.1
+ * @version 3.1.0
  */
 class Connect {
     /**
@@ -77,6 +77,9 @@ class Connect {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('ssh-command')) {
+                obj['ssh-command'] = ApiClient.convertToType(data['ssh-command'], 'String');
             }
             if (data.hasOwnProperty('ssh-extra-args')) {
                 obj['ssh-extra-args'] = ApiClient.convertToType(data['ssh-extra-args'], 'String');
@@ -163,6 +166,12 @@ Connect.prototype['json'] = undefined;
  * @member {String} name
  */
 Connect.prototype['name'] = undefined;
+
+/**
+ * Path to SSH executable. e.g. /usr/bin/ssh
+ * @member {String} ssh-command
+ */
+Connect.prototype['ssh-command'] = undefined;
 
 /**
  * The Use to add offical SSH arguments (except -i)

@@ -64,6 +64,8 @@ import CreateDockerhubTargetOutput from '../model/CreateDockerhubTargetOutput';
 import CreateDynamicSecret from '../model/CreateDynamicSecret';
 import CreateEKSTarget from '../model/CreateEKSTarget';
 import CreateEKSTargetOutput from '../model/CreateEKSTargetOutput';
+import CreateEventForwarder from '../model/CreateEventForwarder';
+import CreateEventForwarderOutput from '../model/CreateEventForwarderOutput';
 import CreateGKETarget from '../model/CreateGKETarget';
 import CreateGKETargetOutput from '../model/CreateGKETargetOutput';
 import CreateGcpTarget from '../model/CreateGcpTarget';
@@ -108,6 +110,7 @@ import DeleteAuthMethod from '../model/DeleteAuthMethod';
 import DeleteAuthMethodOutput from '../model/DeleteAuthMethodOutput';
 import DeleteAuthMethods from '../model/DeleteAuthMethods';
 import DeleteAuthMethodsOutput from '../model/DeleteAuthMethodsOutput';
+import DeleteEventForwarder from '../model/DeleteEventForwarder';
 import DeleteItem from '../model/DeleteItem';
 import DeleteItemOutput from '../model/DeleteItemOutput';
 import DeleteItems from '../model/DeleteItems';
@@ -132,7 +135,6 @@ import EncryptOutput from '../model/EncryptOutput';
 import EncryptWithClassicKey from '../model/EncryptWithClassicKey';
 import ExportClassicKey from '../model/ExportClassicKey';
 import ExportClassicKeyOutput from '../model/ExportClassicKeyOutput';
-import GatewayAddAllowedManagementAccess from '../model/GatewayAddAllowedManagementAccess';
 import GatewayCreateK8SAuthConfig from '../model/GatewayCreateK8SAuthConfig';
 import GatewayCreateK8SAuthConfigOutput from '../model/GatewayCreateK8SAuthConfigOutput';
 import GatewayCreateMigration from '../model/GatewayCreateMigration';
@@ -273,6 +275,8 @@ import GetAccountSettings from '../model/GetAccountSettings';
 import GetAccountSettingsCommandOutput from '../model/GetAccountSettingsCommandOutput';
 import GetAuthMethod from '../model/GetAuthMethod';
 import GetDynamicSecretValue from '../model/GetDynamicSecretValue';
+import GetEventForwarder from '../model/GetEventForwarder';
+import GetEventForwarderOutput from '../model/GetEventForwarderOutput';
 import GetKubeExecCreds from '../model/GetKubeExecCreds';
 import GetKubeExecCredsOutput from '../model/GetKubeExecCredsOutput';
 import GetPKICertificate from '../model/GetPKICertificate';
@@ -323,6 +327,7 @@ import ListItemsInPathOutput from '../model/ListItemsInPathOutput';
 import ListRoles from '../model/ListRoles';
 import ListRolesOutput from '../model/ListRolesOutput';
 import ListSRABastions from '../model/ListSRABastions';
+import ListSharedItems from '../model/ListSharedItems';
 import ListTargets from '../model/ListTargets';
 import ListTargetsOutput from '../model/ListTargetsOutput';
 import MigrationStatusReplyObj from '../model/MigrationStatusReplyObj';
@@ -330,6 +335,8 @@ import MoveObjects from '../model/MoveObjects';
 import RawCreds from '../model/RawCreds';
 import RefreshKey from '../model/RefreshKey';
 import RefreshKeyOutput from '../model/RefreshKeyOutput';
+import RequestAccess from '../model/RequestAccess';
+import RequestAccessOutput from '../model/RequestAccessOutput';
 import ReverseRBAC from '../model/ReverseRBAC';
 import ReverseRBACOutput from '../model/ReverseRBACOutput';
 import Role from '../model/Role';
@@ -394,6 +401,7 @@ import UpdateDockerhubTarget from '../model/UpdateDockerhubTarget';
 import UpdateDockerhubTargetOutput from '../model/UpdateDockerhubTargetOutput';
 import UpdateEKSTarget from '../model/UpdateEKSTarget';
 import UpdateEKSTargetOutput from '../model/UpdateEKSTargetOutput';
+import UpdateEventForwarder from '../model/UpdateEventForwarder';
 import UpdateGKETarget from '../model/UpdateGKETarget';
 import UpdateGKETargetOutput from '../model/UpdateGKETargetOutput';
 import UpdateGcpTarget from '../model/UpdateGcpTarget';
@@ -445,7 +453,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.0.1
+* @version 3.1.0
 */
 export default class V2Api {
 
@@ -1581,6 +1589,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/CreateEventForwarder} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateEventForwarderOutput} and HTTP response
+     */
+    createEventForwarderWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createEventForwarder");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateEventForwarderOutput;
+      return this.apiClient.callApi(
+        '/create-event-forwarder', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateEventForwarder} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateEventForwarderOutput}
+     */
+    createEventForwarder(body) {
+      return this.createEventForwarderWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/CreateGKETarget} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateGKETargetOutput} and HTTP response
      */
@@ -2484,6 +2535,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/DeleteEventForwarder} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteEventForwarderWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling deleteEventForwarder");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/delete-event-forwarder', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DeleteEventForwarder} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteEventForwarder(body) {
+      return this.deleteEventForwarderWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/DeleteItem} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DeleteItemOutput} and HTTP response
      */
@@ -3165,49 +3259,6 @@ export default class V2Api {
      */
     exportClassicKey(body) {
       return this.exportClassicKeyWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @param {module:model/GatewayAddAllowedManagementAccess} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    gatewayAddAllowedManagementAccessWithHttpInfo(body) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling gatewayAddAllowedManagementAccess");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Object;
-      return this.apiClient.callApi(
-        '/gateway-add-allow-management-access', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {module:model/GatewayAddAllowedManagementAccess} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    gatewayAddAllowedManagementAccess(body) {
-      return this.gatewayAddAllowedManagementAccessWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6474,6 +6525,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GetEventForwarder} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetEventForwarderOutput} and HTTP response
+     */
+    getEventForwarderWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling getEventForwarder");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GetEventForwarderOutput;
+      return this.apiClient.callApi(
+        '/get-event-forwarder', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GetEventForwarder} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetEventForwarderOutput}
+     */
+    getEventForwarder(body) {
+      return this.getEventForwarderWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GetKubeExecCreds} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetKubeExecCredsOutput} and HTTP response
      */
@@ -7665,6 +7759,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/ListSharedItems} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    listSharedItemsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling listSharedItems");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/list-shared-items', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ListSharedItems} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    listSharedItems(body) {
+      return this.listSharedItemsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/ListTargets} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListTargetsOutput} and HTTP response
      */
@@ -7829,6 +7966,49 @@ export default class V2Api {
      */
     refreshKey(body) {
       return this.refreshKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RequestAccess} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestAccessOutput} and HTTP response
+     */
+    requestAccessWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling requestAccess");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RequestAccessOutput;
+      return this.apiClient.callApi(
+        '/request-access', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RequestAccess} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestAccessOutput}
+     */
+    requestAccess(body) {
+      return this.requestAccessWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9500,6 +9680,49 @@ export default class V2Api {
      */
     updateEKSTarget(body) {
       return this.updateEKSTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateEventForwarder} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateEventForwarderWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateEventForwarder");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-event-forwarder', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateEventForwarder} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateEventForwarder(body) {
+      return this.updateEventForwarderWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

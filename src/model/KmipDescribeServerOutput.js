@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipDescribeServerOutput model module.
  * @module model/KmipDescribeServerOutput
- * @version 3.0.1
+ * @version 3.1.0
  */
 class KmipDescribeServerOutput {
     /**

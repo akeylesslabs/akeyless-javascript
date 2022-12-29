@@ -26,6 +26,7 @@ import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
 import AllowedAccess from './model/AllowedAccess';
 import AssocRoleAuthMethod from './model/AssocRoleAuthMethod';
 import AssocTargetItem from './model/AssocTargetItem';
+import AttributeTypeAndValue from './model/AttributeTypeAndValue';
 import Auth from './model/Auth';
 import AuthMethod from './model/AuthMethod';
 import AuthMethodAccessInfo from './model/AuthMethodAccessInfo';
@@ -41,6 +42,9 @@ import BastionsList from './model/BastionsList';
 import CFConfigPart from './model/CFConfigPart';
 import CacheConfigPart from './model/CacheConfigPart';
 import CertAccessRules from './model/CertAccessRules';
+import CertificateChainInfo from './model/CertificateChainInfo';
+import CertificateExpirationEvent from './model/CertificateExpirationEvent';
+import CertificateInfo from './model/CertificateInfo';
 import CertificateIssueInfo from './model/CertificateIssueInfo';
 import ClassicKeyDetailsInfo from './model/ClassicKeyDetailsInfo';
 import ClassicKeyStatusInfo from './model/ClassicKeyStatusInfo';
@@ -92,6 +96,8 @@ import CreateDockerhubTargetOutput from './model/CreateDockerhubTargetOutput';
 import CreateDynamicSecret from './model/CreateDynamicSecret';
 import CreateEKSTarget from './model/CreateEKSTarget';
 import CreateEKSTargetOutput from './model/CreateEKSTargetOutput';
+import CreateEventForwarder from './model/CreateEventForwarder';
+import CreateEventForwarderOutput from './model/CreateEventForwarderOutput';
 import CreateGKETarget from './model/CreateGKETarget';
 import CreateGKETargetOutput from './model/CreateGKETargetOutput';
 import CreateGcpTarget from './model/CreateGcpTarget';
@@ -144,6 +150,7 @@ import DeleteAuthMethod from './model/DeleteAuthMethod';
 import DeleteAuthMethodOutput from './model/DeleteAuthMethodOutput';
 import DeleteAuthMethods from './model/DeleteAuthMethods';
 import DeleteAuthMethodsOutput from './model/DeleteAuthMethodsOutput';
+import DeleteEventForwarder from './model/DeleteEventForwarder';
 import DeleteItem from './model/DeleteItem';
 import DeleteItemOutput from './model/DeleteItemOutput';
 import DeleteItems from './model/DeleteItems';
@@ -165,6 +172,7 @@ import Detokenize from './model/Detokenize';
 import DetokenizeOutput from './model/DetokenizeOutput';
 import DynamicSecretProducerInfo from './model/DynamicSecretProducerInfo';
 import ElasticsearchLogForwardingConfig from './model/ElasticsearchLogForwardingConfig';
+import EmailEntry from './model/EmailEntry';
 import EmailPassAccessRules from './model/EmailPassAccessRules';
 import EmailTokenizerInfo from './model/EmailTokenizerInfo';
 import Encrypt from './model/Encrypt';
@@ -175,11 +183,11 @@ import EncryptWithClassicKey from './model/EncryptWithClassicKey';
 import EncryptWithClassicKeyOutput from './model/EncryptWithClassicKeyOutput';
 import ExportClassicKey from './model/ExportClassicKey';
 import ExportClassicKeyOutput from './model/ExportClassicKeyOutput';
+import Extension from './model/Extension';
 import ExternalKMSKeyId from './model/ExternalKMSKeyId';
 import GCPAccessRules from './model/GCPAccessRules';
 import GCPPayload from './model/GCPPayload';
 import GCPSecretsMigration from './model/GCPSecretsMigration';
-import GatewayAddAllowedManagementAccess from './model/GatewayAddAllowedManagementAccess';
 import GatewayCreateK8SAuthConfig from './model/GatewayCreateK8SAuthConfig';
 import GatewayCreateK8SAuthConfigOutput from './model/GatewayCreateK8SAuthConfigOutput';
 import GatewayCreateMigration from './model/GatewayCreateMigration';
@@ -327,6 +335,8 @@ import GetAccountSettings from './model/GetAccountSettings';
 import GetAccountSettingsCommandOutput from './model/GetAccountSettingsCommandOutput';
 import GetAuthMethod from './model/GetAuthMethod';
 import GetDynamicSecretValue from './model/GetDynamicSecretValue';
+import GetEventForwarder from './model/GetEventForwarder';
+import GetEventForwarderOutput from './model/GetEventForwarderOutput';
 import GetKubeExecCreds from './model/GetKubeExecCreds';
 import GetKubeExecCredsOutput from './model/GetKubeExecCredsOutput';
 import GetPKICertificate from './model/GetPKICertificate';
@@ -398,6 +408,7 @@ import ListItemsInPathOutput from './model/ListItemsInPathOutput';
 import ListRoles from './model/ListRoles';
 import ListRolesOutput from './model/ListRolesOutput';
 import ListSRABastions from './model/ListSRABastions';
+import ListSharedItems from './model/ListSharedItems';
 import ListTargets from './model/ListTargets';
 import ListTargetsOutput from './model/ListTargetsOutput';
 import LogForwardingConfigPart from './model/LogForwardingConfigPart';
@@ -412,6 +423,8 @@ import MigrationsConfigPart from './model/MigrationsConfigPart';
 import MockMigration from './model/MockMigration';
 import MockPayload from './model/MockPayload';
 import MoveObjects from './model/MoveObjects';
+import Name from './model/Name';
+import NotiForwarder from './model/NotiForwarder';
 import OAuth2AccessRules from './model/OAuth2AccessRules';
 import OAuth2CustomClaim from './model/OAuth2CustomClaim';
 import OIDCAccessRules from './model/OIDCAccessRules';
@@ -428,6 +441,8 @@ import RawCreds from './model/RawCreds';
 import RefreshKey from './model/RefreshKey';
 import RefreshKeyOutput from './model/RefreshKeyOutput';
 import RegexpTokenizerInfo from './model/RegexpTokenizerInfo';
+import RequestAccess from './model/RequestAccess';
+import RequestAccessOutput from './model/RequestAccessOutput';
 import RequiredActivity from './model/RequiredActivity';
 import ReverseRBAC from './model/ReverseRBAC';
 import ReverseRBACClient from './model/ReverseRBACClient';
@@ -520,6 +535,7 @@ import UpdateDockerhubTarget from './model/UpdateDockerhubTarget';
 import UpdateDockerhubTargetOutput from './model/UpdateDockerhubTargetOutput';
 import UpdateEKSTarget from './model/UpdateEKSTarget';
 import UpdateEKSTargetOutput from './model/UpdateEKSTargetOutput';
+import UpdateEventForwarder from './model/UpdateEventForwarder';
 import UpdateGKETarget from './model/UpdateGKETarget';
 import UpdateGKETargetOutput from './model/UpdateGKETargetOutput';
 import UpdateGcpTarget from './model/UpdateGcpTarget';
@@ -603,7 +619,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.0.1
+* @version 3.1.0
 */
 export {
     /**
@@ -689,6 +705,12 @@ export {
      * @property {module:model/AssocTargetItem}
      */
     AssocTargetItem,
+
+    /**
+     * The AttributeTypeAndValue model constructor.
+     * @property {module:model/AttributeTypeAndValue}
+     */
+    AttributeTypeAndValue,
 
     /**
      * The Auth model constructor.
@@ -779,6 +801,24 @@ export {
      * @property {module:model/CertAccessRules}
      */
     CertAccessRules,
+
+    /**
+     * The CertificateChainInfo model constructor.
+     * @property {module:model/CertificateChainInfo}
+     */
+    CertificateChainInfo,
+
+    /**
+     * The CertificateExpirationEvent model constructor.
+     * @property {module:model/CertificateExpirationEvent}
+     */
+    CertificateExpirationEvent,
+
+    /**
+     * The CertificateInfo model constructor.
+     * @property {module:model/CertificateInfo}
+     */
+    CertificateInfo,
 
     /**
      * The CertificateIssueInfo model constructor.
@@ -1085,6 +1125,18 @@ export {
      * @property {module:model/CreateEKSTargetOutput}
      */
     CreateEKSTargetOutput,
+
+    /**
+     * The CreateEventForwarder model constructor.
+     * @property {module:model/CreateEventForwarder}
+     */
+    CreateEventForwarder,
+
+    /**
+     * The CreateEventForwarderOutput model constructor.
+     * @property {module:model/CreateEventForwarderOutput}
+     */
+    CreateEventForwarderOutput,
 
     /**
      * The CreateGKETarget model constructor.
@@ -1399,6 +1451,12 @@ export {
     DeleteAuthMethodsOutput,
 
     /**
+     * The DeleteEventForwarder model constructor.
+     * @property {module:model/DeleteEventForwarder}
+     */
+    DeleteEventForwarder,
+
+    /**
      * The DeleteItem model constructor.
      * @property {module:model/DeleteItem}
      */
@@ -1525,6 +1583,12 @@ export {
     ElasticsearchLogForwardingConfig,
 
     /**
+     * The EmailEntry model constructor.
+     * @property {module:model/EmailEntry}
+     */
+    EmailEntry,
+
+    /**
      * The EmailPassAccessRules model constructor.
      * @property {module:model/EmailPassAccessRules}
      */
@@ -1585,6 +1649,12 @@ export {
     ExportClassicKeyOutput,
 
     /**
+     * The Extension model constructor.
+     * @property {module:model/Extension}
+     */
+    Extension,
+
+    /**
      * The ExternalKMSKeyId model constructor.
      * @property {module:model/ExternalKMSKeyId}
      */
@@ -1607,12 +1677,6 @@ export {
      * @property {module:model/GCPSecretsMigration}
      */
     GCPSecretsMigration,
-
-    /**
-     * The GatewayAddAllowedManagementAccess model constructor.
-     * @property {module:model/GatewayAddAllowedManagementAccess}
-     */
-    GatewayAddAllowedManagementAccess,
 
     /**
      * The GatewayCreateK8SAuthConfig model constructor.
@@ -2497,6 +2561,18 @@ export {
     GetDynamicSecretValue,
 
     /**
+     * The GetEventForwarder model constructor.
+     * @property {module:model/GetEventForwarder}
+     */
+    GetEventForwarder,
+
+    /**
+     * The GetEventForwarderOutput model constructor.
+     * @property {module:model/GetEventForwarderOutput}
+     */
+    GetEventForwarderOutput,
+
+    /**
      * The GetKubeExecCreds model constructor.
      * @property {module:model/GetKubeExecCreds}
      */
@@ -2923,6 +2999,12 @@ export {
     ListSRABastions,
 
     /**
+     * The ListSharedItems model constructor.
+     * @property {module:model/ListSharedItems}
+     */
+    ListSharedItems,
+
+    /**
      * The ListTargets model constructor.
      * @property {module:model/ListTargets}
      */
@@ -3005,6 +3087,18 @@ export {
      * @property {module:model/MoveObjects}
      */
     MoveObjects,
+
+    /**
+     * The Name model constructor.
+     * @property {module:model/Name}
+     */
+    Name,
+
+    /**
+     * The NotiForwarder model constructor.
+     * @property {module:model/NotiForwarder}
+     */
+    NotiForwarder,
 
     /**
      * The OAuth2AccessRules model constructor.
@@ -3101,6 +3195,18 @@ export {
      * @property {module:model/RegexpTokenizerInfo}
      */
     RegexpTokenizerInfo,
+
+    /**
+     * The RequestAccess model constructor.
+     * @property {module:model/RequestAccess}
+     */
+    RequestAccess,
+
+    /**
+     * The RequestAccessOutput model constructor.
+     * @property {module:model/RequestAccessOutput}
+     */
+    RequestAccessOutput,
 
     /**
      * The RequiredActivity model constructor.
@@ -3653,6 +3759,12 @@ export {
      * @property {module:model/UpdateEKSTargetOutput}
      */
     UpdateEKSTargetOutput,
+
+    /**
+     * The UpdateEventForwarder model constructor.
+     * @property {module:model/UpdateEventForwarder}
+     */
+    UpdateEventForwarder,
 
     /**
      * The UpdateGKETarget model constructor.
