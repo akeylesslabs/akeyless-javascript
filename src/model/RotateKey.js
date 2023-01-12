@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotateKey model module.
  * @module model/RotateKey
- * @version 3.1.0
+ * @version 3.1.1
  */
 class RotateKey {
     /**
@@ -56,6 +56,9 @@ class RotateKey {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('new-cert-pem-data')) {
+                obj['new-cert-pem-data'] = ApiClient.convertToType(data['new-cert-pem-data'], 'String');
+            }
             if (data.hasOwnProperty('new-key-data')) {
                 obj['new-key-data'] = ApiClient.convertToType(data['new-key-data'], 'String');
             }
@@ -83,6 +86,12 @@ RotateKey.prototype['json'] = undefined;
  * @member {String} name
  */
 RotateKey.prototype['name'] = undefined;
+
+/**
+ * The new pem encoded certificate for the classic key. relevant only for keys provided by user ('bring-your-own-key')
+ * @member {String} new-cert-pem-data
+ */
+RotateKey.prototype['new-cert-pem-data'] = undefined;
 
 /**
  * The new base64 encoded value for the classic key. relevant only for keys provided by user ('bring-your-own-key')

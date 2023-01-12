@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ShareItem model module.
  * @module model/ShareItem
- * @version 3.1.0
+ * @version 3.1.1
  */
 class ShareItem {
     /**

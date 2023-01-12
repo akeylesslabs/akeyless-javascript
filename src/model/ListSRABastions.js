@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListSRABastions model module.
  * @module model/ListSRABastions
- * @version 3.1.0
+ * @version 3.1.1
  */
 class ListSRABastions {
     /**
@@ -47,6 +47,9 @@ class ListSRABastions {
         if (data) {
             obj = obj || new ListSRABastions();
 
+            if (data.hasOwnProperty('allowed-urls-only')) {
+                obj['allowed-urls-only'] = ApiClient.convertToType(data['allowed-urls-only'], 'Boolean');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -62,6 +65,11 @@ class ListSRABastions {
 
 
 }
+
+/**
+ * @member {Boolean} allowed-urls-only
+ */
+ListSRABastions.prototype['allowed-urls-only'] = undefined;
 
 /**
  * Set output format to JSON

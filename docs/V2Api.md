@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**createAuthMethodSAML**](V2Api.md#createAuthMethodSAML) | **POST** /create-auth-method-saml | 
 [**createAuthMethodUniversalIdentity**](V2Api.md#createAuthMethodUniversalIdentity) | **POST** /create-auth-method-universal-identity | 
 [**createAzureTarget**](V2Api.md#createAzureTarget) | **POST** /create-azure-target | 
+[**createCertificate**](V2Api.md#createCertificate) | **POST** /create-certificate | 
 [**createClassicKey**](V2Api.md#createClassicKey) | **POST** /create-classic-key | 
 [**createDBTarget**](V2Api.md#createDBTarget) | **POST** /create-db-target | 
 [**createDFCKey**](V2Api.md#createDFCKey) | **POST** /create-dfc-key | 
@@ -140,10 +141,12 @@ Method | HTTP request | Description
 [**gatewayUpdateProducerRdp**](V2Api.md#gatewayUpdateProducerRdp) | **POST** /gateway-update-producer-rdp | 
 [**gatewayUpdateProducerRedshift**](V2Api.md#gatewayUpdateProducerRedshift) | **POST** /gateway-update-producer-redshift | 
 [**gatewayUpdateProducerSnowflake**](V2Api.md#gatewayUpdateProducerSnowflake) | **POST** /gateway-update-producer-snowflake | 
+[**gatewayUpdateTlsCert**](V2Api.md#gatewayUpdateTlsCert) | **POST** /gateway-update-tls-cert | 
 [**gatewayUpdateTmpUsers**](V2Api.md#gatewayUpdateTmpUsers) | **POST** /gateway-update-producer-tmp-creds | 
 [**getAccountLogo**](V2Api.md#getAccountLogo) | **POST** /get-account-logo | 
 [**getAccountSettings**](V2Api.md#getAccountSettings) | **POST** /get-account-settings | 
 [**getAuthMethod**](V2Api.md#getAuthMethod) | **POST** /get-auth-method | 
+[**getCertificateValue**](V2Api.md#getCertificateValue) | **POST** /get-certificate-value | 
 [**getDynamicSecretValue**](V2Api.md#getDynamicSecretValue) | **POST** /get-dynamic-secret-value | 
 [**getEventForwarder**](V2Api.md#getEventForwarder) | **POST** /get-event-forwarder | 
 [**getKubeExecCreds**](V2Api.md#getKubeExecCreds) | **POST** /get-kube-exec-creds | 
@@ -215,6 +218,7 @@ Method | HTTP request | Description
 [**updateAuthMethodSAML**](V2Api.md#updateAuthMethodSAML) | **POST** /update-auth-method-saml | 
 [**updateAuthMethodUniversalIdentity**](V2Api.md#updateAuthMethodUniversalIdentity) | **POST** /update-auth-method-universal-identity | 
 [**updateAzureTarget**](V2Api.md#updateAzureTarget) | **POST** /update-azure-target | 
+[**updateCertificateValue**](V2Api.md#updateCertificateValue) | **POST** /update-certificate-value | 
 [**updateDBTarget**](V2Api.md#updateDBTarget) | **POST** /update-db-target | 
 [**updateDBTargetDetails**](V2Api.md#updateDBTargetDetails) | **POST** /update-db-target-details | 
 [**updateDockerhubTarget**](V2Api.md#updateDockerhubTarget) | **POST** /update-dockerhub-target | 
@@ -1080,6 +1084,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateAzureTargetOutput**](CreateAzureTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createCertificate
+
+> CreateCertificateOutput createCertificate(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateCertificate(); // CreateCertificate | 
+apiInstance.createCertificate(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateCertificate**](CreateCertificate.md)|  | 
+
+### Return type
+
+[**CreateCertificateOutput**](CreateCertificateOutput.md)
 
 ### Authorization
 
@@ -5969,6 +6015,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayUpdateTlsCert
+
+> GatewayUpdateTlsCertOutput gatewayUpdateTlsCert(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateTlsCert(); // GatewayUpdateTlsCert | 
+apiInstance.gatewayUpdateTlsCert(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateTlsCert**](GatewayUpdateTlsCert.md)|  | 
+
+### Return type
+
+[**GatewayUpdateTlsCertOutput**](GatewayUpdateTlsCertOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayUpdateTmpUsers
 
 > gatewayUpdateTmpUsers(body)
@@ -6122,6 +6210,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AuthMethod**](AuthMethod.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## getCertificateValue
+
+> GetCertificateValueOutput getCertificateValue(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GetCertificateValue(); // GetCertificateValue | 
+apiInstance.getCertificateValue(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetCertificateValue**](GetCertificateValue.md)|  | 
+
+### Return type
+
+[**GetCertificateValueOutput**](GetCertificateValueOutput.md)
 
 ### Authorization
 
@@ -9128,6 +9258,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateAzureTargetOutput**](UpdateAzureTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateCertificateValue
+
+> UpdateCertificateOutput updateCertificateValue(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateCertificateValue(); // UpdateCertificateValue | 
+apiInstance.updateCertificateValue(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateCertificateValue**](UpdateCertificateValue.md)|  | 
+
+### Return type
+
+[**UpdateCertificateOutput**](UpdateCertificateOutput.md)
 
 ### Authorization
 

@@ -85,6 +85,8 @@ import CreateAuthMethodUniversalIdentity from './model/CreateAuthMethodUniversal
 import CreateAuthMethodUniversalIdentityOutput from './model/CreateAuthMethodUniversalIdentityOutput';
 import CreateAzureTarget from './model/CreateAzureTarget';
 import CreateAzureTargetOutput from './model/CreateAzureTargetOutput';
+import CreateCertificate from './model/CreateCertificate';
+import CreateCertificateOutput from './model/CreateCertificateOutput';
 import CreateClassicKey from './model/CreateClassicKey';
 import CreateClassicKeyOutput from './model/CreateClassicKeyOutput';
 import CreateDBTarget from './model/CreateDBTarget';
@@ -327,6 +329,8 @@ import GatewayUpdateProducerRedshift from './model/GatewayUpdateProducerRedshift
 import GatewayUpdateProducerRedshiftOutput from './model/GatewayUpdateProducerRedshiftOutput';
 import GatewayUpdateProducerSnowflake from './model/GatewayUpdateProducerSnowflake';
 import GatewayUpdateProducerSnowflakeOutput from './model/GatewayUpdateProducerSnowflakeOutput';
+import GatewayUpdateTlsCert from './model/GatewayUpdateTlsCert';
+import GatewayUpdateTlsCertOutput from './model/GatewayUpdateTlsCertOutput';
 import GatewayUpdateTmpUsers from './model/GatewayUpdateTmpUsers';
 import GatewaysListResponse from './model/GatewaysListResponse';
 import GenCustomerFragment from './model/GenCustomerFragment';
@@ -334,6 +338,8 @@ import GeneralConfigPart from './model/GeneralConfigPart';
 import GetAccountSettings from './model/GetAccountSettings';
 import GetAccountSettingsCommandOutput from './model/GetAccountSettingsCommandOutput';
 import GetAuthMethod from './model/GetAuthMethod';
+import GetCertificateValue from './model/GetCertificateValue';
+import GetCertificateValueOutput from './model/GetCertificateValueOutput';
 import GetDynamicSecretValue from './model/GetDynamicSecretValue';
 import GetEventForwarder from './model/GetEventForwarder';
 import GetEventForwarderOutput from './model/GetEventForwarderOutput';
@@ -528,6 +534,8 @@ import UpdateAuthMethodSAML from './model/UpdateAuthMethodSAML';
 import UpdateAuthMethodUniversalIdentity from './model/UpdateAuthMethodUniversalIdentity';
 import UpdateAzureTarget from './model/UpdateAzureTarget';
 import UpdateAzureTargetOutput from './model/UpdateAzureTargetOutput';
+import UpdateCertificateOutput from './model/UpdateCertificateOutput';
+import UpdateCertificateValue from './model/UpdateCertificateValue';
 import UpdateDBTarget from './model/UpdateDBTarget';
 import UpdateDBTargetDetails from './model/UpdateDBTargetDetails';
 import UpdateDBTargetOutput from './model/UpdateDBTargetOutput';
@@ -619,7 +627,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.1.0
+* @version 3.1.1
 */
 export {
     /**
@@ -1059,6 +1067,18 @@ export {
      * @property {module:model/CreateAzureTargetOutput}
      */
     CreateAzureTargetOutput,
+
+    /**
+     * The CreateCertificate model constructor.
+     * @property {module:model/CreateCertificate}
+     */
+    CreateCertificate,
+
+    /**
+     * The CreateCertificateOutput model constructor.
+     * @property {module:model/CreateCertificateOutput}
+     */
+    CreateCertificateOutput,
 
     /**
      * The CreateClassicKey model constructor.
@@ -2513,6 +2533,18 @@ export {
     GatewayUpdateProducerSnowflakeOutput,
 
     /**
+     * The GatewayUpdateTlsCert model constructor.
+     * @property {module:model/GatewayUpdateTlsCert}
+     */
+    GatewayUpdateTlsCert,
+
+    /**
+     * The GatewayUpdateTlsCertOutput model constructor.
+     * @property {module:model/GatewayUpdateTlsCertOutput}
+     */
+    GatewayUpdateTlsCertOutput,
+
+    /**
      * The GatewayUpdateTmpUsers model constructor.
      * @property {module:model/GatewayUpdateTmpUsers}
      */
@@ -2553,6 +2585,18 @@ export {
      * @property {module:model/GetAuthMethod}
      */
     GetAuthMethod,
+
+    /**
+     * The GetCertificateValue model constructor.
+     * @property {module:model/GetCertificateValue}
+     */
+    GetCertificateValue,
+
+    /**
+     * The GetCertificateValueOutput model constructor.
+     * @property {module:model/GetCertificateValueOutput}
+     */
+    GetCertificateValueOutput,
 
     /**
      * The GetDynamicSecretValue model constructor.
@@ -3717,6 +3761,18 @@ export {
      * @property {module:model/UpdateAzureTargetOutput}
      */
     UpdateAzureTargetOutput,
+
+    /**
+     * The UpdateCertificateOutput model constructor.
+     * @property {module:model/UpdateCertificateOutput}
+     */
+    UpdateCertificateOutput,
+
+    /**
+     * The UpdateCertificateValue model constructor.
+     * @property {module:model/UpdateCertificateValue}
+     */
+    UpdateCertificateValue,
 
     /**
      * The UpdateDBTarget model constructor.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyPKICertWithClassicKey model module.
  * @module model/VerifyPKICertWithClassicKey
- * @version 3.1.0
+ * @version 3.1.1
  */
 class VerifyPKICertWithClassicKey {
     /**

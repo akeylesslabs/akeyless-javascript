@@ -18,7 +18,7 @@ import Name from './Name';
 /**
  * The CertificateInfo model module.
  * @module model/CertificateInfo
- * @version 3.1.0
+ * @version 3.1.1
  */
 class CertificateInfo {
     /**

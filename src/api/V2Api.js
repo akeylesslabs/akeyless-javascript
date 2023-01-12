@@ -53,6 +53,8 @@ import CreateAuthMethodUniversalIdentity from '../model/CreateAuthMethodUniversa
 import CreateAuthMethodUniversalIdentityOutput from '../model/CreateAuthMethodUniversalIdentityOutput';
 import CreateAzureTarget from '../model/CreateAzureTarget';
 import CreateAzureTargetOutput from '../model/CreateAzureTargetOutput';
+import CreateCertificate from '../model/CreateCertificate';
+import CreateCertificateOutput from '../model/CreateCertificateOutput';
 import CreateClassicKey from '../model/CreateClassicKey';
 import CreateClassicKeyOutput from '../model/CreateClassicKeyOutput';
 import CreateDBTarget from '../model/CreateDBTarget';
@@ -269,11 +271,15 @@ import GatewayUpdateProducerRedshift from '../model/GatewayUpdateProducerRedshif
 import GatewayUpdateProducerRedshiftOutput from '../model/GatewayUpdateProducerRedshiftOutput';
 import GatewayUpdateProducerSnowflake from '../model/GatewayUpdateProducerSnowflake';
 import GatewayUpdateProducerSnowflakeOutput from '../model/GatewayUpdateProducerSnowflakeOutput';
+import GatewayUpdateTlsCert from '../model/GatewayUpdateTlsCert';
+import GatewayUpdateTlsCertOutput from '../model/GatewayUpdateTlsCertOutput';
 import GatewayUpdateTmpUsers from '../model/GatewayUpdateTmpUsers';
 import GatewaysListResponse from '../model/GatewaysListResponse';
 import GetAccountSettings from '../model/GetAccountSettings';
 import GetAccountSettingsCommandOutput from '../model/GetAccountSettingsCommandOutput';
 import GetAuthMethod from '../model/GetAuthMethod';
+import GetCertificateValue from '../model/GetCertificateValue';
+import GetCertificateValueOutput from '../model/GetCertificateValueOutput';
 import GetDynamicSecretValue from '../model/GetDynamicSecretValue';
 import GetEventForwarder from '../model/GetEventForwarder';
 import GetEventForwarderOutput from '../model/GetEventForwarderOutput';
@@ -394,6 +400,8 @@ import UpdateAuthMethodSAML from '../model/UpdateAuthMethodSAML';
 import UpdateAuthMethodUniversalIdentity from '../model/UpdateAuthMethodUniversalIdentity';
 import UpdateAzureTarget from '../model/UpdateAzureTarget';
 import UpdateAzureTargetOutput from '../model/UpdateAzureTargetOutput';
+import UpdateCertificateOutput from '../model/UpdateCertificateOutput';
+import UpdateCertificateValue from '../model/UpdateCertificateValue';
 import UpdateDBTarget from '../model/UpdateDBTarget';
 import UpdateDBTargetDetails from '../model/UpdateDBTargetDetails';
 import UpdateDBTargetOutput from '../model/UpdateDBTargetOutput';
@@ -453,7 +461,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.1.0
+* @version 3.1.1
 */
 export default class V2Api {
 
@@ -1324,6 +1332,49 @@ export default class V2Api {
      */
     createAzureTarget(body) {
       return this.createAzureTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateCertificate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateCertificateOutput} and HTTP response
+     */
+    createCertificateWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createCertificate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateCertificateOutput;
+      return this.apiClient.callApi(
+        '/create-certificate', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateCertificate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateCertificateOutput}
+     */
+    createCertificate(body) {
+      return this.createCertificateWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6316,6 +6367,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayUpdateTlsCert} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateTlsCertOutput} and HTTP response
+     */
+    gatewayUpdateTlsCertWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateTlsCert");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateTlsCertOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-tls-cert', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateTlsCert} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateTlsCertOutput}
+     */
+    gatewayUpdateTlsCert(body) {
+      return this.gatewayUpdateTlsCertWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayUpdateTmpUsers} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -6475,6 +6569,49 @@ export default class V2Api {
      */
     getAuthMethod(body) {
       return this.getAuthMethodWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GetCertificateValue} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetCertificateValueOutput} and HTTP response
+     */
+    getCertificateValueWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling getCertificateValue");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GetCertificateValueOutput;
+      return this.apiClient.callApi(
+        '/get-certificate-value', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GetCertificateValue} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetCertificateValueOutput}
+     */
+    getCertificateValue(body) {
+      return this.getCertificateValueWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9508,6 +9645,49 @@ export default class V2Api {
      */
     updateAzureTarget(body) {
       return this.updateAzureTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateCertificateValue} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateCertificateOutput} and HTTP response
+     */
+    updateCertificateValueWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateCertificateValue");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateCertificateOutput;
+      return this.apiClient.callApi(
+        '/update-certificate-value', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateCertificateValue} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateCertificateOutput}
+     */
+    updateCertificateValue(body) {
+      return this.updateCertificateValueWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
