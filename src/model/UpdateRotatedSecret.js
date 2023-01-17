@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 3.1.1
+ * @version 3.1.2
  */
 class UpdateRotatedSecret {
     /**
@@ -67,6 +67,9 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('custom-payload')) {
                 obj['custom-payload'] = ApiClient.convertToType(data['custom-payload'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('gcp-key')) {
                 obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
@@ -209,6 +212,13 @@ UpdateRotatedSecret.prototype['aws-region'] = 'us-east-2';
 UpdateRotatedSecret.prototype['custom-payload'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ * @default 'default_metadata'
+ */
+UpdateRotatedSecret.prototype['description'] = 'default_metadata';
+
+/**
  * Base64-encoded service account private key text
  * @member {String} gcp-key
  */
@@ -238,7 +248,7 @@ UpdateRotatedSecret.prototype['key'] = undefined;
 UpdateRotatedSecret.prototype['name'] = undefined;
 
 /**
- * New item metadata
+ * Deprecated - use description
  * @member {String} new-metadata
  * @default 'default_metadata'
  */

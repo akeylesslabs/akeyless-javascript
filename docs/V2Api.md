@@ -49,6 +49,7 @@ Method | HTTP request | Description
 [**createWebTarget**](V2Api.md#createWebTarget) | **POST** /create-web-target | 
 [**createldapTarget**](V2Api.md#createldapTarget) | **POST** /create-ldap-target | 
 [**decrypt**](V2Api.md#decrypt) | **POST** /decrypt | 
+[**decryptGPG**](V2Api.md#decryptGPG) | **POST** /decrypt-gpg | 
 [**decryptPKCS1**](V2Api.md#decryptPKCS1) | **POST** /decrypt-pkcs1 | 
 [**decryptWithClassicKey**](V2Api.md#decryptWithClassicKey) | **POST** /decrypt-with-classic-key | 
 [**deleteAuthMethod**](V2Api.md#deleteAuthMethod) | **POST** /delete-auth-method | 
@@ -68,6 +69,7 @@ Method | HTTP request | Description
 [**describeSubClaims**](V2Api.md#describeSubClaims) | **POST** /describe-sub-claims | 
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
+[**encryptGPG**](V2Api.md#encryptGPG) | **POST** /encrypt-gpg | 
 [**encryptWithClassicKey**](V2Api.md#encryptWithClassicKey) | **POST** /encrypt-with-classic-key | 
 [**exportClassicKey**](V2Api.md#exportClassicKey) | **POST** /export-classic-key | 
 [**gatewayCreateK8SAuthConfig**](V2Api.md#gatewayCreateK8SAuthConfig) | **POST** /gateway-create-k8s-auth-config | 
@@ -191,6 +193,7 @@ Method | HTTP request | Description
 [**setItemState**](V2Api.md#setItemState) | **POST** /set-item-state | 
 [**setRoleRule**](V2Api.md#setRoleRule) | **POST** /set-role-rule | 
 [**shareItem**](V2Api.md#shareItem) | **POST** /share-item | 
+[**signGPG**](V2Api.md#signGPG) | **POST** /sign-gpg | 
 [**signJWTWithClassicKey**](V2Api.md#signJWTWithClassicKey) | **POST** /sign-jwt-with-classic-key | 
 [**signPKCS1**](V2Api.md#signPKCS1) | **POST** /sign-pkcs1 | 
 [**signPKICertWithClassicKey**](V2Api.md#signPKICertWithClassicKey) | **POST** /sign-pki-cert-with-classic-key | 
@@ -249,6 +252,7 @@ Method | HTTP request | Description
 [**updateWebTargetDetails**](V2Api.md#updateWebTargetDetails) | **POST** /update-web-target-details | 
 [**uploadRSA**](V2Api.md#uploadRSA) | **POST** /upload-rsa | 
 [**validateToken**](V2Api.md#validateToken) | **POST** /validate-token | 
+[**verifyGPG**](V2Api.md#verifyGPG) | **POST** /verify-gpg | 
 [**verifyJWTWithClassicKey**](V2Api.md#verifyJWTWithClassicKey) | **POST** /verify-jwt-with-classic-key | 
 [**verifyPKCS1**](V2Api.md#verifyPKCS1) | **POST** /verify-pkcs1 | 
 [**verifyPKICertWithClassicKey**](V2Api.md#verifyPKICertWithClassicKey) | **POST** /verify-pki-cert-with-classic-key | 
@@ -2145,6 +2149,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## decryptGPG
+
+> DecryptGPGOutput decryptGPG(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DecryptGPG(); // DecryptGPG | 
+apiInstance.decryptGPG(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DecryptGPG**](DecryptGPG.md)|  | 
+
+### Return type
+
+[**DecryptGPGOutput**](DecryptGPGOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## decryptPKCS1
 
 > DecryptPKCS1Output decryptPKCS1(body)
@@ -2932,6 +2978,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EncryptOutput**](EncryptOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## encryptGPG
+
+> EncryptGPGOutput encryptGPG(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.EncryptGPG(); // EncryptGPG | 
+apiInstance.encryptGPG(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EncryptGPG**](EncryptGPG.md)|  | 
+
+### Return type
+
+[**EncryptGPGOutput**](EncryptGPGOutput.md)
 
 ### Authorization
 
@@ -8135,6 +8223,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## signGPG
+
+> SignGPGOutput signGPG(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.SignGPG(); // SignGPG | 
+apiInstance.signGPG(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SignGPG**](SignGPG.md)|  | 
+
+### Return type
+
+[**SignGPGOutput**](SignGPGOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## signJWTWithClassicKey
 
 > SignJWTOutput signJWTWithClassicKey(body)
@@ -10556,6 +10686,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ValidateTokenOutput**](ValidateTokenOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## verifyGPG
+
+> Object verifyGPG(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.VerifyGPG(); // VerifyGPG | 
+apiInstance.verifyGPG(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**VerifyGPG**](VerifyGPG.md)|  | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 

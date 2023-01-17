@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadPKCS12 model module.
  * @module model/UploadPKCS12
- * @version 3.1.1
+ * @version 3.1.2
  */
 class UploadPKCS12 {
     /**
@@ -58,6 +58,9 @@ class UploadPKCS12 {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('in')) {
                 obj['in'] = ApiClient.convertToType(data['in'], 'String');
@@ -106,6 +109,12 @@ UploadPKCS12.prototype['customer-frg-id'] = undefined;
 UploadPKCS12.prototype['delete_protection'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ */
+UploadPKCS12.prototype['description'] = undefined;
+
+/**
  * PKCS#12 input file (private key and certificate only)
  * @member {String} in
  */
@@ -118,7 +127,7 @@ UploadPKCS12.prototype['in'] = undefined;
 UploadPKCS12.prototype['json'] = undefined;
 
 /**
- * A metadata about the key
+ * Deprecated - use description
  * @member {String} metadata
  */
 UploadPKCS12.prototype['metadata'] = undefined;

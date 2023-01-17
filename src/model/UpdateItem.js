@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 3.1.1
+ * @version 3.1.2
  */
 class UpdateItem {
     /**
@@ -60,6 +60,9 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -186,6 +189,13 @@ UpdateItem.prototype['cert-file-data'] = undefined;
 UpdateItem.prototype['delete_protection'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ * @default 'default_metadata'
+ */
+UpdateItem.prototype['description'] = 'default_metadata';
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  */
@@ -198,7 +208,7 @@ UpdateItem.prototype['json'] = undefined;
 UpdateItem.prototype['name'] = undefined;
 
 /**
- * New item metadata
+ * Deprecated - use description
  * @member {String} new-metadata
  * @default 'default_metadata'
  */

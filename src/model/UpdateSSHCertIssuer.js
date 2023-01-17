@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHCertIssuer model module.
  * @module model/UpdateSSHCertIssuer
- * @version 3.1.1
+ * @version 3.1.2
  */
 class UpdateSSHCertIssuer {
     /**
@@ -60,6 +60,9 @@ class UpdateSSHCertIssuer {
             }
             if (data.hasOwnProperty('allowed-users')) {
                 obj['allowed-users'] = ApiClient.convertToType(data['allowed-users'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('extensions')) {
                 obj['extensions'] = ApiClient.convertToType(data['extensions'], {'String': 'String'});
@@ -132,6 +135,12 @@ UpdateSSHCertIssuer.prototype['add-tag'] = undefined;
 UpdateSSHCertIssuer.prototype['allowed-users'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ */
+UpdateSSHCertIssuer.prototype['description'] = undefined;
+
+/**
  * Signed certificates with extensions, e.g permit-port-forwarding=\\\"\\\"
  * @member {Object.<String, String>} extensions
  */
@@ -144,7 +153,7 @@ UpdateSSHCertIssuer.prototype['extensions'] = undefined;
 UpdateSSHCertIssuer.prototype['json'] = undefined;
 
 /**
- * A metadata about the issuer
+ * Deprecated - use description
  * @member {String} metadata
  */
 UpdateSSHCertIssuer.prototype['metadata'] = undefined;

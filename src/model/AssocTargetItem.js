@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocTargetItem model module.
  * @module model/AssocTargetItem
- * @version 3.1.1
+ * @version 3.1.2
  */
 class AssocTargetItem {
     /**
@@ -52,6 +52,9 @@ class AssocTargetItem {
         if (data) {
             obj = obj || new AssocTargetItem();
 
+            if (data.hasOwnProperty('disable-previous-key-version')) {
+                obj['disable-previous-key-version'] = ApiClient.convertToType(data['disable-previous-key-version'], 'Boolean');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -103,6 +106,12 @@ class AssocTargetItem {
 
 
 }
+
+/**
+ * Automatically disable previous key version (required for azure targets)
+ * @member {Boolean} disable-previous-key-version
+ */
+AssocTargetItem.prototype['disable-previous-key-version'] = undefined;
 
 /**
  * Set output format to JSON

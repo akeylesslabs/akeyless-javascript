@@ -142,6 +142,8 @@ import DatadogForwardingConfig from './model/DatadogForwardingConfig';
 import Decrypt from './model/Decrypt';
 import DecryptFile from './model/DecryptFile';
 import DecryptFileOutput from './model/DecryptFileOutput';
+import DecryptGPG from './model/DecryptGPG';
+import DecryptGPGOutput from './model/DecryptGPGOutput';
 import DecryptOutput from './model/DecryptOutput';
 import DecryptPKCS1 from './model/DecryptPKCS1';
 import DecryptPKCS1Output from './model/DecryptPKCS1Output';
@@ -180,6 +182,8 @@ import EmailTokenizerInfo from './model/EmailTokenizerInfo';
 import Encrypt from './model/Encrypt';
 import EncryptFile from './model/EncryptFile';
 import EncryptFileOutput from './model/EncryptFileOutput';
+import EncryptGPG from './model/EncryptGPG';
+import EncryptGPGOutput from './model/EncryptGPGOutput';
 import EncryptOutput from './model/EncryptOutput';
 import EncryptWithClassicKey from './model/EncryptWithClassicKey';
 import EncryptWithClassicKeyOutput from './model/EncryptWithClassicKeyOutput';
@@ -474,6 +478,8 @@ import SecureRemoteAccess from './model/SecureRemoteAccess';
 import SetItemState from './model/SetItemState';
 import SetRoleRule from './model/SetRoleRule';
 import ShareItem from './model/ShareItem';
+import SignGPG from './model/SignGPG';
+import SignGPGOutput from './model/SignGPGOutput';
 import SignJWTOutput from './model/SignJWTOutput';
 import SignJWTWithClassicKey from './model/SignJWTWithClassicKey';
 import SignPKCS1 from './model/SignPKCS1';
@@ -590,6 +596,7 @@ import UploadRSA from './model/UploadRSA';
 import ValidateToken from './model/ValidateToken';
 import ValidateTokenOutput from './model/ValidateTokenOutput';
 import VaultlessTokenizerInfo from './model/VaultlessTokenizerInfo';
+import VerifyGPG from './model/VerifyGPG';
 import VerifyJWTOutput from './model/VerifyJWTOutput';
 import VerifyJWTWithClassicKey from './model/VerifyJWTWithClassicKey';
 import VerifyPKCS1 from './model/VerifyPKCS1';
@@ -627,7 +634,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.1.1
+* @version 3.1.2
 */
 export {
     /**
@@ -1411,6 +1418,18 @@ export {
     DecryptFileOutput,
 
     /**
+     * The DecryptGPG model constructor.
+     * @property {module:model/DecryptGPG}
+     */
+    DecryptGPG,
+
+    /**
+     * The DecryptGPGOutput model constructor.
+     * @property {module:model/DecryptGPGOutput}
+     */
+    DecryptGPGOutput,
+
+    /**
      * The DecryptOutput model constructor.
      * @property {module:model/DecryptOutput}
      */
@@ -1637,6 +1656,18 @@ export {
      * @property {module:model/EncryptFileOutput}
      */
     EncryptFileOutput,
+
+    /**
+     * The EncryptGPG model constructor.
+     * @property {module:model/EncryptGPG}
+     */
+    EncryptGPG,
+
+    /**
+     * The EncryptGPGOutput model constructor.
+     * @property {module:model/EncryptGPGOutput}
+     */
+    EncryptGPGOutput,
 
     /**
      * The EncryptOutput model constructor.
@@ -3403,6 +3434,18 @@ export {
     ShareItem,
 
     /**
+     * The SignGPG model constructor.
+     * @property {module:model/SignGPG}
+     */
+    SignGPG,
+
+    /**
+     * The SignGPGOutput model constructor.
+     * @property {module:model/SignGPGOutput}
+     */
+    SignGPGOutput,
+
+    /**
      * The SignJWTOutput model constructor.
      * @property {module:model/SignJWTOutput}
      */
@@ -4097,6 +4140,12 @@ export {
      * @property {module:model/VaultlessTokenizerInfo}
      */
     VaultlessTokenizerInfo,
+
+    /**
+     * The VerifyGPG model constructor.
+     * @property {module:model/VerifyGPG}
+     */
+    VerifyGPG,
 
     /**
      * The VerifyJWTOutput model constructor.

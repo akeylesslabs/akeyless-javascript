@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 3.1.1
+ * @version 3.1.2
  */
 class CreatePKICertIssuer {
     /**
@@ -76,6 +76,9 @@ class CreatePKICertIssuer {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -187,6 +190,12 @@ CreatePKICertIssuer.prototype['country'] = undefined;
 CreatePKICertIssuer.prototype['delete_protection'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ */
+CreatePKICertIssuer.prototype['description'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  */
@@ -206,7 +215,7 @@ CreatePKICertIssuer.prototype['key-usage'] = 'DigitalSignature,KeyAgreement,KeyE
 CreatePKICertIssuer.prototype['locality'] = undefined;
 
 /**
- * A metadata about the issuer
+ * Deprecated - use description
  * @member {String} metadata
  */
 CreatePKICertIssuer.prototype['metadata'] = undefined;

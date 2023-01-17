@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 3.1.1
+ * @version 3.1.2
  */
 class CreateRotatedSecret {
     /**
@@ -76,6 +76,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('gcp-key')) {
                 obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
@@ -232,6 +235,12 @@ CreateRotatedSecret.prototype['custom-payload'] = undefined;
 CreateRotatedSecret.prototype['delete_protection'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ */
+CreateRotatedSecret.prototype['description'] = undefined;
+
+/**
  * Base64-encoded service account private key text
  * @member {String} gcp-key
  */
@@ -250,7 +259,7 @@ CreateRotatedSecret.prototype['json'] = undefined;
 CreateRotatedSecret.prototype['key'] = undefined;
 
 /**
- * Metadata about the secret
+ * Deprecated - use description
  * @member {String} metadata
  */
 CreateRotatedSecret.prototype['metadata'] = undefined;

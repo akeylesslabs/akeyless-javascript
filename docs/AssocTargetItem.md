@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**disablePreviousKeyVersion** | **Boolean** | Automatically disable previous key version (required for azure targets) | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] 
 **keyOperations** | **[String]** | A list of allowed operations for the key (required for azure targets) | [optional] 
 **keyringName** | **String** | Keyring name of the GCP KMS (required for gcp targets) | [optional] 

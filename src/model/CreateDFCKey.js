@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDFCKey model module.
  * @module model/CreateDFCKey
- * @version 3.1.1
+ * @version 3.1.2
  */
 class CreateDFCKey {
     /**
@@ -59,6 +59,9 @@ class CreateDFCKey {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -107,13 +110,19 @@ CreateDFCKey.prototype['customer-frg-id'] = undefined;
 CreateDFCKey.prototype['delete_protection'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ */
+CreateDFCKey.prototype['description'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  */
 CreateDFCKey.prototype['json'] = undefined;
 
 /**
- * Metadata about the DFC key
+ * Deprecated - use description
  * @member {String} metadata
  */
 CreateDFCKey.prototype['metadata'] = undefined;

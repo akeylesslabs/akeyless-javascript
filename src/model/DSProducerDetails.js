@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 3.1.1
+ * @version 3.1.2
  */
 class DSProducerDetails {
     /**
@@ -193,6 +193,12 @@ class DSProducerDetails {
             if (data.hasOwnProperty('db_port')) {
                 obj['db_port'] = ApiClient.convertToType(data['db_port'], 'String');
             }
+            if (data.hasOwnProperty('db_private_key')) {
+                obj['db_private_key'] = ApiClient.convertToType(data['db_private_key'], 'String');
+            }
+            if (data.hasOwnProperty('db_private_key_passphrase')) {
+                obj['db_private_key_passphrase'] = ApiClient.convertToType(data['db_private_key_passphrase'], 'String');
+            }
             if (data.hasOwnProperty('db_pwd')) {
                 obj['db_pwd'] = ApiClient.convertToType(data['db_pwd'], 'String');
             }
@@ -343,6 +349,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('item_targets_assoc')) {
                 obj['item_targets_assoc'] = ApiClient.convertToType(data['item_targets_assoc'], [ItemTargetAssociation]);
             }
+            if (data.hasOwnProperty('k8s_allowed_namespaces')) {
+                obj['k8s_allowed_namespaces'] = ApiClient.convertToType(data['k8s_allowed_namespaces'], 'String');
+            }
             if (data.hasOwnProperty('k8s_bearer_token')) {
                 obj['k8s_bearer_token'] = ApiClient.convertToType(data['k8s_bearer_token'], 'String');
             }
@@ -351,6 +360,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('k8s_cluster_endpoint')) {
                 obj['k8s_cluster_endpoint'] = ApiClient.convertToType(data['k8s_cluster_endpoint'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_dynamic_mode')) {
+                obj['k8s_dynamic_mode'] = ApiClient.convertToType(data['k8s_dynamic_mode'], 'Boolean');
             }
             if (data.hasOwnProperty('k8s_namespace')) {
                 obj['k8s_namespace'] = ApiClient.convertToType(data['k8s_namespace'], 'String');
@@ -831,6 +843,17 @@ DSProducerDetails.prototype['db_name'] = undefined;
 DSProducerDetails.prototype['db_port'] = undefined;
 
 /**
+ * (Optional) Private Key in PEM format
+ * @member {String} db_private_key
+ */
+DSProducerDetails.prototype['db_private_key'] = undefined;
+
+/**
+ * @member {String} db_private_key_passphrase
+ */
+DSProducerDetails.prototype['db_private_key_passphrase'] = undefined;
+
+/**
  * @member {String} db_pwd
  */
 DSProducerDetails.prototype['db_pwd'] = undefined;
@@ -1084,6 +1107,12 @@ DSProducerDetails.prototype['is_fixed_user'] = undefined;
 DSProducerDetails.prototype['item_targets_assoc'] = undefined;
 
 /**
+ * comma-separated list of allowed namespaces. Can hold just * which signifies that any namespace is allowed
+ * @member {String} k8s_allowed_namespaces
+ */
+DSProducerDetails.prototype['k8s_allowed_namespaces'] = undefined;
+
+/**
  * @member {String} k8s_bearer_token
  */
 DSProducerDetails.prototype['k8s_bearer_token'] = undefined;
@@ -1097,6 +1126,12 @@ DSProducerDetails.prototype['k8s_cluster_ca_certificate'] = undefined;
  * @member {String} k8s_cluster_endpoint
  */
 DSProducerDetails.prototype['k8s_cluster_endpoint'] = undefined;
+
+/**
+ * when native k8s is in dynamic mode, user can define allowed namespaces, K8sServiceAccount doesn't exist from the start and will only be created at time of getting dynamic secret value By default dynamic mode is false and producer behaves like it did before
+ * @member {Boolean} k8s_dynamic_mode
+ */
+DSProducerDetails.prototype['k8s_dynamic_mode'] = undefined;
 
 /**
  * @member {String} k8s_namespace

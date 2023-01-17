@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateTokenizer model module.
  * @module model/CreateTokenizer
- * @version 3.1.1
+ * @version 3.1.2
  */
 class CreateTokenizer {
     /**
@@ -62,6 +62,9 @@ class CreateTokenizer {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('encoding-template')) {
                 obj['encoding-template'] = ApiClient.convertToType(data['encoding-template'], 'String');
@@ -125,6 +128,12 @@ CreateTokenizer.prototype['decoding-template'] = undefined;
 CreateTokenizer.prototype['delete_protection'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ */
+CreateTokenizer.prototype['description'] = undefined;
+
+/**
  * The Encoding output template to use in regexp vaultless tokenization
  * @member {String} encoding-template
  */
@@ -143,7 +152,7 @@ CreateTokenizer.prototype['encryption-key-name'] = undefined;
 CreateTokenizer.prototype['json'] = undefined;
 
 /**
- * A metadata about the tokenizer
+ * Deprecated - use description
  * @member {String} metadata
  */
 CreateTokenizer.prototype['metadata'] = undefined;

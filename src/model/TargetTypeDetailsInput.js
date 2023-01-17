@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 3.1.1
+ * @version 3.1.2
  */
 class TargetTypeDetailsInput {
     /**
@@ -130,6 +130,12 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('db_port')) {
                 obj['db_port'] = ApiClient.convertToType(data['db_port'], 'String');
+            }
+            if (data.hasOwnProperty('db_private_key')) {
+                obj['db_private_key'] = ApiClient.convertToType(data['db_private_key'], 'String');
+            }
+            if (data.hasOwnProperty('db_private_key_passphrase')) {
+                obj['db_private_key_passphrase'] = ApiClient.convertToType(data['db_private_key_passphrase'], 'String');
             }
             if (data.hasOwnProperty('db_pwd')) {
                 obj['db_pwd'] = ApiClient.convertToType(data['db_pwd'], 'String');
@@ -476,6 +482,17 @@ TargetTypeDetailsInput.prototype['db_name'] = undefined;
  * @member {String} db_port
  */
 TargetTypeDetailsInput.prototype['db_port'] = undefined;
+
+/**
+ * (Optional) Private Key in PEM format
+ * @member {String} db_private_key
+ */
+TargetTypeDetailsInput.prototype['db_private_key'] = undefined;
+
+/**
+ * @member {String} db_private_key_passphrase
+ */
+TargetTypeDetailsInput.prototype['db_private_key_passphrase'] = undefined;
 
 /**
  * @member {String} db_pwd

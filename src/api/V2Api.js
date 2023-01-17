@@ -103,6 +103,8 @@ import CreateWebTarget from '../model/CreateWebTarget';
 import CreateWebTargetOutput from '../model/CreateWebTargetOutput';
 import DSProducerDetails from '../model/DSProducerDetails';
 import Decrypt from '../model/Decrypt';
+import DecryptGPG from '../model/DecryptGPG';
+import DecryptGPGOutput from '../model/DecryptGPGOutput';
 import DecryptOutput from '../model/DecryptOutput';
 import DecryptPKCS1 from '../model/DecryptPKCS1';
 import DecryptPKCS1Output from '../model/DecryptPKCS1Output';
@@ -133,6 +135,8 @@ import DescribeSubClaimsOutput from '../model/DescribeSubClaimsOutput';
 import Detokenize from '../model/Detokenize';
 import DetokenizeOutput from '../model/DetokenizeOutput';
 import Encrypt from '../model/Encrypt';
+import EncryptGPG from '../model/EncryptGPG';
+import EncryptGPGOutput from '../model/EncryptGPGOutput';
 import EncryptOutput from '../model/EncryptOutput';
 import EncryptWithClassicKey from '../model/EncryptWithClassicKey';
 import ExportClassicKey from '../model/ExportClassicKey';
@@ -354,6 +358,8 @@ import RotatedSecretOutput from '../model/RotatedSecretOutput';
 import SetItemState from '../model/SetItemState';
 import SetRoleRule from '../model/SetRoleRule';
 import ShareItem from '../model/ShareItem';
+import SignGPG from '../model/SignGPG';
+import SignGPGOutput from '../model/SignGPGOutput';
 import SignJWTOutput from '../model/SignJWTOutput';
 import SignJWTWithClassicKey from '../model/SignJWTWithClassicKey';
 import SignPKCS1 from '../model/SignPKCS1';
@@ -452,6 +458,7 @@ import UpdateWebTargetOutput from '../model/UpdateWebTargetOutput';
 import UploadRSA from '../model/UploadRSA';
 import ValidateToken from '../model/ValidateToken';
 import ValidateTokenOutput from '../model/ValidateTokenOutput';
+import VerifyGPG from '../model/VerifyGPG';
 import VerifyJWTOutput from '../model/VerifyJWTOutput';
 import VerifyJWTWithClassicKey from '../model/VerifyJWTWithClassicKey';
 import VerifyPKCS1 from '../model/VerifyPKCS1';
@@ -461,7 +468,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.1.1
+* @version 3.1.2
 */
 export default class V2Api {
 
@@ -2414,6 +2421,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/DecryptGPG} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DecryptGPGOutput} and HTTP response
+     */
+    decryptGPGWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling decryptGPG");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DecryptGPGOutput;
+      return this.apiClient.callApi(
+        '/decrypt-gpg', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DecryptGPG} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DecryptGPGOutput}
+     */
+    decryptGPG(body) {
+      return this.decryptGPGWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/DecryptPKCS1} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DecryptPKCS1Output} and HTTP response
      */
@@ -3224,6 +3274,49 @@ export default class V2Api {
      */
     encrypt(body) {
       return this.encryptWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EncryptGPG} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EncryptGPGOutput} and HTTP response
+     */
+    encryptGPGWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling encryptGPG");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EncryptGPGOutput;
+      return this.apiClient.callApi(
+        '/encrypt-gpg', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EncryptGPG} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EncryptGPGOutput}
+     */
+    encryptGPG(body) {
+      return this.encryptGPGWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8491,6 +8584,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/SignGPG} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SignGPGOutput} and HTTP response
+     */
+    signGPGWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling signGPG");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = SignGPGOutput;
+      return this.apiClient.callApi(
+        '/sign-gpg', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/SignGPG} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SignGPGOutput}
+     */
+    signGPG(body) {
+      return this.signGPGWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/SignJWTWithClassicKey} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SignJWTOutput} and HTTP response
      */
@@ -10972,6 +11108,49 @@ export default class V2Api {
      */
     validateToken(body) {
       return this.validateTokenWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/VerifyGPG} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    verifyGPGWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling verifyGPG");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/verify-gpg', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/VerifyGPG} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    verifyGPG(body) {
+      return this.verifyGPGWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

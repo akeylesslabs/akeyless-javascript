@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerSnowflake model module.
  * @module model/GatewayCreateProducerSnowflake
- * @version 3.1.1
+ * @version 3.1.2
  */
 class GatewayCreateProducerSnowflake {
     /**
      * Constructs a new <code>GatewayCreateProducerSnowflake</code>.
-     * gatewayCreateProducerSnowflakeCmd is a command that creates a Snowflake producer
+     * GatewayCreateProducerSnowflakeCmd is a command that creates a Snowflake producer
      * @alias module:model/GatewayCreateProducerSnowflake
      * @param name {String} Producer name
      */
@@ -70,6 +70,12 @@ class GatewayCreateProducerSnowflake {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('private-key')) {
+                obj['private-key'] = ApiClient.convertToType(data['private-key'], 'String');
+            }
+            if (data.hasOwnProperty('private-key-passphrase')) {
+                obj['private-key-passphrase'] = ApiClient.convertToType(data['private-key-passphrase'], 'String');
             }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'String');
@@ -140,6 +146,18 @@ GatewayCreateProducerSnowflake.prototype['json'] = undefined;
  * @member {String} name
  */
 GatewayCreateProducerSnowflake.prototype['name'] = undefined;
+
+/**
+ * RSA Private key (base64 encoded)
+ * @member {String} private-key
+ */
+GatewayCreateProducerSnowflake.prototype['private-key'] = undefined;
+
+/**
+ * The Private key passphrase
+ * @member {String} private-key-passphrase
+ */
+GatewayCreateProducerSnowflake.prototype['private-key-passphrase'] = undefined;
 
 /**
  * User role

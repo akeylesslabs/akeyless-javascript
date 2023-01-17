@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateCertificate model module.
  * @module model/CreateCertificate
- * @version 3.1.1
+ * @version 3.1.2
  */
 class CreateCertificate {
     /**
@@ -54,6 +54,9 @@ class CreateCertificate {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('expiration-event-in')) {
                 obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
@@ -102,6 +105,12 @@ CreateCertificate.prototype['certificate-data'] = undefined;
 CreateCertificate.prototype['delete_protection'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ */
+CreateCertificate.prototype['description'] = undefined;
+
+/**
  * How many days before the expiration of the certificate would you like to be notified.
  * @member {Array.<String>} expiration-event-in
  */
@@ -126,7 +135,7 @@ CreateCertificate.prototype['key'] = undefined;
 CreateCertificate.prototype['key-data'] = undefined;
 
 /**
- * Metadata about the certificate
+ * Deprecated - use description
  * @member {String} metadata
  */
 CreateCertificate.prototype['metadata'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDynamicSecret model module.
  * @module model/CreateDynamicSecret
- * @version 3.1.1
+ * @version 3.1.2
  */
 class CreateDynamicSecret {
     /**
@@ -51,6 +51,9 @@ class CreateDynamicSecret {
 
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -87,6 +90,12 @@ class CreateDynamicSecret {
 CreateDynamicSecret.prototype['delete_protection'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ */
+CreateDynamicSecret.prototype['description'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  */
@@ -99,11 +108,10 @@ CreateDynamicSecret.prototype['json'] = undefined;
 CreateDynamicSecret.prototype['key'] = undefined;
 
 /**
- * Metadata about the dynamic secret
+ * Deprecated - use description
  * @member {String} metadata
- * @default 'None'
  */
-CreateDynamicSecret.prototype['metadata'] = 'None';
+CreateDynamicSecret.prototype['metadata'] = undefined;
 
 /**
  * Dynamic secret name

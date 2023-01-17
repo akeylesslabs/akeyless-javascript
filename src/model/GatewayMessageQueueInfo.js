@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayMessageQueueInfo model module.
  * @module model/GatewayMessageQueueInfo
- * @version 3.1.1
+ * @version 3.1.2
  */
 class GatewayMessageQueueInfo {
     /**

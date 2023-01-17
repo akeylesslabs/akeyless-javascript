@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 3.1.1
+ * @version 3.1.2
  */
 class CreateClassicKey {
     /**
      * Constructs a new <code>CreateClassicKey</code>.
      * CreateClassicKey is a command that creates classic key
      * @alias module:model/CreateClassicKey
-     * @param alg {String} Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384]
+     * @param alg {String} Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384, GPG]
      * @param name {String} ClassicKey name
      */
     constructor(alg, name) { 
@@ -61,6 +61,12 @@ class CreateClassicKey {
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('gpg-alg')) {
+                obj['gpg-alg'] = ApiClient.convertToType(data['gpg-alg'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -93,7 +99,7 @@ class CreateClassicKey {
 }
 
 /**
- * Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384]
+ * Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384, GPG]
  * @member {String} alg
  */
 CreateClassicKey.prototype['alg'] = undefined;
@@ -111,6 +117,18 @@ CreateClassicKey.prototype['cert-file-data'] = undefined;
 CreateClassicKey.prototype['delete_protection'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ */
+CreateClassicKey.prototype['description'] = undefined;
+
+/**
+ * gpg alg: Relevant only if GPG key type selected; options: [RSA1024, RSA2048, RSA3072, RSA4096, Ed25519]
+ * @member {String} gpg-alg
+ */
+CreateClassicKey.prototype['gpg-alg'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  */
@@ -123,7 +141,7 @@ CreateClassicKey.prototype['json'] = undefined;
 CreateClassicKey.prototype['key-data'] = undefined;
 
 /**
- * Metadata about the classic key
+ * Deprecated - use description
  * @member {String} metadata
  */
 CreateClassicKey.prototype['metadata'] = undefined;

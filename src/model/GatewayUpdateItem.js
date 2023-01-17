@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateItem model module.
  * @module model/GatewayUpdateItem
- * @version 3.1.1
+ * @version 3.1.2
  */
 class GatewayUpdateItem {
     /**
@@ -69,6 +69,9 @@ class GatewayUpdateItem {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('gcp-key')) {
                 obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
@@ -162,6 +165,13 @@ GatewayUpdateItem.prototype['custom-payload'] = undefined;
 GatewayUpdateItem.prototype['delete_protection'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ * @default 'default_metadata'
+ */
+GatewayUpdateItem.prototype['description'] = 'default_metadata';
+
+/**
  * Base64-encoded service account private key text
  * @member {String} gcp-key
  */
@@ -191,7 +201,7 @@ GatewayUpdateItem.prototype['key'] = undefined;
 GatewayUpdateItem.prototype['name'] = undefined;
 
 /**
- * New item metadata
+ * Deprecated - use description
  * @member {String} new-metadata
  * @default 'default_metadata'
  */

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTarget model module.
  * @module model/CreateDBTarget
- * @version 3.1.1
+ * @version 3.1.2
  */
 class CreateDBTarget {
     /**
@@ -107,6 +107,12 @@ class CreateDBTarget {
             }
             if (data.hasOwnProperty('snowflake-account')) {
                 obj['snowflake-account'] = ApiClient.convertToType(data['snowflake-account'], 'String');
+            }
+            if (data.hasOwnProperty('snowflake-api-private-key')) {
+                obj['snowflake-api-private-key'] = ApiClient.convertToType(data['snowflake-api-private-key'], 'String');
+            }
+            if (data.hasOwnProperty('snowflake-api-private-key-password')) {
+                obj['snowflake-api-private-key-password'] = ApiClient.convertToType(data['snowflake-api-private-key-password'], 'String');
             }
             if (data.hasOwnProperty('ssl')) {
                 obj['ssl'] = ApiClient.convertToType(data['ssl'], 'Boolean');
@@ -235,6 +241,18 @@ CreateDBTarget.prototype['pwd'] = undefined;
  * @member {String} snowflake-account
  */
 CreateDBTarget.prototype['snowflake-account'] = undefined;
+
+/**
+ * RSA Private key (base64 encoded)
+ * @member {String} snowflake-api-private-key
+ */
+CreateDBTarget.prototype['snowflake-api-private-key'] = undefined;
+
+/**
+ * The Private key passphrase
+ * @member {String} snowflake-api-private-key-password
+ */
+CreateDBTarget.prototype['snowflake-api-private-key-password'] = undefined;
 
 /**
  * SSL connection mode

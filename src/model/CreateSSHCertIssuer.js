@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHCertIssuer model module.
  * @module model/CreateSSHCertIssuer
- * @version 3.1.1
+ * @version 3.1.2
  */
 class CreateSSHCertIssuer {
     /**
@@ -60,6 +60,9 @@ class CreateSSHCertIssuer {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('extensions')) {
                 obj['extensions'] = ApiClient.convertToType(data['extensions'], {'String': 'String'});
@@ -129,6 +132,12 @@ CreateSSHCertIssuer.prototype['allowed-users'] = undefined;
 CreateSSHCertIssuer.prototype['delete_protection'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ */
+CreateSSHCertIssuer.prototype['description'] = undefined;
+
+/**
  * Signed certificates with extensions, e.g permit-port-forwarding=\\\"\\\"
  * @member {Object.<String, String>} extensions
  */
@@ -141,7 +150,7 @@ CreateSSHCertIssuer.prototype['extensions'] = undefined;
 CreateSSHCertIssuer.prototype['json'] = undefined;
 
 /**
- * A metadata about the issuer
+ * Deprecated - use description
  * @member {String} metadata
  */
 CreateSSHCertIssuer.prototype['metadata'] = undefined;

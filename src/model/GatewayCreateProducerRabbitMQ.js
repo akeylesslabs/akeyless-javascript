@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRabbitMQ model module.
  * @module model/GatewayCreateProducerRabbitMQ
- * @version 3.1.1
+ * @version 3.1.2
  */
 class GatewayCreateProducerRabbitMQ {
     /**

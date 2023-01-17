@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 3.1.1
+ * @version 3.1.2
  */
 class CreateSecret {
     /**
@@ -56,6 +56,9 @@ class CreateSecret {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -144,13 +147,19 @@ CreateSecret.prototype['accessibility'] = 'regular';
 CreateSecret.prototype['delete_protection'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ */
+CreateSecret.prototype['description'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  */
 CreateSecret.prototype['json'] = undefined;
 
 /**
- * Metadata about the secret
+ * Deprecated - use description
  * @member {String} metadata
  */
 CreateSecret.prototype['metadata'] = undefined;
