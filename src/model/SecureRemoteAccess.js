@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecureRemoteAccess model module.
  * @module model/SecureRemoteAccess
- * @version 3.1.2
+ * @version 3.2.0
  */
 class SecureRemoteAccess {
     /**
@@ -106,6 +106,9 @@ class SecureRemoteAccess {
             }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
+            }
+            if (data.hasOwnProperty('rotate_after_disconnect')) {
+                obj['rotate_after_disconnect'] = ApiClient.convertToType(data['rotate_after_disconnect'], 'Boolean');
             }
             if (data.hasOwnProperty('schema')) {
                 obj['schema'] = ApiClient.convertToType(data['schema'], 'String');
@@ -234,6 +237,11 @@ SecureRemoteAccess.prototype['rdp_user'] = undefined;
  * @member {String} region
  */
 SecureRemoteAccess.prototype['region'] = undefined;
+
+/**
+ * @member {Boolean} rotate_after_disconnect
+ */
+SecureRemoteAccess.prototype['rotate_after_disconnect'] = undefined;
 
 /**
  * @member {String} schema

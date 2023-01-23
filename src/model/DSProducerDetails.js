@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 3.1.2
+ * @version 3.2.0
  */
 class DSProducerDetails {
     /**
@@ -49,6 +49,9 @@ class DSProducerDetails {
         if (data) {
             obj = obj || new DSProducerDetails();
 
+            if (data.hasOwnProperty('access_token_manager_id')) {
+                obj['access_token_manager_id'] = ApiClient.convertToType(data['access_token_manager_id'], 'String');
+            }
             if (data.hasOwnProperty('active')) {
                 obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
             }
@@ -60,6 +63,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('admin_rotation_interval_days')) {
                 obj['admin_rotation_interval_days'] = ApiClient.convertToType(data['admin_rotation_interval_days'], 'Number');
+            }
+            if (data.hasOwnProperty('administrative_port')) {
+                obj['administrative_port'] = ApiClient.convertToType(data['administrative_port'], 'String');
             }
             if (data.hasOwnProperty('artifactory_admin_apikey')) {
                 obj['artifactory_admin_apikey'] = ApiClient.convertToType(data['artifactory_admin_apikey'], 'String');
@@ -75,6 +81,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('artifactory_token_scope')) {
                 obj['artifactory_token_scope'] = ApiClient.convertToType(data['artifactory_token_scope'], 'String');
+            }
+            if (data.hasOwnProperty('authorization_port')) {
+                obj['authorization_port'] = ApiClient.convertToType(data['authorization_port'], 'String');
             }
             if (data.hasOwnProperty('aws_access_key_id')) {
                 obj['aws_access_key_id'] = ApiClient.convertToType(data['aws_access_key_id'], 'String');
@@ -172,6 +181,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('chef_skip_ssl')) {
                 obj['chef_skip_ssl'] = ApiClient.convertToType(data['chef_skip_ssl'], 'Boolean');
             }
+            if (data.hasOwnProperty('client_authentication_type')) {
+                obj['client_authentication_type'] = ApiClient.convertToType(data['client_authentication_type'], 'String');
+            }
             if (data.hasOwnProperty('create_sync_url')) {
                 obj['create_sync_url'] = ApiClient.convertToType(data['create_sync_url'], 'String');
             }
@@ -250,6 +262,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('enable_admin_rotation')) {
                 obj['enable_admin_rotation'] = ApiClient.convertToType(data['enable_admin_rotation'], 'Boolean');
             }
+            if (data.hasOwnProperty('enforce_replay_prevention')) {
+                obj['enforce_replay_prevention'] = ApiClient.convertToType(data['enforce_replay_prevention'], 'Boolean');
+            }
             if (data.hasOwnProperty('externally_provided_user')) {
                 obj['externally_provided_user'] = ApiClient.convertToType(data['externally_provided_user'], 'String');
             }
@@ -325,6 +340,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('gke_service_account_name')) {
                 obj['gke_service_account_name'] = ApiClient.convertToType(data['gke_service_account_name'], 'String');
             }
+            if (data.hasOwnProperty('grant_types')) {
+                obj['grant_types'] = ApiClient.convertToType(data['grant_types'], ['String']);
+            }
             if (data.hasOwnProperty('groups')) {
                 obj['groups'] = ApiClient.convertToType(data['groups'], 'String');
             }
@@ -346,8 +364,17 @@ class DSProducerDetails {
             if (data.hasOwnProperty('is_fixed_user')) {
                 obj['is_fixed_user'] = ApiClient.convertToType(data['is_fixed_user'], 'String');
             }
+            if (data.hasOwnProperty('issuer')) {
+                obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
+            }
             if (data.hasOwnProperty('item_targets_assoc')) {
                 obj['item_targets_assoc'] = ApiClient.convertToType(data['item_targets_assoc'], [ItemTargetAssociation]);
+            }
+            if (data.hasOwnProperty('jwks')) {
+                obj['jwks'] = ApiClient.convertToType(data['jwks'], 'String');
+            }
+            if (data.hasOwnProperty('jwks_url')) {
+                obj['jwks_url'] = ApiClient.convertToType(data['jwks_url'], 'String');
             }
             if (data.hasOwnProperty('k8s_allowed_namespaces')) {
                 obj['k8s_allowed_namespaces'] = ApiClient.convertToType(data['k8s_allowed_namespaces'], 'String');
@@ -367,8 +394,20 @@ class DSProducerDetails {
             if (data.hasOwnProperty('k8s_namespace')) {
                 obj['k8s_namespace'] = ApiClient.convertToType(data['k8s_namespace'], 'String');
             }
+            if (data.hasOwnProperty('k8s_role_name')) {
+                obj['k8s_role_name'] = ApiClient.convertToType(data['k8s_role_name'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_role_type')) {
+                obj['k8s_role_type'] = ApiClient.convertToType(data['k8s_role_type'], 'String');
+            }
             if (data.hasOwnProperty('k8s_service_account')) {
                 obj['k8s_service_account'] = ApiClient.convertToType(data['k8s_service_account'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_temp_role_binding_definition')) {
+                obj['k8s_temp_role_binding_definition'] = ApiClient.convertToType(data['k8s_temp_role_binding_definition'], ['Number']);
+            }
+            if (data.hasOwnProperty('k8s_temp_role_definition')) {
+                obj['k8s_temp_role_definition'] = ApiClient.convertToType(data['k8s_temp_role_definition'], ['Number']);
             }
             if (data.hasOwnProperty('last_admin_rotation')) {
                 obj['last_admin_rotation'] = ApiClient.convertToType(data['last_admin_rotation'], 'Number');
@@ -463,11 +502,17 @@ class DSProducerDetails {
             if (data.hasOwnProperty('payload')) {
                 obj['payload'] = ApiClient.convertToType(data['payload'], 'String');
             }
+            if (data.hasOwnProperty('ping_url')) {
+                obj['ping_url'] = ApiClient.convertToType(data['ping_url'], 'String');
+            }
             if (data.hasOwnProperty('postgres_creation_statements')) {
                 obj['postgres_creation_statements'] = ApiClient.convertToType(data['postgres_creation_statements'], 'String');
             }
             if (data.hasOwnProperty('postgres_revocation_statements')) {
                 obj['postgres_revocation_statements'] = ApiClient.convertToType(data['postgres_revocation_statements'], 'String');
+            }
+            if (data.hasOwnProperty('privileged_user')) {
+                obj['privileged_user'] = ApiClient.convertToType(data['privileged_user'], 'String');
             }
             if (data.hasOwnProperty('rabbitmq_server_password')) {
                 obj['rabbitmq_server_password'] = ApiClient.convertToType(data['rabbitmq_server_password'], 'String');
@@ -493,8 +538,14 @@ class DSProducerDetails {
             if (data.hasOwnProperty('rabbitmq_user_write_permission')) {
                 obj['rabbitmq_user_write_permission'] = ApiClient.convertToType(data['rabbitmq_user_write_permission'], 'String');
             }
+            if (data.hasOwnProperty('redirect_uris')) {
+                obj['redirect_uris'] = ApiClient.convertToType(data['redirect_uris'], ['String']);
+            }
             if (data.hasOwnProperty('redshift_creation_statements')) {
                 obj['redshift_creation_statements'] = ApiClient.convertToType(data['redshift_creation_statements'], 'String');
+            }
+            if (data.hasOwnProperty('restricted_scopes')) {
+                obj['restricted_scopes'] = ApiClient.convertToType(data['restricted_scopes'], ['String']);
             }
             if (data.hasOwnProperty('revoke_sync_url')) {
                 obj['revoke_sync_url'] = ApiClient.convertToType(data['revoke_sync_url'], 'String');
@@ -523,11 +574,17 @@ class DSProducerDetails {
             if (data.hasOwnProperty('should_stop')) {
                 obj['should_stop'] = ApiClient.convertToType(data['should_stop'], 'String');
             }
+            if (data.hasOwnProperty('signing_algorithm')) {
+                obj['signing_algorithm'] = ApiClient.convertToType(data['signing_algorithm'], 'String');
+            }
             if (data.hasOwnProperty('ssl_connection_certificate')) {
                 obj['ssl_connection_certificate'] = ApiClient.convertToType(data['ssl_connection_certificate'], 'String');
             }
             if (data.hasOwnProperty('ssl_connection_mode')) {
                 obj['ssl_connection_mode'] = ApiClient.convertToType(data['ssl_connection_mode'], 'Boolean');
+            }
+            if (data.hasOwnProperty('subject_dn')) {
+                obj['subject_dn'] = ApiClient.convertToType(data['subject_dn'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -540,6 +597,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('user_name')) {
                 obj['user_name'] = ApiClient.convertToType(data['user_name'], 'String');
+            }
+            if (data.hasOwnProperty('user_password')) {
+                obj['user_password'] = ApiClient.convertToType(data['user_password'], 'String');
             }
             if (data.hasOwnProperty('user_principal_name')) {
                 obj['user_principal_name'] = ApiClient.convertToType(data['user_principal_name'], 'String');
@@ -603,6 +663,11 @@ class DSProducerDetails {
 }
 
 /**
+ * @member {String} access_token_manager_id
+ */
+DSProducerDetails.prototype['access_token_manager_id'] = undefined;
+
+/**
  * @member {Boolean} active
  */
 DSProducerDetails.prototype['active'] = undefined;
@@ -621,6 +686,11 @@ DSProducerDetails.prototype['admin_pwd'] = undefined;
  * @member {Number} admin_rotation_interval_days
  */
 DSProducerDetails.prototype['admin_rotation_interval_days'] = undefined;
+
+/**
+ * @member {String} administrative_port
+ */
+DSProducerDetails.prototype['administrative_port'] = undefined;
 
 /**
  * @member {String} artifactory_admin_apikey
@@ -646,6 +716,11 @@ DSProducerDetails.prototype['artifactory_token_audience'] = undefined;
  * @member {String} artifactory_token_scope
  */
 DSProducerDetails.prototype['artifactory_token_scope'] = undefined;
+
+/**
+ * @member {String} authorization_port
+ */
+DSProducerDetails.prototype['authorization_port'] = undefined;
 
 /**
  * @member {String} aws_access_key_id
@@ -808,6 +883,11 @@ DSProducerDetails.prototype['chef_server_username'] = undefined;
 DSProducerDetails.prototype['chef_skip_ssl'] = undefined;
 
 /**
+ * @member {String} client_authentication_type
+ */
+DSProducerDetails.prototype['client_authentication_type'] = undefined;
+
+/**
  * @member {String} create_sync_url
  */
 DSProducerDetails.prototype['create_sync_url'] = undefined;
@@ -941,6 +1021,12 @@ DSProducerDetails.prototype['eks_secret_access_key'] = undefined;
 DSProducerDetails.prototype['enable_admin_rotation'] = undefined;
 
 /**
+ * relevant for PRIVATE_KEY_JWT client authentication type
+ * @member {Boolean} enforce_replay_prevention
+ */
+DSProducerDetails.prototype['enforce_replay_prevention'] = undefined;
+
+/**
  * @member {String} externally_provided_user
  */
 DSProducerDetails.prototype['externally_provided_user'] = undefined;
@@ -1067,6 +1153,11 @@ DSProducerDetails.prototype['gke_service_account_key'] = undefined;
 DSProducerDetails.prototype['gke_service_account_name'] = undefined;
 
 /**
+ * @member {Array.<String>} grant_types
+ */
+DSProducerDetails.prototype['grant_types'] = undefined;
+
+/**
  * @member {String} groups
  */
 DSProducerDetails.prototype['groups'] = undefined;
@@ -1102,9 +1193,25 @@ DSProducerDetails.prototype['implementation_type'] = undefined;
 DSProducerDetails.prototype['is_fixed_user'] = undefined;
 
 /**
+ * relevant for CLIENT_TLS_CERTIFICATE client authentication type
+ * @member {String} issuer
+ */
+DSProducerDetails.prototype['issuer'] = undefined;
+
+/**
  * @member {Array.<module:model/ItemTargetAssociation>} item_targets_assoc
  */
 DSProducerDetails.prototype['item_targets_assoc'] = undefined;
+
+/**
+ * @member {String} jwks
+ */
+DSProducerDetails.prototype['jwks'] = undefined;
+
+/**
+ * @member {String} jwks_url
+ */
+DSProducerDetails.prototype['jwks_url'] = undefined;
 
 /**
  * comma-separated list of allowed namespaces. Can hold just * which signifies that any namespace is allowed
@@ -1139,9 +1246,32 @@ DSProducerDetails.prototype['k8s_dynamic_mode'] = undefined;
 DSProducerDetails.prototype['k8s_namespace'] = undefined;
 
 /**
+ * Name of the pre-existing Role or ClusterRole to bind a generated service account to.
+ * @member {String} k8s_role_name
+ */
+DSProducerDetails.prototype['k8s_role_name'] = undefined;
+
+/**
+ * @member {String} k8s_role_type
+ */
+DSProducerDetails.prototype['k8s_role_type'] = undefined;
+
+/**
  * @member {String} k8s_service_account
  */
 DSProducerDetails.prototype['k8s_service_account'] = undefined;
+
+/**
+ * Yaml/Json definition of temporary role binding that will be created and deleted when TTL is due. Must have as subject name of Service Account specified in K8sServiceAccount field
+ * @member {Array.<Number>} k8s_temp_role_binding_definition
+ */
+DSProducerDetails.prototype['k8s_temp_role_binding_definition'] = undefined;
+
+/**
+ * Yaml/Json definition of temporary role that will be created and deleted when TTL is due
+ * @member {Array.<Number>} k8s_temp_role_definition
+ */
+DSProducerDetails.prototype['k8s_temp_role_definition'] = undefined;
 
 /**
  * @member {Number} last_admin_rotation
@@ -1303,6 +1433,11 @@ DSProducerDetails.prototype['password_policy'] = undefined;
 DSProducerDetails.prototype['payload'] = undefined;
 
 /**
+ * @member {String} ping_url
+ */
+DSProducerDetails.prototype['ping_url'] = undefined;
+
+/**
  * @member {String} postgres_creation_statements
  */
 DSProducerDetails.prototype['postgres_creation_statements'] = undefined;
@@ -1311,6 +1446,11 @@ DSProducerDetails.prototype['postgres_creation_statements'] = undefined;
  * @member {String} postgres_revocation_statements
  */
 DSProducerDetails.prototype['postgres_revocation_statements'] = undefined;
+
+/**
+ * @member {String} privileged_user
+ */
+DSProducerDetails.prototype['privileged_user'] = undefined;
 
 /**
  * @member {String} rabbitmq_server_password
@@ -1353,9 +1493,19 @@ DSProducerDetails.prototype['rabbitmq_user_vhost'] = undefined;
 DSProducerDetails.prototype['rabbitmq_user_write_permission'] = undefined;
 
 /**
+ * @member {Array.<String>} redirect_uris
+ */
+DSProducerDetails.prototype['redirect_uris'] = undefined;
+
+/**
  * @member {String} redshift_creation_statements
  */
 DSProducerDetails.prototype['redshift_creation_statements'] = undefined;
+
+/**
+ * @member {Array.<String>} restricted_scopes
+ */
+DSProducerDetails.prototype['restricted_scopes'] = undefined;
 
 /**
  * @member {String} revoke_sync_url
@@ -1405,6 +1555,11 @@ DSProducerDetails.prototype['sf_warehouse_name'] = undefined;
 DSProducerDetails.prototype['should_stop'] = undefined;
 
 /**
+ * @member {String} signing_algorithm
+ */
+DSProducerDetails.prototype['signing_algorithm'] = undefined;
+
+/**
  * (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field
  * @member {String} ssl_connection_certificate
  */
@@ -1415,6 +1570,11 @@ DSProducerDetails.prototype['ssl_connection_certificate'] = undefined;
  * @member {Boolean} ssl_connection_mode
  */
 DSProducerDetails.prototype['ssl_connection_mode'] = undefined;
+
+/**
+ * @member {String} subject_dn
+ */
+DSProducerDetails.prototype['subject_dn'] = undefined;
 
 /**
  * @member {Array.<String>} tags
@@ -1435,6 +1595,11 @@ DSProducerDetails.prototype['use_gw_cloud_identity'] = undefined;
  * @member {String} user_name
  */
 DSProducerDetails.prototype['user_name'] = undefined;
+
+/**
+ * @member {String} user_password
+ */
+DSProducerDetails.prototype['user_password'] = undefined;
 
 /**
  * @member {String} user_principal_name

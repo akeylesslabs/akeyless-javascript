@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPKICertificate model module.
  * @module model/GetPKICertificate
- * @version 3.1.2
+ * @version 3.2.0
  */
 class GetPKICertificate {
     /**
@@ -58,6 +58,9 @@ class GetPKICertificate {
             if (data.hasOwnProperty('common-name')) {
                 obj['common-name'] = ApiClient.convertToType(data['common-name'], 'String');
             }
+            if (data.hasOwnProperty('csr-data-base64')) {
+                obj['csr-data-base64'] = ApiClient.convertToType(data['csr-data-base64'], 'String');
+            }
             if (data.hasOwnProperty('extended-key-usage')) {
                 obj['extended-key-usage'] = ApiClient.convertToType(data['extended-key-usage'], 'String');
             }
@@ -87,7 +90,7 @@ class GetPKICertificate {
 }
 
 /**
- * The Subject Alternative Names to be included in the PKI certificate (in a comma-delimited list)
+ * The Subject Alternative Names to be included in the PKI certificate (in a comma-separated list) (if CSR is supplied this flag is ignored and any DNS.* names are taken from it)
  * @member {String} alt-names
  */
 GetPKICertificate.prototype['alt-names'] = undefined;
@@ -99,10 +102,16 @@ GetPKICertificate.prototype['alt-names'] = undefined;
 GetPKICertificate.prototype['cert-issuer-name'] = undefined;
 
 /**
- * The common name to be included in the PKI certificate
+ * The common name to be included in the PKI certificate (if CSR is supplied this flag is ignored and the CSR subject CN is taken)
  * @member {String} common-name
  */
 GetPKICertificate.prototype['common-name'] = undefined;
+
+/**
+ * Certificate Signing Request contents encoded in base64 to generate the certificate with
+ * @member {String} csr-data-base64
+ */
+GetPKICertificate.prototype['csr-data-base64'] = undefined;
 
 /**
  * A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: 'clientauth', 'serverauth'.
@@ -141,7 +150,7 @@ GetPKICertificate.prototype['ttl'] = undefined;
 GetPKICertificate.prototype['uid-token'] = undefined;
 
 /**
- * The URI Subject Alternative Names to be included in the PKI certificate (in a comma-delimited list)
+ * The URI Subject Alternative Names to be included in the PKI certificate (in a comma-separated list) (if CSR is supplied this flag is ignored and any URI.* names are taken from it)
  * @member {String} uri-sans
  */
 GetPKICertificate.prototype['uri-sans'] = undefined;

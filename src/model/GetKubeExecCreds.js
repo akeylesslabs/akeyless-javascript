@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetKubeExecCreds model module.
  * @module model/GetKubeExecCreds
- * @version 3.1.2
+ * @version 3.2.0
  */
 class GetKubeExecCreds {
     /**
@@ -59,6 +59,9 @@ class GetKubeExecCreds {
             if (data.hasOwnProperty('common-name')) {
                 obj['common-name'] = ApiClient.convertToType(data['common-name'], 'String');
             }
+            if (data.hasOwnProperty('csr-data-base64')) {
+                obj['csr-data-base64'] = ApiClient.convertToType(data['csr-data-base64'], 'String');
+            }
             if (data.hasOwnProperty('extended-key-usage')) {
                 obj['extended-key-usage'] = ApiClient.convertToType(data['extended-key-usage'], 'String');
             }
@@ -88,7 +91,7 @@ class GetKubeExecCreds {
 }
 
 /**
- * The Subject Alternative Names to be included in the PKI certificate (in a comma-delimited list)
+ * The Subject Alternative Names to be included in the PKI certificate (in a comma-separated list) (if CSR is supplied this flag is ignored and any DNS.* names are taken from it)
  * @member {String} alt-names
  */
 GetKubeExecCreds.prototype['alt-names'] = undefined;
@@ -100,10 +103,16 @@ GetKubeExecCreds.prototype['alt-names'] = undefined;
 GetKubeExecCreds.prototype['cert-issuer-name'] = undefined;
 
 /**
- * The common name to be included in the PKI certificate
+ * The common name to be included in the PKI certificate (if CSR is supplied this flag is ignored and the CSR subject CN is taken)
  * @member {String} common-name
  */
 GetKubeExecCreds.prototype['common-name'] = undefined;
+
+/**
+ * Certificate Signing Request contents encoded in base64 to generate the certificate with
+ * @member {String} csr-data-base64
+ */
+GetKubeExecCreds.prototype['csr-data-base64'] = undefined;
 
 /**
  * A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: 'clientauth', 'serverauth'.
@@ -142,7 +151,7 @@ GetKubeExecCreds.prototype['ttl'] = undefined;
 GetKubeExecCreds.prototype['uid-token'] = undefined;
 
 /**
- * The URI Subject Alternative Names to be included in the PKI certificate (in a comma-delimited list)
+ * The URI Subject Alternative Names to be included in the PKI certificate (in a comma-separated list) (if CSR is supplied this flag is ignored and any URI.* names are taken from it)
  * @member {String} uri-sans
  */
 GetKubeExecCreds.prototype['uri-sans'] = undefined;

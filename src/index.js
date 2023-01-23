@@ -114,6 +114,8 @@ import CreateNativeK8STarget from './model/CreateNativeK8STarget';
 import CreateNativeK8STargetOutput from './model/CreateNativeK8STargetOutput';
 import CreatePKICertIssuer from './model/CreatePKICertIssuer';
 import CreatePKICertIssuerOutput from './model/CreatePKICertIssuerOutput';
+import CreatePingTarget from './model/CreatePingTarget';
+import CreatePingTargetOutput from './model/CreatePingTargetOutput';
 import CreateRabbitMQTarget from './model/CreateRabbitMQTarget';
 import CreateRabbitMQTargetOutput from './model/CreateRabbitMQTargetOutput';
 import CreateRole from './model/CreateRole';
@@ -235,6 +237,8 @@ import GatewayCreateProducerNativeK8S from './model/GatewayCreateProducerNativeK
 import GatewayCreateProducerNativeK8SOutput from './model/GatewayCreateProducerNativeK8SOutput';
 import GatewayCreateProducerOracleDb from './model/GatewayCreateProducerOracleDb';
 import GatewayCreateProducerOracleDbOutput from './model/GatewayCreateProducerOracleDbOutput';
+import GatewayCreateProducerPing from './model/GatewayCreateProducerPing';
+import GatewayCreateProducerPingOutput from './model/GatewayCreateProducerPingOutput';
 import GatewayCreateProducerPostgreSQL from './model/GatewayCreateProducerPostgreSQL';
 import GatewayCreateProducerPostgreSQLOutput from './model/GatewayCreateProducerPostgreSQLOutput';
 import GatewayCreateProducerRabbitMQ from './model/GatewayCreateProducerRabbitMQ';
@@ -323,6 +327,8 @@ import GatewayUpdateProducerNativeK8S from './model/GatewayUpdateProducerNativeK
 import GatewayUpdateProducerNativeK8SOutput from './model/GatewayUpdateProducerNativeK8SOutput';
 import GatewayUpdateProducerOracleDb from './model/GatewayUpdateProducerOracleDb';
 import GatewayUpdateProducerOracleDbOutput from './model/GatewayUpdateProducerOracleDbOutput';
+import GatewayUpdateProducerPing from './model/GatewayUpdateProducerPing';
+import GatewayUpdateProducerPingOutput from './model/GatewayUpdateProducerPingOutput';
 import GatewayUpdateProducerPostgreSQL from './model/GatewayUpdateProducerPostgreSQL';
 import GatewayUpdateProducerPostgreSQLOutput from './model/GatewayUpdateProducerPostgreSQLOutput';
 import GatewayUpdateProducerRabbitMQ from './model/GatewayUpdateProducerRabbitMQ';
@@ -566,6 +572,7 @@ import UpdateNativeK8STargetOutput from './model/UpdateNativeK8STargetOutput';
 import UpdateOutput from './model/UpdateOutput';
 import UpdatePKICertIssuer from './model/UpdatePKICertIssuer';
 import UpdatePKICertIssuerOutput from './model/UpdatePKICertIssuerOutput';
+import UpdatePingTarget from './model/UpdatePingTarget';
 import UpdateRDPTargetDetails from './model/UpdateRDPTargetDetails';
 import UpdateRabbitMQTarget from './model/UpdateRabbitMQTarget';
 import UpdateRabbitMQTargetDetails from './model/UpdateRabbitMQTargetDetails';
@@ -634,7 +641,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.1.2
+* @version 3.2.0
 */
 export {
     /**
@@ -1248,6 +1255,18 @@ export {
      * @property {module:model/CreatePKICertIssuerOutput}
      */
     CreatePKICertIssuerOutput,
+
+    /**
+     * The CreatePingTarget model constructor.
+     * @property {module:model/CreatePingTarget}
+     */
+    CreatePingTarget,
+
+    /**
+     * The CreatePingTargetOutput model constructor.
+     * @property {module:model/CreatePingTargetOutput}
+     */
+    CreatePingTargetOutput,
 
     /**
      * The CreateRabbitMQTarget model constructor.
@@ -1976,6 +1995,18 @@ export {
     GatewayCreateProducerOracleDbOutput,
 
     /**
+     * The GatewayCreateProducerPing model constructor.
+     * @property {module:model/GatewayCreateProducerPing}
+     */
+    GatewayCreateProducerPing,
+
+    /**
+     * The GatewayCreateProducerPingOutput model constructor.
+     * @property {module:model/GatewayCreateProducerPingOutput}
+     */
+    GatewayCreateProducerPingOutput,
+
+    /**
      * The GatewayCreateProducerPostgreSQL model constructor.
      * @property {module:model/GatewayCreateProducerPostgreSQL}
      */
@@ -2502,6 +2533,18 @@ export {
      * @property {module:model/GatewayUpdateProducerOracleDbOutput}
      */
     GatewayUpdateProducerOracleDbOutput,
+
+    /**
+     * The GatewayUpdateProducerPing model constructor.
+     * @property {module:model/GatewayUpdateProducerPing}
+     */
+    GatewayUpdateProducerPing,
+
+    /**
+     * The GatewayUpdateProducerPingOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerPingOutput}
+     */
+    GatewayUpdateProducerPingOutput,
 
     /**
      * The GatewayUpdateProducerPostgreSQL model constructor.
@@ -3960,6 +4003,12 @@ export {
      * @property {module:model/UpdatePKICertIssuerOutput}
      */
     UpdatePKICertIssuerOutput,
+
+    /**
+     * The UpdatePingTarget model constructor.
+     * @property {module:model/UpdatePingTarget}
+     */
+    UpdatePingTarget,
 
     /**
      * The UpdateRDPTargetDetails model constructor.

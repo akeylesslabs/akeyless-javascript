@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 3.1.2
+ * @version 3.2.0
  */
 class UpdateRotatedSecret {
     /**
@@ -97,6 +97,9 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('rm-tag')) {
                 obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
+            }
+            if (data.hasOwnProperty('rotate-after-disconnect')) {
+                obj['rotate-after-disconnect'] = ApiClient.convertToType(data['rotate-after-disconnect'], 'String');
             }
             if (data.hasOwnProperty('rotated-password')) {
                 obj['rotated-password'] = ApiClient.convertToType(data['rotated-password'], 'String');
@@ -271,6 +274,13 @@ UpdateRotatedSecret.prototype['new-version'] = undefined;
  * @member {Array.<String>} rm-tag
  */
 UpdateRotatedSecret.prototype['rm-tag'] = undefined;
+
+/**
+ * Rotate the value of the secret after SRA session ends
+ * @member {String} rotate-after-disconnect
+ * @default 'false'
+ */
+UpdateRotatedSecret.prototype['rotate-after-disconnect'] = 'false';
 
 /**
  * @member {String} rotated-password

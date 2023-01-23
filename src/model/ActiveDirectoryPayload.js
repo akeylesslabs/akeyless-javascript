@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ActiveDirectoryPayload model module.
  * @module model/ActiveDirectoryPayload
- * @version 3.1.2
+ * @version 3.2.0
  */
 class ActiveDirectoryPayload {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 3.1.2
+ * @version 3.2.0
  */
 class TargetTypeDetailsInput {
     /**
@@ -47,6 +47,9 @@ class TargetTypeDetailsInput {
         if (data) {
             obj = obj || new TargetTypeDetailsInput();
 
+            if (data.hasOwnProperty('administrative_port')) {
+                obj['administrative_port'] = ApiClient.convertToType(data['administrative_port'], 'String');
+            }
             if (data.hasOwnProperty('app_private_key')) {
                 obj['app_private_key'] = ApiClient.convertToType(data['app_private_key'], ['Number']);
             }
@@ -61,6 +64,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('auth_flow')) {
                 obj['auth_flow'] = ApiClient.convertToType(data['auth_flow'], 'String');
+            }
+            if (data.hasOwnProperty('authorization_port')) {
+                obj['authorization_port'] = ApiClient.convertToType(data['authorization_port'], 'String');
             }
             if (data.hasOwnProperty('aws_access_key_id')) {
                 obj['aws_access_key_id'] = ApiClient.convertToType(data['aws_access_key_id'], 'String');
@@ -269,6 +275,9 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('payload')) {
                 obj['payload'] = ApiClient.convertToType(data['payload'], 'String');
             }
+            if (data.hasOwnProperty('ping_url')) {
+                obj['ping_url'] = ApiClient.convertToType(data['ping_url'], 'String');
+            }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
             }
@@ -277,6 +286,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('private_key_password')) {
                 obj['private_key_password'] = ApiClient.convertToType(data['private_key_password'], 'String');
+            }
+            if (data.hasOwnProperty('privileged_user')) {
+                obj['privileged_user'] = ApiClient.convertToType(data['privileged_user'], 'String');
             }
             if (data.hasOwnProperty('rabbitmq_server_password')) {
                 obj['rabbitmq_server_password'] = ApiClient.convertToType(data['rabbitmq_server_password'], 'String');
@@ -311,6 +323,9 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('user_name')) {
                 obj['user_name'] = ApiClient.convertToType(data['user_name'], 'String');
             }
+            if (data.hasOwnProperty('user_password')) {
+                obj['user_password'] = ApiClient.convertToType(data['user_password'], 'String');
+            }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
@@ -340,6 +355,11 @@ class TargetTypeDetailsInput {
 }
 
 /**
+ * @member {String} administrative_port
+ */
+TargetTypeDetailsInput.prototype['administrative_port'] = undefined;
+
+/**
  * params needed for jwt auth AppPrivateKey is the rsa private key in PEM format
  * @member {Array.<Number>} app_private_key
  */
@@ -364,6 +384,11 @@ TargetTypeDetailsInput.prototype['artifactory_base_url'] = undefined;
  * @member {String} auth_flow
  */
 TargetTypeDetailsInput.prototype['auth_flow'] = undefined;
+
+/**
+ * @member {String} authorization_port
+ */
+TargetTypeDetailsInput.prototype['authorization_port'] = undefined;
 
 /**
  * @member {String} aws_access_key_id
@@ -721,6 +746,11 @@ TargetTypeDetailsInput.prototype['password'] = undefined;
 TargetTypeDetailsInput.prototype['payload'] = undefined;
 
 /**
+ * @member {String} ping_url
+ */
+TargetTypeDetailsInput.prototype['ping_url'] = undefined;
+
+/**
  * @member {String} port
  */
 TargetTypeDetailsInput.prototype['port'] = undefined;
@@ -734,6 +764,11 @@ TargetTypeDetailsInput.prototype['private_key'] = undefined;
  * @member {String} private_key_password
  */
 TargetTypeDetailsInput.prototype['private_key_password'] = undefined;
+
+/**
+ * @member {String} privileged_user
+ */
+TargetTypeDetailsInput.prototype['privileged_user'] = undefined;
 
 /**
  * @member {String} rabbitmq_server_password
@@ -791,6 +826,11 @@ TargetTypeDetailsInput.prototype['use_gw_cloud_identity'] = undefined;
  * @member {String} user_name
  */
 TargetTypeDetailsInput.prototype['user_name'] = undefined;
+
+/**
+ * @member {String} user_password
+ */
+TargetTypeDetailsInput.prototype['user_password'] = undefined;
 
 /**
  * @member {String} username

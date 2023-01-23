@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **key** | **String** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **metadata** | **String** | Deprecated - use description | [optional] 
 **name** | **String** | Secret name | 
+**rotateAfterDisconnect** | **String** | Rotate the value of the secret after SRA session ends | [optional] [default to &#39;false&#39;]
 **rotatedPassword** | **String** |  | [optional] 
 **rotatedUsername** | **String** |  | [optional] 
 **rotationHour** | **Number** |  | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerChef model module.
  * @module model/GatewayUpdateProducerChef
- * @version 3.1.2
+ * @version 3.2.0
  */
 class GatewayUpdateProducerChef {
     /**

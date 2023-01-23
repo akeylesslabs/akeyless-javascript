@@ -82,6 +82,8 @@ import CreateNativeK8STarget from '../model/CreateNativeK8STarget';
 import CreateNativeK8STargetOutput from '../model/CreateNativeK8STargetOutput';
 import CreatePKICertIssuer from '../model/CreatePKICertIssuer';
 import CreatePKICertIssuerOutput from '../model/CreatePKICertIssuerOutput';
+import CreatePingTarget from '../model/CreatePingTarget';
+import CreatePingTargetOutput from '../model/CreatePingTargetOutput';
 import CreateRabbitMQTarget from '../model/CreateRabbitMQTarget';
 import CreateRabbitMQTargetOutput from '../model/CreateRabbitMQTargetOutput';
 import CreateRole from '../model/CreateRole';
@@ -180,6 +182,8 @@ import GatewayCreateProducerNativeK8S from '../model/GatewayCreateProducerNative
 import GatewayCreateProducerNativeK8SOutput from '../model/GatewayCreateProducerNativeK8SOutput';
 import GatewayCreateProducerOracleDb from '../model/GatewayCreateProducerOracleDb';
 import GatewayCreateProducerOracleDbOutput from '../model/GatewayCreateProducerOracleDbOutput';
+import GatewayCreateProducerPing from '../model/GatewayCreateProducerPing';
+import GatewayCreateProducerPingOutput from '../model/GatewayCreateProducerPingOutput';
 import GatewayCreateProducerPostgreSQL from '../model/GatewayCreateProducerPostgreSQL';
 import GatewayCreateProducerPostgreSQLOutput from '../model/GatewayCreateProducerPostgreSQLOutput';
 import GatewayCreateProducerRabbitMQ from '../model/GatewayCreateProducerRabbitMQ';
@@ -265,6 +269,8 @@ import GatewayUpdateProducerNativeK8S from '../model/GatewayUpdateProducerNative
 import GatewayUpdateProducerNativeK8SOutput from '../model/GatewayUpdateProducerNativeK8SOutput';
 import GatewayUpdateProducerOracleDb from '../model/GatewayUpdateProducerOracleDb';
 import GatewayUpdateProducerOracleDbOutput from '../model/GatewayUpdateProducerOracleDbOutput';
+import GatewayUpdateProducerPing from '../model/GatewayUpdateProducerPing';
+import GatewayUpdateProducerPingOutput from '../model/GatewayUpdateProducerPingOutput';
 import GatewayUpdateProducerPostgreSQL from '../model/GatewayUpdateProducerPostgreSQL';
 import GatewayUpdateProducerPostgreSQLOutput from '../model/GatewayUpdateProducerPostgreSQLOutput';
 import GatewayUpdateProducerRabbitMQ from '../model/GatewayUpdateProducerRabbitMQ';
@@ -431,6 +437,7 @@ import UpdateNativeK8STarget from '../model/UpdateNativeK8STarget';
 import UpdateNativeK8STargetOutput from '../model/UpdateNativeK8STargetOutput';
 import UpdatePKICertIssuer from '../model/UpdatePKICertIssuer';
 import UpdatePKICertIssuerOutput from '../model/UpdatePKICertIssuerOutput';
+import UpdatePingTarget from '../model/UpdatePingTarget';
 import UpdateRDPTargetDetails from '../model/UpdateRDPTargetDetails';
 import UpdateRabbitMQTarget from '../model/UpdateRabbitMQTarget';
 import UpdateRabbitMQTargetDetails from '../model/UpdateRabbitMQTargetDetails';
@@ -468,7 +475,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.1.2
+* @version 3.2.0
 */
 export default class V2Api {
 
@@ -1941,6 +1948,49 @@ export default class V2Api {
      */
     createPKICertIssuer(body) {
       return this.createPKICertIssuerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreatePingTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreatePingTargetOutput} and HTTP response
+     */
+    createPingTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createPingTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreatePingTargetOutput;
+      return this.apiClient.callApi(
+        '/create-ping-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreatePingTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreatePingTargetOutput}
+     */
+    createPingTarget(body) {
+      return this.createPingTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4269,6 +4319,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayCreateProducerPing} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerPingOutput} and HTTP response
+     */
+    gatewayCreateProducerPingWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateProducerPing");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayCreateProducerPingOutput;
+      return this.apiClient.callApi(
+        '/gateway-create-producer-ping', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayCreateProducerPing} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerPingOutput}
+     */
+    gatewayCreateProducerPing(body) {
+      return this.gatewayCreateProducerPingWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayCreateProducerPostgreSQL} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerPostgreSQLOutput} and HTTP response
      */
@@ -6238,6 +6331,49 @@ export default class V2Api {
      */
     gatewayUpdateProducerOracleDb(body) {
       return this.gatewayUpdateProducerOracleDbWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerPing} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerPingOutput} and HTTP response
+     */
+    gatewayUpdateProducerPingWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerPing");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerPingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-ping', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerPing} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerPingOutput}
+     */
+    gatewayUpdateProducerPing(body) {
+      return this.gatewayUpdateProducerPingWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -10383,6 +10519,49 @@ export default class V2Api {
      */
     updatePKICertIssuer(body) {
       return this.updatePKICertIssuerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdatePingTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updatePingTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updatePingTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-ping-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdatePingTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updatePingTarget(body) {
+      return this.updatePingTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
