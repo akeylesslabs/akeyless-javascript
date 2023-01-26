@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSalesforceTarget model module.
  * @module model/UpdateSalesforceTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UpdateSalesforceTarget {
     /**
@@ -77,6 +77,9 @@ class UpdateSalesforceTarget {
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
@@ -158,10 +161,16 @@ UpdateSalesforceTarget.prototype['client-id'] = undefined;
 UpdateSalesforceTarget.prototype['client-secret'] = undefined;
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 UpdateSalesforceTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+UpdateSalesforceTarget.prototype['description'] = undefined;
 
 /**
  * The email of the user attached to the oauth2 app used for connecting to Salesforce

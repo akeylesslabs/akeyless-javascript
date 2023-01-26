@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGKETarget model module.
  * @module model/CreateGKETarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateGKETarget {
     /**
@@ -51,6 +51,9 @@ class CreateGKETarget {
 
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('gke-account-key')) {
                 obj['gke-account-key'] = ApiClient.convertToType(data['gke-account-key'], 'String');
@@ -93,10 +96,16 @@ class CreateGKETarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateGKETarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateGKETarget.prototype['description'] = undefined;
 
 /**
  * GKE Service Account key file path

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerEks model module.
  * @module model/GatewayUpdateProducerEks
- * @version 3.2.0
+ * @version 3.2.1
  */
 class GatewayUpdateProducerEks {
     /**
@@ -248,9 +248,9 @@ GatewayUpdateProducerEks.prototype['uid-token'] = undefined;
 /**
  * User TTL
  * @member {String} user-ttl
- * @default '60m'
+ * @default '15m'
  */
-GatewayUpdateProducerEks.prototype['user-ttl'] = '60m';
+GatewayUpdateProducerEks.prototype['user-ttl'] = '15m';
 
 
 

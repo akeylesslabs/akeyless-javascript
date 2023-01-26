@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHTarget model module.
  * @module model/CreateSSHTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateSSHTarget {
     /**
@@ -51,6 +51,9 @@ class CreateSSHTarget {
 
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
@@ -93,10 +96,16 @@ class CreateSSHTarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateSSHTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateSSHTarget.prototype['description'] = undefined;
 
 /**
  * @member {String} host

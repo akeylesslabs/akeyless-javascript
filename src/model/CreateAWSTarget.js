@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAWSTarget model module.
  * @module model/CreateAWSTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateAWSTarget {
     /**
@@ -57,6 +57,9 @@ class CreateAWSTarget {
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -100,10 +103,16 @@ CreateAWSTarget.prototype['access-key'] = undefined;
 CreateAWSTarget.prototype['access-key-id'] = undefined;
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateAWSTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateAWSTarget.prototype['description'] = undefined;
 
 /**
  * Set output format to JSON

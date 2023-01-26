@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEventForwarder model module.
  * @module model/CreateEventForwarder
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateEventForwarder {
     /**
@@ -63,6 +63,9 @@ class CreateEventForwarder {
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('email-to')) {
                 obj['email-to'] = ApiClient.convertToType(data['email-to'], 'String');
@@ -123,10 +126,16 @@ CreateEventForwarder.prototype['admin-name'] = undefined;
 CreateEventForwarder.prototype['admin-pwd'] = undefined;
 
 /**
- * Comment about the EventForwarder
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateEventForwarder.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateEventForwarder.prototype['description'] = undefined;
 
 /**
  * A comma seperated list of email addresses to send event to (relevant only for \\\"email\\\" Event Forwarder)

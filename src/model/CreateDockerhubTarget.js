@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDockerhubTarget model module.
  * @module model/CreateDockerhubTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateDockerhubTarget {
     /**
@@ -52,6 +52,9 @@ class CreateDockerhubTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('dockerhub-password')) {
                 obj['dockerhub-password'] = ApiClient.convertToType(data['dockerhub-password'], 'String');
             }
@@ -81,10 +84,16 @@ class CreateDockerhubTarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateDockerhubTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateDockerhubTarget.prototype['description'] = undefined;
 
 /**
  * DockerhubPassword is either the user's password to manage the repository

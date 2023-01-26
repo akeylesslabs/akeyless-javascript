@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateEKSTarget model module.
  * @module model/UpdateEKSTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UpdateEKSTarget {
     /**
@@ -61,6 +61,9 @@ class UpdateEKSTarget {
 
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('eks-access-key-id')) {
                 obj['eks-access-key-id'] = ApiClient.convertToType(data['eks-access-key-id'], 'String');
@@ -115,10 +118,16 @@ class UpdateEKSTarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 UpdateEKSTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+UpdateEKSTarget.prototype['description'] = undefined;
 
 /**
  * Access Key ID

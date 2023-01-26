@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateEventForwarder model module.
  * @module model/UpdateEventForwarder
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UpdateEventForwarder {
     /**
@@ -51,6 +51,9 @@ class UpdateEventForwarder {
 
             if (data.hasOwnProperty('admin-name')) {
                 obj['admin-name'] = ApiClient.convertToType(data['admin-name'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('email-to')) {
                 obj['email-to'] = ApiClient.convertToType(data['email-to'], 'String');
@@ -99,6 +102,13 @@ class UpdateEventForwarder {
 UpdateEventForwarder.prototype['admin-name'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ * @default 'default_comment'
+ */
+UpdateEventForwarder.prototype['description'] = 'default_comment';
+
+/**
  * A comma seperated list of email addresses to send event to (relevant only for \\\"email\\\" Event Forwarder)
  * @member {String} email-to
  */
@@ -141,7 +151,7 @@ UpdateEventForwarder.prototype['json'] = undefined;
 UpdateEventForwarder.prototype['name'] = undefined;
 
 /**
- * New comment about the Event Forwarder
+ * Deprecated - use description
  * @member {String} new-comment
  * @default 'default_comment'
  */

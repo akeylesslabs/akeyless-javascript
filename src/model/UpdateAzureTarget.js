@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAzureTarget model module.
  * @module model/UpdateAzureTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UpdateAzureTarget {
     /**
@@ -57,6 +57,9 @@ class UpdateAzureTarget {
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -115,10 +118,16 @@ UpdateAzureTarget.prototype['client-id'] = undefined;
 UpdateAzureTarget.prototype['client-secret'] = undefined;
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 UpdateAzureTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+UpdateAzureTarget.prototype['description'] = undefined;
 
 /**
  * Set output format to JSON

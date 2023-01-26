@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidRotateToken model module.
  * @module model/UidRotateToken
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UidRotateToken {
     /**

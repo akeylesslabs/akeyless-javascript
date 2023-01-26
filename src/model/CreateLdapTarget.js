@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLdapTarget model module.
  * @module model/CreateLdapTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateLdapTarget {
     /**
@@ -63,6 +63,9 @@ class CreateLdapTarget {
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -111,10 +114,16 @@ CreateLdapTarget.prototype['bind-dn'] = undefined;
 CreateLdapTarget.prototype['bind-dn-password'] = undefined;
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateLdapTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateLdapTarget.prototype['description'] = undefined;
 
 /**
  * Set output format to JSON

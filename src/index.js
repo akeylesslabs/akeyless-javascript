@@ -374,6 +374,7 @@ import GwClusterIdentity from './model/GwClusterIdentity';
 import HashiMigration from './model/HashiMigration';
 import HashiPayload from './model/HashiPayload';
 import HuaweiAccessRules from './model/HuaweiAccessRules';
+import ImporterInfo from './model/ImporterInfo';
 import Item from './model/Item';
 import ItemGeneralInfo from './model/ItemGeneralInfo';
 import ItemTargetAssociation from './model/ItemTargetAssociation';
@@ -641,7 +642,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.2.0
+* @version 3.2.1
 */
 export {
     /**
@@ -2815,6 +2816,12 @@ export {
      * @property {module:model/HuaweiAccessRules}
      */
     HuaweiAccessRules,
+
+    /**
+     * The ImporterInfo model constructor.
+     * @property {module:model/ImporterInfo}
+     */
+    ImporterInfo,
 
     /**
      * The Item model constructor.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAzureTarget model module.
  * @module model/CreateAzureTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateAzureTarget {
     /**
@@ -57,6 +57,9 @@ class CreateAzureTarget {
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -106,10 +109,16 @@ CreateAzureTarget.prototype['client-id'] = undefined;
 CreateAzureTarget.prototype['client-secret'] = undefined;
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateAzureTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateAzureTarget.prototype['description'] = undefined;
 
 /**
  * Set output format to JSON

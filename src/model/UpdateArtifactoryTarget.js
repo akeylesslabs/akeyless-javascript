@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateArtifactoryTarget model module.
  * @module model/UpdateArtifactoryTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UpdateArtifactoryTarget {
     /**
@@ -66,6 +66,9 @@ class UpdateArtifactoryTarget {
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -117,10 +120,16 @@ UpdateArtifactoryTarget.prototype['artifactory-admin-pwd'] = undefined;
 UpdateArtifactoryTarget.prototype['base-url'] = undefined;
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 UpdateArtifactoryTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+UpdateArtifactoryTarget.prototype['description'] = undefined;
 
 /**
  * Set output format to JSON

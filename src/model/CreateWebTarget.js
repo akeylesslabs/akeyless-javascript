@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateWebTarget model module.
  * @module model/CreateWebTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateWebTarget {
     /**
@@ -52,6 +52,9 @@ class CreateWebTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -78,10 +81,16 @@ class CreateWebTarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateWebTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateWebTarget.prototype['description'] = undefined;
 
 /**
  * Set output format to JSON

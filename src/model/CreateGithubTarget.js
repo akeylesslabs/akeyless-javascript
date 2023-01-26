@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGithubTarget model module.
  * @module model/CreateGithubTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateGithubTarget {
     /**
@@ -52,6 +52,9 @@ class CreateGithubTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('github-app-id')) {
                 obj['github-app-id'] = ApiClient.convertToType(data['github-app-id'], 'Number');
             }
@@ -84,10 +87,16 @@ class CreateGithubTarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateGithubTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateGithubTarget.prototype['description'] = undefined;
 
 /**
  * Github app id

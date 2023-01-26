@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTarget model module.
  * @module model/UpdateDBTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UpdateDBTarget {
     /**
@@ -65,6 +65,9 @@ class UpdateDBTarget {
             }
             if (data.hasOwnProperty('db-type')) {
                 obj['db-type'] = ApiClient.convertToType(data['db-type'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
@@ -146,7 +149,7 @@ class UpdateDBTarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 UpdateDBTarget.prototype['comment'] = undefined;
@@ -172,6 +175,12 @@ UpdateDBTarget.prototype['db-server-name'] = undefined;
  * @member {String} db-type
  */
 UpdateDBTarget.prototype['db-type'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+UpdateDBTarget.prototype['description'] = undefined;
 
 /**
  * @member {String} host

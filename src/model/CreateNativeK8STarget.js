@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateNativeK8STarget model module.
  * @module model/CreateNativeK8STarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateNativeK8STarget {
     /**
@@ -58,6 +58,9 @@ class CreateNativeK8STarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -90,10 +93,16 @@ class CreateNativeK8STarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateNativeK8STarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateNativeK8STarget.prototype['description'] = undefined;
 
 /**
  * Set output format to JSON

@@ -18,7 +18,7 @@ import ExternalKMSKeyId from './ExternalKMSKeyId';
 /**
  * The ClassicKeyTargetInfo model module.
  * @module model/ClassicKeyTargetInfo
- * @version 3.2.0
+ * @version 3.2.1
  */
 class ClassicKeyTargetInfo {
     /**

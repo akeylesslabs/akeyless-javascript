@@ -16,6 +16,7 @@ import CertificateChainInfo from './CertificateChainInfo';
 import CertificateIssueInfo from './CertificateIssueInfo';
 import ClassicKeyDetailsInfo from './ClassicKeyDetailsInfo';
 import DynamicSecretProducerInfo from './DynamicSecretProducerInfo';
+import ImporterInfo from './ImporterInfo';
 import PasswordPolicyInfo from './PasswordPolicyInfo';
 import RotatedSecretDetailsInfo from './RotatedSecretDetailsInfo';
 import SecureRemoteAccess from './SecureRemoteAccess';
@@ -25,7 +26,7 @@ import TokenizerInfo from './TokenizerInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 3.2.0
+ * @version 3.2.1
  */
 class ItemGeneralInfo {
     /**
@@ -73,6 +74,9 @@ class ItemGeneralInfo {
             }
             if (data.hasOwnProperty('dynamic_secret_producer_details')) {
                 obj['dynamic_secret_producer_details'] = DynamicSecretProducerInfo.constructFromObject(data['dynamic_secret_producer_details']);
+            }
+            if (data.hasOwnProperty('importer_info')) {
+                obj['importer_info'] = ImporterInfo.constructFromObject(data['importer_info']);
             }
             if (data.hasOwnProperty('password_policy')) {
                 obj['password_policy'] = PasswordPolicyInfo.constructFromObject(data['password_policy']);
@@ -125,6 +129,11 @@ ItemGeneralInfo.prototype['display_metadata'] = undefined;
  * @member {module:model/DynamicSecretProducerInfo} dynamic_secret_producer_details
  */
 ItemGeneralInfo.prototype['dynamic_secret_producer_details'] = undefined;
+
+/**
+ * @member {module:model/ImporterInfo} importer_info
+ */
+ItemGeneralInfo.prototype['importer_info'] = undefined;
 
 /**
  * @member {module:model/PasswordPolicyInfo} password_policy

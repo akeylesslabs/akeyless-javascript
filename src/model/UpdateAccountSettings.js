@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UpdateAccountSettings {
     /**

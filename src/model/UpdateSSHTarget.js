@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHTarget model module.
  * @module model/UpdateSSHTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UpdateSSHTarget {
     /**
@@ -51,6 +51,9 @@ class UpdateSSHTarget {
 
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
@@ -102,10 +105,16 @@ class UpdateSSHTarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 UpdateSSHTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+UpdateSSHTarget.prototype['description'] = undefined;
 
 /**
  * @member {String} host

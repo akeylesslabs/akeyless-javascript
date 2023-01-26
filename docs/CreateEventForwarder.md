@@ -6,7 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **adminName** | **String** | Workstation Admin Name | [optional] 
 **adminPwd** | **String** | Workstation Admin password | [optional] 
-**comment** | **String** | Comment about the EventForwarder | [optional] 
+**comment** | **String** | Deprecated - use description | [optional] 
+**description** | **String** | Description of the object | [optional] 
 **emailTo** | **String** | A comma seperated list of email addresses to send event to (relevant only for \\\&quot;email\\\&quot; Event Forwarder) | [optional] 
 **eventSourceLocations** | **[String]** | Event sources | 
 **eventSourceType** | **String** | Event Source type [item, target] | [optional] [default to &#39;item&#39;]

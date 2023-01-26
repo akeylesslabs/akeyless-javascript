@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateTarget model module.
  * @module model/UpdateTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UpdateTarget {
     /**
@@ -49,6 +49,9 @@ class UpdateTarget {
         if (data) {
             obj = obj || new UpdateTarget();
 
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -75,6 +78,13 @@ class UpdateTarget {
 }
 
 /**
+ * Description of the object
+ * @member {String} description
+ * @default 'default_comment'
+ */
+UpdateTarget.prototype['description'] = 'default_comment';
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  */
@@ -87,7 +97,7 @@ UpdateTarget.prototype['json'] = undefined;
 UpdateTarget.prototype['name'] = undefined;
 
 /**
- * New comment about the target
+ * Deprecated - use description
  * @member {String} new-comment
  * @default 'default_comment'
  */

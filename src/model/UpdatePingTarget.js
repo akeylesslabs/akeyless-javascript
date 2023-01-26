@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePingTarget model module.
  * @module model/UpdatePingTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UpdatePingTarget {
     /**
@@ -57,6 +57,9 @@ class UpdatePingTarget {
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -113,10 +116,16 @@ UpdatePingTarget.prototype['administrative-port'] = '9999';
 UpdatePingTarget.prototype['authorization-port'] = '9031';
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 UpdatePingTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+UpdatePingTarget.prototype['description'] = undefined;
 
 /**
  * Set output format to JSON

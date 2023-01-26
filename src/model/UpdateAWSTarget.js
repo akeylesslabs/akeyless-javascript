@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAWSTarget model module.
  * @module model/UpdateAWSTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UpdateAWSTarget {
     /**
@@ -57,6 +57,9 @@ class UpdateAWSTarget {
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -109,10 +112,16 @@ UpdateAWSTarget.prototype['access-key'] = undefined;
 UpdateAWSTarget.prototype['access-key-id'] = undefined;
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 UpdateAWSTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+UpdateAWSTarget.prototype['description'] = undefined;
 
 /**
  * Set output format to JSON

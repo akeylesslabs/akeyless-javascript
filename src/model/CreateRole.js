@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRole model module.
  * @module model/CreateRole
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateRole {
     /**
@@ -58,6 +58,9 @@ class CreateRole {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('gw-analytics-access')) {
                 obj['gw-analytics-access'] = ApiClient.convertToType(data['gw-analytics-access'], 'String');
             }
@@ -96,10 +99,16 @@ CreateRole.prototype['analytics-access'] = undefined;
 CreateRole.prototype['audit-access'] = undefined;
 
 /**
- * Comment about the role
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateRole.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateRole.prototype['description'] = undefined;
 
 /**
  * Allow this role to view gw analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDockerhubTarget model module.
  * @module model/UpdateDockerhubTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UpdateDockerhubTarget {
     /**
@@ -51,6 +51,9 @@ class UpdateDockerhubTarget {
 
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('dockerhub-password')) {
                 obj['dockerhub-password'] = ApiClient.convertToType(data['dockerhub-password'], 'String');
@@ -90,10 +93,16 @@ class UpdateDockerhubTarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 UpdateDockerhubTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+UpdateDockerhubTarget.prototype['description'] = undefined;
 
 /**
  * @member {String} dockerhub-password

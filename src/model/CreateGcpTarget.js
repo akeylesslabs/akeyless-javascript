@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGcpTarget model module.
  * @module model/CreateGcpTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateGcpTarget {
     /**
@@ -52,6 +52,9 @@ class CreateGcpTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('gcp-key')) {
                 obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
             }
@@ -81,10 +84,16 @@ class CreateGcpTarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateGcpTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateGcpTarget.prototype['description'] = undefined;
 
 /**
  * Base64-encoded service account private key text

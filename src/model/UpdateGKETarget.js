@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGKETarget model module.
  * @module model/UpdateGKETarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UpdateGKETarget {
     /**
@@ -51,6 +51,9 @@ class UpdateGKETarget {
 
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('gke-account-key')) {
                 obj['gke-account-key'] = ApiClient.convertToType(data['gke-account-key'], 'String');
@@ -102,10 +105,16 @@ class UpdateGKETarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 UpdateGKETarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+UpdateGKETarget.prototype['description'] = undefined;
 
 /**
  * GKE Service Account key file path

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 3.2.0
+ * @version 3.2.1
  */
 class UpdateRole {
     /**
@@ -54,6 +54,9 @@ class UpdateRole {
             }
             if (data.hasOwnProperty('audit-access')) {
                 obj['audit-access'] = ApiClient.convertToType(data['audit-access'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('gw-analytics-access')) {
                 obj['gw-analytics-access'] = ApiClient.convertToType(data['gw-analytics-access'], 'String');
@@ -99,6 +102,13 @@ UpdateRole.prototype['analytics-access'] = undefined;
 UpdateRole.prototype['audit-access'] = undefined;
 
 /**
+ * Description of the object
+ * @member {String} description
+ * @default 'default_comment'
+ */
+UpdateRole.prototype['description'] = 'default_comment';
+
+/**
  * Allow this role to view gw analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.
  * @member {String} gw-analytics-access
  */
@@ -117,7 +127,7 @@ UpdateRole.prototype['json'] = undefined;
 UpdateRole.prototype['name'] = undefined;
 
 /**
- * New comment about the role
+ * Deprecated - use description
  * @member {String} new-comment
  * @default 'default_comment'
  */

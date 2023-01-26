@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTarget model module.
  * @module model/CreateDBTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateDBTarget {
     /**
@@ -65,6 +65,9 @@ class CreateDBTarget {
             }
             if (data.hasOwnProperty('db-type')) {
                 obj['db-type'] = ApiClient.convertToType(data['db-type'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
@@ -137,7 +140,7 @@ class CreateDBTarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateDBTarget.prototype['comment'] = undefined;
@@ -163,6 +166,12 @@ CreateDBTarget.prototype['db-server-name'] = undefined;
  * @member {String} db-type
  */
 CreateDBTarget.prototype['db-type'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateDBTarget.prototype['description'] = undefined;
 
 /**
  * @member {String} host

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRabbitMQTarget model module.
  * @module model/CreateRabbitMQTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateRabbitMQTarget {
     /**
@@ -52,6 +52,9 @@ class CreateRabbitMQTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -84,10 +87,16 @@ class CreateRabbitMQTarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateRabbitMQTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateRabbitMQTarget.prototype['description'] = undefined;
 
 /**
  * Set output format to JSON

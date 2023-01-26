@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEKSTarget model module.
  * @module model/CreateEKSTarget
- * @version 3.2.0
+ * @version 3.2.1
  */
 class CreateEKSTarget {
     /**
@@ -62,6 +62,9 @@ class CreateEKSTarget {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('eks-access-key-id')) {
                 obj['eks-access-key-id'] = ApiClient.convertToType(data['eks-access-key-id'], 'String');
             }
@@ -106,10 +109,16 @@ class CreateEKSTarget {
 }
 
 /**
- * Comment about the target
+ * Deprecated - use description
  * @member {String} comment
  */
 CreateEKSTarget.prototype['comment'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+CreateEKSTarget.prototype['description'] = undefined;
 
 /**
  * Access Key ID
