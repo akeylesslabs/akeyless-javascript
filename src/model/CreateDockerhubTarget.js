@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDockerhubTarget model module.
  * @module model/CreateDockerhubTarget
- * @version 3.2.1
+ * @version 3.2.2
  */
 class CreateDockerhubTarget {
     /**

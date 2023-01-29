@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidCreateChildTokenOutput model module.
  * @module model/UidCreateChildTokenOutput
- * @version 3.2.1
+ * @version 3.2.2
  */
 class UidCreateChildTokenOutput {
     /**
