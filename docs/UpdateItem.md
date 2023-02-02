@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **newMetadata** | **String** | Deprecated - use description | [optional] [default to &#39;default_metadata&#39;]
 **newName** | **String** | New item name | [optional] 
 **rmTag** | **[String]** | List of the existent tags that will be removed from this item | [optional] 
+**rotateAfterDisconnect** | **String** | Rotate the value of the secret after SRA session ends | [optional] [default to &#39;false&#39;]
 **secureAccessAddHost** | **[String]** |  | [optional] 
 **secureAccessAllowExternalUser** | **String** |  | [optional] 
 **secureAccessAllowPortForwading** | **Boolean** |  | [optional] 

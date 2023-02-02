@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerOracleDb model module.
  * @module model/GatewayUpdateProducerOracleDb
- * @version 3.2.2
+ * @version 3.2.3
  */
 class GatewayUpdateProducerOracleDb {
     /**

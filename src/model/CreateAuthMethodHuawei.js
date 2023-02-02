@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodHuawei model module.
  * @module model/CreateAuthMethodHuawei
- * @version 3.2.2
+ * @version 3.2.3
  */
 class CreateAuthMethodHuawei {
     /**

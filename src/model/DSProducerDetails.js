@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 3.2.2
+ * @version 3.2.3
  */
 class DSProducerDetails {
     /**
@@ -391,6 +391,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('k8s_dynamic_mode')) {
                 obj['k8s_dynamic_mode'] = ApiClient.convertToType(data['k8s_dynamic_mode'], 'Boolean');
             }
+            if (data.hasOwnProperty('k8s_multiple_doc_yaml_temp_definition')) {
+                obj['k8s_multiple_doc_yaml_temp_definition'] = ApiClient.convertToType(data['k8s_multiple_doc_yaml_temp_definition'], ['Number']);
+            }
             if (data.hasOwnProperty('k8s_namespace')) {
                 obj['k8s_namespace'] = ApiClient.convertToType(data['k8s_namespace'], 'String');
             }
@@ -402,12 +405,6 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('k8s_service_account')) {
                 obj['k8s_service_account'] = ApiClient.convertToType(data['k8s_service_account'], 'String');
-            }
-            if (data.hasOwnProperty('k8s_temp_role_binding_definition')) {
-                obj['k8s_temp_role_binding_definition'] = ApiClient.convertToType(data['k8s_temp_role_binding_definition'], ['Number']);
-            }
-            if (data.hasOwnProperty('k8s_temp_role_definition')) {
-                obj['k8s_temp_role_definition'] = ApiClient.convertToType(data['k8s_temp_role_definition'], ['Number']);
             }
             if (data.hasOwnProperty('last_admin_rotation')) {
                 obj['last_admin_rotation'] = ApiClient.convertToType(data['last_admin_rotation'], 'Number');
@@ -1241,6 +1238,12 @@ DSProducerDetails.prototype['k8s_cluster_endpoint'] = undefined;
 DSProducerDetails.prototype['k8s_dynamic_mode'] = undefined;
 
 /**
+ * Yaml definition for creation of temporary objects. Field that can hold multiple docs from which following will be extracted: ServiceAccount, Role/ClusterRole and RoleBinding/ClusterRoleBinding. If ServiceAccount not specified - it will be generated automatically
+ * @member {Array.<Number>} k8s_multiple_doc_yaml_temp_definition
+ */
+DSProducerDetails.prototype['k8s_multiple_doc_yaml_temp_definition'] = undefined;
+
+/**
  * @member {String} k8s_namespace
  */
 DSProducerDetails.prototype['k8s_namespace'] = undefined;
@@ -1260,18 +1263,6 @@ DSProducerDetails.prototype['k8s_role_type'] = undefined;
  * @member {String} k8s_service_account
  */
 DSProducerDetails.prototype['k8s_service_account'] = undefined;
-
-/**
- * Yaml/Json definition of temporary role binding that will be created and deleted when TTL is due. Must have as subject name of Service Account specified in K8sServiceAccount field
- * @member {Array.<Number>} k8s_temp_role_binding_definition
- */
-DSProducerDetails.prototype['k8s_temp_role_binding_definition'] = undefined;
-
-/**
- * Yaml/Json definition of temporary role that will be created and deleted when TTL is due
- * @member {Array.<Number>} k8s_temp_role_definition
- */
-DSProducerDetails.prototype['k8s_temp_role_definition'] = undefined;
 
 /**
  * @member {Number} last_admin_rotation

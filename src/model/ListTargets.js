@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListTargets model module.
  * @module model/ListTargets
- * @version 3.2.2
+ * @version 3.2.3
  */
 class ListTargets {
     /**

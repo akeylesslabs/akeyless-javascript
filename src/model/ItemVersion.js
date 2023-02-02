@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ItemVersion model module.
  * @module model/ItemVersion
- * @version 3.2.2
+ * @version 3.2.3
  */
 class ItemVersion {
     /**

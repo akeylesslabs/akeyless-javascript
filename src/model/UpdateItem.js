@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 3.2.2
+ * @version 3.2.3
  */
 class UpdateItem {
     /**
@@ -78,6 +78,9 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('rm-tag')) {
                 obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
+            }
+            if (data.hasOwnProperty('rotate-after-disconnect')) {
+                obj['rotate-after-disconnect'] = ApiClient.convertToType(data['rotate-after-disconnect'], 'String');
             }
             if (data.hasOwnProperty('secure-access-add-host')) {
                 obj['secure-access-add-host'] = ApiClient.convertToType(data['secure-access-add-host'], ['String']);
@@ -225,6 +228,13 @@ UpdateItem.prototype['new-name'] = undefined;
  * @member {Array.<String>} rm-tag
  */
 UpdateItem.prototype['rm-tag'] = undefined;
+
+/**
+ * Rotate the value of the secret after SRA session ends
+ * @member {String} rotate-after-disconnect
+ * @default 'false'
+ */
+UpdateItem.prototype['rotate-after-disconnect'] = 'false';
 
 /**
  * @member {Array.<String>} secure-access-add-host
