@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerOracleDb model module.
  * @module model/GatewayUpdateProducerOracleDb
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateProducerOracleDb {
     /**
@@ -136,7 +136,7 @@ GatewayUpdateProducerOracleDb.prototype['db-server-certificates'] = undefined;
 GatewayUpdateProducerOracleDb.prototype['db-server-name'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerOracleDb.prototype['delete_protection'] = undefined;
@@ -144,8 +144,9 @@ GatewayUpdateProducerOracleDb.prototype['delete_protection'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateProducerOracleDb.prototype['json'] = undefined;
+GatewayUpdateProducerOracleDb.prototype['json'] = false;
 
 /**
  * Producer name
@@ -204,24 +205,30 @@ GatewayUpdateProducerOracleDb.prototype['oracle-username'] = undefined;
 GatewayUpdateProducerOracleDb.prototype['producer-encryption-key-name'] = undefined;
 
 /**
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 GatewayUpdateProducerOracleDb.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
+ * @default 'false'
  */
-GatewayUpdateProducerOracleDb.prototype['secure-access-enable'] = undefined;
+GatewayUpdateProducerOracleDb.prototype['secure-access-enable'] = 'false';
 
 /**
+ * Target DB servers for connections
  * @member {Array.<String>} secure-access-host
  */
 GatewayUpdateProducerOracleDb.prototype['secure-access-host'] = undefined;
 
 /**
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
+ * @default false
  */
-GatewayUpdateProducerOracleDb.prototype['secure-access-web'] = undefined;
+GatewayUpdateProducerOracleDb.prototype['secure-access-web'] = false;
 
 /**
  * List of the tags attached to this secret

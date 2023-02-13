@@ -16,17 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipMoveServer model module.
  * @module model/KmipMoveServer
- * @version 3.2.3
+ * @version 3.2.4
  */
 class KmipMoveServer {
     /**
      * Constructs a new <code>KmipMoveServer</code>.
      * kmipMoveServer is a command that Moves the root location of the kmip server and all associated items to a new root location
      * @alias module:model/KmipMoveServer
+     * @param newRoot {String} New root for the kmip server
      */
-    constructor() { 
+    constructor(newRoot) { 
         
-        KmipMoveServer.initialize(this);
+        KmipMoveServer.initialize(this, newRoot);
     }
 
     /**
@@ -34,7 +35,8 @@ class KmipMoveServer {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, newRoot) { 
+        obj['new-root'] = newRoot;
     }
 
     /**
@@ -70,10 +72,12 @@ class KmipMoveServer {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-KmipMoveServer.prototype['json'] = undefined;
+KmipMoveServer.prototype['json'] = false;
 
 /**
+ * New root for the kmip server
  * @member {String} new-root
  */
 KmipMoveServer.prototype['new-root'] = undefined;

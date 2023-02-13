@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGcp model module.
  * @module model/GatewayCreateProducerGcp
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerGcp {
     /**
@@ -108,7 +108,7 @@ class GatewayCreateProducerGcp {
 }
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerGcp.prototype['delete_protection'] = undefined;
@@ -145,8 +145,9 @@ GatewayCreateProducerGcp.prototype['gcp-token-scopes'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerGcp.prototype['json'] = undefined;
+GatewayCreateProducerGcp.prototype['json'] = false;
 
 /**
  * Producer name

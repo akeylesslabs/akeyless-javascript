@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateRotatedSecret {
     /**
@@ -193,11 +193,13 @@ class CreateRotatedSecret {
 }
 
 /**
+ * API ID to rotate (relevant only for rotator-type=api-key)
  * @member {String} api-id
  */
 CreateRotatedSecret.prototype['api-id'] = undefined;
 
 /**
+ * API key to rotate (relevant only for rotator-type=api-key)
  * @member {String} api-key
  */
 CreateRotatedSecret.prototype['api-key'] = undefined;
@@ -209,12 +211,14 @@ CreateRotatedSecret.prototype['api-key'] = undefined;
 CreateRotatedSecret.prototype['application-id'] = undefined;
 
 /**
+ * The credentials to connect with use-user-creds/use-target-creds
  * @member {String} authentication-credentials
+ * @default 'use-user-creds'
  */
-CreateRotatedSecret.prototype['authentication-credentials'] = undefined;
+CreateRotatedSecret.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation
+ * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 CreateRotatedSecret.prototype['auto-rotate'] = undefined;
@@ -227,12 +231,13 @@ CreateRotatedSecret.prototype['auto-rotate'] = undefined;
 CreateRotatedSecret.prototype['aws-region'] = 'us-east-2';
 
 /**
+ * Secret payload to be sent with rotation request (relevant only for rotator-type=custom)
  * @member {String} custom-payload
  */
 CreateRotatedSecret.prototype['custom-payload'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 CreateRotatedSecret.prototype['delete_protection'] = undefined;
@@ -252,8 +257,9 @@ CreateRotatedSecret.prototype['gcp-key'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateRotatedSecret.prototype['json'] = undefined;
+CreateRotatedSecret.prototype['json'] = false;
 
 /**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
@@ -274,23 +280,26 @@ CreateRotatedSecret.prototype['metadata'] = undefined;
 CreateRotatedSecret.prototype['name'] = undefined;
 
 /**
- * Rotate the value of the secret after SRA session ends
+ * Rotate the value of the secret after SRA session ends [true/false]
  * @member {String} rotate-after-disconnect
  * @default 'false'
  */
 CreateRotatedSecret.prototype['rotate-after-disconnect'] = 'false';
 
 /**
+ * rotated-username password (relevant only for rotator-type=password)
  * @member {String} rotated-password
  */
 CreateRotatedSecret.prototype['rotated-password'] = undefined;
 
 /**
+ * username to be rotated, if selected use-self-creds at rotator-creds-type, this username will try to rotate it's own password, if use-target-creds is selected, target credentials will be use to rotate the rotated-password (relevant only for rotator-type=password)
  * @member {String} rotated-username
  */
 CreateRotatedSecret.prototype['rotated-username'] = undefined;
 
 /**
+ * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 CreateRotatedSecret.prototype['rotation-hour'] = undefined;
@@ -307,6 +316,7 @@ CreateRotatedSecret.prototype['rotation-interval'] = undefined;
 CreateRotatedSecret.prototype['rotator-creds-type'] = undefined;
 
 /**
+ * Custom rotation command (relevant only for ssh target)
  * @member {String} rotator-custom-cmd
  */
 CreateRotatedSecret.prototype['rotator-custom-cmd'] = undefined;
@@ -318,82 +328,82 @@ CreateRotatedSecret.prototype['rotator-custom-cmd'] = undefined;
 CreateRotatedSecret.prototype['rotator-type'] = undefined;
 
 /**
- * Secure Access Allow Providing External User (used in ssh)
+ * Allow providing external user for a domain users (relevant only for rdp)
  * @member {Boolean} secure-access-allow-external-user
  * @default false
  */
 CreateRotatedSecret.prototype['secure-access-allow-external-user'] = false;
 
 /**
- * Secure Access Account Id (used in aws)
+ * The AWS account id (relevant only for aws)
  * @member {String} secure-access-aws-account-id
  */
 CreateRotatedSecret.prototype['secure-access-aws-account-id'] = undefined;
 
 /**
- * Secure Access Aws Native Cli (used in aws)
+ * The AWS native cli
  * @member {Boolean} secure-access-aws-native-cli
  */
 CreateRotatedSecret.prototype['secure-access-aws-native-cli'] = undefined;
 
 /**
- * Secure Access Bastion Issuer
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 CreateRotatedSecret.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
- * Secure Access DB Name (used in data bases)
+ * The DB name (relevant only for DB Dynamic-Secret)
  * @member {String} secure-access-db-name
  */
 CreateRotatedSecret.prototype['secure-access-db-name'] = undefined;
 
 /**
- * Secure Access Schema (used in mssql, postgresql)
+ * The db schema (relevant only for mssql or postgresql)
  * @member {String} secure-access-db-schema
  */
 CreateRotatedSecret.prototype['secure-access-db-schema'] = undefined;
 
 /**
- * Secure Access Enabled
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 CreateRotatedSecret.prototype['secure-access-enable'] = undefined;
 
 /**
- * Secure Access Host
+ * Target servers for connections
  * @member {Array.<String>} secure-access-host
  */
 CreateRotatedSecret.prototype['secure-access-host'] = undefined;
 
 /**
- * Secure Access Domain (used in ssh)
+ * Required when the Dynamic Secret is used for a domain user (relevant only for RDP Dynamic-Secret)
  * @member {String} secure-access-rdp-domain
  */
 CreateRotatedSecret.prototype['secure-access-rdp-domain'] = undefined;
 
 /**
- * Secure Access Override User (used in ssh)
+ * Override the RDP Domain username (relevant only for rdp)
  * @member {String} secure-access-rdp-user
  */
 CreateRotatedSecret.prototype['secure-access-rdp-user'] = undefined;
 
 /**
- * Secure Access Web
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
  * @default false
  */
 CreateRotatedSecret.prototype['secure-access-web'] = false;
 
 /**
- * Secure Access Isolated (used in aws, azure)
+ * Secure browser via Akeyless Web Access Bastion (relevant only for aws or azure)
  * @member {Boolean} secure-access-web-browsing
  * @default false
  */
 CreateRotatedSecret.prototype['secure-access-web-browsing'] = false;
 
 /**
- * Secure Access Web Proxy (used in aws, azure)
+ * Web-Proxy via Akeyless Web Access Bastion (relevant only for aws or azure)
  * @member {Boolean} secure-access-web-proxy
  * @default false
  */

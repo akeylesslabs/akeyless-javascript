@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayListMigration model module.
  * @module model/GatewayListMigration
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayListMigration {
     /**
@@ -67,8 +67,9 @@ class GatewayListMigration {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayListMigration.prototype['json'] = undefined;
+GatewayListMigration.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

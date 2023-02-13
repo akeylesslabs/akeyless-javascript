@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **codeSigningFlag** | **Boolean** | If set, certificates will be flagged for code signing use | [optional] 
 **country** | **String** | A comma-separated list of the country that will be set in the issued certificate | [optional] 
 **description** | **String** | Description of the object | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **keyUsage** | **String** | key-usage | [optional] [default to &#39;DigitalSignature,KeyAgreement,KeyEncipherment&#39;]
 **locality** | **String** | A comma-separated list of the locality that will be set in the issued certificate | [optional] 
 **metadata** | **String** | Deprecated - use description | [optional] 

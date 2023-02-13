@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipClientSetRule model module.
  * @module model/KmipClientSetRule
- * @version 3.2.3
+ * @version 3.2.4
  */
 class KmipClientSetRule {
     /**
@@ -93,8 +93,9 @@ KmipClientSetRule.prototype['client-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-KmipClientSetRule.prototype['json'] = undefined;
+KmipClientSetRule.prototype['json'] = false;
 
 /**
  * @member {String} name

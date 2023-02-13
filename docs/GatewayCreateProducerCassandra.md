@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **cassandraPassword** | **String** | Cassandra superuser password | [optional] 
 **cassandraPort** | **String** | Cassandra port | [optional] [default to &#39;9042&#39;]
 **cassandraUsername** | **String** | Cassandra superuser username | [optional] 
-**deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Producer name | 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **tags** | **[String]** | List of the tags attached to this secret | [optional] 

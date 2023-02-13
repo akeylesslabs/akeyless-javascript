@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReverseRBAC model module.
  * @module model/ReverseRBAC
- * @version 3.2.3
+ * @version 3.2.4
  */
 class ReverseRBAC {
     /**
@@ -77,8 +77,9 @@ class ReverseRBAC {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-ReverseRBAC.prototype['json'] = undefined;
+ReverseRBAC.prototype['json'] = false;
 
 /**
  * Path to an object

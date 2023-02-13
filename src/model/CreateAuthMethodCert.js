@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodCert model module.
  * @module model/CreateAuthMethodCert
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateAuthMethodCert {
     /**
@@ -183,14 +183,16 @@ CreateAuthMethodCert.prototype['gw-bound-ips'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateAuthMethodCert.prototype['json'] = undefined;
+CreateAuthMethodCert.prototype['json'] = false;
 
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
+ * @default 0
  */
-CreateAuthMethodCert.prototype['jwt-ttl'] = undefined;
+CreateAuthMethodCert.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

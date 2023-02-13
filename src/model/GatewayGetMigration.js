@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetMigration model module.
  * @module model/GatewayGetMigration
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayGetMigration {
     /**
@@ -70,8 +70,9 @@ class GatewayGetMigration {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayGetMigration.prototype['json'] = undefined;
+GatewayGetMigration.prototype['json'] = false;
 
 /**
  * Migration name to display

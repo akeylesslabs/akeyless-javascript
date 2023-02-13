@@ -78,6 +78,8 @@ import CreateKey from '../model/CreateKey';
 import CreateKeyOutput from '../model/CreateKeyOutput';
 import CreateLdapTarget from '../model/CreateLdapTarget';
 import CreateLdapTargetOutput from '../model/CreateLdapTargetOutput';
+import CreateLinkedTarget from '../model/CreateLinkedTarget';
+import CreateLinkedTargetOutput from '../model/CreateLinkedTargetOutput';
 import CreateNativeK8STarget from '../model/CreateNativeK8STarget';
 import CreateNativeK8STargetOutput from '../model/CreateNativeK8STargetOutput';
 import CreatePKICertIssuer from '../model/CreatePKICertIssuer';
@@ -103,6 +105,8 @@ import CreateTokenizer from '../model/CreateTokenizer';
 import CreateTokenizerOutput from '../model/CreateTokenizerOutput';
 import CreateWebTarget from '../model/CreateWebTarget';
 import CreateWebTargetOutput from '../model/CreateWebTargetOutput';
+import CreateWindowsTarget from '../model/CreateWindowsTarget';
+import CreateWindowsTargetOutput from '../model/CreateWindowsTargetOutput';
 import DSProducerDetails from '../model/DSProducerDetails';
 import Decrypt from '../model/Decrypt';
 import DecryptGPG from '../model/DecryptGPG';
@@ -433,6 +437,7 @@ import UpdateItemOutput from '../model/UpdateItemOutput';
 import UpdateLdapTarget from '../model/UpdateLdapTarget';
 import UpdateLdapTargetDetails from '../model/UpdateLdapTargetDetails';
 import UpdateLdapTargetOutput from '../model/UpdateLdapTargetOutput';
+import UpdateLinkedTarget from '../model/UpdateLinkedTarget';
 import UpdateNativeK8STarget from '../model/UpdateNativeK8STarget';
 import UpdateNativeK8STargetOutput from '../model/UpdateNativeK8STargetOutput';
 import UpdatePKICertIssuer from '../model/UpdatePKICertIssuer';
@@ -462,6 +467,7 @@ import UpdateTargetOutput from '../model/UpdateTargetOutput';
 import UpdateWebTarget from '../model/UpdateWebTarget';
 import UpdateWebTargetDetails from '../model/UpdateWebTargetDetails';
 import UpdateWebTargetOutput from '../model/UpdateWebTargetOutput';
+import UpdateWindowsTarget from '../model/UpdateWindowsTarget';
 import UploadRSA from '../model/UploadRSA';
 import ValidateToken from '../model/ValidateToken';
 import ValidateTokenOutput from '../model/ValidateTokenOutput';
@@ -475,7 +481,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.2.3
+* @version 3.2.4
 */
 export default class V2Api {
 
@@ -1869,6 +1875,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/CreateLinkedTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateLinkedTargetOutput} and HTTP response
+     */
+    createLinkedTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createLinkedTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateLinkedTargetOutput;
+      return this.apiClient.callApi(
+        '/create-linked-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateLinkedTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateLinkedTargetOutput}
+     */
+    createLinkedTarget(body) {
+      return this.createLinkedTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/CreateNativeK8STarget} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateNativeK8STargetOutput} and HTTP response
      */
@@ -2378,6 +2427,49 @@ export default class V2Api {
      */
     createWebTarget(body) {
       return this.createWebTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateWindowsTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateWindowsTargetOutput} and HTTP response
+     */
+    createWindowsTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createWindowsTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateWindowsTargetOutput;
+      return this.apiClient.callApi(
+        '/create-windows-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateWindowsTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateWindowsTargetOutput}
+     */
+    createWindowsTarget(body) {
+      return this.createWindowsTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -10440,6 +10532,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/UpdateLinkedTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateLinkedTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateLinkedTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-linked-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateLinkedTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateLinkedTarget(body) {
+      return this.updateLinkedTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/UpdateNativeK8STarget} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateNativeK8STargetOutput} and HTTP response
      */
@@ -11201,6 +11336,49 @@ export default class V2Api {
      */
     updateWebTargetDetails(body) {
       return this.updateWebTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateWindowsTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateWindowsTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateWindowsTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-windows-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateWindowsTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateWindowsTarget(body) {
+      return this.updateWindowsTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

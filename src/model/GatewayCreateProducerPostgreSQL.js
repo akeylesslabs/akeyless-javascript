@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerPostgreSQL model module.
  * @module model/GatewayCreateProducerPostgreSQL
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerPostgreSQL {
     /**
@@ -130,7 +130,7 @@ class GatewayCreateProducerPostgreSQL {
 GatewayCreateProducerPostgreSQL.prototype['creation-statements'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerPostgreSQL.prototype['delete_protection'] = undefined;
@@ -138,8 +138,9 @@ GatewayCreateProducerPostgreSQL.prototype['delete_protection'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerPostgreSQL.prototype['json'] = undefined;
+GatewayCreateProducerPostgreSQL.prototype['json'] = false;
 
 /**
  * Producer name
@@ -192,35 +193,42 @@ GatewayCreateProducerPostgreSQL.prototype['producer-encryption-key'] = undefined
 GatewayCreateProducerPostgreSQL.prototype['revocation-statement'] = undefined;
 
 /**
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 GatewayCreateProducerPostgreSQL.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
+ * The DB schema
  * @member {String} secure-access-db-schema
  */
 GatewayCreateProducerPostgreSQL.prototype['secure-access-db-schema'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayCreateProducerPostgreSQL.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Target DB servers for connections
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerPostgreSQL.prototype['secure-access-host'] = undefined;
 
 /**
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
+ * @default false
  */
-GatewayCreateProducerPostgreSQL.prototype['secure-access-web'] = undefined;
+GatewayCreateProducerPostgreSQL.prototype['secure-access-web'] = false;
 
 /**
- * SSL connection mode
+ * Enable/Disable SSL [true/false]
  * @member {Boolean} ssl
+ * @default false
  */
-GatewayCreateProducerPostgreSQL.prototype['ssl'] = undefined;
+GatewayCreateProducerPostgreSQL.prototype['ssl'] = false;
 
 /**
  * List of the tags attached to this secret

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 3.2.3
+ * @version 3.2.4
  */
 class TargetTypeDetailsInput {
     /**
@@ -179,6 +179,9 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('gcp_service_account_key')) {
                 obj['gcp_service_account_key'] = ApiClient.convertToType(data['gcp_service_account_key'], 'String');
             }
+            if (data.hasOwnProperty('gcp_service_account_key_base64')) {
+                obj['gcp_service_account_key_base64'] = ApiClient.convertToType(data['gcp_service_account_key_base64'], 'String');
+            }
             if (data.hasOwnProperty('github_app_id')) {
                 obj['github_app_id'] = ApiClient.convertToType(data['github_app_id'], 'Number');
             }
@@ -205,6 +208,12 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
+            }
+            if (data.hasOwnProperty('hostname')) {
+                obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
+            }
+            if (data.hasOwnProperty('hosts')) {
+                obj['hosts'] = ApiClient.convertToType(data['hosts'], ['String']);
             }
             if (data.hasOwnProperty('implementation_type')) {
                 obj['implementation_type'] = ApiClient.convertToType(data['implementation_type'], 'String');
@@ -298,6 +307,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('rabbitmq_server_user')) {
                 obj['rabbitmq_server_user'] = ApiClient.convertToType(data['rabbitmq_server_user'], 'String');
+            }
+            if (data.hasOwnProperty('rdp_port')) {
+                obj['rdp_port'] = ApiClient.convertToType(data['rdp_port'], 'String');
             }
             if (data.hasOwnProperty('security_token')) {
                 obj['security_token'] = ApiClient.convertToType(data['security_token'], 'String');
@@ -583,6 +595,11 @@ TargetTypeDetailsInput.prototype['gcp_service_account_email'] = undefined;
 TargetTypeDetailsInput.prototype['gcp_service_account_key'] = undefined;
 
 /**
+ * @member {String} gcp_service_account_key_base64
+ */
+TargetTypeDetailsInput.prototype['gcp_service_account_key_base64'] = undefined;
+
+/**
  * @member {Number} github_app_id
  */
 TargetTypeDetailsInput.prototype['github_app_id'] = undefined;
@@ -626,6 +643,16 @@ TargetTypeDetailsInput.prototype['gke_service_account_name'] = undefined;
  * @member {String} host
  */
 TargetTypeDetailsInput.prototype['host'] = undefined;
+
+/**
+ * @member {String} hostname
+ */
+TargetTypeDetailsInput.prototype['hostname'] = undefined;
+
+/**
+ * @member {Array.<String>} hosts
+ */
+TargetTypeDetailsInput.prototype['hosts'] = undefined;
 
 /**
  * @member {String} implementation_type
@@ -784,6 +811,11 @@ TargetTypeDetailsInput.prototype['rabbitmq_server_uri'] = undefined;
  * @member {String} rabbitmq_server_user
  */
 TargetTypeDetailsInput.prototype['rabbitmq_server_user'] = undefined;
+
+/**
+ * @member {String} rdp_port
+ */
+TargetTypeDetailsInput.prototype['rdp_port'] = undefined;
 
 /**
  * @member {String} security_token

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MoveObjects model module.
  * @module model/MoveObjects
- * @version 3.2.3
+ * @version 3.2.4
  */
 class MoveObjects {
     /**
@@ -79,8 +79,9 @@ class MoveObjects {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-MoveObjects.prototype['json'] = undefined;
+MoveObjects.prototype['json'] = false;
 
 /**
  * The objects type to move (item/auth_method/role)

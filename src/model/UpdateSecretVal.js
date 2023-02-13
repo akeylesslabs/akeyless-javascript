@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSecretVal model module.
  * @module model/UpdateSecretVal
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateSecretVal {
     /**
@@ -110,10 +110,12 @@ UpdateSecretVal.prototype['accessibility'] = 'regular';
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateSecretVal.prototype['json'] = undefined;
+UpdateSecretVal.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateSecretVal.prototype['keep-prev-version'] = undefined;

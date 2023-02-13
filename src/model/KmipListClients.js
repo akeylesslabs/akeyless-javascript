@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipListClients model module.
  * @module model/KmipListClients
- * @version 3.2.3
+ * @version 3.2.4
  */
 class KmipListClients {
     /**
@@ -66,8 +66,9 @@ class KmipListClients {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-KmipListClients.prototype['json'] = undefined;
+KmipListClients.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

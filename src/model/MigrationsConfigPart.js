@@ -24,7 +24,7 @@ import OnePasswordMigration from './OnePasswordMigration';
 /**
  * The MigrationsConfigPart model module.
  * @module model/MigrationsConfigPart
- * @version 3.2.3
+ * @version 3.2.4
  */
 class MigrationsConfigPart {
     /**

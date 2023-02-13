@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateTarget model module.
  * @module model/UpdateTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateTarget {
     /**
@@ -87,8 +87,9 @@ UpdateTarget.prototype['description'] = 'default_comment';
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateTarget.prototype['json'] = undefined;
+UpdateTarget.prototype['json'] = false;
 
 /**
  * Target name

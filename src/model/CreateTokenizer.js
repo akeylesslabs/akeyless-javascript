@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateTokenizer model module.
  * @module model/CreateTokenizer
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateTokenizer {
     /**
@@ -122,7 +122,7 @@ CreateTokenizer.prototype['alphabet'] = undefined;
 CreateTokenizer.prototype['decoding-template'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 CreateTokenizer.prototype['delete_protection'] = undefined;
@@ -148,8 +148,9 @@ CreateTokenizer.prototype['encryption-key-name'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateTokenizer.prototype['json'] = undefined;
+CreateTokenizer.prototype['json'] = false;
 
 /**
  * Deprecated - use description
@@ -190,8 +191,9 @@ CreateTokenizer.prototype['token'] = undefined;
 /**
  * Tokenizer type
  * @member {String} tokenizer-type
+ * @default 'vaultless'
  */
-CreateTokenizer.prototype['tokenizer-type'] = undefined;
+CreateTokenizer.prototype['tokenizer-type'] = 'vaultless';
 
 /**
  * The tweak type to use in vaultless tokenization [Supplied, Generated, Internal, Masking]

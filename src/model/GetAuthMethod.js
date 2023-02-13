@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetAuthMethod model module.
  * @module model/GetAuthMethod
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GetAuthMethod {
     /**
@@ -71,8 +71,9 @@ class GetAuthMethod {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GetAuthMethod.prototype['json'] = undefined;
+GetAuthMethod.prototype['json'] = false;
 
 /**
  * Auth Method name

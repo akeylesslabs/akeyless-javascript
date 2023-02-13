@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateRole {
     /**
@@ -117,8 +117,9 @@ UpdateRole.prototype['gw-analytics-access'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateRole.prototype['json'] = undefined;
+UpdateRole.prototype['json'] = false;
 
 /**
  * Role name

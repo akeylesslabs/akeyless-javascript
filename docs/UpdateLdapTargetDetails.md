@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bindDn** | **String** |  | [optional] 
 **bindDnPassword** | **String** |  | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
-**keepPrevVersion** | **String** |  | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
+**keepPrevVersion** | **String** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **String** |  | [optional] 
 **ldapCaCert** | **String** |  | [optional] 
 **ldapUrl** | **String** |  | [optional] 

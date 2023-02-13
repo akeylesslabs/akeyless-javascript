@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **issuer** | **String** | Issuer URL | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **jwksUri** | **String** | The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server. | 
-**jwtTtl** | **Number** | Jwt TTL | [optional] 
+**jwtTtl** | **Number** | Jwt TTL | [optional] [default to 0]
 **name** | **String** | Auth Method name | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 

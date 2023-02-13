@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRole model module.
  * @module model/CreateRole
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateRole {
     /**
@@ -119,8 +119,9 @@ CreateRole.prototype['gw-analytics-access'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateRole.prototype['json'] = undefined;
+CreateRole.prototype['json'] = false;
 
 /**
  * Role name

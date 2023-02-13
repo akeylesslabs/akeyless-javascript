@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessibility** | **String** | for personal password manager | [optional] [default to &#39;regular&#39;]
 **filter** | **String** | Filter by item name or part of it | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **minimalView** | **Boolean** |  | [optional] 
 **paginationToken** | **String** | Next page reference | [optional] 
 **path** | **String** | Path to folder | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTargetAssociation model module.
  * @module model/DeleteTargetAssociation
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DeleteTargetAssociation {
     /**
@@ -84,8 +84,9 @@ DeleteTargetAssociation.prototype['assoc-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DeleteTargetAssociation.prototype['json'] = undefined;
+DeleteTargetAssociation.prototype['json'] = false;
 
 /**
  * Item name

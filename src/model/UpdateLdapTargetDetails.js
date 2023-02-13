@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLdapTargetDetails model module.
  * @module model/UpdateLdapTargetDetails
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateLdapTargetDetails {
     /**
@@ -108,10 +108,12 @@ UpdateLdapTargetDetails.prototype['bind-dn-password'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateLdapTargetDetails.prototype['json'] = undefined;
+UpdateLdapTargetDetails.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateLdapTargetDetails.prototype['keep-prev-version'] = undefined;

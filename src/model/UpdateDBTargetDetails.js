@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTargetDetails model module.
  * @module model/UpdateDBTargetDetails
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateDBTargetDetails {
     /**
@@ -111,10 +111,12 @@ UpdateDBTargetDetails.prototype['host_name'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateDBTargetDetails.prototype['json'] = undefined;
+UpdateDBTargetDetails.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateDBTargetDetails.prototype['keep-prev-version'] = undefined;

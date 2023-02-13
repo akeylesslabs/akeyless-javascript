@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListSRABastions model module.
  * @module model/ListSRABastions
- * @version 3.2.3
+ * @version 3.2.4
  */
 class ListSRABastions {
     /**
@@ -67,15 +67,18 @@ class ListSRABastions {
 }
 
 /**
+ * Filter the response to show only bastions allowed URLs
  * @member {Boolean} allowed-urls-only
+ * @default false
  */
-ListSRABastions.prototype['allowed-urls-only'] = undefined;
+ListSRABastions.prototype['allowed-urls-only'] = false;
 
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-ListSRABastions.prototype['json'] = undefined;
+ListSRABastions.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

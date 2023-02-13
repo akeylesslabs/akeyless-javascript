@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **String** | Deprecated - use description | [optional] 
 **description** | **String** | Description of the object | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **key** | **String** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **String** | Target name | 
 **rabbitmqServerPassword** | **String** |  | [optional] 

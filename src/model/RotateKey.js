@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotateKey model module.
  * @module model/RotateKey
- * @version 3.2.3
+ * @version 3.2.4
  */
 class RotateKey {
     /**
@@ -78,8 +78,9 @@ class RotateKey {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-RotateKey.prototype['json'] = undefined;
+RotateKey.prototype['json'] = false;
 
 /**
  * Key name

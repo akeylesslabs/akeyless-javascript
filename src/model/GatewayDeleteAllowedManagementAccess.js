@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteAllowedManagementAccess model module.
  * @module model/GatewayDeleteAllowedManagementAccess
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayDeleteAllowedManagementAccess {
     /**
@@ -72,8 +72,9 @@ class GatewayDeleteAllowedManagementAccess {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayDeleteAllowedManagementAccess.prototype['json'] = undefined;
+GatewayDeleteAllowedManagementAccess.prototype['json'] = false;
 
 /**
  * SubAdminID to be removed

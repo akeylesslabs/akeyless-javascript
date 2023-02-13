@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StaticCredsAuth model module.
  * @module model/StaticCredsAuth
- * @version 3.2.3
+ * @version 3.2.4
  */
 class StaticCredsAuth {
     /**
@@ -88,8 +88,9 @@ StaticCredsAuth.prototype['creds'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-StaticCredsAuth.prototype['json'] = undefined;
+StaticCredsAuth.prototype['json'] = false;
 
 
 

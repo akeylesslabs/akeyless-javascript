@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDockerhubTarget model module.
  * @module model/UpdateDockerhubTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateDockerhubTarget {
     /**
@@ -117,10 +117,12 @@ UpdateDockerhubTarget.prototype['dockerhub-username'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateDockerhubTarget.prototype['json'] = undefined;
+UpdateDockerhubTarget.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateDockerhubTarget.prototype['keep-prev-version'] = undefined;

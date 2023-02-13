@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateMigration {
     /**
@@ -321,8 +321,9 @@ GatewayUpdateMigration.prototype['ad_user_groups'] = undefined;
 /**
  * Set the SSH Port for further connection to the domain servers. Default is port 22 (Relevant only for Active Directory migration)
  * @member {String} as_ssh_port
+ * @default '22'
  */
-GatewayUpdateMigration.prototype['as_ssh_port'] = undefined;
+GatewayUpdateMigration.prototype['as_ssh_port'] = '22';
 
 /**
  * AWS Secret Access Key (relevant only for AWS migration)
@@ -339,8 +340,9 @@ GatewayUpdateMigration.prototype['aws-key-id'] = undefined;
 /**
  * AWS region of the required Secrets Manager (relevant only for AWS migration)
  * @member {String} aws-region
+ * @default 'us-east-2'
  */
-GatewayUpdateMigration.prototype['aws-region'] = undefined;
+GatewayUpdateMigration.prototype['aws-region'] = 'us-east-2';
 
 /**
  * Azure Key Vault Access client ID, should be Azure AD App with a service principal (relevant only for Azure Key Vault migration)
@@ -373,10 +375,11 @@ GatewayUpdateMigration.prototype['azure-tenant-id'] = undefined;
 GatewayUpdateMigration.prototype['gcp-key'] = undefined;
 
 /**
- * Import secret key as json value or independent secrets (relevant only for HasiCorp Vault migration)
+ * Import secret key as json value or independent secrets (relevant only for HasiCorp Vault migration) [true/false]
  * @member {String} hashi-json
+ * @default 'true'
  */
-GatewayUpdateMigration.prototype['hashi-json'] = undefined;
+GatewayUpdateMigration.prototype['hashi-json'] = 'true';
 
 /**
  * HashiCorp Vault Namespaces is a comma-separated list of namespaces which need to be imported into Akeyless Vault. For every provided namespace, all its child namespaces are imported as well, e.g. nmsp/subnmsp1/subnmsp2,nmsp/anothernmsp. By default, import all namespaces (relevant only for HasiCorp Vault migration)
@@ -405,8 +408,9 @@ GatewayUpdateMigration.prototype['id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateMigration.prototype['json'] = undefined;
+GatewayUpdateMigration.prototype['json'] = false;
 
 /**
  * For Certificate Authentication method K8s Cluster CA certificate (relevant only for K8s migration with Certificate Authentication method)

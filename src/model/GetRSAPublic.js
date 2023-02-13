@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetRSAPublic model module.
  * @module model/GetRSAPublic
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GetRSAPublic {
     /**
@@ -72,8 +72,9 @@ class GetRSAPublic {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GetRSAPublic.prototype['json'] = undefined;
+GetRSAPublic.prototype['json'] = false;
 
 /**
  * Name of RSA key to extract the public key from

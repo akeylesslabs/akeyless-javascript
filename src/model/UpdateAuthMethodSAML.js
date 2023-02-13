@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodSAML model module.
  * @module model/UpdateAuthMethodSAML
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateAuthMethodSAML {
     /**
@@ -147,14 +147,16 @@ UpdateAuthMethodSAML.prototype['idp-metadata-xml-data'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateAuthMethodSAML.prototype['json'] = undefined;
+UpdateAuthMethodSAML.prototype['json'] = false;
 
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
+ * @default 0
  */
-UpdateAuthMethodSAML.prototype['jwt-ttl'] = undefined;
+UpdateAuthMethodSAML.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

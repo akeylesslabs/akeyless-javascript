@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerChef model module.
  * @module model/GatewayCreateProducerChef
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerChef {
     /**
@@ -124,7 +124,7 @@ GatewayCreateProducerChef.prototype['chef-server-url'] = undefined;
 GatewayCreateProducerChef.prototype['chef-server-username'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerChef.prototype['delete_protection'] = undefined;
@@ -132,8 +132,9 @@ GatewayCreateProducerChef.prototype['delete_protection'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerChef.prototype['json'] = undefined;
+GatewayCreateProducerChef.prototype['json'] = false;
 
 /**
  * Producer name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerLdap model module.
  * @module model/GatewayCreateProducerLdap
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerLdap {
     /**
@@ -121,13 +121,13 @@ GatewayCreateProducerLdap.prototype['bind-dn'] = undefined;
 GatewayCreateProducerLdap.prototype['bind-dn-password'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerLdap.prototype['delete_protection'] = undefined;
 
 /**
- * Fixed user
+ * Externally provided username [true/false]
  * @member {String} external-username
  * @default 'false'
  */
@@ -136,8 +136,9 @@ GatewayCreateProducerLdap.prototype['external-username'] = 'false';
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerLdap.prototype['json'] = undefined;
+GatewayCreateProducerLdap.prototype['json'] = false;
 
 /**
  * CA Certificate File Content

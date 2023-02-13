@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteRole model module.
  * @module model/DeleteRole
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DeleteRole {
     /**
@@ -71,8 +71,9 @@ class DeleteRole {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DeleteRole.prototype['json'] = undefined;
+DeleteRole.prototype['json'] = false;
 
 /**
  * Role name

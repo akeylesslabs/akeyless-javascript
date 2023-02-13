@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Connect model module.
  * @module model/Connect
- * @version 3.2.3
+ * @version 3.2.4
  */
 class Connect {
     /**
@@ -158,8 +158,9 @@ Connect.prototype['identity-file'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-Connect.prototype['json'] = undefined;
+Connect.prototype['json'] = false;
 
 /**
  * The Secret name (for database and AWS producers - producer name)
@@ -182,8 +183,9 @@ Connect.prototype['ssh-extra-args'] = undefined;
 /**
  * Set this option to output legacy ('ssh-rsa-cert-v01@openssh.com') signing algorithm name in the ssh certificate.
  * @member {Boolean} ssh-legacy-signing-alg
+ * @default false
  */
-Connect.prototype['ssh-legacy-signing-alg'] = undefined;
+Connect.prototype['ssh-legacy-signing-alg'] = false;
 
 /**
  * The target

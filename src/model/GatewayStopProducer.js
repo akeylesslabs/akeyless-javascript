@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayStopProducer model module.
  * @module model/GatewayStopProducer
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayStopProducer {
     /**
@@ -72,8 +72,9 @@ class GatewayStopProducer {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayStopProducer.prototype['json'] = undefined;
+GatewayStopProducer.prototype['json'] = false;
 
 /**
  * Producer name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidListChildren model module.
  * @module model/UidListChildren
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UidListChildren {
     /**
@@ -76,8 +76,9 @@ UidListChildren.prototype['auth-method-name'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UidListChildren.prototype['json'] = undefined;
+UidListChildren.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

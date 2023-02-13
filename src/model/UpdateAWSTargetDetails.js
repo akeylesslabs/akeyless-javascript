@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAWSTargetDetails model module.
  * @module model/UpdateAWSTargetDetails
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateAWSTargetDetails {
     /**
@@ -90,11 +90,13 @@ class UpdateAWSTargetDetails {
 }
 
 /**
+ * The aws secret access key
  * @member {String} access-key
  */
 UpdateAWSTargetDetails.prototype['access-key'] = undefined;
 
 /**
+ * The aws access key id
  * @member {String} access-key-id
  */
 UpdateAWSTargetDetails.prototype['access-key-id'] = undefined;
@@ -102,10 +104,12 @@ UpdateAWSTargetDetails.prototype['access-key-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateAWSTargetDetails.prototype['json'] = undefined;
+UpdateAWSTargetDetails.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateAWSTargetDetails.prototype['keep-prev-version'] = undefined;
@@ -129,11 +133,14 @@ UpdateAWSTargetDetails.prototype['new-version'] = undefined;
 UpdateAWSTargetDetails.prototype['protection_key'] = undefined;
 
 /**
+ * The aws region
  * @member {String} region
+ * @default 'us-east-2'
  */
-UpdateAWSTargetDetails.prototype['region'] = undefined;
+UpdateAWSTargetDetails.prototype['region'] = 'us-east-2';
 
 /**
+ * Required only for temporary security credentials retrieved via STS, otherwise it can be an empty string
  * @member {String} session-token
  */
 UpdateAWSTargetDetails.prototype['session-token'] = undefined;

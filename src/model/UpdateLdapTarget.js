@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLdapTarget model module.
  * @module model/UpdateLdapTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateLdapTarget {
     /**
@@ -129,10 +129,12 @@ UpdateLdapTarget.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateLdapTarget.prototype['json'] = undefined;
+UpdateLdapTarget.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateLdapTarget.prototype['keep-prev-version'] = undefined;

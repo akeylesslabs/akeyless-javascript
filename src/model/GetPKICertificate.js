@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPKICertificate model module.
  * @module model/GetPKICertificate
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GetPKICertificate {
     /**
@@ -122,8 +122,9 @@ GetPKICertificate.prototype['extended-key-usage'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GetPKICertificate.prototype['json'] = undefined;
+GetPKICertificate.prototype['json'] = false;
 
 /**
  * PKI key file contents. If this option is used, the certificate will be printed to stdout

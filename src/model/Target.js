@@ -18,7 +18,7 @@ import TargetItemAssociation from './TargetItemAssociation';
 /**
  * The Target model module.
  * @module model/Target
- * @version 3.2.3
+ * @version 3.2.4
  */
 class Target {
     /**
@@ -81,6 +81,9 @@ class Target {
             }
             if (data.hasOwnProperty('protection_key_name')) {
                 obj['protection_key_name'] = ApiClient.convertToType(data['protection_key_name'], 'String');
+            }
+            if (data.hasOwnProperty('target_details')) {
+                obj['target_details'] = ApiClient.convertToType(data['target_details'], 'String');
             }
             if (data.hasOwnProperty('target_id')) {
                 obj['target_id'] = ApiClient.convertToType(data['target_id'], 'Number');
@@ -162,6 +165,11 @@ Target.prototype['modification_date'] = undefined;
  * @member {String} protection_key_name
  */
 Target.prototype['protection_key_name'] = undefined;
+
+/**
+ * @member {String} target_details
+ */
+Target.prototype['target_details'] = undefined;
 
 /**
  * @member {Number} target_id

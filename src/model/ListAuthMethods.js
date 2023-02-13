@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListAuthMethods model module.
  * @module model/ListAuthMethods
- * @version 3.2.3
+ * @version 3.2.4
  */
 class ListAuthMethods {
     /**
@@ -82,8 +82,9 @@ ListAuthMethods.prototype['filter'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-ListAuthMethods.prototype['json'] = undefined;
+ListAuthMethods.prototype['json'] = false;
 
 /**
  * Next page reference

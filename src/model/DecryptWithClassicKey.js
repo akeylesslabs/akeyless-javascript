@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptWithClassicKey model module.
  * @module model/DecryptWithClassicKey
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DecryptWithClassicKey {
     /**
@@ -93,8 +93,9 @@ DecryptWithClassicKey.prototype['display-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DecryptWithClassicKey.prototype['json'] = undefined;
+DecryptWithClassicKey.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

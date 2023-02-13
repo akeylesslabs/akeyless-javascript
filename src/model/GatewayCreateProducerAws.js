@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAws model module.
  * @module model/GatewayCreateProducerAws
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerAws {
     /**
@@ -188,14 +188,14 @@ GatewayCreateProducerAws.prototype['aws-user-groups'] = undefined;
 GatewayCreateProducerAws.prototype['aws-user-policies'] = undefined;
 
 /**
- * AWS User programmatic access
+ * Enable AWS User programmatic access
  * @member {Boolean} aws-user-programmatic-access
  * @default true
  */
 GatewayCreateProducerAws.prototype['aws-user-programmatic-access'] = true;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerAws.prototype['delete_protection'] = undefined;
@@ -210,8 +210,9 @@ GatewayCreateProducerAws.prototype['enable-admin-rotation'] = false;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerAws.prototype['json'] = undefined;
+GatewayCreateProducerAws.prototype['json'] = false;
 
 /**
  * Producer name
@@ -233,39 +234,49 @@ GatewayCreateProducerAws.prototype['producer-encryption-key-name'] = undefined;
 GatewayCreateProducerAws.prototype['region'] = 'us-east-2';
 
 /**
+ * The AWS account id
  * @member {String} secure-access-aws-account-id
  */
 GatewayCreateProducerAws.prototype['secure-access-aws-account-id'] = undefined;
 
 /**
+ * The AWS native cli
  * @member {Boolean} secure-access-aws-native-cli
  */
 GatewayCreateProducerAws.prototype['secure-access-aws-native-cli'] = undefined;
 
 /**
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 GatewayCreateProducerAws.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayCreateProducerAws.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
+ * @default true
  */
-GatewayCreateProducerAws.prototype['secure-access-web'] = undefined;
+GatewayCreateProducerAws.prototype['secure-access-web'] = true;
 
 /**
+ * Secure browser via Akeyless Web Access Bastion
  * @member {Boolean} secure-access-web-browsing
+ * @default false
  */
-GatewayCreateProducerAws.prototype['secure-access-web-browsing'] = undefined;
+GatewayCreateProducerAws.prototype['secure-access-web-browsing'] = false;
 
 /**
+ * Web-Proxy via Akeyless Web Access Bastion
  * @member {Boolean} secure-access-web-proxy
+ * @default false
  */
-GatewayCreateProducerAws.prototype['secure-access-web-proxy'] = undefined;
+GatewayCreateProducerAws.prototype['secure-access-web-proxy'] = false;
 
 /**
  * List of the tags attached to this secret

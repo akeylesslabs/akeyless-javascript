@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateItem model module.
  * @module model/GatewayUpdateItem
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateItem {
     /**
@@ -138,28 +138,31 @@ class GatewayUpdateItem {
 GatewayUpdateItem.prototype['add-tag'] = undefined;
 
 /**
+ * API ID to rotate (relevant only for rotator-type=api-key)
  * @member {String} api-id
  */
 GatewayUpdateItem.prototype['api-id'] = undefined;
 
 /**
+ * API key to rotate (relevant only for rotator-type=api-key)
  * @member {String} api-key
  */
 GatewayUpdateItem.prototype['api-key'] = undefined;
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation
+ * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 GatewayUpdateItem.prototype['auto-rotate'] = undefined;
 
 /**
+ * Secret payload to be sent with rotation request (relevant only for rotator-type=custom)
  * @member {String} custom-payload
  */
 GatewayUpdateItem.prototype['custom-payload'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateItem.prototype['delete_protection'] = undefined;
@@ -180,10 +183,12 @@ GatewayUpdateItem.prototype['gcp-key'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateItem.prototype['json'] = undefined;
+GatewayUpdateItem.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. (relevant only for --type=rotated-secret). If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 GatewayUpdateItem.prototype['keep-prev-version'] = undefined;
@@ -226,11 +231,13 @@ GatewayUpdateItem.prototype['new-version'] = undefined;
 GatewayUpdateItem.prototype['rm-tag'] = undefined;
 
 /**
+ * rotated-username password (relevant only for rotator-type=password)
  * @member {String} rotated-password
  */
 GatewayUpdateItem.prototype['rotated-password'] = undefined;
 
 /**
+ * username to be rotated, if selected \\\"use-self-creds\\\" at rotator-creds-type, this username will try to rotate it's own password, if \\\"use-target-creds\\\" is selected, target credentials will be use to rotate the rotated-password (relevant only for rotator-type=password)
  * @member {String} rotated-username
  */
 GatewayUpdateItem.prototype['rotated-username'] = undefined;
@@ -251,8 +258,9 @@ GatewayUpdateItem.prototype['rotation-interval'] = undefined;
 /**
  * The rotation credentials type
  * @member {String} rotator-creds-type
+ * @default 'use-self-creds'
  */
-GatewayUpdateItem.prototype['rotator-creds-type'] = undefined;
+GatewayUpdateItem.prototype['rotator-creds-type'] = 'use-self-creds';
 
 /**
  * Authentication token (see `/auth` and `/configure`)

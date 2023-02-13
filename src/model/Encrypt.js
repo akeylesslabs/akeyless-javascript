@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Encrypt model module.
  * @module model/Encrypt
- * @version 3.2.3
+ * @version 3.2.4
  */
 class Encrypt {
     /**
@@ -110,8 +110,9 @@ Encrypt.prototype['item-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-Encrypt.prototype['json'] = undefined;
+Encrypt.prototype['json'] = false;
 
 /**
  * The name of the key to use in the encryption process

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListRoles model module.
  * @module model/ListRoles
- * @version 3.2.3
+ * @version 3.2.4
  */
 class ListRoles {
     /**
@@ -78,8 +78,9 @@ ListRoles.prototype['filter'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-ListRoles.prototype['json'] = undefined;
+ListRoles.prototype['json'] = false;
 
 /**
  * Next page reference

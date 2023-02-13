@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadPKCS12 model module.
  * @module model/UploadPKCS12
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UploadPKCS12 {
     /**
@@ -103,7 +103,7 @@ class UploadPKCS12 {
 UploadPKCS12.prototype['customer-frg-id'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 UploadPKCS12.prototype['delete_protection'] = undefined;
@@ -123,8 +123,9 @@ UploadPKCS12.prototype['in'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UploadPKCS12.prototype['json'] = undefined;
+UploadPKCS12.prototype['json'] = false;
 
 /**
  * Deprecated - use description

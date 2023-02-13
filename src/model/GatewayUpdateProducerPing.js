@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerPing model module.
  * @module model/GatewayUpdateProducerPing
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateProducerPing {
     /**
@@ -136,7 +136,7 @@ class GatewayUpdateProducerPing {
 }
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerPing.prototype['delete_protection'] = undefined;
@@ -144,8 +144,9 @@ GatewayUpdateProducerPing.prototype['delete_protection'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateProducerPing.prototype['json'] = undefined;
+GatewayUpdateProducerPing.prototype['json'] = false;
 
 /**
  * Producer name
@@ -193,10 +194,11 @@ GatewayUpdateProducerPing.prototype['ping-cert-subject-dn'] = undefined;
 GatewayUpdateProducerPing.prototype['ping-client-authentication-type'] = 'CLIENT_SECRET';
 
 /**
- * Determines whether PingFederate requires a unique signed JWT from the client for each action (relevant for PRIVATE_KEY_JWT authentication method)
+ * Determines whether PingFederate requires a unique signed JWT from the client for each action (relevant for PRIVATE_KEY_JWT authentication method) [true/false]
  * @member {String} ping-enforce-replay-prevention
+ * @default 'false'
  */
-GatewayUpdateProducerPing.prototype['ping-enforce-replay-prevention'] = undefined;
+GatewayUpdateProducerPing.prototype['ping-enforce-replay-prevention'] = 'false';
 
 /**
  * List of OAuth client grant types [IMPLICIT, AUTHORIZATION_CODE, CLIENT_CREDENTIALS, TOKEN_EXCHANGE, REFRESH_TOKEN, ASSERTION_GRANTS, PASSWORD, RESOURCE_OWNER_CREDENTIALS]. If no explicit value is given, AUTHORIZATION_CODE will be selected as default.

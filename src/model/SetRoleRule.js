@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetRoleRule model module.
  * @module model/SetRoleRule
- * @version 3.2.3
+ * @version 3.2.4
  */
 class SetRoleRule {
     /**
@@ -93,8 +93,9 @@ SetRoleRule.prototype['capability'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-SetRoleRule.prototype['json'] = undefined;
+SetRoleRule.prototype['json'] = false;
 
 /**
  * The path the rule refers to

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AllowedAccess model module.
  * @module model/AllowedAccess
- * @version 3.2.3
+ * @version 3.2.4
  */
 class AllowedAccess {
     /**
@@ -59,6 +59,9 @@ class AllowedAccess {
             if (data.hasOwnProperty('alloweds_login')) {
                 obj['alloweds_login'] = ApiClient.convertToType(data['alloweds_login'], 'Boolean');
             }
+            if (data.hasOwnProperty('editable')) {
+                obj['editable'] = ApiClient.convertToType(data['editable'], 'Boolean');
+            }
             if (data.hasOwnProperty('err_msg')) {
                 obj['err_msg'] = ApiClient.convertToType(data['err_msg'], 'String');
             }
@@ -100,6 +103,11 @@ AllowedAccess.prototype['allowed_api'] = undefined;
  * @member {Boolean} alloweds_login
  */
 AllowedAccess.prototype['alloweds_login'] = undefined;
+
+/**
+ * @member {Boolean} editable
+ */
+AllowedAccess.prototype['editable'] = undefined;
 
 /**
  * @member {String} err_msg

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipDescribeClient model module.
  * @module model/KmipDescribeClient
- * @version 3.2.3
+ * @version 3.2.4
  */
 class KmipDescribeClient {
     /**
@@ -77,8 +77,9 @@ KmipDescribeClient.prototype['client-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-KmipDescribeClient.prototype['json'] = undefined;
+KmipDescribeClient.prototype['json'] = false;
 
 /**
  * @member {String} name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayRevokeTmpUsers model module.
  * @module model/GatewayRevokeTmpUsers
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayRevokeTmpUsers {
     /**
@@ -92,8 +92,9 @@ GatewayRevokeTmpUsers.prototype['host'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayRevokeTmpUsers.prototype['json'] = undefined;
+GatewayRevokeTmpUsers.prototype['json'] = false;
 
 /**
  * Producer Name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidGenerateToken model module.
  * @module model/UidGenerateToken
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UidGenerateToken {
     /**
@@ -78,8 +78,9 @@ UidGenerateToken.prototype['auth-method-name'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UidGenerateToken.prototype['json'] = undefined;
+UidGenerateToken.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

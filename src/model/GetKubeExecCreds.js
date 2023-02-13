@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetKubeExecCreds model module.
  * @module model/GetKubeExecCreds
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GetKubeExecCreds {
     /**
@@ -52,6 +52,9 @@ class GetKubeExecCreds {
 
             if (data.hasOwnProperty('alt-names')) {
                 obj['alt-names'] = ApiClient.convertToType(data['alt-names'], 'String');
+            }
+            if (data.hasOwnProperty('api-version')) {
+                obj['api-version'] = ApiClient.convertToType(data['api-version'], 'String');
             }
             if (data.hasOwnProperty('cert-issuer-name')) {
                 obj['cert-issuer-name'] = ApiClient.convertToType(data['cert-issuer-name'], 'String');
@@ -97,6 +100,13 @@ class GetKubeExecCreds {
 GetKubeExecCreds.prototype['alt-names'] = undefined;
 
 /**
+ * Client authentication API version
+ * @member {String} api-version
+ * @default 'v1'
+ */
+GetKubeExecCreds.prototype['api-version'] = 'v1';
+
+/**
  * The name of the PKI certificate issuer
  * @member {String} cert-issuer-name
  */
@@ -123,8 +133,9 @@ GetKubeExecCreds.prototype['extended-key-usage'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GetKubeExecCreds.prototype['json'] = undefined;
+GetKubeExecCreds.prototype['json'] = false;
 
 /**
  * PKI key file contents. If this option is used, the certificate will be printed to stdout

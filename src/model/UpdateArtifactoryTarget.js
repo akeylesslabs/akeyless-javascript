@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateArtifactoryTarget model module.
  * @module model/UpdateArtifactoryTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateArtifactoryTarget {
     /**
@@ -134,10 +134,12 @@ UpdateArtifactoryTarget.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateArtifactoryTarget.prototype['json'] = undefined;
+UpdateArtifactoryTarget.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateArtifactoryTarget.prototype['keep-prev-version'] = undefined;

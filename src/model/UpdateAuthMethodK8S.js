@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodK8S model module.
  * @module model/UpdateAuthMethodK8S
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateAuthMethodK8S {
     /**
@@ -149,7 +149,7 @@ UpdateAuthMethodK8S.prototype['bound-sa-names'] = undefined;
 UpdateAuthMethodK8S.prototype['force-sub-claims'] = undefined;
 
 /**
- * Automatically generate key-pair for K8S configuration. If set to false, a public key needs to be provided
+ * Automatically generate key-pair for K8S configuration. If set to false, a public key needs to be provided [true/false]
  * @member {String} gen-key
  */
 UpdateAuthMethodK8S.prototype['gen-key'] = undefined;
@@ -163,14 +163,16 @@ UpdateAuthMethodK8S.prototype['gw-bound-ips'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateAuthMethodK8S.prototype['json'] = undefined;
+UpdateAuthMethodK8S.prototype['json'] = false;
 
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
+ * @default 0
  */
-UpdateAuthMethodK8S.prototype['jwt-ttl'] = undefined;
+UpdateAuthMethodK8S.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

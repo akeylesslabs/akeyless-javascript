@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateEKSTarget model module.
  * @module model/UpdateEKSTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateEKSTarget {
     /**
@@ -169,10 +169,12 @@ UpdateEKSTarget.prototype['eks-secret-access-key'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateEKSTarget.prototype['json'] = undefined;
+UpdateEKSTarget.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateEKSTarget.prototype['keep-prev-version'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCustom model module.
  * @module model/GatewayCreateProducerCustom
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerCustom {
     /**
@@ -118,7 +118,7 @@ GatewayCreateProducerCustom.prototype['admin_rotation_interval_days'] = undefine
 GatewayCreateProducerCustom.prototype['create-sync-url'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerCustom.prototype['delete_protection'] = undefined;
@@ -133,8 +133,9 @@ GatewayCreateProducerCustom.prototype['enable_admin_rotation'] = false;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerCustom.prototype['json'] = undefined;
+GatewayCreateProducerCustom.prototype['json'] = false;
 
 /**
  * Producer name

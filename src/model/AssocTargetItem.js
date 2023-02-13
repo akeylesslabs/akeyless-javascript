@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocTargetItem model module.
  * @module model/AssocTargetItem
- * @version 3.2.3
+ * @version 3.2.4
  */
 class AssocTargetItem {
     /**
@@ -110,14 +110,16 @@ class AssocTargetItem {
 /**
  * Automatically disable previous key version (required for azure targets)
  * @member {Boolean} disable-previous-key-version
+ * @default false
  */
-AssocTargetItem.prototype['disable-previous-key-version'] = undefined;
+AssocTargetItem.prototype['disable-previous-key-version'] = false;
 
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-AssocTargetItem.prototype['json'] = undefined;
+AssocTargetItem.prototype['json'] = false;
 
 /**
  * A list of allowed operations for the key (required for azure targets)
@@ -144,7 +146,7 @@ AssocTargetItem.prototype['kms-algorithm'] = undefined;
 AssocTargetItem.prototype['location-id'] = undefined;
 
 /**
- * Set to 'true' to create a multi region managed key (relevant for aws targets)
+ * Set to 'true' to create a multi-region managed key. (Relevant only for Classic Key AWS targets)
  * @member {String} multi-region
  * @default 'false'
  */

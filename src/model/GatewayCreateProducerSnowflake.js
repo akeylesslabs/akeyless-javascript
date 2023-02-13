@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerSnowflake model module.
  * @module model/GatewayCreateProducerSnowflake
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerSnowflake {
     /**
@@ -130,7 +130,7 @@ GatewayCreateProducerSnowflake.prototype['account-username'] = undefined;
 GatewayCreateProducerSnowflake.prototype['db-name'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerSnowflake.prototype['delete_protection'] = undefined;
@@ -138,8 +138,9 @@ GatewayCreateProducerSnowflake.prototype['delete_protection'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerSnowflake.prototype['json'] = undefined;
+GatewayCreateProducerSnowflake.prototype['json'] = false;
 
 /**
  * Producer name

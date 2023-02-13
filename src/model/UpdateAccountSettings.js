@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateAccountSettings {
     /**
@@ -58,6 +58,9 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
+            }
+            if (data.hasOwnProperty('default-share-link-ttl-minutes')) {
+                obj['default-share-link-ttl-minutes'] = ApiClient.convertToType(data['default-share-link-ttl-minutes'], 'String');
             }
             if (data.hasOwnProperty('default-versioning')) {
                 obj['default-versioning'] = ApiClient.convertToType(data['default-versioning'], 'String');
@@ -142,13 +145,19 @@ UpdateAccountSettings.prototype['company-name'] = undefined;
 UpdateAccountSettings.prototype['country'] = undefined;
 
 /**
- * Should create version by default
+ * Set the default ttl in minutes for sharing item number between 60 and 43200
+ * @member {String} default-share-link-ttl-minutes
+ */
+UpdateAccountSettings.prototype['default-share-link-ttl-minutes'] = undefined;
+
+/**
+ * If set to true, new item version will be created on each update [true/false]
  * @member {String} default-versioning
  */
 UpdateAccountSettings.prototype['default-versioning'] = undefined;
 
 /**
- * Enable classic key protection [\"true\"/\"false\"]
+ * Set to update protection with classic keys state [true/false]
  * @member {String} dp-enable-classic-key-protection
  */
 UpdateAccountSettings.prototype['dp-enable-classic-key-protection'] = undefined;
@@ -162,8 +171,9 @@ UpdateAccountSettings.prototype['item-type'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateAccountSettings.prototype['json'] = undefined;
+UpdateAccountSettings.prototype['json'] = false;
 
 /**
  * Default ttl
@@ -190,7 +200,7 @@ UpdateAccountSettings.prototype['jwt-ttl-min'] = undefined;
 UpdateAccountSettings.prototype['max-versions'] = undefined;
 
 /**
- * For PasswordPolicy use
+ * Password length between 5 - to 50 characters
  * @member {Number} password-length
  */
 UpdateAccountSettings.prototype['password-length'] = undefined;
@@ -220,25 +230,25 @@ UpdateAccountSettings.prototype['token'] = undefined;
 UpdateAccountSettings.prototype['uid-token'] = undefined;
 
 /**
- * For PasswordPolicy use
+ * Password must contain lower case letters [true/false]
  * @member {String} use-lower-letters
  */
 UpdateAccountSettings.prototype['use-lower-letters'] = undefined;
 
 /**
- * For PasswordPolicy use
+ * Password must contain numbers [true/false]
  * @member {String} use-numbers
  */
 UpdateAccountSettings.prototype['use-numbers'] = undefined;
 
 /**
- * For PasswordPolicy use
+ * Password must contain special characters [true/false]
  * @member {String} use-special-characters
  */
 UpdateAccountSettings.prototype['use-special-characters'] = undefined;
 
 /**
- * For PasswordPolicy use
+ * Password must contain capital letters [true/false]
  * @member {String} use_capital-letters
  */
 UpdateAccountSettings.prototype['use_capital-letters'] = undefined;

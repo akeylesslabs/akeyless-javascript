@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerHanaDb model module.
  * @module model/GatewayCreateProducerHanaDb
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerHanaDb {
     /**
@@ -121,7 +121,7 @@ class GatewayCreateProducerHanaDb {
 }
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerHanaDb.prototype['delete_protection'] = undefined;
@@ -173,8 +173,9 @@ GatewayCreateProducerHanaDb.prototype['hanadb-username'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerHanaDb.prototype['json'] = undefined;
+GatewayCreateProducerHanaDb.prototype['json'] = false;
 
 /**
  * Producer name
@@ -189,29 +190,35 @@ GatewayCreateProducerHanaDb.prototype['name'] = undefined;
 GatewayCreateProducerHanaDb.prototype['producer-encryption-key-name'] = undefined;
 
 /**
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 GatewayCreateProducerHanaDb.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
+ * The DB schema
  * @member {String} secure-access-db-schema
  */
 GatewayCreateProducerHanaDb.prototype['secure-access-db-schema'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayCreateProducerHanaDb.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Target DB servers for connections
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerHanaDb.prototype['secure-access-host'] = undefined;
 
 /**
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
+ * @default false
  */
-GatewayCreateProducerHanaDb.prototype['secure-access-web'] = undefined;
+GatewayCreateProducerHanaDb.prototype['secure-access-web'] = false;
 
 /**
  * List of the tags attached to this secret

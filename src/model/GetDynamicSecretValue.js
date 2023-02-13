@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetDynamicSecretValue model module.
  * @module model/GetDynamicSecretValue
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GetDynamicSecretValue {
     /**
@@ -95,8 +95,9 @@ GetDynamicSecretValue.prototype['host'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GetDynamicSecretValue.prototype['json'] = undefined;
+GetDynamicSecretValue.prototype['json'] = false;
 
 /**
  * Dynamic secret name

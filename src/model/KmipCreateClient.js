@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipCreateClient model module.
  * @module model/KmipCreateClient
- * @version 3.2.3
+ * @version 3.2.4
  */
 class KmipCreateClient {
     /**
@@ -75,20 +75,25 @@ class KmipCreateClient {
 }
 
 /**
+ * If set to 'true', newly created keys on the client will be set to an 'active' state
  * @member {String} activate-keys-on-creation
+ * @default 'false'
  */
-KmipCreateClient.prototype['activate-keys-on-creation'] = undefined;
+KmipCreateClient.prototype['activate-keys-on-creation'] = 'false';
 
 /**
+ * Client certificate TTL in days
  * @member {Number} certificate-ttl
+ * @default 90
  */
-KmipCreateClient.prototype['certificate-ttl'] = undefined;
+KmipCreateClient.prototype['certificate-ttl'] = 90;
 
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-KmipCreateClient.prototype['json'] = undefined;
+KmipCreateClient.prototype['json'] = false;
 
 /**
  * Client name

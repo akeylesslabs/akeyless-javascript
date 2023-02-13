@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayListProducers model module.
  * @module model/GatewayListProducers
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayListProducers {
     /**
@@ -67,8 +67,9 @@ class GatewayListProducers {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayListProducers.prototype['json'] = undefined;
+GatewayListProducers.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

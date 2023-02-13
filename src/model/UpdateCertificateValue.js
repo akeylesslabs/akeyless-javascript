@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCertificateValue model module.
  * @module model/UpdateCertificateValue
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateCertificateValue {
     /**
@@ -95,8 +95,9 @@ UpdateCertificateValue.prototype['expiration-event-in'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateCertificateValue.prototype['json'] = undefined;
+UpdateCertificateValue.prototype['json'] = false;
 
 /**
  * The name of a key to use to encrypt the certificate's key (if empty, the account default protectionKey key will be used)

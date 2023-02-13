@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodHuawei model module.
  * @module model/CreateAuthMethodHuawei
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateAuthMethodHuawei {
     /**
@@ -176,14 +176,16 @@ CreateAuthMethodHuawei.prototype['gw-bound-ips'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateAuthMethodHuawei.prototype['json'] = undefined;
+CreateAuthMethodHuawei.prototype['json'] = false;
 
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
+ * @default 0
  */
-CreateAuthMethodHuawei.prototype['jwt-ttl'] = undefined;
+CreateAuthMethodHuawei.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

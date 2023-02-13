@@ -16,17 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAWSTarget model module.
  * @module model/UpdateAWSTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateAWSTarget {
     /**
      * Constructs a new <code>UpdateAWSTarget</code>.
      * @alias module:model/UpdateAWSTarget
+     * @param accessKey {String} AWS secret access key
+     * @param accessKeyId {String} AWS access key ID
      * @param name {String} Target name
      */
-    constructor(name) { 
+    constructor(accessKey, accessKeyId, name) { 
         
-        UpdateAWSTarget.initialize(this, name);
+        UpdateAWSTarget.initialize(this, accessKey, accessKeyId, name);
     }
 
     /**
@@ -34,7 +36,9 @@ class UpdateAWSTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name) { 
+    static initialize(obj, accessKey, accessKeyId, name) { 
+        obj['access-key'] = accessKey;
+        obj['access-key-id'] = accessKeyId;
         obj['name'] = name;
     }
 
@@ -102,11 +106,13 @@ class UpdateAWSTarget {
 }
 
 /**
+ * AWS secret access key
  * @member {String} access-key
  */
 UpdateAWSTarget.prototype['access-key'] = undefined;
 
 /**
+ * AWS access key ID
  * @member {String} access-key-id
  */
 UpdateAWSTarget.prototype['access-key-id'] = undefined;
@@ -126,10 +132,12 @@ UpdateAWSTarget.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateAWSTarget.prototype['json'] = undefined;
+UpdateAWSTarget.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateAWSTarget.prototype['keep-prev-version'] = undefined;
@@ -153,11 +161,14 @@ UpdateAWSTarget.prototype['name'] = undefined;
 UpdateAWSTarget.prototype['new-name'] = undefined;
 
 /**
+ * AWS region
  * @member {String} region
+ * @default 'us-east-2'
  */
-UpdateAWSTarget.prototype['region'] = undefined;
+UpdateAWSTarget.prototype['region'] = 'us-east-2';
 
 /**
+ * Required only for temporary security credentials retrieved using STS
  * @member {String} session-token
  */
 UpdateAWSTarget.prototype['session-token'] = undefined;
@@ -181,6 +192,7 @@ UpdateAWSTarget.prototype['uid-token'] = undefined;
 UpdateAWSTarget.prototype['update-version'] = undefined;
 
 /**
+ * Use the GW's Cloud IAM
  * @member {Boolean} use-gw-cloud-identity
  */
 UpdateAWSTarget.prototype['use-gw-cloud-identity'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExportClassicKey model module.
  * @module model/ExportClassicKey
- * @version 3.2.3
+ * @version 3.2.4
  */
 class ExportClassicKey {
     /**
@@ -76,7 +76,7 @@ class ExportClassicKey {
 }
 
 /**
- * Ignore Cache Retrieve the Secret value without checking the Gateway's cache. This flag is only relevant when using the RestAPI
+ * Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI
  * @member {String} ignore-cache
  * @default 'false'
  */
@@ -85,8 +85,9 @@ ExportClassicKey.prototype['ignore-cache'] = 'false';
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-ExportClassicKey.prototype['json'] = undefined;
+ExportClassicKey.prototype['json'] = false;
 
 /**
  * ClassicKey name

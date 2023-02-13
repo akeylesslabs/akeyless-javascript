@@ -21,6 +21,7 @@ import AccountGeneralSettings from './model/AccountGeneralSettings';
 import AccountObjectVersionSettingsOutput from './model/AccountObjectVersionSettingsOutput';
 import ActiveDirectoryMigration from './model/ActiveDirectoryMigration';
 import ActiveDirectoryPayload from './model/ActiveDirectoryPayload';
+import AddGatewayAllowedAccessId from './model/AddGatewayAllowedAccessId';
 import AdminsConfigPart from './model/AdminsConfigPart';
 import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
 import AllowedAccess from './model/AllowedAccess';
@@ -110,6 +111,8 @@ import CreateKey from './model/CreateKey';
 import CreateKeyOutput from './model/CreateKeyOutput';
 import CreateLdapTarget from './model/CreateLdapTarget';
 import CreateLdapTargetOutput from './model/CreateLdapTargetOutput';
+import CreateLinkedTarget from './model/CreateLinkedTarget';
+import CreateLinkedTargetOutput from './model/CreateLinkedTargetOutput';
 import CreateNativeK8STarget from './model/CreateNativeK8STarget';
 import CreateNativeK8STargetOutput from './model/CreateNativeK8STargetOutput';
 import CreatePKICertIssuer from './model/CreatePKICertIssuer';
@@ -135,6 +138,8 @@ import CreateTokenizer from './model/CreateTokenizer';
 import CreateTokenizerOutput from './model/CreateTokenizerOutput';
 import CreateWebTarget from './model/CreateWebTarget';
 import CreateWebTargetOutput from './model/CreateWebTargetOutput';
+import CreateWindowsTarget from './model/CreateWindowsTarget';
+import CreateWindowsTargetOutput from './model/CreateWindowsTargetOutput';
 import CustomerFragment from './model/CustomerFragment';
 import CustomerFragmentsJson from './model/CustomerFragmentsJson';
 import CustomerFullAddress from './model/CustomerFullAddress';
@@ -157,6 +162,7 @@ import DeleteAuthMethodOutput from './model/DeleteAuthMethodOutput';
 import DeleteAuthMethods from './model/DeleteAuthMethods';
 import DeleteAuthMethodsOutput from './model/DeleteAuthMethodsOutput';
 import DeleteEventForwarder from './model/DeleteEventForwarder';
+import DeleteGatewayAllowedAccessId from './model/DeleteGatewayAllowedAccessId';
 import DeleteItem from './model/DeleteItem';
 import DeleteItemOutput from './model/DeleteItemOutput';
 import DeleteItems from './model/DeleteItems';
@@ -485,6 +491,7 @@ import SecureRemoteAccess from './model/SecureRemoteAccess';
 import SetItemState from './model/SetItemState';
 import SetRoleRule from './model/SetRoleRule';
 import ShareItem from './model/ShareItem';
+import SharingPolicyInfo from './model/SharingPolicyInfo';
 import SignGPG from './model/SignGPG';
 import SignGPGOutput from './model/SignGPGOutput';
 import SignJWTOutput from './model/SignJWTOutput';
@@ -568,6 +575,7 @@ import UpdateItemOutput from './model/UpdateItemOutput';
 import UpdateLdapTarget from './model/UpdateLdapTarget';
 import UpdateLdapTargetDetails from './model/UpdateLdapTargetDetails';
 import UpdateLdapTargetOutput from './model/UpdateLdapTargetOutput';
+import UpdateLinkedTarget from './model/UpdateLinkedTarget';
 import UpdateNativeK8STarget from './model/UpdateNativeK8STarget';
 import UpdateNativeK8STargetOutput from './model/UpdateNativeK8STargetOutput';
 import UpdateOutput from './model/UpdateOutput';
@@ -599,6 +607,7 @@ import UpdateTargetOutput from './model/UpdateTargetOutput';
 import UpdateWebTarget from './model/UpdateWebTarget';
 import UpdateWebTargetDetails from './model/UpdateWebTargetDetails';
 import UpdateWebTargetOutput from './model/UpdateWebTargetOutput';
+import UpdateWindowsTarget from './model/UpdateWindowsTarget';
 import UploadPKCS12 from './model/UploadPKCS12';
 import UploadRSA from './model/UploadRSA';
 import ValidateToken from './model/ValidateToken';
@@ -642,7 +651,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.2.3
+* @version 3.2.4
 */
 export {
     /**
@@ -698,6 +707,12 @@ export {
      * @property {module:model/ActiveDirectoryPayload}
      */
     ActiveDirectoryPayload,
+
+    /**
+     * The AddGatewayAllowedAccessId model constructor.
+     * @property {module:model/AddGatewayAllowedAccessId}
+     */
+    AddGatewayAllowedAccessId,
 
     /**
      * The AdminsConfigPart model constructor.
@@ -1234,6 +1249,18 @@ export {
     CreateLdapTargetOutput,
 
     /**
+     * The CreateLinkedTarget model constructor.
+     * @property {module:model/CreateLinkedTarget}
+     */
+    CreateLinkedTarget,
+
+    /**
+     * The CreateLinkedTargetOutput model constructor.
+     * @property {module:model/CreateLinkedTargetOutput}
+     */
+    CreateLinkedTargetOutput,
+
+    /**
      * The CreateNativeK8STarget model constructor.
      * @property {module:model/CreateNativeK8STarget}
      */
@@ -1384,6 +1411,18 @@ export {
     CreateWebTargetOutput,
 
     /**
+     * The CreateWindowsTarget model constructor.
+     * @property {module:model/CreateWindowsTarget}
+     */
+    CreateWindowsTarget,
+
+    /**
+     * The CreateWindowsTargetOutput model constructor.
+     * @property {module:model/CreateWindowsTargetOutput}
+     */
+    CreateWindowsTargetOutput,
+
+    /**
      * The CustomerFragment model constructor.
      * @property {module:model/CustomerFragment}
      */
@@ -1514,6 +1553,12 @@ export {
      * @property {module:model/DeleteEventForwarder}
      */
     DeleteEventForwarder,
+
+    /**
+     * The DeleteGatewayAllowedAccessId model constructor.
+     * @property {module:model/DeleteGatewayAllowedAccessId}
+     */
+    DeleteGatewayAllowedAccessId,
 
     /**
      * The DeleteItem model constructor.
@@ -3484,6 +3529,12 @@ export {
     ShareItem,
 
     /**
+     * The SharingPolicyInfo model constructor.
+     * @property {module:model/SharingPolicyInfo}
+     */
+    SharingPolicyInfo,
+
+    /**
      * The SignGPG model constructor.
      * @property {module:model/SignGPG}
      */
@@ -3982,6 +4033,12 @@ export {
     UpdateLdapTargetOutput,
 
     /**
+     * The UpdateLinkedTarget model constructor.
+     * @property {module:model/UpdateLinkedTarget}
+     */
+    UpdateLinkedTarget,
+
+    /**
      * The UpdateNativeK8STarget model constructor.
      * @property {module:model/UpdateNativeK8STarget}
      */
@@ -4166,6 +4223,12 @@ export {
      * @property {module:model/UpdateWebTargetOutput}
      */
     UpdateWebTargetOutput,
+
+    /**
+     * The UpdateWindowsTarget model constructor.
+     * @property {module:model/UpdateWindowsTarget}
+     */
+    UpdateWindowsTarget,
 
     /**
      * The UploadPKCS12 model constructor.

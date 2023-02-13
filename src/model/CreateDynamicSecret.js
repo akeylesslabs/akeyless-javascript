@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDynamicSecret model module.
  * @module model/CreateDynamicSecret
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateDynamicSecret {
     /**
@@ -84,7 +84,7 @@ class CreateDynamicSecret {
 }
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 CreateDynamicSecret.prototype['delete_protection'] = undefined;
@@ -98,8 +98,9 @@ CreateDynamicSecret.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateDynamicSecret.prototype['json'] = undefined;
+CreateDynamicSecret.prototype['json'] = false;
 
 /**
  * The name of a key that used to encrypt the dynamic secret values (if empty, the account default protectionKey key will be used)

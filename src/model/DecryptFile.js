@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptFile model module.
  * @module model/DecryptFile
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DecryptFile {
     /**
@@ -89,8 +89,9 @@ DecryptFile.prototype['item-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DecryptFile.prototype['json'] = undefined;
+DecryptFile.prototype['json'] = false;
 
 /**
  * The name of the key to use in the decryption process

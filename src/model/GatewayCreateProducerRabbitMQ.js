@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRabbitMQ model module.
  * @module model/GatewayCreateProducerRabbitMQ
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerRabbitMQ {
     /**
@@ -124,7 +124,7 @@ class GatewayCreateProducerRabbitMQ {
 }
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerRabbitMQ.prototype['delete_protection'] = undefined;
@@ -132,8 +132,9 @@ GatewayCreateProducerRabbitMQ.prototype['delete_protection'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerRabbitMQ.prototype['json'] = undefined;
+GatewayCreateProducerRabbitMQ.prototype['json'] = false;
 
 /**
  * Producer name
@@ -196,31 +197,37 @@ GatewayCreateProducerRabbitMQ.prototype['rabbitmq-user-vhost'] = undefined;
 GatewayCreateProducerRabbitMQ.prototype['rabbitmq-user-write-permission'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayCreateProducerRabbitMQ.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Destination URL to inject secrets
  * @member {String} secure-access-url
  */
 GatewayCreateProducerRabbitMQ.prototype['secure-access-url'] = undefined;
 
 /**
- * Secure Access Web Category
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
  * @default true
  */
 GatewayCreateProducerRabbitMQ.prototype['secure-access-web'] = true;
 
 /**
+ * Secure browser via Akeyless Web Access Bastion
  * @member {Boolean} secure-access-web-browsing
+ * @default false
  */
-GatewayCreateProducerRabbitMQ.prototype['secure-access-web-browsing'] = undefined;
+GatewayCreateProducerRabbitMQ.prototype['secure-access-web-browsing'] = false;
 
 /**
+ * Web-Proxy via Akeyless Web Access Bastion
  * @member {Boolean} secure-access-web-proxy
+ * @default false
  */
-GatewayCreateProducerRabbitMQ.prototype['secure-access-web-proxy'] = undefined;
+GatewayCreateProducerRabbitMQ.prototype['secure-access-web-proxy'] = false;
 
 /**
  * List of the tags attached to this secret

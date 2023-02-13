@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LogstashLogForwardingConfig model module.
  * @module model/LogstashLogForwardingConfig
- * @version 3.2.3
+ * @version 3.2.4
  */
 class LogstashLogForwardingConfig {
     /**

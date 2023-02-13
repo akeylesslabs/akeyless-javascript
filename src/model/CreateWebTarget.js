@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateWebTarget model module.
  * @module model/CreateWebTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateWebTarget {
     /**
@@ -95,8 +95,9 @@ CreateWebTarget.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateWebTarget.prototype['json'] = undefined;
+CreateWebTarget.prototype['json'] = false;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)

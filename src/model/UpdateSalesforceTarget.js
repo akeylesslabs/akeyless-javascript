@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSalesforceTarget model module.
  * @module model/UpdateSalesforceTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateSalesforceTarget {
     /**
@@ -181,10 +181,12 @@ UpdateSalesforceTarget.prototype['email'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateSalesforceTarget.prototype['json'] = undefined;
+UpdateSalesforceTarget.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateSalesforceTarget.prototype['keep-prev-version'] = undefined;

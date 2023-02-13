@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdatePKICertIssuer {
     /**
@@ -201,8 +201,9 @@ UpdatePKICertIssuer.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdatePKICertIssuer.prototype['json'] = undefined;
+UpdatePKICertIssuer.prototype['json'] = false;
 
 /**
  * key-usage

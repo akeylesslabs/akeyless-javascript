@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **comment** | **String** | Deprecated - use description | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **email** | **String** | The email of the user attached to the oauth2 app used for connecting to Salesforce | 
-**json** | **Boolean** | Set output format to JSON | [optional] 
-**keepPrevVersion** | **String** |  | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
+**keepPrevVersion** | **String** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **String** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **String** | Target name | 
 **newName** | **String** | New target name | [optional] 

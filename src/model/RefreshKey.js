@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RefreshKey model module.
  * @module model/RefreshKey
- * @version 3.2.3
+ * @version 3.2.4
  */
 class RefreshKey {
     /**
@@ -71,8 +71,9 @@ class RefreshKey {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-RefreshKey.prototype['json'] = undefined;
+RefreshKey.prototype['json'] = false;
 
 /**
  * Key name

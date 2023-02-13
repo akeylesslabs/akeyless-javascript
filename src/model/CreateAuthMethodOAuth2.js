@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOAuth2 model module.
  * @module model/CreateAuthMethodOAuth2
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateAuthMethodOAuth2 {
     /**
@@ -149,8 +149,9 @@ CreateAuthMethodOAuth2.prototype['issuer'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateAuthMethodOAuth2.prototype['json'] = undefined;
+CreateAuthMethodOAuth2.prototype['json'] = false;
 
 /**
  * The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server.
@@ -161,8 +162,9 @@ CreateAuthMethodOAuth2.prototype['jwks-uri'] = undefined;
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
+ * @default 0
  */
-CreateAuthMethodOAuth2.prototype['jwt-ttl'] = undefined;
+CreateAuthMethodOAuth2.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

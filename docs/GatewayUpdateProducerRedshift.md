@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creationStatements** | **String** | Redshift Creation statements | [optional] 
-**deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Producer name | 
 **newName** | **String** | Producer name | [optional] 
 **producerEncryptionKey** | **String** | Dynamic producer encryption key | [optional] 
@@ -15,9 +15,9 @@ Name | Type | Description | Notes
 **redshiftPassword** | **String** | Redshift Password | [optional] 
 **redshiftPort** | **String** | Redshift Port | [optional] [default to &#39;5439&#39;]
 **redshiftUsername** | **String** | Redshift Username | [optional] 
-**secureAccessEnable** | **String** |  | [optional] 
-**secureAccessHost** | **[String]** |  | [optional] 
-**ssl** | **Boolean** | SSL connection mode | [optional] 
+**secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
+**secureAccessHost** | **[String]** | Target DB servers for connections | [optional] 
+**ssl** | **Boolean** | Enable/Disable SSL [true/false] | [optional] [default to false]
 **tags** | **[String]** | List of the tags attached to this secret | [optional] 
 **targetName** | **String** | Target name | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

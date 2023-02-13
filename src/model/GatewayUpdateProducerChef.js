@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerChef model module.
  * @module model/GatewayUpdateProducerChef
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateProducerChef {
     /**
@@ -127,7 +127,7 @@ GatewayUpdateProducerChef.prototype['chef-server-url'] = undefined;
 GatewayUpdateProducerChef.prototype['chef-server-username'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerChef.prototype['delete_protection'] = undefined;
@@ -135,8 +135,9 @@ GatewayUpdateProducerChef.prototype['delete_protection'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateProducerChef.prototype['json'] = undefined;
+GatewayUpdateProducerChef.prototype['json'] = false;
 
 /**
  * Producer name

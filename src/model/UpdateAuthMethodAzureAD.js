@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAzureAD model module.
  * @module model/UpdateAuthMethodAzureAD
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateAuthMethodAzureAD {
     /**
@@ -221,8 +221,9 @@ UpdateAuthMethodAzureAD.prototype['issuer'] = 'https://sts.windows.net/---bound_
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateAuthMethodAzureAD.prototype['json'] = undefined;
+UpdateAuthMethodAzureAD.prototype['json'] = false;
 
 /**
  * The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server.
@@ -234,8 +235,9 @@ UpdateAuthMethodAzureAD.prototype['jwks-uri'] = 'https://login.microsoftonline.c
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
+ * @default 0
  */
-UpdateAuthMethodAzureAD.prototype['jwt-ttl'] = undefined;
+UpdateAuthMethodAzureAD.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

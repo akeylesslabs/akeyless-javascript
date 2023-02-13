@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteItems model module.
  * @module model/DeleteItems
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DeleteItems {
     /**
@@ -71,8 +71,9 @@ class DeleteItems {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DeleteItems.prototype['json'] = undefined;
+DeleteItems.prototype['json'] = false;
 
 /**
  * Path to delete the items from

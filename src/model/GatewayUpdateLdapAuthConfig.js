@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLdapAuthConfig model module.
  * @module model/GatewayUpdateLdapAuthConfig
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateLdapAuthConfig {
     /**
@@ -142,8 +142,9 @@ GatewayUpdateLdapAuthConfig.prototype['group-filter'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateLdapAuthConfig.prototype['json'] = undefined;
+GatewayUpdateLdapAuthConfig.prototype['json'] = false;
 
 /**
  * LDAP CA Certificate (base64 encoded)
@@ -152,7 +153,7 @@ GatewayUpdateLdapAuthConfig.prototype['json'] = undefined;
 GatewayUpdateLdapAuthConfig.prototype['ldap-ca-cert'] = undefined;
 
 /**
- * Enable Ldap
+ * Enable Ldap [true/false]
  * @member {String} ldap-enable
  */
 GatewayUpdateLdapAuthConfig.prototype['ldap-enable'] = undefined;

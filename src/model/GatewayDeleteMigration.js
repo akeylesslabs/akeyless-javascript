@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteMigration model module.
  * @module model/GatewayDeleteMigration
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayDeleteMigration {
     /**
@@ -78,8 +78,9 @@ GatewayDeleteMigration.prototype['id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayDeleteMigration.prototype['json'] = undefined;
+GatewayDeleteMigration.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

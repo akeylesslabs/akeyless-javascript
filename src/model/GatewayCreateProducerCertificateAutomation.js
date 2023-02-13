@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCertificateAutomation model module.
  * @module model/GatewayCreateProducerCertificateAutomation
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerCertificateAutomation {
     /**
@@ -155,7 +155,7 @@ GatewayCreateProducerCertificateAutomation.prototype['allowed-domains'] = undefi
 GatewayCreateProducerCertificateAutomation.prototype['auto-generated-folder'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerCertificateAutomation.prototype['delete_protection'] = undefined;
@@ -170,8 +170,9 @@ GatewayCreateProducerCertificateAutomation.prototype['enable-admin-rotation'] = 
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerCertificateAutomation.prototype['json'] = undefined;
+GatewayCreateProducerCertificateAutomation.prototype['json'] = false;
 
 /**
  * Producer name
@@ -236,8 +237,9 @@ GatewayCreateProducerCertificateAutomation.prototype['uid-token'] = undefined;
 /**
  * User TTL in time.Duration format (2160h / 129600m / etc...). When using sign-using-akeyless-pki certificates created will have this validity period, otherwise the user-ttl is taken from the Validity Period field of the Zone's' Issuing Template. When using cert-manager it is advised to have a TTL of above 60 days (1440h). For more information - https://cert-manager.io/docs/usage/certificate/
  * @member {String} user-ttl
+ * @default '2160h'
  */
-GatewayCreateProducerCertificateAutomation.prototype['user-ttl'] = undefined;
+GatewayCreateProducerCertificateAutomation.prototype['user-ttl'] = '2160h';
 
 /**
  * Venafi API key

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAzureTarget model module.
  * @module model/UpdateAzureTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateAzureTarget {
     /**
@@ -132,10 +132,12 @@ UpdateAzureTarget.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateAzureTarget.prototype['json'] = undefined;
+UpdateAzureTarget.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateAzureTarget.prototype['keep-prev-version'] = undefined;

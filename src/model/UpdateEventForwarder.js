@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateEventForwarder model module.
  * @module model/UpdateEventForwarder
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateEventForwarder {
     /**
@@ -115,10 +115,11 @@ UpdateEventForwarder.prototype['description'] = 'default_comment';
 UpdateEventForwarder.prototype['email-to'] = undefined;
 
 /**
- * Enable
+ * Enable/Disable Event Forwarder [true/false]
  * @member {String} enable
+ * @default 'true'
  */
-UpdateEventForwarder.prototype['enable'] = undefined;
+UpdateEventForwarder.prototype['enable'] = 'true';
 
 /**
  * Event sources
@@ -141,8 +142,9 @@ UpdateEventForwarder.prototype['host'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateEventForwarder.prototype['json'] = undefined;
+UpdateEventForwarder.prototype['json'] = false;
 
 /**
  * EventForwarder name

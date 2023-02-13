@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidateToken model module.
  * @module model/ValidateToken
- * @version 3.2.3
+ * @version 3.2.4
  */
 class ValidateToken {
     /**
@@ -64,8 +64,9 @@ class ValidateToken {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-ValidateToken.prototype['json'] = undefined;
+ValidateToken.prototype['json'] = false;
 
 /**
  * Token

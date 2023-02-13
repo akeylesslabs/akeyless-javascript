@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHTarget model module.
  * @module model/UpdateSSHTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateSSHTarget {
     /**
@@ -117,6 +117,7 @@ UpdateSSHTarget.prototype['comment'] = undefined;
 UpdateSSHTarget.prototype['description'] = undefined;
 
 /**
+ * SSH host name
  * @member {String} host
  */
 UpdateSSHTarget.prototype['host'] = undefined;
@@ -124,10 +125,12 @@ UpdateSSHTarget.prototype['host'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateSSHTarget.prototype['json'] = undefined;
+UpdateSSHTarget.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateSSHTarget.prototype['keep-prev-version'] = undefined;
@@ -151,26 +154,32 @@ UpdateSSHTarget.prototype['name'] = undefined;
 UpdateSSHTarget.prototype['new-name'] = undefined;
 
 /**
+ * SSH port
  * @member {String} port
+ * @default '22'
  */
-UpdateSSHTarget.prototype['port'] = undefined;
+UpdateSSHTarget.prototype['port'] = '22';
 
 /**
+ * SSH private key
  * @member {String} private-key
  */
 UpdateSSHTarget.prototype['private-key'] = undefined;
 
 /**
+ * SSH private key password
  * @member {String} private-key-password
  */
 UpdateSSHTarget.prototype['private-key-password'] = undefined;
 
 /**
+ * SSH password to rotate
  * @member {String} ssh-password
  */
 UpdateSSHTarget.prototype['ssh-password'] = undefined;
 
 /**
+ * SSH username
  * @member {String} ssh-username
  */
 UpdateSSHTarget.prototype['ssh-username'] = undefined;

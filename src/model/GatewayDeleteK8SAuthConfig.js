@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteK8SAuthConfig model module.
  * @module model/GatewayDeleteK8SAuthConfig
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayDeleteK8SAuthConfig {
     /**
@@ -72,8 +72,9 @@ class GatewayDeleteK8SAuthConfig {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayDeleteK8SAuthConfig.prototype['json'] = undefined;
+GatewayDeleteK8SAuthConfig.prototype['json'] = false;
 
 /**
  * K8S Auth config name

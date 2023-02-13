@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGKETarget model module.
  * @module model/UpdateGKETarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateGKETarget {
     /**
@@ -149,10 +149,12 @@ UpdateGKETarget.prototype['gke-service-account-email'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateGKETarget.prototype['json'] = undefined;
+UpdateGKETarget.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateGKETarget.prototype['keep-prev-version'] = undefined;

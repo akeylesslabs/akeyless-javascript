@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHTarget model module.
  * @module model/CreateSSHTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateSSHTarget {
     /**
@@ -108,6 +108,7 @@ CreateSSHTarget.prototype['comment'] = undefined;
 CreateSSHTarget.prototype['description'] = undefined;
 
 /**
+ * SSH host name
  * @member {String} host
  */
 CreateSSHTarget.prototype['host'] = undefined;
@@ -115,8 +116,9 @@ CreateSSHTarget.prototype['host'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateSSHTarget.prototype['json'] = undefined;
+CreateSSHTarget.prototype['json'] = false;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
@@ -131,26 +133,32 @@ CreateSSHTarget.prototype['key'] = undefined;
 CreateSSHTarget.prototype['name'] = undefined;
 
 /**
+ * SSH port
  * @member {String} port
+ * @default '22'
  */
-CreateSSHTarget.prototype['port'] = undefined;
+CreateSSHTarget.prototype['port'] = '22';
 
 /**
+ * SSH private key
  * @member {String} private-key
  */
 CreateSSHTarget.prototype['private-key'] = undefined;
 
 /**
+ * SSH private key password
  * @member {String} private-key-password
  */
 CreateSSHTarget.prototype['private-key-password'] = undefined;
 
 /**
+ * SSH password to rotate
  * @member {String} ssh-password
  */
 CreateSSHTarget.prototype['ssh-password'] = undefined;
 
 /**
+ * SSH username
  * @member {String} ssh-username
  */
 CreateSSHTarget.prototype['ssh-username'] = undefined;

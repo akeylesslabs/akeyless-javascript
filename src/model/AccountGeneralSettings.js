@@ -14,11 +14,12 @@
 import ApiClient from '../ApiClient';
 import DataProtectionSection from './DataProtectionSection';
 import PasswordPolicyInfo from './PasswordPolicyInfo';
+import SharingPolicyInfo from './SharingPolicyInfo';
 
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 3.2.3
+ * @version 3.2.4
  */
 class AccountGeneralSettings {
     /**
@@ -59,6 +60,9 @@ class AccountGeneralSettings {
             if (data.hasOwnProperty('password_policy')) {
                 obj['password_policy'] = PasswordPolicyInfo.constructFromObject(data['password_policy']);
             }
+            if (data.hasOwnProperty('sharing_policy')) {
+                obj['sharing_policy'] = SharingPolicyInfo.constructFromObject(data['sharing_policy']);
+            }
         }
         return obj;
     }
@@ -80,6 +84,11 @@ AccountGeneralSettings.prototype['enable_request_for_access'] = undefined;
  * @member {module:model/PasswordPolicyInfo} password_policy
  */
 AccountGeneralSettings.prototype['password_policy'] = undefined;
+
+/**
+ * @member {module:model/SharingPolicyInfo} sharing_policy
+ */
+AccountGeneralSettings.prototype['sharing_policy'] = undefined;
 
 
 

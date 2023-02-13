@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **denyRotate** | **Boolean** | Deny from the token to rotate | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
-**jwtTtl** | **Number** | Jwt TTL | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
+**jwtTtl** | **Number** | Jwt TTL | [optional] [default to 0]
 **name** | **String** | Auth Method name | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **ttl** | **Number** | Token ttl | [optional] [default to 60]

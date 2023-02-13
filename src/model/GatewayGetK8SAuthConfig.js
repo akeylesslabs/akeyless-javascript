@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetK8SAuthConfig model module.
  * @module model/GatewayGetK8SAuthConfig
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayGetK8SAuthConfig {
     /**
@@ -72,8 +72,9 @@ class GatewayGetK8SAuthConfig {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayGetK8SAuthConfig.prototype['json'] = undefined;
+GatewayGetK8SAuthConfig.prototype['json'] = false;
 
 /**
  * K8S Auth config name

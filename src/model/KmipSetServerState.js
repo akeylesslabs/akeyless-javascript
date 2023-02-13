@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipSetServerState model module.
  * @module model/KmipSetServerState
- * @version 3.2.3
+ * @version 3.2.4
  */
 class KmipSetServerState {
     /**
@@ -72,8 +72,9 @@ class KmipSetServerState {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-KmipSetServerState.prototype['json'] = undefined;
+KmipSetServerState.prototype['json'] = false;
 
 /**
  * @member {String} state

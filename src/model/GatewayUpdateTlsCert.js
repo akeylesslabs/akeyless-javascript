@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateTlsCert model module.
  * @module model/GatewayUpdateTlsCert
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateTlsCert {
     /**
@@ -79,8 +79,9 @@ GatewayUpdateTlsCert.prototype['cert-data'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateTlsCert.prototype['json'] = undefined;
+GatewayUpdateTlsCert.prototype['json'] = false;
 
 /**
  * TLS Private Key (base64 encoded)

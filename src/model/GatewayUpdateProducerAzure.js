@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerAzure model module.
  * @module model/GatewayUpdateProducerAzure
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateProducerAzure {
     /**
@@ -157,7 +157,7 @@ GatewayUpdateProducerAzure.prototype['azure-client-secret'] = undefined;
 GatewayUpdateProducerAzure.prototype['azure-tenant-id'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerAzure.prototype['delete_protection'] = undefined;
@@ -179,8 +179,9 @@ GatewayUpdateProducerAzure.prototype['fixed-user-only'] = false;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateProducerAzure.prototype['json'] = undefined;
+GatewayUpdateProducerAzure.prototype['json'] = false;
 
 /**
  * Producer name
@@ -201,24 +202,31 @@ GatewayUpdateProducerAzure.prototype['new-name'] = undefined;
 GatewayUpdateProducerAzure.prototype['producer-encryption-key-name'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayUpdateProducerAzure.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
+ * @default true
  */
-GatewayUpdateProducerAzure.prototype['secure-access-web'] = undefined;
+GatewayUpdateProducerAzure.prototype['secure-access-web'] = true;
 
 /**
+ * Secure browser via Akeyless Web Access Bastion
  * @member {Boolean} secure-access-web-browsing
+ * @default false
  */
-GatewayUpdateProducerAzure.prototype['secure-access-web-browsing'] = undefined;
+GatewayUpdateProducerAzure.prototype['secure-access-web-browsing'] = false;
 
 /**
+ * Web-Proxy via Akeyless Web Access Bastion
  * @member {Boolean} secure-access-web-proxy
+ * @default false
  */
-GatewayUpdateProducerAzure.prototype['secure-access-web-proxy'] = undefined;
+GatewayUpdateProducerAzure.prototype['secure-access-web-proxy'] = false;
 
 /**
  * List of the tags attached to this secret

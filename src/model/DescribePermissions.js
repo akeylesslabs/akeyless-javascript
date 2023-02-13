@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribePermissions model module.
  * @module model/DescribePermissions
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DescribePermissions {
     /**
@@ -77,8 +77,9 @@ class DescribePermissions {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DescribePermissions.prototype['json'] = undefined;
+DescribePermissions.prototype['json'] = false;
 
 /**
  * Path to an object

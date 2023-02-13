@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateRotatedSecret {
     /**
@@ -187,17 +187,19 @@ class UpdateRotatedSecret {
 UpdateRotatedSecret.prototype['add-tag'] = undefined;
 
 /**
+ * API ID to rotate
  * @member {String} api-id
  */
 UpdateRotatedSecret.prototype['api-id'] = undefined;
 
 /**
+ * API key to rotate
  * @member {String} api-key
  */
 UpdateRotatedSecret.prototype['api-key'] = undefined;
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation
+ * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 UpdateRotatedSecret.prototype['auto-rotate'] = undefined;
@@ -210,6 +212,7 @@ UpdateRotatedSecret.prototype['auto-rotate'] = undefined;
 UpdateRotatedSecret.prototype['aws-region'] = 'us-east-2';
 
 /**
+ * Secret payload to be sent with rotation request (relevant only for rotator-type=custom)
  * @member {String} custom-payload
  */
 UpdateRotatedSecret.prototype['custom-payload'] = undefined;
@@ -230,10 +233,12 @@ UpdateRotatedSecret.prototype['gcp-key'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateRotatedSecret.prototype['json'] = undefined;
+UpdateRotatedSecret.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateRotatedSecret.prototype['keep-prev-version'] = undefined;
@@ -276,23 +281,26 @@ UpdateRotatedSecret.prototype['new-version'] = undefined;
 UpdateRotatedSecret.prototype['rm-tag'] = undefined;
 
 /**
- * Rotate the value of the secret after SRA session ends
+ * Rotate the value of the secret after SRA session ends [true/false]
  * @member {String} rotate-after-disconnect
  * @default 'false'
  */
 UpdateRotatedSecret.prototype['rotate-after-disconnect'] = 'false';
 
 /**
+ * rotated-username password
  * @member {String} rotated-password
  */
 UpdateRotatedSecret.prototype['rotated-password'] = undefined;
 
 /**
+ * username to be rotated, if selected use-self-creds at rotator-creds-type, this username will try to rotate it's own password, if use-target-creds is selected, target credentials will be use to rotate the rotated-password
  * @member {String} rotated-username
  */
 UpdateRotatedSecret.prototype['rotated-username'] = undefined;
 
 /**
+ * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 UpdateRotatedSecret.prototype['rotation-hour'] = undefined;
@@ -304,92 +312,95 @@ UpdateRotatedSecret.prototype['rotation-hour'] = undefined;
 UpdateRotatedSecret.prototype['rotation-interval'] = undefined;
 
 /**
+ * The credentials to connect with use-self-creds/use-target-creds
  * @member {String} rotator-creds-type
+ * @default 'use-self-creds'
  */
-UpdateRotatedSecret.prototype['rotator-creds-type'] = undefined;
+UpdateRotatedSecret.prototype['rotator-creds-type'] = 'use-self-creds';
 
 /**
+ * \"Custom rotation command (relevant only for ssh target)
  * @member {String} rotator-custom-cmd
  */
 UpdateRotatedSecret.prototype['rotator-custom-cmd'] = undefined;
 
 /**
- * Secure Access Allow Providing External User (used in ssh)
+ * Allow providing external user for a domain users (relevant only for rdp)
  * @member {Boolean} secure-access-allow-external-user
  * @default false
  */
 UpdateRotatedSecret.prototype['secure-access-allow-external-user'] = false;
 
 /**
- * Secure Access Account Id (used in aws)
+ * The AWS account id (relevant only for aws)
  * @member {String} secure-access-aws-account-id
  */
 UpdateRotatedSecret.prototype['secure-access-aws-account-id'] = undefined;
 
 /**
- * Secure Access Aws Native Cli (used in aws)
+ * The AWS native cli
  * @member {Boolean} secure-access-aws-native-cli
  */
 UpdateRotatedSecret.prototype['secure-access-aws-native-cli'] = undefined;
 
 /**
- * Secure Access Bastion Issuer
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 UpdateRotatedSecret.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
- * Secure Access DB Name (used in data bases)
+ * The DB name (relevant only for DB Dynamic-Secret)
  * @member {String} secure-access-db-name
  */
 UpdateRotatedSecret.prototype['secure-access-db-name'] = undefined;
 
 /**
- * Secure Access Schema (used in mssql, postgresql)
+ * The db schema (relevant only for mssql or postgresql)
  * @member {String} secure-access-db-schema
  */
 UpdateRotatedSecret.prototype['secure-access-db-schema'] = undefined;
 
 /**
- * Secure Access Enabled
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 UpdateRotatedSecret.prototype['secure-access-enable'] = undefined;
 
 /**
- * Secure Access Host
+ * Target servers for connections
  * @member {Array.<String>} secure-access-host
  */
 UpdateRotatedSecret.prototype['secure-access-host'] = undefined;
 
 /**
- * Secure Access Domain (used in ssh)
+ * Required when the Dynamic Secret is used for a domain user (relevant only for RDP Dynamic-Secret)
  * @member {String} secure-access-rdp-domain
  */
 UpdateRotatedSecret.prototype['secure-access-rdp-domain'] = undefined;
 
 /**
- * Secure Access Override User (used in ssh)
+ * Override the RDP Domain username (relevant only for rdp)
  * @member {String} secure-access-rdp-user
  */
 UpdateRotatedSecret.prototype['secure-access-rdp-user'] = undefined;
 
 /**
- * Secure Access Web
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
  * @default false
  */
 UpdateRotatedSecret.prototype['secure-access-web'] = false;
 
 /**
- * Secure Access Isolated (used in aws, azure)
+ * Secure browser via Akeyless Web Access Bastion (relevant only for aws or azure)
  * @member {Boolean} secure-access-web-browsing
  * @default false
  */
 UpdateRotatedSecret.prototype['secure-access-web-browsing'] = false;
 
 /**
- * Secure Access Web Proxy (used in aws, azure)
+ * Web-Proxy via Akeyless Web Access Bastion (relevant only for aws or azure)
  * @member {Boolean} secure-access-web-proxy
  * @default false
  */

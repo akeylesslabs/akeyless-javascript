@@ -16,17 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipServerSetup model module.
  * @module model/KmipServerSetup
- * @version 3.2.3
+ * @version 3.2.4
  */
 class KmipServerSetup {
     /**
      * Constructs a new <code>KmipServerSetup</code>.
      * @alias module:model/KmipServerSetup
      * @param hostname {String} Hostname
+     * @param root {String} Root path of KMIP Resources
      */
-    constructor(hostname) { 
+    constructor(hostname, root) { 
         
-        KmipServerSetup.initialize(this, hostname);
+        KmipServerSetup.initialize(this, hostname, root);
     }
 
     /**
@@ -34,8 +35,9 @@ class KmipServerSetup {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hostname) { 
+    static initialize(obj, hostname, root) { 
         obj['hostname'] = hostname;
+        obj['root'] = root;
     }
 
     /**
@@ -75,9 +77,11 @@ class KmipServerSetup {
 }
 
 /**
+ * Server certificate TTL in days
  * @member {Number} certificate-ttl
+ * @default 90
  */
-KmipServerSetup.prototype['certificate-ttl'] = undefined;
+KmipServerSetup.prototype['certificate-ttl'] = 90;
 
 /**
  * Hostname
@@ -88,10 +92,12 @@ KmipServerSetup.prototype['hostname'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-KmipServerSetup.prototype['json'] = undefined;
+KmipServerSetup.prototype['json'] = false;
 
 /**
+ * Root path of KMIP Resources
  * @member {String} root
  */
 KmipServerSetup.prototype['root'] = undefined;

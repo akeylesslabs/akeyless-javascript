@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePingTarget model module.
  * @module model/UpdatePingTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdatePingTarget {
     /**
@@ -130,10 +130,12 @@ UpdatePingTarget.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdatePingTarget.prototype['json'] = undefined;
+UpdatePingTarget.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdatePingTarget.prototype['keep-prev-version'] = undefined;

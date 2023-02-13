@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **baseUrl** | **String** | Base URL | 
 **comment** | **String** | Deprecated - use description | [optional] 
 **description** | **String** | Description of the object | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **key** | **String** | The name of a key used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **String** | Target name | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

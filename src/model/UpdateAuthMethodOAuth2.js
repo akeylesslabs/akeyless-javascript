@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOAuth2 model module.
  * @module model/UpdateAuthMethodOAuth2
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateAuthMethodOAuth2 {
     /**
@@ -152,8 +152,9 @@ UpdateAuthMethodOAuth2.prototype['issuer'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateAuthMethodOAuth2.prototype['json'] = undefined;
+UpdateAuthMethodOAuth2.prototype['json'] = false;
 
 /**
  * The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server.
@@ -164,8 +165,9 @@ UpdateAuthMethodOAuth2.prototype['jwks-uri'] = undefined;
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
+ * @default 0
  */
-UpdateAuthMethodOAuth2.prototype['jwt-ttl'] = undefined;
+UpdateAuthMethodOAuth2.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptPKCS1 model module.
  * @module model/DecryptPKCS1
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DecryptPKCS1 {
     /**
@@ -100,8 +100,9 @@ DecryptPKCS1.prototype['item-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DecryptPKCS1.prototype['json'] = undefined;
+DecryptPKCS1.prototype['json'] = false;
 
 /**
  * The name of the key to use in the decryption process

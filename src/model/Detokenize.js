@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Detokenize model module.
  * @module model/Detokenize
- * @version 3.2.3
+ * @version 3.2.4
  */
 class Detokenize {
     /**
@@ -86,8 +86,9 @@ Detokenize.prototype['ciphertext'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-Detokenize.prototype['json'] = undefined;
+Detokenize.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

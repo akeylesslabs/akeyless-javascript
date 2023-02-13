@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Producer name | 
 **newName** | **String** | Producer name | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
@@ -17,11 +17,11 @@ Name | Type | Description | Notes
 **rabbitmqUserTags** | **String** | User Tags | [optional] 
 **rabbitmqUserVhost** | **String** | User Virtual Host | [optional] 
 **rabbitmqUserWritePermission** | **String** | User write permission | [optional] 
-**secureAccessEnable** | **String** |  | [optional] 
-**secureAccessUrl** | **String** |  | [optional] 
-**secureAccessWeb** | **Boolean** | Secure Access Web Category | [optional] [default to true]
-**secureAccessWebBrowsing** | **Boolean** |  | [optional] 
-**secureAccessWebProxy** | **Boolean** |  | [optional] 
+**secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
+**secureAccessUrl** | **String** | Destination URL to inject secrets | [optional] 
+**secureAccessWeb** | **Boolean** | Enable Web Secure Remote Access | [optional] [default to true]
+**secureAccessWebBrowsing** | **Boolean** | Secure browser via Akeyless Web Access Bastion | [optional] [default to false]
+**secureAccessWebProxy** | **Boolean** | Web-Proxy via Akeyless Web Access Bastion | [optional] [default to false]
 **tags** | **[String]** | List of the tags attached to this secret | [optional] 
 **targetName** | **String** | Target name | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

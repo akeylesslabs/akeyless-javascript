@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateSecret {
     /**
@@ -141,7 +141,7 @@ class CreateSecret {
 CreateSecret.prototype['accessibility'] = 'regular';
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 CreateSecret.prototype['delete_protection'] = undefined;
@@ -155,8 +155,9 @@ CreateSecret.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateSecret.prototype['json'] = undefined;
+CreateSecret.prototype['json'] = false;
 
 /**
  * Deprecated - use description
@@ -207,44 +208,54 @@ CreateSecret.prototype['password-manager-username'] = undefined;
 CreateSecret.prototype['protection_key'] = undefined;
 
 /**
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 CreateSecret.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 CreateSecret.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Target servers for connections
  * @member {Array.<String>} secure-access-host
  */
 CreateSecret.prototype['secure-access-host'] = undefined;
 
 /**
+ * Static-Secret values contains SSH Credentials, either Private Key or Password [password/private-key]
  * @member {String} secure-access-ssh-creds
  */
 CreateSecret.prototype['secure-access-ssh-creds'] = undefined;
 
 /**
+ * Override the SSH username as indicated in SSH Certificate Issuer
  * @member {String} secure-access-ssh-user
  */
 CreateSecret.prototype['secure-access-ssh-user'] = undefined;
 
 /**
+ * Destination URL to inject secrets
  * @member {String} secure-access-url
  */
 CreateSecret.prototype['secure-access-url'] = undefined;
 
 /**
+ * Secure browser via Akeyless Web Access Bastion
  * @member {Boolean} secure-access-web-browsing
+ * @default false
  */
-CreateSecret.prototype['secure-access-web-browsing'] = undefined;
+CreateSecret.prototype['secure-access-web-browsing'] = false;
 
 /**
+ * Web-Proxy via Akeyless Web Access Bastion
  * @member {Boolean} secure-access-web-proxy
+ * @default false
  */
-CreateSecret.prototype['secure-access-web-proxy'] = undefined;
+CreateSecret.prototype['secure-access-web-proxy'] = false;
 
 /**
  * List of the tags attached to this secret
@@ -259,10 +270,11 @@ CreateSecret.prototype['tags'] = undefined;
 CreateSecret.prototype['token'] = undefined;
 
 /**
- * For Password Management use, reflect the website context
+ * The secret sub type [generic/password]
  * @member {String} type
+ * @default 'generic'
  */
-CreateSecret.prototype['type'] = undefined;
+CreateSecret.prototype['type'] = 'generic';
 
 /**
  * The universal identity token, Required only for universal_identity authentication

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackSecret model module.
  * @module model/RollbackSecret
- * @version 3.2.3
+ * @version 3.2.4
  */
 class RollbackSecret {
     /**
@@ -76,8 +76,9 @@ class RollbackSecret {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-RollbackSecret.prototype['json'] = undefined;
+RollbackSecret.prototype['json'] = false;
 
 /**
  * Secret name

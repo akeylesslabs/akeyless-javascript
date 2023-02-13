@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyPKCS1 model module.
  * @module model/VerifyPKCS1
- * @version 3.2.3
+ * @version 3.2.4
  */
 class VerifyPKCS1 {
     /**
@@ -99,8 +99,9 @@ VerifyPKCS1.prototype['item-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-VerifyPKCS1.prototype['json'] = undefined;
+VerifyPKCS1.prototype['json'] = false;
 
 /**
  * The name of the RSA key to use in the verification process

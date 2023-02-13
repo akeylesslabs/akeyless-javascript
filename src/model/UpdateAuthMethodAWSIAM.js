@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAWSIAM model module.
  * @module model/UpdateAuthMethodAWSIAM
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateAuthMethodAWSIAM {
     /**
@@ -183,14 +183,16 @@ UpdateAuthMethodAWSIAM.prototype['gw-bound-ips'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateAuthMethodAWSIAM.prototype['json'] = undefined;
+UpdateAuthMethodAWSIAM.prototype['json'] = false;
 
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
+ * @default 0
  */
-UpdateAuthMethodAWSIAM.prototype['jwt-ttl'] = undefined;
+UpdateAuthMethodAWSIAM.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

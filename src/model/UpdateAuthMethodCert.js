@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodCert model module.
  * @module model/UpdateAuthMethodCert
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateAuthMethodCert {
     /**
@@ -186,14 +186,16 @@ UpdateAuthMethodCert.prototype['gw-bound-ips'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateAuthMethodCert.prototype['json'] = undefined;
+UpdateAuthMethodCert.prototype['json'] = false;
 
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
+ * @default 0
  */
-UpdateAuthMethodCert.prototype['jwt-ttl'] = undefined;
+UpdateAuthMethodCert.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

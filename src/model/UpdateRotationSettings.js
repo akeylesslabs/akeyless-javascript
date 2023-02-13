@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotationSettings model module.
  * @module model/UpdateRotationSettings
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateRotationSettings {
     /**
@@ -86,8 +86,9 @@ UpdateRotationSettings.prototype['auto-rotate'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateRotationSettings.prototype['json'] = undefined;
+UpdateRotationSettings.prototype['json'] = false;
 
 /**
  * Key name

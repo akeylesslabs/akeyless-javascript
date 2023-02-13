@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RequestAccess model module.
  * @module model/RequestAccess
- * @version 3.2.3
+ * @version 3.2.4
  */
 class RequestAccess {
     /**
@@ -100,8 +100,9 @@ RequestAccess.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-RequestAccess.prototype['json'] = undefined;
+RequestAccess.prototype['json'] = false;
 
 /**
  * Item type

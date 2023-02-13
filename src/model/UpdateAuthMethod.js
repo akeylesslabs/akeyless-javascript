@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethod model module.
  * @module model/UpdateAuthMethod
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateAuthMethod {
     /**
@@ -114,14 +114,16 @@ UpdateAuthMethod.prototype['gw-bound-ips'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateAuthMethod.prototype['json'] = undefined;
+UpdateAuthMethod.prototype['json'] = false;
 
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
+ * @default 0
  */
-UpdateAuthMethod.prototype['jwt-ttl'] = undefined;
+UpdateAuthMethod.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

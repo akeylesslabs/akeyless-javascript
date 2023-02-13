@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerGithub model module.
  * @module model/GatewayUpdateProducerGithub
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateProducerGithub {
     /**
@@ -100,7 +100,7 @@ class GatewayUpdateProducerGithub {
 }
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerGithub.prototype['delete_protection'] = undefined;
@@ -120,8 +120,9 @@ GatewayUpdateProducerGithub.prototype['github-app-private-key'] = undefined;
 /**
  * Base URL
  * @member {String} github-base-url
+ * @default 'https://api.github.com/'
  */
-GatewayUpdateProducerGithub.prototype['github-base-url'] = undefined;
+GatewayUpdateProducerGithub.prototype['github-base-url'] = 'https://api.github.com/';
 
 /**
  * Github app installation id
@@ -138,8 +139,9 @@ GatewayUpdateProducerGithub.prototype['installation-repository'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateProducerGithub.prototype['json'] = undefined;
+GatewayUpdateProducerGithub.prototype['json'] = false;
 
 /**
  * Producer name

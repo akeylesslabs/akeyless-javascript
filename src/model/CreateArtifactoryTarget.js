@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateArtifactoryTarget model module.
  * @module model/CreateArtifactoryTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateArtifactoryTarget {
     /**
@@ -125,8 +125,9 @@ CreateArtifactoryTarget.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateArtifactoryTarget.prototype['json'] = undefined;
+CreateArtifactoryTarget.prototype['json'] = false;
 
 /**
  * The name of a key used to encrypt the target secret value (if empty, the account default protectionKey key will be used)

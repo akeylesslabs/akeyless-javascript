@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptWithClassicKey model module.
  * @module model/EncryptWithClassicKey
- * @version 3.2.3
+ * @version 3.2.4
  */
 class EncryptWithClassicKey {
     /**
@@ -87,8 +87,9 @@ EncryptWithClassicKey.prototype['display-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-EncryptWithClassicKey.prototype['json'] = undefined;
+EncryptWithClassicKey.prototype['json'] = false;
 
 /**
  * Data to be encrypted

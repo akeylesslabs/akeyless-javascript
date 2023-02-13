@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCassandra model module.
  * @module model/GatewayCreateProducerCassandra
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerCassandra {
     /**
@@ -131,7 +131,7 @@ GatewayCreateProducerCassandra.prototype['cassandra-port'] = '9042';
 GatewayCreateProducerCassandra.prototype['cassandra-username'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerCassandra.prototype['delete_protection'] = undefined;
@@ -139,8 +139,9 @@ GatewayCreateProducerCassandra.prototype['delete_protection'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerCassandra.prototype['json'] = undefined;
+GatewayCreateProducerCassandra.prototype['json'] = false;
 
 /**
  * Producer name

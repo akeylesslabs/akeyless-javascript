@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRDPTargetDetails model module.
  * @module model/UpdateRDPTargetDetails
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateRDPTargetDetails {
     /**
@@ -90,32 +90,39 @@ class UpdateRDPTargetDetails {
 }
 
 /**
+ * The admin name
  * @member {String} admin_name
  */
 UpdateRDPTargetDetails.prototype['admin_name'] = undefined;
 
 /**
+ * The admin password
  * @member {String} admin_pwd
  */
 UpdateRDPTargetDetails.prototype['admin_pwd'] = undefined;
 
 /**
+ * The rdp host name
  * @member {String} host_name
  */
 UpdateRDPTargetDetails.prototype['host_name'] = undefined;
 
 /**
+ * The rdp port
  * @member {String} host_port
+ * @default '22'
  */
-UpdateRDPTargetDetails.prototype['host_port'] = undefined;
+UpdateRDPTargetDetails.prototype['host_port'] = '22';
 
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateRDPTargetDetails.prototype['json'] = undefined;
+UpdateRDPTargetDetails.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateRDPTargetDetails.prototype['keep-prev-version'] = undefined;

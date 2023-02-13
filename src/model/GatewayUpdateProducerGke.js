@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerGke model module.
  * @module model/GatewayUpdateProducerGke
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateProducerGke {
     /**
@@ -118,7 +118,7 @@ class GatewayUpdateProducerGke {
 }
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerGke.prototype['delete_protection'] = undefined;
@@ -156,8 +156,9 @@ GatewayUpdateProducerGke.prototype['gke-service-account-email'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateProducerGke.prototype['json'] = undefined;
+GatewayUpdateProducerGke.prototype['json'] = false;
 
 /**
  * Producer name
@@ -178,29 +179,35 @@ GatewayUpdateProducerGke.prototype['new-name'] = undefined;
 GatewayUpdateProducerGke.prototype['producer-encryption-key-name'] = undefined;
 
 /**
+ * Enable Port forwarding while using CLI access
  * @member {Boolean} secure-access-allow-port-forwading
  */
 GatewayUpdateProducerGke.prototype['secure-access-allow-port-forwading'] = undefined;
 
 /**
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 GatewayUpdateProducerGke.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
+ * The K8s cluster endpoint URL
  * @member {String} secure-access-cluster-endpoint
  */
 GatewayUpdateProducerGke.prototype['secure-access-cluster-endpoint'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayUpdateProducerGke.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
+ * @default false
  */
-GatewayUpdateProducerGke.prototype['secure-access-web'] = undefined;
+GatewayUpdateProducerGke.prototype['secure-access-web'] = false;
 
 /**
  * List of the tags attached to this secret

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateClassicKey {
     /**
@@ -111,7 +111,7 @@ CreateClassicKey.prototype['alg'] = undefined;
 CreateClassicKey.prototype['cert-file-data'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 CreateClassicKey.prototype['delete_protection'] = undefined;
@@ -131,8 +131,9 @@ CreateClassicKey.prototype['gpg-alg'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateClassicKey.prototype['json'] = undefined;
+CreateClassicKey.prototype['json'] = false;
 
 /**
  * Base64-encoded classic key value

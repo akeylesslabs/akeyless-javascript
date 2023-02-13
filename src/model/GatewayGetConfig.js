@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetConfig model module.
  * @module model/GatewayGetConfig
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayGetConfig {
     /**
@@ -67,8 +67,9 @@ class GatewayGetConfig {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayGetConfig.prototype['json'] = undefined;
+GatewayGetConfig.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

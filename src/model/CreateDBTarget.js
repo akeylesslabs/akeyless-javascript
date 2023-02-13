@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTarget model module.
  * @module model/CreateDBTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateDBTarget {
     /**
@@ -181,8 +181,9 @@ CreateDBTarget.prototype['host'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateDBTarget.prototype['json'] = undefined;
+CreateDBTarget.prototype['json'] = false;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
@@ -264,10 +265,11 @@ CreateDBTarget.prototype['snowflake-api-private-key'] = undefined;
 CreateDBTarget.prototype['snowflake-api-private-key-password'] = undefined;
 
 /**
- * SSL connection mode
+ * Enable/Disable SSL [true/false]
  * @member {Boolean} ssl
+ * @default false
  */
-CreateDBTarget.prototype['ssl'] = undefined;
+CreateDBTarget.prototype['ssl'] = false;
 
 /**
  * SSL connection certificate

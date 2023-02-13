@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Tokenize model module.
  * @module model/Tokenize
- * @version 3.2.3
+ * @version 3.2.4
  */
 class Tokenize {
     /**
@@ -80,8 +80,9 @@ class Tokenize {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-Tokenize.prototype['json'] = undefined;
+Tokenize.prototype['json'] = false;
 
 /**
  * Data to be encrypted

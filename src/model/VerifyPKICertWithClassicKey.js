@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyPKICertWithClassicKey model module.
  * @module model/VerifyPKICertWithClassicKey
- * @version 3.2.3
+ * @version 3.2.4
  */
 class VerifyPKICertWithClassicKey {
     /**
@@ -87,8 +87,9 @@ VerifyPKICertWithClassicKey.prototype['display-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-VerifyPKICertWithClassicKey.prototype['json'] = undefined;
+VerifyPKICertWithClassicKey.prototype['json'] = false;
 
 /**
  * PkiCert

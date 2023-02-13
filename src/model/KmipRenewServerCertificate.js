@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipRenewServerCertificate model module.
  * @module model/KmipRenewServerCertificate
- * @version 3.2.3
+ * @version 3.2.4
  */
 class KmipRenewServerCertificate {
     /**
@@ -66,8 +66,9 @@ class KmipRenewServerCertificate {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-KmipRenewServerCertificate.prototype['json'] = undefined;
+KmipRenewServerCertificate.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

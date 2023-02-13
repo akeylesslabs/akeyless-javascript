@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
 **eksAccessKeyId** | **String** | Access Key ID | [optional] 
 **eksAssumeRole** | **String** | IAM assume role | [optional] 
 **eksClusterCaCert** | **String** | EKS cluster CA certificate | [optional] 
@@ -12,14 +12,14 @@ Name | Type | Description | Notes
 **eksClusterName** | **String** | EKS cluster name | [optional] 
 **eksRegion** | **String** | Region | [optional] [default to &#39;us-east-2&#39;]
 **eksSecretAccessKey** | **String** | Secret Access Key | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Producer name | 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
-**secureAccessAllowPortForwading** | **Boolean** |  | [optional] 
-**secureAccessBastionIssuer** | **String** |  | [optional] 
-**secureAccessClusterEndpoint** | **String** |  | [optional] 
-**secureAccessEnable** | **String** |  | [optional] 
-**secureAccessWeb** | **Boolean** |  | [optional] 
+**secureAccessAllowPortForwading** | **Boolean** | Enable Port forwarding while using CLI access | [optional] 
+**secureAccessBastionIssuer** | **String** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
+**secureAccessClusterEndpoint** | **String** | The K8s cluster endpoint URL | [optional] 
+**secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
+**secureAccessWeb** | **Boolean** | Enable Web Secure Remote Access | [optional] [default to false]
 **tags** | **[String]** | List of the tags attached to this secret | [optional] 
 **targetName** | **String** | Target name | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

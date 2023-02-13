@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteEventForwarder model module.
  * @module model/DeleteEventForwarder
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DeleteEventForwarder {
     /**
@@ -71,8 +71,9 @@ class DeleteEventForwarder {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DeleteEventForwarder.prototype['json'] = undefined;
+DeleteEventForwarder.prototype['json'] = false;
 
 /**
  * EventForwarder name

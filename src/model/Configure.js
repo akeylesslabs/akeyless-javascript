@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Configure model module.
  * @module model/Configure
- * @version 3.2.3
+ * @version 3.2.4
  */
 class Configure {
     /**
@@ -133,14 +133,16 @@ Configure.prototype['cert-data'] = undefined;
 /**
  * GCP JWT audience
  * @member {String} gcp-audience
+ * @default 'akeyless.io'
  */
-Configure.prototype['gcp-audience'] = undefined;
+Configure.prototype['gcp-audience'] = 'akeyless.io';
 
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-Configure.prototype['json'] = undefined;
+Configure.prototype['json'] = false;
 
 /**
  * The K8S Auth config name (relevant only for access-type=k8s)

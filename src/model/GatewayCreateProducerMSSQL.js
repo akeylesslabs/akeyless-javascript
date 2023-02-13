@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMSSQL model module.
  * @module model/GatewayCreateProducerMSSQL
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerMSSQL {
     /**
@@ -121,7 +121,7 @@ class GatewayCreateProducerMSSQL {
 }
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerMSSQL.prototype['delete_protection'] = undefined;
@@ -129,8 +129,9 @@ GatewayCreateProducerMSSQL.prototype['delete_protection'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerMSSQL.prototype['json'] = undefined;
+GatewayCreateProducerMSSQL.prototype['json'] = false;
 
 /**
  * MSSQL Creation statements
@@ -189,29 +190,35 @@ GatewayCreateProducerMSSQL.prototype['name'] = undefined;
 GatewayCreateProducerMSSQL.prototype['producer-encryption-key-name'] = undefined;
 
 /**
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 GatewayCreateProducerMSSQL.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
+ * The DB schema
  * @member {String} secure-access-db-schema
  */
 GatewayCreateProducerMSSQL.prototype['secure-access-db-schema'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayCreateProducerMSSQL.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Target DB servers for connections
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerMSSQL.prototype['secure-access-host'] = undefined;
 
 /**
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
+ * @default false
  */
-GatewayCreateProducerMSSQL.prototype['secure-access-web'] = undefined;
+GatewayCreateProducerMSSQL.prototype['secure-access-web'] = false;
 
 /**
  * List of the tags attached to this secret

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptGPG model module.
  * @module model/DecryptGPG
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DecryptGPG {
     /**
@@ -106,8 +106,9 @@ DecryptGPG.prototype['item-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DecryptGPG.prototype['json'] = undefined;
+DecryptGPG.prototype['json'] = false;
 
 /**
  * The name of the key to use in the decryption process

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerEks model module.
  * @module model/GatewayCreateProducerEks
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerEks {
     /**
@@ -121,7 +121,7 @@ class GatewayCreateProducerEks {
 }
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerEks.prototype['delete_protection'] = undefined;
@@ -172,8 +172,9 @@ GatewayCreateProducerEks.prototype['eks-secret-access-key'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerEks.prototype['json'] = undefined;
+GatewayCreateProducerEks.prototype['json'] = false;
 
 /**
  * Producer name
@@ -188,29 +189,35 @@ GatewayCreateProducerEks.prototype['name'] = undefined;
 GatewayCreateProducerEks.prototype['producer-encryption-key-name'] = undefined;
 
 /**
+ * Enable Port forwarding while using CLI access
  * @member {Boolean} secure-access-allow-port-forwading
  */
 GatewayCreateProducerEks.prototype['secure-access-allow-port-forwading'] = undefined;
 
 /**
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 GatewayCreateProducerEks.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
+ * The K8s cluster endpoint URL
  * @member {String} secure-access-cluster-endpoint
  */
 GatewayCreateProducerEks.prototype['secure-access-cluster-endpoint'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayCreateProducerEks.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
+ * @default false
  */
-GatewayCreateProducerEks.prototype['secure-access-web'] = undefined;
+GatewayCreateProducerEks.prototype['secure-access-web'] = false;
 
 /**
  * List of the tags attached to this secret

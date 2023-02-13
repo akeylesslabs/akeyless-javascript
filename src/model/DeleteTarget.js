@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTarget model module.
  * @module model/DeleteTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DeleteTarget {
     /**
@@ -84,8 +84,9 @@ DeleteTarget.prototype['force-deletion'] = false;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DeleteTarget.prototype['json'] = undefined;
+DeleteTarget.prototype['json'] = false;
 
 /**
  * Target name

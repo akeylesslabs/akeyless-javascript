@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHCertIssuer model module.
  * @module model/UpdateSSHCertIssuer
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateSSHCertIssuer {
     /**
@@ -149,8 +149,9 @@ UpdateSSHCertIssuer.prototype['extensions'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateSSHCertIssuer.prototype['json'] = undefined;
+UpdateSSHCertIssuer.prototype['json'] = false;
 
 /**
  * Deprecated - use description
@@ -183,31 +184,37 @@ UpdateSSHCertIssuer.prototype['principals'] = undefined;
 UpdateSSHCertIssuer.prototype['rm-tag'] = undefined;
 
 /**
+ * Bastion's SSH control API endpoint. E.g. https://my.bastion:9900
  * @member {String} secure-access-bastion-api
  */
 UpdateSSHCertIssuer.prototype['secure-access-bastion-api'] = undefined;
 
 /**
+ * Bastion's SSH server. E.g. my.bastion:22
  * @member {String} secure-access-bastion-ssh
  */
 UpdateSSHCertIssuer.prototype['secure-access-bastion-ssh'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 UpdateSSHCertIssuer.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Target servers for connections
  * @member {Array.<String>} secure-access-host
  */
 UpdateSSHCertIssuer.prototype['secure-access-host'] = undefined;
 
 /**
+ * SSH username to connect to target server, must be in 'Allowed Users' list
  * @member {String} secure-access-ssh-creds-user
  */
 UpdateSSHCertIssuer.prototype['secure-access-ssh-creds-user'] = undefined;
 
 /**
+ * Use internal SSH Bastion
  * @member {Boolean} secure-access-use-internal-bastion
  */
 UpdateSSHCertIssuer.prototype['secure-access-use-internal-bastion'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayStartProducer model module.
  * @module model/GatewayStartProducer
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayStartProducer {
     /**
@@ -72,8 +72,9 @@ class GatewayStartProducer {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayStartProducer.prototype['json'] = undefined;
+GatewayStartProducer.prototype['json'] = false;
 
 /**
  * Producer name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignPKICertWithClassicKey model module.
  * @module model/SignPKICertWithClassicKey
- * @version 3.2.3
+ * @version 3.2.4
  */
 class SignPKICertWithClassicKey {
     /**
@@ -146,8 +146,9 @@ SignPKICertWithClassicKey.prototype['dns-names'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-SignPKICertWithClassicKey.prototype['json'] = undefined;
+SignPKICertWithClassicKey.prototype['json'] = false;
 
 /**
  * key-usage

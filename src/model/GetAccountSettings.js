@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetAccountSettings model module.
  * @module model/GetAccountSettings
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GetAccountSettings {
     /**
@@ -66,8 +66,9 @@ class GetAccountSettings {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GetAccountSettings.prototype['json'] = undefined;
+GetAccountSettings.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

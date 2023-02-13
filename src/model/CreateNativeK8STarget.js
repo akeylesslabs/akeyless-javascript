@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateNativeK8STarget model module.
  * @module model/CreateNativeK8STarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateNativeK8STarget {
     /**
@@ -107,8 +107,9 @@ CreateNativeK8STarget.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateNativeK8STarget.prototype['json'] = undefined;
+CreateNativeK8STarget.prototype['json'] = false;
 
 /**
  * K8S cluster CA certificate

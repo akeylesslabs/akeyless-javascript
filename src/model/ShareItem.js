@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ShareItem model module.
  * @module model/ShareItem
- * @version 3.2.3
+ * @version 3.2.4
  */
 class ShareItem {
     /**
@@ -113,8 +113,9 @@ ShareItem.prototype['item-name'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-ShareItem.prototype['json'] = undefined;
+ShareItem.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

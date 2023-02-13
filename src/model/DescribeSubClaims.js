@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeSubClaims model module.
  * @module model/DescribeSubClaims
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DescribeSubClaims {
     /**
@@ -67,8 +67,9 @@ class DescribeSubClaims {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DescribeSubClaims.prototype['json'] = undefined;
+DescribeSubClaims.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

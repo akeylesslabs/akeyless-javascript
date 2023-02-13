@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEventForwarder model module.
  * @module model/CreateEventForwarder
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateEventForwarder {
     /**
@@ -182,8 +182,9 @@ CreateEventForwarder.prototype['host'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateEventForwarder.prototype['json'] = undefined;
+CreateEventForwarder.prototype['json'] = false;
 
 /**
  * The name of a key that used to encrypt the EventForwarder secret value (if empty, the account default protectionKey key will be used)

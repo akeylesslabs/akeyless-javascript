@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidCreateChildToken model module.
  * @module model/UidCreateChildToken
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UidCreateChildToken {
     /**
@@ -124,8 +124,9 @@ UidCreateChildToken.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UidCreateChildToken.prototype['json'] = undefined;
+UidCreateChildToken.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

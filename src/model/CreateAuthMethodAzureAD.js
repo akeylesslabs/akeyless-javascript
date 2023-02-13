@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAzureAD model module.
  * @module model/CreateAuthMethodAzureAD
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateAuthMethodAzureAD {
     /**
@@ -218,8 +218,9 @@ CreateAuthMethodAzureAD.prototype['issuer'] = 'https://sts.windows.net/---bound_
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateAuthMethodAzureAD.prototype['json'] = undefined;
+CreateAuthMethodAzureAD.prototype['json'] = false;
 
 /**
  * The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server.
@@ -231,8 +232,9 @@ CreateAuthMethodAzureAD.prototype['jwks-uri'] = 'https://login.microsoftonline.c
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
+ * @default 0
  */
-CreateAuthMethodAzureAD.prototype['jwt-ttl'] = undefined;
+CreateAuthMethodAzureAD.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipClientDeleteRule model module.
  * @module model/KmipClientDeleteRule
- * @version 3.2.3
+ * @version 3.2.4
  */
 class KmipClientDeleteRule {
     /**
@@ -82,8 +82,9 @@ KmipClientDeleteRule.prototype['client-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-KmipClientDeleteRule.prototype['json'] = undefined;
+KmipClientDeleteRule.prototype['json'] = false;
 
 /**
  * @member {String} name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGcpTarget model module.
  * @module model/UpdateGcpTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateGcpTarget {
     /**
@@ -113,10 +113,12 @@ UpdateGcpTarget.prototype['gcp-key'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateGcpTarget.prototype['json'] = undefined;
+UpdateGcpTarget.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateGcpTarget.prototype['keep-prev-version'] = undefined;

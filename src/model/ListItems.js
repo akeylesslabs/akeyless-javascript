@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 3.2.3
+ * @version 3.2.4
  */
 class ListItems {
     /**
@@ -103,8 +103,9 @@ ListItems.prototype['filter'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-ListItems.prototype['json'] = undefined;
+ListItems.prototype['json'] = false;
 
 /**
  * @member {Boolean} minimal-view

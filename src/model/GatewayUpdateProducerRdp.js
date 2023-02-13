@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRdp model module.
  * @module model/GatewayUpdateProducerRdp
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateProducerRdp {
     /**
@@ -133,13 +133,13 @@ class GatewayUpdateProducerRdp {
 GatewayUpdateProducerRdp.prototype['allow-user-extend-session'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerRdp.prototype['delete_protection'] = undefined;
 
 /**
- * Fixed user
+ * Allow access using externally (IdP) provided username [true/false]
  * @member {String} fixed-user-only
  * @default 'false'
  */
@@ -148,8 +148,9 @@ GatewayUpdateProducerRdp.prototype['fixed-user-only'] = 'false';
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateProducerRdp.prototype['json'] = undefined;
+GatewayUpdateProducerRdp.prototype['json'] = false;
 
 /**
  * Producer name
@@ -201,26 +202,32 @@ GatewayUpdateProducerRdp.prototype['rdp-host-port'] = '22';
 GatewayUpdateProducerRdp.prototype['rdp-user-groups'] = undefined;
 
 /**
+ * Allow providing external user for a domain users
  * @member {Boolean} secure-access-allow-external-user
+ * @default false
  */
-GatewayUpdateProducerRdp.prototype['secure-access-allow-external-user'] = undefined;
+GatewayUpdateProducerRdp.prototype['secure-access-allow-external-user'] = false;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayUpdateProducerRdp.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Target servers for connections
  * @member {Array.<String>} secure-access-host
  */
 GatewayUpdateProducerRdp.prototype['secure-access-host'] = undefined;
 
 /**
+ * Required when the Dynamic Secret is used for a domain user
  * @member {String} secure-access-rdp-domain
  */
 GatewayUpdateProducerRdp.prototype['secure-access-rdp-domain'] = undefined;
 
 /**
+ * Override the RDP Domain username
  * @member {String} secure-access-rdp-user
  */
 GatewayUpdateProducerRdp.prototype['secure-access-rdp-user'] = undefined;

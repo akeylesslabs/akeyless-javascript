@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayStatusMigration model module.
  * @module model/GatewayStatusMigration
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayStatusMigration {
     /**
@@ -79,8 +79,9 @@ GatewayStatusMigration.prototype['id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayStatusMigration.prototype['json'] = undefined;
+GatewayStatusMigration.prototype['json'] = false;
 
 /**
  * Migration name to display

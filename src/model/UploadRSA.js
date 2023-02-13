@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadRSA model module.
  * @module model/UploadRSA
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UploadRSA {
     /**
@@ -119,7 +119,7 @@ UploadRSA.prototype['cert-file-data'] = undefined;
 UploadRSA.prototype['customer-frg-id'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 UploadRSA.prototype['delete_protection'] = undefined;
@@ -133,8 +133,9 @@ UploadRSA.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UploadRSA.prototype['json'] = undefined;
+UploadRSA.prototype['json'] = false;
 
 /**
  * Deprecated - use description
@@ -149,10 +150,11 @@ UploadRSA.prototype['metadata'] = undefined;
 UploadRSA.prototype['name'] = undefined;
 
 /**
- * When the overwrite flag is set, this command will only update an existing key. [true, false]
+ * When the overwrite flag is set, this command will only update an existing key [true/false]
  * @member {String} overwrite
+ * @default 'false'
  */
-UploadRSA.prototype['overwrite'] = undefined;
+UploadRSA.prototype['overwrite'] = 'false';
 
 /**
  * RSA private key data, base64 encoded

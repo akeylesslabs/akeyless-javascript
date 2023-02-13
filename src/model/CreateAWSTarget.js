@@ -16,17 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAWSTarget model module.
  * @module model/CreateAWSTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateAWSTarget {
     /**
      * Constructs a new <code>CreateAWSTarget</code>.
      * @alias module:model/CreateAWSTarget
+     * @param accessKey {String} AWS secret access key
+     * @param accessKeyId {String} AWS access key ID
      * @param name {String} Target name
      */
-    constructor(name) { 
+    constructor(accessKey, accessKeyId, name) { 
         
-        CreateAWSTarget.initialize(this, name);
+        CreateAWSTarget.initialize(this, accessKey, accessKeyId, name);
     }
 
     /**
@@ -34,7 +36,9 @@ class CreateAWSTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name) { 
+    static initialize(obj, accessKey, accessKeyId, name) { 
+        obj['access-key'] = accessKey;
+        obj['access-key-id'] = accessKeyId;
         obj['name'] = name;
     }
 
@@ -93,11 +97,13 @@ class CreateAWSTarget {
 }
 
 /**
+ * AWS secret access key
  * @member {String} access-key
  */
 CreateAWSTarget.prototype['access-key'] = undefined;
 
 /**
+ * AWS access key ID
  * @member {String} access-key-id
  */
 CreateAWSTarget.prototype['access-key-id'] = undefined;
@@ -117,8 +123,9 @@ CreateAWSTarget.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateAWSTarget.prototype['json'] = undefined;
+CreateAWSTarget.prototype['json'] = false;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)
@@ -133,11 +140,14 @@ CreateAWSTarget.prototype['key'] = undefined;
 CreateAWSTarget.prototype['name'] = undefined;
 
 /**
+ * AWS region
  * @member {String} region
+ * @default 'us-east-2'
  */
-CreateAWSTarget.prototype['region'] = undefined;
+CreateAWSTarget.prototype['region'] = 'us-east-2';
 
 /**
+ * Required only for temporary security credentials retrieved using STS
  * @member {String} session-token
  */
 CreateAWSTarget.prototype['session-token'] = undefined;
@@ -155,6 +165,7 @@ CreateAWSTarget.prototype['token'] = undefined;
 CreateAWSTarget.prototype['uid-token'] = undefined;
 
 /**
+ * Use the GW's Cloud IAM
  * @member {Boolean} use-gw-cloud-identity
  */
 CreateAWSTarget.prototype['use-gw-cloud-identity'] = undefined;

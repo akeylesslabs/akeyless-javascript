@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetItemState model module.
  * @module model/SetItemState
- * @version 3.2.3
+ * @version 3.2.4
  */
 class SetItemState {
     /**
@@ -85,8 +85,9 @@ SetItemState.prototype['desired-state'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-SetItemState.prototype['json'] = undefined;
+SetItemState.prototype['json'] = false;
 
 /**
  * Current item name

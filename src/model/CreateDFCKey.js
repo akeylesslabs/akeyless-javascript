@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDFCKey model module.
  * @module model/CreateDFCKey
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateDFCKey {
     /**
@@ -104,7 +104,7 @@ CreateDFCKey.prototype['alg'] = undefined;
 CreateDFCKey.prototype['customer-frg-id'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 CreateDFCKey.prototype['delete_protection'] = undefined;
@@ -118,8 +118,9 @@ CreateDFCKey.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateDFCKey.prototype['json'] = undefined;
+CreateDFCKey.prototype['json'] = false;
 
 /**
  * Deprecated - use description

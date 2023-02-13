@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetSSHCertificate model module.
  * @module model/GetSSHCertificate
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GetSSHCertificate {
     /**
@@ -97,14 +97,16 @@ GetSSHCertificate.prototype['cert-username'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GetSSHCertificate.prototype['json'] = undefined;
+GetSSHCertificate.prototype['json'] = false;
 
 /**
  * Set this option to output legacy ('ssh-rsa-cert-v01@openssh.com') signing algorithm name in the certificate.
  * @member {Boolean} legacy-signing-alg-name
+ * @default false
  */
-GetSSHCertificate.prototype['legacy-signing-alg-name'] = undefined;
+GetSSHCertificate.prototype['legacy-signing-alg-name'] = false;
 
 /**
  * SSH public key file contents. If this option is used, the certificate will be printed to stdout

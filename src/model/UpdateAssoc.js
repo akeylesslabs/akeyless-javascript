@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAssoc model module.
  * @module model/UpdateAssoc
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateAssoc {
     /**
@@ -82,15 +82,18 @@ class UpdateAssoc {
 UpdateAssoc.prototype['assoc-id'] = undefined;
 
 /**
+ * Treat sub claims as case-sensitive [true/false]
  * @member {String} case-sensitive
+ * @default 'true'
  */
-UpdateAssoc.prototype['case-sensitive'] = undefined;
+UpdateAssoc.prototype['case-sensitive'] = 'true';
 
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateAssoc.prototype['json'] = undefined;
+UpdateAssoc.prototype['json'] = false;
 
 /**
  * key/val of sub claims, e.g group=admins,developers

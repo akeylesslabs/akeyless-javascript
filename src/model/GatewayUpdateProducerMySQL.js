@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMySQL model module.
  * @module model/GatewayUpdateProducerMySQL
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateProducerMySQL {
     /**
@@ -142,7 +142,7 @@ GatewayUpdateProducerMySQL.prototype['db-server-certificates'] = undefined;
 GatewayUpdateProducerMySQL.prototype['db-server-name'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerMySQL.prototype['delete_protection'] = undefined;
@@ -150,8 +150,9 @@ GatewayUpdateProducerMySQL.prototype['delete_protection'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateProducerMySQL.prototype['json'] = undefined;
+GatewayUpdateProducerMySQL.prototype['json'] = false;
 
 /**
  * MySQL DB Name
@@ -210,30 +211,36 @@ GatewayUpdateProducerMySQL.prototype['new-name'] = undefined;
 GatewayUpdateProducerMySQL.prototype['producer-encryption-key-name'] = undefined;
 
 /**
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 GatewayUpdateProducerMySQL.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayUpdateProducerMySQL.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Target DB servers for connections
  * @member {Array.<String>} secure-access-host
  */
 GatewayUpdateProducerMySQL.prototype['secure-access-host'] = undefined;
 
 /**
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
+ * @default false
  */
-GatewayUpdateProducerMySQL.prototype['secure-access-web'] = undefined;
+GatewayUpdateProducerMySQL.prototype['secure-access-web'] = false;
 
 /**
- * SSL connection mode
+ * Enable/Disable SSL [true/false]
  * @member {Boolean} ssl
+ * @default false
  */
-GatewayUpdateProducerMySQL.prototype['ssl'] = undefined;
+GatewayUpdateProducerMySQL.prototype['ssl'] = false;
 
 /**
  * SSL connection certificate

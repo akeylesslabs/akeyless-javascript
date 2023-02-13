@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyJWTWithClassicKey model module.
  * @module model/VerifyJWTWithClassicKey
- * @version 3.2.3
+ * @version 3.2.4
  */
 class VerifyJWTWithClassicKey {
     /**
@@ -92,8 +92,9 @@ VerifyJWTWithClassicKey.prototype['display-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-VerifyJWTWithClassicKey.prototype['json'] = undefined;
+VerifyJWTWithClassicKey.prototype['json'] = false;
 
 /**
  * JWT

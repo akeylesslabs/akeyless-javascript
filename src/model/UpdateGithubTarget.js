@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGithubTarget model module.
  * @module model/UpdateGithubTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateGithubTarget {
     /**
@@ -122,16 +122,19 @@ UpdateGithubTarget.prototype['github-app-private-key'] = undefined;
 /**
  * Base URL
  * @member {String} github-base-url
+ * @default 'https://api.github.com/'
  */
-UpdateGithubTarget.prototype['github-base-url'] = undefined;
+UpdateGithubTarget.prototype['github-base-url'] = 'https://api.github.com/';
 
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateGithubTarget.prototype['json'] = undefined;
+UpdateGithubTarget.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateGithubTarget.prototype['keep-prev-version'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodLDAP model module.
  * @module model/CreateAuthMethodLDAP
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateAuthMethodLDAP {
     /**
@@ -113,7 +113,7 @@ CreateAuthMethodLDAP.prototype['bound-ips'] = undefined;
 CreateAuthMethodLDAP.prototype['force-sub-claims'] = undefined;
 
 /**
- * Automatically generate key-pair for LDAP configuration. If set to false, a public key needs to be provided
+ * Automatically generate key-pair for LDAP configuration. If set to false, a public key needs to be provided [true/false]
  * @member {String} gen-key
  * @default 'true'
  */
@@ -128,14 +128,16 @@ CreateAuthMethodLDAP.prototype['gw-bound-ips'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateAuthMethodLDAP.prototype['json'] = undefined;
+CreateAuthMethodLDAP.prototype['json'] = false;
 
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
+ * @default 0
  */
-CreateAuthMethodLDAP.prototype['jwt-ttl'] = undefined;
+CreateAuthMethodLDAP.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name
@@ -164,8 +166,9 @@ CreateAuthMethodLDAP.prototype['uid-token'] = undefined;
 /**
  * A unique identifier (ID) value should be configured for OAuth2, LDAP and SAML authentication method types and is usually a value such as the email, username, or upn for example. Whenever a user logs in with a token, these authentication types issue a \"sub claim\" that contains details uniquely identifying that user. This sub claim includes a key containing the ID value that you configured, and is used to distinguish between different users from within the same organization.
  * @member {String} unique-identifier
+ * @default 'users'
  */
-CreateAuthMethodLDAP.prototype['unique-identifier'] = undefined;
+CreateAuthMethodLDAP.prototype['unique-identifier'] = 'users';
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignPKCS1 model module.
  * @module model/SignPKCS1
- * @version 3.2.3
+ * @version 3.2.4
  */
 class SignPKCS1 {
     /**
@@ -93,8 +93,9 @@ SignPKCS1.prototype['item-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-SignPKCS1.prototype['json'] = undefined;
+SignPKCS1.prototype['json'] = false;
 
 /**
  * The name of the RSA key to use in the signing process

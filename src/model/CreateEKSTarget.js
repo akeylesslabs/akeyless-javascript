@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEKSTarget model module.
  * @module model/CreateEKSTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateEKSTarget {
     /**
@@ -160,8 +160,9 @@ CreateEKSTarget.prototype['eks-secret-access-key'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateEKSTarget.prototype['json'] = undefined;
+CreateEKSTarget.prototype['json'] = false;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)

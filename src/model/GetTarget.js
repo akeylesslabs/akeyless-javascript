@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetTarget model module.
  * @module model/GetTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GetTarget {
     /**
@@ -74,8 +74,9 @@ class GetTarget {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GetTarget.prototype['json'] = undefined;
+GetTarget.prototype['json'] = false;
 
 /**
  * Target name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RevokeCreds model module.
  * @module model/RevokeCreds
- * @version 3.2.3
+ * @version 3.2.4
  */
 class RevokeCreds {
     /**
@@ -67,8 +67,9 @@ class RevokeCreds {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-RevokeCreds.prototype['json'] = undefined;
+RevokeCreds.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

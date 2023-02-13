@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerDockerhub model module.
  * @module model/GatewayUpdateProducerDockerhub
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateProducerDockerhub {
     /**
@@ -97,7 +97,7 @@ class GatewayUpdateProducerDockerhub {
 }
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerDockerhub.prototype['delete_protection'] = undefined;
@@ -123,8 +123,9 @@ GatewayUpdateProducerDockerhub.prototype['dockerhub-username'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateProducerDockerhub.prototype['json'] = undefined;
+GatewayUpdateProducerDockerhub.prototype['json'] = false;
 
 /**
  * Producer name

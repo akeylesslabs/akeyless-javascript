@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCertificateValue model module.
  * @module model/GetCertificateValue
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GetCertificateValue {
     /**
@@ -74,8 +74,9 @@ class GetCertificateValue {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GetCertificateValue.prototype['json'] = undefined;
+GetCertificateValue.prototype['json'] = false;
 
 /**
  * Certificate name

@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayUpdateProducerMSSQLOutput model module.
  * @module model/GatewayUpdateProducerMSSQLOutput
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateProducerMSSQLOutput {
     /**

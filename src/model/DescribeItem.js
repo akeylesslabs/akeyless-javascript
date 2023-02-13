@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeItem model module.
  * @module model/DescribeItem
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DescribeItem {
     /**
@@ -92,8 +92,9 @@ DescribeItem.prototype['item-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DescribeItem.prototype['json'] = undefined;
+DescribeItem.prototype['json'] = false;
 
 /**
  * Item name

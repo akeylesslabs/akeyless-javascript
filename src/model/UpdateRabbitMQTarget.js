@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRabbitMQTarget model module.
  * @module model/UpdateRabbitMQTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateRabbitMQTarget {
     /**
@@ -110,10 +110,12 @@ UpdateRabbitMQTarget.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateRabbitMQTarget.prototype['json'] = undefined;
+UpdateRabbitMQTarget.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateRabbitMQTarget.prototype['keep-prev-version'] = undefined;

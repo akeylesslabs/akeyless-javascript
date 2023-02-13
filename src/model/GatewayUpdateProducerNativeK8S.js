@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerNativeK8S model module.
  * @module model/GatewayUpdateProducerNativeK8S
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateProducerNativeK8S {
     /**
@@ -127,7 +127,7 @@ class GatewayUpdateProducerNativeK8S {
 }
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerNativeK8S.prototype['delete_protection'] = undefined;
@@ -135,8 +135,9 @@ GatewayUpdateProducerNativeK8S.prototype['delete_protection'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateProducerNativeK8S.prototype['json'] = undefined;
+GatewayUpdateProducerNativeK8S.prototype['json'] = false;
 
 /**
  * K8S cluster CA certificate
@@ -159,8 +160,9 @@ GatewayUpdateProducerNativeK8S.prototype['k8s-cluster-token'] = undefined;
 /**
  * K8S namespace
  * @member {String} k8s-namespace
+ * @default 'default'
  */
-GatewayUpdateProducerNativeK8S.prototype['k8s-namespace'] = undefined;
+GatewayUpdateProducerNativeK8S.prototype['k8s-namespace'] = 'default';
 
 /**
  * K8S service account
@@ -187,44 +189,55 @@ GatewayUpdateProducerNativeK8S.prototype['new-name'] = undefined;
 GatewayUpdateProducerNativeK8S.prototype['producer-encryption-key-name'] = undefined;
 
 /**
+ * Enable Port forwarding while using CLI access
  * @member {Boolean} secure-access-allow-port-forwading
  */
 GatewayUpdateProducerNativeK8S.prototype['secure-access-allow-port-forwading'] = undefined;
 
 /**
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 GatewayUpdateProducerNativeK8S.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
+ * The K8s cluster endpoint URL
  * @member {String} secure-access-cluster-endpoint
  */
 GatewayUpdateProducerNativeK8S.prototype['secure-access-cluster-endpoint'] = undefined;
 
 /**
+ * The K8s dashboard url
  * @member {String} secure-access-dashboard-url
  */
 GatewayUpdateProducerNativeK8S.prototype['secure-access-dashboard-url'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayUpdateProducerNativeK8S.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
+ * @default false
  */
-GatewayUpdateProducerNativeK8S.prototype['secure-access-web'] = undefined;
+GatewayUpdateProducerNativeK8S.prototype['secure-access-web'] = false;
 
 /**
+ * Secure browser via Akeyless Web Access Bastion
  * @member {Boolean} secure-access-web-browsing
+ * @default false
  */
-GatewayUpdateProducerNativeK8S.prototype['secure-access-web-browsing'] = undefined;
+GatewayUpdateProducerNativeK8S.prototype['secure-access-web-browsing'] = false;
 
 /**
+ * Web-Proxy via Akeyless Web Access Bastion
  * @member {Boolean} secure-access-web-proxy
+ * @default false
  */
-GatewayUpdateProducerNativeK8S.prototype['secure-access-web-proxy'] = undefined;
+GatewayUpdateProducerNativeK8S.prototype['secure-access-web-proxy'] = false;
 
 /**
  * List of the tags attached to this secret

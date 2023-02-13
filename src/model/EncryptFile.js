@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptFile model module.
  * @module model/EncryptFile
- * @version 3.2.3
+ * @version 3.2.4
  */
 class EncryptFile {
     /**
@@ -112,8 +112,9 @@ EncryptFile.prototype['item-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-EncryptFile.prototype['json'] = undefined;
+EncryptFile.prototype['json'] = false;
 
 /**
  * The name of the key to use in the encryption process

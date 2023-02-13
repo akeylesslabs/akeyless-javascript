@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipRenewClientCertificate model module.
  * @module model/KmipRenewClientCertificate
- * @version 3.2.3
+ * @version 3.2.4
  */
 class KmipRenewClientCertificate {
     /**
@@ -77,8 +77,9 @@ KmipRenewClientCertificate.prototype['client-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-KmipRenewClientCertificate.prototype['json'] = undefined;
+KmipRenewClientCertificate.prototype['json'] = false;
 
 /**
  * @member {String} name

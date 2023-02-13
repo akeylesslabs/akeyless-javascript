@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **boundZones** | **[String]** | &#x3D;&#x3D;&#x3D; Machine authentication section &#x3D;&#x3D;&#x3D; List of zones that a GCE instance must belong to in order to be authenticated. TODO: If bound_instance_groups is provided, it is assumed to be a zonal group and the group must belong to this zone. | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
-**jwtTtl** | **Number** | Jwt TTL | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
+**jwtTtl** | **Number** | Jwt TTL | [optional] [default to 0]
 **name** | **String** | Auth Method name | 
 **serviceAccountCredsData** | **String** | ServiceAccount credentials data instead of giving a file path, base64 encoded | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

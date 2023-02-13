@@ -36,6 +36,7 @@ Method | HTTP request | Description
 [**createGcpTarget**](V2Api.md#createGcpTarget) | **POST** /create-gcp-target | 
 [**createGithubTarget**](V2Api.md#createGithubTarget) | **POST** /create-github-target | 
 [**createKey**](V2Api.md#createKey) | **POST** /create-key | 
+[**createLinkedTarget**](V2Api.md#createLinkedTarget) | **POST** /create-linked-target | 
 [**createNativeK8STarget**](V2Api.md#createNativeK8STarget) | **POST** /create-k8s-target | 
 [**createPKICertIssuer**](V2Api.md#createPKICertIssuer) | **POST** /create-pki-cert-issuer | 
 [**createPingTarget**](V2Api.md#createPingTarget) | **POST** /create-ping-target | 
@@ -48,6 +49,7 @@ Method | HTTP request | Description
 [**createSecret**](V2Api.md#createSecret) | **POST** /create-secret | 
 [**createTokenizer**](V2Api.md#createTokenizer) | **POST** /create-tokenizer | 
 [**createWebTarget**](V2Api.md#createWebTarget) | **POST** /create-web-target | 
+[**createWindowsTarget**](V2Api.md#createWindowsTarget) | **POST** /create-windows-target | 
 [**createldapTarget**](V2Api.md#createldapTarget) | **POST** /create-ldap-target | 
 [**decrypt**](V2Api.md#decrypt) | **POST** /decrypt | 
 [**decryptGPG**](V2Api.md#decryptGPG) | **POST** /decrypt-gpg | 
@@ -236,6 +238,7 @@ Method | HTTP request | Description
 [**updateItem**](V2Api.md#updateItem) | **POST** /update-item | 
 [**updateLdapTarget**](V2Api.md#updateLdapTarget) | **POST** /update-ldap-target | 
 [**updateLdapTargetDetails**](V2Api.md#updateLdapTargetDetails) | **POST** /update-ldap-target-details | 
+[**updateLinkedTarget**](V2Api.md#updateLinkedTarget) | **POST** /update-linked-target | 
 [**updateNativeK8STarget**](V2Api.md#updateNativeK8STarget) | **POST** /update-k8s-target | 
 [**updatePKICertIssuer**](V2Api.md#updatePKICertIssuer) | **POST** /update-pki-cert-issuer | 
 [**updatePingTarget**](V2Api.md#updatePingTarget) | **POST** /update-ping-target | 
@@ -254,6 +257,7 @@ Method | HTTP request | Description
 [**updateTargetDetails**](V2Api.md#updateTargetDetails) | **POST** /update-target-details | 
 [**updateWebTarget**](V2Api.md#updateWebTarget) | **POST** /update-web-target | 
 [**updateWebTargetDetails**](V2Api.md#updateWebTargetDetails) | **POST** /update-web-target-details | 
+[**updateWindowsTarget**](V2Api.md#updateWindowsTarget) | **POST** /update-windows-target | 
 [**uploadRSA**](V2Api.md#uploadRSA) | **POST** /upload-rsa | 
 [**validateToken**](V2Api.md#validateToken) | **POST** /validate-token | 
 [**verifyGPG**](V2Api.md#verifyGPG) | **POST** /verify-gpg | 
@@ -1607,6 +1611,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## createLinkedTarget
+
+> CreateLinkedTargetOutput createLinkedTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateLinkedTarget(); // CreateLinkedTarget | 
+apiInstance.createLinkedTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateLinkedTarget**](CreateLinkedTarget.md)|  | 
+
+### Return type
+
+[**CreateLinkedTargetOutput**](CreateLinkedTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## createNativeK8STarget
 
 > CreateNativeK8STargetOutput createNativeK8STarget(body)
@@ -2100,6 +2146,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateWebTargetOutput**](CreateWebTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createWindowsTarget
+
+> CreateWindowsTargetOutput createWindowsTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateWindowsTarget(); // CreateWindowsTarget | 
+apiInstance.createWindowsTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateWindowsTarget**](CreateWindowsTarget.md)|  | 
+
+### Return type
+
+[**CreateWindowsTargetOutput**](CreateWindowsTargetOutput.md)
 
 ### Authorization
 
@@ -10033,6 +10121,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## updateLinkedTarget
+
+> Object updateLinkedTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateLinkedTarget(); // UpdateLinkedTarget | 
+apiInstance.updateLinkedTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateLinkedTarget**](UpdateLinkedTarget.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## updateNativeK8STarget
 
 > UpdateNativeK8STargetOutput updateNativeK8STarget(body)
@@ -10774,6 +10904,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateTargetOutput**](UpdateTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateWindowsTarget
+
+> Object updateWindowsTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateWindowsTarget(); // UpdateWindowsTarget | 
+apiInstance.updateWindowsTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateWindowsTarget**](UpdateWindowsTarget.md)|  | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 

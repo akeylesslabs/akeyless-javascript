@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerArtifactory model module.
  * @module model/GatewayUpdateProducerArtifactory
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateProducerArtifactory {
     /**
@@ -137,7 +137,7 @@ GatewayUpdateProducerArtifactory.prototype['artifactory-token-scope'] = undefine
 GatewayUpdateProducerArtifactory.prototype['base-url'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerArtifactory.prototype['delete_protection'] = undefined;
@@ -145,8 +145,9 @@ GatewayUpdateProducerArtifactory.prototype['delete_protection'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateProducerArtifactory.prototype['json'] = undefined;
+GatewayUpdateProducerArtifactory.prototype['json'] = false;
 
 /**
  * Producer name

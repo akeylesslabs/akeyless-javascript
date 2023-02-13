@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetLdapAuthConfig model module.
  * @module model/GatewayGetLdapAuthConfig
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayGetLdapAuthConfig {
     /**
@@ -67,8 +67,9 @@ class GatewayGetLdapAuthConfig {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayGetLdapAuthConfig.prototype['json'] = undefined;
+GatewayGetLdapAuthConfig.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

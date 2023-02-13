@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipDescribeServer model module.
  * @module model/KmipDescribeServer
- * @version 3.2.3
+ * @version 3.2.4
  */
 class KmipDescribeServer {
     /**
@@ -66,8 +66,9 @@ class KmipDescribeServer {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-KmipDescribeServer.prototype['json'] = undefined;
+KmipDescribeServer.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

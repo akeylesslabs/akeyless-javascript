@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Update model module.
  * @module model/Update
- * @version 3.2.3
+ * @version 3.2.4
  */
 class Update {
     /**
@@ -63,14 +63,16 @@ class Update {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-Update.prototype['json'] = undefined;
+Update.prototype['json'] = false;
 
 /**
  * Version
  * @member {String} version
+ * @default 'latest'
  */
-Update.prototype['version'] = undefined;
+Update.prototype['version'] = 'latest';
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteItem model module.
  * @module model/DeleteItem
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DeleteItem {
     /**
@@ -104,8 +104,9 @@ DeleteItem.prototype['delete-in-days'] = 7;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DeleteItem.prototype['json'] = undefined;
+DeleteItem.prototype['json'] = false;
 
 /**
  * Item name

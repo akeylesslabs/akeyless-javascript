@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignJWTWithClassicKey model module.
  * @module model/SignJWTWithClassicKey
- * @version 3.2.3
+ * @version 3.2.4
  */
 class SignJWTWithClassicKey {
     /**
@@ -92,8 +92,9 @@ SignJWTWithClassicKey.prototype['display-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-SignJWTWithClassicKey.prototype['json'] = undefined;
+SignJWTWithClassicKey.prototype['json'] = false;
 
 /**
  * JWTClaims

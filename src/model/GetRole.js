@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetRole model module.
  * @module model/GetRole
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GetRole {
     /**
@@ -71,8 +71,9 @@ class GetRole {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GetRole.prototype['json'] = undefined;
+GetRole.prototype['json'] = false;
 
 /**
  * Role name

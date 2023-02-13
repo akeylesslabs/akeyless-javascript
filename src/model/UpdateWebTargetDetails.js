@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateWebTargetDetails model module.
  * @module model/UpdateWebTargetDetails
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateWebTargetDetails {
     /**
@@ -83,10 +83,12 @@ class UpdateWebTargetDetails {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateWebTargetDetails.prototype['json'] = undefined;
+UpdateWebTargetDetails.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateWebTargetDetails.prototype['keep-prev-version'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateK8SAuthConfig model module.
  * @module model/GatewayCreateK8SAuthConfig
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateK8SAuthConfig {
     /**
@@ -131,7 +131,7 @@ GatewayCreateK8SAuthConfig.prototype['cluster-api-type'] = 'native_k8s';
 GatewayCreateK8SAuthConfig.prototype['config-encryption-key-name'] = undefined;
 
 /**
- * Disable issuer validation
+ * Disable issuer validation [true/false]
  * @member {String} disable-issuer-validation
  */
 GatewayCreateK8SAuthConfig.prototype['disable-issuer-validation'] = undefined;
@@ -139,8 +139,9 @@ GatewayCreateK8SAuthConfig.prototype['disable-issuer-validation'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateK8SAuthConfig.prototype['json'] = undefined;
+GatewayCreateK8SAuthConfig.prototype['json'] = false;
 
 /**
  * The CA Certificate (base64 encoded) to use to call into the kubernetes API server
@@ -155,10 +156,11 @@ GatewayCreateK8SAuthConfig.prototype['k8s-ca-cert'] = undefined;
 GatewayCreateK8SAuthConfig.prototype['k8s-host'] = undefined;
 
 /**
- * The Kubernetes JWT issuer name. If not set, kubernetes/serviceaccount will use as an issuer.
+ * The Kubernetes JWT issuer name. K8SIssuer is the claim that specifies who issued the Kubernetes token
  * @member {String} k8s-issuer
+ * @default 'kubernetes/serviceaccount'
  */
-GatewayCreateK8SAuthConfig.prototype['k8s-issuer'] = undefined;
+GatewayCreateK8SAuthConfig.prototype['k8s-issuer'] = 'kubernetes/serviceaccount';
 
 /**
  * K8S Auth config name

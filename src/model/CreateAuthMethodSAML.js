@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodSAML model module.
  * @module model/CreateAuthMethodSAML
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateAuthMethodSAML {
     /**
@@ -144,14 +144,16 @@ CreateAuthMethodSAML.prototype['idp-metadata-xml-data'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateAuthMethodSAML.prototype['json'] = undefined;
+CreateAuthMethodSAML.prototype['json'] = false;
 
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
+ * @default 0
  */
-CreateAuthMethodSAML.prototype['jwt-ttl'] = undefined;
+CreateAuthMethodSAML.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

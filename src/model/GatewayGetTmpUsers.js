@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetTmpUsers model module.
  * @module model/GatewayGetTmpUsers
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayGetTmpUsers {
     /**
@@ -72,8 +72,9 @@ class GatewayGetTmpUsers {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayGetTmpUsers.prototype['json'] = undefined;
+GatewayGetTmpUsers.prototype['json'] = false;
 
 /**
  * Producer Name

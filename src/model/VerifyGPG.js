@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyGPG model module.
  * @module model/VerifyGPG
- * @version 3.2.3
+ * @version 3.2.4
  */
 class VerifyGPG {
     /**
@@ -97,8 +97,9 @@ VerifyGPG.prototype['item-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-VerifyGPG.prototype['json'] = undefined;
+VerifyGPG.prototype['json'] = false;
 
 /**
  * The name of the key to use in the encryption process

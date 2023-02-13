@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRedshift model module.
  * @module model/GatewayCreateProducerRedshift
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerRedshift {
     /**
@@ -118,7 +118,7 @@ class GatewayCreateProducerRedshift {
 GatewayCreateProducerRedshift.prototype['creation-statements'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerRedshift.prototype['delete_protection'] = undefined;
@@ -126,8 +126,9 @@ GatewayCreateProducerRedshift.prototype['delete_protection'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerRedshift.prototype['json'] = undefined;
+GatewayCreateProducerRedshift.prototype['json'] = false;
 
 /**
  * Producer name
@@ -174,20 +175,23 @@ GatewayCreateProducerRedshift.prototype['redshift-port'] = '5439';
 GatewayCreateProducerRedshift.prototype['redshift-username'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayCreateProducerRedshift.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Target DB servers for connections
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerRedshift.prototype['secure-access-host'] = undefined;
 
 /**
- * SSL connection mode
+ * Enable/Disable SSL [true/false]
  * @member {Boolean} ssl
+ * @default false
  */
-GatewayCreateProducerRedshift.prototype['ssl'] = undefined;
+GatewayCreateProducerRedshift.prototype['ssl'] = false;
 
 /**
  * List of the tags attached to this secret

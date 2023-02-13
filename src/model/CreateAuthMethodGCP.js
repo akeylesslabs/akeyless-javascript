@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodGCP model module.
  * @module model/CreateAuthMethodGCP
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateAuthMethodGCP {
     /**
@@ -177,14 +177,16 @@ CreateAuthMethodGCP.prototype['gw-bound-ips'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateAuthMethodGCP.prototype['json'] = undefined;
+CreateAuthMethodGCP.prototype['json'] = false;
 
 /**
  * Jwt TTL
  * @member {Number} jwt-ttl
+ * @default 0
  */
-CreateAuthMethodGCP.prototype['jwt-ttl'] = undefined;
+CreateAuthMethodGCP.prototype['jwt-ttl'] = 0;
 
 /**
  * Auth Method name

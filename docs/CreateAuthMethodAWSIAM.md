@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **boundUserName** | **[String]** | A list of full user-name that the access is restricted to | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
-**jwtTtl** | **Number** | Jwt TTL | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
+**jwtTtl** | **Number** | Jwt TTL | [optional] [default to 0]
 **name** | **String** | Auth Method name | 
 **stsUrl** | **String** | sts URL | [optional] [default to &#39;https://sts.amazonaws.com&#39;]
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

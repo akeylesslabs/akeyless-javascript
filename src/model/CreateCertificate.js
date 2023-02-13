@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateCertificate model module.
  * @module model/CreateCertificate
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateCertificate {
     /**
@@ -99,7 +99,7 @@ class CreateCertificate {
 CreateCertificate.prototype['certificate-data'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 CreateCertificate.prototype['delete_protection'] = undefined;
@@ -119,8 +119,9 @@ CreateCertificate.prototype['expiration-event-in'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateCertificate.prototype['json'] = undefined;
+CreateCertificate.prototype['json'] = false;
 
 /**
  * The name of a key to use to encrypt the certificate's key (if empty, the account default protectionKey key will be used)

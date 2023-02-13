@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetTags model module.
  * @module model/GetTags
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GetTags {
     /**
@@ -71,8 +71,9 @@ class GetTags {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GetTags.prototype['json'] = undefined;
+GetTags.prototype['json'] = false;
 
 /**
  * Item name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteAuthMethods model module.
  * @module model/DeleteAuthMethods
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DeleteAuthMethods {
     /**
@@ -72,8 +72,9 @@ class DeleteAuthMethods {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DeleteAuthMethods.prototype['json'] = undefined;
+DeleteAuthMethods.prototype['json'] = false;
 
 /**
  * Path to delete the auth methods from

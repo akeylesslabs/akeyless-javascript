@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGke model module.
  * @module model/GatewayCreateProducerGke
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerGke {
     /**
@@ -115,7 +115,7 @@ class GatewayCreateProducerGke {
 }
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerGke.prototype['delete_protection'] = undefined;
@@ -153,8 +153,9 @@ GatewayCreateProducerGke.prototype['gke-service-account-email'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerGke.prototype['json'] = undefined;
+GatewayCreateProducerGke.prototype['json'] = false;
 
 /**
  * Producer name
@@ -169,29 +170,35 @@ GatewayCreateProducerGke.prototype['name'] = undefined;
 GatewayCreateProducerGke.prototype['producer-encryption-key-name'] = undefined;
 
 /**
+ * Enable Port forwarding while using CLI access
  * @member {Boolean} secure-access-allow-port-forwading
  */
 GatewayCreateProducerGke.prototype['secure-access-allow-port-forwading'] = undefined;
 
 /**
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 GatewayCreateProducerGke.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
+ * The K8s cluster endpoint URL
  * @member {String} secure-access-cluster-endpoint
  */
 GatewayCreateProducerGke.prototype['secure-access-cluster-endpoint'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayCreateProducerGke.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
+ * @default false
  */
-GatewayCreateProducerGke.prototype['secure-access-web'] = undefined;
+GatewayCreateProducerGke.prototype['secure-access-web'] = false;
 
 /**
  * List of the tags attached to this secret

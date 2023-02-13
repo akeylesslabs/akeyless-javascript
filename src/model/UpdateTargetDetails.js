@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateTargetDetails model module.
  * @module model/UpdateTargetDetails
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateTargetDetails {
     /**
@@ -60,8 +60,9 @@ class UpdateTargetDetails {
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateTargetDetails.prototype['json'] = undefined;
+UpdateTargetDetails.prototype['json'] = false;
 
 
 

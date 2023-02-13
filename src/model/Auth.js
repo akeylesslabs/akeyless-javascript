@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 3.2.3
+ * @version 3.2.4
  */
 class Auth {
     /**
@@ -165,14 +165,16 @@ Auth.prototype['gateway-url'] = undefined;
 /**
  * GCP JWT audience
  * @member {String} gcp-audience
+ * @default 'akeyless.io'
  */
-Auth.prototype['gcp-audience'] = undefined;
+Auth.prototype['gcp-audience'] = 'akeyless.io';
 
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-Auth.prototype['json'] = undefined;
+Auth.prototype['json'] = false;
 
 /**
  * The Json Web Token (relevant only for access-type=jwt/oidc)

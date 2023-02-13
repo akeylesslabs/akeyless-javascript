@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerHanaDb model module.
  * @module model/GatewayUpdateProducerHanaDb
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayUpdateProducerHanaDb {
     /**
@@ -124,7 +124,7 @@ class GatewayUpdateProducerHanaDb {
 }
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerHanaDb.prototype['delete_protection'] = undefined;
@@ -176,8 +176,9 @@ GatewayUpdateProducerHanaDb.prototype['hanadb-username'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayUpdateProducerHanaDb.prototype['json'] = undefined;
+GatewayUpdateProducerHanaDb.prototype['json'] = false;
 
 /**
  * Producer name
@@ -198,29 +199,35 @@ GatewayUpdateProducerHanaDb.prototype['new-name'] = undefined;
 GatewayUpdateProducerHanaDb.prototype['producer-encryption-key-name'] = undefined;
 
 /**
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 GatewayUpdateProducerHanaDb.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
+ * The DB schema
  * @member {String} secure-access-db-schema
  */
 GatewayUpdateProducerHanaDb.prototype['secure-access-db-schema'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayUpdateProducerHanaDb.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Target DB servers for connections
  * @member {Array.<String>} secure-access-host
  */
 GatewayUpdateProducerHanaDb.prototype['secure-access-host'] = undefined;
 
 /**
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
+ * @default false
  */
-GatewayUpdateProducerHanaDb.prototype['secure-access-web'] = undefined;
+GatewayUpdateProducerHanaDb.prototype['secure-access-web'] = false;
 
 /**
  * List of the tags attached to this secret

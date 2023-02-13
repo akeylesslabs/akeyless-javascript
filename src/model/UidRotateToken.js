@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidRotateToken model module.
  * @module model/UidRotateToken
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UidRotateToken {
     /**
@@ -79,8 +79,9 @@ UidRotateToken.prototype['fork'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UidRotateToken.prototype['json'] = undefined;
+UidRotateToken.prototype['json'] = false;
 
 /**
  * The new rotated token to send manual ack for (with uid-token=the-orig-token)

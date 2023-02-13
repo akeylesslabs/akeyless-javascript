@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocRoleAuthMethod model module.
  * @module model/AssocRoleAuthMethod
- * @version 3.2.3
+ * @version 3.2.4
  */
 class AssocRoleAuthMethod {
     /**
@@ -87,15 +87,18 @@ class AssocRoleAuthMethod {
 AssocRoleAuthMethod.prototype['am-name'] = undefined;
 
 /**
+ * Treat sub claims as case-sensitive [true/false]
  * @member {String} case-sensitive
+ * @default 'true'
  */
-AssocRoleAuthMethod.prototype['case-sensitive'] = undefined;
+AssocRoleAuthMethod.prototype['case-sensitive'] = 'true';
 
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-AssocRoleAuthMethod.prototype['json'] = undefined;
+AssocRoleAuthMethod.prototype['json'] = false;
 
 /**
  * The role to associate

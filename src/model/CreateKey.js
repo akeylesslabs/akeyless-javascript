@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateKey model module.
  * @module model/CreateKey
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateKey {
     /**
@@ -105,7 +105,7 @@ CreateKey.prototype['alg'] = undefined;
 CreateKey.prototype['customer-frg-id'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 CreateKey.prototype['delete_protection'] = undefined;
@@ -119,8 +119,9 @@ CreateKey.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateKey.prototype['json'] = undefined;
+CreateKey.prototype['json'] = false;
 
 /**
  * Deprecated - use description

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAzure model module.
  * @module model/GatewayCreateProducerAzure
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerAzure {
     /**
@@ -154,7 +154,7 @@ GatewayCreateProducerAzure.prototype['azure-client-secret'] = undefined;
 GatewayCreateProducerAzure.prototype['azure-tenant-id'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerAzure.prototype['delete_protection'] = undefined;
@@ -176,8 +176,9 @@ GatewayCreateProducerAzure.prototype['fixed-user-only'] = false;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerAzure.prototype['json'] = undefined;
+GatewayCreateProducerAzure.prototype['json'] = false;
 
 /**
  * Producer name
@@ -192,24 +193,31 @@ GatewayCreateProducerAzure.prototype['name'] = undefined;
 GatewayCreateProducerAzure.prototype['producer-encryption-key-name'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayCreateProducerAzure.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
+ * @default true
  */
-GatewayCreateProducerAzure.prototype['secure-access-web'] = undefined;
+GatewayCreateProducerAzure.prototype['secure-access-web'] = true;
 
 /**
+ * Secure browser via Akeyless Web Access Bastion
  * @member {Boolean} secure-access-web-browsing
+ * @default false
  */
-GatewayCreateProducerAzure.prototype['secure-access-web-browsing'] = undefined;
+GatewayCreateProducerAzure.prototype['secure-access-web-browsing'] = false;
 
 /**
+ * Web-Proxy via Akeyless Web Access Bastion
  * @member {Boolean} secure-access-web-proxy
+ * @default false
  */
-GatewayCreateProducerAzure.prototype['secure-access-web-proxy'] = undefined;
+GatewayCreateProducerAzure.prototype['secure-access-web-proxy'] = false;
 
 /**
  * List of the tags attached to this secret

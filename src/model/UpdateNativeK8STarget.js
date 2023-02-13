@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateNativeK8STarget model module.
  * @module model/UpdateNativeK8STarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateNativeK8STarget {
     /**
@@ -116,8 +116,9 @@ UpdateNativeK8STarget.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateNativeK8STarget.prototype['json'] = undefined;
+UpdateNativeK8STarget.prototype['json'] = false;
 
 /**
  * K8S cluster CA certificate
@@ -138,6 +139,7 @@ UpdateNativeK8STarget.prototype['k8s-cluster-endpoint'] = undefined;
 UpdateNativeK8STarget.prototype['k8s-cluster-token'] = undefined;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateNativeK8STarget.prototype['keep-prev-version'] = undefined;

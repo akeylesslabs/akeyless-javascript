@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteRoleAssociation model module.
  * @module model/DeleteRoleAssociation
- * @version 3.2.3
+ * @version 3.2.4
  */
 class DeleteRoleAssociation {
     /**
@@ -78,8 +78,9 @@ DeleteRoleAssociation.prototype['assoc-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-DeleteRoleAssociation.prototype['json'] = undefined;
+DeleteRoleAssociation.prototype['json'] = false;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

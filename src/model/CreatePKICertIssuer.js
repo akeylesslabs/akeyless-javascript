@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreatePKICertIssuer {
     /**
@@ -184,7 +184,7 @@ CreatePKICertIssuer.prototype['code-signing-flag'] = undefined;
 CreatePKICertIssuer.prototype['country'] = undefined;
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 CreatePKICertIssuer.prototype['delete_protection'] = undefined;
@@ -198,8 +198,9 @@ CreatePKICertIssuer.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreatePKICertIssuer.prototype['json'] = undefined;
+CreatePKICertIssuer.prototype['json'] = false;
 
 /**
  * key-usage

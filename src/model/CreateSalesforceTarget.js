@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSalesforceTarget model module.
  * @module model/CreateSalesforceTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateSalesforceTarget {
     /**
@@ -172,8 +172,9 @@ CreateSalesforceTarget.prototype['email'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateSalesforceTarget.prototype['json'] = undefined;
+CreateSalesforceTarget.prototype['json'] = false;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)

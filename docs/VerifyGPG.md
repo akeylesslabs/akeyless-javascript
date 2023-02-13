@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **displayId** | **String** | The display id of the key to use in the encryption process | [optional] 
 **itemId** | **Number** | The item id of the key to use in the encryption process | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **keyName** | **String** | The name of the key to use in the encryption process | 
 **passphrase** | **String** | Passphrase that was used to generate the key | [optional] 
 **signature** | **String** | The signature to be verified in base64 format | 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**deleteProtection** | **String** | Protection from accidental deletion of this item | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **mssqlCreateStatements** | **String** | MSSQL Creation statements | [optional] 
 **mssqlDbname** | **String** | MSSQL Name | [optional] 
 **mssqlHost** | **String** | MSSQL Host | [optional] [default to &#39;127.0.0.1&#39;]
@@ -16,11 +16,11 @@ Name | Type | Description | Notes
 **name** | **String** | Producer name | 
 **newName** | **String** | Producer name | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
-**secureAccessBastionIssuer** | **String** |  | [optional] 
-**secureAccessDbSchema** | **String** |  | [optional] 
-**secureAccessEnable** | **String** |  | [optional] 
-**secureAccessHost** | **[String]** |  | [optional] 
-**secureAccessWeb** | **Boolean** |  | [optional] 
+**secureAccessBastionIssuer** | **String** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
+**secureAccessDbSchema** | **String** | The DB schema | [optional] 
+**secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
+**secureAccessHost** | **[String]** | Target DB servers for connections | [optional] 
+**secureAccessWeb** | **Boolean** | Enable Web Secure Remote Access | [optional] [default to false]
 **tags** | **[String]** | List of the tags attached to this secret | [optional] 
 **targetName** | **String** | Target name | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

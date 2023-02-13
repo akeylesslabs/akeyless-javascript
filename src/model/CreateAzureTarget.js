@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAzureTarget model module.
  * @module model/CreateAzureTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class CreateAzureTarget {
     /**
@@ -123,8 +123,9 @@ CreateAzureTarget.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-CreateAzureTarget.prototype['json'] = undefined;
+CreateAzureTarget.prototype['json'] = false;
 
 /**
  * The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)

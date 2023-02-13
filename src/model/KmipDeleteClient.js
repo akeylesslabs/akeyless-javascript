@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipDeleteClient model module.
  * @module model/KmipDeleteClient
- * @version 3.2.3
+ * @version 3.2.4
  */
 class KmipDeleteClient {
     /**
@@ -77,8 +77,9 @@ KmipDeleteClient.prototype['client-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-KmipDeleteClient.prototype['json'] = undefined;
+KmipDeleteClient.prototype['json'] = false;
 
 /**
  * @member {String} name

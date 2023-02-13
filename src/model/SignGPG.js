@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignGPG model module.
  * @module model/SignGPG
- * @version 3.2.3
+ * @version 3.2.4
  */
 class SignGPG {
     /**
@@ -97,8 +97,9 @@ SignGPG.prototype['item-id'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-SignGPG.prototype['json'] = undefined;
+SignGPG.prototype['json'] = false;
 
 /**
  * The name of the key to use in the encryption process

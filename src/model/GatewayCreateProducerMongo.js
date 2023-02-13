@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMongo model module.
  * @module model/GatewayCreateProducerMongo
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayCreateProducerMongo {
     /**
@@ -133,7 +133,7 @@ class GatewayCreateProducerMongo {
 }
 
 /**
- * Protection from accidental deletion of this item
+ * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerMongo.prototype['delete_protection'] = undefined;
@@ -141,8 +141,9 @@ GatewayCreateProducerMongo.prototype['delete_protection'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayCreateProducerMongo.prototype['json'] = undefined;
+GatewayCreateProducerMongo.prototype['json'] = false;
 
 /**
  * MongoDB Atlas private key
@@ -230,24 +231,29 @@ GatewayCreateProducerMongo.prototype['name'] = undefined;
 GatewayCreateProducerMongo.prototype['producer-encryption-key-name'] = undefined;
 
 /**
+ * Path to the SSH Certificate Issuer for your Akeyless Bastion
  * @member {String} secure-access-bastion-issuer
  */
 GatewayCreateProducerMongo.prototype['secure-access-bastion-issuer'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
  * @member {String} secure-access-enable
  */
 GatewayCreateProducerMongo.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Target DB servers for connections
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerMongo.prototype['secure-access-host'] = undefined;
 
 /**
+ * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
+ * @default false
  */
-GatewayCreateProducerMongo.prototype['secure-access-web'] = undefined;
+GatewayCreateProducerMongo.prototype['secure-access-web'] = false;
 
 /**
  * List of the tags attached to this secret

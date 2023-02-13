@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListTargets model module.
  * @module model/ListTargets
- * @version 3.2.3
+ * @version 3.2.4
  */
 class ListTargets {
     /**
@@ -81,8 +81,9 @@ ListTargets.prototype['filter'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-ListTargets.prototype['json'] = undefined;
+ListTargets.prototype['json'] = false;
 
 /**
  * Next page reference

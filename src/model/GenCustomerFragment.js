@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenCustomerFragment model module.
  * @module model/GenCustomerFragment
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GenCustomerFragment {
     /**
@@ -72,8 +72,9 @@ GenCustomerFragment.prototype['description'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GenCustomerFragment.prototype['json'] = undefined;
+GenCustomerFragment.prototype['json'] = false;
 
 /**
  * Deprecated - use description

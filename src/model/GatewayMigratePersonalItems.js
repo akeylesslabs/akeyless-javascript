@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayMigratePersonalItems model module.
  * @module model/GatewayMigratePersonalItems
- * @version 3.2.3
+ * @version 3.2.4
  */
 class GatewayMigratePersonalItems {
     /**
@@ -121,8 +121,9 @@ GatewayMigratePersonalItems.prototype['1password-vaults'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-GatewayMigratePersonalItems.prototype['json'] = undefined;
+GatewayMigratePersonalItems.prototype['json'] = false;
 
 /**
  * The name of a key that used to encrypt the secret value

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTarget model module.
  * @module model/UpdateDBTarget
- * @version 3.2.3
+ * @version 3.2.4
  */
 class UpdateDBTarget {
     /**
@@ -190,10 +190,12 @@ UpdateDBTarget.prototype['host'] = undefined;
 /**
  * Set output format to JSON
  * @member {Boolean} json
+ * @default false
  */
-UpdateDBTarget.prototype['json'] = undefined;
+UpdateDBTarget.prototype['json'] = false;
 
 /**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
  * @member {String} keep-prev-version
  */
 UpdateDBTarget.prototype['keep-prev-version'] = undefined;
@@ -284,10 +286,11 @@ UpdateDBTarget.prototype['snowflake-api-private-key'] = undefined;
 UpdateDBTarget.prototype['snowflake-api-private-key-password'] = undefined;
 
 /**
- * SSL connection mode
+ * Enable/Disable SSL [true/false]
  * @member {Boolean} ssl
+ * @default false
  */
-UpdateDBTarget.prototype['ssl'] = undefined;
+UpdateDBTarget.prototype['ssl'] = false;
 
 /**
  * SSL connection certificate
