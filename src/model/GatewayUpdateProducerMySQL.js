@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMySQL model module.
  * @module model/GatewayUpdateProducerMySQL
- * @version 3.2.4
+ * @version 3.2.5
  */
 class GatewayUpdateProducerMySQL {
     /**
@@ -73,6 +73,9 @@ class GatewayUpdateProducerMySQL {
             }
             if (data.hasOwnProperty('mysql-port')) {
                 obj['mysql-port'] = ApiClient.convertToType(data['mysql-port'], 'String');
+            }
+            if (data.hasOwnProperty('mysql-revocation-statements')) {
+                obj['mysql-revocation-statements'] = ApiClient.convertToType(data['mysql-revocation-statements'], 'String');
             }
             if (data.hasOwnProperty('mysql-screation-statements')) {
                 obj['mysql-screation-statements'] = ApiClient.convertToType(data['mysql-screation-statements'], 'String');
@@ -179,6 +182,12 @@ GatewayUpdateProducerMySQL.prototype['mysql-password'] = undefined;
  * @default '3306'
  */
 GatewayUpdateProducerMySQL.prototype['mysql-port'] = '3306';
+
+/**
+ * MySQL Revocation statements
+ * @member {String} mysql-revocation-statements
+ */
+GatewayUpdateProducerMySQL.prototype['mysql-revocation-statements'] = undefined;
 
 /**
  * MySQL Creation statements

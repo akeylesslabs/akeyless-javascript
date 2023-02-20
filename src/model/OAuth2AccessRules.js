@@ -17,7 +17,7 @@ import OAuth2CustomClaim from './OAuth2CustomClaim';
 /**
  * The OAuth2AccessRules model module.
  * @module model/OAuth2AccessRules
- * @version 3.2.4
+ * @version 3.2.5
  */
 class OAuth2AccessRules {
     /**
@@ -61,6 +61,9 @@ class OAuth2AccessRules {
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
             }
+            if (data.hasOwnProperty('jwks_json_data')) {
+                obj['jwks_json_data'] = ApiClient.convertToType(data['jwks_json_data'], 'String');
+            }
             if (data.hasOwnProperty('jwks_uri')) {
                 obj['jwks_uri'] = ApiClient.convertToType(data['jwks_uri'], 'String');
             }
@@ -97,6 +100,12 @@ OAuth2AccessRules.prototype['bound_clients_id'] = undefined;
  * @member {String} issuer
  */
 OAuth2AccessRules.prototype['issuer'] = undefined;
+
+/**
+ * The JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server. base64 encoded string
+ * @member {String} jwks_json_data
+ */
+OAuth2AccessRules.prototype['jwks_json_data'] = undefined;
 
 /**
  * The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server.

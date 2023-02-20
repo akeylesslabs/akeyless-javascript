@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerNativeK8S model module.
  * @module model/GatewayUpdateProducerNativeK8S
- * @version 3.2.4
+ * @version 3.2.5
  */
 class GatewayUpdateProducerNativeK8S {
     /**
@@ -158,14 +158,13 @@ GatewayUpdateProducerNativeK8S.prototype['k8s-cluster-endpoint'] = undefined;
 GatewayUpdateProducerNativeK8S.prototype['k8s-cluster-token'] = undefined;
 
 /**
- * K8S namespace
+ * K8S Namespace where the ServiceAccount exists.
  * @member {String} k8s-namespace
- * @default 'default'
  */
-GatewayUpdateProducerNativeK8S.prototype['k8s-namespace'] = 'default';
+GatewayUpdateProducerNativeK8S.prototype['k8s-namespace'] = undefined;
 
 /**
- * K8S service account
+ * K8S ServiceAccount to extract token from.
  * @member {String} k8s-service-account
  */
 GatewayUpdateProducerNativeK8S.prototype['k8s-service-account'] = undefined;

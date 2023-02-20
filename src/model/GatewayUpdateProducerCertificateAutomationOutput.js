@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayUpdateProducerCertificateAutomationOutput model module.
  * @module model/GatewayUpdateProducerCertificateAutomationOutput
- * @version 3.2.4
+ * @version 3.2.5
  */
 class GatewayUpdateProducerCertificateAutomationOutput {
     /**

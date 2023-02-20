@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailPassAccessRules model module.
  * @module model/EmailPassAccessRules
- * @version 3.2.4
+ * @version 3.2.5
  */
 class EmailPassAccessRules {
     /**
@@ -53,6 +53,9 @@ class EmailPassAccessRules {
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
+            if (data.hasOwnProperty('enc_email_with_shared_key')) {
+                obj['enc_email_with_shared_key'] = ApiClient.convertToType(data['enc_email_with_shared_key'], 'String');
+            }
             if (data.hasOwnProperty('hash_pass')) {
                 obj['hash_pass'] = ApiClient.convertToType(data['hash_pass'], 'String');
             }
@@ -73,6 +76,12 @@ EmailPassAccessRules.prototype['alg'] = undefined;
  * @member {String} email
  */
 EmailPassAccessRules.prototype['email'] = undefined;
+
+/**
+ * EncEmailWithSharedKey is the email of this auth method, encrypted with the shared auth/uam key (for use in uam)
+ * @member {String} enc_email_with_shared_key
+ */
+EmailPassAccessRules.prototype['enc_email_with_shared_key'] = undefined;
 
 /**
  * The password value

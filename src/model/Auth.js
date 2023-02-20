@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 3.2.4
+ * @version 3.2.5
  */
 class Auth {
     /**
@@ -55,6 +55,9 @@ class Auth {
             }
             if (data.hasOwnProperty('access-type')) {
                 obj['access-type'] = ApiClient.convertToType(data['access-type'], 'String');
+            }
+            if (data.hasOwnProperty('account-id')) {
+                obj['account-id'] = ApiClient.convertToType(data['account-id'], 'String');
             }
             if (data.hasOwnProperty('admin-email')) {
                 obj['admin-email'] = ApiClient.convertToType(data['admin-email'], 'String');
@@ -126,6 +129,12 @@ Auth.prototype['access-key'] = undefined;
  * @default 'access_key'
  */
 Auth.prototype['access-type'] = 'access_key';
+
+/**
+ * Account id (relevant only for access-type=password where the email address is associated with more than one account)
+ * @member {String} account-id
+ */
+Auth.prototype['account-id'] = undefined;
 
 /**
  * Email (relevant only for access-type=password)

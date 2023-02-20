@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PasswordPolicyInfo model module.
  * @module model/PasswordPolicyInfo
- * @version 3.2.4
+ * @version 3.2.5
  */
 class PasswordPolicyInfo {
     /**

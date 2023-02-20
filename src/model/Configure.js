@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Configure model module.
  * @module model/Configure
- * @version 3.2.4
+ * @version 3.2.5
  */
 class Configure {
     /**
@@ -55,6 +55,9 @@ class Configure {
             }
             if (data.hasOwnProperty('access-type')) {
                 obj['access-type'] = ApiClient.convertToType(data['access-type'], 'String');
+            }
+            if (data.hasOwnProperty('account-id')) {
+                obj['account-id'] = ApiClient.convertToType(data['account-id'], 'String');
             }
             if (data.hasOwnProperty('admin-email')) {
                 obj['admin-email'] = ApiClient.convertToType(data['admin-email'], 'String');
@@ -105,6 +108,12 @@ Configure.prototype['access-key'] = undefined;
  * @default 'access_key'
  */
 Configure.prototype['access-type'] = 'access_key';
+
+/**
+ * Account id (relevant only for access-type=password where the email address is associated with more than one account)
+ * @member {String} account-id
+ */
+Configure.prototype['account-id'] = undefined;
 
 /**
  * Email (relevant only for access-type=password)
