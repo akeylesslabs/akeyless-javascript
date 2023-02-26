@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **deleteProtection** | **Boolean** |  | [optional] 
 **deletionDate** | **Date** |  | [optional] 
 **displayId** | **String** |  | [optional] 
+**gatewayDetails** | [**[GatewayBasicInfo]**](GatewayBasicInfo.md) |  | [optional] 
 **isAccessRequestEnabled** | **Boolean** |  | [optional] 
 **isEnabled** | **Boolean** |  | [optional] 
 **itemAccessibility** | **Number** |  | [optional] 

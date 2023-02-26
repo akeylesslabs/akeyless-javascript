@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import CertificateIssueInfo from './CertificateIssueInfo';
+import GatewayBasicInfo from './GatewayBasicInfo';
 import ItemGeneralInfo from './ItemGeneralInfo';
 import ItemTargetAssociation from './ItemTargetAssociation';
 import ItemVersion from './ItemVersion';
@@ -22,7 +23,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 3.2.5
+ * @version 3.2.6
  */
 class Item {
     /**
@@ -88,6 +89,9 @@ class Item {
             }
             if (data.hasOwnProperty('display_id')) {
                 obj['display_id'] = ApiClient.convertToType(data['display_id'], 'String');
+            }
+            if (data.hasOwnProperty('gateway_details')) {
+                obj['gateway_details'] = ApiClient.convertToType(data['gateway_details'], [GatewayBasicInfo]);
             }
             if (data.hasOwnProperty('is_access_request_enabled')) {
                 obj['is_access_request_enabled'] = ApiClient.convertToType(data['is_access_request_enabled'], 'Boolean');
@@ -227,6 +231,11 @@ Item.prototype['deletion_date'] = undefined;
  * @member {String} display_id
  */
 Item.prototype['display_id'] = undefined;
+
+/**
+ * @member {Array.<module:model/GatewayBasicInfo>} gateway_details
+ */
+Item.prototype['gateway_details'] = undefined;
 
 /**
  * @member {Boolean} is_access_request_enabled

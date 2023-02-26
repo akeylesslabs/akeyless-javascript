@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReverseRBAC model module.
  * @module model/ReverseRBAC
- * @version 3.2.5
+ * @version 3.2.6
  */
 class ReverseRBAC {
     /**

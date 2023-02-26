@@ -18,7 +18,7 @@ import MigrationGeneral from './MigrationGeneral';
 /**
  * The HashiMigration model module.
  * @module model/HashiMigration
- * @version 3.2.5
+ * @version 3.2.6
  */
 class HashiMigration {
     /**

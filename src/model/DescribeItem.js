@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeItem model module.
  * @module model/DescribeItem
- * @version 3.2.5
+ * @version 3.2.6
  */
 class DescribeItem {
     /**
@@ -52,6 +52,9 @@ class DescribeItem {
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
             }
+            if (data.hasOwnProperty('gateway-details')) {
+                obj['gateway-details'] = ApiClient.convertToType(data['gateway-details'], 'Boolean');
+            }
             if (data.hasOwnProperty('item-id')) {
                 obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
             }
@@ -82,6 +85,13 @@ class DescribeItem {
  * @member {String} display-id
  */
 DescribeItem.prototype['display-id'] = undefined;
+
+/**
+ * Indicate if the item should return with clusters details (url, etc)
+ * @member {Boolean} gateway-details
+ * @default false
+ */
+DescribeItem.prototype['gateway-details'] = false;
 
 /**
  * Item id of the item

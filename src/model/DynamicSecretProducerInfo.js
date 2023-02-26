@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretProducerInfo model module.
  * @module model/DynamicSecretProducerInfo
- * @version 3.2.5
+ * @version 3.2.6
  */
 class DynamicSecretProducerInfo {
     /**
@@ -54,6 +54,12 @@ class DynamicSecretProducerInfo {
             if (data.hasOwnProperty('gw_cluster_id')) {
                 obj['gw_cluster_id'] = ApiClient.convertToType(data['gw_cluster_id'], 'Number');
             }
+            if (data.hasOwnProperty('k8s_allowed_namespaces')) {
+                obj['k8s_allowed_namespaces'] = ApiClient.convertToType(data['k8s_allowed_namespaces'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_dynamic_mode')) {
+                obj['k8s_dynamic_mode'] = ApiClient.convertToType(data['k8s_dynamic_mode'], 'Boolean');
+            }
             if (data.hasOwnProperty('producer_last_keep_alive')) {
                 obj['producer_last_keep_alive'] = ApiClient.convertToType(data['producer_last_keep_alive'], 'String');
             }
@@ -82,6 +88,18 @@ DynamicSecretProducerInfo.prototype['failure_message'] = undefined;
  * @member {Number} gw_cluster_id
  */
 DynamicSecretProducerInfo.prototype['gw_cluster_id'] = undefined;
+
+/**
+ * Relevant only for generic k8s producer
+ * @member {String} k8s_allowed_namespaces
+ */
+DynamicSecretProducerInfo.prototype['k8s_allowed_namespaces'] = undefined;
+
+/**
+ * Relevant only for generic k8s producer
+ * @member {Boolean} k8s_dynamic_mode
+ */
+DynamicSecretProducerInfo.prototype['k8s_dynamic_mode'] = undefined;
 
 /**
  * @member {String} producer_last_keep_alive

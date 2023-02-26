@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **displayId** | **String** | The display id of the item | [optional] 
+**gatewayDetails** | **Boolean** | Indicate if the item should return with clusters details (url, etc) | [optional] [default to false]
 **itemId** | **Number** | Item id of the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Item name | 

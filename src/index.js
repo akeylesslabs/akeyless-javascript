@@ -202,6 +202,7 @@ import ExternalKMSKeyId from './model/ExternalKMSKeyId';
 import GCPAccessRules from './model/GCPAccessRules';
 import GCPPayload from './model/GCPPayload';
 import GCPSecretsMigration from './model/GCPSecretsMigration';
+import GatewayBasicInfo from './model/GatewayBasicInfo';
 import GatewayCreateK8SAuthConfig from './model/GatewayCreateK8SAuthConfig';
 import GatewayCreateK8SAuthConfigOutput from './model/GatewayCreateK8SAuthConfigOutput';
 import GatewayCreateMigration from './model/GatewayCreateMigration';
@@ -651,7 +652,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.2.5
+* @version 3.2.6
 */
 export {
     /**
@@ -1793,6 +1794,12 @@ export {
      * @property {module:model/GCPSecretsMigration}
      */
     GCPSecretsMigration,
+
+    /**
+     * The GatewayBasicInfo model constructor.
+     * @property {module:model/GatewayBasicInfo}
+     */
+    GatewayBasicInfo,
 
     /**
      * The GatewayCreateK8SAuthConfig model constructor.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerNativeK8S model module.
  * @module model/GatewayCreateProducerNativeK8S
- * @version 3.2.5
+ * @version 3.2.6
  */
 class GatewayCreateProducerNativeK8S {
     /**
@@ -56,6 +56,9 @@ class GatewayCreateProducerNativeK8S {
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
+            if (data.hasOwnProperty('k8s-allowed-namespaces')) {
+                obj['k8s-allowed-namespaces'] = ApiClient.convertToType(data['k8s-allowed-namespaces'], 'String');
+            }
             if (data.hasOwnProperty('k8s-cluster-ca-cert')) {
                 obj['k8s-cluster-ca-cert'] = ApiClient.convertToType(data['k8s-cluster-ca-cert'], 'String');
             }
@@ -68,8 +71,20 @@ class GatewayCreateProducerNativeK8S {
             if (data.hasOwnProperty('k8s-namespace')) {
                 obj['k8s-namespace'] = ApiClient.convertToType(data['k8s-namespace'], 'String');
             }
+            if (data.hasOwnProperty('k8s-predefined-role-name')) {
+                obj['k8s-predefined-role-name'] = ApiClient.convertToType(data['k8s-predefined-role-name'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-predefined-role-type')) {
+                obj['k8s-predefined-role-type'] = ApiClient.convertToType(data['k8s-predefined-role-type'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-rolebinding-yaml-def')) {
+                obj['k8s-rolebinding-yaml-def'] = ApiClient.convertToType(data['k8s-rolebinding-yaml-def'], 'String');
+            }
             if (data.hasOwnProperty('k8s-service-account')) {
                 obj['k8s-service-account'] = ApiClient.convertToType(data['k8s-service-account'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-service-account-type')) {
+                obj['k8s-service-account-type'] = ApiClient.convertToType(data['k8s-service-account-type'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -137,6 +152,12 @@ GatewayCreateProducerNativeK8S.prototype['delete_protection'] = undefined;
 GatewayCreateProducerNativeK8S.prototype['json'] = false;
 
 /**
+ * Comma-separated list of allowed K8S namespaces for the generated ServiceAccount (relevant only for k8s-service-account-type=dynamic)
+ * @member {String} k8s-allowed-namespaces
+ */
+GatewayCreateProducerNativeK8S.prototype['k8s-allowed-namespaces'] = undefined;
+
+/**
  * K8S cluster CA certificate
  * @member {String} k8s-cluster-ca-cert
  */
@@ -161,10 +182,34 @@ GatewayCreateProducerNativeK8S.prototype['k8s-cluster-token'] = undefined;
 GatewayCreateProducerNativeK8S.prototype['k8s-namespace'] = undefined;
 
 /**
+ * The pre-existing Role or ClusterRole name to bind the generated ServiceAccount to (relevant only for k8s-service-account-type=dynamic)
+ * @member {String} k8s-predefined-role-name
+ */
+GatewayCreateProducerNativeK8S.prototype['k8s-predefined-role-name'] = undefined;
+
+/**
+ * Specifies the type of the pre-existing K8S role [Role, ClusterRole] (relevant only for k8s-service-account-type=dynamic)
+ * @member {String} k8s-predefined-role-type
+ */
+GatewayCreateProducerNativeK8S.prototype['k8s-predefined-role-type'] = undefined;
+
+/**
+ * Path to yaml file that contains definitions of K8S role and role binding (relevant only for k8s-service-account-type=dynamic)
+ * @member {String} k8s-rolebinding-yaml-def
+ */
+GatewayCreateProducerNativeK8S.prototype['k8s-rolebinding-yaml-def'] = undefined;
+
+/**
  * K8S ServiceAccount to extract token from.
  * @member {String} k8s-service-account
  */
 GatewayCreateProducerNativeK8S.prototype['k8s-service-account'] = undefined;
+
+/**
+ * K8S ServiceAccount type [fixed, dynamic].
+ * @member {String} k8s-service-account-type
+ */
+GatewayCreateProducerNativeK8S.prototype['k8s-service-account-type'] = undefined;
 
 /**
  * Producer name
