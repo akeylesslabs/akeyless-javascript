@@ -19,7 +19,7 @@ import SharingPolicyInfo from './SharingPolicyInfo';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 3.2.7
+ * @version 3.2.8
  */
 class AccountGeneralSettings {
     /**

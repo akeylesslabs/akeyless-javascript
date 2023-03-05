@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RequestAccessOutput model module.
  * @module model/RequestAccessOutput
- * @version 3.2.7
+ * @version 3.2.8
  */
 class RequestAccessOutput {
     /**
