@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCertificateOutput model module.
  * @module model/UpdateCertificateOutput
- * @version 3.2.6
+ * @version 3.2.7
  */
 class UpdateCertificateOutput {
     /**

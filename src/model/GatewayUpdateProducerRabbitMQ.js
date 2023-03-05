@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRabbitMQ model module.
  * @module model/GatewayUpdateProducerRabbitMQ
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayUpdateProducerRabbitMQ {
     /**
@@ -239,7 +239,7 @@ GatewayUpdateProducerRabbitMQ.prototype['secure-access-web-browsing'] = false;
 GatewayUpdateProducerRabbitMQ.prototype['secure-access-web-proxy'] = false;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayUpdateProducerRabbitMQ.prototype['tags'] = undefined;

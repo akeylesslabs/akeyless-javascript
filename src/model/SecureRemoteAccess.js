@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecureRemoteAccess model module.
  * @module model/SecureRemoteAccess
- * @version 3.2.6
+ * @version 3.2.7
  */
 class SecureRemoteAccess {
     /**

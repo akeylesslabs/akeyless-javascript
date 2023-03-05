@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Detokenize model module.
  * @module model/Detokenize
- * @version 3.2.6
+ * @version 3.2.7
  */
 class Detokenize {
     /**

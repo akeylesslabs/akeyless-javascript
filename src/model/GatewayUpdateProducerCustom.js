@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerCustom model module.
  * @module model/GatewayUpdateProducerCustom
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayUpdateProducerCustom {
     /**
@@ -177,7 +177,7 @@ GatewayUpdateProducerCustom.prototype['revoke-sync-url'] = undefined;
 GatewayUpdateProducerCustom.prototype['rotate-sync-url'] = undefined;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayUpdateProducerCustom.prototype['tags'] = undefined;

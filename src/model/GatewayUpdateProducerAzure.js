@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerAzure model module.
  * @module model/GatewayUpdateProducerAzure
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayUpdateProducerAzure {
     /**
@@ -229,7 +229,7 @@ GatewayUpdateProducerAzure.prototype['secure-access-web-browsing'] = false;
 GatewayUpdateProducerAzure.prototype['secure-access-web-proxy'] = false;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayUpdateProducerAzure.prototype['tags'] = undefined;

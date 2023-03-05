@@ -16,18 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLinkedTarget model module.
  * @module model/CreateLinkedTarget
- * @version 3.2.6
+ * @version 3.2.7
  */
 class CreateLinkedTarget {
     /**
      * Constructs a new <code>CreateLinkedTarget</code>.
      * @alias module:model/CreateLinkedTarget
-     * @param hosts {String} A comma seperated list of server hosts.
      * @param name {String} Target name
      */
-    constructor(hosts, name) { 
+    constructor(name) { 
         
-        CreateLinkedTarget.initialize(this, hosts, name);
+        CreateLinkedTarget.initialize(this, name);
     }
 
     /**
@@ -35,8 +34,7 @@ class CreateLinkedTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hosts, name) { 
-        obj['hosts'] = hosts;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 
@@ -51,9 +49,6 @@ class CreateLinkedTarget {
         if (data) {
             obj = obj || new CreateLinkedTarget();
 
-            if (data.hasOwnProperty('comment')) {
-                obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
-            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -83,19 +78,13 @@ class CreateLinkedTarget {
 }
 
 /**
- * Deprecated - use description
- * @member {String} comment
- */
-CreateLinkedTarget.prototype['comment'] = undefined;
-
-/**
  * Description of the object
  * @member {String} description
  */
 CreateLinkedTarget.prototype['description'] = undefined;
 
 /**
- * A comma seperated list of server hosts.
+ * A comma seperated list of server hosts and server descriptions joined by semicolon ';' (i.e. 'server-dev.com;My Dev server,server-prod.com;My Prod server description')
  * @member {String} hosts
  */
 CreateLinkedTarget.prototype['hosts'] = undefined;

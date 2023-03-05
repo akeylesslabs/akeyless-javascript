@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRdp model module.
  * @module model/GatewayCreateProducerRdp
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayCreateProducerRdp {
     /**
@@ -224,7 +224,7 @@ GatewayCreateProducerRdp.prototype['secure-access-rdp-domain'] = undefined;
 GatewayCreateProducerRdp.prototype['secure-access-rdp-user'] = undefined;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayCreateProducerRdp.prototype['tags'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodCert model module.
  * @module model/UpdateAuthMethodCert
- * @version 3.2.6
+ * @version 3.2.7
  */
 class UpdateAuthMethodCert {
     /**
@@ -54,6 +54,9 @@ class UpdateAuthMethodCert {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('allowed-cors')) {
+                obj['allowed-cors'] = ApiClient.convertToType(data['allowed-cors'], 'String');
             }
             if (data.hasOwnProperty('bound-common-names')) {
                 obj['bound-common-names'] = ApiClient.convertToType(data['bound-common-names'], ['String']);
@@ -122,6 +125,12 @@ class UpdateAuthMethodCert {
  * @default 0
  */
 UpdateAuthMethodCert.prototype['access-expires'] = 0;
+
+/**
+ * Comma separated list of allowed CORS domains to be validated as part of the authentication flow.
+ * @member {String} allowed-cors
+ */
+UpdateAuthMethodCert.prototype['allowed-cors'] = undefined;
 
 /**
  * A list of names. At least one must exist in the Common Name. Supports globbing.

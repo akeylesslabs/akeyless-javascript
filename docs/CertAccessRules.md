@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**allowedCors** | **[String]** | a list of allowed cors domains if used for browser authentication | [optional] 
 **boundCommonNames** | **[String]** | A list of names. At least one must exist in the Common Name. Supports globbing. | [optional] 
 **boundDnsSans** | **[String]** | A list of DNS names. At least one must exist in the SANs. Supports globbing. | [optional] 
 **boundEmailSans** | **[String]** | A list of Email Addresses. At least one must exist in the SANs. Supports globbing. | [optional] 

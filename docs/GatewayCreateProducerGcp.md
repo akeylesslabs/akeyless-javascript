@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **roleBinding** | **String** | Role binding definitions in json format | [optional] 
 **serviceAccountType** | **String** | The type of the gcp dynamic secret. Options[fixed, dynamic] | [default to &#39;fixed&#39;]
-**tags** | **[String]** | List of the tags attached to this secret | [optional] 
+**tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | Target name | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 

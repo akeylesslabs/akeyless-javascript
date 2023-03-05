@@ -16,18 +16,17 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLinkedTarget model module.
  * @module model/UpdateLinkedTarget
- * @version 3.2.6
+ * @version 3.2.7
  */
 class UpdateLinkedTarget {
     /**
      * Constructs a new <code>UpdateLinkedTarget</code>.
      * @alias module:model/UpdateLinkedTarget
-     * @param hosts {String} A comma seperated list of server hosts.
      * @param name {String} Linked Target name
      */
-    constructor(hosts, name) { 
+    constructor(name) { 
         
-        UpdateLinkedTarget.initialize(this, hosts, name);
+        UpdateLinkedTarget.initialize(this, name);
     }
 
     /**
@@ -35,8 +34,7 @@ class UpdateLinkedTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hosts, name) { 
-        obj['hosts'] = hosts;
+    static initialize(obj, name) { 
         obj['name'] = name;
     }
 
@@ -53,9 +51,6 @@ class UpdateLinkedTarget {
 
             if (data.hasOwnProperty('add-hosts')) {
                 obj['add-hosts'] = ApiClient.convertToType(data['add-hosts'], 'String');
-            }
-            if (data.hasOwnProperty('comment')) {
-                obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -95,16 +90,10 @@ class UpdateLinkedTarget {
 }
 
 /**
- * Comma separated list of new hosts that will be added to the Linked Target hosts.
+ * A comma seperated list of new server hosts and server descriptions joined by semicolon ';' that will be added to the Linked Target hosts.
  * @member {String} add-hosts
  */
 UpdateLinkedTarget.prototype['add-hosts'] = undefined;
-
-/**
- * Deprecated - use description
- * @member {String} comment
- */
-UpdateLinkedTarget.prototype['comment'] = undefined;
 
 /**
  * Description of the object
@@ -113,7 +102,7 @@ UpdateLinkedTarget.prototype['comment'] = undefined;
 UpdateLinkedTarget.prototype['description'] = undefined;
 
 /**
- * A comma seperated list of server hosts.
+ * A comma seperated list of server hosts and server descriptions joined by semicolon ';' (i.e. 'server-dev.com;My Dev server,server-prod.com;My Prod server description')
  * @member {String} hosts
  */
 UpdateLinkedTarget.prototype['hosts'] = undefined;

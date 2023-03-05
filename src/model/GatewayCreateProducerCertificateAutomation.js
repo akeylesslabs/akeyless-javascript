@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCertificateAutomation model module.
  * @module model/GatewayCreateProducerCertificateAutomation
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayCreateProducerCertificateAutomation {
     /**
@@ -211,7 +211,7 @@ GatewayCreateProducerCertificateAutomation.prototype['signer-key-name'] = undefi
 GatewayCreateProducerCertificateAutomation.prototype['store-private-key'] = undefined;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayCreateProducerCertificateAutomation.prototype['tags'] = undefined;

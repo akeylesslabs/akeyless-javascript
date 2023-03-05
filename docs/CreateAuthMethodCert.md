@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessExpires** | **Number** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
+**allowedCors** | **String** | Comma separated list of allowed CORS domains to be validated as part of the authentication flow. | [optional] 
 **boundCommonNames** | **[String]** | A list of names. At least one must exist in the Common Name. Supports globbing. | [optional] 
 **boundDnsSans** | **[String]** | A list of DNS names. At least one must exist in the SANs. Supports globbing. | [optional] 
 **boundEmailSans** | **[String]** | A list of Email Addresses. At least one must exist in the SANs. Supports globbing. | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAws model module.
  * @module model/GatewayCreateProducerAws
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayCreateProducerAws {
     /**
@@ -279,7 +279,7 @@ GatewayCreateProducerAws.prototype['secure-access-web-browsing'] = false;
 GatewayCreateProducerAws.prototype['secure-access-web-proxy'] = false;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayCreateProducerAws.prototype['tags'] = undefined;

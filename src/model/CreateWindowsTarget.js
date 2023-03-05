@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateWindowsTarget model module.
  * @module model/CreateWindowsTarget
- * @version 3.2.6
+ * @version 3.2.7
  */
 class CreateWindowsTarget {
     /**
@@ -49,9 +49,6 @@ class CreateWindowsTarget {
         if (data) {
             obj = obj || new CreateWindowsTarget();
 
-            if (data.hasOwnProperty('comment')) {
-                obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
-            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -70,8 +67,8 @@ class CreateWindowsTarget {
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
-            if (data.hasOwnProperty('rdp-port')) {
-                obj['rdp-port'] = ApiClient.convertToType(data['rdp-port'], 'String');
+            if (data.hasOwnProperty('port')) {
+                obj['port'] = ApiClient.convertToType(data['port'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -88,12 +85,6 @@ class CreateWindowsTarget {
 
 
 }
-
-/**
- * Deprecated - use description
- * @member {String} comment
- */
-CreateWindowsTarget.prototype['comment'] = undefined;
 
 /**
  * Description of the object
@@ -133,11 +124,11 @@ CreateWindowsTarget.prototype['name'] = undefined;
 CreateWindowsTarget.prototype['password'] = undefined;
 
 /**
- * Server port for RDP (Remote Desktop Protocol)
- * @member {String} rdp-port
- * @default '3389'
+ * Server WinRM HTTPS port
+ * @member {String} port
+ * @default '5986'
  */
-CreateWindowsTarget.prototype['rdp-port'] = '3389';
+CreateWindowsTarget.prototype['port'] = '5986';
 
 /**
  * Authentication token (see `/auth` and `/configure`)

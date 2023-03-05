@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 3.2.6
+ * @version 3.2.7
  */
 class CreateClassicKey {
     /**
@@ -160,7 +160,7 @@ CreateClassicKey.prototype['name'] = undefined;
 CreateClassicKey.prototype['protection-key-name'] = undefined;
 
 /**
- * List of the tags attached to this classic key
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 CreateClassicKey.prototype['tags'] = undefined;

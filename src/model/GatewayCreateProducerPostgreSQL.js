@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerPostgreSQL model module.
  * @module model/GatewayCreateProducerPostgreSQL
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayCreateProducerPostgreSQL {
     /**
@@ -231,7 +231,7 @@ GatewayCreateProducerPostgreSQL.prototype['secure-access-web'] = false;
 GatewayCreateProducerPostgreSQL.prototype['ssl'] = false;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayCreateProducerPostgreSQL.prototype['tags'] = undefined;

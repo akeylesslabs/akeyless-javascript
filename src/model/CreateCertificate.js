@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateCertificate model module.
  * @module model/CreateCertificate
- * @version 3.2.6
+ * @version 3.2.7
  */
 class CreateCertificate {
     /**
@@ -148,7 +148,7 @@ CreateCertificate.prototype['metadata'] = undefined;
 CreateCertificate.prototype['name'] = undefined;
 
 /**
- * List of the tags attached to this certificate
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 CreateCertificate.prototype['tags'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGcp model module.
  * @module model/GatewayCreateProducerGcp
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayCreateProducerGcp {
     /**
@@ -175,7 +175,7 @@ GatewayCreateProducerGcp.prototype['role-binding'] = undefined;
 GatewayCreateProducerGcp.prototype['service-account-type'] = 'fixed';
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayCreateProducerGcp.prototype['tags'] = undefined;

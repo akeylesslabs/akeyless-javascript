@@ -17,13 +17,14 @@ import GatewayBasicInfo from './GatewayBasicInfo';
 import ItemGeneralInfo from './ItemGeneralInfo';
 import ItemTargetAssociation from './ItemTargetAssociation';
 import ItemVersion from './ItemVersion';
+import LinkedDetails from './LinkedDetails';
 import RuleAssigner from './RuleAssigner';
 import TargetItemVersion from './TargetItemVersion';
 
 /**
  * The Item model module.
  * @module model/Item
- * @version 3.2.6
+ * @version 3.2.7
  */
 class Item {
     /**
@@ -137,6 +138,9 @@ class Item {
             }
             if (data.hasOwnProperty('last_version')) {
                 obj['last_version'] = ApiClient.convertToType(data['last_version'], 'Number');
+            }
+            if (data.hasOwnProperty('linked_details')) {
+                obj['linked_details'] = LinkedDetails.constructFromObject(data['linked_details']);
             }
             if (data.hasOwnProperty('modification_date')) {
                 obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
@@ -312,6 +316,11 @@ Item.prototype['item_versions'] = undefined;
  * @member {Number} last_version
  */
 Item.prototype['last_version'] = undefined;
+
+/**
+ * @member {module:model/LinkedDetails} linked_details
+ */
+Item.prototype['linked_details'] = undefined;
 
 /**
  * @member {Date} modification_date

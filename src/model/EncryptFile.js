@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptFile model module.
  * @module model/EncryptFile
- * @version 3.2.6
+ * @version 3.2.7
  */
 class EncryptFile {
     /**
@@ -54,9 +54,6 @@ class EncryptFile {
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
             }
-            if (data.hasOwnProperty('encryption-context')) {
-                obj['encryption-context'] = ApiClient.convertToType(data['encryption-context'], {'String': 'String'});
-            }
             if (data.hasOwnProperty('in')) {
                 obj['in'] = ApiClient.convertToType(data['in'], 'String');
             }
@@ -90,12 +87,6 @@ class EncryptFile {
  * @member {String} display-id
  */
 EncryptFile.prototype['display-id'] = undefined;
-
-/**
- * name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the same value must be supplied to the decrypt command or decryption will fail
- * @member {Object.<String, String>} encryption-context
- */
-EncryptFile.prototype['encryption-context'] = undefined;
 
 /**
  * Path to the file to be encrypted. If not provided, the content will be taken from stdin

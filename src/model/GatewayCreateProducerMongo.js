@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMongo model module.
  * @module model/GatewayCreateProducerMongo
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayCreateProducerMongo {
     /**
@@ -256,7 +256,7 @@ GatewayCreateProducerMongo.prototype['secure-access-host'] = undefined;
 GatewayCreateProducerMongo.prototype['secure-access-web'] = false;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayCreateProducerMongo.prototype['tags'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 3.2.6
+ * @version 3.2.7
  */
 class TargetTypeDetailsInput {
     /**
@@ -213,7 +213,7 @@ class TargetTypeDetailsInput {
                 obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
             }
             if (data.hasOwnProperty('hosts')) {
-                obj['hosts'] = ApiClient.convertToType(data['hosts'], ['String']);
+                obj['hosts'] = ApiClient.convertToType(data['hosts'], {'String': 'String'});
             }
             if (data.hasOwnProperty('implementation_type')) {
                 obj['implementation_type'] = ApiClient.convertToType(data['implementation_type'], 'String');
@@ -307,9 +307,6 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('rabbitmq_server_user')) {
                 obj['rabbitmq_server_user'] = ApiClient.convertToType(data['rabbitmq_server_user'], 'String');
-            }
-            if (data.hasOwnProperty('rdp_port')) {
-                obj['rdp_port'] = ApiClient.convertToType(data['rdp_port'], 'String');
             }
             if (data.hasOwnProperty('security_token')) {
                 obj['security_token'] = ApiClient.convertToType(data['security_token'], 'String');
@@ -650,7 +647,7 @@ TargetTypeDetailsInput.prototype['host'] = undefined;
 TargetTypeDetailsInput.prototype['hostname'] = undefined;
 
 /**
- * @member {Array.<String>} hosts
+ * @member {Object.<String, String>} hosts
  */
 TargetTypeDetailsInput.prototype['hosts'] = undefined;
 
@@ -811,11 +808,6 @@ TargetTypeDetailsInput.prototype['rabbitmq_server_uri'] = undefined;
  * @member {String} rabbitmq_server_user
  */
 TargetTypeDetailsInput.prototype['rabbitmq_server_user'] = undefined;
-
-/**
- * @member {String} rdp_port
- */
-TargetTypeDetailsInput.prototype['rdp_port'] = undefined;
 
 /**
  * @member {String} security_token

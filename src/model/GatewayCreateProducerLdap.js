@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerLdap model module.
  * @module model/GatewayCreateProducerLdap
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayCreateProducerLdap {
     /**
@@ -165,7 +165,7 @@ GatewayCreateProducerLdap.prototype['name'] = undefined;
 GatewayCreateProducerLdap.prototype['producer-encryption-key-name'] = undefined;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayCreateProducerLdap.prototype['tags'] = undefined;

@@ -175,6 +175,7 @@ import DeleteRoles from './model/DeleteRoles';
 import DeleteTarget from './model/DeleteTarget';
 import DeleteTargetAssociation from './model/DeleteTargetAssociation';
 import DeleteTargets from './model/DeleteTargets';
+import DescribeAssoc from './model/DescribeAssoc';
 import DescribeItem from './model/DescribeItem';
 import DescribePermissions from './model/DescribePermissions';
 import DescribePermissionsOutput from './model/DescribePermissionsOutput';
@@ -262,6 +263,8 @@ import GatewayDeleteK8SAuthConfigOutput from './model/GatewayDeleteK8SAuthConfig
 import GatewayDeleteMigration from './model/GatewayDeleteMigration';
 import GatewayDeleteProducer from './model/GatewayDeleteProducer';
 import GatewayDeleteProducerOutput from './model/GatewayDeleteProducerOutput';
+import GatewayDownloadCustomerFragments from './model/GatewayDownloadCustomerFragments';
+import GatewayDownloadCustomerFragmentsOutput from './model/GatewayDownloadCustomerFragmentsOutput';
 import GatewayGetConfig from './model/GatewayGetConfig';
 import GatewayGetK8SAuthConfig from './model/GatewayGetK8SAuthConfig';
 import GatewayGetK8SAuthConfigOutput from './model/GatewayGetK8SAuthConfigOutput';
@@ -381,6 +384,8 @@ import GwClusterIdentity from './model/GwClusterIdentity';
 import HashiMigration from './model/HashiMigration';
 import HashiPayload from './model/HashiPayload';
 import HuaweiAccessRules from './model/HuaweiAccessRules';
+import ImportPasswords from './model/ImportPasswords';
+import ImportPasswordsOutput from './model/ImportPasswordsOutput';
 import ImporterInfo from './model/ImporterInfo';
 import Item from './model/Item';
 import ItemGeneralInfo from './model/ItemGeneralInfo';
@@ -424,6 +429,7 @@ import LastConfigChange from './model/LastConfigChange';
 import LastStatusInfo from './model/LastStatusInfo';
 import LdapConfigPart from './model/LdapConfigPart';
 import LeadershipConfigPart from './model/LeadershipConfigPart';
+import LinkedDetails from './model/LinkedDetails';
 import ListAuthMethods from './model/ListAuthMethods';
 import ListAuthMethodsOutput from './model/ListAuthMethodsOutput';
 import ListGateways from './model/ListGateways';
@@ -473,6 +479,7 @@ import ReverseRBACClient from './model/ReverseRBACClient';
 import ReverseRBACOutput from './model/ReverseRBACOutput';
 import RevokeCreds from './model/RevokeCreds';
 import Role from './model/Role';
+import RoleAssociationDetails from './model/RoleAssociationDetails';
 import RoleAuthMethodAssociation from './model/RoleAuthMethodAssociation';
 import RollbackSecret from './model/RollbackSecret';
 import RollbackSecretOutput from './model/RollbackSecretOutput';
@@ -652,7 +659,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.2.6
+* @version 3.2.7
 */
 export {
     /**
@@ -1634,6 +1641,12 @@ export {
     DeleteTargets,
 
     /**
+     * The DescribeAssoc model constructor.
+     * @property {module:model/DescribeAssoc}
+     */
+    DescribeAssoc,
+
+    /**
      * The DescribeItem model constructor.
      * @property {module:model/DescribeItem}
      */
@@ -2154,6 +2167,18 @@ export {
      * @property {module:model/GatewayDeleteProducerOutput}
      */
     GatewayDeleteProducerOutput,
+
+    /**
+     * The GatewayDownloadCustomerFragments model constructor.
+     * @property {module:model/GatewayDownloadCustomerFragments}
+     */
+    GatewayDownloadCustomerFragments,
+
+    /**
+     * The GatewayDownloadCustomerFragmentsOutput model constructor.
+     * @property {module:model/GatewayDownloadCustomerFragmentsOutput}
+     */
+    GatewayDownloadCustomerFragmentsOutput,
 
     /**
      * The GatewayGetConfig model constructor.
@@ -2870,6 +2895,18 @@ export {
     HuaweiAccessRules,
 
     /**
+     * The ImportPasswords model constructor.
+     * @property {module:model/ImportPasswords}
+     */
+    ImportPasswords,
+
+    /**
+     * The ImportPasswordsOutput model constructor.
+     * @property {module:model/ImportPasswordsOutput}
+     */
+    ImportPasswordsOutput,
+
+    /**
      * The ImporterInfo model constructor.
      * @property {module:model/ImporterInfo}
      */
@@ -3126,6 +3163,12 @@ export {
      * @property {module:model/LeadershipConfigPart}
      */
     LeadershipConfigPart,
+
+    /**
+     * The LinkedDetails model constructor.
+     * @property {module:model/LinkedDetails}
+     */
+    LinkedDetails,
 
     /**
      * The ListAuthMethods model constructor.
@@ -3420,6 +3463,12 @@ export {
      * @property {module:model/Role}
      */
     Role,
+
+    /**
+     * The RoleAssociationDetails model constructor.
+     * @property {module:model/RoleAssociationDetails}
+     */
+    RoleAssociationDetails,
 
     /**
      * The RoleAuthMethodAssociation model constructor.

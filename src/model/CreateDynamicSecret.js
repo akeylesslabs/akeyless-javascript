@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDynamicSecret model module.
  * @module model/CreateDynamicSecret
- * @version 3.2.6
+ * @version 3.2.7
  */
 class CreateDynamicSecret {
     /**
@@ -121,7 +121,7 @@ CreateDynamicSecret.prototype['metadata'] = undefined;
 CreateDynamicSecret.prototype['name'] = undefined;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 CreateDynamicSecret.prototype['tags'] = undefined;

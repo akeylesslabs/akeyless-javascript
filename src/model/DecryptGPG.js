@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptGPG model module.
  * @module model/DecryptGPG
- * @version 3.2.6
+ * @version 3.2.7
  */
 class DecryptGPG {
     /**

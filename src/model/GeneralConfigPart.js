@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GeneralConfigPart model module.
  * @module model/GeneralConfigPart
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GeneralConfigPart {
     /**
@@ -55,6 +55,9 @@ class GeneralConfigPart {
             }
             if (data.hasOwnProperty('display_name')) {
                 obj['display_name'] = ApiClient.convertToType(data['display_name'], 'String');
+            }
+            if (data.hasOwnProperty('enable_sni_proxy')) {
+                obj['enable_sni_proxy'] = ApiClient.convertToType(data['enable_sni_proxy'], 'Boolean');
             }
             if (data.hasOwnProperty('enable_tls')) {
                 obj['enable_tls'] = ApiClient.convertToType(data['enable_tls'], 'Boolean');
@@ -102,6 +105,11 @@ GeneralConfigPart.prototype['api_token_ttl'] = undefined;
  * @member {String} display_name
  */
 GeneralConfigPart.prototype['display_name'] = undefined;
+
+/**
+ * @member {Boolean} enable_sni_proxy
+ */
+GeneralConfigPart.prototype['enable_sni_proxy'] = undefined;
 
 /**
  * @member {Boolean} enable_tls

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerGcp model module.
  * @module model/GatewayUpdateProducerGcp
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayUpdateProducerGcp {
     /**
@@ -184,7 +184,7 @@ GatewayUpdateProducerGcp.prototype['role-binding'] = undefined;
 GatewayUpdateProducerGcp.prototype['service-account-type'] = 'fixed';
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayUpdateProducerGcp.prototype['tags'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 3.2.6
+ * @version 3.2.7
  */
 class CreateSecret {
     /**
@@ -258,7 +258,7 @@ CreateSecret.prototype['secure-access-web-browsing'] = false;
 CreateSecret.prototype['secure-access-web-proxy'] = false;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 CreateSecret.prototype['tags'] = undefined;

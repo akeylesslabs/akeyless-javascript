@@ -133,6 +133,7 @@ import DeleteRoles from '../model/DeleteRoles';
 import DeleteTarget from '../model/DeleteTarget';
 import DeleteTargetAssociation from '../model/DeleteTargetAssociation';
 import DeleteTargets from '../model/DeleteTargets';
+import DescribeAssoc from '../model/DescribeAssoc';
 import DescribeItem from '../model/DescribeItem';
 import DescribePermissions from '../model/DescribePermissions';
 import DescribePermissionsOutput from '../model/DescribePermissionsOutput';
@@ -204,6 +205,8 @@ import GatewayDeleteK8SAuthConfigOutput from '../model/GatewayDeleteK8SAuthConfi
 import GatewayDeleteMigration from '../model/GatewayDeleteMigration';
 import GatewayDeleteProducer from '../model/GatewayDeleteProducer';
 import GatewayDeleteProducerOutput from '../model/GatewayDeleteProducerOutput';
+import GatewayDownloadCustomerFragments from '../model/GatewayDownloadCustomerFragments';
+import GatewayDownloadCustomerFragmentsOutput from '../model/GatewayDownloadCustomerFragmentsOutput';
 import GatewayGetConfig from '../model/GatewayGetConfig';
 import GatewayGetK8SAuthConfig from '../model/GatewayGetK8SAuthConfig';
 import GatewayGetK8SAuthConfigOutput from '../model/GatewayGetK8SAuthConfigOutput';
@@ -314,6 +317,8 @@ import GetTags from '../model/GetTags';
 import GetTarget from '../model/GetTarget';
 import GetTargetDetails from '../model/GetTargetDetails';
 import GetTargetDetailsOutput from '../model/GetTargetDetailsOutput';
+import ImportPasswords from '../model/ImportPasswords';
+import ImportPasswordsOutput from '../model/ImportPasswordsOutput';
 import Item from '../model/Item';
 import JSONError from '../model/JSONError';
 import KMIPClientGetResponse from '../model/KMIPClientGetResponse';
@@ -360,6 +365,7 @@ import RequestAccessOutput from '../model/RequestAccessOutput';
 import ReverseRBAC from '../model/ReverseRBAC';
 import ReverseRBACOutput from '../model/ReverseRBACOutput';
 import Role from '../model/Role';
+import RoleAssociationDetails from '../model/RoleAssociationDetails';
 import RollbackSecret from '../model/RollbackSecret';
 import RollbackSecretOutput from '../model/RollbackSecretOutput';
 import RotateKeyOutput from '../model/RotateKeyOutput';
@@ -481,7 +487,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.2.6
+* @version 3.2.7
 */
 export default class V2Api {
 
@@ -3208,6 +3214,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/DescribeAssoc} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RoleAssociationDetails} and HTTP response
+     */
+    describeAssocWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling describeAssoc");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RoleAssociationDetails;
+      return this.apiClient.callApi(
+        '/describe-role-am-assoc', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DescribeAssoc} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RoleAssociationDetails}
+     */
+    describeAssoc(body) {
+      return this.describeAssocWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/DescribeItem} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Item} and HTTP response
      */
@@ -4834,6 +4883,49 @@ export default class V2Api {
      */
     gatewayDeleteProducer(body) {
       return this.gatewayDeleteProducerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayDownloadCustomerFragments} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayDownloadCustomerFragmentsOutput} and HTTP response
+     */
+    gatewayDownloadCustomerFragmentsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayDownloadCustomerFragments");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayDownloadCustomerFragmentsOutput;
+      return this.apiClient.callApi(
+        '/gateway-download-customer-fragments', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayDownloadCustomerFragments} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayDownloadCustomerFragmentsOutput}
+     */
+    gatewayDownloadCustomerFragments(body) {
+      return this.gatewayDownloadCustomerFragmentsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7449,6 +7541,49 @@ export default class V2Api {
      */
     getTargetDetails(body) {
       return this.getTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/ImportPasswords} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ImportPasswordsOutput} and HTTP response
+     */
+    importPasswordsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling importPasswords");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ImportPasswordsOutput;
+      return this.apiClient.callApi(
+        '/import-passwords', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ImportPasswords} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ImportPasswordsOutput}
+     */
+    importPasswords(body) {
+      return this.importPasswordsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerArtifactory model module.
  * @module model/GatewayUpdateProducerArtifactory
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayUpdateProducerArtifactory {
     /**
@@ -168,7 +168,7 @@ GatewayUpdateProducerArtifactory.prototype['new-name'] = undefined;
 GatewayUpdateProducerArtifactory.prototype['producer-encryption-key-name'] = undefined;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayUpdateProducerArtifactory.prototype['tags'] = undefined;

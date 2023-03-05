@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerChef model module.
  * @module model/GatewayCreateProducerChef
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayCreateProducerChef {
     /**
@@ -156,7 +156,7 @@ GatewayCreateProducerChef.prototype['producer-encryption-key-name'] = undefined;
 GatewayCreateProducerChef.prototype['skip-ssl'] = true;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayCreateProducerChef.prototype['tags'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerDockerhub model module.
  * @module model/GatewayCreateProducerDockerhub
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayCreateProducerDockerhub {
     /**
@@ -137,7 +137,7 @@ GatewayCreateProducerDockerhub.prototype['name'] = undefined;
 GatewayCreateProducerDockerhub.prototype['producer-encryption-key-name'] = undefined;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayCreateProducerDockerhub.prototype['tags'] = undefined;

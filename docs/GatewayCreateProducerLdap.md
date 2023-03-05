@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **ldapUrl** | **String** | LDAP Server URL | [optional] 
 **name** | **String** | Producer name | 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
-**tags** | **[String]** | List of the tags attached to this secret | [optional] 
+**tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | Target name | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **tokenExpiration** | **String** | Token expiration | [optional] 

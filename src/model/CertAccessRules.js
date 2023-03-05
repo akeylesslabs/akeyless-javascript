@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CertAccessRules model module.
  * @module model/CertAccessRules
- * @version 3.2.6
+ * @version 3.2.7
  */
 class CertAccessRules {
     /**
@@ -47,6 +47,9 @@ class CertAccessRules {
         if (data) {
             obj = obj || new CertAccessRules();
 
+            if (data.hasOwnProperty('allowed_cors')) {
+                obj['allowed_cors'] = ApiClient.convertToType(data['allowed_cors'], ['String']);
+            }
             if (data.hasOwnProperty('bound_common_names')) {
                 obj['bound_common_names'] = ApiClient.convertToType(data['bound_common_names'], ['String']);
             }
@@ -80,6 +83,12 @@ class CertAccessRules {
 
 
 }
+
+/**
+ * a list of allowed cors domains if used for browser authentication
+ * @member {Array.<String>} allowed_cors
+ */
+CertAccessRules.prototype['allowed_cors'] = undefined;
 
 /**
  * A list of names. At least one must exist in the Common Name. Supports globbing.

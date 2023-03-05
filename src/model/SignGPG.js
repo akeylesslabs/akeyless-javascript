@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignGPG model module.
  * @module model/SignGPG
- * @version 3.2.6
+ * @version 3.2.7
  */
 class SignGPG {
     /**

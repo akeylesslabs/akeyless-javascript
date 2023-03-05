@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerNativeK8S model module.
  * @module model/GatewayUpdateProducerNativeK8S
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayUpdateProducerNativeK8S {
     /**
@@ -284,7 +284,7 @@ GatewayUpdateProducerNativeK8S.prototype['secure-access-web-browsing'] = false;
 GatewayUpdateProducerNativeK8S.prototype['secure-access-web-proxy'] = false;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayUpdateProducerNativeK8S.prototype['tags'] = undefined;

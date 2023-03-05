@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMySQL model module.
  * @module model/GatewayUpdateProducerMySQL
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayUpdateProducerMySQL {
     /**
@@ -258,7 +258,7 @@ GatewayUpdateProducerMySQL.prototype['ssl'] = false;
 GatewayUpdateProducerMySQL.prototype['ssl-certificate'] = undefined;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayUpdateProducerMySQL.prototype['tags'] = undefined;

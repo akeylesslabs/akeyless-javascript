@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerPing model module.
  * @module model/GatewayUpdateProducerPing
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayUpdateProducerPing {
     /**
@@ -267,7 +267,7 @@ GatewayUpdateProducerPing.prototype['ping-url'] = undefined;
 GatewayUpdateProducerPing.prototype['producer-encryption-key-name'] = undefined;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayUpdateProducerPing.prototype['tags'] = undefined;

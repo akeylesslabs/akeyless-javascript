@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRedshift model module.
  * @module model/GatewayCreateProducerRedshift
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayCreateProducerRedshift {
     /**
@@ -194,7 +194,7 @@ GatewayCreateProducerRedshift.prototype['secure-access-host'] = undefined;
 GatewayCreateProducerRedshift.prototype['ssl'] = false;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayCreateProducerRedshift.prototype['tags'] = undefined;

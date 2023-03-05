@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**comment** | **String** | Deprecated - use description | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **hostname** | **String** | Server hostname | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
@@ -13,7 +12,7 @@ Name | Type | Description | Notes
 **name** | **String** | Target name | 
 **newName** | **String** | New target name | [optional] 
 **password** | **String** | The privileged user password | [optional] 
-**rdpPort** | **String** | Server port for RDP (Remote Desktop Protocol) | [optional] [default to &#39;3389&#39;]
+**port** | **String** | Server WinRM HTTPS port | [optional] [default to &#39;5986&#39;]
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **updateVersion** | **Boolean** | Deprecated | [optional] 

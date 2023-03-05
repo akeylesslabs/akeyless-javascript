@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMSSQL model module.
  * @module model/GatewayUpdateProducerMSSQL
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayUpdateProducerMSSQL {
     /**
@@ -230,7 +230,7 @@ GatewayUpdateProducerMSSQL.prototype['secure-access-host'] = undefined;
 GatewayUpdateProducerMSSQL.prototype['secure-access-web'] = false;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayUpdateProducerMSSQL.prototype['tags'] = undefined;

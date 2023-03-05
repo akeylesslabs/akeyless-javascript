@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerSnowflake model module.
  * @module model/GatewayUpdateProducerSnowflake
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayUpdateProducerSnowflake {
     /**
@@ -176,7 +176,7 @@ GatewayUpdateProducerSnowflake.prototype['private-key-passphrase'] = undefined;
 GatewayUpdateProducerSnowflake.prototype['role'] = undefined;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayUpdateProducerSnowflake.prototype['tags'] = undefined;

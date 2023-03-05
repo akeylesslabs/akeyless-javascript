@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerEks model module.
  * @module model/GatewayCreateProducerEks
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayCreateProducerEks {
     /**
@@ -220,7 +220,7 @@ GatewayCreateProducerEks.prototype['secure-access-enable'] = undefined;
 GatewayCreateProducerEks.prototype['secure-access-web'] = false;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayCreateProducerEks.prototype['tags'] = undefined;

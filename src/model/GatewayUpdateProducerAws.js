@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerAws model module.
  * @module model/GatewayUpdateProducerAws
- * @version 3.2.6
+ * @version 3.2.7
  */
 class GatewayUpdateProducerAws {
     /**
@@ -288,7 +288,7 @@ GatewayUpdateProducerAws.prototype['secure-access-web-browsing'] = false;
 GatewayUpdateProducerAws.prototype['secure-access-web-proxy'] = false;
 
 /**
- * List of the tags attached to this secret
+ * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayUpdateProducerAws.prototype['tags'] = undefined;

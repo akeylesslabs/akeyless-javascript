@@ -16,17 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptFile model module.
  * @module model/DecryptFile
- * @version 3.2.6
+ * @version 3.2.7
  */
 class DecryptFile {
     /**
      * Constructs a new <code>DecryptFile</code>.
      * @alias module:model/DecryptFile
+     * @param _in {String} Path to the file to be decrypted. If not provided, the content will be taken from stdin
      * @param keyName {String} The name of the key to use in the decryption process
      */
-    constructor(keyName) { 
+    constructor(_in, keyName) { 
         
-        DecryptFile.initialize(this, keyName);
+        DecryptFile.initialize(this, _in, keyName);
     }
 
     /**
@@ -34,7 +35,8 @@ class DecryptFile {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, keyName) { 
+    static initialize(obj, _in, keyName) { 
+        obj['in'] = _in;
         obj['key-name'] = keyName;
     }
 
@@ -49,8 +51,14 @@ class DecryptFile {
         if (data) {
             obj = obj || new DecryptFile();
 
+            if (data.hasOwnProperty('cyphertext-header')) {
+                obj['cyphertext-header'] = ApiClient.convertToType(data['cyphertext-header'], 'String');
+            }
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
+            }
+            if (data.hasOwnProperty('in')) {
+                obj['in'] = ApiClient.convertToType(data['in'], 'String');
             }
             if (data.hasOwnProperty('item-id')) {
                 obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
@@ -60,6 +68,9 @@ class DecryptFile {
             }
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
+            }
+            if (data.hasOwnProperty('out')) {
+                obj['out'] = ApiClient.convertToType(data['out'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -75,10 +86,21 @@ class DecryptFile {
 }
 
 /**
+ * @member {String} cyphertext-header
+ */
+DecryptFile.prototype['cyphertext-header'] = undefined;
+
+/**
  * The display id of the key to use in the decryption process
  * @member {String} display-id
  */
 DecryptFile.prototype['display-id'] = undefined;
+
+/**
+ * Path to the file to be decrypted. If not provided, the content will be taken from stdin
+ * @member {String} in
+ */
+DecryptFile.prototype['in'] = undefined;
 
 /**
  * The item id of the key to use in the decryption process
@@ -98,6 +120,12 @@ DecryptFile.prototype['json'] = false;
  * @member {String} key-name
  */
 DecryptFile.prototype['key-name'] = undefined;
+
+/**
+ * Path to the output file. If not provided, the output will be sent to stdout
+ * @member {String} out
+ */
+DecryptFile.prototype['out'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
