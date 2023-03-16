@@ -99,6 +99,8 @@ import CreateDockerhubTargetOutput from './model/CreateDockerhubTargetOutput';
 import CreateDynamicSecret from './model/CreateDynamicSecret';
 import CreateEKSTarget from './model/CreateEKSTarget';
 import CreateEKSTargetOutput from './model/CreateEKSTargetOutput';
+import CreateESM from './model/CreateESM';
+import CreateESMOutput from './model/CreateESMOutput';
 import CreateEventForwarder from './model/CreateEventForwarder';
 import CreateEventForwarderOutput from './model/CreateEventForwarderOutput';
 import CreateGKETarget from './model/CreateGKETarget';
@@ -196,6 +198,15 @@ import EncryptGPGOutput from './model/EncryptGPGOutput';
 import EncryptOutput from './model/EncryptOutput';
 import EncryptWithClassicKey from './model/EncryptWithClassicKey';
 import EncryptWithClassicKeyOutput from './model/EncryptWithClassicKeyOutput';
+import EsmCreate from './model/EsmCreate';
+import EsmCreateSecretOutput from './model/EsmCreateSecretOutput';
+import EsmDelete from './model/EsmDelete';
+import EsmGet from './model/EsmGet';
+import EsmGetSecretOutput from './model/EsmGetSecretOutput';
+import EsmList from './model/EsmList';
+import EsmListSecretsOutput from './model/EsmListSecretsOutput';
+import EsmUpdate from './model/EsmUpdate';
+import EsmUpdateSecretOutput from './model/EsmUpdateSecretOutput';
 import ExportClassicKey from './model/ExportClassicKey';
 import ExportClassicKeyOutput from './model/ExportClassicKeyOutput';
 import Extension from './model/Extension';
@@ -253,6 +264,8 @@ import GatewayCreateProducerRabbitMQ from './model/GatewayCreateProducerRabbitMQ
 import GatewayCreateProducerRabbitMQOutput from './model/GatewayCreateProducerRabbitMQOutput';
 import GatewayCreateProducerRdp from './model/GatewayCreateProducerRdp';
 import GatewayCreateProducerRdpOutput from './model/GatewayCreateProducerRdpOutput';
+import GatewayCreateProducerRedis from './model/GatewayCreateProducerRedis';
+import GatewayCreateProducerRedisOutput from './model/GatewayCreateProducerRedisOutput';
 import GatewayCreateProducerRedshift from './model/GatewayCreateProducerRedshift';
 import GatewayCreateProducerRedshiftOutput from './model/GatewayCreateProducerRedshiftOutput';
 import GatewayCreateProducerSnowflake from './model/GatewayCreateProducerSnowflake';
@@ -345,6 +358,8 @@ import GatewayUpdateProducerRabbitMQ from './model/GatewayUpdateProducerRabbitMQ
 import GatewayUpdateProducerRabbitMQOutput from './model/GatewayUpdateProducerRabbitMQOutput';
 import GatewayUpdateProducerRdp from './model/GatewayUpdateProducerRdp';
 import GatewayUpdateProducerRdpOutput from './model/GatewayUpdateProducerRdpOutput';
+import GatewayUpdateProducerRedis from './model/GatewayUpdateProducerRedis';
+import GatewayUpdateProducerRedisOutput from './model/GatewayUpdateProducerRedisOutput';
 import GatewayUpdateProducerRedshift from './model/GatewayUpdateProducerRedshift';
 import GatewayUpdateProducerRedshiftOutput from './model/GatewayUpdateProducerRedshiftOutput';
 import GatewayUpdateProducerSnowflake from './model/GatewayUpdateProducerSnowflake';
@@ -495,6 +510,7 @@ import Rules from './model/Rules';
 import SAMLAccessRules from './model/SAMLAccessRules';
 import SAMLAttribute from './model/SAMLAttribute';
 import SSHCertificateIssueDetails from './model/SSHCertificateIssueDetails';
+import SecretInfo from './model/SecretInfo';
 import SecureRemoteAccess from './model/SecureRemoteAccess';
 import SetItemState from './model/SetItemState';
 import SetRoleRule from './model/SetRoleRule';
@@ -659,7 +675,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.2.8
+* @version 3.3.0
 */
 export {
     /**
@@ -1183,6 +1199,18 @@ export {
      * @property {module:model/CreateEKSTargetOutput}
      */
     CreateEKSTargetOutput,
+
+    /**
+     * The CreateESM model constructor.
+     * @property {module:model/CreateESM}
+     */
+    CreateESM,
+
+    /**
+     * The CreateESMOutput model constructor.
+     * @property {module:model/CreateESMOutput}
+     */
+    CreateESMOutput,
 
     /**
      * The CreateEventForwarder model constructor.
@@ -1767,6 +1795,60 @@ export {
     EncryptWithClassicKeyOutput,
 
     /**
+     * The EsmCreate model constructor.
+     * @property {module:model/EsmCreate}
+     */
+    EsmCreate,
+
+    /**
+     * The EsmCreateSecretOutput model constructor.
+     * @property {module:model/EsmCreateSecretOutput}
+     */
+    EsmCreateSecretOutput,
+
+    /**
+     * The EsmDelete model constructor.
+     * @property {module:model/EsmDelete}
+     */
+    EsmDelete,
+
+    /**
+     * The EsmGet model constructor.
+     * @property {module:model/EsmGet}
+     */
+    EsmGet,
+
+    /**
+     * The EsmGetSecretOutput model constructor.
+     * @property {module:model/EsmGetSecretOutput}
+     */
+    EsmGetSecretOutput,
+
+    /**
+     * The EsmList model constructor.
+     * @property {module:model/EsmList}
+     */
+    EsmList,
+
+    /**
+     * The EsmListSecretsOutput model constructor.
+     * @property {module:model/EsmListSecretsOutput}
+     */
+    EsmListSecretsOutput,
+
+    /**
+     * The EsmUpdate model constructor.
+     * @property {module:model/EsmUpdate}
+     */
+    EsmUpdate,
+
+    /**
+     * The EsmUpdateSecretOutput model constructor.
+     * @property {module:model/EsmUpdateSecretOutput}
+     */
+    EsmUpdateSecretOutput,
+
+    /**
      * The ExportClassicKey model constructor.
      * @property {module:model/ExportClassicKey}
      */
@@ -2107,6 +2189,18 @@ export {
      * @property {module:model/GatewayCreateProducerRdpOutput}
      */
     GatewayCreateProducerRdpOutput,
+
+    /**
+     * The GatewayCreateProducerRedis model constructor.
+     * @property {module:model/GatewayCreateProducerRedis}
+     */
+    GatewayCreateProducerRedis,
+
+    /**
+     * The GatewayCreateProducerRedisOutput model constructor.
+     * @property {module:model/GatewayCreateProducerRedisOutput}
+     */
+    GatewayCreateProducerRedisOutput,
 
     /**
      * The GatewayCreateProducerRedshift model constructor.
@@ -2659,6 +2753,18 @@ export {
      * @property {module:model/GatewayUpdateProducerRdpOutput}
      */
     GatewayUpdateProducerRdpOutput,
+
+    /**
+     * The GatewayUpdateProducerRedis model constructor.
+     * @property {module:model/GatewayUpdateProducerRedis}
+     */
+    GatewayUpdateProducerRedis,
+
+    /**
+     * The GatewayUpdateProducerRedisOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerRedisOutput}
+     */
+    GatewayUpdateProducerRedisOutput,
 
     /**
      * The GatewayUpdateProducerRedshift model constructor.
@@ -3559,6 +3665,12 @@ export {
      * @property {module:model/SSHCertificateIssueDetails}
      */
     SSHCertificateIssueDetails,
+
+    /**
+     * The SecretInfo model constructor.
+     * @property {module:model/SecretInfo}
+     */
+    SecretInfo,
 
     /**
      * The SecureRemoteAccess model constructor.

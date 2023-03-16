@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerOracleDb model module.
  * @module model/GatewayUpdateProducerOracleDb
- * @version 3.2.8
+ * @version 3.3.0
  */
 class GatewayUpdateProducerOracleDb {
     /**
@@ -218,7 +218,7 @@ GatewayUpdateProducerOracleDb.prototype['secure-access-bastion-issuer'] = undefi
 GatewayUpdateProducerOracleDb.prototype['secure-access-enable'] = 'false';
 
 /**
- * Target DB servers for connections
+ * Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts)
  * @member {Array.<String>} secure-access-host
  */
 GatewayUpdateProducerOracleDb.prototype['secure-access-host'] = undefined;

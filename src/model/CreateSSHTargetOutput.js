@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHTargetOutput model module.
  * @module model/CreateSSHTargetOutput
- * @version 3.2.8
+ * @version 3.3.0
  */
 class CreateSSHTargetOutput {
     /**

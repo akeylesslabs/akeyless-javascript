@@ -16,17 +16,20 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateWindowsTarget model module.
  * @module model/CreateWindowsTarget
- * @version 3.2.8
+ * @version 3.3.0
  */
 class CreateWindowsTarget {
     /**
      * Constructs a new <code>CreateWindowsTarget</code>.
      * @alias module:model/CreateWindowsTarget
+     * @param hostname {String} Server hostname
      * @param name {String} Target name
+     * @param password {String} Privileged user password
+     * @param username {String} Privileged username
      */
-    constructor(name) { 
+    constructor(hostname, name, password, username) { 
         
-        CreateWindowsTarget.initialize(this, name);
+        CreateWindowsTarget.initialize(this, hostname, name, password, username);
     }
 
     /**
@@ -34,8 +37,11 @@ class CreateWindowsTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name) { 
+    static initialize(obj, hostname, name, password, username) { 
+        obj['hostname'] = hostname;
         obj['name'] = name;
+        obj['password'] = password;
+        obj['username'] = username;
     }
 
     /**
@@ -49,6 +55,9 @@ class CreateWindowsTarget {
         if (data) {
             obj = obj || new CreateWindowsTarget();
 
+            if (data.hasOwnProperty('certificate')) {
+                obj['certificate'] = ApiClient.convertToType(data['certificate'], 'String');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -76,6 +85,9 @@ class CreateWindowsTarget {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
+            if (data.hasOwnProperty('use-tls')) {
+                obj['use-tls'] = ApiClient.convertToType(data['use-tls'], 'String');
+            }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
@@ -85,6 +97,12 @@ class CreateWindowsTarget {
 
 
 }
+
+/**
+ * SSL CA certificate in base64 encoding generated from a trusted Certificate Authority (CA)
+ * @member {String} certificate
+ */
+CreateWindowsTarget.prototype['certificate'] = undefined;
 
 /**
  * Description of the object
@@ -118,13 +136,13 @@ CreateWindowsTarget.prototype['key'] = undefined;
 CreateWindowsTarget.prototype['name'] = undefined;
 
 /**
- * The privileged user password
+ * Privileged user password
  * @member {String} password
  */
 CreateWindowsTarget.prototype['password'] = undefined;
 
 /**
- * Server WinRM HTTPS port
+ * Server WinRM port
  * @member {String} port
  * @default '5986'
  */
@@ -141,6 +159,13 @@ CreateWindowsTarget.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateWindowsTarget.prototype['uid-token'] = undefined;
+
+/**
+ * Enable/Disable TLS for WinRM over HTTPS [true/false]
+ * @member {String} use-tls
+ * @default 'true'
+ */
+CreateWindowsTarget.prototype['use-tls'] = 'true';
 
 /**
  * Privileged username

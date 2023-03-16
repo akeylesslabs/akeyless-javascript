@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**bastionDetails** | **Boolean** | Indicate if the item should return with ztb cluster details (url, etc) | [optional] [default to false]
 **displayId** | **String** | The display id of the item | [optional] 
 **gatewayDetails** | **Boolean** | Indicate if the item should return with clusters details (url, etc) | [optional] [default to false]
 **itemId** | **Number** | Item id of the item | [optional] 

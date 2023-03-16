@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 3.2.8
+ * @version 3.3.0
  */
 class UpdateItem {
     /**
@@ -323,7 +323,7 @@ UpdateItem.prototype['secure-access-db-schema'] = undefined;
 UpdateItem.prototype['secure-access-enable'] = undefined;
 
 /**
- * Target servers for connections
+ * Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers)
  * @member {Array.<String>} secure-access-host
  */
 UpdateItem.prototype['secure-access-host'] = undefined;

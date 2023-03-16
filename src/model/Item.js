@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import BastionsList from './BastionsList';
 import CertificateIssueInfo from './CertificateIssueInfo';
 import GatewayBasicInfo from './GatewayBasicInfo';
 import ItemGeneralInfo from './ItemGeneralInfo';
@@ -24,7 +25,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 3.2.8
+ * @version 3.3.0
  */
 class Item {
     /**
@@ -63,6 +64,9 @@ class Item {
             }
             if (data.hasOwnProperty('auto_rotate')) {
                 obj['auto_rotate'] = ApiClient.convertToType(data['auto_rotate'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bastion_details')) {
+                obj['bastion_details'] = BastionsList.constructFromObject(data['bastion_details']);
             }
             if (data.hasOwnProperty('cert_issuer_signer_key_name')) {
                 obj['cert_issuer_signer_key_name'] = ApiClient.convertToType(data['cert_issuer_signer_key_name'], 'String');
@@ -190,6 +194,11 @@ Item.prototype['access_request_status'] = undefined;
  * @member {Boolean} auto_rotate
  */
 Item.prototype['auto_rotate'] = undefined;
+
+/**
+ * @member {module:model/BastionsList} bastion_details
+ */
+Item.prototype['bastion_details'] = undefined;
 
 /**
  * @member {String} cert_issuer_signer_key_name

@@ -17,7 +17,7 @@ import AllowedAccess from './AllowedAccess';
 /**
  * The AdminsConfigPart model module.
  * @module model/AdminsConfigPart
- * @version 3.2.8
+ * @version 3.3.0
  */
 class AdminsConfigPart {
     /**

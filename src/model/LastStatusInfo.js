@@ -17,7 +17,7 @@ import MigrationStatus from './MigrationStatus';
 /**
  * The LastStatusInfo model module.
  * @module model/LastStatusInfo
- * @version 3.2.8
+ * @version 3.3.0
  */
 class LastStatusInfo {
     /**
@@ -54,6 +54,9 @@ class LastStatusInfo {
             if (data.hasOwnProperty('producers_errors')) {
                 obj['producers_errors'] = ApiClient.convertToType(data['producers_errors'], Object);
             }
+            if (data.hasOwnProperty('was_migrations_copied_to_new_table')) {
+                obj['was_migrations_copied_to_new_table'] = ApiClient.convertToType(data['was_migrations_copied_to_new_table'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -70,6 +73,12 @@ LastStatusInfo.prototype['migrations_status'] = undefined;
  * @member {Object} producers_errors
  */
 LastStatusInfo.prototype['producers_errors'] = undefined;
+
+/**
+ * flag to indicate migrationStatus copied to new table
+ * @member {Boolean} was_migrations_copied_to_new_table
+ */
+LastStatusInfo.prototype['was_migrations_copied_to_new_table'] = undefined;
 
 
 

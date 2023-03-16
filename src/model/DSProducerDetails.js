@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 3.2.8
+ * @version 3.3.0
  */
 class DSProducerDetails {
     /**
@@ -51,6 +51,9 @@ class DSProducerDetails {
 
             if (data.hasOwnProperty('access_token_manager_id')) {
                 obj['access_token_manager_id'] = ApiClient.convertToType(data['access_token_manager_id'], 'String');
+            }
+            if (data.hasOwnProperty('acl_rules')) {
+                obj['acl_rules'] = ApiClient.convertToType(data['acl_rules'], ['String']);
             }
             if (data.hasOwnProperty('active')) {
                 obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
@@ -669,6 +672,11 @@ class DSProducerDetails {
  * @member {String} access_token_manager_id
  */
 DSProducerDetails.prototype['access_token_manager_id'] = undefined;
+
+/**
+ * @member {Array.<String>} acl_rules
+ */
+DSProducerDetails.prototype['acl_rules'] = undefined;
 
 /**
  * @member {Boolean} active

@@ -66,6 +66,8 @@ import CreateDockerhubTargetOutput from '../model/CreateDockerhubTargetOutput';
 import CreateDynamicSecret from '../model/CreateDynamicSecret';
 import CreateEKSTarget from '../model/CreateEKSTarget';
 import CreateEKSTargetOutput from '../model/CreateEKSTargetOutput';
+import CreateESM from '../model/CreateESM';
+import CreateESMOutput from '../model/CreateESMOutput';
 import CreateEventForwarder from '../model/CreateEventForwarder';
 import CreateEventForwarderOutput from '../model/CreateEventForwarderOutput';
 import CreateGKETarget from '../model/CreateGKETarget';
@@ -146,6 +148,14 @@ import EncryptGPG from '../model/EncryptGPG';
 import EncryptGPGOutput from '../model/EncryptGPGOutput';
 import EncryptOutput from '../model/EncryptOutput';
 import EncryptWithClassicKey from '../model/EncryptWithClassicKey';
+import EsmCreateSecretOutput from '../model/EsmCreateSecretOutput';
+import EsmDelete from '../model/EsmDelete';
+import EsmGet from '../model/EsmGet';
+import EsmGetSecretOutput from '../model/EsmGetSecretOutput';
+import EsmList from '../model/EsmList';
+import EsmListSecretsOutput from '../model/EsmListSecretsOutput';
+import EsmUpdate from '../model/EsmUpdate';
+import EsmUpdateSecretOutput from '../model/EsmUpdateSecretOutput';
 import ExportClassicKey from '../model/ExportClassicKey';
 import ExportClassicKeyOutput from '../model/ExportClassicKeyOutput';
 import GatewayCreateK8SAuthConfig from '../model/GatewayCreateK8SAuthConfig';
@@ -195,6 +205,8 @@ import GatewayCreateProducerRabbitMQ from '../model/GatewayCreateProducerRabbitM
 import GatewayCreateProducerRabbitMQOutput from '../model/GatewayCreateProducerRabbitMQOutput';
 import GatewayCreateProducerRdp from '../model/GatewayCreateProducerRdp';
 import GatewayCreateProducerRdpOutput from '../model/GatewayCreateProducerRdpOutput';
+import GatewayCreateProducerRedis from '../model/GatewayCreateProducerRedis';
+import GatewayCreateProducerRedisOutput from '../model/GatewayCreateProducerRedisOutput';
 import GatewayCreateProducerRedshift from '../model/GatewayCreateProducerRedshift';
 import GatewayCreateProducerRedshiftOutput from '../model/GatewayCreateProducerRedshiftOutput';
 import GatewayCreateProducerSnowflake from '../model/GatewayCreateProducerSnowflake';
@@ -284,6 +296,8 @@ import GatewayUpdateProducerRabbitMQ from '../model/GatewayUpdateProducerRabbitM
 import GatewayUpdateProducerRabbitMQOutput from '../model/GatewayUpdateProducerRabbitMQOutput';
 import GatewayUpdateProducerRdp from '../model/GatewayUpdateProducerRdp';
 import GatewayUpdateProducerRdpOutput from '../model/GatewayUpdateProducerRdpOutput';
+import GatewayUpdateProducerRedis from '../model/GatewayUpdateProducerRedis';
+import GatewayUpdateProducerRedisOutput from '../model/GatewayUpdateProducerRedisOutput';
 import GatewayUpdateProducerRedshift from '../model/GatewayUpdateProducerRedshift';
 import GatewayUpdateProducerRedshiftOutput from '../model/GatewayUpdateProducerRedshiftOutput';
 import GatewayUpdateProducerSnowflake from '../model/GatewayUpdateProducerSnowflake';
@@ -487,7 +501,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.2.8
+* @version 3.3.0
 */
 export default class V2Api {
 
@@ -1659,6 +1673,49 @@ export default class V2Api {
      */
     createEKSTarget(body) {
       return this.createEKSTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateESM} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateESMOutput} and HTTP response
+     */
+    createESMWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createESM");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateESMOutput;
+      return this.apiClient.callApi(
+        '/create-esm', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateESM} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateESMOutput}
+     */
+    createESM(body) {
+      return this.createESMWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3558,6 +3615,215 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/EsmUpdate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EsmCreateSecretOutput} and HTTP response
+     */
+    esmCreateWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling esmCreate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EsmCreateSecretOutput;
+      return this.apiClient.callApi(
+        '/esm-create', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EsmUpdate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EsmCreateSecretOutput}
+     */
+    esmCreate(body) {
+      return this.esmCreateWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EsmDelete} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    esmDeleteWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling esmDelete");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/esm-delete', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EsmDelete} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    esmDelete(body) {
+      return this.esmDeleteWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EsmGet} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EsmGetSecretOutput} and HTTP response
+     */
+    esmGetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling esmGet");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EsmGetSecretOutput;
+      return this.apiClient.callApi(
+        '/esm-get', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EsmGet} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EsmGetSecretOutput}
+     */
+    esmGet(body) {
+      return this.esmGetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EsmList} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EsmListSecretsOutput} and HTTP response
+     */
+    esmListWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling esmList");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EsmListSecretsOutput;
+      return this.apiClient.callApi(
+        '/esm-list', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EsmList} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EsmListSecretsOutput}
+     */
+    esmList(body) {
+      return this.esmListWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EsmUpdateSecretOutput} and HTTP response
+     */
+    esmUpdateWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EsmUpdateSecretOutput;
+      return this.apiClient.callApi(
+        '/esm-update', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EsmUpdateSecretOutput}
+     */
+    esmUpdate() {
+      return this.esmUpdateWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/ExportClassicKey} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ExportClassicKeyOutput} and HTTP response
      */
@@ -4625,6 +4891,49 @@ export default class V2Api {
      */
     gatewayCreateProducerRdp(body) {
       return this.gatewayCreateProducerRdpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayCreateProducerRedis} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerRedisOutput} and HTTP response
+     */
+    gatewayCreateProducerRedisWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateProducerRedis");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayCreateProducerRedisOutput;
+      return this.apiClient.callApi(
+        '/gateway-create-producer-Redis', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayCreateProducerRedis} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerRedisOutput}
+     */
+    gatewayCreateProducerRedis(body) {
+      return this.gatewayCreateProducerRedisWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6687,6 +6996,49 @@ export default class V2Api {
      */
     gatewayUpdateProducerRdp(body) {
       return this.gatewayUpdateProducerRdpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerRedis} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerRedisOutput} and HTTP response
+     */
+    gatewayUpdateProducerRedisWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerRedis");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerRedisOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-redis', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerRedis} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerRedisOutput}
+     */
+    gatewayUpdateProducerRedis(body) {
+      return this.gatewayUpdateProducerRedisWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 3.2.8
+ * @version 3.3.0
  */
 class CreateRotatedSecret {
     /**
@@ -371,7 +371,7 @@ CreateRotatedSecret.prototype['secure-access-db-schema'] = undefined;
 CreateRotatedSecret.prototype['secure-access-enable'] = undefined;
 
 /**
- * Target servers for connections
+ * Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers)
  * @member {Array.<String>} secure-access-host
  */
 CreateRotatedSecret.prototype['secure-access-host'] = undefined;

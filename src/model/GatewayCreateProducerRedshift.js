@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRedshift model module.
  * @module model/GatewayCreateProducerRedshift
- * @version 3.2.8
+ * @version 3.3.0
  */
 class GatewayCreateProducerRedshift {
     /**
@@ -181,7 +181,7 @@ GatewayCreateProducerRedshift.prototype['redshift-username'] = undefined;
 GatewayCreateProducerRedshift.prototype['secure-access-enable'] = undefined;
 
 /**
- * Target DB servers for connections
+ * Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts)
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerRedshift.prototype['secure-access-host'] = undefined;

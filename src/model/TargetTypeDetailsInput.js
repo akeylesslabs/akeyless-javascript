@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 3.2.8
+ * @version 3.3.0
  */
 class TargetTypeDetailsInput {
     /**
@@ -103,6 +103,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('ca_cert_name')) {
                 obj['ca_cert_name'] = ApiClient.convertToType(data['ca_cert_name'], 'String');
+            }
+            if (data.hasOwnProperty('certificate')) {
+                obj['certificate'] = ApiClient.convertToType(data['certificate'], 'String');
             }
             if (data.hasOwnProperty('chef_server_host_name')) {
                 obj['chef_server_host_name'] = ApiClient.convertToType(data['chef_server_host_name'], 'String');
@@ -329,6 +332,9 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('use_gw_cloud_identity')) {
                 obj['use_gw_cloud_identity'] = ApiClient.convertToType(data['use_gw_cloud_identity'], 'Boolean');
             }
+            if (data.hasOwnProperty('use_tls')) {
+                obj['use_tls'] = ApiClient.convertToType(data['use_tls'], 'Boolean');
+            }
             if (data.hasOwnProperty('user_name')) {
                 obj['user_name'] = ApiClient.convertToType(data['user_name'], 'String');
             }
@@ -460,6 +466,11 @@ TargetTypeDetailsInput.prototype['ca_cert_data'] = undefined;
  * @member {String} ca_cert_name
  */
 TargetTypeDetailsInput.prototype['ca_cert_name'] = undefined;
+
+/**
+ * @member {String} certificate
+ */
+TargetTypeDetailsInput.prototype['certificate'] = undefined;
 
 /**
  * @member {String} chef_server_host_name
@@ -845,6 +856,11 @@ TargetTypeDetailsInput.prototype['url'] = undefined;
  * @member {Boolean} use_gw_cloud_identity
  */
 TargetTypeDetailsInput.prototype['use_gw_cloud_identity'] = undefined;
+
+/**
+ * @member {Boolean} use_tls
+ */
+TargetTypeDetailsInput.prototype['use_tls'] = undefined;
 
 /**
  * @member {String} user_name

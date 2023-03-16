@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMSSQL model module.
  * @module model/GatewayCreateProducerMSSQL
- * @version 3.2.8
+ * @version 3.3.0
  */
 class GatewayCreateProducerMSSQL {
     /**
@@ -208,7 +208,7 @@ GatewayCreateProducerMSSQL.prototype['secure-access-db-schema'] = undefined;
 GatewayCreateProducerMSSQL.prototype['secure-access-enable'] = undefined;
 
 /**
- * Target DB servers for connections
+ * Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts)
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerMSSQL.prototype['secure-access-host'] = undefined;

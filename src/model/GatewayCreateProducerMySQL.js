@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMySQL model module.
  * @module model/GatewayCreateProducerMySQL
- * @version 3.2.8
+ * @version 3.3.0
  */
 class GatewayCreateProducerMySQL {
     /**
@@ -223,7 +223,7 @@ GatewayCreateProducerMySQL.prototype['secure-access-bastion-issuer'] = undefined
 GatewayCreateProducerMySQL.prototype['secure-access-enable'] = undefined;
 
 /**
- * Target DB servers for connections
+ * Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts)
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerMySQL.prototype['secure-access-host'] = undefined;

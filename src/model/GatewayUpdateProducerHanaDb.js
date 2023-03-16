@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerHanaDb model module.
  * @module model/GatewayUpdateProducerHanaDb
- * @version 3.2.8
+ * @version 3.3.0
  */
 class GatewayUpdateProducerHanaDb {
     /**
@@ -217,7 +217,7 @@ GatewayUpdateProducerHanaDb.prototype['secure-access-db-schema'] = undefined;
 GatewayUpdateProducerHanaDb.prototype['secure-access-enable'] = undefined;
 
 /**
- * Target DB servers for connections
+ * Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts)
  * @member {Array.<String>} secure-access-host
  */
 GatewayUpdateProducerHanaDb.prototype['secure-access-host'] = undefined;

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **accessDate** | **Date** |  | [optional] 
 **accessRequestStatus** | **String** |  | [optional] 
 **autoRotate** | **Boolean** |  | [optional] 
+**bastionDetails** | [**BastionsList**](BastionsList.md) |  | [optional] 
 **certIssuerSignerKeyName** | **String** |  | [optional] 
 **certificateIssueDetails** | [**CertificateIssueInfo**](CertificateIssueInfo.md) |  | [optional] 
 **certificates** | **String** |  | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerPostgreSQL model module.
  * @module model/GatewayCreateProducerPostgreSQL
- * @version 3.2.8
+ * @version 3.3.0
  */
 class GatewayCreateProducerPostgreSQL {
     /**
@@ -211,7 +211,7 @@ GatewayCreateProducerPostgreSQL.prototype['secure-access-db-schema'] = undefined
 GatewayCreateProducerPostgreSQL.prototype['secure-access-enable'] = undefined;
 
 /**
- * Target DB servers for connections
+ * Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts)
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerPostgreSQL.prototype['secure-access-host'] = undefined;

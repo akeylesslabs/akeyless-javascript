@@ -16,17 +16,20 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateWindowsTarget model module.
  * @module model/UpdateWindowsTarget
- * @version 3.2.8
+ * @version 3.3.0
  */
 class UpdateWindowsTarget {
     /**
      * Constructs a new <code>UpdateWindowsTarget</code>.
      * @alias module:model/UpdateWindowsTarget
+     * @param hostname {String} Server hostname
      * @param name {String} Target name
+     * @param password {String} Privileged user password
+     * @param username {String} Privileged username
      */
-    constructor(name) { 
+    constructor(hostname, name, password, username) { 
         
-        UpdateWindowsTarget.initialize(this, name);
+        UpdateWindowsTarget.initialize(this, hostname, name, password, username);
     }
 
     /**
@@ -34,8 +37,11 @@ class UpdateWindowsTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name) { 
+    static initialize(obj, hostname, name, password, username) { 
+        obj['hostname'] = hostname;
         obj['name'] = name;
+        obj['password'] = password;
+        obj['username'] = username;
     }
 
     /**
@@ -49,6 +55,9 @@ class UpdateWindowsTarget {
         if (data) {
             obj = obj || new UpdateWindowsTarget();
 
+            if (data.hasOwnProperty('certificate')) {
+                obj['certificate'] = ApiClient.convertToType(data['certificate'], 'String');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -85,6 +94,9 @@ class UpdateWindowsTarget {
             if (data.hasOwnProperty('update-version')) {
                 obj['update-version'] = ApiClient.convertToType(data['update-version'], 'Boolean');
             }
+            if (data.hasOwnProperty('use-tls')) {
+                obj['use-tls'] = ApiClient.convertToType(data['use-tls'], 'String');
+            }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
@@ -94,6 +106,12 @@ class UpdateWindowsTarget {
 
 
 }
+
+/**
+ * SSL CA certificate in base64 encoding generated from a trusted Certificate Authority (CA)
+ * @member {String} certificate
+ */
+UpdateWindowsTarget.prototype['certificate'] = undefined;
 
 /**
  * Description of the object
@@ -139,13 +157,13 @@ UpdateWindowsTarget.prototype['name'] = undefined;
 UpdateWindowsTarget.prototype['new-name'] = undefined;
 
 /**
- * The privileged user password
+ * Privileged user password
  * @member {String} password
  */
 UpdateWindowsTarget.prototype['password'] = undefined;
 
 /**
- * Server WinRM HTTPS port
+ * Server WinRM port
  * @member {String} port
  * @default '5986'
  */
@@ -168,6 +186,13 @@ UpdateWindowsTarget.prototype['uid-token'] = undefined;
  * @member {Boolean} update-version
  */
 UpdateWindowsTarget.prototype['update-version'] = undefined;
+
+/**
+ * Enable/Disable TLS for WinRM over HTTPS [true/false]
+ * @member {String} use-tls
+ * @default 'true'
+ */
+UpdateWindowsTarget.prototype['use-tls'] = 'true';
 
 /**
  * Privileged username

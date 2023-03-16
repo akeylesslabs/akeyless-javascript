@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeItem model module.
  * @module model/DescribeItem
- * @version 3.2.8
+ * @version 3.3.0
  */
 class DescribeItem {
     /**
@@ -49,6 +49,9 @@ class DescribeItem {
         if (data) {
             obj = obj || new DescribeItem();
 
+            if (data.hasOwnProperty('bastion-details')) {
+                obj['bastion-details'] = ApiClient.convertToType(data['bastion-details'], 'Boolean');
+            }
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
             }
@@ -79,6 +82,13 @@ class DescribeItem {
 
 
 }
+
+/**
+ * Indicate if the item should return with ztb cluster details (url, etc)
+ * @member {Boolean} bastion-details
+ * @default false
+ */
+DescribeItem.prototype['bastion-details'] = false;
 
 /**
  * The display id of the item

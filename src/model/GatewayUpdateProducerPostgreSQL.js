@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerPostgreSQL model module.
  * @module model/GatewayUpdateProducerPostgreSQL
- * @version 3.2.8
+ * @version 3.3.0
  */
 class GatewayUpdateProducerPostgreSQL {
     /**
@@ -220,7 +220,7 @@ GatewayUpdateProducerPostgreSQL.prototype['secure-access-db-schema'] = undefined
 GatewayUpdateProducerPostgreSQL.prototype['secure-access-enable'] = undefined;
 
 /**
- * Target DB servers for connections
+ * Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts)
  * @member {Array.<String>} secure-access-host
  */
 GatewayUpdateProducerPostgreSQL.prototype['secure-access-host'] = undefined;

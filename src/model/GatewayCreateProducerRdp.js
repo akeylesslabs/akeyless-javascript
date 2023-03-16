@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRdp model module.
  * @module model/GatewayCreateProducerRdp
- * @version 3.2.8
+ * @version 3.3.0
  */
 class GatewayCreateProducerRdp {
     /**
@@ -206,7 +206,7 @@ GatewayCreateProducerRdp.prototype['secure-access-allow-external-user'] = false;
 GatewayCreateProducerRdp.prototype['secure-access-enable'] = undefined;
 
 /**
- * Target servers for connections
+ * Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers)
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerRdp.prototype['secure-access-host'] = undefined;

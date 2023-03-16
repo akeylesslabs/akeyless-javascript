@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHCertIssuer model module.
  * @module model/CreateSSHCertIssuer
- * @version 3.2.8
+ * @version 3.3.0
  */
 class CreateSSHCertIssuer {
     /**
@@ -187,7 +187,7 @@ CreateSSHCertIssuer.prototype['secure-access-bastion-ssh'] = undefined;
 CreateSSHCertIssuer.prototype['secure-access-enable'] = undefined;
 
 /**
- * Target servers for connections
+ * Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers)
  * @member {Array.<String>} secure-access-host
  */
 CreateSSHCertIssuer.prototype['secure-access-host'] = undefined;
