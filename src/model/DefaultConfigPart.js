@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DefaultConfigPart model module.
  * @module model/DefaultConfigPart
- * @version 3.3.0
+ * @version 3.3.1
  */
 class DefaultConfigPart {
     /**
@@ -47,6 +47,9 @@ class DefaultConfigPart {
         if (data) {
             obj = obj || new DefaultConfigPart();
 
+            if (data.hasOwnProperty('certificate_access_id')) {
+                obj['certificate_access_id'] = ApiClient.convertToType(data['certificate_access_id'], 'String');
+            }
             if (data.hasOwnProperty('default_protection_key_id')) {
                 obj['default_protection_key_id'] = ApiClient.convertToType(data['default_protection_key_id'], 'Number');
             }
@@ -65,6 +68,11 @@ class DefaultConfigPart {
 
 
 }
+
+/**
+ * @member {String} certificate_access_id
+ */
+DefaultConfigPart.prototype['certificate_access_id'] = undefined;
 
 /**
  * @member {Number} default_protection_key_id

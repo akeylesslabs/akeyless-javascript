@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**allowedAccess** | [**{String: AllowedAccess}**](AllowedAccess.md) |  | [optional] 
+**adminsMigrationStatus** | **Number** |  | [optional] 
+**allowedAccess** | [**{String: AllowedAccessOld}**](AllowedAccessOld.md) |  | [optional] 
 
 

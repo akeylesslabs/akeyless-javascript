@@ -18,7 +18,7 @@ import CertificateInfo from './CertificateInfo';
 /**
  * The CertificateChainInfo model module.
  * @module model/CertificateChainInfo
- * @version 3.3.0
+ * @version 3.3.1
  */
 class CertificateChainInfo {
     /**
@@ -52,8 +52,17 @@ class CertificateChainInfo {
             if (data.hasOwnProperty('certificate_chain')) {
                 obj['certificate_chain'] = ApiClient.convertToType(data['certificate_chain'], [CertificateInfo]);
             }
+            if (data.hasOwnProperty('certificate_format')) {
+                obj['certificate_format'] = ApiClient.convertToType(data['certificate_format'], 'String');
+            }
+            if (data.hasOwnProperty('certificate_issuer_name')) {
+                obj['certificate_issuer_name'] = ApiClient.convertToType(data['certificate_issuer_name'], 'String');
+            }
             if (data.hasOwnProperty('certificate_pem')) {
                 obj['certificate_pem'] = ApiClient.convertToType(data['certificate_pem'], 'String');
+            }
+            if (data.hasOwnProperty('certificate_status')) {
+                obj['certificate_status'] = ApiClient.convertToType(data['certificate_status'], 'String');
             }
             if (data.hasOwnProperty('expiration_events')) {
                 obj['expiration_events'] = ApiClient.convertToType(data['expiration_events'], [CertificateExpirationEvent]);
@@ -71,9 +80,24 @@ class CertificateChainInfo {
 CertificateChainInfo.prototype['certificate_chain'] = undefined;
 
 /**
+ * @member {String} certificate_format
+ */
+CertificateChainInfo.prototype['certificate_format'] = undefined;
+
+/**
+ * @member {String} certificate_issuer_name
+ */
+CertificateChainInfo.prototype['certificate_issuer_name'] = undefined;
+
+/**
  * @member {String} certificate_pem
  */
 CertificateChainInfo.prototype['certificate_pem'] = undefined;
+
+/**
+ * @member {String} certificate_status
+ */
+CertificateChainInfo.prototype['certificate_status'] = undefined;
 
 /**
  * @member {Array.<module:model/CertificateExpirationEvent>} expiration_events

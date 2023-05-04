@@ -25,6 +25,10 @@ import AddGatewayAllowedAccessId from './model/AddGatewayAllowedAccessId';
 import AdminsConfigPart from './model/AdminsConfigPart';
 import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
 import AllowedAccess from './model/AllowedAccess';
+import AllowedAccessArgs from './model/AllowedAccessArgs';
+import AllowedAccessDeleteArgs from './model/AllowedAccessDeleteArgs';
+import AllowedAccessOld from './model/AllowedAccessOld';
+import AllowedAccessUpdateArgs from './model/AllowedAccessUpdateArgs';
 import AssocRoleAuthMethod from './model/AssocRoleAuthMethod';
 import AssocTargetItem from './model/AssocTargetItem';
 import AttributeTypeAndValue from './model/AttributeTypeAndValue';
@@ -109,6 +113,8 @@ import CreateGcpTarget from './model/CreateGcpTarget';
 import CreateGcpTargetOutput from './model/CreateGcpTargetOutput';
 import CreateGithubTarget from './model/CreateGithubTarget';
 import CreateGithubTargetOutput from './model/CreateGithubTargetOutput';
+import CreateGlobalSignTarget from './model/CreateGlobalSignTarget';
+import CreateGlobalSignTargetOutput from './model/CreateGlobalSignTargetOutput';
 import CreateKey from './model/CreateKey';
 import CreateKeyOutput from './model/CreateKeyOutput';
 import CreateLdapTarget from './model/CreateLdapTarget';
@@ -142,6 +148,8 @@ import CreateWebTarget from './model/CreateWebTarget';
 import CreateWebTargetOutput from './model/CreateWebTargetOutput';
 import CreateWindowsTarget from './model/CreateWindowsTarget';
 import CreateWindowsTargetOutput from './model/CreateWindowsTargetOutput';
+import CreateZeroSSLTarget from './model/CreateZeroSSLTarget';
+import CreateZeroSSLTargetOutput from './model/CreateZeroSSLTargetOutput';
 import CustomerFragment from './model/CustomerFragment';
 import CustomerFragmentsJson from './model/CustomerFragmentsJson';
 import CustomerFullAddress from './model/CustomerFullAddress';
@@ -270,7 +278,7 @@ import GatewayCreateProducerRedshift from './model/GatewayCreateProducerRedshift
 import GatewayCreateProducerRedshiftOutput from './model/GatewayCreateProducerRedshiftOutput';
 import GatewayCreateProducerSnowflake from './model/GatewayCreateProducerSnowflake';
 import GatewayCreateProducerSnowflakeOutput from './model/GatewayCreateProducerSnowflakeOutput';
-import GatewayDeleteAllowedManagementAccess from './model/GatewayDeleteAllowedManagementAccess';
+import GatewayDeleteAllowedAccessOutput from './model/GatewayDeleteAllowedAccessOutput';
 import GatewayDeleteK8SAuthConfig from './model/GatewayDeleteK8SAuthConfig';
 import GatewayDeleteK8SAuthConfigOutput from './model/GatewayDeleteK8SAuthConfigOutput';
 import GatewayDeleteMigration from './model/GatewayDeleteMigration';
@@ -286,9 +294,9 @@ import GatewayGetLdapAuthConfigOutput from './model/GatewayGetLdapAuthConfigOutp
 import GatewayGetMigration from './model/GatewayGetMigration';
 import GatewayGetProducer from './model/GatewayGetProducer';
 import GatewayGetTmpUsers from './model/GatewayGetTmpUsers';
-import GatewayListAllowedManagementAccess from './model/GatewayListAllowedManagementAccess';
 import GatewayListMigration from './model/GatewayListMigration';
 import GatewayListProducers from './model/GatewayListProducers';
+import GatewayListRotatedSecrets from './model/GatewayListRotatedSecrets';
 import GatewayMessageQueueInfo from './model/GatewayMessageQueueInfo';
 import GatewayMigratePersonalItems from './model/GatewayMigratePersonalItems';
 import GatewayMigratePersonalItemsOutput from './model/GatewayMigratePersonalItemsOutput';
@@ -390,7 +398,6 @@ import GetRotatedSecretValue from './model/GetRotatedSecretValue';
 import GetSSHCertificate from './model/GetSSHCertificate';
 import GetSSHCertificateOutput from './model/GetSSHCertificateOutput';
 import GetSecretValue from './model/GetSecretValue';
-import GetSubAdminsListReplyObj from './model/GetSubAdminsListReplyObj';
 import GetTags from './model/GetTags';
 import GetTarget from './model/GetTarget';
 import GetTargetDetails from './model/GetTargetDetails';
@@ -398,6 +405,8 @@ import GetTargetDetailsOutput from './model/GetTargetDetailsOutput';
 import GwClusterIdentity from './model/GwClusterIdentity';
 import HashiMigration from './model/HashiMigration';
 import HashiPayload from './model/HashiPayload';
+import Hmac from './model/Hmac';
+import HmacOutput from './model/HmacOutput';
 import HuaweiAccessRules from './model/HuaweiAccessRules';
 import ImportPasswords from './model/ImportPasswords';
 import ImportPasswordsOutput from './model/ImportPasswordsOutput';
@@ -450,6 +459,7 @@ import ListAuthMethodsOutput from './model/ListAuthMethodsOutput';
 import ListGateways from './model/ListGateways';
 import ListItems from './model/ListItems';
 import ListItemsInPathOutput from './model/ListItemsInPathOutput';
+import ListItemsOutput from './model/ListItemsOutput';
 import ListRoles from './model/ListRoles';
 import ListRolesOutput from './model/ListRolesOutput';
 import ListSRABastions from './model/ListSRABastions';
@@ -594,6 +604,8 @@ import UpdateGcpTarget from './model/UpdateGcpTarget';
 import UpdateGcpTargetOutput from './model/UpdateGcpTargetOutput';
 import UpdateGithubTarget from './model/UpdateGithubTarget';
 import UpdateGithubTargetOutput from './model/UpdateGithubTargetOutput';
+import UpdateGlobalSignTarget from './model/UpdateGlobalSignTarget';
+import UpdateGlobalSignTargetOutput from './model/UpdateGlobalSignTargetOutput';
 import UpdateItem from './model/UpdateItem';
 import UpdateItemOutput from './model/UpdateItemOutput';
 import UpdateLdapTarget from './model/UpdateLdapTarget';
@@ -632,6 +644,8 @@ import UpdateWebTarget from './model/UpdateWebTarget';
 import UpdateWebTargetDetails from './model/UpdateWebTargetDetails';
 import UpdateWebTargetOutput from './model/UpdateWebTargetOutput';
 import UpdateWindowsTarget from './model/UpdateWindowsTarget';
+import UpdateZeroSSLTarget from './model/UpdateZeroSSLTarget';
+import UpdateZeroSSLTargetOutput from './model/UpdateZeroSSLTargetOutput';
 import UploadPKCS12 from './model/UploadPKCS12';
 import UploadRSA from './model/UploadRSA';
 import ValidateToken from './model/ValidateToken';
@@ -675,7 +689,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.3.0
+* @version 3.3.1
 */
 export {
     /**
@@ -755,6 +769,30 @@ export {
      * @property {module:model/AllowedAccess}
      */
     AllowedAccess,
+
+    /**
+     * The AllowedAccessArgs model constructor.
+     * @property {module:model/AllowedAccessArgs}
+     */
+    AllowedAccessArgs,
+
+    /**
+     * The AllowedAccessDeleteArgs model constructor.
+     * @property {module:model/AllowedAccessDeleteArgs}
+     */
+    AllowedAccessDeleteArgs,
+
+    /**
+     * The AllowedAccessOld model constructor.
+     * @property {module:model/AllowedAccessOld}
+     */
+    AllowedAccessOld,
+
+    /**
+     * The AllowedAccessUpdateArgs model constructor.
+     * @property {module:model/AllowedAccessUpdateArgs}
+     */
+    AllowedAccessUpdateArgs,
 
     /**
      * The AssocRoleAuthMethod model constructor.
@@ -1261,6 +1299,18 @@ export {
     CreateGithubTargetOutput,
 
     /**
+     * The CreateGlobalSignTarget model constructor.
+     * @property {module:model/CreateGlobalSignTarget}
+     */
+    CreateGlobalSignTarget,
+
+    /**
+     * The CreateGlobalSignTargetOutput model constructor.
+     * @property {module:model/CreateGlobalSignTargetOutput}
+     */
+    CreateGlobalSignTargetOutput,
+
+    /**
      * The CreateKey model constructor.
      * @property {module:model/CreateKey}
      */
@@ -1457,6 +1507,18 @@ export {
      * @property {module:model/CreateWindowsTargetOutput}
      */
     CreateWindowsTargetOutput,
+
+    /**
+     * The CreateZeroSSLTarget model constructor.
+     * @property {module:model/CreateZeroSSLTarget}
+     */
+    CreateZeroSSLTarget,
+
+    /**
+     * The CreateZeroSSLTargetOutput model constructor.
+     * @property {module:model/CreateZeroSSLTargetOutput}
+     */
+    CreateZeroSSLTargetOutput,
 
     /**
      * The CustomerFragment model constructor.
@@ -2227,10 +2289,10 @@ export {
     GatewayCreateProducerSnowflakeOutput,
 
     /**
-     * The GatewayDeleteAllowedManagementAccess model constructor.
-     * @property {module:model/GatewayDeleteAllowedManagementAccess}
+     * The GatewayDeleteAllowedAccessOutput model constructor.
+     * @property {module:model/GatewayDeleteAllowedAccessOutput}
      */
-    GatewayDeleteAllowedManagementAccess,
+    GatewayDeleteAllowedAccessOutput,
 
     /**
      * The GatewayDeleteK8SAuthConfig model constructor.
@@ -2323,12 +2385,6 @@ export {
     GatewayGetTmpUsers,
 
     /**
-     * The GatewayListAllowedManagementAccess model constructor.
-     * @property {module:model/GatewayListAllowedManagementAccess}
-     */
-    GatewayListAllowedManagementAccess,
-
-    /**
      * The GatewayListMigration model constructor.
      * @property {module:model/GatewayListMigration}
      */
@@ -2339,6 +2395,12 @@ export {
      * @property {module:model/GatewayListProducers}
      */
     GatewayListProducers,
+
+    /**
+     * The GatewayListRotatedSecrets model constructor.
+     * @property {module:model/GatewayListRotatedSecrets}
+     */
+    GatewayListRotatedSecrets,
 
     /**
      * The GatewayMessageQueueInfo model constructor.
@@ -2947,12 +3009,6 @@ export {
     GetSecretValue,
 
     /**
-     * The GetSubAdminsListReplyObj model constructor.
-     * @property {module:model/GetSubAdminsListReplyObj}
-     */
-    GetSubAdminsListReplyObj,
-
-    /**
      * The GetTags model constructor.
      * @property {module:model/GetTags}
      */
@@ -2993,6 +3049,18 @@ export {
      * @property {module:model/HashiPayload}
      */
     HashiPayload,
+
+    /**
+     * The Hmac model constructor.
+     * @property {module:model/Hmac}
+     */
+    Hmac,
+
+    /**
+     * The HmacOutput model constructor.
+     * @property {module:model/HmacOutput}
+     */
+    HmacOutput,
 
     /**
      * The HuaweiAccessRules model constructor.
@@ -3305,6 +3373,12 @@ export {
      * @property {module:model/ListItemsInPathOutput}
      */
     ListItemsInPathOutput,
+
+    /**
+     * The ListItemsOutput model constructor.
+     * @property {module:model/ListItemsOutput}
+     */
+    ListItemsOutput,
 
     /**
      * The ListRoles model constructor.
@@ -4171,6 +4245,18 @@ export {
     UpdateGithubTargetOutput,
 
     /**
+     * The UpdateGlobalSignTarget model constructor.
+     * @property {module:model/UpdateGlobalSignTarget}
+     */
+    UpdateGlobalSignTarget,
+
+    /**
+     * The UpdateGlobalSignTargetOutput model constructor.
+     * @property {module:model/UpdateGlobalSignTargetOutput}
+     */
+    UpdateGlobalSignTargetOutput,
+
+    /**
      * The UpdateItem model constructor.
      * @property {module:model/UpdateItem}
      */
@@ -4397,6 +4483,18 @@ export {
      * @property {module:model/UpdateWindowsTarget}
      */
     UpdateWindowsTarget,
+
+    /**
+     * The UpdateZeroSSLTarget model constructor.
+     * @property {module:model/UpdateZeroSSLTarget}
+     */
+    UpdateZeroSSLTarget,
+
+    /**
+     * The UpdateZeroSSLTargetOutput model constructor.
+     * @property {module:model/UpdateZeroSSLTargetOutput}
+     */
+    UpdateZeroSSLTargetOutput,
 
     /**
      * The UploadPKCS12 model constructor.

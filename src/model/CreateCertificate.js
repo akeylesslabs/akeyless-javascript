@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateCertificate model module.
  * @module model/CreateCertificate
- * @version 3.3.0
+ * @version 3.3.1
  */
 class CreateCertificate {
     /**
@@ -61,6 +61,9 @@ class CreateCertificate {
             if (data.hasOwnProperty('expiration-event-in')) {
                 obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
             }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -93,7 +96,7 @@ class CreateCertificate {
 }
 
 /**
- * Content of the certificate PEM in a Base64 format.
+ * Content of the certificate in a Base64 format.
  * @member {String} certificate-data
  */
 CreateCertificate.prototype['certificate-data'] = undefined;
@@ -117,6 +120,12 @@ CreateCertificate.prototype['description'] = undefined;
 CreateCertificate.prototype['expiration-event-in'] = undefined;
 
 /**
+ * CertificateFormat of the certificate and private key, possible values: cer,crt,pem,pfx,p12. Required when passing inline certificate content with --certificate-data or --key-data, otherwise format is derived from the file extension.
+ * @member {String} format
+ */
+CreateCertificate.prototype['format'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  * @default false
@@ -130,7 +139,7 @@ CreateCertificate.prototype['json'] = false;
 CreateCertificate.prototype['key'] = undefined;
 
 /**
- * Content of the certificate's private key PEM in a Base64 format.
+ * Content of the certificate's private key in a Base64 format.
  * @member {String} key-data
  */
 CreateCertificate.prototype['key-data'] = undefined;

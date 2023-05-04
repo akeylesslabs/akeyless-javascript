@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Configure model module.
  * @module model/Configure
- * @version 3.3.0
+ * @version 3.3.1
  */
 class Configure {
     /**
@@ -103,7 +103,7 @@ Configure.prototype['access-id'] = undefined;
 Configure.prototype['access-key'] = undefined;
 
 /**
- * Access Type (access_key/password/azure_ad/saml/oidc/aws_iam/gcp/k8s)
+ * Access Type (access_key/password/azure_ad/saml/oidc/aws_iam/gcp/k8s/cert)
  * @member {String} access-type
  * @default 'access_key'
  */

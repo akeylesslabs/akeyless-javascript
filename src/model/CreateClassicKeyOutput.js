@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKeyOutput model module.
  * @module model/CreateClassicKeyOutput
- * @version 3.3.0
+ * @version 3.3.1
  */
 class CreateClassicKeyOutput {
     /**
@@ -56,6 +56,9 @@ class CreateClassicKeyOutput {
             if (data.hasOwnProperty('classic_key_type')) {
                 obj['classic_key_type'] = ApiClient.convertToType(data['classic_key_type'], 'String');
             }
+            if (data.hasOwnProperty('public_key')) {
+                obj['public_key'] = ApiClient.convertToType(data['public_key'], 'String');
+            }
         }
         return obj;
     }
@@ -77,6 +80,11 @@ CreateClassicKeyOutput.prototype['classic_key_name'] = undefined;
  * @member {String} classic_key_type
  */
 CreateClassicKeyOutput.prototype['classic_key_type'] = undefined;
+
+/**
+ * @member {String} public_key
+ */
+CreateClassicKeyOutput.prototype['public_key'] = undefined;
 
 
 

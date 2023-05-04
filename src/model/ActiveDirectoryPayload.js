@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ActiveDirectoryPayload model module.
  * @module model/ActiveDirectoryPayload
- * @version 3.3.0
+ * @version 3.3.1
  */
 class ActiveDirectoryPayload {
     /**
@@ -86,11 +86,20 @@ class ActiveDirectoryPayload {
             if (data.hasOwnProperty('ssh_port')) {
                 obj['ssh_port'] = ApiClient.convertToType(data['ssh_port'], 'String');
             }
+            if (data.hasOwnProperty('targets_type')) {
+                obj['targets_type'] = ApiClient.convertToType(data['targets_type'], 'String');
+            }
             if (data.hasOwnProperty('user_base_dn')) {
                 obj['user_base_dn'] = ApiClient.convertToType(data['user_base_dn'], 'String');
             }
             if (data.hasOwnProperty('user_groups')) {
                 obj['user_groups'] = ApiClient.convertToType(data['user_groups'], ['String']);
+            }
+            if (data.hasOwnProperty('winrm_over_http')) {
+                obj['winrm_over_http'] = ApiClient.convertToType(data['winrm_over_http'], 'Boolean');
+            }
+            if (data.hasOwnProperty('winrm_port')) {
+                obj['winrm_port'] = ApiClient.convertToType(data['winrm_port'], 'String');
             }
         }
         return obj;
@@ -165,6 +174,11 @@ ActiveDirectoryPayload.prototype['local_users_rotated_secrets_path_template'] = 
 ActiveDirectoryPayload.prototype['ssh_port'] = undefined;
 
 /**
+ * @member {String} targets_type
+ */
+ActiveDirectoryPayload.prototype['targets_type'] = undefined;
+
+/**
  * @member {String} user_base_dn
  */
 ActiveDirectoryPayload.prototype['user_base_dn'] = undefined;
@@ -173,6 +187,16 @@ ActiveDirectoryPayload.prototype['user_base_dn'] = undefined;
  * @member {Array.<String>} user_groups
  */
 ActiveDirectoryPayload.prototype['user_groups'] = undefined;
+
+/**
+ * @member {Boolean} winrm_over_http
+ */
+ActiveDirectoryPayload.prototype['winrm_over_http'] = undefined;
+
+/**
+ * @member {String} winrm_port
+ */
+ActiveDirectoryPayload.prototype['winrm_port'] = undefined;
 
 
 

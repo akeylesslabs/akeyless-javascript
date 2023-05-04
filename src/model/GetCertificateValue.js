@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCertificateValue model module.
  * @module model/GetCertificateValue
- * @version 3.3.0
+ * @version 3.3.1
  */
 class GetCertificateValue {
     /**
@@ -49,11 +49,26 @@ class GetCertificateValue {
         if (data) {
             obj = obj || new GetCertificateValue();
 
+            if (data.hasOwnProperty('cert-issuer-name')) {
+                obj['cert-issuer-name'] = ApiClient.convertToType(data['cert-issuer-name'], 'String');
+            }
+            if (data.hasOwnProperty('certificate-file-output')) {
+                obj['certificate-file-output'] = ApiClient.convertToType(data['certificate-file-output'], 'String');
+            }
+            if (data.hasOwnProperty('display-id')) {
+                obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
+            }
+            if (data.hasOwnProperty('issuance-token')) {
+                obj['issuance-token'] = ApiClient.convertToType(data['issuance-token'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('private-key-file-output')) {
+                obj['private-key-file-output'] = ApiClient.convertToType(data['private-key-file-output'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -72,6 +87,30 @@ class GetCertificateValue {
 }
 
 /**
+ * The parent PKI Certificate Issuer's name of the certificate, required when used with display-id and token
+ * @member {String} cert-issuer-name
+ */
+GetCertificateValue.prototype['cert-issuer-name'] = undefined;
+
+/**
+ * File to write the certificates to.
+ * @member {String} certificate-file-output
+ */
+GetCertificateValue.prototype['certificate-file-output'] = undefined;
+
+/**
+ * Certificate display ID
+ * @member {String} display-id
+ */
+GetCertificateValue.prototype['display-id'] = undefined;
+
+/**
+ * Token for getting the issued certificate
+ * @member {String} issuance-token
+ */
+GetCertificateValue.prototype['issuance-token'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  * @default false
@@ -81,8 +120,15 @@ GetCertificateValue.prototype['json'] = false;
 /**
  * Certificate name
  * @member {String} name
+ * @default 'dummy_certificate_name'
  */
-GetCertificateValue.prototype['name'] = undefined;
+GetCertificateValue.prototype['name'] = 'dummy_certificate_name';
+
+/**
+ * File to write the private key to.
+ * @member {String} private-key-file-output
+ */
+GetCertificateValue.prototype['private-key-file-output'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

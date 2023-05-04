@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 3.3.0
+ * @version 3.3.1
  */
 class CreatePKICertIssuer {
     /**
      * Constructs a new <code>CreatePKICertIssuer</code>.
      * @alias module:model/CreatePKICertIssuer
      * @param name {String} PKI certificate issuer name
-     * @param signerKeyName {String} A key to sign the certificate with
-     * @param ttl {Number} he requested Time To Live for the certificate, in seconds
+     * @param signerKeyName {String} A key to sign the certificate with, required in Private CA mode
+     * @param ttl {Number} The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs
      */
     constructor(name, signerKeyName, ttl) { 
         
@@ -65,6 +65,9 @@ class CreatePKICertIssuer {
             if (data.hasOwnProperty('allowed-uri-sans')) {
                 obj['allowed-uri-sans'] = ApiClient.convertToType(data['allowed-uri-sans'], 'String');
             }
+            if (data.hasOwnProperty('ca-target')) {
+                obj['ca-target'] = ApiClient.convertToType(data['ca-target'], 'String');
+            }
             if (data.hasOwnProperty('client-flag')) {
                 obj['client-flag'] = ApiClient.convertToType(data['client-flag'], 'Boolean');
             }
@@ -79,6 +82,15 @@ class CreatePKICertIssuer {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('destination-path')) {
+                obj['destination-path'] = ApiClient.convertToType(data['destination-path'], 'String');
+            }
+            if (data.hasOwnProperty('expiration-event-in')) {
+                obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
+            }
+            if (data.hasOwnProperty('gw-cluster-url')) {
+                obj['gw-cluster-url'] = ApiClient.convertToType(data['gw-cluster-url'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -109,6 +121,9 @@ class CreatePKICertIssuer {
             }
             if (data.hasOwnProperty('postal-code')) {
                 obj['postal-code'] = ApiClient.convertToType(data['postal-code'], 'String');
+            }
+            if (data.hasOwnProperty('protect-certificates')) {
+                obj['protect-certificates'] = ApiClient.convertToType(data['protect-certificates'], 'Boolean');
             }
             if (data.hasOwnProperty('province')) {
                 obj['province'] = ApiClient.convertToType(data['province'], 'String');
@@ -166,6 +181,12 @@ CreatePKICertIssuer.prototype['allowed-domains'] = undefined;
 CreatePKICertIssuer.prototype['allowed-uri-sans'] = undefined;
 
 /**
+ * The name of an existing CA target to attach this PKI Certificate Issuer to, required in Public CA mode
+ * @member {String} ca-target
+ */
+CreatePKICertIssuer.prototype['ca-target'] = undefined;
+
+/**
  * If set, certificates will be flagged for client auth use
  * @member {Boolean} client-flag
  */
@@ -194,6 +215,24 @@ CreatePKICertIssuer.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 CreatePKICertIssuer.prototype['description'] = undefined;
+
+/**
+ * A path in which to save generated certificates
+ * @member {String} destination-path
+ */
+CreatePKICertIssuer.prototype['destination-path'] = undefined;
+
+/**
+ * How many days before the expiration of the certificate would you like to be notified.
+ * @member {Array.<String>} expiration-event-in
+ */
+CreatePKICertIssuer.prototype['expiration-event-in'] = undefined;
+
+/**
+ * The GW cluster URL to issue the certificate from, required in Public CA mode
+ * @member {String} gw-cluster-url
+ */
+CreatePKICertIssuer.prototype['gw-cluster-url'] = undefined;
 
 /**
  * Set output format to JSON
@@ -258,6 +297,12 @@ CreatePKICertIssuer.prototype['organizations'] = undefined;
 CreatePKICertIssuer.prototype['postal-code'] = undefined;
 
 /**
+ * Whether to protect generated certificates from deletion
+ * @member {Boolean} protect-certificates
+ */
+CreatePKICertIssuer.prototype['protect-certificates'] = undefined;
+
+/**
  * A comma-separated list of provinces that will be set in the issued certificate
  * @member {String} province
  */
@@ -270,10 +315,11 @@ CreatePKICertIssuer.prototype['province'] = undefined;
 CreatePKICertIssuer.prototype['server-flag'] = undefined;
 
 /**
- * A key to sign the certificate with
+ * A key to sign the certificate with, required in Private CA mode
  * @member {String} signer-key-name
+ * @default 'dummy_signer_key'
  */
-CreatePKICertIssuer.prototype['signer-key-name'] = undefined;
+CreatePKICertIssuer.prototype['signer-key-name'] = 'dummy_signer_key';
 
 /**
  * A comma-separated list of street addresses that will be set in the issued certificate
@@ -294,7 +340,7 @@ CreatePKICertIssuer.prototype['tag'] = undefined;
 CreatePKICertIssuer.prototype['token'] = undefined;
 
 /**
- * he requested Time To Live for the certificate, in seconds
+ * The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs
  * @member {Number} ttl
  */
 CreatePKICertIssuer.prototype['ttl'] = undefined;

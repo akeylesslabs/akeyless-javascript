@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayMessageQueueInfo model module.
  * @module model/GatewayMessageQueueInfo
- * @version 3.3.0
+ * @version 3.3.1
  */
 class GatewayMessageQueueInfo {
     /**
@@ -47,8 +47,8 @@ class GatewayMessageQueueInfo {
         if (data) {
             obj = obj || new GatewayMessageQueueInfo();
 
-            if (data.hasOwnProperty('broadcast_queue_name')) {
-                obj['broadcast_queue_name'] = ApiClient.convertToType(data['broadcast_queue_name'], 'String');
+            if (data.hasOwnProperty('broadcast_queue_name_a')) {
+                obj['broadcast_queue_name_a'] = ApiClient.convertToType(data['broadcast_queue_name_a'], 'String');
             }
             if (data.hasOwnProperty('mq_type')) {
                 obj['mq_type'] = ApiClient.convertToType(data['mq_type'], 'String');
@@ -67,9 +67,9 @@ class GatewayMessageQueueInfo {
 }
 
 /**
- * @member {String} broadcast_queue_name
+ * @member {String} broadcast_queue_name_a
  */
-GatewayMessageQueueInfo.prototype['broadcast_queue_name'] = undefined;
+GatewayMessageQueueInfo.prototype['broadcast_queue_name_a'] = undefined;
 
 /**
  * @member {String} mq_type

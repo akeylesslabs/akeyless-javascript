@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Decrypt model module.
  * @module model/Decrypt
- * @version 3.3.0
+ * @version 3.3.1
  */
 class Decrypt {
     /**
@@ -76,6 +76,9 @@ class Decrypt {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
         }
         return obj;
@@ -138,6 +141,12 @@ Decrypt.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 Decrypt.prototype['uid-token'] = undefined;
+
+/**
+ * key version (relevant only for classic key)
+ * @member {Number} version
+ */
+Decrypt.prototype['version'] = undefined;
 
 
 

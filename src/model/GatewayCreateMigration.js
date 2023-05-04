@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateMigration model module.
  * @module model/GatewayCreateMigration
- * @version 3.3.0
+ * @version 3.3.1
  */
 class GatewayCreateMigration {
     /**
@@ -67,6 +67,18 @@ class GatewayCreateMigration {
             if (data.hasOwnProperty('1password-vaults')) {
                 obj['1password-vaults'] = ApiClient.convertToType(data['1password-vaults'], ['String']);
             }
+            if (data.hasOwnProperty('ad-ssh-port')) {
+                obj['ad-ssh-port'] = ApiClient.convertToType(data['ad-ssh-port'], 'String');
+            }
+            if (data.hasOwnProperty('ad-targets-type')) {
+                obj['ad-targets-type'] = ApiClient.convertToType(data['ad-targets-type'], 'String');
+            }
+            if (data.hasOwnProperty('ad-winrm-over-http')) {
+                obj['ad-winrm-over-http'] = ApiClient.convertToType(data['ad-winrm-over-http'], 'String');
+            }
+            if (data.hasOwnProperty('ad-winrm-port')) {
+                obj['ad-winrm-port'] = ApiClient.convertToType(data['ad-winrm-port'], 'String');
+            }
             if (data.hasOwnProperty('ad_auto_rotate')) {
                 obj['ad_auto_rotate'] = ApiClient.convertToType(data['ad_auto_rotate'], 'String');
             }
@@ -108,9 +120,6 @@ class GatewayCreateMigration {
             }
             if (data.hasOwnProperty('ad_user_groups')) {
                 obj['ad_user_groups'] = ApiClient.convertToType(data['ad_user_groups'], 'String');
-            }
-            if (data.hasOwnProperty('as_ssh_port')) {
-                obj['as_ssh_port'] = ApiClient.convertToType(data['as_ssh_port'], 'String');
             }
             if (data.hasOwnProperty('aws-key')) {
                 obj['aws-key'] = ApiClient.convertToType(data['aws-key'], 'String');
@@ -234,6 +243,34 @@ GatewayCreateMigration.prototype['1password-url'] = undefined;
 GatewayCreateMigration.prototype['1password-vaults'] = undefined;
 
 /**
+ * Set the SSH Port for further connection to the domain servers. Default is port 22 (Relevant only for Active Directory migration)
+ * @member {String} ad-ssh-port
+ * @default '22'
+ */
+GatewayCreateMigration.prototype['ad-ssh-port'] = '22';
+
+/**
+ * Set the target type of the domain servers [ssh/windows](Relevant only for Active Directory migration)
+ * @member {String} ad-targets-type
+ * @default 'windows'
+ */
+GatewayCreateMigration.prototype['ad-targets-type'] = 'windows';
+
+/**
+ * Use WinRM over HTTP, by default runs over HTTPS
+ * @member {String} ad-winrm-over-http
+ * @default 'false'
+ */
+GatewayCreateMigration.prototype['ad-winrm-over-http'] = 'false';
+
+/**
+ * Set the WinRM Port for further connection to the domain servers. Default is 5986 (Relevant only for Active Directory migration)
+ * @member {String} ad-winrm-port
+ * @default '5986'
+ */
+GatewayCreateMigration.prototype['ad-winrm-port'] = '5986';
+
+/**
  * Enable/Disable automatic/recurrent rotation for migrated secrets. Default is false: only manual rotation is allowed for migrated secrets. If set to true, this command should be combined with --ad-rotation-interval and --ad-rotation-hour parameters (Relevant only for Active Directory migration)
  * @member {String} ad_auto_rotate
  */
@@ -246,7 +283,7 @@ GatewayCreateMigration.prototype['ad_auto_rotate'] = undefined;
 GatewayCreateMigration.prototype['ad_computer_base_dn'] = undefined;
 
 /**
- * Enable/Disable discovery of local users from each domain server and migrate them as SSH Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration)
+ * Enable/Disable discovery of local users from each domain server and migrate them as SSH/Windows Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration)
  * @member {String} ad_discover_local_users
  */
 GatewayCreateMigration.prototype['ad_discover_local_users'] = undefined;
@@ -300,7 +337,7 @@ GatewayCreateMigration.prototype['ad_sra_enable_rdp'] = undefined;
 GatewayCreateMigration.prototype['ad_target_name'] = undefined;
 
 /**
- * Path location template for migrating domain servers as SSH Targets e.g.: .../Servers/{{COMPUTER_NAME}} (Relevant only for Active Directory migration)
+ * Path location template for migrating domain servers as SSH/Windows Targets e.g.: .../Servers/{{COMPUTER_NAME}} (Relevant only for Active Directory migration)
  * @member {String} ad_targets_path_template
  */
 GatewayCreateMigration.prototype['ad_targets_path_template'] = undefined;
@@ -316,13 +353,6 @@ GatewayCreateMigration.prototype['ad_user_base_dn'] = undefined;
  * @member {String} ad_user_groups
  */
 GatewayCreateMigration.prototype['ad_user_groups'] = undefined;
-
-/**
- * Set the SSH Port for further connection to the domain servers. Default is port 22 (Relevant only for Active Directory migration)
- * @member {String} as_ssh_port
- * @default '22'
- */
-GatewayCreateMigration.prototype['as_ssh_port'] = '22';
 
 /**
  * AWS Secret Access Key (relevant only for AWS migration)

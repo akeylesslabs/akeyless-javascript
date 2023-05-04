@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 3.3.0
+ * @version 3.3.1
  */
 class TargetTypeDetailsInput {
     /**
@@ -49,6 +49,9 @@ class TargetTypeDetailsInput {
 
             if (data.hasOwnProperty('administrative_port')) {
                 obj['administrative_port'] = ApiClient.convertToType(data['administrative_port'], 'String');
+            }
+            if (data.hasOwnProperty('api_key')) {
+                obj['api_key'] = ApiClient.convertToType(data['api_key'], 'String');
             }
             if (data.hasOwnProperty('app_private_key')) {
                 obj['app_private_key'] = ApiClient.convertToType(data['app_private_key'], ['Number']);
@@ -158,6 +161,9 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('db_user_name')) {
                 obj['db_user_name'] = ApiClient.convertToType(data['db_user_name'], 'String');
             }
+            if (data.hasOwnProperty('domain_name')) {
+                obj['domain_name'] = ApiClient.convertToType(data['domain_name'], 'String');
+            }
             if (data.hasOwnProperty('eks_access_key_id')) {
                 obj['eks_access_key_id'] = ApiClient.convertToType(data['eks_access_key_id'], 'String');
             }
@@ -175,6 +181,12 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('eks_secret_access_key')) {
                 obj['eks_secret_access_key'] = ApiClient.convertToType(data['eks_secret_access_key'], 'String');
+            }
+            if (data.hasOwnProperty('email')) {
+                obj['email'] = ApiClient.convertToType(data['email'], 'String');
+            }
+            if (data.hasOwnProperty('first_name')) {
+                obj['first_name'] = ApiClient.convertToType(data['first_name'], 'String');
             }
             if (data.hasOwnProperty('gcp_service_account_email')) {
                 obj['gcp_service_account_email'] = ApiClient.convertToType(data['gcp_service_account_email'], 'String');
@@ -218,6 +230,18 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('hosts')) {
                 obj['hosts'] = ApiClient.convertToType(data['hosts'], {'String': 'String'});
             }
+            if (data.hasOwnProperty('imap_fqdn')) {
+                obj['imap_fqdn'] = ApiClient.convertToType(data['imap_fqdn'], 'String');
+            }
+            if (data.hasOwnProperty('imap_password')) {
+                obj['imap_password'] = ApiClient.convertToType(data['imap_password'], 'String');
+            }
+            if (data.hasOwnProperty('imap_port')) {
+                obj['imap_port'] = ApiClient.convertToType(data['imap_port'], 'String');
+            }
+            if (data.hasOwnProperty('imap_user')) {
+                obj['imap_user'] = ApiClient.convertToType(data['imap_user'], 'String');
+            }
             if (data.hasOwnProperty('implementation_type')) {
                 obj['implementation_type'] = ApiClient.convertToType(data['implementation_type'], 'String');
             }
@@ -229,6 +253,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('k8s_cluster_endpoint')) {
                 obj['k8s_cluster_endpoint'] = ApiClient.convertToType(data['k8s_cluster_endpoint'], 'String');
+            }
+            if (data.hasOwnProperty('last_name')) {
+                obj['last_name'] = ApiClient.convertToType(data['last_name'], 'String');
             }
             if (data.hasOwnProperty('ldap_audience')) {
                 obj['ldap_audience'] = ApiClient.convertToType(data['ldap_audience'], 'String');
@@ -287,6 +314,9 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('payload')) {
                 obj['payload'] = ApiClient.convertToType(data['payload'], 'String');
             }
+            if (data.hasOwnProperty('phone')) {
+                obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
+            }
             if (data.hasOwnProperty('ping_url')) {
                 obj['ping_url'] = ApiClient.convertToType(data['ping_url'], 'String');
             }
@@ -301,6 +331,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('privileged_user')) {
                 obj['privileged_user'] = ApiClient.convertToType(data['privileged_user'], 'String');
+            }
+            if (data.hasOwnProperty('profile_id')) {
+                obj['profile_id'] = ApiClient.convertToType(data['profile_id'], 'String');
             }
             if (data.hasOwnProperty('rabbitmq_server_password')) {
                 obj['rabbitmq_server_password'] = ApiClient.convertToType(data['rabbitmq_server_password'], 'String');
@@ -326,11 +359,17 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('tenant_url')) {
                 obj['tenant_url'] = ApiClient.convertToType(data['tenant_url'], 'String');
             }
+            if (data.hasOwnProperty('timeout')) {
+                obj['timeout'] = ApiClient.convertToType(data['timeout'], 'Number');
+            }
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
             }
             if (data.hasOwnProperty('use_gw_cloud_identity')) {
                 obj['use_gw_cloud_identity'] = ApiClient.convertToType(data['use_gw_cloud_identity'], 'Boolean');
+            }
+            if (data.hasOwnProperty('use_gw_service_account')) {
+                obj['use_gw_service_account'] = ApiClient.convertToType(data['use_gw_service_account'], 'Boolean');
             }
             if (data.hasOwnProperty('use_tls')) {
                 obj['use_tls'] = ApiClient.convertToType(data['use_tls'], 'Boolean');
@@ -343,6 +382,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            }
+            if (data.hasOwnProperty('validation_email')) {
+                obj['validation_email'] = ApiClient.convertToType(data['validation_email'], 'String');
             }
             if (data.hasOwnProperty('venafi_api_key')) {
                 obj['venafi_api_key'] = ApiClient.convertToType(data['venafi_api_key'], 'String');
@@ -373,6 +415,11 @@ class TargetTypeDetailsInput {
  * @member {String} administrative_port
  */
 TargetTypeDetailsInput.prototype['administrative_port'] = undefined;
+
+/**
+ * @member {String} api_key
+ */
+TargetTypeDetailsInput.prototype['api_key'] = undefined;
 
 /**
  * params needed for jwt auth AppPrivateKey is the rsa private key in PEM format
@@ -562,6 +609,11 @@ TargetTypeDetailsInput.prototype['db_server_name'] = undefined;
 TargetTypeDetailsInput.prototype['db_user_name'] = undefined;
 
 /**
+ * @member {String} domain_name
+ */
+TargetTypeDetailsInput.prototype['domain_name'] = undefined;
+
+/**
  * @member {String} eks_access_key_id
  */
 TargetTypeDetailsInput.prototype['eks_access_key_id'] = undefined;
@@ -590,6 +642,17 @@ TargetTypeDetailsInput.prototype['eks_region'] = undefined;
  * @member {String} eks_secret_access_key
  */
 TargetTypeDetailsInput.prototype['eks_secret_access_key'] = undefined;
+
+/**
+ * @member {String} email
+ */
+TargetTypeDetailsInput.prototype['email'] = undefined;
+
+/**
+ * Contact Info - GlobalSign requires this to be sent with every certificate creation request
+ * @member {String} first_name
+ */
+TargetTypeDetailsInput.prototype['first_name'] = undefined;
 
 /**
  * deprecated
@@ -663,6 +726,26 @@ TargetTypeDetailsInput.prototype['hostname'] = undefined;
 TargetTypeDetailsInput.prototype['hosts'] = undefined;
 
 /**
+ * @member {String} imap_fqdn
+ */
+TargetTypeDetailsInput.prototype['imap_fqdn'] = undefined;
+
+/**
+ * @member {String} imap_password
+ */
+TargetTypeDetailsInput.prototype['imap_password'] = undefined;
+
+/**
+ * @member {String} imap_port
+ */
+TargetTypeDetailsInput.prototype['imap_port'] = undefined;
+
+/**
+ * @member {String} imap_user
+ */
+TargetTypeDetailsInput.prototype['imap_user'] = undefined;
+
+/**
  * @member {String} implementation_type
  */
 TargetTypeDetailsInput.prototype['implementation_type'] = undefined;
@@ -681,6 +764,11 @@ TargetTypeDetailsInput.prototype['k8s_cluster_ca_certificate'] = undefined;
  * @member {String} k8s_cluster_endpoint
  */
 TargetTypeDetailsInput.prototype['k8s_cluster_endpoint'] = undefined;
+
+/**
+ * @member {String} last_name
+ */
+TargetTypeDetailsInput.prototype['last_name'] = undefined;
 
 /**
  * @member {String} ldap_audience
@@ -781,6 +869,11 @@ TargetTypeDetailsInput.prototype['password'] = undefined;
 TargetTypeDetailsInput.prototype['payload'] = undefined;
 
 /**
+ * @member {String} phone
+ */
+TargetTypeDetailsInput.prototype['phone'] = undefined;
+
+/**
  * @member {String} ping_url
  */
 TargetTypeDetailsInput.prototype['ping_url'] = undefined;
@@ -804,6 +897,11 @@ TargetTypeDetailsInput.prototype['private_key_password'] = undefined;
  * @member {String} privileged_user
  */
 TargetTypeDetailsInput.prototype['privileged_user'] = undefined;
+
+/**
+ * @member {String} profile_id
+ */
+TargetTypeDetailsInput.prototype['profile_id'] = undefined;
 
 /**
  * @member {String} rabbitmq_server_password
@@ -848,6 +946,12 @@ TargetTypeDetailsInput.prototype['ssl_connection_mode'] = undefined;
 TargetTypeDetailsInput.prototype['tenant_url'] = undefined;
 
 /**
+ * A Duration represents the elapsed time between two instants as an int64 nanosecond count. The representation limits the largest representable duration to approximately 290 years.
+ * @member {Number} timeout
+ */
+TargetTypeDetailsInput.prototype['timeout'] = undefined;
+
+/**
  * @member {String} url
  */
 TargetTypeDetailsInput.prototype['url'] = undefined;
@@ -856,6 +960,11 @@ TargetTypeDetailsInput.prototype['url'] = undefined;
  * @member {Boolean} use_gw_cloud_identity
  */
 TargetTypeDetailsInput.prototype['use_gw_cloud_identity'] = undefined;
+
+/**
+ * @member {Boolean} use_gw_service_account
+ */
+TargetTypeDetailsInput.prototype['use_gw_service_account'] = undefined;
 
 /**
  * @member {Boolean} use_tls
@@ -876,6 +985,11 @@ TargetTypeDetailsInput.prototype['user_password'] = undefined;
  * @member {String} username
  */
 TargetTypeDetailsInput.prototype['username'] = undefined;
+
+/**
+ * @member {String} validation_email
+ */
+TargetTypeDetailsInput.prototype['validation_email'] = undefined;
 
 /**
  * @member {String} venafi_api_key

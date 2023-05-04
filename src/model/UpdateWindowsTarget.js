@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateWindowsTarget model module.
  * @module model/UpdateWindowsTarget
- * @version 3.3.0
+ * @version 3.3.1
  */
 class UpdateWindowsTarget {
     /**
@@ -60,6 +60,9 @@ class UpdateWindowsTarget {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('domain')) {
+                obj['domain'] = ApiClient.convertToType(data['domain'], 'String');
             }
             if (data.hasOwnProperty('hostname')) {
                 obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
@@ -118,6 +121,12 @@ UpdateWindowsTarget.prototype['certificate'] = undefined;
  * @member {String} description
  */
 UpdateWindowsTarget.prototype['description'] = undefined;
+
+/**
+ * User domain name
+ * @member {String} domain
+ */
+UpdateWindowsTarget.prototype['domain'] = undefined;
 
 /**
  * Server hostname

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Encrypt model module.
  * @module model/Encrypt
- * @version 3.3.0
+ * @version 3.3.1
  */
 class Encrypt {
     /**
@@ -76,6 +76,9 @@ class Encrypt {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+            }
         }
         return obj;
     }
@@ -96,7 +99,7 @@ Encrypt.prototype['display-id'] = undefined;
 Encrypt.prototype['encryption-context'] = undefined;
 
 /**
- * If specified, the plaintext input is assumed to be formatted accordingly. Current supported options: [base64]
+ * Select default assumed format for any plaintext input. Currently supported options: [base64]
  * @member {String} input-format
  */
 Encrypt.prototype['input-format'] = undefined;
@@ -137,6 +140,12 @@ Encrypt.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 Encrypt.prototype['uid-token'] = undefined;
+
+/**
+ * key version (relevant only for classic key)
+ * @member {Number} version
+ */
+Encrypt.prototype['version'] = undefined;
 
 
 

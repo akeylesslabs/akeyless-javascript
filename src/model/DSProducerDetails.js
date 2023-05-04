@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 3.3.0
+ * @version 3.3.1
  */
 class DSProducerDetails {
     /**
@@ -600,6 +600,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('use_gw_cloud_identity')) {
                 obj['use_gw_cloud_identity'] = ApiClient.convertToType(data['use_gw_cloud_identity'], 'Boolean');
+            }
+            if (data.hasOwnProperty('use_gw_service_account')) {
+                obj['use_gw_service_account'] = ApiClient.convertToType(data['use_gw_service_account'], 'Boolean');
             }
             if (data.hasOwnProperty('user_name')) {
                 obj['user_name'] = ApiClient.convertToType(data['user_name'], 'String');
@@ -1605,6 +1608,11 @@ DSProducerDetails.prototype['timeout_seconds'] = undefined;
  * @member {Boolean} use_gw_cloud_identity
  */
 DSProducerDetails.prototype['use_gw_cloud_identity'] = undefined;
+
+/**
+ * @member {Boolean} use_gw_service_account
+ */
+DSProducerDetails.prototype['use_gw_service_account'] = undefined;
 
 /**
  * @member {String} user_name

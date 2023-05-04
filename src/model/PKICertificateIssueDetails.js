@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import CertificateExpirationEvent from './CertificateExpirationEvent';
 
 /**
  * The PKICertificateIssueDetails model module.
  * @module model/PKICertificateIssueDetails
- * @version 3.3.0
+ * @version 3.3.1
  */
 class PKICertificateIssueDetails {
     /**
@@ -62,6 +63,9 @@ class PKICertificateIssueDetails {
             if (data.hasOwnProperty('basic_constraints_valid_for_non_ca')) {
                 obj['basic_constraints_valid_for_non_ca'] = ApiClient.convertToType(data['basic_constraints_valid_for_non_ca'], 'Boolean');
             }
+            if (data.hasOwnProperty('certificate_authority_mode')) {
+                obj['certificate_authority_mode'] = ApiClient.convertToType(data['certificate_authority_mode'], 'String');
+            }
             if (data.hasOwnProperty('client_flag')) {
                 obj['client_flag'] = ApiClient.convertToType(data['client_flag'], 'Boolean');
             }
@@ -71,8 +75,17 @@ class PKICertificateIssueDetails {
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], ['String']);
             }
+            if (data.hasOwnProperty('destination_path')) {
+                obj['destination_path'] = ApiClient.convertToType(data['destination_path'], 'String');
+            }
             if (data.hasOwnProperty('enforce_hostnames')) {
                 obj['enforce_hostnames'] = ApiClient.convertToType(data['enforce_hostnames'], 'Boolean');
+            }
+            if (data.hasOwnProperty('expiration_events')) {
+                obj['expiration_events'] = ApiClient.convertToType(data['expiration_events'], [CertificateExpirationEvent]);
+            }
+            if (data.hasOwnProperty('gw_cluster_url')) {
+                obj['gw_cluster_url'] = ApiClient.convertToType(data['gw_cluster_url'], 'String');
             }
             if (data.hasOwnProperty('is_ca')) {
                 obj['is_ca'] = ApiClient.convertToType(data['is_ca'], 'Boolean');
@@ -100,6 +113,9 @@ class PKICertificateIssueDetails {
             }
             if (data.hasOwnProperty('postal_code')) {
                 obj['postal_code'] = ApiClient.convertToType(data['postal_code'], ['String']);
+            }
+            if (data.hasOwnProperty('protect_generated_certificates')) {
+                obj['protect_generated_certificates'] = ApiClient.convertToType(data['protect_generated_certificates'], 'Boolean');
             }
             if (data.hasOwnProperty('province')) {
                 obj['province'] = ApiClient.convertToType(data['province'], ['String']);
@@ -146,6 +162,11 @@ PKICertificateIssueDetails.prototype['allowed_uri_sans'] = undefined;
 PKICertificateIssueDetails.prototype['basic_constraints_valid_for_non_ca'] = undefined;
 
 /**
+ * @member {String} certificate_authority_mode
+ */
+PKICertificateIssueDetails.prototype['certificate_authority_mode'] = undefined;
+
+/**
  * @member {Boolean} client_flag
  */
 PKICertificateIssueDetails.prototype['client_flag'] = undefined;
@@ -161,9 +182,27 @@ PKICertificateIssueDetails.prototype['code_signing_flag'] = undefined;
 PKICertificateIssueDetails.prototype['country'] = undefined;
 
 /**
+ * DestinationPath is the destination to save generated certificates
+ * @member {String} destination_path
+ */
+PKICertificateIssueDetails.prototype['destination_path'] = undefined;
+
+/**
  * @member {Boolean} enforce_hostnames
  */
 PKICertificateIssueDetails.prototype['enforce_hostnames'] = undefined;
+
+/**
+ * ExpirationNotification holds a list of expiration notices that should be sent in case a certificate is about to expire, this value is being propagated to the Certificate resources that are created
+ * @member {Array.<module:model/CertificateExpirationEvent>} expiration_events
+ */
+PKICertificateIssueDetails.prototype['expiration_events'] = undefined;
+
+/**
+ * GWClusterURL is required when CAMode is \"public\" and it defines the cluster URL the PKI should be issued from. The GW cluster must have permissions to read associated target's details
+ * @member {String} gw_cluster_url
+ */
+PKICertificateIssueDetails.prototype['gw_cluster_url'] = undefined;
 
 /**
  * @member {Boolean} is_ca
@@ -210,6 +249,12 @@ PKICertificateIssueDetails.prototype['organization_unit_list'] = undefined;
  * @member {Array.<String>} postal_code
  */
 PKICertificateIssueDetails.prototype['postal_code'] = undefined;
+
+/**
+ * ProtectGeneratedCertificates dictates whether the created certificates should be protected from deletion
+ * @member {Boolean} protect_generated_certificates
+ */
+PKICertificateIssueDetails.prototype['protect_generated_certificates'] = undefined;
 
 /**
  * @member {Array.<String>} province

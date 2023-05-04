@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDownloadCustomerFragmentsOutput model module.
  * @module model/GatewayDownloadCustomerFragmentsOutput
- * @version 3.3.0
+ * @version 3.3.1
  */
 class GatewayDownloadCustomerFragmentsOutput {
     /**

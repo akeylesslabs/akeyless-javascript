@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateNativeK8STarget model module.
  * @module model/UpdateNativeK8STarget
- * @version 3.3.0
+ * @version 3.3.1
  */
 class UpdateNativeK8STarget {
     /**
@@ -94,6 +94,9 @@ class UpdateNativeK8STarget {
             if (data.hasOwnProperty('update-version')) {
                 obj['update-version'] = ApiClient.convertToType(data['update-version'], 'Boolean');
             }
+            if (data.hasOwnProperty('use-gw-service-account')) {
+                obj['use-gw-service-account'] = ApiClient.convertToType(data['use-gw-service-account'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -123,20 +126,23 @@ UpdateNativeK8STarget.prototype['json'] = false;
 /**
  * K8S cluster CA certificate
  * @member {String} k8s-cluster-ca-cert
+ * @default 'dummy_val'
  */
-UpdateNativeK8STarget.prototype['k8s-cluster-ca-cert'] = undefined;
+UpdateNativeK8STarget.prototype['k8s-cluster-ca-cert'] = 'dummy_val';
 
 /**
  * K8S cluster URL endpoint
  * @member {String} k8s-cluster-endpoint
+ * @default 'dummy_val'
  */
-UpdateNativeK8STarget.prototype['k8s-cluster-endpoint'] = undefined;
+UpdateNativeK8STarget.prototype['k8s-cluster-endpoint'] = 'dummy_val';
 
 /**
  * K8S cluster Bearer token
  * @member {String} k8s-cluster-token
+ * @default 'dummy_val'
  */
-UpdateNativeK8STarget.prototype['k8s-cluster-token'] = undefined;
+UpdateNativeK8STarget.prototype['k8s-cluster-token'] = 'dummy_val';
 
 /**
  * Whether to keep previous version [true/false]. If not set, use default according to account settings
@@ -179,6 +185,12 @@ UpdateNativeK8STarget.prototype['uid-token'] = undefined;
  * @member {Boolean} update-version
  */
 UpdateNativeK8STarget.prototype['update-version'] = undefined;
+
+/**
+ * Use the GW's service account
+ * @member {Boolean} use-gw-service-account
+ */
+UpdateNativeK8STarget.prototype['use-gw-service-account'] = undefined;
 
 
 

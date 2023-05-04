@@ -188,6 +188,7 @@ Name | Type | Description | Notes
 **tags** | **[String]** |  | [optional] 
 **timeoutSeconds** | **Number** |  | [optional] 
 **useGwCloudIdentity** | **Boolean** |  | [optional] 
+**useGwServiceAccount** | **Boolean** |  | [optional] 
 **userName** | **String** |  | [optional] 
 **userPassword** | **String** |  | [optional] 
 **userPrincipalName** | **String** |  | [optional] 

@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 3.3.0
+ * @version 3.3.1
  */
 class UpdatePKICertIssuer {
     /**
      * Constructs a new <code>UpdatePKICertIssuer</code>.
      * @alias module:model/UpdatePKICertIssuer
      * @param name {String} PKI certificate issuer name
-     * @param signerKeyName {String} A key to sign the certificate with
+     * @param signerKeyName {String} A key to sign the certificate with, required in Private CA mode
      * @param ttl {Number} he requested Time To Live for the certificate, in seconds
      */
     constructor(name, signerKeyName, ttl) { 
@@ -80,6 +80,15 @@ class UpdatePKICertIssuer {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('destination-path')) {
+                obj['destination-path'] = ApiClient.convertToType(data['destination-path'], 'String');
+            }
+            if (data.hasOwnProperty('expiration-event-in')) {
+                obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
+            }
+            if (data.hasOwnProperty('gw-cluster-url')) {
+                obj['gw-cluster-url'] = ApiClient.convertToType(data['gw-cluster-url'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -112,6 +121,9 @@ class UpdatePKICertIssuer {
             }
             if (data.hasOwnProperty('postal-code')) {
                 obj['postal-code'] = ApiClient.convertToType(data['postal-code'], 'String');
+            }
+            if (data.hasOwnProperty('protect-certificates')) {
+                obj['protect-certificates'] = ApiClient.convertToType(data['protect-certificates'], 'Boolean');
             }
             if (data.hasOwnProperty('province')) {
                 obj['province'] = ApiClient.convertToType(data['province'], 'String');
@@ -199,6 +211,24 @@ UpdatePKICertIssuer.prototype['country'] = undefined;
 UpdatePKICertIssuer.prototype['description'] = undefined;
 
 /**
+ * A path in which to save generated certificates
+ * @member {String} destination-path
+ */
+UpdatePKICertIssuer.prototype['destination-path'] = undefined;
+
+/**
+ * How many days before the expiration of the certificate would you like to be notified.
+ * @member {Array.<String>} expiration-event-in
+ */
+UpdatePKICertIssuer.prototype['expiration-event-in'] = undefined;
+
+/**
+ * The GW cluster URL to issue the certificate from, required in Public CA mode
+ * @member {String} gw-cluster-url
+ */
+UpdatePKICertIssuer.prototype['gw-cluster-url'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  * @default false
@@ -267,6 +297,12 @@ UpdatePKICertIssuer.prototype['organizations'] = undefined;
 UpdatePKICertIssuer.prototype['postal-code'] = undefined;
 
 /**
+ * Whether to protect generated certificates from deletion
+ * @member {Boolean} protect-certificates
+ */
+UpdatePKICertIssuer.prototype['protect-certificates'] = undefined;
+
+/**
  * A comma-separated list of the province that will be set in the issued certificate
  * @member {String} province
  */
@@ -285,10 +321,11 @@ UpdatePKICertIssuer.prototype['rm-tag'] = undefined;
 UpdatePKICertIssuer.prototype['server-flag'] = undefined;
 
 /**
- * A key to sign the certificate with
+ * A key to sign the certificate with, required in Private CA mode
  * @member {String} signer-key-name
+ * @default 'dummy_signer_key'
  */
-UpdatePKICertIssuer.prototype['signer-key-name'] = undefined;
+UpdatePKICertIssuer.prototype['signer-key-name'] = 'dummy_signer_key';
 
 /**
  * A comma-separated list of the street address that will be set in the issued certificate

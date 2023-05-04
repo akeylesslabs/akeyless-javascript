@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Update model module.
  * @module model/Update
- * @version 3.3.0
+ * @version 3.3.1
  */
 class Update {
     /**
@@ -47,8 +47,14 @@ class Update {
         if (data) {
             obj = obj || new Update();
 
+            if (data.hasOwnProperty('artifact-repository')) {
+                obj['artifact-repository'] = ApiClient.convertToType(data['artifact-repository'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
+            if (data.hasOwnProperty('show-changelog')) {
+                obj['show-changelog'] = ApiClient.convertToType(data['show-changelog'], 'Boolean');
             }
             if (data.hasOwnProperty('version')) {
                 obj['version'] = ApiClient.convertToType(data['version'], 'String');
@@ -61,6 +67,12 @@ class Update {
 }
 
 /**
+ * Alternative CLI repository url. e.g. https://artifacts.site2.akeyless.io
+ * @member {String} artifact-repository
+ */
+Update.prototype['artifact-repository'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  * @default false
@@ -68,7 +80,13 @@ class Update {
 Update.prototype['json'] = false;
 
 /**
- * Version
+ * Show the changelog between the current version and the latest one and exit (update will not be performed)
+ * @member {Boolean} show-changelog
+ */
+Update.prototype['show-changelog'] = undefined;
+
+/**
+ * The CLI version
  * @member {String} version
  * @default 'latest'
  */

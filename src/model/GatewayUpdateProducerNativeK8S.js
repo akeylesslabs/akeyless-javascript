@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerNativeK8S model module.
  * @module model/GatewayUpdateProducerNativeK8S
- * @version 3.3.0
+ * @version 3.3.1
  */
 class GatewayUpdateProducerNativeK8S {
     /**
@@ -130,6 +130,9 @@ class GatewayUpdateProducerNativeK8S {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('use-gw-service-account')) {
+                obj['use-gw-service-account'] = ApiClient.convertToType(data['use-gw-service-account'], 'Boolean');
             }
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
@@ -306,6 +309,12 @@ GatewayUpdateProducerNativeK8S.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GatewayUpdateProducerNativeK8S.prototype['uid-token'] = undefined;
+
+/**
+ * Use the GW's service account
+ * @member {Boolean} use-gw-service-account
+ */
+GatewayUpdateProducerNativeK8S.prototype['use-gw-service-account'] = undefined;
 
 /**
  * User TTL

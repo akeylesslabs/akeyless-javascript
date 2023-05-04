@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EsmGetSecretOutput model module.
  * @module model/EsmGetSecretOutput
- * @version 3.3.0
+ * @version 3.3.1
  */
 class EsmGetSecretOutput {
     /**
@@ -47,6 +47,9 @@ class EsmGetSecretOutput {
         if (data) {
             obj = obj || new EsmGetSecretOutput();
 
+            if (data.hasOwnProperty('binary_value')) {
+                obj['binary_value'] = ApiClient.convertToType(data['binary_value'], 'Boolean');
+            }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], Object);
             }
@@ -59,6 +62,11 @@ class EsmGetSecretOutput {
 
 
 }
+
+/**
+ * @member {Boolean} binary_value
+ */
+EsmGetSecretOutput.prototype['binary_value'] = undefined;
 
 /**
  * @member {Object} metadata

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BastionListEntry model module.
  * @module model/BastionListEntry
- * @version 3.3.0
+ * @version 3.3.1
  */
 class BastionListEntry {
     /**

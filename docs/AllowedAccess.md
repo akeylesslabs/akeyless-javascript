@@ -4,15 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accId** | **String** |  | [optional] 
-**accessRulesType** | **String** |  | [optional] 
-**allowedApi** | **Boolean** |  | [optional] 
-**allowedsLogin** | **Boolean** |  | [optional] 
+**accessId** | **String** |  | [optional] 
+**accessType** | **String** |  | [optional] 
+**clusterId** | **Number** |  | [optional] 
+**createdAt** | **Date** |  | [optional] 
+**description** | **String** |  | [optional] 
 **editable** | **Boolean** |  | [optional] 
-**errMsg** | **String** |  | [optional] 
-**hash** | **String** |  | [optional] 
+**error** | **String** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **isValid** | **Boolean** |  | [optional] 
 **name** | **String** |  | [optional] 
+**permissions** | **[String]** |  | [optional] 
 **subClaims** | **{String: [String]}** |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
 
 

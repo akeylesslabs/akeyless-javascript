@@ -17,7 +17,10 @@ Name | Type | Description | Notes
 **localUsersIgnoreList** | **{String: Boolean}** |  | [optional] 
 **localUsersRotatedSecretsPathTemplate** | **String** |  | [optional] 
 **sshPort** | **String** |  | [optional] 
+**targetsType** | **String** |  | [optional] 
 **userBaseDn** | **String** |  | [optional] 
 **userGroups** | **[String]** |  | [optional] 
+**winrmOverHttp** | **Boolean** |  | [optional] 
+**winrmPort** | **String** |  | [optional] 
 
 

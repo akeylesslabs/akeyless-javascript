@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPKICertificateOutput model module.
  * @module model/GetPKICertificateOutput
- * @version 3.3.0
+ * @version 3.3.1
  */
 class GetPKICertificateOutput {
     /**
@@ -47,6 +47,9 @@ class GetPKICertificateOutput {
         if (data) {
             obj = obj || new GetPKICertificateOutput();
 
+            if (data.hasOwnProperty('cert_display_id')) {
+                obj['cert_display_id'] = ApiClient.convertToType(data['cert_display_id'], 'String');
+            }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], 'String');
             }
@@ -56,12 +59,20 @@ class GetPKICertificateOutput {
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
+            if (data.hasOwnProperty('reading_token')) {
+                obj['reading_token'] = ApiClient.convertToType(data['reading_token'], 'String');
+            }
         }
         return obj;
     }
 
 
 }
+
+/**
+ * @member {String} cert_display_id
+ */
+GetPKICertificateOutput.prototype['cert_display_id'] = undefined;
 
 /**
  * @member {String} data
@@ -77,6 +88,11 @@ GetPKICertificateOutput.prototype['parent_cert'] = undefined;
  * @member {String} path
  */
 GetPKICertificateOutput.prototype['path'] = undefined;
+
+/**
+ * @member {String} reading_token
+ */
+GetPKICertificateOutput.prototype['reading_token'] = undefined;
 
 
 

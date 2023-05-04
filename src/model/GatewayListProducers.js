@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayListProducers model module.
  * @module model/GatewayListProducers
- * @version 3.3.0
+ * @version 3.3.1
  */
 class GatewayListProducers {
     /**
      * Constructs a new <code>GatewayListProducers</code>.
-     * gatewayListProducers is a command that returns producer
+     * gatewayListProducers is a command that returns a list of producers
      * @alias module:model/GatewayListProducers
      */
     constructor() { 

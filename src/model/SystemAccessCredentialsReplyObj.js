@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SystemAccessCredentialsReplyObj model module.
  * @module model/SystemAccessCredentialsReplyObj
- * @version 3.3.0
+ * @version 3.3.1
  */
 class SystemAccessCredentialsReplyObj {
     /**
@@ -56,6 +56,9 @@ class SystemAccessCredentialsReplyObj {
             if (data.hasOwnProperty('kfm_creds')) {
                 obj['kfm_creds'] = ApiClient.convertToType(data['kfm_creds'], 'String');
             }
+            if (data.hasOwnProperty('required_mfa')) {
+                obj['required_mfa'] = ApiClient.convertToType(data['required_mfa'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -86,6 +89,11 @@ SystemAccessCredentialsReplyObj.prototype['expiry'] = undefined;
  * @member {String} kfm_creds
  */
 SystemAccessCredentialsReplyObj.prototype['kfm_creds'] = undefined;
+
+/**
+ * @member {String} required_mfa
+ */
+SystemAccessCredentialsReplyObj.prototype['required_mfa'] = undefined;
 
 /**
  * Credentials tmp token

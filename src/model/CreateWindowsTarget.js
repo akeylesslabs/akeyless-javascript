@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateWindowsTarget model module.
  * @module model/CreateWindowsTarget
- * @version 3.3.0
+ * @version 3.3.1
  */
 class CreateWindowsTarget {
     /**
@@ -60,6 +60,9 @@ class CreateWindowsTarget {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('domain')) {
+                obj['domain'] = ApiClient.convertToType(data['domain'], 'String');
             }
             if (data.hasOwnProperty('hostname')) {
                 obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
@@ -109,6 +112,12 @@ CreateWindowsTarget.prototype['certificate'] = undefined;
  * @member {String} description
  */
 CreateWindowsTarget.prototype['description'] = undefined;
+
+/**
+ * User domain name
+ * @member {String} domain
+ */
+CreateWindowsTarget.prototype['domain'] = undefined;
 
 /**
  * Server hostname

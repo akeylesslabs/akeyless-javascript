@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AllowedAccess model module.
  * @module model/AllowedAccess
- * @version 3.3.0
+ * @version 3.3.1
  */
 class AllowedAccess {
     /**
@@ -47,26 +47,29 @@ class AllowedAccess {
         if (data) {
             obj = obj || new AllowedAccess();
 
-            if (data.hasOwnProperty('acc_id')) {
-                obj['acc_id'] = ApiClient.convertToType(data['acc_id'], 'String');
+            if (data.hasOwnProperty('access_id')) {
+                obj['access_id'] = ApiClient.convertToType(data['access_id'], 'String');
             }
-            if (data.hasOwnProperty('access_rules_type')) {
-                obj['access_rules_type'] = ApiClient.convertToType(data['access_rules_type'], 'String');
+            if (data.hasOwnProperty('access_type')) {
+                obj['access_type'] = ApiClient.convertToType(data['access_type'], 'String');
             }
-            if (data.hasOwnProperty('allowed_api')) {
-                obj['allowed_api'] = ApiClient.convertToType(data['allowed_api'], 'Boolean');
+            if (data.hasOwnProperty('cluster_id')) {
+                obj['cluster_id'] = ApiClient.convertToType(data['cluster_id'], 'Number');
             }
-            if (data.hasOwnProperty('alloweds_login')) {
-                obj['alloweds_login'] = ApiClient.convertToType(data['alloweds_login'], 'Boolean');
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('editable')) {
                 obj['editable'] = ApiClient.convertToType(data['editable'], 'Boolean');
             }
-            if (data.hasOwnProperty('err_msg')) {
-                obj['err_msg'] = ApiClient.convertToType(data['err_msg'], 'String');
+            if (data.hasOwnProperty('error')) {
+                obj['error'] = ApiClient.convertToType(data['error'], 'String');
             }
-            if (data.hasOwnProperty('hash')) {
-                obj['hash'] = ApiClient.convertToType(data['hash'], 'String');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('is_valid')) {
                 obj['is_valid'] = ApiClient.convertToType(data['is_valid'], 'Boolean');
@@ -74,8 +77,14 @@ class AllowedAccess {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('permissions')) {
+                obj['permissions'] = ApiClient.convertToType(data['permissions'], ['String']);
+            }
             if (data.hasOwnProperty('sub_claims')) {
                 obj['sub_claims'] = ApiClient.convertToType(data['sub_claims'], {'String': ['String']});
+            }
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
         }
         return obj;
@@ -85,24 +94,29 @@ class AllowedAccess {
 }
 
 /**
- * @member {String} acc_id
+ * @member {String} access_id
  */
-AllowedAccess.prototype['acc_id'] = undefined;
+AllowedAccess.prototype['access_id'] = undefined;
 
 /**
- * @member {String} access_rules_type
+ * @member {String} access_type
  */
-AllowedAccess.prototype['access_rules_type'] = undefined;
+AllowedAccess.prototype['access_type'] = undefined;
 
 /**
- * @member {Boolean} allowed_api
+ * @member {Number} cluster_id
  */
-AllowedAccess.prototype['allowed_api'] = undefined;
+AllowedAccess.prototype['cluster_id'] = undefined;
 
 /**
- * @member {Boolean} alloweds_login
+ * @member {Date} created_at
  */
-AllowedAccess.prototype['alloweds_login'] = undefined;
+AllowedAccess.prototype['created_at'] = undefined;
+
+/**
+ * @member {String} description
+ */
+AllowedAccess.prototype['description'] = undefined;
 
 /**
  * @member {Boolean} editable
@@ -110,14 +124,14 @@ AllowedAccess.prototype['alloweds_login'] = undefined;
 AllowedAccess.prototype['editable'] = undefined;
 
 /**
- * @member {String} err_msg
+ * @member {String} error
  */
-AllowedAccess.prototype['err_msg'] = undefined;
+AllowedAccess.prototype['error'] = undefined;
 
 /**
- * @member {String} hash
+ * @member {Number} id
  */
-AllowedAccess.prototype['hash'] = undefined;
+AllowedAccess.prototype['id'] = undefined;
 
 /**
  * @member {Boolean} is_valid
@@ -130,9 +144,19 @@ AllowedAccess.prototype['is_valid'] = undefined;
 AllowedAccess.prototype['name'] = undefined;
 
 /**
+ * @member {Array.<String>} permissions
+ */
+AllowedAccess.prototype['permissions'] = undefined;
+
+/**
  * @member {Object.<String, Array.<String>>} sub_claims
  */
 AllowedAccess.prototype['sub_claims'] = undefined;
+
+/**
+ * @member {Date} updated_at
+ */
+AllowedAccess.prototype['updated_at'] = undefined;
 
 
 

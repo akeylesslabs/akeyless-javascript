@@ -17,7 +17,7 @@ import ClassicKeyTargetInfo from './ClassicKeyTargetInfo';
 /**
  * The ClassicKeyDetailsInfo model module.
  * @module model/ClassicKeyDetailsInfo
- * @version 3.3.0
+ * @version 3.3.1
  */
 class ClassicKeyDetailsInfo {
     /**
@@ -71,6 +71,9 @@ class ClassicKeyDetailsInfo {
             }
             if (data.hasOwnProperty('last_error')) {
                 obj['last_error'] = ApiClient.convertToType(data['last_error'], 'String');
+            }
+            if (data.hasOwnProperty('public_key')) {
+                obj['public_key'] = ApiClient.convertToType(data['public_key'], 'String');
             }
             if (data.hasOwnProperty('target_alias_helper')) {
                 obj['target_alias_helper'] = ApiClient.convertToType(data['target_alias_helper'], 'String');
@@ -128,6 +131,11 @@ ClassicKeyDetailsInfo.prototype['key_type'] = undefined;
  * @member {String} last_error
  */
 ClassicKeyDetailsInfo.prototype['last_error'] = undefined;
+
+/**
+ * @member {String} public_key
+ */
+ClassicKeyDetailsInfo.prototype['public_key'] = undefined;
 
 /**
  * @member {String} target_alias_helper

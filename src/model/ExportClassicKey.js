@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExportClassicKey model module.
  * @module model/ExportClassicKey
- * @version 3.3.0
+ * @version 3.3.1
  */
 class ExportClassicKey {
     /**
@@ -50,6 +50,9 @@ class ExportClassicKey {
         if (data) {
             obj = obj || new ExportClassicKey();
 
+            if (data.hasOwnProperty('export-public-key')) {
+                obj['export-public-key'] = ApiClient.convertToType(data['export-public-key'], 'Boolean');
+            }
             if (data.hasOwnProperty('ignore-cache')) {
                 obj['ignore-cache'] = ApiClient.convertToType(data['ignore-cache'], 'String');
             }
@@ -74,6 +77,13 @@ class ExportClassicKey {
 
 
 }
+
+/**
+ * Use this option to output only public key
+ * @member {Boolean} export-public-key
+ * @default false
+ */
+ExportClassicKey.prototype['export-public-key'] = false;
 
 /**
  * Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI

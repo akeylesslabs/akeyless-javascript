@@ -76,6 +76,8 @@ import CreateGcpTarget from '../model/CreateGcpTarget';
 import CreateGcpTargetOutput from '../model/CreateGcpTargetOutput';
 import CreateGithubTarget from '../model/CreateGithubTarget';
 import CreateGithubTargetOutput from '../model/CreateGithubTargetOutput';
+import CreateGlobalSignTarget from '../model/CreateGlobalSignTarget';
+import CreateGlobalSignTargetOutput from '../model/CreateGlobalSignTargetOutput';
 import CreateKey from '../model/CreateKey';
 import CreateKeyOutput from '../model/CreateKeyOutput';
 import CreateLdapTarget from '../model/CreateLdapTarget';
@@ -109,6 +111,8 @@ import CreateWebTarget from '../model/CreateWebTarget';
 import CreateWebTargetOutput from '../model/CreateWebTargetOutput';
 import CreateWindowsTarget from '../model/CreateWindowsTarget';
 import CreateWindowsTargetOutput from '../model/CreateWindowsTargetOutput';
+import CreateZeroSSLTarget from '../model/CreateZeroSSLTarget';
+import CreateZeroSSLTargetOutput from '../model/CreateZeroSSLTargetOutput';
 import DSProducerDetails from '../model/DSProducerDetails';
 import Decrypt from '../model/Decrypt';
 import DecryptGPG from '../model/DecryptGPG';
@@ -123,6 +127,7 @@ import DeleteAuthMethodOutput from '../model/DeleteAuthMethodOutput';
 import DeleteAuthMethods from '../model/DeleteAuthMethods';
 import DeleteAuthMethodsOutput from '../model/DeleteAuthMethodsOutput';
 import DeleteEventForwarder from '../model/DeleteEventForwarder';
+import DeleteGatewayAllowedAccessId from '../model/DeleteGatewayAllowedAccessId';
 import DeleteItem from '../model/DeleteItem';
 import DeleteItemOutput from '../model/DeleteItemOutput';
 import DeleteItems from '../model/DeleteItems';
@@ -211,7 +216,6 @@ import GatewayCreateProducerRedshift from '../model/GatewayCreateProducerRedshif
 import GatewayCreateProducerRedshiftOutput from '../model/GatewayCreateProducerRedshiftOutput';
 import GatewayCreateProducerSnowflake from '../model/GatewayCreateProducerSnowflake';
 import GatewayCreateProducerSnowflakeOutput from '../model/GatewayCreateProducerSnowflakeOutput';
-import GatewayDeleteAllowedManagementAccess from '../model/GatewayDeleteAllowedManagementAccess';
 import GatewayDeleteK8SAuthConfig from '../model/GatewayDeleteK8SAuthConfig';
 import GatewayDeleteK8SAuthConfigOutput from '../model/GatewayDeleteK8SAuthConfigOutput';
 import GatewayDeleteMigration from '../model/GatewayDeleteMigration';
@@ -227,9 +231,9 @@ import GatewayGetLdapAuthConfigOutput from '../model/GatewayGetLdapAuthConfigOut
 import GatewayGetMigration from '../model/GatewayGetMigration';
 import GatewayGetProducer from '../model/GatewayGetProducer';
 import GatewayGetTmpUsers from '../model/GatewayGetTmpUsers';
-import GatewayListAllowedManagementAccess from '../model/GatewayListAllowedManagementAccess';
 import GatewayListMigration from '../model/GatewayListMigration';
 import GatewayListProducers from '../model/GatewayListProducers';
+import GatewayListRotatedSecrets from '../model/GatewayListRotatedSecrets';
 import GatewayMigratePersonalItems from '../model/GatewayMigratePersonalItems';
 import GatewayMigratePersonalItemsOutput from '../model/GatewayMigratePersonalItemsOutput';
 import GatewayMigrationCreateOutput from '../model/GatewayMigrationCreateOutput';
@@ -326,11 +330,12 @@ import GetRotatedSecretValue from '../model/GetRotatedSecretValue';
 import GetSSHCertificate from '../model/GetSSHCertificate';
 import GetSSHCertificateOutput from '../model/GetSSHCertificateOutput';
 import GetSecretValue from '../model/GetSecretValue';
-import GetSubAdminsListReplyObj from '../model/GetSubAdminsListReplyObj';
 import GetTags from '../model/GetTags';
 import GetTarget from '../model/GetTarget';
 import GetTargetDetails from '../model/GetTargetDetails';
 import GetTargetDetailsOutput from '../model/GetTargetDetailsOutput';
+import Hmac from '../model/Hmac';
+import HmacOutput from '../model/HmacOutput';
 import ImportPasswords from '../model/ImportPasswords';
 import ImportPasswordsOutput from '../model/ImportPasswordsOutput';
 import Item from '../model/Item';
@@ -363,6 +368,7 @@ import ListAuthMethodsOutput from '../model/ListAuthMethodsOutput';
 import ListGateways from '../model/ListGateways';
 import ListItems from '../model/ListItems';
 import ListItemsInPathOutput from '../model/ListItemsInPathOutput';
+import ListItemsOutput from '../model/ListItemsOutput';
 import ListRoles from '../model/ListRoles';
 import ListRolesOutput from '../model/ListRolesOutput';
 import ListSRABastions from '../model/ListSRABastions';
@@ -452,6 +458,8 @@ import UpdateGcpTarget from '../model/UpdateGcpTarget';
 import UpdateGcpTargetOutput from '../model/UpdateGcpTargetOutput';
 import UpdateGithubTarget from '../model/UpdateGithubTarget';
 import UpdateGithubTargetOutput from '../model/UpdateGithubTargetOutput';
+import UpdateGlobalSignTarget from '../model/UpdateGlobalSignTarget';
+import UpdateGlobalSignTargetOutput from '../model/UpdateGlobalSignTargetOutput';
 import UpdateItem from '../model/UpdateItem';
 import UpdateItemOutput from '../model/UpdateItemOutput';
 import UpdateLdapTarget from '../model/UpdateLdapTarget';
@@ -488,6 +496,8 @@ import UpdateWebTarget from '../model/UpdateWebTarget';
 import UpdateWebTargetDetails from '../model/UpdateWebTargetDetails';
 import UpdateWebTargetOutput from '../model/UpdateWebTargetOutput';
 import UpdateWindowsTarget from '../model/UpdateWindowsTarget';
+import UpdateZeroSSLTarget from '../model/UpdateZeroSSLTarget';
+import UpdateZeroSSLTargetOutput from '../model/UpdateZeroSSLTargetOutput';
 import UploadRSA from '../model/UploadRSA';
 import ValidateToken from '../model/ValidateToken';
 import ValidateTokenOutput from '../model/ValidateTokenOutput';
@@ -501,7 +511,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.3.0
+* @version 3.3.1
 */
 export default class V2Api {
 
@@ -1895,6 +1905,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/CreateGlobalSignTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateGlobalSignTargetOutput} and HTTP response
+     */
+    createGlobalSignTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createGlobalSignTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateGlobalSignTargetOutput;
+      return this.apiClient.callApi(
+        '/create-globalsign-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateGlobalSignTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateGlobalSignTargetOutput}
+     */
+    createGlobalSignTarget(body) {
+      return this.createGlobalSignTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/CreateKey} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateKeyOutput} and HTTP response
      */
@@ -2540,6 +2593,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/CreateZeroSSLTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateZeroSSLTargetOutput} and HTTP response
+     */
+    createZeroSSLTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createZeroSSLTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateZeroSSLTargetOutput;
+      return this.apiClient.callApi(
+        '/create-zerossl-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateZeroSSLTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateZeroSSLTargetOutput}
+     */
+    createZeroSSLTarget(body) {
+      return this.createZeroSSLTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/CreateLdapTarget} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateLdapTargetOutput} and HTTP response
      */
@@ -2877,6 +2973,49 @@ export default class V2Api {
      */
     deleteEventForwarder(body) {
       return this.deleteEventForwarderWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DeleteGatewayAllowedAccessId} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteGatewayAllowedAccessIdWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling deleteGatewayAllowedAccessId");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/gateway-delete-allowed-management-access', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DeleteGatewayAllowedAccessId} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteGatewayAllowedAccessId(body) {
+      return this.deleteGatewayAllowedAccessIdWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5027,49 +5166,6 @@ export default class V2Api {
 
 
     /**
-     * @param {module:model/GatewayDeleteAllowedManagementAccess} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    gatewayDeleteAllowedManagementAccessWithHttpInfo(body) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling gatewayDeleteAllowedManagementAccess");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Object;
-      return this.apiClient.callApi(
-        '/gateway-delete-allowed-management-access', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {module:model/GatewayDeleteAllowedManagementAccess} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    gatewayDeleteAllowedManagementAccess(body) {
-      return this.gatewayDeleteAllowedManagementAccessWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * @param {module:model/GatewayDeleteK8SAuthConfig} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayDeleteK8SAuthConfigOutput} and HTTP response
      */
@@ -5500,49 +5596,6 @@ export default class V2Api {
 
 
     /**
-     * @param {module:model/GatewayListAllowedManagementAccess} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetSubAdminsListReplyObj} and HTTP response
-     */
-    gatewayListAllowedManagementAccessWithHttpInfo(body) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling gatewayListAllowedManagementAccess");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = GetSubAdminsListReplyObj;
-      return this.apiClient.callApi(
-        '/gateway-list-allowed-management-access', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @param {module:model/GatewayListAllowedManagementAccess} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetSubAdminsListReplyObj}
-     */
-    gatewayListAllowedManagementAccess(body) {
-      return this.gatewayListAllowedManagementAccessWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * @param {module:model/GatewayListMigration} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayMigrationListOutput} and HTTP response
      */
@@ -5622,6 +5675,49 @@ export default class V2Api {
      */
     gatewayListProducers(body) {
       return this.gatewayListProducersWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayListRotatedSecrets} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListItemsOutput} and HTTP response
+     */
+    gatewayListRotatedSecretsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayListRotatedSecrets");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ListItemsOutput;
+      return this.apiClient.callApi(
+        '/gateway-list-rotated-secrets', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayListRotatedSecrets} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ListItemsOutput}
+     */
+    gatewayListRotatedSecrets(body) {
+      return this.gatewayListRotatedSecretsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7893,6 +7989,49 @@ export default class V2Api {
      */
     getTargetDetails(body) {
       return this.getTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/Hmac} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HmacOutput} and HTTP response
+     */
+    hmacWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling hmac");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = HmacOutput;
+      return this.apiClient.callApi(
+        '/hmac', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/Hmac} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HmacOutput}
+     */
+    hmac(body) {
+      return this.hmacWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -10890,6 +11029,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/UpdateGlobalSignTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateGlobalSignTargetOutput} and HTTP response
+     */
+    updateGlobalSignTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateGlobalSignTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateGlobalSignTargetOutput;
+      return this.apiClient.callApi(
+        '/update-globalsign-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateGlobalSignTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateGlobalSignTargetOutput}
+     */
+    updateGlobalSignTarget(body) {
+      return this.updateGlobalSignTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/UpdateItem} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateItemOutput} and HTTP response
      */
@@ -11866,6 +12048,49 @@ export default class V2Api {
      */
     updateWindowsTarget(body) {
       return this.updateWindowsTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateZeroSSLTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateZeroSSLTargetOutput} and HTTP response
+     */
+    updateZeroSSLTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateZeroSSLTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateZeroSSLTargetOutput;
+      return this.apiClient.callApi(
+        '/update-zerossl-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateZeroSSLTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateZeroSSLTargetOutput}
+     */
+    updateZeroSSLTarget(body) {
+      return this.updateZeroSSLTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

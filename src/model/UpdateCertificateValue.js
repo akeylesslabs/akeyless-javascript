@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCertificateValue model module.
  * @module model/UpdateCertificateValue
- * @version 3.3.0
+ * @version 3.3.1
  */
 class UpdateCertificateValue {
     /**
@@ -55,6 +55,9 @@ class UpdateCertificateValue {
             if (data.hasOwnProperty('expiration-event-in')) {
                 obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
             }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -81,7 +84,7 @@ class UpdateCertificateValue {
 }
 
 /**
- * Content of the certificate PEM in a Base64 format.
+ * Content of the certificate in a Base64 format.
  * @member {String} certificate-data
  */
 UpdateCertificateValue.prototype['certificate-data'] = undefined;
@@ -91,6 +94,12 @@ UpdateCertificateValue.prototype['certificate-data'] = undefined;
  * @member {Array.<String>} expiration-event-in
  */
 UpdateCertificateValue.prototype['expiration-event-in'] = undefined;
+
+/**
+ * CertificateFormat of the certificate and private key, possible values: cer,crt,pem,pfx,p12. Required when passing inline certificate content with --certificate-data or --key-data, otherwise format is derived from the file extension.
+ * @member {String} format
+ */
+UpdateCertificateValue.prototype['format'] = undefined;
 
 /**
  * Set output format to JSON
@@ -106,7 +115,7 @@ UpdateCertificateValue.prototype['json'] = false;
 UpdateCertificateValue.prototype['key'] = undefined;
 
 /**
- * Content of the certificate's private key PEM in a Base64 format.
+ * Content of the certificate's private key in a Base64 format.
  * @member {String} key-data
  */
 UpdateCertificateValue.prototype['key-data'] = undefined;
