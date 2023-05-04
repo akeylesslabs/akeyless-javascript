@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SystemAccessCredentialsReplyObj model module.
  * @module model/SystemAccessCredentialsReplyObj
- * @version 3.3.1
+ * @version 3.3.2
  */
 class SystemAccessCredentialsReplyObj {
     /**

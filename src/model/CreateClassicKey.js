@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 3.3.1
+ * @version 3.3.2
  */
 class CreateClassicKey {
     /**

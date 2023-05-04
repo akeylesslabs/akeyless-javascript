@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RevokeCreds model module.
  * @module model/RevokeCreds
- * @version 3.3.1
+ * @version 3.3.2
  */
 class RevokeCreds {
     /**

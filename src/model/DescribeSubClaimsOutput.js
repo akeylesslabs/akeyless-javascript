@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeSubClaimsOutput model module.
  * @module model/DescribeSubClaimsOutput
- * @version 3.3.1
+ * @version 3.3.2
  */
 class DescribeSubClaimsOutput {
     /**

@@ -18,7 +18,7 @@ import Rules from './Rules';
 /**
  * The Role model module.
  * @module model/Role
- * @version 3.3.1
+ * @version 3.3.2
  */
 class Role {
     /**
