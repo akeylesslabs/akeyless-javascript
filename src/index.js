@@ -689,7 +689,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.3.2
+* @version 3.3.3
 */
 export {
     /**

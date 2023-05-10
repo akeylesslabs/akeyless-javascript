@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateK8SAuthConfig model module.
  * @module model/GatewayCreateK8SAuthConfig
- * @version 3.3.2
+ * @version 3.3.3
  */
 class GatewayCreateK8SAuthConfig {
     /**
@@ -103,6 +103,9 @@ class GatewayCreateK8SAuthConfig {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('use-gw-service-account')) {
+                obj['use-gw-service-account'] = ApiClient.convertToType(data['use-gw-service-account'], 'Boolean');
             }
         }
         return obj;
@@ -210,6 +213,12 @@ GatewayCreateK8SAuthConfig.prototype['token-reviewer-jwt'] = undefined;
  * @member {String} uid-token
  */
 GatewayCreateK8SAuthConfig.prototype['uid-token'] = undefined;
+
+/**
+ * Use the GW's service account
+ * @member {Boolean} use-gw-service-account
+ */
+GatewayCreateK8SAuthConfig.prototype['use-gw-service-account'] = undefined;
 
 
 

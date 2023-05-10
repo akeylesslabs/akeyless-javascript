@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTarget model module.
  * @module model/CreateDBTarget
- * @version 3.3.2
+ * @version 3.3.3
  */
 class CreateDBTarget {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetK8SAuthConfigOutput model module.
  * @module model/GatewayGetK8SAuthConfigOutput
- * @version 3.3.2
+ * @version 3.3.3
  */
 class GatewayGetK8SAuthConfigOutput {
     /**
@@ -190,7 +190,7 @@ GatewayGetK8SAuthConfigOutput.prototype['rancher_api_key'] = undefined;
 GatewayGetK8SAuthConfigOutput.prototype['rancher_cluster_id'] = undefined;
 
 /**
- * UseLocalCAJwt is an optional parameter to set defaulting to using the local CA cert and service account jwt when running in a Kubernetes pod
+ * UseLocalCAJwt is an optional parameter to set defaulting to using the local service account when running in a Kubernetes pod
  * @member {Boolean} use_local_ca_jwt
  */
 GatewayGetK8SAuthConfigOutput.prototype['use_local_ca_jwt'] = undefined;

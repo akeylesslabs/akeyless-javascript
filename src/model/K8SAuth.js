@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The K8SAuth model module.
  * @module model/K8SAuth
- * @version 3.3.2
+ * @version 3.3.3
  */
 class K8SAuth {
     /**
@@ -190,7 +190,7 @@ K8SAuth.prototype['rancher_api_key'] = undefined;
 K8SAuth.prototype['rancher_cluster_id'] = undefined;
 
 /**
- * UseLocalCAJwt is an optional parameter to set defaulting to using the local CA cert and service account jwt when running in a Kubernetes pod
+ * UseLocalCAJwt is an optional parameter to set defaulting to using the local service account when running in a Kubernetes pod
  * @member {Boolean} use_local_ca_jwt
  */
 K8SAuth.prototype['use_local_ca_jwt'] = undefined;
