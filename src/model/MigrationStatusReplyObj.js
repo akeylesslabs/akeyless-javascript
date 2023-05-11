@@ -17,7 +17,7 @@ import MigrationItems from './MigrationItems';
 /**
  * The MigrationStatusReplyObj model module.
  * @module model/MigrationStatusReplyObj
- * @version 3.3.3
+ * @version 3.3.4
  */
 class MigrationStatusReplyObj {
     /**
@@ -51,6 +51,9 @@ class MigrationStatusReplyObj {
             if (data.hasOwnProperty('duration_time')) {
                 obj['duration_time'] = ApiClient.convertToType(data['duration_time'], 'String');
             }
+            if (data.hasOwnProperty('error')) {
+                obj['error'] = ApiClient.convertToType(data['error'], 'String');
+            }
             if (data.hasOwnProperty('last_status_message')) {
                 obj['last_status_message'] = ApiClient.convertToType(data['last_status_message'], 'String');
             }
@@ -75,8 +78,17 @@ class MigrationStatusReplyObj {
             if (data.hasOwnProperty('migration_type')) {
                 obj['migration_type'] = ApiClient.convertToType(data['migration_type'], 'String');
             }
+            if (data.hasOwnProperty('migration_type_name')) {
+                obj['migration_type_name'] = ApiClient.convertToType(data['migration_type_name'], 'String');
+            }
+            if (data.hasOwnProperty('rotated_secrets')) {
+                obj['rotated_secrets'] = MigrationItems.constructFromObject(data['rotated_secrets']);
+            }
             if (data.hasOwnProperty('start_time')) {
                 obj['start_time'] = ApiClient.convertToType(data['start_time'], 'String');
+            }
+            if (data.hasOwnProperty('targets')) {
+                obj['targets'] = MigrationItems.constructFromObject(data['targets']);
             }
         }
         return obj;
@@ -89,6 +101,11 @@ class MigrationStatusReplyObj {
  * @member {String} duration_time
  */
 MigrationStatusReplyObj.prototype['duration_time'] = undefined;
+
+/**
+ * @member {String} error
+ */
+MigrationStatusReplyObj.prototype['error'] = undefined;
 
 /**
  * @member {String} last_status_message
@@ -131,9 +148,24 @@ MigrationStatusReplyObj.prototype['migration_state'] = undefined;
 MigrationStatusReplyObj.prototype['migration_type'] = undefined;
 
 /**
+ * @member {String} migration_type_name
+ */
+MigrationStatusReplyObj.prototype['migration_type_name'] = undefined;
+
+/**
+ * @member {module:model/MigrationItems} rotated_secrets
+ */
+MigrationStatusReplyObj.prototype['rotated_secrets'] = undefined;
+
+/**
  * @member {String} start_time
  */
 MigrationStatusReplyObj.prototype['start_time'] = undefined;
+
+/**
+ * @member {module:model/MigrationItems} targets
+ */
+MigrationStatusReplyObj.prototype['targets'] = undefined;
 
 
 

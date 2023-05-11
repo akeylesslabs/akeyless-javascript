@@ -128,6 +128,7 @@ import DeleteAuthMethods from '../model/DeleteAuthMethods';
 import DeleteAuthMethodsOutput from '../model/DeleteAuthMethodsOutput';
 import DeleteEventForwarder from '../model/DeleteEventForwarder';
 import DeleteGatewayAllowedAccessId from '../model/DeleteGatewayAllowedAccessId';
+import DeleteGwCluster from '../model/DeleteGwCluster';
 import DeleteItem from '../model/DeleteItem';
 import DeleteItemOutput from '../model/DeleteItemOutput';
 import DeleteItems from '../model/DeleteItems';
@@ -511,7 +512,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.3.3
+* @version 3.3.4
 */
 export default class V2Api {
 
@@ -3016,6 +3017,49 @@ export default class V2Api {
      */
     deleteGatewayAllowedAccessId(body) {
       return this.deleteGatewayAllowedAccessIdWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DeleteGwCluster} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteGwClusterWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling deleteGwCluster");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/delete-gateway-cluster', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DeleteGwCluster} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteGwCluster(body) {
+      return this.deleteGwClusterWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

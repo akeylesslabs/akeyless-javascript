@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateMigration model module.
  * @module model/GatewayCreateMigration
- * @version 3.3.3
+ * @version 3.3.4
  */
 class GatewayCreateMigration {
     /**
@@ -24,11 +24,13 @@ class GatewayCreateMigration {
      * gatewayCreateMigration is a command that create migration
      * @alias module:model/GatewayCreateMigration
      * @param name {String} Migration name
+     * @param siTargetName {String} SSH, Windows or Linked Target Name. (Relevant only for Server Inventory migration)
+     * @param siUsersPathTemplate {String} Path location template for migrating users as Rotated Secrets e.g.: .../Users/{{COMPUTER_NAME}}/{{USERNAME}} (Relevant only for Server Inventory migration)
      * @param targetLocation {String} Target location in Akeyless for imported secrets
      */
-    constructor(name, targetLocation) { 
+    constructor(name, siTargetName, siUsersPathTemplate, targetLocation) { 
         
-        GatewayCreateMigration.initialize(this, name, targetLocation);
+        GatewayCreateMigration.initialize(this, name, siTargetName, siUsersPathTemplate, targetLocation);
     }
 
     /**
@@ -36,8 +38,10 @@ class GatewayCreateMigration {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, targetLocation) { 
+    static initialize(obj, name, siTargetName, siUsersPathTemplate, targetLocation) { 
         obj['name'] = name;
+        obj['si-target-name'] = siTargetName;
+        obj['si-users-path-template'] = siUsersPathTemplate;
         obj['target-location'] = targetLocation;
     }
 
@@ -192,6 +196,27 @@ class GatewayCreateMigration {
             }
             if (data.hasOwnProperty('protection-key')) {
                 obj['protection-key'] = ApiClient.convertToType(data['protection-key'], 'String');
+            }
+            if (data.hasOwnProperty('si-auto-rotate')) {
+                obj['si-auto-rotate'] = ApiClient.convertToType(data['si-auto-rotate'], 'String');
+            }
+            if (data.hasOwnProperty('si-rotation-hour')) {
+                obj['si-rotation-hour'] = ApiClient.convertToType(data['si-rotation-hour'], 'Number');
+            }
+            if (data.hasOwnProperty('si-rotation-interval')) {
+                obj['si-rotation-interval'] = ApiClient.convertToType(data['si-rotation-interval'], 'Number');
+            }
+            if (data.hasOwnProperty('si-sra-enable-rdp')) {
+                obj['si-sra-enable-rdp'] = ApiClient.convertToType(data['si-sra-enable-rdp'], 'String');
+            }
+            if (data.hasOwnProperty('si-target-name')) {
+                obj['si-target-name'] = ApiClient.convertToType(data['si-target-name'], 'String');
+            }
+            if (data.hasOwnProperty('si-users-ignore')) {
+                obj['si-users-ignore'] = ApiClient.convertToType(data['si-users-ignore'], 'String');
+            }
+            if (data.hasOwnProperty('si-users-path-template')) {
+                obj['si-users-path-template'] = ApiClient.convertToType(data['si-users-path-template'], 'String');
             }
             if (data.hasOwnProperty('target-location')) {
                 obj['target-location'] = ApiClient.convertToType(data['target-location'], 'String');
@@ -349,7 +374,7 @@ GatewayCreateMigration.prototype['ad_targets_path_template'] = undefined;
 GatewayCreateMigration.prototype['ad_user_base_dn'] = undefined;
 
 /**
- * Comma-separated list of domain groups from which privileged domain users will be migrated (Relevant only for Active Directory migration)
+ * Comma-separated list of domain groups from which privileged domain users will be migrated. If empty, migrate all users based on the --ad-user-base-dn (Relevant only for Active Directory migration)
  * @member {String} ad_user_groups
  */
 GatewayCreateMigration.prototype['ad_user_groups'] = undefined;
@@ -500,6 +525,49 @@ GatewayCreateMigration.prototype['name'] = undefined;
  * @member {String} protection-key
  */
 GatewayCreateMigration.prototype['protection-key'] = undefined;
+
+/**
+ * Enable/Disable automatic/recurrent rotation for migrated secrets. Default is false: only manual rotation is allowed for migrated secrets. If set to true, this command should be combined with --si-rotation-interval and --si-rotation-hour parameters (Relevant only for Server Inventory migration)
+ * @member {String} si-auto-rotate
+ */
+GatewayCreateMigration.prototype['si-auto-rotate'] = undefined;
+
+/**
+ * The hour of the scheduled rotation in UTC (Relevant only for Server Inventory migration)
+ * @member {Number} si-rotation-hour
+ */
+GatewayCreateMigration.prototype['si-rotation-hour'] = undefined;
+
+/**
+ * The number of days to wait between every automatic rotation [1-365] (Relevant only for Server Inventory migration)
+ * @member {Number} si-rotation-interval
+ */
+GatewayCreateMigration.prototype['si-rotation-interval'] = undefined;
+
+/**
+ * Enable/Disable RDP Secure Remote Access for the migrated local users rotated secrets. Default is false: rotated secrets will not be created with SRA (Relevant only for Server Inventory migration)
+ * @member {String} si-sra-enable-rdp
+ * @default 'false'
+ */
+GatewayCreateMigration.prototype['si-sra-enable-rdp'] = 'false';
+
+/**
+ * SSH, Windows or Linked Target Name. (Relevant only for Server Inventory migration)
+ * @member {String} si-target-name
+ */
+GatewayCreateMigration.prototype['si-target-name'] = undefined;
+
+/**
+ * Comma-separated list of Local Users which should not be migrated (Relevant only for Server Inventory migration)
+ * @member {String} si-users-ignore
+ */
+GatewayCreateMigration.prototype['si-users-ignore'] = undefined;
+
+/**
+ * Path location template for migrating users as Rotated Secrets e.g.: .../Users/{{COMPUTER_NAME}}/{{USERNAME}} (Relevant only for Server Inventory migration)
+ * @member {String} si-users-path-template
+ */
+GatewayCreateMigration.prototype['si-users-path-template'] = undefined;
 
 /**
  * Target location in Akeyless for imported secrets

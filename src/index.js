@@ -173,6 +173,7 @@ import DeleteAuthMethods from './model/DeleteAuthMethods';
 import DeleteAuthMethodsOutput from './model/DeleteAuthMethodsOutput';
 import DeleteEventForwarder from './model/DeleteEventForwarder';
 import DeleteGatewayAllowedAccessId from './model/DeleteGatewayAllowedAccessId';
+import DeleteGwCluster from './model/DeleteGwCluster';
 import DeleteItem from './model/DeleteItem';
 import DeleteItemOutput from './model/DeleteItemOutput';
 import DeleteItems from './model/DeleteItems';
@@ -522,6 +523,8 @@ import SAMLAttribute from './model/SAMLAttribute';
 import SSHCertificateIssueDetails from './model/SSHCertificateIssueDetails';
 import SecretInfo from './model/SecretInfo';
 import SecureRemoteAccess from './model/SecureRemoteAccess';
+import ServerInventoryMigration from './model/ServerInventoryMigration';
+import ServerInventoryPayload from './model/ServerInventoryPayload';
 import SetItemState from './model/SetItemState';
 import SetRoleRule from './model/SetRoleRule';
 import ShareItem from './model/ShareItem';
@@ -689,7 +692,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.3.3
+* @version 3.3.4
 */
 export {
     /**
@@ -1657,6 +1660,12 @@ export {
      * @property {module:model/DeleteGatewayAllowedAccessId}
      */
     DeleteGatewayAllowedAccessId,
+
+    /**
+     * The DeleteGwCluster model constructor.
+     * @property {module:model/DeleteGwCluster}
+     */
+    DeleteGwCluster,
 
     /**
      * The DeleteItem model constructor.
@@ -3751,6 +3760,18 @@ export {
      * @property {module:model/SecureRemoteAccess}
      */
     SecureRemoteAccess,
+
+    /**
+     * The ServerInventoryMigration model constructor.
+     * @property {module:model/ServerInventoryMigration}
+     */
+    ServerInventoryMigration,
+
+    /**
+     * The ServerInventoryPayload model constructor.
+     * @property {module:model/ServerInventoryPayload}
+     */
+    ServerInventoryPayload,
 
     /**
      * The SetItemState model constructor.

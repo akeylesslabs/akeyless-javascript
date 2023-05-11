@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 3.3.3
+ * @version 3.3.4
  */
 class ListItems {
     /**
@@ -64,6 +64,9 @@ class ListItems {
             }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
+            }
+            if (data.hasOwnProperty('sra-only')) {
+                obj['sra-only'] = ApiClient.convertToType(data['sra-only'], 'Boolean');
             }
             if (data.hasOwnProperty('sub_types')) {
                 obj['sub_types'] = ApiClient.convertToType(data['sub_types'], ['String']);
@@ -123,6 +126,13 @@ ListItems.prototype['pagination-token'] = undefined;
  * @member {String} path
  */
 ListItems.prototype['path'] = undefined;
+
+/**
+ * Filter by items with SRA functionality enabled
+ * @member {Boolean} sra-only
+ * @default false
+ */
+ListItems.prototype['sra-only'] = false;
 
 /**
  * @member {Array.<String>} sub_types

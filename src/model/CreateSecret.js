@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 3.3.3
+ * @version 3.3.4
  */
 class CreateSecret {
     /**
@@ -95,6 +95,9 @@ class CreateSecret {
             }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('secure-access-rdp-user')) {
+                obj['secure-access-rdp-user'] = ApiClient.convertToType(data['secure-access-rdp-user'], 'String');
             }
             if (data.hasOwnProperty('secure-access-ssh-creds')) {
                 obj['secure-access-ssh-creds'] = ApiClient.convertToType(data['secure-access-ssh-creds'], 'String');
@@ -224,6 +227,12 @@ CreateSecret.prototype['secure-access-enable'] = undefined;
  * @member {Array.<String>} secure-access-host
  */
 CreateSecret.prototype['secure-access-host'] = undefined;
+
+/**
+ * Remote Desktop Username
+ * @member {String} secure-access-rdp-user
+ */
+CreateSecret.prototype['secure-access-rdp-user'] = undefined;
 
 /**
  * Static-Secret values contains SSH Credentials, either Private Key or Password [password/private-key]

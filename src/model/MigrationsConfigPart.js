@@ -20,11 +20,12 @@ import HashiMigration from './HashiMigration';
 import K8SMigration from './K8SMigration';
 import MockMigration from './MockMigration';
 import OnePasswordMigration from './OnePasswordMigration';
+import ServerInventoryMigration from './ServerInventoryMigration';
 
 /**
  * The MigrationsConfigPart model module.
  * @module model/MigrationsConfigPart
- * @version 3.3.3
+ * @version 3.3.4
  */
 class MigrationsConfigPart {
     /**
@@ -79,6 +80,9 @@ class MigrationsConfigPart {
             if (data.hasOwnProperty('one_password_migrations')) {
                 obj['one_password_migrations'] = ApiClient.convertToType(data['one_password_migrations'], [OnePasswordMigration]);
             }
+            if (data.hasOwnProperty('server_inventory_migrations')) {
+                obj['server_inventory_migrations'] = ApiClient.convertToType(data['server_inventory_migrations'], [ServerInventoryMigration]);
+            }
         }
         return obj;
     }
@@ -125,6 +129,11 @@ MigrationsConfigPart.prototype['mock_migrations'] = undefined;
  * @member {Array.<module:model/OnePasswordMigration>} one_password_migrations
  */
 MigrationsConfigPart.prototype['one_password_migrations'] = undefined;
+
+/**
+ * @member {Array.<module:model/ServerInventoryMigration>} server_inventory_migrations
+ */
+MigrationsConfigPart.prototype['server_inventory_migrations'] = undefined;
 
 
 
