@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLinkedTargetOutput model module.
  * @module model/CreateLinkedTargetOutput
- * @version 3.3.4
+ * @version 3.3.5
  */
 class CreateLinkedTargetOutput {
     /**

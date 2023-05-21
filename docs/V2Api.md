@@ -72,6 +72,7 @@ Method | HTTP request | Description
 [**deleteTarget**](V2Api.md#deleteTarget) | **POST** /delete-target | 
 [**deleteTargetAssociation**](V2Api.md#deleteTargetAssociation) | **POST** /delete-assoc-target-item | 
 [**deleteTargets**](V2Api.md#deleteTargets) | **POST** /delete-targets | 
+[**deriveKey**](V2Api.md#deriveKey) | **POST** /derive-key | 
 [**describeAssoc**](V2Api.md#describeAssoc) | **POST** /describe-role-am-assoc | 
 [**describeItem**](V2Api.md#describeItem) | **POST** /describe-item | 
 [**describePermissions**](V2Api.md#describePermissions) | **POST** /describe-permissions | 
@@ -85,6 +86,7 @@ Method | HTTP request | Description
 [**esmGet**](V2Api.md#esmGet) | **POST** /esm-get | 
 [**esmList**](V2Api.md#esmList) | **POST** /esm-list | 
 [**esmUpdate**](V2Api.md#esmUpdate) | **POST** /esm-update | 
+[**eventAction**](V2Api.md#eventAction) | **POST** /event-action | 
 [**exportClassicKey**](V2Api.md#exportClassicKey) | **POST** /export-classic-key | 
 [**gatewayCreateK8SAuthConfig**](V2Api.md#gatewayCreateK8SAuthConfig) | **POST** /gateway-create-k8s-auth-config | 
 [**gatewayCreateMigration**](V2Api.md#gatewayCreateMigration) | **POST** /gateway-create-migration | 
@@ -3140,6 +3142,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## deriveKey
+
+> DeriveKeyOutput deriveKey(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DeriveKey(); // DeriveKey | 
+apiInstance.deriveKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DeriveKey**](DeriveKey.md)|  | 
+
+### Return type
+
+[**DeriveKeyOutput**](DeriveKeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## describeAssoc
 
 > RoleAssociationDetails describeAssoc(body)
@@ -3679,6 +3723,48 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## eventAction
+
+> Object eventAction(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.EventAction(); // EventAction | 
+apiInstance.eventAction(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EventAction**](EventAction.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

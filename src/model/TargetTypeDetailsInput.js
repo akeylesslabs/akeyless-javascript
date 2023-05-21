@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 3.3.4
+ * @version 3.3.5
  */
 class TargetTypeDetailsInput {
     /**
@@ -392,8 +392,17 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('venafi_base_url')) {
                 obj['venafi_base_url'] = ApiClient.convertToType(data['venafi_base_url'], 'String');
             }
+            if (data.hasOwnProperty('venafi_tpp_access_token')) {
+                obj['venafi_tpp_access_token'] = ApiClient.convertToType(data['venafi_tpp_access_token'], 'String');
+            }
+            if (data.hasOwnProperty('venafi_tpp_client_id')) {
+                obj['venafi_tpp_client_id'] = ApiClient.convertToType(data['venafi_tpp_client_id'], 'String');
+            }
             if (data.hasOwnProperty('venafi_tpp_password')) {
                 obj['venafi_tpp_password'] = ApiClient.convertToType(data['venafi_tpp_password'], 'String');
+            }
+            if (data.hasOwnProperty('venafi_tpp_refresh_token')) {
+                obj['venafi_tpp_refresh_token'] = ApiClient.convertToType(data['venafi_tpp_refresh_token'], 'String');
             }
             if (data.hasOwnProperty('venafi_tpp_username')) {
                 obj['venafi_tpp_username'] = ApiClient.convertToType(data['venafi_tpp_username'], 'String');
@@ -1002,11 +1011,28 @@ TargetTypeDetailsInput.prototype['venafi_api_key'] = undefined;
 TargetTypeDetailsInput.prototype['venafi_base_url'] = undefined;
 
 /**
+ * @member {String} venafi_tpp_access_token
+ */
+TargetTypeDetailsInput.prototype['venafi_tpp_access_token'] = undefined;
+
+/**
+ * @member {String} venafi_tpp_client_id
+ */
+TargetTypeDetailsInput.prototype['venafi_tpp_client_id'] = undefined;
+
+/**
+ * Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead
  * @member {String} venafi_tpp_password
  */
 TargetTypeDetailsInput.prototype['venafi_tpp_password'] = undefined;
 
 /**
+ * @member {String} venafi_tpp_refresh_token
+ */
+TargetTypeDetailsInput.prototype['venafi_tpp_refresh_token'] = undefined;
+
+/**
+ * Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead
  * @member {String} venafi_tpp_username
  */
 TargetTypeDetailsInput.prototype['venafi_tpp_username'] = undefined;

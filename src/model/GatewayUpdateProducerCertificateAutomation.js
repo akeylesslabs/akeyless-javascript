@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerCertificateAutomation model module.
  * @module model/GatewayUpdateProducerCertificateAutomation
- * @version 3.3.4
+ * @version 3.3.5
  */
 class GatewayUpdateProducerCertificateAutomation {
     /**
@@ -107,20 +107,23 @@ class GatewayUpdateProducerCertificateAutomation {
             if (data.hasOwnProperty('user-ttl')) {
                 obj['user-ttl'] = ApiClient.convertToType(data['user-ttl'], 'String');
             }
+            if (data.hasOwnProperty('venafi-access-token')) {
+                obj['venafi-access-token'] = ApiClient.convertToType(data['venafi-access-token'], 'String');
+            }
             if (data.hasOwnProperty('venafi-api-key')) {
                 obj['venafi-api-key'] = ApiClient.convertToType(data['venafi-api-key'], 'String');
             }
             if (data.hasOwnProperty('venafi-baseurl')) {
                 obj['venafi-baseurl'] = ApiClient.convertToType(data['venafi-baseurl'], 'String');
             }
-            if (data.hasOwnProperty('venafi-password')) {
-                obj['venafi-password'] = ApiClient.convertToType(data['venafi-password'], 'String');
+            if (data.hasOwnProperty('venafi-client-id')) {
+                obj['venafi-client-id'] = ApiClient.convertToType(data['venafi-client-id'], 'String');
+            }
+            if (data.hasOwnProperty('venafi-refresh-token')) {
+                obj['venafi-refresh-token'] = ApiClient.convertToType(data['venafi-refresh-token'], 'String');
             }
             if (data.hasOwnProperty('venafi-use-tpp')) {
                 obj['venafi-use-tpp'] = ApiClient.convertToType(data['venafi-use-tpp'], 'Boolean');
-            }
-            if (data.hasOwnProperty('venafi-username')) {
-                obj['venafi-username'] = ApiClient.convertToType(data['venafi-username'], 'String');
             }
             if (data.hasOwnProperty('venafi-zone')) {
                 obj['venafi-zone'] = ApiClient.convertToType(data['venafi-zone'], 'String');
@@ -251,6 +254,12 @@ GatewayUpdateProducerCertificateAutomation.prototype['uid-token'] = undefined;
 GatewayUpdateProducerCertificateAutomation.prototype['user-ttl'] = '2160h';
 
 /**
+ * Venafi Access Token to use to access the TPP environment (Relevant when using TPP)
+ * @member {String} venafi-access-token
+ */
+GatewayUpdateProducerCertificateAutomation.prototype['venafi-access-token'] = undefined;
+
+/**
  * Venafi API key
  * @member {String} venafi-api-key
  */
@@ -263,22 +272,23 @@ GatewayUpdateProducerCertificateAutomation.prototype['venafi-api-key'] = undefin
 GatewayUpdateProducerCertificateAutomation.prototype['venafi-baseurl'] = undefined;
 
 /**
- * Venafi Password
- * @member {String} venafi-password
+ * Venafi Client ID that was used when the access token was generated
+ * @member {String} venafi-client-id
+ * @default 'akeyless'
  */
-GatewayUpdateProducerCertificateAutomation.prototype['venafi-password'] = undefined;
+GatewayUpdateProducerCertificateAutomation.prototype['venafi-client-id'] = 'akeyless';
+
+/**
+ * Venafi Refresh Token to use when the Access Token is expired (Relevant when using TPP)
+ * @member {String} venafi-refresh-token
+ */
+GatewayUpdateProducerCertificateAutomation.prototype['venafi-refresh-token'] = undefined;
 
 /**
  * Venafi using TPP
  * @member {Boolean} venafi-use-tpp
  */
 GatewayUpdateProducerCertificateAutomation.prototype['venafi-use-tpp'] = undefined;
-
-/**
- * Venafi Username
- * @member {String} venafi-username
- */
-GatewayUpdateProducerCertificateAutomation.prototype['venafi-username'] = undefined;
 
 /**
  * Venafi Zone

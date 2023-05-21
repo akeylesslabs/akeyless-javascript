@@ -17,7 +17,7 @@ import PathRule from './PathRule';
 /**
  * The KMIPClient model module.
  * @module model/KMIPClient
- * @version 3.3.4
+ * @version 3.3.5
  */
 class KMIPClient {
     /**

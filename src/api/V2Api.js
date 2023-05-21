@@ -141,6 +141,8 @@ import DeleteRoles from '../model/DeleteRoles';
 import DeleteTarget from '../model/DeleteTarget';
 import DeleteTargetAssociation from '../model/DeleteTargetAssociation';
 import DeleteTargets from '../model/DeleteTargets';
+import DeriveKey from '../model/DeriveKey';
+import DeriveKeyOutput from '../model/DeriveKeyOutput';
 import DescribeAssoc from '../model/DescribeAssoc';
 import DescribeItem from '../model/DescribeItem';
 import DescribePermissions from '../model/DescribePermissions';
@@ -162,6 +164,7 @@ import EsmList from '../model/EsmList';
 import EsmListSecretsOutput from '../model/EsmListSecretsOutput';
 import EsmUpdate from '../model/EsmUpdate';
 import EsmUpdateSecretOutput from '../model/EsmUpdateSecretOutput';
+import EventAction from '../model/EventAction';
 import ExportClassicKey from '../model/ExportClassicKey';
 import ExportClassicKeyOutput from '../model/ExportClassicKeyOutput';
 import GatewayCreateK8SAuthConfig from '../model/GatewayCreateK8SAuthConfig';
@@ -512,7 +515,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.3.4
+* @version 3.3.5
 */
 export default class V2Api {
 
@@ -3454,6 +3457,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/DeriveKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DeriveKeyOutput} and HTTP response
+     */
+    deriveKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling deriveKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DeriveKeyOutput;
+      return this.apiClient.callApi(
+        '/derive-key', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DeriveKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DeriveKeyOutput}
+     */
+    deriveKey(body) {
+      return this.deriveKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/DescribeAssoc} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RoleAssociationDetails} and HTTP response
      */
@@ -4000,6 +4046,49 @@ export default class V2Api {
      */
     esmUpdate() {
       return this.esmUpdateWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EventAction} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    eventActionWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling eventAction");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/event-action', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EventAction} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    eventAction(body) {
+      return this.eventActionWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 3.3.4
+ * @version 3.3.5
  */
 class DSProducerDetails {
     /**
@@ -649,8 +649,17 @@ class DSProducerDetails {
             if (data.hasOwnProperty('venafi_store_private_key')) {
                 obj['venafi_store_private_key'] = ApiClient.convertToType(data['venafi_store_private_key'], 'Boolean');
             }
+            if (data.hasOwnProperty('venafi_tpp_access_token')) {
+                obj['venafi_tpp_access_token'] = ApiClient.convertToType(data['venafi_tpp_access_token'], 'String');
+            }
+            if (data.hasOwnProperty('venafi_tpp_client_id')) {
+                obj['venafi_tpp_client_id'] = ApiClient.convertToType(data['venafi_tpp_client_id'], 'String');
+            }
             if (data.hasOwnProperty('venafi_tpp_password')) {
                 obj['venafi_tpp_password'] = ApiClient.convertToType(data['venafi_tpp_password'], 'String');
+            }
+            if (data.hasOwnProperty('venafi_tpp_refresh_token')) {
+                obj['venafi_tpp_refresh_token'] = ApiClient.convertToType(data['venafi_tpp_refresh_token'], 'String');
             }
             if (data.hasOwnProperty('venafi_tpp_username')) {
                 obj['venafi_tpp_username'] = ApiClient.convertToType(data['venafi_tpp_username'], 'String');
@@ -1690,11 +1699,28 @@ DSProducerDetails.prototype['venafi_signer_key_name'] = undefined;
 DSProducerDetails.prototype['venafi_store_private_key'] = undefined;
 
 /**
+ * @member {String} venafi_tpp_access_token
+ */
+DSProducerDetails.prototype['venafi_tpp_access_token'] = undefined;
+
+/**
+ * @member {String} venafi_tpp_client_id
+ */
+DSProducerDetails.prototype['venafi_tpp_client_id'] = undefined;
+
+/**
+ * Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead
  * @member {String} venafi_tpp_password
  */
 DSProducerDetails.prototype['venafi_tpp_password'] = undefined;
 
 /**
+ * @member {String} venafi_tpp_refresh_token
+ */
+DSProducerDetails.prototype['venafi_tpp_refresh_token'] = undefined;
+
+/**
+ * Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead
  * @member {String} venafi_tpp_username
  */
 DSProducerDetails.prototype['venafi_tpp_username'] = undefined;

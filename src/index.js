@@ -51,6 +51,7 @@ import CertificateChainInfo from './model/CertificateChainInfo';
 import CertificateExpirationEvent from './model/CertificateExpirationEvent';
 import CertificateInfo from './model/CertificateInfo';
 import CertificateIssueInfo from './model/CertificateIssueInfo';
+import CertificateTemplateInfo from './model/CertificateTemplateInfo';
 import ClassicKeyDetailsInfo from './model/ClassicKeyDetailsInfo';
 import ClassicKeyStatusInfo from './model/ClassicKeyStatusInfo';
 import ClassicKeyTargetInfo from './model/ClassicKeyTargetInfo';
@@ -186,6 +187,8 @@ import DeleteRoles from './model/DeleteRoles';
 import DeleteTarget from './model/DeleteTarget';
 import DeleteTargetAssociation from './model/DeleteTargetAssociation';
 import DeleteTargets from './model/DeleteTargets';
+import DeriveKey from './model/DeriveKey';
+import DeriveKeyOutput from './model/DeriveKeyOutput';
 import DescribeAssoc from './model/DescribeAssoc';
 import DescribeItem from './model/DescribeItem';
 import DescribePermissions from './model/DescribePermissions';
@@ -216,6 +219,7 @@ import EsmList from './model/EsmList';
 import EsmListSecretsOutput from './model/EsmListSecretsOutput';
 import EsmUpdate from './model/EsmUpdate';
 import EsmUpdateSecretOutput from './model/EsmUpdateSecretOutput';
+import EventAction from './model/EventAction';
 import ExportClassicKey from './model/ExportClassicKey';
 import ExportClassicKeyOutput from './model/ExportClassicKeyOutput';
 import Extension from './model/Extension';
@@ -692,7 +696,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.3.4
+* @version 3.3.5
 */
 export {
     /**
@@ -928,6 +932,12 @@ export {
      * @property {module:model/CertificateIssueInfo}
      */
     CertificateIssueInfo,
+
+    /**
+     * The CertificateTemplateInfo model constructor.
+     * @property {module:model/CertificateTemplateInfo}
+     */
+    CertificateTemplateInfo,
 
     /**
      * The ClassicKeyDetailsInfo model constructor.
@@ -1740,6 +1750,18 @@ export {
     DeleteTargets,
 
     /**
+     * The DeriveKey model constructor.
+     * @property {module:model/DeriveKey}
+     */
+    DeriveKey,
+
+    /**
+     * The DeriveKeyOutput model constructor.
+     * @property {module:model/DeriveKeyOutput}
+     */
+    DeriveKeyOutput,
+
+    /**
      * The DescribeAssoc model constructor.
      * @property {module:model/DescribeAssoc}
      */
@@ -1918,6 +1940,12 @@ export {
      * @property {module:model/EsmUpdateSecretOutput}
      */
     EsmUpdateSecretOutput,
+
+    /**
+     * The EventAction model constructor.
+     * @property {module:model/EventAction}
+     */
+    EventAction,
 
     /**
      * The ExportClassicKey model constructor.

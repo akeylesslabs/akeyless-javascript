@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDFCKey model module.
  * @module model/CreateDFCKey
- * @version 3.3.4
+ * @version 3.3.5
  */
 class CreateDFCKey {
     /**
@@ -54,6 +54,27 @@ class CreateDFCKey {
             if (data.hasOwnProperty('alg')) {
                 obj['alg'] = ApiClient.convertToType(data['alg'], 'String');
             }
+            if (data.hasOwnProperty('certificate-common-name')) {
+                obj['certificate-common-name'] = ApiClient.convertToType(data['certificate-common-name'], 'String');
+            }
+            if (data.hasOwnProperty('certificate-country')) {
+                obj['certificate-country'] = ApiClient.convertToType(data['certificate-country'], 'String');
+            }
+            if (data.hasOwnProperty('certificate-digest-algo')) {
+                obj['certificate-digest-algo'] = ApiClient.convertToType(data['certificate-digest-algo'], 'String');
+            }
+            if (data.hasOwnProperty('certificate-locality')) {
+                obj['certificate-locality'] = ApiClient.convertToType(data['certificate-locality'], 'String');
+            }
+            if (data.hasOwnProperty('certificate-organization')) {
+                obj['certificate-organization'] = ApiClient.convertToType(data['certificate-organization'], 'String');
+            }
+            if (data.hasOwnProperty('certificate-province')) {
+                obj['certificate-province'] = ApiClient.convertToType(data['certificate-province'], 'String');
+            }
+            if (data.hasOwnProperty('certificate-ttl')) {
+                obj['certificate-ttl'] = ApiClient.convertToType(data['certificate-ttl'], 'Number');
+            }
             if (data.hasOwnProperty('customer-frg-id')) {
                 obj['customer-frg-id'] = ApiClient.convertToType(data['customer-frg-id'], 'String');
             }
@@ -62,6 +83,9 @@ class CreateDFCKey {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('generate-self-signed-certificate')) {
+                obj['generate-self-signed-certificate'] = ApiClient.convertToType(data['generate-self-signed-certificate'], 'Boolean');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -98,6 +122,48 @@ class CreateDFCKey {
 CreateDFCKey.prototype['alg'] = undefined;
 
 /**
+ * Common name for the generated certificate. Relevant only for generate-self-signed-certificate.
+ * @member {String} certificate-common-name
+ */
+CreateDFCKey.prototype['certificate-common-name'] = undefined;
+
+/**
+ * Country name for the generated certificate. Relevant only for generate-self-signed-certificate.
+ * @member {String} certificate-country
+ */
+CreateDFCKey.prototype['certificate-country'] = undefined;
+
+/**
+ * Digest algorithm to be used for the certificate key signing. Currently, we support only \"sha256\" so we hide this option for CLI.
+ * @member {String} certificate-digest-algo
+ */
+CreateDFCKey.prototype['certificate-digest-algo'] = undefined;
+
+/**
+ * Locality for the generated certificate. Relevant only for generate-self-signed-certificate.
+ * @member {String} certificate-locality
+ */
+CreateDFCKey.prototype['certificate-locality'] = undefined;
+
+/**
+ * Organization name for the generated certificate. Relevant only for generate-self-signed-certificate.
+ * @member {String} certificate-organization
+ */
+CreateDFCKey.prototype['certificate-organization'] = undefined;
+
+/**
+ * Province name for the generated certificate. Relevant only for generate-self-signed-certificate.
+ * @member {String} certificate-province
+ */
+CreateDFCKey.prototype['certificate-province'] = undefined;
+
+/**
+ * TTL in days for the generated certificate. Required only for generate-self-signed-certificate.
+ * @member {Number} certificate-ttl
+ */
+CreateDFCKey.prototype['certificate-ttl'] = undefined;
+
+/**
  * The customer fragment ID that will be used to create the DFC key (if empty, the key will be created independently of a customer fragment)
  * @member {String} customer-frg-id
  */
@@ -114,6 +180,12 @@ CreateDFCKey.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 CreateDFCKey.prototype['description'] = undefined;
+
+/**
+ * Whether to generate a self signed certificate with the key. If set, --certificate-ttl must be provided.
+ * @member {Boolean} generate-self-signed-certificate
+ */
+CreateDFCKey.prototype['generate-self-signed-certificate'] = undefined;
 
 /**
  * Set output format to JSON
