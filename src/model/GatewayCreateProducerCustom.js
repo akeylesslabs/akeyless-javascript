@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCustom model module.
  * @module model/GatewayCreateProducerCustom
- * @version 3.3.5
+ * @version 3.3.6
  */
 class GatewayCreateProducerCustom {
     /**

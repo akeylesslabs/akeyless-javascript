@@ -533,10 +533,12 @@ import SetItemState from './model/SetItemState';
 import SetRoleRule from './model/SetRoleRule';
 import ShareItem from './model/ShareItem';
 import SharingPolicyInfo from './model/SharingPolicyInfo';
+import SignDataWithClassicKey from './model/SignDataWithClassicKey';
 import SignGPG from './model/SignGPG';
 import SignGPGOutput from './model/SignGPGOutput';
 import SignJWTOutput from './model/SignJWTOutput';
 import SignJWTWithClassicKey from './model/SignJWTWithClassicKey';
+import SignOutput from './model/SignOutput';
 import SignPKCS1 from './model/SignPKCS1';
 import SignPKCS1Output from './model/SignPKCS1Output';
 import SignPKICertOutput from './model/SignPKICertOutput';
@@ -658,6 +660,7 @@ import UploadRSA from './model/UploadRSA';
 import ValidateToken from './model/ValidateToken';
 import ValidateTokenOutput from './model/ValidateTokenOutput';
 import VaultlessTokenizerInfo from './model/VaultlessTokenizerInfo';
+import VerifyDataWithClassicKey from './model/VerifyDataWithClassicKey';
 import VerifyGPG from './model/VerifyGPG';
 import VerifyJWTOutput from './model/VerifyJWTOutput';
 import VerifyJWTWithClassicKey from './model/VerifyJWTWithClassicKey';
@@ -696,7 +699,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.3.5
+* @version 3.3.6
 */
 export {
     /**
@@ -3826,6 +3829,12 @@ export {
     SharingPolicyInfo,
 
     /**
+     * The SignDataWithClassicKey model constructor.
+     * @property {module:model/SignDataWithClassicKey}
+     */
+    SignDataWithClassicKey,
+
+    /**
      * The SignGPG model constructor.
      * @property {module:model/SignGPG}
      */
@@ -3848,6 +3857,12 @@ export {
      * @property {module:model/SignJWTWithClassicKey}
      */
     SignJWTWithClassicKey,
+
+    /**
+     * The SignOutput model constructor.
+     * @property {module:model/SignOutput}
+     */
+    SignOutput,
 
     /**
      * The SignPKCS1 model constructor.
@@ -4574,6 +4589,12 @@ export {
      * @property {module:model/VaultlessTokenizerInfo}
      */
     VaultlessTokenizerInfo,
+
+    /**
+     * The VerifyDataWithClassicKey model constructor.
+     * @property {module:model/VerifyDataWithClassicKey}
+     */
+    VerifyDataWithClassicKey,
 
     /**
      * The VerifyGPG model constructor.

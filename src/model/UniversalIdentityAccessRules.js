@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UniversalIdentityAccessRules model module.
  * @module model/UniversalIdentityAccessRules
- * @version 3.3.5
+ * @version 3.3.6
  */
 class UniversalIdentityAccessRules {
     /**

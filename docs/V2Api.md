@@ -215,6 +215,7 @@ Method | HTTP request | Description
 [**setItemState**](V2Api.md#setItemState) | **POST** /set-item-state | 
 [**setRoleRule**](V2Api.md#setRoleRule) | **POST** /set-role-rule | 
 [**shareItem**](V2Api.md#shareItem) | **POST** /share-item | 
+[**signDataWithClassicKey**](V2Api.md#signDataWithClassicKey) | **POST** /sign-data-with-classic-key | 
 [**signGPG**](V2Api.md#signGPG) | **POST** /sign-gpg | 
 [**signJWTWithClassicKey**](V2Api.md#signJWTWithClassicKey) | **POST** /sign-jwt-with-classic-key | 
 [**signPKCS1**](V2Api.md#signPKCS1) | **POST** /sign-pkcs1 | 
@@ -279,6 +280,7 @@ Method | HTTP request | Description
 [**updateZeroSSLTarget**](V2Api.md#updateZeroSSLTarget) | **POST** /update-zerossl-target | 
 [**uploadRSA**](V2Api.md#uploadRSA) | **POST** /upload-rsa | 
 [**validateToken**](V2Api.md#validateToken) | **POST** /validate-token | 
+[**verifyDataWithClassicKey**](V2Api.md#verifyDataWithClassicKey) | **POST** /verify-data-with-classic-key | 
 [**verifyGPG**](V2Api.md#verifyGPG) | **POST** /verify-gpg | 
 [**verifyJWTWithClassicKey**](V2Api.md#verifyJWTWithClassicKey) | **POST** /verify-jwt-with-classic-key | 
 [**verifyPKCS1**](V2Api.md#verifyPKCS1) | **POST** /verify-pkcs1 | 
@@ -9170,6 +9172,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## signDataWithClassicKey
+
+> SignOutput signDataWithClassicKey(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.SignDataWithClassicKey(); // SignDataWithClassicKey | 
+apiInstance.signDataWithClassicKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SignDataWithClassicKey**](SignDataWithClassicKey.md)|  | 
+
+### Return type
+
+[**SignOutput**](SignOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## signGPG
 
 > SignGPGOutput signGPG(body)
@@ -11843,6 +11887,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ValidateTokenOutput**](ValidateTokenOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## verifyDataWithClassicKey
+
+> VerifyPKICertOutput verifyDataWithClassicKey(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.VerifyDataWithClassicKey(); // VerifyDataWithClassicKey | 
+apiInstance.verifyDataWithClassicKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**VerifyDataWithClassicKey**](VerifyDataWithClassicKey.md)|  | 
+
+### Return type
+
+[**VerifyPKICertOutput**](VerifyPKICertOutput.md)
 
 ### Authorization
 

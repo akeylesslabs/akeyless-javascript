@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipCreateClient model module.
  * @module model/KmipCreateClient
- * @version 3.3.5
+ * @version 3.3.6
  */
 class KmipCreateClient {
     /**

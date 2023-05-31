@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayStatusMigration model module.
  * @module model/GatewayStatusMigration
- * @version 3.3.5
+ * @version 3.3.6
  */
 class GatewayStatusMigration {
     /**

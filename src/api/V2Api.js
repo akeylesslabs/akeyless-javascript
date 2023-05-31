@@ -398,10 +398,12 @@ import RotatedSecretOutput from '../model/RotatedSecretOutput';
 import SetItemState from '../model/SetItemState';
 import SetRoleRule from '../model/SetRoleRule';
 import ShareItem from '../model/ShareItem';
+import SignDataWithClassicKey from '../model/SignDataWithClassicKey';
 import SignGPG from '../model/SignGPG';
 import SignGPGOutput from '../model/SignGPGOutput';
 import SignJWTOutput from '../model/SignJWTOutput';
 import SignJWTWithClassicKey from '../model/SignJWTWithClassicKey';
+import SignOutput from '../model/SignOutput';
 import SignPKCS1 from '../model/SignPKCS1';
 import SignPKCS1Output from '../model/SignPKCS1Output';
 import SignPKICertOutput from '../model/SignPKICertOutput';
@@ -505,6 +507,7 @@ import UpdateZeroSSLTargetOutput from '../model/UpdateZeroSSLTargetOutput';
 import UploadRSA from '../model/UploadRSA';
 import ValidateToken from '../model/ValidateToken';
 import ValidateTokenOutput from '../model/ValidateTokenOutput';
+import VerifyDataWithClassicKey from '../model/VerifyDataWithClassicKey';
 import VerifyGPG from '../model/VerifyGPG';
 import VerifyJWTOutput from '../model/VerifyJWTOutput';
 import VerifyJWTWithClassicKey from '../model/VerifyJWTWithClassicKey';
@@ -515,7 +518,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.3.5
+* @version 3.3.6
 */
 export default class V2Api {
 
@@ -9571,6 +9574,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/SignDataWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SignOutput} and HTTP response
+     */
+    signDataWithClassicKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling signDataWithClassicKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = SignOutput;
+      return this.apiClient.callApi(
+        '/sign-data-with-classic-key', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/SignDataWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SignOutput}
+     */
+    signDataWithClassicKey(body) {
+      return this.signDataWithClassicKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/SignGPG} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SignGPGOutput} and HTTP response
      */
@@ -12310,6 +12356,49 @@ export default class V2Api {
      */
     validateToken(body) {
       return this.validateTokenWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/VerifyDataWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VerifyPKICertOutput} and HTTP response
+     */
+    verifyDataWithClassicKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling verifyDataWithClassicKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = VerifyPKICertOutput;
+      return this.apiClient.callApi(
+        '/verify-data-with-classic-key', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/VerifyDataWithClassicKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VerifyPKICertOutput}
+     */
+    verifyDataWithClassicKey(body) {
+      return this.verifyDataWithClassicKeyWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
