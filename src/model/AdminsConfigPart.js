@@ -17,7 +17,7 @@ import AllowedAccessOld from './AllowedAccessOld';
 /**
  * The AdminsConfigPart model module.
  * @module model/AdminsConfigPart
- * @version 3.3.6
+ * @version 3.3.7
  */
 class AdminsConfigPart {
     /**

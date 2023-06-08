@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateKeyOutput model module.
  * @module model/CreateKeyOutput
- * @version 3.3.6
+ * @version 3.3.7
  */
 class CreateKeyOutput {
     /**

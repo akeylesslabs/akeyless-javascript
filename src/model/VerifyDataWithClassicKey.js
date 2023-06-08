@@ -16,20 +16,20 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyDataWithClassicKey model module.
  * @module model/VerifyDataWithClassicKey
- * @version 3.3.6
+ * @version 3.3.7
  */
 class VerifyDataWithClassicKey {
     /**
      * Constructs a new <code>VerifyDataWithClassicKey</code>.
      * @alias module:model/VerifyDataWithClassicKey
      * @param data {String} Data
-     * @param keyName {String} The name of the key to use in the verification process
+     * @param name {String} The name of the key to use in the verification process
      * @param signature {String} The data's signature in a Base64 format.
      * @param version {Number} classic key version
      */
-    constructor(data, keyName, signature, version) { 
+    constructor(data, name, signature, version) { 
         
-        VerifyDataWithClassicKey.initialize(this, data, keyName, signature, version);
+        VerifyDataWithClassicKey.initialize(this, data, name, signature, version);
     }
 
     /**
@@ -37,9 +37,9 @@ class VerifyDataWithClassicKey {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, data, keyName, signature, version) { 
+    static initialize(obj, data, name, signature, version) { 
         obj['data'] = data;
-        obj['key-name'] = keyName;
+        obj['name'] = name;
         obj['signature'] = signature;
         obj['version'] = version;
     }
@@ -70,8 +70,8 @@ class VerifyDataWithClassicKey {
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
-            if (data.hasOwnProperty('key-name')) {
-                obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('signature')) {
                 obj['signature'] = ApiClient.convertToType(data['signature'], 'String');
@@ -127,9 +127,9 @@ VerifyDataWithClassicKey.prototype['json'] = false;
 
 /**
  * The name of the key to use in the verification process
- * @member {String} key-name
+ * @member {String} name
  */
-VerifyDataWithClassicKey.prototype['key-name'] = undefined;
+VerifyDataWithClassicKey.prototype['name'] = undefined;
 
 /**
  * The data's signature in a Base64 format.

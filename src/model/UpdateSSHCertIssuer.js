@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHCertIssuer model module.
  * @module model/UpdateSSHCertIssuer
- * @version 3.3.6
+ * @version 3.3.7
  */
 class UpdateSSHCertIssuer {
     /**
@@ -25,7 +25,7 @@ class UpdateSSHCertIssuer {
      * @param allowedUsers {String} Users allowed to fetch the certificate, e.g root,ubuntu
      * @param name {String} SSH certificate issuer name
      * @param signerKeyName {String} A key to sign the certificate with
-     * @param ttl {Number} he requested Time To Live for the certificate, in seconds
+     * @param ttl {Number} The requested Time To Live for the certificate, in seconds
      */
     constructor(allowedUsers, name, signerKeyName, ttl) { 
         
@@ -60,6 +60,9 @@ class UpdateSSHCertIssuer {
             }
             if (data.hasOwnProperty('allowed-users')) {
                 obj['allowed-users'] = ApiClient.convertToType(data['allowed-users'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -133,6 +136,12 @@ UpdateSSHCertIssuer.prototype['add-tag'] = undefined;
  * @member {String} allowed-users
  */
 UpdateSSHCertIssuer.prototype['allowed-users'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item [true/false]
+ * @member {String} delete_protection
+ */
+UpdateSSHCertIssuer.prototype['delete_protection'] = undefined;
 
 /**
  * Description of the object
@@ -232,7 +241,7 @@ UpdateSSHCertIssuer.prototype['signer-key-name'] = undefined;
 UpdateSSHCertIssuer.prototype['token'] = undefined;
 
 /**
- * he requested Time To Live for the certificate, in seconds
+ * The requested Time To Live for the certificate, in seconds
  * @member {Number} ttl
  */
 UpdateSSHCertIssuer.prototype['ttl'] = undefined;

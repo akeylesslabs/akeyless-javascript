@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HmacOutput model module.
  * @module model/HmacOutput
- * @version 3.3.6
+ * @version 3.3.7
  */
 class HmacOutput {
     /**

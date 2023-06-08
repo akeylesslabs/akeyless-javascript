@@ -17,7 +17,7 @@ import SystemAccessCredentialsReplyObj from './SystemAccessCredentialsReplyObj';
 /**
  * The AuthOutput model module.
  * @module model/AuthOutput
- * @version 3.3.6
+ * @version 3.3.7
  */
 class AuthOutput {
     /**

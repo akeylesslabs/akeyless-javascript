@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 3.3.6
+ * @version 3.3.7
  */
 class ListItems {
     /**
@@ -58,6 +58,9 @@ class ListItems {
             }
             if (data.hasOwnProperty('minimal-view')) {
                 obj['minimal-view'] = ApiClient.convertToType(data['minimal-view'], 'Boolean');
+            }
+            if (data.hasOwnProperty('pagination')) {
+                obj['pagination'] = ApiClient.convertToType(data['pagination'], 'String');
             }
             if (data.hasOwnProperty('pagination-token')) {
                 obj['pagination-token'] = ApiClient.convertToType(data['pagination-token'], 'String');
@@ -114,6 +117,13 @@ ListItems.prototype['json'] = false;
  * @member {Boolean} minimal-view
  */
 ListItems.prototype['minimal-view'] = undefined;
+
+/**
+ * Retrieve items with pagination
+ * @member {String} pagination
+ * @default 'enabled'
+ */
+ListItems.prototype['pagination'] = 'enabled';
 
 /**
  * Next page reference

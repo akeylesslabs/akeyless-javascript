@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAzureTargetOutput model module.
  * @module model/CreateAzureTargetOutput
- * @version 3.3.6
+ * @version 3.3.7
  */
 class CreateAzureTargetOutput {
     /**

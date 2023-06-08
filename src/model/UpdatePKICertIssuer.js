@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 3.3.6
+ * @version 3.3.7
  */
 class UpdatePKICertIssuer {
     /**
@@ -24,7 +24,7 @@ class UpdatePKICertIssuer {
      * @alias module:model/UpdatePKICertIssuer
      * @param name {String} PKI certificate issuer name
      * @param signerKeyName {String} A key to sign the certificate with, required in Private CA mode
-     * @param ttl {Number} he requested Time To Live for the certificate, in seconds
+     * @param ttl {Number} The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs
      */
     constructor(name, signerKeyName, ttl) { 
         
@@ -76,6 +76,9 @@ class UpdatePKICertIssuer {
             }
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -199,10 +202,16 @@ UpdatePKICertIssuer.prototype['client-flag'] = undefined;
 UpdatePKICertIssuer.prototype['code-signing-flag'] = undefined;
 
 /**
- * A comma-separated list of the country that will be set in the issued certificate
+ * A comma-separated list of countries that will be set in the issued certificate
  * @member {String} country
  */
 UpdatePKICertIssuer.prototype['country'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item [true/false]
+ * @member {String} delete_protection
+ */
+UpdatePKICertIssuer.prototype['delete_protection'] = undefined;
 
 /**
  * Description of the object
@@ -243,7 +252,7 @@ UpdatePKICertIssuer.prototype['json'] = false;
 UpdatePKICertIssuer.prototype['key-usage'] = 'DigitalSignature,KeyAgreement,KeyEncipherment';
 
 /**
- * A comma-separated list of the locality that will be set in the issued certificate
+ * A comma-separated list of localities that will be set in the issued certificate
  * @member {String} locality
  */
 UpdatePKICertIssuer.prototype['locality'] = undefined;
@@ -291,7 +300,7 @@ UpdatePKICertIssuer.prototype['organizational-units'] = undefined;
 UpdatePKICertIssuer.prototype['organizations'] = undefined;
 
 /**
- * A comma-separated list of the postal code that will be set in the issued certificate
+ * A comma-separated list of postal codes that will be set in the issued certificate
  * @member {String} postal-code
  */
 UpdatePKICertIssuer.prototype['postal-code'] = undefined;
@@ -303,7 +312,7 @@ UpdatePKICertIssuer.prototype['postal-code'] = undefined;
 UpdatePKICertIssuer.prototype['protect-certificates'] = undefined;
 
 /**
- * A comma-separated list of the province that will be set in the issued certificate
+ * A comma-separated list of provinces that will be set in the issued certificate
  * @member {String} province
  */
 UpdatePKICertIssuer.prototype['province'] = undefined;
@@ -328,7 +337,7 @@ UpdatePKICertIssuer.prototype['server-flag'] = undefined;
 UpdatePKICertIssuer.prototype['signer-key-name'] = 'dummy_signer_key';
 
 /**
- * A comma-separated list of the street address that will be set in the issued certificate
+ * A comma-separated list of street addresses that will be set in the issued certificate
  * @member {String} street-address
  */
 UpdatePKICertIssuer.prototype['street-address'] = undefined;
@@ -340,7 +349,7 @@ UpdatePKICertIssuer.prototype['street-address'] = undefined;
 UpdatePKICertIssuer.prototype['token'] = undefined;
 
 /**
- * he requested Time To Live for the certificate, in seconds
+ * The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs
  * @member {Number} ttl
  */
 UpdatePKICertIssuer.prototype['ttl'] = undefined;

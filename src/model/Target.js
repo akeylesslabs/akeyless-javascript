@@ -18,7 +18,7 @@ import TargetItemAssociation from './TargetItemAssociation';
 /**
  * The Target model module.
  * @module model/Target
- * @version 3.3.6
+ * @version 3.3.7
  */
 class Target {
     /**
@@ -93,6 +93,9 @@ class Target {
             }
             if (data.hasOwnProperty('target_name')) {
                 obj['target_name'] = ApiClient.convertToType(data['target_name'], 'String');
+            }
+            if (data.hasOwnProperty('target_sub_type')) {
+                obj['target_sub_type'] = ApiClient.convertToType(data['target_sub_type'], 'String');
             }
             if (data.hasOwnProperty('target_type')) {
                 obj['target_type'] = ApiClient.convertToType(data['target_type'], 'String');
@@ -185,6 +188,11 @@ Target.prototype['target_items_assoc'] = undefined;
  * @member {String} target_name
  */
 Target.prototype['target_name'] = undefined;
+
+/**
+ * @member {String} target_sub_type
+ */
+Target.prototype['target_sub_type'] = undefined;
 
 /**
  * @member {String} target_type
