@@ -18,7 +18,7 @@ import AuthMethodRoleAssociation from './AuthMethodRoleAssociation';
 /**
  * The AuthMethod model module.
  * @module model/AuthMethod
- * @version 3.3.7
+ * @version 3.3.8
  */
 class AuthMethod {
     /**
@@ -57,6 +57,9 @@ class AuthMethod {
             }
             if (data.hasOwnProperty('account_id')) {
                 obj['account_id'] = ApiClient.convertToType(data['account_id'], 'String');
+            }
+            if (data.hasOwnProperty('associated_gw_ids')) {
+                obj['associated_gw_ids'] = ApiClient.convertToType(data['associated_gw_ids'], ['Number']);
             }
             if (data.hasOwnProperty('auth_method_access_id')) {
                 obj['auth_method_access_id'] = ApiClient.convertToType(data['auth_method_access_id'], 'String');
@@ -100,6 +103,11 @@ AuthMethod.prototype['access_info'] = undefined;
  * @member {String} account_id
  */
 AuthMethod.prototype['account_id'] = undefined;
+
+/**
+ * @member {Array.<Number>} associated_gw_ids
+ */
+AuthMethod.prototype['associated_gw_ids'] = undefined;
 
 /**
  * @member {String} auth_method_access_id

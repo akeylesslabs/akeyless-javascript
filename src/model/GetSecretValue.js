@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetSecretValue model module.
  * @module model/GetSecretValue
- * @version 3.3.7
+ * @version 3.3.8
  */
 class GetSecretValue {
     /**
