@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 3.3.8
+ * @version 3.3.9
  */
 class CreateRotatedSecret {
     /**
@@ -118,6 +118,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('rotator-type')) {
                 obj['rotator-type'] = ApiClient.convertToType(data['rotator-type'], 'String');
+            }
+            if (data.hasOwnProperty('same-password')) {
+                obj['same-password'] = ApiClient.convertToType(data['same-password'], 'String');
             }
             if (data.hasOwnProperty('secure-access-allow-external-user')) {
                 obj['secure-access-allow-external-user'] = ApiClient.convertToType(data['secure-access-allow-external-user'], 'Boolean');
@@ -326,6 +329,12 @@ CreateRotatedSecret.prototype['rotator-custom-cmd'] = undefined;
  * @member {String} rotator-type
  */
 CreateRotatedSecret.prototype['rotator-type'] = undefined;
+
+/**
+ * Rotate same password for each host from the Linked Target (relevant only for Linked Target)
+ * @member {String} same-password
+ */
+CreateRotatedSecret.prototype['same-password'] = undefined;
 
 /**
  * Allow providing external user for a domain users (relevant only for rdp)

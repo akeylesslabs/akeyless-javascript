@@ -19,7 +19,7 @@ import SharingPolicyInfo from './SharingPolicyInfo';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 3.3.8
+ * @version 3.3.9
  */
 class AccountGeneralSettings {
     /**
@@ -60,6 +60,9 @@ class AccountGeneralSettings {
             if (data.hasOwnProperty('password_policy')) {
                 obj['password_policy'] = PasswordPolicyInfo.constructFromObject(data['password_policy']);
             }
+            if (data.hasOwnProperty('protect_items_by_default')) {
+                obj['protect_items_by_default'] = ApiClient.convertToType(data['protect_items_by_default'], 'Boolean');
+            }
             if (data.hasOwnProperty('sharing_policy')) {
                 obj['sharing_policy'] = SharingPolicyInfo.constructFromObject(data['sharing_policy']);
             }
@@ -84,6 +87,11 @@ AccountGeneralSettings.prototype['enable_request_for_access'] = undefined;
  * @member {module:model/PasswordPolicyInfo} password_policy
  */
 AccountGeneralSettings.prototype['password_policy'] = undefined;
+
+/**
+ * @member {Boolean} protect_items_by_default
+ */
+AccountGeneralSettings.prototype['protect_items_by_default'] = undefined;
 
 /**
  * @member {module:model/SharingPolicyInfo} sharing_policy

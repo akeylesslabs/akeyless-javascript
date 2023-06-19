@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 3.3.8
+ * @version 3.3.9
  */
 class UpdateAccountSettings {
     /**
@@ -70,6 +70,9 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('item-type')) {
                 obj['item-type'] = ApiClient.convertToType(data['item-type'], 'String');
+            }
+            if (data.hasOwnProperty('items-deletion-protection')) {
+                obj['items-deletion-protection'] = ApiClient.convertToType(data['items-deletion-protection'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -167,6 +170,12 @@ UpdateAccountSettings.prototype['dp-enable-classic-key-protection'] = undefined;
  * @member {String} item-type
  */
 UpdateAccountSettings.prototype['item-type'] = undefined;
+
+/**
+ * Set or unset the default behaviour of items deletion protection [true/false]
+ * @member {String} items-deletion-protection
+ */
+UpdateAccountSettings.prototype['items-deletion-protection'] = undefined;
 
 /**
  * Set output format to JSON

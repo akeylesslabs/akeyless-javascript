@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 3.3.8
+ * @version 3.3.9
  */
 class UpdateRotatedSecret {
     /**
@@ -118,6 +118,9 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('rotator-custom-cmd')) {
                 obj['rotator-custom-cmd'] = ApiClient.convertToType(data['rotator-custom-cmd'], 'String');
+            }
+            if (data.hasOwnProperty('same-password')) {
+                obj['same-password'] = ApiClient.convertToType(data['same-password'], 'String');
             }
             if (data.hasOwnProperty('secure-access-allow-external-user')) {
                 obj['secure-access-allow-external-user'] = ApiClient.convertToType(data['secure-access-allow-external-user'], 'Boolean');
@@ -323,6 +326,12 @@ UpdateRotatedSecret.prototype['rotator-creds-type'] = 'use-self-creds';
  * @member {String} rotator-custom-cmd
  */
 UpdateRotatedSecret.prototype['rotator-custom-cmd'] = undefined;
+
+/**
+ * Rotate same password for each host from the Linked Target (relevant only for Linked Target)
+ * @member {String} same-password
+ */
+UpdateRotatedSecret.prototype['same-password'] = undefined;
 
 /**
  * Allow providing external user for a domain users (relevant only for rdp)

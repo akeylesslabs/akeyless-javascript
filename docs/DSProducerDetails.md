@@ -130,6 +130,7 @@ Name | Type | Description | Notes
 **ldapBindDn** | **String** |  | [optional] 
 **ldapBindPassword** | **String** |  | [optional] 
 **ldapCertificate** | **String** |  | [optional] 
+**ldapGroupDn** | **String** |  | [optional] 
 **ldapTokenExpiration** | **String** |  | [optional] 
 **ldapUrl** | **String** |  | [optional] 
 **ldapUserAttr** | **String** |  | [optional] 

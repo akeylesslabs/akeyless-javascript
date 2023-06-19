@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCertificateValue model module.
  * @module model/UpdateCertificateValue
- * @version 3.3.8
+ * @version 3.3.9
  */
 class UpdateCertificateValue {
     /**
@@ -49,8 +49,17 @@ class UpdateCertificateValue {
         if (data) {
             obj = obj || new UpdateCertificateValue();
 
+            if (data.hasOwnProperty('add-tag')) {
+                obj['add-tag'] = ApiClient.convertToType(data['add-tag'], ['String']);
+            }
             if (data.hasOwnProperty('certificate-data')) {
                 obj['certificate-data'] = ApiClient.convertToType(data['certificate-data'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('expiration-event-in')) {
                 obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
@@ -67,8 +76,14 @@ class UpdateCertificateValue {
             if (data.hasOwnProperty('key-data')) {
                 obj['key-data'] = ApiClient.convertToType(data['key-data'], 'String');
             }
+            if (data.hasOwnProperty('metadata')) {
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('rm-tag')) {
+                obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -84,10 +99,28 @@ class UpdateCertificateValue {
 }
 
 /**
+ * List of the new tags that will be attached to this item
+ * @member {Array.<String>} add-tag
+ */
+UpdateCertificateValue.prototype['add-tag'] = undefined;
+
+/**
  * Content of the certificate in a Base64 format.
  * @member {String} certificate-data
  */
 UpdateCertificateValue.prototype['certificate-data'] = undefined;
+
+/**
+ * Protection from accidental deletion of this item [true/false]
+ * @member {String} delete_protection
+ */
+UpdateCertificateValue.prototype['delete_protection'] = undefined;
+
+/**
+ * Description of the object
+ * @member {String} description
+ */
+UpdateCertificateValue.prototype['description'] = undefined;
 
 /**
  * How many days before the expiration of the certificate would you like to be notified.
@@ -121,10 +154,22 @@ UpdateCertificateValue.prototype['key'] = undefined;
 UpdateCertificateValue.prototype['key-data'] = undefined;
 
 /**
+ * Deprecated - use description
+ * @member {String} metadata
+ */
+UpdateCertificateValue.prototype['metadata'] = undefined;
+
+/**
  * Certificate name
  * @member {String} name
  */
 UpdateCertificateValue.prototype['name'] = undefined;
+
+/**
+ * List of the existent tags that will be removed from this item
+ * @member {Array.<String>} rm-tag
+ */
+UpdateCertificateValue.prototype['rm-tag'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

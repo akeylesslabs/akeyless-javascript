@@ -5,16 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessibility** | **String** | for personal password manager | [optional] [default to &#39;regular&#39;]
+**customField** | **{String: String}** | For Password Management use, additional fields | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
+**injectUrl** | **[String]** | For Password Management use, reflect the website context | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **metadata** | **String** | Deprecated - use description | [optional] 
 **multilineValue** | **Boolean** | The provided value is a multiline value (separated by &#39;\\n&#39;) | [optional] 
 **name** | **String** | Secret name | 
-**passwordManagerCustomField** | **{String: String}** | For Password Management use, additional fields | [optional] 
-**passwordManagerInjectUrl** | **[String]** | For Password Management use, reflect the website context | [optional] 
-**passwordManagerPassword** | **String** | For Password Management use, additional fields | [optional] 
-**passwordManagerUsername** | **String** | For Password Management use | [optional] 
+**password** | **String** | For Password Management use, additional fields | [optional] 
 **protectionKey** | **String** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **secureAccessBastionIssuer** | **String** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
@@ -29,6 +28,7 @@ Name | Type | Description | Notes
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **type** | **String** | The secret sub type [generic/password] | [optional] [default to &#39;generic&#39;]
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**username** | **String** | For Password Management use | [optional] 
 **value** | **String** | The secret value | 
 
 

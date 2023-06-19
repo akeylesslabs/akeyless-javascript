@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerLdap model module.
  * @module model/GatewayCreateProducerLdap
- * @version 3.3.8
+ * @version 3.3.9
  */
 class GatewayCreateProducerLdap {
     /**
@@ -61,6 +61,9 @@ class GatewayCreateProducerLdap {
             }
             if (data.hasOwnProperty('external-username')) {
                 obj['external-username'] = ApiClient.convertToType(data['external-username'], 'String');
+            }
+            if (data.hasOwnProperty('group-dn')) {
+                obj['group-dn'] = ApiClient.convertToType(data['group-dn'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -132,6 +135,12 @@ GatewayCreateProducerLdap.prototype['delete_protection'] = undefined;
  * @default 'false'
  */
 GatewayCreateProducerLdap.prototype['external-username'] = 'false';
+
+/**
+ * Group DN which the temporary user should be added
+ * @member {String} group-dn
+ */
+GatewayCreateProducerLdap.prototype['group-dn'] = undefined;
 
 /**
  * Set output format to JSON

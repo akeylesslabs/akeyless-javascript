@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretDetailsInfo model module.
  * @module model/RotatedSecretDetailsInfo
- * @version 3.3.8
+ * @version 3.3.9
  */
 class RotatedSecretDetailsInfo {
     /**
@@ -78,6 +78,9 @@ class RotatedSecretDetailsInfo {
             if (data.hasOwnProperty('rotator_type')) {
                 obj['rotator_type'] = ApiClient.convertToType(data['rotator_type'], 'String');
             }
+            if (data.hasOwnProperty('same_password')) {
+                obj['same_password'] = ApiClient.convertToType(data['same_password'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -135,6 +138,11 @@ RotatedSecretDetailsInfo.prototype['rotator_status'] = undefined;
  * @member {String} rotator_type
  */
 RotatedSecretDetailsInfo.prototype['rotator_type'] = undefined;
+
+/**
+ * @member {Boolean} same_password
+ */
+RotatedSecretDetailsInfo.prototype['same_password'] = undefined;
 
 
 

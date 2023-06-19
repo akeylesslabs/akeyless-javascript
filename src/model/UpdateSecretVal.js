@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSecretVal model module.
  * @module model/UpdateSecretVal
- * @version 3.3.8
+ * @version 3.3.9
  */
 class UpdateSecretVal {
     /**
@@ -54,6 +54,12 @@ class UpdateSecretVal {
             if (data.hasOwnProperty('accessibility')) {
                 obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
             }
+            if (data.hasOwnProperty('custom-field')) {
+                obj['custom-field'] = ApiClient.convertToType(data['custom-field'], {'String': 'String'});
+            }
+            if (data.hasOwnProperty('inject-url')) {
+                obj['inject-url'] = ApiClient.convertToType(data['inject-url'], ['String']);
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -72,23 +78,17 @@ class UpdateSecretVal {
             if (data.hasOwnProperty('new-version')) {
                 obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
             }
-            if (data.hasOwnProperty('password-manager-custom-field')) {
-                obj['password-manager-custom-field'] = ApiClient.convertToType(data['password-manager-custom-field'], {'String': 'String'});
-            }
-            if (data.hasOwnProperty('password-manager-inject-url')) {
-                obj['password-manager-inject-url'] = ApiClient.convertToType(data['password-manager-inject-url'], ['String']);
-            }
-            if (data.hasOwnProperty('password-manager-password')) {
-                obj['password-manager-password'] = ApiClient.convertToType(data['password-manager-password'], 'String');
-            }
-            if (data.hasOwnProperty('password-manager-username')) {
-                obj['password-manager-username'] = ApiClient.convertToType(data['password-manager-username'], 'String');
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'String');
@@ -106,6 +106,18 @@ class UpdateSecretVal {
  * @default 'regular'
  */
 UpdateSecretVal.prototype['accessibility'] = 'regular';
+
+/**
+ * For Password Management use, additional fields
+ * @member {Object.<String, String>} custom-field
+ */
+UpdateSecretVal.prototype['custom-field'] = undefined;
+
+/**
+ * For Password Management use, reflect the website context
+ * @member {Array.<String>} inject-url
+ */
+UpdateSecretVal.prototype['inject-url'] = undefined;
 
 /**
  * Set output format to JSON
@@ -146,27 +158,9 @@ UpdateSecretVal.prototype['new-version'] = undefined;
 
 /**
  * For Password Management use, additional fields
- * @member {Object.<String, String>} password-manager-custom-field
+ * @member {String} password
  */
-UpdateSecretVal.prototype['password-manager-custom-field'] = undefined;
-
-/**
- * For Password Management use, reflect the website context
- * @member {Array.<String>} password-manager-inject-url
- */
-UpdateSecretVal.prototype['password-manager-inject-url'] = undefined;
-
-/**
- * For Password Management use, additional fields
- * @member {String} password-manager-password
- */
-UpdateSecretVal.prototype['password-manager-password'] = undefined;
-
-/**
- * For Password Management use
- * @member {String} password-manager-username
- */
-UpdateSecretVal.prototype['password-manager-username'] = undefined;
+UpdateSecretVal.prototype['password'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)
@@ -179,6 +173,12 @@ UpdateSecretVal.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateSecretVal.prototype['uid-token'] = undefined;
+
+/**
+ * For Password Management use
+ * @member {String} username
+ */
+UpdateSecretVal.prototype['username'] = undefined;
 
 /**
  * The new secret value

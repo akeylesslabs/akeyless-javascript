@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 3.3.8
+ * @version 3.3.9
  */
 class DSProducerDetails {
     /**
@@ -426,6 +426,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('ldap_certificate')) {
                 obj['ldap_certificate'] = ApiClient.convertToType(data['ldap_certificate'], 'String');
+            }
+            if (data.hasOwnProperty('ldap_group_dn')) {
+                obj['ldap_group_dn'] = ApiClient.convertToType(data['ldap_group_dn'], 'String');
             }
             if (data.hasOwnProperty('ldap_token_expiration')) {
                 obj['ldap_token_expiration'] = ApiClient.convertToType(data['ldap_token_expiration'], 'String');
@@ -1319,6 +1322,11 @@ DSProducerDetails.prototype['ldap_bind_password'] = undefined;
  * @member {String} ldap_certificate
  */
 DSProducerDetails.prototype['ldap_certificate'] = undefined;
+
+/**
+ * @member {String} ldap_group_dn
+ */
+DSProducerDetails.prototype['ldap_group_dn'] = undefined;
 
 /**
  * @member {String} ldap_token_expiration

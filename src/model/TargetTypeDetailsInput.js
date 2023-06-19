@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 3.3.8
+ * @version 3.3.9
  */
 class TargetTypeDetailsInput {
     /**
@@ -730,6 +730,7 @@ TargetTypeDetailsInput.prototype['host'] = undefined;
 TargetTypeDetailsInput.prototype['hostname'] = undefined;
 
 /**
+ * key hostname, value description
  * @member {Object.<String, String>} hosts
  */
 TargetTypeDetailsInput.prototype['hosts'] = undefined;

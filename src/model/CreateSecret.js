@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 3.3.8
+ * @version 3.3.9
  */
 class CreateSecret {
     /**
@@ -54,11 +54,17 @@ class CreateSecret {
             if (data.hasOwnProperty('accessibility')) {
                 obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
             }
+            if (data.hasOwnProperty('custom-field')) {
+                obj['custom-field'] = ApiClient.convertToType(data['custom-field'], {'String': 'String'});
+            }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('inject-url')) {
+                obj['inject-url'] = ApiClient.convertToType(data['inject-url'], ['String']);
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -72,17 +78,8 @@ class CreateSecret {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('password-manager-custom-field')) {
-                obj['password-manager-custom-field'] = ApiClient.convertToType(data['password-manager-custom-field'], {'String': 'String'});
-            }
-            if (data.hasOwnProperty('password-manager-inject-url')) {
-                obj['password-manager-inject-url'] = ApiClient.convertToType(data['password-manager-inject-url'], ['String']);
-            }
-            if (data.hasOwnProperty('password-manager-password')) {
-                obj['password-manager-password'] = ApiClient.convertToType(data['password-manager-password'], 'String');
-            }
-            if (data.hasOwnProperty('password-manager-username')) {
-                obj['password-manager-username'] = ApiClient.convertToType(data['password-manager-username'], 'String');
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('protection_key')) {
                 obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
@@ -126,6 +123,9 @@ class CreateSecret {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            }
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'String');
             }
@@ -144,6 +144,12 @@ class CreateSecret {
 CreateSecret.prototype['accessibility'] = 'regular';
 
 /**
+ * For Password Management use, additional fields
+ * @member {Object.<String, String>} custom-field
+ */
+CreateSecret.prototype['custom-field'] = undefined;
+
+/**
  * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
@@ -154,6 +160,12 @@ CreateSecret.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 CreateSecret.prototype['description'] = undefined;
+
+/**
+ * For Password Management use, reflect the website context
+ * @member {Array.<String>} inject-url
+ */
+CreateSecret.prototype['inject-url'] = undefined;
 
 /**
  * Set output format to JSON
@@ -182,27 +194,9 @@ CreateSecret.prototype['name'] = undefined;
 
 /**
  * For Password Management use, additional fields
- * @member {Object.<String, String>} password-manager-custom-field
+ * @member {String} password
  */
-CreateSecret.prototype['password-manager-custom-field'] = undefined;
-
-/**
- * For Password Management use, reflect the website context
- * @member {Array.<String>} password-manager-inject-url
- */
-CreateSecret.prototype['password-manager-inject-url'] = undefined;
-
-/**
- * For Password Management use, additional fields
- * @member {String} password-manager-password
- */
-CreateSecret.prototype['password-manager-password'] = undefined;
-
-/**
- * For Password Management use
- * @member {String} password-manager-username
- */
-CreateSecret.prototype['password-manager-username'] = undefined;
+CreateSecret.prototype['password'] = undefined;
 
 /**
  * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
@@ -290,6 +284,12 @@ CreateSecret.prototype['type'] = 'generic';
  * @member {String} uid-token
  */
 CreateSecret.prototype['uid-token'] = undefined;
+
+/**
+ * For Password Management use
+ * @member {String} username
+ */
+CreateSecret.prototype['username'] = undefined;
 
 /**
  * The secret value
