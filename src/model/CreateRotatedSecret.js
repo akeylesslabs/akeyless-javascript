@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 3.3.9
+ * @version 3.3.10
  */
 class CreateRotatedSecret {
     /**

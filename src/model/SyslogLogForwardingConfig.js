@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SyslogLogForwardingConfig model module.
  * @module model/SyslogLogForwardingConfig
- * @version 3.3.9
+ * @version 3.3.10
  */
 class SyslogLogForwardingConfig {
     /**
@@ -47,6 +47,9 @@ class SyslogLogForwardingConfig {
         if (data) {
             obj = obj || new SyslogLogForwardingConfig();
 
+            if (data.hasOwnProperty('syslog_enable_tls')) {
+                obj['syslog_enable_tls'] = ApiClient.convertToType(data['syslog_enable_tls'], 'Boolean');
+            }
             if (data.hasOwnProperty('syslog_formatter')) {
                 obj['syslog_formatter'] = ApiClient.convertToType(data['syslog_formatter'], 'String');
             }
@@ -59,12 +62,20 @@ class SyslogLogForwardingConfig {
             if (data.hasOwnProperty('syslog_target_tag')) {
                 obj['syslog_target_tag'] = ApiClient.convertToType(data['syslog_target_tag'], 'String');
             }
+            if (data.hasOwnProperty('syslog_tls_certificate')) {
+                obj['syslog_tls_certificate'] = ApiClient.convertToType(data['syslog_tls_certificate'], 'String');
+            }
         }
         return obj;
     }
 
 
 }
+
+/**
+ * @member {Boolean} syslog_enable_tls
+ */
+SyslogLogForwardingConfig.prototype['syslog_enable_tls'] = undefined;
 
 /**
  * @member {String} syslog_formatter
@@ -85,6 +96,11 @@ SyslogLogForwardingConfig.prototype['syslog_network'] = undefined;
  * @member {String} syslog_target_tag
  */
 SyslogLogForwardingConfig.prototype['syslog_target_tag'] = undefined;
+
+/**
+ * @member {String} syslog_tls_certificate
+ */
+SyslogLogForwardingConfig.prototype['syslog_tls_certificate'] = undefined;
 
 
 

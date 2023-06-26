@@ -18,7 +18,7 @@ import CertificateInfo from './CertificateInfo';
 /**
  * The CertificateChainInfo model module.
  * @module model/CertificateChainInfo
- * @version 3.3.9
+ * @version 3.3.10
  */
 class CertificateChainInfo {
     /**
@@ -55,6 +55,9 @@ class CertificateChainInfo {
             if (data.hasOwnProperty('certificate_format')) {
                 obj['certificate_format'] = ApiClient.convertToType(data['certificate_format'], 'String');
             }
+            if (data.hasOwnProperty('certificate_issuer_item_id')) {
+                obj['certificate_issuer_item_id'] = ApiClient.convertToType(data['certificate_issuer_item_id'], 'Number');
+            }
             if (data.hasOwnProperty('certificate_issuer_name')) {
                 obj['certificate_issuer_name'] = ApiClient.convertToType(data['certificate_issuer_name'], 'String');
             }
@@ -83,6 +86,11 @@ CertificateChainInfo.prototype['certificate_chain'] = undefined;
  * @member {String} certificate_format
  */
 CertificateChainInfo.prototype['certificate_format'] = undefined;
+
+/**
+ * @member {Number} certificate_issuer_item_id
+ */
+CertificateChainInfo.prototype['certificate_issuer_item_id'] = undefined;
 
 /**
  * @member {String} certificate_issuer_name

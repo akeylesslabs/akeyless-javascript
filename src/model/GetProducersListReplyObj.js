@@ -17,7 +17,7 @@ import Producer from './Producer';
 /**
  * The GetProducersListReplyObj model module.
  * @module model/GetProducersListReplyObj
- * @version 3.3.9
+ * @version 3.3.10
  */
 class GetProducersListReplyObj {
     /**

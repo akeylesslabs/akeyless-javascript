@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ElasticsearchLogForwardingConfig model module.
  * @module model/ElasticsearchLogForwardingConfig
- * @version 3.3.9
+ * @version 3.3.10
  */
 class ElasticsearchLogForwardingConfig {
     /**
@@ -56,6 +56,9 @@ class ElasticsearchLogForwardingConfig {
             if (data.hasOwnProperty('elasticsearch_cloud_id')) {
                 obj['elasticsearch_cloud_id'] = ApiClient.convertToType(data['elasticsearch_cloud_id'], 'String');
             }
+            if (data.hasOwnProperty('elasticsearch_enable_tls')) {
+                obj['elasticsearch_enable_tls'] = ApiClient.convertToType(data['elasticsearch_enable_tls'], 'Boolean');
+            }
             if (data.hasOwnProperty('elasticsearch_index')) {
                 obj['elasticsearch_index'] = ApiClient.convertToType(data['elasticsearch_index'], 'String');
             }
@@ -67,6 +70,9 @@ class ElasticsearchLogForwardingConfig {
             }
             if (data.hasOwnProperty('elasticsearch_server_type')) {
                 obj['elasticsearch_server_type'] = ApiClient.convertToType(data['elasticsearch_server_type'], 'String');
+            }
+            if (data.hasOwnProperty('elasticsearch_tls_certificate')) {
+                obj['elasticsearch_tls_certificate'] = ApiClient.convertToType(data['elasticsearch_tls_certificate'], 'String');
             }
             if (data.hasOwnProperty('elasticsearch_user_name')) {
                 obj['elasticsearch_user_name'] = ApiClient.convertToType(data['elasticsearch_user_name'], 'String');
@@ -94,6 +100,11 @@ ElasticsearchLogForwardingConfig.prototype['elasticsearch_auth_type'] = undefine
 ElasticsearchLogForwardingConfig.prototype['elasticsearch_cloud_id'] = undefined;
 
 /**
+ * @member {Boolean} elasticsearch_enable_tls
+ */
+ElasticsearchLogForwardingConfig.prototype['elasticsearch_enable_tls'] = undefined;
+
+/**
  * @member {String} elasticsearch_index
  */
 ElasticsearchLogForwardingConfig.prototype['elasticsearch_index'] = undefined;
@@ -112,6 +123,11 @@ ElasticsearchLogForwardingConfig.prototype['elasticsearch_password'] = undefined
  * @member {String} elasticsearch_server_type
  */
 ElasticsearchLogForwardingConfig.prototype['elasticsearch_server_type'] = undefined;
+
+/**
+ * @member {String} elasticsearch_tls_certificate
+ */
+ElasticsearchLogForwardingConfig.prototype['elasticsearch_tls_certificate'] = undefined;
 
 /**
  * @member {String} elasticsearch_user_name

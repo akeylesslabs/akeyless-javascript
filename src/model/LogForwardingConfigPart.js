@@ -19,12 +19,13 @@ import ElasticsearchLogForwardingConfig from './ElasticsearchLogForwardingConfig
 import LogstashLogForwardingConfig from './LogstashLogForwardingConfig';
 import LogzIoLogForwardingConfig from './LogzIoLogForwardingConfig';
 import SplunkLogForwardingConfig from './SplunkLogForwardingConfig';
+import SumologicLogForwardingConfig from './SumologicLogForwardingConfig';
 import SyslogLogForwardingConfig from './SyslogLogForwardingConfig';
 
 /**
  * The LogForwardingConfigPart model module.
  * @module model/LogForwardingConfigPart
- * @version 3.3.9
+ * @version 3.3.10
  */
 class LogForwardingConfigPart {
     /**
@@ -87,6 +88,9 @@ class LogForwardingConfigPart {
             }
             if (data.hasOwnProperty('splunk_config')) {
                 obj['splunk_config'] = SplunkLogForwardingConfig.constructFromObject(data['splunk_config']);
+            }
+            if (data.hasOwnProperty('sumo_logic_config')) {
+                obj['sumo_logic_config'] = SumologicLogForwardingConfig.constructFromObject(data['sumo_logic_config']);
             }
             if (data.hasOwnProperty('syslog_config')) {
                 obj['syslog_config'] = SyslogLogForwardingConfig.constructFromObject(data['syslog_config']);
@@ -155,6 +159,11 @@ LogForwardingConfigPart.prototype['pull_interval_sec'] = undefined;
  * @member {module:model/SplunkLogForwardingConfig} splunk_config
  */
 LogForwardingConfigPart.prototype['splunk_config'] = undefined;
+
+/**
+ * @member {module:model/SumologicLogForwardingConfig} sumo_logic_config
+ */
+LogForwardingConfigPart.prototype['sumo_logic_config'] = undefined;
 
 /**
  * @member {module:model/SyslogLogForwardingConfig} syslog_config

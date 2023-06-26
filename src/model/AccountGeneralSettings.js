@@ -19,7 +19,7 @@ import SharingPolicyInfo from './SharingPolicyInfo';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 3.3.9
+ * @version 3.3.10
  */
 class AccountGeneralSettings {
     /**
@@ -51,6 +51,12 @@ class AccountGeneralSettings {
         if (data) {
             obj = obj || new AccountGeneralSettings();
 
+            if (data.hasOwnProperty('account_default_key_item_id')) {
+                obj['account_default_key_item_id'] = ApiClient.convertToType(data['account_default_key_item_id'], 'Number');
+            }
+            if (data.hasOwnProperty('account_default_key_name')) {
+                obj['account_default_key_name'] = ApiClient.convertToType(data['account_default_key_name'], 'String');
+            }
             if (data.hasOwnProperty('data_protection_section')) {
                 obj['data_protection_section'] = DataProtectionSection.constructFromObject(data['data_protection_section']);
             }
@@ -72,6 +78,18 @@ class AccountGeneralSettings {
 
 
 }
+
+/**
+ * AccountDefaultKeyItemID is the item ID of the DFC key item configured as the default protection key
+ * @member {Number} account_default_key_item_id
+ */
+AccountGeneralSettings.prototype['account_default_key_item_id'] = undefined;
+
+/**
+ * AccountDefaultKeyName is the name of the DFC key item configured as the default key This is here simply for the response to include the item name in addition to the display ID so the client can properly show this to the user. It will not be saved to the DB, only the AccountDefaultKeyItemID will.
+ * @member {String} account_default_key_name
+ */
+AccountGeneralSettings.prototype['account_default_key_name'] = undefined;
 
 /**
  * @member {module:model/DataProtectionSection} data_protection_section

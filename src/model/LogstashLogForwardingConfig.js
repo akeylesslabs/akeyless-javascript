@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LogstashLogForwardingConfig model module.
  * @module model/LogstashLogForwardingConfig
- * @version 3.3.9
+ * @version 3.3.10
  */
 class LogstashLogForwardingConfig {
     /**
@@ -50,8 +50,14 @@ class LogstashLogForwardingConfig {
             if (data.hasOwnProperty('logstash_dns')) {
                 obj['logstash_dns'] = ApiClient.convertToType(data['logstash_dns'], 'String');
             }
+            if (data.hasOwnProperty('logstash_enable_tls')) {
+                obj['logstash_enable_tls'] = ApiClient.convertToType(data['logstash_enable_tls'], 'Boolean');
+            }
             if (data.hasOwnProperty('logstash_protocol')) {
                 obj['logstash_protocol'] = ApiClient.convertToType(data['logstash_protocol'], 'String');
+            }
+            if (data.hasOwnProperty('logstash_tls_certificate')) {
+                obj['logstash_tls_certificate'] = ApiClient.convertToType(data['logstash_tls_certificate'], 'String');
             }
         }
         return obj;
@@ -66,9 +72,19 @@ class LogstashLogForwardingConfig {
 LogstashLogForwardingConfig.prototype['logstash_dns'] = undefined;
 
 /**
+ * @member {Boolean} logstash_enable_tls
+ */
+LogstashLogForwardingConfig.prototype['logstash_enable_tls'] = undefined;
+
+/**
  * @member {String} logstash_protocol
  */
 LogstashLogForwardingConfig.prototype['logstash_protocol'] = undefined;
+
+/**
+ * @member {String} logstash_tls_certificate
+ */
+LogstashLogForwardingConfig.prototype['logstash_tls_certificate'] = undefined;
 
 
 

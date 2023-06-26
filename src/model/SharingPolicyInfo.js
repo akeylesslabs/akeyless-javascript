@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SharingPolicyInfo model module.
  * @module model/SharingPolicyInfo
- * @version 3.3.9
+ * @version 3.3.10
  */
 class SharingPolicyInfo {
     /**

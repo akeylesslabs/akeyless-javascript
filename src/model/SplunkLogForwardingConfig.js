@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SplunkLogForwardingConfig model module.
  * @module model/SplunkLogForwardingConfig
- * @version 3.3.9
+ * @version 3.3.10
  */
 class SplunkLogForwardingConfig {
     /**
@@ -47,6 +47,9 @@ class SplunkLogForwardingConfig {
         if (data) {
             obj = obj || new SplunkLogForwardingConfig();
 
+            if (data.hasOwnProperty('splunk_enable_tls')) {
+                obj['splunk_enable_tls'] = ApiClient.convertToType(data['splunk_enable_tls'], 'Boolean');
+            }
             if (data.hasOwnProperty('splunk_index')) {
                 obj['splunk_index'] = ApiClient.convertToType(data['splunk_index'], 'String');
             }
@@ -55,6 +58,9 @@ class SplunkLogForwardingConfig {
             }
             if (data.hasOwnProperty('splunk_sourcetype')) {
                 obj['splunk_sourcetype'] = ApiClient.convertToType(data['splunk_sourcetype'], 'String');
+            }
+            if (data.hasOwnProperty('splunk_tls_certificate')) {
+                obj['splunk_tls_certificate'] = ApiClient.convertToType(data['splunk_tls_certificate'], 'String');
             }
             if (data.hasOwnProperty('splunk_token')) {
                 obj['splunk_token'] = ApiClient.convertToType(data['splunk_token'], 'String');
@@ -70,6 +76,11 @@ class SplunkLogForwardingConfig {
 }
 
 /**
+ * @member {Boolean} splunk_enable_tls
+ */
+SplunkLogForwardingConfig.prototype['splunk_enable_tls'] = undefined;
+
+/**
  * @member {String} splunk_index
  */
 SplunkLogForwardingConfig.prototype['splunk_index'] = undefined;
@@ -83,6 +94,11 @@ SplunkLogForwardingConfig.prototype['splunk_source'] = undefined;
  * @member {String} splunk_sourcetype
  */
 SplunkLogForwardingConfig.prototype['splunk_sourcetype'] = undefined;
+
+/**
+ * @member {String} splunk_tls_certificate
+ */
+SplunkLogForwardingConfig.prototype['splunk_tls_certificate'] = undefined;
 
 /**
  * @member {String} splunk_token

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **certificateChain** | [**[CertificateInfo]**](CertificateInfo.md) |  | [optional] 
 **certificateFormat** | **String** |  | [optional] 
+**certificateIssuerItemId** | **Number** |  | [optional] 
 **certificateIssuerName** | **String** |  | [optional] 
 **certificatePem** | **String** |  | [optional] 
 **certificateStatus** | **String** |  | [optional] 

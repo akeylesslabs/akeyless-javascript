@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 3.3.9
+ * @version 3.3.10
  */
 class UpdateAccountSettings {
     /**
@@ -58,6 +58,9 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
+            }
+            if (data.hasOwnProperty('default-key-name')) {
+                obj['default-key-name'] = ApiClient.convertToType(data['default-key-name'], 'String');
             }
             if (data.hasOwnProperty('default-share-link-ttl-minutes')) {
                 obj['default-share-link-ttl-minutes'] = ApiClient.convertToType(data['default-share-link-ttl-minutes'], 'String');
@@ -146,6 +149,12 @@ UpdateAccountSettings.prototype['company-name'] = undefined;
  * @member {String} country
  */
 UpdateAccountSettings.prototype['country'] = undefined;
+
+/**
+ * Set the account default key based on the DFC key item name. Use \"set-original-akeyless-default-key\" to revert to using the original default key of the account. Empty string will change nothing.
+ * @member {String} default-key-name
+ */
+UpdateAccountSettings.prototype['default-key-name'] = undefined;
 
 /**
  * Set the default ttl in minutes for sharing item number between 60 and 43200

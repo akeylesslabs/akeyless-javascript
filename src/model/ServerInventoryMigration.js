@@ -18,7 +18,7 @@ import ServerInventoryPayload from './ServerInventoryPayload';
 /**
  * The ServerInventoryMigration model module.
  * @module model/ServerInventoryMigration
- * @version 3.3.9
+ * @version 3.3.10
  */
 class ServerInventoryMigration {
     /**

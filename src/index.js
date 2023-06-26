@@ -549,6 +549,7 @@ import SraInfo from './model/SraInfo';
 import StaticCredsAuth from './model/StaticCredsAuth';
 import StaticCredsAuthOutput from './model/StaticCredsAuthOutput';
 import StaticSecretDetailsInfo from './model/StaticSecretDetailsInfo';
+import SumologicLogForwardingConfig from './model/SumologicLogForwardingConfig';
 import SyslogLogForwardingConfig from './model/SyslogLogForwardingConfig';
 import SystemAccessCredentialsReplyObj from './model/SystemAccessCredentialsReplyObj';
 import SystemAccessCredsSettings from './model/SystemAccessCredsSettings';
@@ -699,7 +700,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.3.9
+* @version 3.3.10
 */
 export {
     /**
@@ -3923,6 +3924,12 @@ export {
      * @property {module:model/StaticSecretDetailsInfo}
      */
     StaticSecretDetailsInfo,
+
+    /**
+     * The SumologicLogForwardingConfig model constructor.
+     * @property {module:model/SumologicLogForwardingConfig}
+     */
+    SumologicLogForwardingConfig,
 
     /**
      * The SyslogLogForwardingConfig model constructor.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSecretValOutput model module.
  * @module model/UpdateSecretValOutput
- * @version 3.3.9
+ * @version 3.3.10
  */
 class UpdateSecretValOutput {
     /**
