@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ImporterInfo model module.
  * @module model/ImporterInfo
- * @version 3.3.10
+ * @version 3.3.11
  */
 class ImporterInfo {
     /**

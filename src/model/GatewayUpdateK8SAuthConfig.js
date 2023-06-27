@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateK8SAuthConfig model module.
  * @module model/GatewayUpdateK8SAuthConfig
- * @version 3.3.10
+ * @version 3.3.11
  */
 class GatewayUpdateK8SAuthConfig {
     /**

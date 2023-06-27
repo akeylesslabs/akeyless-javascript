@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenCustomerFragment model module.
  * @module model/GenCustomerFragment
- * @version 3.3.10
+ * @version 3.3.11
  */
 class GenCustomerFragment {
     /**

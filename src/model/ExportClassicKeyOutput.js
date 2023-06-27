@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExportClassicKeyOutput model module.
  * @module model/ExportClassicKeyOutput
- * @version 3.3.10
+ * @version 3.3.11
  */
 class ExportClassicKeyOutput {
     /**

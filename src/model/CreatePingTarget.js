@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePingTarget model module.
  * @module model/CreatePingTarget
- * @version 3.3.10
+ * @version 3.3.11
  */
 class CreatePingTarget {
     /**
