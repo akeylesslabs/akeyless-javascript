@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayUpdateProducerOracleDbOutput model module.
  * @module model/GatewayUpdateProducerOracleDbOutput
- * @version 3.3.11
+ * @version 3.3.12
  */
 class GatewayUpdateProducerOracleDbOutput {
     /**

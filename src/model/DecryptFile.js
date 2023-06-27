@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptFile model module.
  * @module model/DecryptFile
- * @version 3.3.11
+ * @version 3.3.12
  */
 class DecryptFile {
     /**

@@ -17,7 +17,7 @@ import Rules from './Rules';
 /**
  * The AuthMethodRoleAssociation model module.
  * @module model/AuthMethodRoleAssociation
- * @version 3.3.11
+ * @version 3.3.12
  */
 class AuthMethodRoleAssociation {
     /**
@@ -58,6 +58,9 @@ class AuthMethodRoleAssociation {
             if (data.hasOwnProperty('auth_method_sub_claims')) {
                 obj['auth_method_sub_claims'] = ApiClient.convertToType(data['auth_method_sub_claims'], {'String': ['String']});
             }
+            if (data.hasOwnProperty('is_sub_claims_case_sensitive')) {
+                obj['is_sub_claims_case_sensitive'] = ApiClient.convertToType(data['is_sub_claims_case_sensitive'], 'Boolean');
+            }
             if (data.hasOwnProperty('role_name')) {
                 obj['role_name'] = ApiClient.convertToType(data['role_name'], 'String');
             }
@@ -85,6 +88,11 @@ AuthMethodRoleAssociation.prototype['assoc_id'] = undefined;
  * @member {Object.<String, Array.<String>>} auth_method_sub_claims
  */
 AuthMethodRoleAssociation.prototype['auth_method_sub_claims'] = undefined;
+
+/**
+ * @member {Boolean} is_sub_claims_case_sensitive
+ */
+AuthMethodRoleAssociation.prototype['is_sub_claims_case_sensitive'] = undefined;
 
 /**
  * @member {String} role_name
