@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRdp model module.
  * @module model/GatewayCreateProducerRdp
- * @version 3.3.13
+ * @version 3.3.14
  */
 class GatewayCreateProducerRdp {
     /**

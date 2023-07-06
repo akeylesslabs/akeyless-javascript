@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteMigration model module.
  * @module model/GatewayDeleteMigration
- * @version 3.3.13
+ * @version 3.3.14
  */
 class GatewayDeleteMigration {
     /**

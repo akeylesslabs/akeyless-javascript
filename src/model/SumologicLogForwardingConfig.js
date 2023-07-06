@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SumologicLogForwardingConfig model module.
  * @module model/SumologicLogForwardingConfig
- * @version 3.3.13
+ * @version 3.3.14
  */
 class SumologicLogForwardingConfig {
     /**

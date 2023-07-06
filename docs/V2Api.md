@@ -3871,7 +3871,7 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AllowedAccessArgs(); // AllowedAccessArgs | 
+let body = new akeyless.GatewayCreateAllowedAccess(); // GatewayCreateAllowedAccess | 
 apiInstance.gatewayCreateAllowedAccess(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3885,7 +3885,7 @@ apiInstance.gatewayCreateAllowedAccess(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AllowedAccessArgs**](AllowedAccessArgs.md)|  | 
+ **body** | [**GatewayCreateAllowedAccess**](GatewayCreateAllowedAccess.md)|  | 
 
 ### Return type
 
@@ -5049,7 +5049,7 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AllowedAccessDeleteArgs(); // AllowedAccessDeleteArgs | 
+let body = new akeyless.GatewayDeleteAllowedAccess(); // GatewayDeleteAllowedAccess | 
 apiInstance.gatewayDeleteAllowedAccess(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -5063,7 +5063,7 @@ apiInstance.gatewayDeleteAllowedAccess(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AllowedAccessDeleteArgs**](AllowedAccessDeleteArgs.md)|  | 
+ **body** | [**GatewayDeleteAllowedAccess**](GatewayDeleteAllowedAccess.md)|  | 
 
 ### Return type
 
@@ -5259,7 +5259,7 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AllowedAccessArgs(); // AllowedAccessArgs | 
+let body = new akeyless.GatewayGetAllowedAccess(); // GatewayGetAllowedAccess | 
 apiInstance.gatewayGetAllowedAccess(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -5273,7 +5273,7 @@ apiInstance.gatewayGetAllowedAccess(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AllowedAccessArgs**](AllowedAccessArgs.md)|  | 
+ **body** | [**GatewayGetAllowedAccess**](GatewayGetAllowedAccess.md)|  | 
 
 ### Return type
 
@@ -5933,7 +5933,7 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AllowedAccessUpdateArgs(); // AllowedAccessUpdateArgs | 
+let body = new akeyless.GatewayUpdateAllowedAccess(); // GatewayUpdateAllowedAccess | 
 apiInstance.gatewayUpdateAllowedAccess(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -5947,7 +5947,7 @@ apiInstance.gatewayUpdateAllowedAccess(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AllowedAccessUpdateArgs**](AllowedAccessUpdateArgs.md)|  | 
+ **body** | [**GatewayUpdateAllowedAccess**](GatewayUpdateAllowedAccess.md)|  | 
 
 ### Return type
 

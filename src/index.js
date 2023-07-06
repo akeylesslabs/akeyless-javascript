@@ -26,10 +26,7 @@ import AddGatewayAllowedAccessId from './model/AddGatewayAllowedAccessId';
 import AdminsConfigPart from './model/AdminsConfigPart';
 import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
 import AllowedAccess from './model/AllowedAccess';
-import AllowedAccessArgs from './model/AllowedAccessArgs';
-import AllowedAccessDeleteArgs from './model/AllowedAccessDeleteArgs';
 import AllowedAccessOld from './model/AllowedAccessOld';
-import AllowedAccessUpdateArgs from './model/AllowedAccessUpdateArgs';
 import AssocRoleAuthMethod from './model/AssocRoleAuthMethod';
 import AssocTargetItem from './model/AssocTargetItem';
 import AttributeTypeAndValue from './model/AttributeTypeAndValue';
@@ -232,6 +229,7 @@ import GCPAccessRules from './model/GCPAccessRules';
 import GCPPayload from './model/GCPPayload';
 import GCPSecretsMigration from './model/GCPSecretsMigration';
 import GatewayBasicInfo from './model/GatewayBasicInfo';
+import GatewayCreateAllowedAccess from './model/GatewayCreateAllowedAccess';
 import GatewayCreateK8SAuthConfig from './model/GatewayCreateK8SAuthConfig';
 import GatewayCreateK8SAuthConfigOutput from './model/GatewayCreateK8SAuthConfigOutput';
 import GatewayCreateMigration from './model/GatewayCreateMigration';
@@ -287,6 +285,7 @@ import GatewayCreateProducerRedshift from './model/GatewayCreateProducerRedshift
 import GatewayCreateProducerRedshiftOutput from './model/GatewayCreateProducerRedshiftOutput';
 import GatewayCreateProducerSnowflake from './model/GatewayCreateProducerSnowflake';
 import GatewayCreateProducerSnowflakeOutput from './model/GatewayCreateProducerSnowflakeOutput';
+import GatewayDeleteAllowedAccess from './model/GatewayDeleteAllowedAccess';
 import GatewayDeleteAllowedAccessOutput from './model/GatewayDeleteAllowedAccessOutput';
 import GatewayDeleteK8SAuthConfig from './model/GatewayDeleteK8SAuthConfig';
 import GatewayDeleteK8SAuthConfigOutput from './model/GatewayDeleteK8SAuthConfigOutput';
@@ -295,6 +294,7 @@ import GatewayDeleteProducer from './model/GatewayDeleteProducer';
 import GatewayDeleteProducerOutput from './model/GatewayDeleteProducerOutput';
 import GatewayDownloadCustomerFragments from './model/GatewayDownloadCustomerFragments';
 import GatewayDownloadCustomerFragmentsOutput from './model/GatewayDownloadCustomerFragmentsOutput';
+import GatewayGetAllowedAccess from './model/GatewayGetAllowedAccess';
 import GatewayGetConfig from './model/GatewayGetConfig';
 import GatewayGetK8SAuthConfig from './model/GatewayGetK8SAuthConfig';
 import GatewayGetK8SAuthConfigOutput from './model/GatewayGetK8SAuthConfigOutput';
@@ -322,6 +322,7 @@ import GatewayStatusMigration from './model/GatewayStatusMigration';
 import GatewayStopProducer from './model/GatewayStopProducer';
 import GatewayStopProducerOutput from './model/GatewayStopProducerOutput';
 import GatewaySyncMigration from './model/GatewaySyncMigration';
+import GatewayUpdateAllowedAccess from './model/GatewayUpdateAllowedAccess';
 import GatewayUpdateItem from './model/GatewayUpdateItem';
 import GatewayUpdateItemOutput from './model/GatewayUpdateItemOutput';
 import GatewayUpdateK8SAuthConfig from './model/GatewayUpdateK8SAuthConfig';
@@ -706,7 +707,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.3.13
+* @version 3.3.14
 */
 export {
     /**
@@ -794,28 +795,10 @@ export {
     AllowedAccess,
 
     /**
-     * The AllowedAccessArgs model constructor.
-     * @property {module:model/AllowedAccessArgs}
-     */
-    AllowedAccessArgs,
-
-    /**
-     * The AllowedAccessDeleteArgs model constructor.
-     * @property {module:model/AllowedAccessDeleteArgs}
-     */
-    AllowedAccessDeleteArgs,
-
-    /**
      * The AllowedAccessOld model constructor.
      * @property {module:model/AllowedAccessOld}
      */
     AllowedAccessOld,
-
-    /**
-     * The AllowedAccessUpdateArgs model constructor.
-     * @property {module:model/AllowedAccessUpdateArgs}
-     */
-    AllowedAccessUpdateArgs,
 
     /**
      * The AssocRoleAuthMethod model constructor.
@@ -2030,6 +2013,12 @@ export {
     GatewayBasicInfo,
 
     /**
+     * The GatewayCreateAllowedAccess model constructor.
+     * @property {module:model/GatewayCreateAllowedAccess}
+     */
+    GatewayCreateAllowedAccess,
+
+    /**
      * The GatewayCreateK8SAuthConfig model constructor.
      * @property {module:model/GatewayCreateK8SAuthConfig}
      */
@@ -2360,6 +2349,12 @@ export {
     GatewayCreateProducerSnowflakeOutput,
 
     /**
+     * The GatewayDeleteAllowedAccess model constructor.
+     * @property {module:model/GatewayDeleteAllowedAccess}
+     */
+    GatewayDeleteAllowedAccess,
+
+    /**
      * The GatewayDeleteAllowedAccessOutput model constructor.
      * @property {module:model/GatewayDeleteAllowedAccessOutput}
      */
@@ -2406,6 +2401,12 @@ export {
      * @property {module:model/GatewayDownloadCustomerFragmentsOutput}
      */
     GatewayDownloadCustomerFragmentsOutput,
+
+    /**
+     * The GatewayGetAllowedAccess model constructor.
+     * @property {module:model/GatewayGetAllowedAccess}
+     */
+    GatewayGetAllowedAccess,
 
     /**
      * The GatewayGetConfig model constructor.
@@ -2568,6 +2569,12 @@ export {
      * @property {module:model/GatewaySyncMigration}
      */
     GatewaySyncMigration,
+
+    /**
+     * The GatewayUpdateAllowedAccess model constructor.
+     * @property {module:model/GatewayUpdateAllowedAccess}
+     */
+    GatewayUpdateAllowedAccess,
 
     /**
      * The GatewayUpdateItem model constructor.

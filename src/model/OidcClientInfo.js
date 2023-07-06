@@ -17,7 +17,7 @@ import AccessPermissionAssignment from './AccessPermissionAssignment';
 /**
  * The OidcClientInfo model module.
  * @module model/OidcClientInfo
- * @version 3.3.13
+ * @version 3.3.14
  */
 class OidcClientInfo {
     /**

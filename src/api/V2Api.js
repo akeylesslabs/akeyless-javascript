@@ -15,9 +15,6 @@
 import ApiClient from "../ApiClient";
 import AkeylessGatewayConfig from '../model/AkeylessGatewayConfig';
 import AllowedAccess from '../model/AllowedAccess';
-import AllowedAccessArgs from '../model/AllowedAccessArgs';
-import AllowedAccessDeleteArgs from '../model/AllowedAccessDeleteArgs';
-import AllowedAccessUpdateArgs from '../model/AllowedAccessUpdateArgs';
 import AssocRoleAuthMethod from '../model/AssocRoleAuthMethod';
 import AssocTargetItem from '../model/AssocTargetItem';
 import Auth from '../model/Auth';
@@ -174,6 +171,7 @@ import EsmUpdateSecretOutput from '../model/EsmUpdateSecretOutput';
 import EventAction from '../model/EventAction';
 import ExportClassicKey from '../model/ExportClassicKey';
 import ExportClassicKeyOutput from '../model/ExportClassicKeyOutput';
+import GatewayCreateAllowedAccess from '../model/GatewayCreateAllowedAccess';
 import GatewayCreateK8SAuthConfig from '../model/GatewayCreateK8SAuthConfig';
 import GatewayCreateK8SAuthConfigOutput from '../model/GatewayCreateK8SAuthConfigOutput';
 import GatewayCreateMigration from '../model/GatewayCreateMigration';
@@ -227,6 +225,7 @@ import GatewayCreateProducerRedshift from '../model/GatewayCreateProducerRedshif
 import GatewayCreateProducerRedshiftOutput from '../model/GatewayCreateProducerRedshiftOutput';
 import GatewayCreateProducerSnowflake from '../model/GatewayCreateProducerSnowflake';
 import GatewayCreateProducerSnowflakeOutput from '../model/GatewayCreateProducerSnowflakeOutput';
+import GatewayDeleteAllowedAccess from '../model/GatewayDeleteAllowedAccess';
 import GatewayDeleteAllowedAccessOutput from '../model/GatewayDeleteAllowedAccessOutput';
 import GatewayDeleteK8SAuthConfig from '../model/GatewayDeleteK8SAuthConfig';
 import GatewayDeleteK8SAuthConfigOutput from '../model/GatewayDeleteK8SAuthConfigOutput';
@@ -235,6 +234,7 @@ import GatewayDeleteProducer from '../model/GatewayDeleteProducer';
 import GatewayDeleteProducerOutput from '../model/GatewayDeleteProducerOutput';
 import GatewayDownloadCustomerFragments from '../model/GatewayDownloadCustomerFragments';
 import GatewayDownloadCustomerFragmentsOutput from '../model/GatewayDownloadCustomerFragmentsOutput';
+import GatewayGetAllowedAccess from '../model/GatewayGetAllowedAccess';
 import GatewayGetConfig from '../model/GatewayGetConfig';
 import GatewayGetK8SAuthConfig from '../model/GatewayGetK8SAuthConfig';
 import GatewayGetK8SAuthConfigOutput from '../model/GatewayGetK8SAuthConfigOutput';
@@ -261,6 +261,7 @@ import GatewayStatusMigration from '../model/GatewayStatusMigration';
 import GatewayStopProducer from '../model/GatewayStopProducer';
 import GatewayStopProducerOutput from '../model/GatewayStopProducerOutput';
 import GatewaySyncMigration from '../model/GatewaySyncMigration';
+import GatewayUpdateAllowedAccess from '../model/GatewayUpdateAllowedAccess';
 import GatewayUpdateItem from '../model/GatewayUpdateItem';
 import GatewayUpdateItemOutput from '../model/GatewayUpdateItemOutput';
 import GatewayUpdateK8SAuthConfig from '../model/GatewayUpdateK8SAuthConfig';
@@ -526,7 +527,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.3.13
+* @version 3.3.14
 */
 export default class V2Api {
 
@@ -4193,7 +4194,7 @@ export default class V2Api {
 
 
     /**
-     * @param {module:model/AllowedAccessArgs} body 
+     * @param {module:model/GatewayCreateAllowedAccess} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AllowedAccess} and HTTP response
      */
     gatewayCreateAllowedAccessWithHttpInfo(body) {
@@ -4224,7 +4225,7 @@ export default class V2Api {
     }
 
     /**
-     * @param {module:model/AllowedAccessArgs} body 
+     * @param {module:model/GatewayCreateAllowedAccess} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AllowedAccess}
      */
     gatewayCreateAllowedAccess(body) {
@@ -5396,7 +5397,7 @@ export default class V2Api {
 
 
     /**
-     * @param {module:model/AllowedAccessDeleteArgs} body 
+     * @param {module:model/GatewayDeleteAllowedAccess} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayDeleteAllowedAccessOutput} and HTTP response
      */
     gatewayDeleteAllowedAccessWithHttpInfo(body) {
@@ -5427,7 +5428,7 @@ export default class V2Api {
     }
 
     /**
-     * @param {module:model/AllowedAccessDeleteArgs} body 
+     * @param {module:model/GatewayDeleteAllowedAccess} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayDeleteAllowedAccessOutput}
      */
     gatewayDeleteAllowedAccess(body) {
@@ -5611,7 +5612,7 @@ export default class V2Api {
 
 
     /**
-     * @param {module:model/AllowedAccessArgs} body 
+     * @param {module:model/GatewayGetAllowedAccess} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AllowedAccess} and HTTP response
      */
     gatewayGetAllowedAccessWithHttpInfo(body) {
@@ -5642,7 +5643,7 @@ export default class V2Api {
     }
 
     /**
-     * @param {module:model/AllowedAccessArgs} body 
+     * @param {module:model/GatewayGetAllowedAccess} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AllowedAccess}
      */
     gatewayGetAllowedAccess(body) {
@@ -6298,7 +6299,7 @@ export default class V2Api {
 
 
     /**
-     * @param {module:model/AllowedAccessUpdateArgs} body 
+     * @param {module:model/GatewayUpdateAllowedAccess} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AllowedAccess} and HTTP response
      */
     gatewayUpdateAllowedAccessWithHttpInfo(body) {
@@ -6329,7 +6330,7 @@ export default class V2Api {
     }
 
     /**
-     * @param {module:model/AllowedAccessUpdateArgs} body 
+     * @param {module:model/GatewayUpdateAllowedAccess} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AllowedAccess}
      */
     gatewayUpdateAllowedAccess(body) {
