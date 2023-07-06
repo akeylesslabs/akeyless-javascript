@@ -17,6 +17,7 @@ import APIKeyAccessRules from './model/APIKeyAccessRules';
 import AWSIAMAccessRules from './model/AWSIAMAccessRules';
 import AWSPayload from './model/AWSPayload';
 import AWSSecretsMigration from './model/AWSSecretsMigration';
+import AccessPermissionAssignment from './model/AccessPermissionAssignment';
 import AccountGeneralSettings from './model/AccountGeneralSettings';
 import AccountObjectVersionSettingsOutput from './model/AccountObjectVersionSettingsOutput';
 import ActiveDirectoryMigration from './model/ActiveDirectoryMigration';
@@ -72,6 +73,8 @@ import CreateAuthMethodAzureAD from './model/CreateAuthMethodAzureAD';
 import CreateAuthMethodAzureADOutput from './model/CreateAuthMethodAzureADOutput';
 import CreateAuthMethodCert from './model/CreateAuthMethodCert';
 import CreateAuthMethodCertOutput from './model/CreateAuthMethodCertOutput';
+import CreateAuthMethodEmail from './model/CreateAuthMethodEmail';
+import CreateAuthMethodEmailOutput from './model/CreateAuthMethodEmailOutput';
 import CreateAuthMethodGCP from './model/CreateAuthMethodGCP';
 import CreateAuthMethodGCPOutput from './model/CreateAuthMethodGCPOutput';
 import CreateAuthMethodHuawei from './model/CreateAuthMethodHuawei';
@@ -213,6 +216,7 @@ import EncryptWithClassicKeyOutput from './model/EncryptWithClassicKeyOutput';
 import EsmCreate from './model/EsmCreate';
 import EsmCreateSecretOutput from './model/EsmCreateSecretOutput';
 import EsmDelete from './model/EsmDelete';
+import EsmDeleteSecretOutput from './model/EsmDeleteSecretOutput';
 import EsmGet from './model/EsmGet';
 import EsmGetSecretOutput from './model/EsmGetSecretOutput';
 import EsmList from './model/EsmList';
@@ -407,6 +411,7 @@ import GetTags from './model/GetTags';
 import GetTarget from './model/GetTarget';
 import GetTargetDetails from './model/GetTargetDetails';
 import GetTargetDetailsOutput from './model/GetTargetDetailsOutput';
+import GoogleChronicleForwardingConfig from './model/GoogleChronicleForwardingConfig';
 import GwClusterIdentity from './model/GwClusterIdentity';
 import HashiMigration from './model/HashiMigration';
 import HashiPayload from './model/HashiPayload';
@@ -490,6 +495,7 @@ import OAuth2CustomClaim from './model/OAuth2CustomClaim';
 import OIDCAccessRules from './model/OIDCAccessRules';
 import OIDCCustomClaim from './model/OIDCCustomClaim';
 import ObjectVersionSettingsOutput from './model/ObjectVersionSettingsOutput';
+import OidcClientInfo from './model/OidcClientInfo';
 import OnePasswordMigration from './model/OnePasswordMigration';
 import OnePasswordPayload from './model/OnePasswordPayload';
 import PKICertificateIssueDetails from './model/PKICertificateIssueDetails';
@@ -700,7 +706,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.3.12
+* @version 3.3.13
 */
 export {
     /**
@@ -732,6 +738,12 @@ export {
      * @property {module:model/AWSSecretsMigration}
      */
     AWSSecretsMigration,
+
+    /**
+     * The AccessPermissionAssignment model constructor.
+     * @property {module:model/AccessPermissionAssignment}
+     */
+    AccessPermissionAssignment,
 
     /**
      * The AccountGeneralSettings model constructor.
@@ -1062,6 +1074,18 @@ export {
      * @property {module:model/CreateAuthMethodCertOutput}
      */
     CreateAuthMethodCertOutput,
+
+    /**
+     * The CreateAuthMethodEmail model constructor.
+     * @property {module:model/CreateAuthMethodEmail}
+     */
+    CreateAuthMethodEmail,
+
+    /**
+     * The CreateAuthMethodEmailOutput model constructor.
+     * @property {module:model/CreateAuthMethodEmailOutput}
+     */
+    CreateAuthMethodEmailOutput,
 
     /**
      * The CreateAuthMethodGCP model constructor.
@@ -1908,6 +1932,12 @@ export {
      * @property {module:model/EsmDelete}
      */
     EsmDelete,
+
+    /**
+     * The EsmDeleteSecretOutput model constructor.
+     * @property {module:model/EsmDeleteSecretOutput}
+     */
+    EsmDeleteSecretOutput,
 
     /**
      * The EsmGet model constructor.
@@ -3074,6 +3104,12 @@ export {
     GetTargetDetailsOutput,
 
     /**
+     * The GoogleChronicleForwardingConfig model constructor.
+     * @property {module:model/GoogleChronicleForwardingConfig}
+     */
+    GoogleChronicleForwardingConfig,
+
+    /**
      * The GwClusterIdentity model constructor.
      * @property {module:model/GwClusterIdentity}
      */
@@ -3570,6 +3606,12 @@ export {
      * @property {module:model/ObjectVersionSettingsOutput}
      */
     ObjectVersionSettingsOutput,
+
+    /**
+     * The OidcClientInfo model constructor.
+     * @property {module:model/OidcClientInfo}
+     */
+    OidcClientInfo,
 
     /**
      * The OnePasswordMigration model constructor.

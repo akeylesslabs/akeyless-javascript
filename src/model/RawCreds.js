@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RawCreds model module.
  * @module model/RawCreds
- * @version 3.3.12
+ * @version 3.3.13
  */
 class RawCreds {
     /**

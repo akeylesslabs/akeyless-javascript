@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 3.3.12
+ * @version 3.3.13
  */
 class UpdatePKICertIssuer {
     /**
@@ -91,6 +91,9 @@ class UpdatePKICertIssuer {
             }
             if (data.hasOwnProperty('gw-cluster-url')) {
                 obj['gw-cluster-url'] = ApiClient.convertToType(data['gw-cluster-url'], 'String');
+            }
+            if (data.hasOwnProperty('is-ca')) {
+                obj['is-ca'] = ApiClient.convertToType(data['is-ca'], 'Boolean');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -236,6 +239,12 @@ UpdatePKICertIssuer.prototype['expiration-event-in'] = undefined;
  * @member {String} gw-cluster-url
  */
 UpdatePKICertIssuer.prototype['gw-cluster-url'] = undefined;
+
+/**
+ * If set, the basic constraints extension will be added to certificate
+ * @member {Boolean} is-ca
+ */
+UpdatePKICertIssuer.prototype['is-ca'] = undefined;
 
 /**
  * Set output format to JSON

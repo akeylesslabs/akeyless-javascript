@@ -18,6 +18,7 @@ import CertificateTemplateInfo from './CertificateTemplateInfo';
 import ClassicKeyDetailsInfo from './ClassicKeyDetailsInfo';
 import DynamicSecretProducerInfo from './DynamicSecretProducerInfo';
 import ImporterInfo from './ImporterInfo';
+import OidcClientInfo from './OidcClientInfo';
 import PasswordPolicyInfo from './PasswordPolicyInfo';
 import RotatedSecretDetailsInfo from './RotatedSecretDetailsInfo';
 import SecureRemoteAccess from './SecureRemoteAccess';
@@ -27,7 +28,7 @@ import TokenizerInfo from './TokenizerInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 3.3.12
+ * @version 3.3.13
  */
 class ItemGeneralInfo {
     /**
@@ -81,6 +82,9 @@ class ItemGeneralInfo {
             }
             if (data.hasOwnProperty('importer_info')) {
                 obj['importer_info'] = ImporterInfo.constructFromObject(data['importer_info']);
+            }
+            if (data.hasOwnProperty('oidc_client_info')) {
+                obj['oidc_client_info'] = OidcClientInfo.constructFromObject(data['oidc_client_info']);
             }
             if (data.hasOwnProperty('password_policy')) {
                 obj['password_policy'] = PasswordPolicyInfo.constructFromObject(data['password_policy']);
@@ -143,6 +147,11 @@ ItemGeneralInfo.prototype['dynamic_secret_producer_details'] = undefined;
  * @member {module:model/ImporterInfo} importer_info
  */
 ItemGeneralInfo.prototype['importer_info'] = undefined;
+
+/**
+ * @member {module:model/OidcClientInfo} oidc_client_info
+ */
+ItemGeneralInfo.prototype['oidc_client_info'] = undefined;
 
 /**
  * @member {module:model/PasswordPolicyInfo} password_policy

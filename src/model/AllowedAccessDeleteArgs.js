@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AllowedAccessDeleteArgs model module.
  * @module model/AllowedAccessDeleteArgs
- * @version 3.3.12
+ * @version 3.3.13
  */
 class AllowedAccessDeleteArgs {
     /**

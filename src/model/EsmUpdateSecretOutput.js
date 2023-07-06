@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EsmUpdateSecretOutput model module.
  * @module model/EsmUpdateSecretOutput
- * @version 3.3.12
+ * @version 3.3.13
  */
 class EsmUpdateSecretOutput {
     /**
@@ -47,6 +47,9 @@ class EsmUpdateSecretOutput {
         if (data) {
             obj = obj || new EsmUpdateSecretOutput();
 
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
             if (data.hasOwnProperty('secret_id')) {
                 obj['secret_id'] = ApiClient.convertToType(data['secret_id'], 'String');
             }
@@ -59,6 +62,11 @@ class EsmUpdateSecretOutput {
 
 
 }
+
+/**
+ * @member {String} name
+ */
+EsmUpdateSecretOutput.prototype['name'] = undefined;
 
 /**
  * @member {String} secret_id

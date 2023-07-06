@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerGithubOutput model module.
  * @module model/GatewayCreateProducerGithubOutput
- * @version 3.3.12
+ * @version 3.3.13
  */
 class GatewayCreateProducerGithubOutput {
     /**

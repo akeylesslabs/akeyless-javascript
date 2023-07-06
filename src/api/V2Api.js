@@ -14,6 +14,10 @@
 
 import ApiClient from "../ApiClient";
 import AkeylessGatewayConfig from '../model/AkeylessGatewayConfig';
+import AllowedAccess from '../model/AllowedAccess';
+import AllowedAccessArgs from '../model/AllowedAccessArgs';
+import AllowedAccessDeleteArgs from '../model/AllowedAccessDeleteArgs';
+import AllowedAccessUpdateArgs from '../model/AllowedAccessUpdateArgs';
 import AssocRoleAuthMethod from '../model/AssocRoleAuthMethod';
 import AssocTargetItem from '../model/AssocTargetItem';
 import Auth from '../model/Auth';
@@ -34,6 +38,8 @@ import CreateAuthMethodAzureAD from '../model/CreateAuthMethodAzureAD';
 import CreateAuthMethodAzureADOutput from '../model/CreateAuthMethodAzureADOutput';
 import CreateAuthMethodCert from '../model/CreateAuthMethodCert';
 import CreateAuthMethodCertOutput from '../model/CreateAuthMethodCertOutput';
+import CreateAuthMethodEmail from '../model/CreateAuthMethodEmail';
+import CreateAuthMethodEmailOutput from '../model/CreateAuthMethodEmailOutput';
 import CreateAuthMethodGCP from '../model/CreateAuthMethodGCP';
 import CreateAuthMethodGCPOutput from '../model/CreateAuthMethodGCPOutput';
 import CreateAuthMethodHuawei from '../model/CreateAuthMethodHuawei';
@@ -158,6 +164,7 @@ import EncryptOutput from '../model/EncryptOutput';
 import EncryptWithClassicKey from '../model/EncryptWithClassicKey';
 import EsmCreateSecretOutput from '../model/EsmCreateSecretOutput';
 import EsmDelete from '../model/EsmDelete';
+import EsmDeleteSecretOutput from '../model/EsmDeleteSecretOutput';
 import EsmGet from '../model/EsmGet';
 import EsmGetSecretOutput from '../model/EsmGetSecretOutput';
 import EsmList from '../model/EsmList';
@@ -220,6 +227,7 @@ import GatewayCreateProducerRedshift from '../model/GatewayCreateProducerRedshif
 import GatewayCreateProducerRedshiftOutput from '../model/GatewayCreateProducerRedshiftOutput';
 import GatewayCreateProducerSnowflake from '../model/GatewayCreateProducerSnowflake';
 import GatewayCreateProducerSnowflakeOutput from '../model/GatewayCreateProducerSnowflakeOutput';
+import GatewayDeleteAllowedAccessOutput from '../model/GatewayDeleteAllowedAccessOutput';
 import GatewayDeleteK8SAuthConfig from '../model/GatewayDeleteK8SAuthConfig';
 import GatewayDeleteK8SAuthConfigOutput from '../model/GatewayDeleteK8SAuthConfigOutput';
 import GatewayDeleteMigration from '../model/GatewayDeleteMigration';
@@ -518,7 +526,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.3.12
+* @version 3.3.13
 */
 export default class V2Api {
 
@@ -1002,6 +1010,49 @@ export default class V2Api {
      */
     createAuthMethodCert(body) {
       return this.createAuthMethodCertWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateAuthMethodEmail} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAuthMethodEmailOutput} and HTTP response
+     */
+    createAuthMethodEmailWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createAuthMethodEmail");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateAuthMethodEmailOutput;
+      return this.apiClient.callApi(
+        '/create-auth-method-email', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateAuthMethodEmail} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAuthMethodEmailOutput}
+     */
+    createAuthMethodEmail(body) {
+      return this.createAuthMethodEmailWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3891,7 +3942,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/EsmDelete} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EsmDeleteSecretOutput} and HTTP response
      */
     esmDeleteWithHttpInfo(body) {
       let postBody = body;
@@ -3912,7 +3963,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = EsmDeleteSecretOutput;
       return this.apiClient.callApi(
         '/esm-delete', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3922,7 +3973,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/EsmDelete} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EsmDeleteSecretOutput}
      */
     esmDelete(body) {
       return this.esmDeleteWithHttpInfo(body)
@@ -4135,6 +4186,49 @@ export default class V2Api {
      */
     exportClassicKey(body) {
       return this.exportClassicKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AllowedAccessArgs} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AllowedAccess} and HTTP response
+     */
+    gatewayCreateAllowedAccessWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateAllowedAccess");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AllowedAccess;
+      return this.apiClient.callApi(
+        '/gateway-create-allowed-access', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AllowedAccessArgs} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AllowedAccess}
+     */
+    gatewayCreateAllowedAccess(body) {
+      return this.gatewayCreateAllowedAccessWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5302,6 +5396,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/AllowedAccessDeleteArgs} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayDeleteAllowedAccessOutput} and HTTP response
+     */
+    gatewayDeleteAllowedAccessWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayDeleteAllowedAccess");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayDeleteAllowedAccessOutput;
+      return this.apiClient.callApi(
+        '/gateway-delete-allowed-access', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AllowedAccessDeleteArgs} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayDeleteAllowedAccessOutput}
+     */
+    gatewayDeleteAllowedAccess(body) {
+      return this.gatewayDeleteAllowedAccessWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayDeleteK8SAuthConfig} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayDeleteK8SAuthConfigOutput} and HTTP response
      */
@@ -5467,6 +5604,49 @@ export default class V2Api {
      */
     gatewayDownloadCustomerFragments(body) {
       return this.gatewayDownloadCustomerFragmentsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AllowedAccessArgs} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AllowedAccess} and HTTP response
+     */
+    gatewayGetAllowedAccessWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayGetAllowedAccess");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AllowedAccess;
+      return this.apiClient.callApi(
+        '/gateway-get-allowed-access', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AllowedAccessArgs} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AllowedAccess}
+     */
+    gatewayGetAllowedAccess(body) {
+      return this.gatewayGetAllowedAccessWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6111,6 +6291,49 @@ export default class V2Api {
      */
     gatewaySyncMigration(body) {
       return this.gatewaySyncMigrationWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AllowedAccessUpdateArgs} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AllowedAccess} and HTTP response
+     */
+    gatewayUpdateAllowedAccessWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateAllowedAccess");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AllowedAccess;
+      return this.apiClient.callApi(
+        '/gateway-update-allowed-access', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AllowedAccessUpdateArgs} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AllowedAccess}
+     */
+    gatewayUpdateAllowedAccess(body) {
+      return this.gatewayUpdateAllowedAccessWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

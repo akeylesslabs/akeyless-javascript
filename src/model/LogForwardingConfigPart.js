@@ -16,6 +16,7 @@ import AwsS3LogForwardingConfig from './AwsS3LogForwardingConfig';
 import AzureLogAnalyticsForwardingConfig from './AzureLogAnalyticsForwardingConfig';
 import DatadogForwardingConfig from './DatadogForwardingConfig';
 import ElasticsearchLogForwardingConfig from './ElasticsearchLogForwardingConfig';
+import GoogleChronicleForwardingConfig from './GoogleChronicleForwardingConfig';
 import LogstashLogForwardingConfig from './LogstashLogForwardingConfig';
 import LogzIoLogForwardingConfig from './LogzIoLogForwardingConfig';
 import SplunkLogForwardingConfig from './SplunkLogForwardingConfig';
@@ -25,7 +26,7 @@ import SyslogLogForwardingConfig from './SyslogLogForwardingConfig';
 /**
  * The LogForwardingConfigPart model module.
  * @module model/LogForwardingConfigPart
- * @version 3.3.12
+ * @version 3.3.13
  */
 class LogForwardingConfigPart {
     /**
@@ -67,6 +68,9 @@ class LogForwardingConfigPart {
             }
             if (data.hasOwnProperty('elasticsearch_config')) {
                 obj['elasticsearch_config'] = ElasticsearchLogForwardingConfig.constructFromObject(data['elasticsearch_config']);
+            }
+            if (data.hasOwnProperty('google_chronicle_config')) {
+                obj['google_chronicle_config'] = GoogleChronicleForwardingConfig.constructFromObject(data['google_chronicle_config']);
             }
             if (data.hasOwnProperty('json_output')) {
                 obj['json_output'] = ApiClient.convertToType(data['json_output'], 'Boolean');
@@ -124,6 +128,11 @@ LogForwardingConfigPart.prototype['datadog_config'] = undefined;
  * @member {module:model/ElasticsearchLogForwardingConfig} elasticsearch_config
  */
 LogForwardingConfigPart.prototype['elasticsearch_config'] = undefined;
+
+/**
+ * @member {module:model/GoogleChronicleForwardingConfig} google_chronicle_config
+ */
+LogForwardingConfigPart.prototype['google_chronicle_config'] = undefined;
 
 /**
  * @member {Boolean} json_output

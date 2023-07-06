@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerCassandra model module.
  * @module model/GatewayUpdateProducerCassandra
- * @version 3.3.12
+ * @version 3.3.13
  */
 class GatewayUpdateProducerCassandra {
     /**
