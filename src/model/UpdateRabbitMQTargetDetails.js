@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRabbitMQTargetDetails model module.
  * @module model/UpdateRabbitMQTargetDetails
- * @version 3.3.14
+ * @version 3.3.15
  */
 class UpdateRabbitMQTargetDetails {
     /**

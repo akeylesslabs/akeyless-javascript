@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOAuth2 model module.
  * @module model/UpdateAuthMethodOAuth2
- * @version 3.3.14
+ * @version 3.3.15
  */
 class UpdateAuthMethodOAuth2 {
     /**
@@ -80,9 +80,6 @@ class UpdateAuthMethodOAuth2 {
             }
             if (data.hasOwnProperty('jwks-json-data')) {
                 obj['jwks-json-data'] = ApiClient.convertToType(data['jwks-json-data'], 'String');
-            }
-            if (data.hasOwnProperty('jwks-json-file')) {
-                obj['jwks-json-file'] = ApiClient.convertToType(data['jwks-json-file'], 'String');
             }
             if (data.hasOwnProperty('jwks-uri')) {
                 obj['jwks-uri'] = ApiClient.convertToType(data['jwks-uri'], 'String');
@@ -167,12 +164,6 @@ UpdateAuthMethodOAuth2.prototype['json'] = false;
  * @member {String} jwks-json-data
  */
 UpdateAuthMethodOAuth2.prototype['jwks-json-data'] = undefined;
-
-/**
- * JSON Web Key Set (JWKS) JSON file path that will be used to verify any JSON Web Token (JWT) issued by the authorization server.
- * @member {String} jwks-json-file
- */
-UpdateAuthMethodOAuth2.prototype['jwks-json-file'] = undefined;
 
 /**
  * The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server.

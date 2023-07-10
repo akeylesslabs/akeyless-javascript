@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCertificateValue model module.
  * @module model/GetCertificateValue
- * @version 3.3.14
+ * @version 3.3.15
  */
 class GetCertificateValue {
     /**

@@ -323,6 +323,8 @@ import GatewayUpdateTlsCert from '../model/GatewayUpdateTlsCert';
 import GatewayUpdateTlsCertOutput from '../model/GatewayUpdateTlsCertOutput';
 import GatewayUpdateTmpUsers from '../model/GatewayUpdateTmpUsers';
 import GatewaysListResponse from '../model/GatewaysListResponse';
+import GenerateCsr from '../model/GenerateCsr';
+import GenerateCsrOutput from '../model/GenerateCsrOutput';
 import GetAccountSettings from '../model/GetAccountSettings';
 import GetAccountSettingsCommandOutput from '../model/GetAccountSettingsCommandOutput';
 import GetAuthMethod from '../model/GetAuthMethod';
@@ -527,7 +529,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.3.14
+* @version 3.3.15
 */
 export default class V2Api {
 
@@ -5421,7 +5423,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = GatewayDeleteAllowedAccessOutput;
       return this.apiClient.callApi(
-        '/gateway-delete-allowed-access', 'DELETE',
+        '/gateway-delete-allowed-access', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -5636,7 +5638,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = AllowedAccess;
       return this.apiClient.callApi(
-        '/gateway-get-allowed-access', 'GET',
+        '/gateway-get-allowed-access', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7667,6 +7669,49 @@ export default class V2Api {
      */
     gatewayUpdateTmpUsers(body) {
       return this.gatewayUpdateTmpUsersWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GenerateCsr} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GenerateCsrOutput} and HTTP response
+     */
+    generateCsrWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling generateCsr");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GenerateCsrOutput;
+      return this.apiClient.callApi(
+        '/generate-csr', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GenerateCsr} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GenerateCsrOutput}
+     */
+    generateCsr(body) {
+      return this.generateCsrWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -18,7 +18,7 @@ import MigrationGeneral from './MigrationGeneral';
 /**
  * The AWSSecretsMigration model module.
  * @module model/AWSSecretsMigration
- * @version 3.3.14
+ * @version 3.3.15
  */
 class AWSSecretsMigration {
     /**

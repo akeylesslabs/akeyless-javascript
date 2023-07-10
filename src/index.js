@@ -388,6 +388,8 @@ import GatewayUpdateTmpUsers from './model/GatewayUpdateTmpUsers';
 import GatewaysListResponse from './model/GatewaysListResponse';
 import GenCustomerFragment from './model/GenCustomerFragment';
 import GeneralConfigPart from './model/GeneralConfigPart';
+import GenerateCsr from './model/GenerateCsr';
+import GenerateCsrOutput from './model/GenerateCsrOutput';
 import GetAccountSettings from './model/GetAccountSettings';
 import GetAccountSettingsCommandOutput from './model/GetAccountSettingsCommandOutput';
 import GetAuthMethod from './model/GetAuthMethod';
@@ -707,7 +709,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.3.14
+* @version 3.3.15
 */
 export {
     /**
@@ -2965,6 +2967,18 @@ export {
      * @property {module:model/GeneralConfigPart}
      */
     GeneralConfigPart,
+
+    /**
+     * The GenerateCsr model constructor.
+     * @property {module:model/GenerateCsr}
+     */
+    GenerateCsr,
+
+    /**
+     * The GenerateCsrOutput model constructor.
+     * @property {module:model/GenerateCsrOutput}
+     */
+    GenerateCsrOutput,
 
     /**
      * The GetAccountSettings model constructor.

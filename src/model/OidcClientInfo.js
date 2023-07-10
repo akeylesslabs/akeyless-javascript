@@ -17,7 +17,7 @@ import AccessPermissionAssignment from './AccessPermissionAssignment';
 /**
  * The OidcClientInfo model module.
  * @module model/OidcClientInfo
- * @version 3.3.14
+ * @version 3.3.15
  */
 class OidcClientInfo {
     /**
@@ -54,8 +54,8 @@ class OidcClientInfo {
             if (data.hasOwnProperty('audience')) {
                 obj['audience'] = ApiClient.convertToType(data['audience'], ['String']);
             }
-            if (data.hasOwnProperty('client-id')) {
-                obj['client-id'] = ApiClient.convertToType(data['client-id'], 'String');
+            if (data.hasOwnProperty('client_id')) {
+                obj['client_id'] = ApiClient.convertToType(data['client_id'], 'String');
             }
             if (data.hasOwnProperty('grant_types')) {
                 obj['grant_types'] = ApiClient.convertToType(data['grant_types'], ['String']);
@@ -93,9 +93,9 @@ OidcClientInfo.prototype['access_permission_assignment'] = undefined;
 OidcClientInfo.prototype['audience'] = undefined;
 
 /**
- * @member {String} client-id
+ * @member {String} client_id
  */
-OidcClientInfo.prototype['client-id'] = undefined;
+OidcClientInfo.prototype['client_id'] = undefined;
 
 /**
  * @member {Array.<String>} grant_types

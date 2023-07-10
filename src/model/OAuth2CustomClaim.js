@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OAuth2CustomClaim model module.
  * @module model/OAuth2CustomClaim
- * @version 3.3.14
+ * @version 3.3.15
  */
 class OAuth2CustomClaim {
     /**
