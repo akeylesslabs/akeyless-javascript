@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateEventForwarder model module.
  * @module model/UpdateEventForwarder
- * @version 3.3.15
+ * @version 3.3.16
  */
 class UpdateEventForwarder {
     /**
@@ -109,7 +109,7 @@ UpdateEventForwarder.prototype['admin-name'] = undefined;
 UpdateEventForwarder.prototype['description'] = 'default_comment';
 
 /**
- * A comma seperated list of email addresses to send event to (relevant only for \\\"email\\\" Event Forwarder)
+ * A comma seperated list of email addresses to send event to (relevant only for \"email\" Event Forwarder)
  * @member {String} email-to
  */
 UpdateEventForwarder.prototype['email-to'] = undefined;

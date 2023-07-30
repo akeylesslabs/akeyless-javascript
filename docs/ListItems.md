@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessibility** | **String** | for personal password manager | [optional] [default to &#39;regular&#39;]
+**autoPagination** | **String** | Retrieve all items using pagination, when disabled retrieving only first 1000 items | [optional] [default to &#39;enabled&#39;]
 **filter** | **String** | Filter by item name or part of it | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **minimalView** | **Boolean** |  | [optional] 
-**pagination** | **String** | Retrieve items with pagination | [optional] [default to &#39;enabled&#39;]
 **paginationToken** | **String** | Next page reference | [optional] 
 **path** | **String** | Path to folder | [optional] 
 **sraOnly** | **Boolean** | Filter by items with SRA functionality enabled | [optional] [default to false]

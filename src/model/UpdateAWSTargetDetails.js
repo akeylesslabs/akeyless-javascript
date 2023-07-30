@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAWSTargetDetails model module.
  * @module model/UpdateAWSTargetDetails
- * @version 3.3.15
+ * @version 3.3.16
  */
 class UpdateAWSTargetDetails {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ElasticsearchLogForwardingConfig model module.
  * @module model/ElasticsearchLogForwardingConfig
- * @version 3.3.15
+ * @version 3.3.16
  */
 class ElasticsearchLogForwardingConfig {
     /**

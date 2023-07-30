@@ -37,6 +37,7 @@ Method | HTTP request | Description
 [**createGKETarget**](V2Api.md#createGKETarget) | **POST** /create-gke-target | 
 [**createGcpTarget**](V2Api.md#createGcpTarget) | **POST** /create-gcp-target | 
 [**createGithubTarget**](V2Api.md#createGithubTarget) | **POST** /create-github-target | 
+[**createGlobalSignAtlasTarget**](V2Api.md#createGlobalSignAtlasTarget) | **POST** /create-globalsign-atlas-target | 
 [**createGlobalSignTarget**](V2Api.md#createGlobalSignTarget) | **POST** /create-globalsign-target | 
 [**createKey**](V2Api.md#createKey) | **POST** /create-key | 
 [**createLinkedTarget**](V2Api.md#createLinkedTarget) | **POST** /create-linked-target | 
@@ -259,6 +260,7 @@ Method | HTTP request | Description
 [**updateGKETarget**](V2Api.md#updateGKETarget) | **POST** /update-gke-target | 
 [**updateGcpTarget**](V2Api.md#updateGcpTarget) | **POST** /update-gcp-target | 
 [**updateGithubTarget**](V2Api.md#updateGithubTarget) | **POST** /update-github-target | 
+[**updateGlobalSignAtlasTarget**](V2Api.md#updateGlobalSignAtlasTarget) | **POST** /update-globalsign-atlas-target | 
 [**updateGlobalSignTarget**](V2Api.md#updateGlobalSignTarget) | **POST** /update-globalsign-target | 
 [**updateItem**](V2Api.md#updateItem) | **POST** /update-item | 
 [**updateLdapTarget**](V2Api.md#updateLdapTarget) | **POST** /update-ldap-target | 
@@ -1669,6 +1671,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateGithubTargetOutput**](CreateGithubTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createGlobalSignAtlasTarget
+
+> CreateGlobalSignAtlasTargetOutput createGlobalSignAtlasTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateGlobalSignAtlasTarget(); // CreateGlobalSignAtlasTarget | 
+apiInstance.createGlobalSignAtlasTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateGlobalSignAtlasTarget**](CreateGlobalSignAtlasTarget.md)|  | 
+
+### Return type
+
+[**CreateGlobalSignAtlasTargetOutput**](CreateGlobalSignAtlasTargetOutput.md)
 
 ### Authorization
 
@@ -11015,6 +11059,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateGithubTargetOutput**](UpdateGithubTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateGlobalSignAtlasTarget
+
+> UpdateGlobalSignAtlasTargetOutput updateGlobalSignAtlasTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateGlobalSignAtlasTarget(); // UpdateGlobalSignAtlasTarget | 
+apiInstance.updateGlobalSignAtlasTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateGlobalSignAtlasTarget**](UpdateGlobalSignAtlasTarget.md)|  | 
+
+### Return type
+
+[**UpdateGlobalSignAtlasTargetOutput**](UpdateGlobalSignAtlasTargetOutput.md)
 
 ### Authorization
 

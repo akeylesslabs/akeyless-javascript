@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EsmCreateSecretOutput model module.
  * @module model/EsmCreateSecretOutput
- * @version 3.3.15
+ * @version 3.3.16
  */
 class EsmCreateSecretOutput {
     /**

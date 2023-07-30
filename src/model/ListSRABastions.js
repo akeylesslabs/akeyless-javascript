@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListSRABastions model module.
  * @module model/ListSRABastions
- * @version 3.3.15
+ * @version 3.3.16
  */
 class ListSRABastions {
     /**

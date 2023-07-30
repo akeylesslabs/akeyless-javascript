@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GoogleChronicleForwardingConfig model module.
  * @module model/GoogleChronicleForwardingConfig
- * @version 3.3.15
+ * @version 3.3.16
  */
 class GoogleChronicleForwardingConfig {
     /**

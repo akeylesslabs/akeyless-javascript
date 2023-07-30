@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGcpTargetOutput model module.
  * @module model/CreateGcpTargetOutput
- * @version 3.3.15
+ * @version 3.3.16
  */
 class CreateGcpTargetOutput {
     /**

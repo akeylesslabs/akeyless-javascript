@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSecretVal model module.
  * @module model/UpdateSecretVal
- * @version 3.3.15
+ * @version 3.3.16
  */
 class UpdateSecretVal {
     /**
      * Constructs a new <code>UpdateSecretVal</code>.
      * @alias module:model/UpdateSecretVal
      * @param name {String} Secret name
-     * @param value {String} The new secret value
+     * @param value {String} The secret value (only relevant for type 'generic')
      */
     constructor(name, value) { 
         
@@ -181,7 +181,7 @@ UpdateSecretVal.prototype['uid-token'] = undefined;
 UpdateSecretVal.prototype['username'] = undefined;
 
 /**
- * The new secret value
+ * The secret value (only relevant for type 'generic')
  * @member {String} value
  */
 UpdateSecretVal.prototype['value'] = undefined;

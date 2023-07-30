@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateCsr model module.
  * @module model/GenerateCsr
- * @version 3.3.15
+ * @version 3.3.16
  */
 class GenerateCsr {
     /**
      * Constructs a new <code>GenerateCsr</code>.
      * @alias module:model/GenerateCsr
-     * @param commonName {String} The commonName to be included in the CSR certificate
-     * @param name {String} Key name in akeyless
+     * @param commonName {String} The common name to be included in the CSR certificate
+     * @param name {String} The classic key name
      */
     constructor(commonName, name) { 
         
@@ -75,9 +75,6 @@ class GenerateCsr {
             if (data.hasOwnProperty('dep')) {
                 obj['dep'] = ApiClient.convertToType(data['dep'], 'String');
             }
-            if (data.hasOwnProperty('description')) {
-                obj['description'] = ApiClient.convertToType(data['description'], 'String');
-            }
             if (data.hasOwnProperty('email-addresses')) {
                 obj['email-addresses'] = ApiClient.convertToType(data['email-addresses'], 'String');
             }
@@ -89,9 +86,6 @@ class GenerateCsr {
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
-            }
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -124,13 +118,13 @@ class GenerateCsr {
 GenerateCsr.prototype['alg'] = undefined;
 
 /**
- * The DNS Alternative Names to be included in the CSR certificate (in a comma-separated list)
+ * A comma-separated list of dns alternative names
  * @member {String} alt-names
  */
 GenerateCsr.prototype['alt-names'] = undefined;
 
 /**
- * The certificateType to be included in the CSR certificate (ssl-client/ssl-server/certificate-signing)
+ * The certificate type to be included in the CSR certificate (ssl-client/ssl-server/certificate-signing)
  * @member {String} certificate-type
  */
 GenerateCsr.prototype['certificate-type'] = undefined;
@@ -142,7 +136,7 @@ GenerateCsr.prototype['certificate-type'] = undefined;
 GenerateCsr.prototype['city'] = undefined;
 
 /**
- * The commonName to be included in the CSR certificate
+ * The common name to be included in the CSR certificate
  * @member {String} common-name
  */
 GenerateCsr.prototype['common-name'] = undefined;
@@ -166,25 +160,19 @@ GenerateCsr.prototype['critical'] = undefined;
 GenerateCsr.prototype['dep'] = undefined;
 
 /**
- * Description of the object
- * @member {String} description
- */
-GenerateCsr.prototype['description'] = undefined;
-
-/**
- * The email addresses Alternative Names to be included in the CSR certificate (in a comma-separated list)
+ * A comma-separated list of email addresses alternative names
  * @member {String} email-addresses
  */
 GenerateCsr.prototype['email-addresses'] = undefined;
 
 /**
- * Generate a new csr key
+ * Generate a new classic key for the csr
  * @member {Boolean} generate-key
  */
 GenerateCsr.prototype['generate-key'] = undefined;
 
 /**
- * The ip addresses Alternative Names to be included in the CSR certificate (in a comma-separated list)
+ * A comma-separated list of ip addresses alternative names
  * @member {String} ip-addresses
  */
 GenerateCsr.prototype['ip-addresses'] = undefined;
@@ -197,13 +185,7 @@ GenerateCsr.prototype['ip-addresses'] = undefined;
 GenerateCsr.prototype['json'] = false;
 
 /**
- * Deprecated - use description
- * @member {String} metadata
- */
-GenerateCsr.prototype['metadata'] = undefined;
-
-/**
- * Key name in akeyless
+ * The classic key name
  * @member {String} name
  */
 GenerateCsr.prototype['name'] = undefined;
@@ -233,7 +215,7 @@ GenerateCsr.prototype['token'] = undefined;
 GenerateCsr.prototype['uid-token'] = undefined;
 
 /**
- * The URI Subject Alternative Names to be included in the CSR certificate (in a comma-separated list)
+ * A comma-separated list of uri alternative names
  * @member {String} uri-sans
  */
 GenerateCsr.prototype['uri-sans'] = undefined;

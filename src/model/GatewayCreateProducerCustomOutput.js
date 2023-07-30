@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerCustomOutput model module.
  * @module model/GatewayCreateProducerCustomOutput
- * @version 3.3.15
+ * @version 3.3.16
  */
 class GatewayCreateProducerCustomOutput {
     /**

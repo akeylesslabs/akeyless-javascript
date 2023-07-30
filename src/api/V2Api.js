@@ -79,6 +79,8 @@ import CreateGcpTarget from '../model/CreateGcpTarget';
 import CreateGcpTargetOutput from '../model/CreateGcpTargetOutput';
 import CreateGithubTarget from '../model/CreateGithubTarget';
 import CreateGithubTargetOutput from '../model/CreateGithubTargetOutput';
+import CreateGlobalSignAtlasTarget from '../model/CreateGlobalSignAtlasTarget';
+import CreateGlobalSignAtlasTargetOutput from '../model/CreateGlobalSignAtlasTargetOutput';
 import CreateGlobalSignTarget from '../model/CreateGlobalSignTarget';
 import CreateGlobalSignTargetOutput from '../model/CreateGlobalSignTargetOutput';
 import CreateKey from '../model/CreateKey';
@@ -475,6 +477,8 @@ import UpdateGcpTarget from '../model/UpdateGcpTarget';
 import UpdateGcpTargetOutput from '../model/UpdateGcpTargetOutput';
 import UpdateGithubTarget from '../model/UpdateGithubTarget';
 import UpdateGithubTargetOutput from '../model/UpdateGithubTargetOutput';
+import UpdateGlobalSignAtlasTarget from '../model/UpdateGlobalSignAtlasTarget';
+import UpdateGlobalSignAtlasTargetOutput from '../model/UpdateGlobalSignAtlasTargetOutput';
 import UpdateGlobalSignTarget from '../model/UpdateGlobalSignTarget';
 import UpdateGlobalSignTargetOutput from '../model/UpdateGlobalSignTargetOutput';
 import UpdateItem from '../model/UpdateItem';
@@ -529,7 +533,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.3.15
+* @version 3.3.16
 */
 export default class V2Api {
 
@@ -1959,6 +1963,49 @@ export default class V2Api {
      */
     createGithubTarget(body) {
       return this.createGithubTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateGlobalSignAtlasTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateGlobalSignAtlasTargetOutput} and HTTP response
+     */
+    createGlobalSignAtlasTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createGlobalSignAtlasTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateGlobalSignAtlasTargetOutput;
+      return this.apiClient.callApi(
+        '/create-globalsign-atlas-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateGlobalSignAtlasTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateGlobalSignAtlasTargetOutput}
+     */
+    createGlobalSignAtlasTarget(body) {
+      return this.createGlobalSignAtlasTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -11470,6 +11517,49 @@ export default class V2Api {
      */
     updateGithubTarget(body) {
       return this.updateGithubTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateGlobalSignAtlasTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateGlobalSignAtlasTargetOutput} and HTTP response
+     */
+    updateGlobalSignAtlasTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateGlobalSignAtlasTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateGlobalSignAtlasTargetOutput;
+      return this.apiClient.callApi(
+        '/update-globalsign-atlas-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateGlobalSignAtlasTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateGlobalSignAtlasTargetOutput}
+     */
+    updateGlobalSignAtlasTarget(body) {
+      return this.updateGlobalSignAtlasTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

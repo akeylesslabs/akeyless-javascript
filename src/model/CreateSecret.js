@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 3.3.15
+ * @version 3.3.16
  */
 class CreateSecret {
     /**
      * Constructs a new <code>CreateSecret</code>.
      * @alias module:model/CreateSecret
      * @param name {String} Secret name
-     * @param value {String} The secret value
+     * @param value {String} The secret value (only relevant for type 'generic')
      */
     constructor(name, value) { 
         
@@ -292,7 +292,7 @@ CreateSecret.prototype['uid-token'] = undefined;
 CreateSecret.prototype['username'] = undefined;
 
 /**
- * The secret value
+ * The secret value (only relevant for type 'generic')
  * @member {String} value
  */
 CreateSecret.prototype['value'] = undefined;

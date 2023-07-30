@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 3.3.15
+ * @version 3.3.16
  */
 class ListItems {
     /**
@@ -50,6 +50,9 @@ class ListItems {
             if (data.hasOwnProperty('accessibility')) {
                 obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
             }
+            if (data.hasOwnProperty('auto-pagination')) {
+                obj['auto-pagination'] = ApiClient.convertToType(data['auto-pagination'], 'String');
+            }
             if (data.hasOwnProperty('filter')) {
                 obj['filter'] = ApiClient.convertToType(data['filter'], 'String');
             }
@@ -58,9 +61,6 @@ class ListItems {
             }
             if (data.hasOwnProperty('minimal-view')) {
                 obj['minimal-view'] = ApiClient.convertToType(data['minimal-view'], 'Boolean');
-            }
-            if (data.hasOwnProperty('pagination')) {
-                obj['pagination'] = ApiClient.convertToType(data['pagination'], 'String');
             }
             if (data.hasOwnProperty('pagination-token')) {
                 obj['pagination-token'] = ApiClient.convertToType(data['pagination-token'], 'String');
@@ -101,6 +101,13 @@ class ListItems {
 ListItems.prototype['accessibility'] = 'regular';
 
 /**
+ * Retrieve all items using pagination, when disabled retrieving only first 1000 items
+ * @member {String} auto-pagination
+ * @default 'enabled'
+ */
+ListItems.prototype['auto-pagination'] = 'enabled';
+
+/**
  * Filter by item name or part of it
  * @member {String} filter
  */
@@ -117,13 +124,6 @@ ListItems.prototype['json'] = false;
  * @member {Boolean} minimal-view
  */
 ListItems.prototype['minimal-view'] = undefined;
-
-/**
- * Retrieve items with pagination
- * @member {String} pagination
- * @default 'enabled'
- */
-ListItems.prototype['pagination'] = 'enabled';
 
 /**
  * Next page reference

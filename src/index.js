@@ -17,6 +17,7 @@ import APIKeyAccessRules from './model/APIKeyAccessRules';
 import AWSIAMAccessRules from './model/AWSIAMAccessRules';
 import AWSPayload from './model/AWSPayload';
 import AWSSecretsMigration from './model/AWSSecretsMigration';
+import AWSTargetDetails from './model/AWSTargetDetails';
 import AccessPermissionAssignment from './model/AccessPermissionAssignment';
 import AccountGeneralSettings from './model/AccountGeneralSettings';
 import AccountObjectVersionSettingsOutput from './model/AccountObjectVersionSettingsOutput';
@@ -27,6 +28,7 @@ import AdminsConfigPart from './model/AdminsConfigPart';
 import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
 import AllowedAccess from './model/AllowedAccess';
 import AllowedAccessOld from './model/AllowedAccessOld';
+import ArtifactoryTargetDetails from './model/ArtifactoryTargetDetails';
 import AssocRoleAuthMethod from './model/AssocRoleAuthMethod';
 import AssocTargetItem from './model/AssocTargetItem';
 import AttributeTypeAndValue from './model/AttributeTypeAndValue';
@@ -40,6 +42,7 @@ import AzureADAccessRules from './model/AzureADAccessRules';
 import AzureKeyVaultMigration from './model/AzureKeyVaultMigration';
 import AzureLogAnalyticsForwardingConfig from './model/AzureLogAnalyticsForwardingConfig';
 import AzurePayload from './model/AzurePayload';
+import AzureTargetDetails from './model/AzureTargetDetails';
 import BastionListEntry from './model/BastionListEntry';
 import BastionsList from './model/BastionsList';
 import CFConfigPart from './model/CFConfigPart';
@@ -50,6 +53,7 @@ import CertificateExpirationEvent from './model/CertificateExpirationEvent';
 import CertificateInfo from './model/CertificateInfo';
 import CertificateIssueInfo from './model/CertificateIssueInfo';
 import CertificateTemplateInfo from './model/CertificateTemplateInfo';
+import ChefTargetDetails from './model/ChefTargetDetails';
 import ClassicKeyDetailsInfo from './model/ClassicKeyDetailsInfo';
 import ClassicKeyStatusInfo from './model/ClassicKeyStatusInfo';
 import ClassicKeyTargetInfo from './model/ClassicKeyTargetInfo';
@@ -114,6 +118,8 @@ import CreateGcpTarget from './model/CreateGcpTarget';
 import CreateGcpTargetOutput from './model/CreateGcpTargetOutput';
 import CreateGithubTarget from './model/CreateGithubTarget';
 import CreateGithubTargetOutput from './model/CreateGithubTargetOutput';
+import CreateGlobalSignAtlasTarget from './model/CreateGlobalSignAtlasTarget';
+import CreateGlobalSignAtlasTargetOutput from './model/CreateGlobalSignAtlasTargetOutput';
 import CreateGlobalSignTarget from './model/CreateGlobalSignTarget';
 import CreateGlobalSignTargetOutput from './model/CreateGlobalSignTargetOutput';
 import CreateKey from './model/CreateKey';
@@ -151,12 +157,14 @@ import CreateWindowsTarget from './model/CreateWindowsTarget';
 import CreateWindowsTargetOutput from './model/CreateWindowsTargetOutput';
 import CreateZeroSSLTarget from './model/CreateZeroSSLTarget';
 import CreateZeroSSLTargetOutput from './model/CreateZeroSSLTargetOutput';
+import CustomTargetDetails from './model/CustomTargetDetails';
 import CustomerFragment from './model/CustomerFragment';
 import CustomerFragmentsJson from './model/CustomerFragmentsJson';
 import CustomerFullAddress from './model/CustomerFullAddress';
 import DSProducerDetails from './model/DSProducerDetails';
 import DataProtectionSection from './model/DataProtectionSection';
 import DatadogForwardingConfig from './model/DatadogForwardingConfig';
+import DbTargetDetails from './model/DbTargetDetails';
 import Decrypt from './model/Decrypt';
 import DecryptFile from './model/DecryptFile';
 import DecryptFileOutput from './model/DecryptFileOutput';
@@ -197,7 +205,9 @@ import DescribeSubClaims from './model/DescribeSubClaims';
 import DescribeSubClaimsOutput from './model/DescribeSubClaimsOutput';
 import Detokenize from './model/Detokenize';
 import DetokenizeOutput from './model/DetokenizeOutput';
+import DockerhubTargetDetails from './model/DockerhubTargetDetails';
 import DynamicSecretProducerInfo from './model/DynamicSecretProducerInfo';
+import EKSTargetDetails from './model/EKSTargetDetails';
 import ElasticsearchLogForwardingConfig from './model/ElasticsearchLogForwardingConfig';
 import EmailEntry from './model/EmailEntry';
 import EmailPassAccessRules from './model/EmailPassAccessRules';
@@ -228,6 +238,7 @@ import ExternalKMSKeyId from './model/ExternalKMSKeyId';
 import GCPAccessRules from './model/GCPAccessRules';
 import GCPPayload from './model/GCPPayload';
 import GCPSecretsMigration from './model/GCPSecretsMigration';
+import GKETargetDetails from './model/GKETargetDetails';
 import GatewayBasicInfo from './model/GatewayBasicInfo';
 import GatewayCreateAllowedAccess from './model/GatewayCreateAllowedAccess';
 import GatewayCreateK8SAuthConfig from './model/GatewayCreateK8SAuthConfig';
@@ -386,6 +397,7 @@ import GatewayUpdateTlsCert from './model/GatewayUpdateTlsCert';
 import GatewayUpdateTlsCertOutput from './model/GatewayUpdateTlsCertOutput';
 import GatewayUpdateTmpUsers from './model/GatewayUpdateTmpUsers';
 import GatewaysListResponse from './model/GatewaysListResponse';
+import GcpTargetDetails from './model/GcpTargetDetails';
 import GenCustomerFragment from './model/GenCustomerFragment';
 import GeneralConfigPart from './model/GeneralConfigPart';
 import GenerateCsr from './model/GenerateCsr';
@@ -414,6 +426,9 @@ import GetTags from './model/GetTags';
 import GetTarget from './model/GetTarget';
 import GetTargetDetails from './model/GetTargetDetails';
 import GetTargetDetailsOutput from './model/GetTargetDetailsOutput';
+import GithubTargetDetails from './model/GithubTargetDetails';
+import GlobalSignAtlasTargetDetails from './model/GlobalSignAtlasTargetDetails';
+import GlobalSignGCCTargetDetails from './model/GlobalSignGCCTargetDetails';
 import GoogleChronicleForwardingConfig from './model/GoogleChronicleForwardingConfig';
 import GwClusterIdentity from './model/GwClusterIdentity';
 import HashiMigration from './model/HashiMigration';
@@ -465,8 +480,10 @@ import LDAPAccessRules from './model/LDAPAccessRules';
 import LastConfigChange from './model/LastConfigChange';
 import LastStatusInfo from './model/LastStatusInfo';
 import LdapConfigPart from './model/LdapConfigPart';
+import LdapTargetDetails from './model/LdapTargetDetails';
 import LeadershipConfigPart from './model/LeadershipConfigPart';
 import LinkedDetails from './model/LinkedDetails';
+import LinkedTargetDetails from './model/LinkedTargetDetails';
 import ListAuthMethods from './model/ListAuthMethods';
 import ListAuthMethodsOutput from './model/ListAuthMethodsOutput';
 import ListGateways from './model/ListGateways';
@@ -490,8 +507,10 @@ import MigrationsConfigLastChange from './model/MigrationsConfigLastChange';
 import MigrationsConfigPart from './model/MigrationsConfigPart';
 import MockMigration from './model/MockMigration';
 import MockPayload from './model/MockPayload';
+import MongoDBTargetDetails from './model/MongoDBTargetDetails';
 import MoveObjects from './model/MoveObjects';
 import Name from './model/Name';
+import NativeK8sTargetDetails from './model/NativeK8sTargetDetails';
 import NotiForwarder from './model/NotiForwarder';
 import OAuth2AccessRules from './model/OAuth2AccessRules';
 import OAuth2CustomClaim from './model/OAuth2CustomClaim';
@@ -504,8 +523,10 @@ import OnePasswordPayload from './model/OnePasswordPayload';
 import PKICertificateIssueDetails from './model/PKICertificateIssueDetails';
 import PasswordPolicyInfo from './model/PasswordPolicyInfo';
 import PathRule from './model/PathRule';
+import PingTargetDetails from './model/PingTargetDetails';
 import Producer from './model/Producer';
 import ProducersConfigPart from './model/ProducersConfigPart';
+import RabbitMQTargetDetails from './model/RabbitMQTargetDetails';
 import RawCreds from './model/RawCreds';
 import RefreshKey from './model/RefreshKey';
 import RefreshKeyOutput from './model/RefreshKeyOutput';
@@ -534,6 +555,8 @@ import Rules from './model/Rules';
 import SAMLAccessRules from './model/SAMLAccessRules';
 import SAMLAttribute from './model/SAMLAttribute';
 import SSHCertificateIssueDetails from './model/SSHCertificateIssueDetails';
+import SSHTargetDetails from './model/SSHTargetDetails';
+import SalesforceTargetDetails from './model/SalesforceTargetDetails';
 import SecretInfo from './model/SecretInfo';
 import SecureRemoteAccess from './model/SecureRemoteAccess';
 import ServerInventoryMigration from './model/ServerInventoryMigration';
@@ -623,6 +646,8 @@ import UpdateGcpTarget from './model/UpdateGcpTarget';
 import UpdateGcpTargetOutput from './model/UpdateGcpTargetOutput';
 import UpdateGithubTarget from './model/UpdateGithubTarget';
 import UpdateGithubTargetOutput from './model/UpdateGithubTargetOutput';
+import UpdateGlobalSignAtlasTarget from './model/UpdateGlobalSignAtlasTarget';
+import UpdateGlobalSignAtlasTargetOutput from './model/UpdateGlobalSignAtlasTargetOutput';
 import UpdateGlobalSignTarget from './model/UpdateGlobalSignTarget';
 import UpdateGlobalSignTargetOutput from './model/UpdateGlobalSignTargetOutput';
 import UpdateItem from './model/UpdateItem';
@@ -670,6 +695,7 @@ import UploadRSA from './model/UploadRSA';
 import ValidateToken from './model/ValidateToken';
 import ValidateTokenOutput from './model/ValidateTokenOutput';
 import VaultlessTokenizerInfo from './model/VaultlessTokenizerInfo';
+import VenafiTargetDetails from './model/VenafiTargetDetails';
 import VerifyDataWithClassicKey from './model/VerifyDataWithClassicKey';
 import VerifyGPG from './model/VerifyGPG';
 import VerifyJWTOutput from './model/VerifyJWTOutput';
@@ -677,6 +703,9 @@ import VerifyJWTWithClassicKey from './model/VerifyJWTWithClassicKey';
 import VerifyPKCS1 from './model/VerifyPKCS1';
 import VerifyPKICertOutput from './model/VerifyPKICertOutput';
 import VerifyPKICertWithClassicKey from './model/VerifyPKICertWithClassicKey';
+import WebTargetDetails from './model/WebTargetDetails';
+import WindowsTargetDetails from './model/WindowsTargetDetails';
+import ZeroSSLTargetDetails from './model/ZeroSSLTargetDetails';
 import V2Api from './api/V2Api';
 
 
@@ -709,7 +738,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.3.15
+* @version 3.3.16
 */
 export {
     /**
@@ -741,6 +770,12 @@ export {
      * @property {module:model/AWSSecretsMigration}
      */
     AWSSecretsMigration,
+
+    /**
+     * The AWSTargetDetails model constructor.
+     * @property {module:model/AWSTargetDetails}
+     */
+    AWSTargetDetails,
 
     /**
      * The AccessPermissionAssignment model constructor.
@@ -801,6 +836,12 @@ export {
      * @property {module:model/AllowedAccessOld}
      */
     AllowedAccessOld,
+
+    /**
+     * The ArtifactoryTargetDetails model constructor.
+     * @property {module:model/ArtifactoryTargetDetails}
+     */
+    ArtifactoryTargetDetails,
 
     /**
      * The AssocRoleAuthMethod model constructor.
@@ -881,6 +922,12 @@ export {
     AzurePayload,
 
     /**
+     * The AzureTargetDetails model constructor.
+     * @property {module:model/AzureTargetDetails}
+     */
+    AzureTargetDetails,
+
+    /**
      * The BastionListEntry model constructor.
      * @property {module:model/BastionListEntry}
      */
@@ -939,6 +986,12 @@ export {
      * @property {module:model/CertificateTemplateInfo}
      */
     CertificateTemplateInfo,
+
+    /**
+     * The ChefTargetDetails model constructor.
+     * @property {module:model/ChefTargetDetails}
+     */
+    ChefTargetDetails,
 
     /**
      * The ClassicKeyDetailsInfo model constructor.
@@ -1325,6 +1378,18 @@ export {
     CreateGithubTargetOutput,
 
     /**
+     * The CreateGlobalSignAtlasTarget model constructor.
+     * @property {module:model/CreateGlobalSignAtlasTarget}
+     */
+    CreateGlobalSignAtlasTarget,
+
+    /**
+     * The CreateGlobalSignAtlasTargetOutput model constructor.
+     * @property {module:model/CreateGlobalSignAtlasTargetOutput}
+     */
+    CreateGlobalSignAtlasTargetOutput,
+
+    /**
      * The CreateGlobalSignTarget model constructor.
      * @property {module:model/CreateGlobalSignTarget}
      */
@@ -1547,6 +1612,12 @@ export {
     CreateZeroSSLTargetOutput,
 
     /**
+     * The CustomTargetDetails model constructor.
+     * @property {module:model/CustomTargetDetails}
+     */
+    CustomTargetDetails,
+
+    /**
      * The CustomerFragment model constructor.
      * @property {module:model/CustomerFragment}
      */
@@ -1581,6 +1652,12 @@ export {
      * @property {module:model/DatadogForwardingConfig}
      */
     DatadogForwardingConfig,
+
+    /**
+     * The DbTargetDetails model constructor.
+     * @property {module:model/DbTargetDetails}
+     */
+    DbTargetDetails,
 
     /**
      * The Decrypt model constructor.
@@ -1823,10 +1900,22 @@ export {
     DetokenizeOutput,
 
     /**
+     * The DockerhubTargetDetails model constructor.
+     * @property {module:model/DockerhubTargetDetails}
+     */
+    DockerhubTargetDetails,
+
+    /**
      * The DynamicSecretProducerInfo model constructor.
      * @property {module:model/DynamicSecretProducerInfo}
      */
     DynamicSecretProducerInfo,
+
+    /**
+     * The EKSTargetDetails model constructor.
+     * @property {module:model/EKSTargetDetails}
+     */
+    EKSTargetDetails,
 
     /**
      * The ElasticsearchLogForwardingConfig model constructor.
@@ -2007,6 +2096,12 @@ export {
      * @property {module:model/GCPSecretsMigration}
      */
     GCPSecretsMigration,
+
+    /**
+     * The GKETargetDetails model constructor.
+     * @property {module:model/GKETargetDetails}
+     */
+    GKETargetDetails,
 
     /**
      * The GatewayBasicInfo model constructor.
@@ -2957,6 +3052,12 @@ export {
     GatewaysListResponse,
 
     /**
+     * The GcpTargetDetails model constructor.
+     * @property {module:model/GcpTargetDetails}
+     */
+    GcpTargetDetails,
+
+    /**
      * The GenCustomerFragment model constructor.
      * @property {module:model/GenCustomerFragment}
      */
@@ -3123,6 +3224,24 @@ export {
      * @property {module:model/GetTargetDetailsOutput}
      */
     GetTargetDetailsOutput,
+
+    /**
+     * The GithubTargetDetails model constructor.
+     * @property {module:model/GithubTargetDetails}
+     */
+    GithubTargetDetails,
+
+    /**
+     * The GlobalSignAtlasTargetDetails model constructor.
+     * @property {module:model/GlobalSignAtlasTargetDetails}
+     */
+    GlobalSignAtlasTargetDetails,
+
+    /**
+     * The GlobalSignGCCTargetDetails model constructor.
+     * @property {module:model/GlobalSignGCCTargetDetails}
+     */
+    GlobalSignGCCTargetDetails,
 
     /**
      * The GoogleChronicleForwardingConfig model constructor.
@@ -3431,6 +3550,12 @@ export {
     LdapConfigPart,
 
     /**
+     * The LdapTargetDetails model constructor.
+     * @property {module:model/LdapTargetDetails}
+     */
+    LdapTargetDetails,
+
+    /**
      * The LeadershipConfigPart model constructor.
      * @property {module:model/LeadershipConfigPart}
      */
@@ -3441,6 +3566,12 @@ export {
      * @property {module:model/LinkedDetails}
      */
     LinkedDetails,
+
+    /**
+     * The LinkedTargetDetails model constructor.
+     * @property {module:model/LinkedTargetDetails}
+     */
+    LinkedTargetDetails,
 
     /**
      * The ListAuthMethods model constructor.
@@ -3581,6 +3712,12 @@ export {
     MockPayload,
 
     /**
+     * The MongoDBTargetDetails model constructor.
+     * @property {module:model/MongoDBTargetDetails}
+     */
+    MongoDBTargetDetails,
+
+    /**
      * The MoveObjects model constructor.
      * @property {module:model/MoveObjects}
      */
@@ -3591,6 +3728,12 @@ export {
      * @property {module:model/Name}
      */
     Name,
+
+    /**
+     * The NativeK8sTargetDetails model constructor.
+     * @property {module:model/NativeK8sTargetDetails}
+     */
+    NativeK8sTargetDetails,
 
     /**
      * The NotiForwarder model constructor.
@@ -3665,6 +3808,12 @@ export {
     PathRule,
 
     /**
+     * The PingTargetDetails model constructor.
+     * @property {module:model/PingTargetDetails}
+     */
+    PingTargetDetails,
+
+    /**
      * The Producer model constructor.
      * @property {module:model/Producer}
      */
@@ -3675,6 +3824,12 @@ export {
      * @property {module:model/ProducersConfigPart}
      */
     ProducersConfigPart,
+
+    /**
+     * The RabbitMQTargetDetails model constructor.
+     * @property {module:model/RabbitMQTargetDetails}
+     */
+    RabbitMQTargetDetails,
 
     /**
      * The RawCreds model constructor.
@@ -3843,6 +3998,18 @@ export {
      * @property {module:model/SSHCertificateIssueDetails}
      */
     SSHCertificateIssueDetails,
+
+    /**
+     * The SSHTargetDetails model constructor.
+     * @property {module:model/SSHTargetDetails}
+     */
+    SSHTargetDetails,
+
+    /**
+     * The SalesforceTargetDetails model constructor.
+     * @property {module:model/SalesforceTargetDetails}
+     */
+    SalesforceTargetDetails,
 
     /**
      * The SecretInfo model constructor.
@@ -4379,6 +4546,18 @@ export {
     UpdateGithubTargetOutput,
 
     /**
+     * The UpdateGlobalSignAtlasTarget model constructor.
+     * @property {module:model/UpdateGlobalSignAtlasTarget}
+     */
+    UpdateGlobalSignAtlasTarget,
+
+    /**
+     * The UpdateGlobalSignAtlasTargetOutput model constructor.
+     * @property {module:model/UpdateGlobalSignAtlasTargetOutput}
+     */
+    UpdateGlobalSignAtlasTargetOutput,
+
+    /**
      * The UpdateGlobalSignTarget model constructor.
      * @property {module:model/UpdateGlobalSignTarget}
      */
@@ -4661,6 +4840,12 @@ export {
     VaultlessTokenizerInfo,
 
     /**
+     * The VenafiTargetDetails model constructor.
+     * @property {module:model/VenafiTargetDetails}
+     */
+    VenafiTargetDetails,
+
+    /**
      * The VerifyDataWithClassicKey model constructor.
      * @property {module:model/VerifyDataWithClassicKey}
      */
@@ -4701,6 +4886,24 @@ export {
      * @property {module:model/VerifyPKICertWithClassicKey}
      */
     VerifyPKICertWithClassicKey,
+
+    /**
+     * The WebTargetDetails model constructor.
+     * @property {module:model/WebTargetDetails}
+     */
+    WebTargetDetails,
+
+    /**
+     * The WindowsTargetDetails model constructor.
+     * @property {module:model/WindowsTargetDetails}
+     */
+    WindowsTargetDetails,
+
+    /**
+     * The ZeroSSLTargetDetails model constructor.
+     * @property {module:model/ZeroSSLTargetDetails}
+     */
+    ZeroSSLTargetDetails,
 
     /**
     * The V2Api service constructor.

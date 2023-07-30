@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptPKCS1 model module.
  * @module model/DecryptPKCS1
- * @version 3.3.15
+ * @version 3.3.16
  */
 class DecryptPKCS1 {
     /**
@@ -66,11 +66,17 @@ class DecryptPKCS1 {
             if (data.hasOwnProperty('key-name')) {
                 obj['key-name'] = ApiClient.convertToType(data['key-name'], 'String');
             }
+            if (data.hasOwnProperty('output-format')) {
+                obj['output-format'] = ApiClient.convertToType(data['output-format'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
         }
         return obj;
@@ -111,6 +117,12 @@ DecryptPKCS1.prototype['json'] = false;
 DecryptPKCS1.prototype['key-name'] = undefined;
 
 /**
+ * If specified, the output will be formatted accordingly. options: [base64]
+ * @member {String} output-format
+ */
+DecryptPKCS1.prototype['output-format'] = undefined;
+
+/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -121,6 +133,12 @@ DecryptPKCS1.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 DecryptPKCS1.prototype['uid-token'] = undefined;
+
+/**
+ * key version (relevant only for classic key)
+ * @member {Number} version
+ */
+DecryptPKCS1.prototype['version'] = undefined;
 
 
 
