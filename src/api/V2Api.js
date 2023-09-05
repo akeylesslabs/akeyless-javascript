@@ -347,6 +347,7 @@ import GetGroup from '../model/GetGroup';
 import GetGroupOutput from '../model/GetGroupOutput';
 import GetKubeExecCreds from '../model/GetKubeExecCreds';
 import GetKubeExecCredsOutput from '../model/GetKubeExecCredsOutput';
+import GetLastUserEventStatus from '../model/GetLastUserEventStatus';
 import GetPKICertificate from '../model/GetPKICertificate';
 import GetPKICertificateOutput from '../model/GetPKICertificateOutput';
 import GetProducersListReplyObj from '../model/GetProducersListReplyObj';
@@ -551,7 +552,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.3.17
+* @version 3.3.18
 */
 export default class V2Api {
 
@@ -8294,6 +8295,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GetLastUserEventStatus} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetUserEventStatusOutput} and HTTP response
+     */
+    getLastUserEventStatusWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling getLastUserEventStatus");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GetUserEventStatusOutput;
+      return this.apiClient.callApi(
+        '/user-event-last-status', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GetLastUserEventStatus} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetUserEventStatusOutput}
+     */
+    getLastUserEventStatus(body) {
+      return this.getLastUserEventStatusWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GetPKICertificate} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetPKICertificateOutput} and HTTP response
      */
@@ -8674,43 +8718,6 @@ export default class V2Api {
      */
     getTargetDetails(body) {
       return this.getTargetDetailsWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetUserEventStatusOutput} and HTTP response
-     */
-    getUserLastEventStatusWithHttpInfo() {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = GetUserEventStatusOutput;
-      return this.apiClient.callApi(
-        '/user-event-last-status', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetUserEventStatusOutput}
-     */
-    getUserLastEventStatus() {
-      return this.getUserLastEventStatusWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

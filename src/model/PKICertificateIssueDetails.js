@@ -17,7 +17,7 @@ import CertificateExpirationEvent from './CertificateExpirationEvent';
 /**
  * The PKICertificateIssueDetails model module.
  * @module model/PKICertificateIssueDetails
- * @version 3.3.17
+ * @version 3.3.18
  */
 class PKICertificateIssueDetails {
     /**

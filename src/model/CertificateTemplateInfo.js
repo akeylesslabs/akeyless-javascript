@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CertificateTemplateInfo model module.
  * @module model/CertificateTemplateInfo
- * @version 3.3.17
+ * @version 3.3.18
  */
 class CertificateTemplateInfo {
     /**

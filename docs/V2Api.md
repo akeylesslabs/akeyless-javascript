@@ -184,6 +184,7 @@ Method | HTTP request | Description
 [**getEventForwarder**](V2Api.md#getEventForwarder) | **POST** /get-event-forwarder | 
 [**getGroup**](V2Api.md#getGroup) | **POST** /get-group | 
 [**getKubeExecCreds**](V2Api.md#getKubeExecCreds) | **POST** /get-kube-exec-creds | 
+[**getLastUserEventStatus**](V2Api.md#getLastUserEventStatus) | **POST** /user-event-last-status | 
 [**getPKICertificate**](V2Api.md#getPKICertificate) | **POST** /get-pki-certificate | 
 [**getRSAPublic**](V2Api.md#getRSAPublic) | **POST** /get-rsa-public | 
 [**getRole**](V2Api.md#getRole) | **POST** /get-role | 
@@ -193,7 +194,6 @@ Method | HTTP request | Description
 [**getTags**](V2Api.md#getTags) | **POST** /get-tags | 
 [**getTarget**](V2Api.md#getTarget) | **POST** /get-target | 
 [**getTargetDetails**](V2Api.md#getTargetDetails) | **POST** /get-target-details | 
-[**getUserLastEventStatus**](V2Api.md#getUserLastEventStatus) | **POST** /user-event-last-status | 
 [**hmac**](V2Api.md#hmac) | **POST** /hmac | 
 [**importPasswords**](V2Api.md#importPasswords) | **POST** /import-passwords | 
 [**kmipClientDeleteRule**](V2Api.md#kmipClientDeleteRule) | **POST** /kmip-client-delete-rule | 
@@ -7864,6 +7864,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## getLastUserEventStatus
+
+> GetUserEventStatusOutput getLastUserEventStatus(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GetLastUserEventStatus(); // GetLastUserEventStatus | 
+apiInstance.getLastUserEventStatus(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetLastUserEventStatus**](GetLastUserEventStatus.md)|  | 
+
+### Return type
+
+[**GetUserEventStatusOutput**](GetUserEventStatusOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## getPKICertificate
 
 > GetPKICertificateOutput getPKICertificate(body)
@@ -8239,44 +8281,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## getUserLastEventStatus
-
-> GetUserEventStatusOutput getUserLastEventStatus()
-
-
-
-### Example
-
-```javascript
-import akeyless from 'akeyless';
-
-let apiInstance = new akeyless.V2Api();
-apiInstance.getUserLastEventStatus().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**GetUserEventStatusOutput**](GetUserEventStatusOutput.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

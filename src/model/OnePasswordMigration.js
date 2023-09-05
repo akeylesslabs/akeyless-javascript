@@ -18,7 +18,7 @@ import OnePasswordPayload from './OnePasswordPayload';
 /**
  * The OnePasswordMigration model module.
  * @module model/OnePasswordMigration
- * @version 3.3.17
+ * @version 3.3.18
  */
 class OnePasswordMigration {
     /**

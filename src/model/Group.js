@@ -17,7 +17,7 @@ import AccessPermissionAssignment from './AccessPermissionAssignment';
 /**
  * The Group model module.
  * @module model/Group
- * @version 3.3.17
+ * @version 3.3.18
  */
 class Group {
     /**

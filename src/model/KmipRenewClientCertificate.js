@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipRenewClientCertificate model module.
  * @module model/KmipRenewClientCertificate
- * @version 3.3.17
+ * @version 3.3.18
  */
 class KmipRenewClientCertificate {
     /**

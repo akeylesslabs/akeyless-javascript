@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodSAMLOutput model module.
  * @module model/CreateAuthMethodSAMLOutput
- * @version 3.3.17
+ * @version 3.3.18
  */
 class CreateAuthMethodSAMLOutput {
     /**

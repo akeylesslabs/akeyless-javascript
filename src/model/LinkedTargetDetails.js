@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LinkedTargetDetails model module.
  * @module model/LinkedTargetDetails
- * @version 3.3.17
+ * @version 3.3.18
  */
 class LinkedTargetDetails {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EsmList model module.
  * @module model/EsmList
- * @version 3.3.17
+ * @version 3.3.18
  */
 class EsmList {
     /**

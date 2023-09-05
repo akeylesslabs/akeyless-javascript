@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAzureAD model module.
  * @module model/UpdateAuthMethodAzureAD
- * @version 3.3.17
+ * @version 3.3.18
  */
 class UpdateAuthMethodAzureAD {
     /**
