@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NativeK8sTargetDetails model module.
  * @module model/NativeK8sTargetDetails
- * @version 3.3.16
+ * @version 3.3.17
  */
 class NativeK8sTargetDetails {
     /**
@@ -47,8 +47,17 @@ class NativeK8sTargetDetails {
         if (data) {
             obj = obj || new NativeK8sTargetDetails();
 
+            if (data.hasOwnProperty('k8s_auth_type')) {
+                obj['k8s_auth_type'] = ApiClient.convertToType(data['k8s_auth_type'], 'String');
+            }
             if (data.hasOwnProperty('k8s_bearer_token')) {
                 obj['k8s_bearer_token'] = ApiClient.convertToType(data['k8s_bearer_token'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_client_cert_data')) {
+                obj['k8s_client_cert_data'] = ApiClient.convertToType(data['k8s_client_cert_data'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_client_key_data')) {
+                obj['k8s_client_key_data'] = ApiClient.convertToType(data['k8s_client_key_data'], 'String');
             }
             if (data.hasOwnProperty('k8s_cluster_ca_certificate')) {
                 obj['k8s_cluster_ca_certificate'] = ApiClient.convertToType(data['k8s_cluster_ca_certificate'], 'String');
@@ -67,9 +76,25 @@ class NativeK8sTargetDetails {
 }
 
 /**
+ * @member {String} k8s_auth_type
+ */
+NativeK8sTargetDetails.prototype['k8s_auth_type'] = undefined;
+
+/**
  * @member {String} k8s_bearer_token
  */
 NativeK8sTargetDetails.prototype['k8s_bearer_token'] = undefined;
+
+/**
+ * For K8s Client certificates authentication
+ * @member {String} k8s_client_cert_data
+ */
+NativeK8sTargetDetails.prototype['k8s_client_cert_data'] = undefined;
+
+/**
+ * @member {String} k8s_client_key_data
+ */
+NativeK8sTargetDetails.prototype['k8s_client_key_data'] = undefined;
 
 /**
  * @member {String} k8s_cluster_ca_certificate

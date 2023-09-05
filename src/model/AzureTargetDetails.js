@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AzureTargetDetails model module.
  * @module model/AzureTargetDetails
- * @version 3.3.16
+ * @version 3.3.17
  */
 class AzureTargetDetails {
     /**

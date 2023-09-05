@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodUniversalIdentityOutput model module.
  * @module model/CreateAuthMethodUniversalIdentityOutput
- * @version 3.3.16
+ * @version 3.3.17
  */
 class CreateAuthMethodUniversalIdentityOutput {
     /**

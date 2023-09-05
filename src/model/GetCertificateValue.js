@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCertificateValue model module.
  * @module model/GetCertificateValue
- * @version 3.3.16
+ * @version 3.3.17
  */
 class GetCertificateValue {
     /**
@@ -57,6 +57,9 @@ class GetCertificateValue {
             }
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
+            }
+            if (data.hasOwnProperty('ignore-cache')) {
+                obj['ignore-cache'] = ApiClient.convertToType(data['ignore-cache'], 'String');
             }
             if (data.hasOwnProperty('issuance-token')) {
                 obj['issuance-token'] = ApiClient.convertToType(data['issuance-token'], 'String');
@@ -103,6 +106,13 @@ GetCertificateValue.prototype['certificate-file-output'] = undefined;
  * @member {String} display-id
  */
 GetCertificateValue.prototype['display-id'] = undefined;
+
+/**
+ * Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI
+ * @member {String} ignore-cache
+ * @default 'false'
+ */
+GetCertificateValue.prototype['ignore-cache'] = 'false';
 
 /**
  * Token for getting the issued certificate

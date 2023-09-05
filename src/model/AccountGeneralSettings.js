@@ -19,7 +19,7 @@ import SharingPolicyInfo from './SharingPolicyInfo';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 3.3.16
+ * @version 3.3.17
  */
 class AccountGeneralSettings {
     /**
@@ -63,6 +63,9 @@ class AccountGeneralSettings {
             if (data.hasOwnProperty('enable_request_for_access')) {
                 obj['enable_request_for_access'] = ApiClient.convertToType(data['enable_request_for_access'], 'Boolean');
             }
+            if (data.hasOwnProperty('invalid_characters')) {
+                obj['invalid_characters'] = ApiClient.convertToType(data['invalid_characters'], 'String');
+            }
             if (data.hasOwnProperty('password_policy')) {
                 obj['password_policy'] = PasswordPolicyInfo.constructFromObject(data['password_policy']);
             }
@@ -100,6 +103,12 @@ AccountGeneralSettings.prototype['data_protection_section'] = undefined;
  * @member {Boolean} enable_request_for_access
  */
 AccountGeneralSettings.prototype['enable_request_for_access'] = undefined;
+
+/**
+ * InvalidCharacters is the invalid characters for items/targets/roles/auths/notifier_forwarder naming convention
+ * @member {String} invalid_characters
+ */
+AccountGeneralSettings.prototype['invalid_characters'] = undefined;
 
 /**
  * @member {module:model/PasswordPolicyInfo} password_policy

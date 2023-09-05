@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Configure model module.
  * @module model/Configure
- * @version 3.3.16
+ * @version 3.3.17
  */
 class Configure {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateK8SAuthConfig model module.
  * @module model/GatewayUpdateK8SAuthConfig
- * @version 3.3.16
+ * @version 3.3.17
  */
 class GatewayUpdateK8SAuthConfig {
     /**
@@ -73,8 +73,17 @@ class GatewayUpdateK8SAuthConfig {
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
+            if (data.hasOwnProperty('k8s-auth-type')) {
+                obj['k8s-auth-type'] = ApiClient.convertToType(data['k8s-auth-type'], 'String');
+            }
             if (data.hasOwnProperty('k8s-ca-cert')) {
                 obj['k8s-ca-cert'] = ApiClient.convertToType(data['k8s-ca-cert'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-client-certificate')) {
+                obj['k8s-client-certificate'] = ApiClient.convertToType(data['k8s-client-certificate'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-client-key')) {
+                obj['k8s-client-key'] = ApiClient.convertToType(data['k8s-client-key'], 'String');
             }
             if (data.hasOwnProperty('k8s-host')) {
                 obj['k8s-host'] = ApiClient.convertToType(data['k8s-host'], 'String');
@@ -152,10 +161,29 @@ GatewayUpdateK8SAuthConfig.prototype['disable-issuer-validation'] = undefined;
 GatewayUpdateK8SAuthConfig.prototype['json'] = false;
 
 /**
+ * K8S auth type [token/certificate]. (relevant for \"native_k8s\" only)
+ * @member {String} k8s-auth-type
+ * @default 'token'
+ */
+GatewayUpdateK8SAuthConfig.prototype['k8s-auth-type'] = 'token';
+
+/**
  * The CA Certificate (base64 encoded) to use to call into the kubernetes API server
  * @member {String} k8s-ca-cert
  */
 GatewayUpdateK8SAuthConfig.prototype['k8s-ca-cert'] = undefined;
+
+/**
+ * Content of the k8 client certificate (PEM format) in a Base64 format (relevant for \"native_k8s\" only)
+ * @member {String} k8s-client-certificate
+ */
+GatewayUpdateK8SAuthConfig.prototype['k8s-client-certificate'] = undefined;
+
+/**
+ * Content of the k8 client private key (PEM format) in a Base64 format (relevant for \"native_k8s\" only)
+ * @member {String} k8s-client-key
+ */
+GatewayUpdateK8SAuthConfig.prototype['k8s-client-key'] = undefined;
 
 /**
  * The URL of the kubernetes API server

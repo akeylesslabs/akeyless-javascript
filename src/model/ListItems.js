@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 3.3.16
+ * @version 3.3.17
  */
 class ListItems {
     /**
@@ -49,6 +49,9 @@ class ListItems {
 
             if (data.hasOwnProperty('accessibility')) {
                 obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
+            }
+            if (data.hasOwnProperty('advanced-filter')) {
+                obj['advanced-filter'] = ApiClient.convertToType(data['advanced-filter'], 'String');
             }
             if (data.hasOwnProperty('auto-pagination')) {
                 obj['auto-pagination'] = ApiClient.convertToType(data['auto-pagination'], 'String');
@@ -99,6 +102,12 @@ class ListItems {
  * @default 'regular'
  */
 ListItems.prototype['accessibility'] = 'regular';
+
+/**
+ * Filter by item name/username/website or part of it
+ * @member {String} advanced-filter
+ */
+ListItems.prototype['advanced-filter'] = undefined;
 
 /**
  * Retrieve all items using pagination, when disabled retrieving only first 1000 items

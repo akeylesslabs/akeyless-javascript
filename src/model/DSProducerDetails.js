@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 3.3.16
+ * @version 3.3.17
  */
 class DSProducerDetails {
     /**
@@ -385,8 +385,17 @@ class DSProducerDetails {
             if (data.hasOwnProperty('k8s_allowed_namespaces')) {
                 obj['k8s_allowed_namespaces'] = ApiClient.convertToType(data['k8s_allowed_namespaces'], 'String');
             }
+            if (data.hasOwnProperty('k8s_auth_type')) {
+                obj['k8s_auth_type'] = ApiClient.convertToType(data['k8s_auth_type'], 'String');
+            }
             if (data.hasOwnProperty('k8s_bearer_token')) {
                 obj['k8s_bearer_token'] = ApiClient.convertToType(data['k8s_bearer_token'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_client_cert_data')) {
+                obj['k8s_client_cert_data'] = ApiClient.convertToType(data['k8s_client_cert_data'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_client_key_data')) {
+                obj['k8s_client_key_data'] = ApiClient.convertToType(data['k8s_client_key_data'], 'String');
             }
             if (data.hasOwnProperty('k8s_cluster_ca_certificate')) {
                 obj['k8s_cluster_ca_certificate'] = ApiClient.convertToType(data['k8s_cluster_ca_certificate'], 'String');
@@ -1251,9 +1260,25 @@ DSProducerDetails.prototype['jwks_url'] = undefined;
 DSProducerDetails.prototype['k8s_allowed_namespaces'] = undefined;
 
 /**
+ * @member {String} k8s_auth_type
+ */
+DSProducerDetails.prototype['k8s_auth_type'] = undefined;
+
+/**
  * @member {String} k8s_bearer_token
  */
 DSProducerDetails.prototype['k8s_bearer_token'] = undefined;
+
+/**
+ * For K8s Client certificates authentication
+ * @member {String} k8s_client_cert_data
+ */
+DSProducerDetails.prototype['k8s_client_cert_data'] = undefined;
+
+/**
+ * @member {String} k8s_client_key_data
+ */
+DSProducerDetails.prototype['k8s_client_key_data'] = undefined;
 
 /**
  * @member {String} k8s_cluster_ca_certificate

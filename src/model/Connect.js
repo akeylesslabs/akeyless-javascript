@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Connect model module.
  * @module model/Connect
- * @version 3.3.16
+ * @version 3.3.17
  */
 class Connect {
     /**
@@ -95,6 +95,9 @@ class Connect {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('use-ssh-agent')) {
+                obj['use-ssh-agent'] = ApiClient.convertToType(data['use-ssh-agent'], 'Boolean');
             }
             if (data.hasOwnProperty('via-bastion')) {
                 obj['via-bastion'] = ApiClient.convertToType(data['via-bastion'], 'String');
@@ -204,6 +207,12 @@ Connect.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 Connect.prototype['uid-token'] = undefined;
+
+/**
+ * Enable ssh-agent
+ * @member {Boolean} use-ssh-agent
+ */
+Connect.prototype['use-ssh-agent'] = undefined;
 
 /**
  * The jump box server

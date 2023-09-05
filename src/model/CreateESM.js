@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateESM model module.
  * @module model/CreateESM
- * @version 3.3.16
+ * @version 3.3.17
  */
 class CreateESM {
     /**

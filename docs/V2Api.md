@@ -39,9 +39,11 @@ Method | HTTP request | Description
 [**createGithubTarget**](V2Api.md#createGithubTarget) | **POST** /create-github-target | 
 [**createGlobalSignAtlasTarget**](V2Api.md#createGlobalSignAtlasTarget) | **POST** /create-globalsign-atlas-target | 
 [**createGlobalSignTarget**](V2Api.md#createGlobalSignTarget) | **POST** /create-globalsign-target | 
+[**createGroup**](V2Api.md#createGroup) | **POST** /create-group | 
 [**createKey**](V2Api.md#createKey) | **POST** /create-key | 
 [**createLinkedTarget**](V2Api.md#createLinkedTarget) | **POST** /create-linked-target | 
 [**createNativeK8STarget**](V2Api.md#createNativeK8STarget) | **POST** /create-k8s-target | 
+[**createOidcApp**](V2Api.md#createOidcApp) | **POST** /create-oidc-app | 
 [**createPKICertIssuer**](V2Api.md#createPKICertIssuer) | **POST** /create-pki-cert-issuer | 
 [**createPingTarget**](V2Api.md#createPingTarget) | **POST** /create-ping-target | 
 [**createRabbitMQTarget**](V2Api.md#createRabbitMQTarget) | **POST** /create-rabbitmq-target | 
@@ -52,6 +54,7 @@ Method | HTTP request | Description
 [**createSalesforceTarget**](V2Api.md#createSalesforceTarget) | **POST** /create-salesforce-target | 
 [**createSecret**](V2Api.md#createSecret) | **POST** /create-secret | 
 [**createTokenizer**](V2Api.md#createTokenizer) | **POST** /create-tokenizer | 
+[**createUserEvent**](V2Api.md#createUserEvent) | **POST** /create-user-event | 
 [**createWebTarget**](V2Api.md#createWebTarget) | **POST** /create-web-target | 
 [**createWindowsTarget**](V2Api.md#createWindowsTarget) | **POST** /create-windows-target | 
 [**createZeroSSLTarget**](V2Api.md#createZeroSSLTarget) | **POST** /create-zerossl-target | 
@@ -64,6 +67,7 @@ Method | HTTP request | Description
 [**deleteAuthMethods**](V2Api.md#deleteAuthMethods) | **POST** /delete-auth-methods | 
 [**deleteEventForwarder**](V2Api.md#deleteEventForwarder) | **POST** /delete-event-forwarder | 
 [**deleteGatewayAllowedAccessId**](V2Api.md#deleteGatewayAllowedAccessId) | **POST** /gateway-delete-allowed-management-access | 
+[**deleteGroup**](V2Api.md#deleteGroup) | **POST** /delete-group | 
 [**deleteGwCluster**](V2Api.md#deleteGwCluster) | **POST** /delete-gateway-cluster | 
 [**deleteItem**](V2Api.md#deleteItem) | **POST** /delete-item | 
 [**deleteItems**](V2Api.md#deleteItems) | **POST** /delete-items | 
@@ -178,6 +182,7 @@ Method | HTTP request | Description
 [**getCertificateValue**](V2Api.md#getCertificateValue) | **POST** /get-certificate-value | 
 [**getDynamicSecretValue**](V2Api.md#getDynamicSecretValue) | **POST** /get-dynamic-secret-value | 
 [**getEventForwarder**](V2Api.md#getEventForwarder) | **POST** /get-event-forwarder | 
+[**getGroup**](V2Api.md#getGroup) | **POST** /get-group | 
 [**getKubeExecCreds**](V2Api.md#getKubeExecCreds) | **POST** /get-kube-exec-creds | 
 [**getPKICertificate**](V2Api.md#getPKICertificate) | **POST** /get-pki-certificate | 
 [**getRSAPublic**](V2Api.md#getRSAPublic) | **POST** /get-rsa-public | 
@@ -188,6 +193,7 @@ Method | HTTP request | Description
 [**getTags**](V2Api.md#getTags) | **POST** /get-tags | 
 [**getTarget**](V2Api.md#getTarget) | **POST** /get-target | 
 [**getTargetDetails**](V2Api.md#getTargetDetails) | **POST** /get-target-details | 
+[**getUserLastEventStatus**](V2Api.md#getUserLastEventStatus) | **POST** /user-event-last-status | 
 [**hmac**](V2Api.md#hmac) | **POST** /hmac | 
 [**importPasswords**](V2Api.md#importPasswords) | **POST** /import-passwords | 
 [**kmipClientDeleteRule**](V2Api.md#kmipClientDeleteRule) | **POST** /kmip-client-delete-rule | 
@@ -205,6 +211,7 @@ Method | HTTP request | Description
 [**kmipSetServerState**](V2Api.md#kmipSetServerState) | **POST** /kmip-set-environment-state | 
 [**listAuthMethods**](V2Api.md#listAuthMethods) | **POST** /list-auth-methods | 
 [**listGateways**](V2Api.md#listGateways) | **POST** /list-gateways | 
+[**listGroups**](V2Api.md#listGroups) | **POST** /list-group | 
 [**listItems**](V2Api.md#listItems) | **POST** /list-items | 
 [**listRoles**](V2Api.md#listRoles) | **POST** /list-roles | 
 [**listSRABastions**](V2Api.md#listSRABastions) | **POST** /list-sra-bastions | 
@@ -218,6 +225,7 @@ Method | HTTP request | Description
 [**revokeCreds**](V2Api.md#revokeCreds) | **POST** /revoke-creds | 
 [**rollbackSecret**](V2Api.md#rollbackSecret) | **POST** /rollback-secret | 
 [**rotateKey**](V2Api.md#rotateKey) | **POST** /rotate-key | 
+[**rotateOidcClientSecret**](V2Api.md#rotateOidcClientSecret) | **POST** /rotate-oidc-client-secret | 
 [**rotateSecret**](V2Api.md#rotateSecret) | **POST** /gateway-rotate-secret | 
 [**setItemState**](V2Api.md#setItemState) | **POST** /set-item-state | 
 [**setRoleRule**](V2Api.md#setRoleRule) | **POST** /set-role-rule | 
@@ -262,11 +270,13 @@ Method | HTTP request | Description
 [**updateGithubTarget**](V2Api.md#updateGithubTarget) | **POST** /update-github-target | 
 [**updateGlobalSignAtlasTarget**](V2Api.md#updateGlobalSignAtlasTarget) | **POST** /update-globalsign-atlas-target | 
 [**updateGlobalSignTarget**](V2Api.md#updateGlobalSignTarget) | **POST** /update-globalsign-target | 
+[**updateGroup**](V2Api.md#updateGroup) | **POST** /update-group | 
 [**updateItem**](V2Api.md#updateItem) | **POST** /update-item | 
 [**updateLdapTarget**](V2Api.md#updateLdapTarget) | **POST** /update-ldap-target | 
 [**updateLdapTargetDetails**](V2Api.md#updateLdapTargetDetails) | **POST** /update-ldap-target-details | 
 [**updateLinkedTarget**](V2Api.md#updateLinkedTarget) | **POST** /update-linked-target | 
 [**updateNativeK8STarget**](V2Api.md#updateNativeK8STarget) | **POST** /update-k8s-target | 
+[**updateOidcApp**](V2Api.md#updateOidcApp) | **POST** /update-oidc-app | 
 [**updatePKICertIssuer**](V2Api.md#updatePKICertIssuer) | **POST** /update-pki-cert-issuer | 
 [**updatePingTarget**](V2Api.md#updatePingTarget) | **POST** /update-ping-target | 
 [**updateRDPTargetDetails**](V2Api.md#updateRDPTargetDetails) | **POST** /update-rdp-target-details | 
@@ -1766,6 +1776,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## createGroup
+
+> CreateGroupOutput createGroup(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateGroup(); // CreateGroup | 
+apiInstance.createGroup(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateGroup**](CreateGroup.md)|  | 
+
+### Return type
+
+[**CreateGroupOutput**](CreateGroupOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## createKey
 
 > CreateKeyOutput createKey(body)
@@ -1881,6 +1933,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateNativeK8STargetOutput**](CreateNativeK8STargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createOidcApp
+
+> CreateOidcAppOutput createOidcApp(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateOidcApp(); // CreateOidcApp | 
+apiInstance.createOidcApp(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateOidcApp**](CreateOidcApp.md)|  | 
+
+### Return type
+
+[**CreateOidcAppOutput**](CreateOidcAppOutput.md)
 
 ### Authorization
 
@@ -2301,6 +2395,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateTokenizerOutput**](CreateTokenizerOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createUserEvent
+
+> CreateUserEventOutput createUserEvent(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateUserEvent(); // CreateUserEvent | 
+apiInstance.createUserEvent(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateUserEvent**](CreateUserEvent.md)|  | 
+
+### Return type
+
+[**CreateUserEventOutput**](CreateUserEventOutput.md)
 
 ### Authorization
 
@@ -2805,6 +2941,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 **Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## deleteGroup
+
+> DeleteGroupOutput deleteGroup(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DeleteGroup(); // DeleteGroup | 
+apiInstance.deleteGroup(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DeleteGroup**](DeleteGroup.md)|  | 
+
+### Return type
+
+[**DeleteGroupOutput**](DeleteGroupOutput.md)
 
 ### Authorization
 
@@ -7602,6 +7780,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## getGroup
+
+> GetGroupOutput getGroup(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GetGroup(); // GetGroup | 
+apiInstance.getGroup(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetGroup**](GetGroup.md)|  | 
+
+### Return type
+
+[**GetGroupOutput**](GetGroupOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## getKubeExecCreds
 
 > GetKubeExecCredsOutput getKubeExecCreds(body)
@@ -8019,6 +8239,44 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## getUserLastEventStatus
+
+> GetUserEventStatusOutput getUserLastEventStatus()
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+apiInstance.getUserLastEventStatus().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetUserEventStatusOutput**](GetUserEventStatusOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -8762,6 +9020,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## listGroups
+
+> ListGroupsOutput listGroups(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ListGroups(); // ListGroups | 
+apiInstance.listGroups(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ListGroups**](ListGroups.md)|  | 
+
+### Return type
+
+[**ListGroupsOutput**](ListGroupsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## listItems
 
 > ListItemsInPathOutput listItems(body)
@@ -9295,6 +9595,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RotateKeyOutput**](RotateKeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotateOidcClientSecret
+
+> RotateOidcClientOutput rotateOidcClientSecret(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotateOidcClientSecret(); // RotateOidcClientSecret | 
+apiInstance.rotateOidcClientSecret(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotateOidcClientSecret**](RotateOidcClientSecret.md)|  | 
+
+### Return type
+
+[**RotateOidcClientOutput**](RotateOidcClientOutput.md)
 
 ### Authorization
 
@@ -11154,6 +11496,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## updateGroup
+
+> UpdateGroupOutput updateGroup(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateGroup(); // UpdateGroup | 
+apiInstance.updateGroup(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateGroup**](UpdateGroup.md)|  | 
+
+### Return type
+
+[**UpdateGroupOutput**](UpdateGroupOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## updateItem
 
 > UpdateItemOutput updateItem(body)
@@ -11353,6 +11737,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateNativeK8STargetOutput**](UpdateNativeK8STargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateOidcApp
+
+> Object updateOidcApp(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateOidcApp(); // UpdateOidcApp | 
+apiInstance.updateOidcApp(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateOidcApp**](UpdateOidcApp.md)|  | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 

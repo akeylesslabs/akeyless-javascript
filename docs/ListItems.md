@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessibility** | **String** | for personal password manager | [optional] [default to &#39;regular&#39;]
+**advancedFilter** | **String** | Filter by item name/username/website or part of it | [optional] 
 **autoPagination** | **String** | Retrieve all items using pagination, when disabled retrieving only first 1000 items | [optional] [default to &#39;enabled&#39;]
 **filter** | **String** | Filter by item name or part of it | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 3.3.16
+ * @version 3.3.17
  */
 class UpdateAccountSettings {
     /**
@@ -70,6 +70,9 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('dp-enable-classic-key-protection')) {
                 obj['dp-enable-classic-key-protection'] = ApiClient.convertToType(data['dp-enable-classic-key-protection'], 'String');
+            }
+            if (data.hasOwnProperty('invalid-characters')) {
+                obj['invalid-characters'] = ApiClient.convertToType(data['invalid-characters'], 'String');
             }
             if (data.hasOwnProperty('item-type')) {
                 obj['item-type'] = ApiClient.convertToType(data['item-type'], 'String');
@@ -173,6 +176,13 @@ UpdateAccountSettings.prototype['default-versioning'] = undefined;
  * @member {String} dp-enable-classic-key-protection
  */
 UpdateAccountSettings.prototype['dp-enable-classic-key-protection'] = undefined;
+
+/**
+ * Characters that cannot be used for items/targets/roles/auths/event_forwarder names. Empty string will enforce nothing.
+ * @member {String} invalid-characters
+ * @default 'notReceivedInvalidCharacter'
+ */
+UpdateAccountSettings.prototype['invalid-characters'] = 'notReceivedInvalidCharacter';
 
 /**
  * VersionSettingsObjectType defines object types for account version settings

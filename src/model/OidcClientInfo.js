@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccessPermissionAssignment from './AccessPermissionAssignment';
+import AccessOrGroupPermissionAssignment from './AccessOrGroupPermissionAssignment';
 
 /**
  * The OidcClientInfo model module.
  * @module model/OidcClientInfo
- * @version 3.3.16
+ * @version 3.3.17
  */
 class OidcClientInfo {
     /**
@@ -49,7 +49,7 @@ class OidcClientInfo {
             obj = obj || new OidcClientInfo();
 
             if (data.hasOwnProperty('access_permission_assignment')) {
-                obj['access_permission_assignment'] = ApiClient.convertToType(data['access_permission_assignment'], [AccessPermissionAssignment]);
+                obj['access_permission_assignment'] = ApiClient.convertToType(data['access_permission_assignment'], [AccessOrGroupPermissionAssignment]);
             }
             if (data.hasOwnProperty('audience')) {
                 obj['audience'] = ApiClient.convertToType(data['audience'], ['String']);
@@ -59,6 +59,9 @@ class OidcClientInfo {
             }
             if (data.hasOwnProperty('grant_types')) {
                 obj['grant_types'] = ApiClient.convertToType(data['grant_types'], ['String']);
+            }
+            if (data.hasOwnProperty('issuer_url')) {
+                obj['issuer_url'] = ApiClient.convertToType(data['issuer_url'], 'String');
             }
             if (data.hasOwnProperty('logout_uris')) {
                 obj['logout_uris'] = ApiClient.convertToType(data['logout_uris'], ['String']);
@@ -83,7 +86,7 @@ class OidcClientInfo {
 }
 
 /**
- * @member {Array.<module:model/AccessPermissionAssignment>} access_permission_assignment
+ * @member {Array.<module:model/AccessOrGroupPermissionAssignment>} access_permission_assignment
  */
 OidcClientInfo.prototype['access_permission_assignment'] = undefined;
 
@@ -101,6 +104,11 @@ OidcClientInfo.prototype['client_id'] = undefined;
  * @member {Array.<String>} grant_types
  */
 OidcClientInfo.prototype['grant_types'] = undefined;
+
+/**
+ * @member {String} issuer_url
+ */
+OidcClientInfo.prototype['issuer_url'] = undefined;
 
 /**
  * @member {Array.<String>} logout_uris

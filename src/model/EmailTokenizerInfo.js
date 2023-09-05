@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailTokenizerInfo model module.
  * @module model/EmailTokenizerInfo
- * @version 3.3.16
+ * @version 3.3.17
  */
 class EmailTokenizerInfo {
     /**

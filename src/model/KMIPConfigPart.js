@@ -18,7 +18,7 @@ import KMIPServer from './KMIPServer';
 /**
  * The KMIPConfigPart model module.
  * @module model/KMIPConfigPart
- * @version 3.3.16
+ * @version 3.3.17
  */
 class KMIPConfigPart {
     /**

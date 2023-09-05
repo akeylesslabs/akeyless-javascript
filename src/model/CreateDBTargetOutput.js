@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTargetOutput model module.
  * @module model/CreateDBTargetOutput
- * @version 3.3.16
+ * @version 3.3.17
  */
 class CreateDBTargetOutput {
     /**

@@ -18,6 +18,7 @@ import AWSIAMAccessRules from './model/AWSIAMAccessRules';
 import AWSPayload from './model/AWSPayload';
 import AWSSecretsMigration from './model/AWSSecretsMigration';
 import AWSTargetDetails from './model/AWSTargetDetails';
+import AccessOrGroupPermissionAssignment from './model/AccessOrGroupPermissionAssignment';
 import AccessPermissionAssignment from './model/AccessPermissionAssignment';
 import AccountGeneralSettings from './model/AccountGeneralSettings';
 import AccountObjectVersionSettingsOutput from './model/AccountObjectVersionSettingsOutput';
@@ -122,6 +123,8 @@ import CreateGlobalSignAtlasTarget from './model/CreateGlobalSignAtlasTarget';
 import CreateGlobalSignAtlasTargetOutput from './model/CreateGlobalSignAtlasTargetOutput';
 import CreateGlobalSignTarget from './model/CreateGlobalSignTarget';
 import CreateGlobalSignTargetOutput from './model/CreateGlobalSignTargetOutput';
+import CreateGroup from './model/CreateGroup';
+import CreateGroupOutput from './model/CreateGroupOutput';
 import CreateKey from './model/CreateKey';
 import CreateKeyOutput from './model/CreateKeyOutput';
 import CreateLdapTarget from './model/CreateLdapTarget';
@@ -130,6 +133,8 @@ import CreateLinkedTarget from './model/CreateLinkedTarget';
 import CreateLinkedTargetOutput from './model/CreateLinkedTargetOutput';
 import CreateNativeK8STarget from './model/CreateNativeK8STarget';
 import CreateNativeK8STargetOutput from './model/CreateNativeK8STargetOutput';
+import CreateOidcApp from './model/CreateOidcApp';
+import CreateOidcAppOutput from './model/CreateOidcAppOutput';
 import CreatePKICertIssuer from './model/CreatePKICertIssuer';
 import CreatePKICertIssuerOutput from './model/CreatePKICertIssuerOutput';
 import CreatePingTarget from './model/CreatePingTarget';
@@ -151,6 +156,8 @@ import CreateSecretOutput from './model/CreateSecretOutput';
 import CreateTargetItemAssocOutput from './model/CreateTargetItemAssocOutput';
 import CreateTokenizer from './model/CreateTokenizer';
 import CreateTokenizerOutput from './model/CreateTokenizerOutput';
+import CreateUserEvent from './model/CreateUserEvent';
+import CreateUserEventOutput from './model/CreateUserEventOutput';
 import CreateWebTarget from './model/CreateWebTarget';
 import CreateWebTargetOutput from './model/CreateWebTargetOutput';
 import CreateWindowsTarget from './model/CreateWindowsTarget';
@@ -182,6 +189,8 @@ import DeleteAuthMethods from './model/DeleteAuthMethods';
 import DeleteAuthMethodsOutput from './model/DeleteAuthMethodsOutput';
 import DeleteEventForwarder from './model/DeleteEventForwarder';
 import DeleteGatewayAllowedAccessId from './model/DeleteGatewayAllowedAccessId';
+import DeleteGroup from './model/DeleteGroup';
+import DeleteGroupOutput from './model/DeleteGroupOutput';
 import DeleteGwCluster from './model/DeleteGwCluster';
 import DeleteItem from './model/DeleteItem';
 import DeleteItemOutput from './model/DeleteItemOutput';
@@ -410,8 +419,11 @@ import GetCertificateValueOutput from './model/GetCertificateValueOutput';
 import GetDynamicSecretValue from './model/GetDynamicSecretValue';
 import GetEventForwarder from './model/GetEventForwarder';
 import GetEventForwarderOutput from './model/GetEventForwarderOutput';
+import GetGroup from './model/GetGroup';
+import GetGroupOutput from './model/GetGroupOutput';
 import GetKubeExecCreds from './model/GetKubeExecCreds';
 import GetKubeExecCredsOutput from './model/GetKubeExecCredsOutput';
+import GetLastUserEventStatus from './model/GetLastUserEventStatus';
 import GetPKICertificate from './model/GetPKICertificate';
 import GetPKICertificateOutput from './model/GetPKICertificateOutput';
 import GetProducersListReplyObj from './model/GetProducersListReplyObj';
@@ -426,10 +438,12 @@ import GetTags from './model/GetTags';
 import GetTarget from './model/GetTarget';
 import GetTargetDetails from './model/GetTargetDetails';
 import GetTargetDetailsOutput from './model/GetTargetDetailsOutput';
+import GetUserEventStatusOutput from './model/GetUserEventStatusOutput';
 import GithubTargetDetails from './model/GithubTargetDetails';
 import GlobalSignAtlasTargetDetails from './model/GlobalSignAtlasTargetDetails';
 import GlobalSignGCCTargetDetails from './model/GlobalSignGCCTargetDetails';
 import GoogleChronicleForwardingConfig from './model/GoogleChronicleForwardingConfig';
+import Group from './model/Group';
 import GwClusterIdentity from './model/GwClusterIdentity';
 import HashiMigration from './model/HashiMigration';
 import HashiPayload from './model/HashiPayload';
@@ -487,6 +501,8 @@ import LinkedTargetDetails from './model/LinkedTargetDetails';
 import ListAuthMethods from './model/ListAuthMethods';
 import ListAuthMethodsOutput from './model/ListAuthMethodsOutput';
 import ListGateways from './model/ListGateways';
+import ListGroups from './model/ListGroups';
+import ListGroupsOutput from './model/ListGroupsOutput';
 import ListItems from './model/ListItems';
 import ListItemsInPathOutput from './model/ListItemsInPathOutput';
 import ListItemsOutput from './model/ListItemsOutput';
@@ -545,6 +561,8 @@ import RollbackSecret from './model/RollbackSecret';
 import RollbackSecretOutput from './model/RollbackSecretOutput';
 import RotateKey from './model/RotateKey';
 import RotateKeyOutput from './model/RotateKeyOutput';
+import RotateOidcClientOutput from './model/RotateOidcClientOutput';
+import RotateOidcClientSecret from './model/RotateOidcClientSecret';
 import RotateSecret from './model/RotateSecret';
 import RotatedSecretDetailsInfo from './model/RotatedSecretDetailsInfo';
 import RotatedSecretOutput from './model/RotatedSecretOutput';
@@ -650,6 +668,8 @@ import UpdateGlobalSignAtlasTarget from './model/UpdateGlobalSignAtlasTarget';
 import UpdateGlobalSignAtlasTargetOutput from './model/UpdateGlobalSignAtlasTargetOutput';
 import UpdateGlobalSignTarget from './model/UpdateGlobalSignTarget';
 import UpdateGlobalSignTargetOutput from './model/UpdateGlobalSignTargetOutput';
+import UpdateGroup from './model/UpdateGroup';
+import UpdateGroupOutput from './model/UpdateGroupOutput';
 import UpdateItem from './model/UpdateItem';
 import UpdateItemOutput from './model/UpdateItemOutput';
 import UpdateLdapTarget from './model/UpdateLdapTarget';
@@ -658,6 +678,7 @@ import UpdateLdapTargetOutput from './model/UpdateLdapTargetOutput';
 import UpdateLinkedTarget from './model/UpdateLinkedTarget';
 import UpdateNativeK8STarget from './model/UpdateNativeK8STarget';
 import UpdateNativeK8STargetOutput from './model/UpdateNativeK8STargetOutput';
+import UpdateOidcApp from './model/UpdateOidcApp';
 import UpdateOutput from './model/UpdateOutput';
 import UpdatePKICertIssuer from './model/UpdatePKICertIssuer';
 import UpdatePKICertIssuerOutput from './model/UpdatePKICertIssuerOutput';
@@ -738,7 +759,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.3.16
+* @version 3.3.17
 */
 export {
     /**
@@ -776,6 +797,12 @@ export {
      * @property {module:model/AWSTargetDetails}
      */
     AWSTargetDetails,
+
+    /**
+     * The AccessOrGroupPermissionAssignment model constructor.
+     * @property {module:model/AccessOrGroupPermissionAssignment}
+     */
+    AccessOrGroupPermissionAssignment,
 
     /**
      * The AccessPermissionAssignment model constructor.
@@ -1402,6 +1429,18 @@ export {
     CreateGlobalSignTargetOutput,
 
     /**
+     * The CreateGroup model constructor.
+     * @property {module:model/CreateGroup}
+     */
+    CreateGroup,
+
+    /**
+     * The CreateGroupOutput model constructor.
+     * @property {module:model/CreateGroupOutput}
+     */
+    CreateGroupOutput,
+
+    /**
      * The CreateKey model constructor.
      * @property {module:model/CreateKey}
      */
@@ -1448,6 +1487,18 @@ export {
      * @property {module:model/CreateNativeK8STargetOutput}
      */
     CreateNativeK8STargetOutput,
+
+    /**
+     * The CreateOidcApp model constructor.
+     * @property {module:model/CreateOidcApp}
+     */
+    CreateOidcApp,
+
+    /**
+     * The CreateOidcAppOutput model constructor.
+     * @property {module:model/CreateOidcAppOutput}
+     */
+    CreateOidcAppOutput,
 
     /**
      * The CreatePKICertIssuer model constructor.
@@ -1574,6 +1625,18 @@ export {
      * @property {module:model/CreateTokenizerOutput}
      */
     CreateTokenizerOutput,
+
+    /**
+     * The CreateUserEvent model constructor.
+     * @property {module:model/CreateUserEvent}
+     */
+    CreateUserEvent,
+
+    /**
+     * The CreateUserEventOutput model constructor.
+     * @property {module:model/CreateUserEventOutput}
+     */
+    CreateUserEventOutput,
 
     /**
      * The CreateWebTarget model constructor.
@@ -1760,6 +1823,18 @@ export {
      * @property {module:model/DeleteGatewayAllowedAccessId}
      */
     DeleteGatewayAllowedAccessId,
+
+    /**
+     * The DeleteGroup model constructor.
+     * @property {module:model/DeleteGroup}
+     */
+    DeleteGroup,
+
+    /**
+     * The DeleteGroupOutput model constructor.
+     * @property {module:model/DeleteGroupOutput}
+     */
+    DeleteGroupOutput,
 
     /**
      * The DeleteGwCluster model constructor.
@@ -3130,6 +3205,18 @@ export {
     GetEventForwarderOutput,
 
     /**
+     * The GetGroup model constructor.
+     * @property {module:model/GetGroup}
+     */
+    GetGroup,
+
+    /**
+     * The GetGroupOutput model constructor.
+     * @property {module:model/GetGroupOutput}
+     */
+    GetGroupOutput,
+
+    /**
      * The GetKubeExecCreds model constructor.
      * @property {module:model/GetKubeExecCreds}
      */
@@ -3140,6 +3227,12 @@ export {
      * @property {module:model/GetKubeExecCredsOutput}
      */
     GetKubeExecCredsOutput,
+
+    /**
+     * The GetLastUserEventStatus model constructor.
+     * @property {module:model/GetLastUserEventStatus}
+     */
+    GetLastUserEventStatus,
 
     /**
      * The GetPKICertificate model constructor.
@@ -3226,6 +3319,12 @@ export {
     GetTargetDetailsOutput,
 
     /**
+     * The GetUserEventStatusOutput model constructor.
+     * @property {module:model/GetUserEventStatusOutput}
+     */
+    GetUserEventStatusOutput,
+
+    /**
      * The GithubTargetDetails model constructor.
      * @property {module:model/GithubTargetDetails}
      */
@@ -3248,6 +3347,12 @@ export {
      * @property {module:model/GoogleChronicleForwardingConfig}
      */
     GoogleChronicleForwardingConfig,
+
+    /**
+     * The Group model constructor.
+     * @property {module:model/Group}
+     */
+    Group,
 
     /**
      * The GwClusterIdentity model constructor.
@@ -3590,6 +3695,18 @@ export {
      * @property {module:model/ListGateways}
      */
     ListGateways,
+
+    /**
+     * The ListGroups model constructor.
+     * @property {module:model/ListGroups}
+     */
+    ListGroups,
+
+    /**
+     * The ListGroupsOutput model constructor.
+     * @property {module:model/ListGroupsOutput}
+     */
+    ListGroupsOutput,
 
     /**
      * The ListItems model constructor.
@@ -3938,6 +4055,18 @@ export {
      * @property {module:model/RotateKeyOutput}
      */
     RotateKeyOutput,
+
+    /**
+     * The RotateOidcClientOutput model constructor.
+     * @property {module:model/RotateOidcClientOutput}
+     */
+    RotateOidcClientOutput,
+
+    /**
+     * The RotateOidcClientSecret model constructor.
+     * @property {module:model/RotateOidcClientSecret}
+     */
+    RotateOidcClientSecret,
 
     /**
      * The RotateSecret model constructor.
@@ -4570,6 +4699,18 @@ export {
     UpdateGlobalSignTargetOutput,
 
     /**
+     * The UpdateGroup model constructor.
+     * @property {module:model/UpdateGroup}
+     */
+    UpdateGroup,
+
+    /**
+     * The UpdateGroupOutput model constructor.
+     * @property {module:model/UpdateGroupOutput}
+     */
+    UpdateGroupOutput,
+
+    /**
      * The UpdateItem model constructor.
      * @property {module:model/UpdateItem}
      */
@@ -4616,6 +4757,12 @@ export {
      * @property {module:model/UpdateNativeK8STargetOutput}
      */
     UpdateNativeK8STargetOutput,
+
+    /**
+     * The UpdateOidcApp model constructor.
+     * @property {module:model/UpdateOidcApp}
+     */
+    UpdateOidcApp,
 
     /**
      * The UpdateOutput model constructor.

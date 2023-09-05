@@ -17,7 +17,7 @@ import RuleAssigner from './RuleAssigner';
 /**
  * The PathRule model module.
  * @module model/PathRule
- * @version 3.3.16
+ * @version 3.3.17
  */
 class PathRule {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRole model module.
  * @module model/CreateRole
- * @version 3.3.16
+ * @version 3.3.17
  */
 class CreateRole {
     /**
@@ -78,6 +78,9 @@ class CreateRole {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('usage-reports-access')) {
+                obj['usage-reports-access'] = ApiClient.convertToType(data['usage-reports-access'], 'String');
             }
         }
         return obj;
@@ -146,6 +149,12 @@ CreateRole.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateRole.prototype['uid-token'] = undefined;
+
+/**
+ * Allow this role to view Usage Report. Currently only 'none' and 'all' values are supported.
+ * @member {String} usage-reports-access
+ */
+CreateRole.prototype['usage-reports-access'] = undefined;
 
 
 

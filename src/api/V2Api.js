@@ -83,6 +83,8 @@ import CreateGlobalSignAtlasTarget from '../model/CreateGlobalSignAtlasTarget';
 import CreateGlobalSignAtlasTargetOutput from '../model/CreateGlobalSignAtlasTargetOutput';
 import CreateGlobalSignTarget from '../model/CreateGlobalSignTarget';
 import CreateGlobalSignTargetOutput from '../model/CreateGlobalSignTargetOutput';
+import CreateGroup from '../model/CreateGroup';
+import CreateGroupOutput from '../model/CreateGroupOutput';
 import CreateKey from '../model/CreateKey';
 import CreateKeyOutput from '../model/CreateKeyOutput';
 import CreateLdapTarget from '../model/CreateLdapTarget';
@@ -91,6 +93,8 @@ import CreateLinkedTarget from '../model/CreateLinkedTarget';
 import CreateLinkedTargetOutput from '../model/CreateLinkedTargetOutput';
 import CreateNativeK8STarget from '../model/CreateNativeK8STarget';
 import CreateNativeK8STargetOutput from '../model/CreateNativeK8STargetOutput';
+import CreateOidcApp from '../model/CreateOidcApp';
+import CreateOidcAppOutput from '../model/CreateOidcAppOutput';
 import CreatePKICertIssuer from '../model/CreatePKICertIssuer';
 import CreatePKICertIssuerOutput from '../model/CreatePKICertIssuerOutput';
 import CreatePingTarget from '../model/CreatePingTarget';
@@ -112,6 +116,8 @@ import CreateSecretOutput from '../model/CreateSecretOutput';
 import CreateTargetItemAssocOutput from '../model/CreateTargetItemAssocOutput';
 import CreateTokenizer from '../model/CreateTokenizer';
 import CreateTokenizerOutput from '../model/CreateTokenizerOutput';
+import CreateUserEvent from '../model/CreateUserEvent';
+import CreateUserEventOutput from '../model/CreateUserEventOutput';
 import CreateWebTarget from '../model/CreateWebTarget';
 import CreateWebTargetOutput from '../model/CreateWebTargetOutput';
 import CreateWindowsTarget from '../model/CreateWindowsTarget';
@@ -133,6 +139,8 @@ import DeleteAuthMethods from '../model/DeleteAuthMethods';
 import DeleteAuthMethodsOutput from '../model/DeleteAuthMethodsOutput';
 import DeleteEventForwarder from '../model/DeleteEventForwarder';
 import DeleteGatewayAllowedAccessId from '../model/DeleteGatewayAllowedAccessId';
+import DeleteGroup from '../model/DeleteGroup';
+import DeleteGroupOutput from '../model/DeleteGroupOutput';
 import DeleteGwCluster from '../model/DeleteGwCluster';
 import DeleteItem from '../model/DeleteItem';
 import DeleteItemOutput from '../model/DeleteItemOutput';
@@ -335,6 +343,8 @@ import GetCertificateValueOutput from '../model/GetCertificateValueOutput';
 import GetDynamicSecretValue from '../model/GetDynamicSecretValue';
 import GetEventForwarder from '../model/GetEventForwarder';
 import GetEventForwarderOutput from '../model/GetEventForwarderOutput';
+import GetGroup from '../model/GetGroup';
+import GetGroupOutput from '../model/GetGroupOutput';
 import GetKubeExecCreds from '../model/GetKubeExecCreds';
 import GetKubeExecCredsOutput from '../model/GetKubeExecCredsOutput';
 import GetPKICertificate from '../model/GetPKICertificate';
@@ -351,6 +361,7 @@ import GetTags from '../model/GetTags';
 import GetTarget from '../model/GetTarget';
 import GetTargetDetails from '../model/GetTargetDetails';
 import GetTargetDetailsOutput from '../model/GetTargetDetailsOutput';
+import GetUserEventStatusOutput from '../model/GetUserEventStatusOutput';
 import Hmac from '../model/Hmac';
 import HmacOutput from '../model/HmacOutput';
 import ImportPasswords from '../model/ImportPasswords';
@@ -383,6 +394,8 @@ import KmipSetServerStateOutput from '../model/KmipSetServerStateOutput';
 import ListAuthMethods from '../model/ListAuthMethods';
 import ListAuthMethodsOutput from '../model/ListAuthMethodsOutput';
 import ListGateways from '../model/ListGateways';
+import ListGroups from '../model/ListGroups';
+import ListGroupsOutput from '../model/ListGroupsOutput';
 import ListItems from '../model/ListItems';
 import ListItemsInPathOutput from '../model/ListItemsInPathOutput';
 import ListItemsOutput from '../model/ListItemsOutput';
@@ -406,6 +419,8 @@ import RoleAssociationDetails from '../model/RoleAssociationDetails';
 import RollbackSecret from '../model/RollbackSecret';
 import RollbackSecretOutput from '../model/RollbackSecretOutput';
 import RotateKeyOutput from '../model/RotateKeyOutput';
+import RotateOidcClientOutput from '../model/RotateOidcClientOutput';
+import RotateOidcClientSecret from '../model/RotateOidcClientSecret';
 import RotateSecret from '../model/RotateSecret';
 import RotatedSecretOutput from '../model/RotatedSecretOutput';
 import SetItemState from '../model/SetItemState';
@@ -481,6 +496,8 @@ import UpdateGlobalSignAtlasTarget from '../model/UpdateGlobalSignAtlasTarget';
 import UpdateGlobalSignAtlasTargetOutput from '../model/UpdateGlobalSignAtlasTargetOutput';
 import UpdateGlobalSignTarget from '../model/UpdateGlobalSignTarget';
 import UpdateGlobalSignTargetOutput from '../model/UpdateGlobalSignTargetOutput';
+import UpdateGroup from '../model/UpdateGroup';
+import UpdateGroupOutput from '../model/UpdateGroupOutput';
 import UpdateItem from '../model/UpdateItem';
 import UpdateItemOutput from '../model/UpdateItemOutput';
 import UpdateLdapTarget from '../model/UpdateLdapTarget';
@@ -489,6 +506,7 @@ import UpdateLdapTargetOutput from '../model/UpdateLdapTargetOutput';
 import UpdateLinkedTarget from '../model/UpdateLinkedTarget';
 import UpdateNativeK8STarget from '../model/UpdateNativeK8STarget';
 import UpdateNativeK8STargetOutput from '../model/UpdateNativeK8STargetOutput';
+import UpdateOidcApp from '../model/UpdateOidcApp';
 import UpdatePKICertIssuer from '../model/UpdatePKICertIssuer';
 import UpdatePKICertIssuerOutput from '../model/UpdatePKICertIssuerOutput';
 import UpdatePingTarget from '../model/UpdatePingTarget';
@@ -533,7 +551,7 @@ import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.3.16
+* @version 3.3.17
 */
 export default class V2Api {
 
@@ -2056,6 +2074,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/CreateGroup} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateGroupOutput} and HTTP response
+     */
+    createGroupWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createGroup");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateGroupOutput;
+      return this.apiClient.callApi(
+        '/create-group', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateGroup} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateGroupOutput}
+     */
+    createGroup(body) {
+      return this.createGroupWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/CreateKey} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateKeyOutput} and HTTP response
      */
@@ -2178,6 +2239,49 @@ export default class V2Api {
      */
     createNativeK8STarget(body) {
       return this.createNativeK8STargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateOidcApp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateOidcAppOutput} and HTTP response
+     */
+    createOidcAppWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createOidcApp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateOidcAppOutput;
+      return this.apiClient.callApi(
+        '/create-oidc-app', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateOidcApp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateOidcAppOutput}
+     */
+    createOidcApp(body) {
+      return this.createOidcAppWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2608,6 +2712,49 @@ export default class V2Api {
      */
     createTokenizer(body) {
       return this.createTokenizerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateUserEvent} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateUserEventOutput} and HTTP response
+     */
+    createUserEventWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createUserEvent");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateUserEventOutput;
+      return this.apiClient.callApi(
+        '/create-user-event', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateUserEvent} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateUserEventOutput}
+     */
+    createUserEvent(body) {
+      return this.createUserEventWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -3124,6 +3271,49 @@ export default class V2Api {
      */
     deleteGatewayAllowedAccessId(body) {
       return this.deleteGatewayAllowedAccessIdWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DeleteGroup} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DeleteGroupOutput} and HTTP response
+     */
+    deleteGroupWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling deleteGroup");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DeleteGroupOutput;
+      return this.apiClient.callApi(
+        '/delete-group', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DeleteGroup} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DeleteGroupOutput}
+     */
+    deleteGroup(body) {
+      return this.deleteGroupWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8018,6 +8208,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GetGroup} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetGroupOutput} and HTTP response
+     */
+    getGroupWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling getGroup");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GetGroupOutput;
+      return this.apiClient.callApi(
+        '/get-group', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GetGroup} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetGroupOutput}
+     */
+    getGroup(body) {
+      return this.getGroupWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GetKubeExecCreds} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetKubeExecCredsOutput} and HTTP response
      */
@@ -8441,6 +8674,43 @@ export default class V2Api {
      */
     getTargetDetails(body) {
       return this.getTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetUserEventStatusOutput} and HTTP response
+     */
+    getUserLastEventStatusWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = GetUserEventStatusOutput;
+      return this.apiClient.callApi(
+        '/user-event-last-status', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetUserEventStatusOutput}
+     */
+    getUserLastEventStatus() {
+      return this.getUserLastEventStatusWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9166,6 +9436,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/ListGroups} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListGroupsOutput} and HTTP response
+     */
+    listGroupsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling listGroups");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ListGroupsOutput;
+      return this.apiClient.callApi(
+        '/list-group', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ListGroups} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ListGroupsOutput}
+     */
+    listGroups(body) {
+      return this.listGroupsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/ListItems} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListItemsInPathOutput} and HTTP response
      */
@@ -9711,6 +10024,49 @@ export default class V2Api {
      */
     rotateKey(body) {
       return this.rotateKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotateOidcClientSecret} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotateOidcClientOutput} and HTTP response
+     */
+    rotateOidcClientSecretWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotateOidcClientSecret");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotateOidcClientOutput;
+      return this.apiClient.callApi(
+        '/rotate-oidc-client-secret', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotateOidcClientSecret} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotateOidcClientOutput}
+     */
+    rotateOidcClientSecret(body) {
+      return this.rotateOidcClientSecretWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -11610,6 +11966,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/UpdateGroup} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateGroupOutput} and HTTP response
+     */
+    updateGroupWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateGroup");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateGroupOutput;
+      return this.apiClient.callApi(
+        '/update-group', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateGroup} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateGroupOutput}
+     */
+    updateGroup(body) {
+      return this.updateGroupWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/UpdateItem} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateItemOutput} and HTTP response
      */
@@ -11818,6 +12217,49 @@ export default class V2Api {
      */
     updateNativeK8STarget(body) {
       return this.updateNativeK8STargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateOidcApp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateOidcAppWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateOidcApp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-oidc-app', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateOidcApp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateOidcApp(body) {
+      return this.updateOidcAppWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

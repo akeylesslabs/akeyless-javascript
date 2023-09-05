@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateTlsCertOutput model module.
  * @module model/GatewayUpdateTlsCertOutput
- * @version 3.3.16
+ * @version 3.3.17
  */
 class GatewayUpdateTlsCertOutput {
     /**

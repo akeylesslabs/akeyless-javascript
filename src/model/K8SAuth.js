@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The K8SAuth model module.
  * @module model/K8SAuth
- * @version 3.3.16
+ * @version 3.3.17
  */
 class K8SAuth {
     /**
@@ -65,8 +65,17 @@ class K8SAuth {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
+            if (data.hasOwnProperty('k8s_auth_type')) {
+                obj['k8s_auth_type'] = ApiClient.convertToType(data['k8s_auth_type'], 'String');
+            }
             if (data.hasOwnProperty('k8s_ca_cert')) {
                 obj['k8s_ca_cert'] = ApiClient.convertToType(data['k8s_ca_cert'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_client_cert_data')) {
+                obj['k8s_client_cert_data'] = ApiClient.convertToType(data['k8s_client_cert_data'], 'String');
+            }
+            if (data.hasOwnProperty('k8s_client_key_data')) {
+                obj['k8s_client_key_data'] = ApiClient.convertToType(data['k8s_client_key_data'], 'String');
             }
             if (data.hasOwnProperty('k8s_host')) {
                 obj['k8s_host'] = ApiClient.convertToType(data['k8s_host'], 'String');
@@ -138,10 +147,27 @@ K8SAuth.prototype['disable_iss_validation'] = undefined;
 K8SAuth.prototype['id'] = undefined;
 
 /**
+ * @member {String} k8s_auth_type
+ */
+K8SAuth.prototype['k8s_auth_type'] = undefined;
+
+/**
  * K8SCACert is the CA Cert to use to call into the kubernetes API
  * @member {String} k8s_ca_cert
  */
 K8SAuth.prototype['k8s_ca_cert'] = undefined;
+
+/**
+ * K8sClientCertData is the client certificate for k8s client certificate authentication
+ * @member {String} k8s_client_cert_data
+ */
+K8SAuth.prototype['k8s_client_cert_data'] = undefined;
+
+/**
+ * K8sClientKeyData is the client key for k8s client certificate authentication
+ * @member {String} k8s_client_key_data
+ */
+K8SAuth.prototype['k8s_client_key_data'] = undefined;
 
 /**
  * K8SHost is the url string for the kubernetes API
