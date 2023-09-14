@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Tokenize model module.
  * @module model/Tokenize
- * @version 3.3.18
+ * @version 3.4.0
  */
 class Tokenize {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KMIPServer model module.
  * @module model/KMIPServer
- * @version 3.3.18
+ * @version 3.4.0
  */
 class KMIPServer {
     /**

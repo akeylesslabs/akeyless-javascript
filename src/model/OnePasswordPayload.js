@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OnePasswordPayload model module.
  * @module model/OnePasswordPayload
- * @version 3.3.18
+ * @version 3.4.0
  */
 class OnePasswordPayload {
     /**

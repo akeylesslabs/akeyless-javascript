@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodGCP model module.
  * @module model/UpdateAuthMethodGCP
- * @version 3.3.18
+ * @version 3.4.0
  */
 class UpdateAuthMethodGCP {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRole model module.
  * @module model/CreateRole
- * @version 3.3.18
+ * @version 3.4.0
  */
 class CreateRole {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGlobalSignTargetOutput model module.
  * @module model/CreateGlobalSignTargetOutput
- * @version 3.3.18
+ * @version 3.4.0
  */
 class CreateGlobalSignTargetOutput {
     /**

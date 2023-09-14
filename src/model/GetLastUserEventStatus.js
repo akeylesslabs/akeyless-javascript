@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetLastUserEventStatus model module.
  * @module model/GetLastUserEventStatus
- * @version 3.3.18
+ * @version 3.4.0
  */
 class GetLastUserEventStatus {
     /**
@@ -114,7 +114,7 @@ GetLastUserEventStatus.prototype['item-type'] = undefined;
 GetLastUserEventStatus.prototype['json'] = false;
 
 /**
- * The time back to search the event, can be passed as string representation. For example if the value is \"5m\" we will return the last user event issued in the last 5 minutes By default we will search without any time boundary
+ * The time back to search the event, for example if the value is \"5m\" we will return the last user event issued in the last 5 minutes. By default, we will search without any time boundary.
  * @member {String} time-back
  */
 GetLastUserEventStatus.prototype['time-back'] = undefined;

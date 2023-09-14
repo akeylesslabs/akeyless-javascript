@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MigrationItems model module.
  * @module model/MigrationItems
- * @version 3.3.18
+ * @version 3.4.0
  */
 class MigrationItems {
     /**

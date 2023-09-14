@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerNativeK8S model module.
  * @module model/GatewayCreateProducerNativeK8S
- * @version 3.3.18
+ * @version 3.4.0
  */
 class GatewayCreateProducerNativeK8S {
     /**

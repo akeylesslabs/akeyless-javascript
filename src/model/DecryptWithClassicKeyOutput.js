@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptWithClassicKeyOutput model module.
  * @module model/DecryptWithClassicKeyOutput
- * @version 3.3.18
+ * @version 3.4.0
  */
 class DecryptWithClassicKeyOutput {
     /**

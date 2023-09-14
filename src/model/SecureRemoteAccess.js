@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecureRemoteAccess model module.
  * @module model/SecureRemoteAccess
- * @version 3.3.18
+ * @version 3.4.0
  */
 class SecureRemoteAccess {
     /**
@@ -100,6 +100,9 @@ class SecureRemoteAccess {
             }
             if (data.hasOwnProperty('native')) {
                 obj['native'] = ApiClient.convertToType(data['native'], 'Boolean');
+            }
+            if (data.hasOwnProperty('rd_gateway_server')) {
+                obj['rd_gateway_server'] = ApiClient.convertToType(data['rd_gateway_server'], 'String');
             }
             if (data.hasOwnProperty('rdp_user')) {
                 obj['rdp_user'] = ApiClient.convertToType(data['rdp_user'], 'String');
@@ -227,6 +230,11 @@ SecureRemoteAccess.prototype['isolated'] = undefined;
  * @member {Boolean} native
  */
 SecureRemoteAccess.prototype['native'] = undefined;
+
+/**
+ * @member {String} rd_gateway_server
+ */
+SecureRemoteAccess.prototype['rd_gateway_server'] = undefined;
 
 /**
  * @member {String} rdp_user

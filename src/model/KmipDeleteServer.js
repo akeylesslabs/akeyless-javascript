@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipDeleteServer model module.
  * @module model/KmipDeleteServer
- * @version 3.3.18
+ * @version 3.4.0
  */
 class KmipDeleteServer {
     /**

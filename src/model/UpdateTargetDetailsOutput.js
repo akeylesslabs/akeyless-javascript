@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateTargetDetailsOutput model module.
  * @module model/UpdateTargetDetailsOutput
- * @version 3.3.18
+ * @version 3.4.0
  */
 class UpdateTargetDetailsOutput {
     /**

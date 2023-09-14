@@ -16,18 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTarget model module.
  * @module model/UpdateDBTarget
- * @version 3.3.18
+ * @version 3.4.0
  */
 class UpdateDBTarget {
     /**
      * Constructs a new <code>UpdateDBTarget</code>.
      * @alias module:model/UpdateDBTarget
+     * @param connectionType {String} (Optional) Type of connection to mssql database [credentials/cloud-identity]
      * @param dbType {String} 
      * @param name {String} Target name
      */
-    constructor(dbType, name) { 
+    constructor(connectionType, dbType, name) { 
         
-        UpdateDBTarget.initialize(this, dbType, name);
+        UpdateDBTarget.initialize(this, connectionType, dbType, name);
     }
 
     /**
@@ -35,7 +36,8 @@ class UpdateDBTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, dbType, name) { 
+    static initialize(obj, connectionType, dbType, name) { 
+        obj['connection-type'] = connectionType;
         obj['db-type'] = dbType;
         obj['name'] = name;
     }
@@ -51,8 +53,26 @@ class UpdateDBTarget {
         if (data) {
             obj = obj || new UpdateDBTarget();
 
+            if (data.hasOwnProperty('DBDefinedConnectionType')) {
+                obj['DBDefinedConnectionType'] = ApiClient.convertToType(data['DBDefinedConnectionType'], 'String');
+            }
+            if (data.hasOwnProperty('azure-client-id')) {
+                obj['azure-client-id'] = ApiClient.convertToType(data['azure-client-id'], 'String');
+            }
+            if (data.hasOwnProperty('azure-client-secret')) {
+                obj['azure-client-secret'] = ApiClient.convertToType(data['azure-client-secret'], 'String');
+            }
+            if (data.hasOwnProperty('azure-tenant-id')) {
+                obj['azure-tenant-id'] = ApiClient.convertToType(data['azure-tenant-id'], 'String');
+            }
+            if (data.hasOwnProperty('cloud-service-provider')) {
+                obj['cloud-service-provider'] = ApiClient.convertToType(data['cloud-service-provider'], 'String');
+            }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('connection-type')) {
+                obj['connection-type'] = ApiClient.convertToType(data['connection-type'], 'String');
             }
             if (data.hasOwnProperty('db-name')) {
                 obj['db-name'] = ApiClient.convertToType(data['db-name'], 'String');
@@ -149,10 +169,46 @@ class UpdateDBTarget {
 }
 
 /**
+ * @member {String} DBDefinedConnectionType
+ */
+UpdateDBTarget.prototype['DBDefinedConnectionType'] = undefined;
+
+/**
+ * (Optional) Client id (relevant for \"cloud-service-provider\" only)
+ * @member {String} azure-client-id
+ */
+UpdateDBTarget.prototype['azure-client-id'] = undefined;
+
+/**
+ * (Optional) Client secret (relevant for \"cloud-service-provider\" only)
+ * @member {String} azure-client-secret
+ */
+UpdateDBTarget.prototype['azure-client-secret'] = undefined;
+
+/**
+ * (Optional) Tenant id (relevant for \"cloud-service-provider\" only)
+ * @member {String} azure-tenant-id
+ */
+UpdateDBTarget.prototype['azure-tenant-id'] = undefined;
+
+/**
+ * (Optional) Cloud service provider (currently only supports Azure)
+ * @member {String} cloud-service-provider
+ */
+UpdateDBTarget.prototype['cloud-service-provider'] = undefined;
+
+/**
  * Deprecated - use description
  * @member {String} comment
  */
 UpdateDBTarget.prototype['comment'] = undefined;
+
+/**
+ * (Optional) Type of connection to mssql database [credentials/cloud-identity]
+ * @member {String} connection-type
+ * @default 'credentials'
+ */
+UpdateDBTarget.prototype['connection-type'] = 'credentials';
 
 /**
  * @member {String} db-name

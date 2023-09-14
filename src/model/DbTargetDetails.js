@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DbTargetDetails model module.
  * @module model/DbTargetDetails
- * @version 3.3.18
+ * @version 3.4.0
  */
 class DbTargetDetails {
     /**
@@ -48,6 +48,18 @@ class DbTargetDetails {
         if (data) {
             obj = obj || new DbTargetDetails();
 
+            if (data.hasOwnProperty('cloud_service_provider')) {
+                obj['cloud_service_provider'] = ApiClient.convertToType(data['cloud_service_provider'], 'String');
+            }
+            if (data.hasOwnProperty('connection_type')) {
+                obj['connection_type'] = ApiClient.convertToType(data['connection_type'], 'String');
+            }
+            if (data.hasOwnProperty('db_client_id')) {
+                obj['db_client_id'] = ApiClient.convertToType(data['db_client_id'], 'String');
+            }
+            if (data.hasOwnProperty('db_client_secret')) {
+                obj['db_client_secret'] = ApiClient.convertToType(data['db_client_secret'], 'String');
+            }
             if (data.hasOwnProperty('db_host_name')) {
                 obj['db_host_name'] = ApiClient.convertToType(data['db_host_name'], 'String');
             }
@@ -72,6 +84,9 @@ class DbTargetDetails {
             if (data.hasOwnProperty('db_server_name')) {
                 obj['db_server_name'] = ApiClient.convertToType(data['db_server_name'], 'String');
             }
+            if (data.hasOwnProperty('db_tenant_id')) {
+                obj['db_tenant_id'] = ApiClient.convertToType(data['db_tenant_id'], 'String');
+            }
             if (data.hasOwnProperty('db_user_name')) {
                 obj['db_user_name'] = ApiClient.convertToType(data['db_user_name'], 'String');
             }
@@ -90,6 +105,26 @@ class DbTargetDetails {
 
 
 }
+
+/**
+ * @member {String} cloud_service_provider
+ */
+DbTargetDetails.prototype['cloud_service_provider'] = undefined;
+
+/**
+ * @member {String} connection_type
+ */
+DbTargetDetails.prototype['connection_type'] = undefined;
+
+/**
+ * @member {String} db_client_id
+ */
+DbTargetDetails.prototype['db_client_id'] = undefined;
+
+/**
+ * @member {String} db_client_secret
+ */
+DbTargetDetails.prototype['db_client_secret'] = undefined;
 
 /**
  * @member {String} db_host_name
@@ -133,6 +168,11 @@ DbTargetDetails.prototype['db_server_certificates'] = undefined;
  * @member {String} db_server_name
  */
 DbTargetDetails.prototype['db_server_name'] = undefined;
+
+/**
+ * @member {String} db_tenant_id
+ */
+DbTargetDetails.prototype['db_tenant_id'] = undefined;
 
 /**
  * @member {String} db_user_name

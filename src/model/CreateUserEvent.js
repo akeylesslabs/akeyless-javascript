@@ -16,15 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateUserEvent model module.
  * @module model/CreateUserEvent
- * @version 3.3.18
+ * @version 3.4.0
  */
 class CreateUserEvent {
     /**
      * Constructs a new <code>CreateUserEvent</code>.
      * @alias module:model/CreateUserEvent
      * @param eventType {String} 
-     * @param itemName {String} Event item name
-     * @param itemType {String} Event item type can be either \"target\" or type of item eg \"static_secret\"/\"dynamic_secret\" To get type of some item run `akeyless describe-item -n {ITEM_NAME} --jq-expression .item_type`
+     * @param itemName {String} EventItemName Event item name
+     * @param itemType {String} EventItemType Event item type
      */
     constructor(eventType, itemName, itemType) { 
         
@@ -122,13 +122,13 @@ CreateUserEvent.prototype['event-source'] = undefined;
 CreateUserEvent.prototype['event-type'] = undefined;
 
 /**
- * Event item name
+ * EventItemName Event item name
  * @member {String} item-name
  */
 CreateUserEvent.prototype['item-name'] = undefined;
 
 /**
- * Event item type can be either \"target\" or type of item eg \"static_secret\"/\"dynamic_secret\" To get type of some item run `akeyless describe-item -n {ITEM_NAME} --jq-expression .item_type`
+ * EventItemType Event item type
  * @member {String} item-type
  */
 CreateUserEvent.prototype['item-type'] = undefined;
@@ -141,7 +141,7 @@ CreateUserEvent.prototype['item-type'] = undefined;
 CreateUserEvent.prototype['json'] = false;
 
 /**
- * TTL in minutes for how long to grant the requested access
+ * For how long to grant the requested access, in minutes
  * @member {Number} request-access-ttl
  */
 CreateUserEvent.prototype['request-access-ttl'] = undefined;

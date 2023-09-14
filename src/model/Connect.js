@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Connect model module.
  * @module model/Connect
- * @version 3.3.18
+ * @version 3.4.0
  */
 class Connect {
     /**
@@ -74,6 +74,9 @@ class Connect {
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
+            if (data.hasOwnProperty('justification')) {
+                obj['justification'] = ApiClient.convertToType(data['justification'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -164,6 +167,11 @@ Connect.prototype['identity-file'] = undefined;
  * @default false
  */
 Connect.prototype['json'] = false;
+
+/**
+ * @member {String} justification
+ */
+Connect.prototype['justification'] = undefined;
 
 /**
  * The Secret name (for database and AWS producers - producer name)

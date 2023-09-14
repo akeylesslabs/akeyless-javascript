@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 3.3.18
+ * @version 3.4.0
  */
 class DSProducerDetails {
     /**
@@ -187,8 +187,20 @@ class DSProducerDetails {
             if (data.hasOwnProperty('client_authentication_type')) {
                 obj['client_authentication_type'] = ApiClient.convertToType(data['client_authentication_type'], 'String');
             }
+            if (data.hasOwnProperty('cloud_service_provider')) {
+                obj['cloud_service_provider'] = ApiClient.convertToType(data['cloud_service_provider'], 'String');
+            }
+            if (data.hasOwnProperty('connection_type')) {
+                obj['connection_type'] = ApiClient.convertToType(data['connection_type'], 'String');
+            }
             if (data.hasOwnProperty('create_sync_url')) {
                 obj['create_sync_url'] = ApiClient.convertToType(data['create_sync_url'], 'String');
+            }
+            if (data.hasOwnProperty('db_client_id')) {
+                obj['db_client_id'] = ApiClient.convertToType(data['db_client_id'], 'String');
+            }
+            if (data.hasOwnProperty('db_client_secret')) {
+                obj['db_client_secret'] = ApiClient.convertToType(data['db_client_secret'], 'String');
             }
             if (data.hasOwnProperty('db_host_name')) {
                 obj['db_host_name'] = ApiClient.convertToType(data['db_host_name'], 'String');
@@ -222,6 +234,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('db_server_name')) {
                 obj['db_server_name'] = ApiClient.convertToType(data['db_server_name'], 'String');
+            }
+            if (data.hasOwnProperty('db_tenant_id')) {
+                obj['db_tenant_id'] = ApiClient.convertToType(data['db_tenant_id'], 'String');
             }
             if (data.hasOwnProperty('db_user_name')) {
                 obj['db_user_name'] = ApiClient.convertToType(data['db_user_name'], 'String');
@@ -923,9 +938,29 @@ DSProducerDetails.prototype['chef_skip_ssl'] = undefined;
 DSProducerDetails.prototype['client_authentication_type'] = undefined;
 
 /**
+ * @member {String} cloud_service_provider
+ */
+DSProducerDetails.prototype['cloud_service_provider'] = undefined;
+
+/**
+ * @member {String} connection_type
+ */
+DSProducerDetails.prototype['connection_type'] = undefined;
+
+/**
  * @member {String} create_sync_url
  */
 DSProducerDetails.prototype['create_sync_url'] = undefined;
+
+/**
+ * @member {String} db_client_id
+ */
+DSProducerDetails.prototype['db_client_id'] = undefined;
+
+/**
+ * @member {String} db_client_secret
+ */
+DSProducerDetails.prototype['db_client_secret'] = undefined;
 
 /**
  * @member {String} db_host_name
@@ -984,6 +1019,11 @@ DSProducerDetails.prototype['db_server_certificates'] = undefined;
  * @member {String} db_server_name
  */
 DSProducerDetails.prototype['db_server_name'] = undefined;
+
+/**
+ * @member {String} db_tenant_id
+ */
+DSProducerDetails.prototype['db_tenant_id'] = undefined;
 
 /**
  * @member {String} db_user_name

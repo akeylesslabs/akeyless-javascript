@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackSecretOutput model module.
  * @module model/RollbackSecretOutput
- * @version 3.3.18
+ * @version 3.4.0
  */
 class RollbackSecretOutput {
     /**

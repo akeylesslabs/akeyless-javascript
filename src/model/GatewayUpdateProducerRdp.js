@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRdp model module.
  * @module model/GatewayUpdateProducerRdp
- * @version 3.3.18
+ * @version 3.4.0
  */
 class GatewayUpdateProducerRdp {
     /**
@@ -94,6 +94,9 @@ class GatewayUpdateProducerRdp {
             }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('secure-access-rd-gateway-server')) {
+                obj['secure-access-rd-gateway-server'] = ApiClient.convertToType(data['secure-access-rd-gateway-server'], 'String');
             }
             if (data.hasOwnProperty('secure-access-rdp-domain')) {
                 obj['secure-access-rdp-domain'] = ApiClient.convertToType(data['secure-access-rdp-domain'], 'String');
@@ -219,6 +222,12 @@ GatewayUpdateProducerRdp.prototype['secure-access-enable'] = undefined;
  * @member {Array.<String>} secure-access-host
  */
 GatewayUpdateProducerRdp.prototype['secure-access-host'] = undefined;
+
+/**
+ * RD Gateway server
+ * @member {String} secure-access-rd-gateway-server
+ */
+GatewayUpdateProducerRdp.prototype['secure-access-rd-gateway-server'] = undefined;
 
 /**
  * Required when the Dynamic Secret is used for a domain user
