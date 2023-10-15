@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOIDC model module.
  * @module model/CreateAuthMethodOIDC
- * @version 3.4.0
+ * @version 3.5.0
  */
 class CreateAuthMethodOIDC {
     /**
@@ -93,6 +93,9 @@ class CreateAuthMethodOIDC {
             }
             if (data.hasOwnProperty('required-scopes-prefix')) {
                 obj['required-scopes-prefix'] = ApiClient.convertToType(data['required-scopes-prefix'], 'String');
+            }
+            if (data.hasOwnProperty('subclaims-delimiters')) {
+                obj['subclaims-delimiters'] = ApiClient.convertToType(data['subclaims-delimiters'], ['String']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -196,6 +199,12 @@ CreateAuthMethodOIDC.prototype['required-scopes'] = undefined;
  * @member {String} required-scopes-prefix
  */
 CreateAuthMethodOIDC.prototype['required-scopes-prefix'] = undefined;
+
+/**
+ * A list of additional sub claims delimiters (relevant only for SAML, OIDC, OAuth2/JWT)
+ * @member {Array.<String>} subclaims-delimiters
+ */
+CreateAuthMethodOIDC.prototype['subclaims-delimiters'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

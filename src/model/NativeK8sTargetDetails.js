@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NativeK8sTargetDetails model module.
  * @module model/NativeK8sTargetDetails
- * @version 3.4.0
+ * @version 3.5.0
  */
 class NativeK8sTargetDetails {
     /**

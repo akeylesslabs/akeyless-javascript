@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerHanaDb model module.
  * @module model/GatewayUpdateProducerHanaDb
- * @version 3.4.0
+ * @version 3.5.0
  */
 class GatewayUpdateProducerHanaDb {
     /**

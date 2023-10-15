@@ -29,7 +29,7 @@ import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 3.4.0
+ * @version 3.5.0
  */
 class AuthMethodAccessInfo {
     /**
@@ -116,6 +116,9 @@ class AuthMethodAccessInfo {
             }
             if (data.hasOwnProperty('saml_access_rules')) {
                 obj['saml_access_rules'] = SAMLAccessRules.constructFromObject(data['saml_access_rules']);
+            }
+            if (data.hasOwnProperty('sub_claims_delimiters')) {
+                obj['sub_claims_delimiters'] = ApiClient.convertToType(data['sub_claims_delimiters'], ['String']);
             }
             if (data.hasOwnProperty('universal_identity_access_rules')) {
                 obj['universal_identity_access_rules'] = UniversalIdentityAccessRules.constructFromObject(data['universal_identity_access_rules']);
@@ -223,6 +226,11 @@ AuthMethodAccessInfo.prototype['rules_type'] = undefined;
  * @member {module:model/SAMLAccessRules} saml_access_rules
  */
 AuthMethodAccessInfo.prototype['saml_access_rules'] = undefined;
+
+/**
+ * @member {Array.<String>} sub_claims_delimiters
+ */
+AuthMethodAccessInfo.prototype['sub_claims_delimiters'] = undefined;
 
 /**
  * @member {module:model/UniversalIdentityAccessRules} universal_identity_access_rules

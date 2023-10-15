@@ -428,6 +428,8 @@ import SetItemState from '../model/SetItemState';
 import SetRoleRule from '../model/SetRoleRule';
 import ShareItem from '../model/ShareItem';
 import SignDataWithClassicKey from '../model/SignDataWithClassicKey';
+import SignEcDsa from '../model/SignEcDsa';
+import SignEcDsaOutput from '../model/SignEcDsaOutput';
 import SignGPG from '../model/SignGPG';
 import SignGPGOutput from '../model/SignGPGOutput';
 import SignJWTOutput from '../model/SignJWTOutput';
@@ -437,6 +439,8 @@ import SignPKCS1 from '../model/SignPKCS1';
 import SignPKCS1Output from '../model/SignPKCS1Output';
 import SignPKICertOutput from '../model/SignPKICertOutput';
 import SignPKICertWithClassicKey from '../model/SignPKICertWithClassicKey';
+import SignRsaSsaPss from '../model/SignRsaSsaPss';
+import SignRsaSsaPssOutput from '../model/SignRsaSsaPssOutput';
 import StaticCredsAuth from '../model/StaticCredsAuth';
 import StaticCredsAuthOutput from '../model/StaticCredsAuthOutput';
 import SystemAccessCredentialsReplyObj from '../model/SystemAccessCredentialsReplyObj';
@@ -542,17 +546,19 @@ import UploadRSA from '../model/UploadRSA';
 import ValidateToken from '../model/ValidateToken';
 import ValidateTokenOutput from '../model/ValidateTokenOutput';
 import VerifyDataWithClassicKey from '../model/VerifyDataWithClassicKey';
+import VerifyEcDsa from '../model/VerifyEcDsa';
 import VerifyGPG from '../model/VerifyGPG';
 import VerifyJWTOutput from '../model/VerifyJWTOutput';
 import VerifyJWTWithClassicKey from '../model/VerifyJWTWithClassicKey';
 import VerifyPKCS1 from '../model/VerifyPKCS1';
 import VerifyPKICertOutput from '../model/VerifyPKICertOutput';
 import VerifyPKICertWithClassicKey from '../model/VerifyPKICertWithClassicKey';
+import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.4.0
+* @version 3.5.0
 */
 export default class V2Api {
 
@@ -10296,6 +10302,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/SignEcDsa} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SignEcDsaOutput} and HTTP response
+     */
+    signEcDsaWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling signEcDsa");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = SignEcDsaOutput;
+      return this.apiClient.callApi(
+        '/sign-ecdsa', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/SignEcDsa} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SignEcDsaOutput}
+     */
+    signEcDsa(body) {
+      return this.signEcDsaWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/SignGPG} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SignGPGOutput} and HTTP response
      */
@@ -10461,6 +10510,49 @@ export default class V2Api {
      */
     signPKICertWithClassicKey(body) {
       return this.signPKICertWithClassicKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/SignRsaSsaPss} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SignRsaSsaPssOutput} and HTTP response
+     */
+    signRsaSsaPssWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling signRsaSsaPss");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = SignRsaSsaPssOutput;
+      return this.apiClient.callApi(
+        '/sign-rsassa-pss', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/SignRsaSsaPss} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SignRsaSsaPssOutput}
+     */
+    signRsaSsaPss(body) {
+      return this.signRsaSsaPssWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -13214,6 +13306,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/VerifyEcDsa} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    verifyEcDsaWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling verifyEcDsa");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/verify-ecdsa', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/VerifyEcDsa} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    verifyEcDsa(body) {
+      return this.verifyEcDsaWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/VerifyGPG} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
@@ -13379,6 +13514,49 @@ export default class V2Api {
      */
     verifyPKICertWithClassicKey(body) {
       return this.verifyPKICertWithClassicKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/VerifyRsaSsaPss} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    verifyRsaSsaPssWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling verifyRsaSsaPss");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/verify-rsassa-pss', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/VerifyRsaSsaPss} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    verifyRsaSsaPss(body) {
+      return this.verifyRsaSsaPssWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

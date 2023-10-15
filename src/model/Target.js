@@ -18,7 +18,7 @@ import TargetItemAssociation from './TargetItemAssociation';
 /**
  * The Target model module.
  * @module model/Target
- * @version 3.4.0
+ * @version 3.5.0
  */
 class Target {
     /**
@@ -51,6 +51,9 @@ class Target {
 
             if (data.hasOwnProperty('access_date')) {
                 obj['access_date'] = ApiClient.convertToType(data['access_date'], 'Date');
+            }
+            if (data.hasOwnProperty('access_date_display')) {
+                obj['access_date_display'] = ApiClient.convertToType(data['access_date_display'], 'String');
             }
             if (data.hasOwnProperty('access_request_status')) {
                 obj['access_request_status'] = ApiClient.convertToType(data['access_request_status'], 'String');
@@ -117,6 +120,11 @@ class Target {
  * @member {Date} access_date
  */
 Target.prototype['access_date'] = undefined;
+
+/**
+ * @member {String} access_date_display
+ */
+Target.prototype['access_date_display'] = undefined;
 
 /**
  * @member {String} access_request_status

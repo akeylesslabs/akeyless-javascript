@@ -17,7 +17,7 @@ import ReverseRBACClient from './ReverseRBACClient';
 /**
  * The ReverseRBACOutput model module.
  * @module model/ReverseRBACOutput
- * @version 3.4.0
+ * @version 3.5.0
  */
 class ReverseRBACOutput {
     /**

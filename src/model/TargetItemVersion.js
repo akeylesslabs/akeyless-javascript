@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetItemVersion model module.
  * @module model/TargetItemVersion
- * @version 3.4.0
+ * @version 3.5.0
  */
 class TargetItemVersion {
     /**
@@ -49,6 +49,9 @@ class TargetItemVersion {
 
             if (data.hasOwnProperty('access_date')) {
                 obj['access_date'] = ApiClient.convertToType(data['access_date'], 'Date');
+            }
+            if (data.hasOwnProperty('access_date_display')) {
+                obj['access_date_display'] = ApiClient.convertToType(data['access_date_display'], 'String');
             }
             if (data.hasOwnProperty('creation_date')) {
                 obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
@@ -91,6 +94,11 @@ class TargetItemVersion {
  * @member {Date} access_date
  */
 TargetItemVersion.prototype['access_date'] = undefined;
+
+/**
+ * @member {String} access_date_display
+ */
+TargetItemVersion.prototype['access_date_display'] = undefined;
 
 /**
  * @member {Date} creation_date

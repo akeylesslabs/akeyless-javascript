@@ -18,7 +18,7 @@ import AuthMethodRoleAssociation from './AuthMethodRoleAssociation';
 /**
  * The AuthMethod model module.
  * @module model/AuthMethod
- * @version 3.4.0
+ * @version 3.5.0
  */
 class AuthMethod {
     /**
@@ -51,6 +51,9 @@ class AuthMethod {
 
             if (data.hasOwnProperty('access_date')) {
                 obj['access_date'] = ApiClient.convertToType(data['access_date'], 'Date');
+            }
+            if (data.hasOwnProperty('access_date_display')) {
+                obj['access_date_display'] = ApiClient.convertToType(data['access_date_display'], 'String');
             }
             if (data.hasOwnProperty('access_info')) {
                 obj['access_info'] = AuthMethodAccessInfo.constructFromObject(data['access_info']);
@@ -93,6 +96,11 @@ class AuthMethod {
  * @member {Date} access_date
  */
 AuthMethod.prototype['access_date'] = undefined;
+
+/**
+ * @member {String} access_date_display
+ */
+AuthMethod.prototype['access_date_display'] = undefined;
 
 /**
  * @member {module:model/AuthMethodAccessInfo} access_info

@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import CfInfo from './CfInfo';
 
 /**
  * The GwClusterIdentity model module.
  * @module model/GwClusterIdentity
- * @version 3.4.0
+ * @version 3.5.0
  */
 class GwClusterIdentity {
     /**
@@ -64,6 +65,9 @@ class GwClusterIdentity {
             }
             if (data.hasOwnProperty('customer_fragment_ids')) {
                 obj['customer_fragment_ids'] = ApiClient.convertToType(data['customer_fragment_ids'], ['String']);
+            }
+            if (data.hasOwnProperty('customer_fragments')) {
+                obj['customer_fragments'] = ApiClient.convertToType(data['customer_fragments'], [CfInfo]);
             }
             if (data.hasOwnProperty('default_protection_key_id')) {
                 obj['default_protection_key_id'] = ApiClient.convertToType(data['default_protection_key_id'], 'Number');
@@ -116,9 +120,15 @@ GwClusterIdentity.prototype['cluster_url'] = undefined;
 GwClusterIdentity.prototype['current_gw'] = undefined;
 
 /**
+ * Deprecated - use CustomerFragments instead
  * @member {Array.<String>} customer_fragment_ids
  */
 GwClusterIdentity.prototype['customer_fragment_ids'] = undefined;
+
+/**
+ * @member {Array.<module:model/CfInfo>} customer_fragments
+ */
+GwClusterIdentity.prototype['customer_fragments'] = undefined;
 
 /**
  * @member {Number} default_protection_key_id

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerFragment model module.
  * @module model/CustomerFragment
- * @version 3.4.0
+ * @version 3.5.0
  */
 class CustomerFragment {
     /**
@@ -53,6 +53,9 @@ class CustomerFragment {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'String');
             }
@@ -72,6 +75,11 @@ CustomerFragment.prototype['description'] = undefined;
  * @member {String} id
  */
 CustomerFragment.prototype['id'] = undefined;
+
+/**
+ * @member {String} name
+ */
+CustomerFragment.prototype['name'] = undefined;
 
 /**
  * @member {String} value

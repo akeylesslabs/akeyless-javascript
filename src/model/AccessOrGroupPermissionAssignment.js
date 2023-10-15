@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccessOrGroupPermissionAssignment model module.
  * @module model/AccessOrGroupPermissionAssignment
- * @version 3.4.0
+ * @version 3.5.0
  */
 class AccessOrGroupPermissionAssignment {
     /**
@@ -50,6 +50,12 @@ class AccessOrGroupPermissionAssignment {
             if (data.hasOwnProperty('access_id')) {
                 obj['access_id'] = ApiClient.convertToType(data['access_id'], 'String');
             }
+            if (data.hasOwnProperty('access_type')) {
+                obj['access_type'] = ApiClient.convertToType(data['access_type'], 'String');
+            }
+            if (data.hasOwnProperty('assignment_name')) {
+                obj['assignment_name'] = ApiClient.convertToType(data['assignment_name'], 'String');
+            }
             if (data.hasOwnProperty('assignment_type')) {
                 obj['assignment_type'] = ApiClient.convertToType(data['assignment_type'], 'String');
             }
@@ -70,6 +76,16 @@ class AccessOrGroupPermissionAssignment {
  * @member {String} access_id
  */
 AccessOrGroupPermissionAssignment.prototype['access_id'] = undefined;
+
+/**
+ * @member {String} access_type
+ */
+AccessOrGroupPermissionAssignment.prototype['access_type'] = undefined;
+
+/**
+ * @member {String} assignment_name
+ */
+AccessOrGroupPermissionAssignment.prototype['assignment_name'] = undefined;
 
 /**
  * @member {String} assignment_type

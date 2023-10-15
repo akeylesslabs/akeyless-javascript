@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RuleAssigner model module.
  * @module model/RuleAssigner
- * @version 3.4.0
+ * @version 3.5.0
  */
 class RuleAssigner {
     /**

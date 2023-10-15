@@ -54,6 +54,7 @@ import CertificateExpirationEvent from './model/CertificateExpirationEvent';
 import CertificateInfo from './model/CertificateInfo';
 import CertificateIssueInfo from './model/CertificateIssueInfo';
 import CertificateTemplateInfo from './model/CertificateTemplateInfo';
+import CfInfo from './model/CfInfo';
 import ChefTargetDetails from './model/ChefTargetDetails';
 import ClassicKeyDetailsInfo from './model/ClassicKeyDetailsInfo';
 import ClassicKeyStatusInfo from './model/ClassicKeyStatusInfo';
@@ -584,6 +585,8 @@ import SetRoleRule from './model/SetRoleRule';
 import ShareItem from './model/ShareItem';
 import SharingPolicyInfo from './model/SharingPolicyInfo';
 import SignDataWithClassicKey from './model/SignDataWithClassicKey';
+import SignEcDsa from './model/SignEcDsa';
+import SignEcDsaOutput from './model/SignEcDsaOutput';
 import SignGPG from './model/SignGPG';
 import SignGPGOutput from './model/SignGPGOutput';
 import SignJWTOutput from './model/SignJWTOutput';
@@ -593,6 +596,8 @@ import SignPKCS1 from './model/SignPKCS1';
 import SignPKCS1Output from './model/SignPKCS1Output';
 import SignPKICertOutput from './model/SignPKICertOutput';
 import SignPKICertWithClassicKey from './model/SignPKICertWithClassicKey';
+import SignRsaSsaPss from './model/SignRsaSsaPss';
+import SignRsaSsaPssOutput from './model/SignRsaSsaPssOutput';
 import SmInfo from './model/SmInfo';
 import SplunkLogForwardingConfig from './model/SplunkLogForwardingConfig';
 import SraInfo from './model/SraInfo';
@@ -718,12 +723,14 @@ import ValidateTokenOutput from './model/ValidateTokenOutput';
 import VaultlessTokenizerInfo from './model/VaultlessTokenizerInfo';
 import VenafiTargetDetails from './model/VenafiTargetDetails';
 import VerifyDataWithClassicKey from './model/VerifyDataWithClassicKey';
+import VerifyEcDsa from './model/VerifyEcDsa';
 import VerifyGPG from './model/VerifyGPG';
 import VerifyJWTOutput from './model/VerifyJWTOutput';
 import VerifyJWTWithClassicKey from './model/VerifyJWTWithClassicKey';
 import VerifyPKCS1 from './model/VerifyPKCS1';
 import VerifyPKICertOutput from './model/VerifyPKICertOutput';
 import VerifyPKICertWithClassicKey from './model/VerifyPKICertWithClassicKey';
+import VerifyRsaSsaPss from './model/VerifyRsaSsaPss';
 import WebTargetDetails from './model/WebTargetDetails';
 import WindowsTargetDetails from './model/WindowsTargetDetails';
 import ZeroSSLTargetDetails from './model/ZeroSSLTargetDetails';
@@ -759,7 +766,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.4.0
+* @version 3.5.0
 */
 export {
     /**
@@ -1013,6 +1020,12 @@ export {
      * @property {module:model/CertificateTemplateInfo}
      */
     CertificateTemplateInfo,
+
+    /**
+     * The CfInfo model constructor.
+     * @property {module:model/CfInfo}
+     */
+    CfInfo,
 
     /**
      * The ChefTargetDetails model constructor.
@@ -4195,6 +4208,18 @@ export {
     SignDataWithClassicKey,
 
     /**
+     * The SignEcDsa model constructor.
+     * @property {module:model/SignEcDsa}
+     */
+    SignEcDsa,
+
+    /**
+     * The SignEcDsaOutput model constructor.
+     * @property {module:model/SignEcDsaOutput}
+     */
+    SignEcDsaOutput,
+
+    /**
      * The SignGPG model constructor.
      * @property {module:model/SignGPG}
      */
@@ -4247,6 +4272,18 @@ export {
      * @property {module:model/SignPKICertWithClassicKey}
      */
     SignPKICertWithClassicKey,
+
+    /**
+     * The SignRsaSsaPss model constructor.
+     * @property {module:model/SignRsaSsaPss}
+     */
+    SignRsaSsaPss,
+
+    /**
+     * The SignRsaSsaPssOutput model constructor.
+     * @property {module:model/SignRsaSsaPssOutput}
+     */
+    SignRsaSsaPssOutput,
 
     /**
      * The SmInfo model constructor.
@@ -4999,6 +5036,12 @@ export {
     VerifyDataWithClassicKey,
 
     /**
+     * The VerifyEcDsa model constructor.
+     * @property {module:model/VerifyEcDsa}
+     */
+    VerifyEcDsa,
+
+    /**
      * The VerifyGPG model constructor.
      * @property {module:model/VerifyGPG}
      */
@@ -5033,6 +5076,12 @@ export {
      * @property {module:model/VerifyPKICertWithClassicKey}
      */
     VerifyPKICertWithClassicKey,
+
+    /**
+     * The VerifyRsaSsaPss model constructor.
+     * @property {module:model/VerifyRsaSsaPss}
+     */
+    VerifyRsaSsaPss,
 
     /**
      * The WebTargetDetails model constructor.

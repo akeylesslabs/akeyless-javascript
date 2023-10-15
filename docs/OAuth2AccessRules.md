@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **audience** | **String** | The audience in the JWT. | [optional] 
+**authorizedGwClusterName** | **String** | The gateway cluster name that is authorized to access JWKeySetURL | [optional] 
 **boundClaims** | [**[OAuth2CustomClaim]**](OAuth2CustomClaim.md) | The claims that login is restricted to. | [optional] 
 **boundClientsId** | **[String]** | The clients ids that login is restricted to. | [optional] 
 **issuer** | **String** | Issuer URL | [optional] 

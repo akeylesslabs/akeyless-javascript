@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenCustomerFragment model module.
  * @module model/GenCustomerFragment
- * @version 3.4.0
+ * @version 3.5.0
  */
 class GenCustomerFragment {
     /**
@@ -56,6 +56,9 @@ class GenCustomerFragment {
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
             }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
         }
         return obj;
     }
@@ -81,6 +84,12 @@ GenCustomerFragment.prototype['json'] = false;
  * @member {String} metadata
  */
 GenCustomerFragment.prototype['metadata'] = undefined;
+
+/**
+ * Customer fragment name
+ * @member {String} name
+ */
+GenCustomerFragment.prototype['name'] = undefined;
 
 
 

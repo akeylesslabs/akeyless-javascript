@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MigrationGeneral model module.
  * @module model/MigrationGeneral
- * @version 3.4.0
+ * @version 3.5.0
  */
 class MigrationGeneral {
     /**
@@ -50,6 +50,9 @@ class MigrationGeneral {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
+            if (data.hasOwnProperty('last_migration')) {
+                obj['last_migration'] = ApiClient.convertToType(data['last_migration'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -79,6 +82,11 @@ class MigrationGeneral {
  * @member {String} id
  */
 MigrationGeneral.prototype['id'] = undefined;
+
+/**
+ * @member {String} last_migration
+ */
+MigrationGeneral.prototype['last_migration'] = undefined;
 
 /**
  * @member {String} name

@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayUpdateProducerArtifactoryOutput model module.
  * @module model/GatewayUpdateProducerArtifactoryOutput
- * @version 3.4.0
+ * @version 3.5.0
  */
 class GatewayUpdateProducerArtifactoryOutput {
     /**

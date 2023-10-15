@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EsmDeleteSecretOutput model module.
  * @module model/EsmDeleteSecretOutput
- * @version 3.4.0
+ * @version 3.5.0
  */
 class EsmDeleteSecretOutput {
     /**

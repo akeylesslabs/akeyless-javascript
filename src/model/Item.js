@@ -25,7 +25,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 3.4.0
+ * @version 3.5.0
  */
 class Item {
     /**
@@ -58,6 +58,9 @@ class Item {
 
             if (data.hasOwnProperty('access_date')) {
                 obj['access_date'] = ApiClient.convertToType(data['access_date'], 'Date');
+            }
+            if (data.hasOwnProperty('access_date_display')) {
+                obj['access_date_display'] = ApiClient.convertToType(data['access_date_display'], 'String');
             }
             if (data.hasOwnProperty('access_request_status')) {
                 obj['access_request_status'] = ApiClient.convertToType(data['access_request_status'], 'String');
@@ -184,6 +187,11 @@ class Item {
  * @member {Date} access_date
  */
 Item.prototype['access_date'] = undefined;
+
+/**
+ * @member {String} access_date_display
+ */
+Item.prototype['access_date_display'] = undefined;
 
 /**
  * @member {String} access_request_status

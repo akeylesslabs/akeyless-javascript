@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessDate** | **Date** |  | [optional] 
+**accessDateDisplay** | **String** |  | [optional] 
 **clientPermissions** | **[String]** |  | [optional] 
 **comment** | **String** |  | [optional] 
 **creationDate** | **Date** |  | [optional] 

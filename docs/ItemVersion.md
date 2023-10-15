@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessDate** | **Date** |  | [optional] 
+**accessDateDisplay** | **String** |  | [optional] 
 **creationDate** | **Date** |  | [optional] 
 **customerFragmentId** | **String** |  | [optional] 
 **deletionDate** | **Date** |  | [optional] 

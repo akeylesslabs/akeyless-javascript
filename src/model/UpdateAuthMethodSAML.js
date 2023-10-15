@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodSAML model module.
  * @module model/UpdateAuthMethodSAML
- * @version 3.4.0
+ * @version 3.5.0
  */
 class UpdateAuthMethodSAML {
     /**
@@ -84,6 +84,9 @@ class UpdateAuthMethodSAML {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('subclaims-delimiters')) {
+                obj['subclaims-delimiters'] = ApiClient.convertToType(data['subclaims-delimiters'], ['String']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -169,6 +172,12 @@ UpdateAuthMethodSAML.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateAuthMethodSAML.prototype['new-name'] = undefined;
+
+/**
+ * A list of additional sub claims delimiters (relevant only for SAML, OIDC, OAuth2/JWT)
+ * @member {Array.<String>} subclaims-delimiters
+ */
+UpdateAuthMethodSAML.prototype['subclaims-delimiters'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

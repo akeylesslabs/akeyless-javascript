@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 3.4.0
+ * @version 3.5.0
  */
 class UpdateAccountSettings {
     /**
@@ -92,6 +92,9 @@ class UpdateAccountSettings {
             if (data.hasOwnProperty('jwt-ttl-min')) {
                 obj['jwt-ttl-min'] = ApiClient.convertToType(data['jwt-ttl-min'], 'Number');
             }
+            if (data.hasOwnProperty('lock-default-key')) {
+                obj['lock-default-key'] = ApiClient.convertToType(data['lock-default-key'], 'String');
+            }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
@@ -154,7 +157,7 @@ UpdateAccountSettings.prototype['company-name'] = undefined;
 UpdateAccountSettings.prototype['country'] = undefined;
 
 /**
- * Set the account default key based on the DFC key item name. Use \"set-original-akeyless-default-key\" to revert to using the original default key of the account. Empty string will change nothing.
+ * Set the account default key based on the DFC key name. Use \"set-original-akeyless-default-key\" to revert to using the original default key of the account.
  * @member {String} default-key-name
  */
 UpdateAccountSettings.prototype['default-key-name'] = undefined;
@@ -220,6 +223,12 @@ UpdateAccountSettings.prototype['jwt-ttl-max'] = undefined;
  * @member {Number} jwt-ttl-min
  */
 UpdateAccountSettings.prototype['jwt-ttl-min'] = undefined;
+
+/**
+ * Lock the account's default protection key, if set - users will not be able to use a different protection key, relevant only if default-key-name is configured [true/false]
+ * @member {String} lock-default-key
+ */
+UpdateAccountSettings.prototype['lock-default-key'] = undefined;
 
 /**
  * Max versions

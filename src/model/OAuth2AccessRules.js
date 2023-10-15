@@ -17,7 +17,7 @@ import OAuth2CustomClaim from './OAuth2CustomClaim';
 /**
  * The OAuth2AccessRules model module.
  * @module model/OAuth2AccessRules
- * @version 3.4.0
+ * @version 3.5.0
  */
 class OAuth2AccessRules {
     /**
@@ -52,6 +52,9 @@ class OAuth2AccessRules {
             if (data.hasOwnProperty('audience')) {
                 obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
             }
+            if (data.hasOwnProperty('authorized_gw_cluster_name')) {
+                obj['authorized_gw_cluster_name'] = ApiClient.convertToType(data['authorized_gw_cluster_name'], 'String');
+            }
             if (data.hasOwnProperty('bound_claims')) {
                 obj['bound_claims'] = ApiClient.convertToType(data['bound_claims'], [OAuth2CustomClaim]);
             }
@@ -82,6 +85,12 @@ class OAuth2AccessRules {
  * @member {String} audience
  */
 OAuth2AccessRules.prototype['audience'] = undefined;
+
+/**
+ * The gateway cluster name that is authorized to access JWKeySetURL
+ * @member {String} authorized_gw_cluster_name
+ */
+OAuth2AccessRules.prototype['authorized_gw_cluster_name'] = undefined;
 
 /**
  * The claims that login is restricted to.

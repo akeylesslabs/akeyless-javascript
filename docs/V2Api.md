@@ -231,10 +231,12 @@ Method | HTTP request | Description
 [**setRoleRule**](V2Api.md#setRoleRule) | **POST** /set-role-rule | 
 [**shareItem**](V2Api.md#shareItem) | **POST** /share-item | 
 [**signDataWithClassicKey**](V2Api.md#signDataWithClassicKey) | **POST** /sign-data-with-classic-key | 
+[**signEcDsa**](V2Api.md#signEcDsa) | **POST** /sign-ecdsa | 
 [**signGPG**](V2Api.md#signGPG) | **POST** /sign-gpg | 
 [**signJWTWithClassicKey**](V2Api.md#signJWTWithClassicKey) | **POST** /sign-jwt-with-classic-key | 
 [**signPKCS1**](V2Api.md#signPKCS1) | **POST** /sign-pkcs1 | 
 [**signPKICertWithClassicKey**](V2Api.md#signPKICertWithClassicKey) | **POST** /sign-pki-cert-with-classic-key | 
+[**signRsaSsaPss**](V2Api.md#signRsaSsaPss) | **POST** /sign-rsassa-pss | 
 [**staticCredsAuth**](V2Api.md#staticCredsAuth) | **POST** /static-creds-auth | 
 [**tokenize**](V2Api.md#tokenize) | **POST** /tokenize | 
 [**uidCreateChildToken**](V2Api.md#uidCreateChildToken) | **POST** /uid-create-child-token | 
@@ -299,10 +301,12 @@ Method | HTTP request | Description
 [**uploadRSA**](V2Api.md#uploadRSA) | **POST** /upload-rsa | 
 [**validateToken**](V2Api.md#validateToken) | **POST** /validate-token | 
 [**verifyDataWithClassicKey**](V2Api.md#verifyDataWithClassicKey) | **POST** /verify-data-with-classic-key | 
+[**verifyEcDsa**](V2Api.md#verifyEcDsa) | **POST** /verify-ecdsa | 
 [**verifyGPG**](V2Api.md#verifyGPG) | **POST** /verify-gpg | 
 [**verifyJWTWithClassicKey**](V2Api.md#verifyJWTWithClassicKey) | **POST** /verify-jwt-with-classic-key | 
 [**verifyPKCS1**](V2Api.md#verifyPKCS1) | **POST** /verify-pkcs1 | 
 [**verifyPKICertWithClassicKey**](V2Api.md#verifyPKICertWithClassicKey) | **POST** /verify-pki-cert-with-classic-key | 
+[**verifyRsaSsaPss**](V2Api.md#verifyRsaSsaPss) | **POST** /verify-rsassa-pss | 
 
 
 
@@ -9862,6 +9866,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## signEcDsa
+
+> SignEcDsaOutput signEcDsa(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.SignEcDsa(); // SignEcDsa | 
+apiInstance.signEcDsa(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SignEcDsa**](SignEcDsa.md)|  | 
+
+### Return type
+
+[**SignEcDsaOutput**](SignEcDsaOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## signGPG
 
 > SignGPGOutput signGPG(body)
@@ -10019,6 +10065,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SignPKICertOutput**](SignPKICertOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## signRsaSsaPss
+
+> SignRsaSsaPssOutput signRsaSsaPss(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.SignRsaSsaPss(); // SignRsaSsaPss | 
+apiInstance.signRsaSsaPss(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SignRsaSsaPss**](SignRsaSsaPss.md)|  | 
+
+### Return type
+
+[**SignRsaSsaPssOutput**](SignRsaSsaPssOutput.md)
 
 ### Authorization
 
@@ -12714,6 +12802,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## verifyEcDsa
+
+> Object verifyEcDsa(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.VerifyEcDsa(); // VerifyEcDsa | 
+apiInstance.verifyEcDsa(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**VerifyEcDsa**](VerifyEcDsa.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## verifyGPG
 
 > Object verifyGPG(body)
@@ -12871,6 +13001,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**VerifyPKICertOutput**](VerifyPKICertOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## verifyRsaSsaPss
+
+> Object verifyRsaSsaPss(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.VerifyRsaSsaPss(); // VerifyRsaSsaPss | 
+apiInstance.verifyRsaSsaPss(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**VerifyRsaSsaPss**](VerifyRsaSsaPss.md)|  | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 

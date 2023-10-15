@@ -19,7 +19,7 @@ import SharingPolicyInfo from './SharingPolicyInfo';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 3.4.0
+ * @version 3.5.0
  */
 class AccountGeneralSettings {
     /**
@@ -66,6 +66,9 @@ class AccountGeneralSettings {
             if (data.hasOwnProperty('invalid_characters')) {
                 obj['invalid_characters'] = ApiClient.convertToType(data['invalid_characters'], 'String');
             }
+            if (data.hasOwnProperty('lock_default_key')) {
+                obj['lock_default_key'] = ApiClient.convertToType(data['lock_default_key'], 'Boolean');
+            }
             if (data.hasOwnProperty('password_policy')) {
                 obj['password_policy'] = PasswordPolicyInfo.constructFromObject(data['password_policy']);
             }
@@ -109,6 +112,12 @@ AccountGeneralSettings.prototype['enable_request_for_access'] = undefined;
  * @member {String} invalid_characters
  */
 AccountGeneralSettings.prototype['invalid_characters'] = undefined;
+
+/**
+ * LockDefaultKey determines whether the configured default key can be updated by end-users on a per-request basis true - all requests use the configured default key false - every request can determine its protection key (default) nil - change nothing (every request can determine its protection key (default)) This parameter is only relevant if AccountDefaultKeyItemID is not empty
+ * @member {Boolean} lock_default_key
+ */
+AccountGeneralSettings.prototype['lock_default_key'] = undefined;
 
 /**
  * @member {module:model/PasswordPolicyInfo} password_policy

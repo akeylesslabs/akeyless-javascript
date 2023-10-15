@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **certData** | **String** | Certificate data encoded in base64. Used if file was not provided. (relevant only for access-type&#x3D;cert) | [optional] 
 **cloudId** | **String** | The cloud identity (relevant only for access-type&#x3D;azure_ad,aws_iam,gcp) | [optional] 
 **debug** | **Boolean** |  | [optional] 
-**gatewayUrl** | **String** | Gateway URL for the K8S authenticated (relevant only for access-type&#x3D;k8s) | [optional] 
+**gatewayUrl** | **String** | Gateway URL for the K8S/OAUTH2 authenticated (relevant only for access-type&#x3D;k8s/oauth2) | [optional] 
 **gcpAudience** | **String** | GCP JWT audience | [optional] [default to &#39;akeyless.io&#39;]
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **jwt** | **String** | The Json Web Token (relevant only for access-type&#x3D;jwt/oidc) | [optional] 

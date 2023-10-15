@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodSAML model module.
  * @module model/CreateAuthMethodSAML
- * @version 3.4.0
+ * @version 3.5.0
  */
 class CreateAuthMethodSAML {
     /**
@@ -81,6 +81,9 @@ class CreateAuthMethodSAML {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('subclaims-delimiters')) {
+                obj['subclaims-delimiters'] = ApiClient.convertToType(data['subclaims-delimiters'], ['String']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -160,6 +163,12 @@ CreateAuthMethodSAML.prototype['jwt-ttl'] = 0;
  * @member {String} name
  */
 CreateAuthMethodSAML.prototype['name'] = undefined;
+
+/**
+ * A list of additional sub claims delimiters (relevant only for SAML, OIDC, OAuth2/JWT)
+ * @member {Array.<String>} subclaims-delimiters
+ */
+CreateAuthMethodSAML.prototype['subclaims-delimiters'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

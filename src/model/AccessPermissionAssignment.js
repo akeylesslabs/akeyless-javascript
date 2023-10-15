@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccessPermissionAssignment model module.
  * @module model/AccessPermissionAssignment
- * @version 3.4.0
+ * @version 3.5.0
  */
 class AccessPermissionAssignment {
     /**
@@ -50,6 +50,9 @@ class AccessPermissionAssignment {
             if (data.hasOwnProperty('access_id')) {
                 obj['access_id'] = ApiClient.convertToType(data['access_id'], 'String');
             }
+            if (data.hasOwnProperty('access_type')) {
+                obj['access_type'] = ApiClient.convertToType(data['access_type'], 'String');
+            }
             if (data.hasOwnProperty('sub_claims')) {
                 obj['sub_claims'] = ApiClient.convertToType(data['sub_claims'], {'String': ['String']});
             }
@@ -64,6 +67,11 @@ class AccessPermissionAssignment {
  * @member {String} access_id
  */
 AccessPermissionAssignment.prototype['access_id'] = undefined;
+
+/**
+ * @member {String} access_type
+ */
+AccessPermissionAssignment.prototype['access_type'] = undefined;
 
 /**
  * @member {Object.<String, Array.<String>>} sub_claims

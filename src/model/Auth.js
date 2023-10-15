@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 3.4.0
+ * @version 3.5.0
  */
 class Auth {
     /**
@@ -166,7 +166,7 @@ Auth.prototype['cloud-id'] = undefined;
 Auth.prototype['debug'] = undefined;
 
 /**
- * Gateway URL for the K8S authenticated (relevant only for access-type=k8s)
+ * Gateway URL for the K8S/OAUTH2 authenticated (relevant only for access-type=k8s/oauth2)
  * @member {String} gateway-url
  */
 Auth.prototype['gateway-url'] = undefined;

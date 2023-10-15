@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOAuth2 model module.
  * @module model/UpdateAuthMethodOAuth2
- * @version 3.4.0
+ * @version 3.5.0
  */
 class UpdateAuthMethodOAuth2 {
     /**
@@ -69,6 +69,9 @@ class UpdateAuthMethodOAuth2 {
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
             }
+            if (data.hasOwnProperty('gateway-url')) {
+                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
+            }
             if (data.hasOwnProperty('gw-bound-ips')) {
                 obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
             }
@@ -92,6 +95,9 @@ class UpdateAuthMethodOAuth2 {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('subclaims-delimiters')) {
+                obj['subclaims-delimiters'] = ApiClient.convertToType(data['subclaims-delimiters'], ['String']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -139,6 +145,12 @@ UpdateAuthMethodOAuth2.prototype['bound-ips'] = undefined;
  * @member {Boolean} force-sub-claims
  */
 UpdateAuthMethodOAuth2.prototype['force-sub-claims'] = undefined;
+
+/**
+ * Akeyless Gateway URL (Configuration Management port). Relevant only when the jwks-uri is accessible only from the gateway.
+ * @member {String} gateway-url
+ */
+UpdateAuthMethodOAuth2.prototype['gateway-url'] = undefined;
 
 /**
  * A CIDR whitelist with the GW IPs that the access is restricted to
@@ -190,6 +202,12 @@ UpdateAuthMethodOAuth2.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateAuthMethodOAuth2.prototype['new-name'] = undefined;
+
+/**
+ * A list of additional sub claims delimiters (relevant only for SAML, OIDC, OAuth2/JWT)
+ * @member {Array.<String>} subclaims-delimiters
+ */
+UpdateAuthMethodOAuth2.prototype['subclaims-delimiters'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

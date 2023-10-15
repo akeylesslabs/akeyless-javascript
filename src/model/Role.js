@@ -18,7 +18,7 @@ import Rules from './Rules';
 /**
  * The Role model module.
  * @module model/Role
- * @version 3.4.0
+ * @version 3.5.0
  */
 class Role {
     /**
@@ -52,6 +52,9 @@ class Role {
             if (data.hasOwnProperty('access_date')) {
                 obj['access_date'] = ApiClient.convertToType(data['access_date'], 'Date');
             }
+            if (data.hasOwnProperty('access_date_display')) {
+                obj['access_date_display'] = ApiClient.convertToType(data['access_date_display'], 'String');
+            }
             if (data.hasOwnProperty('client_permissions')) {
                 obj['client_permissions'] = ApiClient.convertToType(data['client_permissions'], ['String']);
             }
@@ -84,6 +87,11 @@ class Role {
  * @member {Date} access_date
  */
 Role.prototype['access_date'] = undefined;
+
+/**
+ * @member {String} access_date_display
+ */
+Role.prototype['access_date_display'] = undefined;
 
 /**
  * @member {Array.<String>} client_permissions
