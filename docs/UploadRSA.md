@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **name** | **String** | Name of key to be created | 
 **overwrite** | **String** | When the overwrite flag is set, this command will only update an existing key [true/false] | [optional] [default to &#39;false&#39;]
 **rsaFileData** | **String** | RSA private key data, base64 encoded | [optional] 
-**splitLevel** | **Number** | The number of fragments that the item will be split into | [optional] [default to 2]
+**splitLevel** | **Number** | The number of fragments that the item will be split into | [optional] [default to 3]
 **tag** | **[String]** | List of the tags attached to this key | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 

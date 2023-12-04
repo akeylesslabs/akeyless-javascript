@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEventForwarder model module.
  * @module model/CreateEventForwarder
- * @version 3.5.0
+ * @version 3.5.1
  */
 class CreateEventForwarder {
     /**
@@ -60,6 +60,18 @@ class CreateEventForwarder {
             }
             if (data.hasOwnProperty('admin-pwd')) {
                 obj['admin-pwd'] = ApiClient.convertToType(data['admin-pwd'], 'String');
+            }
+            if (data.hasOwnProperty('app-private-key-base64')) {
+                obj['app-private-key-base64'] = ApiClient.convertToType(data['app-private-key-base64'], 'String');
+            }
+            if (data.hasOwnProperty('auth-type')) {
+                obj['auth-type'] = ApiClient.convertToType(data['auth-type'], 'String');
+            }
+            if (data.hasOwnProperty('client-id')) {
+                obj['client-id'] = ApiClient.convertToType(data['client-id'], 'String');
+            }
+            if (data.hasOwnProperty('client-secret')) {
+                obj['client-secret'] = ApiClient.convertToType(data['client-secret'], 'String');
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
@@ -106,6 +118,9 @@ class CreateEventForwarder {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
+            if (data.hasOwnProperty('user-email')) {
+                obj['user-email'] = ApiClient.convertToType(data['user-email'], 'String');
+            }
         }
         return obj;
     }
@@ -124,6 +139,31 @@ CreateEventForwarder.prototype['admin-name'] = undefined;
  * @member {String} admin-pwd
  */
 CreateEventForwarder.prototype['admin-pwd'] = undefined;
+
+/**
+ * The RSA Private Key PEM formatted in base64 to use when connecting to ServiceNow with jwt authentication
+ * @member {String} app-private-key-base64
+ */
+CreateEventForwarder.prototype['app-private-key-base64'] = undefined;
+
+/**
+ * The authentication type to use when connecting to ServiceNow (user-pass / jwt)
+ * @member {String} auth-type
+ * @default 'user-pass'
+ */
+CreateEventForwarder.prototype['auth-type'] = 'user-pass';
+
+/**
+ * The client ID to use when connecting to ServiceNow with jwt authentication
+ * @member {String} client-id
+ */
+CreateEventForwarder.prototype['client-id'] = undefined;
+
+/**
+ * The client secret to use when connecting to ServiceNow with jwt authentication
+ * @member {String} client-secret
+ */
+CreateEventForwarder.prototype['client-secret'] = undefined;
 
 /**
  * Deprecated - use description
@@ -214,6 +254,12 @@ CreateEventForwarder.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateEventForwarder.prototype['uid-token'] = undefined;
+
+/**
+ * The user email to use when connecting to ServiceNow with jwt authentication
+ * @member {String} user-email
+ */
+CreateEventForwarder.prototype['user-email'] = undefined;
 
 
 

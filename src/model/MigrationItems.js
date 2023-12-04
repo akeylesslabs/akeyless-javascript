@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MigrationItems model module.
  * @module model/MigrationItems
- * @version 3.5.0
+ * @version 3.5.1
  */
 class MigrationItems {
     /**
@@ -59,6 +59,9 @@ class MigrationItems {
             if (data.hasOwnProperty('total')) {
                 obj['total'] = ApiClient.convertToType(data['total'], 'Number');
             }
+            if (data.hasOwnProperty('updated')) {
+                obj['updated'] = ApiClient.convertToType(data['updated'], 'Number');
+            }
         }
         return obj;
     }
@@ -85,6 +88,11 @@ MigrationItems.prototype['skipped'] = undefined;
  * @member {Number} total
  */
 MigrationItems.prototype['total'] = undefined;
+
+/**
+ * @member {Number} updated
+ */
+MigrationItems.prototype['updated'] = undefined;
 
 
 

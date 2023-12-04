@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHCertIssuer model module.
  * @module model/CreateSSHCertIssuer
- * @version 3.5.0
+ * @version 3.5.1
  */
 class CreateSSHCertIssuer {
     /**
@@ -55,6 +55,9 @@ class CreateSSHCertIssuer {
         if (data) {
             obj = obj || new CreateSSHCertIssuer();
 
+            if (data.hasOwnProperty('SshCertIssuerHostProvider')) {
+                obj['SshCertIssuerHostProvider'] = ApiClient.convertToType(data['SshCertIssuerHostProvider'], 'String');
+            }
             if (data.hasOwnProperty('allowed-users')) {
                 obj['allowed-users'] = ApiClient.convertToType(data['allowed-users'], 'String');
             }
@@ -66,6 +69,9 @@ class CreateSSHCertIssuer {
             }
             if (data.hasOwnProperty('extensions')) {
                 obj['extensions'] = ApiClient.convertToType(data['extensions'], {'String': 'String'});
+            }
+            if (data.hasOwnProperty('host-provider')) {
+                obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -103,6 +109,9 @@ class CreateSSHCertIssuer {
             if (data.hasOwnProperty('tag')) {
                 obj['tag'] = ApiClient.convertToType(data['tag'], ['String']);
             }
+            if (data.hasOwnProperty('target')) {
+                obj['target'] = ApiClient.convertToType(data['target'], ['String']);
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -118,6 +127,11 @@ class CreateSSHCertIssuer {
 
 
 }
+
+/**
+ * @member {String} SshCertIssuerHostProvider
+ */
+CreateSSHCertIssuer.prototype['SshCertIssuerHostProvider'] = undefined;
 
 /**
  * Users allowed to fetch the certificate, e.g root,ubuntu
@@ -142,6 +156,13 @@ CreateSSHCertIssuer.prototype['description'] = undefined;
  * @member {Object.<String, String>} extensions
  */
 CreateSSHCertIssuer.prototype['extensions'] = undefined;
+
+/**
+ * Host provider type [explicit/target]
+ * @member {String} host-provider
+ * @default 'explicit'
+ */
+CreateSSHCertIssuer.prototype['host-provider'] = 'explicit';
 
 /**
  * Set output format to JSON
@@ -215,6 +236,12 @@ CreateSSHCertIssuer.prototype['signer-key-name'] = undefined;
  * @member {Array.<String>} tag
  */
 CreateSSHCertIssuer.prototype['tag'] = undefined;
+
+/**
+ * A list of existing targets to be associated, Relevant only for Secure Remote Access, To specify multiple targets use argument multiple times
+ * @member {Array.<String>} target
+ */
+CreateSSHCertIssuer.prototype['target'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

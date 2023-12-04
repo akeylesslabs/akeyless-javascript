@@ -25,7 +25,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 3.5.0
+ * @version 3.5.1
  */
 class Item {
     /**
@@ -142,6 +142,9 @@ class Item {
             }
             if (data.hasOwnProperty('item_versions')) {
                 obj['item_versions'] = ApiClient.convertToType(data['item_versions'], [ItemVersion]);
+            }
+            if (data.hasOwnProperty('last_rotation_date')) {
+                obj['last_rotation_date'] = ApiClient.convertToType(data['last_rotation_date'], 'Date');
             }
             if (data.hasOwnProperty('last_version')) {
                 obj['last_version'] = ApiClient.convertToType(data['last_version'], 'Number');
@@ -328,6 +331,11 @@ Item.prototype['item_type'] = undefined;
  * @member {Array.<module:model/ItemVersion>} item_versions
  */
 Item.prototype['item_versions'] = undefined;
+
+/**
+ * @member {Date} last_rotation_date
+ */
+Item.prototype['last_rotation_date'] = undefined;
 
 /**
  * @member {Number} last_version

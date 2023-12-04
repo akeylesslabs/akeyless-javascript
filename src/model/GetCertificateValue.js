@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCertificateValue model module.
  * @module model/GetCertificateValue
- * @version 3.5.0
+ * @version 3.5.1
  */
 class GetCertificateValue {
     /**
@@ -52,9 +52,6 @@ class GetCertificateValue {
             if (data.hasOwnProperty('cert-issuer-name')) {
                 obj['cert-issuer-name'] = ApiClient.convertToType(data['cert-issuer-name'], 'String');
             }
-            if (data.hasOwnProperty('certificate-file-output')) {
-                obj['certificate-file-output'] = ApiClient.convertToType(data['certificate-file-output'], 'String');
-            }
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
             }
@@ -69,9 +66,6 @@ class GetCertificateValue {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('private-key-file-output')) {
-                obj['private-key-file-output'] = ApiClient.convertToType(data['private-key-file-output'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -94,12 +88,6 @@ class GetCertificateValue {
  * @member {String} cert-issuer-name
  */
 GetCertificateValue.prototype['cert-issuer-name'] = undefined;
-
-/**
- * File to write the certificates to.
- * @member {String} certificate-file-output
- */
-GetCertificateValue.prototype['certificate-file-output'] = undefined;
 
 /**
  * Certificate display ID
@@ -133,12 +121,6 @@ GetCertificateValue.prototype['json'] = false;
  * @default 'dummy_certificate_name'
  */
 GetCertificateValue.prototype['name'] = 'dummy_certificate_name';
-
-/**
- * File to write the private key to.
- * @member {String} private-key-file-output
- */
-GetCertificateValue.prototype['private-key-file-output'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

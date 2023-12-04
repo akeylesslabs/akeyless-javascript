@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateMigration model module.
  * @module model/GatewayCreateMigration
- * @version 3.5.0
+ * @version 3.5.1
  */
 class GatewayCreateMigration {
     /**
@@ -70,6 +70,9 @@ class GatewayCreateMigration {
             }
             if (data.hasOwnProperty('1password-vaults')) {
                 obj['1password-vaults'] = ApiClient.convertToType(data['1password-vaults'], ['String']);
+            }
+            if (data.hasOwnProperty('ad-discover-services')) {
+                obj['ad-discover-services'] = ApiClient.convertToType(data['ad-discover-services'], 'String');
             }
             if (data.hasOwnProperty('ad-ssh-port')) {
                 obj['ad-ssh-port'] = ApiClient.convertToType(data['ad-ssh-port'], 'String');
@@ -266,6 +269,13 @@ GatewayCreateMigration.prototype['1password-url'] = undefined;
  * @member {Array.<String>} 1password-vaults
  */
 GatewayCreateMigration.prototype['1password-vaults'] = undefined;
+
+/**
+ * Enable/Disable discovery of Windows services from each domain server as part of the SSH/Windows Rotated Secrets. Default is false. (Relevant only for Active Directory migration)
+ * @member {String} ad-discover-services
+ * @default 'false'
+ */
+GatewayCreateMigration.prototype['ad-discover-services'] = 'false';
 
 /**
  * Set the SSH Port for further connection to the domain servers. Default is port 22 (Relevant only for Active Directory migration)

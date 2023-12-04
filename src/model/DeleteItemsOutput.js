@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteItemsOutput model module.
  * @module model/DeleteItemsOutput
- * @version 3.5.0
+ * @version 3.5.1
  */
 class DeleteItemsOutput {
     /**
@@ -47,6 +47,12 @@ class DeleteItemsOutput {
         if (data) {
             obj = obj || new DeleteItemsOutput();
 
+            if (data.hasOwnProperty('deleted_items')) {
+                obj['deleted_items'] = ApiClient.convertToType(data['deleted_items'], ['String']);
+            }
+            if (data.hasOwnProperty('failed_deleted_items')) {
+                obj['failed_deleted_items'] = ApiClient.convertToType(data['failed_deleted_items'], {'String': 'String'});
+            }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
@@ -56,6 +62,16 @@ class DeleteItemsOutput {
 
 
 }
+
+/**
+ * @member {Array.<String>} deleted_items
+ */
+DeleteItemsOutput.prototype['deleted_items'] = undefined;
+
+/**
+ * @member {Object.<String, String>} failed_deleted_items
+ */
+DeleteItemsOutput.prototype['failed_deleted_items'] = undefined;
 
 /**
  * @member {String} path

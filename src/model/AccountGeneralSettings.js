@@ -15,11 +15,12 @@ import ApiClient from '../ApiClient';
 import DataProtectionSection from './DataProtectionSection';
 import PasswordPolicyInfo from './PasswordPolicyInfo';
 import SharingPolicyInfo from './SharingPolicyInfo';
+import UsageEventSetting from './UsageEventSetting';
 
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 3.5.0
+ * @version 3.5.1
  */
 class AccountGeneralSettings {
     /**
@@ -57,6 +58,9 @@ class AccountGeneralSettings {
             if (data.hasOwnProperty('account_default_key_name')) {
                 obj['account_default_key_name'] = ApiClient.convertToType(data['account_default_key_name'], 'String');
             }
+            if (data.hasOwnProperty('auth_usage_event')) {
+                obj['auth_usage_event'] = UsageEventSetting.constructFromObject(data['auth_usage_event']);
+            }
             if (data.hasOwnProperty('data_protection_section')) {
                 obj['data_protection_section'] = DataProtectionSection.constructFromObject(data['data_protection_section']);
             }
@@ -65,6 +69,9 @@ class AccountGeneralSettings {
             }
             if (data.hasOwnProperty('invalid_characters')) {
                 obj['invalid_characters'] = ApiClient.convertToType(data['invalid_characters'], 'String');
+            }
+            if (data.hasOwnProperty('item_usage_event')) {
+                obj['item_usage_event'] = UsageEventSetting.constructFromObject(data['item_usage_event']);
             }
             if (data.hasOwnProperty('lock_default_key')) {
                 obj['lock_default_key'] = ApiClient.convertToType(data['lock_default_key'], 'Boolean');
@@ -98,6 +105,11 @@ AccountGeneralSettings.prototype['account_default_key_item_id'] = undefined;
 AccountGeneralSettings.prototype['account_default_key_name'] = undefined;
 
 /**
+ * @member {module:model/UsageEventSetting} auth_usage_event
+ */
+AccountGeneralSettings.prototype['auth_usage_event'] = undefined;
+
+/**
  * @member {module:model/DataProtectionSection} data_protection_section
  */
 AccountGeneralSettings.prototype['data_protection_section'] = undefined;
@@ -112,6 +124,11 @@ AccountGeneralSettings.prototype['enable_request_for_access'] = undefined;
  * @member {String} invalid_characters
  */
 AccountGeneralSettings.prototype['invalid_characters'] = undefined;
+
+/**
+ * @member {module:model/UsageEventSetting} item_usage_event
+ */
+AccountGeneralSettings.prototype['item_usage_event'] = undefined;
 
 /**
  * LockDefaultKey determines whether the configured default key can be updated by end-users on a per-request basis true - all requests use the configured default key false - every request can determine its protection key (default) nil - change nothing (every request can determine its protection key (default)) This parameter is only relevant if AccountDefaultKeyItemID is not empty

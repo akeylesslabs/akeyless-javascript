@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteGwCluster model module.
  * @module model/DeleteGwCluster
- * @version 3.5.0
+ * @version 3.5.1
  */
 class DeleteGwCluster {
     /**

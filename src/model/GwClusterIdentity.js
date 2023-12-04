@@ -17,7 +17,7 @@ import CfInfo from './CfInfo';
 /**
  * The GwClusterIdentity model module.
  * @module model/GwClusterIdentity
- * @version 3.5.0
+ * @version 3.5.1
  */
 class GwClusterIdentity {
     /**
@@ -48,6 +48,9 @@ class GwClusterIdentity {
         if (data) {
             obj = obj || new GwClusterIdentity();
 
+            if (data.hasOwnProperty('action_allowed')) {
+                obj['action_allowed'] = ApiClient.convertToType(data['action_allowed'], 'Boolean');
+            }
             if (data.hasOwnProperty('allowed')) {
                 obj['allowed'] = ApiClient.convertToType(data['allowed'], 'Boolean');
             }
@@ -93,6 +96,11 @@ class GwClusterIdentity {
 
 
 }
+
+/**
+ * @member {Boolean} action_allowed
+ */
+GwClusterIdentity.prototype['action_allowed'] = undefined;
 
 /**
  * @member {Boolean} allowed

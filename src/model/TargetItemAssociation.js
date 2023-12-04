@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetItemAssociation model module.
  * @module model/TargetItemAssociation
- * @version 3.5.0
+ * @version 3.5.1
  */
 class TargetItemAssociation {
     /**
      * Constructs a new <code>TargetItemAssociation</code>.
-     * TargetItemAssociation includes details of an association between a target and an item.
+     * TargetItemAssociation includes details of an association between a target and an item. Also, between targets in case of CredentialsLess target or Linked target.
      * @alias module:model/TargetItemAssociation
      */
     constructor() { 

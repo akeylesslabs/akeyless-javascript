@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import WindowsService from './WindowsService';
 
 /**
  * The RotatedSecretDetailsInfo model module.
  * @module model/RotatedSecretDetailsInfo
- * @version 3.5.0
+ * @version 3.5.1
  */
 class RotatedSecretDetailsInfo {
     /**
@@ -81,6 +82,9 @@ class RotatedSecretDetailsInfo {
             if (data.hasOwnProperty('same_password')) {
                 obj['same_password'] = ApiClient.convertToType(data['same_password'], 'Boolean');
             }
+            if (data.hasOwnProperty('services_details')) {
+                obj['services_details'] = ApiClient.convertToType(data['services_details'], [WindowsService]);
+            }
         }
         return obj;
     }
@@ -143,6 +147,11 @@ RotatedSecretDetailsInfo.prototype['rotator_type'] = undefined;
  * @member {Boolean} same_password
  */
 RotatedSecretDetailsInfo.prototype['same_password'] = undefined;
+
+/**
+ * @member {Array.<module:model/WindowsService>} services_details
+ */
+RotatedSecretDetailsInfo.prototype['services_details'] = undefined;
 
 
 

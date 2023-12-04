@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import TargetNameWithHosts from './TargetNameWithHosts';
 
 /**
  * The SecureRemoteAccess model module.
  * @module model/SecureRemoteAccess
- * @version 3.5.0
+ * @version 3.5.1
  */
 class SecureRemoteAccess {
     /**
@@ -89,6 +90,9 @@ class SecureRemoteAccess {
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], ['String']);
             }
+            if (data.hasOwnProperty('host_provider_type')) {
+                obj['host_provider_type'] = ApiClient.convertToType(data['host_provider_type'], 'String');
+            }
             if (data.hasOwnProperty('is_cli')) {
                 obj['is_cli'] = ApiClient.convertToType(data['is_cli'], 'Boolean');
             }
@@ -124,6 +128,9 @@ class SecureRemoteAccess {
             }
             if (data.hasOwnProperty('ssh_user')) {
                 obj['ssh_user'] = ApiClient.convertToType(data['ssh_user'], 'String');
+            }
+            if (data.hasOwnProperty('target_hosts')) {
+                obj['target_hosts'] = ApiClient.convertToType(data['target_hosts'], [TargetNameWithHosts]);
             }
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
@@ -212,6 +219,11 @@ SecureRemoteAccess.prototype['endpoint'] = undefined;
 SecureRemoteAccess.prototype['host'] = undefined;
 
 /**
+ * @member {String} host_provider_type
+ */
+SecureRemoteAccess.prototype['host_provider_type'] = undefined;
+
+/**
  * @member {Boolean} is_cli
  */
 SecureRemoteAccess.prototype['is_cli'] = undefined;
@@ -270,6 +282,11 @@ SecureRemoteAccess.prototype['ssh_private_key'] = undefined;
  * @member {String} ssh_user
  */
 SecureRemoteAccess.prototype['ssh_user'] = undefined;
+
+/**
+ * @member {Array.<module:model/TargetNameWithHosts>} target_hosts
+ */
+SecureRemoteAccess.prototype['target_hosts'] = undefined;
 
 /**
  * @member {String} url

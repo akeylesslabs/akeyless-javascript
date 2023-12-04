@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotateSecret model module.
  * @module model/RotateSecret
- * @version 3.5.0
+ * @version 3.5.1
  */
 class RotateSecret {
     /**
@@ -49,11 +49,17 @@ class RotateSecret {
         if (data) {
             obj = obj || new RotateSecret();
 
+            if (data.hasOwnProperty('RotateAllServicesBoolean')) {
+                obj['RotateAllServicesBoolean'] = ApiClient.convertToType(data['RotateAllServicesBoolean'], 'Boolean');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-all-services')) {
+                obj['rotate-all-services'] = ApiClient.convertToType(data['rotate-all-services'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -69,6 +75,11 @@ class RotateSecret {
 }
 
 /**
+ * @member {Boolean} RotateAllServicesBoolean
+ */
+RotateSecret.prototype['RotateAllServicesBoolean'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  * @default false
@@ -80,6 +91,13 @@ RotateSecret.prototype['json'] = false;
  * @member {String} name
  */
 RotateSecret.prototype['name'] = undefined;
+
+/**
+ * Rotate all associated services
+ * @member {String} rotate-all-services
+ * @default 'false'
+ */
+RotateSecret.prototype['rotate-all-services'] = 'false';
 
 /**
  * Authentication token (see `/auth` and `/configure`)

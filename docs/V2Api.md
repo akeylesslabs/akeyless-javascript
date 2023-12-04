@@ -3808,7 +3808,7 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EsmUpdate(); // EsmUpdate | 
+let body = new akeyless.EsmCreate(); // EsmCreate | 
 apiInstance.esmCreate(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -3822,7 +3822,7 @@ apiInstance.esmCreate(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EsmUpdate**](EsmUpdate.md)|  | 
+ **body** | [**EsmCreate**](EsmCreate.md)|  | 
 
 ### Return type
 
@@ -3966,7 +3966,7 @@ No authorization required
 
 ## esmUpdate
 
-> EsmUpdateSecretOutput esmUpdate()
+> EsmUpdateSecretOutput esmUpdate(body)
 
 
 
@@ -3976,7 +3976,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-apiInstance.esmUpdate().then((data) => {
+let body = new akeyless.EsmUpdate(); // EsmUpdate | 
+apiInstance.esmUpdate(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3986,7 +3987,10 @@ apiInstance.esmUpdate().then((data) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EsmUpdate**](EsmUpdate.md)|  | 
 
 ### Return type
 
@@ -3998,7 +4002,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -7702,7 +7706,7 @@ No authorization required
 
 ## getDynamicSecretValue
 
-> {String: String} getDynamicSecretValue(body)
+> Object getDynamicSecretValue(body)
 
 
 
@@ -7730,7 +7734,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{String: String}**
+**Object**
 
 ### Authorization
 
@@ -8038,7 +8042,7 @@ No authorization required
 
 ## getRotatedSecretValue
 
-> {String: Object} getRotatedSecretValue(body)
+> Object getRotatedSecretValue(body)
 
 
 
@@ -8066,7 +8070,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{String: Object}**
+**Object**
 
 ### Authorization
 

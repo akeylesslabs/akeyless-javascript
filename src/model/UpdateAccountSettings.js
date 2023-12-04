@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 3.5.0
+ * @version 3.5.1
  */
 class UpdateAccountSettings {
     /**
@@ -112,6 +112,15 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('usage-event-enable')) {
+                obj['usage-event-enable'] = ApiClient.convertToType(data['usage-event-enable'], 'String');
+            }
+            if (data.hasOwnProperty('usage-event-interval')) {
+                obj['usage-event-interval'] = ApiClient.convertToType(data['usage-event-interval'], 'Number');
+            }
+            if (data.hasOwnProperty('usage-event-object-type')) {
+                obj['usage-event-object-type'] = ApiClient.convertToType(data['usage-event-object-type'], 'String');
             }
             if (data.hasOwnProperty('use-lower-letters')) {
                 obj['use-lower-letters'] = ApiClient.convertToType(data['use-lower-letters'], 'String');
@@ -265,6 +274,24 @@ UpdateAccountSettings.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateAccountSettings.prototype['uid-token'] = undefined;
+
+/**
+ * Enable event for objects that have not been used or changed [true/false]
+ * @member {String} usage-event-enable
+ */
+UpdateAccountSettings.prototype['usage-event-enable'] = undefined;
+
+/**
+ * Interval by days for unused objects. Default and minimum interval is 90 days
+ * @member {Number} usage-event-interval
+ */
+UpdateAccountSettings.prototype['usage-event-interval'] = undefined;
+
+/**
+ * Usage event is supported for auth method or secrets-and-keys [auth/item]
+ * @member {String} usage-event-object-type
+ */
+UpdateAccountSettings.prototype['usage-event-object-type'] = undefined;
 
 /**
  * Password must contain lower case letters [true/false]

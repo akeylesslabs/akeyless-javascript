@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **rotatorStatus** | **String** | RotationStatus defines types of rotation Status | [optional] 
 **rotatorType** | **String** |  | [optional] 
 **samePassword** | **Boolean** |  | [optional] 
+**servicesDetails** | [**[WindowsService]**](WindowsService.md) |  | [optional] 
 
 

@@ -4,11 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**sshCertIssuerHostProvider** | **String** |  | [optional] 
 **addTag** | **[String]** | List of the new tags that will be attached to this item | [optional] 
 **allowedUsers** | **String** | Users allowed to fetch the certificate, e.g root,ubuntu | 
 **deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **extensions** | **{String: String}** | Signed certificates with extensions, e.g permit-port-forwarding&#x3D;\\\&quot;\\\&quot; | [optional] 
+**hostProvider** | **String** | Host provider type [explicit/target] | [optional] [default to &#39;explicit&#39;]
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **metadata** | **String** | Deprecated - use description | [optional] 
 **name** | **String** | SSH certificate issuer name | 

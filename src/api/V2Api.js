@@ -169,6 +169,7 @@ import EncryptGPG from '../model/EncryptGPG';
 import EncryptGPGOutput from '../model/EncryptGPGOutput';
 import EncryptOutput from '../model/EncryptOutput';
 import EncryptWithClassicKey from '../model/EncryptWithClassicKey';
+import EsmCreate from '../model/EsmCreate';
 import EsmCreateSecretOutput from '../model/EsmCreateSecretOutput';
 import EsmDelete from '../model/EsmDelete';
 import EsmDeleteSecretOutput from '../model/EsmDeleteSecretOutput';
@@ -558,7 +559,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.5.0
+* @version 3.5.1
 */
 export default class V2Api {
 
@@ -4145,7 +4146,7 @@ export default class V2Api {
 
 
     /**
-     * @param {module:model/EsmUpdate} body 
+     * @param {module:model/EsmCreate} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EsmCreateSecretOutput} and HTTP response
      */
     esmCreateWithHttpInfo(body) {
@@ -4176,7 +4177,7 @@ export default class V2Api {
     }
 
     /**
-     * @param {module:model/EsmUpdate} body 
+     * @param {module:model/EsmCreate} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EsmCreateSecretOutput}
      */
     esmCreate(body) {
@@ -4317,10 +4318,15 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/EsmUpdate} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EsmUpdateSecretOutput} and HTTP response
      */
-    esmUpdateWithHttpInfo() {
-      let postBody = null;
+    esmUpdateWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling esmUpdate");
+      }
 
       let pathParams = {
       };
@@ -4332,7 +4338,7 @@ export default class V2Api {
       };
 
       let authNames = [];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = EsmUpdateSecretOutput;
       return this.apiClient.callApi(
@@ -4343,10 +4349,11 @@ export default class V2Api {
     }
 
     /**
+     * @param {module:model/EsmUpdate} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EsmUpdateSecretOutput}
      */
-    esmUpdate() {
-      return this.esmUpdateWithHttpInfo()
+    esmUpdate(body) {
+      return this.esmUpdateWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -8130,7 +8137,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetDynamicSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     getDynamicSecretValueWithHttpInfo(body) {
       let postBody = body;
@@ -8151,7 +8158,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = {'String': 'String'};
+      let returnType = Object;
       return this.apiClient.callApi(
         '/get-dynamic-secret-value', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -8161,7 +8168,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetDynamicSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     getDynamicSecretValue(body) {
       return this.getDynamicSecretValueWithHttpInfo(body)
@@ -8474,7 +8481,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetRotatedSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: Object}>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     getRotatedSecretValueWithHttpInfo(body) {
       let postBody = body;
@@ -8495,7 +8502,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = {'String': Object};
+      let returnType = Object;
       return this.apiClient.callApi(
         '/get-rotated-secret-value', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -8505,7 +8512,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetRotatedSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: Object}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     getRotatedSecretValue(body) {
       return this.getRotatedSecretValueWithHttpInfo(body)

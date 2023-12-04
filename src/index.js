@@ -611,6 +611,7 @@ import SystemAccessCredsSettings from './model/SystemAccessCredsSettings';
 import Target from './model/Target';
 import TargetItemAssociation from './model/TargetItemAssociation';
 import TargetItemVersion from './model/TargetItemVersion';
+import TargetNameWithHosts from './model/TargetNameWithHosts';
 import TargetTypeDetailsInput from './model/TargetTypeDetailsInput';
 import TmpUserData from './model/TmpUserData';
 import Tokenize from './model/Tokenize';
@@ -718,6 +719,7 @@ import UpdateZeroSSLTarget from './model/UpdateZeroSSLTarget';
 import UpdateZeroSSLTargetOutput from './model/UpdateZeroSSLTargetOutput';
 import UploadPKCS12 from './model/UploadPKCS12';
 import UploadRSA from './model/UploadRSA';
+import UsageEventSetting from './model/UsageEventSetting';
 import ValidateToken from './model/ValidateToken';
 import ValidateTokenOutput from './model/ValidateTokenOutput';
 import VaultlessTokenizerInfo from './model/VaultlessTokenizerInfo';
@@ -732,6 +734,8 @@ import VerifyPKICertOutput from './model/VerifyPKICertOutput';
 import VerifyPKICertWithClassicKey from './model/VerifyPKICertWithClassicKey';
 import VerifyRsaSsaPss from './model/VerifyRsaSsaPss';
 import WebTargetDetails from './model/WebTargetDetails';
+import WindowsService from './model/WindowsService';
+import WindowsServiceAttributes from './model/WindowsServiceAttributes';
 import WindowsTargetDetails from './model/WindowsTargetDetails';
 import ZeroSSLTargetDetails from './model/ZeroSSLTargetDetails';
 import V2Api from './api/V2Api';
@@ -766,7 +770,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.5.0
+* @version 3.5.1
 */
 export {
     /**
@@ -4364,6 +4368,12 @@ export {
     TargetItemVersion,
 
     /**
+     * The TargetNameWithHosts model constructor.
+     * @property {module:model/TargetNameWithHosts}
+     */
+    TargetNameWithHosts,
+
+    /**
      * The TargetTypeDetailsInput model constructor.
      * @property {module:model/TargetTypeDetailsInput}
      */
@@ -5006,6 +5016,12 @@ export {
     UploadRSA,
 
     /**
+     * The UsageEventSetting model constructor.
+     * @property {module:model/UsageEventSetting}
+     */
+    UsageEventSetting,
+
+    /**
      * The ValidateToken model constructor.
      * @property {module:model/ValidateToken}
      */
@@ -5088,6 +5104,18 @@ export {
      * @property {module:model/WebTargetDetails}
      */
     WebTargetDetails,
+
+    /**
+     * The WindowsService model constructor.
+     * @property {module:model/WindowsService}
+     */
+    WindowsService,
+
+    /**
+     * The WindowsServiceAttributes model constructor.
+     * @property {module:model/WindowsServiceAttributes}
+     */
+    WindowsServiceAttributes,
 
     /**
      * The WindowsTargetDetails model constructor.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadRSA model module.
  * @module model/UploadRSA
- * @version 3.5.0
+ * @version 3.5.1
  */
 class UploadRSA {
     /**
@@ -165,9 +165,9 @@ UploadRSA.prototype['rsa-file-data'] = undefined;
 /**
  * The number of fragments that the item will be split into
  * @member {Number} split-level
- * @default 2
+ * @default 3
  */
-UploadRSA.prototype['split-level'] = 2;
+UploadRSA.prototype['split-level'] = 3;
 
 /**
  * List of the tags attached to this key

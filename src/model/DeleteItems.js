@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteItems model module.
  * @module model/DeleteItems
- * @version 3.5.0
+ * @version 3.5.1
  */
 class DeleteItems {
     /**
@@ -49,6 +49,9 @@ class DeleteItems {
         if (data) {
             obj = obj || new DeleteItems();
 
+            if (data.hasOwnProperty('item')) {
+                obj['item'] = ApiClient.convertToType(data['item'], ['String']);
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -69,6 +72,12 @@ class DeleteItems {
 }
 
 /**
+ * A list of items to delete, To specify multiple items use argument multiple times
+ * @member {Array.<String>} item
+ */
+DeleteItems.prototype['item'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  * @default false
@@ -78,8 +87,9 @@ DeleteItems.prototype['json'] = false;
 /**
  * Path to delete the items from
  * @member {String} path
+ * @default 'dummy_path'
  */
-DeleteItems.prototype['path'] = undefined;
+DeleteItems.prototype['path'] = 'dummy_path';
 
 /**
  * Authentication token (see `/auth` and `/configure`)

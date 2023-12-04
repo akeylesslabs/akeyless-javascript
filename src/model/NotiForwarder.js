@@ -18,7 +18,7 @@ import ItemVersion from './ItemVersion';
 /**
  * The NotiForwarder model module.
  * @module model/NotiForwarder
- * @version 3.5.0
+ * @version 3.5.1
  */
 class NotiForwarder {
     /**
@@ -49,6 +49,12 @@ class NotiForwarder {
         if (data) {
             obj = obj || new NotiForwarder();
 
+            if (data.hasOwnProperty('auth_type')) {
+                obj['auth_type'] = ApiClient.convertToType(data['auth_type'], 'String');
+            }
+            if (data.hasOwnProperty('client_id')) {
+                obj['client_id'] = ApiClient.convertToType(data['client_id'], 'String');
+            }
             if (data.hasOwnProperty('client_permissions')) {
                 obj['client_permissions'] = ApiClient.convertToType(data['client_permissions'], ['String']);
             }
@@ -103,6 +109,9 @@ class NotiForwarder {
             if (data.hasOwnProperty('to_emails')) {
                 obj['to_emails'] = ApiClient.convertToType(data['to_emails'], [EmailEntry]);
             }
+            if (data.hasOwnProperty('user_email')) {
+                obj['user_email'] = ApiClient.convertToType(data['user_email'], 'String');
+            }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
@@ -115,6 +124,17 @@ class NotiForwarder {
 
 
 }
+
+/**
+ * @member {String} auth_type
+ */
+NotiForwarder.prototype['auth_type'] = undefined;
+
+/**
+ * Auth - JWT
+ * @member {String} client_id
+ */
+NotiForwarder.prototype['client_id'] = undefined;
 
 /**
  * @member {Array.<String>} client_permissions
@@ -207,6 +227,12 @@ NotiForwarder.prototype['timespan_in_seconds'] = undefined;
 NotiForwarder.prototype['to_emails'] = undefined;
 
 /**
+ * @member {String} user_email
+ */
+NotiForwarder.prototype['user_email'] = undefined;
+
+/**
+ * Auth - User Password
  * @member {String} username
  */
 NotiForwarder.prototype['username'] = undefined;

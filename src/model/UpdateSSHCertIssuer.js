@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHCertIssuer model module.
  * @module model/UpdateSSHCertIssuer
- * @version 3.5.0
+ * @version 3.5.1
  */
 class UpdateSSHCertIssuer {
     /**
@@ -55,6 +55,9 @@ class UpdateSSHCertIssuer {
         if (data) {
             obj = obj || new UpdateSSHCertIssuer();
 
+            if (data.hasOwnProperty('SshCertIssuerHostProvider')) {
+                obj['SshCertIssuerHostProvider'] = ApiClient.convertToType(data['SshCertIssuerHostProvider'], 'String');
+            }
             if (data.hasOwnProperty('add-tag')) {
                 obj['add-tag'] = ApiClient.convertToType(data['add-tag'], ['String']);
             }
@@ -69,6 +72,9 @@ class UpdateSSHCertIssuer {
             }
             if (data.hasOwnProperty('extensions')) {
                 obj['extensions'] = ApiClient.convertToType(data['extensions'], {'String': 'String'});
+            }
+            if (data.hasOwnProperty('host-provider')) {
+                obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -126,6 +132,11 @@ class UpdateSSHCertIssuer {
 }
 
 /**
+ * @member {String} SshCertIssuerHostProvider
+ */
+UpdateSSHCertIssuer.prototype['SshCertIssuerHostProvider'] = undefined;
+
+/**
  * List of the new tags that will be attached to this item
  * @member {Array.<String>} add-tag
  */
@@ -154,6 +165,13 @@ UpdateSSHCertIssuer.prototype['description'] = undefined;
  * @member {Object.<String, String>} extensions
  */
 UpdateSSHCertIssuer.prototype['extensions'] = undefined;
+
+/**
+ * Host provider type [explicit/target]
+ * @member {String} host-provider
+ * @default 'explicit'
+ */
+UpdateSSHCertIssuer.prototype['host-provider'] = 'explicit';
 
 /**
  * Set output format to JSON

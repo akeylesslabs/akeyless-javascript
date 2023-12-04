@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeItem model module.
  * @module model/DescribeItem
- * @version 3.5.0
+ * @version 3.5.1
  */
 class DescribeItem {
     /**
@@ -49,6 +49,9 @@ class DescribeItem {
         if (data) {
             obj = obj || new DescribeItem();
 
+            if (data.hasOwnProperty('accessibility')) {
+                obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
+            }
             if (data.hasOwnProperty('bastion-details')) {
                 obj['bastion-details'] = ApiClient.convertToType(data['bastion-details'], 'Boolean');
             }
@@ -67,6 +70,9 @@ class DescribeItem {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('services-details')) {
+                obj['services-details'] = ApiClient.convertToType(data['services-details'], 'Boolean');
+            }
             if (data.hasOwnProperty('show-versions')) {
                 obj['show-versions'] = ApiClient.convertToType(data['show-versions'], 'Boolean');
             }
@@ -82,6 +88,13 @@ class DescribeItem {
 
 
 }
+
+/**
+ * for personal password manager
+ * @member {String} accessibility
+ * @default 'regular'
+ */
+DescribeItem.prototype['accessibility'] = 'regular';
 
 /**
  * Indicate if the item should return with ztb cluster details (url, etc)
@@ -121,6 +134,13 @@ DescribeItem.prototype['json'] = false;
  * @member {String} name
  */
 DescribeItem.prototype['name'] = undefined;
+
+/**
+ * Include all associated services details
+ * @member {Boolean} services-details
+ * @default false
+ */
+DescribeItem.prototype['services-details'] = false;
 
 /**
  * Include all item versions in reply

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignEcDsaOutput model module.
  * @module model/SignEcDsaOutput
- * @version 3.5.0
+ * @version 3.5.1
  */
 class SignEcDsaOutput {
     /**

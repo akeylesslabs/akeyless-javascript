@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateEventForwarder model module.
  * @module model/UpdateEventForwarder
- * @version 3.5.0
+ * @version 3.5.1
  */
 class UpdateEventForwarder {
     /**
@@ -51,6 +51,12 @@ class UpdateEventForwarder {
 
             if (data.hasOwnProperty('admin-name')) {
                 obj['admin-name'] = ApiClient.convertToType(data['admin-name'], 'String');
+            }
+            if (data.hasOwnProperty('auth-type')) {
+                obj['auth-type'] = ApiClient.convertToType(data['auth-type'], 'String');
+            }
+            if (data.hasOwnProperty('client-id')) {
+                obj['client-id'] = ApiClient.convertToType(data['client-id'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -88,6 +94,9 @@ class UpdateEventForwarder {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
+            if (data.hasOwnProperty('user-email')) {
+                obj['user-email'] = ApiClient.convertToType(data['user-email'], 'String');
+            }
         }
         return obj;
     }
@@ -100,6 +109,19 @@ class UpdateEventForwarder {
  * @member {String} admin-name
  */
 UpdateEventForwarder.prototype['admin-name'] = undefined;
+
+/**
+ * The authentication type to use when connecting to ServiceNow (user-pass / jwt)
+ * @member {String} auth-type
+ * @default 'user-pass'
+ */
+UpdateEventForwarder.prototype['auth-type'] = 'user-pass';
+
+/**
+ * The client ID to use when connecting to ServiceNow with jwt authentication
+ * @member {String} client-id
+ */
+UpdateEventForwarder.prototype['client-id'] = undefined;
 
 /**
  * Description of the object
@@ -176,6 +198,12 @@ UpdateEventForwarder.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateEventForwarder.prototype['uid-token'] = undefined;
+
+/**
+ * The user email to use when connecting to ServiceNow with jwt authentication
+ * @member {String} user-email
+ */
+UpdateEventForwarder.prototype['user-email'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ActiveDirectoryPayload model module.
  * @module model/ActiveDirectoryPayload
- * @version 3.5.0
+ * @version 3.5.1
  */
 class ActiveDirectoryPayload {
     /**
@@ -64,6 +64,9 @@ class ActiveDirectoryPayload {
             }
             if (data.hasOwnProperty('discover_local_users')) {
                 obj['discover_local_users'] = ApiClient.convertToType(data['discover_local_users'], 'Boolean');
+            }
+            if (data.hasOwnProperty('discover_services')) {
+                obj['discover_services'] = ApiClient.convertToType(data['discover_services'], 'Boolean');
             }
             if (data.hasOwnProperty('domain_name')) {
                 obj['domain_name'] = ApiClient.convertToType(data['domain_name'], 'String');
@@ -137,6 +140,11 @@ ActiveDirectoryPayload.prototype['computer_base_dn'] = undefined;
  * @member {Boolean} discover_local_users
  */
 ActiveDirectoryPayload.prototype['discover_local_users'] = undefined;
+
+/**
+ * @member {Boolean} discover_services
+ */
+ActiveDirectoryPayload.prototype['discover_services'] = undefined;
 
 /**
  * @member {String} domain_name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The APIKeyAccessRules model module.
  * @module model/APIKeyAccessRules
- * @version 3.5.0
+ * @version 3.5.1
  */
 class APIKeyAccessRules {
     /**
@@ -53,6 +53,9 @@ class APIKeyAccessRules {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
+            if (data.hasOwnProperty('modification_date')) {
+                obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
+            }
         }
         return obj;
     }
@@ -70,6 +73,11 @@ APIKeyAccessRules.prototype['alg'] = undefined;
  * @member {String} key
  */
 APIKeyAccessRules.prototype['key'] = undefined;
+
+/**
+ * @member {Date} modification_date
+ */
+APIKeyAccessRules.prototype['modification_date'] = undefined;
 
 
 
