@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateItem model module.
  * @module model/GatewayUpdateItem
- * @version 3.5.1
+ * @version 3.5.2
  */
 class GatewayUpdateItem {
     /**
@@ -75,6 +75,12 @@ class GatewayUpdateItem {
             }
             if (data.hasOwnProperty('gcp-key')) {
                 obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
+            }
+            if (data.hasOwnProperty('gcp-service-account-email')) {
+                obj['gcp-service-account-email'] = ApiClient.convertToType(data['gcp-service-account-email'], 'String');
+            }
+            if (data.hasOwnProperty('gcp-service-account-key-id')) {
+                obj['gcp-service-account-key-id'] = ApiClient.convertToType(data['gcp-service-account-key-id'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -179,6 +185,18 @@ GatewayUpdateItem.prototype['description'] = 'default_metadata';
  * @member {String} gcp-key
  */
 GatewayUpdateItem.prototype['gcp-key'] = undefined;
+
+/**
+ * The email of the gcp service account to rotate
+ * @member {String} gcp-service-account-email
+ */
+GatewayUpdateItem.prototype['gcp-service-account-email'] = undefined;
+
+/**
+ * The key id of the gcp service account to rotate
+ * @member {String} gcp-service-account-key-id
+ */
+GatewayUpdateItem.prototype['gcp-service-account-key-id'] = undefined;
 
 /**
  * Set output format to JSON

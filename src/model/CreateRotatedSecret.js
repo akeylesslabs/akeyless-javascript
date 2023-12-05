@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 3.5.1
+ * @version 3.5.2
  */
 class CreateRotatedSecret {
     /**
@@ -82,6 +82,12 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('gcp-key')) {
                 obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
+            }
+            if (data.hasOwnProperty('gcp-service-account-email')) {
+                obj['gcp-service-account-email'] = ApiClient.convertToType(data['gcp-service-account-email'], 'String');
+            }
+            if (data.hasOwnProperty('gcp-service-account-key-id')) {
+                obj['gcp-service-account-key-id'] = ApiClient.convertToType(data['gcp-service-account-key-id'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -256,6 +262,18 @@ CreateRotatedSecret.prototype['description'] = undefined;
  * @member {String} gcp-key
  */
 CreateRotatedSecret.prototype['gcp-key'] = undefined;
+
+/**
+ * The email of the gcp service account to rotate
+ * @member {String} gcp-service-account-email
+ */
+CreateRotatedSecret.prototype['gcp-service-account-email'] = undefined;
+
+/**
+ * The key id of the gcp service account to rotate
+ * @member {String} gcp-service-account-key-id
+ */
+CreateRotatedSecret.prototype['gcp-service-account-key-id'] = undefined;
 
 /**
  * Set output format to JSON

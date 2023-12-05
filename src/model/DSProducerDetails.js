@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 3.5.1
+ * @version 3.5.2
  */
 class DSProducerDetails {
     /**
@@ -306,6 +306,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('gcp_service_account_key_base64')) {
                 obj['gcp_service_account_key_base64'] = ApiClient.convertToType(data['gcp_service_account_key_base64'], 'String');
+            }
+            if (data.hasOwnProperty('gcp_service_account_key_id')) {
+                obj['gcp_service_account_key_id'] = ApiClient.convertToType(data['gcp_service_account_key_id'], 'String');
             }
             if (data.hasOwnProperty('gcp_service_account_type')) {
                 obj['gcp_service_account_type'] = ApiClient.convertToType(data['gcp_service_account_type'], 'String');
@@ -1141,6 +1144,11 @@ DSProducerDetails.prototype['gcp_service_account_key'] = undefined;
  * @member {String} gcp_service_account_key_base64
  */
 DSProducerDetails.prototype['gcp_service_account_key_base64'] = undefined;
+
+/**
+ * @member {String} gcp_service_account_key_id
+ */
+DSProducerDetails.prototype['gcp_service_account_key_id'] = undefined;
 
 /**
  * @member {String} gcp_service_account_type

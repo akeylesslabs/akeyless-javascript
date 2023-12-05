@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GcpTargetDetails model module.
  * @module model/GcpTargetDetails
- * @version 3.5.1
+ * @version 3.5.2
  */
 class GcpTargetDetails {
     /**
@@ -56,6 +56,9 @@ class GcpTargetDetails {
             if (data.hasOwnProperty('gcp_service_account_key_base64')) {
                 obj['gcp_service_account_key_base64'] = ApiClient.convertToType(data['gcp_service_account_key_base64'], 'String');
             }
+            if (data.hasOwnProperty('gcp_service_account_key_id')) {
+                obj['gcp_service_account_key_id'] = ApiClient.convertToType(data['gcp_service_account_key_id'], 'String');
+            }
             if (data.hasOwnProperty('use_gw_cloud_identity')) {
                 obj['use_gw_cloud_identity'] = ApiClient.convertToType(data['use_gw_cloud_identity'], 'Boolean');
             }
@@ -67,7 +70,6 @@ class GcpTargetDetails {
 }
 
 /**
- * deprecated
  * @member {String} gcp_service_account_email
  */
 GcpTargetDetails.prototype['gcp_service_account_email'] = undefined;
@@ -81,6 +83,11 @@ GcpTargetDetails.prototype['gcp_service_account_key'] = undefined;
  * @member {String} gcp_service_account_key_base64
  */
 GcpTargetDetails.prototype['gcp_service_account_key_base64'] = undefined;
+
+/**
+ * @member {String} gcp_service_account_key_id
+ */
+GcpTargetDetails.prototype['gcp_service_account_key_id'] = undefined;
 
 /**
  * @member {Boolean} use_gw_cloud_identity
