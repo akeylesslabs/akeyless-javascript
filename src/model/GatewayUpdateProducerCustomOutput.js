@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayUpdateProducerCustomOutput model module.
  * @module model/GatewayUpdateProducerCustomOutput
- * @version 3.5.2
+ * @version 3.5.1
  */
 class GatewayUpdateProducerCustomOutput {
     /**

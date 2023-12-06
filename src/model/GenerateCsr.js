@@ -16,18 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateCsr model module.
  * @module model/GenerateCsr
- * @version 3.5.2
+ * @version 3.5.1
  */
 class GenerateCsr {
     /**
      * Constructs a new <code>GenerateCsr</code>.
      * @alias module:model/GenerateCsr
      * @param commonName {String} The common name to be included in the CSR certificate
+     * @param keyType {String} The type of the key to generate (classic-key/dfc)
      * @param name {String} The classic key name
      */
-    constructor(commonName, name) { 
+    constructor(commonName, keyType, name) { 
         
-        GenerateCsr.initialize(this, commonName, name);
+        GenerateCsr.initialize(this, commonName, keyType, name);
     }
 
     /**
@@ -35,8 +36,9 @@ class GenerateCsr {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, commonName, name) { 
+    static initialize(obj, commonName, keyType, name) { 
         obj['common-name'] = commonName;
+        obj['key-type'] = keyType;
         obj['name'] = name;
     }
 
@@ -87,11 +89,17 @@ class GenerateCsr {
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
+            if (data.hasOwnProperty('key-type')) {
+                obj['key-type'] = ApiClient.convertToType(data['key-type'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('org')) {
                 obj['org'] = ApiClient.convertToType(data['org'], 'String');
+            }
+            if (data.hasOwnProperty('split-level')) {
+                obj['split-level'] = ApiClient.convertToType(data['split-level'], 'Number');
             }
             if (data.hasOwnProperty('state')) {
                 obj['state'] = ApiClient.convertToType(data['state'], 'String');
@@ -185,6 +193,13 @@ GenerateCsr.prototype['ip-addresses'] = undefined;
 GenerateCsr.prototype['json'] = false;
 
 /**
+ * The type of the key to generate (classic-key/dfc)
+ * @member {String} key-type
+ * @default 'classic-key'
+ */
+GenerateCsr.prototype['key-type'] = 'classic-key';
+
+/**
  * The classic key name
  * @member {String} name
  */
@@ -195,6 +210,13 @@ GenerateCsr.prototype['name'] = undefined;
  * @member {String} org
  */
 GenerateCsr.prototype['org'] = undefined;
+
+/**
+ * The number of fragments that the item will be split into (not includes customer fragment)
+ * @member {Number} split-level
+ * @default 3
+ */
+GenerateCsr.prototype['split-level'] = 3;
 
 /**
  * The state to be included in the CSR certificate

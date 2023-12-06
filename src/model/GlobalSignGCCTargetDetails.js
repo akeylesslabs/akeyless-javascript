@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GlobalSignGCCTargetDetails model module.
  * @module model/GlobalSignGCCTargetDetails
- * @version 3.5.2
+ * @version 3.5.1
  */
 class GlobalSignGCCTargetDetails {
     /**

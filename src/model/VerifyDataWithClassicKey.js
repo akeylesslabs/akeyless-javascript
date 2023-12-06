@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyDataWithClassicKey model module.
  * @module model/VerifyDataWithClassicKey
- * @version 3.5.2
+ * @version 3.5.1
  */
 class VerifyDataWithClassicKey {
     /**
