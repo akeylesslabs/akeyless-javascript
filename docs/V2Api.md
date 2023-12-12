@@ -7707,7 +7707,7 @@ No authorization required
 
 ## getDynamicSecretValue
 
-> Object getDynamicSecretValue(body)
+> {String: String} getDynamicSecretValue(body)
 
 
 
@@ -7735,7 +7735,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**{String: String}**
 
 ### Authorization
 
@@ -8043,7 +8043,7 @@ No authorization required
 
 ## getRotatedSecretValue
 
-> Object getRotatedSecretValue(body)
+> {String: Object} getRotatedSecretValue(body)
 
 
 
@@ -8071,7 +8071,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**{String: Object}**
 
 ### Authorization
 

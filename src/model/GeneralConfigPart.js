@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GeneralConfigPart model module.
  * @module model/GeneralConfigPart
- * @version 3.5.2
+ * @version 3.5.3
  */
 class GeneralConfigPart {
     /**
@@ -73,6 +73,9 @@ class GeneralConfigPart {
             }
             if (data.hasOwnProperty('gw_cluster_url')) {
                 obj['gw_cluster_url'] = ApiClient.convertToType(data['gw_cluster_url'], 'String');
+            }
+            if (data.hasOwnProperty('notify_on_status_change')) {
+                obj['notify_on_status_change'] = ApiClient.convertToType(data['notify_on_status_change'], 'Boolean');
             }
             if (data.hasOwnProperty('tcp_port')) {
                 obj['tcp_port'] = ApiClient.convertToType(data['tcp_port'], 'String');
@@ -135,6 +138,11 @@ GeneralConfigPart.prototype['enable_tls_hvp'] = undefined;
  * @member {String} gw_cluster_url
  */
 GeneralConfigPart.prototype['gw_cluster_url'] = undefined;
+
+/**
+ * @member {Boolean} notify_on_status_change
+ */
+GeneralConfigPart.prototype['notify_on_status_change'] = undefined;
 
 /**
  * @member {String} tcp_port

@@ -560,7 +560,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.5.2
+* @version 3.5.3
 */
 export default class V2Api {
 
@@ -8138,7 +8138,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetDynamicSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
     getDynamicSecretValueWithHttpInfo(body) {
       let postBody = body;
@@ -8159,7 +8159,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = {'String': 'String'};
       return this.apiClient.callApi(
         '/get-dynamic-secret-value', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -8169,7 +8169,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetDynamicSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
     getDynamicSecretValue(body) {
       return this.getDynamicSecretValueWithHttpInfo(body)
@@ -8482,7 +8482,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetRotatedSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: Object}>} and HTTP response
      */
     getRotatedSecretValueWithHttpInfo(body) {
       let postBody = body;
@@ -8503,7 +8503,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = {'String': Object};
       return this.apiClient.callApi(
         '/get-rotated-secret-value', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -8513,7 +8513,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetRotatedSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: Object}>}
      */
     getRotatedSecretValue(body) {
       return this.getRotatedSecretValueWithHttpInfo(body)
