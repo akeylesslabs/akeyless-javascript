@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ActiveDirectoryPayload model module.
  * @module model/ActiveDirectoryPayload
- * @version 3.5.1
+ * @version 3.5.2
  */
 class ActiveDirectoryPayload {
     /**
@@ -68,6 +68,9 @@ class ActiveDirectoryPayload {
             if (data.hasOwnProperty('discover_services')) {
                 obj['discover_services'] = ApiClient.convertToType(data['discover_services'], 'Boolean');
             }
+            if (data.hasOwnProperty('discovery_types')) {
+                obj['discovery_types'] = ApiClient.convertToType(data['discovery_types'], ['String']);
+            }
             if (data.hasOwnProperty('domain_name')) {
                 obj['domain_name'] = ApiClient.convertToType(data['domain_name'], 'String');
             }
@@ -85,6 +88,9 @@ class ActiveDirectoryPayload {
             }
             if (data.hasOwnProperty('local_users_rotated_secrets_path_template')) {
                 obj['local_users_rotated_secrets_path_template'] = ApiClient.convertToType(data['local_users_rotated_secrets_path_template'], 'String');
+            }
+            if (data.hasOwnProperty('os_filter')) {
+                obj['os_filter'] = ApiClient.convertToType(data['os_filter'], 'String');
             }
             if (data.hasOwnProperty('ssh_port')) {
                 obj['ssh_port'] = ApiClient.convertToType(data['ssh_port'], 'String');
@@ -137,6 +143,7 @@ ActiveDirectoryPayload.prototype['auto_rotate_rotation_hour'] = undefined;
 ActiveDirectoryPayload.prototype['computer_base_dn'] = undefined;
 
 /**
+ * Deprecated
  * @member {Boolean} discover_local_users
  */
 ActiveDirectoryPayload.prototype['discover_local_users'] = undefined;
@@ -145,6 +152,11 @@ ActiveDirectoryPayload.prototype['discover_local_users'] = undefined;
  * @member {Boolean} discover_services
  */
 ActiveDirectoryPayload.prototype['discover_services'] = undefined;
+
+/**
+ * @member {Array.<String>} discovery_types
+ */
+ActiveDirectoryPayload.prototype['discovery_types'] = undefined;
 
 /**
  * @member {String} domain_name
@@ -175,6 +187,11 @@ ActiveDirectoryPayload.prototype['local_users_ignore_list'] = undefined;
  * @member {String} local_users_rotated_secrets_path_template
  */
 ActiveDirectoryPayload.prototype['local_users_rotated_secrets_path_template'] = undefined;
+
+/**
+ * @member {String} os_filter
+ */
+ActiveDirectoryPayload.prototype['os_filter'] = undefined;
 
 /**
  * @member {String} ssh_port

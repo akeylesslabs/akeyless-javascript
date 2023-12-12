@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 3.5.1
+ * @version 3.5.2
  */
 class GatewayUpdateMigration {
     /**
@@ -71,6 +71,12 @@ class GatewayUpdateMigration {
             }
             if (data.hasOwnProperty('ad-discover-services')) {
                 obj['ad-discover-services'] = ApiClient.convertToType(data['ad-discover-services'], 'String');
+            }
+            if (data.hasOwnProperty('ad-discovery-types')) {
+                obj['ad-discovery-types'] = ApiClient.convertToType(data['ad-discovery-types'], ['String']);
+            }
+            if (data.hasOwnProperty('ad-os-filter')) {
+                obj['ad-os-filter'] = ApiClient.convertToType(data['ad-os-filter'], 'String');
             }
             if (data.hasOwnProperty('ad-ssh-port')) {
                 obj['ad-ssh-port'] = ApiClient.convertToType(data['ad-ssh-port'], 'String');
@@ -279,6 +285,18 @@ GatewayUpdateMigration.prototype['1password-vaults'] = undefined;
 GatewayUpdateMigration.prototype['ad-discover-services'] = 'false';
 
 /**
+ * Set migration discovery types (domain-users, computers, local-users). (Relevant only for Active Directory migration)
+ * @member {Array.<String>} ad-discovery-types
+ */
+GatewayUpdateMigration.prototype['ad-discovery-types'] = undefined;
+
+/**
+ * Filter by Operating System to run the migration, can be used with wildcards, e.g. SRV20* (Relevant only for Active Directory migration)
+ * @member {String} ad-os-filter
+ */
+GatewayUpdateMigration.prototype['ad-os-filter'] = undefined;
+
+/**
  * Set the SSH Port for further connection to the domain servers. Default is port 22 (Relevant only for Active Directory migration)
  * @member {String} ad-ssh-port
  * @default '22'
@@ -319,7 +337,7 @@ GatewayUpdateMigration.prototype['ad_auto_rotate'] = undefined;
 GatewayUpdateMigration.prototype['ad_computer_base_dn'] = undefined;
 
 /**
- * Enable/Disable discovery of local users from each domain server and migrate them as SSH/Windows Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration)
+ * Enable/Disable discovery of local users from each domain server and migrate them as SSH/Windows Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration) Deprecated: use AdDiscoverTypes
  * @member {String} ad_discover_local_users
  */
 GatewayUpdateMigration.prototype['ad_discover_local_users'] = undefined;

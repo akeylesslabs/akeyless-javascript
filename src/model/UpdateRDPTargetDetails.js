@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRDPTargetDetails model module.
  * @module model/UpdateRDPTargetDetails
- * @version 3.5.1
+ * @version 3.5.2
  */
 class UpdateRDPTargetDetails {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 3.5.1
+ * @version 3.5.2
  */
 class CreateClassicKey {
     /**
@@ -78,6 +78,9 @@ class CreateClassicKey {
             }
             if (data.hasOwnProperty('certificate-ttl')) {
                 obj['certificate-ttl'] = ApiClient.convertToType(data['certificate-ttl'], 'Number');
+            }
+            if (data.hasOwnProperty('conf-file-data')) {
+                obj['conf-file-data'] = ApiClient.convertToType(data['conf-file-data'], 'String');
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
@@ -175,6 +178,12 @@ CreateClassicKey.prototype['certificate-province'] = undefined;
  * @member {Number} certificate-ttl
  */
 CreateClassicKey.prototype['certificate-ttl'] = undefined;
+
+/**
+ * The csr config data in base64 encoding
+ * @member {String} conf-file-data
+ */
+CreateClassicKey.prototype['conf-file-data'] = undefined;
 
 /**
  * Protection from accidental deletion of this item [true/false]

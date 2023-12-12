@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CertificateTemplateInfo model module.
  * @module model/CertificateTemplateInfo
- * @version 3.5.1
+ * @version 3.5.2
  */
 class CertificateTemplateInfo {
     /**
@@ -53,6 +53,9 @@ class CertificateTemplateInfo {
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
             }
+            if (data.hasOwnProperty('csr_cnf_base_64')) {
+                obj['csr_cnf_base_64'] = ApiClient.convertToType(data['csr_cnf_base_64'], 'String');
+            }
             if (data.hasOwnProperty('digest_algo')) {
                 obj['digest_algo'] = ApiClient.convertToType(data['digest_algo'], 'String');
             }
@@ -87,6 +90,11 @@ CertificateTemplateInfo.prototype['common_name'] = undefined;
  * @member {String} country
  */
 CertificateTemplateInfo.prototype['country'] = undefined;
+
+/**
+ * @member {String} csr_cnf_base_64
+ */
+CertificateTemplateInfo.prototype['csr_cnf_base_64'] = undefined;
 
 /**
  * @member {String} digest_algo

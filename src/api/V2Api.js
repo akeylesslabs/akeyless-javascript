@@ -484,6 +484,7 @@ import UpdateAzureTarget from '../model/UpdateAzureTarget';
 import UpdateAzureTargetOutput from '../model/UpdateAzureTargetOutput';
 import UpdateCertificateOutput from '../model/UpdateCertificateOutput';
 import UpdateCertificateValue from '../model/UpdateCertificateValue';
+import UpdateClassicKeyCertificate from '../model/UpdateClassicKeyCertificate';
 import UpdateDBTarget from '../model/UpdateDBTarget';
 import UpdateDBTargetDetails from '../model/UpdateDBTargetDetails';
 import UpdateDBTargetOutput from '../model/UpdateDBTargetOutput';
@@ -559,7 +560,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.5.1
+* @version 3.5.2
 */
 export default class V2Api {
 
@@ -11635,6 +11636,49 @@ export default class V2Api {
      */
     updateCertificateValue(body) {
       return this.updateCertificateValueWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateClassicKeyCertificate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateClassicKeyCertificateWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateClassicKeyCertificate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/update-classic-key-certificate', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateClassicKeyCertificate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateClassicKeyCertificate(body) {
+      return this.updateClassicKeyCertificateWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

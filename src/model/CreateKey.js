@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateKey model module.
  * @module model/CreateKey
- * @version 3.5.1
+ * @version 3.5.2
  */
 class CreateKey {
     /**
@@ -75,6 +75,9 @@ class CreateKey {
             }
             if (data.hasOwnProperty('certificate-ttl')) {
                 obj['certificate-ttl'] = ApiClient.convertToType(data['certificate-ttl'], 'Number');
+            }
+            if (data.hasOwnProperty('conf-file-data')) {
+                obj['conf-file-data'] = ApiClient.convertToType(data['conf-file-data'], 'String');
             }
             if (data.hasOwnProperty('customer-frg-id')) {
                 obj['customer-frg-id'] = ApiClient.convertToType(data['customer-frg-id'], 'String');
@@ -163,6 +166,12 @@ CreateKey.prototype['certificate-province'] = undefined;
  * @member {Number} certificate-ttl
  */
 CreateKey.prototype['certificate-ttl'] = undefined;
+
+/**
+ * The csr config data in base64 encoding
+ * @member {String} conf-file-data
+ */
+CreateKey.prototype['conf-file-data'] = undefined;
 
 /**
  * The customer fragment ID that will be used to create the key (if empty, the key will be created independently of a customer fragment)

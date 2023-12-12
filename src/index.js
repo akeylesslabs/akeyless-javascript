@@ -656,6 +656,7 @@ import UpdateAzureTarget from './model/UpdateAzureTarget';
 import UpdateAzureTargetOutput from './model/UpdateAzureTargetOutput';
 import UpdateCertificateOutput from './model/UpdateCertificateOutput';
 import UpdateCertificateValue from './model/UpdateCertificateValue';
+import UpdateClassicKeyCertificate from './model/UpdateClassicKeyCertificate';
 import UpdateDBTarget from './model/UpdateDBTarget';
 import UpdateDBTargetDetails from './model/UpdateDBTargetDetails';
 import UpdateDBTargetOutput from './model/UpdateDBTargetOutput';
@@ -770,7 +771,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.5.1
+* @version 3.5.2
 */
 export {
     /**
@@ -4636,6 +4637,12 @@ export {
      * @property {module:model/UpdateCertificateValue}
      */
     UpdateCertificateValue,
+
+    /**
+     * The UpdateClassicKeyCertificate model constructor.
+     * @property {module:model/UpdateClassicKeyCertificate}
+     */
+    UpdateClassicKeyCertificate,
 
     /**
      * The UpdateDBTarget model constructor.

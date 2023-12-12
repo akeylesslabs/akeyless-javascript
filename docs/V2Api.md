@@ -262,6 +262,7 @@ Method | HTTP request | Description
 [**updateAuthMethodUniversalIdentity**](V2Api.md#updateAuthMethodUniversalIdentity) | **POST** /update-auth-method-universal-identity | 
 [**updateAzureTarget**](V2Api.md#updateAzureTarget) | **POST** /update-azure-target | 
 [**updateCertificateValue**](V2Api.md#updateCertificateValue) | **POST** /update-certificate-value | 
+[**updateClassicKeyCertificate**](V2Api.md#updateClassicKeyCertificate) | **POST** /update-classic-key-certificate | 
 [**updateDBTarget**](V2Api.md#updateDBTarget) | **POST** /update-db-target | 
 [**updateDBTargetDetails**](V2Api.md#updateDBTargetDetails) | **POST** /update-db-target-details | 
 [**updateDockerhubTarget**](V2Api.md#updateDockerhubTarget) | **POST** /update-dockerhub-target | 
@@ -11161,6 +11162,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateCertificateOutput**](UpdateCertificateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateClassicKeyCertificate
+
+> Object updateClassicKeyCertificate(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateClassicKeyCertificate(); // UpdateClassicKeyCertificate | 
+apiInstance.updateClassicKeyCertificate(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateClassicKeyCertificate**](UpdateClassicKeyCertificate.md)|  | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 

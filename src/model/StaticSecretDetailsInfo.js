@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StaticSecretDetailsInfo model module.
  * @module model/StaticSecretDetailsInfo
- * @version 3.5.1
+ * @version 3.5.2
  */
 class StaticSecretDetailsInfo {
     /**
