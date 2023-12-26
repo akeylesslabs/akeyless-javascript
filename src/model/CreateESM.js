@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateESM model module.
  * @module model/CreateESM
- * @version 3.5.3
+ * @version 3.5.4
  */
 class CreateESM {
     /**
      * Constructs a new <code>CreateESM</code>.
-     * CreateESM is a command that creates an External Secrets Manager
+     * CreateESM is a command that creates an External Secrets Manager. [Deprecated: Use command create-usc]
      * @alias module:model/CreateESM
      * @param name {String} External Secrets Manager name
      * @param targetToAssociate {String} Target External Secrets Manager to connect

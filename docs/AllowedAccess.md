@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **permissions** | **[String]** |  | [optional] 
 **subClaims** | **{String: [String]}** |  | [optional] 
+**subClaimsCaseInsensitive** | **Boolean** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 
 

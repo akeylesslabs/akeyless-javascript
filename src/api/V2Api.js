@@ -116,6 +116,8 @@ import CreateSecretOutput from '../model/CreateSecretOutput';
 import CreateTargetItemAssocOutput from '../model/CreateTargetItemAssocOutput';
 import CreateTokenizer from '../model/CreateTokenizer';
 import CreateTokenizerOutput from '../model/CreateTokenizerOutput';
+import CreateUSC from '../model/CreateUSC';
+import CreateUSCOutput from '../model/CreateUSCOutput';
 import CreateUserEvent from '../model/CreateUserEvent';
 import CreateUserEventOutput from '../model/CreateUserEventOutput';
 import CreateWebTarget from '../model/CreateWebTarget';
@@ -545,6 +547,15 @@ import UpdateWindowsTarget from '../model/UpdateWindowsTarget';
 import UpdateZeroSSLTarget from '../model/UpdateZeroSSLTarget';
 import UpdateZeroSSLTargetOutput from '../model/UpdateZeroSSLTargetOutput';
 import UploadRSA from '../model/UploadRSA';
+import UscCreateSecretOutput from '../model/UscCreateSecretOutput';
+import UscDelete from '../model/UscDelete';
+import UscDeleteSecretOutput from '../model/UscDeleteSecretOutput';
+import UscGet from '../model/UscGet';
+import UscGetSecretOutput from '../model/UscGetSecretOutput';
+import UscList from '../model/UscList';
+import UscListSecretsOutput from '../model/UscListSecretsOutput';
+import UscUpdate from '../model/UscUpdate';
+import UscUpdateSecretOutput from '../model/UscUpdateSecretOutput';
 import ValidateToken from '../model/ValidateToken';
 import ValidateTokenOutput from '../model/ValidateTokenOutput';
 import VerifyDataWithClassicKey from '../model/VerifyDataWithClassicKey';
@@ -560,7 +571,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.5.3
+* @version 3.5.4
 */
 export default class V2Api {
 
@@ -2721,6 +2732,49 @@ export default class V2Api {
      */
     createTokenizer(body) {
       return this.createTokenizerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateUSC} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateUSCOutput} and HTTP response
+     */
+    createUSCWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createUSC");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateUSCOutput;
+      return this.apiClient.callApi(
+        '/create-usc', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateUSC} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateUSCOutput}
+     */
+    createUSC(body) {
+      return this.createUSCWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -13264,6 +13318,215 @@ export default class V2Api {
      */
     uploadRSA(body) {
       return this.uploadRSAWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UscUpdate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UscCreateSecretOutput} and HTTP response
+     */
+    uscCreateWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling uscCreate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UscCreateSecretOutput;
+      return this.apiClient.callApi(
+        '/usc-create', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UscUpdate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UscCreateSecretOutput}
+     */
+    uscCreate(body) {
+      return this.uscCreateWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UscDelete} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UscDeleteSecretOutput} and HTTP response
+     */
+    uscDeleteWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling uscDelete");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UscDeleteSecretOutput;
+      return this.apiClient.callApi(
+        '/usc-delete', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UscDelete} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UscDeleteSecretOutput}
+     */
+    uscDelete(body) {
+      return this.uscDeleteWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UscGet} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UscGetSecretOutput} and HTTP response
+     */
+    uscGetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling uscGet");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UscGetSecretOutput;
+      return this.apiClient.callApi(
+        '/usc-get', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UscGet} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UscGetSecretOutput}
+     */
+    uscGet(body) {
+      return this.uscGetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UscList} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UscListSecretsOutput} and HTTP response
+     */
+    uscListWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling uscList");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UscListSecretsOutput;
+      return this.apiClient.callApi(
+        '/usc-list', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UscList} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UscListSecretsOutput}
+     */
+    uscList(body) {
+      return this.uscListWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UscUpdateSecretOutput} and HTTP response
+     */
+    uscUpdateWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = UscUpdateSecretOutput;
+      return this.apiClient.callApi(
+        '/usc-update', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UscUpdateSecretOutput}
+     */
+    uscUpdate() {
+      return this.uscUpdateWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

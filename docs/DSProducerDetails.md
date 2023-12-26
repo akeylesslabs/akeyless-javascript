@@ -163,6 +163,7 @@ Name | Type | Description | Notes
 **mysqlCreationStatements** | **String** |  | [optional] 
 **mysqlRevocationStatements** | **String** |  | [optional] 
 **oracleCreationStatements** | **String** |  | [optional] 
+**oracleRevocationStatements** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 
 **passwordLength** | **Number** |  | [optional] 
 **passwordPolicy** | **String** |  | [optional] 

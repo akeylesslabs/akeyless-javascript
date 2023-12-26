@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Hmac model module.
  * @module model/Hmac
- * @version 3.5.3
+ * @version 3.5.4
  */
 class Hmac {
     /**

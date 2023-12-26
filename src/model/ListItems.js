@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 3.5.3
+ * @version 3.5.4
  */
 class ListItems {
     /**
@@ -64,6 +64,9 @@ class ListItems {
             }
             if (data.hasOwnProperty('minimal-view')) {
                 obj['minimal-view'] = ApiClient.convertToType(data['minimal-view'], 'Boolean');
+            }
+            if (data.hasOwnProperty('modified-after')) {
+                obj['modified-after'] = ApiClient.convertToType(data['modified-after'], 'Number');
             }
             if (data.hasOwnProperty('pagination-token')) {
                 obj['pagination-token'] = ApiClient.convertToType(data['pagination-token'], 'String');
@@ -130,9 +133,16 @@ ListItems.prototype['filter'] = undefined;
 ListItems.prototype['json'] = false;
 
 /**
+ * Show only basic information of the items
  * @member {Boolean} minimal-view
  */
 ListItems.prototype['minimal-view'] = undefined;
+
+/**
+ * List only secrets modified after specified date (in unix time)
+ * @member {Number} modified-after
+ */
+ListItems.prototype['modified-after'] = undefined;
 
 /**
  * Next page reference

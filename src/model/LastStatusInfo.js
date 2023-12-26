@@ -17,7 +17,7 @@ import MigrationStatus from './MigrationStatus';
 /**
  * The LastStatusInfo model module.
  * @module model/LastStatusInfo
- * @version 3.5.3
+ * @version 3.5.4
  */
 class LastStatusInfo {
     /**

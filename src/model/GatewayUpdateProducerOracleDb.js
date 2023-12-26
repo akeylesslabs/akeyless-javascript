@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerOracleDb model module.
  * @module model/GatewayUpdateProducerOracleDb
- * @version 3.5.3
+ * @version 3.5.4
  */
 class GatewayUpdateProducerOracleDb {
     /**
@@ -76,6 +76,9 @@ class GatewayUpdateProducerOracleDb {
             }
             if (data.hasOwnProperty('oracle-port')) {
                 obj['oracle-port'] = ApiClient.convertToType(data['oracle-port'], 'String');
+            }
+            if (data.hasOwnProperty('oracle-revocation-statements')) {
+                obj['oracle-revocation-statements'] = ApiClient.convertToType(data['oracle-revocation-statements'], 'String');
             }
             if (data.hasOwnProperty('oracle-screation-statements')) {
                 obj['oracle-screation-statements'] = ApiClient.convertToType(data['oracle-screation-statements'], 'String');
@@ -179,6 +182,12 @@ GatewayUpdateProducerOracleDb.prototype['oracle-password'] = undefined;
  * @default '1521'
  */
 GatewayUpdateProducerOracleDb.prototype['oracle-port'] = '1521';
+
+/**
+ * Oracle Revocation statements
+ * @member {String} oracle-revocation-statements
+ */
+GatewayUpdateProducerOracleDb.prototype['oracle-revocation-statements'] = undefined;
 
 /**
  * Oracle Creation statements

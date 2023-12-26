@@ -157,6 +157,8 @@ import CreateSecretOutput from './model/CreateSecretOutput';
 import CreateTargetItemAssocOutput from './model/CreateTargetItemAssocOutput';
 import CreateTokenizer from './model/CreateTokenizer';
 import CreateTokenizerOutput from './model/CreateTokenizerOutput';
+import CreateUSC from './model/CreateUSC';
+import CreateUSCOutput from './model/CreateUSCOutput';
 import CreateUserEvent from './model/CreateUserEvent';
 import CreateUserEventOutput from './model/CreateUserEventOutput';
 import CreateWebTarget from './model/CreateWebTarget';
@@ -721,6 +723,16 @@ import UpdateZeroSSLTargetOutput from './model/UpdateZeroSSLTargetOutput';
 import UploadPKCS12 from './model/UploadPKCS12';
 import UploadRSA from './model/UploadRSA';
 import UsageEventSetting from './model/UsageEventSetting';
+import UscCreate from './model/UscCreate';
+import UscCreateSecretOutput from './model/UscCreateSecretOutput';
+import UscDelete from './model/UscDelete';
+import UscDeleteSecretOutput from './model/UscDeleteSecretOutput';
+import UscGet from './model/UscGet';
+import UscGetSecretOutput from './model/UscGetSecretOutput';
+import UscList from './model/UscList';
+import UscListSecretsOutput from './model/UscListSecretsOutput';
+import UscUpdate from './model/UscUpdate';
+import UscUpdateSecretOutput from './model/UscUpdateSecretOutput';
 import ValidateToken from './model/ValidateToken';
 import ValidateTokenOutput from './model/ValidateTokenOutput';
 import VaultlessTokenizerInfo from './model/VaultlessTokenizerInfo';
@@ -771,7 +783,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.5.3
+* @version 3.5.4
 */
 export {
     /**
@@ -1643,6 +1655,18 @@ export {
      * @property {module:model/CreateTokenizerOutput}
      */
     CreateTokenizerOutput,
+
+    /**
+     * The CreateUSC model constructor.
+     * @property {module:model/CreateUSC}
+     */
+    CreateUSC,
+
+    /**
+     * The CreateUSCOutput model constructor.
+     * @property {module:model/CreateUSCOutput}
+     */
+    CreateUSCOutput,
 
     /**
      * The CreateUserEvent model constructor.
@@ -5027,6 +5051,66 @@ export {
      * @property {module:model/UsageEventSetting}
      */
     UsageEventSetting,
+
+    /**
+     * The UscCreate model constructor.
+     * @property {module:model/UscCreate}
+     */
+    UscCreate,
+
+    /**
+     * The UscCreateSecretOutput model constructor.
+     * @property {module:model/UscCreateSecretOutput}
+     */
+    UscCreateSecretOutput,
+
+    /**
+     * The UscDelete model constructor.
+     * @property {module:model/UscDelete}
+     */
+    UscDelete,
+
+    /**
+     * The UscDeleteSecretOutput model constructor.
+     * @property {module:model/UscDeleteSecretOutput}
+     */
+    UscDeleteSecretOutput,
+
+    /**
+     * The UscGet model constructor.
+     * @property {module:model/UscGet}
+     */
+    UscGet,
+
+    /**
+     * The UscGetSecretOutput model constructor.
+     * @property {module:model/UscGetSecretOutput}
+     */
+    UscGetSecretOutput,
+
+    /**
+     * The UscList model constructor.
+     * @property {module:model/UscList}
+     */
+    UscList,
+
+    /**
+     * The UscListSecretsOutput model constructor.
+     * @property {module:model/UscListSecretsOutput}
+     */
+    UscListSecretsOutput,
+
+    /**
+     * The UscUpdate model constructor.
+     * @property {module:model/UscUpdate}
+     */
+    UscUpdate,
+
+    /**
+     * The UscUpdateSecretOutput model constructor.
+     * @property {module:model/UscUpdateSecretOutput}
+     */
+    UscUpdateSecretOutput,
 
     /**
      * The ValidateToken model constructor.

@@ -17,7 +17,7 @@ import Role from './Role';
 /**
  * The ListRolesOutput model module.
  * @module model/ListRolesOutput
- * @version 3.5.3
+ * @version 3.5.4
  */
 class ListRolesOutput {
     /**

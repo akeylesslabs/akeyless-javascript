@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AllowedAccess model module.
  * @module model/AllowedAccess
- * @version 3.5.3
+ * @version 3.5.4
  */
 class AllowedAccess {
     /**
@@ -82,6 +82,9 @@ class AllowedAccess {
             }
             if (data.hasOwnProperty('sub_claims')) {
                 obj['sub_claims'] = ApiClient.convertToType(data['sub_claims'], {'String': ['String']});
+            }
+            if (data.hasOwnProperty('sub_claims_case_insensitive')) {
+                obj['sub_claims_case_insensitive'] = ApiClient.convertToType(data['sub_claims_case_insensitive'], 'Boolean');
             }
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
@@ -152,6 +155,11 @@ AllowedAccess.prototype['permissions'] = undefined;
  * @member {Object.<String, Array.<String>>} sub_claims
  */
 AllowedAccess.prototype['sub_claims'] = undefined;
+
+/**
+ * @member {Boolean} sub_claims_case_insensitive
+ */
+AllowedAccess.prototype['sub_claims_case_insensitive'] = undefined;
 
 /**
  * @member {Date} updated_at

@@ -4,7 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**subClaimsCaseInsensitive** | **Boolean** |  | [optional] 
 **accessId** | **String** | Access ID The access id to be attached to this allowed access. Auth method with this access id should already exist. | 
+**caseSensitive** | **String** | Treat sub claims as case-sensitive [true/false] | [optional] [default to &#39;true&#39;]
 **description** | **String** | Allowed access description | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Allowed access name | 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateAllowedAccess model module.
  * @module model/GatewayUpdateAllowedAccess
- * @version 3.5.3
+ * @version 3.5.4
  */
 class GatewayUpdateAllowedAccess {
     /**
@@ -52,8 +52,14 @@ class GatewayUpdateAllowedAccess {
         if (data) {
             obj = obj || new GatewayUpdateAllowedAccess();
 
+            if (data.hasOwnProperty('SubClaimsCaseInsensitive')) {
+                obj['SubClaimsCaseInsensitive'] = ApiClient.convertToType(data['SubClaimsCaseInsensitive'], 'Boolean');
+            }
             if (data.hasOwnProperty('access-id')) {
                 obj['access-id'] = ApiClient.convertToType(data['access-id'], 'String');
+            }
+            if (data.hasOwnProperty('case-sensitive')) {
+                obj['case-sensitive'] = ApiClient.convertToType(data['case-sensitive'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -87,10 +93,22 @@ class GatewayUpdateAllowedAccess {
 }
 
 /**
+ * @member {Boolean} SubClaimsCaseInsensitive
+ */
+GatewayUpdateAllowedAccess.prototype['SubClaimsCaseInsensitive'] = undefined;
+
+/**
  * Access ID The access id to be attached to this allowed access. Auth method with this access id should already exist.
  * @member {String} access-id
  */
 GatewayUpdateAllowedAccess.prototype['access-id'] = undefined;
+
+/**
+ * Treat sub claims as case-sensitive [true/false]
+ * @member {String} case-sensitive
+ * @default 'true'
+ */
+GatewayUpdateAllowedAccess.prototype['case-sensitive'] = 'true';
 
 /**
  * Allowed access description

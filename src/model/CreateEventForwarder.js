@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEventForwarder model module.
  * @module model/CreateEventForwarder
- * @version 3.5.3
+ * @version 3.5.4
  */
 class CreateEventForwarder {
     /**
@@ -190,7 +190,7 @@ CreateEventForwarder.prototype['email-to'] = undefined;
 CreateEventForwarder.prototype['event-source-locations'] = undefined;
 
 /**
- * Event Source type [item, target, auth_method]
+ * Event Source type [item, target, auth_method, gateway]
  * @member {String} event-source-type
  * @default 'item'
  */

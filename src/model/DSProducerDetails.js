@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 3.5.3
+ * @version 3.5.4
  */
 class DSProducerDetails {
     /**
@@ -525,6 +525,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('oracle_creation_statements')) {
                 obj['oracle_creation_statements'] = ApiClient.convertToType(data['oracle_creation_statements'], 'String');
+            }
+            if (data.hasOwnProperty('oracle_revocation_statements')) {
+                obj['oracle_revocation_statements'] = ApiClient.convertToType(data['oracle_revocation_statements'], 'String');
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
@@ -1519,6 +1522,11 @@ DSProducerDetails.prototype['mysql_revocation_statements'] = undefined;
  * @member {String} oracle_creation_statements
  */
 DSProducerDetails.prototype['oracle_creation_statements'] = undefined;
+
+/**
+ * @member {String} oracle_revocation_statements
+ */
+DSProducerDetails.prototype['oracle_revocation_statements'] = undefined;
 
 /**
  * @member {String} password

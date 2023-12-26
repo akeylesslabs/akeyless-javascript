@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteItems model module.
  * @module model/DeleteItems
- * @version 3.5.3
+ * @version 3.5.4
  */
 class DeleteItems {
     /**
