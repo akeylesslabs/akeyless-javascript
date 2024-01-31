@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscList model module.
  * @module model/UscList
- * @version 3.6.0
+ * @version 3.6.1
  */
 class UscList {
     /**

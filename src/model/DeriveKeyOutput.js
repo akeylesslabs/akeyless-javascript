@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeriveKeyOutput model module.
  * @module model/DeriveKeyOutput
- * @version 3.6.0
+ * @version 3.6.1
  */
 class DeriveKeyOutput {
     /**

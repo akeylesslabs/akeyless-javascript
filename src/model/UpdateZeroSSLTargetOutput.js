@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateZeroSSLTargetOutput model module.
  * @module model/UpdateZeroSSLTargetOutput
- * @version 3.6.0
+ * @version 3.6.1
  */
 class UpdateZeroSSLTargetOutput {
     /**
