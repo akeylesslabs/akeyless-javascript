@@ -47,6 +47,8 @@ import CreateAuthMethodLDAP from '../model/CreateAuthMethodLDAP';
 import CreateAuthMethodLDAPOutput from '../model/CreateAuthMethodLDAPOutput';
 import CreateAuthMethodOAuth2 from '../model/CreateAuthMethodOAuth2';
 import CreateAuthMethodOAuth2Output from '../model/CreateAuthMethodOAuth2Output';
+import CreateAuthMethodOCI from '../model/CreateAuthMethodOCI';
+import CreateAuthMethodOCIOutput from '../model/CreateAuthMethodOCIOutput';
 import CreateAuthMethodOIDC from '../model/CreateAuthMethodOIDC';
 import CreateAuthMethodOIDCOutput from '../model/CreateAuthMethodOIDCOutput';
 import CreateAuthMethodOutput from '../model/CreateAuthMethodOutput';
@@ -483,6 +485,8 @@ import UpdateAuthMethodK8SOutput from '../model/UpdateAuthMethodK8SOutput';
 import UpdateAuthMethodLDAP from '../model/UpdateAuthMethodLDAP';
 import UpdateAuthMethodLDAPOutput from '../model/UpdateAuthMethodLDAPOutput';
 import UpdateAuthMethodOAuth2 from '../model/UpdateAuthMethodOAuth2';
+import UpdateAuthMethodOCI from '../model/UpdateAuthMethodOCI';
+import UpdateAuthMethodOCIOutput from '../model/UpdateAuthMethodOCIOutput';
 import UpdateAuthMethodOIDC from '../model/UpdateAuthMethodOIDC';
 import UpdateAuthMethodOutput from '../model/UpdateAuthMethodOutput';
 import UpdateAuthMethodSAML from '../model/UpdateAuthMethodSAML';
@@ -1318,6 +1322,49 @@ export default class V2Api {
      */
     createAuthMethodOAuth2(body) {
       return this.createAuthMethodOAuth2WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateAuthMethodOCI} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateAuthMethodOCIOutput} and HTTP response
+     */
+    createAuthMethodOCIWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createAuthMethodOCI");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateAuthMethodOCIOutput;
+      return this.apiClient.callApi(
+        '/create-auth-method-oci', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateAuthMethodOCI} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateAuthMethodOCIOutput}
+     */
+    createAuthMethodOCI(body) {
+      return this.createAuthMethodOCIWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -11566,6 +11613,49 @@ export default class V2Api {
      */
     updateAuthMethodOAuth2(body) {
       return this.updateAuthMethodOAuth2WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateAuthMethodOCI} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateAuthMethodOCIOutput} and HTTP response
+     */
+    updateAuthMethodOCIWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateAuthMethodOCI");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateAuthMethodOCIOutput;
+      return this.apiClient.callApi(
+        '/update-auth-method-oci', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateAuthMethodOCI} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateAuthMethodOCIOutput}
+     */
+    updateAuthMethodOCI(body) {
+      return this.updateAuthMethodOCIWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

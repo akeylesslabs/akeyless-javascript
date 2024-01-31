@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**createAuthMethodK8S**](V2Api.md#createAuthMethodK8S) | **POST** /create-auth-method-k8s | 
 [**createAuthMethodLDAP**](V2Api.md#createAuthMethodLDAP) | **POST** /create-auth-method-ldap | 
 [**createAuthMethodOAuth2**](V2Api.md#createAuthMethodOAuth2) | **POST** /create-auth-method-oauth2 | 
+[**createAuthMethodOCI**](V2Api.md#createAuthMethodOCI) | **POST** /create-auth-method-oci | 
 [**createAuthMethodOIDC**](V2Api.md#createAuthMethodOIDC) | **POST** /create-auth-method-oidc | 
 [**createAuthMethodSAML**](V2Api.md#createAuthMethodSAML) | **POST** /create-auth-method-saml | 
 [**createAuthMethodUniversalIdentity**](V2Api.md#createAuthMethodUniversalIdentity) | **POST** /create-auth-method-universal-identity | 
@@ -260,6 +261,7 @@ Method | HTTP request | Description
 [**updateAuthMethodK8S**](V2Api.md#updateAuthMethodK8S) | **POST** /update-auth-method-k8s | 
 [**updateAuthMethodLDAP**](V2Api.md#updateAuthMethodLDAP) | **POST** /update-auth-method-ldap | 
 [**updateAuthMethodOAuth2**](V2Api.md#updateAuthMethodOAuth2) | **POST** /update-auth-method-oauth2 | 
+[**updateAuthMethodOCI**](V2Api.md#updateAuthMethodOCI) | **POST** /update-auth-method-oci | 
 [**updateAuthMethodOIDC**](V2Api.md#updateAuthMethodOIDC) | **POST** /update-auth-method-oidc | 
 [**updateAuthMethodSAML**](V2Api.md#updateAuthMethodSAML) | **POST** /update-auth-method-saml | 
 [**updateAuthMethodUniversalIdentity**](V2Api.md#updateAuthMethodUniversalIdentity) | **POST** /update-auth-method-universal-identity | 
@@ -1022,6 +1024,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateAuthMethodOAuth2Output**](CreateAuthMethodOAuth2Output.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createAuthMethodOCI
+
+> CreateAuthMethodOCIOutput createAuthMethodOCI(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateAuthMethodOCI(); // CreateAuthMethodOCI | 
+apiInstance.createAuthMethodOCI(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateAuthMethodOCI**](CreateAuthMethodOCI.md)|  | 
+
+### Return type
+
+[**CreateAuthMethodOCIOutput**](CreateAuthMethodOCIOutput.md)
 
 ### Authorization
 
@@ -11086,6 +11130,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 **Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAuthMethodOCI
+
+> UpdateAuthMethodOCIOutput updateAuthMethodOCI(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateAuthMethodOCI(); // UpdateAuthMethodOCI | 
+apiInstance.updateAuthMethodOCI(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAuthMethodOCI**](UpdateAuthMethodOCI.md)|  | 
+
+### Return type
+
+[**UpdateAuthMethodOCIOutput**](UpdateAuthMethodOCIOutput.md)
 
 ### Authorization
 

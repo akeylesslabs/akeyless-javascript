@@ -83,6 +83,12 @@ class Configure {
             if (data.hasOwnProperty('key-data')) {
                 obj['key-data'] = ApiClient.convertToType(data['key-data'], 'String');
             }
+            if (data.hasOwnProperty('oci-auth-type')) {
+                obj['oci-auth-type'] = ApiClient.convertToType(data['oci-auth-type'], 'String');
+            }
+            if (data.hasOwnProperty('oci-group-ocid')) {
+                obj['oci-group-ocid'] = ApiClient.convertToType(data['oci-group-ocid'], ['String']);
+            }
         }
         return obj;
     }
@@ -164,6 +170,19 @@ Configure.prototype['k8s-auth-config-name'] = undefined;
  * @member {String} key-data
  */
 Configure.prototype['key-data'] = undefined;
+
+/**
+ * The type of the OCI configuration to use [instance/apikey/resource] (relevant only for access-type=oci)
+ * @member {String} oci-auth-type
+ * @default 'apikey'
+ */
+Configure.prototype['oci-auth-type'] = 'apikey';
+
+/**
+ * A list of Oracle Cloud IDs groups (relevant only for access-type=oci)
+ * @member {Array.<String>} oci-group-ocid
+ */
+Configure.prototype['oci-group-ocid'] = undefined;
 
 
 

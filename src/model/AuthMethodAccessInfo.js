@@ -22,6 +22,7 @@ import HuaweiAccessRules from './HuaweiAccessRules';
 import KubernetesAccessRules from './KubernetesAccessRules';
 import LDAPAccessRules from './LDAPAccessRules';
 import OAuth2AccessRules from './OAuth2AccessRules';
+import OCIAccessRules from './OCIAccessRules';
 import OIDCAccessRules from './OIDCAccessRules';
 import SAMLAccessRules from './SAMLAccessRules';
 import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
@@ -107,6 +108,9 @@ class AuthMethodAccessInfo {
             }
             if (data.hasOwnProperty('oauth2_access_rules')) {
                 obj['oauth2_access_rules'] = OAuth2AccessRules.constructFromObject(data['oauth2_access_rules']);
+            }
+            if (data.hasOwnProperty('oci_access_rules')) {
+                obj['oci_access_rules'] = OCIAccessRules.constructFromObject(data['oci_access_rules']);
             }
             if (data.hasOwnProperty('oidc_access_rules')) {
                 obj['oidc_access_rules'] = OIDCAccessRules.constructFromObject(data['oidc_access_rules']);
@@ -211,6 +215,11 @@ AuthMethodAccessInfo.prototype['ldap_access_rules'] = undefined;
  * @member {module:model/OAuth2AccessRules} oauth2_access_rules
  */
 AuthMethodAccessInfo.prototype['oauth2_access_rules'] = undefined;
+
+/**
+ * @member {module:model/OCIAccessRules} oci_access_rules
+ */
+AuthMethodAccessInfo.prototype['oci_access_rules'] = undefined;
 
 /**
  * @member {module:model/OIDCAccessRules} oidc_access_rules

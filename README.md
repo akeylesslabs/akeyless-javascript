@@ -68,6 +68,7 @@ Class | Method | HTTP request | Description
 *akeyless.V2Api* | [**createAuthMethodK8S**](docs/V2Api.md#createAuthMethodK8S) | **POST** /create-auth-method-k8s | 
 *akeyless.V2Api* | [**createAuthMethodLDAP**](docs/V2Api.md#createAuthMethodLDAP) | **POST** /create-auth-method-ldap | 
 *akeyless.V2Api* | [**createAuthMethodOAuth2**](docs/V2Api.md#createAuthMethodOAuth2) | **POST** /create-auth-method-oauth2 | 
+*akeyless.V2Api* | [**createAuthMethodOCI**](docs/V2Api.md#createAuthMethodOCI) | **POST** /create-auth-method-oci | 
 *akeyless.V2Api* | [**createAuthMethodOIDC**](docs/V2Api.md#createAuthMethodOIDC) | **POST** /create-auth-method-oidc | 
 *akeyless.V2Api* | [**createAuthMethodSAML**](docs/V2Api.md#createAuthMethodSAML) | **POST** /create-auth-method-saml | 
 *akeyless.V2Api* | [**createAuthMethodUniversalIdentity**](docs/V2Api.md#createAuthMethodUniversalIdentity) | **POST** /create-auth-method-universal-identity | 
@@ -307,6 +308,7 @@ Class | Method | HTTP request | Description
 *akeyless.V2Api* | [**updateAuthMethodK8S**](docs/V2Api.md#updateAuthMethodK8S) | **POST** /update-auth-method-k8s | 
 *akeyless.V2Api* | [**updateAuthMethodLDAP**](docs/V2Api.md#updateAuthMethodLDAP) | **POST** /update-auth-method-ldap | 
 *akeyless.V2Api* | [**updateAuthMethodOAuth2**](docs/V2Api.md#updateAuthMethodOAuth2) | **POST** /update-auth-method-oauth2 | 
+*akeyless.V2Api* | [**updateAuthMethodOCI**](docs/V2Api.md#updateAuthMethodOCI) | **POST** /update-auth-method-oci | 
 *akeyless.V2Api* | [**updateAuthMethodOIDC**](docs/V2Api.md#updateAuthMethodOIDC) | **POST** /update-auth-method-oidc | 
 *akeyless.V2Api* | [**updateAuthMethodSAML**](docs/V2Api.md#updateAuthMethodSAML) | **POST** /update-auth-method-saml | 
 *akeyless.V2Api* | [**updateAuthMethodUniversalIdentity**](docs/V2Api.md#updateAuthMethodUniversalIdentity) | **POST** /update-auth-method-universal-identity | 
@@ -443,6 +445,8 @@ Class | Method | HTTP request | Description
  - [akeyless.CreateAuthMethodLDAPOutput](docs/CreateAuthMethodLDAPOutput.md)
  - [akeyless.CreateAuthMethodOAuth2](docs/CreateAuthMethodOAuth2.md)
  - [akeyless.CreateAuthMethodOAuth2Output](docs/CreateAuthMethodOAuth2Output.md)
+ - [akeyless.CreateAuthMethodOCI](docs/CreateAuthMethodOCI.md)
+ - [akeyless.CreateAuthMethodOCIOutput](docs/CreateAuthMethodOCIOutput.md)
  - [akeyless.CreateAuthMethodOIDC](docs/CreateAuthMethodOIDC.md)
  - [akeyless.CreateAuthMethodOIDCOutput](docs/CreateAuthMethodOIDCOutput.md)
  - [akeyless.CreateAuthMethodOutput](docs/CreateAuthMethodOutput.md)
@@ -888,6 +892,7 @@ Class | Method | HTTP request | Description
  - [akeyless.NotiForwarder](docs/NotiForwarder.md)
  - [akeyless.OAuth2AccessRules](docs/OAuth2AccessRules.md)
  - [akeyless.OAuth2CustomClaim](docs/OAuth2CustomClaim.md)
+ - [akeyless.OCIAccessRules](docs/OCIAccessRules.md)
  - [akeyless.OIDCAccessRules](docs/OIDCAccessRules.md)
  - [akeyless.OIDCCustomClaim](docs/OIDCCustomClaim.md)
  - [akeyless.ObjectVersionSettingsOutput](docs/ObjectVersionSettingsOutput.md)
@@ -1009,6 +1014,8 @@ Class | Method | HTTP request | Description
  - [akeyless.UpdateAuthMethodLDAP](docs/UpdateAuthMethodLDAP.md)
  - [akeyless.UpdateAuthMethodLDAPOutput](docs/UpdateAuthMethodLDAPOutput.md)
  - [akeyless.UpdateAuthMethodOAuth2](docs/UpdateAuthMethodOAuth2.md)
+ - [akeyless.UpdateAuthMethodOCI](docs/UpdateAuthMethodOCI.md)
+ - [akeyless.UpdateAuthMethodOCIOutput](docs/UpdateAuthMethodOCIOutput.md)
  - [akeyless.UpdateAuthMethodOIDC](docs/UpdateAuthMethodOIDC.md)
  - [akeyless.UpdateAuthMethodOutput](docs/UpdateAuthMethodOutput.md)
  - [akeyless.UpdateAuthMethodSAML](docs/UpdateAuthMethodSAML.md)

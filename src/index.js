@@ -89,6 +89,8 @@ import CreateAuthMethodLDAP from './model/CreateAuthMethodLDAP';
 import CreateAuthMethodLDAPOutput from './model/CreateAuthMethodLDAPOutput';
 import CreateAuthMethodOAuth2 from './model/CreateAuthMethodOAuth2';
 import CreateAuthMethodOAuth2Output from './model/CreateAuthMethodOAuth2Output';
+import CreateAuthMethodOCI from './model/CreateAuthMethodOCI';
+import CreateAuthMethodOCIOutput from './model/CreateAuthMethodOCIOutput';
 import CreateAuthMethodOIDC from './model/CreateAuthMethodOIDC';
 import CreateAuthMethodOIDCOutput from './model/CreateAuthMethodOIDCOutput';
 import CreateAuthMethodOutput from './model/CreateAuthMethodOutput';
@@ -534,6 +536,7 @@ import NativeK8sTargetDetails from './model/NativeK8sTargetDetails';
 import NotiForwarder from './model/NotiForwarder';
 import OAuth2AccessRules from './model/OAuth2AccessRules';
 import OAuth2CustomClaim from './model/OAuth2CustomClaim';
+import OCIAccessRules from './model/OCIAccessRules';
 import OIDCAccessRules from './model/OIDCAccessRules';
 import OIDCCustomClaim from './model/OIDCCustomClaim';
 import ObjectVersionSettingsOutput from './model/ObjectVersionSettingsOutput';
@@ -655,6 +658,8 @@ import UpdateAuthMethodK8SOutput from './model/UpdateAuthMethodK8SOutput';
 import UpdateAuthMethodLDAP from './model/UpdateAuthMethodLDAP';
 import UpdateAuthMethodLDAPOutput from './model/UpdateAuthMethodLDAPOutput';
 import UpdateAuthMethodOAuth2 from './model/UpdateAuthMethodOAuth2';
+import UpdateAuthMethodOCI from './model/UpdateAuthMethodOCI';
+import UpdateAuthMethodOCIOutput from './model/UpdateAuthMethodOCIOutput';
 import UpdateAuthMethodOIDC from './model/UpdateAuthMethodOIDC';
 import UpdateAuthMethodOutput from './model/UpdateAuthMethodOutput';
 import UpdateAuthMethodSAML from './model/UpdateAuthMethodSAML';
@@ -1252,6 +1257,18 @@ export {
      * @property {module:model/CreateAuthMethodOAuth2Output}
      */
     CreateAuthMethodOAuth2Output,
+
+    /**
+     * The CreateAuthMethodOCI model constructor.
+     * @property {module:model/CreateAuthMethodOCI}
+     */
+    CreateAuthMethodOCI,
+
+    /**
+     * The CreateAuthMethodOCIOutput model constructor.
+     * @property {module:model/CreateAuthMethodOCIOutput}
+     */
+    CreateAuthMethodOCIOutput,
 
     /**
      * The CreateAuthMethodOIDC model constructor.
@@ -3924,6 +3941,12 @@ export {
     OAuth2CustomClaim,
 
     /**
+     * The OCIAccessRules model constructor.
+     * @property {module:model/OCIAccessRules}
+     */
+    OCIAccessRules,
+
+    /**
      * The OIDCAccessRules model constructor.
      * @property {module:model/OIDCAccessRules}
      */
@@ -4648,6 +4671,18 @@ export {
      * @property {module:model/UpdateAuthMethodOAuth2}
      */
     UpdateAuthMethodOAuth2,
+
+    /**
+     * The UpdateAuthMethodOCI model constructor.
+     * @property {module:model/UpdateAuthMethodOCI}
+     */
+    UpdateAuthMethodOCI,
+
+    /**
+     * The UpdateAuthMethodOCIOutput model constructor.
+     * @property {module:model/UpdateAuthMethodOCIOutput}
+     */
+    UpdateAuthMethodOCIOutput,
 
     /**
      * The UpdateAuthMethodOIDC model constructor.

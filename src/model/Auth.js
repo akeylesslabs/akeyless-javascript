@@ -101,6 +101,12 @@ class Auth {
             if (data.hasOwnProperty('ldap_username')) {
                 obj['ldap_username'] = ApiClient.convertToType(data['ldap_username'], 'String');
             }
+            if (data.hasOwnProperty('oci-auth-type')) {
+                obj['oci-auth-type'] = ApiClient.convertToType(data['oci-auth-type'], 'String');
+            }
+            if (data.hasOwnProperty('oci-group-ocid')) {
+                obj['oci-group-ocid'] = ApiClient.convertToType(data['oci-group-ocid'], ['String']);
+            }
             if (data.hasOwnProperty('uid_token')) {
                 obj['uid_token'] = ApiClient.convertToType(data['uid_token'], 'String');
             }
@@ -220,6 +226,19 @@ Auth.prototype['ldap_password'] = undefined;
  * @member {String} ldap_username
  */
 Auth.prototype['ldap_username'] = undefined;
+
+/**
+ * The type of the OCI configuration to use [instance/apikey/resource] (relevant only for access-type=oci)
+ * @member {String} oci-auth-type
+ * @default 'apikey'
+ */
+Auth.prototype['oci-auth-type'] = 'apikey';
+
+/**
+ * A list of Oracle Cloud IDs groups (relevant only for access-type=oci)
+ * @member {Array.<String>} oci-group-ocid
+ */
+Auth.prototype['oci-group-ocid'] = undefined;
 
 /**
  * The universal_identity token (relevant only for access-type=universal_identity)
