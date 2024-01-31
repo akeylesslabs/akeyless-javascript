@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignEcDsa model module.
  * @module model/SignEcDsa
- * @version 3.5.4
+ * @version 3.6.0
  */
 class SignEcDsa {
     /**
@@ -65,11 +65,17 @@ class SignEcDsa {
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
             }
+            if (data.hasOwnProperty('prehashed')) {
+                obj['prehashed'] = ApiClient.convertToType(data['prehashed'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
         }
         return obj;
@@ -110,6 +116,12 @@ SignEcDsa.prototype['key-name'] = undefined;
 SignEcDsa.prototype['message'] = undefined;
 
 /**
+ * Markes that the message is already hashed
+ * @member {Boolean} prehashed
+ */
+SignEcDsa.prototype['prehashed'] = undefined;
+
+/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -120,6 +132,12 @@ SignEcDsa.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 SignEcDsa.prototype['uid-token'] = undefined;
+
+/**
+ * The version of the key to use for signing
+ * @member {Number} version
+ */
+SignEcDsa.prototype['version'] = undefined;
 
 
 

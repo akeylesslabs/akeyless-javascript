@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCertificateValue model module.
  * @module model/UpdateCertificateValue
- * @version 3.5.4
+ * @version 3.6.0
  */
 class UpdateCertificateValue {
     /**
@@ -69,6 +69,9 @@ class UpdateCertificateValue {
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
+            if (data.hasOwnProperty('keep-prev-version')) {
+                obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
@@ -140,6 +143,12 @@ UpdateCertificateValue.prototype['format'] = undefined;
  * @default false
  */
 UpdateCertificateValue.prototype['json'] = false;
+
+/**
+ * Whether to keep previous version [true/false]. If not set, use default according to account settings
+ * @member {String} keep-prev-version
+ */
+UpdateCertificateValue.prototype['keep-prev-version'] = undefined;
 
 /**
  * The name of a key to use to encrypt the certificate's key (if empty, the account default protectionKey key will be used)

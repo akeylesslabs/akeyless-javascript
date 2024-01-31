@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocTargetItem model module.
  * @module model/AssocTargetItem
- * @version 3.5.4
+ * @version 3.6.0
  */
 class AssocTargetItem {
     /**
@@ -52,6 +52,12 @@ class AssocTargetItem {
         if (data) {
             obj = obj || new AssocTargetItem();
 
+            if (data.hasOwnProperty('certificate-path')) {
+                obj['certificate-path'] = ApiClient.convertToType(data['certificate-path'], 'String');
+            }
+            if (data.hasOwnProperty('chain-path')) {
+                obj['chain-path'] = ApiClient.convertToType(data['chain-path'], 'String');
+            }
             if (data.hasOwnProperty('disable-previous-key-version')) {
                 obj['disable-previous-key-version'] = ApiClient.convertToType(data['disable-previous-key-version'], 'Boolean');
             }
@@ -76,6 +82,9 @@ class AssocTargetItem {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('private-key-path')) {
+                obj['private-key-path'] = ApiClient.convertToType(data['private-key-path'], 'String');
+            }
             if (data.hasOwnProperty('project-id')) {
                 obj['project-id'] = ApiClient.convertToType(data['project-id'], 'String');
             }
@@ -84,6 +93,9 @@ class AssocTargetItem {
             }
             if (data.hasOwnProperty('regions')) {
                 obj['regions'] = ApiClient.convertToType(data['regions'], ['String']);
+            }
+            if (data.hasOwnProperty('sra-association')) {
+                obj['sra-association'] = ApiClient.convertToType(data['sra-association'], 'Boolean');
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -106,6 +118,18 @@ class AssocTargetItem {
 
 
 }
+
+/**
+ * A path on the target to store the certificate pem file (relevant only for certificate provisioning)
+ * @member {String} certificate-path
+ */
+AssocTargetItem.prototype['certificate-path'] = undefined;
+
+/**
+ * A path on the target to store the full chain pem file (relevant only for certificate provisioning)
+ * @member {String} chain-path
+ */
+AssocTargetItem.prototype['chain-path'] = undefined;
 
 /**
  * Automatically disable previous key version (required for azure targets)
@@ -159,6 +183,12 @@ AssocTargetItem.prototype['multi-region'] = 'false';
 AssocTargetItem.prototype['name'] = undefined;
 
 /**
+ * A path on the target to store the private key (relevant only for certificate provisioning)
+ * @member {String} private-key-path
+ */
+AssocTargetItem.prototype['private-key-path'] = undefined;
+
+/**
  * Project id of the GCP KMS (required for gcp targets)
  * @member {String} project-id
  */
@@ -175,6 +205,13 @@ AssocTargetItem.prototype['purpose'] = undefined;
  * @member {Array.<String>} regions
  */
 AssocTargetItem.prototype['regions'] = undefined;
+
+/**
+ * Is the target to associate is for sra, relevant only for linked target association for ldap rotated secret
+ * @member {Boolean} sra-association
+ * @default false
+ */
+AssocTargetItem.prototype['sra-association'] = false;
 
 /**
  * The target to associate

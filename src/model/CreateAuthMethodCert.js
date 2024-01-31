@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodCert model module.
  * @module model/CreateAuthMethodCert
- * @version 3.5.4
+ * @version 3.6.0
  */
 class CreateAuthMethodCert {
     /**
@@ -81,6 +81,9 @@ class CreateAuthMethodCert {
             }
             if (data.hasOwnProperty('certificate-data')) {
                 obj['certificate-data'] = ApiClient.convertToType(data['certificate-data'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
@@ -176,6 +179,12 @@ CreateAuthMethodCert.prototype['bound-uri-sans'] = undefined;
  * @member {String} certificate-data
  */
 CreateAuthMethodCert.prototype['certificate-data'] = undefined;
+
+/**
+ * Auth Method description
+ * @member {String} description
+ */
+CreateAuthMethodCert.prototype['description'] = undefined;
 
 /**
  * if true: enforce role-association must include sub claims

@@ -17,7 +17,7 @@ import AccessPermissionAssignment from './AccessPermissionAssignment';
 /**
  * The GetGroupOutput model module.
  * @module model/GetGroupOutput
- * @version 3.5.4
+ * @version 3.6.0
  */
 class GetGroupOutput {
     /**

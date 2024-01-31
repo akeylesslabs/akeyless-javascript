@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ServerInventoryPayload model module.
  * @module model/ServerInventoryPayload
- * @version 3.5.4
+ * @version 3.6.0
  */
 class ServerInventoryPayload {
     /**
@@ -65,6 +65,9 @@ class ServerInventoryPayload {
             if (data.hasOwnProperty('server_targets_path_template')) {
                 obj['server_targets_path_template'] = ApiClient.convertToType(data['server_targets_path_template'], 'String');
             }
+            if (data.hasOwnProperty('user_groups')) {
+                obj['user_groups'] = ApiClient.convertToType(data['user_groups'], ['String']);
+            }
             if (data.hasOwnProperty('users_ignore_list')) {
                 obj['users_ignore_list'] = ApiClient.convertToType(data['users_ignore_list'], {'String': 'Boolean'});
             }
@@ -107,6 +110,11 @@ ServerInventoryPayload.prototype['migration_target_id'] = undefined;
  * @member {String} server_targets_path_template
  */
 ServerInventoryPayload.prototype['server_targets_path_template'] = undefined;
+
+/**
+ * @member {Array.<String>} user_groups
+ */
+ServerInventoryPayload.prototype['user_groups'] = undefined;
 
 /**
  * @member {Object.<String, Boolean>} users_ignore_list

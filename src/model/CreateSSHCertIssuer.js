@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHCertIssuer model module.
  * @module model/CreateSSHCertIssuer
- * @version 3.5.4
+ * @version 3.6.0
  */
 class CreateSSHCertIssuer {
     /**
@@ -55,8 +55,8 @@ class CreateSSHCertIssuer {
         if (data) {
             obj = obj || new CreateSSHCertIssuer();
 
-            if (data.hasOwnProperty('SshCertIssuerHostProvider')) {
-                obj['SshCertIssuerHostProvider'] = ApiClient.convertToType(data['SshCertIssuerHostProvider'], 'String');
+            if (data.hasOwnProperty('ProviderType')) {
+                obj['ProviderType'] = ApiClient.convertToType(data['ProviderType'], 'String');
             }
             if (data.hasOwnProperty('allowed-users')) {
                 obj['allowed-users'] = ApiClient.convertToType(data['allowed-users'], 'String');
@@ -129,9 +129,9 @@ class CreateSSHCertIssuer {
 }
 
 /**
- * @member {String} SshCertIssuerHostProvider
+ * @member {String} ProviderType
  */
-CreateSSHCertIssuer.prototype['SshCertIssuerHostProvider'] = undefined;
+CreateSSHCertIssuer.prototype['ProviderType'] = undefined;
 
 /**
  * Users allowed to fetch the certificate, e.g root,ubuntu
@@ -158,7 +158,7 @@ CreateSSHCertIssuer.prototype['description'] = undefined;
 CreateSSHCertIssuer.prototype['extensions'] = undefined;
 
 /**
- * Host provider type [explicit/target]
+ * Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret
  * @member {String} host-provider
  * @default 'explicit'
  */
@@ -238,7 +238,7 @@ CreateSSHCertIssuer.prototype['signer-key-name'] = undefined;
 CreateSSHCertIssuer.prototype['tag'] = undefined;
 
 /**
- * A list of existing targets to be associated, Relevant only for Secure Remote Access, To specify multiple targets use argument multiple times
+ * A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer and ldap rotated secret, To specify multiple targets use argument multiple times
  * @member {Array.<String>} target
  */
 CreateSSHCertIssuer.prototype['target'] = undefined;

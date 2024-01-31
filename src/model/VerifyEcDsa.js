@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyEcDsa model module.
  * @module model/VerifyEcDsa
- * @version 3.5.4
+ * @version 3.6.0
  */
 class VerifyEcDsa {
     /**
@@ -67,6 +67,9 @@ class VerifyEcDsa {
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
             }
+            if (data.hasOwnProperty('prehashed')) {
+                obj['prehashed'] = ApiClient.convertToType(data['prehashed'], 'Boolean');
+            }
             if (data.hasOwnProperty('signature')) {
                 obj['signature'] = ApiClient.convertToType(data['signature'], 'String');
             }
@@ -75,6 +78,9 @@ class VerifyEcDsa {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
         }
         return obj;
@@ -115,6 +121,12 @@ VerifyEcDsa.prototype['key-name'] = undefined;
 VerifyEcDsa.prototype['message'] = undefined;
 
 /**
+ * Markes that the message is already hashed
+ * @member {Boolean} prehashed
+ */
+VerifyEcDsa.prototype['prehashed'] = undefined;
+
+/**
  * The message's signature
  * @member {String} signature
  */
@@ -131,6 +143,12 @@ VerifyEcDsa.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 VerifyEcDsa.prototype['uid-token'] = undefined;
+
+/**
+ * The version of the key to use for verification
+ * @member {Number} version
+ */
+VerifyEcDsa.prototype['version'] = undefined;
 
 
 

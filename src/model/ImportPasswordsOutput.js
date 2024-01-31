@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ImportPasswordsOutput model module.
  * @module model/ImportPasswordsOutput
- * @version 3.5.4
+ * @version 3.6.0
  */
 class ImportPasswordsOutput {
     /**
@@ -56,6 +56,9 @@ class ImportPasswordsOutput {
             if (data.hasOwnProperty('successfully_parsed')) {
                 obj['successfully_parsed'] = ApiClient.convertToType(data['successfully_parsed'], 'Number');
             }
+            if (data.hasOwnProperty('updated')) {
+                obj['updated'] = ApiClient.convertToType(data['updated'], 'Number');
+            }
         }
         return obj;
     }
@@ -77,6 +80,11 @@ ImportPasswordsOutput.prototype['passwords_in_file'] = undefined;
  * @member {Number} successfully_parsed
  */
 ImportPasswordsOutput.prototype['successfully_parsed'] = undefined;
+
+/**
+ * @member {Number} updated
+ */
+ImportPasswordsOutput.prototype['updated'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodEmail model module.
  * @module model/CreateAuthMethodEmail
- * @version 3.5.4
+ * @version 3.6.0
  */
 class CreateAuthMethodEmail {
     /**
@@ -57,6 +57,9 @@ class CreateAuthMethodEmail {
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
@@ -101,6 +104,12 @@ CreateAuthMethodEmail.prototype['access-expires'] = 0;
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodEmail.prototype['bound-ips'] = undefined;
+
+/**
+ * Auth Method description
+ * @member {String} description
+ */
+CreateAuthMethodEmail.prototype['description'] = undefined;
 
 /**
  * An email address to be invited to have access

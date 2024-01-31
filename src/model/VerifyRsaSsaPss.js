@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyRsaSsaPss model module.
  * @module model/VerifyRsaSsaPss
- * @version 3.5.4
+ * @version 3.6.0
  */
 class VerifyRsaSsaPss {
     /**
@@ -70,6 +70,9 @@ class VerifyRsaSsaPss {
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
             }
+            if (data.hasOwnProperty('prehashed')) {
+                obj['prehashed'] = ApiClient.convertToType(data['prehashed'], 'Boolean');
+            }
             if (data.hasOwnProperty('signature')) {
                 obj['signature'] = ApiClient.convertToType(data['signature'], 'String');
             }
@@ -78,6 +81,9 @@ class VerifyRsaSsaPss {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
         }
         return obj;
@@ -124,6 +130,12 @@ VerifyRsaSsaPss.prototype['key-name'] = undefined;
 VerifyRsaSsaPss.prototype['message'] = undefined;
 
 /**
+ * Markes that the message is already hashed
+ * @member {Boolean} prehashed
+ */
+VerifyRsaSsaPss.prototype['prehashed'] = undefined;
+
+/**
  * The message's signature
  * @member {String} signature
  */
@@ -140,6 +152,12 @@ VerifyRsaSsaPss.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 VerifyRsaSsaPss.prototype['uid-token'] = undefined;
+
+/**
+ * The version of the key to use for verification
+ * @member {Number} version
+ */
+VerifyRsaSsaPss.prototype['version'] = undefined;
 
 
 

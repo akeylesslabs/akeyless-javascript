@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessExpires** | **Number** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
-**audience** | **String** | The audience in the JWT | [optional] [default to &#39;https://management.azure.com/&#39;]
+**audience** | **String** | Deprecated (Deprecated) The audience in the JWT | [optional] [default to &#39;https://management.azure.com/&#39;]
 **boundGroupId** | **[String]** | A list of group ids that the access is restricted to | [optional] 
 **boundIps** | **[String]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
 **boundProviders** | **[String]** | A list of resource providers that the access is restricted to (e.g, Microsoft.Compute, Microsoft.ManagedIdentity, etc) | [optional] 
@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **boundSpid** | **[String]** | A list of service principal IDs that the access is restricted to | [optional] 
 **boundSubId** | **[String]** | A list of subscription ids that the access is restricted to | [optional] 
 **boundTenantId** | **String** | The Azure tenant id that the access is restricted to | 
+**description** | **String** | Auth Method description | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **issuer** | **String** | Issuer URL | [optional] [default to &#39;https://sts.windows.net/---bound_tenant_id---&#39;]

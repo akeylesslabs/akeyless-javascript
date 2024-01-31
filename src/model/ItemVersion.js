@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import CertificateVersionInfo from './CertificateVersionInfo';
 
 /**
  * The ItemVersion model module.
  * @module model/ItemVersion
- * @version 3.5.4
+ * @version 3.6.0
  */
 class ItemVersion {
     /**
@@ -52,6 +53,9 @@ class ItemVersion {
             }
             if (data.hasOwnProperty('access_date_display')) {
                 obj['access_date_display'] = ApiClient.convertToType(data['access_date_display'], 'String');
+            }
+            if (data.hasOwnProperty('certificate_version_info')) {
+                obj['certificate_version_info'] = CertificateVersionInfo.constructFromObject(data['certificate_version_info']);
             }
             if (data.hasOwnProperty('creation_date')) {
                 obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
@@ -93,6 +97,11 @@ ItemVersion.prototype['access_date'] = undefined;
  * @member {String} access_date_display
  */
 ItemVersion.prototype['access_date_display'] = undefined;
+
+/**
+ * @member {module:model/CertificateVersionInfo} certificate_version_info
+ */
+ItemVersion.prototype['certificate_version_info'] = undefined;
 
 /**
  * @member {Date} creation_date

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateItem model module.
  * @module model/GatewayUpdateItem
- * @version 3.5.4
+ * @version 3.6.0
  */
 class GatewayUpdateItem {
     /**
@@ -60,6 +60,9 @@ class GatewayUpdateItem {
             }
             if (data.hasOwnProperty('api-key')) {
                 obj['api-key'] = ApiClient.convertToType(data['api-key'], 'String');
+            }
+            if (data.hasOwnProperty('app-id')) {
+                obj['app-id'] = ApiClient.convertToType(data['app-id'], 'String');
             }
             if (data.hasOwnProperty('auto-rotate')) {
                 obj['auto-rotate'] = ApiClient.convertToType(data['auto-rotate'], 'String');
@@ -154,6 +157,12 @@ GatewayUpdateItem.prototype['api-id'] = undefined;
  * @member {String} api-key
  */
 GatewayUpdateItem.prototype['api-key'] = undefined;
+
+/**
+ * ApplicationId (used in azure)
+ * @member {String} app-id
+ */
+GatewayUpdateItem.prototype['app-id'] = undefined;
 
 /**
  * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]

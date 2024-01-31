@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodHuawei model module.
  * @module model/CreateAuthMethodHuawei
- * @version 3.5.4
+ * @version 3.6.0
  */
 class CreateAuthMethodHuawei {
     /**
@@ -76,6 +76,9 @@ class CreateAuthMethodHuawei {
             }
             if (data.hasOwnProperty('bound-user-name')) {
                 obj['bound-user-name'] = ApiClient.convertToType(data['bound-user-name'], ['String']);
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
@@ -160,6 +163,12 @@ CreateAuthMethodHuawei.prototype['bound-user-id'] = undefined;
  * @member {Array.<String>} bound-user-name
  */
 CreateAuthMethodHuawei.prototype['bound-user-name'] = undefined;
+
+/**
+ * Auth Method description
+ * @member {String} description
+ */
+CreateAuthMethodHuawei.prototype['description'] = undefined;
 
 /**
  * if true: enforce role-association must include sub claims

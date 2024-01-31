@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOIDC model module.
  * @module model/UpdateAuthMethodOIDC
- * @version 3.5.4
+ * @version 3.6.0
  */
 class UpdateAuthMethodOIDC {
     /**
@@ -69,6 +69,9 @@ class UpdateAuthMethodOIDC {
             }
             if (data.hasOwnProperty('client-secret')) {
                 obj['client-secret'] = ApiClient.convertToType(data['client-secret'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
@@ -152,6 +155,12 @@ UpdateAuthMethodOIDC.prototype['client-id'] = undefined;
  * @member {String} client-secret
  */
 UpdateAuthMethodOIDC.prototype['client-secret'] = undefined;
+
+/**
+ * Auth Method description
+ * @member {String} description
+ */
+UpdateAuthMethodOIDC.prototype['description'] = undefined;
 
 /**
  * if true: enforce role-association must include sub claims

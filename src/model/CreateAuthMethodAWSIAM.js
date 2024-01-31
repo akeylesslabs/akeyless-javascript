@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAWSIAM model module.
  * @module model/CreateAuthMethodAWSIAM
- * @version 3.5.4
+ * @version 3.6.0
  */
 class CreateAuthMethodAWSIAM {
     /**
@@ -78,6 +78,9 @@ class CreateAuthMethodAWSIAM {
             }
             if (data.hasOwnProperty('bound-user-name')) {
                 obj['bound-user-name'] = ApiClient.convertToType(data['bound-user-name'], ['String']);
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
@@ -164,6 +167,12 @@ CreateAuthMethodAWSIAM.prototype['bound-user-id'] = undefined;
  * @member {Array.<String>} bound-user-name
  */
 CreateAuthMethodAWSIAM.prototype['bound-user-name'] = undefined;
+
+/**
+ * Auth Method description
+ * @member {String} description
+ */
+CreateAuthMethodAWSIAM.prototype['description'] = undefined;
 
 /**
  * if true: enforce role-association must include sub claims

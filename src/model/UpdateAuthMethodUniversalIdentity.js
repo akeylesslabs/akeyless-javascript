@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodUniversalIdentity model module.
  * @module model/UpdateAuthMethodUniversalIdentity
- * @version 3.5.4
+ * @version 3.6.0
  */
 class UpdateAuthMethodUniversalIdentity {
     /**
@@ -61,6 +61,9 @@ class UpdateAuthMethodUniversalIdentity {
             }
             if (data.hasOwnProperty('deny-rotate')) {
                 obj['deny-rotate'] = ApiClient.convertToType(data['deny-rotate'], 'Boolean');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
@@ -120,6 +123,12 @@ UpdateAuthMethodUniversalIdentity.prototype['deny-inheritance'] = undefined;
  * @member {Boolean} deny-rotate
  */
 UpdateAuthMethodUniversalIdentity.prototype['deny-rotate'] = undefined;
+
+/**
+ * Auth Method description
+ * @member {String} description
+ */
+UpdateAuthMethodUniversalIdentity.prototype['description'] = undefined;
 
 /**
  * if true: enforce role-association must include sub claims

@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**certificatePath** | **String** | A path on the target to store the certificate pem file (relevant only for certificate provisioning) | [optional] 
+**chainPath** | **String** | A path on the target to store the full chain pem file (relevant only for certificate provisioning) | [optional] 
 **disablePreviousKeyVersion** | **Boolean** | Automatically disable previous key version (required for azure targets) | [optional] [default to false]
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **keyOperations** | **[String]** | A list of allowed operations for the key (required for azure targets) | [optional] 
@@ -12,9 +14,11 @@ Name | Type | Description | Notes
 **locationId** | **String** | Location id of the GCP KMS (required for gcp targets) | [optional] 
 **multiRegion** | **String** | Set to &#39;true&#39; to create a multi-region managed key. (Relevant only for Classic Key AWS targets) | [optional] [default to &#39;false&#39;]
 **name** | **String** | The item to associate | 
+**privateKeyPath** | **String** | A path on the target to store the private key (relevant only for certificate provisioning) | [optional] 
 **projectId** | **String** | Project id of the GCP KMS (required for gcp targets) | [optional] 
 **purpose** | **String** | Purpose of the key in GCP KMS (required for gcp targets) | [optional] 
 **regions** | **[String]** | The list of regions to create a copy of the key in (relevant for aws targets) | [optional] 
+**sraAssociation** | **Boolean** | Is the target to associate is for sra, relevant only for linked target association for ldap rotated secret | [optional] [default to false]
 **targetName** | **String** | The target to associate | 
 **tenantSecretType** | **String** | The tenant secret type [Data/SearchIndex/Analytics] (required for salesforce targets) | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

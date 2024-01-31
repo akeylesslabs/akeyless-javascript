@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **sshPrivateKey** | **Boolean** |  | [optional] 
 **sshUser** | **String** |  | [optional] 
 **targetHosts** | [**[TargetNameWithHosts]**](TargetNameWithHosts.md) |  | [optional] 
+**targets** | **[String]** |  | [optional] 
 **url** | **String** |  | [optional] 
 **useInternalBastion** | **Boolean** |  | [optional] 
 **webProxy** | **Boolean** |  | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOAuth2 model module.
  * @module model/CreateAuthMethodOAuth2
- * @version 3.5.4
+ * @version 3.6.0
  */
 class CreateAuthMethodOAuth2 {
     /**
@@ -65,6 +65,9 @@ class CreateAuthMethodOAuth2 {
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
@@ -136,6 +139,12 @@ CreateAuthMethodOAuth2.prototype['bound-client-ids'] = undefined;
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodOAuth2.prototype['bound-ips'] = undefined;
+
+/**
+ * Auth Method description
+ * @member {String} description
+ */
+CreateAuthMethodOAuth2.prototype['description'] = undefined;
 
 /**
  * if true: enforce role-association must include sub claims

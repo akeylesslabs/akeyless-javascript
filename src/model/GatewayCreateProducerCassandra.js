@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCassandra model module.
  * @module model/GatewayCreateProducerCassandra
- * @version 3.5.4
+ * @version 3.6.0
  */
 class GatewayCreateProducerCassandra {
     /**
@@ -76,6 +76,12 @@ class GatewayCreateProducerCassandra {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('ssl')) {
+                obj['ssl'] = ApiClient.convertToType(data['ssl'], 'Boolean');
+            }
+            if (data.hasOwnProperty('ssl-certificate')) {
+                obj['ssl-certificate'] = ApiClient.convertToType(data['ssl-certificate'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -154,6 +160,19 @@ GatewayCreateProducerCassandra.prototype['name'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayCreateProducerCassandra.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * Enable/Disable SSL [true/false]
+ * @member {Boolean} ssl
+ * @default false
+ */
+GatewayCreateProducerCassandra.prototype['ssl'] = false;
+
+/**
+ * SSL CA certificate in base64 encoding generated from a trusted Certificate Authority (CA)
+ * @member {String} ssl-certificate
+ */
+GatewayCreateProducerCassandra.prototype['ssl-certificate'] = undefined;
 
 /**
  * Add tags attached to this object

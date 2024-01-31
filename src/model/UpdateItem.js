@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 3.5.4
+ * @version 3.6.0
  */
 class UpdateItem {
     /**
@@ -49,6 +49,9 @@ class UpdateItem {
         if (data) {
             obj = obj || new UpdateItem();
 
+            if (data.hasOwnProperty('ProviderType')) {
+                obj['ProviderType'] = ApiClient.convertToType(data['ProviderType'], 'String');
+            }
             if (data.hasOwnProperty('accessibility')) {
                 obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
             }
@@ -58,11 +61,17 @@ class UpdateItem {
             if (data.hasOwnProperty('cert-file-data')) {
                 obj['cert-file-data'] = ApiClient.convertToType(data['cert-file-data'], 'String');
             }
+            if (data.hasOwnProperty('change-event')) {
+                obj['change-event'] = ApiClient.convertToType(data['change-event'], 'String');
+            }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('host-provider')) {
+                obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -171,6 +180,11 @@ class UpdateItem {
 }
 
 /**
+ * @member {String} ProviderType
+ */
+UpdateItem.prototype['ProviderType'] = undefined;
+
+/**
  * for personal password manager
  * @member {String} accessibility
  * @default 'regular'
@@ -190,6 +204,12 @@ UpdateItem.prototype['add-tag'] = undefined;
 UpdateItem.prototype['cert-file-data'] = undefined;
 
 /**
+ * Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret)
+ * @member {String} change-event
+ */
+UpdateItem.prototype['change-event'] = undefined;
+
+/**
  * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
@@ -201,6 +221,13 @@ UpdateItem.prototype['delete_protection'] = undefined;
  * @default 'default_metadata'
  */
 UpdateItem.prototype['description'] = 'default_metadata';
+
+/**
+ * Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret
+ * @member {String} host-provider
+ * @default 'explicit'
+ */
+UpdateItem.prototype['host-provider'] = 'explicit';
 
 /**
  * Set output format to JSON

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSecretVal model module.
  * @module model/UpdateSecretVal
- * @version 3.5.4
+ * @version 3.6.0
  */
 class UpdateSecretVal {
     /**
@@ -68,6 +68,9 @@ class UpdateSecretVal {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('last-version')) {
+                obj['last-version'] = ApiClient.convertToType(data['last-version'], 'Number');
             }
             if (data.hasOwnProperty('multiline')) {
                 obj['multiline'] = ApiClient.convertToType(data['multiline'], 'Boolean');
@@ -137,6 +140,12 @@ UpdateSecretVal.prototype['keep-prev-version'] = undefined;
  * @member {String} key
  */
 UpdateSecretVal.prototype['key'] = undefined;
+
+/**
+ * The last version number before the update
+ * @member {Number} last-version
+ */
+UpdateSecretVal.prototype['last-version'] = undefined;
 
 /**
  * The provided value is a multiline value (separated by '\\n')

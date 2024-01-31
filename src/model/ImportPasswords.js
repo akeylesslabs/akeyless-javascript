@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ImportPasswords model module.
  * @module model/ImportPasswords
- * @version 3.5.4
+ * @version 3.6.0
  */
 class ImportPasswords {
     /**
@@ -73,6 +73,9 @@ class ImportPasswords {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('update-mode')) {
+                obj['update-mode'] = ApiClient.convertToType(data['update-mode'], 'String');
             }
         }
         return obj;
@@ -132,6 +135,11 @@ ImportPasswords.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 ImportPasswords.prototype['uid-token'] = undefined;
+
+/**
+ * @member {String} update-mode
+ */
+ImportPasswords.prototype['update-mode'] = undefined;
 
 
 

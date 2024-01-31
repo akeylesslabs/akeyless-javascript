@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignPKCS1Output model module.
  * @module model/SignPKCS1Output
- * @version 3.5.4
+ * @version 3.6.0
  */
 class SignPKCS1Output {
     /**
@@ -48,7 +48,7 @@ class SignPKCS1Output {
             obj = obj || new SignPKCS1Output();
 
             if (data.hasOwnProperty('result')) {
-                obj['result'] = ApiClient.convertToType(data['result'], ['Number']);
+                obj['result'] = ApiClient.convertToType(data['result'], 'String');
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class SignPKCS1Output {
 }
 
 /**
- * @member {Array.<Number>} result
+ * @member {String} result
  */
 SignPKCS1Output.prototype['result'] = undefined;
 

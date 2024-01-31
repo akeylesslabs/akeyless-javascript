@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **defaultSecretLocation** | **String** |  | [optional] 
 **displayName** | **String** |  | [optional] 
 **id** | **Number** |  | [optional] 
+**serverlessType** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 **statusDescription** | **String** |  | [optional] 
 

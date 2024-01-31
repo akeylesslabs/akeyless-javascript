@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodGCP model module.
  * @module model/UpdateAuthMethodGCP
- * @version 3.5.4
+ * @version 3.6.0
  */
 class UpdateAuthMethodGCP {
     /**
@@ -77,6 +77,9 @@ class UpdateAuthMethodGCP {
             }
             if (data.hasOwnProperty('bound-zones')) {
                 obj['bound-zones'] = ApiClient.convertToType(data['bound-zones'], ['String']);
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
@@ -164,6 +167,12 @@ UpdateAuthMethodGCP.prototype['bound-service-accounts'] = undefined;
  * @member {Array.<String>} bound-zones
  */
 UpdateAuthMethodGCP.prototype['bound-zones'] = undefined;
+
+/**
+ * Auth Method description
+ * @member {String} description
+ */
+UpdateAuthMethodGCP.prototype['description'] = undefined;
 
 /**
  * if true: enforce role-association must include sub claims

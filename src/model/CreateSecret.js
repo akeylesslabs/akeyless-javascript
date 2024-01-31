@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 3.5.4
+ * @version 3.6.0
  */
 class CreateSecret {
     /**
@@ -53,6 +53,9 @@ class CreateSecret {
 
             if (data.hasOwnProperty('accessibility')) {
                 obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
+            }
+            if (data.hasOwnProperty('change-event')) {
+                obj['change-event'] = ApiClient.convertToType(data['change-event'], 'String');
             }
             if (data.hasOwnProperty('custom-field')) {
                 obj['custom-field'] = ApiClient.convertToType(data['custom-field'], {'String': 'String'});
@@ -142,6 +145,12 @@ class CreateSecret {
  * @default 'regular'
  */
 CreateSecret.prototype['accessibility'] = 'regular';
+
+/**
+ * Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret)
+ * @member {String} change-event
+ */
+CreateSecret.prototype['change-event'] = undefined;
 
 /**
  * For Password Management use, additional fields

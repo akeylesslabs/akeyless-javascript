@@ -4,11 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**providerType** | **String** |  | [optional] 
 **accessibility** | **String** | for personal password manager | [optional] [default to &#39;regular&#39;]
 **addTag** | **[String]** | List of the new tags that will be attached to this item | [optional] 
 **certFileData** | **String** | PEM Certificate in a Base64 format. Used for updating RSA keys&#39; certificates. | [optional] 
+**changeEvent** | **String** | Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret) | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] [default to &#39;default_metadata&#39;]
+**hostProvider** | **String** | Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret | [optional] [default to &#39;explicit&#39;]
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Current item name | 
 **newMetadata** | **String** | Deprecated - use description | [optional] [default to &#39;default_metadata&#39;]

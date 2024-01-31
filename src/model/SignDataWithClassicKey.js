@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignDataWithClassicKey model module.
  * @module model/SignDataWithClassicKey
- * @version 3.5.4
+ * @version 3.6.0
  */
 class SignDataWithClassicKey {
     /**
@@ -67,6 +67,9 @@ class SignDataWithClassicKey {
             if (data.hasOwnProperty('hashing-method')) {
                 obj['hashing-method'] = ApiClient.convertToType(data['hashing-method'], 'String');
             }
+            if (data.hasOwnProperty('ignore-cache')) {
+                obj['ignore-cache'] = ApiClient.convertToType(data['ignore-cache'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -114,6 +117,13 @@ SignDataWithClassicKey.prototype['hashed'] = false;
  * @default 'SHA256'
  */
 SignDataWithClassicKey.prototype['hashing-method'] = 'SHA256';
+
+/**
+ * Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI
+ * @member {String} ignore-cache
+ * @default 'false'
+ */
+SignDataWithClassicKey.prototype['ignore-cache'] = 'false';
 
 /**
  * Set output format to JSON

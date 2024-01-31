@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAzureAD model module.
  * @module model/UpdateAuthMethodAzureAD
- * @version 3.5.4
+ * @version 3.6.0
  */
 class UpdateAuthMethodAzureAD {
     /**
@@ -88,6 +88,9 @@ class UpdateAuthMethodAzureAD {
             if (data.hasOwnProperty('bound-tenant-id')) {
                 obj['bound-tenant-id'] = ApiClient.convertToType(data['bound-tenant-id'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
             }
@@ -133,7 +136,7 @@ class UpdateAuthMethodAzureAD {
 UpdateAuthMethodAzureAD.prototype['access-expires'] = 0;
 
 /**
- * The audience in the JWT
+ * Deprecated (Deprecated) The audience in the JWT
  * @member {String} audience
  * @default 'https://management.azure.com/'
  */
@@ -198,6 +201,12 @@ UpdateAuthMethodAzureAD.prototype['bound-sub-id'] = undefined;
  * @member {String} bound-tenant-id
  */
 UpdateAuthMethodAzureAD.prototype['bound-tenant-id'] = undefined;
+
+/**
+ * Auth Method description
+ * @member {String} description
+ */
+UpdateAuthMethodAzureAD.prototype['description'] = undefined;
 
 /**
  * if true: enforce role-association must include sub claims

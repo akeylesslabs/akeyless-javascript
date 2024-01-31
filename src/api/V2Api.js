@@ -411,9 +411,13 @@ import ListTargets from '../model/ListTargets';
 import ListTargetsOutput from '../model/ListTargetsOutput';
 import MigrationStatusReplyObj from '../model/MigrationStatusReplyObj';
 import MoveObjects from '../model/MoveObjects';
+import ProvisionCertificate from '../model/ProvisionCertificate';
+import ProvisionCertificateOutput from '../model/ProvisionCertificateOutput';
 import RawCreds from '../model/RawCreds';
 import RefreshKey from '../model/RefreshKey';
 import RefreshKeyOutput from '../model/RefreshKeyOutput';
+import RenewCertificate from '../model/RenewCertificate';
+import RenewCertificateOutput from '../model/RenewCertificateOutput';
 import RequestAccess from '../model/RequestAccess';
 import RequestAccessOutput from '../model/RequestAccessOutput';
 import ReverseRBAC from '../model/ReverseRBAC';
@@ -422,6 +426,7 @@ import Role from '../model/Role';
 import RoleAssociationDetails from '../model/RoleAssociationDetails';
 import RollbackSecret from '../model/RollbackSecret';
 import RollbackSecretOutput from '../model/RollbackSecretOutput';
+import RotateKey from '../model/RotateKey';
 import RotateKeyOutput from '../model/RotateKeyOutput';
 import RotateOidcClientOutput from '../model/RotateOidcClientOutput';
 import RotateOidcClientSecret from '../model/RotateOidcClientSecret';
@@ -571,7 +576,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.5.4
+* @version 3.6.0
 */
 export default class V2Api {
 
@@ -9812,6 +9817,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/ProvisionCertificate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProvisionCertificateOutput} and HTTP response
+     */
+    provisionCertificateWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling provisionCertificate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ProvisionCertificateOutput;
+      return this.apiClient.callApi(
+        '/provision-certificate', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ProvisionCertificate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProvisionCertificateOutput}
+     */
+    provisionCertificate(body) {
+      return this.provisionCertificateWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {Object} opts Optional parameters
      * @param {module:model/RawCreds} opts.body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SystemAccessCredentialsReplyObj} and HTTP response
@@ -9890,6 +9938,49 @@ export default class V2Api {
      */
     refreshKey(body) {
       return this.refreshKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RenewCertificate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RenewCertificateOutput} and HTTP response
+     */
+    renewCertificateWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling renewCertificate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RenewCertificateOutput;
+      return this.apiClient.callApi(
+        '/renew-certificate', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RenewCertificate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RenewCertificateOutput}
+     */
+    renewCertificate(body) {
+      return this.renewCertificateWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -10063,7 +10154,7 @@ export default class V2Api {
 
 
     /**
-     * @param {module:model/UpdateRotationSettings} body 
+     * @param {module:model/RotateKey} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotateKeyOutput} and HTTP response
      */
     rotateKeyWithHttpInfo(body) {
@@ -10094,7 +10185,7 @@ export default class V2Api {
     }
 
     /**
-     * @param {module:model/UpdateRotationSettings} body 
+     * @param {module:model/RotateKey} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotateKeyOutput}
      */
     rotateKey(body) {
@@ -12772,10 +12863,15 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/UpdateRotationSettings} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotateKeyOutput} and HTTP response
      */
-    updateRotationSettingsWithHttpInfo() {
-      let postBody = null;
+    updateRotationSettingsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateRotationSettings");
+      }
 
       let pathParams = {
       };
@@ -12787,21 +12883,22 @@ export default class V2Api {
       };
 
       let authNames = [];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = RotateKeyOutput;
       return this.apiClient.callApi(
-        '/update-rotation-settingsrotate-key', 'POST',
+        '/update-rotation-settings', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
+     * @param {module:model/UpdateRotationSettings} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotateKeyOutput}
      */
-    updateRotationSettings() {
-      return this.updateRotationSettingsWithHttpInfo()
+    updateRotationSettings(body) {
+      return this.updateRotationSettingsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

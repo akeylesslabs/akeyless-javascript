@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignRsaSsaPss model module.
  * @module model/SignRsaSsaPss
- * @version 3.5.4
+ * @version 3.6.0
  */
 class SignRsaSsaPss {
     /**
@@ -68,11 +68,17 @@ class SignRsaSsaPss {
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
             }
+            if (data.hasOwnProperty('prehashed')) {
+                obj['prehashed'] = ApiClient.convertToType(data['prehashed'], 'Boolean');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
         }
         return obj;
@@ -119,6 +125,12 @@ SignRsaSsaPss.prototype['key-name'] = undefined;
 SignRsaSsaPss.prototype['message'] = undefined;
 
 /**
+ * Markes that the message is already hashed
+ * @member {Boolean} prehashed
+ */
+SignRsaSsaPss.prototype['prehashed'] = undefined;
+
+/**
  * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
@@ -129,6 +141,12 @@ SignRsaSsaPss.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 SignRsaSsaPss.prototype['uid-token'] = undefined;
+
+/**
+ * The version of the key to use for signing
+ * @member {Number} version
+ */
+SignRsaSsaPss.prototype['version'] = undefined;
 
 
 

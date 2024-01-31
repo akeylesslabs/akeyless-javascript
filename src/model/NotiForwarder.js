@@ -18,7 +18,7 @@ import ItemVersion from './ItemVersion';
 /**
  * The NotiForwarder model module.
  * @module model/NotiForwarder
- * @version 3.5.4
+ * @version 3.6.0
  */
 class NotiForwarder {
     /**

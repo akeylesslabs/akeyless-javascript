@@ -219,8 +219,10 @@ Method | HTTP request | Description
 [**listSharedItems**](V2Api.md#listSharedItems) | **POST** /list-shared-items | 
 [**listTargets**](V2Api.md#listTargets) | **POST** /list-targets | 
 [**moveObjects**](V2Api.md#moveObjects) | **POST** /move-objects | 
+[**provisionCertificate**](V2Api.md#provisionCertificate) | **POST** /provision-certificate | 
 [**rawCreds**](V2Api.md#rawCreds) | **POST** /raw-creds | 
 [**refreshKey**](V2Api.md#refreshKey) | **POST** /refresh-key | 
+[**renewCertificate**](V2Api.md#renewCertificate) | **POST** /renew-certificate | 
 [**requestAccess**](V2Api.md#requestAccess) | **POST** /request-access | 
 [**reverseRBAC**](V2Api.md#reverseRBAC) | **POST** /reverse-rbac | 
 [**revokeCreds**](V2Api.md#revokeCreds) | **POST** /revoke-creds | 
@@ -288,7 +290,7 @@ Method | HTTP request | Description
 [**updateRabbitMQTargetDetails**](V2Api.md#updateRabbitMQTargetDetails) | **POST** /update-rabbitmq-target-details | 
 [**updateRole**](V2Api.md#updateRole) | **POST** /update-role | 
 [**updateRotatedSecret**](V2Api.md#updateRotatedSecret) | **POST** /update-rotated-secret | 
-[**updateRotationSettings**](V2Api.md#updateRotationSettings) | **POST** /update-rotation-settingsrotate-key | 
+[**updateRotationSettings**](V2Api.md#updateRotationSettings) | **POST** /update-rotation-settings | 
 [**updateSSHCertIssuer**](V2Api.md#updateSSHCertIssuer) | **POST** /update-ssh-cert-issuer | 
 [**updateSSHTarget**](V2Api.md#updateSSHTarget) | **POST** /update-ssh-target | 
 [**updateSSHTargetDetails**](V2Api.md#updateSSHTargetDetails) | **POST** /update-ssh-target-details | 
@@ -9375,6 +9377,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## provisionCertificate
+
+> ProvisionCertificateOutput provisionCertificate(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ProvisionCertificate(); // ProvisionCertificate | 
+apiInstance.provisionCertificate(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProvisionCertificate**](ProvisionCertificate.md)|  | 
+
+### Return type
+
+[**ProvisionCertificateOutput**](ProvisionCertificateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## rawCreds
 
 > SystemAccessCredentialsReplyObj rawCreds(opts)
@@ -9450,6 +9494,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RefreshKeyOutput**](RefreshKeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## renewCertificate
+
+> RenewCertificateOutput renewCertificate(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RenewCertificate(); // RenewCertificate | 
+apiInstance.renewCertificate(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RenewCertificate**](RenewCertificate.md)|  | 
+
+### Return type
+
+[**RenewCertificateOutput**](RenewCertificateOutput.md)
 
 ### Authorization
 
@@ -9637,7 +9723,7 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateRotationSettings(); // UpdateRotationSettings | 
+let body = new akeyless.RotateKey(); // RotateKey | 
 apiInstance.rotateKey(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -9651,7 +9737,7 @@ apiInstance.rotateKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateRotationSettings**](UpdateRotationSettings.md)|  | 
+ **body** | [**RotateKey**](RotateKey.md)|  | 
 
 ### Return type
 
@@ -12273,7 +12359,7 @@ No authorization required
 
 ## updateRotationSettings
 
-> RotateKeyOutput updateRotationSettings()
+> RotateKeyOutput updateRotationSettings(body)
 
 
 
@@ -12283,7 +12369,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-apiInstance.updateRotationSettings().then((data) => {
+let body = new akeyless.UpdateRotationSettings(); // UpdateRotationSettings | 
+apiInstance.updateRotationSettings(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12293,7 +12380,10 @@ apiInstance.updateRotationSettings().then((data) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateRotationSettings**](UpdateRotationSettings.md)|  | 
 
 ### Return type
 
@@ -12305,7 +12395,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

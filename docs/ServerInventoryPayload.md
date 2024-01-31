@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **enableRdpSra** | **Boolean** |  | [optional] 
 **migrationTargetId** | **Number** |  | [optional] 
 **serverTargetsPathTemplate** | **String** |  | [optional] 
+**userGroups** | **[String]** |  | [optional] 
 **usersIgnoreList** | **{String: Boolean}** |  | [optional] 
 **usersRotatedSecretsPathTemplate** | **String** |  | [optional] 
 

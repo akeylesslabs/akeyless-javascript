@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessExpires** | **Number** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
 **boundIps** | **[String]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
+**description** | **String** | Auth Method description | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]

@@ -18,7 +18,7 @@ import CertificateInfo from './CertificateInfo';
 /**
  * The CertificateChainInfo model module.
  * @module model/CertificateChainInfo
- * @version 3.5.4
+ * @version 3.6.0
  */
 class CertificateChainInfo {
     /**
@@ -55,6 +55,12 @@ class CertificateChainInfo {
             if (data.hasOwnProperty('certificate_format')) {
                 obj['certificate_format'] = ApiClient.convertToType(data['certificate_format'], 'String');
             }
+            if (data.hasOwnProperty('certificate_has_private_key')) {
+                obj['certificate_has_private_key'] = ApiClient.convertToType(data['certificate_has_private_key'], 'Boolean');
+            }
+            if (data.hasOwnProperty('certificate_issuer_gw_cluster_url')) {
+                obj['certificate_issuer_gw_cluster_url'] = ApiClient.convertToType(data['certificate_issuer_gw_cluster_url'], 'String');
+            }
             if (data.hasOwnProperty('certificate_issuer_item_id')) {
                 obj['certificate_issuer_item_id'] = ApiClient.convertToType(data['certificate_issuer_item_id'], 'Number');
             }
@@ -86,6 +92,16 @@ CertificateChainInfo.prototype['certificate_chain'] = undefined;
  * @member {String} certificate_format
  */
 CertificateChainInfo.prototype['certificate_format'] = undefined;
+
+/**
+ * @member {Boolean} certificate_has_private_key
+ */
+CertificateChainInfo.prototype['certificate_has_private_key'] = undefined;
+
+/**
+ * @member {String} certificate_issuer_gw_cluster_url
+ */
+CertificateChainInfo.prototype['certificate_issuer_gw_cluster_url'] = undefined;
 
 /**
  * @member {Number} certificate_issuer_item_id

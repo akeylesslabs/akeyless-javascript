@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodUniversalIdentity model module.
  * @module model/CreateAuthMethodUniversalIdentity
- * @version 3.5.4
+ * @version 3.6.0
  */
 class CreateAuthMethodUniversalIdentity {
     /**
@@ -61,6 +61,9 @@ class CreateAuthMethodUniversalIdentity {
             }
             if (data.hasOwnProperty('deny-rotate')) {
                 obj['deny-rotate'] = ApiClient.convertToType(data['deny-rotate'], 'Boolean');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
@@ -117,6 +120,12 @@ CreateAuthMethodUniversalIdentity.prototype['deny-inheritance'] = undefined;
  * @member {Boolean} deny-rotate
  */
 CreateAuthMethodUniversalIdentity.prototype['deny-rotate'] = undefined;
+
+/**
+ * Auth Method description
+ * @member {String} description
+ */
+CreateAuthMethodUniversalIdentity.prototype['description'] = undefined;
 
 /**
  * if true: enforce role-association must include sub claims

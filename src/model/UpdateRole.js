@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 3.5.4
+ * @version 3.6.0
  */
 class UpdateRole {
     /**
@@ -57,6 +57,12 @@ class UpdateRole {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('event-center-access')) {
+                obj['event-center-access'] = ApiClient.convertToType(data['event-center-access'], 'String');
+            }
+            if (data.hasOwnProperty('event-forwarder-access')) {
+                obj['event-forwarder-access'] = ApiClient.convertToType(data['event-forwarder-access'], 'String');
             }
             if (data.hasOwnProperty('gw-analytics-access')) {
                 obj['gw-analytics-access'] = ApiClient.convertToType(data['gw-analytics-access'], 'String');
@@ -110,6 +116,18 @@ UpdateRole.prototype['audit-access'] = undefined;
  * @default 'default_comment'
  */
 UpdateRole.prototype['description'] = 'default_comment';
+
+/**
+ * Allow this role to view Event Center. Currently only 'none', 'own' and 'all' values are supported
+ * @member {String} event-center-access
+ */
+UpdateRole.prototype['event-center-access'] = undefined;
+
+/**
+ * Allow this role to manage Event Forwarders. Currently only 'none' and 'all' values are supported.
+ * @member {String} event-forwarder-access
+ */
+UpdateRole.prototype['event-forwarder-access'] = undefined;
 
 /**
  * Allow this role to view gw analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.

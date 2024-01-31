@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodK8S model module.
  * @module model/UpdateAuthMethodK8S
- * @version 3.5.4
+ * @version 3.6.0
  */
 class UpdateAuthMethodK8S {
     /**
@@ -67,6 +67,9 @@ class UpdateAuthMethodK8S {
             }
             if (data.hasOwnProperty('bound-sa-names')) {
                 obj['bound-sa-names'] = ApiClient.convertToType(data['bound-sa-names'], ['String']);
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
@@ -141,6 +144,12 @@ UpdateAuthMethodK8S.prototype['bound-pod-names'] = undefined;
  * @member {Array.<String>} bound-sa-names
  */
 UpdateAuthMethodK8S.prototype['bound-sa-names'] = undefined;
+
+/**
+ * Auth Method description
+ * @member {String} description
+ */
+UpdateAuthMethodK8S.prototype['description'] = undefined;
 
 /**
  * if true: enforce role-association must include sub claims

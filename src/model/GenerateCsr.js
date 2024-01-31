@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateCsr model module.
  * @module model/GenerateCsr
- * @version 3.5.4
+ * @version 3.6.0
  */
 class GenerateCsr {
     /**
@@ -24,7 +24,7 @@ class GenerateCsr {
      * @alias module:model/GenerateCsr
      * @param commonName {String} The common name to be included in the CSR certificate
      * @param keyType {String} The type of the key to generate (classic-key/dfc)
-     * @param name {String} The classic key name
+     * @param name {String} The key name
      */
     constructor(commonName, keyType, name) { 
         
@@ -200,7 +200,7 @@ GenerateCsr.prototype['json'] = false;
 GenerateCsr.prototype['key-type'] = 'classic-key';
 
 /**
- * The classic key name
+ * The key name
  * @member {String} name
  */
 GenerateCsr.prototype['name'] = undefined;

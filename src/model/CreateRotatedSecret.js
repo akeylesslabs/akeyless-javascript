@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 3.5.4
+ * @version 3.6.0
  */
 class CreateRotatedSecret {
     /**
@@ -53,6 +53,9 @@ class CreateRotatedSecret {
         if (data) {
             obj = obj || new CreateRotatedSecret();
 
+            if (data.hasOwnProperty('ProviderType')) {
+                obj['ProviderType'] = ApiClient.convertToType(data['ProviderType'], 'String');
+            }
             if (data.hasOwnProperty('api-id')) {
                 obj['api-id'] = ApiClient.convertToType(data['api-id'], 'String');
             }
@@ -88,6 +91,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('gcp-service-account-key-id')) {
                 obj['gcp-service-account-key-id'] = ApiClient.convertToType(data['gcp-service-account-key-id'], 'String');
+            }
+            if (data.hasOwnProperty('host-provider')) {
+                obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -179,6 +185,9 @@ class CreateRotatedSecret {
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
+            if (data.hasOwnProperty('target')) {
+                obj['target'] = ApiClient.convertToType(data['target'], ['String']);
+            }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
@@ -200,6 +209,11 @@ class CreateRotatedSecret {
 
 
 }
+
+/**
+ * @member {String} ProviderType
+ */
+CreateRotatedSecret.prototype['ProviderType'] = undefined;
 
 /**
  * API ID to rotate (relevant only for rotator-type=api-key)
@@ -276,6 +290,13 @@ CreateRotatedSecret.prototype['gcp-service-account-email'] = undefined;
 CreateRotatedSecret.prototype['gcp-service-account-key-id'] = undefined;
 
 /**
+ * Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret
+ * @member {String} host-provider
+ * @default 'explicit'
+ */
+CreateRotatedSecret.prototype['host-provider'] = 'explicit';
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  * @default false
@@ -320,7 +341,7 @@ CreateRotatedSecret.prototype['rotated-password'] = undefined;
 CreateRotatedSecret.prototype['rotated-username'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
+ * The Hour of the rotation in UTC. Default rotation-hour is 14:00
  * @member {Number} rotation-hour
  */
 CreateRotatedSecret.prototype['rotation-hour'] = undefined;
@@ -459,6 +480,12 @@ CreateRotatedSecret.prototype['storage-account-key-name'] = undefined;
  * @member {Array.<String>} tags
  */
 CreateRotatedSecret.prototype['tags'] = undefined;
+
+/**
+ * A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer and ldap rotated secret, To specify multiple targets use argument multiple times
+ * @member {Array.<String>} target
+ */
+CreateRotatedSecret.prototype['target'] = undefined;
 
 /**
  * Target name

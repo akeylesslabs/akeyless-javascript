@@ -17,7 +17,7 @@ import CfInfo from './CfInfo';
 /**
  * The GwClusterIdentity model module.
  * @module model/GwClusterIdentity
- * @version 3.5.4
+ * @version 3.6.0
  */
 class GwClusterIdentity {
     /**
@@ -83,6 +83,9 @@ class GwClusterIdentity {
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
+            if (data.hasOwnProperty('serverless_type')) {
+                obj['serverless_type'] = ApiClient.convertToType(data['serverless_type'], 'String');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -157,6 +160,11 @@ GwClusterIdentity.prototype['display_name'] = undefined;
  * @member {Number} id
  */
 GwClusterIdentity.prototype['id'] = undefined;
+
+/**
+ * @member {String} serverless_type
+ */
+GwClusterIdentity.prototype['serverless_type'] = undefined;
 
 /**
  * @member {String} status

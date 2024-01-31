@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodLDAP model module.
  * @module model/UpdateAuthMethodLDAP
- * @version 3.5.4
+ * @version 3.6.0
  */
 class UpdateAuthMethodLDAP {
     /**
@@ -55,6 +55,9 @@ class UpdateAuthMethodLDAP {
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
@@ -108,6 +111,12 @@ UpdateAuthMethodLDAP.prototype['access-expires'] = 0;
  * @member {Array.<String>} bound-ips
  */
 UpdateAuthMethodLDAP.prototype['bound-ips'] = undefined;
+
+/**
+ * Auth Method description
+ * @member {String} description
+ */
+UpdateAuthMethodLDAP.prototype['description'] = undefined;
 
 /**
  * if true: enforce role-association must include sub claims

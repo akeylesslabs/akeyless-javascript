@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Connect model module.
  * @module model/Connect
- * @version 3.5.4
+ * @version 3.6.0
  */
 class Connect {
     /**
@@ -186,7 +186,7 @@ Connect.prototype['name'] = undefined;
 Connect.prototype['ssh-command'] = undefined;
 
 /**
- * The Use to add offical SSH arguments (except -i)
+ * Additional SSH arguments (except -i)
  * @member {String} ssh-extra-args
  */
 Connect.prototype['ssh-extra-args'] = undefined;

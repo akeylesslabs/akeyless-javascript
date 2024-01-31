@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEventForwarder model module.
  * @module model/CreateEventForwarder
- * @version 3.5.4
+ * @version 3.6.0
  */
 class CreateEventForwarder {
     /**
@@ -197,7 +197,7 @@ CreateEventForwarder.prototype['event-source-locations'] = undefined;
 CreateEventForwarder.prototype['event-source-type'] = 'item';
 
 /**
- * List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, auth-method-pending-expiration, auth-method-expired, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure]
+ * List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated]
  * @member {Array.<String>} event-types
  */
 CreateEventForwarder.prototype['event-types'] = undefined;

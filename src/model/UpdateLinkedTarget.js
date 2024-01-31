@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLinkedTarget model module.
  * @module model/UpdateLinkedTarget
- * @version 3.5.4
+ * @version 3.6.0
  */
 class UpdateLinkedTarget {
     /**
@@ -78,6 +78,9 @@ class UpdateLinkedTarget {
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
@@ -149,6 +152,12 @@ UpdateLinkedTarget.prototype['rm-hosts'] = undefined;
  * @member {String} token
  */
 UpdateLinkedTarget.prototype['token'] = undefined;
+
+/**
+ * Specifies the hosts type, relevant only when working without parent target
+ * @member {String} type
+ */
+UpdateLinkedTarget.prototype['type'] = undefined;
 
 /**
  * The universal identity token, Required only for universal_identity authentication

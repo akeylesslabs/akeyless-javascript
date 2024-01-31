@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 3.5.4
+ * @version 3.6.0
  */
 class GatewayUpdateMigration {
     /**
@@ -224,6 +224,9 @@ class GatewayUpdateMigration {
             }
             if (data.hasOwnProperty('si-target-name')) {
                 obj['si-target-name'] = ApiClient.convertToType(data['si-target-name'], 'String');
+            }
+            if (data.hasOwnProperty('si-user-groups')) {
+                obj['si-user-groups'] = ApiClient.convertToType(data['si-user-groups'], 'String');
             }
             if (data.hasOwnProperty('si-users-ignore')) {
                 obj['si-users-ignore'] = ApiClient.convertToType(data['si-users-ignore'], 'String');
@@ -597,6 +600,12 @@ GatewayUpdateMigration.prototype['si-sra-enable-rdp'] = 'false';
  * @member {String} si-target-name
  */
 GatewayUpdateMigration.prototype['si-target-name'] = undefined;
+
+/**
+ * Comma-separated list of groups to migrate users from. If empty, all users from all groups will be migrated (Relevant only for Server Inventory migration)
+ * @member {String} si-user-groups
+ */
+GatewayUpdateMigration.prototype['si-user-groups'] = undefined;
 
 /**
  * Comma-separated list of Local Users which should not be migrated (Relevant only for Server Inventory migration)

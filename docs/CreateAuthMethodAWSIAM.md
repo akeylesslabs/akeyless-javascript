@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **boundRoleName** | **[String]** | A list of full role-name that the access is restricted to | [optional] 
 **boundUserId** | **[String]** | A list of full user ids that the access is restricted to | [optional] 
 **boundUserName** | **[String]** | A list of full user-name that the access is restricted to | [optional] 
+**description** | **String** | Auth Method description | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]

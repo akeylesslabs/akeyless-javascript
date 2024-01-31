@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLinkedTarget model module.
  * @module model/CreateLinkedTarget
- * @version 3.5.4
+ * @version 3.6.0
  */
 class CreateLinkedTarget {
     /**
@@ -67,6 +67,9 @@ class CreateLinkedTarget {
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
@@ -113,6 +116,12 @@ CreateLinkedTarget.prototype['parent-target-name'] = undefined;
  * @member {String} token
  */
 CreateLinkedTarget.prototype['token'] = undefined;
+
+/**
+ * Specifies the hosts type, relevant only when working without parent target
+ * @member {String} type
+ */
+CreateLinkedTarget.prototype['type'] = undefined;
 
 /**
  * The universal identity token, Required only for universal_identity authentication

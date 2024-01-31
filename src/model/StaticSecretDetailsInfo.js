@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StaticSecretDetailsInfo model module.
  * @module model/StaticSecretDetailsInfo
- * @version 3.5.4
+ * @version 3.6.0
  */
 class StaticSecretDetailsInfo {
     /**
@@ -47,6 +47,9 @@ class StaticSecretDetailsInfo {
         if (data) {
             obj = obj || new StaticSecretDetailsInfo();
 
+            if (data.hasOwnProperty('notify_on_change_event')) {
+                obj['notify_on_change_event'] = ApiClient.convertToType(data['notify_on_change_event'], 'Boolean');
+            }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
@@ -62,6 +65,11 @@ class StaticSecretDetailsInfo {
 
 
 }
+
+/**
+ * @member {Boolean} notify_on_change_event
+ */
+StaticSecretDetailsInfo.prototype['notify_on_change_event'] = undefined;
 
 /**
  * @member {String} username

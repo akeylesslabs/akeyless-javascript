@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHCertIssuer model module.
  * @module model/UpdateSSHCertIssuer
- * @version 3.5.4
+ * @version 3.6.0
  */
 class UpdateSSHCertIssuer {
     /**
@@ -55,8 +55,8 @@ class UpdateSSHCertIssuer {
         if (data) {
             obj = obj || new UpdateSSHCertIssuer();
 
-            if (data.hasOwnProperty('SshCertIssuerHostProvider')) {
-                obj['SshCertIssuerHostProvider'] = ApiClient.convertToType(data['SshCertIssuerHostProvider'], 'String');
+            if (data.hasOwnProperty('ProviderType')) {
+                obj['ProviderType'] = ApiClient.convertToType(data['ProviderType'], 'String');
             }
             if (data.hasOwnProperty('add-tag')) {
                 obj['add-tag'] = ApiClient.convertToType(data['add-tag'], ['String']);
@@ -132,9 +132,9 @@ class UpdateSSHCertIssuer {
 }
 
 /**
- * @member {String} SshCertIssuerHostProvider
+ * @member {String} ProviderType
  */
-UpdateSSHCertIssuer.prototype['SshCertIssuerHostProvider'] = undefined;
+UpdateSSHCertIssuer.prototype['ProviderType'] = undefined;
 
 /**
  * List of the new tags that will be attached to this item
@@ -167,7 +167,7 @@ UpdateSSHCertIssuer.prototype['description'] = undefined;
 UpdateSSHCertIssuer.prototype['extensions'] = undefined;
 
 /**
- * Host provider type [explicit/target]
+ * Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret
  * @member {String} host-provider
  * @default 'explicit'
  */

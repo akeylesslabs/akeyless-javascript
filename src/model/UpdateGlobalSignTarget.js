@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGlobalSignTarget model module.
  * @module model/UpdateGlobalSignTarget
- * @version 3.5.4
+ * @version 3.6.0
  */
 class UpdateGlobalSignTarget {
     /**

@@ -17,7 +17,7 @@ import TargetNameWithHosts from './TargetNameWithHosts';
 /**
  * The SecureRemoteAccess model module.
  * @module model/SecureRemoteAccess
- * @version 3.5.4
+ * @version 3.6.0
  */
 class SecureRemoteAccess {
     /**
@@ -131,6 +131,9 @@ class SecureRemoteAccess {
             }
             if (data.hasOwnProperty('target_hosts')) {
                 obj['target_hosts'] = ApiClient.convertToType(data['target_hosts'], [TargetNameWithHosts]);
+            }
+            if (data.hasOwnProperty('targets')) {
+                obj['targets'] = ApiClient.convertToType(data['targets'], ['String']);
             }
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
@@ -287,6 +290,11 @@ SecureRemoteAccess.prototype['ssh_user'] = undefined;
  * @member {Array.<module:model/TargetNameWithHosts>} target_hosts
  */
 SecureRemoteAccess.prototype['target_hosts'] = undefined;
+
+/**
+ * @member {Array.<String>} targets
+ */
+SecureRemoteAccess.prototype['targets'] = undefined;
 
 /**
  * @member {String} url

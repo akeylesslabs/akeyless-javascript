@@ -54,6 +54,7 @@ import CertificateExpirationEvent from './model/CertificateExpirationEvent';
 import CertificateInfo from './model/CertificateInfo';
 import CertificateIssueInfo from './model/CertificateIssueInfo';
 import CertificateTemplateInfo from './model/CertificateTemplateInfo';
+import CertificateVersionInfo from './model/CertificateVersionInfo';
 import CfInfo from './model/CfInfo';
 import ChefTargetDetails from './model/ChefTargetDetails';
 import ClassicKeyDetailsInfo from './model/ClassicKeyDetailsInfo';
@@ -545,11 +546,15 @@ import PathRule from './model/PathRule';
 import PingTargetDetails from './model/PingTargetDetails';
 import Producer from './model/Producer';
 import ProducersConfigPart from './model/ProducersConfigPart';
+import ProvisionCertificate from './model/ProvisionCertificate';
+import ProvisionCertificateOutput from './model/ProvisionCertificateOutput';
 import RabbitMQTargetDetails from './model/RabbitMQTargetDetails';
 import RawCreds from './model/RawCreds';
 import RefreshKey from './model/RefreshKey';
 import RefreshKeyOutput from './model/RefreshKeyOutput';
 import RegexpTokenizerInfo from './model/RegexpTokenizerInfo';
+import RenewCertificate from './model/RenewCertificate';
+import RenewCertificateOutput from './model/RenewCertificateOutput';
 import RequestAccess from './model/RequestAccess';
 import RequestAccessOutput from './model/RequestAccessOutput';
 import RequiredActivity from './model/RequiredActivity';
@@ -783,7 +788,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.5.4
+* @version 3.6.0
 */
 export {
     /**
@@ -1037,6 +1042,12 @@ export {
      * @property {module:model/CertificateTemplateInfo}
      */
     CertificateTemplateInfo,
+
+    /**
+     * The CertificateVersionInfo model constructor.
+     * @property {module:model/CertificateVersionInfo}
+     */
+    CertificateVersionInfo,
 
     /**
      * The CfInfo model constructor.
@@ -3985,6 +3996,18 @@ export {
     ProducersConfigPart,
 
     /**
+     * The ProvisionCertificate model constructor.
+     * @property {module:model/ProvisionCertificate}
+     */
+    ProvisionCertificate,
+
+    /**
+     * The ProvisionCertificateOutput model constructor.
+     * @property {module:model/ProvisionCertificateOutput}
+     */
+    ProvisionCertificateOutput,
+
+    /**
      * The RabbitMQTargetDetails model constructor.
      * @property {module:model/RabbitMQTargetDetails}
      */
@@ -4013,6 +4036,18 @@ export {
      * @property {module:model/RegexpTokenizerInfo}
      */
     RegexpTokenizerInfo,
+
+    /**
+     * The RenewCertificate model constructor.
+     * @property {module:model/RenewCertificate}
+     */
+    RenewCertificate,
+
+    /**
+     * The RenewCertificateOutput model constructor.
+     * @property {module:model/RenewCertificateOutput}
+     */
+    RenewCertificateOutput,
 
     /**
      * The RequestAccess model constructor.
