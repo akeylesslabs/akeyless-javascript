@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**host** | **String** | Host | 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
-**name** | **String** | Producer Name | 
+**name** | **String** | Dynamic secret name | 
 **newTtlMin** | **Number** | New TTL in Minutes | 
 **tmpCredsId** | **String** | Tmp Creds ID | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

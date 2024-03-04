@@ -85,6 +85,8 @@ import CreateGlobalSignAtlasTarget from '../model/CreateGlobalSignAtlasTarget';
 import CreateGlobalSignAtlasTargetOutput from '../model/CreateGlobalSignAtlasTargetOutput';
 import CreateGlobalSignTarget from '../model/CreateGlobalSignTarget';
 import CreateGlobalSignTargetOutput from '../model/CreateGlobalSignTargetOutput';
+import CreateGodaddyTarget from '../model/CreateGodaddyTarget';
+import CreateGodaddyTargetOutput from '../model/CreateGodaddyTargetOutput';
 import CreateGroup from '../model/CreateGroup';
 import CreateGroupOutput from '../model/CreateGroupOutput';
 import CreateKey from '../model/CreateKey';
@@ -168,6 +170,65 @@ import DescribeSubClaims from '../model/DescribeSubClaims';
 import DescribeSubClaimsOutput from '../model/DescribeSubClaimsOutput';
 import Detokenize from '../model/Detokenize';
 import DetokenizeOutput from '../model/DetokenizeOutput';
+import DynamicSecretCreateArtifactory from '../model/DynamicSecretCreateArtifactory';
+import DynamicSecretCreateAws from '../model/DynamicSecretCreateAws';
+import DynamicSecretCreateAzure from '../model/DynamicSecretCreateAzure';
+import DynamicSecretCreateCassandra from '../model/DynamicSecretCreateCassandra';
+import DynamicSecretCreateCustom from '../model/DynamicSecretCreateCustom';
+import DynamicSecretCreateDockerhub from '../model/DynamicSecretCreateDockerhub';
+import DynamicSecretCreateEks from '../model/DynamicSecretCreateEks';
+import DynamicSecretCreateGcp from '../model/DynamicSecretCreateGcp';
+import DynamicSecretCreateGithub from '../model/DynamicSecretCreateGithub';
+import DynamicSecretCreateGke from '../model/DynamicSecretCreateGke';
+import DynamicSecretCreateHanaDb from '../model/DynamicSecretCreateHanaDb';
+import DynamicSecretCreateK8s from '../model/DynamicSecretCreateK8s';
+import DynamicSecretCreateLdap from '../model/DynamicSecretCreateLdap';
+import DynamicSecretCreateMongoDb from '../model/DynamicSecretCreateMongoDb';
+import DynamicSecretCreateMsSql from '../model/DynamicSecretCreateMsSql';
+import DynamicSecretCreateMySql from '../model/DynamicSecretCreateMySql';
+import DynamicSecretCreateOracleDb from '../model/DynamicSecretCreateOracleDb';
+import DynamicSecretCreateOutput from '../model/DynamicSecretCreateOutput';
+import DynamicSecretCreatePing from '../model/DynamicSecretCreatePing';
+import DynamicSecretCreatePostgreSql from '../model/DynamicSecretCreatePostgreSql';
+import DynamicSecretCreateRabbitMq from '../model/DynamicSecretCreateRabbitMq';
+import DynamicSecretCreateRdp from '../model/DynamicSecretCreateRdp';
+import DynamicSecretCreateRedis from '../model/DynamicSecretCreateRedis';
+import DynamicSecretCreateRedshift from '../model/DynamicSecretCreateRedshift';
+import DynamicSecretCreateSnowflake from '../model/DynamicSecretCreateSnowflake';
+import DynamicSecretCreateVenafi from '../model/DynamicSecretCreateVenafi';
+import DynamicSecretDelete from '../model/DynamicSecretDelete';
+import DynamicSecretDeleteOutput from '../model/DynamicSecretDeleteOutput';
+import DynamicSecretGetValue from '../model/DynamicSecretGetValue';
+import DynamicSecretList from '../model/DynamicSecretList';
+import DynamicSecretTmpCredsDelete from '../model/DynamicSecretTmpCredsDelete';
+import DynamicSecretTmpCredsGet from '../model/DynamicSecretTmpCredsGet';
+import DynamicSecretTmpCredsUpdate from '../model/DynamicSecretTmpCredsUpdate';
+import DynamicSecretUpdateArtifactory from '../model/DynamicSecretUpdateArtifactory';
+import DynamicSecretUpdateAws from '../model/DynamicSecretUpdateAws';
+import DynamicSecretUpdateAzure from '../model/DynamicSecretUpdateAzure';
+import DynamicSecretUpdateCassandra from '../model/DynamicSecretUpdateCassandra';
+import DynamicSecretUpdateCustom from '../model/DynamicSecretUpdateCustom';
+import DynamicSecretUpdateDockerhub from '../model/DynamicSecretUpdateDockerhub';
+import DynamicSecretUpdateEks from '../model/DynamicSecretUpdateEks';
+import DynamicSecretUpdateGcp from '../model/DynamicSecretUpdateGcp';
+import DynamicSecretUpdateGithub from '../model/DynamicSecretUpdateGithub';
+import DynamicSecretUpdateGke from '../model/DynamicSecretUpdateGke';
+import DynamicSecretUpdateHanaDb from '../model/DynamicSecretUpdateHanaDb';
+import DynamicSecretUpdateK8s from '../model/DynamicSecretUpdateK8s';
+import DynamicSecretUpdateLdap from '../model/DynamicSecretUpdateLdap';
+import DynamicSecretUpdateMongoDb from '../model/DynamicSecretUpdateMongoDb';
+import DynamicSecretUpdateMsSql from '../model/DynamicSecretUpdateMsSql';
+import DynamicSecretUpdateMySql from '../model/DynamicSecretUpdateMySql';
+import DynamicSecretUpdateOracleDb from '../model/DynamicSecretUpdateOracleDb';
+import DynamicSecretUpdateOutput from '../model/DynamicSecretUpdateOutput';
+import DynamicSecretUpdatePing from '../model/DynamicSecretUpdatePing';
+import DynamicSecretUpdatePostgreSql from '../model/DynamicSecretUpdatePostgreSql';
+import DynamicSecretUpdateRabbitMq from '../model/DynamicSecretUpdateRabbitMq';
+import DynamicSecretUpdateRdp from '../model/DynamicSecretUpdateRdp';
+import DynamicSecretUpdateRedis from '../model/DynamicSecretUpdateRedis';
+import DynamicSecretUpdateRedshift from '../model/DynamicSecretUpdateRedshift';
+import DynamicSecretUpdateSnowflake from '../model/DynamicSecretUpdateSnowflake';
+import DynamicSecretUpdateVenafi from '../model/DynamicSecretUpdateVenafi';
 import Encrypt from '../model/Encrypt';
 import EncryptGPG from '../model/EncryptGPG';
 import EncryptGPGOutput from '../model/EncryptGPGOutput';
@@ -184,6 +245,15 @@ import EsmListSecretsOutput from '../model/EsmListSecretsOutput';
 import EsmUpdate from '../model/EsmUpdate';
 import EsmUpdateSecretOutput from '../model/EsmUpdateSecretOutput';
 import EventAction from '../model/EventAction';
+import EventForwarderCreateEmail from '../model/EventForwarderCreateEmail';
+import EventForwarderCreateUpdateOutput from '../model/EventForwarderCreateUpdateOutput';
+import EventForwarderCreateWebhook from '../model/EventForwarderCreateWebhook';
+import EventForwarderDelete from '../model/EventForwarderDelete';
+import EventForwarderDeleteOutput from '../model/EventForwarderDeleteOutput';
+import EventForwarderGet from '../model/EventForwarderGet';
+import EventForwarderGetOutput from '../model/EventForwarderGetOutput';
+import EventForwarderUpdateEmail from '../model/EventForwarderUpdateEmail';
+import EventForwarderUpdateWebhook from '../model/EventForwarderUpdateWebhook';
 import ExportClassicKey from '../model/ExportClassicKey';
 import ExportClassicKeyOutput from '../model/ExportClassicKeyOutput';
 import GatewayCreateAllowedAccess from '../model/GatewayCreateAllowedAccess';
@@ -198,8 +268,8 @@ import GatewayCreateProducerAzure from '../model/GatewayCreateProducerAzure';
 import GatewayCreateProducerAzureOutput from '../model/GatewayCreateProducerAzureOutput';
 import GatewayCreateProducerCassandra from '../model/GatewayCreateProducerCassandra';
 import GatewayCreateProducerCassandraOutput from '../model/GatewayCreateProducerCassandraOutput';
-import GatewayCreateProducerCertificateAutomation from '../model/GatewayCreateProducerCertificateAutomation';
-import GatewayCreateProducerCertificateAutomationOutput from '../model/GatewayCreateProducerCertificateAutomationOutput';
+import GatewayCreateProducerChef from '../model/GatewayCreateProducerChef';
+import GatewayCreateProducerChefOutput from '../model/GatewayCreateProducerChefOutput';
 import GatewayCreateProducerCustom from '../model/GatewayCreateProducerCustom';
 import GatewayCreateProducerCustomOutput from '../model/GatewayCreateProducerCustomOutput';
 import GatewayCreateProducerDockerhub from '../model/GatewayCreateProducerDockerhub';
@@ -240,6 +310,8 @@ import GatewayCreateProducerRedshift from '../model/GatewayCreateProducerRedshif
 import GatewayCreateProducerRedshiftOutput from '../model/GatewayCreateProducerRedshiftOutput';
 import GatewayCreateProducerSnowflake from '../model/GatewayCreateProducerSnowflake';
 import GatewayCreateProducerSnowflakeOutput from '../model/GatewayCreateProducerSnowflakeOutput';
+import GatewayCreateProducerVenafi from '../model/GatewayCreateProducerVenafi';
+import GatewayCreateProducerVenafiOutput from '../model/GatewayCreateProducerVenafiOutput';
 import GatewayDeleteAllowedAccess from '../model/GatewayDeleteAllowedAccess';
 import GatewayDeleteAllowedAccessOutput from '../model/GatewayDeleteAllowedAccessOutput';
 import GatewayDeleteK8SAuthConfig from '../model/GatewayDeleteK8SAuthConfig';
@@ -292,8 +364,8 @@ import GatewayUpdateProducerAzure from '../model/GatewayUpdateProducerAzure';
 import GatewayUpdateProducerAzureOutput from '../model/GatewayUpdateProducerAzureOutput';
 import GatewayUpdateProducerCassandra from '../model/GatewayUpdateProducerCassandra';
 import GatewayUpdateProducerCassandraOutput from '../model/GatewayUpdateProducerCassandraOutput';
-import GatewayUpdateProducerCertificateAutomation from '../model/GatewayUpdateProducerCertificateAutomation';
-import GatewayUpdateProducerCertificateAutomationOutput from '../model/GatewayUpdateProducerCertificateAutomationOutput';
+import GatewayUpdateProducerChef from '../model/GatewayUpdateProducerChef';
+import GatewayUpdateProducerChefOutput from '../model/GatewayUpdateProducerChefOutput';
 import GatewayUpdateProducerCustom from '../model/GatewayUpdateProducerCustom';
 import GatewayUpdateProducerCustomOutput from '../model/GatewayUpdateProducerCustomOutput';
 import GatewayUpdateProducerDockerhub from '../model/GatewayUpdateProducerDockerhub';
@@ -334,6 +406,8 @@ import GatewayUpdateProducerRedshift from '../model/GatewayUpdateProducerRedshif
 import GatewayUpdateProducerRedshiftOutput from '../model/GatewayUpdateProducerRedshiftOutput';
 import GatewayUpdateProducerSnowflake from '../model/GatewayUpdateProducerSnowflake';
 import GatewayUpdateProducerSnowflakeOutput from '../model/GatewayUpdateProducerSnowflakeOutput';
+import GatewayUpdateProducerVenafi from '../model/GatewayUpdateProducerVenafi';
+import GatewayUpdateProducerVenafiOutput from '../model/GatewayUpdateProducerVenafiOutput';
 import GatewayUpdateTlsCert from '../model/GatewayUpdateTlsCert';
 import GatewayUpdateTlsCertOutput from '../model/GatewayUpdateTlsCertOutput';
 import GatewayUpdateTmpUsers from '../model/GatewayUpdateTmpUsers';
@@ -433,7 +507,47 @@ import RotateKeyOutput from '../model/RotateKeyOutput';
 import RotateOidcClientOutput from '../model/RotateOidcClientOutput';
 import RotateOidcClientSecret from '../model/RotateOidcClientSecret';
 import RotateSecret from '../model/RotateSecret';
+import RotatedSecretCreateAws from '../model/RotatedSecretCreateAws';
+import RotatedSecretCreateAzure from '../model/RotatedSecretCreateAzure';
+import RotatedSecretCreateCassandra from '../model/RotatedSecretCreateCassandra';
+import RotatedSecretCreateCustom from '../model/RotatedSecretCreateCustom';
+import RotatedSecretCreateDockerhub from '../model/RotatedSecretCreateDockerhub';
+import RotatedSecretCreateGcp from '../model/RotatedSecretCreateGcp';
+import RotatedSecretCreateHanadb from '../model/RotatedSecretCreateHanadb';
+import RotatedSecretCreateLdap from '../model/RotatedSecretCreateLdap';
+import RotatedSecretCreateMongodb from '../model/RotatedSecretCreateMongodb';
+import RotatedSecretCreateMssql from '../model/RotatedSecretCreateMssql';
+import RotatedSecretCreateMysql from '../model/RotatedSecretCreateMysql';
+import RotatedSecretCreateOracledb from '../model/RotatedSecretCreateOracledb';
+import RotatedSecretCreateOutput from '../model/RotatedSecretCreateOutput';
+import RotatedSecretCreatePostgresql from '../model/RotatedSecretCreatePostgresql';
+import RotatedSecretCreateRedis from '../model/RotatedSecretCreateRedis';
+import RotatedSecretCreateRedshift from '../model/RotatedSecretCreateRedshift';
+import RotatedSecretCreateSnowflake from '../model/RotatedSecretCreateSnowflake';
+import RotatedSecretCreateSsh from '../model/RotatedSecretCreateSsh';
+import RotatedSecretCreateWindows from '../model/RotatedSecretCreateWindows';
+import RotatedSecretGetValue from '../model/RotatedSecretGetValue';
+import RotatedSecretList from '../model/RotatedSecretList';
 import RotatedSecretOutput from '../model/RotatedSecretOutput';
+import RotatedSecretUpdateAws from '../model/RotatedSecretUpdateAws';
+import RotatedSecretUpdateAzure from '../model/RotatedSecretUpdateAzure';
+import RotatedSecretUpdateCassandra from '../model/RotatedSecretUpdateCassandra';
+import RotatedSecretUpdateCustom from '../model/RotatedSecretUpdateCustom';
+import RotatedSecretUpdateDockerhub from '../model/RotatedSecretUpdateDockerhub';
+import RotatedSecretUpdateGcp from '../model/RotatedSecretUpdateGcp';
+import RotatedSecretUpdateHanadb from '../model/RotatedSecretUpdateHanadb';
+import RotatedSecretUpdateLdap from '../model/RotatedSecretUpdateLdap';
+import RotatedSecretUpdateMongodb from '../model/RotatedSecretUpdateMongodb';
+import RotatedSecretUpdateMssql from '../model/RotatedSecretUpdateMssql';
+import RotatedSecretUpdateMysql from '../model/RotatedSecretUpdateMysql';
+import RotatedSecretUpdateOracledb from '../model/RotatedSecretUpdateOracledb';
+import RotatedSecretUpdateOutput from '../model/RotatedSecretUpdateOutput';
+import RotatedSecretUpdatePostgresql from '../model/RotatedSecretUpdatePostgresql';
+import RotatedSecretUpdateRedis from '../model/RotatedSecretUpdateRedis';
+import RotatedSecretUpdateRedshift from '../model/RotatedSecretUpdateRedshift';
+import RotatedSecretUpdateSnowflake from '../model/RotatedSecretUpdateSnowflake';
+import RotatedSecretUpdateSsh from '../model/RotatedSecretUpdateSsh';
+import RotatedSecretUpdateWindows from '../model/RotatedSecretUpdateWindows';
 import SetItemState from '../model/SetItemState';
 import SetRoleRule from '../model/SetRoleRule';
 import ShareItem from '../model/ShareItem';
@@ -514,6 +628,8 @@ import UpdateGlobalSignAtlasTarget from '../model/UpdateGlobalSignAtlasTarget';
 import UpdateGlobalSignAtlasTargetOutput from '../model/UpdateGlobalSignAtlasTargetOutput';
 import UpdateGlobalSignTarget from '../model/UpdateGlobalSignTarget';
 import UpdateGlobalSignTargetOutput from '../model/UpdateGlobalSignTargetOutput';
+import UpdateGodaddyTarget from '../model/UpdateGodaddyTarget';
+import UpdateGodaddyTargetOutput from '../model/UpdateGodaddyTargetOutput';
 import UpdateGroup from '../model/UpdateGroup';
 import UpdateGroupOutput from '../model/UpdateGroupOutput';
 import UpdateItem from '../model/UpdateItem';
@@ -580,7 +696,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.6.1
+* @version 3.6.2
 */
 export default class V2Api {
 
@@ -2139,6 +2255,49 @@ export default class V2Api {
      */
     createGlobalSignTarget(body) {
       return this.createGlobalSignTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateGodaddyTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateGodaddyTargetOutput} and HTTP response
+     */
+    createGodaddyTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createGodaddyTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateGodaddyTargetOutput;
+      return this.apiClient.callApi(
+        '/create-godaddy-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateGodaddyTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateGodaddyTargetOutput}
+     */
+    createGodaddyTarget(body) {
+      return this.createGodaddyTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4124,6 +4283,2449 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/DynamicSecretCreateArtifactory} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateArtifactoryWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateArtifactory");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-artifactory', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateArtifactory} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateArtifactory(body) {
+      return this.dynamicSecretCreateArtifactoryWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateAwsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateAws");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-aws', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateAws(body) {
+      return this.dynamicSecretCreateAwsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateAzureWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateAzure");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-azure', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateAzure(body) {
+      return this.dynamicSecretCreateAzureWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateCassandra} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateCassandraWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateCassandra");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-cassandra', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateCassandra} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateCassandra(body) {
+      return this.dynamicSecretCreateCassandraWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/DynamicSecretCreateCustom} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateCustomWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-custom', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/DynamicSecretCreateCustom} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateCustom(opts) {
+      return this.dynamicSecretCreateCustomWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateDockerhubWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateDockerhub");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-dockerhub', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateDockerhub(body) {
+      return this.dynamicSecretCreateDockerhubWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateEks} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateEksWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateEks");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-eks', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateEks} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateEks(body) {
+      return this.dynamicSecretCreateEksWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateGcpWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateGcp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-gcp', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateGcp(body) {
+      return this.dynamicSecretCreateGcpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateGithub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateGithubWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateGithub");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-github', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateGithub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateGithub(body) {
+      return this.dynamicSecretCreateGithubWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateGke} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateGkeWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateGke");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-gke', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateGke} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateGke(body) {
+      return this.dynamicSecretCreateGkeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateHanaDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateHanaDbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateHanaDb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-hanadb', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateHanaDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateHanaDb(body) {
+      return this.dynamicSecretCreateHanaDbWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateK8s} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateK8sWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateK8s");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-k8s', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateK8s} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateK8s(body) {
+      return this.dynamicSecretCreateK8sWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateLdapWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateLdap");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-ldap', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateLdap(body) {
+      return this.dynamicSecretCreateLdapWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateMongoDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateMongoDbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateMongoDb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-mongo', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateMongoDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateMongoDb(body) {
+      return this.dynamicSecretCreateMongoDbWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateMsSql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateMsSqlWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateMsSql");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-mssql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateMsSql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateMsSql(body) {
+      return this.dynamicSecretCreateMsSqlWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateMySql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateMySqlWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateMySql");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-mysql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateMySql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateMySql(body) {
+      return this.dynamicSecretCreateMySqlWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateOracleDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateOracleDbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateOracleDb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-oracle', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateOracleDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateOracleDb(body) {
+      return this.dynamicSecretCreateOracleDbWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreatePing} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreatePingWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreatePing");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-ping', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreatePing} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreatePing(body) {
+      return this.dynamicSecretCreatePingWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreatePostgreSql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreatePostgreSqlWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreatePostgreSql");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-postgresql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreatePostgreSql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreatePostgreSql(body) {
+      return this.dynamicSecretCreatePostgreSqlWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateRabbitMq} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateRabbitMqWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateRabbitMq");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-rabbitmq', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateRabbitMq} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateRabbitMq(body) {
+      return this.dynamicSecretCreateRabbitMqWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateRdp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateRdpWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateRdp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-rdp', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateRdp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateRdp(body) {
+      return this.dynamicSecretCreateRdpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateRedis} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateRedisWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateRedis");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-redis', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateRedis} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateRedis(body) {
+      return this.dynamicSecretCreateRedisWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateRedshift} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateRedshiftWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateRedshift");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-redshift', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateRedshift} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateRedshift(body) {
+      return this.dynamicSecretCreateRedshiftWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateSnowflake} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateSnowflakeWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateSnowflake");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-snowflake', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateSnowflake} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateSnowflake(body) {
+      return this.dynamicSecretCreateSnowflakeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretCreateVenafi} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateVenafiWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateVenafi");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-venafi', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateVenafi} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateVenafi(body) {
+      return this.dynamicSecretCreateVenafiWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretDelete} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretDeleteOutput} and HTTP response
+     */
+    dynamicSecretDeleteWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretDelete");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretDeleteOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-delete', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretDelete} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretDeleteOutput}
+     */
+    dynamicSecretDelete(body) {
+      return this.dynamicSecretDeleteWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DSProducerDetails} and HTTP response
+     */
+    dynamicSecretGetWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = DSProducerDetails;
+      return this.apiClient.callApi(
+        '/dynamic-secret-get', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DSProducerDetails}
+     */
+    dynamicSecretGet() {
+      return this.dynamicSecretGetWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretGetValue} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     */
+    dynamicSecretGetValueWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretGetValue");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = {'String': 'String'};
+      return this.apiClient.callApi(
+        '/dynamic-secret-get-value', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretGetValue} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     */
+    dynamicSecretGetValue(body) {
+      return this.dynamicSecretGetValueWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretList} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetProducersListReplyObj} and HTTP response
+     */
+    dynamicSecretListWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretList");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GetProducersListReplyObj;
+      return this.apiClient.callApi(
+        '/dynamic-secret-list', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretList} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetProducersListReplyObj}
+     */
+    dynamicSecretList(body) {
+      return this.dynamicSecretListWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretTmpCredsDelete} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    dynamicSecretTmpCredsDeleteWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretTmpCredsDelete");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/dynamic-secret-tmp-creds-delete', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretTmpCredsDelete} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    dynamicSecretTmpCredsDelete(body) {
+      return this.dynamicSecretTmpCredsDeleteWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretTmpCredsGet} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/TmpUserData>} and HTTP response
+     */
+    dynamicSecretTmpCredsGetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretTmpCredsGet");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = [TmpUserData];
+      return this.apiClient.callApi(
+        '/dynamic-secret-tmp-creds-Get', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretTmpCredsGet} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/TmpUserData>}
+     */
+    dynamicSecretTmpCredsGet(body) {
+      return this.dynamicSecretTmpCredsGetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretTmpCredsUpdate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    dynamicSecretTmpCredsUpdateWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretTmpCredsUpdate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/dynamic-secret-tmp-creds-update', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretTmpCredsUpdate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    dynamicSecretTmpCredsUpdate(body) {
+      return this.dynamicSecretTmpCredsUpdateWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateArtifactory} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateArtifactoryWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateArtifactory");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-artifactory', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateArtifactory} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateArtifactory(body) {
+      return this.dynamicSecretUpdateArtifactoryWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateAwsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateAws");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-aws', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateAws(body) {
+      return this.dynamicSecretUpdateAwsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateAzureWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateAzure");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-azure', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateAzure(body) {
+      return this.dynamicSecretUpdateAzureWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateCassandra} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateCassandraWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateCassandra");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-cassandra', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateCassandra} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateCassandra(body) {
+      return this.dynamicSecretUpdateCassandraWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/DynamicSecretUpdateCustom} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateCustomWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['body'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-custom', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/DynamicSecretUpdateCustom} opts.body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateCustom(opts) {
+      return this.dynamicSecretUpdateCustomWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateDockerhubWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateDockerhub");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-dockerhub', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateDockerhub(body) {
+      return this.dynamicSecretUpdateDockerhubWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateEks} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateEksWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateEks");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-eks', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateEks} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateEks(body) {
+      return this.dynamicSecretUpdateEksWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateGcpWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateGcp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-gcp', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateGcp(body) {
+      return this.dynamicSecretUpdateGcpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateGithub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateGithubWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateGithub");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-github', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateGithub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateGithub(body) {
+      return this.dynamicSecretUpdateGithubWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateGke} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateGkeWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateGke");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-gke', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateGke} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateGke(body) {
+      return this.dynamicSecretUpdateGkeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateHanaDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateHanaDbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateHanaDb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-hana', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateHanaDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateHanaDb(body) {
+      return this.dynamicSecretUpdateHanaDbWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateK8s} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateK8sWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateK8s");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-k8s', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateK8s} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateK8s(body) {
+      return this.dynamicSecretUpdateK8sWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateLdapWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateLdap");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-ldap', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateLdap(body) {
+      return this.dynamicSecretUpdateLdapWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateMongoDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateMongoDbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateMongoDb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-mongo', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateMongoDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateMongoDb(body) {
+      return this.dynamicSecretUpdateMongoDbWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateMsSql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateMsSqlWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateMsSql");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-mssql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateMsSql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateMsSql(body) {
+      return this.dynamicSecretUpdateMsSqlWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateMySql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateMySqlWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateMySql");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-mysql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateMySql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateMySql(body) {
+      return this.dynamicSecretUpdateMySqlWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateOracleDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateOracleDbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateOracleDb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-oracle', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateOracleDb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateOracleDb(body) {
+      return this.dynamicSecretUpdateOracleDbWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdatePing} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdatePingWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdatePing");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-ping', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdatePing} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdatePing(body) {
+      return this.dynamicSecretUpdatePingWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdatePostgreSql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdatePostgreSqlWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdatePostgreSql");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-postgresql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdatePostgreSql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdatePostgreSql(body) {
+      return this.dynamicSecretUpdatePostgreSqlWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateRabbitMq} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateRabbitMqWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateRabbitMq");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-rabbitmq', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateRabbitMq} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateRabbitMq(body) {
+      return this.dynamicSecretUpdateRabbitMqWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateRdp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateRdpWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateRdp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-rdp', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateRdp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateRdp(body) {
+      return this.dynamicSecretUpdateRdpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateRedis} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateRedisWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateRedis");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-redis', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateRedis} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateRedis(body) {
+      return this.dynamicSecretUpdateRedisWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateRedshift} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateRedshiftWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateRedshift");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-redshift', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateRedshift} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateRedshift(body) {
+      return this.dynamicSecretUpdateRedshiftWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateSnowflake} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateSnowflakeWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateSnowflake");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-snowflake', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateSnowflake} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateSnowflake(body) {
+      return this.dynamicSecretUpdateSnowflakeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateVenafi} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateVenafiWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateVenafi");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-venafi', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateVenafi} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateVenafi(body) {
+      return this.dynamicSecretUpdateVenafiWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/Encrypt} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EncryptOutput} and HTTP response
      */
@@ -4511,6 +7113,264 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/EventForwarderCreateEmail} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventForwarderCreateUpdateOutput} and HTTP response
+     */
+    eventForwarderCreateEmailWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling eventForwarderCreateEmail");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EventForwarderCreateUpdateOutput;
+      return this.apiClient.callApi(
+        '/event-forwarder-create-email', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EventForwarderCreateEmail} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventForwarderCreateUpdateOutput}
+     */
+    eventForwarderCreateEmail(body) {
+      return this.eventForwarderCreateEmailWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EventForwarderCreateWebhook} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventForwarderCreateUpdateOutput} and HTTP response
+     */
+    eventForwarderCreateWebhookWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling eventForwarderCreateWebhook");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EventForwarderCreateUpdateOutput;
+      return this.apiClient.callApi(
+        '/event-forwarder-create-webhook', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EventForwarderCreateWebhook} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventForwarderCreateUpdateOutput}
+     */
+    eventForwarderCreateWebhook(body) {
+      return this.eventForwarderCreateWebhookWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EventForwarderDelete} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventForwarderDeleteOutput} and HTTP response
+     */
+    eventForwarderDeleteWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling eventForwarderDelete");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EventForwarderDeleteOutput;
+      return this.apiClient.callApi(
+        '/event-forwarder-delete', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EventForwarderDelete} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventForwarderDeleteOutput}
+     */
+    eventForwarderDelete(body) {
+      return this.eventForwarderDeleteWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EventForwarderGet} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventForwarderGetOutput} and HTTP response
+     */
+    eventForwarderGetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling eventForwarderGet");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EventForwarderGetOutput;
+      return this.apiClient.callApi(
+        '/event-forwarder-get', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EventForwarderGet} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventForwarderGetOutput}
+     */
+    eventForwarderGet(body) {
+      return this.eventForwarderGetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EventForwarderUpdateEmail} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventForwarderCreateUpdateOutput} and HTTP response
+     */
+    eventForwarderUpdateEmailWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling eventForwarderUpdateEmail");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EventForwarderCreateUpdateOutput;
+      return this.apiClient.callApi(
+        '/event-forwarder-update-email', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EventForwarderUpdateEmail} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventForwarderCreateUpdateOutput}
+     */
+    eventForwarderUpdateEmail(body) {
+      return this.eventForwarderUpdateEmailWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EventForwarderUpdateWebhook} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventForwarderCreateUpdateOutput} and HTTP response
+     */
+    eventForwarderUpdateWebhookWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling eventForwarderUpdateWebhook");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EventForwarderCreateUpdateOutput;
+      return this.apiClient.callApi(
+        '/event-forwarder-update-webhook', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EventForwarderUpdateWebhook} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventForwarderCreateUpdateOutput}
+     */
+    eventForwarderUpdateWebhook(body) {
+      return this.eventForwarderUpdateWebhookWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/ExportClassicKey} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ExportClassicKeyOutput} and HTTP response
      */
@@ -4855,14 +7715,14 @@ export default class V2Api {
 
 
     /**
-     * @param {module:model/GatewayCreateProducerCertificateAutomation} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerCertificateAutomationOutput} and HTTP response
+     * @param {module:model/GatewayCreateProducerChef} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerChefOutput} and HTTP response
      */
-    gatewayCreateProducerCertificateAutomationWithHttpInfo(body) {
+    gatewayCreateProducerChefWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling gatewayCreateProducerCertificateAutomation");
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateProducerChef");
       }
 
       let pathParams = {
@@ -4877,20 +7737,20 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = GatewayCreateProducerCertificateAutomationOutput;
+      let returnType = GatewayCreateProducerChefOutput;
       return this.apiClient.callApi(
-        '/gateway-create-producer-certificate-automation', 'POST',
+        '/gateway-create-producer-chef', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * @param {module:model/GatewayCreateProducerCertificateAutomation} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerCertificateAutomationOutput}
+     * @param {module:model/GatewayCreateProducerChef} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerChefOutput}
      */
-    gatewayCreateProducerCertificateAutomation(body) {
-      return this.gatewayCreateProducerCertificateAutomationWithHttpInfo(body)
+    gatewayCreateProducerChef(body) {
+      return this.gatewayCreateProducerChefWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -5750,6 +8610,49 @@ export default class V2Api {
      */
     gatewayCreateProducerSnowflake(body) {
       return this.gatewayCreateProducerSnowflakeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayCreateProducerVenafi} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayCreateProducerVenafiOutput} and HTTP response
+     */
+    gatewayCreateProducerVenafiWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayCreateProducerVenafi");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayCreateProducerVenafiOutput;
+      return this.apiClient.callApi(
+        '/gateway-create-producer-certificate-automation', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayCreateProducerVenafi} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayCreateProducerVenafiOutput}
+     */
+    gatewayCreateProducerVenafi(body) {
+      return this.gatewayCreateProducerVenafiWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7046,14 +9949,14 @@ export default class V2Api {
 
 
     /**
-     * @param {module:model/GatewayUpdateProducerCertificateAutomation} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerCertificateAutomationOutput} and HTTP response
+     * @param {module:model/GatewayUpdateProducerChef} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerChefOutput} and HTTP response
      */
-    gatewayUpdateProducerCertificateAutomationWithHttpInfo(body) {
+    gatewayUpdateProducerChefWithHttpInfo(body) {
       let postBody = body;
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerCertificateAutomation");
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerChef");
       }
 
       let pathParams = {
@@ -7068,20 +9971,20 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = GatewayUpdateProducerCertificateAutomationOutput;
+      let returnType = GatewayUpdateProducerChefOutput;
       return this.apiClient.callApi(
-        '/gateway-update-producer-certificate-automation', 'POST',
+        '/gateway-update-producer-chef', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * @param {module:model/GatewayUpdateProducerCertificateAutomation} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerCertificateAutomationOutput}
+     * @param {module:model/GatewayUpdateProducerChef} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerChefOutput}
      */
-    gatewayUpdateProducerCertificateAutomation(body) {
-      return this.gatewayUpdateProducerCertificateAutomationWithHttpInfo(body)
+    gatewayUpdateProducerChef(body) {
+      return this.gatewayUpdateProducerChefWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -7941,6 +10844,49 @@ export default class V2Api {
      */
     gatewayUpdateProducerSnowflake(body) {
       return this.gatewayUpdateProducerSnowflakeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateProducerVenafi} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateProducerVenafiOutput} and HTTP response
+     */
+    gatewayUpdateProducerVenafiWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateProducerVenafi");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateProducerVenafiOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-producer-certificate-automation', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateProducerVenafi} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateProducerVenafiOutput}
+     */
+    gatewayUpdateProducerVenafi(body) {
+      return this.gatewayUpdateProducerVenafiWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -10330,6 +13276,1640 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/RotatedSecretCreateAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateAwsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateAws");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-aws', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateAws(body) {
+      return this.rotatedSecretCreateAwsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateAzureWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateAzure");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-azure', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateAzure(body) {
+      return this.rotatedSecretCreateAzureWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateCassandra} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateCassandraWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateCassandra");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-cassandra', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateCassandra} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateCassandra(body) {
+      return this.rotatedSecretCreateCassandraWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateCustom} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateCustomWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateCustom");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-custom', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateCustom} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateCustom(body) {
+      return this.rotatedSecretCreateCustomWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateDockerhubWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateDockerhub");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-dockerhub', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateDockerhub(body) {
+      return this.rotatedSecretCreateDockerhubWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateGcpWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateGcp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-gcp', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateGcp(body) {
+      return this.rotatedSecretCreateGcpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateHanadb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateHanadbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateHanadb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-hanadb', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateHanadb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateHanadb(body) {
+      return this.rotatedSecretCreateHanadbWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateLdapWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateLdap");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-ldap', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateLdap(body) {
+      return this.rotatedSecretCreateLdapWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateMongodb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateMongodbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateMongodb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-mongodb', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateMongodb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateMongodb(body) {
+      return this.rotatedSecretCreateMongodbWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateMssql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateMssqlWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateMssql");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-mssql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateMssql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateMssql(body) {
+      return this.rotatedSecretCreateMssqlWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateMysql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateMysqlWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateMysql");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-mysql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateMysql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateMysql(body) {
+      return this.rotatedSecretCreateMysqlWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateOracledb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateOracledbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateOracledb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-oracledb', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateOracledb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateOracledb(body) {
+      return this.rotatedSecretCreateOracledbWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreatePostgresql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreatePostgresqlWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreatePostgresql");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-postgresql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreatePostgresql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreatePostgresql(body) {
+      return this.rotatedSecretCreatePostgresqlWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateRedis} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateRedisWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateRedis");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-redis', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateRedis} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateRedis(body) {
+      return this.rotatedSecretCreateRedisWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateRedshift} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateRedshiftWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateRedshift");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-redshift', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateRedshift} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateRedshift(body) {
+      return this.rotatedSecretCreateRedshiftWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateSnowflake} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateSnowflakeWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateSnowflake");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-snowflake', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateSnowflake} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateSnowflake(body) {
+      return this.rotatedSecretCreateSnowflakeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateSsh} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateSshWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateSsh");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-ssh', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateSsh} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateSsh(body) {
+      return this.rotatedSecretCreateSshWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateWindows} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateWindowsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretCreateWindows");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-windows', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateWindows} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateWindows(body) {
+      return this.rotatedSecretCreateWindowsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretGetValue} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     */
+    rotatedSecretGetValueWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretGetValue");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = {'String': 'String'};
+      return this.apiClient.callApi(
+        '/rotated-secret-get-value', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretGetValue} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     */
+    rotatedSecretGetValue(body) {
+      return this.rotatedSecretGetValueWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretList} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetProducersListReplyObj} and HTTP response
+     */
+    rotatedSecretListWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretList");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GetProducersListReplyObj;
+      return this.apiClient.callApi(
+        '/rotated-secret-list', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretList} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetProducersListReplyObj}
+     */
+    rotatedSecretList(body) {
+      return this.rotatedSecretListWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateAwsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateAws");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-aws', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateAws(body) {
+      return this.rotatedSecretUpdateAwsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateAzureWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateAzure");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-azure', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateAzure(body) {
+      return this.rotatedSecretUpdateAzureWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateCassandra} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateCassandraWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateCassandra");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-cassandra', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateCassandra} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateCassandra(body) {
+      return this.rotatedSecretUpdateCassandraWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateCustom} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateCustomWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateCustom");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-custom', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateCustom} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateCustom(body) {
+      return this.rotatedSecretUpdateCustomWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateDockerhubWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateDockerhub");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-dockerhub', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateDockerhub(body) {
+      return this.rotatedSecretUpdateDockerhubWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateGcpWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateGcp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-gcp', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateGcp(body) {
+      return this.rotatedSecretUpdateGcpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateHanadb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateHanadbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateHanadb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-hanadb', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateHanadb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateHanadb(body) {
+      return this.rotatedSecretUpdateHanadbWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateLdapWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateLdap");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-ldap', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateLdap(body) {
+      return this.rotatedSecretUpdateLdapWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateMongodb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateMongodbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateMongodb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-mongodb', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateMongodb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateMongodb(body) {
+      return this.rotatedSecretUpdateMongodbWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateMssql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateMssqlWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateMssql");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-mssql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateMssql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateMssql(body) {
+      return this.rotatedSecretUpdateMssqlWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateMysql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateMysqlWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateMysql");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-mysql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateMysql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateMysql(body) {
+      return this.rotatedSecretUpdateMysqlWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateOracledb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateOracledbWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateOracledb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-oracledb', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateOracledb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateOracledb(body) {
+      return this.rotatedSecretUpdateOracledbWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdatePostgresql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdatePostgresqlWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdatePostgresql");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-postgresql', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdatePostgresql} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdatePostgresql(body) {
+      return this.rotatedSecretUpdatePostgresqlWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateRedis} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateRedisWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateRedis");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-redis', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateRedis} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateRedis(body) {
+      return this.rotatedSecretUpdateRedisWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateRedshift} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateRedshiftWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateRedshift");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-redshift', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateRedshift} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateRedshift(body) {
+      return this.rotatedSecretUpdateRedshiftWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateSnowflake} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateSnowflakeWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateSnowflake");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-snowflake', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateSnowflake} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateSnowflake(body) {
+      return this.rotatedSecretUpdateSnowflakeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateSsh} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateSshWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateSsh");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-ssh', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateSsh} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateSsh(body) {
+      return this.rotatedSecretUpdateSshWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateWindows} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateWindowsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling rotatedSecretUpdateWindows");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-windows', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateWindows} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateWindows(body) {
+      return this.rotatedSecretUpdateWindowsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/SetItemState} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
@@ -12344,6 +16924,49 @@ export default class V2Api {
      */
     updateGlobalSignTarget(body) {
       return this.updateGlobalSignTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateGodaddyTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateGodaddyTargetOutput} and HTTP response
+     */
+    updateGodaddyTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateGodaddyTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateGodaddyTargetOutput;
+      return this.apiClient.callApi(
+        '/update-godaddy-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateGodaddyTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateGodaddyTargetOutput}
+     */
+    updateGodaddyTarget(body) {
+      return this.updateGodaddyTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

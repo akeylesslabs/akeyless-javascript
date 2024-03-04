@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **gcpSaEmail** | **String** | The email of the fixed service acocunt to generate keys or tokens for. (revelant for service-account-type&#x3D;fixed) | [optional] 
 **gcpTokenScopes** | **String** | Access token scopes list, e.g. scope1,scope2 | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
-**name** | **String** | Producer name | 
+**name** | **String** | Dynamic secret name | 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **roleBinding** | **String** | Role binding definitions in json format | [optional] 
 **serviceAccountType** | **String** | The type of the gcp dynamic secret. Options[fixed, dynamic] | [default to &#39;fixed&#39;]

@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMySQL model module.
  * @module model/GatewayCreateProducerMySQL
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerMySQL {
     /**
      * Constructs a new <code>GatewayCreateProducerMySQL</code>.
-     * gatewayCreateProducerMySQL is a command that creates mysql producer
+     * gatewayCreateProducerMySQL is a command that creates mysql producer [Deprecated: Use dynamic-secret-create-mysql command]
      * @alias module:model/GatewayCreateProducerMySQL
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -85,6 +85,9 @@ class GatewayCreateProducerMySQL {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -199,10 +202,16 @@ GatewayCreateProducerMySQL.prototype['mysql-screation-statements'] = undefined;
 GatewayCreateProducerMySQL.prototype['mysql-username'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerMySQL.prototype['name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayCreateProducerMySQL.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

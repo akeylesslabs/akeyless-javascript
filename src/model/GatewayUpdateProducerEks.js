@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerEks model module.
  * @module model/GatewayUpdateProducerEks
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerEks {
     /**
      * Constructs a new <code>GatewayUpdateProducerEks</code>.
-     * gatewayUpdateProducerEks is a command that updates eks producer
+     * gatewayUpdateProducerEks is a command that updates eks producer [Deprecated: Use dynamic-secret-update-eks command]
      * @alias module:model/GatewayUpdateProducerEks
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -180,13 +180,13 @@ GatewayUpdateProducerEks.prototype['eks-secret-access-key'] = undefined;
 GatewayUpdateProducerEks.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerEks.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerEks.prototype['new-name'] = undefined;

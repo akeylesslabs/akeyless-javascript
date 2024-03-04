@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **eksRegion** | **String** | Region | [optional] [default to &#39;us-east-2&#39;]
 **eksSecretAccessKey** | **String** | Secret Access Key | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
-**name** | **String** | Producer name | 
+**name** | **String** | Dynamic secret name | 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **secureAccessAllowPortForwading** | **Boolean** | Enable Port forwarding while using CLI access | [optional] 
 **secureAccessBastionIssuer** | **String** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 

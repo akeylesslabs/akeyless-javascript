@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAzureAD model module.
  * @module model/CreateAuthMethodAzureAD
- * @version 3.6.1
+ * @version 3.6.2
  */
 class CreateAuthMethodAzureAD {
     /**
@@ -111,6 +111,9 @@ class CreateAuthMethodAzureAD {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -250,6 +253,12 @@ CreateAuthMethodAzureAD.prototype['jwt-ttl'] = 0;
  * @member {String} name
  */
 CreateAuthMethodAzureAD.prototype['name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+CreateAuthMethodAzureAD.prototype['product-type'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

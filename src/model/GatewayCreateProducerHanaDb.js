@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerHanaDb model module.
  * @module model/GatewayCreateProducerHanaDb
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerHanaDb {
     /**
      * Constructs a new <code>GatewayCreateProducerHanaDb</code>.
-     * gatewayCreateProducerHanaDb is a command that creates hanadb producer
+     * gatewayCreateProducerHanaDb is a command that creates hanadb producer [Deprecated: Use dynamic-secret-create-hanadb command]
      * @alias module:model/GatewayCreateProducerHanaDb
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -79,6 +79,9 @@ class GatewayCreateProducerHanaDb {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -178,10 +181,16 @@ GatewayCreateProducerHanaDb.prototype['hanadb-username'] = undefined;
 GatewayCreateProducerHanaDb.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerHanaDb.prototype['name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayCreateProducerHanaDb.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

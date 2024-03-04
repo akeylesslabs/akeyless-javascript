@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetProducer model module.
  * @module model/GatewayGetProducer
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayGetProducer {
     /**
      * Constructs a new <code>GatewayGetProducer</code>.
-     * gatewayGetProducer is a command that returns producer
+     * gatewayGetProducer is a command that returns producer [Deprecated: Use dynamic-secret-get command]
      * @alias module:model/GatewayGetProducer
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -77,7 +77,7 @@ class GatewayGetProducer {
 GatewayGetProducer.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayGetProducer.prototype['name'] = undefined;

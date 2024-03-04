@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **jwtTtl** | **Number** | Jwt TTL | [optional] [default to 0]
 **name** | **String** | Auth Method name | 
 **newName** | **String** | Auth Method new name | [optional] 
+**productType** | **[String]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca] | [optional] 
 **stsUrl** | **String** | sts URL | [optional] [default to &#39;https://sts.amazonaws.com&#39;]
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 

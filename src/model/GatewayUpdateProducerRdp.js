@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRdp model module.
  * @module model/GatewayUpdateProducerRdp
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerRdp {
     /**
      * Constructs a new <code>GatewayUpdateProducerRdp</code>.
-     * gatewayUpdateProducerRdp is a command that updates rdp producer
+     * gatewayUpdateProducerRdp is a command that updates rdp producer [Deprecated: Use dynamic-secret-update-rdp command]
      * @alias module:model/GatewayUpdateProducerRdp
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -67,6 +67,9 @@ class GatewayUpdateProducerRdp {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -156,16 +159,22 @@ GatewayUpdateProducerRdp.prototype['fixed-user-only'] = 'false';
 GatewayUpdateProducerRdp.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerRdp.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerRdp.prototype['new-name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayUpdateProducerRdp.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

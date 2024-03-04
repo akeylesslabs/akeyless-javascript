@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodCert model module.
  * @module model/CreateAuthMethodCert
- * @version 3.6.1
+ * @version 3.6.2
  */
 class CreateAuthMethodCert {
     /**
@@ -99,6 +99,9 @@ class CreateAuthMethodCert {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('revoked-cert-ids')) {
                 obj['revoked-cert-ids'] = ApiClient.convertToType(data['revoked-cert-ids'], ['String']);
@@ -217,6 +220,12 @@ CreateAuthMethodCert.prototype['jwt-ttl'] = 0;
  * @member {String} name
  */
 CreateAuthMethodCert.prototype['name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+CreateAuthMethodCert.prototype['product-type'] = undefined;
 
 /**
  * A list of revoked cert ids

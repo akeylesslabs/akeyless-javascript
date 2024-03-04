@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAzure model module.
  * @module model/GatewayCreateProducerAzure
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerAzure {
     /**
      * Constructs a new <code>GatewayCreateProducerAzure</code>.
-     * gatewayCreateProducerAzure is a command that creates azure producer
+     * gatewayCreateProducerAzure is a command that creates azure producer [Deprecated: Use dynamic-secret-create-azure command]
      * @alias module:model/GatewayCreateProducerAzure
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -76,6 +76,9 @@ class GatewayCreateProducerAzure {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -181,10 +184,16 @@ GatewayCreateProducerAzure.prototype['fixed-user-only'] = false;
 GatewayCreateProducerAzure.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerAzure.prototype['name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayCreateProducerAzure.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

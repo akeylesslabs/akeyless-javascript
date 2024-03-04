@@ -15,8 +15,9 @@ Name | Type | Description | Notes
 **mysqlRevocationStatements** | **String** | MySQL Revocation statements | [optional] 
 **mysqlScreationStatements** | **String** | MySQL Creation statements | [optional] 
 **mysqlUsername** | **String** | MySQL Username | [optional] 
-**name** | **String** | Producer name | 
-**newName** | **String** | Producer name | [optional] 
+**name** | **String** | Dynamic secret name | 
+**newName** | **String** | Dynamic secret name | [optional] 
+**passwordLength** | **String** | The length of the password to be generated | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **secureAccessBastionIssuer** | **String** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 

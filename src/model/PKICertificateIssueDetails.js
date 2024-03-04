@@ -17,7 +17,7 @@ import CertificateExpirationEvent from './CertificateExpirationEvent';
 /**
  * The PKICertificateIssueDetails model module.
  * @module model/PKICertificateIssueDetails
- * @version 3.6.1
+ * @version 3.6.2
  */
 class PKICertificateIssueDetails {
     /**
@@ -51,11 +51,17 @@ class PKICertificateIssueDetails {
             if (data.hasOwnProperty('allow_any_name')) {
                 obj['allow_any_name'] = ApiClient.convertToType(data['allow_any_name'], 'Boolean');
             }
+            if (data.hasOwnProperty('allow_copy_ext_from_csr')) {
+                obj['allow_copy_ext_from_csr'] = ApiClient.convertToType(data['allow_copy_ext_from_csr'], 'Boolean');
+            }
             if (data.hasOwnProperty('allow_subdomains')) {
                 obj['allow_subdomains'] = ApiClient.convertToType(data['allow_subdomains'], 'Boolean');
             }
             if (data.hasOwnProperty('allowed_domains_list')) {
                 obj['allowed_domains_list'] = ApiClient.convertToType(data['allowed_domains_list'], ['String']);
+            }
+            if (data.hasOwnProperty('allowed_extra_extensions')) {
+                obj['allowed_extra_extensions'] = ApiClient.convertToType(data['allowed_extra_extensions'], {'String': ['String']});
             }
             if (data.hasOwnProperty('allowed_uri_sans')) {
                 obj['allowed_uri_sans'] = ApiClient.convertToType(data['allowed_uri_sans'], ['String']);
@@ -142,6 +148,11 @@ class PKICertificateIssueDetails {
 PKICertificateIssueDetails.prototype['allow_any_name'] = undefined;
 
 /**
+ * @member {Boolean} allow_copy_ext_from_csr
+ */
+PKICertificateIssueDetails.prototype['allow_copy_ext_from_csr'] = undefined;
+
+/**
  * @member {Boolean} allow_subdomains
  */
 PKICertificateIssueDetails.prototype['allow_subdomains'] = undefined;
@@ -150,6 +161,11 @@ PKICertificateIssueDetails.prototype['allow_subdomains'] = undefined;
  * @member {Array.<String>} allowed_domains_list
  */
 PKICertificateIssueDetails.prototype['allowed_domains_list'] = undefined;
+
+/**
+ * @member {Object.<String, Array.<String>>} allowed_extra_extensions
+ */
+PKICertificateIssueDetails.prototype['allowed_extra_extensions'] = undefined;
 
 /**
  * @member {Array.<String>} allowed_uri_sans

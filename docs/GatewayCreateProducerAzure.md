@@ -12,7 +12,8 @@ Name | Type | Description | Notes
 **fixedUserClaimKeyname** | **String** | FixedUserClaimKeyname | [optional] [default to &#39;false&#39;]
 **fixedUserOnly** | **Boolean** | Fixed user | [optional] [default to false]
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
-**name** | **String** | Producer name | 
+**name** | **String** | Dynamic secret name | 
+**passwordLength** | **String** | The length of the password to be generated | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
 **secureAccessWeb** | **Boolean** | Enable Web Secure Remote Access | [optional] [default to true]

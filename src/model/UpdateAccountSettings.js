@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 3.6.1
+ * @version 3.6.2
  */
 class UpdateAccountSettings {
     /**
@@ -71,6 +71,12 @@ class UpdateAccountSettings {
             if (data.hasOwnProperty('dp-enable-classic-key-protection')) {
                 obj['dp-enable-classic-key-protection'] = ApiClient.convertToType(data['dp-enable-classic-key-protection'], 'String');
             }
+            if (data.hasOwnProperty('dynamic-secret-max-ttl')) {
+                obj['dynamic-secret-max-ttl'] = ApiClient.convertToType(data['dynamic-secret-max-ttl'], 'Number');
+            }
+            if (data.hasOwnProperty('dynamic-secret-max-ttl-enable')) {
+                obj['dynamic-secret-max-ttl-enable'] = ApiClient.convertToType(data['dynamic-secret-max-ttl-enable'], 'String');
+            }
             if (data.hasOwnProperty('invalid-characters')) {
                 obj['invalid-characters'] = ApiClient.convertToType(data['invalid-characters'], 'String');
             }
@@ -94,6 +100,12 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('lock-default-key')) {
                 obj['lock-default-key'] = ApiClient.convertToType(data['lock-default-key'], 'String');
+            }
+            if (data.hasOwnProperty('max-rotation-interval')) {
+                obj['max-rotation-interval'] = ApiClient.convertToType(data['max-rotation-interval'], 'Number');
+            }
+            if (data.hasOwnProperty('max-rotation-interval-enable')) {
+                obj['max-rotation-interval-enable'] = ApiClient.convertToType(data['max-rotation-interval-enable'], 'String');
             }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
@@ -190,6 +202,18 @@ UpdateAccountSettings.prototype['default-versioning'] = undefined;
 UpdateAccountSettings.prototype['dp-enable-classic-key-protection'] = undefined;
 
 /**
+ * Set the maximum ttl for dynamic secrets
+ * @member {Number} dynamic-secret-max-ttl
+ */
+UpdateAccountSettings.prototype['dynamic-secret-max-ttl'] = undefined;
+
+/**
+ * Set a maximum ttl for dynamic secrets [true/false]
+ * @member {String} dynamic-secret-max-ttl-enable
+ */
+UpdateAccountSettings.prototype['dynamic-secret-max-ttl-enable'] = undefined;
+
+/**
  * Characters that cannot be used for items/targets/roles/auths/event_forwarder names. Empty string will enforce nothing.
  * @member {String} invalid-characters
  * @default 'notReceivedInvalidCharacter'
@@ -238,6 +262,18 @@ UpdateAccountSettings.prototype['jwt-ttl-min'] = undefined;
  * @member {String} lock-default-key
  */
 UpdateAccountSettings.prototype['lock-default-key'] = undefined;
+
+/**
+ * Set the maximum rotation interval for rotated secrets auto rotation settings
+ * @member {Number} max-rotation-interval
+ */
+UpdateAccountSettings.prototype['max-rotation-interval'] = undefined;
+
+/**
+ * Set a maximum rotation interval for rotated secrets auto rotation settings [true/false]
+ * @member {String} max-rotation-interval-enable
+ */
+UpdateAccountSettings.prototype['max-rotation-interval-enable'] = undefined;
 
 /**
  * Max versions

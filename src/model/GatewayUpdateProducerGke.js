@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerGke model module.
  * @module model/GatewayUpdateProducerGke
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerGke {
     /**
      * Constructs a new <code>GatewayUpdateProducerGke</code>.
-     * gatewayUpdateProducerGke is a command that updates gke producer
+     * gatewayUpdateProducerGke is a command that updates gke producer [Deprecated: Use dynamic-secret-update-gke command]
      * @alias module:model/GatewayUpdateProducerGke
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -161,13 +161,13 @@ GatewayUpdateProducerGke.prototype['gke-service-account-email'] = undefined;
 GatewayUpdateProducerGke.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerGke.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerGke.prototype['new-name'] = undefined;

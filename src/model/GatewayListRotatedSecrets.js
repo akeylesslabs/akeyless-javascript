@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayListRotatedSecrets model module.
  * @module model/GatewayListRotatedSecrets
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayListRotatedSecrets {
     /**
      * Constructs a new <code>GatewayListRotatedSecrets</code>.
-     * gatewayListRotatedSecrets is a command that returns a list of rotated secrets
+     * gatewayListRotatedSecrets is a command that returns a list of rotated secrets. [Deprecated: Use rotated-secret list command]
      * @alias module:model/GatewayListRotatedSecrets
      */
     constructor() { 

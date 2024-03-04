@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGlobalSignAtlasTarget model module.
  * @module model/UpdateGlobalSignAtlasTarget
- * @version 3.6.1
+ * @version 3.6.2
  */
 class UpdateGlobalSignAtlasTarget {
     /**

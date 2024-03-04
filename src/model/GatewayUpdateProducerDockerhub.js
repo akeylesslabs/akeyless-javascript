@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerDockerhub model module.
  * @module model/GatewayUpdateProducerDockerhub
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerDockerhub {
     /**
      * Constructs a new <code>GatewayUpdateProducerDockerhub</code>.
-     * gatewayUpdateProducerDockerhub is a command that updates a DOCKERHUB producer
+     * gatewayUpdateProducerDockerhub is a command that updates a DOCKERHUB producer [Deprecated: Use dynamic-secret-update-dockerhub command]
      * @alias module:model/GatewayUpdateProducerDockerhub
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -128,13 +128,13 @@ GatewayUpdateProducerDockerhub.prototype['dockerhub-username'] = undefined;
 GatewayUpdateProducerDockerhub.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerDockerhub.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerDockerhub.prototype['new-name'] = undefined;

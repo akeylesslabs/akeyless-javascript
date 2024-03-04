@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteProducer model module.
  * @module model/GatewayDeleteProducer
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayDeleteProducer {
     /**
      * Constructs a new <code>GatewayDeleteProducer</code>.
-     * gatewayDeleteProducer is a command that deletes producer
+     * gatewayDeleteProducer is a command that deletes producer [Deprecated: Use dynamic-secret-delete command]
      * @alias module:model/GatewayDeleteProducer
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -77,7 +77,7 @@ class GatewayDeleteProducer {
 GatewayDeleteProducer.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayDeleteProducer.prototype['name'] = undefined;

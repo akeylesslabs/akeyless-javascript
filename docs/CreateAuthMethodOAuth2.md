@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **audience** | **String** | The audience in the JWT | [optional] 
 **boundClientIds** | **[String]** | The clients ids that the access is restricted to | [optional] 
 **boundIps** | **[String]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
+**cert** | **String** | CertificateFile Path to a file that contain the certificate in a PEM format. | [optional] 
+**certFileData** | **String** | CertificateFileData PEM Certificate in a Base64 format. | [optional] 
 **description** | **String** | Auth Method description | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **gatewayUrl** | **String** | Akeyless Gateway URL (Configuration Management port). Relevant only when the jwks-uri is accessible only from the gateway. | [optional] 
@@ -18,6 +20,7 @@ Name | Type | Description | Notes
 **jwksUri** | **String** | The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server. | [default to &#39;default_jwks_url&#39;]
 **jwtTtl** | **Number** | Jwt TTL | [optional] [default to 0]
 **name** | **String** | Auth Method name | 
+**productType** | **[String]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca] | [optional] 
 **subclaimsDelimiters** | **[String]** | A list of additional sub claims delimiters (relevant only for SAML, OIDC, OAuth2/JWT) | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 

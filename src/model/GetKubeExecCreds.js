@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetKubeExecCreds model module.
  * @module model/GetKubeExecCreds
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GetKubeExecCreds {
     /**
@@ -67,6 +67,9 @@ class GetKubeExecCreds {
             }
             if (data.hasOwnProperty('extended-key-usage')) {
                 obj['extended-key-usage'] = ApiClient.convertToType(data['extended-key-usage'], 'String');
+            }
+            if (data.hasOwnProperty('extra-extensions')) {
+                obj['extra-extensions'] = ApiClient.convertToType(data['extra-extensions'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -129,6 +132,12 @@ GetKubeExecCreds.prototype['csr-data-base64'] = undefined;
  * @member {String} extended-key-usage
  */
 GetKubeExecCreds.prototype['extended-key-usage'] = undefined;
+
+/**
+ * A json string that defines the requested extra extensions for the certificate
+ * @member {String} extra-extensions
+ */
+GetKubeExecCreds.prototype['extra-extensions'] = undefined;
 
 /**
  * Set output format to JSON

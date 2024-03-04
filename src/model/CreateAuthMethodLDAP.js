@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodLDAP model module.
  * @module model/CreateAuthMethodLDAP
- * @version 3.6.1
+ * @version 3.6.2
  */
 class CreateAuthMethodLDAP {
     /**
@@ -76,6 +76,9 @@ class CreateAuthMethodLDAP {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('public-key-data')) {
                 obj['public-key-data'] = ApiClient.convertToType(data['public-key-data'], 'String');
@@ -153,6 +156,12 @@ CreateAuthMethodLDAP.prototype['jwt-ttl'] = 0;
  * @member {String} name
  */
 CreateAuthMethodLDAP.prototype['name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+CreateAuthMethodLDAP.prototype['product-type'] = undefined;
 
 /**
  * A public key generated for LDAP authentication method on Akeyless in base64 or PEM format [RSA2048]

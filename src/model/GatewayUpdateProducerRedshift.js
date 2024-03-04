@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRedshift model module.
  * @module model/GatewayUpdateProducerRedshift
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerRedshift {
     /**
      * Constructs a new <code>GatewayUpdateProducerRedshift</code>.
-     * gatewayUpdateProducerRedshift is a command that updates redshift producer
+     * gatewayUpdateProducerRedshift is a command that updates redshift producer [Deprecated: Use dynamic-secret-update-redshift command]
      * @alias module:model/GatewayUpdateProducerRedshift
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -64,6 +64,9 @@ class GatewayUpdateProducerRedshift {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key')) {
                 obj['producer-encryption-key'] = ApiClient.convertToType(data['producer-encryption-key'], 'String');
@@ -134,16 +137,22 @@ GatewayUpdateProducerRedshift.prototype['delete_protection'] = undefined;
 GatewayUpdateProducerRedshift.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerRedshift.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerRedshift.prototype['new-name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayUpdateProducerRedshift.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

@@ -16,14 +16,15 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCustom model module.
  * @module model/GatewayCreateProducerCustom
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerCustom {
     /**
      * Constructs a new <code>GatewayCreateProducerCustom</code>.
+     * gatewayCreateProducerCustom is a command that creates a custom producer. [Deprecated: Use dynamic-secret-create-custom command]
      * @alias module:model/GatewayCreateProducerCustom
      * @param createSyncUrl {String} URL of an endpoint that implements /sync/create method, for example https://webhook.example.com/sync/create
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      * @param revokeSyncUrl {String} URL of an endpoint that implements /sync/revoke method, for example https://webhook.example.com/sync/revoke
      */
     constructor(createSyncUrl, name, revokeSyncUrl) { 
@@ -138,7 +139,7 @@ GatewayCreateProducerCustom.prototype['enable_admin_rotation'] = false;
 GatewayCreateProducerCustom.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerCustom.prototype['name'] = undefined;

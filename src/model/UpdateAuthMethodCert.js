@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodCert model module.
  * @module model/UpdateAuthMethodCert
- * @version 3.6.1
+ * @version 3.6.2
  */
 class UpdateAuthMethodCert {
     /**
@@ -102,6 +102,9 @@ class UpdateAuthMethodCert {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('revoked-cert-ids')) {
                 obj['revoked-cert-ids'] = ApiClient.convertToType(data['revoked-cert-ids'], ['String']);
@@ -226,6 +229,12 @@ UpdateAuthMethodCert.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateAuthMethodCert.prototype['new-name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+UpdateAuthMethodCert.prototype['product-type'] = undefined;
 
 /**
  * A list of revoked cert ids

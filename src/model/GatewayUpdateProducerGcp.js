@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerGcp model module.
  * @module model/GatewayUpdateProducerGcp
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerGcp {
     /**
      * Constructs a new <code>GatewayUpdateProducerGcp</code>.
-     * gatewayUpdateProducerGcp is a command that updates a GCP producer
+     * gatewayUpdateProducerGcp is a command that updates a GCP producer [Deprecated: Use dynamic-secret-update-gcp command]
      * @alias module:model/GatewayUpdateProducerGcp
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      * @param serviceAccountType {String} The type of the gcp dynamic secret. Options[fixed, dynamic]
      */
     constructor(name, serviceAccountType) { 
@@ -153,13 +153,13 @@ GatewayUpdateProducerGcp.prototype['gcp-token-scopes'] = undefined;
 GatewayUpdateProducerGcp.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerGcp.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerGcp.prototype['new-name'] = undefined;

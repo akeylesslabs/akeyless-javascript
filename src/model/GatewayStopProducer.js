@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayStopProducer model module.
  * @module model/GatewayStopProducer
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayStopProducer {
     /**
      * Constructs a new <code>GatewayStopProducer</code>.
-     * gatewayStopProducer is a command that stops producer
+     * gatewayStopProducer is a command that stops producer [Deprecated: Use set-item-state command]
      * @alias module:model/GatewayStopProducer
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -77,7 +77,7 @@ class GatewayStopProducer {
 GatewayStopProducer.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayStopProducer.prototype['name'] = undefined;

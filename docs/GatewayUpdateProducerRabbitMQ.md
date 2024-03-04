@@ -6,8 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
-**name** | **String** | Producer name | 
-**newName** | **String** | Producer name | [optional] 
+**name** | **String** | Dynamic secret name | 
+**newName** | **String** | Dynamic secret name | [optional] 
+**passwordLength** | **String** | The length of the password to be generated | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **rabbitmqAdminPwd** | **String** | RabbitMQ Admin password | [optional] 
 **rabbitmqAdminUser** | **String** | RabbitMQ Admin User | [optional] 

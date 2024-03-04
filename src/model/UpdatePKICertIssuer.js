@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 3.6.1
+ * @version 3.6.2
  */
 class UpdatePKICertIssuer {
     /**
@@ -59,11 +59,17 @@ class UpdatePKICertIssuer {
             if (data.hasOwnProperty('allow-any-name')) {
                 obj['allow-any-name'] = ApiClient.convertToType(data['allow-any-name'], 'Boolean');
             }
+            if (data.hasOwnProperty('allow-copy-ext-from-csr')) {
+                obj['allow-copy-ext-from-csr'] = ApiClient.convertToType(data['allow-copy-ext-from-csr'], 'Boolean');
+            }
             if (data.hasOwnProperty('allow-subdomains')) {
                 obj['allow-subdomains'] = ApiClient.convertToType(data['allow-subdomains'], 'Boolean');
             }
             if (data.hasOwnProperty('allowed-domains')) {
                 obj['allowed-domains'] = ApiClient.convertToType(data['allowed-domains'], 'String');
+            }
+            if (data.hasOwnProperty('allowed-extra-extensions')) {
+                obj['allowed-extra-extensions'] = ApiClient.convertToType(data['allowed-extra-extensions'], 'String');
             }
             if (data.hasOwnProperty('allowed-uri-sans')) {
                 obj['allowed-uri-sans'] = ApiClient.convertToType(data['allowed-uri-sans'], 'String');
@@ -175,6 +181,12 @@ UpdatePKICertIssuer.prototype['add-tag'] = undefined;
 UpdatePKICertIssuer.prototype['allow-any-name'] = undefined;
 
 /**
+ * If set, will allow copying the extra extensions from the csr file (if given)
+ * @member {Boolean} allow-copy-ext-from-csr
+ */
+UpdatePKICertIssuer.prototype['allow-copy-ext-from-csr'] = undefined;
+
+/**
  * If set, clients can request certificates for subdomains and wildcard subdomains of the allowed domains
  * @member {Boolean} allow-subdomains
  */
@@ -185,6 +197,12 @@ UpdatePKICertIssuer.prototype['allow-subdomains'] = undefined;
  * @member {String} allowed-domains
  */
 UpdatePKICertIssuer.prototype['allowed-domains'] = undefined;
+
+/**
+ * A json string containing the allowed extra extensions for the pki cert issuer
+ * @member {String} allowed-extra-extensions
+ */
+UpdatePKICertIssuer.prototype['allowed-extra-extensions'] = undefined;
 
 /**
  * A list of the allowed URIs that clients can request to be included in the certificate as part of the URI Subject Alternative Names (in a comma-delimited list)

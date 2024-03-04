@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodK8S model module.
  * @module model/UpdateAuthMethodK8S
- * @version 3.6.1
+ * @version 3.6.2
  */
 class UpdateAuthMethodK8S {
     /**
@@ -91,6 +91,9 @@ class UpdateAuthMethodK8S {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('public-key')) {
                 obj['public-key'] = ApiClient.convertToType(data['public-key'], 'String');
@@ -194,6 +197,12 @@ UpdateAuthMethodK8S.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateAuthMethodK8S.prototype['new-name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+UpdateAuthMethodK8S.prototype['product-type'] = undefined;
 
 /**
  * Base64-encoded or PEM formatted public key data for K8S authentication method is required [RSA2048]

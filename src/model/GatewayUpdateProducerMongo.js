@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMongo model module.
  * @module model/GatewayUpdateProducerMongo
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerMongo {
     /**
      * Constructs a new <code>GatewayUpdateProducerMongo</code>.
-     * gatewayUpdateProducerMongo is a command that updates either mongodb  producer or mongodb atlas producer
+     * gatewayUpdateProducerMongo is a command that updates either mongodb  producer or mongodb atlas producer [Deprecated: Use dynamic-secret-update-mongodb command]
      * @alias module:model/GatewayUpdateProducerMongo
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -97,6 +97,9 @@ class GatewayUpdateProducerMongo {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -222,16 +225,22 @@ GatewayUpdateProducerMongo.prototype['mongodb-uri-options'] = undefined;
 GatewayUpdateProducerMongo.prototype['mongodb-username'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerMongo.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerMongo.prototype['new-name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayUpdateProducerMongo.prototype['password-length'] = undefined;
 
 /**
  * Encrypt producer with following key

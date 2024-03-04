@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerPostgreSQL model module.
  * @module model/GatewayUpdateProducerPostgreSQL
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerPostgreSQL {
     /**
      * Constructs a new <code>GatewayUpdateProducerPostgreSQL</code>.
-     * gatewayUpdateProducerPostgreSQL is a command that updates postgresql producer
+     * gatewayUpdateProducerPostgreSQL is a command that updates postgresql producer [Deprecated: Use dynamic-secret-update-postgresql command]
      * @alias module:model/GatewayUpdateProducerPostgreSQL
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -64,6 +64,9 @@ class GatewayUpdateProducerPostgreSQL {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('postgresql-db-name')) {
                 obj['postgresql-db-name'] = ApiClient.convertToType(data['postgresql-db-name'], 'String');
@@ -146,16 +149,22 @@ GatewayUpdateProducerPostgreSQL.prototype['delete_protection'] = undefined;
 GatewayUpdateProducerPostgreSQL.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerPostgreSQL.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerPostgreSQL.prototype['new-name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayUpdateProducerPostgreSQL.prototype['password-length'] = undefined;
 
 /**
  * PostgreSQL DB Name

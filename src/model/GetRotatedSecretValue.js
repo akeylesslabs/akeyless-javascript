@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The GetRotatedSecretValue model module.
  * @module model/GetRotatedSecretValue
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GetRotatedSecretValue {
     /**
      * Constructs a new <code>GetRotatedSecretValue</code>.
+     * getRotatedSecretValue is a command that creates a new Akeyless profile. [Deprecated: Use rotated-secret get-value command]
      * @alias module:model/GetRotatedSecretValue
      * @param names {String} Secret name
      */

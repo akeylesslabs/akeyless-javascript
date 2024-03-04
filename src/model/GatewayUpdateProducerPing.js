@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerPing model module.
  * @module model/GatewayUpdateProducerPing
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerPing {
     /**
      * Constructs a new <code>GatewayUpdateProducerPing</code>.
-     * gatewayUpdateProducerPing is a command that updates Ping producer
+     * gatewayUpdateProducerPing is a command that updates Ping producer [Deprecated: Use dynamic-secret-update-ping command]
      * @alias module:model/GatewayUpdateProducerPing
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -149,13 +149,13 @@ GatewayUpdateProducerPing.prototype['delete_protection'] = undefined;
 GatewayUpdateProducerPing.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerPing.prototype['name'] = undefined;
 
 /**
- * Producer New name
+ * Dynamic secret New name
  * @member {String} new-name
  */
 GatewayUpdateProducerPing.prototype['new-name'] = undefined;

@@ -5,8 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allowAnyName** | **Boolean** |  | [optional] 
+**allowCopyExtFromCsr** | **Boolean** |  | [optional] 
 **allowSubdomains** | **Boolean** |  | [optional] 
 **allowedDomainsList** | **[String]** |  | [optional] 
+**allowedExtraExtensions** | **{String: [String]}** |  | [optional] 
 **allowedUriSans** | **[String]** |  | [optional] 
 **basicConstraintsValidForNonCa** | **Boolean** |  | [optional] 
 **certificateAuthorityMode** | **String** |  | [optional] 

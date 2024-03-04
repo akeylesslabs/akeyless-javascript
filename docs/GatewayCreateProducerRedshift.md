@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 **creationStatements** | **String** | Redshift Creation statements | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
-**name** | **String** | Producer name | 
+**name** | **String** | Dynamic secret name | 
+**passwordLength** | **String** | The length of the password to be generated | [optional] 
 **producerEncryptionKey** | **String** | Dynamic producer encryption key | [optional] 
 **redshiftDbName** | **String** | Redshift DB Name | [optional] 
 **redshiftHost** | **String** | Redshift Host | [optional] [default to &#39;127.0.0.1&#39;]

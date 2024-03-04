@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerAzure model module.
  * @module model/GatewayUpdateProducerAzure
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerAzure {
     /**
      * Constructs a new <code>GatewayUpdateProducerAzure</code>.
-     * gatewayUpdateProducerAzure is a command that updates azure producer
+     * gatewayUpdateProducerAzure is a command that updates azure producer [Deprecated: Use dynamic-secret-update-azure command]
      * @alias module:model/GatewayUpdateProducerAzure
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -79,6 +79,9 @@ class GatewayUpdateProducerAzure {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -184,16 +187,22 @@ GatewayUpdateProducerAzure.prototype['fixed-user-only'] = false;
 GatewayUpdateProducerAzure.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerAzure.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerAzure.prototype['new-name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayUpdateProducerAzure.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

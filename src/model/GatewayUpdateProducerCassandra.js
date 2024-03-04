@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerCassandra model module.
  * @module model/GatewayUpdateProducerCassandra
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerCassandra {
     /**
      * Constructs a new <code>GatewayUpdateProducerCassandra</code>.
-     * gatewayUpdateProducerCassandra is a command that updates a Cassandra producer
+     * gatewayUpdateProducerCassandra is a command that updates a Cassandra producer [Deprecated: Use dynamic-secret-update-cassandra command]
      * @alias module:model/GatewayUpdateProducerCassandra
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -76,6 +76,9 @@ class GatewayUpdateProducerCassandra {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -153,16 +156,22 @@ GatewayUpdateProducerCassandra.prototype['delete_protection'] = undefined;
 GatewayUpdateProducerCassandra.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerCassandra.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerCassandra.prototype['new-name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayUpdateProducerCassandra.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

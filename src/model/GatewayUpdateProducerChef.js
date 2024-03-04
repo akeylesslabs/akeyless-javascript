@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerChef model module.
  * @module model/GatewayUpdateProducerChef
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerChef {
     /**
      * Constructs a new <code>GatewayUpdateProducerChef</code>.
-     * gatewayUpdateProducerChef is a command that updates chef producer
+     * gatewayUpdateProducerChef is a command that updates chef producer [Deprecated: Use dynamic-secret-update-chef command]
      * @alias module:model/GatewayUpdateProducerChef
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -73,6 +73,9 @@ class GatewayUpdateProducerChef {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -140,16 +143,22 @@ GatewayUpdateProducerChef.prototype['delete_protection'] = undefined;
 GatewayUpdateProducerChef.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerChef.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerChef.prototype['new-name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayUpdateProducerChef.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

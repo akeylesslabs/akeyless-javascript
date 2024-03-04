@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerOracleDb model module.
  * @module model/GatewayCreateProducerOracleDb
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerOracleDb {
     /**
      * Constructs a new <code>GatewayCreateProducerOracleDb</code>.
-     * gatewayCreateProducerOracleDb is a command that creates oracle db producer
+     * gatewayCreateProducerOracleDb is a command that creates oracle db producer [Deprecated: Use dynamic-secret-create-oracledb command]
      * @alias module:model/GatewayCreateProducerOracleDb
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -85,6 +85,9 @@ class GatewayCreateProducerOracleDb {
             }
             if (data.hasOwnProperty('oracle-username')) {
                 obj['oracle-username'] = ApiClient.convertToType(data['oracle-username'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -149,7 +152,7 @@ GatewayCreateProducerOracleDb.prototype['delete_protection'] = undefined;
 GatewayCreateProducerOracleDb.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerOracleDb.prototype['name'] = undefined;
@@ -197,6 +200,12 @@ GatewayCreateProducerOracleDb.prototype['oracle-service-name'] = undefined;
  * @member {String} oracle-username
  */
 GatewayCreateProducerOracleDb.prototype['oracle-username'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayCreateProducerOracleDb.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

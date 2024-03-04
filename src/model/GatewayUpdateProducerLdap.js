@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerLdap model module.
  * @module model/GatewayUpdateProducerLdap
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerLdap {
     /**
      * Constructs a new <code>GatewayUpdateProducerLdap</code>.
-     * gatewayUpdateProducerLdap is a command that updates ldap producer
+     * gatewayUpdateProducerLdap is a command that updates ldap producer [Deprecated: Use dynamic-secret-update-ldap command]
      * @alias module:model/GatewayUpdateProducerLdap
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -79,6 +79,9 @@ class GatewayUpdateProducerLdap {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -165,16 +168,22 @@ GatewayUpdateProducerLdap.prototype['ldap-ca-cert'] = undefined;
 GatewayUpdateProducerLdap.prototype['ldap-url'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerLdap.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerLdap.prototype['new-name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayUpdateProducerLdap.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

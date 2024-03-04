@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 3.6.1
+ * @version 3.6.2
  */
 class CreateSecret {
     /**
      * Constructs a new <code>CreateSecret</code>.
      * @alias module:model/CreateSecret
      * @param name {String} Secret name
-     * @param value {String} The secret value (only relevant for type 'generic')
+     * @param value {String} The secret value (relevant only for type 'generic')
      */
     constructor(name, value) { 
         
@@ -65,6 +65,9 @@ class CreateSecret {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('inject-url')) {
                 obj['inject-url'] = ApiClient.convertToType(data['inject-url'], ['String']);
@@ -169,6 +172,13 @@ CreateSecret.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 CreateSecret.prototype['description'] = undefined;
+
+/**
+ * Secret format [text/json] (relevant only for type 'generic')
+ * @member {String} format
+ * @default 'text'
+ */
+CreateSecret.prototype['format'] = 'text';
 
 /**
  * For Password Management use, reflect the website context
@@ -301,7 +311,7 @@ CreateSecret.prototype['uid-token'] = undefined;
 CreateSecret.prototype['username'] = undefined;
 
 /**
- * The secret value (only relevant for type 'generic')
+ * The secret value (relevant only for type 'generic')
  * @member {String} value
  */
 CreateSecret.prototype['value'] = undefined;

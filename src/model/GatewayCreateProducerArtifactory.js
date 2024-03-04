@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerArtifactory model module.
  * @module model/GatewayCreateProducerArtifactory
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerArtifactory {
     /**
      * Constructs a new <code>GatewayCreateProducerArtifactory</code>.
-     * gatewayCreateProducerArtifactory is a command that creates artifactory producer
+     * gatewayCreateProducerArtifactory is a command that creates artifactory producer [Deprecated: Use dynamic-secret-create-artifactory command]
      * @alias module:model/GatewayCreateProducerArtifactory
      * @param artifactoryTokenAudience {String} Token Audience
      * @param artifactoryTokenScope {String} Token Scope
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(artifactoryTokenAudience, artifactoryTokenScope, name) { 
         
@@ -147,7 +147,7 @@ GatewayCreateProducerArtifactory.prototype['delete_protection'] = undefined;
 GatewayCreateProducerArtifactory.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerArtifactory.prototype['name'] = undefined;

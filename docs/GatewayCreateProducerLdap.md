@@ -12,7 +12,8 @@ Name | Type | Description | Notes
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **ldapCaCert** | **String** | CA Certificate File Content | [optional] 
 **ldapUrl** | **String** | LDAP Server URL | [optional] 
-**name** | **String** | Producer name | 
+**name** | **String** | Dynamic secret name | 
+**passwordLength** | **String** | The length of the password to be generated | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | Target name | [optional] 

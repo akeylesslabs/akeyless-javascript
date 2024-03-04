@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 3.6.1
+ * @version 3.6.2
  */
 class DSProducerDetails {
     /**
@@ -345,6 +345,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('github_installation_token_repositories_ids')) {
                 obj['github_installation_token_repositories_ids'] = ApiClient.convertToType(data['github_installation_token_repositories_ids'], ['Number']);
+            }
+            if (data.hasOwnProperty('github_organization_name')) {
+                obj['github_organization_name'] = ApiClient.convertToType(data['github_organization_name'], 'String');
             }
             if (data.hasOwnProperty('github_repository_path')) {
                 obj['github_repository_path'] = ApiClient.convertToType(data['github_repository_path'], 'String');
@@ -1212,6 +1215,11 @@ DSProducerDetails.prototype['github_installation_token_repositories'] = undefine
  * @member {Array.<Number>} github_installation_token_repositories_ids
  */
 DSProducerDetails.prototype['github_installation_token_repositories_ids'] = undefined;
+
+/**
+ * @member {String} github_organization_name
+ */
+DSProducerDetails.prototype['github_organization_name'] = undefined;
 
 /**
  * @member {String} github_repository_path

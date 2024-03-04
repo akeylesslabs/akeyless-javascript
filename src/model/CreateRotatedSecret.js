@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 3.6.1
+ * @version 3.6.2
  */
 class CreateRotatedSecret {
     /**
      * Constructs a new <code>CreateRotatedSecret</code>.
+     * createRotatedSecret is a command that creates a rotated secret [Deprecated: Use rotated-secret-create commands]
      * @alias module:model/CreateRotatedSecret
      * @param name {String} Secret name
      * @param rotatorType {String} Rotator Type
@@ -92,6 +93,9 @@ class CreateRotatedSecret {
             if (data.hasOwnProperty('gcp-service-account-key-id')) {
                 obj['gcp-service-account-key-id'] = ApiClient.convertToType(data['gcp-service-account-key-id'], 'String');
             }
+            if (data.hasOwnProperty('grace-rotation')) {
+                obj['grace-rotation'] = ApiClient.convertToType(data['grace-rotation'], 'String');
+            }
             if (data.hasOwnProperty('host-provider')) {
                 obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
             }
@@ -106,6 +110,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('rotate-after-disconnect')) {
                 obj['rotate-after-disconnect'] = ApiClient.convertToType(data['rotate-after-disconnect'], 'String');
@@ -163,6 +170,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('secure-access-rdp-user')) {
                 obj['secure-access-rdp-user'] = ApiClient.convertToType(data['secure-access-rdp-user'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-url')) {
+                obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
@@ -247,7 +257,7 @@ CreateRotatedSecret.prototype['authentication-credentials'] = 'use-user-creds';
 CreateRotatedSecret.prototype['auto-rotate'] = undefined;
 
 /**
- * Region (used in aws)
+ * Aws Region (relevant only for aws)
  * @member {String} aws-region
  * @default 'us-east-2'
  */
@@ -290,6 +300,12 @@ CreateRotatedSecret.prototype['gcp-service-account-email'] = undefined;
 CreateRotatedSecret.prototype['gcp-service-account-key-id'] = undefined;
 
 /**
+ * Create a new access key without deleting the old key from AWS for backup (relevant only for AWS) [true/false]
+ * @member {String} grace-rotation
+ */
+CreateRotatedSecret.prototype['grace-rotation'] = undefined;
+
+/**
  * Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret
  * @member {String} host-provider
  * @default 'explicit'
@@ -320,6 +336,12 @@ CreateRotatedSecret.prototype['metadata'] = undefined;
  * @member {String} name
  */
 CreateRotatedSecret.prototype['name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+CreateRotatedSecret.prototype['password-length'] = undefined;
 
 /**
  * Rotate the value of the secret after SRA session ends [true/false]
@@ -437,6 +459,12 @@ CreateRotatedSecret.prototype['secure-access-rdp-domain'] = undefined;
 CreateRotatedSecret.prototype['secure-access-rdp-user'] = undefined;
 
 /**
+ * Destination URL to inject secrets
+ * @member {String} secure-access-url
+ */
+CreateRotatedSecret.prototype['secure-access-url'] = undefined;
+
+/**
  * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
  * @default false
@@ -508,8 +536,9 @@ CreateRotatedSecret.prototype['uid-token'] = undefined;
 /**
  * LDAP User Attribute, Default value \"cn\"
  * @member {String} user-attribute
+ * @default 'cn'
  */
-CreateRotatedSecret.prototype['user-attribute'] = undefined;
+CreateRotatedSecret.prototype['user-attribute'] = 'cn';
 
 /**
  * LDAP User Base DN

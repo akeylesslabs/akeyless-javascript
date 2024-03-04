@@ -16,16 +16,16 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerArtifactory model module.
  * @module model/GatewayUpdateProducerArtifactory
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerArtifactory {
     /**
      * Constructs a new <code>GatewayUpdateProducerArtifactory</code>.
-     * gatewayUpdateProducerArtifactory is a command that updates artifactory producer
+     * gatewayUpdateProducerArtifactory is a command that updates artifactory producer [Deprecated: Use dynamic-secret-update-artifactory command]
      * @alias module:model/GatewayUpdateProducerArtifactory
      * @param artifactoryTokenAudience {String} Token Audience
      * @param artifactoryTokenScope {String} Token Scope
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(artifactoryTokenAudience, artifactoryTokenScope, name) { 
         
@@ -150,13 +150,13 @@ GatewayUpdateProducerArtifactory.prototype['delete_protection'] = undefined;
 GatewayUpdateProducerArtifactory.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerArtifactory.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerArtifactory.prototype['new-name'] = undefined;

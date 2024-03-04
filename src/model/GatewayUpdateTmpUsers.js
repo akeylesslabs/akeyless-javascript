@@ -16,20 +16,21 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateTmpUsers model module.
  * @module model/GatewayUpdateTmpUsers
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateTmpUsers {
     /**
      * Constructs a new <code>GatewayUpdateTmpUsers</code>.
-     * gatewayUpdateTmpUsers is a command that returns gateway configuration
+     * gatewayUpdateTmpUsers is a command that returns gateway configuration [Deprecated: Use dynamic-secret-tmp-creds-update command]
      * @alias module:model/GatewayUpdateTmpUsers
-     * @param name {String} Producer Name
+     * @param host {String} Host
+     * @param name {String} Dynamic secret name
      * @param newTtlMin {Number} New TTL in Minutes
      * @param tmpCredsId {String} Tmp Creds ID
      */
-    constructor(name, newTtlMin, tmpCredsId) { 
+    constructor(host, name, newTtlMin, tmpCredsId) { 
         
-        GatewayUpdateTmpUsers.initialize(this, name, newTtlMin, tmpCredsId);
+        GatewayUpdateTmpUsers.initialize(this, host, name, newTtlMin, tmpCredsId);
     }
 
     /**
@@ -37,7 +38,8 @@ class GatewayUpdateTmpUsers {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, newTtlMin, tmpCredsId) { 
+    static initialize(obj, host, name, newTtlMin, tmpCredsId) { 
+        obj['host'] = host;
         obj['name'] = name;
         obj['new-ttl-min'] = newTtlMin;
         obj['tmp-creds-id'] = tmpCredsId;
@@ -54,6 +56,9 @@ class GatewayUpdateTmpUsers {
         if (data) {
             obj = obj || new GatewayUpdateTmpUsers();
 
+            if (data.hasOwnProperty('host')) {
+                obj['host'] = ApiClient.convertToType(data['host'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -80,6 +85,12 @@ class GatewayUpdateTmpUsers {
 }
 
 /**
+ * Host
+ * @member {String} host
+ */
+GatewayUpdateTmpUsers.prototype['host'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  * @default false
@@ -87,7 +98,7 @@ class GatewayUpdateTmpUsers {
 GatewayUpdateTmpUsers.prototype['json'] = false;
 
 /**
- * Producer Name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateTmpUsers.prototype['name'] = undefined;

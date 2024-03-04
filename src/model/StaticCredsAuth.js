@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StaticCredsAuth model module.
  * @module model/StaticCredsAuth
- * @version 3.6.1
+ * @version 3.6.2
  */
 class StaticCredsAuth {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOIDC model module.
  * @module model/CreateAuthMethodOIDC
- * @version 3.6.1
+ * @version 3.6.2
  */
 class CreateAuthMethodOIDC {
     /**
@@ -90,6 +90,9 @@ class CreateAuthMethodOIDC {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('required-scopes')) {
                 obj['required-scopes'] = ApiClient.convertToType(data['required-scopes'], ['String']);
@@ -196,6 +199,12 @@ CreateAuthMethodOIDC.prototype['jwt-ttl'] = 0;
  * @member {String} name
  */
 CreateAuthMethodOIDC.prototype['name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+CreateAuthMethodOIDC.prototype['product-type'] = undefined;
 
 /**
  * RequiredScopes is a list of required scopes that the oidc method will request from the oidc provider and the user must approve

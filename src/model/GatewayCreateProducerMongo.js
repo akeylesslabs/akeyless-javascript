@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMongo model module.
  * @module model/GatewayCreateProducerMongo
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerMongo {
     /**
      * Constructs a new <code>GatewayCreateProducerMongo</code>.
-     * gatewayCreateProducerMongo is a command that creates either mongodb  producer or mongodb atlas producer
+     * gatewayCreateProducerMongo is a command that creates either mongodb  producer or mongodb atlas producer [Deprecated: Use dynamic-secret-create-mongodb command]
      * @alias module:model/GatewayCreateProducerMongo
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -94,6 +94,9 @@ class GatewayCreateProducerMongo {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -219,10 +222,16 @@ GatewayCreateProducerMongo.prototype['mongodb-uri-options'] = undefined;
 GatewayCreateProducerMongo.prototype['mongodb-username'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerMongo.prototype['name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayCreateProducerMongo.prototype['password-length'] = undefined;
 
 /**
  * Encrypt producer with following key

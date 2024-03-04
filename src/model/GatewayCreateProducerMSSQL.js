@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMSSQL model module.
  * @module model/GatewayCreateProducerMSSQL
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerMSSQL {
     /**
      * Constructs a new <code>GatewayCreateProducerMSSQL</code>.
-     * gatewayCreateProducerMSSQL is a command that creates mssql producer
+     * gatewayCreateProducerMSSQL is a command that creates mssql producer [Deprecated: Use dynamic-secret-create-mssql command]
      * @alias module:model/GatewayCreateProducerMSSQL
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -79,6 +79,9 @@ class GatewayCreateProducerMSSQL {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -178,10 +181,16 @@ GatewayCreateProducerMSSQL.prototype['mssql-revocation-statements'] = undefined;
 GatewayCreateProducerMSSQL.prototype['mssql-username'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerMSSQL.prototype['name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayCreateProducerMSSQL.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

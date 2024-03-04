@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOAuth2 model module.
  * @module model/UpdateAuthMethodOAuth2
- * @version 3.6.1
+ * @version 3.6.2
  */
 class UpdateAuthMethodOAuth2 {
     /**
@@ -66,6 +66,12 @@ class UpdateAuthMethodOAuth2 {
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
             }
+            if (data.hasOwnProperty('cert')) {
+                obj['cert'] = ApiClient.convertToType(data['cert'], 'String');
+            }
+            if (data.hasOwnProperty('cert-file-data')) {
+                obj['cert-file-data'] = ApiClient.convertToType(data['cert-file-data'], 'String');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -98,6 +104,9 @@ class UpdateAuthMethodOAuth2 {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('subclaims-delimiters')) {
                 obj['subclaims-delimiters'] = ApiClient.convertToType(data['subclaims-delimiters'], ['String']);
@@ -142,6 +151,18 @@ UpdateAuthMethodOAuth2.prototype['bound-client-ids'] = undefined;
  * @member {Array.<String>} bound-ips
  */
 UpdateAuthMethodOAuth2.prototype['bound-ips'] = undefined;
+
+/**
+ * CertificateFile Path to a file that contain the certificate in a PEM format.
+ * @member {String} cert
+ */
+UpdateAuthMethodOAuth2.prototype['cert'] = undefined;
+
+/**
+ * CertificateFileData PEM Certificate in a Base64 format.
+ * @member {String} cert-file-data
+ */
+UpdateAuthMethodOAuth2.prototype['cert-file-data'] = undefined;
 
 /**
  * Auth Method description
@@ -211,6 +232,12 @@ UpdateAuthMethodOAuth2.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateAuthMethodOAuth2.prototype['new-name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+UpdateAuthMethodOAuth2.prototype['product-type'] = undefined;
 
 /**
  * A list of additional sub claims delimiters (relevant only for SAML, OIDC, OAuth2/JWT)

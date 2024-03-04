@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGithub model module.
  * @module model/GatewayCreateProducerGithub
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerGithub {
     /**
      * Constructs a new <code>GatewayCreateProducerGithub</code>.
-     * gatewayCreateProducerGithub is a command that creates github producer
+     * gatewayCreateProducerGithub is a command that creates github producer [Deprecated: Use dynamic-secret-create-github command]
      * @alias module:model/GatewayCreateProducerGithub
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -65,6 +65,9 @@ class GatewayCreateProducerGithub {
             if (data.hasOwnProperty('installation-id')) {
                 obj['installation-id'] = ApiClient.convertToType(data['installation-id'], 'Number');
             }
+            if (data.hasOwnProperty('installation-organization')) {
+                obj['installation-organization'] = ApiClient.convertToType(data['installation-organization'], 'String');
+            }
             if (data.hasOwnProperty('installation-repository')) {
                 obj['installation-repository'] = ApiClient.convertToType(data['installation-repository'], 'String');
             }
@@ -73,6 +76,9 @@ class GatewayCreateProducerGithub {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -128,7 +134,13 @@ GatewayCreateProducerGithub.prototype['github-base-url'] = 'https://api.github.c
 GatewayCreateProducerGithub.prototype['installation-id'] = undefined;
 
 /**
- * Repository that the app installation has access to
+ * Optional, instead of installation id, set a GitHub organization name
+ * @member {String} installation-organization
+ */
+GatewayCreateProducerGithub.prototype['installation-organization'] = undefined;
+
+/**
+ * Optional, instead of installation id, set a GitHub repository '<owner>/<repo-name>
  * @member {String} installation-repository
  */
 GatewayCreateProducerGithub.prototype['installation-repository'] = undefined;
@@ -141,10 +153,16 @@ GatewayCreateProducerGithub.prototype['installation-repository'] = undefined;
 GatewayCreateProducerGithub.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerGithub.prototype['name'] = undefined;
+
+/**
+ * Add tags attached to this object
+ * @member {Array.<String>} tags
+ */
+GatewayCreateProducerGithub.prototype['tags'] = undefined;
 
 /**
  * Target name

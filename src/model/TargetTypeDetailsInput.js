@@ -25,6 +25,7 @@ import GcpTargetDetails from './GcpTargetDetails';
 import GithubTargetDetails from './GithubTargetDetails';
 import GlobalSignAtlasTargetDetails from './GlobalSignAtlasTargetDetails';
 import GlobalSignGCCTargetDetails from './GlobalSignGCCTargetDetails';
+import GodaddyTargetDetails from './GodaddyTargetDetails';
 import LdapTargetDetails from './LdapTargetDetails';
 import LinkedTargetDetails from './LinkedTargetDetails';
 import MongoDBTargetDetails from './MongoDBTargetDetails';
@@ -41,7 +42,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 3.6.1
+ * @version 3.6.2
  */
 class TargetTypeDetailsInput {
     /**
@@ -110,6 +111,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('globalsign_target_details')) {
                 obj['globalsign_target_details'] = GlobalSignGCCTargetDetails.constructFromObject(data['globalsign_target_details']);
+            }
+            if (data.hasOwnProperty('godaddy_target_details')) {
+                obj['godaddy_target_details'] = GodaddyTargetDetails.constructFromObject(data['godaddy_target_details']);
             }
             if (data.hasOwnProperty('ldap_target_details')) {
                 obj['ldap_target_details'] = LdapTargetDetails.constructFromObject(data['ldap_target_details']);
@@ -218,6 +222,11 @@ TargetTypeDetailsInput.prototype['globalsign_atlas_target_details'] = undefined;
  * @member {module:model/GlobalSignGCCTargetDetails} globalsign_target_details
  */
 TargetTypeDetailsInput.prototype['globalsign_target_details'] = undefined;
+
+/**
+ * @member {module:model/GodaddyTargetDetails} godaddy_target_details
+ */
+TargetTypeDetailsInput.prototype['godaddy_target_details'] = undefined;
 
 /**
  * @member {module:model/LdapTargetDetails} ldap_target_details

@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerLdap model module.
  * @module model/GatewayCreateProducerLdap
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerLdap {
     /**
      * Constructs a new <code>GatewayCreateProducerLdap</code>.
-     * gatewayCreateProducerLdap is a command that creates ldap producer
+     * gatewayCreateProducerLdap is a command that creates ldap producer [Deprecated: Use dynamic-secret-create-ldap command]
      * @alias module:model/GatewayCreateProducerLdap
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -76,6 +76,9 @@ class GatewayCreateProducerLdap {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -162,10 +165,16 @@ GatewayCreateProducerLdap.prototype['ldap-ca-cert'] = undefined;
 GatewayCreateProducerLdap.prototype['ldap-url'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerLdap.prototype['name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayCreateProducerLdap.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

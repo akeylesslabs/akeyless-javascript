@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOCI model module.
  * @module model/CreateAuthMethodOCI
- * @version 3.6.1
+ * @version 3.6.2
  */
 class CreateAuthMethodOCI {
     /**
@@ -80,6 +80,9 @@ class CreateAuthMethodOCI {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('tenant-ocid')) {
                 obj['tenant-ocid'] = ApiClient.convertToType(data['tenant-ocid'], 'String');
@@ -153,6 +156,12 @@ CreateAuthMethodOCI.prototype['jwt-ttl'] = 0;
  * @member {String} name
  */
 CreateAuthMethodOCI.prototype['name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+CreateAuthMethodOCI.prototype['product-type'] = undefined;
 
 /**
  * The Oracle Cloud tenant ID

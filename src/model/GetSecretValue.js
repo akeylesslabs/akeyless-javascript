@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetSecretValue model module.
  * @module model/GetSecretValue
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GetSecretValue {
     /**
@@ -126,7 +126,7 @@ GetSecretValue.prototype['token'] = undefined;
 GetSecretValue.prototype['uid-token'] = undefined;
 
 /**
- * Secret version
+ * Secret version, if negative value N is provided the last N versions will return (maximum 20)
  * @member {Number} version
  */
 GetSecretValue.prototype['version'] = undefined;

@@ -16,18 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The RequestAccess model module.
  * @module model/RequestAccess
- * @version 3.6.1
+ * @version 3.6.2
  */
 class RequestAccess {
     /**
      * Constructs a new <code>RequestAccess</code>.
      * @alias module:model/RequestAccess
      * @param capability {Array.<String>} List of the required capabilities options: [read, update, delete]
-     * @param name {String} Item type
+     * @param name {String} Item name
+     * @param type {String} Item type
      */
-    constructor(capability, name) { 
+    constructor(capability, name, type) { 
         
-        RequestAccess.initialize(this, capability, name);
+        RequestAccess.initialize(this, capability, name, type);
     }
 
     /**
@@ -35,9 +36,10 @@ class RequestAccess {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, capability, name) { 
+    static initialize(obj, capability, name, type) { 
         obj['capability'] = capability;
         obj['name'] = name;
+        obj['type'] = type;
     }
 
     /**
@@ -68,6 +70,9 @@ class RequestAccess {
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
@@ -105,7 +110,7 @@ RequestAccess.prototype['description'] = undefined;
 RequestAccess.prototype['json'] = false;
 
 /**
- * Item type
+ * Item name
  * @member {String} name
  */
 RequestAccess.prototype['name'] = undefined;
@@ -115,6 +120,12 @@ RequestAccess.prototype['name'] = undefined;
  * @member {String} token
  */
 RequestAccess.prototype['token'] = undefined;
+
+/**
+ * Item type
+ * @member {String} type
+ */
+RequestAccess.prototype['type'] = undefined;
 
 /**
  * The universal identity token, Required only for universal_identity authentication

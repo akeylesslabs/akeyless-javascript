@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerHanaDb model module.
  * @module model/GatewayUpdateProducerHanaDb
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerHanaDb {
     /**
      * Constructs a new <code>GatewayUpdateProducerHanaDb</code>.
-     * gatewayUpdateProducerHanaDb is a command that updates hanadb producer
+     * gatewayUpdateProducerHanaDb is a command that updates hanadb producer [Deprecated: Use dynamic-secret-update-hanadb command]
      * @alias module:model/GatewayUpdateProducerHanaDb
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -82,6 +82,9 @@ class GatewayUpdateProducerHanaDb {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -181,16 +184,22 @@ GatewayUpdateProducerHanaDb.prototype['hanadb-username'] = undefined;
 GatewayUpdateProducerHanaDb.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerHanaDb.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerHanaDb.prototype['new-name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayUpdateProducerHanaDb.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

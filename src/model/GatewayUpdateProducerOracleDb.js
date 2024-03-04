@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerOracleDb model module.
  * @module model/GatewayUpdateProducerOracleDb
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerOracleDb {
     /**
      * Constructs a new <code>GatewayUpdateProducerOracleDb</code>.
-     * gatewayUpdateProducerOracleDb is a command that updates oracle db producer
+     * gatewayUpdateProducerOracleDb is a command that updates oracle db producer [Deprecated: Use dynamic-secret-update-oracledb command]
      * @alias module:model/GatewayUpdateProducerOracleDb
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -89,6 +89,9 @@ class GatewayUpdateProducerOracleDb {
             if (data.hasOwnProperty('oracle-username')) {
                 obj['oracle-username'] = ApiClient.convertToType(data['oracle-username'], 'String');
             }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
+            }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
             }
@@ -152,13 +155,13 @@ GatewayUpdateProducerOracleDb.prototype['delete_protection'] = undefined;
 GatewayUpdateProducerOracleDb.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerOracleDb.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerOracleDb.prototype['new-name'] = undefined;
@@ -206,6 +209,12 @@ GatewayUpdateProducerOracleDb.prototype['oracle-service-name'] = undefined;
  * @member {String} oracle-username
  */
 GatewayUpdateProducerOracleDb.prototype['oracle-username'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayUpdateProducerOracleDb.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

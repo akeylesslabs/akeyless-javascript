@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCassandra model module.
  * @module model/GatewayCreateProducerCassandra
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerCassandra {
     /**
      * Constructs a new <code>GatewayCreateProducerCassandra</code>.
-     * gatewayCreateProducerCassandra is a command that creates a Cassandra producer
+     * gatewayCreateProducerCassandra is a command that creates a Cassandra producer [Deprecated: Use dynamic-secret-create-cassandra command]
      * @alias module:model/GatewayCreateProducerCassandra
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -73,6 +73,9 @@ class GatewayCreateProducerCassandra {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -150,10 +153,16 @@ GatewayCreateProducerCassandra.prototype['delete_protection'] = undefined;
 GatewayCreateProducerCassandra.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerCassandra.prototype['name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayCreateProducerCassandra.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

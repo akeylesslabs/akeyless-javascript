@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodSAML model module.
  * @module model/UpdateAuthMethodSAML
- * @version 3.6.1
+ * @version 3.6.2
  */
 class UpdateAuthMethodSAML {
     /**
@@ -87,6 +87,9 @@ class UpdateAuthMethodSAML {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('subclaims-delimiters')) {
                 obj['subclaims-delimiters'] = ApiClient.convertToType(data['subclaims-delimiters'], ['String']);
@@ -181,6 +184,12 @@ UpdateAuthMethodSAML.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateAuthMethodSAML.prototype['new-name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+UpdateAuthMethodSAML.prototype['product-type'] = undefined;
 
 /**
  * A list of additional sub claims delimiters (relevant only for SAML, OIDC, OAuth2/JWT)

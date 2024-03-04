@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodGCP model module.
  * @module model/CreateAuthMethodGCP
- * @version 3.6.1
+ * @version 3.6.2
  */
 class CreateAuthMethodGCP {
     /**
@@ -95,6 +95,9 @@ class CreateAuthMethodGCP {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('service-account-creds-data')) {
                 obj['service-account-creds-data'] = ApiClient.convertToType(data['service-account-creds-data'], 'String');
@@ -202,6 +205,12 @@ CreateAuthMethodGCP.prototype['jwt-ttl'] = 0;
  * @member {String} name
  */
 CreateAuthMethodGCP.prototype['name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+CreateAuthMethodGCP.prototype['product-type'] = undefined;
 
 /**
  * ServiceAccount credentials data instead of giving a file path, base64 encoded

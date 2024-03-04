@@ -40,6 +40,7 @@ Method | HTTP request | Description
 [**createGithubTarget**](V2Api.md#createGithubTarget) | **POST** /create-github-target | 
 [**createGlobalSignAtlasTarget**](V2Api.md#createGlobalSignAtlasTarget) | **POST** /create-globalsign-atlas-target | 
 [**createGlobalSignTarget**](V2Api.md#createGlobalSignTarget) | **POST** /create-globalsign-target | 
+[**createGodaddyTarget**](V2Api.md#createGodaddyTarget) | **POST** /create-godaddy-target | 
 [**createGroup**](V2Api.md#createGroup) | **POST** /create-group | 
 [**createKey**](V2Api.md#createKey) | **POST** /create-key | 
 [**createLinkedTarget**](V2Api.md#createLinkedTarget) | **POST** /create-linked-target | 
@@ -86,6 +87,63 @@ Method | HTTP request | Description
 [**describePermissions**](V2Api.md#describePermissions) | **POST** /describe-permissions | 
 [**describeSubClaims**](V2Api.md#describeSubClaims) | **POST** /describe-sub-claims | 
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
+[**dynamicSecretCreateArtifactory**](V2Api.md#dynamicSecretCreateArtifactory) | **POST** /dynamic-secret-create-artifactory | 
+[**dynamicSecretCreateAws**](V2Api.md#dynamicSecretCreateAws) | **POST** /dynamic-secret-create-aws | 
+[**dynamicSecretCreateAzure**](V2Api.md#dynamicSecretCreateAzure) | **POST** /dynamic-secret-create-azure | 
+[**dynamicSecretCreateCassandra**](V2Api.md#dynamicSecretCreateCassandra) | **POST** /dynamic-secret-create-cassandra | 
+[**dynamicSecretCreateCustom**](V2Api.md#dynamicSecretCreateCustom) | **POST** /dynamic-secret-create-custom | 
+[**dynamicSecretCreateDockerhub**](V2Api.md#dynamicSecretCreateDockerhub) | **POST** /dynamic-secret-create-dockerhub | 
+[**dynamicSecretCreateEks**](V2Api.md#dynamicSecretCreateEks) | **POST** /dynamic-secret-create-eks | 
+[**dynamicSecretCreateGcp**](V2Api.md#dynamicSecretCreateGcp) | **POST** /dynamic-secret-create-gcp | 
+[**dynamicSecretCreateGithub**](V2Api.md#dynamicSecretCreateGithub) | **POST** /dynamic-secret-create-github | 
+[**dynamicSecretCreateGke**](V2Api.md#dynamicSecretCreateGke) | **POST** /dynamic-secret-create-gke | 
+[**dynamicSecretCreateHanaDb**](V2Api.md#dynamicSecretCreateHanaDb) | **POST** /dynamic-secret-create-hanadb | 
+[**dynamicSecretCreateK8s**](V2Api.md#dynamicSecretCreateK8s) | **POST** /dynamic-secret-create-k8s | 
+[**dynamicSecretCreateLdap**](V2Api.md#dynamicSecretCreateLdap) | **POST** /dynamic-secret-create-ldap | 
+[**dynamicSecretCreateMongoDb**](V2Api.md#dynamicSecretCreateMongoDb) | **POST** /dynamic-secret-create-mongo | 
+[**dynamicSecretCreateMsSql**](V2Api.md#dynamicSecretCreateMsSql) | **POST** /dynamic-secret-create-mssql | 
+[**dynamicSecretCreateMySql**](V2Api.md#dynamicSecretCreateMySql) | **POST** /dynamic-secret-create-mysql | 
+[**dynamicSecretCreateOracleDb**](V2Api.md#dynamicSecretCreateOracleDb) | **POST** /dynamic-secret-create-oracle | 
+[**dynamicSecretCreatePing**](V2Api.md#dynamicSecretCreatePing) | **POST** /dynamic-secret-create-ping | 
+[**dynamicSecretCreatePostgreSql**](V2Api.md#dynamicSecretCreatePostgreSql) | **POST** /dynamic-secret-create-postgresql | 
+[**dynamicSecretCreateRabbitMq**](V2Api.md#dynamicSecretCreateRabbitMq) | **POST** /dynamic-secret-create-rabbitmq | 
+[**dynamicSecretCreateRdp**](V2Api.md#dynamicSecretCreateRdp) | **POST** /dynamic-secret-create-rdp | 
+[**dynamicSecretCreateRedis**](V2Api.md#dynamicSecretCreateRedis) | **POST** /dynamic-secret-create-redis | 
+[**dynamicSecretCreateRedshift**](V2Api.md#dynamicSecretCreateRedshift) | **POST** /dynamic-secret-create-redshift | 
+[**dynamicSecretCreateSnowflake**](V2Api.md#dynamicSecretCreateSnowflake) | **POST** /dynamic-secret-create-snowflake | 
+[**dynamicSecretCreateVenafi**](V2Api.md#dynamicSecretCreateVenafi) | **POST** /dynamic-secret-create-venafi | 
+[**dynamicSecretDelete**](V2Api.md#dynamicSecretDelete) | **POST** /dynamic-secret-delete | 
+[**dynamicSecretGet**](V2Api.md#dynamicSecretGet) | **POST** /dynamic-secret-get | 
+[**dynamicSecretGetValue**](V2Api.md#dynamicSecretGetValue) | **POST** /dynamic-secret-get-value | 
+[**dynamicSecretList**](V2Api.md#dynamicSecretList) | **POST** /dynamic-secret-list | 
+[**dynamicSecretTmpCredsDelete**](V2Api.md#dynamicSecretTmpCredsDelete) | **POST** /dynamic-secret-tmp-creds-delete | 
+[**dynamicSecretTmpCredsGet**](V2Api.md#dynamicSecretTmpCredsGet) | **POST** /dynamic-secret-tmp-creds-Get | 
+[**dynamicSecretTmpCredsUpdate**](V2Api.md#dynamicSecretTmpCredsUpdate) | **POST** /dynamic-secret-tmp-creds-update | 
+[**dynamicSecretUpdateArtifactory**](V2Api.md#dynamicSecretUpdateArtifactory) | **POST** /dynamic-secret-update-artifactory | 
+[**dynamicSecretUpdateAws**](V2Api.md#dynamicSecretUpdateAws) | **POST** /dynamic-secret-update-aws | 
+[**dynamicSecretUpdateAzure**](V2Api.md#dynamicSecretUpdateAzure) | **POST** /dynamic-secret-update-azure | 
+[**dynamicSecretUpdateCassandra**](V2Api.md#dynamicSecretUpdateCassandra) | **POST** /dynamic-secret-update-cassandra | 
+[**dynamicSecretUpdateCustom**](V2Api.md#dynamicSecretUpdateCustom) | **POST** /dynamic-secret-update-custom | 
+[**dynamicSecretUpdateDockerhub**](V2Api.md#dynamicSecretUpdateDockerhub) | **POST** /dynamic-secret-update-dockerhub | 
+[**dynamicSecretUpdateEks**](V2Api.md#dynamicSecretUpdateEks) | **POST** /dynamic-secret-update-eks | 
+[**dynamicSecretUpdateGcp**](V2Api.md#dynamicSecretUpdateGcp) | **POST** /dynamic-secret-update-gcp | 
+[**dynamicSecretUpdateGithub**](V2Api.md#dynamicSecretUpdateGithub) | **POST** /dynamic-secret-update-github | 
+[**dynamicSecretUpdateGke**](V2Api.md#dynamicSecretUpdateGke) | **POST** /dynamic-secret-update-gke | 
+[**dynamicSecretUpdateHanaDb**](V2Api.md#dynamicSecretUpdateHanaDb) | **POST** /dynamic-secret-update-hana | 
+[**dynamicSecretUpdateK8s**](V2Api.md#dynamicSecretUpdateK8s) | **POST** /dynamic-secret-update-k8s | 
+[**dynamicSecretUpdateLdap**](V2Api.md#dynamicSecretUpdateLdap) | **POST** /dynamic-secret-update-ldap | 
+[**dynamicSecretUpdateMongoDb**](V2Api.md#dynamicSecretUpdateMongoDb) | **POST** /dynamic-secret-update-mongo | 
+[**dynamicSecretUpdateMsSql**](V2Api.md#dynamicSecretUpdateMsSql) | **POST** /dynamic-secret-update-mssql | 
+[**dynamicSecretUpdateMySql**](V2Api.md#dynamicSecretUpdateMySql) | **POST** /dynamic-secret-update-mysql | 
+[**dynamicSecretUpdateOracleDb**](V2Api.md#dynamicSecretUpdateOracleDb) | **POST** /dynamic-secret-update-oracle | 
+[**dynamicSecretUpdatePing**](V2Api.md#dynamicSecretUpdatePing) | **POST** /dynamic-secret-update-ping | 
+[**dynamicSecretUpdatePostgreSql**](V2Api.md#dynamicSecretUpdatePostgreSql) | **POST** /dynamic-secret-update-postgresql | 
+[**dynamicSecretUpdateRabbitMq**](V2Api.md#dynamicSecretUpdateRabbitMq) | **POST** /dynamic-secret-update-rabbitmq | 
+[**dynamicSecretUpdateRdp**](V2Api.md#dynamicSecretUpdateRdp) | **POST** /dynamic-secret-update-rdp | 
+[**dynamicSecretUpdateRedis**](V2Api.md#dynamicSecretUpdateRedis) | **POST** /dynamic-secret-update-redis | 
+[**dynamicSecretUpdateRedshift**](V2Api.md#dynamicSecretUpdateRedshift) | **POST** /dynamic-secret-update-redshift | 
+[**dynamicSecretUpdateSnowflake**](V2Api.md#dynamicSecretUpdateSnowflake) | **POST** /dynamic-secret-update-snowflake | 
+[**dynamicSecretUpdateVenafi**](V2Api.md#dynamicSecretUpdateVenafi) | **POST** /dynamic-secret-update-venafi | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
 [**encryptGPG**](V2Api.md#encryptGPG) | **POST** /encrypt-gpg | 
 [**encryptWithClassicKey**](V2Api.md#encryptWithClassicKey) | **POST** /encrypt-with-classic-key | 
@@ -95,6 +153,12 @@ Method | HTTP request | Description
 [**esmList**](V2Api.md#esmList) | **POST** /esm-list | 
 [**esmUpdate**](V2Api.md#esmUpdate) | **POST** /esm-update | 
 [**eventAction**](V2Api.md#eventAction) | **POST** /event-action | 
+[**eventForwarderCreateEmail**](V2Api.md#eventForwarderCreateEmail) | **POST** /event-forwarder-create-email | 
+[**eventForwarderCreateWebhook**](V2Api.md#eventForwarderCreateWebhook) | **POST** /event-forwarder-create-webhook | 
+[**eventForwarderDelete**](V2Api.md#eventForwarderDelete) | **POST** /event-forwarder-delete | 
+[**eventForwarderGet**](V2Api.md#eventForwarderGet) | **POST** /event-forwarder-get | 
+[**eventForwarderUpdateEmail**](V2Api.md#eventForwarderUpdateEmail) | **POST** /event-forwarder-update-email | 
+[**eventForwarderUpdateWebhook**](V2Api.md#eventForwarderUpdateWebhook) | **POST** /event-forwarder-update-webhook | 
 [**exportClassicKey**](V2Api.md#exportClassicKey) | **POST** /export-classic-key | 
 [**gatewayCreateAllowedAccess**](V2Api.md#gatewayCreateAllowedAccess) | **POST** /gateway-create-allowed-access | 
 [**gatewayCreateK8SAuthConfig**](V2Api.md#gatewayCreateK8SAuthConfig) | **POST** /gateway-create-k8s-auth-config | 
@@ -103,7 +167,7 @@ Method | HTTP request | Description
 [**gatewayCreateProducerAws**](V2Api.md#gatewayCreateProducerAws) | **POST** /gateway-create-producer-aws | 
 [**gatewayCreateProducerAzure**](V2Api.md#gatewayCreateProducerAzure) | **POST** /gateway-create-producer-azure | 
 [**gatewayCreateProducerCassandra**](V2Api.md#gatewayCreateProducerCassandra) | **POST** /gateway-create-producer-cassandra | 
-[**gatewayCreateProducerCertificateAutomation**](V2Api.md#gatewayCreateProducerCertificateAutomation) | **POST** /gateway-create-producer-certificate-automation | 
+[**gatewayCreateProducerChef**](V2Api.md#gatewayCreateProducerChef) | **POST** /gateway-create-producer-chef | 
 [**gatewayCreateProducerCustom**](V2Api.md#gatewayCreateProducerCustom) | **POST** /gateway-create-producer-custom | 
 [**gatewayCreateProducerDockerhub**](V2Api.md#gatewayCreateProducerDockerhub) | **POST** /gateway-create-producer-dockerhub | 
 [**gatewayCreateProducerEks**](V2Api.md#gatewayCreateProducerEks) | **POST** /gateway-create-producer-eks | 
@@ -124,6 +188,7 @@ Method | HTTP request | Description
 [**gatewayCreateProducerRedis**](V2Api.md#gatewayCreateProducerRedis) | **POST** /gateway-create-producer-Redis | 
 [**gatewayCreateProducerRedshift**](V2Api.md#gatewayCreateProducerRedshift) | **POST** /gateway-create-producer-redshift | 
 [**gatewayCreateProducerSnowflake**](V2Api.md#gatewayCreateProducerSnowflake) | **POST** /gateway-create-producer-snowflake | 
+[**gatewayCreateProducerVenafi**](V2Api.md#gatewayCreateProducerVenafi) | **POST** /gateway-create-producer-certificate-automation | 
 [**gatewayDeleteAllowedAccess**](V2Api.md#gatewayDeleteAllowedAccess) | **POST** /gateway-delete-allowed-access | 
 [**gatewayDeleteK8SAuthConfig**](V2Api.md#gatewayDeleteK8SAuthConfig) | **POST** /gateway-delete-k8s-auth-config | 
 [**gatewayDeleteMigration**](V2Api.md#gatewayDeleteMigration) | **POST** /gateway-delete-migration | 
@@ -154,7 +219,7 @@ Method | HTTP request | Description
 [**gatewayUpdateProducerAws**](V2Api.md#gatewayUpdateProducerAws) | **POST** /gateway-update-producer-aws | 
 [**gatewayUpdateProducerAzure**](V2Api.md#gatewayUpdateProducerAzure) | **POST** /gateway-update-producer-azure | 
 [**gatewayUpdateProducerCassandra**](V2Api.md#gatewayUpdateProducerCassandra) | **POST** /gateway-update-producer-cassandra | 
-[**gatewayUpdateProducerCertificateAutomation**](V2Api.md#gatewayUpdateProducerCertificateAutomation) | **POST** /gateway-update-producer-certificate-automation | 
+[**gatewayUpdateProducerChef**](V2Api.md#gatewayUpdateProducerChef) | **POST** /gateway-update-producer-chef | 
 [**gatewayUpdateProducerCustom**](V2Api.md#gatewayUpdateProducerCustom) | **POST** /gateway-update-producer-custom | 
 [**gatewayUpdateProducerDockerhub**](V2Api.md#gatewayUpdateProducerDockerhub) | **POST** /gateway-update-producer-dockerhub | 
 [**gatewayUpdateProducerEks**](V2Api.md#gatewayUpdateProducerEks) | **POST** /gateway-update-producer-eks | 
@@ -175,6 +240,7 @@ Method | HTTP request | Description
 [**gatewayUpdateProducerRedis**](V2Api.md#gatewayUpdateProducerRedis) | **POST** /gateway-update-producer-redis | 
 [**gatewayUpdateProducerRedshift**](V2Api.md#gatewayUpdateProducerRedshift) | **POST** /gateway-update-producer-redshift | 
 [**gatewayUpdateProducerSnowflake**](V2Api.md#gatewayUpdateProducerSnowflake) | **POST** /gateway-update-producer-snowflake | 
+[**gatewayUpdateProducerVenafi**](V2Api.md#gatewayUpdateProducerVenafi) | **POST** /gateway-update-producer-certificate-automation | 
 [**gatewayUpdateTlsCert**](V2Api.md#gatewayUpdateTlsCert) | **POST** /gateway-update-tls-cert | 
 [**gatewayUpdateTmpUsers**](V2Api.md#gatewayUpdateTmpUsers) | **POST** /gateway-update-producer-tmp-creds | 
 [**generateCsr**](V2Api.md#generateCsr) | **POST** /generate-csr | 
@@ -231,6 +297,44 @@ Method | HTTP request | Description
 [**rotateKey**](V2Api.md#rotateKey) | **POST** /rotate-key | 
 [**rotateOidcClientSecret**](V2Api.md#rotateOidcClientSecret) | **POST** /rotate-oidc-client-secret | 
 [**rotateSecret**](V2Api.md#rotateSecret) | **POST** /gateway-rotate-secret | 
+[**rotatedSecretCreateAws**](V2Api.md#rotatedSecretCreateAws) | **POST** /rotated-secret-create-aws | 
+[**rotatedSecretCreateAzure**](V2Api.md#rotatedSecretCreateAzure) | **POST** /rotated-secret-create-azure | 
+[**rotatedSecretCreateCassandra**](V2Api.md#rotatedSecretCreateCassandra) | **POST** /rotated-secret-create-cassandra | 
+[**rotatedSecretCreateCustom**](V2Api.md#rotatedSecretCreateCustom) | **POST** /rotated-secret-create-custom | 
+[**rotatedSecretCreateDockerhub**](V2Api.md#rotatedSecretCreateDockerhub) | **POST** /rotated-secret-create-dockerhub | 
+[**rotatedSecretCreateGcp**](V2Api.md#rotatedSecretCreateGcp) | **POST** /rotated-secret-create-gcp | 
+[**rotatedSecretCreateHanadb**](V2Api.md#rotatedSecretCreateHanadb) | **POST** /rotated-secret-create-hanadb | 
+[**rotatedSecretCreateLdap**](V2Api.md#rotatedSecretCreateLdap) | **POST** /rotated-secret-create-ldap | 
+[**rotatedSecretCreateMongodb**](V2Api.md#rotatedSecretCreateMongodb) | **POST** /rotated-secret-create-mongodb | 
+[**rotatedSecretCreateMssql**](V2Api.md#rotatedSecretCreateMssql) | **POST** /rotated-secret-create-mssql | 
+[**rotatedSecretCreateMysql**](V2Api.md#rotatedSecretCreateMysql) | **POST** /rotated-secret-create-mysql | 
+[**rotatedSecretCreateOracledb**](V2Api.md#rotatedSecretCreateOracledb) | **POST** /rotated-secret-create-oracledb | 
+[**rotatedSecretCreatePostgresql**](V2Api.md#rotatedSecretCreatePostgresql) | **POST** /rotated-secret-create-postgresql | 
+[**rotatedSecretCreateRedis**](V2Api.md#rotatedSecretCreateRedis) | **POST** /rotated-secret-create-redis | 
+[**rotatedSecretCreateRedshift**](V2Api.md#rotatedSecretCreateRedshift) | **POST** /rotated-secret-create-redshift | 
+[**rotatedSecretCreateSnowflake**](V2Api.md#rotatedSecretCreateSnowflake) | **POST** /rotated-secret-create-snowflake | 
+[**rotatedSecretCreateSsh**](V2Api.md#rotatedSecretCreateSsh) | **POST** /rotated-secret-create-ssh | 
+[**rotatedSecretCreateWindows**](V2Api.md#rotatedSecretCreateWindows) | **POST** /rotated-secret-create-windows | 
+[**rotatedSecretGetValue**](V2Api.md#rotatedSecretGetValue) | **POST** /rotated-secret-get-value | 
+[**rotatedSecretList**](V2Api.md#rotatedSecretList) | **POST** /rotated-secret-list | 
+[**rotatedSecretUpdateAws**](V2Api.md#rotatedSecretUpdateAws) | **POST** /rotated-secret-update-aws | 
+[**rotatedSecretUpdateAzure**](V2Api.md#rotatedSecretUpdateAzure) | **POST** /rotated-secret-update-azure | 
+[**rotatedSecretUpdateCassandra**](V2Api.md#rotatedSecretUpdateCassandra) | **POST** /rotated-secret-update-cassandra | 
+[**rotatedSecretUpdateCustom**](V2Api.md#rotatedSecretUpdateCustom) | **POST** /rotated-secret-update-custom | 
+[**rotatedSecretUpdateDockerhub**](V2Api.md#rotatedSecretUpdateDockerhub) | **POST** /rotated-secret-update-dockerhub | 
+[**rotatedSecretUpdateGcp**](V2Api.md#rotatedSecretUpdateGcp) | **POST** /rotated-secret-update-gcp | 
+[**rotatedSecretUpdateHanadb**](V2Api.md#rotatedSecretUpdateHanadb) | **POST** /rotated-secret-update-hanadb | 
+[**rotatedSecretUpdateLdap**](V2Api.md#rotatedSecretUpdateLdap) | **POST** /rotated-secret-update-ldap | 
+[**rotatedSecretUpdateMongodb**](V2Api.md#rotatedSecretUpdateMongodb) | **POST** /rotated-secret-update-mongodb | 
+[**rotatedSecretUpdateMssql**](V2Api.md#rotatedSecretUpdateMssql) | **POST** /rotated-secret-update-mssql | 
+[**rotatedSecretUpdateMysql**](V2Api.md#rotatedSecretUpdateMysql) | **POST** /rotated-secret-update-mysql | 
+[**rotatedSecretUpdateOracledb**](V2Api.md#rotatedSecretUpdateOracledb) | **POST** /rotated-secret-update-oracledb | 
+[**rotatedSecretUpdatePostgresql**](V2Api.md#rotatedSecretUpdatePostgresql) | **POST** /rotated-secret-update-postgresql | 
+[**rotatedSecretUpdateRedis**](V2Api.md#rotatedSecretUpdateRedis) | **POST** /rotated-secret-update-redis | 
+[**rotatedSecretUpdateRedshift**](V2Api.md#rotatedSecretUpdateRedshift) | **POST** /rotated-secret-update-redshift | 
+[**rotatedSecretUpdateSnowflake**](V2Api.md#rotatedSecretUpdateSnowflake) | **POST** /rotated-secret-update-snowflake | 
+[**rotatedSecretUpdateSsh**](V2Api.md#rotatedSecretUpdateSsh) | **POST** /rotated-secret-update-ssh | 
+[**rotatedSecretUpdateWindows**](V2Api.md#rotatedSecretUpdateWindows) | **POST** /rotated-secret-update-windows | 
 [**setItemState**](V2Api.md#setItemState) | **POST** /set-item-state | 
 [**setRoleRule**](V2Api.md#setRoleRule) | **POST** /set-role-rule | 
 [**shareItem**](V2Api.md#shareItem) | **POST** /share-item | 
@@ -278,6 +382,7 @@ Method | HTTP request | Description
 [**updateGithubTarget**](V2Api.md#updateGithubTarget) | **POST** /update-github-target | 
 [**updateGlobalSignAtlasTarget**](V2Api.md#updateGlobalSignAtlasTarget) | **POST** /update-globalsign-atlas-target | 
 [**updateGlobalSignTarget**](V2Api.md#updateGlobalSignTarget) | **POST** /update-globalsign-target | 
+[**updateGodaddyTarget**](V2Api.md#updateGodaddyTarget) | **POST** /update-godaddy-target | 
 [**updateGroup**](V2Api.md#updateGroup) | **POST** /update-group | 
 [**updateItem**](V2Api.md#updateItem) | **POST** /update-item | 
 [**updateLdapTarget**](V2Api.md#updateLdapTarget) | **POST** /update-ldap-target | 
@@ -1822,6 +1927,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateGlobalSignTargetOutput**](CreateGlobalSignTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createGodaddyTarget
+
+> CreateGodaddyTargetOutput createGodaddyTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateGodaddyTarget(); // CreateGodaddyTarget | 
+apiInstance.createGodaddyTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateGodaddyTarget**](CreateGodaddyTarget.md)|  | 
+
+### Return type
+
+[**CreateGodaddyTargetOutput**](CreateGodaddyTargetOutput.md)
 
 ### Authorization
 
@@ -3765,6 +3912,2400 @@ No authorization required
 - **Accept**: application/json
 
 
+## dynamicSecretCreateArtifactory
+
+> DynamicSecretCreateOutput dynamicSecretCreateArtifactory(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateArtifactory(); // DynamicSecretCreateArtifactory | 
+apiInstance.dynamicSecretCreateArtifactory(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateArtifactory**](DynamicSecretCreateArtifactory.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateAws
+
+> DynamicSecretCreateOutput dynamicSecretCreateAws(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateAws(); // DynamicSecretCreateAws | 
+apiInstance.dynamicSecretCreateAws(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateAws**](DynamicSecretCreateAws.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateAzure
+
+> DynamicSecretCreateOutput dynamicSecretCreateAzure(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateAzure(); // DynamicSecretCreateAzure | 
+apiInstance.dynamicSecretCreateAzure(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateAzure**](DynamicSecretCreateAzure.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateCassandra
+
+> DynamicSecretCreateOutput dynamicSecretCreateCassandra(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateCassandra(); // DynamicSecretCreateCassandra | 
+apiInstance.dynamicSecretCreateCassandra(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateCassandra**](DynamicSecretCreateCassandra.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateCustom
+
+> DynamicSecretCreateOutput dynamicSecretCreateCustom(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.DynamicSecretCreateCustom() // DynamicSecretCreateCustom | 
+};
+apiInstance.dynamicSecretCreateCustom(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateCustom**](DynamicSecretCreateCustom.md)|  | [optional] 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateDockerhub
+
+> DynamicSecretCreateOutput dynamicSecretCreateDockerhub(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateDockerhub(); // DynamicSecretCreateDockerhub | 
+apiInstance.dynamicSecretCreateDockerhub(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateDockerhub**](DynamicSecretCreateDockerhub.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateEks
+
+> DynamicSecretCreateOutput dynamicSecretCreateEks(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateEks(); // DynamicSecretCreateEks | 
+apiInstance.dynamicSecretCreateEks(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateEks**](DynamicSecretCreateEks.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateGcp
+
+> DynamicSecretCreateOutput dynamicSecretCreateGcp(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateGcp(); // DynamicSecretCreateGcp | 
+apiInstance.dynamicSecretCreateGcp(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateGcp**](DynamicSecretCreateGcp.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateGithub
+
+> DynamicSecretCreateOutput dynamicSecretCreateGithub(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateGithub(); // DynamicSecretCreateGithub | 
+apiInstance.dynamicSecretCreateGithub(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateGithub**](DynamicSecretCreateGithub.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateGke
+
+> DynamicSecretCreateOutput dynamicSecretCreateGke(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateGke(); // DynamicSecretCreateGke | 
+apiInstance.dynamicSecretCreateGke(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateGke**](DynamicSecretCreateGke.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateHanaDb
+
+> DynamicSecretCreateOutput dynamicSecretCreateHanaDb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateHanaDb(); // DynamicSecretCreateHanaDb | 
+apiInstance.dynamicSecretCreateHanaDb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateHanaDb**](DynamicSecretCreateHanaDb.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateK8s
+
+> DynamicSecretCreateOutput dynamicSecretCreateK8s(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateK8s(); // DynamicSecretCreateK8s | 
+apiInstance.dynamicSecretCreateK8s(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateK8s**](DynamicSecretCreateK8s.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateLdap
+
+> DynamicSecretCreateOutput dynamicSecretCreateLdap(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateLdap(); // DynamicSecretCreateLdap | 
+apiInstance.dynamicSecretCreateLdap(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateLdap**](DynamicSecretCreateLdap.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateMongoDb
+
+> DynamicSecretCreateOutput dynamicSecretCreateMongoDb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateMongoDb(); // DynamicSecretCreateMongoDb | 
+apiInstance.dynamicSecretCreateMongoDb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateMongoDb**](DynamicSecretCreateMongoDb.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateMsSql
+
+> DynamicSecretCreateOutput dynamicSecretCreateMsSql(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateMsSql(); // DynamicSecretCreateMsSql | 
+apiInstance.dynamicSecretCreateMsSql(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateMsSql**](DynamicSecretCreateMsSql.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateMySql
+
+> DynamicSecretCreateOutput dynamicSecretCreateMySql(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateMySql(); // DynamicSecretCreateMySql | 
+apiInstance.dynamicSecretCreateMySql(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateMySql**](DynamicSecretCreateMySql.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateOracleDb
+
+> DynamicSecretCreateOutput dynamicSecretCreateOracleDb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateOracleDb(); // DynamicSecretCreateOracleDb | 
+apiInstance.dynamicSecretCreateOracleDb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateOracleDb**](DynamicSecretCreateOracleDb.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreatePing
+
+> DynamicSecretCreateOutput dynamicSecretCreatePing(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreatePing(); // DynamicSecretCreatePing | 
+apiInstance.dynamicSecretCreatePing(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreatePing**](DynamicSecretCreatePing.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreatePostgreSql
+
+> DynamicSecretCreateOutput dynamicSecretCreatePostgreSql(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreatePostgreSql(); // DynamicSecretCreatePostgreSql | 
+apiInstance.dynamicSecretCreatePostgreSql(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreatePostgreSql**](DynamicSecretCreatePostgreSql.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateRabbitMq
+
+> DynamicSecretCreateOutput dynamicSecretCreateRabbitMq(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateRabbitMq(); // DynamicSecretCreateRabbitMq | 
+apiInstance.dynamicSecretCreateRabbitMq(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateRabbitMq**](DynamicSecretCreateRabbitMq.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateRdp
+
+> DynamicSecretCreateOutput dynamicSecretCreateRdp(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateRdp(); // DynamicSecretCreateRdp | 
+apiInstance.dynamicSecretCreateRdp(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateRdp**](DynamicSecretCreateRdp.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateRedis
+
+> DynamicSecretCreateOutput dynamicSecretCreateRedis(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateRedis(); // DynamicSecretCreateRedis | 
+apiInstance.dynamicSecretCreateRedis(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateRedis**](DynamicSecretCreateRedis.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateRedshift
+
+> DynamicSecretCreateOutput dynamicSecretCreateRedshift(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateRedshift(); // DynamicSecretCreateRedshift | 
+apiInstance.dynamicSecretCreateRedshift(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateRedshift**](DynamicSecretCreateRedshift.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateSnowflake
+
+> DynamicSecretCreateOutput dynamicSecretCreateSnowflake(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateSnowflake(); // DynamicSecretCreateSnowflake | 
+apiInstance.dynamicSecretCreateSnowflake(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateSnowflake**](DynamicSecretCreateSnowflake.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretCreateVenafi
+
+> DynamicSecretCreateOutput dynamicSecretCreateVenafi(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateVenafi(); // DynamicSecretCreateVenafi | 
+apiInstance.dynamicSecretCreateVenafi(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateVenafi**](DynamicSecretCreateVenafi.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretDelete
+
+> DynamicSecretDeleteOutput dynamicSecretDelete(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretDelete(); // DynamicSecretDelete | 
+apiInstance.dynamicSecretDelete(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretDelete**](DynamicSecretDelete.md)|  | 
+
+### Return type
+
+[**DynamicSecretDeleteOutput**](DynamicSecretDeleteOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretGet
+
+> DSProducerDetails dynamicSecretGet()
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+apiInstance.dynamicSecretGet().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DSProducerDetails**](DSProducerDetails.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## dynamicSecretGetValue
+
+> {String: String} dynamicSecretGetValue(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretGetValue(); // DynamicSecretGetValue | 
+apiInstance.dynamicSecretGetValue(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretGetValue**](DynamicSecretGetValue.md)|  | 
+
+### Return type
+
+**{String: String}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretList
+
+> GetProducersListReplyObj dynamicSecretList(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretList(); // DynamicSecretList | 
+apiInstance.dynamicSecretList(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretList**](DynamicSecretList.md)|  | 
+
+### Return type
+
+[**GetProducersListReplyObj**](GetProducersListReplyObj.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretTmpCredsDelete
+
+> dynamicSecretTmpCredsDelete(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretTmpCredsDelete(); // DynamicSecretTmpCredsDelete | 
+apiInstance.dynamicSecretTmpCredsDelete(body).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretTmpCredsDelete**](DynamicSecretTmpCredsDelete.md)|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretTmpCredsGet
+
+> [TmpUserData] dynamicSecretTmpCredsGet(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretTmpCredsGet(); // DynamicSecretTmpCredsGet | 
+apiInstance.dynamicSecretTmpCredsGet(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretTmpCredsGet**](DynamicSecretTmpCredsGet.md)|  | 
+
+### Return type
+
+[**[TmpUserData]**](TmpUserData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretTmpCredsUpdate
+
+> dynamicSecretTmpCredsUpdate(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretTmpCredsUpdate(); // DynamicSecretTmpCredsUpdate | 
+apiInstance.dynamicSecretTmpCredsUpdate(body).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretTmpCredsUpdate**](DynamicSecretTmpCredsUpdate.md)|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateArtifactory
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateArtifactory(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateArtifactory(); // DynamicSecretUpdateArtifactory | 
+apiInstance.dynamicSecretUpdateArtifactory(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateArtifactory**](DynamicSecretUpdateArtifactory.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateAws
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateAws(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateAws(); // DynamicSecretUpdateAws | 
+apiInstance.dynamicSecretUpdateAws(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateAws**](DynamicSecretUpdateAws.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateAzure
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateAzure(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateAzure(); // DynamicSecretUpdateAzure | 
+apiInstance.dynamicSecretUpdateAzure(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateAzure**](DynamicSecretUpdateAzure.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateCassandra
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateCassandra(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateCassandra(); // DynamicSecretUpdateCassandra | 
+apiInstance.dynamicSecretUpdateCassandra(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateCassandra**](DynamicSecretUpdateCassandra.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateCustom
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateCustom(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'body': new akeyless.DynamicSecretUpdateCustom() // DynamicSecretUpdateCustom | 
+};
+apiInstance.dynamicSecretUpdateCustom(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateCustom**](DynamicSecretUpdateCustom.md)|  | [optional] 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateDockerhub
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateDockerhub(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateDockerhub(); // DynamicSecretUpdateDockerhub | 
+apiInstance.dynamicSecretUpdateDockerhub(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateDockerhub**](DynamicSecretUpdateDockerhub.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateEks
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateEks(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateEks(); // DynamicSecretUpdateEks | 
+apiInstance.dynamicSecretUpdateEks(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateEks**](DynamicSecretUpdateEks.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateGcp
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateGcp(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateGcp(); // DynamicSecretUpdateGcp | 
+apiInstance.dynamicSecretUpdateGcp(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateGcp**](DynamicSecretUpdateGcp.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateGithub
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateGithub(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateGithub(); // DynamicSecretUpdateGithub | 
+apiInstance.dynamicSecretUpdateGithub(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateGithub**](DynamicSecretUpdateGithub.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateGke
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateGke(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateGke(); // DynamicSecretUpdateGke | 
+apiInstance.dynamicSecretUpdateGke(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateGke**](DynamicSecretUpdateGke.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateHanaDb
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateHanaDb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateHanaDb(); // DynamicSecretUpdateHanaDb | 
+apiInstance.dynamicSecretUpdateHanaDb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateHanaDb**](DynamicSecretUpdateHanaDb.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateK8s
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateK8s(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateK8s(); // DynamicSecretUpdateK8s | 
+apiInstance.dynamicSecretUpdateK8s(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateK8s**](DynamicSecretUpdateK8s.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateLdap
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateLdap(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateLdap(); // DynamicSecretUpdateLdap | 
+apiInstance.dynamicSecretUpdateLdap(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateLdap**](DynamicSecretUpdateLdap.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateMongoDb
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateMongoDb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateMongoDb(); // DynamicSecretUpdateMongoDb | 
+apiInstance.dynamicSecretUpdateMongoDb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateMongoDb**](DynamicSecretUpdateMongoDb.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateMsSql
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateMsSql(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateMsSql(); // DynamicSecretUpdateMsSql | 
+apiInstance.dynamicSecretUpdateMsSql(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateMsSql**](DynamicSecretUpdateMsSql.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateMySql
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateMySql(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateMySql(); // DynamicSecretUpdateMySql | 
+apiInstance.dynamicSecretUpdateMySql(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateMySql**](DynamicSecretUpdateMySql.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateOracleDb
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateOracleDb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateOracleDb(); // DynamicSecretUpdateOracleDb | 
+apiInstance.dynamicSecretUpdateOracleDb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateOracleDb**](DynamicSecretUpdateOracleDb.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdatePing
+
+> DynamicSecretUpdateOutput dynamicSecretUpdatePing(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdatePing(); // DynamicSecretUpdatePing | 
+apiInstance.dynamicSecretUpdatePing(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdatePing**](DynamicSecretUpdatePing.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdatePostgreSql
+
+> DynamicSecretUpdateOutput dynamicSecretUpdatePostgreSql(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdatePostgreSql(); // DynamicSecretUpdatePostgreSql | 
+apiInstance.dynamicSecretUpdatePostgreSql(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdatePostgreSql**](DynamicSecretUpdatePostgreSql.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateRabbitMq
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateRabbitMq(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateRabbitMq(); // DynamicSecretUpdateRabbitMq | 
+apiInstance.dynamicSecretUpdateRabbitMq(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateRabbitMq**](DynamicSecretUpdateRabbitMq.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateRdp
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateRdp(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateRdp(); // DynamicSecretUpdateRdp | 
+apiInstance.dynamicSecretUpdateRdp(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateRdp**](DynamicSecretUpdateRdp.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateRedis
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateRedis(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateRedis(); // DynamicSecretUpdateRedis | 
+apiInstance.dynamicSecretUpdateRedis(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateRedis**](DynamicSecretUpdateRedis.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateRedshift
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateRedshift(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateRedshift(); // DynamicSecretUpdateRedshift | 
+apiInstance.dynamicSecretUpdateRedshift(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateRedshift**](DynamicSecretUpdateRedshift.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateSnowflake
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateSnowflake(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateSnowflake(); // DynamicSecretUpdateSnowflake | 
+apiInstance.dynamicSecretUpdateSnowflake(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateSnowflake**](DynamicSecretUpdateSnowflake.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateVenafi
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateVenafi(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateVenafi(); // DynamicSecretUpdateVenafi | 
+apiInstance.dynamicSecretUpdateVenafi(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateVenafi**](DynamicSecretUpdateVenafi.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## encrypt
 
 > EncryptOutput encrypt(body)
@@ -4143,6 +6684,258 @@ No authorization required
 - **Accept**: application/json
 
 
+## eventForwarderCreateEmail
+
+> EventForwarderCreateUpdateOutput eventForwarderCreateEmail(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.EventForwarderCreateEmail(); // EventForwarderCreateEmail | 
+apiInstance.eventForwarderCreateEmail(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EventForwarderCreateEmail**](EventForwarderCreateEmail.md)|  | 
+
+### Return type
+
+[**EventForwarderCreateUpdateOutput**](EventForwarderCreateUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## eventForwarderCreateWebhook
+
+> EventForwarderCreateUpdateOutput eventForwarderCreateWebhook(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.EventForwarderCreateWebhook(); // EventForwarderCreateWebhook | 
+apiInstance.eventForwarderCreateWebhook(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EventForwarderCreateWebhook**](EventForwarderCreateWebhook.md)|  | 
+
+### Return type
+
+[**EventForwarderCreateUpdateOutput**](EventForwarderCreateUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## eventForwarderDelete
+
+> EventForwarderDeleteOutput eventForwarderDelete(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.EventForwarderDelete(); // EventForwarderDelete | 
+apiInstance.eventForwarderDelete(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EventForwarderDelete**](EventForwarderDelete.md)|  | 
+
+### Return type
+
+[**EventForwarderDeleteOutput**](EventForwarderDeleteOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## eventForwarderGet
+
+> EventForwarderGetOutput eventForwarderGet(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.EventForwarderGet(); // EventForwarderGet | 
+apiInstance.eventForwarderGet(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EventForwarderGet**](EventForwarderGet.md)|  | 
+
+### Return type
+
+[**EventForwarderGetOutput**](EventForwarderGetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## eventForwarderUpdateEmail
+
+> EventForwarderCreateUpdateOutput eventForwarderUpdateEmail(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.EventForwarderUpdateEmail(); // EventForwarderUpdateEmail | 
+apiInstance.eventForwarderUpdateEmail(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EventForwarderUpdateEmail**](EventForwarderUpdateEmail.md)|  | 
+
+### Return type
+
+[**EventForwarderCreateUpdateOutput**](EventForwarderCreateUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## eventForwarderUpdateWebhook
+
+> EventForwarderCreateUpdateOutput eventForwarderUpdateWebhook(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.EventForwarderUpdateWebhook(); // EventForwarderUpdateWebhook | 
+apiInstance.eventForwarderUpdateWebhook(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EventForwarderUpdateWebhook**](EventForwarderUpdateWebhook.md)|  | 
+
+### Return type
+
+[**EventForwarderCreateUpdateOutput**](EventForwarderCreateUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## exportClassicKey
 
 > ExportClassicKeyOutput exportClassicKey(body)
@@ -4479,9 +7272,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## gatewayCreateProducerCertificateAutomation
+## gatewayCreateProducerChef
 
-> GatewayCreateProducerCertificateAutomationOutput gatewayCreateProducerCertificateAutomation(body)
+> GatewayCreateProducerChefOutput gatewayCreateProducerChef(body)
 
 
 
@@ -4491,8 +7284,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerCertificateAutomation(); // GatewayCreateProducerCertificateAutomation | 
-apiInstance.gatewayCreateProducerCertificateAutomation(body).then((data) => {
+let body = new akeyless.GatewayCreateProducerChef(); // GatewayCreateProducerChef | 
+apiInstance.gatewayCreateProducerChef(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4505,11 +7298,11 @@ apiInstance.gatewayCreateProducerCertificateAutomation(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerCertificateAutomation**](GatewayCreateProducerCertificateAutomation.md)|  | 
+ **body** | [**GatewayCreateProducerChef**](GatewayCreateProducerChef.md)|  | 
 
 ### Return type
 
-[**GatewayCreateProducerCertificateAutomationOutput**](GatewayCreateProducerCertificateAutomationOutput.md)
+[**GatewayCreateProducerChefOutput**](GatewayCreateProducerChefOutput.md)
 
 ### Authorization
 
@@ -5352,6 +8145,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayCreateProducerSnowflakeOutput**](GatewayCreateProducerSnowflakeOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayCreateProducerVenafi
+
+> GatewayCreateProducerVenafiOutput gatewayCreateProducerVenafi(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayCreateProducerVenafi(); // GatewayCreateProducerVenafi | 
+apiInstance.gatewayCreateProducerVenafi(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerVenafi**](GatewayCreateProducerVenafi.md)|  | 
+
+### Return type
+
+[**GatewayCreateProducerVenafiOutput**](GatewayCreateProducerVenafiOutput.md)
 
 ### Authorization
 
@@ -6625,9 +9460,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## gatewayUpdateProducerCertificateAutomation
+## gatewayUpdateProducerChef
 
-> GatewayUpdateProducerCertificateAutomationOutput gatewayUpdateProducerCertificateAutomation(body)
+> GatewayUpdateProducerChefOutput gatewayUpdateProducerChef(body)
 
 
 
@@ -6637,8 +9472,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerCertificateAutomation(); // GatewayUpdateProducerCertificateAutomation | 
-apiInstance.gatewayUpdateProducerCertificateAutomation(body).then((data) => {
+let body = new akeyless.GatewayUpdateProducerChef(); // GatewayUpdateProducerChef | 
+apiInstance.gatewayUpdateProducerChef(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6651,11 +9486,11 @@ apiInstance.gatewayUpdateProducerCertificateAutomation(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerCertificateAutomation**](GatewayUpdateProducerCertificateAutomation.md)|  | 
+ **body** | [**GatewayUpdateProducerChef**](GatewayUpdateProducerChef.md)|  | 
 
 ### Return type
 
-[**GatewayUpdateProducerCertificateAutomationOutput**](GatewayUpdateProducerCertificateAutomationOutput.md)
+[**GatewayUpdateProducerChefOutput**](GatewayUpdateProducerChefOutput.md)
 
 ### Authorization
 
@@ -7498,6 +10333,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayUpdateProducerSnowflakeOutput**](GatewayUpdateProducerSnowflakeOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateProducerVenafi
+
+> GatewayUpdateProducerVenafiOutput gatewayUpdateProducerVenafi(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateProducerVenafi(); // GatewayUpdateProducerVenafi | 
+apiInstance.gatewayUpdateProducerVenafi(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerVenafi**](GatewayUpdateProducerVenafi.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerVenafiOutput**](GatewayUpdateProducerVenafiOutput.md)
 
 ### Authorization
 
@@ -9881,6 +12758,1602 @@ No authorization required
 - **Accept**: application/json
 
 
+## rotatedSecretCreateAws
+
+> RotatedSecretCreateOutput rotatedSecretCreateAws(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateAws(); // RotatedSecretCreateAws | 
+apiInstance.rotatedSecretCreateAws(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateAws**](RotatedSecretCreateAws.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateAzure
+
+> RotatedSecretCreateOutput rotatedSecretCreateAzure(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateAzure(); // RotatedSecretCreateAzure | 
+apiInstance.rotatedSecretCreateAzure(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateAzure**](RotatedSecretCreateAzure.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateCassandra
+
+> RotatedSecretCreateOutput rotatedSecretCreateCassandra(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateCassandra(); // RotatedSecretCreateCassandra | 
+apiInstance.rotatedSecretCreateCassandra(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateCassandra**](RotatedSecretCreateCassandra.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateCustom
+
+> RotatedSecretCreateOutput rotatedSecretCreateCustom(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateCustom(); // RotatedSecretCreateCustom | 
+apiInstance.rotatedSecretCreateCustom(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateCustom**](RotatedSecretCreateCustom.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateDockerhub
+
+> RotatedSecretCreateOutput rotatedSecretCreateDockerhub(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateDockerhub(); // RotatedSecretCreateDockerhub | 
+apiInstance.rotatedSecretCreateDockerhub(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateDockerhub**](RotatedSecretCreateDockerhub.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateGcp
+
+> RotatedSecretCreateOutput rotatedSecretCreateGcp(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateGcp(); // RotatedSecretCreateGcp | 
+apiInstance.rotatedSecretCreateGcp(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateGcp**](RotatedSecretCreateGcp.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateHanadb
+
+> RotatedSecretCreateOutput rotatedSecretCreateHanadb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateHanadb(); // RotatedSecretCreateHanadb | 
+apiInstance.rotatedSecretCreateHanadb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateHanadb**](RotatedSecretCreateHanadb.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateLdap
+
+> RotatedSecretCreateOutput rotatedSecretCreateLdap(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateLdap(); // RotatedSecretCreateLdap | 
+apiInstance.rotatedSecretCreateLdap(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateLdap**](RotatedSecretCreateLdap.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateMongodb
+
+> RotatedSecretCreateOutput rotatedSecretCreateMongodb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateMongodb(); // RotatedSecretCreateMongodb | 
+apiInstance.rotatedSecretCreateMongodb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateMongodb**](RotatedSecretCreateMongodb.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateMssql
+
+> RotatedSecretCreateOutput rotatedSecretCreateMssql(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateMssql(); // RotatedSecretCreateMssql | 
+apiInstance.rotatedSecretCreateMssql(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateMssql**](RotatedSecretCreateMssql.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateMysql
+
+> RotatedSecretCreateOutput rotatedSecretCreateMysql(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateMysql(); // RotatedSecretCreateMysql | 
+apiInstance.rotatedSecretCreateMysql(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateMysql**](RotatedSecretCreateMysql.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateOracledb
+
+> RotatedSecretCreateOutput rotatedSecretCreateOracledb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateOracledb(); // RotatedSecretCreateOracledb | 
+apiInstance.rotatedSecretCreateOracledb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateOracledb**](RotatedSecretCreateOracledb.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreatePostgresql
+
+> RotatedSecretCreateOutput rotatedSecretCreatePostgresql(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreatePostgresql(); // RotatedSecretCreatePostgresql | 
+apiInstance.rotatedSecretCreatePostgresql(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreatePostgresql**](RotatedSecretCreatePostgresql.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateRedis
+
+> RotatedSecretCreateOutput rotatedSecretCreateRedis(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateRedis(); // RotatedSecretCreateRedis | 
+apiInstance.rotatedSecretCreateRedis(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateRedis**](RotatedSecretCreateRedis.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateRedshift
+
+> RotatedSecretCreateOutput rotatedSecretCreateRedshift(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateRedshift(); // RotatedSecretCreateRedshift | 
+apiInstance.rotatedSecretCreateRedshift(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateRedshift**](RotatedSecretCreateRedshift.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateSnowflake
+
+> RotatedSecretCreateOutput rotatedSecretCreateSnowflake(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateSnowflake(); // RotatedSecretCreateSnowflake | 
+apiInstance.rotatedSecretCreateSnowflake(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateSnowflake**](RotatedSecretCreateSnowflake.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateSsh
+
+> RotatedSecretCreateOutput rotatedSecretCreateSsh(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateSsh(); // RotatedSecretCreateSsh | 
+apiInstance.rotatedSecretCreateSsh(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateSsh**](RotatedSecretCreateSsh.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateWindows
+
+> RotatedSecretCreateOutput rotatedSecretCreateWindows(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretCreateWindows(); // RotatedSecretCreateWindows | 
+apiInstance.rotatedSecretCreateWindows(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretCreateWindows**](RotatedSecretCreateWindows.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretGetValue
+
+> {String: String} rotatedSecretGetValue(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretGetValue(); // RotatedSecretGetValue | 
+apiInstance.rotatedSecretGetValue(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretGetValue**](RotatedSecretGetValue.md)|  | 
+
+### Return type
+
+**{String: String}**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretList
+
+> GetProducersListReplyObj rotatedSecretList(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretList(); // RotatedSecretList | 
+apiInstance.rotatedSecretList(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretList**](RotatedSecretList.md)|  | 
+
+### Return type
+
+[**GetProducersListReplyObj**](GetProducersListReplyObj.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateAws
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateAws(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateAws(); // RotatedSecretUpdateAws | 
+apiInstance.rotatedSecretUpdateAws(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateAws**](RotatedSecretUpdateAws.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateAzure
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateAzure(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateAzure(); // RotatedSecretUpdateAzure | 
+apiInstance.rotatedSecretUpdateAzure(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateAzure**](RotatedSecretUpdateAzure.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateCassandra
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateCassandra(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateCassandra(); // RotatedSecretUpdateCassandra | 
+apiInstance.rotatedSecretUpdateCassandra(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateCassandra**](RotatedSecretUpdateCassandra.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateCustom
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateCustom(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateCustom(); // RotatedSecretUpdateCustom | 
+apiInstance.rotatedSecretUpdateCustom(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateCustom**](RotatedSecretUpdateCustom.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateDockerhub
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateDockerhub(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateDockerhub(); // RotatedSecretUpdateDockerhub | 
+apiInstance.rotatedSecretUpdateDockerhub(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateDockerhub**](RotatedSecretUpdateDockerhub.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateGcp
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateGcp(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateGcp(); // RotatedSecretUpdateGcp | 
+apiInstance.rotatedSecretUpdateGcp(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateGcp**](RotatedSecretUpdateGcp.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateHanadb
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateHanadb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateHanadb(); // RotatedSecretUpdateHanadb | 
+apiInstance.rotatedSecretUpdateHanadb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateHanadb**](RotatedSecretUpdateHanadb.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateLdap
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateLdap(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateLdap(); // RotatedSecretUpdateLdap | 
+apiInstance.rotatedSecretUpdateLdap(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateLdap**](RotatedSecretUpdateLdap.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateMongodb
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateMongodb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateMongodb(); // RotatedSecretUpdateMongodb | 
+apiInstance.rotatedSecretUpdateMongodb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateMongodb**](RotatedSecretUpdateMongodb.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateMssql
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateMssql(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateMssql(); // RotatedSecretUpdateMssql | 
+apiInstance.rotatedSecretUpdateMssql(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateMssql**](RotatedSecretUpdateMssql.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateMysql
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateMysql(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateMysql(); // RotatedSecretUpdateMysql | 
+apiInstance.rotatedSecretUpdateMysql(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateMysql**](RotatedSecretUpdateMysql.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateOracledb
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateOracledb(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateOracledb(); // RotatedSecretUpdateOracledb | 
+apiInstance.rotatedSecretUpdateOracledb(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateOracledb**](RotatedSecretUpdateOracledb.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdatePostgresql
+
+> RotatedSecretUpdateOutput rotatedSecretUpdatePostgresql(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdatePostgresql(); // RotatedSecretUpdatePostgresql | 
+apiInstance.rotatedSecretUpdatePostgresql(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdatePostgresql**](RotatedSecretUpdatePostgresql.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateRedis
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateRedis(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateRedis(); // RotatedSecretUpdateRedis | 
+apiInstance.rotatedSecretUpdateRedis(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateRedis**](RotatedSecretUpdateRedis.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateRedshift
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateRedshift(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateRedshift(); // RotatedSecretUpdateRedshift | 
+apiInstance.rotatedSecretUpdateRedshift(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateRedshift**](RotatedSecretUpdateRedshift.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateSnowflake
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateSnowflake(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateSnowflake(); // RotatedSecretUpdateSnowflake | 
+apiInstance.rotatedSecretUpdateSnowflake(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateSnowflake**](RotatedSecretUpdateSnowflake.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateSsh
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateSsh(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateSsh(); // RotatedSecretUpdateSsh | 
+apiInstance.rotatedSecretUpdateSsh(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateSsh**](RotatedSecretUpdateSsh.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateWindows
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateWindows(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.RotatedSecretUpdateWindows(); // RotatedSecretUpdateWindows | 
+apiInstance.rotatedSecretUpdateWindows(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RotatedSecretUpdateWindows**](RotatedSecretUpdateWindows.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## setItemState
 
 > Object setItemState(body)
@@ -11844,6 +16317,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateGlobalSignTargetOutput**](UpdateGlobalSignTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateGodaddyTarget
+
+> UpdateGodaddyTargetOutput updateGodaddyTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateGodaddyTarget(); // UpdateGodaddyTarget | 
+apiInstance.updateGodaddyTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateGodaddyTarget**](UpdateGodaddyTarget.md)|  | 
+
+### Return type
+
+[**UpdateGodaddyTargetOutput**](UpdateGodaddyTargetOutput.md)
 
 ### Authorization
 

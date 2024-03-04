@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOCI model module.
  * @module model/UpdateAuthMethodOCI
- * @version 3.6.1
+ * @version 3.6.2
  */
 class UpdateAuthMethodOCI {
     /**
@@ -83,6 +83,9 @@ class UpdateAuthMethodOCI {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('tenant-ocid')) {
                 obj['tenant-ocid'] = ApiClient.convertToType(data['tenant-ocid'], 'String');
@@ -162,6 +165,12 @@ UpdateAuthMethodOCI.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateAuthMethodOCI.prototype['new-name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+UpdateAuthMethodOCI.prototype['product-type'] = undefined;
 
 /**
  * The Oracle Cloud tenant ID

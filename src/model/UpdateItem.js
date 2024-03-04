@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 3.6.1
+ * @version 3.6.2
  */
 class UpdateItem {
     /**
@@ -262,7 +262,7 @@ UpdateItem.prototype['new-name'] = undefined;
 UpdateItem.prototype['rm-tag'] = undefined;
 
 /**
- * Rotate the value of the secret after SRA session ends [true/false] (relevant only for Rotated-secret)
+ * Rotate the value of the secret after SRA session ends [true/false]
  * @member {String} rotate-after-disconnect
  * @default 'false'
  */

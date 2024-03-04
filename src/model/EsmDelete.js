@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EsmDelete model module.
  * @module model/EsmDelete
- * @version 3.6.1
+ * @version 3.6.2
  */
 class EsmDelete {
     /**

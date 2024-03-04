@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRdp model module.
  * @module model/GatewayCreateProducerRdp
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerRdp {
     /**
      * Constructs a new <code>GatewayCreateProducerRdp</code>.
-     * gatewayCreateProducerRdp is a command that creates rdp producer
+     * gatewayCreateProducerRdp is a command that creates rdp producer [Deprecated: Use dynamic-secret-create-rdp command]
      * @alias module:model/GatewayCreateProducerRdp
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -64,6 +64,9 @@ class GatewayCreateProducerRdp {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -153,10 +156,16 @@ GatewayCreateProducerRdp.prototype['fixed-user-only'] = 'false';
 GatewayCreateProducerRdp.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerRdp.prototype['name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayCreateProducerRdp.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

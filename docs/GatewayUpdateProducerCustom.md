@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
 **enableAdminRotation** | **Boolean** | Should admin credentials be rotated | [optional] [default to false]
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
-**name** | **String** | Producer name | 
-**newName** | **String** | Producer name | [optional] 
+**name** | **String** | Dynamic secret name | 
+**newName** | **String** | Dynamic secret name | [optional] 
 **payload** | **String** | Secret payload to be sent with each create/revoke webhook request | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **revokeSyncUrl** | **String** | URL of an endpoint that implements /sync/revoke method, for example https://webhook.example.com/sync/revoke | 

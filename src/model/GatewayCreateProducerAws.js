@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAws model module.
  * @module model/GatewayCreateProducerAws
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerAws {
     /**
      * Constructs a new <code>GatewayCreateProducerAws</code>.
-     * gatewayCreateProducerAws is a command that creates aws producer
+     * gatewayCreateProducerAws is a command that creates aws producer [Deprecated: Use dynamic-secret-create-aws command]
      * @alias module:model/GatewayCreateProducerAws
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -215,7 +215,7 @@ GatewayCreateProducerAws.prototype['enable-admin-rotation'] = false;
 GatewayCreateProducerAws.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerAws.prototype['name'] = undefined;

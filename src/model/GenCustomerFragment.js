@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenCustomerFragment model module.
  * @module model/GenCustomerFragment
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GenCustomerFragment {
     /**
@@ -50,6 +50,9 @@ class GenCustomerFragment {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('hsm-key-label')) {
+                obj['hsm-key-label'] = ApiClient.convertToType(data['hsm-key-label'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -58,6 +61,9 @@ class GenCustomerFragment {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
         }
         return obj;
@@ -71,6 +77,12 @@ class GenCustomerFragment {
  * @member {String} description
  */
 GenCustomerFragment.prototype['description'] = undefined;
+
+/**
+ * The label of the hsm key to use for customer fragment operations (relevant for hsm_wrapped/hsm_protected customer fragments)
+ * @member {String} hsm-key-label
+ */
+GenCustomerFragment.prototype['hsm-key-label'] = undefined;
 
 /**
  * Set output format to JSON
@@ -90,6 +102,13 @@ GenCustomerFragment.prototype['metadata'] = undefined;
  * @member {String} name
  */
 GenCustomerFragment.prototype['name'] = undefined;
+
+/**
+ * Customer fragment type [standard/hsm_wrapped/hsm_secured]
+ * @member {String} type
+ * @default 'standard'
+ */
+GenCustomerFragment.prototype['type'] = 'standard';
 
 
 

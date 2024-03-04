@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetItemState model module.
  * @module model/SetItemState
- * @version 3.6.1
+ * @version 3.6.2
  */
 class SetItemState {
     /**
@@ -108,7 +108,7 @@ SetItemState.prototype['token'] = undefined;
 SetItemState.prototype['uid-token'] = undefined;
 
 /**
- * The specific version you want to update: 0=item level state (default)
+ * The specific version you want to update: 0=item level state (default) (relevant only for keys)
  * @member {Number} version
  * @default 0
  */

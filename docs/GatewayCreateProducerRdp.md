@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
 **fixedUserOnly** | **String** | Allow access using externally (IdP) provided username [true/false] | [optional] [default to &#39;false&#39;]
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
-**name** | **String** | Producer name | 
+**name** | **String** | Dynamic secret name | 
+**passwordLength** | **String** | The length of the password to be generated | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **rdpAdminName** | **String** | RDP Admin Name | [optional] 
 **rdpAdminPwd** | **String** | RDP Admin password | [optional] 

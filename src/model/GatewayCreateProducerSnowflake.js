@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerSnowflake model module.
  * @module model/GatewayCreateProducerSnowflake
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerSnowflake {
     /**
      * Constructs a new <code>GatewayCreateProducerSnowflake</code>.
-     * GatewayCreateProducerSnowflakeCmd is a command that creates a Snowflake producer
+     * GatewayCreateProducerSnowflakeCmd is a command that creates a Snowflake producer [Deprecated: Use dynamic-secret-create-snowflake command]
      * @alias module:model/GatewayCreateProducerSnowflake
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -70,6 +70,9 @@ class GatewayCreateProducerSnowflake {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('private-key')) {
                 obj['private-key'] = ApiClient.convertToType(data['private-key'], 'String');
@@ -143,10 +146,16 @@ GatewayCreateProducerSnowflake.prototype['delete_protection'] = undefined;
 GatewayCreateProducerSnowflake.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerSnowflake.prototype['name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayCreateProducerSnowflake.prototype['password-length'] = undefined;
 
 /**
  * RSA Private key (base64 encoded)

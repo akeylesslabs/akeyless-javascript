@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
 **enableAdminRotation** | **Boolean** | Automatic admin credentials rotation | [optional] [default to false]
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
-**name** | **String** | Producer name | 
+**name** | **String** | Dynamic secret name | 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **region** | **String** | Region | [optional] [default to &#39;us-east-2&#39;]
 **secureAccessAwsAccountId** | **String** | The AWS account id | [optional] 

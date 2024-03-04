@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerPostgreSQL model module.
  * @module model/GatewayCreateProducerPostgreSQL
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerPostgreSQL {
     /**
      * Constructs a new <code>GatewayCreateProducerPostgreSQL</code>.
-     * gatewayCreateProducerPostgreSQL is a command that creates postgresql producer
+     * gatewayCreateProducerPostgreSQL is a command that creates postgresql producer [Deprecated: Use dynamic-secret-create-postgresql command]
      * @alias module:model/GatewayCreateProducerPostgreSQL
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -61,6 +61,9 @@ class GatewayCreateProducerPostgreSQL {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('postgresql-db-name')) {
                 obj['postgresql-db-name'] = ApiClient.convertToType(data['postgresql-db-name'], 'String');
@@ -143,10 +146,16 @@ GatewayCreateProducerPostgreSQL.prototype['delete_protection'] = undefined;
 GatewayCreateProducerPostgreSQL.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerPostgreSQL.prototype['name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayCreateProducerPostgreSQL.prototype['password-length'] = undefined;
 
 /**
  * PostgreSQL DB Name

@@ -8,8 +8,9 @@ Name | Type | Description | Notes
 **deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
 **host** | **String** | Redis Host | [optional] [default to &#39;127.0.0.1&#39;]
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
-**name** | **String** | Producer name | 
+**name** | **String** | Dynamic secret name | 
 **password** | **String** | Redis Password | [optional] 
+**passwordLength** | **String** | The length of the password to be generated | [optional] 
 **port** | **String** | Redis Port | [optional] [default to &#39;6379&#39;]
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **ssl** | **Boolean** | Enable/Disable SSL [true/false] | [optional] [default to false]

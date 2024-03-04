@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayRevokeTmpUsers model module.
  * @module model/GatewayRevokeTmpUsers
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayRevokeTmpUsers {
     /**
      * Constructs a new <code>GatewayRevokeTmpUsers</code>.
-     * gatewayRevokeTmpUsers is a command that revoke producer tmp user
+     * gatewayRevokeTmpUsers is a command that revoke producer tmp user [Deprecated: Use dynamic-secret-tmp-creds-delete command]
      * @alias module:model/GatewayRevokeTmpUsers
-     * @param name {String} Producer Name
+     * @param name {String} Dynamic secret name
      * @param tmpCredsId {String} Tmp Creds ID
      */
     constructor(name, tmpCredsId) { 
@@ -84,7 +84,7 @@ class GatewayRevokeTmpUsers {
 }
 
 /**
- * Deprecated: has no effect
+ * Host
  * @member {String} host
  */
 GatewayRevokeTmpUsers.prototype['host'] = undefined;
@@ -97,7 +97,7 @@ GatewayRevokeTmpUsers.prototype['host'] = undefined;
 GatewayRevokeTmpUsers.prototype['json'] = false;
 
 /**
- * Producer Name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayRevokeTmpUsers.prototype['name'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateItem model module.
  * @module model/GatewayUpdateItem
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateItem {
     /**
@@ -85,6 +85,9 @@ class GatewayUpdateItem {
             if (data.hasOwnProperty('gcp-service-account-key-id')) {
                 obj['gcp-service-account-key-id'] = ApiClient.convertToType(data['gcp-service-account-key-id'], 'String');
             }
+            if (data.hasOwnProperty('grace-rotation')) {
+                obj['grace-rotation'] = ApiClient.convertToType(data['grace-rotation'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -105,6 +108,9 @@ class GatewayUpdateItem {
             }
             if (data.hasOwnProperty('new-version')) {
                 obj['new-version'] = ApiClient.convertToType(data['new-version'], 'Boolean');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('rm-tag')) {
                 obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
@@ -208,6 +214,12 @@ GatewayUpdateItem.prototype['gcp-service-account-email'] = undefined;
 GatewayUpdateItem.prototype['gcp-service-account-key-id'] = undefined;
 
 /**
+ * Create a new access key without deleting the old key from AWS for backup (relevant only for AWS) [true/false]
+ * @member {String} grace-rotation
+ */
+GatewayUpdateItem.prototype['grace-rotation'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  * @default false
@@ -250,6 +262,12 @@ GatewayUpdateItem.prototype['new-name'] = undefined;
  * @member {Boolean} new-version
  */
 GatewayUpdateItem.prototype['new-version'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayUpdateItem.prototype['password-length'] = undefined;
 
 /**
  * List of the existent tags that will be removed from this item

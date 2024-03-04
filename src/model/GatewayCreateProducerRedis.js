@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRedis model module.
  * @module model/GatewayCreateProducerRedis
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerRedis {
     /**
      * Constructs a new <code>GatewayCreateProducerRedis</code>.
-     * gatewayCreateProducerRedis is a command that creates Redis producer
+     * gatewayCreateProducerRedis is a command that creates Redis producer [Deprecated: Use dynamic-secret-create-redis command]
      * @alias module:model/GatewayCreateProducerRedis
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -67,6 +67,9 @@ class GatewayCreateProducerRedis {
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
@@ -132,7 +135,7 @@ GatewayCreateProducerRedis.prototype['host'] = '127.0.0.1';
 GatewayCreateProducerRedis.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerRedis.prototype['name'] = undefined;
@@ -142,6 +145,12 @@ GatewayCreateProducerRedis.prototype['name'] = undefined;
  * @member {String} password
  */
 GatewayCreateProducerRedis.prototype['password'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayCreateProducerRedis.prototype['password-length'] = undefined;
 
 /**
  * Redis Port

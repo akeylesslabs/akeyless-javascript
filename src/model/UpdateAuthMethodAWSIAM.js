@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAWSIAM model module.
  * @module model/UpdateAuthMethodAWSIAM
- * @version 3.6.1
+ * @version 3.6.2
  */
 class UpdateAuthMethodAWSIAM {
     /**
@@ -99,6 +99,9 @@ class UpdateAuthMethodAWSIAM {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('sts-url')) {
                 obj['sts-url'] = ApiClient.convertToType(data['sts-url'], 'String');
@@ -214,6 +217,12 @@ UpdateAuthMethodAWSIAM.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateAuthMethodAWSIAM.prototype['new-name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+UpdateAuthMethodAWSIAM.prototype['product-type'] = undefined;
 
 /**
  * sts URL

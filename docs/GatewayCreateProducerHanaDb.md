@@ -13,7 +13,8 @@ Name | Type | Description | Notes
 **hanadbRevocationStatements** | **String** | HanaDb Revocation statements | [optional] 
 **hanadbUsername** | **String** | HanaDb Username | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
-**name** | **String** | Producer name | 
+**name** | **String** | Dynamic secret name | 
+**passwordLength** | **String** | The length of the password to be generated | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **secureAccessBastionIssuer** | **String** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
 **secureAccessDbSchema** | **String** | The DB schema | [optional] 

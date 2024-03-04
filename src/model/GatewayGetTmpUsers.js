@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetTmpUsers model module.
  * @module model/GatewayGetTmpUsers
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayGetTmpUsers {
     /**
      * Constructs a new <code>GatewayGetTmpUsers</code>.
-     * gatewayGetTmpUsers is a command that returns gateway configuration
+     * gatewayGetTmpUsers is a command that returns gateway configuration [Deprecated: Use dynamic-secret-tmp-creds-get command]
      * @alias module:model/GatewayGetTmpUsers
-     * @param name {String} Producer Name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -77,7 +77,7 @@ class GatewayGetTmpUsers {
 GatewayGetTmpUsers.prototype['json'] = false;
 
 /**
- * Producer Name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayGetTmpUsers.prototype['name'] = undefined;

@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerNativeK8S model module.
  * @module model/GatewayUpdateProducerNativeK8S
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayUpdateProducerNativeK8S {
     /**
      * Constructs a new <code>GatewayUpdateProducerNativeK8S</code>.
-     * gatewayUpdateProducerNativeK8S is a command that updates k8s producer
+     * gatewayUpdateProducerNativeK8S is a command that updates k8s producer [Deprecated: Use dynamic-secret-update-k8s command]
      * @alias module:model/GatewayUpdateProducerNativeK8S
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -218,13 +218,13 @@ GatewayUpdateProducerNativeK8S.prototype['k8s-service-account'] = undefined;
 GatewayUpdateProducerNativeK8S.prototype['k8s-service-account-type'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayUpdateProducerNativeK8S.prototype['name'] = undefined;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} new-name
  */
 GatewayUpdateProducerNativeK8S.prototype['new-name'] = undefined;

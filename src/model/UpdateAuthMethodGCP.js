@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodGCP model module.
  * @module model/UpdateAuthMethodGCP
- * @version 3.6.1
+ * @version 3.6.2
  */
 class UpdateAuthMethodGCP {
     /**
@@ -98,6 +98,9 @@ class UpdateAuthMethodGCP {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('service-account-creds-data')) {
                 obj['service-account-creds-data'] = ApiClient.convertToType(data['service-account-creds-data'], 'String');
@@ -211,6 +214,12 @@ UpdateAuthMethodGCP.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateAuthMethodGCP.prototype['new-name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+UpdateAuthMethodGCP.prototype['product-type'] = undefined;
 
 /**
  * ServiceAccount credentials data instead of giving a file path, base64 encoded

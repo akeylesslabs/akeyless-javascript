@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **deletePreviousVersionInDays** | **Number** |  | [optional] 
+**graceRotation** | **Boolean** |  | [optional] 
 **gwClusterId** | **Number** |  | [optional] 
 **lastRotationError** | **String** |  | [optional] 
 **numberOfVersionsToSave** | **Number** |  | [optional] 

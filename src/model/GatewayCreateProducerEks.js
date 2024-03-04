@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerEks model module.
  * @module model/GatewayCreateProducerEks
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerEks {
     /**
      * Constructs a new <code>GatewayCreateProducerEks</code>.
-     * gatewayCreateProducerEks is a command that creates eks producer
+     * gatewayCreateProducerEks is a command that creates eks producer [Deprecated: Use dynamic-secret-create-eks command]
      * @alias module:model/GatewayCreateProducerEks
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -177,7 +177,7 @@ GatewayCreateProducerEks.prototype['eks-secret-access-key'] = undefined;
 GatewayCreateProducerEks.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerEks.prototype['name'] = undefined;

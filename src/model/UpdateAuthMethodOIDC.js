@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOIDC model module.
  * @module model/UpdateAuthMethodOIDC
- * @version 3.6.1
+ * @version 3.6.2
  */
 class UpdateAuthMethodOIDC {
     /**
@@ -93,6 +93,9 @@ class UpdateAuthMethodOIDC {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('required-scopes')) {
                 obj['required-scopes'] = ApiClient.convertToType(data['required-scopes'], ['String']);
@@ -205,6 +208,12 @@ UpdateAuthMethodOIDC.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateAuthMethodOIDC.prototype['new-name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+UpdateAuthMethodOIDC.prototype['product-type'] = undefined;
 
 /**
  * RequiredScopes is a list of required scopes that the oidc method will request from the oidc provider and the user must approve

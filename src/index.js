@@ -127,6 +127,8 @@ import CreateGlobalSignAtlasTarget from './model/CreateGlobalSignAtlasTarget';
 import CreateGlobalSignAtlasTargetOutput from './model/CreateGlobalSignAtlasTargetOutput';
 import CreateGlobalSignTarget from './model/CreateGlobalSignTarget';
 import CreateGlobalSignTargetOutput from './model/CreateGlobalSignTargetOutput';
+import CreateGodaddyTarget from './model/CreateGodaddyTarget';
+import CreateGodaddyTargetOutput from './model/CreateGodaddyTargetOutput';
 import CreateGroup from './model/CreateGroup';
 import CreateGroupOutput from './model/CreateGroupOutput';
 import CreateKey from './model/CreateKey';
@@ -171,8 +173,8 @@ import CreateWindowsTargetOutput from './model/CreateWindowsTargetOutput';
 import CreateZeroSSLTarget from './model/CreateZeroSSLTarget';
 import CreateZeroSSLTargetOutput from './model/CreateZeroSSLTargetOutput';
 import CustomTargetDetails from './model/CustomTargetDetails';
-import CustomerFragment from './model/CustomerFragment';
-import CustomerFragmentsJson from './model/CustomerFragmentsJson';
+import CustomerFragmentConfig from './model/CustomerFragmentConfig';
+import CustomerFragmentsConfigJson from './model/CustomerFragmentsConfigJson';
 import CustomerFullAddress from './model/CustomerFullAddress';
 import DSProducerDetails from './model/DSProducerDetails';
 import DataProtectionSection from './model/DataProtectionSection';
@@ -221,7 +223,70 @@ import DescribeSubClaimsOutput from './model/DescribeSubClaimsOutput';
 import Detokenize from './model/Detokenize';
 import DetokenizeOutput from './model/DetokenizeOutput';
 import DockerhubTargetDetails from './model/DockerhubTargetDetails';
+import DynamicSecretCreateArtifactory from './model/DynamicSecretCreateArtifactory';
+import DynamicSecretCreateAws from './model/DynamicSecretCreateAws';
+import DynamicSecretCreateAzure from './model/DynamicSecretCreateAzure';
+import DynamicSecretCreateCassandra from './model/DynamicSecretCreateCassandra';
+import DynamicSecretCreateChef from './model/DynamicSecretCreateChef';
+import DynamicSecretCreateCustom from './model/DynamicSecretCreateCustom';
+import DynamicSecretCreateDockerhub from './model/DynamicSecretCreateDockerhub';
+import DynamicSecretCreateEks from './model/DynamicSecretCreateEks';
+import DynamicSecretCreateGcp from './model/DynamicSecretCreateGcp';
+import DynamicSecretCreateGithub from './model/DynamicSecretCreateGithub';
+import DynamicSecretCreateGke from './model/DynamicSecretCreateGke';
+import DynamicSecretCreateHanaDb from './model/DynamicSecretCreateHanaDb';
+import DynamicSecretCreateK8s from './model/DynamicSecretCreateK8s';
+import DynamicSecretCreateLdap from './model/DynamicSecretCreateLdap';
+import DynamicSecretCreateMongoDb from './model/DynamicSecretCreateMongoDb';
+import DynamicSecretCreateMsSql from './model/DynamicSecretCreateMsSql';
+import DynamicSecretCreateMySql from './model/DynamicSecretCreateMySql';
+import DynamicSecretCreateOracleDb from './model/DynamicSecretCreateOracleDb';
+import DynamicSecretCreateOutput from './model/DynamicSecretCreateOutput';
+import DynamicSecretCreatePing from './model/DynamicSecretCreatePing';
+import DynamicSecretCreatePostgreSql from './model/DynamicSecretCreatePostgreSql';
+import DynamicSecretCreateRabbitMq from './model/DynamicSecretCreateRabbitMq';
+import DynamicSecretCreateRdp from './model/DynamicSecretCreateRdp';
+import DynamicSecretCreateRedis from './model/DynamicSecretCreateRedis';
+import DynamicSecretCreateRedshift from './model/DynamicSecretCreateRedshift';
+import DynamicSecretCreateSnowflake from './model/DynamicSecretCreateSnowflake';
+import DynamicSecretCreateVenafi from './model/DynamicSecretCreateVenafi';
+import DynamicSecretDelete from './model/DynamicSecretDelete';
+import DynamicSecretDeleteOutput from './model/DynamicSecretDeleteOutput';
+import DynamicSecretGet from './model/DynamicSecretGet';
+import DynamicSecretGetValue from './model/DynamicSecretGetValue';
+import DynamicSecretList from './model/DynamicSecretList';
+import DynamicSecretMaxTtl from './model/DynamicSecretMaxTtl';
 import DynamicSecretProducerInfo from './model/DynamicSecretProducerInfo';
+import DynamicSecretTmpCredsDelete from './model/DynamicSecretTmpCredsDelete';
+import DynamicSecretTmpCredsGet from './model/DynamicSecretTmpCredsGet';
+import DynamicSecretTmpCredsUpdate from './model/DynamicSecretTmpCredsUpdate';
+import DynamicSecretUpdateArtifactory from './model/DynamicSecretUpdateArtifactory';
+import DynamicSecretUpdateAws from './model/DynamicSecretUpdateAws';
+import DynamicSecretUpdateAzure from './model/DynamicSecretUpdateAzure';
+import DynamicSecretUpdateCassandra from './model/DynamicSecretUpdateCassandra';
+import DynamicSecretUpdateChef from './model/DynamicSecretUpdateChef';
+import DynamicSecretUpdateCustom from './model/DynamicSecretUpdateCustom';
+import DynamicSecretUpdateDockerhub from './model/DynamicSecretUpdateDockerhub';
+import DynamicSecretUpdateEks from './model/DynamicSecretUpdateEks';
+import DynamicSecretUpdateGcp from './model/DynamicSecretUpdateGcp';
+import DynamicSecretUpdateGithub from './model/DynamicSecretUpdateGithub';
+import DynamicSecretUpdateGke from './model/DynamicSecretUpdateGke';
+import DynamicSecretUpdateHanaDb from './model/DynamicSecretUpdateHanaDb';
+import DynamicSecretUpdateK8s from './model/DynamicSecretUpdateK8s';
+import DynamicSecretUpdateLdap from './model/DynamicSecretUpdateLdap';
+import DynamicSecretUpdateMongoDb from './model/DynamicSecretUpdateMongoDb';
+import DynamicSecretUpdateMsSql from './model/DynamicSecretUpdateMsSql';
+import DynamicSecretUpdateMySql from './model/DynamicSecretUpdateMySql';
+import DynamicSecretUpdateOracleDb from './model/DynamicSecretUpdateOracleDb';
+import DynamicSecretUpdateOutput from './model/DynamicSecretUpdateOutput';
+import DynamicSecretUpdatePing from './model/DynamicSecretUpdatePing';
+import DynamicSecretUpdatePostgreSql from './model/DynamicSecretUpdatePostgreSql';
+import DynamicSecretUpdateRabbitMq from './model/DynamicSecretUpdateRabbitMq';
+import DynamicSecretUpdateRdp from './model/DynamicSecretUpdateRdp';
+import DynamicSecretUpdateRedis from './model/DynamicSecretUpdateRedis';
+import DynamicSecretUpdateRedshift from './model/DynamicSecretUpdateRedshift';
+import DynamicSecretUpdateSnowflake from './model/DynamicSecretUpdateSnowflake';
+import DynamicSecretUpdateVenafi from './model/DynamicSecretUpdateVenafi';
 import EKSTargetDetails from './model/EKSTargetDetails';
 import ElasticsearchLogForwardingConfig from './model/ElasticsearchLogForwardingConfig';
 import EmailEntry from './model/EmailEntry';
@@ -246,6 +311,15 @@ import EsmListSecretsOutput from './model/EsmListSecretsOutput';
 import EsmUpdate from './model/EsmUpdate';
 import EsmUpdateSecretOutput from './model/EsmUpdateSecretOutput';
 import EventAction from './model/EventAction';
+import EventForwarderCreateEmail from './model/EventForwarderCreateEmail';
+import EventForwarderCreateUpdateOutput from './model/EventForwarderCreateUpdateOutput';
+import EventForwarderCreateWebhook from './model/EventForwarderCreateWebhook';
+import EventForwarderDelete from './model/EventForwarderDelete';
+import EventForwarderDeleteOutput from './model/EventForwarderDeleteOutput';
+import EventForwarderGet from './model/EventForwarderGet';
+import EventForwarderGetOutput from './model/EventForwarderGetOutput';
+import EventForwarderUpdateEmail from './model/EventForwarderUpdateEmail';
+import EventForwarderUpdateWebhook from './model/EventForwarderUpdateWebhook';
 import ExportClassicKey from './model/ExportClassicKey';
 import ExportClassicKeyOutput from './model/ExportClassicKeyOutput';
 import Extension from './model/Extension';
@@ -267,8 +341,6 @@ import GatewayCreateProducerAzure from './model/GatewayCreateProducerAzure';
 import GatewayCreateProducerAzureOutput from './model/GatewayCreateProducerAzureOutput';
 import GatewayCreateProducerCassandra from './model/GatewayCreateProducerCassandra';
 import GatewayCreateProducerCassandraOutput from './model/GatewayCreateProducerCassandraOutput';
-import GatewayCreateProducerCertificateAutomation from './model/GatewayCreateProducerCertificateAutomation';
-import GatewayCreateProducerCertificateAutomationOutput from './model/GatewayCreateProducerCertificateAutomationOutput';
 import GatewayCreateProducerChef from './model/GatewayCreateProducerChef';
 import GatewayCreateProducerChefOutput from './model/GatewayCreateProducerChefOutput';
 import GatewayCreateProducerCustom from './model/GatewayCreateProducerCustom';
@@ -311,6 +383,8 @@ import GatewayCreateProducerRedshift from './model/GatewayCreateProducerRedshift
 import GatewayCreateProducerRedshiftOutput from './model/GatewayCreateProducerRedshiftOutput';
 import GatewayCreateProducerSnowflake from './model/GatewayCreateProducerSnowflake';
 import GatewayCreateProducerSnowflakeOutput from './model/GatewayCreateProducerSnowflakeOutput';
+import GatewayCreateProducerVenafi from './model/GatewayCreateProducerVenafi';
+import GatewayCreateProducerVenafiOutput from './model/GatewayCreateProducerVenafiOutput';
 import GatewayDeleteAllowedAccess from './model/GatewayDeleteAllowedAccess';
 import GatewayDeleteAllowedAccessOutput from './model/GatewayDeleteAllowedAccessOutput';
 import GatewayDeleteK8SAuthConfig from './model/GatewayDeleteK8SAuthConfig';
@@ -364,8 +438,6 @@ import GatewayUpdateProducerAzure from './model/GatewayUpdateProducerAzure';
 import GatewayUpdateProducerAzureOutput from './model/GatewayUpdateProducerAzureOutput';
 import GatewayUpdateProducerCassandra from './model/GatewayUpdateProducerCassandra';
 import GatewayUpdateProducerCassandraOutput from './model/GatewayUpdateProducerCassandraOutput';
-import GatewayUpdateProducerCertificateAutomation from './model/GatewayUpdateProducerCertificateAutomation';
-import GatewayUpdateProducerCertificateAutomationOutput from './model/GatewayUpdateProducerCertificateAutomationOutput';
 import GatewayUpdateProducerChef from './model/GatewayUpdateProducerChef';
 import GatewayUpdateProducerChefOutput from './model/GatewayUpdateProducerChefOutput';
 import GatewayUpdateProducerCustom from './model/GatewayUpdateProducerCustom';
@@ -408,6 +480,8 @@ import GatewayUpdateProducerRedshift from './model/GatewayUpdateProducerRedshift
 import GatewayUpdateProducerRedshiftOutput from './model/GatewayUpdateProducerRedshiftOutput';
 import GatewayUpdateProducerSnowflake from './model/GatewayUpdateProducerSnowflake';
 import GatewayUpdateProducerSnowflakeOutput from './model/GatewayUpdateProducerSnowflakeOutput';
+import GatewayUpdateProducerVenafi from './model/GatewayUpdateProducerVenafi';
+import GatewayUpdateProducerVenafiOutput from './model/GatewayUpdateProducerVenafiOutput';
 import GatewayUpdateTlsCert from './model/GatewayUpdateTlsCert';
 import GatewayUpdateTlsCertOutput from './model/GatewayUpdateTlsCertOutput';
 import GatewayUpdateTmpUsers from './model/GatewayUpdateTmpUsers';
@@ -448,6 +522,7 @@ import GetUserEventStatusOutput from './model/GetUserEventStatusOutput';
 import GithubTargetDetails from './model/GithubTargetDetails';
 import GlobalSignAtlasTargetDetails from './model/GlobalSignAtlasTargetDetails';
 import GlobalSignGCCTargetDetails from './model/GlobalSignGCCTargetDetails';
+import GodaddyTargetDetails from './model/GodaddyTargetDetails';
 import GoogleChronicleForwardingConfig from './model/GoogleChronicleForwardingConfig';
 import Group from './model/Group';
 import GwClusterIdentity from './model/GwClusterIdentity';
@@ -575,8 +650,49 @@ import RotateKeyOutput from './model/RotateKeyOutput';
 import RotateOidcClientOutput from './model/RotateOidcClientOutput';
 import RotateOidcClientSecret from './model/RotateOidcClientSecret';
 import RotateSecret from './model/RotateSecret';
+import RotatedSecretCreateAws from './model/RotatedSecretCreateAws';
+import RotatedSecretCreateAzure from './model/RotatedSecretCreateAzure';
+import RotatedSecretCreateCassandra from './model/RotatedSecretCreateCassandra';
+import RotatedSecretCreateCustom from './model/RotatedSecretCreateCustom';
+import RotatedSecretCreateDockerhub from './model/RotatedSecretCreateDockerhub';
+import RotatedSecretCreateGcp from './model/RotatedSecretCreateGcp';
+import RotatedSecretCreateHanadb from './model/RotatedSecretCreateHanadb';
+import RotatedSecretCreateLdap from './model/RotatedSecretCreateLdap';
+import RotatedSecretCreateMongodb from './model/RotatedSecretCreateMongodb';
+import RotatedSecretCreateMssql from './model/RotatedSecretCreateMssql';
+import RotatedSecretCreateMysql from './model/RotatedSecretCreateMysql';
+import RotatedSecretCreateOracledb from './model/RotatedSecretCreateOracledb';
+import RotatedSecretCreateOutput from './model/RotatedSecretCreateOutput';
+import RotatedSecretCreatePostgresql from './model/RotatedSecretCreatePostgresql';
+import RotatedSecretCreateRedis from './model/RotatedSecretCreateRedis';
+import RotatedSecretCreateRedshift from './model/RotatedSecretCreateRedshift';
+import RotatedSecretCreateSnowflake from './model/RotatedSecretCreateSnowflake';
+import RotatedSecretCreateSsh from './model/RotatedSecretCreateSsh';
+import RotatedSecretCreateWindows from './model/RotatedSecretCreateWindows';
 import RotatedSecretDetailsInfo from './model/RotatedSecretDetailsInfo';
+import RotatedSecretGetValue from './model/RotatedSecretGetValue';
+import RotatedSecretList from './model/RotatedSecretList';
 import RotatedSecretOutput from './model/RotatedSecretOutput';
+import RotatedSecretUpdateAws from './model/RotatedSecretUpdateAws';
+import RotatedSecretUpdateAzure from './model/RotatedSecretUpdateAzure';
+import RotatedSecretUpdateCassandra from './model/RotatedSecretUpdateCassandra';
+import RotatedSecretUpdateCustom from './model/RotatedSecretUpdateCustom';
+import RotatedSecretUpdateDockerhub from './model/RotatedSecretUpdateDockerhub';
+import RotatedSecretUpdateGcp from './model/RotatedSecretUpdateGcp';
+import RotatedSecretUpdateHanadb from './model/RotatedSecretUpdateHanadb';
+import RotatedSecretUpdateLdap from './model/RotatedSecretUpdateLdap';
+import RotatedSecretUpdateMongodb from './model/RotatedSecretUpdateMongodb';
+import RotatedSecretUpdateMssql from './model/RotatedSecretUpdateMssql';
+import RotatedSecretUpdateMysql from './model/RotatedSecretUpdateMysql';
+import RotatedSecretUpdateOracledb from './model/RotatedSecretUpdateOracledb';
+import RotatedSecretUpdateOutput from './model/RotatedSecretUpdateOutput';
+import RotatedSecretUpdatePostgresql from './model/RotatedSecretUpdatePostgresql';
+import RotatedSecretUpdateRedis from './model/RotatedSecretUpdateRedis';
+import RotatedSecretUpdateRedshift from './model/RotatedSecretUpdateRedshift';
+import RotatedSecretUpdateSnowflake from './model/RotatedSecretUpdateSnowflake';
+import RotatedSecretUpdateSsh from './model/RotatedSecretUpdateSsh';
+import RotatedSecretUpdateWindows from './model/RotatedSecretUpdateWindows';
+import RotationSecretMaxInterval from './model/RotationSecretMaxInterval';
 import Rotator from './model/Rotator';
 import RotatorsConfigPart from './model/RotatorsConfigPart';
 import RuleAssigner from './model/RuleAssigner';
@@ -687,6 +803,8 @@ import UpdateGlobalSignAtlasTarget from './model/UpdateGlobalSignAtlasTarget';
 import UpdateGlobalSignAtlasTargetOutput from './model/UpdateGlobalSignAtlasTargetOutput';
 import UpdateGlobalSignTarget from './model/UpdateGlobalSignTarget';
 import UpdateGlobalSignTargetOutput from './model/UpdateGlobalSignTargetOutput';
+import UpdateGodaddyTarget from './model/UpdateGodaddyTarget';
+import UpdateGodaddyTargetOutput from './model/UpdateGodaddyTargetOutput';
 import UpdateGroup from './model/UpdateGroup';
 import UpdateGroupOutput from './model/UpdateGroupOutput';
 import UpdateItem from './model/UpdateItem';
@@ -756,6 +874,7 @@ import VerifyPKCS1 from './model/VerifyPKCS1';
 import VerifyPKICertOutput from './model/VerifyPKICertOutput';
 import VerifyPKICertWithClassicKey from './model/VerifyPKICertWithClassicKey';
 import VerifyRsaSsaPss from './model/VerifyRsaSsaPss';
+import WebHookNotiForwarderPublicDetails from './model/WebHookNotiForwarderPublicDetails';
 import WebTargetDetails from './model/WebTargetDetails';
 import WindowsService from './model/WindowsService';
 import WindowsServiceAttributes from './model/WindowsServiceAttributes';
@@ -793,7 +912,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.6.1
+* @version 3.6.2
 */
 export {
     /**
@@ -1487,6 +1606,18 @@ export {
     CreateGlobalSignTargetOutput,
 
     /**
+     * The CreateGodaddyTarget model constructor.
+     * @property {module:model/CreateGodaddyTarget}
+     */
+    CreateGodaddyTarget,
+
+    /**
+     * The CreateGodaddyTargetOutput model constructor.
+     * @property {module:model/CreateGodaddyTargetOutput}
+     */
+    CreateGodaddyTargetOutput,
+
+    /**
      * The CreateGroup model constructor.
      * @property {module:model/CreateGroup}
      */
@@ -1751,16 +1882,16 @@ export {
     CustomTargetDetails,
 
     /**
-     * The CustomerFragment model constructor.
-     * @property {module:model/CustomerFragment}
+     * The CustomerFragmentConfig model constructor.
+     * @property {module:model/CustomerFragmentConfig}
      */
-    CustomerFragment,
+    CustomerFragmentConfig,
 
     /**
-     * The CustomerFragmentsJson model constructor.
-     * @property {module:model/CustomerFragmentsJson}
+     * The CustomerFragmentsConfigJson model constructor.
+     * @property {module:model/CustomerFragmentsConfigJson}
      */
-    CustomerFragmentsJson,
+    CustomerFragmentsConfigJson,
 
     /**
      * The CustomerFullAddress model constructor.
@@ -2051,10 +2182,388 @@ export {
     DockerhubTargetDetails,
 
     /**
+     * The DynamicSecretCreateArtifactory model constructor.
+     * @property {module:model/DynamicSecretCreateArtifactory}
+     */
+    DynamicSecretCreateArtifactory,
+
+    /**
+     * The DynamicSecretCreateAws model constructor.
+     * @property {module:model/DynamicSecretCreateAws}
+     */
+    DynamicSecretCreateAws,
+
+    /**
+     * The DynamicSecretCreateAzure model constructor.
+     * @property {module:model/DynamicSecretCreateAzure}
+     */
+    DynamicSecretCreateAzure,
+
+    /**
+     * The DynamicSecretCreateCassandra model constructor.
+     * @property {module:model/DynamicSecretCreateCassandra}
+     */
+    DynamicSecretCreateCassandra,
+
+    /**
+     * The DynamicSecretCreateChef model constructor.
+     * @property {module:model/DynamicSecretCreateChef}
+     */
+    DynamicSecretCreateChef,
+
+    /**
+     * The DynamicSecretCreateCustom model constructor.
+     * @property {module:model/DynamicSecretCreateCustom}
+     */
+    DynamicSecretCreateCustom,
+
+    /**
+     * The DynamicSecretCreateDockerhub model constructor.
+     * @property {module:model/DynamicSecretCreateDockerhub}
+     */
+    DynamicSecretCreateDockerhub,
+
+    /**
+     * The DynamicSecretCreateEks model constructor.
+     * @property {module:model/DynamicSecretCreateEks}
+     */
+    DynamicSecretCreateEks,
+
+    /**
+     * The DynamicSecretCreateGcp model constructor.
+     * @property {module:model/DynamicSecretCreateGcp}
+     */
+    DynamicSecretCreateGcp,
+
+    /**
+     * The DynamicSecretCreateGithub model constructor.
+     * @property {module:model/DynamicSecretCreateGithub}
+     */
+    DynamicSecretCreateGithub,
+
+    /**
+     * The DynamicSecretCreateGke model constructor.
+     * @property {module:model/DynamicSecretCreateGke}
+     */
+    DynamicSecretCreateGke,
+
+    /**
+     * The DynamicSecretCreateHanaDb model constructor.
+     * @property {module:model/DynamicSecretCreateHanaDb}
+     */
+    DynamicSecretCreateHanaDb,
+
+    /**
+     * The DynamicSecretCreateK8s model constructor.
+     * @property {module:model/DynamicSecretCreateK8s}
+     */
+    DynamicSecretCreateK8s,
+
+    /**
+     * The DynamicSecretCreateLdap model constructor.
+     * @property {module:model/DynamicSecretCreateLdap}
+     */
+    DynamicSecretCreateLdap,
+
+    /**
+     * The DynamicSecretCreateMongoDb model constructor.
+     * @property {module:model/DynamicSecretCreateMongoDb}
+     */
+    DynamicSecretCreateMongoDb,
+
+    /**
+     * The DynamicSecretCreateMsSql model constructor.
+     * @property {module:model/DynamicSecretCreateMsSql}
+     */
+    DynamicSecretCreateMsSql,
+
+    /**
+     * The DynamicSecretCreateMySql model constructor.
+     * @property {module:model/DynamicSecretCreateMySql}
+     */
+    DynamicSecretCreateMySql,
+
+    /**
+     * The DynamicSecretCreateOracleDb model constructor.
+     * @property {module:model/DynamicSecretCreateOracleDb}
+     */
+    DynamicSecretCreateOracleDb,
+
+    /**
+     * The DynamicSecretCreateOutput model constructor.
+     * @property {module:model/DynamicSecretCreateOutput}
+     */
+    DynamicSecretCreateOutput,
+
+    /**
+     * The DynamicSecretCreatePing model constructor.
+     * @property {module:model/DynamicSecretCreatePing}
+     */
+    DynamicSecretCreatePing,
+
+    /**
+     * The DynamicSecretCreatePostgreSql model constructor.
+     * @property {module:model/DynamicSecretCreatePostgreSql}
+     */
+    DynamicSecretCreatePostgreSql,
+
+    /**
+     * The DynamicSecretCreateRabbitMq model constructor.
+     * @property {module:model/DynamicSecretCreateRabbitMq}
+     */
+    DynamicSecretCreateRabbitMq,
+
+    /**
+     * The DynamicSecretCreateRdp model constructor.
+     * @property {module:model/DynamicSecretCreateRdp}
+     */
+    DynamicSecretCreateRdp,
+
+    /**
+     * The DynamicSecretCreateRedis model constructor.
+     * @property {module:model/DynamicSecretCreateRedis}
+     */
+    DynamicSecretCreateRedis,
+
+    /**
+     * The DynamicSecretCreateRedshift model constructor.
+     * @property {module:model/DynamicSecretCreateRedshift}
+     */
+    DynamicSecretCreateRedshift,
+
+    /**
+     * The DynamicSecretCreateSnowflake model constructor.
+     * @property {module:model/DynamicSecretCreateSnowflake}
+     */
+    DynamicSecretCreateSnowflake,
+
+    /**
+     * The DynamicSecretCreateVenafi model constructor.
+     * @property {module:model/DynamicSecretCreateVenafi}
+     */
+    DynamicSecretCreateVenafi,
+
+    /**
+     * The DynamicSecretDelete model constructor.
+     * @property {module:model/DynamicSecretDelete}
+     */
+    DynamicSecretDelete,
+
+    /**
+     * The DynamicSecretDeleteOutput model constructor.
+     * @property {module:model/DynamicSecretDeleteOutput}
+     */
+    DynamicSecretDeleteOutput,
+
+    /**
+     * The DynamicSecretGet model constructor.
+     * @property {module:model/DynamicSecretGet}
+     */
+    DynamicSecretGet,
+
+    /**
+     * The DynamicSecretGetValue model constructor.
+     * @property {module:model/DynamicSecretGetValue}
+     */
+    DynamicSecretGetValue,
+
+    /**
+     * The DynamicSecretList model constructor.
+     * @property {module:model/DynamicSecretList}
+     */
+    DynamicSecretList,
+
+    /**
+     * The DynamicSecretMaxTtl model constructor.
+     * @property {module:model/DynamicSecretMaxTtl}
+     */
+    DynamicSecretMaxTtl,
+
+    /**
      * The DynamicSecretProducerInfo model constructor.
      * @property {module:model/DynamicSecretProducerInfo}
      */
     DynamicSecretProducerInfo,
+
+    /**
+     * The DynamicSecretTmpCredsDelete model constructor.
+     * @property {module:model/DynamicSecretTmpCredsDelete}
+     */
+    DynamicSecretTmpCredsDelete,
+
+    /**
+     * The DynamicSecretTmpCredsGet model constructor.
+     * @property {module:model/DynamicSecretTmpCredsGet}
+     */
+    DynamicSecretTmpCredsGet,
+
+    /**
+     * The DynamicSecretTmpCredsUpdate model constructor.
+     * @property {module:model/DynamicSecretTmpCredsUpdate}
+     */
+    DynamicSecretTmpCredsUpdate,
+
+    /**
+     * The DynamicSecretUpdateArtifactory model constructor.
+     * @property {module:model/DynamicSecretUpdateArtifactory}
+     */
+    DynamicSecretUpdateArtifactory,
+
+    /**
+     * The DynamicSecretUpdateAws model constructor.
+     * @property {module:model/DynamicSecretUpdateAws}
+     */
+    DynamicSecretUpdateAws,
+
+    /**
+     * The DynamicSecretUpdateAzure model constructor.
+     * @property {module:model/DynamicSecretUpdateAzure}
+     */
+    DynamicSecretUpdateAzure,
+
+    /**
+     * The DynamicSecretUpdateCassandra model constructor.
+     * @property {module:model/DynamicSecretUpdateCassandra}
+     */
+    DynamicSecretUpdateCassandra,
+
+    /**
+     * The DynamicSecretUpdateChef model constructor.
+     * @property {module:model/DynamicSecretUpdateChef}
+     */
+    DynamicSecretUpdateChef,
+
+    /**
+     * The DynamicSecretUpdateCustom model constructor.
+     * @property {module:model/DynamicSecretUpdateCustom}
+     */
+    DynamicSecretUpdateCustom,
+
+    /**
+     * The DynamicSecretUpdateDockerhub model constructor.
+     * @property {module:model/DynamicSecretUpdateDockerhub}
+     */
+    DynamicSecretUpdateDockerhub,
+
+    /**
+     * The DynamicSecretUpdateEks model constructor.
+     * @property {module:model/DynamicSecretUpdateEks}
+     */
+    DynamicSecretUpdateEks,
+
+    /**
+     * The DynamicSecretUpdateGcp model constructor.
+     * @property {module:model/DynamicSecretUpdateGcp}
+     */
+    DynamicSecretUpdateGcp,
+
+    /**
+     * The DynamicSecretUpdateGithub model constructor.
+     * @property {module:model/DynamicSecretUpdateGithub}
+     */
+    DynamicSecretUpdateGithub,
+
+    /**
+     * The DynamicSecretUpdateGke model constructor.
+     * @property {module:model/DynamicSecretUpdateGke}
+     */
+    DynamicSecretUpdateGke,
+
+    /**
+     * The DynamicSecretUpdateHanaDb model constructor.
+     * @property {module:model/DynamicSecretUpdateHanaDb}
+     */
+    DynamicSecretUpdateHanaDb,
+
+    /**
+     * The DynamicSecretUpdateK8s model constructor.
+     * @property {module:model/DynamicSecretUpdateK8s}
+     */
+    DynamicSecretUpdateK8s,
+
+    /**
+     * The DynamicSecretUpdateLdap model constructor.
+     * @property {module:model/DynamicSecretUpdateLdap}
+     */
+    DynamicSecretUpdateLdap,
+
+    /**
+     * The DynamicSecretUpdateMongoDb model constructor.
+     * @property {module:model/DynamicSecretUpdateMongoDb}
+     */
+    DynamicSecretUpdateMongoDb,
+
+    /**
+     * The DynamicSecretUpdateMsSql model constructor.
+     * @property {module:model/DynamicSecretUpdateMsSql}
+     */
+    DynamicSecretUpdateMsSql,
+
+    /**
+     * The DynamicSecretUpdateMySql model constructor.
+     * @property {module:model/DynamicSecretUpdateMySql}
+     */
+    DynamicSecretUpdateMySql,
+
+    /**
+     * The DynamicSecretUpdateOracleDb model constructor.
+     * @property {module:model/DynamicSecretUpdateOracleDb}
+     */
+    DynamicSecretUpdateOracleDb,
+
+    /**
+     * The DynamicSecretUpdateOutput model constructor.
+     * @property {module:model/DynamicSecretUpdateOutput}
+     */
+    DynamicSecretUpdateOutput,
+
+    /**
+     * The DynamicSecretUpdatePing model constructor.
+     * @property {module:model/DynamicSecretUpdatePing}
+     */
+    DynamicSecretUpdatePing,
+
+    /**
+     * The DynamicSecretUpdatePostgreSql model constructor.
+     * @property {module:model/DynamicSecretUpdatePostgreSql}
+     */
+    DynamicSecretUpdatePostgreSql,
+
+    /**
+     * The DynamicSecretUpdateRabbitMq model constructor.
+     * @property {module:model/DynamicSecretUpdateRabbitMq}
+     */
+    DynamicSecretUpdateRabbitMq,
+
+    /**
+     * The DynamicSecretUpdateRdp model constructor.
+     * @property {module:model/DynamicSecretUpdateRdp}
+     */
+    DynamicSecretUpdateRdp,
+
+    /**
+     * The DynamicSecretUpdateRedis model constructor.
+     * @property {module:model/DynamicSecretUpdateRedis}
+     */
+    DynamicSecretUpdateRedis,
+
+    /**
+     * The DynamicSecretUpdateRedshift model constructor.
+     * @property {module:model/DynamicSecretUpdateRedshift}
+     */
+    DynamicSecretUpdateRedshift,
+
+    /**
+     * The DynamicSecretUpdateSnowflake model constructor.
+     * @property {module:model/DynamicSecretUpdateSnowflake}
+     */
+    DynamicSecretUpdateSnowflake,
+
+    /**
+     * The DynamicSecretUpdateVenafi model constructor.
+     * @property {module:model/DynamicSecretUpdateVenafi}
+     */
+    DynamicSecretUpdateVenafi,
 
     /**
      * The EKSTargetDetails model constructor.
@@ -2201,6 +2710,60 @@ export {
     EventAction,
 
     /**
+     * The EventForwarderCreateEmail model constructor.
+     * @property {module:model/EventForwarderCreateEmail}
+     */
+    EventForwarderCreateEmail,
+
+    /**
+     * The EventForwarderCreateUpdateOutput model constructor.
+     * @property {module:model/EventForwarderCreateUpdateOutput}
+     */
+    EventForwarderCreateUpdateOutput,
+
+    /**
+     * The EventForwarderCreateWebhook model constructor.
+     * @property {module:model/EventForwarderCreateWebhook}
+     */
+    EventForwarderCreateWebhook,
+
+    /**
+     * The EventForwarderDelete model constructor.
+     * @property {module:model/EventForwarderDelete}
+     */
+    EventForwarderDelete,
+
+    /**
+     * The EventForwarderDeleteOutput model constructor.
+     * @property {module:model/EventForwarderDeleteOutput}
+     */
+    EventForwarderDeleteOutput,
+
+    /**
+     * The EventForwarderGet model constructor.
+     * @property {module:model/EventForwarderGet}
+     */
+    EventForwarderGet,
+
+    /**
+     * The EventForwarderGetOutput model constructor.
+     * @property {module:model/EventForwarderGetOutput}
+     */
+    EventForwarderGetOutput,
+
+    /**
+     * The EventForwarderUpdateEmail model constructor.
+     * @property {module:model/EventForwarderUpdateEmail}
+     */
+    EventForwarderUpdateEmail,
+
+    /**
+     * The EventForwarderUpdateWebhook model constructor.
+     * @property {module:model/EventForwarderUpdateWebhook}
+     */
+    EventForwarderUpdateWebhook,
+
+    /**
      * The ExportClassicKey model constructor.
      * @property {module:model/ExportClassicKey}
      */
@@ -2325,18 +2888,6 @@ export {
      * @property {module:model/GatewayCreateProducerCassandraOutput}
      */
     GatewayCreateProducerCassandraOutput,
-
-    /**
-     * The GatewayCreateProducerCertificateAutomation model constructor.
-     * @property {module:model/GatewayCreateProducerCertificateAutomation}
-     */
-    GatewayCreateProducerCertificateAutomation,
-
-    /**
-     * The GatewayCreateProducerCertificateAutomationOutput model constructor.
-     * @property {module:model/GatewayCreateProducerCertificateAutomationOutput}
-     */
-    GatewayCreateProducerCertificateAutomationOutput,
 
     /**
      * The GatewayCreateProducerChef model constructor.
@@ -2589,6 +3140,18 @@ export {
      * @property {module:model/GatewayCreateProducerSnowflakeOutput}
      */
     GatewayCreateProducerSnowflakeOutput,
+
+    /**
+     * The GatewayCreateProducerVenafi model constructor.
+     * @property {module:model/GatewayCreateProducerVenafi}
+     */
+    GatewayCreateProducerVenafi,
+
+    /**
+     * The GatewayCreateProducerVenafiOutput model constructor.
+     * @property {module:model/GatewayCreateProducerVenafiOutput}
+     */
+    GatewayCreateProducerVenafiOutput,
 
     /**
      * The GatewayDeleteAllowedAccess model constructor.
@@ -2909,18 +3472,6 @@ export {
     GatewayUpdateProducerCassandraOutput,
 
     /**
-     * The GatewayUpdateProducerCertificateAutomation model constructor.
-     * @property {module:model/GatewayUpdateProducerCertificateAutomation}
-     */
-    GatewayUpdateProducerCertificateAutomation,
-
-    /**
-     * The GatewayUpdateProducerCertificateAutomationOutput model constructor.
-     * @property {module:model/GatewayUpdateProducerCertificateAutomationOutput}
-     */
-    GatewayUpdateProducerCertificateAutomationOutput,
-
-    /**
      * The GatewayUpdateProducerChef model constructor.
      * @property {module:model/GatewayUpdateProducerChef}
      */
@@ -3173,6 +3724,18 @@ export {
     GatewayUpdateProducerSnowflakeOutput,
 
     /**
+     * The GatewayUpdateProducerVenafi model constructor.
+     * @property {module:model/GatewayUpdateProducerVenafi}
+     */
+    GatewayUpdateProducerVenafi,
+
+    /**
+     * The GatewayUpdateProducerVenafiOutput model constructor.
+     * @property {module:model/GatewayUpdateProducerVenafiOutput}
+     */
+    GatewayUpdateProducerVenafiOutput,
+
+    /**
      * The GatewayUpdateTlsCert model constructor.
      * @property {module:model/GatewayUpdateTlsCert}
      */
@@ -3411,6 +3974,12 @@ export {
      * @property {module:model/GlobalSignGCCTargetDetails}
      */
     GlobalSignGCCTargetDetails,
+
+    /**
+     * The GodaddyTargetDetails model constructor.
+     * @property {module:model/GodaddyTargetDetails}
+     */
+    GodaddyTargetDetails,
 
     /**
      * The GoogleChronicleForwardingConfig model constructor.
@@ -4175,16 +4744,262 @@ export {
     RotateSecret,
 
     /**
+     * The RotatedSecretCreateAws model constructor.
+     * @property {module:model/RotatedSecretCreateAws}
+     */
+    RotatedSecretCreateAws,
+
+    /**
+     * The RotatedSecretCreateAzure model constructor.
+     * @property {module:model/RotatedSecretCreateAzure}
+     */
+    RotatedSecretCreateAzure,
+
+    /**
+     * The RotatedSecretCreateCassandra model constructor.
+     * @property {module:model/RotatedSecretCreateCassandra}
+     */
+    RotatedSecretCreateCassandra,
+
+    /**
+     * The RotatedSecretCreateCustom model constructor.
+     * @property {module:model/RotatedSecretCreateCustom}
+     */
+    RotatedSecretCreateCustom,
+
+    /**
+     * The RotatedSecretCreateDockerhub model constructor.
+     * @property {module:model/RotatedSecretCreateDockerhub}
+     */
+    RotatedSecretCreateDockerhub,
+
+    /**
+     * The RotatedSecretCreateGcp model constructor.
+     * @property {module:model/RotatedSecretCreateGcp}
+     */
+    RotatedSecretCreateGcp,
+
+    /**
+     * The RotatedSecretCreateHanadb model constructor.
+     * @property {module:model/RotatedSecretCreateHanadb}
+     */
+    RotatedSecretCreateHanadb,
+
+    /**
+     * The RotatedSecretCreateLdap model constructor.
+     * @property {module:model/RotatedSecretCreateLdap}
+     */
+    RotatedSecretCreateLdap,
+
+    /**
+     * The RotatedSecretCreateMongodb model constructor.
+     * @property {module:model/RotatedSecretCreateMongodb}
+     */
+    RotatedSecretCreateMongodb,
+
+    /**
+     * The RotatedSecretCreateMssql model constructor.
+     * @property {module:model/RotatedSecretCreateMssql}
+     */
+    RotatedSecretCreateMssql,
+
+    /**
+     * The RotatedSecretCreateMysql model constructor.
+     * @property {module:model/RotatedSecretCreateMysql}
+     */
+    RotatedSecretCreateMysql,
+
+    /**
+     * The RotatedSecretCreateOracledb model constructor.
+     * @property {module:model/RotatedSecretCreateOracledb}
+     */
+    RotatedSecretCreateOracledb,
+
+    /**
+     * The RotatedSecretCreateOutput model constructor.
+     * @property {module:model/RotatedSecretCreateOutput}
+     */
+    RotatedSecretCreateOutput,
+
+    /**
+     * The RotatedSecretCreatePostgresql model constructor.
+     * @property {module:model/RotatedSecretCreatePostgresql}
+     */
+    RotatedSecretCreatePostgresql,
+
+    /**
+     * The RotatedSecretCreateRedis model constructor.
+     * @property {module:model/RotatedSecretCreateRedis}
+     */
+    RotatedSecretCreateRedis,
+
+    /**
+     * The RotatedSecretCreateRedshift model constructor.
+     * @property {module:model/RotatedSecretCreateRedshift}
+     */
+    RotatedSecretCreateRedshift,
+
+    /**
+     * The RotatedSecretCreateSnowflake model constructor.
+     * @property {module:model/RotatedSecretCreateSnowflake}
+     */
+    RotatedSecretCreateSnowflake,
+
+    /**
+     * The RotatedSecretCreateSsh model constructor.
+     * @property {module:model/RotatedSecretCreateSsh}
+     */
+    RotatedSecretCreateSsh,
+
+    /**
+     * The RotatedSecretCreateWindows model constructor.
+     * @property {module:model/RotatedSecretCreateWindows}
+     */
+    RotatedSecretCreateWindows,
+
+    /**
      * The RotatedSecretDetailsInfo model constructor.
      * @property {module:model/RotatedSecretDetailsInfo}
      */
     RotatedSecretDetailsInfo,
 
     /**
+     * The RotatedSecretGetValue model constructor.
+     * @property {module:model/RotatedSecretGetValue}
+     */
+    RotatedSecretGetValue,
+
+    /**
+     * The RotatedSecretList model constructor.
+     * @property {module:model/RotatedSecretList}
+     */
+    RotatedSecretList,
+
+    /**
      * The RotatedSecretOutput model constructor.
      * @property {module:model/RotatedSecretOutput}
      */
     RotatedSecretOutput,
+
+    /**
+     * The RotatedSecretUpdateAws model constructor.
+     * @property {module:model/RotatedSecretUpdateAws}
+     */
+    RotatedSecretUpdateAws,
+
+    /**
+     * The RotatedSecretUpdateAzure model constructor.
+     * @property {module:model/RotatedSecretUpdateAzure}
+     */
+    RotatedSecretUpdateAzure,
+
+    /**
+     * The RotatedSecretUpdateCassandra model constructor.
+     * @property {module:model/RotatedSecretUpdateCassandra}
+     */
+    RotatedSecretUpdateCassandra,
+
+    /**
+     * The RotatedSecretUpdateCustom model constructor.
+     * @property {module:model/RotatedSecretUpdateCustom}
+     */
+    RotatedSecretUpdateCustom,
+
+    /**
+     * The RotatedSecretUpdateDockerhub model constructor.
+     * @property {module:model/RotatedSecretUpdateDockerhub}
+     */
+    RotatedSecretUpdateDockerhub,
+
+    /**
+     * The RotatedSecretUpdateGcp model constructor.
+     * @property {module:model/RotatedSecretUpdateGcp}
+     */
+    RotatedSecretUpdateGcp,
+
+    /**
+     * The RotatedSecretUpdateHanadb model constructor.
+     * @property {module:model/RotatedSecretUpdateHanadb}
+     */
+    RotatedSecretUpdateHanadb,
+
+    /**
+     * The RotatedSecretUpdateLdap model constructor.
+     * @property {module:model/RotatedSecretUpdateLdap}
+     */
+    RotatedSecretUpdateLdap,
+
+    /**
+     * The RotatedSecretUpdateMongodb model constructor.
+     * @property {module:model/RotatedSecretUpdateMongodb}
+     */
+    RotatedSecretUpdateMongodb,
+
+    /**
+     * The RotatedSecretUpdateMssql model constructor.
+     * @property {module:model/RotatedSecretUpdateMssql}
+     */
+    RotatedSecretUpdateMssql,
+
+    /**
+     * The RotatedSecretUpdateMysql model constructor.
+     * @property {module:model/RotatedSecretUpdateMysql}
+     */
+    RotatedSecretUpdateMysql,
+
+    /**
+     * The RotatedSecretUpdateOracledb model constructor.
+     * @property {module:model/RotatedSecretUpdateOracledb}
+     */
+    RotatedSecretUpdateOracledb,
+
+    /**
+     * The RotatedSecretUpdateOutput model constructor.
+     * @property {module:model/RotatedSecretUpdateOutput}
+     */
+    RotatedSecretUpdateOutput,
+
+    /**
+     * The RotatedSecretUpdatePostgresql model constructor.
+     * @property {module:model/RotatedSecretUpdatePostgresql}
+     */
+    RotatedSecretUpdatePostgresql,
+
+    /**
+     * The RotatedSecretUpdateRedis model constructor.
+     * @property {module:model/RotatedSecretUpdateRedis}
+     */
+    RotatedSecretUpdateRedis,
+
+    /**
+     * The RotatedSecretUpdateRedshift model constructor.
+     * @property {module:model/RotatedSecretUpdateRedshift}
+     */
+    RotatedSecretUpdateRedshift,
+
+    /**
+     * The RotatedSecretUpdateSnowflake model constructor.
+     * @property {module:model/RotatedSecretUpdateSnowflake}
+     */
+    RotatedSecretUpdateSnowflake,
+
+    /**
+     * The RotatedSecretUpdateSsh model constructor.
+     * @property {module:model/RotatedSecretUpdateSsh}
+     */
+    RotatedSecretUpdateSsh,
+
+    /**
+     * The RotatedSecretUpdateWindows model constructor.
+     * @property {module:model/RotatedSecretUpdateWindows}
+     */
+    RotatedSecretUpdateWindows,
+
+    /**
+     * The RotationSecretMaxInterval model constructor.
+     * @property {module:model/RotationSecretMaxInterval}
+     */
+    RotationSecretMaxInterval,
 
     /**
      * The Rotator model constructor.
@@ -4847,6 +5662,18 @@ export {
     UpdateGlobalSignTargetOutput,
 
     /**
+     * The UpdateGodaddyTarget model constructor.
+     * @property {module:model/UpdateGodaddyTarget}
+     */
+    UpdateGodaddyTarget,
+
+    /**
+     * The UpdateGodaddyTargetOutput model constructor.
+     * @property {module:model/UpdateGodaddyTargetOutput}
+     */
+    UpdateGodaddyTargetOutput,
+
+    /**
      * The UpdateGroup model constructor.
      * @property {module:model/UpdateGroup}
      */
@@ -5259,6 +6086,12 @@ export {
      * @property {module:model/VerifyRsaSsaPss}
      */
     VerifyRsaSsaPss,
+
+    /**
+     * The WebHookNotiForwarderPublicDetails model constructor.
+     * @property {module:model/WebHookNotiForwarderPublicDetails}
+     */
+    WebHookNotiForwarderPublicDetails,
 
     /**
      * The WebTargetDetails model constructor.

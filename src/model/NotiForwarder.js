@@ -14,11 +14,12 @@
 import ApiClient from '../ApiClient';
 import EmailEntry from './EmailEntry';
 import ItemVersion from './ItemVersion';
+import WebHookNotiForwarderPublicDetails from './WebHookNotiForwarderPublicDetails';
 
 /**
  * The NotiForwarder model module.
  * @module model/NotiForwarder
- * @version 3.6.1
+ * @version 3.6.2
  */
 class NotiForwarder {
     /**
@@ -114,6 +115,9 @@ class NotiForwarder {
             }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            }
+            if (data.hasOwnProperty('webhook_noti_forwarder_public_details')) {
+                obj['webhook_noti_forwarder_public_details'] = WebHookNotiForwarderPublicDetails.constructFromObject(data['webhook_noti_forwarder_public_details']);
             }
             if (data.hasOwnProperty('with_customer_fragment')) {
                 obj['with_customer_fragment'] = ApiClient.convertToType(data['with_customer_fragment'], 'Boolean');
@@ -236,6 +240,11 @@ NotiForwarder.prototype['user_email'] = undefined;
  * @member {String} username
  */
 NotiForwarder.prototype['username'] = undefined;
+
+/**
+ * @member {module:model/WebHookNotiForwarderPublicDetails} webhook_noti_forwarder_public_details
+ */
+NotiForwarder.prototype['webhook_noti_forwarder_public_details'] = undefined;
 
 /**
  * @member {Boolean} with_customer_fragment

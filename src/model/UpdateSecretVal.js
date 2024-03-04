@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSecretVal model module.
  * @module model/UpdateSecretVal
- * @version 3.6.1
+ * @version 3.6.2
  */
 class UpdateSecretVal {
     /**
      * Constructs a new <code>UpdateSecretVal</code>.
      * @alias module:model/UpdateSecretVal
      * @param name {String} Secret name
-     * @param value {String} The secret value (only relevant for type 'generic')
+     * @param value {String} The secret value (relevant only for type 'generic')
      */
     constructor(name, value) { 
         
@@ -56,6 +56,9 @@ class UpdateSecretVal {
             }
             if (data.hasOwnProperty('custom-field')) {
                 obj['custom-field'] = ApiClient.convertToType(data['custom-field'], {'String': 'String'});
+            }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('inject-url')) {
                 obj['inject-url'] = ApiClient.convertToType(data['inject-url'], ['String']);
@@ -115,6 +118,13 @@ UpdateSecretVal.prototype['accessibility'] = 'regular';
  * @member {Object.<String, String>} custom-field
  */
 UpdateSecretVal.prototype['custom-field'] = undefined;
+
+/**
+ * Secret format [text/json] (relevant only for type 'generic')
+ * @member {String} format
+ * @default 'text'
+ */
+UpdateSecretVal.prototype['format'] = 'text';
 
 /**
  * For Password Management use, reflect the website context
@@ -190,7 +200,7 @@ UpdateSecretVal.prototype['uid-token'] = undefined;
 UpdateSecretVal.prototype['username'] = undefined;
 
 /**
- * The secret value (only relevant for type 'generic')
+ * The secret value (relevant only for type 'generic')
  * @member {String} value
  */
 UpdateSecretVal.prototype['value'] = undefined;

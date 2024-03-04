@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodK8S model module.
  * @module model/CreateAuthMethodK8S
- * @version 3.6.1
+ * @version 3.6.2
  */
 class CreateAuthMethodK8S {
     /**
@@ -88,6 +88,9 @@ class CreateAuthMethodK8S {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('public-key')) {
                 obj['public-key'] = ApiClient.convertToType(data['public-key'], 'String');
@@ -186,6 +189,12 @@ CreateAuthMethodK8S.prototype['jwt-ttl'] = 0;
  * @member {String} name
  */
 CreateAuthMethodK8S.prototype['name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+CreateAuthMethodK8S.prototype['product-type'] = undefined;
 
 /**
  * Base64-encoded or PEM formatted public key data for K8S authentication method is required [RSA2048]

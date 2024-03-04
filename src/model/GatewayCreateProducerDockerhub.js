@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerDockerhub model module.
  * @module model/GatewayCreateProducerDockerhub
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerDockerhub {
     /**
      * Constructs a new <code>GatewayCreateProducerDockerhub</code>.
-     * gatewayCreateProducerDockerhub is a command that creates a DOCKERHUB producer
+     * gatewayCreateProducerDockerhub is a command that creates a DOCKERHUB producer [Deprecated: Use dynamic-secret-create-dockerhub command]
      * @alias module:model/GatewayCreateProducerDockerhub
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -125,7 +125,7 @@ GatewayCreateProducerDockerhub.prototype['dockerhub-username'] = undefined;
 GatewayCreateProducerDockerhub.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerDockerhub.prototype['name'] = undefined;

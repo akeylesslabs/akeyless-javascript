@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayStartProducer model module.
  * @module model/GatewayStartProducer
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayStartProducer {
     /**
      * Constructs a new <code>GatewayStartProducer</code>.
-     * gatewayStartProducer is a command that starts producer
+     * gatewayStartProducer is a command that starts producer [Deprecated: Use set-item-state command]
      * @alias module:model/GatewayStartProducer
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -77,7 +77,7 @@ class GatewayStartProducer {
 GatewayStartProducer.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayStartProducer.prototype['name'] = undefined;

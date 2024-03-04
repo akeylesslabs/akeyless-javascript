@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAWSIAM model module.
  * @module model/CreateAuthMethodAWSIAM
- * @version 3.6.1
+ * @version 3.6.2
  */
 class CreateAuthMethodAWSIAM {
     /**
@@ -96,6 +96,9 @@ class CreateAuthMethodAWSIAM {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('product-type')) {
+                obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
             if (data.hasOwnProperty('sts-url')) {
                 obj['sts-url'] = ApiClient.convertToType(data['sts-url'], 'String');
@@ -205,6 +208,12 @@ CreateAuthMethodAWSIAM.prototype['jwt-ttl'] = 0;
  * @member {String} name
  */
 CreateAuthMethodAWSIAM.prototype['name'] = undefined;
+
+/**
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * @member {Array.<String>} product-type
+ */
+CreateAuthMethodAWSIAM.prototype['product-type'] = undefined;
 
 /**
  * sts URL

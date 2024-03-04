@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRabbitMQ model module.
  * @module model/GatewayCreateProducerRabbitMQ
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerRabbitMQ {
     /**
      * Constructs a new <code>GatewayCreateProducerRabbitMQ</code>.
-     * gatewayCreateProducerRabbitMQ is a command that creates rabbitmq producer
+     * gatewayCreateProducerRabbitMQ is a command that creates rabbitmq producer [Deprecated: Use dynamic-secret-create-rabbitmq command]
      * @alias module:model/GatewayCreateProducerRabbitMQ
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -58,6 +58,9 @@ class GatewayCreateProducerRabbitMQ {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -137,10 +140,16 @@ GatewayCreateProducerRabbitMQ.prototype['delete_protection'] = undefined;
 GatewayCreateProducerRabbitMQ.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerRabbitMQ.prototype['name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayCreateProducerRabbitMQ.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

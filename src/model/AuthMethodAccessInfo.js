@@ -30,7 +30,7 @@ import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 3.6.1
+ * @version 3.6.2
  */
 class AuthMethodAccessInfo {
     /**
@@ -114,6 +114,9 @@ class AuthMethodAccessInfo {
             }
             if (data.hasOwnProperty('oidc_access_rules')) {
                 obj['oidc_access_rules'] = OIDCAccessRules.constructFromObject(data['oidc_access_rules']);
+            }
+            if (data.hasOwnProperty('product_types')) {
+                obj['product_types'] = ApiClient.convertToType(data['product_types'], ['String']);
             }
             if (data.hasOwnProperty('rules_type')) {
                 obj['rules_type'] = ApiClient.convertToType(data['rules_type'], 'String');
@@ -225,6 +228,12 @@ AuthMethodAccessInfo.prototype['oci_access_rules'] = undefined;
  * @member {module:model/OIDCAccessRules} oidc_access_rules
  */
 AuthMethodAccessInfo.prototype['oidc_access_rules'] = undefined;
+
+/**
+ * List of product types this auth method will be in use of
+ * @member {Array.<String>} product_types
+ */
+AuthMethodAccessInfo.prototype['product_types'] = undefined;
 
 /**
  * @member {String} rules_type

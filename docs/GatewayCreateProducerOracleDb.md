@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **dbServerName** | **String** | (Optional) Server name for certificate verification | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
-**name** | **String** | Producer name | 
+**name** | **String** | Dynamic secret name | 
 **oracleHost** | **String** | Oracle Host | [optional] [default to &#39;127.0.0.1&#39;]
 **oraclePassword** | **String** | Oracle Password | [optional] 
 **oraclePort** | **String** | Oracle Port | [optional] [default to &#39;1521&#39;]
@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **oracleScreationStatements** | **String** | Oracle Creation statements | [optional] 
 **oracleServiceName** | **String** | Oracle DB Name | [optional] 
 **oracleUsername** | **String** | Oracle Username | [optional] 
+**passwordLength** | **String** | The length of the password to be generated | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **secureAccessBastionIssuer** | **String** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] [default to &#39;false&#39;]

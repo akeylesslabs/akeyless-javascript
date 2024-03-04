@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPKICertificate model module.
  * @module model/GetPKICertificate
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GetPKICertificate {
     /**
@@ -63,6 +63,9 @@ class GetPKICertificate {
             }
             if (data.hasOwnProperty('extended-key-usage')) {
                 obj['extended-key-usage'] = ApiClient.convertToType(data['extended-key-usage'], 'String');
+            }
+            if (data.hasOwnProperty('extra-extensions')) {
+                obj['extra-extensions'] = ApiClient.convertToType(data['extra-extensions'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -118,6 +121,12 @@ GetPKICertificate.prototype['csr-data-base64'] = undefined;
  * @member {String} extended-key-usage
  */
 GetPKICertificate.prototype['extended-key-usage'] = undefined;
+
+/**
+ * A json string that defines the requested extra extensions for the certificate
+ * @member {String} extra-extensions
+ */
+GetPKICertificate.prototype['extra-extensions'] = undefined;
 
 /**
  * Set output format to JSON

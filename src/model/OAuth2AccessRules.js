@@ -17,7 +17,7 @@ import OAuth2CustomClaim from './OAuth2CustomClaim';
 /**
  * The OAuth2AccessRules model module.
  * @module model/OAuth2AccessRules
- * @version 3.6.1
+ * @version 3.6.2
  */
 class OAuth2AccessRules {
     /**
@@ -61,6 +61,9 @@ class OAuth2AccessRules {
             if (data.hasOwnProperty('bound_clients_id')) {
                 obj['bound_clients_id'] = ApiClient.convertToType(data['bound_clients_id'], ['String']);
             }
+            if (data.hasOwnProperty('certificate')) {
+                obj['certificate'] = ApiClient.convertToType(data['certificate'], 'String');
+            }
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
             }
@@ -103,6 +106,12 @@ OAuth2AccessRules.prototype['bound_claims'] = undefined;
  * @member {Array.<String>} bound_clients_id
  */
 OAuth2AccessRules.prototype['bound_clients_id'] = undefined;
+
+/**
+ * Certificate to use when calling jwks_uri from the gateway. in PEM format
+ * @member {String} certificate
+ */
+OAuth2AccessRules.prototype['certificate'] = undefined;
 
 /**
  * Issuer URL

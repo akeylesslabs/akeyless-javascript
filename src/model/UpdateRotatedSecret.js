@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 3.6.1
+ * @version 3.6.2
  */
 class UpdateRotatedSecret {
     /**
      * Constructs a new <code>UpdateRotatedSecret</code>.
-     * updateRotatedSecret is a command that updates rotated secret. [Deprecated: Use gateway-update-item command]
+     * updateRotatedSecret is a command that updates rotated secret. [Deprecated: Use rotated-secret update commands]
      * @alias module:model/UpdateRotatedSecret
      * @param name {String} Secret name
      */
@@ -50,6 +50,9 @@ class UpdateRotatedSecret {
         if (data) {
             obj = obj || new UpdateRotatedSecret();
 
+            if (data.hasOwnProperty('ProviderType')) {
+                obj['ProviderType'] = ApiClient.convertToType(data['ProviderType'], 'String');
+            }
             if (data.hasOwnProperty('add-tag')) {
                 obj['add-tag'] = ApiClient.convertToType(data['add-tag'], ['String']);
             }
@@ -73,6 +76,12 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('gcp-key')) {
                 obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
+            }
+            if (data.hasOwnProperty('grace-rotation')) {
+                obj['grace-rotation'] = ApiClient.convertToType(data['grace-rotation'], 'String');
+            }
+            if (data.hasOwnProperty('host-provider')) {
+                obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -152,6 +161,9 @@ class UpdateRotatedSecret {
             if (data.hasOwnProperty('secure-access-rdp-user')) {
                 obj['secure-access-rdp-user'] = ApiClient.convertToType(data['secure-access-rdp-user'], 'String');
             }
+            if (data.hasOwnProperty('secure-access-url')) {
+                obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
+            }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
             }
@@ -176,12 +188,23 @@ class UpdateRotatedSecret {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
+            if (data.hasOwnProperty('user-attribute')) {
+                obj['user-attribute'] = ApiClient.convertToType(data['user-attribute'], 'String');
+            }
+            if (data.hasOwnProperty('user-dn')) {
+                obj['user-dn'] = ApiClient.convertToType(data['user-dn'], 'String');
+            }
         }
         return obj;
     }
 
 
 }
+
+/**
+ * @member {String} ProviderType
+ */
+UpdateRotatedSecret.prototype['ProviderType'] = undefined;
 
 /**
  * List of the new tags that will be attached to this item
@@ -208,7 +231,7 @@ UpdateRotatedSecret.prototype['api-key'] = undefined;
 UpdateRotatedSecret.prototype['auto-rotate'] = undefined;
 
 /**
- * Region (used in aws)
+ * Aws Region (relevant only for aws)
  * @member {String} aws-region
  * @default 'us-east-2'
  */
@@ -232,6 +255,19 @@ UpdateRotatedSecret.prototype['description'] = 'default_metadata';
  * @member {String} gcp-key
  */
 UpdateRotatedSecret.prototype['gcp-key'] = undefined;
+
+/**
+ * Create a new access key without deleting the old key from AWS for backup (relevant only for AWS) [true/false]
+ * @member {String} grace-rotation
+ */
+UpdateRotatedSecret.prototype['grace-rotation'] = undefined;
+
+/**
+ * Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret
+ * @member {String} host-provider
+ * @default 'explicit'
+ */
+UpdateRotatedSecret.prototype['host-provider'] = 'explicit';
 
 /**
  * Set output format to JSON
@@ -395,6 +431,12 @@ UpdateRotatedSecret.prototype['secure-access-rdp-domain'] = undefined;
 UpdateRotatedSecret.prototype['secure-access-rdp-user'] = undefined;
 
 /**
+ * Destination URL to inject secrets
+ * @member {String} secure-access-url
+ */
+UpdateRotatedSecret.prototype['secure-access-url'] = undefined;
+
+/**
  * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
  * @default false
@@ -444,6 +486,19 @@ UpdateRotatedSecret.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateRotatedSecret.prototype['uid-token'] = undefined;
+
+/**
+ * LDAP User Attribute, Default value \"cn\"
+ * @member {String} user-attribute
+ * @default 'cn'
+ */
+UpdateRotatedSecret.prototype['user-attribute'] = 'cn';
+
+/**
+ * LDAP User Base DN
+ * @member {String} user-dn
+ */
+UpdateRotatedSecret.prototype['user-dn'] = undefined;
 
 
 

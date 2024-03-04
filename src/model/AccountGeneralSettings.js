@@ -13,14 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import DataProtectionSection from './DataProtectionSection';
+import DynamicSecretMaxTtl from './DynamicSecretMaxTtl';
 import PasswordPolicyInfo from './PasswordPolicyInfo';
+import RotationSecretMaxInterval from './RotationSecretMaxInterval';
 import SharingPolicyInfo from './SharingPolicyInfo';
 import UsageEventSetting from './UsageEventSetting';
 
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 3.6.1
+ * @version 3.6.2
  */
 class AccountGeneralSettings {
     /**
@@ -64,6 +66,9 @@ class AccountGeneralSettings {
             if (data.hasOwnProperty('data_protection_section')) {
                 obj['data_protection_section'] = DataProtectionSection.constructFromObject(data['data_protection_section']);
             }
+            if (data.hasOwnProperty('dynamic_secret_max_ttl')) {
+                obj['dynamic_secret_max_ttl'] = DynamicSecretMaxTtl.constructFromObject(data['dynamic_secret_max_ttl']);
+            }
             if (data.hasOwnProperty('enable_request_for_access')) {
                 obj['enable_request_for_access'] = ApiClient.convertToType(data['enable_request_for_access'], 'Boolean');
             }
@@ -81,6 +86,9 @@ class AccountGeneralSettings {
             }
             if (data.hasOwnProperty('protect_items_by_default')) {
                 obj['protect_items_by_default'] = ApiClient.convertToType(data['protect_items_by_default'], 'Boolean');
+            }
+            if (data.hasOwnProperty('rotation_secret_max_interval')) {
+                obj['rotation_secret_max_interval'] = RotationSecretMaxInterval.constructFromObject(data['rotation_secret_max_interval']);
             }
             if (data.hasOwnProperty('sharing_policy')) {
                 obj['sharing_policy'] = SharingPolicyInfo.constructFromObject(data['sharing_policy']);
@@ -115,6 +123,11 @@ AccountGeneralSettings.prototype['auth_usage_event'] = undefined;
 AccountGeneralSettings.prototype['data_protection_section'] = undefined;
 
 /**
+ * @member {module:model/DynamicSecretMaxTtl} dynamic_secret_max_ttl
+ */
+AccountGeneralSettings.prototype['dynamic_secret_max_ttl'] = undefined;
+
+/**
  * @member {Boolean} enable_request_for_access
  */
 AccountGeneralSettings.prototype['enable_request_for_access'] = undefined;
@@ -145,6 +158,11 @@ AccountGeneralSettings.prototype['password_policy'] = undefined;
  * @member {Boolean} protect_items_by_default
  */
 AccountGeneralSettings.prototype['protect_items_by_default'] = undefined;
+
+/**
+ * @member {module:model/RotationSecretMaxInterval} rotation_secret_max_interval
+ */
+AccountGeneralSettings.prototype['rotation_secret_max_interval'] = undefined;
 
 /**
  * @member {module:model/SharingPolicyInfo} sharing_policy

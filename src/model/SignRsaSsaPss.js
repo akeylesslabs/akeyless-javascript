@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignRsaSsaPss model module.
  * @module model/SignRsaSsaPss
- * @version 3.6.1
+ * @version 3.6.2
  */
 class SignRsaSsaPss {
     /**

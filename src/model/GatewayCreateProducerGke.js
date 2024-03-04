@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGke model module.
  * @module model/GatewayCreateProducerGke
- * @version 3.6.1
+ * @version 3.6.2
  */
 class GatewayCreateProducerGke {
     /**
      * Constructs a new <code>GatewayCreateProducerGke</code>.
-     * gatewayCreateProducerGke is a command that creates gke producer
+     * gatewayCreateProducerGke is a command that creates gke producer [Deprecated: Use dynamic-secret-create-gke command]
      * @alias module:model/GatewayCreateProducerGke
-     * @param name {String} Producer name
+     * @param name {String} Dynamic secret name
      */
     constructor(name) { 
         
@@ -158,7 +158,7 @@ GatewayCreateProducerGke.prototype['gke-service-account-email'] = undefined;
 GatewayCreateProducerGke.prototype['json'] = false;
 
 /**
- * Producer name
+ * Dynamic secret name
  * @member {String} name
  */
 GatewayCreateProducerGke.prototype['name'] = undefined;

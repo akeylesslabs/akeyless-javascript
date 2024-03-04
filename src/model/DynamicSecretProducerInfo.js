@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretProducerInfo model module.
  * @module model/DynamicSecretProducerInfo
- * @version 3.6.1
+ * @version 3.6.2
  */
 class DynamicSecretProducerInfo {
     /**
@@ -72,6 +72,9 @@ class DynamicSecretProducerInfo {
             if (data.hasOwnProperty('producer_type')) {
                 obj['producer_type'] = ApiClient.convertToType(data['producer_type'], 'String');
             }
+            if (data.hasOwnProperty('user_ttl')) {
+                obj['user_ttl'] = ApiClient.convertToType(data['user_ttl'], 'String');
+            }
         }
         return obj;
     }
@@ -121,6 +124,11 @@ DynamicSecretProducerInfo.prototype['producer_status'] = undefined;
  * @member {String} producer_type
  */
 DynamicSecretProducerInfo.prototype['producer_type'] = undefined;
+
+/**
+ * @member {String} user_ttl
+ */
+DynamicSecretProducerInfo.prototype['user_ttl'] = undefined;
 
 
 
