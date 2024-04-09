@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AwsS3LogForwardingConfig model module.
  * @module model/AwsS3LogForwardingConfig
- * @version 3.6.2
+ * @version 3.6.3
  */
 class AwsS3LogForwardingConfig {
     /**
@@ -53,8 +53,14 @@ class AwsS3LogForwardingConfig {
             if (data.hasOwnProperty('aws_access_key')) {
                 obj['aws_access_key'] = ApiClient.convertToType(data['aws_access_key'], 'String');
             }
+            if (data.hasOwnProperty('aws_auth_type')) {
+                obj['aws_auth_type'] = ApiClient.convertToType(data['aws_auth_type'], 'String');
+            }
             if (data.hasOwnProperty('aws_region')) {
                 obj['aws_region'] = ApiClient.convertToType(data['aws_region'], 'String');
+            }
+            if (data.hasOwnProperty('aws_role_arn')) {
+                obj['aws_role_arn'] = ApiClient.convertToType(data['aws_role_arn'], 'String');
             }
             if (data.hasOwnProperty('aws_use_gateway_cloud_identity')) {
                 obj['aws_use_gateway_cloud_identity'] = ApiClient.convertToType(data['aws_use_gateway_cloud_identity'], 'Boolean');
@@ -83,11 +89,22 @@ AwsS3LogForwardingConfig.prototype['aws_access_id'] = undefined;
 AwsS3LogForwardingConfig.prototype['aws_access_key'] = undefined;
 
 /**
+ * @member {String} aws_auth_type
+ */
+AwsS3LogForwardingConfig.prototype['aws_auth_type'] = undefined;
+
+/**
  * @member {String} aws_region
  */
 AwsS3LogForwardingConfig.prototype['aws_region'] = undefined;
 
 /**
+ * @member {String} aws_role_arn
+ */
+AwsS3LogForwardingConfig.prototype['aws_role_arn'] = undefined;
+
+/**
+ * deprecated
  * @member {Boolean} aws_use_gateway_cloud_identity
  */
 AwsS3LogForwardingConfig.prototype['aws_use_gateway_cloud_identity'] = undefined;

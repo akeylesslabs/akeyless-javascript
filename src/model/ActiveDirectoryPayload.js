@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ActiveDirectoryPayload model module.
  * @module model/ActiveDirectoryPayload
- * @version 3.6.2
+ * @version 3.6.3
  */
 class ActiveDirectoryPayload {
     /**
@@ -94,6 +94,9 @@ class ActiveDirectoryPayload {
             }
             if (data.hasOwnProperty('ssh_port')) {
                 obj['ssh_port'] = ApiClient.convertToType(data['ssh_port'], 'String');
+            }
+            if (data.hasOwnProperty('target_format')) {
+                obj['target_format'] = ApiClient.convertToType(data['target_format'], 'String');
             }
             if (data.hasOwnProperty('targets_type')) {
                 obj['targets_type'] = ApiClient.convertToType(data['targets_type'], 'String');
@@ -197,6 +200,11 @@ ActiveDirectoryPayload.prototype['os_filter'] = undefined;
  * @member {String} ssh_port
  */
 ActiveDirectoryPayload.prototype['ssh_port'] = undefined;
+
+/**
+ * @member {String} target_format
+ */
+ActiveDirectoryPayload.prototype['target_format'] = undefined;
 
 /**
  * @member {String} targets_type

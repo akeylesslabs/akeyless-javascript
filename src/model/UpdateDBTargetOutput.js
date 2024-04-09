@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTargetOutput model module.
  * @module model/UpdateDBTargetOutput
- * @version 3.6.2
+ * @version 3.6.3
  */
 class UpdateDBTargetOutput {
     /**

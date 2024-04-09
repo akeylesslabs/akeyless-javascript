@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteEventForwarder model module.
  * @module model/DeleteEventForwarder
- * @version 3.6.2
+ * @version 3.6.3
  */
 class DeleteEventForwarder {
     /**
      * Constructs a new <code>DeleteEventForwarder</code>.
+     * deleteEventForwarder is a command that creates a new event forwarder [Deprecated - please use event-forwarder-delete command]
      * @alias module:model/DeleteEventForwarder
      * @param name {String} EventForwarder name
      */

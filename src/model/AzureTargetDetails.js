@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AzureTargetDetails model module.
  * @module model/AzureTargetDetails
- * @version 3.6.2
+ * @version 3.6.3
  */
 class AzureTargetDetails {
     /**
@@ -65,6 +65,9 @@ class AzureTargetDetails {
             if (data.hasOwnProperty('azure_tenant_id')) {
                 obj['azure_tenant_id'] = ApiClient.convertToType(data['azure_tenant_id'], 'String');
             }
+            if (data.hasOwnProperty('azure_username')) {
+                obj['azure_username'] = ApiClient.convertToType(data['azure_username'], 'String');
+            }
             if (data.hasOwnProperty('use_gw_cloud_identity')) {
                 obj['use_gw_cloud_identity'] = ApiClient.convertToType(data['use_gw_cloud_identity'], 'Boolean');
             }
@@ -104,6 +107,11 @@ AzureTargetDetails.prototype['azure_subscription_id'] = undefined;
  * @member {String} azure_tenant_id
  */
 AzureTargetDetails.prototype['azure_tenant_id'] = undefined;
+
+/**
+ * @member {String} azure_username
+ */
+AzureTargetDetails.prototype['azure_username'] = undefined;
 
 /**
  * @member {Boolean} use_gw_cloud_identity

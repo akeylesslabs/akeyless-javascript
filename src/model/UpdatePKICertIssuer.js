@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 3.6.2
+ * @version 3.6.3
  */
 class UpdatePKICertIssuer {
     /**
@@ -82,6 +82,12 @@ class UpdatePKICertIssuer {
             }
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
+            }
+            if (data.hasOwnProperty('create-private-crl')) {
+                obj['create-private-crl'] = ApiClient.convertToType(data['create-private-crl'], 'Boolean');
+            }
+            if (data.hasOwnProperty('create-public-crl')) {
+                obj['create-public-crl'] = ApiClient.convertToType(data['create-public-crl'], 'Boolean');
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
@@ -229,6 +235,18 @@ UpdatePKICertIssuer.prototype['code-signing-flag'] = undefined;
 UpdatePKICertIssuer.prototype['country'] = undefined;
 
 /**
+ * Set this to allow the issuer will expose a CRL endpoint in the Gateway
+ * @member {Boolean} create-private-crl
+ */
+UpdatePKICertIssuer.prototype['create-private-crl'] = undefined;
+
+/**
+ * Set this to allow the cert issuer will expose a public CRL endpoint
+ * @member {Boolean} create-public-crl
+ */
+UpdatePKICertIssuer.prototype['create-public-crl'] = undefined;
+
+/**
  * Protection from accidental deletion of this item [true/false]
  * @member {String} delete_protection
  */
@@ -253,7 +271,7 @@ UpdatePKICertIssuer.prototype['destination-path'] = undefined;
 UpdatePKICertIssuer.prototype['expiration-event-in'] = undefined;
 
 /**
- * The GW cluster URL to issue the certificate from, required in Public CA mode
+ * The GW cluster URL to issue the certificate from, required in Public CA mode or to allow CRLs on private CA
  * @member {String} gw-cluster-url
  */
 UpdatePKICertIssuer.prototype['gw-cluster-url'] = undefined;

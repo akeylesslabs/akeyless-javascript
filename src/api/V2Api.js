@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import AkeylessGatewayConfig from '../model/AkeylessGatewayConfig';
+import AllAnalyticsData from '../model/AllAnalyticsData';
 import AllowedAccess from '../model/AllowedAccess';
 import AssocRoleAuthMethod from '../model/AssocRoleAuthMethod';
 import AssocTargetItem from '../model/AssocTargetItem';
@@ -246,6 +247,8 @@ import EsmUpdate from '../model/EsmUpdate';
 import EsmUpdateSecretOutput from '../model/EsmUpdateSecretOutput';
 import EventAction from '../model/EventAction';
 import EventForwarderCreateEmail from '../model/EventForwarderCreateEmail';
+import EventForwarderCreateServiceNow from '../model/EventForwarderCreateServiceNow';
+import EventForwarderCreateSlack from '../model/EventForwarderCreateSlack';
 import EventForwarderCreateUpdateOutput from '../model/EventForwarderCreateUpdateOutput';
 import EventForwarderCreateWebhook from '../model/EventForwarderCreateWebhook';
 import EventForwarderDelete from '../model/EventForwarderDelete';
@@ -253,6 +256,8 @@ import EventForwarderDeleteOutput from '../model/EventForwarderDeleteOutput';
 import EventForwarderGet from '../model/EventForwarderGet';
 import EventForwarderGetOutput from '../model/EventForwarderGetOutput';
 import EventForwarderUpdateEmail from '../model/EventForwarderUpdateEmail';
+import EventForwarderUpdateServiceNow from '../model/EventForwarderUpdateServiceNow';
+import EventForwarderUpdateSlack from '../model/EventForwarderUpdateSlack';
 import EventForwarderUpdateWebhook from '../model/EventForwarderUpdateWebhook';
 import ExportClassicKey from '../model/ExportClassicKey';
 import ExportClassicKeyOutput from '../model/ExportClassicKeyOutput';
@@ -416,6 +421,7 @@ import GenerateCsr from '../model/GenerateCsr';
 import GenerateCsrOutput from '../model/GenerateCsrOutput';
 import GetAccountSettings from '../model/GetAccountSettings';
 import GetAccountSettingsCommandOutput from '../model/GetAccountSettingsCommandOutput';
+import GetAnalyticsData from '../model/GetAnalyticsData';
 import GetAuthMethod from '../model/GetAuthMethod';
 import GetCertificateValue from '../model/GetCertificateValue';
 import GetCertificateValueOutput from '../model/GetCertificateValueOutput';
@@ -498,6 +504,7 @@ import RequestAccess from '../model/RequestAccess';
 import RequestAccessOutput from '../model/RequestAccessOutput';
 import ReverseRBAC from '../model/ReverseRBAC';
 import ReverseRBACOutput from '../model/ReverseRBACOutput';
+import RevokeCertificate from '../model/RevokeCertificate';
 import Role from '../model/Role';
 import RoleAssociationDetails from '../model/RoleAssociationDetails';
 import RollbackSecret from '../model/RollbackSecret';
@@ -696,7 +703,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.6.2
+* @version 3.6.3
 */
 export default class V2Api {
 
@@ -7156,6 +7163,92 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/EventForwarderCreateServiceNow} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventForwarderCreateUpdateOutput} and HTTP response
+     */
+    eventForwarderCreateServiceNowWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling eventForwarderCreateServiceNow");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EventForwarderCreateUpdateOutput;
+      return this.apiClient.callApi(
+        '/event-forwarder-create-servicenow', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EventForwarderCreateServiceNow} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventForwarderCreateUpdateOutput}
+     */
+    eventForwarderCreateServiceNow(body) {
+      return this.eventForwarderCreateServiceNowWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EventForwarderCreateSlack} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventForwarderCreateUpdateOutput} and HTTP response
+     */
+    eventForwarderCreateSlackWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling eventForwarderCreateSlack");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EventForwarderCreateUpdateOutput;
+      return this.apiClient.callApi(
+        '/event-forwarder-create-slack', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EventForwarderCreateSlack} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventForwarderCreateUpdateOutput}
+     */
+    eventForwarderCreateSlack(body) {
+      return this.eventForwarderCreateSlackWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/EventForwarderCreateWebhook} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventForwarderCreateUpdateOutput} and HTTP response
      */
@@ -7321,6 +7414,92 @@ export default class V2Api {
      */
     eventForwarderUpdateEmail(body) {
       return this.eventForwarderUpdateEmailWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EventForwarderUpdateServiceNow} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventForwarderCreateUpdateOutput} and HTTP response
+     */
+    eventForwarderUpdateServiceNowWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling eventForwarderUpdateServiceNow");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EventForwarderCreateUpdateOutput;
+      return this.apiClient.callApi(
+        '/event-forwarder-update-servicenow', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EventForwarderUpdateServiceNow} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventForwarderCreateUpdateOutput}
+     */
+    eventForwarderUpdateServiceNow(body) {
+      return this.eventForwarderUpdateServiceNowWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EventForwarderUpdateSlack} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventForwarderCreateUpdateOutput} and HTTP response
+     */
+    eventForwarderUpdateSlackWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling eventForwarderUpdateSlack");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EventForwarderCreateUpdateOutput;
+      return this.apiClient.callApi(
+        '/event-forwarder-update-slack', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EventForwarderUpdateSlack} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventForwarderCreateUpdateOutput}
+     */
+    eventForwarderUpdateSlack(body) {
+      return this.eventForwarderUpdateSlackWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -11103,6 +11282,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GetAnalyticsData} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AllAnalyticsData} and HTTP response
+     */
+    getAnalyticsDataWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling getAnalyticsData");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AllAnalyticsData;
+      return this.apiClient.callApi(
+        '/get-analytics-data', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GetAnalyticsData} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AllAnalyticsData}
+     */
+    getAnalyticsData(body) {
+      return this.getAnalyticsDataWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GetAuthMethod} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethod} and HTTP response
      */
@@ -13060,6 +13282,49 @@ export default class V2Api {
      */
     reverseRBAC(body) {
       return this.reverseRBACWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RevokeCertificate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    revokeCertificateWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling revokeCertificate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/revoke-certificate', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RevokeCertificate} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    revokeCertificate(body) {
+      return this.revokeCertificateWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -17,7 +17,7 @@ import NotiForwarder from './NotiForwarder';
 /**
  * The EventForwarderGetOutput model module.
  * @module model/EventForwarderGetOutput
- * @version 3.6.2
+ * @version 3.6.3
  */
 class EventForwarderGetOutput {
     /**

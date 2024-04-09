@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptGPGOutput model module.
  * @module model/EncryptGPGOutput
- * @version 3.6.2
+ * @version 3.6.3
  */
 class EncryptGPGOutput {
     /**

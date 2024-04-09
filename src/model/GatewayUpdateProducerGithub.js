@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerGithub model module.
  * @module model/GatewayUpdateProducerGithub
- * @version 3.6.2
+ * @version 3.6.3
  */
 class GatewayUpdateProducerGithub {
     /**
@@ -131,19 +131,19 @@ GatewayUpdateProducerGithub.prototype['github-app-private-key'] = undefined;
 GatewayUpdateProducerGithub.prototype['github-base-url'] = 'https://api.github.com/';
 
 /**
- * Github app installation id
+ * GitHub application installation id
  * @member {Number} installation-id
  */
 GatewayUpdateProducerGithub.prototype['installation-id'] = undefined;
 
 /**
- * Optional, instead of installation id, set a GitHub organization name
+ * Optional, mutually exclusive with installation id, GitHub organization name
  * @member {String} installation-organization
  */
 GatewayUpdateProducerGithub.prototype['installation-organization'] = undefined;
 
 /**
- * Optional, instead of installation id, set a GitHub repository '<owner>/<repo-name>
+ * Optional, mutually exclusive with installation id, GitHub repository '<owner>/<repo-name>'
  * @member {String} installation-repository
  */
 GatewayUpdateProducerGithub.prototype['installation-repository'] = undefined;

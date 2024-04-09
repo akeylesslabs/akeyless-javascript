@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 3.6.2
+ * @version 3.6.3
  */
 class Auth {
     /**

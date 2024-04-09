@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ObjectVersionSettingsOutput model module.
  * @module model/ObjectVersionSettingsOutput
- * @version 3.6.2
+ * @version 3.6.3
  */
 class ObjectVersionSettingsOutput {
     /**

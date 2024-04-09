@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateEventForwarder model module.
  * @module model/UpdateEventForwarder
- * @version 3.6.2
+ * @version 3.6.3
  */
 class UpdateEventForwarder {
     /**
      * Constructs a new <code>UpdateEventForwarder</code>.
+     * updateEventForwarder is a command that updates an event forwarder [Deprecated - please use event-forwarder-update-* command]
      * @alias module:model/UpdateEventForwarder
      * @param name {String} EventForwarder name
      */

@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 3.6.2
+ * @version 3.6.3
  */
 class DSProducerDetails {
     /**
@@ -156,6 +156,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('azure_user_roles_template_id')) {
                 obj['azure_user_roles_template_id'] = ApiClient.convertToType(data['azure_user_roles_template_id'], 'String');
+            }
+            if (data.hasOwnProperty('azure_username')) {
+                obj['azure_username'] = ApiClient.convertToType(data['azure_username'], 'String');
             }
             if (data.hasOwnProperty('cassandra_creation_statements')) {
                 obj['cassandra_creation_statements'] = ApiClient.convertToType(data['cassandra_creation_statements'], 'String');
@@ -895,6 +898,11 @@ DSProducerDetails.prototype['azure_user_programmatic_access'] = undefined;
  * @member {String} azure_user_roles_template_id
  */
 DSProducerDetails.prototype['azure_user_roles_template_id'] = undefined;
+
+/**
+ * @member {String} azure_username
+ */
+DSProducerDetails.prototype['azure_username'] = undefined;
 
 /**
  * @member {String} cassandra_creation_statements

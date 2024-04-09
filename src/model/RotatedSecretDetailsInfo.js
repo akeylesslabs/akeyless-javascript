@@ -17,7 +17,7 @@ import WindowsService from './WindowsService';
 /**
  * The RotatedSecretDetailsInfo model module.
  * @module model/RotatedSecretDetailsInfo
- * @version 3.6.2
+ * @version 3.6.3
  */
 class RotatedSecretDetailsInfo {
     /**
@@ -60,6 +60,9 @@ class RotatedSecretDetailsInfo {
             }
             if (data.hasOwnProperty('last_rotation_error')) {
                 obj['last_rotation_error'] = ApiClient.convertToType(data['last_rotation_error'], 'String');
+            }
+            if (data.hasOwnProperty('max_versions')) {
+                obj['max_versions'] = ApiClient.convertToType(data['max_versions'], 'Number');
             }
             if (data.hasOwnProperty('number_of_versions_to_save')) {
                 obj['number_of_versions_to_save'] = ApiClient.convertToType(data['number_of_versions_to_save'], 'Number');
@@ -114,6 +117,11 @@ RotatedSecretDetailsInfo.prototype['gw_cluster_id'] = undefined;
  * @member {String} last_rotation_error
  */
 RotatedSecretDetailsInfo.prototype['last_rotation_error'] = undefined;
+
+/**
+ * @member {Number} max_versions
+ */
+RotatedSecretDetailsInfo.prototype['max_versions'] = undefined;
 
 /**
  * @member {Number} number_of_versions_to_save

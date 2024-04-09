@@ -18,7 +18,7 @@ import MigrationGeneral from './MigrationGeneral';
 /**
  * The GCPSecretsMigration model module.
  * @module model/GCPSecretsMigration
- * @version 3.6.2
+ * @version 3.6.3
  */
 class GCPSecretsMigration {
     /**

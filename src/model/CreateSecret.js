@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 3.6.2
+ * @version 3.6.3
  */
 class CreateSecret {
     /**
@@ -74,6 +74,9 @@ class CreateSecret {
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
@@ -192,6 +195,12 @@ CreateSecret.prototype['inject-url'] = undefined;
  * @default false
  */
 CreateSecret.prototype['json'] = false;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+CreateSecret.prototype['max-versions'] = undefined;
 
 /**
  * Deprecated - use description

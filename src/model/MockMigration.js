@@ -18,7 +18,7 @@ import MockPayload from './MockPayload';
 /**
  * The MockMigration model module.
  * @module model/MockMigration
- * @version 3.6.2
+ * @version 3.6.3
  */
 class MockMigration {
     /**

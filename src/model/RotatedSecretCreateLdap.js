@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateLdap model module.
  * @module model/RotatedSecretCreateLdap
- * @version 3.6.2
+ * @version 3.6.3
  */
 class RotatedSecretCreateLdap {
     /**
@@ -77,6 +77,9 @@ class RotatedSecretCreateLdap {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -115,6 +118,12 @@ class RotatedSecretCreateLdap {
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-proxy')) {
+                obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -195,6 +204,12 @@ RotatedSecretCreateLdap.prototype['json'] = false;
 RotatedSecretCreateLdap.prototype['key'] = undefined;
 
 /**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+RotatedSecretCreateLdap.prototype['max-versions'] = undefined;
+
+/**
  * Rotated secret name
  * @member {String} name
  */
@@ -256,7 +271,7 @@ RotatedSecretCreateLdap.prototype['secure-access-enable'] = undefined;
 RotatedSecretCreateLdap.prototype['secure-access-host'] = undefined;
 
 /**
- * Required when the Dynamic Secret is used for a domain user
+ * Default domain name server. i.e. microsoft.com
  * @member {String} secure-access-rdp-domain
  */
 RotatedSecretCreateLdap.prototype['secure-access-rdp-domain'] = undefined;
@@ -273,6 +288,20 @@ RotatedSecretCreateLdap.prototype['secure-access-url'] = undefined;
  * @default false
  */
 RotatedSecretCreateLdap.prototype['secure-access-web'] = false;
+
+/**
+ * Secure browser via Akeyless Web Access Bastion
+ * @member {Boolean} secure-access-web-browsing
+ * @default false
+ */
+RotatedSecretCreateLdap.prototype['secure-access-web-browsing'] = false;
+
+/**
+ * Web-Proxy via Akeyless Web Access Bastion
+ * @member {Boolean} secure-access-web-proxy
+ * @default false
+ */
+RotatedSecretCreateLdap.prototype['secure-access-web-proxy'] = false;
 
 /**
  * Add tags attached to this object

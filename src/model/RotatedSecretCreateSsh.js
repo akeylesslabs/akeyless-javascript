@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateSsh model module.
  * @module model/RotatedSecretCreateSsh
- * @version 3.6.2
+ * @version 3.6.3
  */
 class RotatedSecretCreateSsh {
     /**
@@ -70,6 +70,9 @@ class RotatedSecretCreateSsh {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -180,6 +183,12 @@ RotatedSecretCreateSsh.prototype['json'] = false;
 RotatedSecretCreateSsh.prototype['key'] = undefined;
 
 /**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+RotatedSecretCreateSsh.prototype['max-versions'] = undefined;
+
+/**
  * Rotated secret name
  * @member {String} name
  */
@@ -266,7 +275,7 @@ RotatedSecretCreateSsh.prototype['secure-access-enable'] = undefined;
 RotatedSecretCreateSsh.prototype['secure-access-host'] = undefined;
 
 /**
- * Required when the Dynamic Secret is used for a domain user
+ * Default domain name server. i.e. microsoft.com
  * @member {String} secure-access-rdp-domain
  */
 RotatedSecretCreateSsh.prototype['secure-access-rdp-domain'] = undefined;

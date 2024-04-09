@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventForwarderUpdateWebhook model module.
  * @module model/EventForwarderUpdateWebhook
- * @version 3.6.2
+ * @version 3.6.3
  */
 class EventForwarderUpdateWebhook {
     /**

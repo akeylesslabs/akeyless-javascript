@@ -19,7 +19,7 @@ import WebHookNotiForwarderPublicDetails from './WebHookNotiForwarderPublicDetai
 /**
  * The NotiForwarder model module.
  * @module model/NotiForwarder
- * @version 3.6.2
+ * @version 3.6.3
  */
 class NotiForwarder {
     /**
@@ -95,6 +95,9 @@ class NotiForwarder {
             if (data.hasOwnProperty('noti_forwarder_versions')) {
                 obj['noti_forwarder_versions'] = ApiClient.convertToType(data['noti_forwarder_versions'], [ItemVersion]);
             }
+            if (data.hasOwnProperty('override_url')) {
+                obj['override_url'] = ApiClient.convertToType(data['override_url'], 'String');
+            }
             if (data.hasOwnProperty('paths')) {
                 obj['paths'] = ApiClient.convertToType(data['paths'], ['String']);
             }
@@ -103,6 +106,9 @@ class NotiForwarder {
             }
             if (data.hasOwnProperty('runner_type')) {
                 obj['runner_type'] = ApiClient.convertToType(data['runner_type'], 'String');
+            }
+            if (data.hasOwnProperty('slack_noti_forwarder_public_details')) {
+                obj['slack_noti_forwarder_public_details'] = ApiClient.convertToType(data['slack_noti_forwarder_public_details'], Object);
             }
             if (data.hasOwnProperty('timespan_in_seconds')) {
                 obj['timespan_in_seconds'] = ApiClient.convertToType(data['timespan_in_seconds'], 'Number');
@@ -206,6 +212,11 @@ NotiForwarder.prototype['noti_forwarder_type'] = undefined;
 NotiForwarder.prototype['noti_forwarder_versions'] = undefined;
 
 /**
+ * @member {String} override_url
+ */
+NotiForwarder.prototype['override_url'] = undefined;
+
+/**
  * @member {Array.<String>} paths
  */
 NotiForwarder.prototype['paths'] = undefined;
@@ -219,6 +230,11 @@ NotiForwarder.prototype['protection_key'] = undefined;
  * @member {String} runner_type
  */
 NotiForwarder.prototype['runner_type'] = undefined;
+
+/**
+ * @member {Object} slack_noti_forwarder_public_details
+ */
+NotiForwarder.prototype['slack_noti_forwarder_public_details'] = undefined;
 
 /**
  * @member {Number} timespan_in_seconds

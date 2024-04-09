@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateAzure model module.
  * @module model/RotatedSecretCreateAzure
- * @version 3.6.2
+ * @version 3.6.3
  */
 class RotatedSecretCreateAzure {
     /**
      * Constructs a new <code>RotatedSecretCreateAzure</code>.
      * @alias module:model/RotatedSecretCreateAzure
      * @param name {String} Rotated secret name
-     * @param rotatorType {String} The rotator type. options: [target/api-key/azure-storage-account]
+     * @param rotatorType {String} The rotator type. options: [target/password/api-key/azure-storage-account]
      * @param targetName {String} Target name
      */
     constructor(name, rotatorType, targetName) { 
@@ -80,11 +80,17 @@ class RotatedSecretCreateAzure {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('password-length')) {
                 obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-after-disconnect')) {
+                obj['rotate-after-disconnect'] = ApiClient.convertToType(data['rotate-after-disconnect'], 'String');
             }
             if (data.hasOwnProperty('rotation-hour')) {
                 obj['rotation-hour'] = ApiClient.convertToType(data['rotation-hour'], 'Number');
@@ -94,6 +100,21 @@ class RotatedSecretCreateAzure {
             }
             if (data.hasOwnProperty('rotator-type')) {
                 obj['rotator-type'] = ApiClient.convertToType(data['rotator-type'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-url')) {
+                obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web')) {
+                obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-proxy')) {
+                obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
             if (data.hasOwnProperty('storage-account-key-name')) {
                 obj['storage-account-key-name'] = ApiClient.convertToType(data['storage-account-key-name'], 'String');
@@ -109,6 +130,9 @@ class RotatedSecretCreateAzure {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -174,6 +198,12 @@ RotatedSecretCreateAzure.prototype['json'] = false;
 RotatedSecretCreateAzure.prototype['key'] = undefined;
 
 /**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+RotatedSecretCreateAzure.prototype['max-versions'] = undefined;
+
+/**
  * Rotated secret name
  * @member {String} name
  */
@@ -184,6 +214,13 @@ RotatedSecretCreateAzure.prototype['name'] = undefined;
  * @member {String} password-length
  */
 RotatedSecretCreateAzure.prototype['password-length'] = undefined;
+
+/**
+ * Rotate the value of the secret after SRA session ends [true/false]
+ * @member {String} rotate-after-disconnect
+ * @default 'false'
+ */
+RotatedSecretCreateAzure.prototype['rotate-after-disconnect'] = 'false';
 
 /**
  * The Hour of the rotation in UTC
@@ -198,10 +235,43 @@ RotatedSecretCreateAzure.prototype['rotation-hour'] = undefined;
 RotatedSecretCreateAzure.prototype['rotation-interval'] = undefined;
 
 /**
- * The rotator type. options: [target/api-key/azure-storage-account]
+ * The rotator type. options: [target/password/api-key/azure-storage-account]
  * @member {String} rotator-type
  */
 RotatedSecretCreateAzure.prototype['rotator-type'] = undefined;
+
+/**
+ * Enable/Disable secure remote access [true/false]
+ * @member {String} secure-access-enable
+ */
+RotatedSecretCreateAzure.prototype['secure-access-enable'] = undefined;
+
+/**
+ * Destination URL to inject secrets
+ * @member {String} secure-access-url
+ */
+RotatedSecretCreateAzure.prototype['secure-access-url'] = undefined;
+
+/**
+ * Enable Web Secure Remote Access
+ * @member {Boolean} secure-access-web
+ * @default false
+ */
+RotatedSecretCreateAzure.prototype['secure-access-web'] = false;
+
+/**
+ * Secure browser via Akeyless Web Access Bastion
+ * @member {Boolean} secure-access-web-browsing
+ * @default false
+ */
+RotatedSecretCreateAzure.prototype['secure-access-web-browsing'] = false;
+
+/**
+ * Web-Proxy via Akeyless Web Access Bastion
+ * @member {Boolean} secure-access-web-proxy
+ * @default false
+ */
+RotatedSecretCreateAzure.prototype['secure-access-web-proxy'] = false;
 
 /**
  * The name of the storage account key to rotate [key1/key2/kerb1/kerb2] (relevat to azure-storage-account)
@@ -232,6 +302,12 @@ RotatedSecretCreateAzure.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 RotatedSecretCreateAzure.prototype['uid-token'] = undefined;
+
+/**
+ * The user principal name to rotate his password (relevant only for rotator-type=password)
+ * @member {String} username
+ */
+RotatedSecretCreateAzure.prototype['username'] = undefined;
 
 
 

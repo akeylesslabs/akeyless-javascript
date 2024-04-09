@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerAws model module.
  * @module model/GatewayUpdateProducerAws
- * @version 3.6.2
+ * @version 3.6.3
  */
 class GatewayUpdateProducerAws {
     /**
@@ -91,6 +91,9 @@ class GatewayUpdateProducerAws {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -228,6 +231,12 @@ GatewayUpdateProducerAws.prototype['name'] = undefined;
  * @member {String} new-name
  */
 GatewayUpdateProducerAws.prototype['new-name'] = undefined;
+
+/**
+ * The length of the password to be generated
+ * @member {String} password-length
+ */
+GatewayUpdateProducerAws.prototype['password-length'] = undefined;
 
 /**
  * Dynamic producer encryption key

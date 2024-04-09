@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MoveObjects model module.
  * @module model/MoveObjects
- * @version 3.6.2
+ * @version 3.6.3
  */
 class MoveObjects {
     /**

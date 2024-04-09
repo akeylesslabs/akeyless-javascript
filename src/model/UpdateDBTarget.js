@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTarget model module.
  * @module model/UpdateDBTarget
- * @version 3.6.2
+ * @version 3.6.3
  */
 class UpdateDBTarget {
     /**
@@ -100,6 +100,9 @@ class UpdateDBTarget {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('mongodb-atlas')) {
                 obj['mongodb-atlas'] = ApiClient.convertToType(data['mongodb-atlas'], 'Boolean');
@@ -261,6 +264,12 @@ UpdateDBTarget.prototype['keep-prev-version'] = undefined;
  * @member {String} key
  */
 UpdateDBTarget.prototype['key'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+UpdateDBTarget.prototype['max-versions'] = undefined;
 
 /**
  * @member {Boolean} mongodb-atlas

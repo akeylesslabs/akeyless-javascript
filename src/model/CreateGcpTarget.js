@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGcpTarget model module.
  * @module model/CreateGcpTarget
- * @version 3.6.2
+ * @version 3.6.3
  */
 class CreateGcpTarget {
     /**
@@ -63,6 +63,9 @@ class CreateGcpTarget {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -113,6 +116,12 @@ CreateGcpTarget.prototype['json'] = false;
  * @member {String} key
  */
 CreateGcpTarget.prototype['key'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+CreateGcpTarget.prototype['max-versions'] = undefined;
 
 /**
  * Target name

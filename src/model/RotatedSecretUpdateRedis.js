@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateRedis model module.
  * @module model/RotatedSecretUpdateRedis
- * @version 3.6.2
+ * @version 3.6.3
  */
 class RotatedSecretUpdateRedis {
     /**
@@ -72,6 +72,9 @@ class RotatedSecretUpdateRedis {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -160,6 +163,12 @@ RotatedSecretUpdateRedis.prototype['keep-prev-version'] = undefined;
  * @member {String} key
  */
 RotatedSecretUpdateRedis.prototype['key'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+RotatedSecretUpdateRedis.prototype['max-versions'] = undefined;
 
 /**
  * Rotated secret name

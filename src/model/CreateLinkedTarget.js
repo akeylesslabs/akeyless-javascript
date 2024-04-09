@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLinkedTarget model module.
  * @module model/CreateLinkedTarget
- * @version 3.6.2
+ * @version 3.6.3
  */
 class CreateLinkedTarget {
     /**

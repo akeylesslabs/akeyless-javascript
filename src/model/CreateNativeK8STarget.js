@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateNativeK8STarget model module.
  * @module model/CreateNativeK8STarget
- * @version 3.6.2
+ * @version 3.6.3
  */
 class CreateNativeK8STarget {
     /**
@@ -84,6 +84,9 @@ class CreateNativeK8STarget {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -168,6 +171,12 @@ CreateNativeK8STarget.prototype['k8s-cluster-token'] = 'dummy_val';
  * @member {String} key
  */
 CreateNativeK8STarget.prototype['key'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+CreateNativeK8STarget.prototype['max-versions'] = undefined;
 
 /**
  * Target name

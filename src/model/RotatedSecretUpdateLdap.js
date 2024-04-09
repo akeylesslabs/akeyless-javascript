@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateLdap model module.
  * @module model/RotatedSecretUpdateLdap
- * @version 3.6.2
+ * @version 3.6.3
  */
 class RotatedSecretUpdateLdap {
     /**
@@ -79,6 +79,9 @@ class RotatedSecretUpdateLdap {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -120,6 +123,12 @@ class RotatedSecretUpdateLdap {
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-proxy')) {
+                obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
             if (data.hasOwnProperty('target')) {
                 obj['target'] = ApiClient.convertToType(data['target'], ['String']);
@@ -207,6 +216,12 @@ RotatedSecretUpdateLdap.prototype['keep-prev-version'] = undefined;
 RotatedSecretUpdateLdap.prototype['key'] = undefined;
 
 /**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+RotatedSecretUpdateLdap.prototype['max-versions'] = undefined;
+
+/**
  * Rotated secret name
  * @member {String} name
  */
@@ -274,7 +289,7 @@ RotatedSecretUpdateLdap.prototype['secure-access-enable'] = undefined;
 RotatedSecretUpdateLdap.prototype['secure-access-host'] = undefined;
 
 /**
- * Required when the Dynamic Secret is used for a domain user
+ * Default domain name server. i.e. microsoft.com
  * @member {String} secure-access-rdp-domain
  */
 RotatedSecretUpdateLdap.prototype['secure-access-rdp-domain'] = undefined;
@@ -291,6 +306,20 @@ RotatedSecretUpdateLdap.prototype['secure-access-url'] = undefined;
  * @default false
  */
 RotatedSecretUpdateLdap.prototype['secure-access-web'] = false;
+
+/**
+ * Secure browser via Akeyless Web Access Bastion
+ * @member {Boolean} secure-access-web-browsing
+ * @default false
+ */
+RotatedSecretUpdateLdap.prototype['secure-access-web-browsing'] = false;
+
+/**
+ * Web-Proxy via Akeyless Web Access Bastion
+ * @member {Boolean} secure-access-web-proxy
+ * @default false
+ */
+RotatedSecretUpdateLdap.prototype['secure-access-web-proxy'] = false;
 
 /**
  * A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer and ldap rotated secret, To specify multiple targets use argument multiple times

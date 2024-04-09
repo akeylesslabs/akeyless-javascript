@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAzureTarget model module.
  * @module model/UpdateAzureTarget
- * @version 3.6.2
+ * @version 3.6.3
  */
 class UpdateAzureTarget {
     /**
@@ -69,6 +69,9 @@ class UpdateAzureTarget {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -147,6 +150,12 @@ UpdateAzureTarget.prototype['keep-prev-version'] = undefined;
  * @member {String} key
  */
 UpdateAzureTarget.prototype['key'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+UpdateAzureTarget.prototype['max-versions'] = undefined;
 
 /**
  * Target name

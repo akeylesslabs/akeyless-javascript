@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StaticSecretDetailsInfo model module.
  * @module model/StaticSecretDetailsInfo
- * @version 3.6.2
+ * @version 3.6.3
  */
 class StaticSecretDetailsInfo {
     /**
@@ -50,6 +50,9 @@ class StaticSecretDetailsInfo {
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
+            if (data.hasOwnProperty('max_versions')) {
+                obj['max_versions'] = ApiClient.convertToType(data['max_versions'], 'Number');
+            }
             if (data.hasOwnProperty('notify_on_change_event')) {
                 obj['notify_on_change_event'] = ApiClient.convertToType(data['notify_on_change_event'], 'Boolean');
             }
@@ -74,6 +77,11 @@ class StaticSecretDetailsInfo {
  * @member {String} format
  */
 StaticSecretDetailsInfo.prototype['format'] = undefined;
+
+/**
+ * @member {Number} max_versions
+ */
+StaticSecretDetailsInfo.prototype['max_versions'] = undefined;
 
 /**
  * @member {Boolean} notify_on_change_event

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateAzure model module.
  * @module model/RotatedSecretUpdateAzure
- * @version 3.6.2
+ * @version 3.6.3
  */
 class RotatedSecretUpdateAzure {
     /**
@@ -82,6 +82,9 @@ class RotatedSecretUpdateAzure {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -94,11 +97,29 @@ class RotatedSecretUpdateAzure {
             if (data.hasOwnProperty('rm-tag')) {
                 obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
             }
+            if (data.hasOwnProperty('rotate-after-disconnect')) {
+                obj['rotate-after-disconnect'] = ApiClient.convertToType(data['rotate-after-disconnect'], 'String');
+            }
             if (data.hasOwnProperty('rotation-hour')) {
                 obj['rotation-hour'] = ApiClient.convertToType(data['rotation-hour'], 'Number');
             }
             if (data.hasOwnProperty('rotation-interval')) {
                 obj['rotation-interval'] = ApiClient.convertToType(data['rotation-interval'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-url')) {
+                obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web')) {
+                obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-proxy')) {
+                obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
             if (data.hasOwnProperty('storage-account-key-name')) {
                 obj['storage-account-key-name'] = ApiClient.convertToType(data['storage-account-key-name'], 'String');
@@ -108,6 +129,9 @@ class RotatedSecretUpdateAzure {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -186,6 +210,12 @@ RotatedSecretUpdateAzure.prototype['keep-prev-version'] = undefined;
 RotatedSecretUpdateAzure.prototype['key'] = undefined;
 
 /**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+RotatedSecretUpdateAzure.prototype['max-versions'] = undefined;
+
+/**
  * Rotated secret name
  * @member {String} name
  */
@@ -210,6 +240,13 @@ RotatedSecretUpdateAzure.prototype['password-length'] = undefined;
 RotatedSecretUpdateAzure.prototype['rm-tag'] = undefined;
 
 /**
+ * Rotate the value of the secret after SRA session ends [true/false]
+ * @member {String} rotate-after-disconnect
+ * @default 'false'
+ */
+RotatedSecretUpdateAzure.prototype['rotate-after-disconnect'] = 'false';
+
+/**
  * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
@@ -220,6 +257,39 @@ RotatedSecretUpdateAzure.prototype['rotation-hour'] = undefined;
  * @member {String} rotation-interval
  */
 RotatedSecretUpdateAzure.prototype['rotation-interval'] = undefined;
+
+/**
+ * Enable/Disable secure remote access [true/false]
+ * @member {String} secure-access-enable
+ */
+RotatedSecretUpdateAzure.prototype['secure-access-enable'] = undefined;
+
+/**
+ * Destination URL to inject secrets
+ * @member {String} secure-access-url
+ */
+RotatedSecretUpdateAzure.prototype['secure-access-url'] = undefined;
+
+/**
+ * Enable Web Secure Remote Access
+ * @member {Boolean} secure-access-web
+ * @default false
+ */
+RotatedSecretUpdateAzure.prototype['secure-access-web'] = false;
+
+/**
+ * Secure browser via Akeyless Web Access Bastion
+ * @member {Boolean} secure-access-web-browsing
+ * @default false
+ */
+RotatedSecretUpdateAzure.prototype['secure-access-web-browsing'] = false;
+
+/**
+ * Web-Proxy via Akeyless Web Access Bastion
+ * @member {Boolean} secure-access-web-proxy
+ * @default false
+ */
+RotatedSecretUpdateAzure.prototype['secure-access-web-proxy'] = false;
 
 /**
  * The name of the storage account key to rotate [key1/key2/kerb1/kerb2] (relevat to azure-storage-account)
@@ -238,6 +308,12 @@ RotatedSecretUpdateAzure.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 RotatedSecretUpdateAzure.prototype['uid-token'] = undefined;
+
+/**
+ * The user principal name to rotate his password (relevant only for rotator-type=password)
+ * @member {String} username
+ */
+RotatedSecretUpdateAzure.prototype['username'] = undefined;
 
 
 

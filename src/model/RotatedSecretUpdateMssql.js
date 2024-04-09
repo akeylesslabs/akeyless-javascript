@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateMssql model module.
  * @module model/RotatedSecretUpdateMssql
- * @version 3.6.2
+ * @version 3.6.3
  */
 class RotatedSecretUpdateMssql {
     /**
@@ -72,6 +72,9 @@ class RotatedSecretUpdateMssql {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -181,6 +184,12 @@ RotatedSecretUpdateMssql.prototype['keep-prev-version'] = undefined;
  * @member {String} key
  */
 RotatedSecretUpdateMssql.prototype['key'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+RotatedSecretUpdateMssql.prototype['max-versions'] = undefined;
 
 /**
  * Rotated secret name

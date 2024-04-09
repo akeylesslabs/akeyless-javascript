@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateNativeK8STarget model module.
  * @module model/UpdateNativeK8STarget
- * @version 3.6.2
+ * @version 3.6.3
  */
 class UpdateNativeK8STarget {
     /**
@@ -87,6 +87,9 @@ class UpdateNativeK8STarget {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -183,6 +186,12 @@ UpdateNativeK8STarget.prototype['keep-prev-version'] = undefined;
  * @member {String} key
  */
 UpdateNativeK8STarget.prototype['key'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+UpdateNativeK8STarget.prototype['max-versions'] = undefined;
 
 /**
  * Target name

@@ -18,7 +18,7 @@ import Name from './Name';
 /**
  * The CertificateInfo model module.
  * @module model/CertificateInfo
- * @version 3.6.2
+ * @version 3.6.3
  */
 class CertificateInfo {
     /**
@@ -54,6 +54,9 @@ class CertificateInfo {
             }
             if (data.hasOwnProperty('KeyUsage')) {
                 obj['KeyUsage'] = ApiClient.convertToType(data['KeyUsage'], 'Number');
+            }
+            if (data.hasOwnProperty('crl_distribution_points')) {
+                obj['crl_distribution_points'] = ApiClient.convertToType(data['crl_distribution_points'], ['String']);
             }
             if (data.hasOwnProperty('dns_names')) {
                 obj['dns_names'] = ApiClient.convertToType(data['dns_names'], ['String']);
@@ -135,6 +138,11 @@ CertificateInfo.prototype['ExtKeyUsage'] = undefined;
  * @member {Number} KeyUsage
  */
 CertificateInfo.prototype['KeyUsage'] = undefined;
+
+/**
+ * @member {Array.<String>} crl_distribution_points
+ */
+CertificateInfo.prototype['crl_distribution_points'] = undefined;
 
 /**
  * @member {Array.<String>} dns_names

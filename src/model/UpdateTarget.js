@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateTarget model module.
  * @module model/UpdateTarget
- * @version 3.6.2
+ * @version 3.6.3
  */
 class UpdateTarget {
     /**
@@ -55,6 +55,9 @@ class UpdateTarget {
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -90,6 +93,12 @@ UpdateTarget.prototype['description'] = 'default_comment';
  * @default false
  */
 UpdateTarget.prototype['json'] = false;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+UpdateTarget.prototype['max-versions'] = undefined;
 
 /**
  * Target name

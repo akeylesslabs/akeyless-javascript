@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CacheConfigPart model module.
  * @module model/CacheConfigPart
- * @version 3.6.2
+ * @version 3.6.3
  */
 class CacheConfigPart {
     /**
@@ -53,6 +53,9 @@ class CacheConfigPart {
             if (data.hasOwnProperty('cache_ttl')) {
                 obj['cache_ttl'] = ApiClient.convertToType(data['cache_ttl'], 'String');
             }
+            if (data.hasOwnProperty('new_proactive_cache_enable')) {
+                obj['new_proactive_cache_enable'] = ApiClient.convertToType(data['new_proactive_cache_enable'], 'Boolean');
+            }
             if (data.hasOwnProperty('proactive_cache_dump_interval')) {
                 obj['proactive_cache_dump_interval'] = ApiClient.convertToType(data['proactive_cache_dump_interval'], 'String');
             }
@@ -78,6 +81,11 @@ CacheConfigPart.prototype['cache_enable'] = undefined;
  * @member {String} cache_ttl
  */
 CacheConfigPart.prototype['cache_ttl'] = undefined;
+
+/**
+ * @member {Boolean} new_proactive_cache_enable
+ */
+CacheConfigPart.prototype['new_proactive_cache_enable'] = undefined;
 
 /**
  * @member {String} proactive_cache_dump_interval

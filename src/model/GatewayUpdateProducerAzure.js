@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerAzure model module.
  * @module model/GatewayUpdateProducerAzure
- * @version 3.6.2
+ * @version 3.6.3
  */
 class GatewayUpdateProducerAzure {
     /**
@@ -205,7 +205,7 @@ GatewayUpdateProducerAzure.prototype['new-name'] = undefined;
 GatewayUpdateProducerAzure.prototype['password-length'] = undefined;
 
 /**
- * Dynamic producer encryption key
+ * Dynamic secret encryption key
  * @member {String} producer-encryption-key-name
  */
 GatewayUpdateProducerAzure.prototype['producer-encryption-key-name'] = undefined;

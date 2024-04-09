@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateCassandra model module.
  * @module model/RotatedSecretUpdateCassandra
- * @version 3.6.2
+ * @version 3.6.3
  */
 class RotatedSecretUpdateCassandra {
     /**
@@ -72,6 +72,9 @@ class RotatedSecretUpdateCassandra {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -160,6 +163,12 @@ RotatedSecretUpdateCassandra.prototype['keep-prev-version'] = undefined;
  * @member {String} key
  */
 RotatedSecretUpdateCassandra.prototype['key'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+RotatedSecretUpdateCassandra.prototype['max-versions'] = undefined;
 
 /**
  * Rotated secret name

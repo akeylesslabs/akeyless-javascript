@@ -17,7 +17,7 @@ import ObjectVersionSettingsOutput from './ObjectVersionSettingsOutput';
 /**
  * The AccountObjectVersionSettingsOutput model module.
  * @module model/AccountObjectVersionSettingsOutput
- * @version 3.6.2
+ * @version 3.6.3
  */
 class AccountObjectVersionSettingsOutput {
     /**
@@ -51,6 +51,9 @@ class AccountObjectVersionSettingsOutput {
             if (data.hasOwnProperty('default-versioning')) {
                 obj['default-versioning'] = ApiClient.convertToType(data['default-versioning'], 'Boolean');
             }
+            if (data.hasOwnProperty('force_new_versions')) {
+                obj['force_new_versions'] = ApiClient.convertToType(data['force_new_versions'], 'Boolean');
+            }
             if (data.hasOwnProperty('items')) {
                 obj['items'] = ApiClient.convertToType(data['items'], [ObjectVersionSettingsOutput]);
             }
@@ -65,6 +68,11 @@ class AccountObjectVersionSettingsOutput {
  * @member {Boolean} default-versioning
  */
 AccountObjectVersionSettingsOutput.prototype['default-versioning'] = undefined;
+
+/**
+ * @member {Boolean} force_new_versions
+ */
+AccountObjectVersionSettingsOutput.prototype['force_new_versions'] = undefined;
 
 /**
  * @member {Array.<module:model/ObjectVersionSettingsOutput>} items

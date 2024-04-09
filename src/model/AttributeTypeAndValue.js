@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AttributeTypeAndValue model module.
  * @module model/AttributeTypeAndValue
- * @version 3.6.2
+ * @version 3.6.3
  */
 class AttributeTypeAndValue {
     /**

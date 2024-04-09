@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import ItemSraStatus from './ItemSraStatus';
 import TargetNameWithHosts from './TargetNameWithHosts';
 
 /**
  * The SecureRemoteAccess model module.
  * @module model/SecureRemoteAccess
- * @version 3.6.2
+ * @version 3.6.3
  */
 class SecureRemoteAccess {
     /**
@@ -128,6 +129,9 @@ class SecureRemoteAccess {
             }
             if (data.hasOwnProperty('ssh_user')) {
                 obj['ssh_user'] = ApiClient.convertToType(data['ssh_user'], 'String');
+            }
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ItemSraStatus.constructFromObject(data['status']);
             }
             if (data.hasOwnProperty('target_hosts')) {
                 obj['target_hosts'] = ApiClient.convertToType(data['target_hosts'], [TargetNameWithHosts]);
@@ -285,6 +289,11 @@ SecureRemoteAccess.prototype['ssh_private_key'] = undefined;
  * @member {String} ssh_user
  */
 SecureRemoteAccess.prototype['ssh_user'] = undefined;
+
+/**
+ * @member {module:model/ItemSraStatus} status
+ */
+SecureRemoteAccess.prototype['status'] = undefined;
 
 /**
  * @member {Array.<module:model/TargetNameWithHosts>} target_hosts

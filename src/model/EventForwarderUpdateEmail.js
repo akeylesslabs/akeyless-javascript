@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventForwarderUpdateEmail model module.
  * @module model/EventForwarderUpdateEmail
- * @version 3.6.2
+ * @version 3.6.3
  */
 class EventForwarderUpdateEmail {
     /**
@@ -87,6 +87,9 @@ class EventForwarderUpdateEmail {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('override-url')) {
+                obj['override-url'] = ApiClient.convertToType(data['override-url'], 'String');
             }
             if (data.hasOwnProperty('targets-event-source-locations')) {
                 obj['targets-event-source-locations'] = ApiClient.convertToType(data['targets-event-source-locations'], ['String']);
@@ -177,6 +180,12 @@ EventForwarderUpdateEmail.prototype['name'] = undefined;
  * @member {String} new-name
  */
 EventForwarderUpdateEmail.prototype['new-name'] = undefined;
+
+/**
+ * Override Akeyless default URL with your Gateway url (port 18888)
+ * @member {String} override-url
+ */
+EventForwarderUpdateEmail.prototype['override-url'] = undefined;
 
 /**
  * Targets Event sources

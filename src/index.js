@@ -27,6 +27,7 @@ import ActiveDirectoryPayload from './model/ActiveDirectoryPayload';
 import AddGatewayAllowedAccessId from './model/AddGatewayAllowedAccessId';
 import AdminsConfigPart from './model/AdminsConfigPart';
 import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
+import AllAnalyticsData from './model/AllAnalyticsData';
 import AllowedAccess from './model/AllowedAccess';
 import AllowedAccessOld from './model/AllowedAccessOld';
 import ArtifactoryTargetDetails from './model/ArtifactoryTargetDetails';
@@ -49,6 +50,7 @@ import BastionsList from './model/BastionsList';
 import CFConfigPart from './model/CFConfigPart';
 import CacheConfigPart from './model/CacheConfigPart';
 import CertAccessRules from './model/CertAccessRules';
+import CertificateAnalyticAggregation from './model/CertificateAnalyticAggregation';
 import CertificateChainInfo from './model/CertificateChainInfo';
 import CertificateExpirationEvent from './model/CertificateExpirationEvent';
 import CertificateInfo from './model/CertificateInfo';
@@ -61,6 +63,8 @@ import ClassicKeyDetailsInfo from './model/ClassicKeyDetailsInfo';
 import ClassicKeyStatusInfo from './model/ClassicKeyStatusInfo';
 import ClassicKeyTargetInfo from './model/ClassicKeyTargetInfo';
 import ClientData from './model/ClientData';
+import ClientUsageInfo from './model/ClientUsageInfo';
+import ClientsUsageReport from './model/ClientsUsageReport';
 import ConfigChange from './model/ConfigChange';
 import ConfigHash from './model/ConfigHash';
 import Configure from './model/Configure';
@@ -312,6 +316,8 @@ import EsmUpdate from './model/EsmUpdate';
 import EsmUpdateSecretOutput from './model/EsmUpdateSecretOutput';
 import EventAction from './model/EventAction';
 import EventForwarderCreateEmail from './model/EventForwarderCreateEmail';
+import EventForwarderCreateServiceNow from './model/EventForwarderCreateServiceNow';
+import EventForwarderCreateSlack from './model/EventForwarderCreateSlack';
 import EventForwarderCreateUpdateOutput from './model/EventForwarderCreateUpdateOutput';
 import EventForwarderCreateWebhook from './model/EventForwarderCreateWebhook';
 import EventForwarderDelete from './model/EventForwarderDelete';
@@ -319,6 +325,8 @@ import EventForwarderDeleteOutput from './model/EventForwarderDeleteOutput';
 import EventForwarderGet from './model/EventForwarderGet';
 import EventForwarderGetOutput from './model/EventForwarderGetOutput';
 import EventForwarderUpdateEmail from './model/EventForwarderUpdateEmail';
+import EventForwarderUpdateServiceNow from './model/EventForwarderUpdateServiceNow';
+import EventForwarderUpdateSlack from './model/EventForwarderUpdateSlack';
 import EventForwarderUpdateWebhook from './model/EventForwarderUpdateWebhook';
 import ExportClassicKey from './model/ExportClassicKey';
 import ExportClassicKeyOutput from './model/ExportClassicKeyOutput';
@@ -493,6 +501,7 @@ import GenerateCsr from './model/GenerateCsr';
 import GenerateCsrOutput from './model/GenerateCsrOutput';
 import GetAccountSettings from './model/GetAccountSettings';
 import GetAccountSettingsCommandOutput from './model/GetAccountSettingsCommandOutput';
+import GetAnalyticsData from './model/GetAnalyticsData';
 import GetAuthMethod from './model/GetAuthMethod';
 import GetCertificateValue from './model/GetCertificateValue';
 import GetCertificateValueOutput from './model/GetCertificateValueOutput';
@@ -536,6 +545,7 @@ import ImportPasswordsOutput from './model/ImportPasswordsOutput';
 import ImporterInfo from './model/ImporterInfo';
 import Item from './model/Item';
 import ItemGeneralInfo from './model/ItemGeneralInfo';
+import ItemSraStatus from './model/ItemSraStatus';
 import ItemTargetAssociation from './model/ItemTargetAssociation';
 import ItemVersion from './model/ItemVersion';
 import JSONError from './model/JSONError';
@@ -639,6 +649,7 @@ import RequiredActivity from './model/RequiredActivity';
 import ReverseRBAC from './model/ReverseRBAC';
 import ReverseRBACClient from './model/ReverseRBACClient';
 import ReverseRBACOutput from './model/ReverseRBACOutput';
+import RevokeCertificate from './model/RevokeCertificate';
 import RevokeCreds from './model/RevokeCreds';
 import Role from './model/Role';
 import RoleAssociationDetails from './model/RoleAssociationDetails';
@@ -851,6 +862,7 @@ import UpdateZeroSSLTargetOutput from './model/UpdateZeroSSLTargetOutput';
 import UploadPKCS12 from './model/UploadPKCS12';
 import UploadRSA from './model/UploadRSA';
 import UsageEventSetting from './model/UsageEventSetting';
+import UsageReportSummary from './model/UsageReportSummary';
 import UscCreate from './model/UscCreate';
 import UscCreateSecretOutput from './model/UscCreateSecretOutput';
 import UscDelete from './model/UscDelete';
@@ -912,7 +924,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.6.2
+* @version 3.6.3
 */
 export {
     /**
@@ -1004,6 +1016,12 @@ export {
      * @property {module:model/AkeylessGatewayConfig}
      */
     AkeylessGatewayConfig,
+
+    /**
+     * The AllAnalyticsData model constructor.
+     * @property {module:model/AllAnalyticsData}
+     */
+    AllAnalyticsData,
 
     /**
      * The AllowedAccess model constructor.
@@ -1138,6 +1156,12 @@ export {
     CertAccessRules,
 
     /**
+     * The CertificateAnalyticAggregation model constructor.
+     * @property {module:model/CertificateAnalyticAggregation}
+     */
+    CertificateAnalyticAggregation,
+
+    /**
      * The CertificateChainInfo model constructor.
      * @property {module:model/CertificateChainInfo}
      */
@@ -1208,6 +1232,18 @@ export {
      * @property {module:model/ClientData}
      */
     ClientData,
+
+    /**
+     * The ClientUsageInfo model constructor.
+     * @property {module:model/ClientUsageInfo}
+     */
+    ClientUsageInfo,
+
+    /**
+     * The ClientsUsageReport model constructor.
+     * @property {module:model/ClientsUsageReport}
+     */
+    ClientsUsageReport,
 
     /**
      * The ConfigChange model constructor.
@@ -2716,6 +2752,18 @@ export {
     EventForwarderCreateEmail,
 
     /**
+     * The EventForwarderCreateServiceNow model constructor.
+     * @property {module:model/EventForwarderCreateServiceNow}
+     */
+    EventForwarderCreateServiceNow,
+
+    /**
+     * The EventForwarderCreateSlack model constructor.
+     * @property {module:model/EventForwarderCreateSlack}
+     */
+    EventForwarderCreateSlack,
+
+    /**
      * The EventForwarderCreateUpdateOutput model constructor.
      * @property {module:model/EventForwarderCreateUpdateOutput}
      */
@@ -2756,6 +2804,18 @@ export {
      * @property {module:model/EventForwarderUpdateEmail}
      */
     EventForwarderUpdateEmail,
+
+    /**
+     * The EventForwarderUpdateServiceNow model constructor.
+     * @property {module:model/EventForwarderUpdateServiceNow}
+     */
+    EventForwarderUpdateServiceNow,
+
+    /**
+     * The EventForwarderUpdateSlack model constructor.
+     * @property {module:model/EventForwarderUpdateSlack}
+     */
+    EventForwarderUpdateSlack,
 
     /**
      * The EventForwarderUpdateWebhook model constructor.
@@ -3802,6 +3862,12 @@ export {
     GetAccountSettingsCommandOutput,
 
     /**
+     * The GetAnalyticsData model constructor.
+     * @property {module:model/GetAnalyticsData}
+     */
+    GetAnalyticsData,
+
+    /**
      * The GetAuthMethod model constructor.
      * @property {module:model/GetAuthMethod}
      */
@@ -4058,6 +4124,12 @@ export {
      * @property {module:model/ItemGeneralInfo}
      */
     ItemGeneralInfo,
+
+    /**
+     * The ItemSraStatus model constructor.
+     * @property {module:model/ItemSraStatus}
+     */
+    ItemSraStatus,
 
     /**
      * The ItemTargetAssociation model constructor.
@@ -4676,6 +4748,12 @@ export {
      * @property {module:model/ReverseRBACOutput}
      */
     ReverseRBACOutput,
+
+    /**
+     * The RevokeCertificate model constructor.
+     * @property {module:model/RevokeCertificate}
+     */
+    RevokeCertificate,
 
     /**
      * The RevokeCreds model constructor.
@@ -5948,6 +6026,12 @@ export {
      * @property {module:model/UsageEventSetting}
      */
     UsageEventSetting,
+
+    /**
+     * The UsageReportSummary model constructor.
+     * @property {module:model/UsageReportSummary}
+     */
+    UsageReportSummary,
 
     /**
      * The UscCreate model constructor.

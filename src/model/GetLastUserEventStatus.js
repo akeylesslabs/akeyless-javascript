@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetLastUserEventStatus model module.
  * @module model/GetLastUserEventStatus
- * @version 3.6.2
+ * @version 3.6.3
  */
 class GetLastUserEventStatus {
     /**

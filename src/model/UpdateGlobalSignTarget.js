@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGlobalSignTarget model module.
  * @module model/UpdateGlobalSignTarget
- * @version 3.6.2
+ * @version 3.6.3
  */
 class UpdateGlobalSignTarget {
     /**
@@ -89,6 +89,9 @@ class UpdateGlobalSignTarget {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -178,6 +181,12 @@ UpdateGlobalSignTarget.prototype['keep-prev-version'] = undefined;
  * @member {String} key
  */
 UpdateGlobalSignTarget.prototype['key'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+UpdateGlobalSignTarget.prototype['max-versions'] = undefined;
 
 /**
  * Target name

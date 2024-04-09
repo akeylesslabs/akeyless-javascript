@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **azureResourceName** | **String** |  | [optional] 
 **azureSubscriptionId** | **String** |  | [optional] 
 **azureTenantId** | **String** |  | [optional] 
+**azureUsername** | **String** |  | [optional] 
 **useGwCloudIdentity** | **Boolean** |  | [optional] 
 
 

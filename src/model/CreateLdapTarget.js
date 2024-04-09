@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLdapTarget model module.
  * @module model/CreateLdapTarget
- * @version 3.6.2
+ * @version 3.6.3
  */
 class CreateLdapTarget {
     /**
@@ -78,6 +78,9 @@ class CreateLdapTarget {
             }
             if (data.hasOwnProperty('ldap-url')) {
                 obj['ldap-url'] = ApiClient.convertToType(data['ldap-url'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -149,6 +152,12 @@ CreateLdapTarget.prototype['ldap-ca-cert'] = undefined;
  * @member {String} ldap-url
  */
 CreateLdapTarget.prototype['ldap-url'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+CreateLdapTarget.prototype['max-versions'] = undefined;
 
 /**
  * Target name

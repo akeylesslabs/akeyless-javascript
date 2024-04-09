@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEventForwarder model module.
  * @module model/CreateEventForwarder
- * @version 3.6.2
+ * @version 3.6.3
  */
 class CreateEventForwarder {
     /**
      * Constructs a new <code>CreateEventForwarder</code>.
+     * createEventForwarder is a command that creates a new event forwarder [Deprecated - please use event-forwarder-create-* command]
      * @alias module:model/CreateEventForwarder
      * @param eventSourceLocations {Array.<String>} Event sources
      * @param forwarderType {String} 

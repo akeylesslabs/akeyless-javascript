@@ -17,7 +17,7 @@ import CertificateExpirationEvent from './CertificateExpirationEvent';
 /**
  * The PKICertificateIssueDetails model module.
  * @module model/PKICertificateIssueDetails
- * @version 3.6.2
+ * @version 3.6.3
  */
 class PKICertificateIssueDetails {
     /**
@@ -81,6 +81,12 @@ class PKICertificateIssueDetails {
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], ['String']);
             }
+            if (data.hasOwnProperty('create_private_crl')) {
+                obj['create_private_crl'] = ApiClient.convertToType(data['create_private_crl'], 'Boolean');
+            }
+            if (data.hasOwnProperty('create_public_crl')) {
+                obj['create_public_crl'] = ApiClient.convertToType(data['create_public_crl'], 'Boolean');
+            }
             if (data.hasOwnProperty('destination_path')) {
                 obj['destination_path'] = ApiClient.convertToType(data['destination_path'], 'String');
             }
@@ -89,6 +95,9 @@ class PKICertificateIssueDetails {
             }
             if (data.hasOwnProperty('expiration_events')) {
                 obj['expiration_events'] = ApiClient.convertToType(data['expiration_events'], [CertificateExpirationEvent]);
+            }
+            if (data.hasOwnProperty('gw_cluster_id')) {
+                obj['gw_cluster_id'] = ApiClient.convertToType(data['gw_cluster_id'], 'Number');
             }
             if (data.hasOwnProperty('gw_cluster_url')) {
                 obj['gw_cluster_url'] = ApiClient.convertToType(data['gw_cluster_url'], 'String');
@@ -198,6 +207,16 @@ PKICertificateIssueDetails.prototype['code_signing_flag'] = undefined;
 PKICertificateIssueDetails.prototype['country'] = undefined;
 
 /**
+ * @member {Boolean} create_private_crl
+ */
+PKICertificateIssueDetails.prototype['create_private_crl'] = undefined;
+
+/**
+ * @member {Boolean} create_public_crl
+ */
+PKICertificateIssueDetails.prototype['create_public_crl'] = undefined;
+
+/**
  * DestinationPath is the destination to save generated certificates
  * @member {String} destination_path
  */
@@ -213,6 +232,11 @@ PKICertificateIssueDetails.prototype['enforce_hostnames'] = undefined;
  * @member {Array.<module:model/CertificateExpirationEvent>} expiration_events
  */
 PKICertificateIssueDetails.prototype['expiration_events'] = undefined;
+
+/**
+ * @member {Number} gw_cluster_id
+ */
+PKICertificateIssueDetails.prototype['gw_cluster_id'] = undefined;
 
 /**
  * GWClusterURL is required when CAMode is \"public\" and it defines the cluster URL the PKI should be issued from. The GW cluster must have permissions to read associated target's details

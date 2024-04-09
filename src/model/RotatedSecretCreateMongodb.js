@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateMongodb model module.
  * @module model/RotatedSecretCreateMongodb
- * @version 3.6.2
+ * @version 3.6.3
  */
 class RotatedSecretCreateMongodb {
     /**
@@ -70,6 +70,9 @@ class RotatedSecretCreateMongodb {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -166,6 +169,12 @@ RotatedSecretCreateMongodb.prototype['json'] = false;
  * @member {String} key
  */
 RotatedSecretCreateMongodb.prototype['key'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+RotatedSecretCreateMongodb.prototype['max-versions'] = undefined;
 
 /**
  * Rotated secret name

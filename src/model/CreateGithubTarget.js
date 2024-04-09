@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGithubTarget model module.
  * @module model/CreateGithubTarget
- * @version 3.6.2
+ * @version 3.6.3
  */
 class CreateGithubTarget {
     /**
@@ -69,6 +69,9 @@ class CreateGithubTarget {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -129,6 +132,12 @@ CreateGithubTarget.prototype['json'] = false;
  * @member {String} key
  */
 CreateGithubTarget.prototype['key'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+CreateGithubTarget.prototype['max-versions'] = undefined;
 
 /**
  * Target name

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateWindows model module.
  * @module model/RotatedSecretCreateWindows
- * @version 3.6.2
+ * @version 3.6.3
  */
 class RotatedSecretCreateWindows {
     /**
@@ -70,6 +70,9 @@ class RotatedSecretCreateWindows {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -171,6 +174,12 @@ RotatedSecretCreateWindows.prototype['json'] = false;
 RotatedSecretCreateWindows.prototype['key'] = undefined;
 
 /**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+RotatedSecretCreateWindows.prototype['max-versions'] = undefined;
+
+/**
  * Rotated secret name
  * @member {String} name
  */
@@ -245,7 +254,7 @@ RotatedSecretCreateWindows.prototype['secure-access-enable'] = undefined;
 RotatedSecretCreateWindows.prototype['secure-access-host'] = undefined;
 
 /**
- * Required when the Dynamic Secret is used for a domain user
+ * Default domain name server. i.e. microsoft.com
  * @member {String} secure-access-rdp-domain
  */
 RotatedSecretCreateWindows.prototype['secure-access-rdp-domain'] = undefined;

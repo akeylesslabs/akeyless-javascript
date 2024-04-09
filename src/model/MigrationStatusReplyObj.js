@@ -17,7 +17,7 @@ import MigrationItems from './MigrationItems';
 /**
  * The MigrationStatusReplyObj model module.
  * @module model/MigrationStatusReplyObj
- * @version 3.6.2
+ * @version 3.6.3
  */
 class MigrationStatusReplyObj {
     /**
@@ -48,6 +48,9 @@ class MigrationStatusReplyObj {
         if (data) {
             obj = obj || new MigrationStatusReplyObj();
 
+            if (data.hasOwnProperty('computers')) {
+                obj['computers'] = ApiClient.convertToType(data['computers'], 'Number');
+            }
             if (data.hasOwnProperty('duration_time')) {
                 obj['duration_time'] = ApiClient.convertToType(data['duration_time'], 'String');
             }
@@ -96,6 +99,11 @@ class MigrationStatusReplyObj {
 
 
 }
+
+/**
+ * @member {Number} computers
+ */
+MigrationStatusReplyObj.prototype['computers'] = undefined;
 
 /**
  * @member {String} duration_time

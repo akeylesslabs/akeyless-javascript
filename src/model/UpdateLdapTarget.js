@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLdapTarget model module.
  * @module model/UpdateLdapTarget
- * @version 3.6.2
+ * @version 3.6.3
  */
 class UpdateLdapTarget {
     /**
@@ -75,6 +75,9 @@ class UpdateLdapTarget {
             }
             if (data.hasOwnProperty('ldap-url')) {
                 obj['ldap-url'] = ApiClient.convertToType(data['ldap-url'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -154,6 +157,12 @@ UpdateLdapTarget.prototype['ldap-ca-cert'] = undefined;
  * @member {String} ldap-url
  */
 UpdateLdapTarget.prototype['ldap-url'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+UpdateLdapTarget.prototype['max-versions'] = undefined;
 
 /**
  * Target name

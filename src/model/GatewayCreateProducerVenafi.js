@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerVenafi model module.
  * @module model/GatewayCreateProducerVenafi
- * @version 3.6.2
+ * @version 3.6.3
  */
 class GatewayCreateProducerVenafi {
     /**

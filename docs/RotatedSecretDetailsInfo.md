@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **graceRotation** | **Boolean** |  | [optional] 
 **gwClusterId** | **Number** |  | [optional] 
 **lastRotationError** | **String** |  | [optional] 
+**maxVersions** | **Number** |  | [optional] 
 **numberOfVersionsToSave** | **Number** |  | [optional] 
 **rotationHour** | **Number** |  | [optional] 
 **rotationIntervalMin** | **Boolean** |  | [optional] 

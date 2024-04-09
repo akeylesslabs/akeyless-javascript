@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventForwarderCreateEmail model module.
  * @module model/EventForwarderCreateEmail
- * @version 3.6.2
+ * @version 3.6.3
  */
 class EventForwarderCreateEmail {
     /**
@@ -83,6 +83,9 @@ class EventForwarderCreateEmail {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('override-url')) {
+                obj['override-url'] = ApiClient.convertToType(data['override-url'], 'String');
             }
             if (data.hasOwnProperty('runner-type')) {
                 obj['runner-type'] = ApiClient.convertToType(data['runner-type'], 'String');
@@ -163,6 +166,12 @@ EventForwarderCreateEmail.prototype['key'] = undefined;
  * @member {String} name
  */
 EventForwarderCreateEmail.prototype['name'] = undefined;
+
+/**
+ * Override Akeyless default URL with your Gateway url (port 18888)
+ * @member {String} override-url
+ */
+EventForwarderCreateEmail.prototype['override-url'] = undefined;
 
 /**
  * @member {String} runner-type

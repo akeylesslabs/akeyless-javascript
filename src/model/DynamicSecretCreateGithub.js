@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateGithub model module.
  * @module model/DynamicSecretCreateGithub
- * @version 3.6.2
+ * @version 3.6.3
  */
 class DynamicSecretCreateGithub {
     /**
@@ -137,19 +137,19 @@ DynamicSecretCreateGithub.prototype['github-app-private-key'] = undefined;
 DynamicSecretCreateGithub.prototype['github-base-url'] = 'https://api.github.com/';
 
 /**
- * Github app installation id
+ * GitHub application installation id
  * @member {Number} installation-id
  */
 DynamicSecretCreateGithub.prototype['installation-id'] = undefined;
 
 /**
- * Optional, instead of installation id, set a GitHub organization name
+ * Optional, mutually exclusive with installation id, GitHub organization name
  * @member {String} installation-organization
  */
 DynamicSecretCreateGithub.prototype['installation-organization'] = undefined;
 
 /**
- * Optional, instead of installation id, set a GitHub repository '<owner>/<repo-name>
+ * Optional, mutually exclusive with installation id, GitHub repository '<owner>/<repo-name>'
  * @member {String} installation-repository
  */
 DynamicSecretCreateGithub.prototype['installation-repository'] = undefined;

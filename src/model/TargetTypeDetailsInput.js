@@ -42,7 +42,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 3.6.2
+ * @version 3.6.3
  */
 class TargetTypeDetailsInput {
     /**

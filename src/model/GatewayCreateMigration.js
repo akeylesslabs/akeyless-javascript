@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateMigration model module.
  * @module model/GatewayCreateMigration
- * @version 3.6.2
+ * @version 3.6.3
  */
 class GatewayCreateMigration {
     /**
@@ -82,6 +82,9 @@ class GatewayCreateMigration {
             }
             if (data.hasOwnProperty('ad-ssh-port')) {
                 obj['ad-ssh-port'] = ApiClient.convertToType(data['ad-ssh-port'], 'String');
+            }
+            if (data.hasOwnProperty('ad-target-format')) {
+                obj['ad-target-format'] = ApiClient.convertToType(data['ad-target-format'], 'String');
             }
             if (data.hasOwnProperty('ad-targets-type')) {
                 obj['ad-targets-type'] = ApiClient.convertToType(data['ad-targets-type'], 'String');
@@ -304,6 +307,13 @@ GatewayCreateMigration.prototype['ad-os-filter'] = undefined;
  * @default '22'
  */
 GatewayCreateMigration.prototype['ad-ssh-port'] = '22';
+
+/**
+ * Relevant only for ad-discovery-types=computers. For linked, all computers will be migrated into a linked target(s). if set with regular, the migration will create a target for each computer.
+ * @member {String} ad-target-format
+ * @default 'linked'
+ */
+GatewayCreateMigration.prototype['ad-target-format'] = 'linked';
 
 /**
  * Set the target type of the domain servers [ssh/windows](Relevant only for Active Directory migration)

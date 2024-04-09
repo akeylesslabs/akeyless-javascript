@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocTargetItem model module.
  * @module model/AssocTargetItem
- * @version 3.6.2
+ * @version 3.6.3
  */
 class AssocTargetItem {
     /**
@@ -81,6 +81,9 @@ class AssocTargetItem {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('post-provision-command')) {
+                obj['post-provision-command'] = ApiClient.convertToType(data['post-provision-command'], 'String');
             }
             if (data.hasOwnProperty('private-key-path')) {
                 obj['private-key-path'] = ApiClient.convertToType(data['private-key-path'], 'String');
@@ -181,6 +184,12 @@ AssocTargetItem.prototype['multi-region'] = 'false';
  * @member {String} name
  */
 AssocTargetItem.prototype['name'] = undefined;
+
+/**
+ * A custom command to run on the remote target after successful provisioning (relevant only for certificate provisioning)
+ * @member {String} post-provision-command
+ */
+AssocTargetItem.prototype['post-provision-command'] = undefined;
 
 /**
  * A path on the target to store the private key (relevant only for certificate provisioning)

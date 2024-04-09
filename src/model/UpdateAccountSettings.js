@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 3.6.2
+ * @version 3.6.3
  */
 class UpdateAccountSettings {
     /**
@@ -76,6 +76,9 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('dynamic-secret-max-ttl-enable')) {
                 obj['dynamic-secret-max-ttl-enable'] = ApiClient.convertToType(data['dynamic-secret-max-ttl-enable'], 'String');
+            }
+            if (data.hasOwnProperty('force-new-versions')) {
+                obj['force-new-versions'] = ApiClient.convertToType(data['force-new-versions'], 'String');
             }
             if (data.hasOwnProperty('invalid-characters')) {
                 obj['invalid-characters'] = ApiClient.convertToType(data['invalid-characters'], 'String');
@@ -190,7 +193,7 @@ UpdateAccountSettings.prototype['default-key-name'] = undefined;
 UpdateAccountSettings.prototype['default-share-link-ttl-minutes'] = undefined;
 
 /**
- * If set to true, new item version will be created on each update [true/false]
+ * If set to true, new versions is enabled by default
  * @member {String} default-versioning
  */
 UpdateAccountSettings.prototype['default-versioning'] = undefined;
@@ -212,6 +215,12 @@ UpdateAccountSettings.prototype['dynamic-secret-max-ttl'] = undefined;
  * @member {String} dynamic-secret-max-ttl-enable
  */
 UpdateAccountSettings.prototype['dynamic-secret-max-ttl-enable'] = undefined;
+
+/**
+ * If set to true, new version will be created on update
+ * @member {String} force-new-versions
+ */
+UpdateAccountSettings.prototype['force-new-versions'] = undefined;
 
 /**
  * Characters that cannot be used for items/targets/roles/auths/event_forwarder names. Empty string will enforce nothing.

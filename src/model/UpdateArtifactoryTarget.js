@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateArtifactoryTarget model module.
  * @module model/UpdateArtifactoryTarget
- * @version 3.6.2
+ * @version 3.6.3
  */
 class UpdateArtifactoryTarget {
     /**
@@ -78,6 +78,9 @@ class UpdateArtifactoryTarget {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -149,6 +152,12 @@ UpdateArtifactoryTarget.prototype['keep-prev-version'] = undefined;
  * @member {String} key
  */
 UpdateArtifactoryTarget.prototype['key'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+UpdateArtifactoryTarget.prototype['max-versions'] = undefined;
 
 /**
  * Target name

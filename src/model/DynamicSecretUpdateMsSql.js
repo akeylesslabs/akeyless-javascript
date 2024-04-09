@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateMsSql model module.
  * @module model/DynamicSecretUpdateMsSql
- * @version 3.6.2
+ * @version 3.6.3
  */
 class DynamicSecretUpdateMsSql {
     /**

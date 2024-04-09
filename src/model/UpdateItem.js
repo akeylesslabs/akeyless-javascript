@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 3.6.2
+ * @version 3.6.3
  */
 class UpdateItem {
     /**
@@ -75,6 +75,9 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -235,6 +238,12 @@ UpdateItem.prototype['host-provider'] = 'explicit';
  * @default false
  */
 UpdateItem.prototype['json'] = false;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+UpdateItem.prototype['max-versions'] = undefined;
 
 /**
  * Current item name

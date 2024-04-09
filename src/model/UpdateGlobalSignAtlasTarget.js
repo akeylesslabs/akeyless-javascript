@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGlobalSignAtlasTarget model module.
  * @module model/UpdateGlobalSignAtlasTarget
- * @version 3.6.2
+ * @version 3.6.3
  */
 class UpdateGlobalSignAtlasTarget {
     /**
@@ -73,6 +73,9 @@ class UpdateGlobalSignAtlasTarget {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
             if (data.hasOwnProperty('mtls-cert-data-base64')) {
                 obj['mtls-cert-data-base64'] = ApiClient.convertToType(data['mtls-cert-data-base64'], 'String');
@@ -147,6 +150,12 @@ UpdateGlobalSignAtlasTarget.prototype['keep-prev-version'] = undefined;
  * @member {String} key
  */
 UpdateGlobalSignAtlasTarget.prototype['key'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+UpdateGlobalSignAtlasTarget.prototype['max-versions'] = undefined;
 
 /**
  * Mutual TLS Certificate contents of the GlobalSign Atlas account encoded in base64, either mtls-cert-file-path or mtls-cert-data-base64 must be supplied
