@@ -4,11 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bastionAccessId** | **String** |  | [optional] 
-**bastionClusterName** | **String** |  | [optional] 
-**bastionInstanceId** | **String** |  | [optional] 
-**isInUsed** | **Boolean** |  | [optional] 
-**sessionId** | **String** |  | [optional] 
-**time** | **Date** |  | [optional] 
+**countInfo** | **{String: {String: Number}}** |  | [optional] 
+**isInUse** | **Boolean** |  | [optional] 
+**lastUsedItem** | **Date** |  | [optional] 
 
 

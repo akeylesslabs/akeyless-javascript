@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerNativeK8S model module.
  * @module model/GatewayCreateProducerNativeK8S
- * @version 3.6.3
+ * @version 4.0.0
  */
 class GatewayCreateProducerNativeK8S {
     /**
@@ -64,6 +64,9 @@ class GatewayCreateProducerNativeK8S {
             }
             if (data.hasOwnProperty('k8s-cluster-endpoint')) {
                 obj['k8s-cluster-endpoint'] = ApiClient.convertToType(data['k8s-cluster-endpoint'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-cluster-name')) {
+                obj['k8s-cluster-name'] = ApiClient.convertToType(data['k8s-cluster-name'], 'String');
             }
             if (data.hasOwnProperty('k8s-cluster-token')) {
                 obj['k8s-cluster-token'] = ApiClient.convertToType(data['k8s-cluster-token'], 'String');
@@ -171,6 +174,12 @@ GatewayCreateProducerNativeK8S.prototype['k8s-cluster-ca-cert'] = undefined;
  * @member {String} k8s-cluster-endpoint
  */
 GatewayCreateProducerNativeK8S.prototype['k8s-cluster-endpoint'] = undefined;
+
+/**
+ * K8S cluster name
+ * @member {String} k8s-cluster-name
+ */
+GatewayCreateProducerNativeK8S.prototype['k8s-cluster-name'] = undefined;
 
 /**
  * K8S cluster Bearer token

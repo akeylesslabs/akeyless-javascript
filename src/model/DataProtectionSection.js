@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DataProtectionSection model module.
  * @module model/DataProtectionSection
- * @version 3.6.3
+ * @version 4.0.0
  */
 class DataProtectionSection {
     /**

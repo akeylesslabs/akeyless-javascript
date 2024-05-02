@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetKubeExecCreds model module.
  * @module model/GetKubeExecCreds
- * @version 3.6.3
+ * @version 4.0.0
  */
 class GetKubeExecCreds {
     /**
@@ -81,7 +81,7 @@ class GetKubeExecCreds {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('ttl')) {
-                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
+                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
@@ -160,7 +160,7 @@ GetKubeExecCreds.prototype['token'] = undefined;
 
 /**
  * Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL)
- * @member {Number} ttl
+ * @member {String} ttl
  */
 GetKubeExecCreds.prototype['ttl'] = undefined;
 

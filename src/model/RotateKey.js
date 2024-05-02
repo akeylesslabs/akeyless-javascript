@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotateKey model module.
  * @module model/RotateKey
- * @version 3.6.3
+ * @version 4.0.0
  */
 class RotateKey {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 3.6.3
+ * @version 4.0.0
  */
 class UpdatePKICertIssuer {
     /**
@@ -24,7 +24,7 @@ class UpdatePKICertIssuer {
      * @alias module:model/UpdatePKICertIssuer
      * @param name {String} PKI certificate issuer name
      * @param signerKeyName {String} A key to sign the certificate with, required in Private CA mode
-     * @param ttl {Number} The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs
+     * @param ttl {String} The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs
      */
     constructor(name, signerKeyName, ttl) { 
         
@@ -162,7 +162,7 @@ class UpdatePKICertIssuer {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('ttl')) {
-                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
+                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
@@ -395,7 +395,7 @@ UpdatePKICertIssuer.prototype['token'] = undefined;
 
 /**
  * The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs
- * @member {Number} ttl
+ * @member {String} ttl
  */
 UpdatePKICertIssuer.prototype['ttl'] = undefined;
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateAzure model module.
  * @module model/RotatedSecretUpdateAzure
- * @version 3.6.3
+ * @version 4.0.0
  */
 class RotatedSecretUpdateAzure {
     /**

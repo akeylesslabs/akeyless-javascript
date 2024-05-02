@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTarget model module.
  * @module model/CreateDBTarget
- * @version 3.6.3
+ * @version 4.0.0
  */
 class CreateDBTarget {
     /**
@@ -67,6 +67,9 @@ class CreateDBTarget {
             }
             if (data.hasOwnProperty('cloud-service-provider')) {
                 obj['cloud-service-provider'] = ApiClient.convertToType(data['cloud-service-provider'], 'String');
+            }
+            if (data.hasOwnProperty('cluster-mode')) {
+                obj['cluster-mode'] = ApiClient.convertToType(data['cluster-mode'], 'Boolean');
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
@@ -190,6 +193,12 @@ CreateDBTarget.prototype['azure-tenant-id'] = undefined;
  * @member {String} cloud-service-provider
  */
 CreateDBTarget.prototype['cloud-service-provider'] = undefined;
+
+/**
+ * Cluster Mode
+ * @member {Boolean} cluster-mode
+ */
+CreateDBTarget.prototype['cluster-mode'] = undefined;
 
 /**
  * Deprecated - use description

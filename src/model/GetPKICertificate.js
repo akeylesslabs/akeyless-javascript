@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPKICertificate model module.
  * @module model/GetPKICertificate
- * @version 3.6.3
+ * @version 4.0.0
  */
 class GetPKICertificate {
     /**
@@ -77,7 +77,7 @@ class GetPKICertificate {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('ttl')) {
-                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
+                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
@@ -149,7 +149,7 @@ GetPKICertificate.prototype['token'] = undefined;
 
 /**
  * Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL)
- * @member {Number} ttl
+ * @member {String} ttl
  */
 GetPKICertificate.prototype['ttl'] = undefined;
 

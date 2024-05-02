@@ -18,7 +18,7 @@ import MigrationsConfigLastChange from './MigrationsConfigLastChange';
 /**
  * The LastConfigChange model module.
  * @module model/LastConfigChange
- * @version 3.6.3
+ * @version 4.0.0
  */
 class LastConfigChange {
     /**

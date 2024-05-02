@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipClientSetRule model module.
  * @module model/KmipClientSetRule
- * @version 3.6.3
+ * @version 4.0.0
  */
 class KmipClientSetRule {
     /**

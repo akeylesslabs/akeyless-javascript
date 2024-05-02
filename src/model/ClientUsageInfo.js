@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClientUsageInfo model module.
  * @module model/ClientUsageInfo
- * @version 3.6.3
+ * @version 4.0.0
  */
 class ClientUsageInfo {
     /**

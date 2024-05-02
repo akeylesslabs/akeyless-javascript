@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayStopProducerOutput model module.
  * @module model/GatewayStopProducerOutput
- * @version 3.6.3
+ * @version 4.0.0
  */
 class GatewayStopProducerOutput {
     /**

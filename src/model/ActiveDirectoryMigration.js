@@ -18,7 +18,7 @@ import MigrationGeneral from './MigrationGeneral';
 /**
  * The ActiveDirectoryMigration model module.
  * @module model/ActiveDirectoryMigration
- * @version 3.6.3
+ * @version 4.0.0
  */
 class ActiveDirectoryMigration {
     /**

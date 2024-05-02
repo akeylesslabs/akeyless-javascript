@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotationSecretMaxInterval model module.
  * @module model/RotationSecretMaxInterval
- * @version 3.6.3
+ * @version 4.0.0
  */
 class RotationSecretMaxInterval {
     /**

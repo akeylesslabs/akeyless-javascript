@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLdapAuthConfigOutput model module.
  * @module model/GatewayUpdateLdapAuthConfigOutput
- * @version 3.6.3
+ * @version 4.0.0
  */
 class GatewayUpdateLdapAuthConfigOutput {
     /**

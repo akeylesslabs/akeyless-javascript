@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeItem model module.
  * @module model/DescribeItem
- * @version 3.6.3
+ * @version 4.0.0
  */
 class DescribeItem {
     /**

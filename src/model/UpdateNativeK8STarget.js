@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateNativeK8STarget model module.
  * @module model/UpdateNativeK8STarget
- * @version 3.6.3
+ * @version 4.0.0
  */
 class UpdateNativeK8STarget {
     /**
@@ -78,6 +78,9 @@ class UpdateNativeK8STarget {
             }
             if (data.hasOwnProperty('k8s-cluster-endpoint')) {
                 obj['k8s-cluster-endpoint'] = ApiClient.convertToType(data['k8s-cluster-endpoint'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-cluster-name')) {
+                obj['k8s-cluster-name'] = ApiClient.convertToType(data['k8s-cluster-name'], 'String');
             }
             if (data.hasOwnProperty('k8s-cluster-token')) {
                 obj['k8s-cluster-token'] = ApiClient.convertToType(data['k8s-cluster-token'], 'String');
@@ -167,6 +170,12 @@ UpdateNativeK8STarget.prototype['k8s-cluster-ca-cert'] = 'dummy_val';
  * @default 'dummy_val'
  */
 UpdateNativeK8STarget.prototype['k8s-cluster-endpoint'] = 'dummy_val';
+
+/**
+ * K8S cluster name
+ * @member {String} k8s-cluster-name
+ */
+UpdateNativeK8STarget.prototype['k8s-cluster-name'] = undefined;
 
 /**
  * K8S cluster Bearer token

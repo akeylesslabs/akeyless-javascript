@@ -97,6 +97,7 @@ Method | HTTP request | Description
 [**dynamicSecretCreateGcp**](V2Api.md#dynamicSecretCreateGcp) | **POST** /dynamic-secret-create-gcp | 
 [**dynamicSecretCreateGithub**](V2Api.md#dynamicSecretCreateGithub) | **POST** /dynamic-secret-create-github | 
 [**dynamicSecretCreateGke**](V2Api.md#dynamicSecretCreateGke) | **POST** /dynamic-secret-create-gke | 
+[**dynamicSecretCreateGoogleWorkspace**](V2Api.md#dynamicSecretCreateGoogleWorkspace) | **POST** /dynamic-secret-create-google-workspace | 
 [**dynamicSecretCreateHanaDb**](V2Api.md#dynamicSecretCreateHanaDb) | **POST** /dynamic-secret-create-hanadb | 
 [**dynamicSecretCreateK8s**](V2Api.md#dynamicSecretCreateK8s) | **POST** /dynamic-secret-create-k8s | 
 [**dynamicSecretCreateLdap**](V2Api.md#dynamicSecretCreateLdap) | **POST** /dynamic-secret-create-ldap | 
@@ -129,6 +130,7 @@ Method | HTTP request | Description
 [**dynamicSecretUpdateGcp**](V2Api.md#dynamicSecretUpdateGcp) | **POST** /dynamic-secret-update-gcp | 
 [**dynamicSecretUpdateGithub**](V2Api.md#dynamicSecretUpdateGithub) | **POST** /dynamic-secret-update-github | 
 [**dynamicSecretUpdateGke**](V2Api.md#dynamicSecretUpdateGke) | **POST** /dynamic-secret-update-gke | 
+[**dynamicSecretUpdateGoogleWorkspace**](V2Api.md#dynamicSecretUpdateGoogleWorkspace) | **POST** /dynamic-secret-update-google-workspace | 
 [**dynamicSecretUpdateHanaDb**](V2Api.md#dynamicSecretUpdateHanaDb) | **POST** /dynamic-secret-update-hana | 
 [**dynamicSecretUpdateK8s**](V2Api.md#dynamicSecretUpdateK8s) | **POST** /dynamic-secret-update-k8s | 
 [**dynamicSecretUpdateLdap**](V2Api.md#dynamicSecretUpdateLdap) | **POST** /dynamic-secret-update-ldap | 
@@ -4340,6 +4342,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## dynamicSecretCreateGoogleWorkspace
+
+> DynamicSecretCreateOutput dynamicSecretCreateGoogleWorkspace(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretCreateGoogleWorkspace(); // DynamicSecretCreateGoogleWorkspace | 
+apiInstance.dynamicSecretCreateGoogleWorkspace(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateGoogleWorkspace**](DynamicSecretCreateGoogleWorkspace.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## dynamicSecretCreateHanaDb
 
 > DynamicSecretCreateOutput dynamicSecretCreateHanaDb(body)
@@ -5014,7 +5058,7 @@ No authorization required
 
 ## dynamicSecretGet
 
-> DSProducerDetails dynamicSecretGet()
+> DSProducerDetails dynamicSecretGet(body)
 
 
 
@@ -5024,7 +5068,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-apiInstance.dynamicSecretGet().then((data) => {
+let body = new akeyless.DynamicSecretGet(); // DynamicSecretGet | 
+apiInstance.dynamicSecretGet(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5034,7 +5079,10 @@ apiInstance.dynamicSecretGet().then((data) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretGet**](DynamicSecretGet.md)|  | 
 
 ### Return type
 
@@ -5046,7 +5094,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -5667,6 +5715,48 @@ apiInstance.dynamicSecretUpdateGke(body).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**DynamicSecretUpdateGke**](DynamicSecretUpdateGke.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateGoogleWorkspace
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateGoogleWorkspace(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DynamicSecretUpdateGoogleWorkspace(); // DynamicSecretUpdateGoogleWorkspace | 
+apiInstance.dynamicSecretUpdateGoogleWorkspace(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateGoogleWorkspace**](DynamicSecretUpdateGoogleWorkspace.md)|  | 
 
 ### Return type
 
@@ -10894,7 +10984,7 @@ No authorization required
 
 ## getDynamicSecretValue
 
-> {String: String} getDynamicSecretValue(body)
+> Object getDynamicSecretValue(body)
 
 
 
@@ -10922,7 +11012,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{String: String}**
+**Object**
 
 ### Authorization
 
@@ -11230,7 +11320,7 @@ No authorization required
 
 ## getRotatedSecretValue
 
-> {String: Object} getRotatedSecretValue(body)
+> Object getRotatedSecretValue(body)
 
 
 
@@ -11258,7 +11348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{String: Object}**
+**Object**
 
 ### Authorization
 
@@ -11314,7 +11404,7 @@ No authorization required
 
 ## getSecretValue
 
-> {String: String} getSecretValue(body)
+> Object getSecretValue(body)
 
 
 
@@ -11342,7 +11432,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{String: String}**
+**Object**
 
 ### Authorization
 
@@ -13774,7 +13864,7 @@ No authorization required
 
 ## rotatedSecretGetValue
 
-> {String: String} rotatedSecretGetValue(body)
+> {String: Object} rotatedSecretGetValue(body)
 
 
 
@@ -13802,7 +13892,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{String: String}**
+**{String: Object}**
 
 ### Authorization
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ImportPasswords model module.
  * @module model/ImportPasswords
- * @version 3.6.3
+ * @version 4.0.0
  */
 class ImportPasswords {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHTargetOutput model module.
  * @module model/UpdateSSHTargetOutput
- * @version 3.6.3
+ * @version 4.0.0
  */
 class UpdateSSHTargetOutput {
     /**

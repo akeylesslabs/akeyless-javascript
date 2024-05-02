@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NativeK8sTargetDetails model module.
  * @module model/NativeK8sTargetDetails
- * @version 3.6.3
+ * @version 4.0.0
  */
 class NativeK8sTargetDetails {
     /**
@@ -65,6 +65,9 @@ class NativeK8sTargetDetails {
             if (data.hasOwnProperty('k8s_cluster_endpoint')) {
                 obj['k8s_cluster_endpoint'] = ApiClient.convertToType(data['k8s_cluster_endpoint'], 'String');
             }
+            if (data.hasOwnProperty('k8s_cluster_name')) {
+                obj['k8s_cluster_name'] = ApiClient.convertToType(data['k8s_cluster_name'], 'String');
+            }
             if (data.hasOwnProperty('use_gw_service_account')) {
                 obj['use_gw_service_account'] = ApiClient.convertToType(data['use_gw_service_account'], 'Boolean');
             }
@@ -105,6 +108,11 @@ NativeK8sTargetDetails.prototype['k8s_cluster_ca_certificate'] = undefined;
  * @member {String} k8s_cluster_endpoint
  */
 NativeK8sTargetDetails.prototype['k8s_cluster_endpoint'] = undefined;
+
+/**
+ * @member {String} k8s_cluster_name
+ */
+NativeK8sTargetDetails.prototype['k8s_cluster_name'] = undefined;
 
 /**
  * @member {Boolean} use_gw_service_account

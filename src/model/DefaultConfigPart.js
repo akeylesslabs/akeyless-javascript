@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DefaultConfigPart model module.
  * @module model/DefaultConfigPart
- * @version 3.6.3
+ * @version 4.0.0
  */
 class DefaultConfigPart {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateOidcApp model module.
  * @module model/CreateOidcApp
- * @version 3.6.3
+ * @version 4.0.0
  */
 class CreateOidcApp {
     /**

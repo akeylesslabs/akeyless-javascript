@@ -238,6 +238,7 @@ import DynamicSecretCreateEks from './model/DynamicSecretCreateEks';
 import DynamicSecretCreateGcp from './model/DynamicSecretCreateGcp';
 import DynamicSecretCreateGithub from './model/DynamicSecretCreateGithub';
 import DynamicSecretCreateGke from './model/DynamicSecretCreateGke';
+import DynamicSecretCreateGoogleWorkspace from './model/DynamicSecretCreateGoogleWorkspace';
 import DynamicSecretCreateHanaDb from './model/DynamicSecretCreateHanaDb';
 import DynamicSecretCreateK8s from './model/DynamicSecretCreateK8s';
 import DynamicSecretCreateLdap from './model/DynamicSecretCreateLdap';
@@ -275,6 +276,7 @@ import DynamicSecretUpdateEks from './model/DynamicSecretUpdateEks';
 import DynamicSecretUpdateGcp from './model/DynamicSecretUpdateGcp';
 import DynamicSecretUpdateGithub from './model/DynamicSecretUpdateGithub';
 import DynamicSecretUpdateGke from './model/DynamicSecretUpdateGke';
+import DynamicSecretUpdateGoogleWorkspace from './model/DynamicSecretUpdateGoogleWorkspace';
 import DynamicSecretUpdateHanaDb from './model/DynamicSecretUpdateHanaDb';
 import DynamicSecretUpdateK8s from './model/DynamicSecretUpdateK8s';
 import DynamicSecretUpdateLdap from './model/DynamicSecretUpdateLdap';
@@ -363,6 +365,7 @@ import GatewayCreateProducerGithub from './model/GatewayCreateProducerGithub';
 import GatewayCreateProducerGithubOutput from './model/GatewayCreateProducerGithubOutput';
 import GatewayCreateProducerGke from './model/GatewayCreateProducerGke';
 import GatewayCreateProducerGkeOutput from './model/GatewayCreateProducerGkeOutput';
+import GatewayCreateProducerGoogleWorkspaceOutput from './model/GatewayCreateProducerGoogleWorkspaceOutput';
 import GatewayCreateProducerHanaDb from './model/GatewayCreateProducerHanaDb';
 import GatewayCreateProducerHanaDbOutput from './model/GatewayCreateProducerHanaDbOutput';
 import GatewayCreateProducerLdap from './model/GatewayCreateProducerLdap';
@@ -423,6 +426,8 @@ import GatewayMigrationGetOutput from './model/GatewayMigrationGetOutput';
 import GatewayMigrationListOutput from './model/GatewayMigrationListOutput';
 import GatewayMigrationSyncOutput from './model/GatewayMigrationSyncOutput';
 import GatewayMigrationUpdateOutput from './model/GatewayMigrationUpdateOutput';
+import GatewayPartialUpdateK8SAuthConfig from './model/GatewayPartialUpdateK8SAuthConfig';
+import GatewayPartialUpdateK8SAuthConfigOutput from './model/GatewayPartialUpdateK8SAuthConfigOutput';
 import GatewayRevokeTmpUsers from './model/GatewayRevokeTmpUsers';
 import GatewayStartProducer from './model/GatewayStartProducer';
 import GatewayStartProducerOutput from './model/GatewayStartProducerOutput';
@@ -924,7 +929,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 3.6.3
+* @version 4.0.0
 */
 export {
     /**
@@ -2284,6 +2289,12 @@ export {
     DynamicSecretCreateGke,
 
     /**
+     * The DynamicSecretCreateGoogleWorkspace model constructor.
+     * @property {module:model/DynamicSecretCreateGoogleWorkspace}
+     */
+    DynamicSecretCreateGoogleWorkspace,
+
+    /**
      * The DynamicSecretCreateHanaDb model constructor.
      * @property {module:model/DynamicSecretCreateHanaDb}
      */
@@ -2504,6 +2515,12 @@ export {
      * @property {module:model/DynamicSecretUpdateGke}
      */
     DynamicSecretUpdateGke,
+
+    /**
+     * The DynamicSecretUpdateGoogleWorkspace model constructor.
+     * @property {module:model/DynamicSecretUpdateGoogleWorkspace}
+     */
+    DynamicSecretUpdateGoogleWorkspace,
 
     /**
      * The DynamicSecretUpdateHanaDb model constructor.
@@ -3034,6 +3051,12 @@ export {
     GatewayCreateProducerGkeOutput,
 
     /**
+     * The GatewayCreateProducerGoogleWorkspaceOutput model constructor.
+     * @property {module:model/GatewayCreateProducerGoogleWorkspaceOutput}
+     */
+    GatewayCreateProducerGoogleWorkspaceOutput,
+
+    /**
      * The GatewayCreateProducerHanaDb model constructor.
      * @property {module:model/GatewayCreateProducerHanaDb}
      */
@@ -3392,6 +3415,18 @@ export {
      * @property {module:model/GatewayMigrationUpdateOutput}
      */
     GatewayMigrationUpdateOutput,
+
+    /**
+     * The GatewayPartialUpdateK8SAuthConfig model constructor.
+     * @property {module:model/GatewayPartialUpdateK8SAuthConfig}
+     */
+    GatewayPartialUpdateK8SAuthConfig,
+
+    /**
+     * The GatewayPartialUpdateK8SAuthConfigOutput model constructor.
+     * @property {module:model/GatewayPartialUpdateK8SAuthConfigOutput}
+     */
+    GatewayPartialUpdateK8SAuthConfigOutput,
 
     /**
      * The GatewayRevokeTmpUsers model constructor.

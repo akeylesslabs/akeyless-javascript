@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretDelete model module.
  * @module model/DynamicSecretDelete
- * @version 3.6.3
+ * @version 4.0.0
  */
 class DynamicSecretDelete {
     /**

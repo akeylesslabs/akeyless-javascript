@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ZeroSSLTargetDetails model module.
  * @module model/ZeroSSLTargetDetails
- * @version 3.6.3
+ * @version 4.0.0
  */
 class ZeroSSLTargetDetails {
     /**

@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretGet model module.
  * @module model/DynamicSecretGet
- * @version 3.6.3
+ * @version 4.0.0
  */
 class DynamicSecretGet {
     /**
      * Constructs a new <code>DynamicSecretGet</code>.
-     * DynamicSecretGet is a command that returns dynamic secret details
+     * dynamicSecretGet is a command that returns dynamic secret details
      * @alias module:model/DynamicSecretGet
      * @param name {String} Dynamic secret name
      */

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateHanadb model module.
  * @module model/RotatedSecretCreateHanadb
- * @version 3.6.3
+ * @version 4.0.0
  */
 class RotatedSecretCreateHanadb {
     /**

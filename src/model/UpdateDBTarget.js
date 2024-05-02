@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTarget model module.
  * @module model/UpdateDBTarget
- * @version 3.6.3
+ * @version 4.0.0
  */
 class UpdateDBTarget {
     /**
@@ -67,6 +67,9 @@ class UpdateDBTarget {
             }
             if (data.hasOwnProperty('cloud-service-provider')) {
                 obj['cloud-service-provider'] = ApiClient.convertToType(data['cloud-service-provider'], 'String');
+            }
+            if (data.hasOwnProperty('cluster-mode')) {
+                obj['cluster-mode'] = ApiClient.convertToType(data['cluster-mode'], 'Boolean');
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
@@ -199,6 +202,12 @@ UpdateDBTarget.prototype['azure-tenant-id'] = undefined;
  * @member {String} cloud-service-provider
  */
 UpdateDBTarget.prototype['cloud-service-provider'] = undefined;
+
+/**
+ * Cluster Mode
+ * @member {Boolean} cluster-mode
+ */
+UpdateDBTarget.prototype['cluster-mode'] = undefined;
 
 /**
  * Deprecated - use description

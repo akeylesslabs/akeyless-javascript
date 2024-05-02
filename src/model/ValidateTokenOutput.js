@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidateTokenOutput model module.
  * @module model/ValidateTokenOutput
- * @version 3.6.3
+ * @version 4.0.0
  */
 class ValidateTokenOutput {
     /**
@@ -53,8 +53,14 @@ class ValidateTokenOutput {
             if (data.hasOwnProperty('is_valid')) {
                 obj['is_valid'] = ApiClient.convertToType(data['is_valid'], 'Boolean');
             }
+            if (data.hasOwnProperty('last_rotate')) {
+                obj['last_rotate'] = ApiClient.convertToType(data['last_rotate'], 'String');
+            }
             if (data.hasOwnProperty('reason')) {
                 obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
+            }
+            if (data.hasOwnProperty('ttl')) {
+                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
             }
         }
         return obj;
@@ -74,9 +80,19 @@ ValidateTokenOutput.prototype['expiration'] = undefined;
 ValidateTokenOutput.prototype['is_valid'] = undefined;
 
 /**
+ * @member {String} last_rotate
+ */
+ValidateTokenOutput.prototype['last_rotate'] = undefined;
+
+/**
  * @member {String} reason
  */
 ValidateTokenOutput.prototype['reason'] = undefined;
+
+/**
+ * @member {Number} ttl
+ */
+ValidateTokenOutput.prototype['ttl'] = undefined;
 
 
 

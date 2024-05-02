@@ -17,7 +17,7 @@ import BastionListEntry from './BastionListEntry';
 /**
  * The BastionsList model module.
  * @module model/BastionsList
- * @version 3.6.3
+ * @version 4.0.0
  */
 class BastionsList {
     /**

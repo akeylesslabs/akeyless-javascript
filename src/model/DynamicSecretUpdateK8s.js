@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateK8s model module.
  * @module model/DynamicSecretUpdateK8s
- * @version 3.6.3
+ * @version 4.0.0
  */
 class DynamicSecretUpdateK8s {
     /**
@@ -67,6 +67,9 @@ class DynamicSecretUpdateK8s {
             }
             if (data.hasOwnProperty('k8s-cluster-endpoint')) {
                 obj['k8s-cluster-endpoint'] = ApiClient.convertToType(data['k8s-cluster-endpoint'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-cluster-name')) {
+                obj['k8s-cluster-name'] = ApiClient.convertToType(data['k8s-cluster-name'], 'String');
             }
             if (data.hasOwnProperty('k8s-cluster-token')) {
                 obj['k8s-cluster-token'] = ApiClient.convertToType(data['k8s-cluster-token'], 'String');
@@ -183,6 +186,12 @@ DynamicSecretUpdateK8s.prototype['k8s-cluster-ca-cert'] = undefined;
  * @member {String} k8s-cluster-endpoint
  */
 DynamicSecretUpdateK8s.prototype['k8s-cluster-endpoint'] = undefined;
+
+/**
+ * K8S cluster name
+ * @member {String} k8s-cluster-name
+ */
+DynamicSecretUpdateK8s.prototype['k8s-cluster-name'] = undefined;
 
 /**
  * K8S cluster Bearer token

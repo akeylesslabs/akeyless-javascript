@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AttributeTypeAndValue model module.
  * @module model/AttributeTypeAndValue
- * @version 3.6.3
+ * @version 4.0.0
  */
 class AttributeTypeAndValue {
     /**
@@ -52,7 +52,7 @@ class AttributeTypeAndValue {
                 obj['Type'] = ApiClient.convertToType(data['Type'], ['Number']);
             }
             if (data.hasOwnProperty('Value')) {
-                obj['Value'] = ApiClient.convertToType(data['Value'], Object);
+                obj['Value'] = ApiClient.convertToType(data['Value'], 'String');
             }
         }
         return obj;
@@ -67,7 +67,7 @@ class AttributeTypeAndValue {
 AttributeTypeAndValue.prototype['Type'] = undefined;
 
 /**
- * @member {Object} Value
+ * @member {String} Value
  */
 AttributeTypeAndValue.prototype['Value'] = undefined;
 

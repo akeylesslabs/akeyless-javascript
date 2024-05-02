@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ItemSraStatus model module.
  * @module model/ItemSraStatus
- * @version 3.6.3
+ * @version 4.0.0
  */
 class ItemSraStatus {
     /**
@@ -47,23 +47,14 @@ class ItemSraStatus {
         if (data) {
             obj = obj || new ItemSraStatus();
 
-            if (data.hasOwnProperty('bastion_access_id')) {
-                obj['bastion_access_id'] = ApiClient.convertToType(data['bastion_access_id'], 'String');
+            if (data.hasOwnProperty('count_info')) {
+                obj['count_info'] = ApiClient.convertToType(data['count_info'], {'String': {'String': 'Number'}});
             }
-            if (data.hasOwnProperty('bastion_cluster_name')) {
-                obj['bastion_cluster_name'] = ApiClient.convertToType(data['bastion_cluster_name'], 'String');
+            if (data.hasOwnProperty('is_in_use')) {
+                obj['is_in_use'] = ApiClient.convertToType(data['is_in_use'], 'Boolean');
             }
-            if (data.hasOwnProperty('bastion_instance_id')) {
-                obj['bastion_instance_id'] = ApiClient.convertToType(data['bastion_instance_id'], 'String');
-            }
-            if (data.hasOwnProperty('is_in_used')) {
-                obj['is_in_used'] = ApiClient.convertToType(data['is_in_used'], 'Boolean');
-            }
-            if (data.hasOwnProperty('session_id')) {
-                obj['session_id'] = ApiClient.convertToType(data['session_id'], 'String');
-            }
-            if (data.hasOwnProperty('time')) {
-                obj['time'] = ApiClient.convertToType(data['time'], 'Date');
+            if (data.hasOwnProperty('last_used_item')) {
+                obj['last_used_item'] = ApiClient.convertToType(data['last_used_item'], 'Date');
             }
         }
         return obj;
@@ -73,34 +64,19 @@ class ItemSraStatus {
 }
 
 /**
- * @member {String} bastion_access_id
+ * @member {Object.<String, Object.<String, Number>>} count_info
  */
-ItemSraStatus.prototype['bastion_access_id'] = undefined;
+ItemSraStatus.prototype['count_info'] = undefined;
 
 /**
- * @member {String} bastion_cluster_name
+ * @member {Boolean} is_in_use
  */
-ItemSraStatus.prototype['bastion_cluster_name'] = undefined;
+ItemSraStatus.prototype['is_in_use'] = undefined;
 
 /**
- * @member {String} bastion_instance_id
+ * @member {Date} last_used_item
  */
-ItemSraStatus.prototype['bastion_instance_id'] = undefined;
-
-/**
- * @member {Boolean} is_in_used
- */
-ItemSraStatus.prototype['is_in_used'] = undefined;
-
-/**
- * @member {String} session_id
- */
-ItemSraStatus.prototype['session_id'] = undefined;
-
-/**
- * @member {Date} time
- */
-ItemSraStatus.prototype['time'] = undefined;
+ItemSraStatus.prototype['last_used_item'] = undefined;
 
 
 

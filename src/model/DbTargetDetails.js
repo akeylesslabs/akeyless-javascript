@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DbTargetDetails model module.
  * @module model/DbTargetDetails
- * @version 3.6.3
+ * @version 4.0.0
  */
 class DbTargetDetails {
     /**
@@ -50,6 +50,9 @@ class DbTargetDetails {
 
             if (data.hasOwnProperty('cloud_service_provider')) {
                 obj['cloud_service_provider'] = ApiClient.convertToType(data['cloud_service_provider'], 'String');
+            }
+            if (data.hasOwnProperty('cluster_mode')) {
+                obj['cluster_mode'] = ApiClient.convertToType(data['cluster_mode'], 'Boolean');
             }
             if (data.hasOwnProperty('connection_type')) {
                 obj['connection_type'] = ApiClient.convertToType(data['connection_type'], 'String');
@@ -110,6 +113,11 @@ class DbTargetDetails {
  * @member {String} cloud_service_provider
  */
 DbTargetDetails.prototype['cloud_service_provider'] = undefined;
+
+/**
+ * @member {Boolean} cluster_mode
+ */
+DbTargetDetails.prototype['cluster_mode'] = undefined;
 
 /**
  * @member {String} connection_type

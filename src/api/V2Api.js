@@ -181,6 +181,7 @@ import DynamicSecretCreateEks from '../model/DynamicSecretCreateEks';
 import DynamicSecretCreateGcp from '../model/DynamicSecretCreateGcp';
 import DynamicSecretCreateGithub from '../model/DynamicSecretCreateGithub';
 import DynamicSecretCreateGke from '../model/DynamicSecretCreateGke';
+import DynamicSecretCreateGoogleWorkspace from '../model/DynamicSecretCreateGoogleWorkspace';
 import DynamicSecretCreateHanaDb from '../model/DynamicSecretCreateHanaDb';
 import DynamicSecretCreateK8s from '../model/DynamicSecretCreateK8s';
 import DynamicSecretCreateLdap from '../model/DynamicSecretCreateLdap';
@@ -199,6 +200,7 @@ import DynamicSecretCreateSnowflake from '../model/DynamicSecretCreateSnowflake'
 import DynamicSecretCreateVenafi from '../model/DynamicSecretCreateVenafi';
 import DynamicSecretDelete from '../model/DynamicSecretDelete';
 import DynamicSecretDeleteOutput from '../model/DynamicSecretDeleteOutput';
+import DynamicSecretGet from '../model/DynamicSecretGet';
 import DynamicSecretGetValue from '../model/DynamicSecretGetValue';
 import DynamicSecretList from '../model/DynamicSecretList';
 import DynamicSecretTmpCredsDelete from '../model/DynamicSecretTmpCredsDelete';
@@ -214,6 +216,7 @@ import DynamicSecretUpdateEks from '../model/DynamicSecretUpdateEks';
 import DynamicSecretUpdateGcp from '../model/DynamicSecretUpdateGcp';
 import DynamicSecretUpdateGithub from '../model/DynamicSecretUpdateGithub';
 import DynamicSecretUpdateGke from '../model/DynamicSecretUpdateGke';
+import DynamicSecretUpdateGoogleWorkspace from '../model/DynamicSecretUpdateGoogleWorkspace';
 import DynamicSecretUpdateHanaDb from '../model/DynamicSecretUpdateHanaDb';
 import DynamicSecretUpdateK8s from '../model/DynamicSecretUpdateK8s';
 import DynamicSecretUpdateLdap from '../model/DynamicSecretUpdateLdap';
@@ -703,7 +706,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 3.6.3
+* @version 4.0.0
 */
 export default class V2Api {
 
@@ -4719,6 +4722,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/DynamicSecretCreateGoogleWorkspace} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateGoogleWorkspaceWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateGoogleWorkspace");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-google-workspace', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateGoogleWorkspace} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateGoogleWorkspace(body) {
+      return this.dynamicSecretCreateGoogleWorkspaceWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/DynamicSecretCreateHanaDb} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
      */
@@ -5407,10 +5453,15 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/DynamicSecretGet} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DSProducerDetails} and HTTP response
      */
-    dynamicSecretGetWithHttpInfo() {
-      let postBody = null;
+    dynamicSecretGetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretGet");
+      }
 
       let pathParams = {
       };
@@ -5422,7 +5473,7 @@ export default class V2Api {
       };
 
       let authNames = [];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = DSProducerDetails;
       return this.apiClient.callApi(
@@ -5433,10 +5484,11 @@ export default class V2Api {
     }
 
     /**
+     * @param {module:model/DynamicSecretGet} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DSProducerDetails}
      */
-    dynamicSecretGet() {
-      return this.dynamicSecretGetWithHttpInfo()
+    dynamicSecretGet(body) {
+      return this.dynamicSecretGetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -6081,6 +6133,49 @@ export default class V2Api {
      */
     dynamicSecretUpdateGke(body) {
       return this.dynamicSecretUpdateGkeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateGoogleWorkspace} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateGoogleWorkspaceWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateGoogleWorkspace");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-google-workspace', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateGoogleWorkspace} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateGoogleWorkspace(body) {
+      return this.dynamicSecretUpdateGoogleWorkspaceWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -11412,7 +11507,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetDynamicSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     getDynamicSecretValueWithHttpInfo(body) {
       let postBody = body;
@@ -11433,7 +11528,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = {'String': 'String'};
+      let returnType = Object;
       return this.apiClient.callApi(
         '/get-dynamic-secret-value', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -11443,7 +11538,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetDynamicSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     getDynamicSecretValue(body) {
       return this.getDynamicSecretValueWithHttpInfo(body)
@@ -11756,7 +11851,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetRotatedSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: Object}>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     getRotatedSecretValueWithHttpInfo(body) {
       let postBody = body;
@@ -11777,7 +11872,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = {'String': Object};
+      let returnType = Object;
       return this.apiClient.callApi(
         '/get-rotated-secret-value', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -11787,7 +11882,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetRotatedSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: Object}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     getRotatedSecretValue(body) {
       return this.getRotatedSecretValueWithHttpInfo(body)
@@ -11842,7 +11937,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     getSecretValueWithHttpInfo(body) {
       let postBody = body;
@@ -11863,7 +11958,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = {'String': 'String'};
+      let returnType = Object;
       return this.apiClient.callApi(
         '/get-secret-value', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -11873,7 +11968,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/GetSecretValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     getSecretValue(body) {
       return this.getSecretValueWithHttpInfo(body)
@@ -14316,7 +14411,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/RotatedSecretGetValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: Object}>} and HTTP response
      */
     rotatedSecretGetValueWithHttpInfo(body) {
       let postBody = body;
@@ -14337,7 +14432,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = {'String': 'String'};
+      let returnType = {'String': Object};
       return this.apiClient.callApi(
         '/rotated-secret-get-value', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -14347,7 +14442,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/RotatedSecretGetValue} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: Object}>}
      */
     rotatedSecretGetValue(body) {
       return this.rotatedSecretGetValueWithHttpInfo(body)

@@ -22,7 +22,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 3.6.3
+ * @version 4.0.0
  */
 class AccountGeneralSettings {
     /**

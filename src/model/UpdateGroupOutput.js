@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGroupOutput model module.
  * @module model/UpdateGroupOutput
- * @version 3.6.3
+ * @version 4.0.0
  */
 class UpdateGroupOutput {
     /**
