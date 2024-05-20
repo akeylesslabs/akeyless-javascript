@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ "or-appsec" ]
   schedule:
-    - cron: '0 2 * * 4'
+    - cron: '0 2 * * 0'
 
 jobs:
   analyze:
@@ -16,10 +16,7 @@ jobs:
     permissions:
       # required for all workflows
       security-events: write
-      # required to fetch internal or private CodeQL packs
       packages: read
-
-      # only required for workflows in private repositories
       actions: read
       contents: read
 
