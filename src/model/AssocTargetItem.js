@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocTargetItem model module.
  * @module model/AssocTargetItem
- * @version 4.0.0
+ * @version 4.1.0
  */
 class AssocTargetItem {
     /**
@@ -90,6 +90,9 @@ class AssocTargetItem {
             }
             if (data.hasOwnProperty('project-id')) {
                 obj['project-id'] = ApiClient.convertToType(data['project-id'], 'String');
+            }
+            if (data.hasOwnProperty('protection-level')) {
+                obj['protection-level'] = ApiClient.convertToType(data['protection-level'], 'String');
             }
             if (data.hasOwnProperty('purpose')) {
                 obj['purpose'] = ApiClient.convertToType(data['purpose'], 'String');
@@ -202,6 +205,13 @@ AssocTargetItem.prototype['private-key-path'] = undefined;
  * @member {String} project-id
  */
 AssocTargetItem.prototype['project-id'] = undefined;
+
+/**
+ * Protection level of the key [software/hardware] (relevant for gcp targets)
+ * @member {String} protection-level
+ * @default 'software'
+ */
+AssocTargetItem.prototype['protection-level'] = 'software';
 
 /**
  * Purpose of the key in GCP KMS (required for gcp targets)

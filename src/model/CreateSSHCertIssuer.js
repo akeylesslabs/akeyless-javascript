@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHCertIssuer model module.
  * @module model/CreateSSHCertIssuer
- * @version 4.0.0
+ * @version 4.1.0
  */
 class CreateSSHCertIssuer {
     /**
@@ -158,11 +158,10 @@ CreateSSHCertIssuer.prototype['description'] = undefined;
 CreateSSHCertIssuer.prototype['extensions'] = undefined;
 
 /**
- * Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret
  * @member {String} host-provider
- * @default 'explicit'
  */
-CreateSSHCertIssuer.prototype['host-provider'] = 'explicit';
+CreateSSHCertIssuer.prototype['host-provider'] = undefined;
 
 /**
  * Set output format to JSON
@@ -238,7 +237,7 @@ CreateSSHCertIssuer.prototype['signer-key-name'] = undefined;
 CreateSSHCertIssuer.prototype['tag'] = undefined;
 
 /**
- * A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer and ldap rotated secret, To specify multiple targets use argument multiple times
+ * A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times
  * @member {Array.<String>} target
  */
 CreateSSHCertIssuer.prototype['target'] = undefined;

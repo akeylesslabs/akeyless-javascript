@@ -18,7 +18,7 @@ import CertificateInfo from './CertificateInfo';
 /**
  * The CertificateChainInfo model module.
  * @module model/CertificateChainInfo
- * @version 4.0.0
+ * @version 4.1.0
  */
 class CertificateChainInfo {
     /**

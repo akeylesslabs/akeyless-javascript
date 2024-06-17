@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateGoogleWorkspace model module.
  * @module model/DynamicSecretCreateGoogleWorkspace
- * @version 4.0.0
+ * @version 4.1.0
  */
 class DynamicSecretCreateGoogleWorkspace {
     /**
@@ -24,12 +24,12 @@ class DynamicSecretCreateGoogleWorkspace {
      * dynamicSecretCreateGoogleWorkspace is a command that creates Google Workspace dynamic secret
      * @alias module:model/DynamicSecretCreateGoogleWorkspace
      * @param accessMode {String} 
-     * @param adminName {String} Admin user email
+     * @param adminEmail {String} Admin user email
      * @param name {String} Dynamic secret name
      */
-    constructor(accessMode, adminName, name) { 
+    constructor(accessMode, adminEmail, name) { 
         
-        DynamicSecretCreateGoogleWorkspace.initialize(this, accessMode, adminName, name);
+        DynamicSecretCreateGoogleWorkspace.initialize(this, accessMode, adminEmail, name);
     }
 
     /**
@@ -37,9 +37,9 @@ class DynamicSecretCreateGoogleWorkspace {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, accessMode, adminName, name) { 
+    static initialize(obj, accessMode, adminEmail, name) { 
         obj['access-mode'] = accessMode;
-        obj['admin-name'] = adminName;
+        obj['admin-email'] = adminEmail;
         obj['name'] = name;
     }
 
@@ -57,8 +57,8 @@ class DynamicSecretCreateGoogleWorkspace {
             if (data.hasOwnProperty('access-mode')) {
                 obj['access-mode'] = ApiClient.convertToType(data['access-mode'], 'String');
             }
-            if (data.hasOwnProperty('admin-name')) {
-                obj['admin-name'] = ApiClient.convertToType(data['admin-name'], 'String');
+            if (data.hasOwnProperty('admin-email')) {
+                obj['admin-email'] = ApiClient.convertToType(data['admin-email'], 'String');
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
@@ -69,11 +69,11 @@ class DynamicSecretCreateGoogleWorkspace {
             if (data.hasOwnProperty('gcp-key')) {
                 obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
             }
-            if (data.hasOwnProperty('group-name')) {
-                obj['group-name'] = ApiClient.convertToType(data['group-name'], 'String');
+            if (data.hasOwnProperty('group-email')) {
+                obj['group-email'] = ApiClient.convertToType(data['group-email'], 'String');
             }
-            if (data.hasOwnProperty('group-role-type')) {
-                obj['group-role-type'] = ApiClient.convertToType(data['group-role-type'], 'String');
+            if (data.hasOwnProperty('group-role')) {
+                obj['group-role'] = ApiClient.convertToType(data['group-role'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -119,9 +119,9 @@ DynamicSecretCreateGoogleWorkspace.prototype['access-mode'] = undefined;
 
 /**
  * Admin user email
- * @member {String} admin-name
+ * @member {String} admin-email
  */
-DynamicSecretCreateGoogleWorkspace.prototype['admin-name'] = undefined;
+DynamicSecretCreateGoogleWorkspace.prototype['admin-email'] = undefined;
 
 /**
  * Protection from accidental deletion of this item [true/false]
@@ -143,14 +143,14 @@ DynamicSecretCreateGoogleWorkspace.prototype['gcp-key'] = undefined;
 
 /**
  * A group email, relevant only for group access-mode
- * @member {String} group-name
+ * @member {String} group-email
  */
-DynamicSecretCreateGoogleWorkspace.prototype['group-name'] = undefined;
+DynamicSecretCreateGoogleWorkspace.prototype['group-email'] = undefined;
 
 /**
- * @member {String} group-role-type
+ * @member {String} group-role
  */
-DynamicSecretCreateGoogleWorkspace.prototype['group-role-type'] = undefined;
+DynamicSecretCreateGoogleWorkspace.prototype['group-role'] = undefined;
 
 /**
  * Set output format to JSON
@@ -189,7 +189,7 @@ DynamicSecretCreateGoogleWorkspace.prototype['role-scope'] = undefined;
 DynamicSecretCreateGoogleWorkspace.prototype['tags'] = undefined;
 
 /**
- * Name of existing target to use in producer creation
+ * Name of existing target to use in dynamic secret creation
  * @member {String} target-name
  */
 DynamicSecretCreateGoogleWorkspace.prototype['target-name'] = undefined;

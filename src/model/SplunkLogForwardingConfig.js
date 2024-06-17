@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SplunkLogForwardingConfig model module.
  * @module model/SplunkLogForwardingConfig
- * @version 4.0.0
+ * @version 4.1.0
  */
 class SplunkLogForwardingConfig {
     /**

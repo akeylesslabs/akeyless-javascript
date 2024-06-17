@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteRoleRuleOutput model module.
  * @module model/DeleteRoleRuleOutput
- * @version 4.0.0
+ * @version 4.1.0
  */
 class DeleteRoleRuleOutput {
     /**

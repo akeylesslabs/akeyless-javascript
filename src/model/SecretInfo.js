@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecretInfo model module.
  * @module model/SecretInfo
- * @version 4.0.0
+ * @version 4.1.0
  */
 class SecretInfo {
     /**
@@ -77,6 +77,9 @@ class SecretInfo {
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+            }
         }
         return obj;
     }
@@ -133,6 +136,11 @@ SecretInfo.prototype['tags'] = undefined;
  * @member {String} type
  */
 SecretInfo.prototype['type'] = undefined;
+
+/**
+ * @member {Number} version
+ */
+SecretInfo.prototype['version'] = undefined;
 
 
 

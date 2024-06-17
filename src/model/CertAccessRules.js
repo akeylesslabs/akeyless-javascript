@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CertAccessRules model module.
  * @module model/CertAccessRules
- * @version 4.0.0
+ * @version 4.1.0
  */
 class CertAccessRules {
     /**

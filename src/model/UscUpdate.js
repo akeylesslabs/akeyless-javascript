@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The UscUpdate model module.
  * @module model/UscUpdate
- * @version 4.0.0
+ * @version 4.1.0
  */
 class UscUpdate {
     /**
      * Constructs a new <code>UscUpdate</code>.
      * uscUpdate is a command that updates a secret in a Universal Secrets Connector
      * @alias module:model/UscUpdate
-     * @param secretId {String} The universal secrets id (or name, for AWS, Azure or K8s targets) to update
+     * @param secretId {String} The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to update
      * @param uscName {String} Name of the Universal Secrets Connector item
      * @param value {String} Value of the universal secrets item, either text or base64 encoded binary
      */
@@ -62,6 +62,9 @@ class UscUpdate {
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
+            if (data.hasOwnProperty('namespace')) {
+                obj['namespace'] = ApiClient.convertToType(data['namespace'], 'String');
             }
             if (data.hasOwnProperty('secret-id')) {
                 obj['secret-id'] = ApiClient.convertToType(data['secret-id'], 'String');
@@ -108,7 +111,13 @@ UscUpdate.prototype['description'] = undefined;
 UscUpdate.prototype['json'] = false;
 
 /**
- * The universal secrets id (or name, for AWS, Azure or K8s targets) to update
+ * The namespace (relevant for Hashi vault target)
+ * @member {String} namespace
+ */
+UscUpdate.prototype['namespace'] = undefined;
+
+/**
+ * The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to update
  * @member {String} secret-id
  */
 UscUpdate.prototype['secret-id'] = undefined;

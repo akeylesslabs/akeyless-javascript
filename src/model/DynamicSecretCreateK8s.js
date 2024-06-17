@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateK8s model module.
  * @module model/DynamicSecretCreateK8s
- * @version 4.0.0
+ * @version 4.1.0
  */
 class DynamicSecretCreateK8s {
     /**

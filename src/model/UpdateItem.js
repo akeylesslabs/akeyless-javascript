@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 4.0.0
+ * @version 4.1.0
  */
 class UpdateItem {
     /**
@@ -226,11 +226,10 @@ UpdateItem.prototype['delete_protection'] = undefined;
 UpdateItem.prototype['description'] = 'default_metadata';
 
 /**
- * Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret
  * @member {String} host-provider
- * @default 'explicit'
  */
-UpdateItem.prototype['host-provider'] = 'explicit';
+UpdateItem.prototype['host-provider'] = undefined;
 
 /**
  * Set output format to JSON

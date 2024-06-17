@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateClassicKeyCertificate model module.
  * @module model/UpdateClassicKeyCertificate
- * @version 4.0.0
+ * @version 4.1.0
  */
 class UpdateClassicKeyCertificate {
     /**

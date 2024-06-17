@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadRSA model module.
  * @module model/UploadRSA
- * @version 4.0.0
+ * @version 4.1.0
  */
 class UploadRSA {
     /**

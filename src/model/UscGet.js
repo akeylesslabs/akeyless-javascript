@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The UscGet model module.
  * @module model/UscGet
- * @version 4.0.0
+ * @version 4.1.0
  */
 class UscGet {
     /**
      * Constructs a new <code>UscGet</code>.
      * uscGet is a command that gets the value and internal details of a secret from a Universal Secrets Connector
      * @alias module:model/UscGet
-     * @param secretId {String} The secret id (or name, for AWS, Azure or K8s targets) to get from the Universal Secrets Connector
+     * @param secretId {String} The secret id (or name, for AWS, Azure, K8s or Hashi vault targets) to get from the Universal Secrets Connector
      * @param uscName {String} Name of the Universal Secrets Connector item
      */
     constructor(secretId, uscName) { 
@@ -55,6 +55,9 @@ class UscGet {
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
+            if (data.hasOwnProperty('namespace')) {
+                obj['namespace'] = ApiClient.convertToType(data['namespace'], 'String');
+            }
             if (data.hasOwnProperty('secret-id')) {
                 obj['secret-id'] = ApiClient.convertToType(data['secret-id'], 'String');
             }
@@ -66,6 +69,9 @@ class UscGet {
             }
             if (data.hasOwnProperty('usc-name')) {
                 obj['usc-name'] = ApiClient.convertToType(data['usc-name'], 'String');
+            }
+            if (data.hasOwnProperty('version-id')) {
+                obj['version-id'] = ApiClient.convertToType(data['version-id'], 'String');
             }
         }
         return obj;
@@ -82,7 +88,13 @@ class UscGet {
 UscGet.prototype['json'] = false;
 
 /**
- * The secret id (or name, for AWS, Azure or K8s targets) to get from the Universal Secrets Connector
+ * The namespace (relevant for Hashi vault target)
+ * @member {String} namespace
+ */
+UscGet.prototype['namespace'] = undefined;
+
+/**
+ * The secret id (or name, for AWS, Azure, K8s or Hashi vault targets) to get from the Universal Secrets Connector
  * @member {String} secret-id
  */
 UscGet.prototype['secret-id'] = undefined;
@@ -104,6 +116,12 @@ UscGet.prototype['uid-token'] = undefined;
  * @member {String} usc-name
  */
 UscGet.prototype['usc-name'] = undefined;
+
+/**
+ * The version id (if not specified, will retrieve the last version)
+ * @member {String} version-id
+ */
+UscGet.prototype['version-id'] = undefined;
 
 
 

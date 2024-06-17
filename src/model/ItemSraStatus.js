@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ItemSraStatus model module.
  * @module model/ItemSraStatus
- * @version 4.0.0
+ * @version 4.1.0
  */
 class ItemSraStatus {
     /**
@@ -47,8 +47,14 @@ class ItemSraStatus {
         if (data) {
             obj = obj || new ItemSraStatus();
 
+            if (data.hasOwnProperty('count_by_host_info')) {
+                obj['count_by_host_info'] = ApiClient.convertToType(data['count_by_host_info'], {'String': 'Number'});
+            }
             if (data.hasOwnProperty('count_info')) {
                 obj['count_info'] = ApiClient.convertToType(data['count_info'], {'String': {'String': 'Number'}});
+            }
+            if (data.hasOwnProperty('hosts_in_use')) {
+                obj['hosts_in_use'] = ApiClient.convertToType(data['hosts_in_use'], ['String']);
             }
             if (data.hasOwnProperty('is_in_use')) {
                 obj['is_in_use'] = ApiClient.convertToType(data['is_in_use'], 'Boolean');
@@ -64,9 +70,19 @@ class ItemSraStatus {
 }
 
 /**
+ * @member {Object.<String, Number>} count_by_host_info
+ */
+ItemSraStatus.prototype['count_by_host_info'] = undefined;
+
+/**
  * @member {Object.<String, Object.<String, Number>>} count_info
  */
 ItemSraStatus.prototype['count_info'] = undefined;
+
+/**
+ * @member {Array.<String>} hosts_in_use
+ */
+ItemSraStatus.prototype['hosts_in_use'] = undefined;
 
 /**
  * @member {Boolean} is_in_use

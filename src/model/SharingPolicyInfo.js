@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SharingPolicyInfo model module.
  * @module model/SharingPolicyInfo
- * @version 4.0.0
+ * @version 4.1.0
  */
 class SharingPolicyInfo {
     /**
@@ -50,6 +50,9 @@ class SharingPolicyInfo {
             if (data.hasOwnProperty('default_share_link_ttl')) {
                 obj['default_share_link_ttl'] = ApiClient.convertToType(data['default_share_link_ttl'], 'Number');
             }
+            if (data.hasOwnProperty('enable')) {
+                obj['enable'] = ApiClient.convertToType(data['enable'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -61,6 +64,11 @@ class SharingPolicyInfo {
  * @member {Number} default_share_link_ttl
  */
 SharingPolicyInfo.prototype['default_share_link_ttl'] = undefined;
+
+/**
+ * @member {Boolean} enable
+ */
+SharingPolicyInfo.prototype['enable'] = undefined;
 
 
 

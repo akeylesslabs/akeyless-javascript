@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **status** | **Boolean** |  | [optional] 
 **tags** | **{String: String}** |  | [optional] 
 **type** | **String** |  | [optional] 
+**version** | **Number** |  | [optional] 
 
 

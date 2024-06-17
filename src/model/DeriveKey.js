@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeriveKey model module.
  * @module model/DeriveKey
- * @version 4.0.0
+ * @version 4.1.0
  */
 class DeriveKey {
     /**

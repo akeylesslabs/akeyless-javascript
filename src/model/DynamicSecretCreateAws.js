@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateAws model module.
  * @module model/DynamicSecretCreateAws
- * @version 4.0.0
+ * @version 4.1.0
  */
 class DynamicSecretCreateAws {
     /**

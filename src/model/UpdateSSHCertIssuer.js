@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHCertIssuer model module.
  * @module model/UpdateSSHCertIssuer
- * @version 4.0.0
+ * @version 4.1.0
  */
 class UpdateSSHCertIssuer {
     /**
@@ -167,11 +167,10 @@ UpdateSSHCertIssuer.prototype['description'] = undefined;
 UpdateSSHCertIssuer.prototype['extensions'] = undefined;
 
 /**
- * Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret
  * @member {String} host-provider
- * @default 'explicit'
  */
-UpdateSSHCertIssuer.prototype['host-provider'] = 'explicit';
+UpdateSSHCertIssuer.prototype['host-provider'] = undefined;
 
 /**
  * Set output format to JSON

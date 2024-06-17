@@ -26,6 +26,7 @@ import GithubTargetDetails from './GithubTargetDetails';
 import GlobalSignAtlasTargetDetails from './GlobalSignAtlasTargetDetails';
 import GlobalSignGCCTargetDetails from './GlobalSignGCCTargetDetails';
 import GodaddyTargetDetails from './GodaddyTargetDetails';
+import HashiVaultTargetDetails from './HashiVaultTargetDetails';
 import LdapTargetDetails from './LdapTargetDetails';
 import LinkedTargetDetails from './LinkedTargetDetails';
 import MongoDBTargetDetails from './MongoDBTargetDetails';
@@ -42,7 +43,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 4.0.0
+ * @version 4.1.0
  */
 class TargetTypeDetailsInput {
     /**
@@ -114,6 +115,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('godaddy_target_details')) {
                 obj['godaddy_target_details'] = GodaddyTargetDetails.constructFromObject(data['godaddy_target_details']);
+            }
+            if (data.hasOwnProperty('hashi_vault_target_details')) {
+                obj['hashi_vault_target_details'] = HashiVaultTargetDetails.constructFromObject(data['hashi_vault_target_details']);
             }
             if (data.hasOwnProperty('ldap_target_details')) {
                 obj['ldap_target_details'] = LdapTargetDetails.constructFromObject(data['ldap_target_details']);
@@ -227,6 +231,11 @@ TargetTypeDetailsInput.prototype['globalsign_target_details'] = undefined;
  * @member {module:model/GodaddyTargetDetails} godaddy_target_details
  */
 TargetTypeDetailsInput.prototype['godaddy_target_details'] = undefined;
+
+/**
+ * @member {module:model/HashiVaultTargetDetails} hashi_vault_target_details
+ */
+TargetTypeDetailsInput.prototype['hashi_vault_target_details'] = undefined;
 
 /**
  * @member {module:model/LdapTargetDetails} ldap_target_details

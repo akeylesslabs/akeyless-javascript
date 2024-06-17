@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 4.0.0
+ * @version 4.1.0
  */
 class CreateRotatedSecret {
     /**
@@ -306,11 +306,10 @@ CreateRotatedSecret.prototype['gcp-service-account-key-id'] = undefined;
 CreateRotatedSecret.prototype['grace-rotation'] = undefined;
 
 /**
- * Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret
  * @member {String} host-provider
- * @default 'explicit'
  */
-CreateRotatedSecret.prototype['host-provider'] = 'explicit';
+CreateRotatedSecret.prototype['host-provider'] = undefined;
 
 /**
  * Set output format to JSON
@@ -510,7 +509,7 @@ CreateRotatedSecret.prototype['storage-account-key-name'] = undefined;
 CreateRotatedSecret.prototype['tags'] = undefined;
 
 /**
- * A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer and ldap rotated secret, To specify multiple targets use argument multiple times
+ * A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times
  * @member {Array.<String>} target
  */
 CreateRotatedSecret.prototype['target'] = undefined;

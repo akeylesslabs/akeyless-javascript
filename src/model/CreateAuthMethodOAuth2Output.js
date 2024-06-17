@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOAuth2Output model module.
  * @module model/CreateAuthMethodOAuth2Output
- * @version 4.0.0
+ * @version 4.1.0
  */
 class CreateAuthMethodOAuth2Output {
     /**

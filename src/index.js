@@ -135,6 +135,8 @@ import CreateGodaddyTarget from './model/CreateGodaddyTarget';
 import CreateGodaddyTargetOutput from './model/CreateGodaddyTargetOutput';
 import CreateGroup from './model/CreateGroup';
 import CreateGroupOutput from './model/CreateGroupOutput';
+import CreateHashiVaultTarget from './model/CreateHashiVaultTarget';
+import CreateHashiVaultTargetOutput from './model/CreateHashiVaultTargetOutput';
 import CreateKey from './model/CreateKey';
 import CreateKeyOutput from './model/CreateKeyOutput';
 import CreateLdapTarget from './model/CreateLdapTarget';
@@ -406,14 +408,19 @@ import GatewayDeleteProducerOutput from './model/GatewayDeleteProducerOutput';
 import GatewayDownloadCustomerFragments from './model/GatewayDownloadCustomerFragments';
 import GatewayDownloadCustomerFragmentsOutput from './model/GatewayDownloadCustomerFragmentsOutput';
 import GatewayGetAllowedAccess from './model/GatewayGetAllowedAccess';
+import GatewayGetCache from './model/GatewayGetCache';
 import GatewayGetConfig from './model/GatewayGetConfig';
+import GatewayGetDefaults from './model/GatewayGetDefaults';
+import GatewayGetDefaultsOutput from './model/GatewayGetDefaultsOutput';
 import GatewayGetK8SAuthConfig from './model/GatewayGetK8SAuthConfig';
 import GatewayGetK8SAuthConfigOutput from './model/GatewayGetK8SAuthConfigOutput';
 import GatewayGetLdapAuthConfig from './model/GatewayGetLdapAuthConfig';
 import GatewayGetLdapAuthConfigOutput from './model/GatewayGetLdapAuthConfigOutput';
+import GatewayGetLogForwarding from './model/GatewayGetLogForwarding';
 import GatewayGetMigration from './model/GatewayGetMigration';
 import GatewayGetProducer from './model/GatewayGetProducer';
 import GatewayGetTmpUsers from './model/GatewayGetTmpUsers';
+import GatewayListCustomerFragments from './model/GatewayListCustomerFragments';
 import GatewayListMigration from './model/GatewayListMigration';
 import GatewayListProducers from './model/GatewayListProducers';
 import GatewayListRotatedSecrets from './model/GatewayListRotatedSecrets';
@@ -436,13 +443,28 @@ import GatewayStopProducer from './model/GatewayStopProducer';
 import GatewayStopProducerOutput from './model/GatewayStopProducerOutput';
 import GatewaySyncMigration from './model/GatewaySyncMigration';
 import GatewayUpdateAllowedAccess from './model/GatewayUpdateAllowedAccess';
+import GatewayUpdateCache from './model/GatewayUpdateCache';
+import GatewayUpdateDefaults from './model/GatewayUpdateDefaults';
 import GatewayUpdateItem from './model/GatewayUpdateItem';
 import GatewayUpdateItemOutput from './model/GatewayUpdateItemOutput';
 import GatewayUpdateK8SAuthConfig from './model/GatewayUpdateK8SAuthConfig';
 import GatewayUpdateK8SAuthConfigOutput from './model/GatewayUpdateK8SAuthConfigOutput';
 import GatewayUpdateLdapAuthConfig from './model/GatewayUpdateLdapAuthConfig';
 import GatewayUpdateLdapAuthConfigOutput from './model/GatewayUpdateLdapAuthConfigOutput';
+import GatewayUpdateLogForwardingAwsS3 from './model/GatewayUpdateLogForwardingAwsS3';
+import GatewayUpdateLogForwardingAzureAnalytics from './model/GatewayUpdateLogForwardingAzureAnalytics';
+import GatewayUpdateLogForwardingDatadog from './model/GatewayUpdateLogForwardingDatadog';
+import GatewayUpdateLogForwardingElasticsearch from './model/GatewayUpdateLogForwardingElasticsearch';
+import GatewayUpdateLogForwardingGoogleChronicle from './model/GatewayUpdateLogForwardingGoogleChronicle';
+import GatewayUpdateLogForwardingLogstash from './model/GatewayUpdateLogForwardingLogstash';
+import GatewayUpdateLogForwardingLogzIo from './model/GatewayUpdateLogForwardingLogzIo';
+import GatewayUpdateLogForwardingOutput from './model/GatewayUpdateLogForwardingOutput';
+import GatewayUpdateLogForwardingSplunk from './model/GatewayUpdateLogForwardingSplunk';
+import GatewayUpdateLogForwardingStdout from './model/GatewayUpdateLogForwardingStdout';
+import GatewayUpdateLogForwardingSumologic from './model/GatewayUpdateLogForwardingSumologic';
+import GatewayUpdateLogForwardingSyslog from './model/GatewayUpdateLogForwardingSyslog';
 import GatewayUpdateMigration from './model/GatewayUpdateMigration';
+import GatewayUpdateOutput from './model/GatewayUpdateOutput';
 import GatewayUpdateProducerArtifactory from './model/GatewayUpdateProducerArtifactory';
 import GatewayUpdateProducerArtifactoryOutput from './model/GatewayUpdateProducerArtifactoryOutput';
 import GatewayUpdateProducerAws from './model/GatewayUpdateProducerAws';
@@ -542,6 +564,7 @@ import Group from './model/Group';
 import GwClusterIdentity from './model/GwClusterIdentity';
 import HashiMigration from './model/HashiMigration';
 import HashiPayload from './model/HashiPayload';
+import HashiVaultTargetDetails from './model/HashiVaultTargetDetails';
 import Hmac from './model/Hmac';
 import HmacOutput from './model/HmacOutput';
 import HuaweiAccessRules from './model/HuaweiAccessRules';
@@ -823,6 +846,8 @@ import UpdateGodaddyTarget from './model/UpdateGodaddyTarget';
 import UpdateGodaddyTargetOutput from './model/UpdateGodaddyTargetOutput';
 import UpdateGroup from './model/UpdateGroup';
 import UpdateGroupOutput from './model/UpdateGroupOutput';
+import UpdateHashiVaultTarget from './model/UpdateHashiVaultTarget';
+import UpdateHashiVaultTargetOutput from './model/UpdateHashiVaultTargetOutput';
 import UpdateItem from './model/UpdateItem';
 import UpdateItemOutput from './model/UpdateItemOutput';
 import UpdateLdapTarget from './model/UpdateLdapTarget';
@@ -929,7 +954,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 4.0.0
+* @version 4.1.0
 */
 export {
     /**
@@ -1669,6 +1694,18 @@ export {
      * @property {module:model/CreateGroupOutput}
      */
     CreateGroupOutput,
+
+    /**
+     * The CreateHashiVaultTarget model constructor.
+     * @property {module:model/CreateHashiVaultTarget}
+     */
+    CreateHashiVaultTarget,
+
+    /**
+     * The CreateHashiVaultTargetOutput model constructor.
+     * @property {module:model/CreateHashiVaultTargetOutput}
+     */
+    CreateHashiVaultTargetOutput,
 
     /**
      * The CreateKey model constructor.
@@ -3297,10 +3334,28 @@ export {
     GatewayGetAllowedAccess,
 
     /**
+     * The GatewayGetCache model constructor.
+     * @property {module:model/GatewayGetCache}
+     */
+    GatewayGetCache,
+
+    /**
      * The GatewayGetConfig model constructor.
      * @property {module:model/GatewayGetConfig}
      */
     GatewayGetConfig,
+
+    /**
+     * The GatewayGetDefaults model constructor.
+     * @property {module:model/GatewayGetDefaults}
+     */
+    GatewayGetDefaults,
+
+    /**
+     * The GatewayGetDefaultsOutput model constructor.
+     * @property {module:model/GatewayGetDefaultsOutput}
+     */
+    GatewayGetDefaultsOutput,
 
     /**
      * The GatewayGetK8SAuthConfig model constructor.
@@ -3327,6 +3382,12 @@ export {
     GatewayGetLdapAuthConfigOutput,
 
     /**
+     * The GatewayGetLogForwarding model constructor.
+     * @property {module:model/GatewayGetLogForwarding}
+     */
+    GatewayGetLogForwarding,
+
+    /**
      * The GatewayGetMigration model constructor.
      * @property {module:model/GatewayGetMigration}
      */
@@ -3343,6 +3404,12 @@ export {
      * @property {module:model/GatewayGetTmpUsers}
      */
     GatewayGetTmpUsers,
+
+    /**
+     * The GatewayListCustomerFragments model constructor.
+     * @property {module:model/GatewayListCustomerFragments}
+     */
+    GatewayListCustomerFragments,
 
     /**
      * The GatewayListMigration model constructor.
@@ -3477,6 +3544,18 @@ export {
     GatewayUpdateAllowedAccess,
 
     /**
+     * The GatewayUpdateCache model constructor.
+     * @property {module:model/GatewayUpdateCache}
+     */
+    GatewayUpdateCache,
+
+    /**
+     * The GatewayUpdateDefaults model constructor.
+     * @property {module:model/GatewayUpdateDefaults}
+     */
+    GatewayUpdateDefaults,
+
+    /**
      * The GatewayUpdateItem model constructor.
      * @property {module:model/GatewayUpdateItem}
      */
@@ -3513,10 +3592,88 @@ export {
     GatewayUpdateLdapAuthConfigOutput,
 
     /**
+     * The GatewayUpdateLogForwardingAwsS3 model constructor.
+     * @property {module:model/GatewayUpdateLogForwardingAwsS3}
+     */
+    GatewayUpdateLogForwardingAwsS3,
+
+    /**
+     * The GatewayUpdateLogForwardingAzureAnalytics model constructor.
+     * @property {module:model/GatewayUpdateLogForwardingAzureAnalytics}
+     */
+    GatewayUpdateLogForwardingAzureAnalytics,
+
+    /**
+     * The GatewayUpdateLogForwardingDatadog model constructor.
+     * @property {module:model/GatewayUpdateLogForwardingDatadog}
+     */
+    GatewayUpdateLogForwardingDatadog,
+
+    /**
+     * The GatewayUpdateLogForwardingElasticsearch model constructor.
+     * @property {module:model/GatewayUpdateLogForwardingElasticsearch}
+     */
+    GatewayUpdateLogForwardingElasticsearch,
+
+    /**
+     * The GatewayUpdateLogForwardingGoogleChronicle model constructor.
+     * @property {module:model/GatewayUpdateLogForwardingGoogleChronicle}
+     */
+    GatewayUpdateLogForwardingGoogleChronicle,
+
+    /**
+     * The GatewayUpdateLogForwardingLogstash model constructor.
+     * @property {module:model/GatewayUpdateLogForwardingLogstash}
+     */
+    GatewayUpdateLogForwardingLogstash,
+
+    /**
+     * The GatewayUpdateLogForwardingLogzIo model constructor.
+     * @property {module:model/GatewayUpdateLogForwardingLogzIo}
+     */
+    GatewayUpdateLogForwardingLogzIo,
+
+    /**
+     * The GatewayUpdateLogForwardingOutput model constructor.
+     * @property {module:model/GatewayUpdateLogForwardingOutput}
+     */
+    GatewayUpdateLogForwardingOutput,
+
+    /**
+     * The GatewayUpdateLogForwardingSplunk model constructor.
+     * @property {module:model/GatewayUpdateLogForwardingSplunk}
+     */
+    GatewayUpdateLogForwardingSplunk,
+
+    /**
+     * The GatewayUpdateLogForwardingStdout model constructor.
+     * @property {module:model/GatewayUpdateLogForwardingStdout}
+     */
+    GatewayUpdateLogForwardingStdout,
+
+    /**
+     * The GatewayUpdateLogForwardingSumologic model constructor.
+     * @property {module:model/GatewayUpdateLogForwardingSumologic}
+     */
+    GatewayUpdateLogForwardingSumologic,
+
+    /**
+     * The GatewayUpdateLogForwardingSyslog model constructor.
+     * @property {module:model/GatewayUpdateLogForwardingSyslog}
+     */
+    GatewayUpdateLogForwardingSyslog,
+
+    /**
      * The GatewayUpdateMigration model constructor.
      * @property {module:model/GatewayUpdateMigration}
      */
     GatewayUpdateMigration,
+
+    /**
+     * The GatewayUpdateOutput model constructor.
+     * @property {module:model/GatewayUpdateOutput}
+     */
+    GatewayUpdateOutput,
 
     /**
      * The GatewayUpdateProducerArtifactory model constructor.
@@ -4111,6 +4268,12 @@ export {
      * @property {module:model/HashiPayload}
      */
     HashiPayload,
+
+    /**
+     * The HashiVaultTargetDetails model constructor.
+     * @property {module:model/HashiVaultTargetDetails}
+     */
+    HashiVaultTargetDetails,
 
     /**
      * The Hmac model constructor.
@@ -5797,6 +5960,18 @@ export {
      * @property {module:model/UpdateGroupOutput}
      */
     UpdateGroupOutput,
+
+    /**
+     * The UpdateHashiVaultTarget model constructor.
+     * @property {module:model/UpdateHashiVaultTarget}
+     */
+    UpdateHashiVaultTarget,
+
+    /**
+     * The UpdateHashiVaultTargetOutput model constructor.
+     * @property {module:model/UpdateHashiVaultTargetOutput}
+     */
+    UpdateHashiVaultTargetOutput,
 
     /**
      * The UpdateItem model constructor.

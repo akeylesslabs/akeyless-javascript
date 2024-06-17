@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The UscDelete model module.
  * @module model/UscDelete
- * @version 4.0.0
+ * @version 4.1.0
  */
 class UscDelete {
     /**
      * Constructs a new <code>UscDelete</code>.
      * uscDelete is a command that deletes a secret from a Universal Secrets Connector
      * @alias module:model/UscDelete
-     * @param secretId {String} The universal secrets id (or name, for AWS, Azure or K8s targets) to delete
+     * @param secretId {String} The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to delete
      * @param uscName {String} Name of the Universal Secrets Connector item
      */
     constructor(secretId, uscName) { 
@@ -55,6 +55,9 @@ class UscDelete {
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
+            if (data.hasOwnProperty('namespace')) {
+                obj['namespace'] = ApiClient.convertToType(data['namespace'], 'String');
+            }
             if (data.hasOwnProperty('secret-id')) {
                 obj['secret-id'] = ApiClient.convertToType(data['secret-id'], 'String');
             }
@@ -82,7 +85,13 @@ class UscDelete {
 UscDelete.prototype['json'] = false;
 
 /**
- * The universal secrets id (or name, for AWS, Azure or K8s targets) to delete
+ * The namespace (relevant for Hashi vault target)
+ * @member {String} namespace
+ */
+UscDelete.prototype['namespace'] = undefined;
+
+/**
+ * The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to delete
  * @member {String} secret-id
  */
 UscDelete.prototype['secret-id'] = undefined;

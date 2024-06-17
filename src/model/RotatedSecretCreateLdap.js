@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateLdap model module.
  * @module model/RotatedSecretCreateLdap
- * @version 4.0.0
+ * @version 4.1.0
  */
 class RotatedSecretCreateLdap {
     /**
@@ -184,11 +184,10 @@ RotatedSecretCreateLdap.prototype['delete_protection'] = undefined;
 RotatedSecretCreateLdap.prototype['description'] = undefined;
 
 /**
- * Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret
  * @member {String} host-provider
- * @default 'explicit'
  */
-RotatedSecretCreateLdap.prototype['host-provider'] = 'explicit';
+RotatedSecretCreateLdap.prototype['host-provider'] = undefined;
 
 /**
  * Set output format to JSON
@@ -310,7 +309,7 @@ RotatedSecretCreateLdap.prototype['secure-access-web-proxy'] = false;
 RotatedSecretCreateLdap.prototype['tags'] = undefined;
 
 /**
- * A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer and ldap rotated secret, To specify multiple targets use argument multiple times
+ * A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times
  * @member {Array.<String>} target
  */
 RotatedSecretCreateLdap.prototype['target'] = undefined;

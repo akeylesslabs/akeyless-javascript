@@ -42,6 +42,7 @@ Method | HTTP request | Description
 [**createGlobalSignTarget**](V2Api.md#createGlobalSignTarget) | **POST** /create-globalsign-target | 
 [**createGodaddyTarget**](V2Api.md#createGodaddyTarget) | **POST** /create-godaddy-target | 
 [**createGroup**](V2Api.md#createGroup) | **POST** /create-group | 
+[**createHashiVaultTarget**](V2Api.md#createHashiVaultTarget) | **POST** /create-hashi-vault-target | 
 [**createKey**](V2Api.md#createKey) | **POST** /create-key | 
 [**createLinkedTarget**](V2Api.md#createLinkedTarget) | **POST** /create-linked-target | 
 [**createNativeK8STarget**](V2Api.md#createNativeK8STarget) | **POST** /create-k8s-target | 
@@ -201,12 +202,16 @@ Method | HTTP request | Description
 [**gatewayDeleteProducer**](V2Api.md#gatewayDeleteProducer) | **POST** /gateway-delete-producer | 
 [**gatewayDownloadCustomerFragments**](V2Api.md#gatewayDownloadCustomerFragments) | **POST** /gateway-download-customer-fragments | 
 [**gatewayGetAllowedAccess**](V2Api.md#gatewayGetAllowedAccess) | **POST** /gateway-get-allowed-access | 
+[**gatewayGetCache**](V2Api.md#gatewayGetCache) | **POST** /gateway-get-cache | 
 [**gatewayGetConfig**](V2Api.md#gatewayGetConfig) | **POST** /gateway-get-config | 
+[**gatewayGetDefaults**](V2Api.md#gatewayGetDefaults) | **POST** /gateway-get-defaults | 
 [**gatewayGetK8SAuthConfig**](V2Api.md#gatewayGetK8SAuthConfig) | **POST** /gateway-get-k8s-auth-config | 
 [**gatewayGetLdapAuthConfig**](V2Api.md#gatewayGetLdapAuthConfig) | **POST** /gateway-get-ldap-auth-config | 
+[**gatewayGetLogForwarding**](V2Api.md#gatewayGetLogForwarding) | **POST** /gateway-get-log-forwarding | 
 [**gatewayGetMigration**](V2Api.md#gatewayGetMigration) | **POST** /gateway-get-migration | 
 [**gatewayGetProducer**](V2Api.md#gatewayGetProducer) | **POST** /gateway-get-producer | 
 [**gatewayGetTmpUsers**](V2Api.md#gatewayGetTmpUsers) | **POST** /gateway-get-producer-tmp-creds | 
+[**gatewayListCustomerFragments**](V2Api.md#gatewayListCustomerFragments) | **POST** /gateway-list-customer-fragments | 
 [**gatewayListMigration**](V2Api.md#gatewayListMigration) | **POST** /gateway-list-migration | 
 [**gatewayListProducers**](V2Api.md#gatewayListProducers) | **POST** /gateway-list-producers | 
 [**gatewayListRotatedSecrets**](V2Api.md#gatewayListRotatedSecrets) | **POST** /gateway-list-rotated-secrets | 
@@ -217,9 +222,22 @@ Method | HTTP request | Description
 [**gatewayStopProducer**](V2Api.md#gatewayStopProducer) | **POST** /gateway-stop-producer | 
 [**gatewaySyncMigration**](V2Api.md#gatewaySyncMigration) | **POST** /gateway-sync-migration | 
 [**gatewayUpdateAllowedAccess**](V2Api.md#gatewayUpdateAllowedAccess) | **POST** /gateway-update-allowed-access | 
+[**gatewayUpdateCache**](V2Api.md#gatewayUpdateCache) | **POST** /gateway-update-cache | 
+[**gatewayUpdateDefaults**](V2Api.md#gatewayUpdateDefaults) | **POST** /gateway-update-defaults | 
 [**gatewayUpdateItem**](V2Api.md#gatewayUpdateItem) | **POST** /gateway-update-item | 
 [**gatewayUpdateK8SAuthConfig**](V2Api.md#gatewayUpdateK8SAuthConfig) | **POST** /gateway-update-k8s-auth-config | 
 [**gatewayUpdateLdapAuthConfig**](V2Api.md#gatewayUpdateLdapAuthConfig) | **POST** /gateway-update-ldap-auth-config | 
+[**gatewayUpdateLogForwardingAwsS3**](V2Api.md#gatewayUpdateLogForwardingAwsS3) | **POST** /gateway-update-log-forwarding-aws-s3 | 
+[**gatewayUpdateLogForwardingAzureAnalytics**](V2Api.md#gatewayUpdateLogForwardingAzureAnalytics) | **POST** /gateway-update-log-forwarding-azure-analytics | 
+[**gatewayUpdateLogForwardingDatadog**](V2Api.md#gatewayUpdateLogForwardingDatadog) | **POST** /gateway-update-log-forwarding-datadog | 
+[**gatewayUpdateLogForwardingElasticsearch**](V2Api.md#gatewayUpdateLogForwardingElasticsearch) | **POST** /gateway-update-log-forwarding-elasticsearch | 
+[**gatewayUpdateLogForwardingGoogleChronicle**](V2Api.md#gatewayUpdateLogForwardingGoogleChronicle) | **POST** /gateway-update-log-forwarding-google-chronicle | 
+[**gatewayUpdateLogForwardingLogstash**](V2Api.md#gatewayUpdateLogForwardingLogstash) | **POST** /gateway-update-log-forwarding-logstash | 
+[**gatewayUpdateLogForwardingLogzIo**](V2Api.md#gatewayUpdateLogForwardingLogzIo) | **POST** /gateway-update-log-forwarding-logz-io | 
+[**gatewayUpdateLogForwardingSplunk**](V2Api.md#gatewayUpdateLogForwardingSplunk) | **POST** /gateway-update-log-forwarding-splunk | 
+[**gatewayUpdateLogForwardingStdout**](V2Api.md#gatewayUpdateLogForwardingStdout) | **POST** /gateway-update-log-forwarding-stdout | 
+[**gatewayUpdateLogForwardingSumologic**](V2Api.md#gatewayUpdateLogForwardingSumologic) | **POST** /gateway-update-log-forwarding-sumologic | 
+[**gatewayUpdateLogForwardingSyslog**](V2Api.md#gatewayUpdateLogForwardingSyslog) | **POST** /gateway-update-log-forwarding-syslog | 
 [**gatewayUpdateMigration**](V2Api.md#gatewayUpdateMigration) | **POST** /gateway-update-migration | 
 [**gatewayUpdateProducerArtifactory**](V2Api.md#gatewayUpdateProducerArtifactory) | **POST** /gateway-update-producer-artifactory | 
 [**gatewayUpdateProducerAws**](V2Api.md#gatewayUpdateProducerAws) | **POST** /gateway-update-producer-aws | 
@@ -392,6 +410,7 @@ Method | HTTP request | Description
 [**updateGlobalSignTarget**](V2Api.md#updateGlobalSignTarget) | **POST** /update-globalsign-target | 
 [**updateGodaddyTarget**](V2Api.md#updateGodaddyTarget) | **POST** /update-godaddy-target | 
 [**updateGroup**](V2Api.md#updateGroup) | **POST** /update-group | 
+[**updateHashiVaultTarget**](V2Api.md#updateHashiVaultTarget) | **POST** /update-hashi-vault-target | 
 [**updateItem**](V2Api.md#updateItem) | **POST** /update-item | 
 [**updateLdapTarget**](V2Api.md#updateLdapTarget) | **POST** /update-ldap-target | 
 [**updateLdapTargetDetails**](V2Api.md#updateLdapTargetDetails) | **POST** /update-ldap-target-details | 
@@ -2019,6 +2038,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateGroupOutput**](CreateGroupOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createHashiVaultTarget
+
+> CreateHashiVaultTargetOutput createHashiVaultTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreateHashiVaultTarget(); // CreateHashiVaultTarget | 
+apiInstance.createHashiVaultTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateHashiVaultTarget**](CreateHashiVaultTarget.md)|  | 
+
+### Return type
+
+[**CreateHashiVaultTargetOutput**](CreateHashiVaultTargetOutput.md)
 
 ### Authorization
 
@@ -8714,6 +8775,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayGetCache
+
+> CacheConfigPart gatewayGetCache(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayGetCache(); // GatewayGetCache | 
+apiInstance.gatewayGetCache(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayGetCache**](GatewayGetCache.md)|  | 
+
+### Return type
+
+[**CacheConfigPart**](CacheConfigPart.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayGetConfig
 
 > AkeylessGatewayConfig gatewayGetConfig(body)
@@ -8745,6 +8848,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AkeylessGatewayConfig**](AkeylessGatewayConfig.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayGetDefaults
+
+> GatewayGetDefaultsOutput gatewayGetDefaults(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayGetDefaults(); // GatewayGetDefaults | 
+apiInstance.gatewayGetDefaults(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayGetDefaults**](GatewayGetDefaults.md)|  | 
+
+### Return type
+
+[**GatewayGetDefaultsOutput**](GatewayGetDefaultsOutput.md)
 
 ### Authorization
 
@@ -8829,6 +8974,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayGetLdapAuthConfigOutput**](GatewayGetLdapAuthConfigOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayGetLogForwarding
+
+> LogForwardingConfigPart gatewayGetLogForwarding(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayGetLogForwarding(); // GatewayGetLogForwarding | 
+apiInstance.gatewayGetLogForwarding(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayGetLogForwarding**](GatewayGetLogForwarding.md)|  | 
+
+### Return type
+
+[**LogForwardingConfigPart**](LogForwardingConfigPart.md)
 
 ### Authorization
 
@@ -8955,6 +9142,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[TmpUserData]**](TmpUserData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayListCustomerFragments
+
+> {String: Object} gatewayListCustomerFragments(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayListCustomerFragments(); // GatewayListCustomerFragments | 
+apiInstance.gatewayListCustomerFragments(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayListCustomerFragments**](GatewayListCustomerFragments.md)|  | 
+
+### Return type
+
+**{String: Object}**
 
 ### Authorization
 
@@ -9388,6 +9617,90 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayUpdateCache
+
+> GatewayUpdateOutput gatewayUpdateCache(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateCache(); // GatewayUpdateCache | 
+apiInstance.gatewayUpdateCache(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateCache**](GatewayUpdateCache.md)|  | 
+
+### Return type
+
+[**GatewayUpdateOutput**](GatewayUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateDefaults
+
+> GatewayUpdateOutput gatewayUpdateDefaults(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateDefaults(); // GatewayUpdateDefaults | 
+apiInstance.gatewayUpdateDefaults(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateDefaults**](GatewayUpdateDefaults.md)|  | 
+
+### Return type
+
+[**GatewayUpdateOutput**](GatewayUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayUpdateItem
 
 > GatewayUpdateItemOutput gatewayUpdateItem(body)
@@ -9503,6 +9816,468 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GatewayUpdateLdapAuthConfigOutput**](GatewayUpdateLdapAuthConfigOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateLogForwardingAwsS3
+
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingAwsS3(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateLogForwardingAwsS3(); // GatewayUpdateLogForwardingAwsS3 | 
+apiInstance.gatewayUpdateLogForwardingAwsS3(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateLogForwardingAwsS3**](GatewayUpdateLogForwardingAwsS3.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateLogForwardingAzureAnalytics
+
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingAzureAnalytics(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateLogForwardingAzureAnalytics(); // GatewayUpdateLogForwardingAzureAnalytics | 
+apiInstance.gatewayUpdateLogForwardingAzureAnalytics(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateLogForwardingAzureAnalytics**](GatewayUpdateLogForwardingAzureAnalytics.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateLogForwardingDatadog
+
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingDatadog(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateLogForwardingDatadog(); // GatewayUpdateLogForwardingDatadog | 
+apiInstance.gatewayUpdateLogForwardingDatadog(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateLogForwardingDatadog**](GatewayUpdateLogForwardingDatadog.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateLogForwardingElasticsearch
+
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingElasticsearch(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateLogForwardingElasticsearch(); // GatewayUpdateLogForwardingElasticsearch | 
+apiInstance.gatewayUpdateLogForwardingElasticsearch(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateLogForwardingElasticsearch**](GatewayUpdateLogForwardingElasticsearch.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateLogForwardingGoogleChronicle
+
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingGoogleChronicle(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateLogForwardingGoogleChronicle(); // GatewayUpdateLogForwardingGoogleChronicle | 
+apiInstance.gatewayUpdateLogForwardingGoogleChronicle(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateLogForwardingGoogleChronicle**](GatewayUpdateLogForwardingGoogleChronicle.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateLogForwardingLogstash
+
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingLogstash(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateLogForwardingLogstash(); // GatewayUpdateLogForwardingLogstash | 
+apiInstance.gatewayUpdateLogForwardingLogstash(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateLogForwardingLogstash**](GatewayUpdateLogForwardingLogstash.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateLogForwardingLogzIo
+
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingLogzIo(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateLogForwardingLogzIo(); // GatewayUpdateLogForwardingLogzIo | 
+apiInstance.gatewayUpdateLogForwardingLogzIo(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateLogForwardingLogzIo**](GatewayUpdateLogForwardingLogzIo.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateLogForwardingSplunk
+
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingSplunk(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateLogForwardingSplunk(); // GatewayUpdateLogForwardingSplunk | 
+apiInstance.gatewayUpdateLogForwardingSplunk(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateLogForwardingSplunk**](GatewayUpdateLogForwardingSplunk.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateLogForwardingStdout
+
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingStdout(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateLogForwardingStdout(); // GatewayUpdateLogForwardingStdout | 
+apiInstance.gatewayUpdateLogForwardingStdout(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateLogForwardingStdout**](GatewayUpdateLogForwardingStdout.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateLogForwardingSumologic
+
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingSumologic(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateLogForwardingSumologic(); // GatewayUpdateLogForwardingSumologic | 
+apiInstance.gatewayUpdateLogForwardingSumologic(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateLogForwardingSumologic**](GatewayUpdateLogForwardingSumologic.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateLogForwardingSyslog
+
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingSyslog(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateLogForwardingSyslog(); // GatewayUpdateLogForwardingSyslog | 
+apiInstance.gatewayUpdateLogForwardingSyslog(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateLogForwardingSyslog**](GatewayUpdateLogForwardingSyslog.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
 
 ### Authorization
 
@@ -16749,6 +17524,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateGroupOutput**](UpdateGroupOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateHashiVaultTarget
+
+> UpdateHashiVaultTargetOutput updateHashiVaultTarget(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.UpdateHashiVaultTarget(); // UpdateHashiVaultTarget | 
+apiInstance.updateHashiVaultTarget(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateHashiVaultTarget**](UpdateHashiVaultTarget.md)|  | 
+
+### Return type
+
+[**UpdateHashiVaultTargetOutput**](UpdateHashiVaultTargetOutput.md)
 
 ### Authorization
 

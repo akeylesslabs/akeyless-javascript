@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscCreate model module.
  * @module model/UscCreate
- * @version 4.0.0
+ * @version 4.1.0
  */
 class UscCreate {
     /**
@@ -63,6 +63,9 @@ class UscCreate {
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
+            if (data.hasOwnProperty('namespace')) {
+                obj['namespace'] = ApiClient.convertToType(data['namespace'], 'String');
+            }
             if (data.hasOwnProperty('secret-name')) {
                 obj['secret-name'] = ApiClient.convertToType(data['secret-name'], 'String');
             }
@@ -106,6 +109,12 @@ UscCreate.prototype['description'] = undefined;
  * @default false
  */
 UscCreate.prototype['json'] = false;
+
+/**
+ * The namespace (relevant for Hashi vault target)
+ * @member {String} namespace
+ */
+UscCreate.prototype['namespace'] = undefined;
 
 /**
  * Name for the new universal secrets

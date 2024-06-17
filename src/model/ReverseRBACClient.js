@@ -17,7 +17,7 @@ import AuthMethodRoleAssociation from './AuthMethodRoleAssociation';
 /**
  * The ReverseRBACClient model module.
  * @module model/ReverseRBACClient
- * @version 4.0.0
+ * @version 4.1.0
  */
 class ReverseRBACClient {
     /**

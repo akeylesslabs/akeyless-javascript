@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 4.0.0
+ * @version 4.1.0
  */
 class UpdateAccountSettings {
     /**
@@ -76,6 +76,9 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('dynamic-secret-max-ttl-enable')) {
                 obj['dynamic-secret-max-ttl-enable'] = ApiClient.convertToType(data['dynamic-secret-max-ttl-enable'], 'String');
+            }
+            if (data.hasOwnProperty('enable-item-sharing')) {
+                obj['enable-item-sharing'] = ApiClient.convertToType(data['enable-item-sharing'], 'String');
             }
             if (data.hasOwnProperty('force-new-versions')) {
                 obj['force-new-versions'] = ApiClient.convertToType(data['force-new-versions'], 'String');
@@ -215,6 +218,12 @@ UpdateAccountSettings.prototype['dynamic-secret-max-ttl'] = undefined;
  * @member {String} dynamic-secret-max-ttl-enable
  */
 UpdateAccountSettings.prototype['dynamic-secret-max-ttl-enable'] = undefined;
+
+/**
+ * Enable sharing items [true/false]
+ * @member {String} enable-item-sharing
+ */
+UpdateAccountSettings.prototype['enable-item-sharing'] = undefined;
 
 /**
  * If set to true, new version will be created on update

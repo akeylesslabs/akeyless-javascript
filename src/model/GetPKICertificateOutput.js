@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPKICertificateOutput model module.
  * @module model/GetPKICertificateOutput
- * @version 4.0.0
+ * @version 4.1.0
  */
 class GetPKICertificateOutput {
     /**
@@ -50,6 +50,9 @@ class GetPKICertificateOutput {
             if (data.hasOwnProperty('cert_display_id')) {
                 obj['cert_display_id'] = ApiClient.convertToType(data['cert_display_id'], 'String');
             }
+            if (data.hasOwnProperty('cert_item_id')) {
+                obj['cert_item_id'] = ApiClient.convertToType(data['cert_item_id'], 'Number');
+            }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], 'String');
             }
@@ -73,6 +76,11 @@ class GetPKICertificateOutput {
  * @member {String} cert_display_id
  */
 GetPKICertificateOutput.prototype['cert_display_id'] = undefined;
+
+/**
+ * @member {Number} cert_item_id
+ */
+GetPKICertificateOutput.prototype['cert_item_id'] = undefined;
 
 /**
  * @member {String} data

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BastionListEntry model module.
  * @module model/BastionListEntry
- * @version 4.0.0
+ * @version 4.1.0
  */
 class BastionListEntry {
     /**
@@ -65,6 +65,9 @@ class BastionListEntry {
             if (data.hasOwnProperty('display_name')) {
                 obj['display_name'] = ApiClient.convertToType(data['display_name'], 'String');
             }
+            if (data.hasOwnProperty('has_gateway_identity')) {
+                obj['has_gateway_identity'] = ApiClient.convertToType(data['has_gateway_identity'], 'Boolean');
+            }
             if (data.hasOwnProperty('last_report')) {
                 obj['last_report'] = ApiClient.convertToType(data['last_report'], 'Date');
             }
@@ -104,6 +107,11 @@ BastionListEntry.prototype['cluster_name'] = undefined;
  * @member {String} display_name
  */
 BastionListEntry.prototype['display_name'] = undefined;
+
+/**
+ * @member {Boolean} has_gateway_identity
+ */
+BastionListEntry.prototype['has_gateway_identity'] = undefined;
 
 /**
  * @member {Date} last_report

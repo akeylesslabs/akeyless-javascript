@@ -22,6 +22,7 @@ import Auth from '../model/Auth';
 import AuthMethod from '../model/AuthMethod';
 import AuthOutput from '../model/AuthOutput';
 import BastionsList from '../model/BastionsList';
+import CacheConfigPart from '../model/CacheConfigPart';
 import Configure from '../model/Configure';
 import ConfigureOutput from '../model/ConfigureOutput';
 import Connect from '../model/Connect';
@@ -90,6 +91,8 @@ import CreateGodaddyTarget from '../model/CreateGodaddyTarget';
 import CreateGodaddyTargetOutput from '../model/CreateGodaddyTargetOutput';
 import CreateGroup from '../model/CreateGroup';
 import CreateGroupOutput from '../model/CreateGroupOutput';
+import CreateHashiVaultTarget from '../model/CreateHashiVaultTarget';
+import CreateHashiVaultTargetOutput from '../model/CreateHashiVaultTargetOutput';
 import CreateKey from '../model/CreateKey';
 import CreateKeyOutput from '../model/CreateKeyOutput';
 import CreateLdapTarget from '../model/CreateLdapTarget';
@@ -330,14 +333,19 @@ import GatewayDeleteProducerOutput from '../model/GatewayDeleteProducerOutput';
 import GatewayDownloadCustomerFragments from '../model/GatewayDownloadCustomerFragments';
 import GatewayDownloadCustomerFragmentsOutput from '../model/GatewayDownloadCustomerFragmentsOutput';
 import GatewayGetAllowedAccess from '../model/GatewayGetAllowedAccess';
+import GatewayGetCache from '../model/GatewayGetCache';
 import GatewayGetConfig from '../model/GatewayGetConfig';
+import GatewayGetDefaults from '../model/GatewayGetDefaults';
+import GatewayGetDefaultsOutput from '../model/GatewayGetDefaultsOutput';
 import GatewayGetK8SAuthConfig from '../model/GatewayGetK8SAuthConfig';
 import GatewayGetK8SAuthConfigOutput from '../model/GatewayGetK8SAuthConfigOutput';
 import GatewayGetLdapAuthConfig from '../model/GatewayGetLdapAuthConfig';
 import GatewayGetLdapAuthConfigOutput from '../model/GatewayGetLdapAuthConfigOutput';
+import GatewayGetLogForwarding from '../model/GatewayGetLogForwarding';
 import GatewayGetMigration from '../model/GatewayGetMigration';
 import GatewayGetProducer from '../model/GatewayGetProducer';
 import GatewayGetTmpUsers from '../model/GatewayGetTmpUsers';
+import GatewayListCustomerFragments from '../model/GatewayListCustomerFragments';
 import GatewayListMigration from '../model/GatewayListMigration';
 import GatewayListProducers from '../model/GatewayListProducers';
 import GatewayListRotatedSecrets from '../model/GatewayListRotatedSecrets';
@@ -357,13 +365,28 @@ import GatewayStopProducer from '../model/GatewayStopProducer';
 import GatewayStopProducerOutput from '../model/GatewayStopProducerOutput';
 import GatewaySyncMigration from '../model/GatewaySyncMigration';
 import GatewayUpdateAllowedAccess from '../model/GatewayUpdateAllowedAccess';
+import GatewayUpdateCache from '../model/GatewayUpdateCache';
+import GatewayUpdateDefaults from '../model/GatewayUpdateDefaults';
 import GatewayUpdateItem from '../model/GatewayUpdateItem';
 import GatewayUpdateItemOutput from '../model/GatewayUpdateItemOutput';
 import GatewayUpdateK8SAuthConfig from '../model/GatewayUpdateK8SAuthConfig';
 import GatewayUpdateK8SAuthConfigOutput from '../model/GatewayUpdateK8SAuthConfigOutput';
 import GatewayUpdateLdapAuthConfig from '../model/GatewayUpdateLdapAuthConfig';
 import GatewayUpdateLdapAuthConfigOutput from '../model/GatewayUpdateLdapAuthConfigOutput';
+import GatewayUpdateLogForwardingAwsS3 from '../model/GatewayUpdateLogForwardingAwsS3';
+import GatewayUpdateLogForwardingAzureAnalytics from '../model/GatewayUpdateLogForwardingAzureAnalytics';
+import GatewayUpdateLogForwardingDatadog from '../model/GatewayUpdateLogForwardingDatadog';
+import GatewayUpdateLogForwardingElasticsearch from '../model/GatewayUpdateLogForwardingElasticsearch';
+import GatewayUpdateLogForwardingGoogleChronicle from '../model/GatewayUpdateLogForwardingGoogleChronicle';
+import GatewayUpdateLogForwardingLogstash from '../model/GatewayUpdateLogForwardingLogstash';
+import GatewayUpdateLogForwardingLogzIo from '../model/GatewayUpdateLogForwardingLogzIo';
+import GatewayUpdateLogForwardingOutput from '../model/GatewayUpdateLogForwardingOutput';
+import GatewayUpdateLogForwardingSplunk from '../model/GatewayUpdateLogForwardingSplunk';
+import GatewayUpdateLogForwardingStdout from '../model/GatewayUpdateLogForwardingStdout';
+import GatewayUpdateLogForwardingSumologic from '../model/GatewayUpdateLogForwardingSumologic';
+import GatewayUpdateLogForwardingSyslog from '../model/GatewayUpdateLogForwardingSyslog';
 import GatewayUpdateMigration from '../model/GatewayUpdateMigration';
+import GatewayUpdateOutput from '../model/GatewayUpdateOutput';
 import GatewayUpdateProducerArtifactory from '../model/GatewayUpdateProducerArtifactory';
 import GatewayUpdateProducerArtifactoryOutput from '../model/GatewayUpdateProducerArtifactoryOutput';
 import GatewayUpdateProducerAws from '../model/GatewayUpdateProducerAws';
@@ -494,6 +517,7 @@ import ListSRABastions from '../model/ListSRABastions';
 import ListSharedItems from '../model/ListSharedItems';
 import ListTargets from '../model/ListTargets';
 import ListTargetsOutput from '../model/ListTargetsOutput';
+import LogForwardingConfigPart from '../model/LogForwardingConfigPart';
 import MigrationStatusReplyObj from '../model/MigrationStatusReplyObj';
 import MoveObjects from '../model/MoveObjects';
 import ProvisionCertificate from '../model/ProvisionCertificate';
@@ -642,6 +666,8 @@ import UpdateGodaddyTarget from '../model/UpdateGodaddyTarget';
 import UpdateGodaddyTargetOutput from '../model/UpdateGodaddyTargetOutput';
 import UpdateGroup from '../model/UpdateGroup';
 import UpdateGroupOutput from '../model/UpdateGroupOutput';
+import UpdateHashiVaultTarget from '../model/UpdateHashiVaultTarget';
+import UpdateHashiVaultTargetOutput from '../model/UpdateHashiVaultTargetOutput';
 import UpdateItem from '../model/UpdateItem';
 import UpdateItemOutput from '../model/UpdateItemOutput';
 import UpdateLdapTarget from '../model/UpdateLdapTarget';
@@ -706,7 +732,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 4.0.0
+* @version 4.1.0
 */
 export default class V2Api {
 
@@ -2351,6 +2377,49 @@ export default class V2Api {
      */
     createGroup(body) {
       return this.createGroupWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateHashiVaultTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateHashiVaultTargetOutput} and HTTP response
+     */
+    createHashiVaultTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createHashiVaultTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateHashiVaultTargetOutput;
+      return this.apiClient.callApi(
+        '/create-hashi-vault-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateHashiVaultTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateHashiVaultTargetOutput}
+     */
+    createHashiVaultTarget(body) {
+      return this.createHashiVaultTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9192,6 +9261,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayGetCache} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CacheConfigPart} and HTTP response
+     */
+    gatewayGetCacheWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayGetCache");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CacheConfigPart;
+      return this.apiClient.callApi(
+        '/gateway-get-cache', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayGetCache} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CacheConfigPart}
+     */
+    gatewayGetCache(body) {
+      return this.gatewayGetCacheWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayGetConfig} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AkeylessGatewayConfig} and HTTP response
      */
@@ -9228,6 +9340,49 @@ export default class V2Api {
      */
     gatewayGetConfig(body) {
       return this.gatewayGetConfigWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayGetDefaults} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayGetDefaultsOutput} and HTTP response
+     */
+    gatewayGetDefaultsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayGetDefaults");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayGetDefaultsOutput;
+      return this.apiClient.callApi(
+        '/gateway-get-defaults', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayGetDefaults} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayGetDefaultsOutput}
+     */
+    gatewayGetDefaults(body) {
+      return this.gatewayGetDefaultsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9314,6 +9469,49 @@ export default class V2Api {
      */
     gatewayGetLdapAuthConfig(body) {
       return this.gatewayGetLdapAuthConfigWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayGetLogForwarding} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogForwardingConfigPart} and HTTP response
+     */
+    gatewayGetLogForwardingWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayGetLogForwarding");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = LogForwardingConfigPart;
+      return this.apiClient.callApi(
+        '/gateway-get-log-forwarding', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayGetLogForwarding} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogForwardingConfigPart}
+     */
+    gatewayGetLogForwarding(body) {
+      return this.gatewayGetLogForwardingWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9443,6 +9641,49 @@ export default class V2Api {
      */
     gatewayGetTmpUsers(body) {
       return this.gatewayGetTmpUsersWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayListCustomerFragments} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: Object}>} and HTTP response
+     */
+    gatewayListCustomerFragmentsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayListCustomerFragments");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = {'String': Object};
+      return this.apiClient.callApi(
+        '/gateway-list-customer-fragments', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayListCustomerFragments} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: Object}>}
+     */
+    gatewayListCustomerFragments(body) {
+      return this.gatewayListCustomerFragmentsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -9879,6 +10120,92 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayUpdateCache} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateOutput} and HTTP response
+     */
+    gatewayUpdateCacheWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateCache");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-cache', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateCache} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateOutput}
+     */
+    gatewayUpdateCache(body) {
+      return this.gatewayUpdateCacheWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateDefaults} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateOutput} and HTTP response
+     */
+    gatewayUpdateDefaultsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateDefaults");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-defaults', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateDefaults} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateOutput}
+     */
+    gatewayUpdateDefaults(body) {
+      return this.gatewayUpdateDefaultsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayUpdateItem} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateItemOutput} and HTTP response
      */
@@ -10001,6 +10328,479 @@ export default class V2Api {
      */
     gatewayUpdateLdapAuthConfig(body) {
       return this.gatewayUpdateLdapAuthConfigWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingAwsS3} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gatewayUpdateLogForwardingAwsS3WithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateLogForwardingAwsS3");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-log-forwarding-aws-s3', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingAwsS3} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gatewayUpdateLogForwardingAwsS3(body) {
+      return this.gatewayUpdateLogForwardingAwsS3WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingAzureAnalytics} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gatewayUpdateLogForwardingAzureAnalyticsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateLogForwardingAzureAnalytics");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-log-forwarding-azure-analytics', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingAzureAnalytics} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gatewayUpdateLogForwardingAzureAnalytics(body) {
+      return this.gatewayUpdateLogForwardingAzureAnalyticsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingDatadog} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gatewayUpdateLogForwardingDatadogWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateLogForwardingDatadog");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-log-forwarding-datadog', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingDatadog} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gatewayUpdateLogForwardingDatadog(body) {
+      return this.gatewayUpdateLogForwardingDatadogWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingElasticsearch} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gatewayUpdateLogForwardingElasticsearchWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateLogForwardingElasticsearch");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-log-forwarding-elasticsearch', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingElasticsearch} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gatewayUpdateLogForwardingElasticsearch(body) {
+      return this.gatewayUpdateLogForwardingElasticsearchWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingGoogleChronicle} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gatewayUpdateLogForwardingGoogleChronicleWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateLogForwardingGoogleChronicle");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-log-forwarding-google-chronicle', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingGoogleChronicle} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gatewayUpdateLogForwardingGoogleChronicle(body) {
+      return this.gatewayUpdateLogForwardingGoogleChronicleWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingLogstash} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gatewayUpdateLogForwardingLogstashWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateLogForwardingLogstash");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-log-forwarding-logstash', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingLogstash} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gatewayUpdateLogForwardingLogstash(body) {
+      return this.gatewayUpdateLogForwardingLogstashWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingLogzIo} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gatewayUpdateLogForwardingLogzIoWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateLogForwardingLogzIo");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-log-forwarding-logz-io', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingLogzIo} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gatewayUpdateLogForwardingLogzIo(body) {
+      return this.gatewayUpdateLogForwardingLogzIoWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingSplunk} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gatewayUpdateLogForwardingSplunkWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateLogForwardingSplunk");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-log-forwarding-splunk', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingSplunk} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gatewayUpdateLogForwardingSplunk(body) {
+      return this.gatewayUpdateLogForwardingSplunkWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingStdout} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gatewayUpdateLogForwardingStdoutWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateLogForwardingStdout");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-log-forwarding-stdout', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingStdout} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gatewayUpdateLogForwardingStdout(body) {
+      return this.gatewayUpdateLogForwardingStdoutWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingSumologic} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gatewayUpdateLogForwardingSumologicWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateLogForwardingSumologic");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-log-forwarding-sumologic', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingSumologic} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gatewayUpdateLogForwardingSumologic(body) {
+      return this.gatewayUpdateLogForwardingSumologicWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingSyslog} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gatewayUpdateLogForwardingSyslogWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateLogForwardingSyslog");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-log-forwarding-syslog', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateLogForwardingSyslog} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gatewayUpdateLogForwardingSyslog(body) {
+      return this.gatewayUpdateLogForwardingSyslogWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -17370,6 +18170,49 @@ export default class V2Api {
      */
     updateGroup(body) {
       return this.updateGroupWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateHashiVaultTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateHashiVaultTargetOutput} and HTTP response
+     */
+    updateHashiVaultTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateHashiVaultTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateHashiVaultTargetOutput;
+      return this.apiClient.callApi(
+        '/update-hashi-vault-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateHashiVaultTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateHashiVaultTargetOutput}
+     */
+    updateHashiVaultTarget(body) {
+      return this.updateHashiVaultTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

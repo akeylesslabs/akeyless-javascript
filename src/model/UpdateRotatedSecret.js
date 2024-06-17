@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 4.0.0
+ * @version 4.1.0
  */
 class UpdateRotatedSecret {
     /**
@@ -263,11 +263,10 @@ UpdateRotatedSecret.prototype['gcp-key'] = undefined;
 UpdateRotatedSecret.prototype['grace-rotation'] = undefined;
 
 /**
- * Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret
  * @member {String} host-provider
- * @default 'explicit'
  */
-UpdateRotatedSecret.prototype['host-provider'] = 'explicit';
+UpdateRotatedSecret.prototype['host-provider'] = undefined;
 
 /**
  * Set output format to JSON

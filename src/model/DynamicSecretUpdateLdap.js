@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateLdap model module.
  * @module model/DynamicSecretUpdateLdap
- * @version 4.0.0
+ * @version 4.1.0
  */
 class DynamicSecretUpdateLdap {
     /**
@@ -50,6 +50,9 @@ class DynamicSecretUpdateLdap {
         if (data) {
             obj = obj || new DynamicSecretUpdateLdap();
 
+            if (data.hasOwnProperty('ProviderType')) {
+                obj['ProviderType'] = ApiClient.convertToType(data['ProviderType'], 'String');
+            }
             if (data.hasOwnProperty('bind-dn')) {
                 obj['bind-dn'] = ApiClient.convertToType(data['bind-dn'], 'String');
             }
@@ -67,6 +70,9 @@ class DynamicSecretUpdateLdap {
             }
             if (data.hasOwnProperty('group-dn')) {
                 obj['group-dn'] = ApiClient.convertToType(data['group-dn'], 'String');
+            }
+            if (data.hasOwnProperty('host-provider')) {
+                obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -89,8 +95,23 @@ class DynamicSecretUpdateLdap {
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
             }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-host')) {
+                obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('secure-access-rd-gateway-server')) {
+                obj['secure-access-rd-gateway-server'] = ApiClient.convertToType(data['secure-access-rd-gateway-server'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-rdp-domain')) {
+                obj['secure-access-rdp-domain'] = ApiClient.convertToType(data['secure-access-rdp-domain'], 'String');
+            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('target')) {
+                obj['target'] = ApiClient.convertToType(data['target'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -119,6 +140,11 @@ class DynamicSecretUpdateLdap {
 
 
 }
+
+/**
+ * @member {String} ProviderType
+ */
+DynamicSecretUpdateLdap.prototype['ProviderType'] = undefined;
 
 /**
  * Bind DN
@@ -156,6 +182,12 @@ DynamicSecretUpdateLdap.prototype['external-username'] = 'false';
  * @member {String} group-dn
  */
 DynamicSecretUpdateLdap.prototype['group-dn'] = undefined;
+
+/**
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret
+ * @member {String} host-provider
+ */
+DynamicSecretUpdateLdap.prototype['host-provider'] = undefined;
 
 /**
  * Set output format to JSON
@@ -201,10 +233,40 @@ DynamicSecretUpdateLdap.prototype['password-length'] = undefined;
 DynamicSecretUpdateLdap.prototype['producer-encryption-key-name'] = undefined;
 
 /**
+ * Enable/Disable secure remote access [true/false]
+ * @member {String} secure-access-enable
+ */
+DynamicSecretUpdateLdap.prototype['secure-access-enable'] = undefined;
+
+/**
+ * Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers)
+ * @member {Array.<String>} secure-access-host
+ */
+DynamicSecretUpdateLdap.prototype['secure-access-host'] = undefined;
+
+/**
+ * RD Gateway server
+ * @member {String} secure-access-rd-gateway-server
+ */
+DynamicSecretUpdateLdap.prototype['secure-access-rd-gateway-server'] = undefined;
+
+/**
+ * Required when the Dynamic Secret is used for a domain user
+ * @member {String} secure-access-rdp-domain
+ */
+DynamicSecretUpdateLdap.prototype['secure-access-rdp-domain'] = undefined;
+
+/**
  * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 DynamicSecretUpdateLdap.prototype['tags'] = undefined;
+
+/**
+ * A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times
+ * @member {Array.<String>} target
+ */
+DynamicSecretUpdateLdap.prototype['target'] = undefined;
 
 /**
  * Target name
