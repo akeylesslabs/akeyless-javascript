@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessExpires** | **Number** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
 **allowedRedirectUri** | **[String]** | Allowed redirect URIs after the authentication | [optional] 
+**auditLogsClaims** | **[String]** | Subclaims to include in audit logs, e.g \&quot;--audit-logs-claims email --audit-logs-claims username\&quot; | [optional] 
 **boundIps** | **[String]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
 **description** | **String** | Auth Method description | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 

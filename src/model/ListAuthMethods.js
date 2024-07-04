@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The ListAuthMethods model module.
  * @module model/ListAuthMethods
- * @version 4.1.0
+ * @version 4.2.0
  */
 class ListAuthMethods {
     /**
      * Constructs a new <code>ListAuthMethods</code>.
-     * listAuthMethods is a command that returns a list of all auth methods in the account.
+     * listAuthMethods is a command that returns a list of all auth methods in the account. [Deprecated: Use auth-method-list command]
      * @alias module:model/ListAuthMethods
      */
     constructor() { 

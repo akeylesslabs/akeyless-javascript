@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateTargetDetails model module.
  * @module model/UpdateTargetDetails
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateTargetDetails {
     /**
      * Constructs a new <code>UpdateTargetDetails</code>.
+     * updateTargetDetails is a command that updates an existing target. [Deprecated]
      * @alias module:model/UpdateTargetDetails
      */
     constructor() { 

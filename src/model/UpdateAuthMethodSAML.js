@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodSAML model module.
  * @module model/UpdateAuthMethodSAML
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateAuthMethodSAML {
     /**
      * Constructs a new <code>UpdateAuthMethodSAML</code>.
-     * updateAuthMethodSAML is a command that updates a new auth method that will be available to authenticate using SAML.
+     * updateAuthMethodSAML is a command that updates a new auth method that will be available to authenticate using SAML. [Deprecated: Use auth-method-update-saml command]
      * @alias module:model/UpdateAuthMethodSAML
      * @param name {String} Auth Method name
      * @param uniqueIdentifier {String} A unique identifier (ID) value should be configured for OAuth2, LDAP and SAML authentication method types and is usually a value such as the email, username, or upn for example. Whenever a user logs in with a token, these authentication types issue a \"sub claim\" that contains details uniquely identifying that user. This sub claim includes a key containing the ID value that you configured, and is used to distinguish between different users from within the same organization.
@@ -57,6 +57,9 @@ class UpdateAuthMethodSAML {
             }
             if (data.hasOwnProperty('allowed-redirect-uri')) {
                 obj['allowed-redirect-uri'] = ApiClient.convertToType(data['allowed-redirect-uri'], ['String']);
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -122,6 +125,12 @@ UpdateAuthMethodSAML.prototype['access-expires'] = 0;
  * @member {Array.<String>} allowed-redirect-uri
  */
 UpdateAuthMethodSAML.prototype['allowed-redirect-uri'] = undefined;
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+UpdateAuthMethodSAML.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A CIDR whitelist with the IPs that the access is restricted to

@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRabbitMQTarget model module.
  * @module model/CreateRabbitMQTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateRabbitMQTarget {
     /**
      * Constructs a new <code>CreateRabbitMQTarget</code>.
+     * createRabbitMQTarget is a command that creates a new target. [Deprecated: Use target-create-rabbitmq command]
      * @alias module:model/CreateRabbitMQTarget
      * @param name {String} Target name
      */

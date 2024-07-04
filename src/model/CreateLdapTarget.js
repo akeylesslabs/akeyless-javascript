@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLdapTarget model module.
  * @module model/CreateLdapTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateLdapTarget {
     /**
      * Constructs a new <code>CreateLdapTarget</code>.
+     * createldapTarget is a command that creates a new target. [Deprecated: Use target-create-ldap command]
      * @alias module:model/CreateLdapTarget
      * @param bindDn {String} Bind DN
      * @param bindDnPassword {String} Bind DN Password

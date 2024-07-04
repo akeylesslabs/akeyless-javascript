@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The APIKeyAccessRules model module.
  * @module model/APIKeyAccessRules
- * @version 4.1.0
+ * @version 4.2.0
  */
 class APIKeyAccessRules {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateAccountSettings {
     /**
@@ -49,6 +49,9 @@ class UpdateAccountSettings {
 
             if (data.hasOwnProperty('address')) {
                 obj['address'] = ApiClient.convertToType(data['address'], 'String');
+            }
+            if (data.hasOwnProperty('bound-ips')) {
+                obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
             }
             if (data.hasOwnProperty('city')) {
                 obj['city'] = ApiClient.convertToType(data['city'], 'String');
@@ -83,6 +86,9 @@ class UpdateAccountSettings {
             if (data.hasOwnProperty('force-new-versions')) {
                 obj['force-new-versions'] = ApiClient.convertToType(data['force-new-versions'], 'String');
             }
+            if (data.hasOwnProperty('gw-bound-ips')) {
+                obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
+            }
             if (data.hasOwnProperty('invalid-characters')) {
                 obj['invalid-characters'] = ApiClient.convertToType(data['invalid-characters'], 'String');
             }
@@ -104,8 +110,14 @@ class UpdateAccountSettings {
             if (data.hasOwnProperty('jwt-ttl-min')) {
                 obj['jwt-ttl-min'] = ApiClient.convertToType(data['jwt-ttl-min'], 'Number');
             }
+            if (data.hasOwnProperty('lock-bound-ips')) {
+                obj['lock-bound-ips'] = ApiClient.convertToType(data['lock-bound-ips'], 'String');
+            }
             if (data.hasOwnProperty('lock-default-key')) {
                 obj['lock-default-key'] = ApiClient.convertToType(data['lock-default-key'], 'String');
+            }
+            if (data.hasOwnProperty('lock-gw-bound-ips')) {
+                obj['lock-gw-bound-ips'] = ApiClient.convertToType(data['lock-gw-bound-ips'], 'String');
             }
             if (data.hasOwnProperty('max-rotation-interval')) {
                 obj['max-rotation-interval'] = ApiClient.convertToType(data['max-rotation-interval'], 'Number');
@@ -164,6 +176,12 @@ class UpdateAccountSettings {
  * @member {String} address
  */
 UpdateAccountSettings.prototype['address'] = undefined;
+
+/**
+ * A default list of comma-separated CIDR block that are allowed to authenticate.
+ * @member {Array.<String>} bound-ips
+ */
+UpdateAccountSettings.prototype['bound-ips'] = undefined;
 
 /**
  * City
@@ -232,6 +250,12 @@ UpdateAccountSettings.prototype['enable-item-sharing'] = undefined;
 UpdateAccountSettings.prototype['force-new-versions'] = undefined;
 
 /**
+ * A default list of comma-separated CIDR block that acts as a trusted Gateway entity.
+ * @member {Array.<String>} gw-bound-ips
+ */
+UpdateAccountSettings.prototype['gw-bound-ips'] = undefined;
+
+/**
  * Characters that cannot be used for items/targets/roles/auths/event_forwarder names. Empty string will enforce nothing.
  * @member {String} invalid-characters
  * @default 'notReceivedInvalidCharacter'
@@ -276,10 +300,22 @@ UpdateAccountSettings.prototype['jwt-ttl-max'] = undefined;
 UpdateAccountSettings.prototype['jwt-ttl-min'] = undefined;
 
 /**
+ * Lock bound-ips setting globally in the account.
+ * @member {String} lock-bound-ips
+ */
+UpdateAccountSettings.prototype['lock-bound-ips'] = undefined;
+
+/**
  * Lock the account's default protection key, if set - users will not be able to use a different protection key, relevant only if default-key-name is configured [true/false]
  * @member {String} lock-default-key
  */
 UpdateAccountSettings.prototype['lock-default-key'] = undefined;
+
+/**
+ * Lock gw-bound-ips setting in the account.
+ * @member {String} lock-gw-bound-ips
+ */
+UpdateAccountSettings.prototype['lock-gw-bound-ips'] = undefined;
 
 /**
  * Set the maximum rotation interval for rotated secrets auto rotation settings

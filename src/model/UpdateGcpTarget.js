@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGcpTarget model module.
  * @module model/UpdateGcpTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateGcpTarget {
     /**
      * Constructs a new <code>UpdateGcpTarget</code>.
+     * updateGcpTarget is a command that updates an existing target. [Deprecated: Use target-update-gcp command]
      * @alias module:model/UpdateGcpTarget
      * @param name {String} Target name
      */

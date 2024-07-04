@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateZeroSSLTarget model module.
  * @module model/UpdateZeroSSLTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateZeroSSLTarget {
     /**
      * Constructs a new <code>UpdateZeroSSLTarget</code>.
+     * updateZeroSSLTarget is a command that updates an existing target. [Deprecated: Use target-update-zerossl command]
      * @alias module:model/UpdateZeroSSLTarget
      * @param apiKey {String} API Key of the ZeroSSLTarget account
      * @param imapFqdn {String} ImapFQDN of the IMAP service, FQDN or IPv4 address. Must be FQDN if the IMAP is using TLS

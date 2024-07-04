@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePingTarget model module.
  * @module model/CreatePingTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreatePingTarget {
     /**
      * Constructs a new <code>CreatePingTarget</code>.
+     * createPingTarget is a command that creates a new target. [Deprecated: Use target-create-ping command]
      * @alias module:model/CreatePingTarget
      * @param name {String} Target name
      */

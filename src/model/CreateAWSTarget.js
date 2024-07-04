@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAWSTarget model module.
  * @module model/CreateAWSTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateAWSTarget {
     /**
      * Constructs a new <code>CreateAWSTarget</code>.
+     * createAWSTarget is a command that creates a new target. [Deprecated: Use target-create-aws command]
      * @alias module:model/CreateAWSTarget
      * @param accessKey {String} AWS secret access key
      * @param accessKeyId {String} AWS access key ID

@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGcpTarget model module.
  * @module model/CreateGcpTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateGcpTarget {
     /**
      * Constructs a new <code>CreateGcpTarget</code>.
+     * createGcpTarget is a command that creates a new target. [Deprecated: Use target-create-gcp command]
      * @alias module:model/CreateGcpTarget
      * @param name {String} Target name
      */

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateRotatedSecret {
     /**
@@ -158,6 +158,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('secure-access-db-schema')) {
                 obj['secure-access-db-schema'] = ApiClient.convertToType(data['secure-access-db-schema'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-disable-concurrent-connections')) {
+                obj['secure-access-disable-concurrent-connections'] = ApiClient.convertToType(data['secure-access-disable-concurrent-connections'], 'Boolean');
             }
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
@@ -432,6 +435,12 @@ CreateRotatedSecret.prototype['secure-access-db-name'] = undefined;
  * @member {String} secure-access-db-schema
  */
 CreateRotatedSecret.prototype['secure-access-db-schema'] = undefined;
+
+/**
+ * Enable this flag to prevent simultaneous use of the same secret
+ * @member {Boolean} secure-access-disable-concurrent-connections
+ */
+CreateRotatedSecret.prototype['secure-access-disable-concurrent-connections'] = undefined;
 
 /**
  * Enable/Disable secure remote access [true/false]

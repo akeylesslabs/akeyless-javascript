@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateNativeK8STarget model module.
  * @module model/UpdateNativeK8STarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateNativeK8STarget {
     /**
      * Constructs a new <code>UpdateNativeK8STarget</code>.
+     * updateNativeK8STarget is a command that updates an existing target. [Deprecated: Use target-update-k8s command]
      * @alias module:model/UpdateNativeK8STarget
      * @param k8sClusterCaCert {String} K8S cluster CA certificate
      * @param k8sClusterEndpoint {String} K8S cluster URL endpoint

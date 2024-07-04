@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTargetDetails model module.
  * @module model/UpdateDBTargetDetails
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateDBTargetDetails {
     /**

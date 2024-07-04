@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGKETarget model module.
  * @module model/CreateGKETarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateGKETarget {
     /**
      * Constructs a new <code>CreateGKETarget</code>.
+     * createGKETarget is a command that creates a new target. [Deprecated: Use target-create-gke command]
      * @alias module:model/CreateGKETarget
      * @param name {String} Target name
      */

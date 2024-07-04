@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 4.1.0
+ * @version 4.2.0
  */
 class DSProducerDetails {
     /**
@@ -357,6 +357,30 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('github_repository_path')) {
                 obj['github_repository_path'] = ApiClient.convertToType(data['github_repository_path'], 'String');
+            }
+            if (data.hasOwnProperty('gitlab_access_token')) {
+                obj['gitlab_access_token'] = ApiClient.convertToType(data['gitlab_access_token'], 'String');
+            }
+            if (data.hasOwnProperty('gitlab_access_type')) {
+                obj['gitlab_access_type'] = ApiClient.convertToType(data['gitlab_access_type'], 'String');
+            }
+            if (data.hasOwnProperty('gitlab_certificate')) {
+                obj['gitlab_certificate'] = ApiClient.convertToType(data['gitlab_certificate'], 'String');
+            }
+            if (data.hasOwnProperty('gitlab_group_name')) {
+                obj['gitlab_group_name'] = ApiClient.convertToType(data['gitlab_group_name'], 'String');
+            }
+            if (data.hasOwnProperty('gitlab_project_name')) {
+                obj['gitlab_project_name'] = ApiClient.convertToType(data['gitlab_project_name'], 'String');
+            }
+            if (data.hasOwnProperty('gitlab_role')) {
+                obj['gitlab_role'] = ApiClient.convertToType(data['gitlab_role'], 'String');
+            }
+            if (data.hasOwnProperty('gitlab_token_scope')) {
+                obj['gitlab_token_scope'] = ApiClient.convertToType(data['gitlab_token_scope'], ['String']);
+            }
+            if (data.hasOwnProperty('gitlab_url')) {
+                obj['gitlab_url'] = ApiClient.convertToType(data['gitlab_url'], 'String');
             }
             if (data.hasOwnProperty('gke_cluster_ca_certificate')) {
                 obj['gke_cluster_ca_certificate'] = ApiClient.convertToType(data['gke_cluster_ca_certificate'], 'String');
@@ -1262,6 +1286,46 @@ DSProducerDetails.prototype['github_organization_name'] = undefined;
  * @member {String} github_repository_path
  */
 DSProducerDetails.prototype['github_repository_path'] = undefined;
+
+/**
+ * @member {String} gitlab_access_token
+ */
+DSProducerDetails.prototype['gitlab_access_token'] = undefined;
+
+/**
+ * @member {String} gitlab_access_type
+ */
+DSProducerDetails.prototype['gitlab_access_type'] = undefined;
+
+/**
+ * @member {String} gitlab_certificate
+ */
+DSProducerDetails.prototype['gitlab_certificate'] = undefined;
+
+/**
+ * @member {String} gitlab_group_name
+ */
+DSProducerDetails.prototype['gitlab_group_name'] = undefined;
+
+/**
+ * @member {String} gitlab_project_name
+ */
+DSProducerDetails.prototype['gitlab_project_name'] = undefined;
+
+/**
+ * @member {String} gitlab_role
+ */
+DSProducerDetails.prototype['gitlab_role'] = undefined;
+
+/**
+ * @member {Array.<String>} gitlab_token_scope
+ */
+DSProducerDetails.prototype['gitlab_token_scope'] = undefined;
+
+/**
+ * @member {String} gitlab_url
+ */
+DSProducerDetails.prototype['gitlab_url'] = undefined;
 
 /**
  * @member {String} gke_cluster_ca_certificate

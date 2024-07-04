@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodGCP model module.
  * @module model/UpdateAuthMethodGCP
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateAuthMethodGCP {
     /**
      * Constructs a new <code>UpdateAuthMethodGCP</code>.
-     * updateAuthMethodGCP is a command that updates a new auth method that will be able to authenticate using GCP IAM Service Account credentials or GCE instance credentials.
+     * updateAuthMethodGCP is a command that updates a new auth method that will be able to authenticate using GCP IAM Service Account credentials or GCE instance credentials. [Deprecated: Use auth-method-update-gcp command]
      * @alias module:model/UpdateAuthMethodGCP
      * @param audience {String} The audience to verify in the JWT received by the client
      * @param name {String} Auth Method name
@@ -59,6 +59,9 @@ class UpdateAuthMethodGCP {
             }
             if (data.hasOwnProperty('audience')) {
                 obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -134,6 +137,12 @@ UpdateAuthMethodGCP.prototype['access-expires'] = 0;
  * @default 'akeyless.io'
  */
 UpdateAuthMethodGCP.prototype['audience'] = 'akeyless.io';
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+UpdateAuthMethodGCP.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A CIDR whitelist with the IPs that the access is restricted to

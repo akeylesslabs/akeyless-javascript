@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayMigrationCreateOutput model module.
  * @module model/GatewayMigrationCreateOutput
- * @version 4.1.0
+ * @version 4.2.0
  */
 class GatewayMigrationCreateOutput {
     /**

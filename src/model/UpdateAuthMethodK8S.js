@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodK8S model module.
  * @module model/UpdateAuthMethodK8S
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateAuthMethodK8S {
     /**
      * Constructs a new <code>UpdateAuthMethodK8S</code>.
-     * updateAuthMethodK8S is a command that updates a new auth method that will be able to authenticate using K8S.
+     * updateAuthMethodK8S is a command that updates a new auth method that will be able to authenticate using K8S. [Deprecated: Use auth-method-update-k8s command]
      * @alias module:model/UpdateAuthMethodK8S
      * @param name {String} Auth Method name
      */
@@ -55,6 +55,9 @@ class UpdateAuthMethodK8S {
             }
             if (data.hasOwnProperty('audience')) {
                 obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -123,6 +126,12 @@ UpdateAuthMethodK8S.prototype['access-expires'] = 0;
  * @member {String} audience
  */
 UpdateAuthMethodK8S.prototype['audience'] = undefined;
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+UpdateAuthMethodK8S.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A CIDR whitelist with the IPs that the access is restricted to

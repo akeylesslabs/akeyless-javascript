@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodCert model module.
  * @module model/CreateAuthMethodCert
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateAuthMethodCert {
     /**
      * Constructs a new <code>CreateAuthMethodCert</code>.
-     * createAuthMethodCert is a command that creates a new auth method that will be able to authenticate using a client certificae
+     * createAuthMethodCert is a command that creates a new auth method that will be able to authenticate using a client certificate. [Deprecated: Use auth-method-create-cert command]
      * @alias module:model/CreateAuthMethodCert
      * @param name {String} Auth Method name
      * @param uniqueIdentifier {String} A unique identifier (ID) value should be configured, such as common_name or organizational_unit Whenever a user logs in with a token, these authentication types issue a \"sub claim\" that contains details uniquely identifying that user. This sub claim includes a key containing the ID value that you configured, and is used to distinguish between different users from within the same organization.
@@ -57,6 +57,9 @@ class CreateAuthMethodCert {
             }
             if (data.hasOwnProperty('allowed-cors')) {
                 obj['allowed-cors'] = ApiClient.convertToType(data['allowed-cors'], 'String');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-common-names')) {
                 obj['bound-common-names'] = ApiClient.convertToType(data['bound-common-names'], ['String']);
@@ -134,6 +137,12 @@ CreateAuthMethodCert.prototype['access-expires'] = 0;
  * @member {String} allowed-cors
  */
 CreateAuthMethodCert.prototype['allowed-cors'] = undefined;
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+CreateAuthMethodCert.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A list of names. At least one must exist in the Common Name. Supports globbing.

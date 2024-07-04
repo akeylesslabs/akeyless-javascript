@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethod model module.
  * @module model/UpdateAuthMethod
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateAuthMethod {
     /**
      * Constructs a new <code>UpdateAuthMethod</code>.
+     * updateAuthMethod is a command that updates a api key auth method. [Deprecated: Use auth-method-update-api-key command]
      * @alias module:model/UpdateAuthMethod
      * @param name {String} Auth Method name
      */
@@ -51,6 +52,9 @@ class UpdateAuthMethod {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -98,6 +102,12 @@ class UpdateAuthMethod {
  * @default 0
  */
 UpdateAuthMethod.prototype['access-expires'] = 0;
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+UpdateAuthMethod.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A CIDR whitelist with the IPs that the access is restricted to

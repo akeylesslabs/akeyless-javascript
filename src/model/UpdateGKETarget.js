@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGKETarget model module.
  * @module model/UpdateGKETarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateGKETarget {
     /**
      * Constructs a new <code>UpdateGKETarget</code>.
+     * updateGKETarget is a command that updates an existing target. [Deprecated: Use target-update-gke command]
      * @alias module:model/UpdateGKETarget
      * @param name {String} Target name
      */

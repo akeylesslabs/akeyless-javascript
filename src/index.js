@@ -30,6 +30,7 @@ import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
 import AllAnalyticsData from './model/AllAnalyticsData';
 import AllowedAccess from './model/AllowedAccess';
 import AllowedAccessOld from './model/AllowedAccessOld';
+import AllowedIpSettings from './model/AllowedIpSettings';
 import ArtifactoryTargetDetails from './model/ArtifactoryTargetDetails';
 import AssocRoleAuthMethod from './model/AssocRoleAuthMethod';
 import AssocTargetItem from './model/AssocTargetItem';
@@ -37,7 +38,39 @@ import AttributeTypeAndValue from './model/AttributeTypeAndValue';
 import Auth from './model/Auth';
 import AuthMethod from './model/AuthMethod';
 import AuthMethodAccessInfo from './model/AuthMethodAccessInfo';
+import AuthMethodCreateApiKey from './model/AuthMethodCreateApiKey';
+import AuthMethodCreateAwsIam from './model/AuthMethodCreateAwsIam';
+import AuthMethodCreateAzureAD from './model/AuthMethodCreateAzureAD';
+import AuthMethodCreateCert from './model/AuthMethodCreateCert';
+import AuthMethodCreateEmail from './model/AuthMethodCreateEmail';
+import AuthMethodCreateGcp from './model/AuthMethodCreateGcp';
+import AuthMethodCreateK8s from './model/AuthMethodCreateK8s';
+import AuthMethodCreateLdap from './model/AuthMethodCreateLdap';
+import AuthMethodCreateOCI from './model/AuthMethodCreateOCI';
+import AuthMethodCreateOIDC from './model/AuthMethodCreateOIDC';
+import AuthMethodCreateOauth2 from './model/AuthMethodCreateOauth2';
+import AuthMethodCreateOutput from './model/AuthMethodCreateOutput';
+import AuthMethodCreateSAML from './model/AuthMethodCreateSAML';
+import AuthMethodCreateUniversalIdentity from './model/AuthMethodCreateUniversalIdentity';
+import AuthMethodDelete from './model/AuthMethodDelete';
+import AuthMethodDeleteOutput from './model/AuthMethodDeleteOutput';
+import AuthMethodGet from './model/AuthMethodGet';
+import AuthMethodList from './model/AuthMethodList';
 import AuthMethodRoleAssociation from './model/AuthMethodRoleAssociation';
+import AuthMethodUpdateApiKey from './model/AuthMethodUpdateApiKey';
+import AuthMethodUpdateAwsIam from './model/AuthMethodUpdateAwsIam';
+import AuthMethodUpdateAzureAD from './model/AuthMethodUpdateAzureAD';
+import AuthMethodUpdateCert from './model/AuthMethodUpdateCert';
+import AuthMethodUpdateEmail from './model/AuthMethodUpdateEmail';
+import AuthMethodUpdateGcp from './model/AuthMethodUpdateGcp';
+import AuthMethodUpdateK8s from './model/AuthMethodUpdateK8s';
+import AuthMethodUpdateLdap from './model/AuthMethodUpdateLdap';
+import AuthMethodUpdateOCI from './model/AuthMethodUpdateOCI';
+import AuthMethodUpdateOIDC from './model/AuthMethodUpdateOIDC';
+import AuthMethodUpdateOauth2 from './model/AuthMethodUpdateOauth2';
+import AuthMethodUpdateOutput from './model/AuthMethodUpdateOutput';
+import AuthMethodUpdateSAML from './model/AuthMethodUpdateSAML';
+import AuthMethodUpdateUniversalIdentity from './model/AuthMethodUpdateUniversalIdentity';
 import AuthOutput from './model/AuthOutput';
 import AwsS3LogForwardingConfig from './model/AwsS3LogForwardingConfig';
 import AzureADAccessRules from './model/AzureADAccessRules';
@@ -127,6 +160,8 @@ import CreateGcpTarget from './model/CreateGcpTarget';
 import CreateGcpTargetOutput from './model/CreateGcpTargetOutput';
 import CreateGithubTarget from './model/CreateGithubTarget';
 import CreateGithubTargetOutput from './model/CreateGithubTargetOutput';
+import CreateGitlabTarget from './model/CreateGitlabTarget';
+import CreateGitlabTargetOutput from './model/CreateGitlabTargetOutput';
 import CreateGlobalSignAtlasTarget from './model/CreateGlobalSignAtlasTarget';
 import CreateGlobalSignAtlasTargetOutput from './model/CreateGlobalSignAtlasTargetOutput';
 import CreateGlobalSignTarget from './model/CreateGlobalSignTarget';
@@ -239,6 +274,7 @@ import DynamicSecretCreateDockerhub from './model/DynamicSecretCreateDockerhub';
 import DynamicSecretCreateEks from './model/DynamicSecretCreateEks';
 import DynamicSecretCreateGcp from './model/DynamicSecretCreateGcp';
 import DynamicSecretCreateGithub from './model/DynamicSecretCreateGithub';
+import DynamicSecretCreateGitlab from './model/DynamicSecretCreateGitlab';
 import DynamicSecretCreateGke from './model/DynamicSecretCreateGke';
 import DynamicSecretCreateGoogleWorkspace from './model/DynamicSecretCreateGoogleWorkspace';
 import DynamicSecretCreateHanaDb from './model/DynamicSecretCreateHanaDb';
@@ -277,6 +313,7 @@ import DynamicSecretUpdateDockerhub from './model/DynamicSecretUpdateDockerhub';
 import DynamicSecretUpdateEks from './model/DynamicSecretUpdateEks';
 import DynamicSecretUpdateGcp from './model/DynamicSecretUpdateGcp';
 import DynamicSecretUpdateGithub from './model/DynamicSecretUpdateGithub';
+import DynamicSecretUpdateGitlab from './model/DynamicSecretUpdateGitlab';
 import DynamicSecretUpdateGke from './model/DynamicSecretUpdateGke';
 import DynamicSecretUpdateGoogleWorkspace from './model/DynamicSecretUpdateGoogleWorkspace';
 import DynamicSecretUpdateHanaDb from './model/DynamicSecretUpdateHanaDb';
@@ -556,6 +593,7 @@ import GetTargetDetails from './model/GetTargetDetails';
 import GetTargetDetailsOutput from './model/GetTargetDetailsOutput';
 import GetUserEventStatusOutput from './model/GetUserEventStatusOutput';
 import GithubTargetDetails from './model/GithubTargetDetails';
+import GitlabTargetDetails from './model/GitlabTargetDetails';
 import GlobalSignAtlasTargetDetails from './model/GlobalSignAtlasTargetDetails';
 import GlobalSignGCCTargetDetails from './model/GlobalSignGCCTargetDetails';
 import GodaddyTargetDetails from './model/GodaddyTargetDetails';
@@ -774,10 +812,64 @@ import SyslogLogForwardingConfig from './model/SyslogLogForwardingConfig';
 import SystemAccessCredentialsReplyObj from './model/SystemAccessCredentialsReplyObj';
 import SystemAccessCredsSettings from './model/SystemAccessCredsSettings';
 import Target from './model/Target';
+import TargetCreateArtifactory from './model/TargetCreateArtifactory';
+import TargetCreateAws from './model/TargetCreateAws';
+import TargetCreateAzure from './model/TargetCreateAzure';
+import TargetCreateDB from './model/TargetCreateDB';
+import TargetCreateDockerhub from './model/TargetCreateDockerhub';
+import TargetCreateEks from './model/TargetCreateEks';
+import TargetCreateGcp from './model/TargetCreateGcp';
+import TargetCreateGithub from './model/TargetCreateGithub';
+import TargetCreateGitlab from './model/TargetCreateGitlab';
+import TargetCreateGke from './model/TargetCreateGke';
+import TargetCreateGlobalSign from './model/TargetCreateGlobalSign';
+import TargetCreateGlobalSignAtlas from './model/TargetCreateGlobalSignAtlas';
+import TargetCreateGodaddy from './model/TargetCreateGodaddy';
+import TargetCreateHashiVault from './model/TargetCreateHashiVault';
+import TargetCreateK8s from './model/TargetCreateK8s';
+import TargetCreateLdap from './model/TargetCreateLdap';
+import TargetCreateLinked from './model/TargetCreateLinked';
+import TargetCreateOutput from './model/TargetCreateOutput';
+import TargetCreatePing from './model/TargetCreatePing';
+import TargetCreateRabbitMq from './model/TargetCreateRabbitMq';
+import TargetCreateSalesforce from './model/TargetCreateSalesforce';
+import TargetCreateSsh from './model/TargetCreateSsh';
+import TargetCreateWeb from './model/TargetCreateWeb';
+import TargetCreateWindows from './model/TargetCreateWindows';
+import TargetCreateZeroSSL from './model/TargetCreateZeroSSL';
+import TargetDelete from './model/TargetDelete';
+import TargetGet from './model/TargetGet';
+import TargetGetDetails from './model/TargetGetDetails';
 import TargetItemAssociation from './model/TargetItemAssociation';
 import TargetItemVersion from './model/TargetItemVersion';
+import TargetList from './model/TargetList';
 import TargetNameWithHosts from './model/TargetNameWithHosts';
 import TargetTypeDetailsInput from './model/TargetTypeDetailsInput';
+import TargetUpdateArtifactory from './model/TargetUpdateArtifactory';
+import TargetUpdateAws from './model/TargetUpdateAws';
+import TargetUpdateAzure from './model/TargetUpdateAzure';
+import TargetUpdateDB from './model/TargetUpdateDB';
+import TargetUpdateDockerhub from './model/TargetUpdateDockerhub';
+import TargetUpdateEks from './model/TargetUpdateEks';
+import TargetUpdateGcp from './model/TargetUpdateGcp';
+import TargetUpdateGithub from './model/TargetUpdateGithub';
+import TargetUpdateGitlab from './model/TargetUpdateGitlab';
+import TargetUpdateGke from './model/TargetUpdateGke';
+import TargetUpdateGlobalSign from './model/TargetUpdateGlobalSign';
+import TargetUpdateGlobalSignAtlas from './model/TargetUpdateGlobalSignAtlas';
+import TargetUpdateGodaddy from './model/TargetUpdateGodaddy';
+import TargetUpdateHashiVault from './model/TargetUpdateHashiVault';
+import TargetUpdateK8s from './model/TargetUpdateK8s';
+import TargetUpdateLdap from './model/TargetUpdateLdap';
+import TargetUpdateLinked from './model/TargetUpdateLinked';
+import TargetUpdateOutput from './model/TargetUpdateOutput';
+import TargetUpdatePing from './model/TargetUpdatePing';
+import TargetUpdateRabbitMq from './model/TargetUpdateRabbitMq';
+import TargetUpdateSalesforce from './model/TargetUpdateSalesforce';
+import TargetUpdateSsh from './model/TargetUpdateSsh';
+import TargetUpdateWeb from './model/TargetUpdateWeb';
+import TargetUpdateWindows from './model/TargetUpdateWindows';
+import TargetUpdateZeroSSL from './model/TargetUpdateZeroSSL';
 import TmpUserData from './model/TmpUserData';
 import Tokenize from './model/Tokenize';
 import TokenizeOutput from './model/TokenizeOutput';
@@ -838,6 +930,8 @@ import UpdateGcpTarget from './model/UpdateGcpTarget';
 import UpdateGcpTargetOutput from './model/UpdateGcpTargetOutput';
 import UpdateGithubTarget from './model/UpdateGithubTarget';
 import UpdateGithubTargetOutput from './model/UpdateGithubTargetOutput';
+import UpdateGitlabTarget from './model/UpdateGitlabTarget';
+import UpdateGitlabTargetOutput from './model/UpdateGitlabTargetOutput';
 import UpdateGlobalSignAtlasTarget from './model/UpdateGlobalSignAtlasTarget';
 import UpdateGlobalSignAtlasTargetOutput from './model/UpdateGlobalSignAtlasTargetOutput';
 import UpdateGlobalSignTarget from './model/UpdateGlobalSignTarget';
@@ -954,7 +1048,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 4.1.0
+* @version 4.2.0
 */
 export {
     /**
@@ -1066,6 +1160,12 @@ export {
     AllowedAccessOld,
 
     /**
+     * The AllowedIpSettings model constructor.
+     * @property {module:model/AllowedIpSettings}
+     */
+    AllowedIpSettings,
+
+    /**
      * The ArtifactoryTargetDetails model constructor.
      * @property {module:model/ArtifactoryTargetDetails}
      */
@@ -1108,10 +1208,202 @@ export {
     AuthMethodAccessInfo,
 
     /**
+     * The AuthMethodCreateApiKey model constructor.
+     * @property {module:model/AuthMethodCreateApiKey}
+     */
+    AuthMethodCreateApiKey,
+
+    /**
+     * The AuthMethodCreateAwsIam model constructor.
+     * @property {module:model/AuthMethodCreateAwsIam}
+     */
+    AuthMethodCreateAwsIam,
+
+    /**
+     * The AuthMethodCreateAzureAD model constructor.
+     * @property {module:model/AuthMethodCreateAzureAD}
+     */
+    AuthMethodCreateAzureAD,
+
+    /**
+     * The AuthMethodCreateCert model constructor.
+     * @property {module:model/AuthMethodCreateCert}
+     */
+    AuthMethodCreateCert,
+
+    /**
+     * The AuthMethodCreateEmail model constructor.
+     * @property {module:model/AuthMethodCreateEmail}
+     */
+    AuthMethodCreateEmail,
+
+    /**
+     * The AuthMethodCreateGcp model constructor.
+     * @property {module:model/AuthMethodCreateGcp}
+     */
+    AuthMethodCreateGcp,
+
+    /**
+     * The AuthMethodCreateK8s model constructor.
+     * @property {module:model/AuthMethodCreateK8s}
+     */
+    AuthMethodCreateK8s,
+
+    /**
+     * The AuthMethodCreateLdap model constructor.
+     * @property {module:model/AuthMethodCreateLdap}
+     */
+    AuthMethodCreateLdap,
+
+    /**
+     * The AuthMethodCreateOCI model constructor.
+     * @property {module:model/AuthMethodCreateOCI}
+     */
+    AuthMethodCreateOCI,
+
+    /**
+     * The AuthMethodCreateOIDC model constructor.
+     * @property {module:model/AuthMethodCreateOIDC}
+     */
+    AuthMethodCreateOIDC,
+
+    /**
+     * The AuthMethodCreateOauth2 model constructor.
+     * @property {module:model/AuthMethodCreateOauth2}
+     */
+    AuthMethodCreateOauth2,
+
+    /**
+     * The AuthMethodCreateOutput model constructor.
+     * @property {module:model/AuthMethodCreateOutput}
+     */
+    AuthMethodCreateOutput,
+
+    /**
+     * The AuthMethodCreateSAML model constructor.
+     * @property {module:model/AuthMethodCreateSAML}
+     */
+    AuthMethodCreateSAML,
+
+    /**
+     * The AuthMethodCreateUniversalIdentity model constructor.
+     * @property {module:model/AuthMethodCreateUniversalIdentity}
+     */
+    AuthMethodCreateUniversalIdentity,
+
+    /**
+     * The AuthMethodDelete model constructor.
+     * @property {module:model/AuthMethodDelete}
+     */
+    AuthMethodDelete,
+
+    /**
+     * The AuthMethodDeleteOutput model constructor.
+     * @property {module:model/AuthMethodDeleteOutput}
+     */
+    AuthMethodDeleteOutput,
+
+    /**
+     * The AuthMethodGet model constructor.
+     * @property {module:model/AuthMethodGet}
+     */
+    AuthMethodGet,
+
+    /**
+     * The AuthMethodList model constructor.
+     * @property {module:model/AuthMethodList}
+     */
+    AuthMethodList,
+
+    /**
      * The AuthMethodRoleAssociation model constructor.
      * @property {module:model/AuthMethodRoleAssociation}
      */
     AuthMethodRoleAssociation,
+
+    /**
+     * The AuthMethodUpdateApiKey model constructor.
+     * @property {module:model/AuthMethodUpdateApiKey}
+     */
+    AuthMethodUpdateApiKey,
+
+    /**
+     * The AuthMethodUpdateAwsIam model constructor.
+     * @property {module:model/AuthMethodUpdateAwsIam}
+     */
+    AuthMethodUpdateAwsIam,
+
+    /**
+     * The AuthMethodUpdateAzureAD model constructor.
+     * @property {module:model/AuthMethodUpdateAzureAD}
+     */
+    AuthMethodUpdateAzureAD,
+
+    /**
+     * The AuthMethodUpdateCert model constructor.
+     * @property {module:model/AuthMethodUpdateCert}
+     */
+    AuthMethodUpdateCert,
+
+    /**
+     * The AuthMethodUpdateEmail model constructor.
+     * @property {module:model/AuthMethodUpdateEmail}
+     */
+    AuthMethodUpdateEmail,
+
+    /**
+     * The AuthMethodUpdateGcp model constructor.
+     * @property {module:model/AuthMethodUpdateGcp}
+     */
+    AuthMethodUpdateGcp,
+
+    /**
+     * The AuthMethodUpdateK8s model constructor.
+     * @property {module:model/AuthMethodUpdateK8s}
+     */
+    AuthMethodUpdateK8s,
+
+    /**
+     * The AuthMethodUpdateLdap model constructor.
+     * @property {module:model/AuthMethodUpdateLdap}
+     */
+    AuthMethodUpdateLdap,
+
+    /**
+     * The AuthMethodUpdateOCI model constructor.
+     * @property {module:model/AuthMethodUpdateOCI}
+     */
+    AuthMethodUpdateOCI,
+
+    /**
+     * The AuthMethodUpdateOIDC model constructor.
+     * @property {module:model/AuthMethodUpdateOIDC}
+     */
+    AuthMethodUpdateOIDC,
+
+    /**
+     * The AuthMethodUpdateOauth2 model constructor.
+     * @property {module:model/AuthMethodUpdateOauth2}
+     */
+    AuthMethodUpdateOauth2,
+
+    /**
+     * The AuthMethodUpdateOutput model constructor.
+     * @property {module:model/AuthMethodUpdateOutput}
+     */
+    AuthMethodUpdateOutput,
+
+    /**
+     * The AuthMethodUpdateSAML model constructor.
+     * @property {module:model/AuthMethodUpdateSAML}
+     */
+    AuthMethodUpdateSAML,
+
+    /**
+     * The AuthMethodUpdateUniversalIdentity model constructor.
+     * @property {module:model/AuthMethodUpdateUniversalIdentity}
+     */
+    AuthMethodUpdateUniversalIdentity,
 
     /**
      * The AuthOutput model constructor.
@@ -1646,6 +1938,18 @@ export {
      * @property {module:model/CreateGithubTargetOutput}
      */
     CreateGithubTargetOutput,
+
+    /**
+     * The CreateGitlabTarget model constructor.
+     * @property {module:model/CreateGitlabTarget}
+     */
+    CreateGitlabTarget,
+
+    /**
+     * The CreateGitlabTargetOutput model constructor.
+     * @property {module:model/CreateGitlabTargetOutput}
+     */
+    CreateGitlabTargetOutput,
 
     /**
      * The CreateGlobalSignAtlasTarget model constructor.
@@ -2320,6 +2624,12 @@ export {
     DynamicSecretCreateGithub,
 
     /**
+     * The DynamicSecretCreateGitlab model constructor.
+     * @property {module:model/DynamicSecretCreateGitlab}
+     */
+    DynamicSecretCreateGitlab,
+
+    /**
      * The DynamicSecretCreateGke model constructor.
      * @property {module:model/DynamicSecretCreateGke}
      */
@@ -2546,6 +2856,12 @@ export {
      * @property {module:model/DynamicSecretUpdateGithub}
      */
     DynamicSecretUpdateGithub,
+
+    /**
+     * The DynamicSecretUpdateGitlab model constructor.
+     * @property {module:model/DynamicSecretUpdateGitlab}
+     */
+    DynamicSecretUpdateGitlab,
 
     /**
      * The DynamicSecretUpdateGke model constructor.
@@ -4222,6 +4538,12 @@ export {
     GithubTargetDetails,
 
     /**
+     * The GitlabTargetDetails model constructor.
+     * @property {module:model/GitlabTargetDetails}
+     */
+    GitlabTargetDetails,
+
+    /**
      * The GlobalSignAtlasTargetDetails model constructor.
      * @property {module:model/GlobalSignAtlasTargetDetails}
      */
@@ -5530,6 +5852,174 @@ export {
     Target,
 
     /**
+     * The TargetCreateArtifactory model constructor.
+     * @property {module:model/TargetCreateArtifactory}
+     */
+    TargetCreateArtifactory,
+
+    /**
+     * The TargetCreateAws model constructor.
+     * @property {module:model/TargetCreateAws}
+     */
+    TargetCreateAws,
+
+    /**
+     * The TargetCreateAzure model constructor.
+     * @property {module:model/TargetCreateAzure}
+     */
+    TargetCreateAzure,
+
+    /**
+     * The TargetCreateDB model constructor.
+     * @property {module:model/TargetCreateDB}
+     */
+    TargetCreateDB,
+
+    /**
+     * The TargetCreateDockerhub model constructor.
+     * @property {module:model/TargetCreateDockerhub}
+     */
+    TargetCreateDockerhub,
+
+    /**
+     * The TargetCreateEks model constructor.
+     * @property {module:model/TargetCreateEks}
+     */
+    TargetCreateEks,
+
+    /**
+     * The TargetCreateGcp model constructor.
+     * @property {module:model/TargetCreateGcp}
+     */
+    TargetCreateGcp,
+
+    /**
+     * The TargetCreateGithub model constructor.
+     * @property {module:model/TargetCreateGithub}
+     */
+    TargetCreateGithub,
+
+    /**
+     * The TargetCreateGitlab model constructor.
+     * @property {module:model/TargetCreateGitlab}
+     */
+    TargetCreateGitlab,
+
+    /**
+     * The TargetCreateGke model constructor.
+     * @property {module:model/TargetCreateGke}
+     */
+    TargetCreateGke,
+
+    /**
+     * The TargetCreateGlobalSign model constructor.
+     * @property {module:model/TargetCreateGlobalSign}
+     */
+    TargetCreateGlobalSign,
+
+    /**
+     * The TargetCreateGlobalSignAtlas model constructor.
+     * @property {module:model/TargetCreateGlobalSignAtlas}
+     */
+    TargetCreateGlobalSignAtlas,
+
+    /**
+     * The TargetCreateGodaddy model constructor.
+     * @property {module:model/TargetCreateGodaddy}
+     */
+    TargetCreateGodaddy,
+
+    /**
+     * The TargetCreateHashiVault model constructor.
+     * @property {module:model/TargetCreateHashiVault}
+     */
+    TargetCreateHashiVault,
+
+    /**
+     * The TargetCreateK8s model constructor.
+     * @property {module:model/TargetCreateK8s}
+     */
+    TargetCreateK8s,
+
+    /**
+     * The TargetCreateLdap model constructor.
+     * @property {module:model/TargetCreateLdap}
+     */
+    TargetCreateLdap,
+
+    /**
+     * The TargetCreateLinked model constructor.
+     * @property {module:model/TargetCreateLinked}
+     */
+    TargetCreateLinked,
+
+    /**
+     * The TargetCreateOutput model constructor.
+     * @property {module:model/TargetCreateOutput}
+     */
+    TargetCreateOutput,
+
+    /**
+     * The TargetCreatePing model constructor.
+     * @property {module:model/TargetCreatePing}
+     */
+    TargetCreatePing,
+
+    /**
+     * The TargetCreateRabbitMq model constructor.
+     * @property {module:model/TargetCreateRabbitMq}
+     */
+    TargetCreateRabbitMq,
+
+    /**
+     * The TargetCreateSalesforce model constructor.
+     * @property {module:model/TargetCreateSalesforce}
+     */
+    TargetCreateSalesforce,
+
+    /**
+     * The TargetCreateSsh model constructor.
+     * @property {module:model/TargetCreateSsh}
+     */
+    TargetCreateSsh,
+
+    /**
+     * The TargetCreateWeb model constructor.
+     * @property {module:model/TargetCreateWeb}
+     */
+    TargetCreateWeb,
+
+    /**
+     * The TargetCreateWindows model constructor.
+     * @property {module:model/TargetCreateWindows}
+     */
+    TargetCreateWindows,
+
+    /**
+     * The TargetCreateZeroSSL model constructor.
+     * @property {module:model/TargetCreateZeroSSL}
+     */
+    TargetCreateZeroSSL,
+
+    /**
+     * The TargetDelete model constructor.
+     * @property {module:model/TargetDelete}
+     */
+    TargetDelete,
+
+    /**
+     * The TargetGet model constructor.
+     * @property {module:model/TargetGet}
+     */
+    TargetGet,
+
+    /**
+     * The TargetGetDetails model constructor.
+     * @property {module:model/TargetGetDetails}
+     */
+    TargetGetDetails,
+
+    /**
      * The TargetItemAssociation model constructor.
      * @property {module:model/TargetItemAssociation}
      */
@@ -5542,6 +6032,12 @@ export {
     TargetItemVersion,
 
     /**
+     * The TargetList model constructor.
+     * @property {module:model/TargetList}
+     */
+    TargetList,
+
+    /**
      * The TargetNameWithHosts model constructor.
      * @property {module:model/TargetNameWithHosts}
      */
@@ -5552,6 +6048,156 @@ export {
      * @property {module:model/TargetTypeDetailsInput}
      */
     TargetTypeDetailsInput,
+
+    /**
+     * The TargetUpdateArtifactory model constructor.
+     * @property {module:model/TargetUpdateArtifactory}
+     */
+    TargetUpdateArtifactory,
+
+    /**
+     * The TargetUpdateAws model constructor.
+     * @property {module:model/TargetUpdateAws}
+     */
+    TargetUpdateAws,
+
+    /**
+     * The TargetUpdateAzure model constructor.
+     * @property {module:model/TargetUpdateAzure}
+     */
+    TargetUpdateAzure,
+
+    /**
+     * The TargetUpdateDB model constructor.
+     * @property {module:model/TargetUpdateDB}
+     */
+    TargetUpdateDB,
+
+    /**
+     * The TargetUpdateDockerhub model constructor.
+     * @property {module:model/TargetUpdateDockerhub}
+     */
+    TargetUpdateDockerhub,
+
+    /**
+     * The TargetUpdateEks model constructor.
+     * @property {module:model/TargetUpdateEks}
+     */
+    TargetUpdateEks,
+
+    /**
+     * The TargetUpdateGcp model constructor.
+     * @property {module:model/TargetUpdateGcp}
+     */
+    TargetUpdateGcp,
+
+    /**
+     * The TargetUpdateGithub model constructor.
+     * @property {module:model/TargetUpdateGithub}
+     */
+    TargetUpdateGithub,
+
+    /**
+     * The TargetUpdateGitlab model constructor.
+     * @property {module:model/TargetUpdateGitlab}
+     */
+    TargetUpdateGitlab,
+
+    /**
+     * The TargetUpdateGke model constructor.
+     * @property {module:model/TargetUpdateGke}
+     */
+    TargetUpdateGke,
+
+    /**
+     * The TargetUpdateGlobalSign model constructor.
+     * @property {module:model/TargetUpdateGlobalSign}
+     */
+    TargetUpdateGlobalSign,
+
+    /**
+     * The TargetUpdateGlobalSignAtlas model constructor.
+     * @property {module:model/TargetUpdateGlobalSignAtlas}
+     */
+    TargetUpdateGlobalSignAtlas,
+
+    /**
+     * The TargetUpdateGodaddy model constructor.
+     * @property {module:model/TargetUpdateGodaddy}
+     */
+    TargetUpdateGodaddy,
+
+    /**
+     * The TargetUpdateHashiVault model constructor.
+     * @property {module:model/TargetUpdateHashiVault}
+     */
+    TargetUpdateHashiVault,
+
+    /**
+     * The TargetUpdateK8s model constructor.
+     * @property {module:model/TargetUpdateK8s}
+     */
+    TargetUpdateK8s,
+
+    /**
+     * The TargetUpdateLdap model constructor.
+     * @property {module:model/TargetUpdateLdap}
+     */
+    TargetUpdateLdap,
+
+    /**
+     * The TargetUpdateLinked model constructor.
+     * @property {module:model/TargetUpdateLinked}
+     */
+    TargetUpdateLinked,
+
+    /**
+     * The TargetUpdateOutput model constructor.
+     * @property {module:model/TargetUpdateOutput}
+     */
+    TargetUpdateOutput,
+
+    /**
+     * The TargetUpdatePing model constructor.
+     * @property {module:model/TargetUpdatePing}
+     */
+    TargetUpdatePing,
+
+    /**
+     * The TargetUpdateRabbitMq model constructor.
+     * @property {module:model/TargetUpdateRabbitMq}
+     */
+    TargetUpdateRabbitMq,
+
+    /**
+     * The TargetUpdateSalesforce model constructor.
+     * @property {module:model/TargetUpdateSalesforce}
+     */
+    TargetUpdateSalesforce,
+
+    /**
+     * The TargetUpdateSsh model constructor.
+     * @property {module:model/TargetUpdateSsh}
+     */
+    TargetUpdateSsh,
+
+    /**
+     * The TargetUpdateWeb model constructor.
+     * @property {module:model/TargetUpdateWeb}
+     */
+    TargetUpdateWeb,
+
+    /**
+     * The TargetUpdateWindows model constructor.
+     * @property {module:model/TargetUpdateWindows}
+     */
+    TargetUpdateWindows,
+
+    /**
+     * The TargetUpdateZeroSSL model constructor.
+     * @property {module:model/TargetUpdateZeroSSL}
+     */
+    TargetUpdateZeroSSL,
 
     /**
      * The TmpUserData model constructor.
@@ -5912,6 +6558,18 @@ export {
      * @property {module:model/UpdateGithubTargetOutput}
      */
     UpdateGithubTargetOutput,
+
+    /**
+     * The UpdateGitlabTarget model constructor.
+     * @property {module:model/UpdateGitlabTarget}
+     */
+    UpdateGitlabTarget,
+
+    /**
+     * The UpdateGitlabTargetOutput model constructor.
+     * @property {module:model/UpdateGitlabTargetOutput}
+     */
+    UpdateGitlabTargetOutput,
 
     /**
      * The UpdateGlobalSignAtlasTarget model constructor.

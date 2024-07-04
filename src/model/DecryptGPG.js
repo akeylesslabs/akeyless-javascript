@@ -16,13 +16,13 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptGPG model module.
  * @module model/DecryptGPG
- * @version 4.1.0
+ * @version 4.2.0
  */
 class DecryptGPG {
     /**
      * Constructs a new <code>DecryptGPG</code>.
      * @alias module:model/DecryptGPG
-     * @param ciphertext {String} Ciphertext to be decrypted in base64 encoded format
+     * @param ciphertext {String} Ciphertext to be decrypted
      * @param keyName {String} The name of the key to use in the decryption process
      */
     constructor(ciphertext, keyName) { 
@@ -57,6 +57,9 @@ class DecryptGPG {
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
             }
+            if (data.hasOwnProperty('input-format')) {
+                obj['input-format'] = ApiClient.convertToType(data['input-format'], 'String');
+            }
             if (data.hasOwnProperty('item-id')) {
                 obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
             }
@@ -86,7 +89,7 @@ class DecryptGPG {
 }
 
 /**
- * Ciphertext to be decrypted in base64 encoded format
+ * Ciphertext to be decrypted
  * @member {String} ciphertext
  */
 DecryptGPG.prototype['ciphertext'] = undefined;
@@ -96,6 +99,13 @@ DecryptGPG.prototype['ciphertext'] = undefined;
  * @member {String} display-id
  */
 DecryptGPG.prototype['display-id'] = undefined;
+
+/**
+ * Select default assumed format for the ciphertext. Currently supported options: [base64,raw]
+ * @member {String} input-format
+ * @default 'base64'
+ */
+DecryptGPG.prototype['input-format'] = 'base64';
 
 /**
  * The item id of the key to use in the decryption process

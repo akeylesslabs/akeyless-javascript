@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOIDC model module.
  * @module model/CreateAuthMethodOIDC
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateAuthMethodOIDC {
     /**
      * Constructs a new <code>CreateAuthMethodOIDC</code>.
-     * createAuthMethodOIDC is a command that creates a new auth method that will be available to authenticate using OIDC.
+     * createAuthMethodOIDC is a command that creates a new auth method that will be available to authenticate using OIDC. [Deprecated: Use auth-method-create-oidc command]
      * @alias module:model/CreateAuthMethodOIDC
      * @param name {String} Auth Method name
      * @param uniqueIdentifier {String} A unique identifier (ID) value should be configured for OIDC, OAuth2, LDAP and SAML authentication method types and is usually a value such as the email, username, or upn for example. Whenever a user logs in with a token, these authentication types issue a \"sub claim\" that contains details uniquely identifying that user. This sub claim includes a key containing the ID value that you configured, and is used to distinguish between different users from within the same organization.
@@ -60,6 +60,9 @@ class CreateAuthMethodOIDC {
             }
             if (data.hasOwnProperty('audience')) {
                 obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -137,6 +140,12 @@ CreateAuthMethodOIDC.prototype['allowed-redirect-uri'] = undefined;
  * @member {String} audience
  */
 CreateAuthMethodOIDC.prototype['audience'] = undefined;
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+CreateAuthMethodOIDC.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A CIDR whitelist with the IPs that the access is restricted to

@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDockerhubTarget model module.
  * @module model/CreateDockerhubTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateDockerhubTarget {
     /**
      * Constructs a new <code>CreateDockerhubTarget</code>.
+     * createDockerhubTarget is a command that creates a new target. [Deprecated: Use target-create-dockerhub command]
      * @alias module:model/CreateDockerhubTarget
      * @param name {String} Target name
      */
@@ -99,13 +100,13 @@ CreateDockerhubTarget.prototype['comment'] = undefined;
 CreateDockerhubTarget.prototype['description'] = undefined;
 
 /**
- * DockerhubPassword is either the user's password to manage the repository
+ * Password for docker repository
  * @member {String} dockerhub-password
  */
 CreateDockerhubTarget.prototype['dockerhub-password'] = undefined;
 
 /**
- * DockerhubUsername is the name of the user in dockerhub
+ * Username for docker repository
  * @member {String} dockerhub-username
  */
 CreateDockerhubTarget.prototype['dockerhub-username'] = undefined;

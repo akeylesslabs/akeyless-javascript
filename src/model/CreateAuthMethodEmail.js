@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodEmail model module.
  * @module model/CreateAuthMethodEmail
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateAuthMethodEmail {
     /**
      * Constructs a new <code>CreateAuthMethodEmail</code>.
-     * createAuthMethodEmail is a command that creates a new auth method that will be able to authenticate using email.
+     * createAuthMethodEmail is a command that creates a new auth method that will be able to authenticate using email. [Deprecated: Use auth-method-create-email command]
      * @alias module:model/CreateAuthMethodEmail
      * @param email {String} An email address to be invited to have access
      * @param name {String} Auth Method name
@@ -54,6 +54,9 @@ class CreateAuthMethodEmail {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -101,6 +104,12 @@ class CreateAuthMethodEmail {
  * @default 0
  */
 CreateAuthMethodEmail.prototype['access-expires'] = 0;
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+CreateAuthMethodEmail.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A CIDR whitelist with the IPs that the access is restricted to

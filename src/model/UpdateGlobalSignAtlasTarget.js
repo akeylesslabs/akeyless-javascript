@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGlobalSignAtlasTarget model module.
  * @module model/UpdateGlobalSignAtlasTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateGlobalSignAtlasTarget {
     /**
      * Constructs a new <code>UpdateGlobalSignAtlasTarget</code>.
+     * updateGlobalSignAtlasTarget is a command that updates an existing target. [Deprecated: Use target-update-globalsign-atlas command]
      * @alias module:model/UpdateGlobalSignAtlasTarget
      * @param apiKey {String} API Key of the GlobalSign Atlas account
      * @param apiSecret {String} API Secret of the GlobalSign Atlas account

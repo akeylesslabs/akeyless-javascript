@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The GetAuthMethod model module.
  * @module model/GetAuthMethod
- * @version 4.1.0
+ * @version 4.2.0
  */
 class GetAuthMethod {
     /**
      * Constructs a new <code>GetAuthMethod</code>.
+     * getAuthMethod is a command that returns information about the auth method. [Deprecated: Use auth-method-get command]
      * @alias module:model/GetAuthMethod
      * @param name {String} Auth Method name
      */

@@ -16,17 +16,21 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLdapTarget model module.
  * @module model/UpdateLdapTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateLdapTarget {
     /**
      * Constructs a new <code>UpdateLdapTarget</code>.
+     * updateLdapTarget is a command that updates an existing target. [Deprecated: Use target-update-ldap command]
      * @alias module:model/UpdateLdapTarget
+     * @param bindDn {String} Bind DN
+     * @param bindDnPassword {String} Bind DN Password
+     * @param ldapUrl {String} LDAP Server URL
      * @param name {String} Target name
      */
-    constructor(name) { 
+    constructor(bindDn, bindDnPassword, ldapUrl, name) { 
         
-        UpdateLdapTarget.initialize(this, name);
+        UpdateLdapTarget.initialize(this, bindDn, bindDnPassword, ldapUrl, name);
     }
 
     /**
@@ -34,7 +38,10 @@ class UpdateLdapTarget {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name) { 
+    static initialize(obj, bindDn, bindDnPassword, ldapUrl, name) { 
+        obj['bind-dn'] = bindDn;
+        obj['bind-dn-password'] = bindDnPassword;
+        obj['ldap-url'] = ldapUrl;
         obj['name'] = name;
     }
 
@@ -108,11 +115,13 @@ class UpdateLdapTarget {
 }
 
 /**
+ * Bind DN
  * @member {String} bind-dn
  */
 UpdateLdapTarget.prototype['bind-dn'] = undefined;
 
 /**
+ * Bind DN Password
  * @member {String} bind-dn-password
  */
 UpdateLdapTarget.prototype['bind-dn-password'] = undefined;
@@ -149,11 +158,13 @@ UpdateLdapTarget.prototype['keep-prev-version'] = undefined;
 UpdateLdapTarget.prototype['key'] = undefined;
 
 /**
+ * CA Certificate File Content
  * @member {String} ldap-ca-cert
  */
 UpdateLdapTarget.prototype['ldap-ca-cert'] = undefined;
 
 /**
+ * LDAP Server URL
  * @member {String} ldap-url
  */
 UpdateLdapTarget.prototype['ldap-url'] = undefined;
@@ -189,6 +200,7 @@ UpdateLdapTarget.prototype['server-type'] = undefined;
 UpdateLdapTarget.prototype['token'] = undefined;
 
 /**
+ * Token expiration
  * @member {String} token-expiration
  */
 UpdateLdapTarget.prototype['token-expiration'] = undefined;

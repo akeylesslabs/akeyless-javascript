@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateCsr model module.
  * @module model/GenerateCsr
- * @version 4.1.0
+ * @version 4.2.0
  */
 class GenerateCsr {
     /**
@@ -79,6 +79,9 @@ class GenerateCsr {
             }
             if (data.hasOwnProperty('email-addresses')) {
                 obj['email-addresses'] = ApiClient.convertToType(data['email-addresses'], 'String');
+            }
+            if (data.hasOwnProperty('export-private-key')) {
+                obj['export-private-key'] = ApiClient.convertToType(data['export-private-key'], 'Boolean');
             }
             if (data.hasOwnProperty('generate-key')) {
                 obj['generate-key'] = ApiClient.convertToType(data['generate-key'], 'Boolean');
@@ -172,6 +175,13 @@ GenerateCsr.prototype['dep'] = undefined;
  * @member {String} email-addresses
  */
 GenerateCsr.prototype['email-addresses'] = undefined;
+
+/**
+ * The flag to indicate if the private key should be exported
+ * @member {Boolean} export-private-key
+ * @default false
+ */
+GenerateCsr.prototype['export-private-key'] = false;
 
 /**
  * Generate a new classic key for the csr

@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateWebTarget model module.
  * @module model/CreateWebTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateWebTarget {
     /**
      * Constructs a new <code>CreateWebTarget</code>.
+     * createWebTarget is a command that creates a new target. [Deprecated: Use target-create-web command]
      * @alias module:model/CreateWebTarget
      * @param name {String} Target name
      */

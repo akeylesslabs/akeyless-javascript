@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethod model module.
  * @module model/CreateAuthMethod
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateAuthMethod {
     /**
      * Constructs a new <code>CreateAuthMethod</code>.
+     * createAuthMethod is a command that creates a new auth method. [Deprecated: Use auth-method-create-api-key command]
      * @alias module:model/CreateAuthMethod
      * @param name {String} Auth Method name
      */
@@ -51,6 +52,9 @@ class CreateAuthMethod {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -95,6 +99,12 @@ class CreateAuthMethod {
  * @default 0
  */
 CreateAuthMethod.prototype['access-expires'] = 0;
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+CreateAuthMethod.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A CIDR whitelist with the IPs that the access is restricted to

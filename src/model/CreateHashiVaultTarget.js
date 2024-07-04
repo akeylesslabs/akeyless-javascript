@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateHashiVaultTarget model module.
  * @module model/CreateHashiVaultTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateHashiVaultTarget {
     /**
      * Constructs a new <code>CreateHashiVaultTarget</code>.
+     * createHashiVaultTarget is a command that creates a new hashi-vault target. [Deprecated: Use target-create-hashi-vault command]
      * @alias module:model/CreateHashiVaultTarget
      * @param name {String} Target name
      */

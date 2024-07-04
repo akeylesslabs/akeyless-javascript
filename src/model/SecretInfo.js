@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecretInfo model module.
  * @module model/SecretInfo
- * @version 4.1.0
+ * @version 4.2.0
  */
 class SecretInfo {
     /**

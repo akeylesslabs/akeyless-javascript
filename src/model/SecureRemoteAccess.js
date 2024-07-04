@@ -18,7 +18,7 @@ import TargetNameWithHosts from './TargetNameWithHosts';
 /**
  * The SecureRemoteAccess model module.
  * @module model/SecureRemoteAccess
- * @version 4.1.0
+ * @version 4.2.0
  */
 class SecureRemoteAccess {
     /**
@@ -69,6 +69,12 @@ class SecureRemoteAccess {
             }
             if (data.hasOwnProperty('bastion_ssh')) {
                 obj['bastion_ssh'] = ApiClient.convertToType(data['bastion_ssh'], 'String');
+            }
+            if (data.hasOwnProperty('block_concurrent_connections')) {
+                obj['block_concurrent_connections'] = ApiClient.convertToType(data['block_concurrent_connections'], 'Boolean');
+            }
+            if (data.hasOwnProperty('block_concurrent_connections_level')) {
+                obj['block_concurrent_connections_level'] = ApiClient.convertToType(data['block_concurrent_connections_level'], 'String');
             }
             if (data.hasOwnProperty('category')) {
                 obj['category'] = ApiClient.convertToType(data['category'], 'String');
@@ -189,6 +195,16 @@ SecureRemoteAccess.prototype['bastion_issuer_id'] = undefined;
  * @member {String} bastion_ssh
  */
 SecureRemoteAccess.prototype['bastion_ssh'] = undefined;
+
+/**
+ * @member {Boolean} block_concurrent_connections
+ */
+SecureRemoteAccess.prototype['block_concurrent_connections'] = undefined;
+
+/**
+ * @member {String} block_concurrent_connections_level
+ */
+SecureRemoteAccess.prototype['block_concurrent_connections_level'] = undefined;
 
 /**
  * @member {String} category

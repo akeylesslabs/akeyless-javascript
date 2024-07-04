@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateZeroSSLTarget model module.
  * @module model/CreateZeroSSLTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateZeroSSLTarget {
     /**
      * Constructs a new <code>CreateZeroSSLTarget</code>.
+     * createZeroSSLTarget is a command that creates a new target. [Deprecated: Use target-create-zerossl command]
      * @alias module:model/CreateZeroSSLTarget
      * @param apiKey {String} API Key of the ZeroSSLTarget account
      * @param imapFqdn {String} ImapFQDN of the IMAP service, FQDN or IPv4 address. Must be FQDN if the IMAP is using TLS

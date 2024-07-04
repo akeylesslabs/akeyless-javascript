@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGlobalSignTarget model module.
  * @module model/CreateGlobalSignTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateGlobalSignTarget {
     /**
      * Constructs a new <code>CreateGlobalSignTarget</code>.
+     * createGlobalSignTarget is a command that creates a new target. [Deprecated: Use target-create-globalsign command]
      * @alias module:model/CreateGlobalSignTarget
      * @param contactEmail {String} Email of the GlobalSign GCC account contact
      * @param contactFirstName {String} First name of the GlobalSign GCC account contact

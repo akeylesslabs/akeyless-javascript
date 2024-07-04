@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDockerhubTarget model module.
  * @module model/UpdateDockerhubTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateDockerhubTarget {
     /**
      * Constructs a new <code>UpdateDockerhubTarget</code>.
+     * updateDockerhubTarget is a command that updates a new target. [Deprecated: Use target-update-dockerhub command]
      * @alias module:model/UpdateDockerhubTarget
      * @param name {String} Target name
      */
@@ -108,11 +109,13 @@ UpdateDockerhubTarget.prototype['comment'] = undefined;
 UpdateDockerhubTarget.prototype['description'] = undefined;
 
 /**
+ * Password for docker repository
  * @member {String} dockerhub-password
  */
 UpdateDockerhubTarget.prototype['dockerhub-password'] = undefined;
 
 /**
+ * Username for docker repository
  * @member {String} dockerhub-username
  */
 UpdateDockerhubTarget.prototype['dockerhub-username'] = undefined;

@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePingTarget model module.
  * @module model/UpdatePingTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdatePingTarget {
     /**
      * Constructs a new <code>UpdatePingTarget</code>.
+     * updatePingTarget is a command that updates an existing target. [Deprecated: Use target-update-ping command]
      * @alias module:model/UpdatePingTarget
      * @param name {String} Target name
      */

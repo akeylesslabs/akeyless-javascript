@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodHuawei model module.
  * @module model/CreateAuthMethodHuawei
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateAuthMethodHuawei {
     /**
@@ -52,6 +52,9 @@ class CreateAuthMethodHuawei {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('auth-url')) {
                 obj['auth-url'] = ApiClient.convertToType(data['auth-url'], 'String');
@@ -117,6 +120,12 @@ class CreateAuthMethodHuawei {
  * @default 0
  */
 CreateAuthMethodHuawei.prototype['access-expires'] = 0;
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+CreateAuthMethodHuawei.prototype['audit-logs-claims'] = undefined;
 
 /**
  * sts URL

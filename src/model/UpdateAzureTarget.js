@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAzureTarget model module.
  * @module model/UpdateAzureTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateAzureTarget {
     /**
      * Constructs a new <code>UpdateAzureTarget</code>.
+     * updateAzureTarget is a command that updates an existing target. [Deprecated: Use target-update-azure command]
      * @alias module:model/UpdateAzureTarget
      * @param name {String} Target name
      */

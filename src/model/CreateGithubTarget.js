@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGithubTarget model module.
  * @module model/CreateGithubTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateGithubTarget {
     /**
      * Constructs a new <code>CreateGithubTarget</code>.
+     * createGithubTarget is a command that creates a new target. [Deprecated: Use target-create-github command]
      * @alias module:model/CreateGithubTarget
      * @param name {String} Target name
      */

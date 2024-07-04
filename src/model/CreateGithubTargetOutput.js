@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGithubTargetOutput model module.
  * @module model/CreateGithubTargetOutput
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateGithubTargetOutput {
     /**

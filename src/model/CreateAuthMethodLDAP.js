@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodLDAP model module.
  * @module model/CreateAuthMethodLDAP
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateAuthMethodLDAP {
     /**
      * Constructs a new <code>CreateAuthMethodLDAP</code>.
-     * createAuthMethodLDAP is a command that creates a new auth method that will be able to authenticate using LDAP.
+     * createAuthMethodLDAP is a command that creates a new auth method that will be able to authenticate using LDAP. [Deprecated: Use auth-method-create-ldap command]
      * @alias module:model/CreateAuthMethodLDAP
      * @param name {String} Auth Method name
      */
@@ -52,6 +52,9 @@ class CreateAuthMethodLDAP {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -105,6 +108,12 @@ class CreateAuthMethodLDAP {
  * @default 0
  */
 CreateAuthMethodLDAP.prototype['access-expires'] = 0;
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+CreateAuthMethodLDAP.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A CIDR whitelist with the IPs that the access is restricted to

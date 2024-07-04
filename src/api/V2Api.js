@@ -20,6 +20,38 @@ import AssocRoleAuthMethod from '../model/AssocRoleAuthMethod';
 import AssocTargetItem from '../model/AssocTargetItem';
 import Auth from '../model/Auth';
 import AuthMethod from '../model/AuthMethod';
+import AuthMethodCreateApiKey from '../model/AuthMethodCreateApiKey';
+import AuthMethodCreateAwsIam from '../model/AuthMethodCreateAwsIam';
+import AuthMethodCreateAzureAD from '../model/AuthMethodCreateAzureAD';
+import AuthMethodCreateCert from '../model/AuthMethodCreateCert';
+import AuthMethodCreateEmail from '../model/AuthMethodCreateEmail';
+import AuthMethodCreateGcp from '../model/AuthMethodCreateGcp';
+import AuthMethodCreateK8s from '../model/AuthMethodCreateK8s';
+import AuthMethodCreateLdap from '../model/AuthMethodCreateLdap';
+import AuthMethodCreateOCI from '../model/AuthMethodCreateOCI';
+import AuthMethodCreateOIDC from '../model/AuthMethodCreateOIDC';
+import AuthMethodCreateOauth2 from '../model/AuthMethodCreateOauth2';
+import AuthMethodCreateOutput from '../model/AuthMethodCreateOutput';
+import AuthMethodCreateSAML from '../model/AuthMethodCreateSAML';
+import AuthMethodCreateUniversalIdentity from '../model/AuthMethodCreateUniversalIdentity';
+import AuthMethodDelete from '../model/AuthMethodDelete';
+import AuthMethodDeleteOutput from '../model/AuthMethodDeleteOutput';
+import AuthMethodGet from '../model/AuthMethodGet';
+import AuthMethodList from '../model/AuthMethodList';
+import AuthMethodUpdateApiKey from '../model/AuthMethodUpdateApiKey';
+import AuthMethodUpdateAwsIam from '../model/AuthMethodUpdateAwsIam';
+import AuthMethodUpdateAzureAD from '../model/AuthMethodUpdateAzureAD';
+import AuthMethodUpdateCert from '../model/AuthMethodUpdateCert';
+import AuthMethodUpdateEmail from '../model/AuthMethodUpdateEmail';
+import AuthMethodUpdateGcp from '../model/AuthMethodUpdateGcp';
+import AuthMethodUpdateK8s from '../model/AuthMethodUpdateK8s';
+import AuthMethodUpdateLdap from '../model/AuthMethodUpdateLdap';
+import AuthMethodUpdateOCI from '../model/AuthMethodUpdateOCI';
+import AuthMethodUpdateOIDC from '../model/AuthMethodUpdateOIDC';
+import AuthMethodUpdateOauth2 from '../model/AuthMethodUpdateOauth2';
+import AuthMethodUpdateOutput from '../model/AuthMethodUpdateOutput';
+import AuthMethodUpdateSAML from '../model/AuthMethodUpdateSAML';
+import AuthMethodUpdateUniversalIdentity from '../model/AuthMethodUpdateUniversalIdentity';
 import AuthOutput from '../model/AuthOutput';
 import BastionsList from '../model/BastionsList';
 import CacheConfigPart from '../model/CacheConfigPart';
@@ -83,6 +115,8 @@ import CreateGcpTarget from '../model/CreateGcpTarget';
 import CreateGcpTargetOutput from '../model/CreateGcpTargetOutput';
 import CreateGithubTarget from '../model/CreateGithubTarget';
 import CreateGithubTargetOutput from '../model/CreateGithubTargetOutput';
+import CreateGitlabTarget from '../model/CreateGitlabTarget';
+import CreateGitlabTargetOutput from '../model/CreateGitlabTargetOutput';
 import CreateGlobalSignAtlasTarget from '../model/CreateGlobalSignAtlasTarget';
 import CreateGlobalSignAtlasTargetOutput from '../model/CreateGlobalSignAtlasTargetOutput';
 import CreateGlobalSignTarget from '../model/CreateGlobalSignTarget';
@@ -183,6 +217,7 @@ import DynamicSecretCreateDockerhub from '../model/DynamicSecretCreateDockerhub'
 import DynamicSecretCreateEks from '../model/DynamicSecretCreateEks';
 import DynamicSecretCreateGcp from '../model/DynamicSecretCreateGcp';
 import DynamicSecretCreateGithub from '../model/DynamicSecretCreateGithub';
+import DynamicSecretCreateGitlab from '../model/DynamicSecretCreateGitlab';
 import DynamicSecretCreateGke from '../model/DynamicSecretCreateGke';
 import DynamicSecretCreateGoogleWorkspace from '../model/DynamicSecretCreateGoogleWorkspace';
 import DynamicSecretCreateHanaDb from '../model/DynamicSecretCreateHanaDb';
@@ -218,6 +253,7 @@ import DynamicSecretUpdateDockerhub from '../model/DynamicSecretUpdateDockerhub'
 import DynamicSecretUpdateEks from '../model/DynamicSecretUpdateEks';
 import DynamicSecretUpdateGcp from '../model/DynamicSecretUpdateGcp';
 import DynamicSecretUpdateGithub from '../model/DynamicSecretUpdateGithub';
+import DynamicSecretUpdateGitlab from '../model/DynamicSecretUpdateGitlab';
 import DynamicSecretUpdateGke from '../model/DynamicSecretUpdateGke';
 import DynamicSecretUpdateGoogleWorkspace from '../model/DynamicSecretUpdateGoogleWorkspace';
 import DynamicSecretUpdateHanaDb from '../model/DynamicSecretUpdateHanaDb';
@@ -603,6 +639,60 @@ import StaticCredsAuth from '../model/StaticCredsAuth';
 import StaticCredsAuthOutput from '../model/StaticCredsAuthOutput';
 import SystemAccessCredentialsReplyObj from '../model/SystemAccessCredentialsReplyObj';
 import Target from '../model/Target';
+import TargetCreateArtifactory from '../model/TargetCreateArtifactory';
+import TargetCreateAws from '../model/TargetCreateAws';
+import TargetCreateAzure from '../model/TargetCreateAzure';
+import TargetCreateDB from '../model/TargetCreateDB';
+import TargetCreateDockerhub from '../model/TargetCreateDockerhub';
+import TargetCreateEks from '../model/TargetCreateEks';
+import TargetCreateGcp from '../model/TargetCreateGcp';
+import TargetCreateGithub from '../model/TargetCreateGithub';
+import TargetCreateGitlab from '../model/TargetCreateGitlab';
+import TargetCreateGke from '../model/TargetCreateGke';
+import TargetCreateGlobalSign from '../model/TargetCreateGlobalSign';
+import TargetCreateGlobalSignAtlas from '../model/TargetCreateGlobalSignAtlas';
+import TargetCreateGodaddy from '../model/TargetCreateGodaddy';
+import TargetCreateHashiVault from '../model/TargetCreateHashiVault';
+import TargetCreateK8s from '../model/TargetCreateK8s';
+import TargetCreateLdap from '../model/TargetCreateLdap';
+import TargetCreateLinked from '../model/TargetCreateLinked';
+import TargetCreateOutput from '../model/TargetCreateOutput';
+import TargetCreatePing from '../model/TargetCreatePing';
+import TargetCreateRabbitMq from '../model/TargetCreateRabbitMq';
+import TargetCreateSalesforce from '../model/TargetCreateSalesforce';
+import TargetCreateSsh from '../model/TargetCreateSsh';
+import TargetCreateWeb from '../model/TargetCreateWeb';
+import TargetCreateWindows from '../model/TargetCreateWindows';
+import TargetCreateZeroSSL from '../model/TargetCreateZeroSSL';
+import TargetDelete from '../model/TargetDelete';
+import TargetGet from '../model/TargetGet';
+import TargetGetDetails from '../model/TargetGetDetails';
+import TargetList from '../model/TargetList';
+import TargetUpdateArtifactory from '../model/TargetUpdateArtifactory';
+import TargetUpdateAws from '../model/TargetUpdateAws';
+import TargetUpdateAzure from '../model/TargetUpdateAzure';
+import TargetUpdateDB from '../model/TargetUpdateDB';
+import TargetUpdateDockerhub from '../model/TargetUpdateDockerhub';
+import TargetUpdateEks from '../model/TargetUpdateEks';
+import TargetUpdateGcp from '../model/TargetUpdateGcp';
+import TargetUpdateGithub from '../model/TargetUpdateGithub';
+import TargetUpdateGitlab from '../model/TargetUpdateGitlab';
+import TargetUpdateGke from '../model/TargetUpdateGke';
+import TargetUpdateGlobalSign from '../model/TargetUpdateGlobalSign';
+import TargetUpdateGlobalSignAtlas from '../model/TargetUpdateGlobalSignAtlas';
+import TargetUpdateGodaddy from '../model/TargetUpdateGodaddy';
+import TargetUpdateHashiVault from '../model/TargetUpdateHashiVault';
+import TargetUpdateK8s from '../model/TargetUpdateK8s';
+import TargetUpdateLdap from '../model/TargetUpdateLdap';
+import TargetUpdateLinked from '../model/TargetUpdateLinked';
+import TargetUpdateOutput from '../model/TargetUpdateOutput';
+import TargetUpdatePing from '../model/TargetUpdatePing';
+import TargetUpdateRabbitMq from '../model/TargetUpdateRabbitMq';
+import TargetUpdateSalesforce from '../model/TargetUpdateSalesforce';
+import TargetUpdateSsh from '../model/TargetUpdateSsh';
+import TargetUpdateWeb from '../model/TargetUpdateWeb';
+import TargetUpdateWindows from '../model/TargetUpdateWindows';
+import TargetUpdateZeroSSL from '../model/TargetUpdateZeroSSL';
 import TmpUserData from '../model/TmpUserData';
 import Tokenize from '../model/Tokenize';
 import TokenizeOutput from '../model/TokenizeOutput';
@@ -658,6 +748,8 @@ import UpdateGcpTarget from '../model/UpdateGcpTarget';
 import UpdateGcpTargetOutput from '../model/UpdateGcpTargetOutput';
 import UpdateGithubTarget from '../model/UpdateGithubTarget';
 import UpdateGithubTargetOutput from '../model/UpdateGithubTargetOutput';
+import UpdateGitlabTarget from '../model/UpdateGitlabTarget';
+import UpdateGitlabTargetOutput from '../model/UpdateGitlabTargetOutput';
 import UpdateGlobalSignAtlasTarget from '../model/UpdateGlobalSignAtlasTarget';
 import UpdateGlobalSignAtlasTargetOutput from '../model/UpdateGlobalSignAtlasTargetOutput';
 import UpdateGlobalSignTarget from '../model/UpdateGlobalSignTarget';
@@ -732,7 +824,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 4.1.0
+* @version 4.2.0
 */
 export default class V2Api {
 
@@ -872,6 +964,1253 @@ export default class V2Api {
      */
     auth(body) {
       return this.authWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateApiKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateApiKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodCreateApiKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-api-key', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateApiKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateApiKey(body) {
+      return this.authMethodCreateApiKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateAwsIam} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateAwsIamWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodCreateAwsIam");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-aws', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateAwsIam} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateAwsIam(body) {
+      return this.authMethodCreateAwsIamWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateAzureAD} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateAzureADWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodCreateAzureAD");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-azure-ad', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateAzureAD} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateAzureAD(body) {
+      return this.authMethodCreateAzureADWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateCert} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateCertWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodCreateCert");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-cert', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateCert} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateCert(body) {
+      return this.authMethodCreateCertWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateEmail} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateEmailWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodCreateEmail");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-email', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateEmail} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateEmail(body) {
+      return this.authMethodCreateEmailWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateGcpWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodCreateGcp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-gcp', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateGcp(body) {
+      return this.authMethodCreateGcpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateK8s} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateK8sWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodCreateK8s");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-k8s', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateK8s} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateK8s(body) {
+      return this.authMethodCreateK8sWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateLdapWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodCreateLdap");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-ldap', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateLdap(body) {
+      return this.authMethodCreateLdapWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateOCI} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateOCIWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodCreateOCI");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-oci', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateOCI} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateOCI(body) {
+      return this.authMethodCreateOCIWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateOIDC} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateOIDCWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodCreateOIDC");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-oidc', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateOIDC} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateOIDC(body) {
+      return this.authMethodCreateOIDCWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateOauth2} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateOauth2WithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodCreateOauth2");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-oauth2', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateOauth2} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateOauth2(body) {
+      return this.authMethodCreateOauth2WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateSAML} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateSAMLWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodCreateSAML");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-saml', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateSAML} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateSAML(body) {
+      return this.authMethodCreateSAMLWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateUniversalIdentity} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateUniversalIdentityWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodCreateUniversalIdentity");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-universal-identity', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateUniversalIdentity} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateUniversalIdentity(body) {
+      return this.authMethodCreateUniversalIdentityWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodDelete} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodDeleteOutput} and HTTP response
+     */
+    authMethodDeleteWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodDelete");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodDeleteOutput;
+      return this.apiClient.callApi(
+        '/auth-method-delete', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodDelete} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodDeleteOutput}
+     */
+    authMethodDelete(body) {
+      return this.authMethodDeleteWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodGet} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethod} and HTTP response
+     */
+    authMethodGetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodGet");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethod;
+      return this.apiClient.callApi(
+        '/auth-method-get', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodGet} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethod}
+     */
+    authMethodGet(body) {
+      return this.authMethodGetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodList} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListAuthMethodsOutput} and HTTP response
+     */
+    authMethodListWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodList");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ListAuthMethodsOutput;
+      return this.apiClient.callApi(
+        '/auth-method-list', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodList} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ListAuthMethodsOutput}
+     */
+    authMethodList(body) {
+      return this.authMethodListWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateApiKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodUpdateOutput} and HTTP response
+     */
+    authMethodUpdateApiKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodUpdateApiKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodUpdateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-api-key', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateApiKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodUpdateOutput}
+     */
+    authMethodUpdateApiKey(body) {
+      return this.authMethodUpdateApiKeyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateAwsIam} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodUpdateOutput} and HTTP response
+     */
+    authMethodUpdateAwsIamWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodUpdateAwsIam");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodUpdateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-aws-iam', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateAwsIam} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodUpdateOutput}
+     */
+    authMethodUpdateAwsIam(body) {
+      return this.authMethodUpdateAwsIamWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateAzureAD} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodUpdateOutput} and HTTP response
+     */
+    authMethodUpdateAzureADWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodUpdateAzureAD");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodUpdateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-azure-ad', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateAzureAD} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodUpdateOutput}
+     */
+    authMethodUpdateAzureAD(body) {
+      return this.authMethodUpdateAzureADWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateCert} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodUpdateOutput} and HTTP response
+     */
+    authMethodUpdateCertWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodUpdateCert");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodUpdateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-cert', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateCert} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodUpdateOutput}
+     */
+    authMethodUpdateCert(body) {
+      return this.authMethodUpdateCertWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateEmail} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodUpdateOutput} and HTTP response
+     */
+    authMethodUpdateEmailWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodUpdateEmail");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodUpdateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-email', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateEmail} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodUpdateOutput}
+     */
+    authMethodUpdateEmail(body) {
+      return this.authMethodUpdateEmailWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodUpdateOutput} and HTTP response
+     */
+    authMethodUpdateGcpWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodUpdateGcp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodUpdateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-gcp', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodUpdateOutput}
+     */
+    authMethodUpdateGcp(body) {
+      return this.authMethodUpdateGcpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateK8s} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodUpdateOutput} and HTTP response
+     */
+    authMethodUpdateK8sWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodUpdateK8s");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodUpdateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-k8s', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateK8s} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodUpdateOutput}
+     */
+    authMethodUpdateK8s(body) {
+      return this.authMethodUpdateK8sWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodUpdateOutput} and HTTP response
+     */
+    authMethodUpdateLdapWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodUpdateLdap");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodUpdateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-ldap', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodUpdateOutput}
+     */
+    authMethodUpdateLdap(body) {
+      return this.authMethodUpdateLdapWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateOCI} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodUpdateOutput} and HTTP response
+     */
+    authMethodUpdateOCIWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodUpdateOCI");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodUpdateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-oci', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateOCI} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodUpdateOutput}
+     */
+    authMethodUpdateOCI(body) {
+      return this.authMethodUpdateOCIWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateOIDC} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodUpdateOutput} and HTTP response
+     */
+    authMethodUpdateOIDCWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodUpdateOIDC");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodUpdateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-oidc', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateOIDC} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodUpdateOutput}
+     */
+    authMethodUpdateOIDC(body) {
+      return this.authMethodUpdateOIDCWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateOauth2} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodUpdateOutput} and HTTP response
+     */
+    authMethodUpdateOauth2WithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodUpdateOauth2");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodUpdateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-oauth2', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateOauth2} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodUpdateOutput}
+     */
+    authMethodUpdateOauth2(body) {
+      return this.authMethodUpdateOauth2WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateSAML} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodUpdateOutput} and HTTP response
+     */
+    authMethodUpdateSAMLWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodUpdateSAML");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodUpdateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-saml', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateSAML} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodUpdateOutput}
+     */
+    authMethodUpdateSAML(body) {
+      return this.authMethodUpdateSAMLWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateUniversalIdentity} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodUpdateOutput} and HTTP response
+     */
+    authMethodUpdateUniversalIdentityWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodUpdateUniversalIdentity");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodUpdateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-universal-identity', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateUniversalIdentity} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodUpdateOutput}
+     */
+    authMethodUpdateUniversalIdentity(body) {
+      return this.authMethodUpdateUniversalIdentityWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2205,6 +3544,49 @@ export default class V2Api {
      */
     createGithubTarget(body) {
       return this.createGithubTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateGitlabTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateGitlabTargetOutput} and HTTP response
+     */
+    createGitlabTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createGitlabTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateGitlabTargetOutput;
+      return this.apiClient.callApi(
+        '/create-gitlab-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateGitlabTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateGitlabTargetOutput}
+     */
+    createGitlabTarget(body) {
+      return this.createGitlabTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4748,6 +6130,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/DynamicSecretCreateGitlab} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateGitlabWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretCreateGitlab");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-gitlab', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateGitlab} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateGitlab(body) {
+      return this.dynamicSecretCreateGitlabWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/DynamicSecretCreateGke} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
      */
@@ -6159,6 +7584,49 @@ export default class V2Api {
      */
     dynamicSecretUpdateGithub(body) {
       return this.dynamicSecretUpdateGithubWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateGitlab} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateGitlabWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dynamicSecretUpdateGitlab");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-gitlab', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateGitlab} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateGitlab(body) {
+      return this.dynamicSecretUpdateGitlabWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -16543,6 +18011,2242 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetCreateArtifactory} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateArtifactoryWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateArtifactory");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-artifactory', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateArtifactory} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateArtifactory(body) {
+      return this.targetCreateArtifactoryWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateAwsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateAws");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-aws', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateAws(body) {
+      return this.targetCreateAwsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateAzureWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateAzure");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-azure', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateAzure(body) {
+      return this.targetCreateAzureWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateDB} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateDBWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateDB");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-db', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateDB} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateDB(body) {
+      return this.targetCreateDBWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateDockerhubWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateDockerhub");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-dockerhub', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateDockerhub(body) {
+      return this.targetCreateDockerhubWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateEks} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateEksWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateEks");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-eks', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateEks} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateEks(body) {
+      return this.targetCreateEksWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateGcpWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateGcp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-gcp', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateGcp(body) {
+      return this.targetCreateGcpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateGithub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateGithubWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateGithub");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-github', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateGithub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateGithub(body) {
+      return this.targetCreateGithubWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateGitlab} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateGitlabWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateGitlab");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-gitlab', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateGitlab} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateGitlab(body) {
+      return this.targetCreateGitlabWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateGke} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateGkeWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateGke");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-gke', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateGke} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateGke(body) {
+      return this.targetCreateGkeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateGlobalSign} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateGlobalSignWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateGlobalSign");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-globalsign', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateGlobalSign} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateGlobalSign(body) {
+      return this.targetCreateGlobalSignWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateGlobalSignAtlas} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateGlobalSignAtlasWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateGlobalSignAtlas");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-globalsign-atlas', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateGlobalSignAtlas} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateGlobalSignAtlas(body) {
+      return this.targetCreateGlobalSignAtlasWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateGodaddy} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateGodaddyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateGodaddy");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-godaddy', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateGodaddy} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateGodaddy(body) {
+      return this.targetCreateGodaddyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateHashiVault} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateHashiVaultWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateHashiVault");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-hashi-vault', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateHashiVault} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateHashiVault(body) {
+      return this.targetCreateHashiVaultWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateK8s} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateK8sWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateK8s");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-k8s', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateK8s} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateK8s(body) {
+      return this.targetCreateK8sWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateLdapWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateLdap");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-ldap', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateLdap(body) {
+      return this.targetCreateLdapWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateLinked} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateLinkedWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateLinked");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-linked', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateLinked} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateLinked(body) {
+      return this.targetCreateLinkedWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreatePing} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreatePingWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreatePing");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-ping', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreatePing} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreatePing(body) {
+      return this.targetCreatePingWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateRabbitMq} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateRabbitMqWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateRabbitMq");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-rabbitmq', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateRabbitMq} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateRabbitMq(body) {
+      return this.targetCreateRabbitMqWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateSalesforce} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateSalesforceWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateSalesforce");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-salesforce', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateSalesforce} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateSalesforce(body) {
+      return this.targetCreateSalesforceWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateSsh} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateSshWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateSsh");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-ssh', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateSsh} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateSsh(body) {
+      return this.targetCreateSshWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateWeb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateWebWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateWeb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-web', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateWeb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateWeb(body) {
+      return this.targetCreateWebWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateWindows} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateWindowsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateWindows");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-windows', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateWindows} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateWindows(body) {
+      return this.targetCreateWindowsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateZeroSSL} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateZeroSSLWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateZeroSSL");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-zerossl', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateZeroSSL} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateZeroSSL(body) {
+      return this.targetCreateZeroSSLWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetDelete} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    targetDeleteWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetDelete");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/target-delete', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetDelete} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    targetDelete(body) {
+      return this.targetDeleteWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetGet} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Target} and HTTP response
+     */
+    targetGetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetGet");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Target;
+      return this.apiClient.callApi(
+        '/target-get', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetGet} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Target}
+     */
+    targetGet(body) {
+      return this.targetGetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetGetDetails} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetTargetDetailsOutput} and HTTP response
+     */
+    targetGetDetailsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetGetDetails");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GetTargetDetailsOutput;
+      return this.apiClient.callApi(
+        '/target-get-details', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetGetDetails} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetTargetDetailsOutput}
+     */
+    targetGetDetails(body) {
+      return this.targetGetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetList} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListTargetsOutput} and HTTP response
+     */
+    targetListWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetList");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ListTargetsOutput;
+      return this.apiClient.callApi(
+        '/target-list', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetList} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ListTargetsOutput}
+     */
+    targetList(body) {
+      return this.targetListWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateArtifactory} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateArtifactoryWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateArtifactory");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-artifactory', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateArtifactory} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateArtifactory(body) {
+      return this.targetUpdateArtifactoryWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateAwsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateAws");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-aws', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateAws} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateAws(body) {
+      return this.targetUpdateAwsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateAzureWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateAzure");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-azure', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateAzure} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateAzure(body) {
+      return this.targetUpdateAzureWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateDB} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateDBWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateDB");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-db', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateDB} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateDB(body) {
+      return this.targetUpdateDBWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateDockerhubWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateDockerhub");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-dockerhub', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateDockerhub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateDockerhub(body) {
+      return this.targetUpdateDockerhubWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateEks} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateEksWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateEks");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-eks', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateEks} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateEks(body) {
+      return this.targetUpdateEksWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateGcpWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateGcp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-gcp', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateGcp} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateGcp(body) {
+      return this.targetUpdateGcpWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateGithub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateGithubWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateGithub");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-github', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateGithub} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateGithub(body) {
+      return this.targetUpdateGithubWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateGitlab} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateGitlabWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateGitlab");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-gitlab', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateGitlab} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateGitlab(body) {
+      return this.targetUpdateGitlabWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateGke} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateGkeWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateGke");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-gke', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateGke} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateGke(body) {
+      return this.targetUpdateGkeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateGlobalSign} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateGlobalSignWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateGlobalSign");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-globalsign', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateGlobalSign} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateGlobalSign(body) {
+      return this.targetUpdateGlobalSignWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateGlobalSignAtlas} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateGlobalSignAtlasWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateGlobalSignAtlas");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-globalsign-atlas', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateGlobalSignAtlas} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateGlobalSignAtlas(body) {
+      return this.targetUpdateGlobalSignAtlasWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateGodaddy} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateGodaddyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateGodaddy");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-godaddy', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateGodaddy} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateGodaddy(body) {
+      return this.targetUpdateGodaddyWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateHashiVault} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateHashiVaultWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateHashiVault");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-hashi-vault', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateHashiVault} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateHashiVault(body) {
+      return this.targetUpdateHashiVaultWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateK8s} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateK8sWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateK8s");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-k8s', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateK8s} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateK8s(body) {
+      return this.targetUpdateK8sWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateLdapWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateLdap");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-ldap', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateLdap} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateLdap(body) {
+      return this.targetUpdateLdapWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateLinked} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateLinkedWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateLinked");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-linked', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateLinked} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateLinked(body) {
+      return this.targetUpdateLinkedWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdatePing} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdatePingWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdatePing");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-ping', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdatePing} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdatePing(body) {
+      return this.targetUpdatePingWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateRabbitMq} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateRabbitMqWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateRabbitMq");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-rabbitmq', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateRabbitMq} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateRabbitMq(body) {
+      return this.targetUpdateRabbitMqWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateSalesforce} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateSalesforceWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateSalesforce");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-salesforce', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateSalesforce} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateSalesforce(body) {
+      return this.targetUpdateSalesforceWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateSsh} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateSshWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateSsh");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-ssh', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateSsh} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateSsh(body) {
+      return this.targetUpdateSshWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateWeb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateWebWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateWeb");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-web', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateWeb} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateWeb(body) {
+      return this.targetUpdateWebWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateWindows} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateWindowsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateWindows");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-windows', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateWindows} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateWindows(body) {
+      return this.targetUpdateWindowsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateZeroSSL} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateZeroSSLWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateZeroSSL");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-zerossl', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateZeroSSL} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateZeroSSL(body) {
+      return this.targetUpdateZeroSSLWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/Tokenize} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenizeOutput} and HTTP response
      */
@@ -17998,6 +21702,49 @@ export default class V2Api {
      */
     updateGithubTarget(body) {
       return this.updateGithubTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateGitlabTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateGitlabTargetOutput} and HTTP response
+     */
+    updateGitlabTargetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateGitlabTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateGitlabTargetOutput;
+      return this.apiClient.callApi(
+        '/update-gitlab-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateGitlabTarget} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateGitlabTargetOutput}
+     */
+    updateGitlabTarget(body) {
+      return this.updateGitlabTargetWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The ListTargets model module.
  * @module model/ListTargets
- * @version 4.1.0
+ * @version 4.2.0
  */
 class ListTargets {
     /**
      * Constructs a new <code>ListTargets</code>.
+     * listTargets is a command that returns a list of targets. [Deprecated: Use target-list command]
      * @alias module:model/ListTargets
      */
     constructor() { 

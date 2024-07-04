@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateWebTarget model module.
  * @module model/UpdateWebTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateWebTarget {
     /**
      * Constructs a new <code>UpdateWebTarget</code>.
+     * updateWebTarget is a command that updates an existing target. [Deprecated: Use target-update-web command]
      * @alias module:model/UpdateWebTarget
      * @param name {String} Target name
      */

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateMysql model module.
  * @module model/RotatedSecretUpdateMysql
- * @version 4.1.0
+ * @version 4.2.0
  */
 class RotatedSecretUpdateMysql {
     /**

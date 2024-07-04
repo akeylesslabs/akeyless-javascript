@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateWindowsTarget model module.
  * @module model/UpdateWindowsTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateWindowsTarget {
     /**
      * Constructs a new <code>UpdateWindowsTarget</code>.
+     * updateWindowsTarget is a command that updates an existing windows target. [Deprecated: Use target-update-windows command]
      * @alias module:model/UpdateWindowsTarget
      * @param hostname {String} Server hostname
      * @param name {String} Target name

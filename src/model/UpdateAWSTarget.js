@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAWSTarget model module.
  * @module model/UpdateAWSTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateAWSTarget {
     /**
      * Constructs a new <code>UpdateAWSTarget</code>.
+     * updateAWSTarget is a command that updates a new target. [Deprecated: Use target-update-aws command]
      * @alias module:model/UpdateAWSTarget
      * @param accessKey {String} AWS secret access key
      * @param accessKeyId {String} AWS access key ID

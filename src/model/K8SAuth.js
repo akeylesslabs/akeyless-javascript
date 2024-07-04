@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The K8SAuth model module.
  * @module model/K8SAuth
- * @version 4.1.0
+ * @version 4.2.0
  */
 class K8SAuth {
     /**
@@ -91,9 +91,6 @@ class K8SAuth {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('protection_key')) {
-                obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
             }
             if (data.hasOwnProperty('rancher_api_key')) {
                 obj['rancher_api_key'] = ApiClient.convertToType(data['rancher_api_key'], 'String');
@@ -197,11 +194,6 @@ K8SAuth.prototype['k8s_token_reviewer_jwt'] = undefined;
  * @member {String} name
  */
 K8SAuth.prototype['name'] = undefined;
-
-/**
- * @member {String} protection_key
- */
-K8SAuth.prototype['protection_key'] = undefined;
 
 /**
  * RancherApiKey the bear token for clusterApiTypeRancher

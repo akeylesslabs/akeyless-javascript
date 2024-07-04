@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGithubTarget model module.
  * @module model/UpdateGithubTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateGithubTarget {
     /**
      * Constructs a new <code>UpdateGithubTarget</code>.
+     * updateGithubTarget is a command that updates a new target. [Deprecated: Use target-update-github command]
      * @alias module:model/UpdateGithubTarget
      * @param name {String} Target name
      */

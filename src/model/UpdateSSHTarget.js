@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHTarget model module.
  * @module model/UpdateSSHTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateSSHTarget {
     /**
      * Constructs a new <code>UpdateSSHTarget</code>.
+     * updateSSHTarget is a command that updates an existing target. [Deprecated: Use target-update-ssh command]
      * @alias module:model/UpdateSSHTarget
      * @param name {String} Target name
      */

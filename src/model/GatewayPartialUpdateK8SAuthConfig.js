@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayPartialUpdateK8SAuthConfig model module.
  * @module model/GatewayPartialUpdateK8SAuthConfig
- * @version 4.1.0
+ * @version 4.2.0
  */
 class GatewayPartialUpdateK8SAuthConfig {
     /**
@@ -52,9 +52,6 @@ class GatewayPartialUpdateK8SAuthConfig {
             }
             if (data.hasOwnProperty('access-id')) {
                 obj['access-id'] = ApiClient.convertToType(data['access-id'], 'String');
-            }
-            if (data.hasOwnProperty('config-encryption-key-name')) {
-                obj['config-encryption-key-name'] = ApiClient.convertToType(data['config-encryption-key-name'], 'String');
             }
             if (data.hasOwnProperty('disable-issuer-validation')) {
                 obj['disable-issuer-validation'] = ApiClient.convertToType(data['disable-issuer-validation'], 'String');
@@ -127,12 +124,6 @@ GatewayPartialUpdateK8SAuthConfig.prototype['UseDefaultIdentityBool'] = undefine
  * @member {String} access-id
  */
 GatewayPartialUpdateK8SAuthConfig.prototype['access-id'] = undefined;
-
-/**
- * Config encryption key
- * @member {String} config-encryption-key-name
- */
-GatewayPartialUpdateK8SAuthConfig.prototype['config-encryption-key-name'] = undefined;
 
 /**
  * Disable issuer validation [true/false]

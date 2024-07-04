@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLinkedTarget model module.
  * @module model/CreateLinkedTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateLinkedTarget {
     /**
      * Constructs a new <code>CreateLinkedTarget</code>.
+     * createLinkedTarget is a command that creates a new Linked Target which can inherit credentials from existing Targets. [Deprecated: Use target-create-linked command]
      * @alias module:model/CreateLinkedTarget
      * @param name {String} Target name
      */

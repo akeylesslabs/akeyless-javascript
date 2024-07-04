@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLinkedTarget model module.
  * @module model/UpdateLinkedTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateLinkedTarget {
     /**
      * Constructs a new <code>UpdateLinkedTarget</code>.
+     * updateLinkedTarget is a command that updates an existing target. [Deprecated: Use target-update-linked command]
      * @alias module:model/UpdateLinkedTarget
      * @param name {String} Linked Target name
      */

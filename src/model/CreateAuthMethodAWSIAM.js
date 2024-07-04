@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAWSIAM model module.
  * @module model/CreateAuthMethodAWSIAM
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateAuthMethodAWSIAM {
     /**
      * Constructs a new <code>CreateAuthMethodAWSIAM</code>.
-     * createAuthMethodAWSIAM is a command that creates a new Auth Method that will be able to authenticate using AWS IAM credentials.
+     * createAuthMethodAWSIAM is a command that creates a new Auth Method that will be able to authenticate using AWS IAM credentials. [Deprecated: Use auth-method-create-aws-iam command]
      * @alias module:model/CreateAuthMethodAWSIAM
      * @param boundAwsAccountId {Array.<String>} A list of AWS account-IDs that the access is restricted to
      * @param name {String} Auth Method name
@@ -54,6 +54,9 @@ class CreateAuthMethodAWSIAM {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-arn')) {
                 obj['bound-arn'] = ApiClient.convertToType(data['bound-arn'], ['String']);
@@ -122,6 +125,12 @@ class CreateAuthMethodAWSIAM {
  * @default 0
  */
 CreateAuthMethodAWSIAM.prototype['access-expires'] = 0;
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+CreateAuthMethodAWSIAM.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A list of full arns that the access is restricted to

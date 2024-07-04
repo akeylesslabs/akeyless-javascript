@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateHashiVaultTarget model module.
  * @module model/UpdateHashiVaultTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateHashiVaultTarget {
     /**
      * Constructs a new <code>UpdateHashiVaultTarget</code>.
+     * updateHashiVaultTarget is a command that updates an existing target. [Deprecated: Use target-update-hashi-vault command]
      * @alias module:model/UpdateHashiVaultTarget
      * @param name {String} Target name
      */

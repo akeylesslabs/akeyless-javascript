@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHTarget model module.
  * @module model/CreateSSHTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateSSHTarget {
     /**
      * Constructs a new <code>CreateSSHTarget</code>.
+     * createSSHTarget is a command that creates a new target. [Deprecated: Use target-create-ssh command]
      * @alias module:model/CreateSSHTarget
      * @param name {String} Target name
      */

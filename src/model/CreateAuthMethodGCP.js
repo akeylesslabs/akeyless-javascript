@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodGCP model module.
  * @module model/CreateAuthMethodGCP
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateAuthMethodGCP {
     /**
      * Constructs a new <code>CreateAuthMethodGCP</code>.
-     * createAuthMethodGCP is a command that creates a new auth method that will be able to authenticate using GCP IAM Service Account credentials or GCE instance credentials.
+     * createAuthMethodGCP is a command that creates a new auth method that will be able to authenticate using GCP IAM Service Account credentials or GCE instance credentials. [Deprecated: Use auth-method-create-gcp command]
      * @alias module:model/CreateAuthMethodGCP
      * @param audience {String} The audience to verify in the JWT received by the client
      * @param name {String} Auth Method name
@@ -59,6 +59,9 @@ class CreateAuthMethodGCP {
             }
             if (data.hasOwnProperty('audience')) {
                 obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -131,6 +134,12 @@ CreateAuthMethodGCP.prototype['access-expires'] = 0;
  * @default 'akeyless.io'
  */
 CreateAuthMethodGCP.prototype['audience'] = 'akeyless.io';
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+CreateAuthMethodGCP.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A CIDR whitelist with the IPs that the access is restricted to

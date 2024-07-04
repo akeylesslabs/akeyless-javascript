@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDBTarget model module.
  * @module model/UpdateDBTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateDBTarget {
     /**
      * Constructs a new <code>UpdateDBTarget</code>.
+     * updateDBTarget is a command that updates an existing target. [Deprecated: Use target-update-db command]
      * @alias module:model/UpdateDBTarget
      * @param connectionType {String} (Optional) Type of connection to mssql database [credentials/cloud-identity]
      * @param dbType {String} 

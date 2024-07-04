@@ -23,6 +23,7 @@ import EKSTargetDetails from './EKSTargetDetails';
 import GKETargetDetails from './GKETargetDetails';
 import GcpTargetDetails from './GcpTargetDetails';
 import GithubTargetDetails from './GithubTargetDetails';
+import GitlabTargetDetails from './GitlabTargetDetails';
 import GlobalSignAtlasTargetDetails from './GlobalSignAtlasTargetDetails';
 import GlobalSignGCCTargetDetails from './GlobalSignGCCTargetDetails';
 import GodaddyTargetDetails from './GodaddyTargetDetails';
@@ -43,7 +44,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 4.1.0
+ * @version 4.2.0
  */
 class TargetTypeDetailsInput {
     /**
@@ -103,6 +104,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('github_target_details')) {
                 obj['github_target_details'] = GithubTargetDetails.constructFromObject(data['github_target_details']);
+            }
+            if (data.hasOwnProperty('gitlab_target_details')) {
+                obj['gitlab_target_details'] = GitlabTargetDetails.constructFromObject(data['gitlab_target_details']);
             }
             if (data.hasOwnProperty('gke_target_details')) {
                 obj['gke_target_details'] = GKETargetDetails.constructFromObject(data['gke_target_details']);
@@ -211,6 +215,11 @@ TargetTypeDetailsInput.prototype['gcp_target_details'] = undefined;
  * @member {module:model/GithubTargetDetails} github_target_details
  */
 TargetTypeDetailsInput.prototype['github_target_details'] = undefined;
+
+/**
+ * @member {module:model/GitlabTargetDetails} gitlab_target_details
+ */
+TargetTypeDetailsInput.prototype['gitlab_target_details'] = undefined;
 
 /**
  * @member {module:model/GKETargetDetails} gke_target_details

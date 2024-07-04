@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import AllowedIpSettings from './AllowedIpSettings';
 import DataProtectionSection from './DataProtectionSection';
 import DynamicSecretMaxTtl from './DynamicSecretMaxTtl';
 import PasswordPolicyInfo from './PasswordPolicyInfo';
@@ -22,7 +23,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 4.1.0
+ * @version 4.2.0
  */
 class AccountGeneralSettings {
     /**
@@ -59,6 +60,12 @@ class AccountGeneralSettings {
             }
             if (data.hasOwnProperty('account_default_key_name')) {
                 obj['account_default_key_name'] = ApiClient.convertToType(data['account_default_key_name'], 'String');
+            }
+            if (data.hasOwnProperty('allowed_clients_ips')) {
+                obj['allowed_clients_ips'] = AllowedIpSettings.constructFromObject(data['allowed_clients_ips']);
+            }
+            if (data.hasOwnProperty('allowed_gateways_ips')) {
+                obj['allowed_gateways_ips'] = AllowedIpSettings.constructFromObject(data['allowed_gateways_ips']);
             }
             if (data.hasOwnProperty('auth_usage_event')) {
                 obj['auth_usage_event'] = UsageEventSetting.constructFromObject(data['auth_usage_event']);
@@ -111,6 +118,16 @@ AccountGeneralSettings.prototype['account_default_key_item_id'] = undefined;
  * @member {String} account_default_key_name
  */
 AccountGeneralSettings.prototype['account_default_key_name'] = undefined;
+
+/**
+ * @member {module:model/AllowedIpSettings} allowed_clients_ips
+ */
+AccountGeneralSettings.prototype['allowed_clients_ips'] = undefined;
+
+/**
+ * @member {module:model/AllowedIpSettings} allowed_gateways_ips
+ */
+AccountGeneralSettings.prototype['allowed_gateways_ips'] = undefined;
 
 /**
  * @member {module:model/UsageEventSetting} auth_usage_event

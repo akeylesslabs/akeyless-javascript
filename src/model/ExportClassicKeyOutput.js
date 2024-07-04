@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExportClassicKeyOutput model module.
  * @module model/ExportClassicKeyOutput
- * @version 4.1.0
+ * @version 4.2.0
  */
 class ExportClassicKeyOutput {
     /**
@@ -53,6 +53,9 @@ class ExportClassicKeyOutput {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
+            if (data.hasOwnProperty('ssh')) {
+                obj['ssh'] = ApiClient.convertToType(data['ssh'], 'String');
+            }
         }
         return obj;
     }
@@ -69,6 +72,11 @@ ExportClassicKeyOutput.prototype['certificatePem'] = undefined;
  * @member {String} key
  */
 ExportClassicKeyOutput.prototype['key'] = undefined;
+
+/**
+ * @member {String} ssh
+ */
+ExportClassicKeyOutput.prototype['ssh'] = undefined;
 
 
 

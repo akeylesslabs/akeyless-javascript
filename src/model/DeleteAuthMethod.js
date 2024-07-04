@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteAuthMethod model module.
  * @module model/DeleteAuthMethod
- * @version 4.1.0
+ * @version 4.2.0
  */
 class DeleteAuthMethod {
     /**
      * Constructs a new <code>DeleteAuthMethod</code>.
+     * deleteAuthMethod is a command that deletes the auth method. [Deprecated: Use auth-method-delete command]
      * @alias module:model/DeleteAuthMethod
      * @param name {String} Auth Method name
      */

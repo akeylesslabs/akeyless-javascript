@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **eksTargetDetails** | [**EKSTargetDetails**](EKSTargetDetails.md) |  | [optional] 
 **gcpTargetDetails** | [**GcpTargetDetails**](GcpTargetDetails.md) |  | [optional] 
 **githubTargetDetails** | [**GithubTargetDetails**](GithubTargetDetails.md) |  | [optional] 
+**gitlabTargetDetails** | [**GitlabTargetDetails**](GitlabTargetDetails.md) |  | [optional] 
 **gkeTargetDetails** | [**GKETargetDetails**](GKETargetDetails.md) |  | [optional] 
 **globalsignAtlasTargetDetails** | [**GlobalSignAtlasTargetDetails**](GlobalSignAtlasTargetDetails.md) |  | [optional] 
 **globalsignTargetDetails** | [**GlobalSignGCCTargetDetails**](GlobalSignGCCTargetDetails.md) |  | [optional] 

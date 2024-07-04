@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEKSTarget model module.
  * @module model/CreateEKSTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateEKSTarget {
     /**
      * Constructs a new <code>CreateEKSTarget</code>.
+     * createEKSTarget is a command that creates a new target. [Deprecated: Use target-create-eks command]
      * @alias module:model/CreateEKSTarget
      * @param eksAccessKeyId {String} Access Key ID
      * @param eksClusterCaCert {String} EKS cluster CA certificate

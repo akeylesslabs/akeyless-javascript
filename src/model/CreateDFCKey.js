@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDFCKey model module.
  * @module model/CreateDFCKey
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateDFCKey {
     /**

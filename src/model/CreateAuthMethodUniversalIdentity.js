@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodUniversalIdentity model module.
  * @module model/CreateAuthMethodUniversalIdentity
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateAuthMethodUniversalIdentity {
     /**
      * Constructs a new <code>CreateAuthMethodUniversalIdentity</code>.
-     * createAuthMethodUniversalIdentity is a command that creates a new auth method that will be able to authenticate using Akeyless Universal Identity.
+     * createAuthMethodUniversalIdentity is a command that creates a new auth method that will be able to authenticate using Akeyless Universal Identity. [Deprecated: Use auth-method-create-universal-identity command]
      * @alias module:model/CreateAuthMethodUniversalIdentity
      * @param name {String} Auth Method name
      */
@@ -52,6 +52,9 @@ class CreateAuthMethodUniversalIdentity {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -105,6 +108,12 @@ class CreateAuthMethodUniversalIdentity {
  * @default 0
  */
 CreateAuthMethodUniversalIdentity.prototype['access-expires'] = 0;
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+CreateAuthMethodUniversalIdentity.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A CIDR whitelist with the IPs that the access is restricted to

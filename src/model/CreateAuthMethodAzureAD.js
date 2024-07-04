@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAzureAD model module.
  * @module model/CreateAuthMethodAzureAD
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateAuthMethodAzureAD {
     /**
      * Constructs a new <code>CreateAuthMethodAzureAD</code>.
-     * createAuthMethodAzureAD is a command that creates a new auth method that will be able to authenticate using Azure Active Directory credentials.
+     * createAuthMethodAzureAD is a command that creates a new auth method that will be able to authenticate using Azure Active Directory credentials. [Deprecated: Use auth-method-create-azure-ad command]
      * @alias module:model/CreateAuthMethodAzureAD
      * @param boundTenantId {String} The Azure tenant id that the access is restricted to
      * @param name {String} Auth Method name
@@ -57,6 +57,9 @@ class CreateAuthMethodAzureAD {
             }
             if (data.hasOwnProperty('audience')) {
                 obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-group-id')) {
                 obj['bound-group-id'] = ApiClient.convertToType(data['bound-group-id'], ['String']);
@@ -141,6 +144,12 @@ CreateAuthMethodAzureAD.prototype['access-expires'] = 0;
  * @default 'https://management.azure.com/'
  */
 CreateAuthMethodAzureAD.prototype['audience'] = 'https://management.azure.com/';
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+CreateAuthMethodAzureAD.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A list of group ids that the access is restricted to

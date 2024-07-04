@@ -30,7 +30,7 @@ import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 4.1.0
+ * @version 4.2.0
  */
 class AuthMethodAccessInfo {
     /**
@@ -69,6 +69,9 @@ class AuthMethodAccessInfo {
             }
             if (data.hasOwnProperty('api_key_access_rules')) {
                 obj['api_key_access_rules'] = APIKeyAccessRules.constructFromObject(data['api_key_access_rules']);
+            }
+            if (data.hasOwnProperty('audit_logs_claims')) {
+                obj['audit_logs_claims'] = ApiClient.convertToType(data['audit_logs_claims'], ['String']);
             }
             if (data.hasOwnProperty('aws_iam_access_rules')) {
                 obj['aws_iam_access_rules'] = AWSIAMAccessRules.constructFromObject(data['aws_iam_access_rules']);
@@ -152,6 +155,11 @@ AuthMethodAccessInfo.prototype['access_id_alias'] = undefined;
  * @member {module:model/APIKeyAccessRules} api_key_access_rules
  */
 AuthMethodAccessInfo.prototype['api_key_access_rules'] = undefined;
+
+/**
+ * @member {Array.<String>} audit_logs_claims
+ */
+AuthMethodAccessInfo.prototype['audit_logs_claims'] = undefined;
 
 /**
  * @member {module:model/AWSIAMAccessRules} aws_iam_access_rules

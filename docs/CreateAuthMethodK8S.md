@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessExpires** | **Number** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
 **audience** | **String** | The audience in the Kubernetes JWT that the access is restricted to | [optional] 
+**auditLogsClaims** | **[String]** | Subclaims to include in audit logs, e.g \&quot;--audit-logs-claims email --audit-logs-claims username\&quot; | [optional] 
 **boundIps** | **[String]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
 **boundNamespaces** | **[String]** | A list of namespaces that the access is restricted to | [optional] 
 **boundPodNames** | **[String]** | A list of pod names that the access is restricted to | [optional] 

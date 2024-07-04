@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTarget model module.
  * @module model/DeleteTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class DeleteTarget {
     /**
      * Constructs a new <code>DeleteTarget</code>.
+     * deleteTarget is a command that deletes a target. [Deprecated: Use target-delete command]
      * @alias module:model/DeleteTarget
      * @param name {String} Target name
      */

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLogForwardingSumologic model module.
  * @module model/GatewayUpdateLogForwardingSumologic
- * @version 4.1.0
+ * @version 4.2.0
  */
 class GatewayUpdateLogForwardingSumologic {
     /**

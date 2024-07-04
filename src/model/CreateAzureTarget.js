@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAzureTarget model module.
  * @module model/CreateAzureTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateAzureTarget {
     /**
      * Constructs a new <code>CreateAzureTarget</code>.
+     * createAzureTarget is a command that creates a new target. [Deprecated: Use target-create-azure command]
      * @alias module:model/CreateAzureTarget
      * @param name {String} Target name
      */

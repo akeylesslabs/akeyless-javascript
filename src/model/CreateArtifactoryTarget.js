@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateArtifactoryTarget model module.
  * @module model/CreateArtifactoryTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateArtifactoryTarget {
     /**
      * Constructs a new <code>CreateArtifactoryTarget</code>.
+     * createArtifactoryTarget is a command that creates a new target. [Deprecated: Use target-create-artifactory command]
      * @alias module:model/CreateArtifactoryTarget
      * @param artifactoryAdminName {String} Artifactory Admin Name
      * @param artifactoryAdminPwd {String} Artifactory Admin password

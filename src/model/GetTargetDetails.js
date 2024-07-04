@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The GetTargetDetails model module.
  * @module model/GetTargetDetails
- * @version 4.1.0
+ * @version 4.2.0
  */
 class GetTargetDetails {
     /**
      * Constructs a new <code>GetTargetDetails</code>.
+     * getTargetDetails is a command that returns target details. [Deprecated: Use target-get-details command]
      * @alias module:model/GetTargetDetails
      * @param name {String} Target name
      */

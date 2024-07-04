@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTarget model module.
  * @module model/CreateDBTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateDBTarget {
     /**
      * Constructs a new <code>CreateDBTarget</code>.
+     * createDBTarget is a command that creates a new target. [Deprecated: Use target-create-db command]
      * @alias module:model/CreateDBTarget
      * @param connectionType {String} (Optional) Type of connection to mssql database [credentials/cloud-identity]
      * @param dbType {String} 

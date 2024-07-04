@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGodaddyTarget model module.
  * @module model/CreateGodaddyTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateGodaddyTarget {
     /**
      * Constructs a new <code>CreateGodaddyTarget</code>.
+     * createGodaddyTarget is a command that creates a new target. [Deprecated: Use target-create-godaddy command]
      * @alias module:model/CreateGodaddyTarget
      * @param apiKey {String} Key of the api credentials to the Godaddy account
      * @param imapFqdn {String} ImapFQDN of the IMAP service, FQDN or IPv4 address. Must be FQDN if the IMAP is using TLS

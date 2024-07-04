@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOCI model module.
  * @module model/CreateAuthMethodOCI
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateAuthMethodOCI {
     /**
      * Constructs a new <code>CreateAuthMethodOCI</code>.
-     * createAuthMethodOCI is a command that Creates a new Oracle Auth Method that will be used in the account using OCI principle and groups.
+     * createAuthMethodOCI is a command that Creates a new Oracle Auth Method that will be used in the account using OCI principle and groups. [Deprecated: Use auth-method-create-oci command]
      * @alias module:model/CreateAuthMethodOCI
      * @param groupOcid {Array.<String>} A list of required groups ocids
      * @param name {String} Auth Method name
@@ -56,6 +56,9 @@ class CreateAuthMethodOCI {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -106,6 +109,12 @@ class CreateAuthMethodOCI {
  * @default 0
  */
 CreateAuthMethodOCI.prototype['access-expires'] = 0;
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+CreateAuthMethodOCI.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A CIDR whitelist with the IPs that the access is restricted to

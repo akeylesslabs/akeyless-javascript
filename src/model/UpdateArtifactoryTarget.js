@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateArtifactoryTarget model module.
  * @module model/UpdateArtifactoryTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateArtifactoryTarget {
     /**
      * Constructs a new <code>UpdateArtifactoryTarget</code>.
+     * updateArtifactoryTarget is a command that updates a new target. [Deprecated: Use target-update-artifactory command]
      * @alias module:model/UpdateArtifactoryTarget
      * @param artifactoryAdminName {String} Artifactory Admin Name
      * @param artifactoryAdminPwd {String} Artifactory Admin password

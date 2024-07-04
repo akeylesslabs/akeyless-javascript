@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateEKSTarget model module.
  * @module model/UpdateEKSTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateEKSTarget {
     /**
      * Constructs a new <code>UpdateEKSTarget</code>.
+     * updateEKSTarget is a command that updates an existing target. [Deprecated: Use target-update-eks command]
      * @alias module:model/UpdateEKSTarget
      * @param eksAccessKeyId {String} Access Key ID
      * @param eksClusterCaCert {String} EKS cluster CA certificate

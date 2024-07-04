@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateK8SAuthConfig model module.
  * @module model/GatewayCreateK8SAuthConfig
- * @version 4.1.0
+ * @version 4.2.0
  */
 class GatewayCreateK8SAuthConfig {
     /**
@@ -61,9 +61,6 @@ class GatewayCreateK8SAuthConfig {
             }
             if (data.hasOwnProperty('cluster-api-type')) {
                 obj['cluster-api-type'] = ApiClient.convertToType(data['cluster-api-type'], 'String');
-            }
-            if (data.hasOwnProperty('config-encryption-key-name')) {
-                obj['config-encryption-key-name'] = ApiClient.convertToType(data['config-encryption-key-name'], 'String');
             }
             if (data.hasOwnProperty('disable-issuer-validation')) {
                 obj['disable-issuer-validation'] = ApiClient.convertToType(data['disable-issuer-validation'], 'String');
@@ -135,12 +132,6 @@ GatewayCreateK8SAuthConfig.prototype['access-id'] = undefined;
  * @default 'native_k8s'
  */
 GatewayCreateK8SAuthConfig.prototype['cluster-api-type'] = 'native_k8s';
-
-/**
- * Config encryption key
- * @member {String} config-encryption-key-name
- */
-GatewayCreateK8SAuthConfig.prototype['config-encryption-key-name'] = undefined;
 
 /**
  * Disable issuer validation [true/false]

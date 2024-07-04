@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetItemState model module.
  * @module model/SetItemState
- * @version 4.1.0
+ * @version 4.2.0
  */
 class SetItemState {
     /**

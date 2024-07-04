@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGlobalSignAtlasTarget model module.
  * @module model/CreateGlobalSignAtlasTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateGlobalSignAtlasTarget {
     /**
      * Constructs a new <code>CreateGlobalSignAtlasTarget</code>.
+     * createGlobalSignAtlasTarget is a command that creates a new target. [Deprecated: Use target-create-globalsign-atlas command]
      * @alias module:model/CreateGlobalSignAtlasTarget
      * @param apiKey {String} API Key of the GlobalSign Atlas account
      * @param apiSecret {String} API Secret of the GlobalSign Atlas account

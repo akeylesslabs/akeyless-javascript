@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateWindowsTarget model module.
  * @module model/CreateWindowsTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class CreateWindowsTarget {
     /**
      * Constructs a new <code>CreateWindowsTarget</code>.
+     * createWindowsTarget is a command that creates a new windows target. [Deprecated: Use target-create-windows command]
      * @alias module:model/CreateWindowsTarget
      * @param hostname {String} Server hostname
      * @param name {String} Target name

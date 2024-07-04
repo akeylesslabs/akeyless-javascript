@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSalesforceTarget model module.
  * @module model/UpdateSalesforceTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateSalesforceTarget {
     /**
      * Constructs a new <code>UpdateSalesforceTarget</code>.
+     * updateSalesforceTarget is a command that updates a new target. [Deprecated: Use target-update-salesforce command]
      * @alias module:model/UpdateSalesforceTarget
      * @param authFlow {String} type of the auth flow ('jwt' / 'user-password')
      * @param clientId {String} Client ID of the oauth2 app to use for connecting to Salesforce

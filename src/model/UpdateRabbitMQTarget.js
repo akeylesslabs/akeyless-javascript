@@ -16,11 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRabbitMQTarget model module.
  * @module model/UpdateRabbitMQTarget
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateRabbitMQTarget {
     /**
      * Constructs a new <code>UpdateRabbitMQTarget</code>.
+     * updateRabbitMQTarget is a command that updates a new target. [Deprecated: Use target-update-rabbitmq command]
      * @alias module:model/UpdateRabbitMQTarget
      * @param name {String} Target name
      */

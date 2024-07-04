@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOCI model module.
  * @module model/UpdateAuthMethodOCI
- * @version 4.1.0
+ * @version 4.2.0
  */
 class UpdateAuthMethodOCI {
     /**
      * Constructs a new <code>UpdateAuthMethodOCI</code>.
-     * updateAuthMethodOCI is a command that updates an auth method that will be used in the account using OCI principle and groups.
+     * updateAuthMethodOCI is a command that updates an auth method that will be used in the account using OCI principle and groups. [Deprecated: Use auth-method-update-oci command]
      * @alias module:model/UpdateAuthMethodOCI
      * @param groupOcid {Array.<String>} A list of required groups ocids
      * @param name {String} Auth Method name
@@ -56,6 +56,9 @@ class UpdateAuthMethodOCI {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('audit-logs-claims')) {
+                obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
@@ -109,6 +112,12 @@ class UpdateAuthMethodOCI {
  * @default 0
  */
 UpdateAuthMethodOCI.prototype['access-expires'] = 0;
+
+/**
+ * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"
+ * @member {Array.<String>} audit-logs-claims
+ */
+UpdateAuthMethodOCI.prototype['audit-logs-claims'] = undefined;
 
 /**
  * A CIDR whitelist with the IPs that the access is restricted to
