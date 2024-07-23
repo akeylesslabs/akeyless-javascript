@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateRedshift model module.
  * @module model/RotatedSecretUpdateRedshift
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RotatedSecretUpdateRedshift {
     /**
@@ -145,7 +145,7 @@ RotatedSecretUpdateRedshift.prototype['authentication-credentials'] = 'use-user-
 RotatedSecretUpdateRedshift.prototype['auto-rotate'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 RotatedSecretUpdateRedshift.prototype['delete_protection'] = undefined;

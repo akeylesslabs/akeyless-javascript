@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateGcp model module.
  * @module model/RotatedSecretCreateGcp
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RotatedSecretCreateGcp {
     /**
@@ -131,7 +131,7 @@ RotatedSecretCreateGcp.prototype['authentication-credentials'] = 'use-user-creds
 RotatedSecretCreateGcp.prototype['auto-rotate'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 RotatedSecretCreateGcp.prototype['delete_protection'] = undefined;

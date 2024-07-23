@@ -18,7 +18,7 @@ import Rules from './Rules';
 /**
  * The Role model module.
  * @module model/Role
- * @version 4.2.0
+ * @version 4.2.1
  */
 class Role {
     /**
@@ -64,6 +64,9 @@ class Role {
             if (data.hasOwnProperty('creation_date')) {
                 obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
             }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'Boolean');
+            }
             if (data.hasOwnProperty('modification_date')) {
                 obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
             }
@@ -107,6 +110,11 @@ Role.prototype['comment'] = undefined;
  * @member {Date} creation_date
  */
 Role.prototype['creation_date'] = undefined;
+
+/**
+ * @member {Boolean} delete_protection
+ */
+Role.prototype['delete_protection'] = undefined;
 
 /**
  * @member {Date} modification_date

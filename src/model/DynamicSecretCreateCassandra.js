@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateCassandra model module.
  * @module model/DynamicSecretCreateCassandra
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretCreateCassandra {
     /**
@@ -143,7 +143,7 @@ DynamicSecretCreateCassandra.prototype['cassandra-port'] = '9042';
 DynamicSecretCreateCassandra.prototype['cassandra-username'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretCreateCassandra.prototype['delete_protection'] = undefined;

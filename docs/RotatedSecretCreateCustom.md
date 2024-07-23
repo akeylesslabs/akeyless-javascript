@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **authenticationCredentials** | **String** | The credentials to connect with use-user-creds/use-target-creds | [optional] [default to &#39;use-user-creds&#39;]
 **autoRotate** | **String** | Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false] | [optional] 
 **customPayload** | **String** | Secret payload to be sent with rotation request | [optional] 
-**deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **key** | **String** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **secureAccessWebProxy** | **Boolean** | Web-Proxy via Akeyless Web Access Bastion | [optional] [default to false]
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | Target name | 
+**timeoutSec** | **Number** | Maximum allowed time in seconds for the custom rotator to return the results | [optional] [default to 40]
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 

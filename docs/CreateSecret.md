@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **accessibility** | **String** | for personal password manager | [optional] [default to &#39;regular&#39;]
 **changeEvent** | **String** | Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret) | [optional] 
 **customField** | **{String: String}** | For Password Management use, additional fields | [optional] 
-**deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **format** | **String** | Secret format [text/json] (relevant only for type &#39;generic&#39;) | [optional] [default to &#39;text&#39;]
 **injectUrl** | **[String]** | For Password Management use, reflect the website context | [optional] 

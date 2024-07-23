@@ -18,7 +18,7 @@ import AuthMethodRoleAssociation from './AuthMethodRoleAssociation';
 /**
  * The AuthMethod model module.
  * @module model/AuthMethod
- * @version 4.2.0
+ * @version 4.2.1
  */
 class AuthMethod {
     /**
@@ -78,6 +78,9 @@ class AuthMethod {
             }
             if (data.hasOwnProperty('creation_date')) {
                 obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'Boolean');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -144,6 +147,11 @@ AuthMethod.prototype['client_permissions'] = undefined;
  * @member {Date} creation_date
  */
 AuthMethod.prototype['creation_date'] = undefined;
+
+/**
+ * @member {Boolean} delete_protection
+ */
+AuthMethod.prototype['delete_protection'] = undefined;
 
 /**
  * @member {String} description

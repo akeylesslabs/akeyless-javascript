@@ -17,7 +17,7 @@ import SystemAccessCredentialsReplyObj from './SystemAccessCredentialsReplyObj';
 /**
  * The AuthOutput model module.
  * @module model/AuthOutput
- * @version 4.2.0
+ * @version 4.2.1
  */
 class AuthOutput {
     /**
@@ -48,6 +48,9 @@ class AuthOutput {
         if (data) {
             obj = obj || new AuthOutput();
 
+            if (data.hasOwnProperty('complete_auth_link')) {
+                obj['complete_auth_link'] = ApiClient.convertToType(data['complete_auth_link'], 'String');
+            }
             if (data.hasOwnProperty('creds')) {
                 obj['creds'] = SystemAccessCredentialsReplyObj.constructFromObject(data['creds']);
             }
@@ -60,6 +63,11 @@ class AuthOutput {
 
 
 }
+
+/**
+ * @member {String} complete_auth_link
+ */
+AuthOutput.prototype['complete_auth_link'] = undefined;
 
 /**
  * @member {module:model/SystemAccessCredentialsReplyObj} creds

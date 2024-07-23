@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dbServerCertificates** | **String** | (Optional) DB server certificates | [optional] 
 **dbServerName** | **String** | (Optional) Server name for certificate verification | [optional] 
-**deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Dynamic secret name | 
 **oracleHost** | **String** | Oracle Host | [optional] [default to &#39;127.0.0.1&#39;]

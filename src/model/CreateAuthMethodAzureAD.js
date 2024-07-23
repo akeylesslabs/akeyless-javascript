@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAzureAD model module.
  * @module model/CreateAuthMethodAzureAD
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateAuthMethodAzureAD {
     /**
@@ -90,6 +90,9 @@ class CreateAuthMethodAzureAD {
             }
             if (data.hasOwnProperty('bound-tenant-id')) {
                 obj['bound-tenant-id'] = ApiClient.convertToType(data['bound-tenant-id'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -210,6 +213,12 @@ CreateAuthMethodAzureAD.prototype['bound-sub-id'] = undefined;
  * @member {String} bound-tenant-id
  */
 CreateAuthMethodAzureAD.prototype['bound-tenant-id'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+CreateAuthMethodAzureAD.prototype['delete_protection'] = undefined;
 
 /**
  * Auth Method description

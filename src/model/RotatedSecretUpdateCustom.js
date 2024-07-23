@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateCustom model module.
  * @module model/RotatedSecretUpdateCustom
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RotatedSecretUpdateCustom {
     /**
@@ -133,6 +133,9 @@ class RotatedSecretUpdateCustom {
             if (data.hasOwnProperty('secure-access-web-proxy')) {
                 obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
+            if (data.hasOwnProperty('timeout-sec')) {
+                obj['timeout-sec'] = ApiClient.convertToType(data['timeout-sec'], 'Number');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -172,7 +175,7 @@ RotatedSecretUpdateCustom.prototype['auto-rotate'] = undefined;
 RotatedSecretUpdateCustom.prototype['custom-payload'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 RotatedSecretUpdateCustom.prototype['delete_protection'] = undefined;
@@ -321,6 +324,12 @@ RotatedSecretUpdateCustom.prototype['secure-access-web-browsing'] = false;
  * @default false
  */
 RotatedSecretUpdateCustom.prototype['secure-access-web-proxy'] = false;
+
+/**
+ * Maximum allowed time in seconds for the custom rotator to return the results
+ * @member {Number} timeout-sec
+ */
+RotatedSecretUpdateCustom.prototype['timeout-sec'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

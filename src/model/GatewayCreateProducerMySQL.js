@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMySQL model module.
  * @module model/GatewayCreateProducerMySQL
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayCreateProducerMySQL {
     /**
@@ -145,7 +145,7 @@ GatewayCreateProducerMySQL.prototype['db-server-certificates'] = undefined;
 GatewayCreateProducerMySQL.prototype['db-server-name'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerMySQL.prototype['delete_protection'] = undefined;

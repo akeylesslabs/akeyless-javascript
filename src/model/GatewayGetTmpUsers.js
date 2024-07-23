@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetTmpUsers model module.
  * @module model/GatewayGetTmpUsers
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayGetTmpUsers {
     /**

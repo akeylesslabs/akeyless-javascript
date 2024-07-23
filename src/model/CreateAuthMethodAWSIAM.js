@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAWSIAM model module.
  * @module model/CreateAuthMethodAWSIAM
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateAuthMethodAWSIAM {
     /**
@@ -81,6 +81,9 @@ class CreateAuthMethodAWSIAM {
             }
             if (data.hasOwnProperty('bound-user-name')) {
                 obj['bound-user-name'] = ApiClient.convertToType(data['bound-user-name'], ['String']);
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -179,6 +182,12 @@ CreateAuthMethodAWSIAM.prototype['bound-user-id'] = undefined;
  * @member {Array.<String>} bound-user-name
  */
 CreateAuthMethodAWSIAM.prototype['bound-user-name'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+CreateAuthMethodAWSIAM.prototype['delete_protection'] = undefined;
 
 /**
  * Auth Method description

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateAzure model module.
  * @module model/RotatedSecretUpdateAzure
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RotatedSecretUpdateAzure {
     /**
@@ -106,6 +106,9 @@ class RotatedSecretUpdateAzure {
             if (data.hasOwnProperty('rotation-interval')) {
                 obj['rotation-interval'] = ApiClient.convertToType(data['rotation-interval'], 'String');
             }
+            if (data.hasOwnProperty('secure-access-disable-concurrent-connections')) {
+                obj['secure-access-disable-concurrent-connections'] = ApiClient.convertToType(data['secure-access-disable-concurrent-connections'], 'Boolean');
+            }
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
             }
@@ -178,7 +181,7 @@ RotatedSecretUpdateAzure.prototype['authentication-credentials'] = 'use-user-cre
 RotatedSecretUpdateAzure.prototype['auto-rotate'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 RotatedSecretUpdateAzure.prototype['delete_protection'] = undefined;
@@ -257,6 +260,12 @@ RotatedSecretUpdateAzure.prototype['rotation-hour'] = undefined;
  * @member {String} rotation-interval
  */
 RotatedSecretUpdateAzure.prototype['rotation-interval'] = undefined;
+
+/**
+ * Enable this flag to prevent simultaneous use of the same secret
+ * @member {Boolean} secure-access-disable-concurrent-connections
+ */
+RotatedSecretUpdateAzure.prototype['secure-access-disable-concurrent-connections'] = undefined;
 
 /**
  * Enable/Disable secure remote access [true/false]

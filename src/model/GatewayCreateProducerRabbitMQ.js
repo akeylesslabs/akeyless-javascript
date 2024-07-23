@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRabbitMQ model module.
  * @module model/GatewayCreateProducerRabbitMQ
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayCreateProducerRabbitMQ {
     /**
@@ -127,7 +127,7 @@ class GatewayCreateProducerRabbitMQ {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerRabbitMQ.prototype['delete_protection'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DbTargetDetails model module.
  * @module model/DbTargetDetails
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DbTargetDetails {
     /**

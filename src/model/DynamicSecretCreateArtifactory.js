@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateArtifactory model module.
  * @module model/DynamicSecretCreateArtifactory
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretCreateArtifactory {
     /**
@@ -137,7 +137,7 @@ DynamicSecretCreateArtifactory.prototype['artifactory-token-scope'] = undefined;
 DynamicSecretCreateArtifactory.prototype['base-url'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretCreateArtifactory.prototype['delete_protection'] = undefined;

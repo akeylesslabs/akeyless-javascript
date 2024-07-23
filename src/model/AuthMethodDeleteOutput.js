@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodDeleteOutput model module.
  * @module model/AuthMethodDeleteOutput
- * @version 4.2.0
+ * @version 4.2.1
  */
 class AuthMethodDeleteOutput {
     /**

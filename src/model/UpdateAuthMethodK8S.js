@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodK8S model module.
  * @module model/UpdateAuthMethodK8S
- * @version 4.2.0
+ * @version 4.2.1
  */
 class UpdateAuthMethodK8S {
     /**
@@ -70,6 +70,9 @@ class UpdateAuthMethodK8S {
             }
             if (data.hasOwnProperty('bound-sa-names')) {
                 obj['bound-sa-names'] = ApiClient.convertToType(data['bound-sa-names'], ['String']);
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -156,6 +159,12 @@ UpdateAuthMethodK8S.prototype['bound-pod-names'] = undefined;
  * @member {Array.<String>} bound-sa-names
  */
 UpdateAuthMethodK8S.prototype['bound-sa-names'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+UpdateAuthMethodK8S.prototype['delete_protection'] = undefined;
 
 /**
  * Auth Method description

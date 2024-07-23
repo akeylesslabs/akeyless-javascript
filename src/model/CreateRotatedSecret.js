@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateRotatedSecret {
     /**
@@ -273,7 +273,7 @@ CreateRotatedSecret.prototype['aws-region'] = 'us-east-2';
 CreateRotatedSecret.prototype['custom-payload'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 CreateRotatedSecret.prototype['delete_protection'] = undefined;

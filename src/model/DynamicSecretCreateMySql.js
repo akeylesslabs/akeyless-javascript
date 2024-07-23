@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateMySql model module.
  * @module model/DynamicSecretCreateMySql
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretCreateMySql {
     /**
@@ -148,7 +148,7 @@ DynamicSecretCreateMySql.prototype['db-server-certificates'] = undefined;
 DynamicSecretCreateMySql.prototype['db-server-name'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretCreateMySql.prototype['delete_protection'] = undefined;

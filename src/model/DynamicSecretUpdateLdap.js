@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateLdap model module.
  * @module model/DynamicSecretUpdateLdap
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretUpdateLdap {
     /**
@@ -159,7 +159,7 @@ DynamicSecretUpdateLdap.prototype['bind-dn'] = undefined;
 DynamicSecretUpdateLdap.prototype['bind-dn-password'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretUpdateLdap.prototype['delete_protection'] = undefined;

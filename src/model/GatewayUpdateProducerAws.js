@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerAws model module.
  * @module model/GatewayUpdateProducerAws
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateProducerAws {
     /**
@@ -122,6 +122,9 @@ class GatewayUpdateProducerAws {
             if (data.hasOwnProperty('secure-access-web-proxy')) {
                 obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
+            if (data.hasOwnProperty('session-tags')) {
+                obj['session-tags'] = ApiClient.convertToType(data['session-tags'], 'String');
+            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
@@ -130,6 +133,9 @@ class GatewayUpdateProducerAws {
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
+            }
+            if (data.hasOwnProperty('transitive-tag-keys')) {
+                obj['transitive-tag-keys'] = ApiClient.convertToType(data['transitive-tag-keys'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
@@ -201,7 +207,7 @@ GatewayUpdateProducerAws.prototype['aws-user-policies'] = undefined;
 GatewayUpdateProducerAws.prototype['aws-user-programmatic-access'] = true;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerAws.prototype['delete_protection'] = undefined;
@@ -297,6 +303,12 @@ GatewayUpdateProducerAws.prototype['secure-access-web-browsing'] = false;
 GatewayUpdateProducerAws.prototype['secure-access-web-proxy'] = false;
 
 /**
+ * String of Key value session tags comma separated, relevant only for Assumed Role
+ * @member {String} session-tags
+ */
+GatewayUpdateProducerAws.prototype['session-tags'] = undefined;
+
+/**
  * Add tags attached to this object
  * @member {Array.<String>} tags
  */
@@ -313,6 +325,12 @@ GatewayUpdateProducerAws.prototype['target-name'] = undefined;
  * @member {String} token
  */
 GatewayUpdateProducerAws.prototype['token'] = undefined;
+
+/**
+ * String of transitive tag keys space separated, relevant only for Assumed Role
+ * @member {String} transitive-tag-keys
+ */
+GatewayUpdateProducerAws.prototype['transitive-tag-keys'] = undefined;
 
 /**
  * The universal identity token, Required only for universal_identity authentication

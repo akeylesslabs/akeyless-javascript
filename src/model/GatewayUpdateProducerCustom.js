@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerCustom model module.
  * @module model/GatewayUpdateProducerCustom
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateProducerCustom {
     /**
@@ -122,7 +122,7 @@ GatewayUpdateProducerCustom.prototype['admin_rotation_interval_days'] = undefine
 GatewayUpdateProducerCustom.prototype['create-sync-url'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerCustom.prototype['delete_protection'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOCI model module.
  * @module model/CreateAuthMethodOCI
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateAuthMethodOCI {
     /**
@@ -62,6 +62,9 @@ class CreateAuthMethodOCI {
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -121,6 +124,12 @@ CreateAuthMethodOCI.prototype['audit-logs-claims'] = undefined;
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodOCI.prototype['bound-ips'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+CreateAuthMethodOCI.prototype['delete_protection'] = undefined;
 
 /**
  * Auth Method description

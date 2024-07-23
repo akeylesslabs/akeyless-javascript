@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodCert model module.
  * @module model/UpdateAuthMethodCert
- * @version 4.2.0
+ * @version 4.2.1
  */
 class UpdateAuthMethodCert {
     /**
@@ -84,6 +84,9 @@ class UpdateAuthMethodCert {
             }
             if (data.hasOwnProperty('certificate-data')) {
                 obj['certificate-data'] = ApiClient.convertToType(data['certificate-data'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -194,6 +197,12 @@ UpdateAuthMethodCert.prototype['bound-uri-sans'] = undefined;
  * @member {String} certificate-data
  */
 UpdateAuthMethodCert.prototype['certificate-data'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+UpdateAuthMethodCert.prototype['delete_protection'] = undefined;
 
 /**
  * Auth Method description

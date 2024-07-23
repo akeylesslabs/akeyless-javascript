@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateChef model module.
  * @module model/DynamicSecretCreateChef
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretCreateChef {
     /**
@@ -130,7 +130,7 @@ DynamicSecretCreateChef.prototype['chef-server-url'] = undefined;
 DynamicSecretCreateChef.prototype['chef-server-username'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretCreateChef.prototype['delete_protection'] = undefined;

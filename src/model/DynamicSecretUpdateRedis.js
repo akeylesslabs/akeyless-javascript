@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateRedis model module.
  * @module model/DynamicSecretUpdateRedis
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretUpdateRedis {
     /**
@@ -121,7 +121,7 @@ class DynamicSecretUpdateRedis {
 DynamicSecretUpdateRedis.prototype['acl-rules'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretUpdateRedis.prototype['delete_protection'] = undefined;

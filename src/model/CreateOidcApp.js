@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateOidcApp model module.
  * @module model/CreateOidcApp
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateOidcApp {
     /**
@@ -115,7 +115,7 @@ CreateOidcApp.prototype['accessibility'] = 'regular';
 CreateOidcApp.prototype['audience'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 CreateOidcApp.prototype['delete_protection'] = undefined;

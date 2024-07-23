@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateCertificate model module.
  * @module model/CreateCertificate
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateCertificate {
     /**
@@ -102,7 +102,7 @@ class CreateCertificate {
 CreateCertificate.prototype['certificate-data'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 CreateCertificate.prototype['delete_protection'] = undefined;

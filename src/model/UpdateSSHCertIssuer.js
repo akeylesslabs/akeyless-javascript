@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHCertIssuer model module.
  * @module model/UpdateSSHCertIssuer
- * @version 4.2.0
+ * @version 4.2.1
  */
 class UpdateSSHCertIssuer {
     /**
@@ -149,7 +149,7 @@ UpdateSSHCertIssuer.prototype['add-tag'] = undefined;
 UpdateSSHCertIssuer.prototype['allowed-users'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 UpdateSSHCertIssuer.prototype['delete_protection'] = undefined;

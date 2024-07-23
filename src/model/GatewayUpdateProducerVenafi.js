@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerVenafi model module.
  * @module model/GatewayUpdateProducerVenafi
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateProducerVenafi {
     /**
@@ -161,7 +161,7 @@ GatewayUpdateProducerVenafi.prototype['allowed-domains'] = undefined;
 GatewayUpdateProducerVenafi.prototype['auto-generated-folder'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerVenafi.prototype['delete_protection'] = undefined;

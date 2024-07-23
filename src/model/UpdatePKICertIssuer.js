@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 4.2.0
+ * @version 4.2.1
  */
 class UpdatePKICertIssuer {
     /**
@@ -247,7 +247,7 @@ UpdatePKICertIssuer.prototype['create-private-crl'] = undefined;
 UpdatePKICertIssuer.prototype['create-public-crl'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 UpdatePKICertIssuer.prototype['delete_protection'] = undefined;

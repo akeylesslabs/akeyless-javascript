@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateRedshift model module.
  * @module model/DynamicSecretUpdateRedshift
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretUpdateRedshift {
     /**
@@ -127,7 +127,7 @@ class DynamicSecretUpdateRedshift {
 DynamicSecretUpdateRedshift.prototype['creation-statements'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretUpdateRedshift.prototype['delete_protection'] = undefined;

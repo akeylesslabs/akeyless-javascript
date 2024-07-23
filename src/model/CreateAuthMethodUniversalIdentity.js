@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodUniversalIdentity model module.
  * @module model/CreateAuthMethodUniversalIdentity
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateAuthMethodUniversalIdentity {
     /**
@@ -58,6 +58,9 @@ class CreateAuthMethodUniversalIdentity {
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('deny-inheritance')) {
                 obj['deny-inheritance'] = ApiClient.convertToType(data['deny-inheritance'], 'Boolean');
@@ -120,6 +123,12 @@ CreateAuthMethodUniversalIdentity.prototype['audit-logs-claims'] = undefined;
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodUniversalIdentity.prototype['bound-ips'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+CreateAuthMethodUniversalIdentity.prototype['delete_protection'] = undefined;
 
 /**
  * Deny from root to create children

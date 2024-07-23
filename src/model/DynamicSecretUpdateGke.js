@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGke model module.
  * @module model/DynamicSecretUpdateGke
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretUpdateGke {
     /**
@@ -121,7 +121,7 @@ class DynamicSecretUpdateGke {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretUpdateGke.prototype['delete_protection'] = undefined;

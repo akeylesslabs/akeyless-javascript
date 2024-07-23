@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerArtifactory model module.
  * @module model/GatewayUpdateProducerArtifactory
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateProducerArtifactory {
     /**
@@ -137,7 +137,7 @@ GatewayUpdateProducerArtifactory.prototype['artifactory-token-scope'] = undefine
 GatewayUpdateProducerArtifactory.prototype['base-url'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerArtifactory.prototype['delete_protection'] = undefined;

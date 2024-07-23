@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateMsSql model module.
  * @module model/DynamicSecretCreateMsSql
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretCreateMsSql {
     /**
@@ -127,7 +127,7 @@ class DynamicSecretCreateMsSql {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretCreateMsSql.prototype['delete_protection'] = undefined;

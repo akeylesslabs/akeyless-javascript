@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRole model module.
  * @module model/CreateRole
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateRole {
     /**
@@ -57,6 +57,9 @@ class CreateRole {
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -112,6 +115,12 @@ CreateRole.prototype['audit-access'] = undefined;
  * @member {String} comment
  */
 CreateRole.prototype['comment'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+CreateRole.prototype['delete_protection'] = undefined;
 
 /**
  * Description of the object

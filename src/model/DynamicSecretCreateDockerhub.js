@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateDockerhub model module.
  * @module model/DynamicSecretCreateDockerhub
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretCreateDockerhub {
     /**
@@ -97,7 +97,7 @@ class DynamicSecretCreateDockerhub {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretCreateDockerhub.prototype['delete_protection'] = undefined;

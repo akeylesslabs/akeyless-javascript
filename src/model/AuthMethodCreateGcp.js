@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateGcp model module.
  * @module model/AuthMethodCreateGcp
- * @version 4.2.0
+ * @version 4.2.1
  */
 class AuthMethodCreateGcp {
     /**
@@ -80,6 +80,9 @@ class AuthMethodCreateGcp {
             }
             if (data.hasOwnProperty('bound-zones')) {
                 obj['bound-zones'] = ApiClient.convertToType(data['bound-zones'], ['String']);
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -176,6 +179,12 @@ AuthMethodCreateGcp.prototype['bound-service-accounts'] = undefined;
  * @member {Array.<String>} bound-zones
  */
 AuthMethodCreateGcp.prototype['bound-zones'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+AuthMethodCreateGcp.prototype['delete_protection'] = undefined;
 
 /**
  * Auth Method description

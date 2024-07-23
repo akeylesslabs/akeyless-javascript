@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateAws model module.
  * @module model/DynamicSecretUpdateAws
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretUpdateAws {
     /**
@@ -125,6 +125,9 @@ class DynamicSecretUpdateAws {
             if (data.hasOwnProperty('secure-access-web-proxy')) {
                 obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
+            if (data.hasOwnProperty('session-tags')) {
+                obj['session-tags'] = ApiClient.convertToType(data['session-tags'], 'String');
+            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
@@ -133,6 +136,9 @@ class DynamicSecretUpdateAws {
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
+            }
+            if (data.hasOwnProperty('transitive-tag-keys')) {
+                obj['transitive-tag-keys'] = ApiClient.convertToType(data['transitive-tag-keys'], 'String');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
@@ -204,7 +210,7 @@ DynamicSecretUpdateAws.prototype['aws-user-policies'] = undefined;
 DynamicSecretUpdateAws.prototype['aws-user-programmatic-access'] = true;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretUpdateAws.prototype['delete_protection'] = undefined;
@@ -306,6 +312,12 @@ DynamicSecretUpdateAws.prototype['secure-access-web-browsing'] = false;
 DynamicSecretUpdateAws.prototype['secure-access-web-proxy'] = false;
 
 /**
+ * String of Key value session tags comma separated, relevant only for Assumed Role
+ * @member {String} session-tags
+ */
+DynamicSecretUpdateAws.prototype['session-tags'] = undefined;
+
+/**
  * Add tags attached to this object
  * @member {Array.<String>} tags
  */
@@ -322,6 +334,12 @@ DynamicSecretUpdateAws.prototype['target-name'] = undefined;
  * @member {String} token
  */
 DynamicSecretUpdateAws.prototype['token'] = undefined;
+
+/**
+ * String of transitive tag keys space separated, relevant only for Assumed Role
+ * @member {String} transitive-tag-keys
+ */
+DynamicSecretUpdateAws.prototype['transitive-tag-keys'] = undefined;
 
 /**
  * The universal identity token, Required only for universal_identity authentication

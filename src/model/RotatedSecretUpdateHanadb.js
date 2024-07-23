@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateHanadb model module.
  * @module model/RotatedSecretUpdateHanadb
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RotatedSecretUpdateHanadb {
     /**
@@ -133,7 +133,7 @@ RotatedSecretUpdateHanadb.prototype['authentication-credentials'] = 'use-user-cr
 RotatedSecretUpdateHanadb.prototype['auto-rotate'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 RotatedSecretUpdateHanadb.prototype['delete_protection'] = undefined;

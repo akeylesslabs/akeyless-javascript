@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHCertIssuer model module.
  * @module model/CreateSSHCertIssuer
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateSSHCertIssuer {
     /**
@@ -140,7 +140,7 @@ CreateSSHCertIssuer.prototype['ProviderType'] = undefined;
 CreateSSHCertIssuer.prototype['allowed-users'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 CreateSSHCertIssuer.prototype['delete_protection'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateUSC model module.
  * @module model/CreateUSC
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateUSC {
     /**
@@ -96,7 +96,7 @@ class CreateUSC {
 CreateUSC.prototype['azure-kv-name'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 CreateUSC.prototype['delete_protection'] = undefined;

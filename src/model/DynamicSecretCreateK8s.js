@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateK8s model module.
  * @module model/DynamicSecretCreateK8s
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretCreateK8s {
     /**
@@ -148,7 +148,7 @@ class DynamicSecretCreateK8s {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretCreateK8s.prototype['delete_protection'] = undefined;

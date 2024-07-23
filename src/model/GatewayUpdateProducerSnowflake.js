@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerSnowflake model module.
  * @module model/GatewayUpdateProducerSnowflake
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateProducerSnowflake {
     /**
@@ -136,7 +136,7 @@ GatewayUpdateProducerSnowflake.prototype['account-username'] = undefined;
 GatewayUpdateProducerSnowflake.prototype['db-name'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerSnowflake.prototype['delete_protection'] = undefined;

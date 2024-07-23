@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreatePostgreSql model module.
  * @module model/DynamicSecretCreatePostgreSql
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretCreatePostgreSql {
     /**
@@ -136,7 +136,7 @@ class DynamicSecretCreatePostgreSql {
 DynamicSecretCreatePostgreSql.prototype['creation-statements'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretCreatePostgreSql.prototype['delete_protection'] = undefined;

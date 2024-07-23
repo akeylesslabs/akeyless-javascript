@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateMongodb model module.
  * @module model/RotatedSecretCreateMongodb
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RotatedSecretCreateMongodb {
     /**
@@ -146,7 +146,7 @@ RotatedSecretCreateMongodb.prototype['authentication-credentials'] = 'use-user-c
 RotatedSecretCreateMongodb.prototype['auto-rotate'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 RotatedSecretCreateMongodb.prototype['delete_protection'] = undefined;

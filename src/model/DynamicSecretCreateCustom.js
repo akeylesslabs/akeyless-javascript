@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateCustom model module.
  * @module model/DynamicSecretCreateCustom
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretCreateCustom {
     /**
@@ -121,7 +121,7 @@ DynamicSecretCreateCustom.prototype['admin_rotation_interval_days'] = undefined;
 DynamicSecretCreateCustom.prototype['create-sync-url'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretCreateCustom.prototype['delete_protection'] = undefined;

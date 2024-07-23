@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateTokenizer model module.
  * @module model/CreateTokenizer
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateTokenizer {
     /**
@@ -122,7 +122,7 @@ CreateTokenizer.prototype['alphabet'] = undefined;
 CreateTokenizer.prototype['decoding-template'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 CreateTokenizer.prototype['delete_protection'] = undefined;

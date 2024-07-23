@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateRdp model module.
  * @module model/DynamicSecretCreateRdp
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretCreateRdp {
     /**
@@ -139,7 +139,7 @@ class DynamicSecretCreateRdp {
 DynamicSecretCreateRdp.prototype['allow-user-extend-session'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretCreateRdp.prototype['delete_protection'] = undefined;

@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DSProducerDetails {
     /**
@@ -103,8 +103,14 @@ class DSProducerDetails {
             if (data.hasOwnProperty('aws_secret_access_key')) {
                 obj['aws_secret_access_key'] = ApiClient.convertToType(data['aws_secret_access_key'], 'String');
             }
+            if (data.hasOwnProperty('aws_session_tags')) {
+                obj['aws_session_tags'] = ApiClient.convertToType(data['aws_session_tags'], 'String');
+            }
             if (data.hasOwnProperty('aws_session_token')) {
                 obj['aws_session_token'] = ApiClient.convertToType(data['aws_session_token'], 'String');
+            }
+            if (data.hasOwnProperty('aws_transitive_tag_keys')) {
+                obj['aws_transitive_tag_keys'] = ApiClient.convertToType(data['aws_transitive_tag_keys'], 'String');
             }
             if (data.hasOwnProperty('aws_user_console_access')) {
                 obj['aws_user_console_access'] = ApiClient.convertToType(data['aws_user_console_access'], 'Boolean');
@@ -858,9 +864,19 @@ DSProducerDetails.prototype['aws_role_arns'] = undefined;
 DSProducerDetails.prototype['aws_secret_access_key'] = undefined;
 
 /**
+ * @member {String} aws_session_tags
+ */
+DSProducerDetails.prototype['aws_session_tags'] = undefined;
+
+/**
  * @member {String} aws_session_token
  */
 DSProducerDetails.prototype['aws_session_token'] = undefined;
+
+/**
+ * @member {String} aws_transitive_tag_keys
+ */
+DSProducerDetails.prototype['aws_transitive_tag_keys'] = undefined;
 
 /**
  * @member {Boolean} aws_user_console_access

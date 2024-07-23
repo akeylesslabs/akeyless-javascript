@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerDockerhub model module.
  * @module model/GatewayUpdateProducerDockerhub
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateProducerDockerhub {
     /**
@@ -97,7 +97,7 @@ class GatewayUpdateProducerDockerhub {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerDockerhub.prototype['delete_protection'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerGcp model module.
  * @module model/GatewayUpdateProducerGcp
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateProducerGcp {
     /**
@@ -111,7 +111,7 @@ class GatewayUpdateProducerGcp {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerGcp.prototype['delete_protection'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodEmail model module.
  * @module model/CreateAuthMethodEmail
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateAuthMethodEmail {
     /**
@@ -60,6 +60,9 @@ class CreateAuthMethodEmail {
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -116,6 +119,12 @@ CreateAuthMethodEmail.prototype['audit-logs-claims'] = undefined;
  * @member {Array.<String>} bound-ips
  */
 CreateAuthMethodEmail.prototype['bound-ips'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+CreateAuthMethodEmail.prototype['delete_protection'] = undefined;
 
 /**
  * Auth Method description

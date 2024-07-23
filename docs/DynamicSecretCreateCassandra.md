@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **cassandraPassword** | **String** | Cassandra superuser password | [optional] 
 **cassandraPort** | **String** | Cassandra port | [optional] [default to &#39;9042&#39;]
 **cassandraUsername** | **String** | Cassandra superuser username | [optional] 
-**deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Dynamic secret name | 

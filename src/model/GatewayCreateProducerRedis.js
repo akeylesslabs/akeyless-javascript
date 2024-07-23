@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRedis model module.
  * @module model/GatewayCreateProducerRedis
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayCreateProducerRedis {
     /**
@@ -115,7 +115,7 @@ class GatewayCreateProducerRedis {
 GatewayCreateProducerRedis.prototype['acl-rules'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerRedis.prototype['delete_protection'] = undefined;

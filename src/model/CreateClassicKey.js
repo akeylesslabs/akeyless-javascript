@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateClassicKey {
     /**
@@ -186,7 +186,7 @@ CreateClassicKey.prototype['certificate-ttl'] = undefined;
 CreateClassicKey.prototype['conf-file-data'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 CreateClassicKey.prototype['delete_protection'] = undefined;

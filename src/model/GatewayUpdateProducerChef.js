@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerChef model module.
  * @module model/GatewayUpdateProducerChef
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateProducerChef {
     /**
@@ -130,7 +130,7 @@ GatewayUpdateProducerChef.prototype['chef-server-url'] = undefined;
 GatewayUpdateProducerChef.prototype['chef-server-username'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerChef.prototype['delete_protection'] = undefined;

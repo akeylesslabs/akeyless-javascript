@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateMigration {
     /**
@@ -68,6 +68,9 @@ class GatewayUpdateMigration {
             }
             if (data.hasOwnProperty('1password-vaults')) {
                 obj['1password-vaults'] = ApiClient.convertToType(data['1password-vaults'], ['String']);
+            }
+            if (data.hasOwnProperty('ServiceAccountKeyDecoded')) {
+                obj['ServiceAccountKeyDecoded'] = ApiClient.convertToType(data['ServiceAccountKeyDecoded'], 'String');
             }
             if (data.hasOwnProperty('ad-discover-services')) {
                 obj['ad-discover-services'] = ApiClient.convertToType(data['ad-discover-services'], 'String');
@@ -282,6 +285,11 @@ GatewayUpdateMigration.prototype['1password-url'] = undefined;
  * @member {Array.<String>} 1password-vaults
  */
 GatewayUpdateMigration.prototype['1password-vaults'] = undefined;
+
+/**
+ * @member {String} ServiceAccountKeyDecoded
+ */
+GatewayUpdateMigration.prototype['ServiceAccountKeyDecoded'] = undefined;
 
 /**
  * Enable/Disable discovery of Windows services from each domain server as part of the SSH/Windows Rotated Secrets. Default is false. (Relevant only for Active Directory migration)

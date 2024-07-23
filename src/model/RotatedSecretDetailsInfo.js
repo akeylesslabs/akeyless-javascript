@@ -17,7 +17,7 @@ import WindowsService from './WindowsService';
 /**
  * The RotatedSecretDetailsInfo model module.
  * @module model/RotatedSecretDetailsInfo
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RotatedSecretDetailsInfo {
     /**
@@ -90,6 +90,9 @@ class RotatedSecretDetailsInfo {
             }
             if (data.hasOwnProperty('services_details')) {
                 obj['services_details'] = ApiClient.convertToType(data['services_details'], [WindowsService]);
+            }
+            if (data.hasOwnProperty('timeout_seconds')) {
+                obj['timeout_seconds'] = ApiClient.convertToType(data['timeout_seconds'], 'Number');
             }
         }
         return obj;
@@ -168,6 +171,11 @@ RotatedSecretDetailsInfo.prototype['same_password'] = undefined;
  * @member {Array.<module:model/WindowsService>} services_details
  */
 RotatedSecretDetailsInfo.prototype['services_details'] = undefined;
+
+/**
+ * @member {Number} timeout_seconds
+ */
+RotatedSecretDetailsInfo.prototype['timeout_seconds'] = undefined;
 
 
 

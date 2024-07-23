@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateMysql model module.
  * @module model/RotatedSecretUpdateMysql
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RotatedSecretUpdateMysql {
     /**
@@ -151,7 +151,7 @@ RotatedSecretUpdateMysql.prototype['authentication-credentials'] = 'use-user-cre
 RotatedSecretUpdateMysql.prototype['auto-rotate'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 RotatedSecretUpdateMysql.prototype['delete_protection'] = undefined;

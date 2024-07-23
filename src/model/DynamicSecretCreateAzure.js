@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateAzure model module.
  * @module model/DynamicSecretCreateAzure
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretCreateAzure {
     /**
@@ -160,7 +160,7 @@ DynamicSecretCreateAzure.prototype['azure-client-secret'] = undefined;
 DynamicSecretCreateAzure.prototype['azure-tenant-id'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretCreateAzure.prototype['delete_protection'] = undefined;

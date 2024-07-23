@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGke model module.
  * @module model/GatewayCreateProducerGke
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayCreateProducerGke {
     /**
@@ -115,7 +115,7 @@ class GatewayCreateProducerGke {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerGke.prototype['delete_protection'] = undefined;

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **boundOrganizationalUnits** | **[String]** | A list of Organizational Units names. At least one must exist in the OU field. | [optional] 
 **boundUriSans** | **[String]** | A list of URIs. At least one must exist in the SANs. Supports globbing. | [optional] 
 **certificateData** | **String** | The certificate data in base64, if no file was provided | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Auth Method description | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 

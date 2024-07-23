@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateLdap model module.
  * @module model/RotatedSecretUpdateLdap
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RotatedSecretUpdateLdap {
     /**
@@ -177,7 +177,7 @@ RotatedSecretUpdateLdap.prototype['authentication-credentials'] = 'use-user-cred
 RotatedSecretUpdateLdap.prototype['auto-rotate'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 RotatedSecretUpdateLdap.prototype['delete_protection'] = undefined;

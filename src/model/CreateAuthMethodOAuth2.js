@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOAuth2 model module.
  * @module model/CreateAuthMethodOAuth2
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateAuthMethodOAuth2 {
     /**
@@ -74,6 +74,9 @@ class CreateAuthMethodOAuth2 {
             }
             if (data.hasOwnProperty('cert-file-data')) {
                 obj['cert-file-data'] = ApiClient.convertToType(data['cert-file-data'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -169,6 +172,12 @@ CreateAuthMethodOAuth2.prototype['cert'] = undefined;
  * @member {String} cert-file-data
  */
 CreateAuthMethodOAuth2.prototype['cert-file-data'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+CreateAuthMethodOAuth2.prototype['delete_protection'] = undefined;
 
 /**
  * Auth Method description

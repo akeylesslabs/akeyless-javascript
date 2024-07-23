@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMSSQL model module.
  * @module model/GatewayUpdateProducerMSSQL
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateProducerMSSQL {
     /**
@@ -127,7 +127,7 @@ class GatewayUpdateProducerMSSQL {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerMSSQL.prototype['delete_protection'] = undefined;

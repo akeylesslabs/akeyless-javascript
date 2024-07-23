@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLogForwardingSyslog model module.
  * @module model/GatewayUpdateLogForwardingSyslog
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateLogForwardingSyslog {
     /**

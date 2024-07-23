@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateOIDC model module.
  * @module model/AuthMethodUpdateOIDC
- * @version 4.2.0
+ * @version 4.2.1
  */
 class AuthMethodUpdateOIDC {
     /**
@@ -72,6 +72,9 @@ class AuthMethodUpdateOIDC {
             }
             if (data.hasOwnProperty('client-secret')) {
                 obj['client-secret'] = ApiClient.convertToType(data['client-secret'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -167,6 +170,12 @@ AuthMethodUpdateOIDC.prototype['client-id'] = undefined;
  * @member {String} client-secret
  */
 AuthMethodUpdateOIDC.prototype['client-secret'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+AuthMethodUpdateOIDC.prototype['delete_protection'] = undefined;
 
 /**
  * Auth Method description

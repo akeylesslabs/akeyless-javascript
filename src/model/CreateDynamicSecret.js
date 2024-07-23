@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDynamicSecret model module.
  * @module model/CreateDynamicSecret
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateDynamicSecret {
     /**
@@ -84,7 +84,7 @@ class CreateDynamicSecret {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 CreateDynamicSecret.prototype['delete_protection'] = undefined;

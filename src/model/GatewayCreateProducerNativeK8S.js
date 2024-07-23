@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerNativeK8S model module.
  * @module model/GatewayCreateProducerNativeK8S
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayCreateProducerNativeK8S {
     /**
@@ -145,7 +145,7 @@ class GatewayCreateProducerNativeK8S {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerNativeK8S.prototype['delete_protection'] = undefined;

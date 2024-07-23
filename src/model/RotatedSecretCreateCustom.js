@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateCustom model module.
  * @module model/RotatedSecretCreateCustom
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RotatedSecretCreateCustom {
     /**
@@ -129,6 +129,9 @@ class RotatedSecretCreateCustom {
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
+            if (data.hasOwnProperty('timeout-sec')) {
+                obj['timeout-sec'] = ApiClient.convertToType(data['timeout-sec'], 'Number');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -162,7 +165,7 @@ RotatedSecretCreateCustom.prototype['auto-rotate'] = undefined;
 RotatedSecretCreateCustom.prototype['custom-payload'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 RotatedSecretCreateCustom.prototype['delete_protection'] = undefined;
@@ -304,6 +307,13 @@ RotatedSecretCreateCustom.prototype['tags'] = undefined;
  * @member {String} target-name
  */
 RotatedSecretCreateCustom.prototype['target-name'] = undefined;
+
+/**
+ * Maximum allowed time in seconds for the custom rotator to return the results
+ * @member {Number} timeout-sec
+ * @default 40
+ */
+RotatedSecretCreateCustom.prototype['timeout-sec'] = 40;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerCassandra model module.
  * @module model/GatewayCreateProducerCassandra
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayCreateProducerCassandra {
     /**
@@ -140,7 +140,7 @@ GatewayCreateProducerCassandra.prototype['cassandra-port'] = '9042';
 GatewayCreateProducerCassandra.prototype['cassandra-username'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayCreateProducerCassandra.prototype['delete_protection'] = undefined;

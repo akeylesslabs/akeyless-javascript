@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGoogleWorkspace model module.
  * @module model/DynamicSecretUpdateGoogleWorkspace
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretUpdateGoogleWorkspace {
     /**
@@ -127,7 +127,7 @@ DynamicSecretUpdateGoogleWorkspace.prototype['access-mode'] = undefined;
 DynamicSecretUpdateGoogleWorkspace.prototype['admin-email'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretUpdateGoogleWorkspace.prototype['delete_protection'] = undefined;

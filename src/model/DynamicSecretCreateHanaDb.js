@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateHanaDb model module.
  * @module model/DynamicSecretCreateHanaDb
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretCreateHanaDb {
     /**
@@ -127,7 +127,7 @@ class DynamicSecretCreateHanaDb {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretCreateHanaDb.prototype['delete_protection'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDFCKey model module.
  * @module model/CreateDFCKey
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateDFCKey {
     /**
@@ -179,7 +179,7 @@ CreateDFCKey.prototype['conf-file-data'] = undefined;
 CreateDFCKey.prototype['customer-frg-id'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 CreateDFCKey.prototype['delete_protection'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateAws model module.
  * @module model/RotatedSecretUpdateAws
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RotatedSecretUpdateAws {
     /**
@@ -173,7 +173,7 @@ RotatedSecretUpdateAws.prototype['auto-rotate'] = undefined;
 RotatedSecretUpdateAws.prototype['aws-region'] = 'us-east-2';
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 RotatedSecretUpdateAws.prototype['delete_protection'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateVenafi model module.
  * @module model/DynamicSecretUpdateVenafi
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretUpdateVenafi {
     /**
@@ -164,7 +164,7 @@ DynamicSecretUpdateVenafi.prototype['allowed-domains'] = undefined;
 DynamicSecretUpdateVenafi.prototype['auto-generated-folder'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretUpdateVenafi.prototype['delete_protection'] = undefined;

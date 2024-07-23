@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadRSA model module.
  * @module model/UploadRSA
- * @version 4.2.0
+ * @version 4.2.1
  */
 class UploadRSA {
     /**
@@ -119,7 +119,7 @@ UploadRSA.prototype['cert-file-data'] = undefined;
 UploadRSA.prototype['customer-frg-id'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 UploadRSA.prototype['delete_protection'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateESM model module.
  * @module model/CreateESM
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateESM {
     /**
@@ -96,7 +96,7 @@ class CreateESM {
 CreateESM.prototype['azure-kv-name'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 CreateESM.prototype['delete_protection'] = undefined;

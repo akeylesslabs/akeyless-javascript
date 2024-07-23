@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RenewCertificate model module.
  * @module model/RenewCertificate
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RenewCertificate {
     /**
@@ -47,6 +47,9 @@ class RenewCertificate {
         if (data) {
             obj = obj || new RenewCertificate();
 
+            if (data.hasOwnProperty('cert-issuer-name')) {
+                obj['cert-issuer-name'] = ApiClient.convertToType(data['cert-issuer-name'], 'String');
+            }
             if (data.hasOwnProperty('generate-key')) {
                 obj['generate-key'] = ApiClient.convertToType(data['generate-key'], 'Boolean');
             }
@@ -71,6 +74,12 @@ class RenewCertificate {
 
 
 }
+
+/**
+ * The name of the PKI certificate issuer
+ * @member {String} cert-issuer-name
+ */
+RenewCertificate.prototype['cert-issuer-name'] = undefined;
 
 /**
  * Generate a new key as part of the certificate renewal

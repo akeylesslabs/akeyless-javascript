@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerPing model module.
  * @module model/GatewayUpdateProducerPing
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateProducerPing {
     /**
@@ -136,7 +136,7 @@ class GatewayUpdateProducerPing {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerPing.prototype['delete_protection'] = undefined;

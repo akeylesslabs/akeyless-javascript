@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateCertificateValue model module.
  * @module model/UpdateCertificateValue
- * @version 4.2.0
+ * @version 4.2.1
  */
 class UpdateCertificateValue {
     /**
@@ -114,7 +114,7 @@ UpdateCertificateValue.prototype['add-tag'] = undefined;
 UpdateCertificateValue.prototype['certificate-data'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 UpdateCertificateValue.prototype['delete_protection'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateSnowflake model module.
  * @module model/DynamicSecretUpdateSnowflake
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretUpdateSnowflake {
     /**
@@ -139,7 +139,7 @@ DynamicSecretUpdateSnowflake.prototype['account-username'] = undefined;
 DynamicSecretUpdateSnowflake.prototype['db-name'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretUpdateSnowflake.prototype['delete_protection'] = undefined;

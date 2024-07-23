@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **allowedUrlsPerInstance** | **{String: [String]}** |  | [optional] 
 **clusterName** | **String** |  | [optional] 
 **displayName** | **String** |  | [optional] 
+**hasGatewayIdentity** | **Boolean** |  | [optional] 
 **lastReport** | **Date** |  | [optional] 
 
 

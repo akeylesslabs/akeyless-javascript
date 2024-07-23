@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGitlab model module.
  * @module model/DynamicSecretUpdateGitlab
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretUpdateGitlab {
     /**
@@ -116,7 +116,7 @@ class DynamicSecretUpdateGitlab {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretUpdateGitlab.prototype['delete_protection'] = undefined;

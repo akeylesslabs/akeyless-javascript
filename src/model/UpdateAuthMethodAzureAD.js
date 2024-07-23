@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAzureAD model module.
  * @module model/UpdateAuthMethodAzureAD
- * @version 4.2.0
+ * @version 4.2.1
  */
 class UpdateAuthMethodAzureAD {
     /**
@@ -90,6 +90,9 @@ class UpdateAuthMethodAzureAD {
             }
             if (data.hasOwnProperty('bound-tenant-id')) {
                 obj['bound-tenant-id'] = ApiClient.convertToType(data['bound-tenant-id'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -213,6 +216,12 @@ UpdateAuthMethodAzureAD.prototype['bound-sub-id'] = undefined;
  * @member {String} bound-tenant-id
  */
 UpdateAuthMethodAzureAD.prototype['bound-tenant-id'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+UpdateAuthMethodAzureAD.prototype['delete_protection'] = undefined;
 
 /**
  * Auth Method description

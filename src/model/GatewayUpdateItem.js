@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateItem model module.
  * @module model/GatewayUpdateItem
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateItem {
     /**
@@ -183,7 +183,7 @@ GatewayUpdateItem.prototype['auto-rotate'] = undefined;
 GatewayUpdateItem.prototype['custom-payload'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateItem.prototype['delete_protection'] = undefined;

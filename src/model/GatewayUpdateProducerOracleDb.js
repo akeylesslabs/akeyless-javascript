@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerOracleDb model module.
  * @module model/GatewayUpdateProducerOracleDb
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateProducerOracleDb {
     /**
@@ -142,7 +142,7 @@ GatewayUpdateProducerOracleDb.prototype['db-server-certificates'] = undefined;
 GatewayUpdateProducerOracleDb.prototype['db-server-name'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerOracleDb.prototype['delete_protection'] = undefined;

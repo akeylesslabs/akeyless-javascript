@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateOauth2 model module.
  * @module model/AuthMethodUpdateOauth2
- * @version 4.2.0
+ * @version 4.2.1
  */
 class AuthMethodUpdateOauth2 {
     /**
@@ -74,6 +74,9 @@ class AuthMethodUpdateOauth2 {
             }
             if (data.hasOwnProperty('cert-file-data')) {
                 obj['cert-file-data'] = ApiClient.convertToType(data['cert-file-data'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -172,6 +175,12 @@ AuthMethodUpdateOauth2.prototype['cert'] = undefined;
  * @member {String} cert-file-data
  */
 AuthMethodUpdateOauth2.prototype['cert-file-data'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+AuthMethodUpdateOauth2.prototype['delete_protection'] = undefined;
 
 /**
  * Auth Method description

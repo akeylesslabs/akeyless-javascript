@@ -19,7 +19,7 @@ import WebHookNotiForwarderPublicDetails from './WebHookNotiForwarderPublicDetai
 /**
  * The NotiForwarder model module.
  * @module model/NotiForwarder
- * @version 4.2.0
+ * @version 4.2.1
  */
 class NotiForwarder {
     /**
@@ -73,6 +73,9 @@ class NotiForwarder {
             }
             if (data.hasOwnProperty('gateway_cluster_id')) {
                 obj['gateway_cluster_id'] = ApiClient.convertToType(data['gateway_cluster_id'], 'Number');
+            }
+            if (data.hasOwnProperty('include_error')) {
+                obj['include_error'] = ApiClient.convertToType(data['include_error'], 'Boolean');
             }
             if (data.hasOwnProperty('is_enabled')) {
                 obj['is_enabled'] = ApiClient.convertToType(data['is_enabled'], 'Boolean');
@@ -175,6 +178,11 @@ NotiForwarder.prototype['event_types'] = undefined;
  * @member {Number} gateway_cluster_id
  */
 NotiForwarder.prototype['gateway_cluster_id'] = undefined;
+
+/**
+ * @member {Boolean} include_error
+ */
+NotiForwarder.prototype['include_error'] = undefined;
 
 /**
  * @member {Boolean} is_enabled

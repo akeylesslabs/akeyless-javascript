@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **chefServerKey** | **String** | Server key | [optional] 
 **chefServerUrl** | **String** | Server URL | [optional] 
 **chefServerUsername** | **String** | Server username | [optional] 
-**deleteProtection** | **String** | Protection from accidental deletion of this item [true/false] | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Dynamic secret name | 
 **passwordLength** | **String** | The length of the password to be generated | [optional] 

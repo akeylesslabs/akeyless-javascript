@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerLdap model module.
  * @module model/GatewayUpdateProducerLdap
- * @version 4.2.0
+ * @version 4.2.1
  */
 class GatewayUpdateProducerLdap {
     /**
@@ -156,7 +156,7 @@ GatewayUpdateProducerLdap.prototype['bind-dn'] = undefined;
 GatewayUpdateProducerLdap.prototype['bind-dn-password'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 GatewayUpdateProducerLdap.prototype['delete_protection'] = undefined;

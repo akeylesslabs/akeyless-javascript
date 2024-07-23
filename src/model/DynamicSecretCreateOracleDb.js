@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateOracleDb model module.
  * @module model/DynamicSecretCreateOracleDb
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretCreateOracleDb {
     /**
@@ -142,7 +142,7 @@ DynamicSecretCreateOracleDb.prototype['db-server-certificates'] = undefined;
 DynamicSecretCreateOracleDb.prototype['db-server-name'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretCreateOracleDb.prototype['delete_protection'] = undefined;

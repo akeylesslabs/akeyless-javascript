@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateWindows model module.
  * @module model/RotatedSecretCreateWindows
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RotatedSecretCreateWindows {
     /**
@@ -149,7 +149,7 @@ RotatedSecretCreateWindows.prototype['authentication-credentials'] = 'use-user-c
 RotatedSecretCreateWindows.prototype['auto-rotate'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 RotatedSecretCreateWindows.prototype['delete_protection'] = undefined;

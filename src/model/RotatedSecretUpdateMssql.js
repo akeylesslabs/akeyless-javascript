@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateMssql model module.
  * @module model/RotatedSecretUpdateMssql
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RotatedSecretUpdateMssql {
     /**
@@ -154,7 +154,7 @@ RotatedSecretUpdateMssql.prototype['authentication-credentials'] = 'use-user-cre
 RotatedSecretUpdateMssql.prototype['auto-rotate'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 RotatedSecretUpdateMssql.prototype['delete_protection'] = undefined;

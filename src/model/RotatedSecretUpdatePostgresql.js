@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdatePostgresql model module.
  * @module model/RotatedSecretUpdatePostgresql
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RotatedSecretUpdatePostgresql {
     /**
@@ -154,7 +154,7 @@ RotatedSecretUpdatePostgresql.prototype['authentication-credentials'] = 'use-use
 RotatedSecretUpdatePostgresql.prototype['auto-rotate'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 RotatedSecretUpdatePostgresql.prototype['delete_protection'] = undefined;

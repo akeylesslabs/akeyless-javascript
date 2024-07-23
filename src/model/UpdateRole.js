@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 4.2.0
+ * @version 4.2.1
  */
 class UpdateRole {
     /**
@@ -54,6 +54,9 @@ class UpdateRole {
             }
             if (data.hasOwnProperty('audit-access')) {
                 obj['audit-access'] = ApiClient.convertToType(data['audit-access'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -109,6 +112,12 @@ UpdateRole.prototype['analytics-access'] = undefined;
  * @member {String} audit-access
  */
 UpdateRole.prototype['audit-access'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+UpdateRole.prototype['delete_protection'] = undefined;
 
 /**
  * Description of the object

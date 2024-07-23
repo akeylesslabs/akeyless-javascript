@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 4.2.0
+ * @version 4.2.1
  */
 class Auth {
     /**
@@ -110,6 +110,9 @@ class Auth {
             if (data.hasOwnProperty('uid_token')) {
                 obj['uid_token'] = ApiClient.convertToType(data['uid_token'], 'String');
             }
+            if (data.hasOwnProperty('use-remote-browser')) {
+                obj['use-remote-browser'] = ApiClient.convertToType(data['use-remote-browser'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -172,7 +175,7 @@ Auth.prototype['cloud-id'] = undefined;
 Auth.prototype['debug'] = undefined;
 
 /**
- * Gateway URL for the K8S/OAUTH2 authenticated (relevant only for access-type=k8s/oauth2)
+ * Gateway URL relevant only for access-type=k8s/oauth2/saml/oidc
  * @member {String} gateway-url
  */
 Auth.prototype['gateway-url'] = undefined;
@@ -245,6 +248,12 @@ Auth.prototype['oci-group-ocid'] = undefined;
  * @member {String} uid_token
  */
 Auth.prototype['uid_token'] = undefined;
+
+/**
+ * Returns a link to complete the authentication remotely (relevant only for access-type=saml/oidc)
+ * @member {Boolean} use-remote-browser
+ */
+Auth.prototype['use-remote-browser'] = undefined;
 
 
 

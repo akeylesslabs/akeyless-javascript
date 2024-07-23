@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateGcp model module.
  * @module model/DynamicSecretCreateGcp
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DynamicSecretCreateGcp {
     /**
@@ -111,7 +111,7 @@ class DynamicSecretCreateGcp {
 }
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 DynamicSecretCreateGcp.prototype['delete_protection'] = undefined;

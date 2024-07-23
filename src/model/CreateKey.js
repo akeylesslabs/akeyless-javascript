@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateKey model module.
  * @module model/CreateKey
- * @version 4.2.0
+ * @version 4.2.1
  */
 class CreateKey {
     /**
@@ -180,7 +180,7 @@ CreateKey.prototype['conf-file-data'] = undefined;
 CreateKey.prototype['customer-frg-id'] = undefined;
 
 /**
- * Protection from accidental deletion of this item [true/false]
+ * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
 CreateKey.prototype['delete_protection'] = undefined;
