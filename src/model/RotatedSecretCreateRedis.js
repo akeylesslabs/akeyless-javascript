@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateRedis model module.
  * @module model/RotatedSecretCreateRedis
- * @version 4.2.1
+ * @version 4.2.2
  */
 class RotatedSecretCreateRedis {
     /**

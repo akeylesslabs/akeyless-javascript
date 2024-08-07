@@ -80,6 +80,8 @@ import AzurePayload from './model/AzurePayload';
 import AzureTargetDetails from './model/AzureTargetDetails';
 import BastionListEntry from './model/BastionListEntry';
 import BastionsList from './model/BastionsList';
+import BatchEncryptionRequestLine from './model/BatchEncryptionRequestLine';
+import BatchEncryptionResponseLine from './model/BatchEncryptionResponseLine';
 import CFConfigPart from './model/CFConfigPart';
 import CacheConfigPart from './model/CacheConfigPart';
 import CertAccessRules from './model/CertAccessRules';
@@ -1048,7 +1050,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 4.2.1
+* @version 4.2.2
 */
 export {
     /**
@@ -1458,6 +1460,18 @@ export {
      * @property {module:model/BastionsList}
      */
     BastionsList,
+
+    /**
+     * The BatchEncryptionRequestLine model constructor.
+     * @property {module:model/BatchEncryptionRequestLine}
+     */
+    BatchEncryptionRequestLine,
+
+    /**
+     * The BatchEncryptionResponseLine model constructor.
+     * @property {module:model/BatchEncryptionResponseLine}
+     */
+    BatchEncryptionResponseLine,
 
     /**
      * The CFConfigPart model constructor.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EKSTargetDetails model module.
  * @module model/EKSTargetDetails
- * @version 4.2.1
+ * @version 4.2.2
  */
 class EKSTargetDetails {
     /**

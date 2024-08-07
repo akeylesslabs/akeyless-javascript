@@ -94,6 +94,7 @@ Method | HTTP request | Description
 [**createZeroSSLTarget**](V2Api.md#createZeroSSLTarget) | **POST** /create-zerossl-target | 
 [**createldapTarget**](V2Api.md#createldapTarget) | **POST** /create-ldap-target | 
 [**decrypt**](V2Api.md#decrypt) | **POST** /decrypt | 
+[**decryptBatch**](V2Api.md#decryptBatch) | **POST** /decrypt-batch | 
 [**decryptGPG**](V2Api.md#decryptGPG) | **POST** /decrypt-gpg | 
 [**decryptPKCS1**](V2Api.md#decryptPKCS1) | **POST** /decrypt-pkcs1 | 
 [**decryptWithClassicKey**](V2Api.md#decryptWithClassicKey) | **POST** /decrypt-with-classic-key | 
@@ -180,6 +181,7 @@ Method | HTTP request | Description
 [**dynamicSecretUpdateSnowflake**](V2Api.md#dynamicSecretUpdateSnowflake) | **POST** /dynamic-secret-update-snowflake | 
 [**dynamicSecretUpdateVenafi**](V2Api.md#dynamicSecretUpdateVenafi) | **POST** /dynamic-secret-update-venafi | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
+[**encryptBatch**](V2Api.md#encryptBatch) | **POST** /encrypt-batch | 
 [**encryptGPG**](V2Api.md#encryptGPG) | **POST** /encrypt-gpg | 
 [**encryptWithClassicKey**](V2Api.md#encryptWithClassicKey) | **POST** /encrypt-with-classic-key | 
 [**esmCreate**](V2Api.md#esmCreate) | **POST** /esm-create | 
@@ -4318,6 +4320,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## decryptBatch
+
+> DecryptOutput decryptBatch(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = [new akeyless.BatchEncryptionRequestLine()]; // [BatchEncryptionRequestLine] | 
+apiInstance.decryptBatch(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**[BatchEncryptionRequestLine]**](BatchEncryptionRequestLine.md)|  | 
+
+### Return type
+
+[**DecryptOutput**](DecryptOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## decryptGPG
 
 > DecryptGPGOutput decryptGPG(body)
@@ -7919,6 +7963,48 @@ apiInstance.encrypt(body).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Encrypt**](Encrypt.md)|  | 
+
+### Return type
+
+[**EncryptOutput**](EncryptOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## encryptBatch
+
+> EncryptOutput encryptBatch(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = [new akeyless.BatchEncryptionRequestLine()]; // [BatchEncryptionRequestLine] | 
+apiInstance.encryptBatch(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**[BatchEncryptionRequestLine]**](BatchEncryptionRequestLine.md)|  | 
 
 ### Return type
 

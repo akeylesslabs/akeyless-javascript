@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadRSA model module.
  * @module model/UploadRSA
- * @version 4.2.1
+ * @version 4.2.2
  */
 class UploadRSA {
     /**
@@ -56,6 +56,9 @@ class UploadRSA {
             }
             if (data.hasOwnProperty('cert-file-data')) {
                 obj['cert-file-data'] = ApiClient.convertToType(data['cert-file-data'], 'String');
+            }
+            if (data.hasOwnProperty('certificate-format')) {
+                obj['certificate-format'] = ApiClient.convertToType(data['certificate-format'], 'String');
             }
             if (data.hasOwnProperty('customer-frg-id')) {
                 obj['customer-frg-id'] = ApiClient.convertToType(data['customer-frg-id'], 'String');
@@ -111,6 +114,11 @@ UploadRSA.prototype['alg'] = undefined;
  * @member {String} cert-file-data
  */
 UploadRSA.prototype['cert-file-data'] = undefined;
+
+/**
+ * @member {String} certificate-format
+ */
+UploadRSA.prototype['certificate-format'] = undefined;
 
 /**
  * The customer fragment ID that will be used to split the key (if empty, the key will be created independently of a customer fragment)

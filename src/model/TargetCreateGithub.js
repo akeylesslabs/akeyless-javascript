@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateGithub model module.
  * @module model/TargetCreateGithub
- * @version 4.2.1
+ * @version 4.2.2
  */
 class TargetCreateGithub {
     /**

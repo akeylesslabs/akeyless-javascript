@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateAws model module.
  * @module model/TargetCreateAws
- * @version 4.2.1
+ * @version 4.2.2
  */
 class TargetCreateAws {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteItemOutput model module.
  * @module model/DeleteItemOutput
- * @version 4.2.1
+ * @version 4.2.2
  */
 class DeleteItemOutput {
     /**

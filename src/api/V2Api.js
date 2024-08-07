@@ -54,6 +54,7 @@ import AuthMethodUpdateSAML from '../model/AuthMethodUpdateSAML';
 import AuthMethodUpdateUniversalIdentity from '../model/AuthMethodUpdateUniversalIdentity';
 import AuthOutput from '../model/AuthOutput';
 import BastionsList from '../model/BastionsList';
+import BatchEncryptionRequestLine from '../model/BatchEncryptionRequestLine';
 import CacheConfigPart from '../model/CacheConfigPart';
 import Configure from '../model/Configure';
 import ConfigureOutput from '../model/ConfigureOutput';
@@ -824,7 +825,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 4.2.1
+* @version 4.2.2
 */
 export default class V2Api {
 
@@ -4712,6 +4713,49 @@ export default class V2Api {
 
 
     /**
+     * @param {Array.<module:model/BatchEncryptionRequestLine>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DecryptOutput} and HTTP response
+     */
+    decryptBatchWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling decryptBatch");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DecryptOutput;
+      return this.apiClient.callApi(
+        '/decrypt-batch', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Array.<module:model/BatchEncryptionRequestLine>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DecryptOutput}
+     */
+    decryptBatch(body) {
+      return this.decryptBatchWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/DecryptGPG} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DecryptGPGOutput} and HTTP response
      */
@@ -8401,6 +8445,49 @@ export default class V2Api {
      */
     encrypt(body) {
       return this.encryptWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Array.<module:model/BatchEncryptionRequestLine>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EncryptOutput} and HTTP response
+     */
+    encryptBatchWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling encryptBatch");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EncryptOutput;
+      return this.apiClient.callApi(
+        '/encrypt-batch', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Array.<module:model/BatchEncryptionRequestLine>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EncryptOutput}
+     */
+    encryptBatch(body) {
+      return this.encryptBatchWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

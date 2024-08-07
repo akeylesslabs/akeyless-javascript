@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 4.2.1
+ * @version 4.2.2
  */
 class CreateClassicKey {
     /**
@@ -66,6 +66,9 @@ class CreateClassicKey {
             }
             if (data.hasOwnProperty('certificate-digest-algo')) {
                 obj['certificate-digest-algo'] = ApiClient.convertToType(data['certificate-digest-algo'], 'String');
+            }
+            if (data.hasOwnProperty('certificate-format')) {
+                obj['certificate-format'] = ApiClient.convertToType(data['certificate-format'], 'String');
             }
             if (data.hasOwnProperty('certificate-locality')) {
                 obj['certificate-locality'] = ApiClient.convertToType(data['certificate-locality'], 'String');
@@ -154,6 +157,11 @@ CreateClassicKey.prototype['certificate-country'] = undefined;
  * @member {String} certificate-digest-algo
  */
 CreateClassicKey.prototype['certificate-digest-algo'] = undefined;
+
+/**
+ * @member {String} certificate-format
+ */
+CreateClassicKey.prototype['certificate-format'] = undefined;
 
 /**
  * Locality for the generated certificate. Relevant only for generate-self-signed-certificate.

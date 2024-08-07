@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WindowsServiceAttributes model module.
  * @module model/WindowsServiceAttributes
- * @version 4.2.1
+ * @version 4.2.2
  */
 class WindowsServiceAttributes {
     /**

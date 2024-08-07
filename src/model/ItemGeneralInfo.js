@@ -28,7 +28,7 @@ import TokenizerInfo from './TokenizerInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 4.2.1
+ * @version 4.2.2
  */
 class ItemGeneralInfo {
     /**
@@ -64,6 +64,9 @@ class ItemGeneralInfo {
             }
             if (data.hasOwnProperty('certificate_chain_info')) {
                 obj['certificate_chain_info'] = CertificateChainInfo.constructFromObject(data['certificate_chain_info']);
+            }
+            if (data.hasOwnProperty('certificate_format')) {
+                obj['certificate_format'] = ApiClient.convertToType(data['certificate_format'], 'String');
             }
             if (data.hasOwnProperty('certificates_template_info')) {
                 obj['certificates_template_info'] = CertificateTemplateInfo.constructFromObject(data['certificates_template_info']);
@@ -117,6 +120,11 @@ ItemGeneralInfo.prototype['cert_issue_details'] = undefined;
  * @member {module:model/CertificateChainInfo} certificate_chain_info
  */
 ItemGeneralInfo.prototype['certificate_chain_info'] = undefined;
+
+/**
+ * @member {String} certificate_format
+ */
+ItemGeneralInfo.prototype['certificate_format'] = undefined;
 
 /**
  * @member {module:model/CertificateTemplateInfo} certificates_template_info

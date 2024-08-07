@@ -17,7 +17,7 @@ import CertificateVersionInfo from './CertificateVersionInfo';
 /**
  * The TargetItemVersion model module.
  * @module model/TargetItemVersion
- * @version 4.2.1
+ * @version 4.2.2
  */
 class TargetItemVersion {
     /**

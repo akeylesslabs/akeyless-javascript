@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGroup model module.
  * @module model/CreateGroup
- * @version 4.2.1
+ * @version 4.2.2
  */
 class CreateGroup {
     /**

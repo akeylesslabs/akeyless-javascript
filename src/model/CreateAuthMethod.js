@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethod model module.
  * @module model/CreateAuthMethod
- * @version 4.2.1
+ * @version 4.2.2
  */
 class CreateAuthMethod {
     /**

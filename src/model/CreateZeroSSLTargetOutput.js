@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateZeroSSLTargetOutput model module.
  * @module model/CreateZeroSSLTargetOutput
- * @version 4.2.1
+ * @version 4.2.2
  */
 class CreateZeroSSLTargetOutput {
     /**

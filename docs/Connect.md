@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**bastionGatewayUrl** | **String** | todo - enable when gw-sra unification is done The Gateway URL (configuration management) address, e.g. http://localhost:8000 | [optional] 
 **helper** | [**Object**](.md) |  | [optional] 
 **rcFileOverride** | **String** | used to override .akeyless-connect.rc in tests | [optional] 
 **bastionCtrlPath** | **String** | The Bastion API path | [optional] 

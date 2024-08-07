@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDFCKey model module.
  * @module model/CreateDFCKey
- * @version 4.2.1
+ * @version 4.2.2
  */
 class CreateDFCKey {
     /**
@@ -62,6 +62,9 @@ class CreateDFCKey {
             }
             if (data.hasOwnProperty('certificate-digest-algo')) {
                 obj['certificate-digest-algo'] = ApiClient.convertToType(data['certificate-digest-algo'], 'String');
+            }
+            if (data.hasOwnProperty('certificate-format')) {
+                obj['certificate-format'] = ApiClient.convertToType(data['certificate-format'], 'String');
             }
             if (data.hasOwnProperty('certificate-locality')) {
                 obj['certificate-locality'] = ApiClient.convertToType(data['certificate-locality'], 'String');
@@ -141,6 +144,11 @@ CreateDFCKey.prototype['certificate-country'] = undefined;
  * @member {String} certificate-digest-algo
  */
 CreateDFCKey.prototype['certificate-digest-algo'] = undefined;
+
+/**
+ * @member {String} certificate-format
+ */
+CreateDFCKey.prototype['certificate-format'] = undefined;
 
 /**
  * Locality for the generated certificate. Relevant only for generate-self-signed-certificate.

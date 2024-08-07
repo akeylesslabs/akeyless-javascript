@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscUpdateSecretOutput model module.
  * @module model/UscUpdateSecretOutput
- * @version 4.2.1
+ * @version 4.2.2
  */
 class UscUpdateSecretOutput {
     /**

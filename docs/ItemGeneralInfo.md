@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **certIssueDetails** | [**CertificateIssueInfo**](CertificateIssueInfo.md) |  | [optional] 
 **certificateChainInfo** | [**CertificateChainInfo**](CertificateChainInfo.md) |  | [optional] 
+**certificateFormat** | **String** |  | [optional] 
 **certificatesTemplateInfo** | [**CertificateTemplateInfo**](CertificateTemplateInfo.md) |  | [optional] 
 **classicKeyDetails** | [**ClassicKeyDetailsInfo**](ClassicKeyDetailsInfo.md) |  | [optional] 
 **clusterGwUrl** | **String** |  | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Connect model module.
  * @module model/Connect
- * @version 4.2.1
+ * @version 4.2.2
  */
 class Connect {
     /**
@@ -48,6 +48,9 @@ class Connect {
         if (data) {
             obj = obj || new Connect();
 
+            if (data.hasOwnProperty('BastionGatewayUrl')) {
+                obj['BastionGatewayUrl'] = ApiClient.convertToType(data['BastionGatewayUrl'], 'String');
+            }
             if (data.hasOwnProperty('Helper')) {
                 obj['Helper'] = ApiClient.convertToType(data['Helper'], Object);
             }
@@ -111,6 +114,12 @@ class Connect {
 
 
 }
+
+/**
+ * todo - enable when gw-sra unification is done The Gateway URL (configuration management) address, e.g. http://localhost:8000
+ * @member {String} BastionGatewayUrl
+ */
+Connect.prototype['BastionGatewayUrl'] = undefined;
 
 /**
  * @member {Object} Helper

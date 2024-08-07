@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateGcp model module.
  * @module model/DynamicSecretCreateGcp
- * @version 4.2.1
+ * @version 4.2.2
  */
 class DynamicSecretCreateGcp {
     /**

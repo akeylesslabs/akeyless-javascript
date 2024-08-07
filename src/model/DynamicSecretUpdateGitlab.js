@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGitlab model module.
  * @module model/DynamicSecretUpdateGitlab
- * @version 4.2.1
+ * @version 4.2.2
  */
 class DynamicSecretUpdateGitlab {
     /**

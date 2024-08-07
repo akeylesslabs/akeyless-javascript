@@ -17,7 +17,7 @@ import GwClusterIdentity from './GwClusterIdentity';
 /**
  * The GatewaysListResponse model module.
  * @module model/GatewaysListResponse
- * @version 4.2.1
+ * @version 4.2.2
  */
 class GatewaysListResponse {
     /**

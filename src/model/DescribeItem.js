@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeItem model module.
  * @module model/DescribeItem
- * @version 4.2.1
+ * @version 4.2.2
  */
 class DescribeItem {
     /**
@@ -54,6 +54,9 @@ class DescribeItem {
             }
             if (data.hasOwnProperty('bastion-details')) {
                 obj['bastion-details'] = ApiClient.convertToType(data['bastion-details'], 'Boolean');
+            }
+            if (data.hasOwnProperty('der-certificate-format')) {
+                obj['der-certificate-format'] = ApiClient.convertToType(data['der-certificate-format'], 'Boolean');
             }
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
@@ -102,6 +105,13 @@ DescribeItem.prototype['accessibility'] = 'regular';
  * @default false
  */
 DescribeItem.prototype['bastion-details'] = false;
+
+/**
+ * The certificate will be displayed in DER format
+ * @member {Boolean} der-certificate-format
+ * @default false
+ */
+DescribeItem.prototype['der-certificate-format'] = false;
 
 /**
  * The display id of the item

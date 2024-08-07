@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ItemSraStatus model module.
  * @module model/ItemSraStatus
- * @version 4.2.1
+ * @version 4.2.2
  */
 class ItemSraStatus {
     /**

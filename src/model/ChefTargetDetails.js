@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ChefTargetDetails model module.
  * @module model/ChefTargetDetails
- * @version 4.2.1
+ * @version 4.2.2
  */
 class ChefTargetDetails {
     /**

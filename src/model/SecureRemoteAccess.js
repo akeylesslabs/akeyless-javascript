@@ -18,7 +18,7 @@ import TargetNameWithHosts from './TargetNameWithHosts';
 /**
  * The SecureRemoteAccess model module.
  * @module model/SecureRemoteAccess
- * @version 4.2.1
+ * @version 4.2.2
  */
 class SecureRemoteAccess {
     /**

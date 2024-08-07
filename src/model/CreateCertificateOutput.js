@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateCertificateOutput model module.
  * @module model/CreateCertificateOutput
- * @version 4.2.1
+ * @version 4.2.2
  */
 class CreateCertificateOutput {
     /**

@@ -17,7 +17,7 @@ import CfInfo from './CfInfo';
 /**
  * The GwClusterIdentity model module.
  * @module model/GwClusterIdentity
- * @version 4.2.1
+ * @version 4.2.2
  */
 class GwClusterIdentity {
     /**

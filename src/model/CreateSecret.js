@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 4.2.1
+ * @version 4.2.2
  */
 class CreateSecret {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayBasicInfo model module.
  * @module model/GatewayBasicInfo
- * @version 4.2.1
+ * @version 4.2.2
  */
 class GatewayBasicInfo {
     /**

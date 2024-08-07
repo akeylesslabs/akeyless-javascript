@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AllowedAccessOld model module.
  * @module model/AllowedAccessOld
- * @version 4.2.1
+ * @version 4.2.2
  */
 class AllowedAccessOld {
     /**
