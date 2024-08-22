@@ -18,7 +18,7 @@ import SecureRemoteAccess from './SecureRemoteAccess';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 4.2.2
+ * @version 4.2.3
  */
 class DSProducerDetails {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateDockerhubTarget model module.
  * @module model/UpdateDockerhubTarget
- * @version 4.2.2
+ * @version 4.2.3
  */
 class UpdateDockerhubTarget {
     /**

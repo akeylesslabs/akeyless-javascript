@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AWSIAMAccessRules model module.
  * @module model/AWSIAMAccessRules
- * @version 4.2.2
+ * @version 4.2.3
  */
 class AWSIAMAccessRules {
     /**
@@ -64,6 +64,9 @@ class AWSIAMAccessRules {
             }
             if (data.hasOwnProperty('sts_endpoint')) {
                 obj['sts_endpoint'] = ApiClient.convertToType(data['sts_endpoint'], 'String');
+            }
+            if (data.hasOwnProperty('unique_identifier')) {
+                obj['unique_identifier'] = ApiClient.convertToType(data['unique_identifier'], 'String');
             }
             if (data.hasOwnProperty('user_id')) {
                 obj['user_id'] = ApiClient.convertToType(data['user_id'], ['String']);
@@ -113,6 +116,12 @@ AWSIAMAccessRules.prototype['role_name'] = undefined;
  * @member {String} sts_endpoint
  */
 AWSIAMAccessRules.prototype['sts_endpoint'] = undefined;
+
+/**
+ * A unique identifier to distinguish different users
+ * @member {String} unique_identifier
+ */
+AWSIAMAccessRules.prototype['unique_identifier'] = undefined;
 
 /**
  * The list of user ids that the login is restricted to.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GKETargetDetails model module.
  * @module model/GKETargetDetails
- * @version 4.2.2
+ * @version 4.2.3
  */
 class GKETargetDetails {
     /**

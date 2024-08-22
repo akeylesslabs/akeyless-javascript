@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventForwarderCreateWebhook model module.
  * @module model/EventForwarderCreateWebhook
- * @version 4.2.2
+ * @version 4.2.3
  */
 class EventForwarderCreateWebhook {
     /**

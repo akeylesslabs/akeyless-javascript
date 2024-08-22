@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateGoogleWorkspace model module.
  * @module model/DynamicSecretCreateGoogleWorkspace
- * @version 4.2.2
+ * @version 4.2.3
  */
 class DynamicSecretCreateGoogleWorkspace {
     /**
@@ -89,6 +89,21 @@ class DynamicSecretCreateGoogleWorkspace {
             }
             if (data.hasOwnProperty('role-scope')) {
                 obj['role-scope'] = ApiClient.convertToType(data['role-scope'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-url')) {
+                obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web')) {
+                obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-proxy')) {
+                obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -181,6 +196,39 @@ DynamicSecretCreateGoogleWorkspace.prototype['role-name'] = undefined;
  * @member {String} role-scope
  */
 DynamicSecretCreateGoogleWorkspace.prototype['role-scope'] = undefined;
+
+/**
+ * Enable/Disable secure remote access [true/false]
+ * @member {String} secure-access-enable
+ */
+DynamicSecretCreateGoogleWorkspace.prototype['secure-access-enable'] = undefined;
+
+/**
+ * Destination URL to inject secrets
+ * @member {String} secure-access-url
+ */
+DynamicSecretCreateGoogleWorkspace.prototype['secure-access-url'] = undefined;
+
+/**
+ * Enable Web Secure Remote Access
+ * @member {Boolean} secure-access-web
+ * @default true
+ */
+DynamicSecretCreateGoogleWorkspace.prototype['secure-access-web'] = true;
+
+/**
+ * Secure browser via Akeyless Web Access Bastion
+ * @member {Boolean} secure-access-web-browsing
+ * @default false
+ */
+DynamicSecretCreateGoogleWorkspace.prototype['secure-access-web-browsing'] = false;
+
+/**
+ * Web-Proxy via Akeyless Web Access Bastion
+ * @member {Boolean} secure-access-web-proxy
+ * @default false
+ */
+DynamicSecretCreateGoogleWorkspace.prototype['secure-access-web-proxy'] = false;
 
 /**
  * Add tags attached to this object

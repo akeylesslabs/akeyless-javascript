@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **customField** | **{String: String}** | For Password Management use, additional fields | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
-**format** | **String** | Secret format [text/json] (relevant only for type &#39;generic&#39;) | [optional] [default to &#39;text&#39;]
+**format** | **String** | Secret format [text/json/key-value] (relevant only for type &#39;generic&#39;) | [optional] [default to &#39;text&#39;]
 **injectUrl** | **[String]** | For Password Management use, reflect the website context | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **maxVersions** | **String** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 

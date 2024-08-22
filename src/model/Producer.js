@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Producer model module.
  * @module model/Producer
- * @version 4.2.2
+ * @version 4.2.3
  */
 class Producer {
     /**

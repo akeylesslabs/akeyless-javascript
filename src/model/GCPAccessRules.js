@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GCPAccessRules model module.
  * @module model/GCPAccessRules
- * @version 4.2.2
+ * @version 4.2.3
  */
 class GCPAccessRules {
     /**
@@ -70,6 +70,9 @@ class GCPAccessRules {
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
+            if (data.hasOwnProperty('unique_identifier')) {
+                obj['unique_identifier'] = ApiClient.convertToType(data['unique_identifier'], 'String');
             }
         }
         return obj;
@@ -125,6 +128,12 @@ GCPAccessRules.prototype['service_account'] = undefined;
  * @member {String} type
  */
 GCPAccessRules.prototype['type'] = undefined;
+
+/**
+ * A unique identifier to distinguish different users
+ * @member {String} unique_identifier
+ */
+GCPAccessRules.prototype['unique_identifier'] = undefined;
 
 
 

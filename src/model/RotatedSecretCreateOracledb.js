@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateOracledb model module.
  * @module model/RotatedSecretCreateOracledb
- * @version 4.2.2
+ * @version 4.2.3
  */
 class RotatedSecretCreateOracledb {
     /**

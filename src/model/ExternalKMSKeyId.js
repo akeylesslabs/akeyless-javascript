@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExternalKMSKeyId model module.
  * @module model/ExternalKMSKeyId
- * @version 4.2.2
+ * @version 4.2.3
  */
 class ExternalKMSKeyId {
     /**

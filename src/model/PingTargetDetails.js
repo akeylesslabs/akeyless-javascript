@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PingTargetDetails model module.
  * @module model/PingTargetDetails
- * @version 4.2.2
+ * @version 4.2.3
  */
 class PingTargetDetails {
     /**

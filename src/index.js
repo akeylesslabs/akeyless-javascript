@@ -27,6 +27,8 @@ import ActiveDirectoryPayload from './model/ActiveDirectoryPayload';
 import AddGatewayAllowedAccessId from './model/AddGatewayAllowedAccessId';
 import AdminsConfigPart from './model/AdminsConfigPart';
 import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
+import AliasDetails from './model/AliasDetails';
+import AliasDetailsOutput from './model/AliasDetailsOutput';
 import AllAnalyticsData from './model/AllAnalyticsData';
 import AllowedAccess from './model/AllowedAccess';
 import AllowedAccessOld from './model/AllowedAccessOld';
@@ -82,6 +84,8 @@ import BastionListEntry from './model/BastionListEntry';
 import BastionsList from './model/BastionsList';
 import BatchEncryptionRequestLine from './model/BatchEncryptionRequestLine';
 import BatchEncryptionResponseLine from './model/BatchEncryptionResponseLine';
+import BatchTokenizationRequestLine from './model/BatchTokenizationRequestLine';
+import BatchTokenizationResponseLine from './model/BatchTokenizationResponseLine';
 import CFConfigPart from './model/CFConfigPart';
 import CacheConfigPart from './model/CacheConfigPart';
 import CertAccessRules from './model/CertAccessRules';
@@ -782,6 +786,7 @@ import SSHCertificateIssueDetails from './model/SSHCertificateIssueDetails';
 import SSHTargetDetails from './model/SSHTargetDetails';
 import SalesforceTargetDetails from './model/SalesforceTargetDetails';
 import SecretInfo from './model/SecretInfo';
+import SectigoTargetDetails from './model/SectigoTargetDetails';
 import SecureRemoteAccess from './model/SecureRemoteAccess';
 import ServerInventoryMigration from './model/ServerInventoryMigration';
 import ServerInventoryPayload from './model/ServerInventoryPayload';
@@ -835,6 +840,7 @@ import TargetCreateOutput from './model/TargetCreateOutput';
 import TargetCreatePing from './model/TargetCreatePing';
 import TargetCreateRabbitMq from './model/TargetCreateRabbitMq';
 import TargetCreateSalesforce from './model/TargetCreateSalesforce';
+import TargetCreateSectigo from './model/TargetCreateSectigo';
 import TargetCreateSsh from './model/TargetCreateSsh';
 import TargetCreateWeb from './model/TargetCreateWeb';
 import TargetCreateWindows from './model/TargetCreateWindows';
@@ -868,6 +874,7 @@ import TargetUpdateOutput from './model/TargetUpdateOutput';
 import TargetUpdatePing from './model/TargetUpdatePing';
 import TargetUpdateRabbitMq from './model/TargetUpdateRabbitMq';
 import TargetUpdateSalesforce from './model/TargetUpdateSalesforce';
+import TargetUpdateSectigo from './model/TargetUpdateSectigo';
 import TargetUpdateSsh from './model/TargetUpdateSsh';
 import TargetUpdateWeb from './model/TargetUpdateWeb';
 import TargetUpdateWindows from './model/TargetUpdateWindows';
@@ -1050,7 +1057,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 4.2.2
+* @version 4.2.3
 */
 export {
     /**
@@ -1142,6 +1149,18 @@ export {
      * @property {module:model/AkeylessGatewayConfig}
      */
     AkeylessGatewayConfig,
+
+    /**
+     * The AliasDetails model constructor.
+     * @property {module:model/AliasDetails}
+     */
+    AliasDetails,
+
+    /**
+     * The AliasDetailsOutput model constructor.
+     * @property {module:model/AliasDetailsOutput}
+     */
+    AliasDetailsOutput,
 
     /**
      * The AllAnalyticsData model constructor.
@@ -1472,6 +1491,18 @@ export {
      * @property {module:model/BatchEncryptionResponseLine}
      */
     BatchEncryptionResponseLine,
+
+    /**
+     * The BatchTokenizationRequestLine model constructor.
+     * @property {module:model/BatchTokenizationRequestLine}
+     */
+    BatchTokenizationRequestLine,
+
+    /**
+     * The BatchTokenizationResponseLine model constructor.
+     * @property {module:model/BatchTokenizationResponseLine}
+     */
+    BatchTokenizationResponseLine,
 
     /**
      * The CFConfigPart model constructor.
@@ -5674,6 +5705,12 @@ export {
     SecretInfo,
 
     /**
+     * The SectigoTargetDetails model constructor.
+     * @property {module:model/SectigoTargetDetails}
+     */
+    SectigoTargetDetails,
+
+    /**
      * The SecureRemoteAccess model constructor.
      * @property {module:model/SecureRemoteAccess}
      */
@@ -5992,6 +6029,12 @@ export {
     TargetCreateSalesforce,
 
     /**
+     * The TargetCreateSectigo model constructor.
+     * @property {module:model/TargetCreateSectigo}
+     */
+    TargetCreateSectigo,
+
+    /**
      * The TargetCreateSsh model constructor.
      * @property {module:model/TargetCreateSsh}
      */
@@ -6188,6 +6231,12 @@ export {
      * @property {module:model/TargetUpdateSalesforce}
      */
     TargetUpdateSalesforce,
+
+    /**
+     * The TargetUpdateSectigo model constructor.
+     * @property {module:model/TargetUpdateSectigo}
+     */
+    TargetUpdateSectigo,
 
     /**
      * The TargetUpdateSsh model constructor.

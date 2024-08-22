@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateAzureAD model module.
  * @module model/AuthMethodCreateAzureAD
- * @version 4.2.2
+ * @version 4.2.3
  */
 class AuthMethodCreateAzureAD {
     /**
@@ -126,6 +126,9 @@ class AuthMethodCreateAzureAD {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('unique-identifier')) {
+                obj['unique-identifier'] = ApiClient.convertToType(data['unique-identifier'], 'String');
             }
         }
         return obj;
@@ -289,6 +292,12 @@ AuthMethodCreateAzureAD.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 AuthMethodCreateAzureAD.prototype['uid-token'] = undefined;
+
+/**
+ * A unique identifier (ID) value which is a \"sub claim\" name that contains details uniquely identifying that resource. This \"sub claim\" is used to distinguish between different identities.
+ * @member {String} unique-identifier
+ */
+AuthMethodCreateAzureAD.prototype['unique-identifier'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAzure model module.
  * @module model/GatewayCreateProducerAzure
- * @version 4.2.2
+ * @version 4.2.3
  */
 class GatewayCreateProducerAzure {
     /**
@@ -85,6 +85,9 @@ class GatewayCreateProducerAzure {
             }
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-url')) {
+                obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
@@ -206,6 +209,12 @@ GatewayCreateProducerAzure.prototype['producer-encryption-key-name'] = undefined
  * @member {String} secure-access-enable
  */
 GatewayCreateProducerAzure.prototype['secure-access-enable'] = undefined;
+
+/**
+ * Destination URL to inject secrets
+ * @member {String} secure-access-url
+ */
+GatewayCreateProducerAzure.prototype['secure-access-url'] = undefined;
 
 /**
  * Enable Web Secure Remote Access

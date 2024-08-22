@@ -4,11 +4,12 @@ All URIs are relative to *https://api.akeyless.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**aliasDetails**](V2Api.md#aliasDetails) | **GET** /alias-details | 
 [**assocRoleAuthMethod**](V2Api.md#assocRoleAuthMethod) | **POST** /assoc-role-am | 
 [**assocTargetItem**](V2Api.md#assocTargetItem) | **POST** /assoc-target-item | 
 [**auth**](V2Api.md#auth) | **POST** /auth | 
 [**authMethodCreateApiKey**](V2Api.md#authMethodCreateApiKey) | **POST** /auth-method-create-api-key | 
-[**authMethodCreateAwsIam**](V2Api.md#authMethodCreateAwsIam) | **POST** /auth-method-create-aws | 
+[**authMethodCreateAwsIam**](V2Api.md#authMethodCreateAwsIam) | **POST** /auth-method-create-aws-iam | 
 [**authMethodCreateAzureAD**](V2Api.md#authMethodCreateAzureAD) | **POST** /auth-method-create-azure-ad | 
 [**authMethodCreateCert**](V2Api.md#authMethodCreateCert) | **POST** /auth-method-create-cert | 
 [**authMethodCreateEmail**](V2Api.md#authMethodCreateEmail) | **POST** /auth-method-create-email | 
@@ -119,6 +120,7 @@ Method | HTTP request | Description
 [**describePermissions**](V2Api.md#describePermissions) | **POST** /describe-permissions | 
 [**describeSubClaims**](V2Api.md#describeSubClaims) | **POST** /describe-sub-claims | 
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
+[**detokenizeBatch**](V2Api.md#detokenizeBatch) | **POST** /detokenize-batch | 
 [**dynamicSecretCreateArtifactory**](V2Api.md#dynamicSecretCreateArtifactory) | **POST** /dynamic-secret-create-artifactory | 
 [**dynamicSecretCreateAws**](V2Api.md#dynamicSecretCreateAws) | **POST** /dynamic-secret-create-aws | 
 [**dynamicSecretCreateAzure**](V2Api.md#dynamicSecretCreateAzure) | **POST** /dynamic-secret-create-azure | 
@@ -426,6 +428,7 @@ Method | HTTP request | Description
 [**targetCreatePing**](V2Api.md#targetCreatePing) | **POST** /target-create-ping | 
 [**targetCreateRabbitMq**](V2Api.md#targetCreateRabbitMq) | **POST** /target-create-rabbitmq | 
 [**targetCreateSalesforce**](V2Api.md#targetCreateSalesforce) | **POST** /target-create-salesforce | 
+[**targetCreateSectigo**](V2Api.md#targetCreateSectigo) | **POST** /target-create-sectigo | 
 [**targetCreateSsh**](V2Api.md#targetCreateSsh) | **POST** /target-create-ssh | 
 [**targetCreateWeb**](V2Api.md#targetCreateWeb) | **POST** /target-create-web | 
 [**targetCreateWindows**](V2Api.md#targetCreateWindows) | **POST** /target-create-windows | 
@@ -454,11 +457,13 @@ Method | HTTP request | Description
 [**targetUpdatePing**](V2Api.md#targetUpdatePing) | **POST** /target-update-ping | 
 [**targetUpdateRabbitMq**](V2Api.md#targetUpdateRabbitMq) | **POST** /target-update-rabbitmq | 
 [**targetUpdateSalesforce**](V2Api.md#targetUpdateSalesforce) | **POST** /target-update-salesforce | 
+[**targetUpdateSectigo**](V2Api.md#targetUpdateSectigo) | **POST** /target-update-sectigo | 
 [**targetUpdateSsh**](V2Api.md#targetUpdateSsh) | **POST** /target-update-ssh | 
 [**targetUpdateWeb**](V2Api.md#targetUpdateWeb) | **POST** /target-update-web | 
 [**targetUpdateWindows**](V2Api.md#targetUpdateWindows) | **POST** /target-update-windows | 
 [**targetUpdateZeroSSL**](V2Api.md#targetUpdateZeroSSL) | **POST** /target-update-zerossl | 
 [**tokenize**](V2Api.md#tokenize) | **POST** /tokenize | 
+[**tokenizeBatch**](V2Api.md#tokenizeBatch) | **POST** /tokenize-batch | 
 [**uidCreateChildToken**](V2Api.md#uidCreateChildToken) | **POST** /uid-create-child-token | 
 [**uidGenerateToken**](V2Api.md#uidGenerateToken) | **POST** /uid-generate-token | 
 [**uidListChildren**](V2Api.md#uidListChildren) | **POST** /uid-list-children | 
@@ -538,6 +543,48 @@ Method | HTTP request | Description
 [**verifyPKICertWithClassicKey**](V2Api.md#verifyPKICertWithClassicKey) | **POST** /verify-pki-cert-with-classic-key | 
 [**verifyRsaSsaPss**](V2Api.md#verifyRsaSsaPss) | **POST** /verify-rsassa-pss | 
 
+
+
+## aliasDetails
+
+> Object aliasDetails(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.AliasDetails(); // AliasDetails | 
+apiInstance.aliasDetails(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AliasDetails**](AliasDetails.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## assocRoleAuthMethod
@@ -5355,6 +5402,48 @@ apiInstance.detokenize(body).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Detokenize**](Detokenize.md)|  | 
+
+### Return type
+
+[**DetokenizeOutput**](DetokenizeOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## detokenizeBatch
+
+> DetokenizeOutput detokenizeBatch(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = [new akeyless.BatchTokenizationRequestLine()]; // [BatchTokenizationRequestLine] | 
+apiInstance.detokenizeBatch(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**[BatchTokenizationRequestLine]**](BatchTokenizationRequestLine.md)|  | 
 
 ### Return type
 
@@ -18294,6 +18383,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetCreateSectigo
+
+> TargetCreateOutput targetCreateSectigo(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.TargetCreateSectigo(); // TargetCreateSectigo | 
+apiInstance.targetCreateSectigo(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TargetCreateSectigo**](TargetCreateSectigo.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetCreateSsh
 
 > TargetCreateOutput targetCreateSsh(body)
@@ -19470,6 +19601,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetUpdateSectigo
+
+> TargetUpdateOutput targetUpdateSectigo(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.TargetUpdateSectigo(); // TargetUpdateSectigo | 
+apiInstance.targetUpdateSectigo(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TargetUpdateSectigo**](TargetUpdateSectigo.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetUpdateSsh
 
 > TargetUpdateOutput targetUpdateSsh(body)
@@ -19665,6 +19838,48 @@ apiInstance.tokenize(body).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Tokenize**](Tokenize.md)|  | 
+
+### Return type
+
+[**TokenizeOutput**](TokenizeOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## tokenizeBatch
+
+> TokenizeOutput tokenizeBatch(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = [new akeyless.BatchTokenizationRequestLine()]; // [BatchTokenizationRequestLine] | 
+apiInstance.tokenizeBatch(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**[BatchTokenizationRequestLine]**](BatchTokenizationRequestLine.md)|  | 
 
 ### Return type
 

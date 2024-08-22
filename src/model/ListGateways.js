@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListGateways model module.
  * @module model/ListGateways
- * @version 4.2.2
+ * @version 4.2.3
  */
 class ListGateways {
     /**

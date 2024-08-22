@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **domain** | **String** |  | [optional] 
 **enable** | **Boolean** |  | [optional] 
 **endpoint** | **String** |  | [optional] 
+**enforceHostsRestriction** | **Boolean** |  | [optional] 
 **host** | **[String]** |  | [optional] 
 **hostProviderType** | **String** |  | [optional] 
 **isCli** | **Boolean** |  | [optional] 

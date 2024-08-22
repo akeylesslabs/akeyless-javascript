@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventForwarderCreateEmail model module.
  * @module model/EventForwarderCreateEmail
- * @version 4.2.2
+ * @version 4.2.3
  */
 class EventForwarderCreateEmail {
     /**
@@ -71,6 +71,9 @@ class EventForwarderCreateEmail {
             }
             if (data.hasOwnProperty('gateways-event-source-locations')) {
                 obj['gateways-event-source-locations'] = ApiClient.convertToType(data['gateways-event-source-locations'], ['String']);
+            }
+            if (data.hasOwnProperty('include-error')) {
+                obj['include-error'] = ApiClient.convertToType(data['include-error'], 'String');
             }
             if (data.hasOwnProperty('items-event-source-locations')) {
                 obj['items-event-source-locations'] = ApiClient.convertToType(data['items-event-source-locations'], ['String']);
@@ -141,6 +144,12 @@ EventForwarderCreateEmail.prototype['every'] = undefined;
  * @member {Array.<String>} gateways-event-source-locations
  */
 EventForwarderCreateEmail.prototype['gateways-event-source-locations'] = undefined;
+
+/**
+ * Set this option to include event errors details [true\\false]
+ * @member {String} include-error
+ */
+EventForwarderCreateEmail.prototype['include-error'] = undefined;
 
 /**
  * Items Event sources

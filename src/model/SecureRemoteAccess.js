@@ -18,7 +18,7 @@ import TargetNameWithHosts from './TargetNameWithHosts';
 /**
  * The SecureRemoteAccess model module.
  * @module model/SecureRemoteAccess
- * @version 4.2.2
+ * @version 4.2.3
  */
 class SecureRemoteAccess {
     /**
@@ -93,6 +93,9 @@ class SecureRemoteAccess {
             }
             if (data.hasOwnProperty('endpoint')) {
                 obj['endpoint'] = ApiClient.convertToType(data['endpoint'], 'String');
+            }
+            if (data.hasOwnProperty('enforce_hosts_restriction')) {
+                obj['enforce_hosts_restriction'] = ApiClient.convertToType(data['enforce_hosts_restriction'], 'Boolean');
             }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], ['String']);
@@ -235,6 +238,11 @@ SecureRemoteAccess.prototype['enable'] = undefined;
  * @member {String} endpoint
  */
 SecureRemoteAccess.prototype['endpoint'] = undefined;
+
+/**
+ * @member {Boolean} enforce_hosts_restriction
+ */
+SecureRemoteAccess.prototype['enforce_hosts_restriction'] = undefined;
 
 /**
  * @member {Array.<String>} host

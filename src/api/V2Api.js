@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import AkeylessGatewayConfig from '../model/AkeylessGatewayConfig';
+import AliasDetails from '../model/AliasDetails';
 import AllAnalyticsData from '../model/AllAnalyticsData';
 import AllowedAccess from '../model/AllowedAccess';
 import AssocRoleAuthMethod from '../model/AssocRoleAuthMethod';
@@ -55,6 +56,7 @@ import AuthMethodUpdateUniversalIdentity from '../model/AuthMethodUpdateUniversa
 import AuthOutput from '../model/AuthOutput';
 import BastionsList from '../model/BastionsList';
 import BatchEncryptionRequestLine from '../model/BatchEncryptionRequestLine';
+import BatchTokenizationRequestLine from '../model/BatchTokenizationRequestLine';
 import CacheConfigPart from '../model/CacheConfigPart';
 import Configure from '../model/Configure';
 import ConfigureOutput from '../model/ConfigureOutput';
@@ -661,6 +663,7 @@ import TargetCreateOutput from '../model/TargetCreateOutput';
 import TargetCreatePing from '../model/TargetCreatePing';
 import TargetCreateRabbitMq from '../model/TargetCreateRabbitMq';
 import TargetCreateSalesforce from '../model/TargetCreateSalesforce';
+import TargetCreateSectigo from '../model/TargetCreateSectigo';
 import TargetCreateSsh from '../model/TargetCreateSsh';
 import TargetCreateWeb from '../model/TargetCreateWeb';
 import TargetCreateWindows from '../model/TargetCreateWindows';
@@ -690,6 +693,7 @@ import TargetUpdateOutput from '../model/TargetUpdateOutput';
 import TargetUpdatePing from '../model/TargetUpdatePing';
 import TargetUpdateRabbitMq from '../model/TargetUpdateRabbitMq';
 import TargetUpdateSalesforce from '../model/TargetUpdateSalesforce';
+import TargetUpdateSectigo from '../model/TargetUpdateSectigo';
 import TargetUpdateSsh from '../model/TargetUpdateSsh';
 import TargetUpdateWeb from '../model/TargetUpdateWeb';
 import TargetUpdateWindows from '../model/TargetUpdateWindows';
@@ -825,7 +829,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 4.2.2
+* @version 4.2.3
 */
 export default class V2Api {
 
@@ -840,6 +844,49 @@ export default class V2Api {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+
+    /**
+     * @param {module:model/AliasDetails} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    aliasDetailsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling aliasDetails");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/alias-details', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AliasDetails} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    aliasDetails(body) {
+      return this.aliasDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
 
     /**
@@ -1039,7 +1086,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = AuthMethodCreateOutput;
       return this.apiClient.callApi(
-        '/auth-method-create-aws', 'POST',
+        '/auth-method-create-aws-iam', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -5781,6 +5828,49 @@ export default class V2Api {
      */
     detokenize(body) {
       return this.detokenizeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Array.<module:model/BatchTokenizationRequestLine>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DetokenizeOutput} and HTTP response
+     */
+    detokenizeBatchWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling detokenizeBatch");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DetokenizeOutput;
+      return this.apiClient.callApi(
+        '/detokenize-batch', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Array.<module:model/BatchTokenizationRequestLine>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DetokenizeOutput}
+     */
+    detokenizeBatch(body) {
+      return this.detokenizeBatchWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -18958,6 +19048,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetCreateSectigo} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateSectigoWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetCreateSectigo");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-sectigo', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateSectigo} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateSectigo(body) {
+      return this.targetCreateSectigoWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetCreateSsh} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
      */
@@ -20162,6 +20295,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetUpdateSectigo} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateSectigoWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling targetUpdateSectigo");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-sectigo', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateSectigo} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateSectigo(body) {
+      return this.targetUpdateSectigoWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetUpdateSsh} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
      */
@@ -20370,6 +20546,49 @@ export default class V2Api {
      */
     tokenize(body) {
       return this.tokenizeWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Array.<module:model/BatchTokenizationRequestLine>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenizeOutput} and HTTP response
+     */
+    tokenizeBatchWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling tokenizeBatch");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TokenizeOutput;
+      return this.apiClient.callApi(
+        '/tokenize-batch', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Array.<module:model/BatchTokenizationRequestLine>} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenizeOutput}
+     */
+    tokenizeBatch(body) {
+      return this.tokenizeBatchWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

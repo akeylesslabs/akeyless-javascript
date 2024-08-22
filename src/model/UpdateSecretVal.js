@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSecretVal model module.
  * @module model/UpdateSecretVal
- * @version 4.2.2
+ * @version 4.2.3
  */
 class UpdateSecretVal {
     /**
@@ -120,7 +120,7 @@ UpdateSecretVal.prototype['accessibility'] = 'regular';
 UpdateSecretVal.prototype['custom-field'] = undefined;
 
 /**
- * Secret format [text/json] (relevant only for type 'generic')
+ * Secret format [text/json/key-value] (relevant only for type 'generic')
  * @member {String} format
  * @default 'text'
  */

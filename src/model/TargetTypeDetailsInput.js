@@ -36,6 +36,7 @@ import PingTargetDetails from './PingTargetDetails';
 import RabbitMQTargetDetails from './RabbitMQTargetDetails';
 import SSHTargetDetails from './SSHTargetDetails';
 import SalesforceTargetDetails from './SalesforceTargetDetails';
+import SectigoTargetDetails from './SectigoTargetDetails';
 import VenafiTargetDetails from './VenafiTargetDetails';
 import WebTargetDetails from './WebTargetDetails';
 import WindowsTargetDetails from './WindowsTargetDetails';
@@ -44,7 +45,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 4.2.2
+ * @version 4.2.3
  */
 class TargetTypeDetailsInput {
     /**
@@ -143,6 +144,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('salesforce_target_details')) {
                 obj['salesforce_target_details'] = SalesforceTargetDetails.constructFromObject(data['salesforce_target_details']);
+            }
+            if (data.hasOwnProperty('sectigo_target_details')) {
+                obj['sectigo_target_details'] = SectigoTargetDetails.constructFromObject(data['sectigo_target_details']);
             }
             if (data.hasOwnProperty('ssh_target_details')) {
                 obj['ssh_target_details'] = SSHTargetDetails.constructFromObject(data['ssh_target_details']);
@@ -280,6 +284,11 @@ TargetTypeDetailsInput.prototype['rabbit_mq_target_details'] = undefined;
  * @member {module:model/SalesforceTargetDetails} salesforce_target_details
  */
 TargetTypeDetailsInput.prototype['salesforce_target_details'] = undefined;
+
+/**
+ * @member {module:model/SectigoTargetDetails} sectigo_target_details
+ */
+TargetTypeDetailsInput.prototype['sectigo_target_details'] = undefined;
 
 /**
  * @member {module:model/SSHTargetDetails} ssh_target_details

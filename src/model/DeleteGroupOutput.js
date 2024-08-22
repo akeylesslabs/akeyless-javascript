@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteGroupOutput model module.
  * @module model/DeleteGroupOutput
- * @version 4.2.2
+ * @version 4.2.3
  */
 class DeleteGroupOutput {
     /**

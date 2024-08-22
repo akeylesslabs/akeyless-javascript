@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **roleId** | **[String]** | The list of role ids that the login is restricted to. | [optional] 
 **roleName** | **[String]** | The list of role names that the login is restricted to. | [optional] 
 **stsEndpoint** | **String** | The sts URL. | [optional] 
+**uniqueIdentifier** | **String** | A unique identifier to distinguish different users | [optional] 
 **userId** | **[String]** | The list of user ids that the login is restricted to. | [optional] 
 **userName** | **[String]** | The list of user names that the login is restricted to. | [optional] 
 

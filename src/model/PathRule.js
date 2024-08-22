@@ -17,7 +17,7 @@ import RuleAssigner from './RuleAssigner';
 /**
  * The PathRule model module.
  * @module model/PathRule
- * @version 4.2.2
+ * @version 4.2.3
  */
 class PathRule {
     /**
@@ -53,6 +53,9 @@ class PathRule {
             }
             if (data.hasOwnProperty('capabilities')) {
                 obj['capabilities'] = ApiClient.convertToType(data['capabilities'], ['String']);
+            }
+            if (data.hasOwnProperty('cb')) {
+                obj['cb'] = ApiClient.convertToType(data['cb'], 'Number');
             }
             if (data.hasOwnProperty('is_limit_access')) {
                 obj['is_limit_access'] = ApiClient.convertToType(data['is_limit_access'], 'Boolean');
@@ -92,6 +95,11 @@ PathRule.prototype['assigners'] = undefined;
  * @member {Array.<String>} capabilities
  */
 PathRule.prototype['capabilities'] = undefined;
+
+/**
+ * @member {Number} cb
+ */
+PathRule.prototype['cb'] = undefined;
 
 /**
  * flag that indicate that this rule is allowed to be access RemainingAccess of times.

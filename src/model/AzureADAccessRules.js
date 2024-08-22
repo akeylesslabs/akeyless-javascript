@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AzureADAccessRules model module.
  * @module model/AzureADAccessRules
- * @version 4.2.2
+ * @version 4.2.3
  */
 class AzureADAccessRules {
     /**
@@ -83,6 +83,9 @@ class AzureADAccessRules {
             }
             if (data.hasOwnProperty('jwks_uri')) {
                 obj['jwks_uri'] = ApiClient.convertToType(data['jwks_uri'], 'String');
+            }
+            if (data.hasOwnProperty('unique_identifier')) {
+                obj['unique_identifier'] = ApiClient.convertToType(data['unique_identifier'], 'String');
             }
         }
         return obj;
@@ -162,6 +165,12 @@ AzureADAccessRules.prototype['issuer'] = undefined;
  * @member {String} jwks_uri
  */
 AzureADAccessRules.prototype['jwks_uri'] = undefined;
+
+/**
+ * A unique identifier to distinguish different users
+ * @member {String} unique_identifier
+ */
+AzureADAccessRules.prototype['unique_identifier'] = undefined;
 
 
 

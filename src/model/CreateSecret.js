@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 4.2.2
+ * @version 4.2.3
  */
 class CreateSecret {
     /**
@@ -177,7 +177,7 @@ CreateSecret.prototype['delete_protection'] = undefined;
 CreateSecret.prototype['description'] = undefined;
 
 /**
- * Secret format [text/json] (relevant only for type 'generic')
+ * Secret format [text/json/key-value] (relevant only for type 'generic')
  * @member {String} format
  * @default 'text'
  */

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLogForwardingSplunk model module.
  * @module model/GatewayUpdateLogForwardingSplunk
- * @version 4.2.2
+ * @version 4.2.3
  */
 class GatewayUpdateLogForwardingSplunk {
     /**

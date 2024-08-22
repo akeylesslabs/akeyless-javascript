@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateRedshift model module.
  * @module model/DynamicSecretUpdateRedshift
- * @version 4.2.2
+ * @version 4.2.3
  */
 class DynamicSecretUpdateRedshift {
     /**

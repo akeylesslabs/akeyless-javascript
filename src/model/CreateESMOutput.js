@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateESMOutput model module.
  * @module model/CreateESMOutput
- * @version 4.2.2
+ * @version 4.2.3
  */
 class CreateESMOutput {
     /**

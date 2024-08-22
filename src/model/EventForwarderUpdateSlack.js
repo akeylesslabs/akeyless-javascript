@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventForwarderUpdateSlack model module.
  * @module model/EventForwarderUpdateSlack
- * @version 4.2.2
+ * @version 4.2.3
  */
 class EventForwarderUpdateSlack {
     /**

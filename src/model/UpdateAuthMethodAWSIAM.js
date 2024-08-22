@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAWSIAM model module.
  * @module model/UpdateAuthMethodAWSIAM
- * @version 4.2.2
+ * @version 4.2.3
  */
 class UpdateAuthMethodAWSIAM {
     /**
@@ -117,6 +117,9 @@ class UpdateAuthMethodAWSIAM {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('unique-identifier')) {
+                obj['unique-identifier'] = ApiClient.convertToType(data['unique-identifier'], 'String');
             }
         }
         return obj;
@@ -260,6 +263,12 @@ UpdateAuthMethodAWSIAM.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateAuthMethodAWSIAM.prototype['uid-token'] = undefined;
+
+/**
+ * A unique identifier (ID) value which is a \"sub claim\" name that contains details uniquely identifying that resource. This \"sub claim\" is used to distinguish between different identities.
+ * @member {String} unique-identifier
+ */
+UpdateAuthMethodAWSIAM.prototype['unique-identifier'] = undefined;
 
 
 

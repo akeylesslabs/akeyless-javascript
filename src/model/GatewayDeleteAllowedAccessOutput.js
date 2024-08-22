@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteAllowedAccessOutput model module.
  * @module model/GatewayDeleteAllowedAccessOutput
- * @version 4.2.2
+ * @version 4.2.3
  */
 class GatewayDeleteAllowedAccessOutput {
     /**

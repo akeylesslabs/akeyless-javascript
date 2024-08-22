@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateAzure model module.
  * @module model/DynamicSecretUpdateAzure
- * @version 4.2.2
+ * @version 4.2.3
  */
 class DynamicSecretUpdateAzure {
     /**
@@ -91,6 +91,9 @@ class DynamicSecretUpdateAzure {
             }
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-url')) {
+                obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
@@ -224,6 +227,12 @@ DynamicSecretUpdateAzure.prototype['producer-encryption-key-name'] = undefined;
  * @member {String} secure-access-enable
  */
 DynamicSecretUpdateAzure.prototype['secure-access-enable'] = undefined;
+
+/**
+ * Destination URL to inject secrets
+ * @member {String} secure-access-url
+ */
+DynamicSecretUpdateAzure.prototype['secure-access-url'] = undefined;
 
 /**
  * Enable Web Secure Remote Access

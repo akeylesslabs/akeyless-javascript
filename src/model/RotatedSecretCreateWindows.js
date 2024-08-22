@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateWindows model module.
  * @module model/RotatedSecretCreateWindows
- * @version 4.2.2
+ * @version 4.2.3
  */
 class RotatedSecretCreateWindows {
     /**

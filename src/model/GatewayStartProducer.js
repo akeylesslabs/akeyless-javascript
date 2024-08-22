@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayStartProducer model module.
  * @module model/GatewayStartProducer
- * @version 4.2.2
+ * @version 4.2.3
  */
 class GatewayStartProducer {
     /**

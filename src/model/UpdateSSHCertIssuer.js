@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHCertIssuer model module.
  * @module model/UpdateSSHCertIssuer
- * @version 4.2.2
+ * @version 4.2.3
  */
 class UpdateSSHCertIssuer {
     /**
@@ -102,6 +102,9 @@ class UpdateSSHCertIssuer {
             }
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enforce-hosts-restriction')) {
+                obj['secure-access-enforce-hosts-restriction'] = ApiClient.convertToType(data['secure-access-enforce-hosts-restriction'], 'Boolean');
             }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
@@ -226,6 +229,12 @@ UpdateSSHCertIssuer.prototype['secure-access-bastion-ssh'] = undefined;
  * @member {String} secure-access-enable
  */
 UpdateSSHCertIssuer.prototype['secure-access-enable'] = undefined;
+
+/**
+ * Enable this flag to enforce connections only to the hosts listed in --secure-access-host
+ * @member {Boolean} secure-access-enforce-hosts-restriction
+ */
+UpdateSSHCertIssuer.prototype['secure-access-enforce-hosts-restriction'] = undefined;
 
 /**
  * Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers)
