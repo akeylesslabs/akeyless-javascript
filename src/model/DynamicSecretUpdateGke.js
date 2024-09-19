@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGke model module.
  * @module model/DynamicSecretUpdateGke
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateGke {
     /**
@@ -176,7 +176,7 @@ DynamicSecretUpdateGke.prototype['json'] = false;
 DynamicSecretUpdateGke.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateGke.prototype['new-name'] = undefined;

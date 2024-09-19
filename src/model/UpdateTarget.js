@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateTarget model module.
  * @module model/UpdateTarget
- * @version 4.2.3
+ * @version 4.2.4
  */
 class UpdateTarget {
     /**
@@ -114,7 +114,7 @@ UpdateTarget.prototype['name'] = undefined;
 UpdateTarget.prototype['new-comment'] = 'default_comment';
 
 /**
- * New Target name
+ * New target name
  * @member {String} new-name
  */
 UpdateTarget.prototype['new-name'] = undefined;

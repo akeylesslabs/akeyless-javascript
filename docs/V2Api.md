@@ -4,7 +4,7 @@ All URIs are relative to *https://api.akeyless.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**aliasDetails**](V2Api.md#aliasDetails) | **GET** /alias-details | 
+[**aliasDetails**](V2Api.md#aliasDetails) | **POST** /alias-details | 
 [**assocRoleAuthMethod**](V2Api.md#assocRoleAuthMethod) | **POST** /assoc-role-am | 
 [**assocTargetItem**](V2Api.md#assocTargetItem) | **POST** /assoc-target-item | 
 [**auth**](V2Api.md#auth) | **POST** /auth | 
@@ -246,6 +246,7 @@ Method | HTTP request | Description
 [**gatewayGetLogForwarding**](V2Api.md#gatewayGetLogForwarding) | **POST** /gateway-get-log-forwarding | 
 [**gatewayGetMigration**](V2Api.md#gatewayGetMigration) | **POST** /gateway-get-migration | 
 [**gatewayGetProducer**](V2Api.md#gatewayGetProducer) | **POST** /gateway-get-producer | 
+[**gatewayGetRemoteAccess**](V2Api.md#gatewayGetRemoteAccess) | **POST** /gateway-get-remote-access | 
 [**gatewayGetTmpUsers**](V2Api.md#gatewayGetTmpUsers) | **POST** /gateway-get-producer-tmp-creds | 
 [**gatewayListCustomerFragments**](V2Api.md#gatewayListCustomerFragments) | **POST** /gateway-list-customer-fragments | 
 [**gatewayListMigration**](V2Api.md#gatewayListMigration) | **POST** /gateway-list-migration | 
@@ -301,6 +302,8 @@ Method | HTTP request | Description
 [**gatewayUpdateProducerRedshift**](V2Api.md#gatewayUpdateProducerRedshift) | **POST** /gateway-update-producer-redshift | 
 [**gatewayUpdateProducerSnowflake**](V2Api.md#gatewayUpdateProducerSnowflake) | **POST** /gateway-update-producer-snowflake | 
 [**gatewayUpdateProducerVenafi**](V2Api.md#gatewayUpdateProducerVenafi) | **POST** /gateway-update-producer-certificate-automation | 
+[**gatewayUpdateRemoteAccess**](V2Api.md#gatewayUpdateRemoteAccess) | **POST** /gateway-update-remote-access | 
+[**gatewayUpdateRemoteAccessRdpRecordings**](V2Api.md#gatewayUpdateRemoteAccessRdpRecordings) | **POST** /gateway-update-remote-access-rdp-recording | 
 [**gatewayUpdateTlsCert**](V2Api.md#gatewayUpdateTlsCert) | **POST** /gateway-update-tls-cert | 
 [**gatewayUpdateTmpUsers**](V2Api.md#gatewayUpdateTmpUsers) | **POST** /gateway-update-producer-tmp-creds | 
 [**generateCsr**](V2Api.md#generateCsr) | **POST** /generate-csr | 
@@ -323,6 +326,17 @@ Method | HTTP request | Description
 [**getTags**](V2Api.md#getTags) | **POST** /get-tags | 
 [**getTarget**](V2Api.md#getTarget) | **POST** /get-target | 
 [**getTargetDetails**](V2Api.md#getTargetDetails) | **POST** /get-target-details | 
+[**gwUpdateRemoteAccessSessionLogsAwsS3**](V2Api.md#gwUpdateRemoteAccessSessionLogsAwsS3) | **POST** /gateway-update-remote-access-session-forwarding-aws-s3 | 
+[**gwUpdateRemoteAccessSessionLogsAzureAnalytics**](V2Api.md#gwUpdateRemoteAccessSessionLogsAzureAnalytics) | **POST** /gateway-update-remote-access-session-forwarding-azure-analytics | 
+[**gwUpdateRemoteAccessSessionLogsDatadog**](V2Api.md#gwUpdateRemoteAccessSessionLogsDatadog) | **POST** /gateway-update-remote-access-session-forwarding-datadog | 
+[**gwUpdateRemoteAccessSessionLogsElasticsearch**](V2Api.md#gwUpdateRemoteAccessSessionLogsElasticsearch) | **POST** /gateway-update-remote-access-session-forwarding-elasticsearch | 
+[**gwUpdateRemoteAccessSessionLogsGoogleChronicle**](V2Api.md#gwUpdateRemoteAccessSessionLogsGoogleChronicle) | **POST** /gateway-update-remote-access-session-forwarding-google-chronicle | 
+[**gwUpdateRemoteAccessSessionLogsLogstash**](V2Api.md#gwUpdateRemoteAccessSessionLogsLogstash) | **POST** /gateway-update-remote-access-session-forwarding-logstash | 
+[**gwUpdateRemoteAccessSessionLogsLogzIo**](V2Api.md#gwUpdateRemoteAccessSessionLogsLogzIo) | **POST** /gateway-update-remote-access-session-forwarding-logz-io | 
+[**gwUpdateRemoteAccessSessionLogsSplunk**](V2Api.md#gwUpdateRemoteAccessSessionLogsSplunk) | **POST** /gateway-update-remote-access-session-forwarding-splunk | 
+[**gwUpdateRemoteAccessSessionLogsStdout**](V2Api.md#gwUpdateRemoteAccessSessionLogsStdout) | **POST** /gateway-update-remote-access-session-forwarding-stdout | 
+[**gwUpdateRemoteAccessSessionLogsSumologic**](V2Api.md#gwUpdateRemoteAccessSessionLogsSumologic) | **POST** /gateway-update-remote-access-session-forwarding-sumologic | 
+[**gwUpdateRemoteAccessSessionLogsSyslog**](V2Api.md#gwUpdateRemoteAccessSessionLogsSyslog) | **POST** /gateway-update-remote-access-session-forwarding-syslog | 
 [**hmac**](V2Api.md#hmac) | **POST** /hmac | 
 [**importPasswords**](V2Api.md#importPasswords) | **POST** /import-passwords | 
 [**kmipClientDeleteRule**](V2Api.md#kmipClientDeleteRule) | **POST** /kmip-client-delete-rule | 
@@ -10715,6 +10729,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayGetRemoteAccess
+
+> BastionConfigReplyObj gatewayGetRemoteAccess(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayGetRemoteAccess(); // GatewayGetRemoteAccess | 
+apiInstance.gatewayGetRemoteAccess(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayGetRemoteAccess**](GatewayGetRemoteAccess.md)|  | 
+
+### Return type
+
+[**BastionConfigReplyObj**](BastionConfigReplyObj.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayGetTmpUsers
 
 > [TmpUserData] gatewayGetTmpUsers(body)
@@ -13029,6 +13085,86 @@ No authorization required
 - **Accept**: application/json
 
 
+## gatewayUpdateRemoteAccess
+
+> Object gatewayUpdateRemoteAccess()
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+apiInstance.gatewayUpdateRemoteAccess().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## gatewayUpdateRemoteAccessRdpRecordings
+
+> Object gatewayUpdateRemoteAccessRdpRecordings(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GatewayUpdateRemoteAccessRdpRecordings(); // GatewayUpdateRemoteAccessRdpRecordings | 
+apiInstance.gatewayUpdateRemoteAccessRdpRecordings(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateRemoteAccessRdpRecordings**](GatewayUpdateRemoteAccessRdpRecordings.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## gatewayUpdateTlsCert
 
 > GatewayUpdateTlsCertOutput gatewayUpdateTlsCert(body)
@@ -13938,6 +14074,468 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetTargetDetailsOutput**](GetTargetDetailsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gwUpdateRemoteAccessSessionLogsAwsS3
+
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsAwsS3(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GwUpdateRemoteAccessSessionLogsAwsS3(); // GwUpdateRemoteAccessSessionLogsAwsS3 | 
+apiInstance.gwUpdateRemoteAccessSessionLogsAwsS3(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsAwsS3**](GwUpdateRemoteAccessSessionLogsAwsS3.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gwUpdateRemoteAccessSessionLogsAzureAnalytics
+
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsAzureAnalytics(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GwUpdateRemoteAccessSessionLogsAzureAnalytics(); // GwUpdateRemoteAccessSessionLogsAzureAnalytics | 
+apiInstance.gwUpdateRemoteAccessSessionLogsAzureAnalytics(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsAzureAnalytics**](GwUpdateRemoteAccessSessionLogsAzureAnalytics.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gwUpdateRemoteAccessSessionLogsDatadog
+
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsDatadog(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GwUpdateRemoteAccessSessionLogsDatadog(); // GwUpdateRemoteAccessSessionLogsDatadog | 
+apiInstance.gwUpdateRemoteAccessSessionLogsDatadog(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsDatadog**](GwUpdateRemoteAccessSessionLogsDatadog.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gwUpdateRemoteAccessSessionLogsElasticsearch
+
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsElasticsearch(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GwUpdateRemoteAccessSessionLogsElasticsearch(); // GwUpdateRemoteAccessSessionLogsElasticsearch | 
+apiInstance.gwUpdateRemoteAccessSessionLogsElasticsearch(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsElasticsearch**](GwUpdateRemoteAccessSessionLogsElasticsearch.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gwUpdateRemoteAccessSessionLogsGoogleChronicle
+
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsGoogleChronicle(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GwUpdateRemoteAccessSessionLogsGoogleChronicle(); // GwUpdateRemoteAccessSessionLogsGoogleChronicle | 
+apiInstance.gwUpdateRemoteAccessSessionLogsGoogleChronicle(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsGoogleChronicle**](GwUpdateRemoteAccessSessionLogsGoogleChronicle.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gwUpdateRemoteAccessSessionLogsLogstash
+
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsLogstash(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GwUpdateRemoteAccessSessionLogsLogstash(); // GwUpdateRemoteAccessSessionLogsLogstash | 
+apiInstance.gwUpdateRemoteAccessSessionLogsLogstash(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsLogstash**](GwUpdateRemoteAccessSessionLogsLogstash.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gwUpdateRemoteAccessSessionLogsLogzIo
+
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsLogzIo(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GwUpdateRemoteAccessSessionLogsLogzIo(); // GwUpdateRemoteAccessSessionLogsLogzIo | 
+apiInstance.gwUpdateRemoteAccessSessionLogsLogzIo(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsLogzIo**](GwUpdateRemoteAccessSessionLogsLogzIo.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gwUpdateRemoteAccessSessionLogsSplunk
+
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsSplunk(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GwUpdateRemoteAccessSessionLogsSplunk(); // GwUpdateRemoteAccessSessionLogsSplunk | 
+apiInstance.gwUpdateRemoteAccessSessionLogsSplunk(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsSplunk**](GwUpdateRemoteAccessSessionLogsSplunk.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gwUpdateRemoteAccessSessionLogsStdout
+
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsStdout(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GwUpdateRemoteAccessSessionLogsStdout(); // GwUpdateRemoteAccessSessionLogsStdout | 
+apiInstance.gwUpdateRemoteAccessSessionLogsStdout(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsStdout**](GwUpdateRemoteAccessSessionLogsStdout.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gwUpdateRemoteAccessSessionLogsSumologic
+
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsSumologic(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GwUpdateRemoteAccessSessionLogsSumologic(); // GwUpdateRemoteAccessSessionLogsSumologic | 
+apiInstance.gwUpdateRemoteAccessSessionLogsSumologic(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsSumologic**](GwUpdateRemoteAccessSessionLogsSumologic.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gwUpdateRemoteAccessSessionLogsSyslog
+
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsSyslog(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GwUpdateRemoteAccessSessionLogsSyslog(); // GwUpdateRemoteAccessSessionLogsSyslog | 
+apiInstance.gwUpdateRemoteAccessSessionLogsSyslog(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsSyslog**](GwUpdateRemoteAccessSessionLogsSyslog.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
 
 ### Authorization
 

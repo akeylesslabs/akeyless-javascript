@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGcp model module.
  * @module model/DynamicSecretUpdateGcp
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateGcp {
     /**
@@ -168,7 +168,7 @@ DynamicSecretUpdateGcp.prototype['json'] = false;
 DynamicSecretUpdateGcp.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateGcp.prototype['new-name'] = undefined;

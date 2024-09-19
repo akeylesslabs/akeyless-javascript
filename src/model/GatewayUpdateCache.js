@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateCache model module.
  * @module model/GatewayUpdateCache
- * @version 4.2.3
+ * @version 4.2.4
  */
 class GatewayUpdateCache {
     /**

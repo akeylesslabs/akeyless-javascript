@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateGcp model module.
  * @module model/RotatedSecretUpdateGcp
- * @version 4.2.3
+ * @version 4.2.4
  */
 class RotatedSecretUpdateGcp {
     /**
@@ -98,6 +98,9 @@ class RotatedSecretUpdateGcp {
             }
             if (data.hasOwnProperty('rm-tag')) {
                 obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
+            }
+            if (data.hasOwnProperty('rotation-event-in')) {
+                obj['rotation-event-in'] = ApiClient.convertToType(data['rotation-event-in'], ['String']);
             }
             if (data.hasOwnProperty('rotation-hour')) {
                 obj['rotation-hour'] = ApiClient.convertToType(data['rotation-hour'], 'Number');
@@ -219,6 +222,12 @@ RotatedSecretUpdateGcp.prototype['password-length'] = undefined;
  * @member {Array.<String>} rm-tag
  */
 RotatedSecretUpdateGcp.prototype['rm-tag'] = undefined;
+
+/**
+ * How many days before the rotation of the item would you like to be notified
+ * @member {Array.<String>} rotation-event-in
+ */
+RotatedSecretUpdateGcp.prototype['rotation-event-in'] = undefined;
 
 /**
  * The Hour of the rotation in UTC

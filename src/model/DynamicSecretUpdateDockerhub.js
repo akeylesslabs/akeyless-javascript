@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateDockerhub model module.
  * @module model/DynamicSecretUpdateDockerhub
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateDockerhub {
     /**
@@ -143,7 +143,7 @@ DynamicSecretUpdateDockerhub.prototype['json'] = false;
 DynamicSecretUpdateDockerhub.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateDockerhub.prototype['new-name'] = undefined;

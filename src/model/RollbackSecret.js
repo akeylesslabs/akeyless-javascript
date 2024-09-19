@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RollbackSecret model module.
  * @module model/RollbackSecret
- * @version 4.2.3
+ * @version 4.2.4
  */
 class RollbackSecret {
     /**
@@ -51,6 +51,9 @@ class RollbackSecret {
         if (data) {
             obj = obj || new RollbackSecret();
 
+            if (data.hasOwnProperty('accessibility')) {
+                obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -72,6 +75,13 @@ class RollbackSecret {
 
 
 }
+
+/**
+ * for personal password manager
+ * @member {String} accessibility
+ * @default 'regular'
+ */
+RollbackSecret.prototype['accessibility'] = 'regular';
 
 /**
  * Set output format to JSON

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateAws model module.
  * @module model/DynamicSecretUpdateAws
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateAws {
     /**
@@ -242,7 +242,7 @@ DynamicSecretUpdateAws.prototype['json'] = false;
 DynamicSecretUpdateAws.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateAws.prototype['new-name'] = undefined;

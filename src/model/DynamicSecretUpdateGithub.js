@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGithub model module.
  * @module model/DynamicSecretUpdateGithub
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateGithub {
     /**
@@ -171,7 +171,7 @@ DynamicSecretUpdateGithub.prototype['json'] = false;
 DynamicSecretUpdateGithub.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateGithub.prototype['new-name'] = undefined;

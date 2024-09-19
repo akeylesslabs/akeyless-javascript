@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateCassandra model module.
  * @module model/RotatedSecretCreateCassandra
- * @version 4.2.3
+ * @version 4.2.4
  */
 class RotatedSecretCreateCassandra {
     /**
@@ -85,6 +85,9 @@ class RotatedSecretCreateCassandra {
             }
             if (data.hasOwnProperty('rotated-username')) {
                 obj['rotated-username'] = ApiClient.convertToType(data['rotated-username'], 'String');
+            }
+            if (data.hasOwnProperty('rotation-event-in')) {
+                obj['rotation-event-in'] = ApiClient.convertToType(data['rotation-event-in'], ['String']);
             }
             if (data.hasOwnProperty('rotation-hour')) {
                 obj['rotation-hour'] = ApiClient.convertToType(data['rotation-hour'], 'Number');
@@ -181,6 +184,12 @@ RotatedSecretCreateCassandra.prototype['rotated-password'] = undefined;
  * @member {String} rotated-username
  */
 RotatedSecretCreateCassandra.prototype['rotated-username'] = undefined;
+
+/**
+ * How many days before the rotation of the item would you like to be notified
+ * @member {Array.<String>} rotation-event-in
+ */
+RotatedSecretCreateCassandra.prototype['rotation-event-in'] = undefined;
 
 /**
  * The Hour of the rotation in UTC

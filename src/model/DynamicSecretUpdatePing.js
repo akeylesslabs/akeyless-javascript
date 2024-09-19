@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdatePing model module.
  * @module model/DynamicSecretUpdatePing
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdatePing {
     /**
@@ -164,7 +164,7 @@ DynamicSecretUpdatePing.prototype['json'] = false;
 DynamicSecretUpdatePing.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdatePing.prototype['new-name'] = undefined;

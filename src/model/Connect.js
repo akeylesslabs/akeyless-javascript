@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Connect model module.
  * @module model/Connect
- * @version 4.2.3
+ * @version 4.2.4
  */
 class Connect {
     /**
@@ -48,9 +48,6 @@ class Connect {
         if (data) {
             obj = obj || new Connect();
 
-            if (data.hasOwnProperty('BastionGatewayUrl')) {
-                obj['BastionGatewayUrl'] = ApiClient.convertToType(data['BastionGatewayUrl'], 'String');
-            }
             if (data.hasOwnProperty('Helper')) {
                 obj['Helper'] = ApiClient.convertToType(data['Helper'], Object);
             }
@@ -71,6 +68,9 @@ class Connect {
             }
             if (data.hasOwnProperty('cert-issuer-name')) {
                 obj['cert-issuer-name'] = ApiClient.convertToType(data['cert-issuer-name'], 'String');
+            }
+            if (data.hasOwnProperty('gateway-url')) {
+                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
             if (data.hasOwnProperty('identity-file')) {
                 obj['identity-file'] = ApiClient.convertToType(data['identity-file'], 'String');
@@ -116,12 +116,6 @@ class Connect {
 }
 
 /**
- * todo - enable when gw-sra unification is done The Gateway URL (configuration management) address, e.g. http://localhost:8000
- * @member {String} BastionGatewayUrl
- */
-Connect.prototype['BastionGatewayUrl'] = undefined;
-
-/**
  * @member {Object} Helper
  */
 Connect.prototype['Helper'] = undefined;
@@ -163,6 +157,12 @@ Connect.prototype['bastion-ctrl-subdomain'] = undefined;
  * @member {String} cert-issuer-name
  */
 Connect.prototype['cert-issuer-name'] = undefined;
+
+/**
+ * The Gateway URL (configuration management) address, e.g. http://localhost:8000
+ * @member {String} gateway-url
+ */
+Connect.prototype['gateway-url'] = undefined;
 
 /**
  * The file from which the identity (private key) for public key authentication is read

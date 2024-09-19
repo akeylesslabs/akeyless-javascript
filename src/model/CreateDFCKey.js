@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDFCKey model module.
  * @module model/CreateDFCKey
- * @version 4.2.3
+ * @version 4.2.4
  */
 class CreateDFCKey {
     /**
@@ -54,6 +54,9 @@ class CreateDFCKey {
             if (data.hasOwnProperty('alg')) {
                 obj['alg'] = ApiClient.convertToType(data['alg'], 'String');
             }
+            if (data.hasOwnProperty('auto-rotate')) {
+                obj['auto-rotate'] = ApiClient.convertToType(data['auto-rotate'], 'String');
+            }
             if (data.hasOwnProperty('certificate-common-name')) {
                 obj['certificate-common-name'] = ApiClient.convertToType(data['certificate-common-name'], 'String');
             }
@@ -90,6 +93,9 @@ class CreateDFCKey {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('expiration-event-in')) {
+                obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
+            }
             if (data.hasOwnProperty('generate-self-signed-certificate')) {
                 obj['generate-self-signed-certificate'] = ApiClient.convertToType(data['generate-self-signed-certificate'], 'Boolean');
             }
@@ -101,6 +107,12 @@ class CreateDFCKey {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('rotation-event-in')) {
+                obj['rotation-event-in'] = ApiClient.convertToType(data['rotation-event-in'], ['String']);
+            }
+            if (data.hasOwnProperty('rotation-interval')) {
+                obj['rotation-interval'] = ApiClient.convertToType(data['rotation-interval'], 'String');
             }
             if (data.hasOwnProperty('split-level')) {
                 obj['split-level'] = ApiClient.convertToType(data['split-level'], 'Number');
@@ -126,6 +138,12 @@ class CreateDFCKey {
  * @member {String} alg
  */
 CreateDFCKey.prototype['alg'] = undefined;
+
+/**
+ * Whether to automatically rotate every rotation_interval days, or disable existing automatic rotation [true/false]
+ * @member {String} auto-rotate
+ */
+CreateDFCKey.prototype['auto-rotate'] = undefined;
 
 /**
  * Common name for the generated certificate. Relevant only for generate-self-signed-certificate.
@@ -199,6 +217,12 @@ CreateDFCKey.prototype['delete_protection'] = undefined;
 CreateDFCKey.prototype['description'] = undefined;
 
 /**
+ * How many days before the expiration of the certificate would you like to be notified.
+ * @member {Array.<String>} expiration-event-in
+ */
+CreateDFCKey.prototype['expiration-event-in'] = undefined;
+
+/**
  * Whether to generate a self signed certificate with the key. If set, --certificate-ttl must be provided.
  * @member {Boolean} generate-self-signed-certificate
  */
@@ -222,6 +246,18 @@ CreateDFCKey.prototype['metadata'] = undefined;
  * @member {String} name
  */
 CreateDFCKey.prototype['name'] = undefined;
+
+/**
+ * How many days before the rotation of the item would you like to be notified
+ * @member {Array.<String>} rotation-event-in
+ */
+CreateDFCKey.prototype['rotation-event-in'] = undefined;
+
+/**
+ * The number of days to wait between every automatic rotation (7-365)
+ * @member {String} rotation-interval
+ */
+CreateDFCKey.prototype['rotation-interval'] = undefined;
 
 /**
  * The number of fragments that the item will be split into (not includes customer fragment)

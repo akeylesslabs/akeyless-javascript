@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerPing model module.
  * @module model/GatewayUpdateProducerPing
- * @version 4.2.3
+ * @version 4.2.4
  */
 class GatewayUpdateProducerPing {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotationSettings model module.
  * @module model/UpdateRotationSettings
- * @version 4.2.3
+ * @version 4.2.4
  */
 class UpdateRotationSettings {
     /**
@@ -61,6 +61,9 @@ class UpdateRotationSettings {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('rotation-event-in')) {
+                obj['rotation-event-in'] = ApiClient.convertToType(data['rotation-event-in'], ['String']);
+            }
             if (data.hasOwnProperty('rotation-interval')) {
                 obj['rotation-interval'] = ApiClient.convertToType(data['rotation-interval'], 'Number');
             }
@@ -95,6 +98,12 @@ UpdateRotationSettings.prototype['json'] = false;
  * @member {String} name
  */
 UpdateRotationSettings.prototype['name'] = undefined;
+
+/**
+ * How many days before the rotation of the item would you like to be notified
+ * @member {Array.<String>} rotation-event-in
+ */
+UpdateRotationSettings.prototype['rotation-event-in'] = undefined;
 
 /**
  * The number of days to wait between every automatic key rotation (7-365)

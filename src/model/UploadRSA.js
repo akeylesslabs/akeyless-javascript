@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadRSA model module.
  * @module model/UploadRSA
- * @version 4.2.3
+ * @version 4.2.4
  */
 class UploadRSA {
     /**
@@ -68,6 +68,9 @@ class UploadRSA {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('expiration-event-in')) {
+                obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -137,6 +140,12 @@ UploadRSA.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 UploadRSA.prototype['description'] = undefined;
+
+/**
+ * How many days before the expiration of the certificate would you like to be notified.
+ * @member {Array.<String>} expiration-event-in
+ */
+UploadRSA.prototype['expiration-event-in'] = undefined;
 
 /**
  * Set output format to JSON

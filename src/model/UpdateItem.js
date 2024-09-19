@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 4.2.3
+ * @version 4.2.4
  */
 class UpdateItem {
     /**
@@ -69,6 +69,9 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('expiration-event-in')) {
+                obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
             }
             if (data.hasOwnProperty('host-provider')) {
                 obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
@@ -224,6 +227,12 @@ UpdateItem.prototype['delete_protection'] = undefined;
  * @default 'default_metadata'
  */
 UpdateItem.prototype['description'] = 'default_metadata';
+
+/**
+ * How many days before the expiration of the certificate would you like to be notified.
+ * @member {Array.<String>} expiration-event-in
+ */
+UpdateItem.prototype['expiration-event-in'] = undefined;
 
 /**
  * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret

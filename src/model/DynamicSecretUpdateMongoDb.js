@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateMongoDb model module.
  * @module model/DynamicSecretUpdateMongoDb
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateMongoDb {
     /**
@@ -240,7 +240,7 @@ DynamicSecretUpdateMongoDb.prototype['mongodb-username'] = undefined;
 DynamicSecretUpdateMongoDb.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateMongoDb.prototype['new-name'] = undefined;

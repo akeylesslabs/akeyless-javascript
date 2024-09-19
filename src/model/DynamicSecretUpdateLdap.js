@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateLdap model module.
  * @module model/DynamicSecretUpdateLdap
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateLdap {
     /**
@@ -215,7 +215,7 @@ DynamicSecretUpdateLdap.prototype['ldap-url'] = undefined;
 DynamicSecretUpdateLdap.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateLdap.prototype['new-name'] = undefined;

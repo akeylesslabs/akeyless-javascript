@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailPassAccessRules model module.
  * @module model/EmailPassAccessRules
- * @version 4.2.3
+ * @version 4.2.4
  */
 class EmailPassAccessRules {
     /**
@@ -59,6 +59,9 @@ class EmailPassAccessRules {
             if (data.hasOwnProperty('hash_pass')) {
                 obj['hash_pass'] = ApiClient.convertToType(data['hash_pass'], 'String');
             }
+            if (data.hasOwnProperty('last_reset_password')) {
+                obj['last_reset_password'] = ApiClient.convertToType(data['last_reset_password'], 'Date');
+            }
         }
         return obj;
     }
@@ -88,6 +91,12 @@ EmailPassAccessRules.prototype['enc_email_with_shared_key'] = undefined;
  * @member {String} hash_pass
  */
 EmailPassAccessRules.prototype['hash_pass'] = undefined;
+
+/**
+ * The last password change date
+ * @member {Date} last_reset_password
+ */
+EmailPassAccessRules.prototype['last_reset_password'] = undefined;
 
 
 

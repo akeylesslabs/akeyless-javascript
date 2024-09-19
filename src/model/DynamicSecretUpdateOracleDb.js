@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateOracleDb model module.
  * @module model/DynamicSecretUpdateOracleDb
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateOracleDb {
     /**
@@ -170,7 +170,7 @@ DynamicSecretUpdateOracleDb.prototype['json'] = false;
 DynamicSecretUpdateOracleDb.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateOracleDb.prototype['new-name'] = undefined;

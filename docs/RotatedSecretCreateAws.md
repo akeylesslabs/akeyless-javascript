@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **name** | **String** | Rotated secret name | 
 **passwordLength** | **String** | The length of the password to be generated | [optional] 
 **rotateAfterDisconnect** | **String** | Rotate the value of the secret after SRA session ends [true/false] | [optional] [default to &#39;false&#39;]
+**rotationEventIn** | **[String]** | How many days before the rotation of the item would you like to be notified | [optional] 
 **rotationHour** | **Number** | The Hour of the rotation in UTC | [optional] 
 **rotationInterval** | **String** | The number of days to wait between every automatic key rotation (1-365) | [optional] 
 **rotatorType** | **String** | The rotator type. options: [target/api-key] | 

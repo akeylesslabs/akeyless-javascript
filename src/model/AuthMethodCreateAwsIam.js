@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateAwsIam model module.
  * @module model/AuthMethodCreateAwsIam
- * @version 4.2.3
+ * @version 4.2.4
  */
 class AuthMethodCreateAwsIam {
     /**

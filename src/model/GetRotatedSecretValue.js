@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetRotatedSecretValue model module.
  * @module model/GetRotatedSecretValue
- * @version 4.2.3
+ * @version 4.2.4
  */
 class GetRotatedSecretValue {
     /**

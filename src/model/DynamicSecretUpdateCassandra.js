@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateCassandra model module.
  * @module model/DynamicSecretUpdateCassandra
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateCassandra {
     /**
@@ -171,7 +171,7 @@ DynamicSecretUpdateCassandra.prototype['json'] = false;
 DynamicSecretUpdateCassandra.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateCassandra.prototype['new-name'] = undefined;

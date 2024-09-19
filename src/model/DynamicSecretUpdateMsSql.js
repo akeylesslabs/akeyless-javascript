@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateMsSql model module.
  * @module model/DynamicSecretUpdateMsSql
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateMsSql {
     /**
@@ -199,7 +199,7 @@ DynamicSecretUpdateMsSql.prototype['mssql-username'] = undefined;
 DynamicSecretUpdateMsSql.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateMsSql.prototype['new-name'] = undefined;

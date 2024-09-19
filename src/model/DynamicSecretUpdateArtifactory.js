@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateArtifactory model module.
  * @module model/DynamicSecretUpdateArtifactory
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateArtifactory {
     /**
@@ -165,7 +165,7 @@ DynamicSecretUpdateArtifactory.prototype['json'] = false;
 DynamicSecretUpdateArtifactory.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateArtifactory.prototype['new-name'] = undefined;

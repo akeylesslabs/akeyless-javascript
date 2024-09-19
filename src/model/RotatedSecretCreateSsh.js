@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateSsh model module.
  * @module model/RotatedSecretCreateSsh
- * @version 4.2.3
+ * @version 4.2.4
  */
 class RotatedSecretCreateSsh {
     /**
@@ -88,6 +88,9 @@ class RotatedSecretCreateSsh {
             }
             if (data.hasOwnProperty('rotated-username')) {
                 obj['rotated-username'] = ApiClient.convertToType(data['rotated-username'], 'String');
+            }
+            if (data.hasOwnProperty('rotation-event-in')) {
+                obj['rotation-event-in'] = ApiClient.convertToType(data['rotation-event-in'], ['String']);
             }
             if (data.hasOwnProperty('rotation-hour')) {
                 obj['rotation-hour'] = ApiClient.convertToType(data['rotation-hour'], 'Number');
@@ -218,6 +221,12 @@ RotatedSecretCreateSsh.prototype['rotated-password'] = undefined;
  * @member {String} rotated-username
  */
 RotatedSecretCreateSsh.prototype['rotated-username'] = undefined;
+
+/**
+ * How many days before the rotation of the item would you like to be notified
+ * @member {Array.<String>} rotation-event-in
+ */
+RotatedSecretCreateSsh.prototype['rotation-event-in'] = undefined;
 
 /**
  * The Hour of the rotation in UTC

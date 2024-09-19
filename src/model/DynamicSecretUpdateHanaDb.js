@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateHanaDb model module.
  * @module model/DynamicSecretUpdateHanaDb
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateHanaDb {
     /**
@@ -199,7 +199,7 @@ DynamicSecretUpdateHanaDb.prototype['json'] = false;
 DynamicSecretUpdateHanaDb.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateHanaDb.prototype['new-name'] = undefined;

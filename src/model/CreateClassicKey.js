@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 4.2.3
+ * @version 4.2.4
  */
 class CreateClassicKey {
     /**
@@ -55,6 +55,9 @@ class CreateClassicKey {
             if (data.hasOwnProperty('alg')) {
                 obj['alg'] = ApiClient.convertToType(data['alg'], 'String');
             }
+            if (data.hasOwnProperty('auto-rotate')) {
+                obj['auto-rotate'] = ApiClient.convertToType(data['auto-rotate'], 'String');
+            }
             if (data.hasOwnProperty('cert-file-data')) {
                 obj['cert-file-data'] = ApiClient.convertToType(data['cert-file-data'], 'String');
             }
@@ -91,6 +94,9 @@ class CreateClassicKey {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('expiration-event-in')) {
+                obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
+            }
             if (data.hasOwnProperty('generate-self-signed-certificate')) {
                 obj['generate-self-signed-certificate'] = ApiClient.convertToType(data['generate-self-signed-certificate'], 'Boolean');
             }
@@ -111,6 +117,12 @@ class CreateClassicKey {
             }
             if (data.hasOwnProperty('protection-key-name')) {
                 obj['protection-key-name'] = ApiClient.convertToType(data['protection-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('rotation-event-in')) {
+                obj['rotation-event-in'] = ApiClient.convertToType(data['rotation-event-in'], ['String']);
+            }
+            if (data.hasOwnProperty('rotation-interval')) {
+                obj['rotation-interval'] = ApiClient.convertToType(data['rotation-interval'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -133,6 +145,12 @@ class CreateClassicKey {
  * @member {String} alg
  */
 CreateClassicKey.prototype['alg'] = undefined;
+
+/**
+ * Whether to automatically rotate every rotation_interval days, or disable existing automatic rotation [true/false]
+ * @member {String} auto-rotate
+ */
+CreateClassicKey.prototype['auto-rotate'] = undefined;
 
 /**
  * Certificate in a PEM format.
@@ -206,6 +224,12 @@ CreateClassicKey.prototype['delete_protection'] = undefined;
 CreateClassicKey.prototype['description'] = undefined;
 
 /**
+ * How many days before the expiration of the certificate would you like to be notified.
+ * @member {Array.<String>} expiration-event-in
+ */
+CreateClassicKey.prototype['expiration-event-in'] = undefined;
+
+/**
  * Whether to generate a self signed certificate with the key. If set, --certificate-ttl must be provided.
  * @member {Boolean} generate-self-signed-certificate
  */
@@ -247,6 +271,18 @@ CreateClassicKey.prototype['name'] = undefined;
  * @member {String} protection-key-name
  */
 CreateClassicKey.prototype['protection-key-name'] = undefined;
+
+/**
+ * How many days before the rotation of the item would you like to be notified
+ * @member {Array.<String>} rotation-event-in
+ */
+CreateClassicKey.prototype['rotation-event-in'] = undefined;
+
+/**
+ * The number of days to wait between every automatic rotation (1-365)
+ * @member {String} rotation-interval
+ */
+CreateClassicKey.prototype['rotation-interval'] = undefined;
 
 /**
  * Add tags attached to this object

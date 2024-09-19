@@ -54,6 +54,7 @@ import AuthMethodUpdateOutput from '../model/AuthMethodUpdateOutput';
 import AuthMethodUpdateSAML from '../model/AuthMethodUpdateSAML';
 import AuthMethodUpdateUniversalIdentity from '../model/AuthMethodUpdateUniversalIdentity';
 import AuthOutput from '../model/AuthOutput';
+import BastionConfigReplyObj from '../model/BastionConfigReplyObj';
 import BastionsList from '../model/BastionsList';
 import BatchEncryptionRequestLine from '../model/BatchEncryptionRequestLine';
 import BatchTokenizationRequestLine from '../model/BatchTokenizationRequestLine';
@@ -383,6 +384,7 @@ import GatewayGetLdapAuthConfigOutput from '../model/GatewayGetLdapAuthConfigOut
 import GatewayGetLogForwarding from '../model/GatewayGetLogForwarding';
 import GatewayGetMigration from '../model/GatewayGetMigration';
 import GatewayGetProducer from '../model/GatewayGetProducer';
+import GatewayGetRemoteAccess from '../model/GatewayGetRemoteAccess';
 import GatewayGetTmpUsers from '../model/GatewayGetTmpUsers';
 import GatewayListCustomerFragments from '../model/GatewayListCustomerFragments';
 import GatewayListMigration from '../model/GatewayListMigration';
@@ -478,6 +480,7 @@ import GatewayUpdateProducerSnowflake from '../model/GatewayUpdateProducerSnowfl
 import GatewayUpdateProducerSnowflakeOutput from '../model/GatewayUpdateProducerSnowflakeOutput';
 import GatewayUpdateProducerVenafi from '../model/GatewayUpdateProducerVenafi';
 import GatewayUpdateProducerVenafiOutput from '../model/GatewayUpdateProducerVenafiOutput';
+import GatewayUpdateRemoteAccessRdpRecordings from '../model/GatewayUpdateRemoteAccessRdpRecordings';
 import GatewayUpdateTlsCert from '../model/GatewayUpdateTlsCert';
 import GatewayUpdateTlsCertOutput from '../model/GatewayUpdateTlsCertOutput';
 import GatewayUpdateTmpUsers from '../model/GatewayUpdateTmpUsers';
@@ -513,6 +516,17 @@ import GetTarget from '../model/GetTarget';
 import GetTargetDetails from '../model/GetTargetDetails';
 import GetTargetDetailsOutput from '../model/GetTargetDetailsOutput';
 import GetUserEventStatusOutput from '../model/GetUserEventStatusOutput';
+import GwUpdateRemoteAccessSessionLogsAwsS3 from '../model/GwUpdateRemoteAccessSessionLogsAwsS3';
+import GwUpdateRemoteAccessSessionLogsAzureAnalytics from '../model/GwUpdateRemoteAccessSessionLogsAzureAnalytics';
+import GwUpdateRemoteAccessSessionLogsDatadog from '../model/GwUpdateRemoteAccessSessionLogsDatadog';
+import GwUpdateRemoteAccessSessionLogsElasticsearch from '../model/GwUpdateRemoteAccessSessionLogsElasticsearch';
+import GwUpdateRemoteAccessSessionLogsGoogleChronicle from '../model/GwUpdateRemoteAccessSessionLogsGoogleChronicle';
+import GwUpdateRemoteAccessSessionLogsLogstash from '../model/GwUpdateRemoteAccessSessionLogsLogstash';
+import GwUpdateRemoteAccessSessionLogsLogzIo from '../model/GwUpdateRemoteAccessSessionLogsLogzIo';
+import GwUpdateRemoteAccessSessionLogsSplunk from '../model/GwUpdateRemoteAccessSessionLogsSplunk';
+import GwUpdateRemoteAccessSessionLogsStdout from '../model/GwUpdateRemoteAccessSessionLogsStdout';
+import GwUpdateRemoteAccessSessionLogsSumologic from '../model/GwUpdateRemoteAccessSessionLogsSumologic';
+import GwUpdateRemoteAccessSessionLogsSyslog from '../model/GwUpdateRemoteAccessSessionLogsSyslog';
 import Hmac from '../model/Hmac';
 import HmacOutput from '../model/HmacOutput';
 import ImportPasswords from '../model/ImportPasswords';
@@ -829,7 +843,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 4.2.3
+* @version 4.2.4
 */
 export default class V2Api {
 
@@ -871,7 +885,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = Object;
       return this.apiClient.callApi(
-        '/alias-details', 'GET',
+        '/alias-details', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -11250,6 +11264,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayGetRemoteAccess} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BastionConfigReplyObj} and HTTP response
+     */
+    gatewayGetRemoteAccessWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayGetRemoteAccess");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = BastionConfigReplyObj;
+      return this.apiClient.callApi(
+        '/gateway-get-remote-access', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayGetRemoteAccess} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BastionConfigReplyObj}
+     */
+    gatewayGetRemoteAccess(body) {
+      return this.gatewayGetRemoteAccessWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayGetTmpUsers} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/TmpUserData>} and HTTP response
      */
@@ -13613,6 +13670,86 @@ export default class V2Api {
 
 
     /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    gatewayUpdateRemoteAccessWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/gateway-update-remote-access', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    gatewayUpdateRemoteAccess() {
+      return this.gatewayUpdateRemoteAccessWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateRemoteAccessRdpRecordings} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    gatewayUpdateRemoteAccessRdpRecordingsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateRemoteAccessRdpRecordings");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/gateway-update-remote-access-rdp-recording', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateRemoteAccessRdpRecordings} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    gatewayUpdateRemoteAccessRdpRecordings(body) {
+      return this.gatewayUpdateRemoteAccessRdpRecordingsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GatewayUpdateTlsCert} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateTlsCertOutput} and HTTP response
      */
@@ -14546,6 +14683,479 @@ export default class V2Api {
      */
     getTargetDetails(body) {
       return this.getTargetDetailsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsAwsS3} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gwUpdateRemoteAccessSessionLogsAwsS3WithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gwUpdateRemoteAccessSessionLogsAwsS3");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-remote-access-session-forwarding-aws-s3', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsAwsS3} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gwUpdateRemoteAccessSessionLogsAwsS3(body) {
+      return this.gwUpdateRemoteAccessSessionLogsAwsS3WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsAzureAnalytics} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gwUpdateRemoteAccessSessionLogsAzureAnalyticsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gwUpdateRemoteAccessSessionLogsAzureAnalytics");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-remote-access-session-forwarding-azure-analytics', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsAzureAnalytics} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gwUpdateRemoteAccessSessionLogsAzureAnalytics(body) {
+      return this.gwUpdateRemoteAccessSessionLogsAzureAnalyticsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsDatadog} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gwUpdateRemoteAccessSessionLogsDatadogWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gwUpdateRemoteAccessSessionLogsDatadog");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-remote-access-session-forwarding-datadog', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsDatadog} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gwUpdateRemoteAccessSessionLogsDatadog(body) {
+      return this.gwUpdateRemoteAccessSessionLogsDatadogWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsElasticsearch} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gwUpdateRemoteAccessSessionLogsElasticsearchWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gwUpdateRemoteAccessSessionLogsElasticsearch");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-remote-access-session-forwarding-elasticsearch', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsElasticsearch} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gwUpdateRemoteAccessSessionLogsElasticsearch(body) {
+      return this.gwUpdateRemoteAccessSessionLogsElasticsearchWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsGoogleChronicle} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gwUpdateRemoteAccessSessionLogsGoogleChronicleWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gwUpdateRemoteAccessSessionLogsGoogleChronicle");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-remote-access-session-forwarding-google-chronicle', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsGoogleChronicle} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gwUpdateRemoteAccessSessionLogsGoogleChronicle(body) {
+      return this.gwUpdateRemoteAccessSessionLogsGoogleChronicleWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsLogstash} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gwUpdateRemoteAccessSessionLogsLogstashWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gwUpdateRemoteAccessSessionLogsLogstash");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-remote-access-session-forwarding-logstash', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsLogstash} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gwUpdateRemoteAccessSessionLogsLogstash(body) {
+      return this.gwUpdateRemoteAccessSessionLogsLogstashWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsLogzIo} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gwUpdateRemoteAccessSessionLogsLogzIoWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gwUpdateRemoteAccessSessionLogsLogzIo");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-remote-access-session-forwarding-logz-io', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsLogzIo} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gwUpdateRemoteAccessSessionLogsLogzIo(body) {
+      return this.gwUpdateRemoteAccessSessionLogsLogzIoWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsSplunk} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gwUpdateRemoteAccessSessionLogsSplunkWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gwUpdateRemoteAccessSessionLogsSplunk");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-remote-access-session-forwarding-splunk', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsSplunk} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gwUpdateRemoteAccessSessionLogsSplunk(body) {
+      return this.gwUpdateRemoteAccessSessionLogsSplunkWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsStdout} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gwUpdateRemoteAccessSessionLogsStdoutWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gwUpdateRemoteAccessSessionLogsStdout");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-remote-access-session-forwarding-stdout', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsStdout} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gwUpdateRemoteAccessSessionLogsStdout(body) {
+      return this.gwUpdateRemoteAccessSessionLogsStdoutWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsSumologic} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gwUpdateRemoteAccessSessionLogsSumologicWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gwUpdateRemoteAccessSessionLogsSumologic");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-remote-access-session-forwarding-sumologic', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsSumologic} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gwUpdateRemoteAccessSessionLogsSumologic(body) {
+      return this.gwUpdateRemoteAccessSessionLogsSumologicWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsSyslog} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GatewayUpdateLogForwardingOutput} and HTTP response
+     */
+    gwUpdateRemoteAccessSessionLogsSyslogWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gwUpdateRemoteAccessSessionLogsSyslog");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GatewayUpdateLogForwardingOutput;
+      return this.apiClient.callApi(
+        '/gateway-update-remote-access-session-forwarding-syslog', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GwUpdateRemoteAccessSessionLogsSyslog} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GatewayUpdateLogForwardingOutput}
+     */
+    gwUpdateRemoteAccessSessionLogsSyslog(body) {
+      return this.gwUpdateRemoteAccessSessionLogsSyslogWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

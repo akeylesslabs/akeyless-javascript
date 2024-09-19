@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventForwarderUpdateEmail model module.
  * @module model/EventForwarderUpdateEmail
- * @version 4.2.3
+ * @version 4.2.4
  */
 class EventForwarderUpdateEmail {
     /**
@@ -136,7 +136,7 @@ EventForwarderUpdateEmail.prototype['email-to'] = undefined;
 EventForwarderUpdateEmail.prototype['enable'] = 'true';
 
 /**
- * List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated]
+ * List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated]
  * @member {Array.<String>} event-types
  */
 EventForwarderUpdateEmail.prototype['event-types'] = undefined;
@@ -148,7 +148,7 @@ EventForwarderUpdateEmail.prototype['event-types'] = undefined;
 EventForwarderUpdateEmail.prototype['gateways-event-source-locations'] = undefined;
 
 /**
- * Set this option to include event errors details [true\\false]
+ * Set this option to include event errors details [true/false]
  * @member {String} include-error
  */
 EventForwarderUpdateEmail.prototype['include-error'] = undefined;

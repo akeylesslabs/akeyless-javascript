@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateSectigo model module.
  * @module model/TargetCreateSectigo
- * @version 4.2.3
+ * @version 4.2.4
  */
 class TargetCreateSectigo {
     /**

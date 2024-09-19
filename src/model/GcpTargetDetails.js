@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GcpTargetDetails model module.
  * @module model/GcpTargetDetails
- * @version 4.2.3
+ * @version 4.2.4
  */
 class GcpTargetDetails {
     /**

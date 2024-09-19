@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateChef model module.
  * @module model/DynamicSecretUpdateChef
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateChef {
     /**
@@ -158,7 +158,7 @@ DynamicSecretUpdateChef.prototype['json'] = false;
 DynamicSecretUpdateChef.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateChef.prototype['new-name'] = undefined;

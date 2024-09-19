@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **fixedUserOnly** | **Boolean** | Fixed user | [optional] [default to false]
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Dynamic secret name | 
-**newName** | **String** | Dynamic secret new name | [optional] 
+**newName** | **String** | Dynamic secret name | [optional] 
 **passwordLength** | **String** | The length of the password to be generated | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic secret encryption key | [optional] 
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 

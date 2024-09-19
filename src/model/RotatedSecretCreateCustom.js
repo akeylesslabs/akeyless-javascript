@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateCustom model module.
  * @module model/RotatedSecretCreateCustom
- * @version 4.2.3
+ * @version 4.2.4
  */
 class RotatedSecretCreateCustom {
     /**
@@ -83,6 +83,9 @@ class RotatedSecretCreateCustom {
             }
             if (data.hasOwnProperty('rotate-after-disconnect')) {
                 obj['rotate-after-disconnect'] = ApiClient.convertToType(data['rotate-after-disconnect'], 'String');
+            }
+            if (data.hasOwnProperty('rotation-event-in')) {
+                obj['rotation-event-in'] = ApiClient.convertToType(data['rotation-event-in'], ['String']);
             }
             if (data.hasOwnProperty('rotation-hour')) {
                 obj['rotation-hour'] = ApiClient.convertToType(data['rotation-hour'], 'Number');
@@ -213,6 +216,12 @@ RotatedSecretCreateCustom.prototype['password-length'] = undefined;
  * @default 'false'
  */
 RotatedSecretCreateCustom.prototype['rotate-after-disconnect'] = 'false';
+
+/**
+ * How many days before the rotation of the item would you like to be notified
+ * @member {Array.<String>} rotation-event-in
+ */
+RotatedSecretCreateCustom.prototype['rotation-event-in'] = undefined;
 
 /**
  * The Hour of the rotation in UTC

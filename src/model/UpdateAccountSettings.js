@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 4.2.3
+ * @version 4.2.4
  */
 class UpdateAccountSettings {
     /**
@@ -83,6 +83,9 @@ class UpdateAccountSettings {
             if (data.hasOwnProperty('enable-item-sharing')) {
                 obj['enable-item-sharing'] = ApiClient.convertToType(data['enable-item-sharing'], 'String');
             }
+            if (data.hasOwnProperty('enable-password-expiration')) {
+                obj['enable-password-expiration'] = ApiClient.convertToType(data['enable-password-expiration'], 'String');
+            }
             if (data.hasOwnProperty('force-new-versions')) {
                 obj['force-new-versions'] = ApiClient.convertToType(data['force-new-versions'], 'String');
             }
@@ -127,6 +130,12 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
+            }
+            if (data.hasOwnProperty('password-expiration-days')) {
+                obj['password-expiration-days'] = ApiClient.convertToType(data['password-expiration-days'], 'String');
+            }
+            if (data.hasOwnProperty('password-expiration-notification-days')) {
+                obj['password-expiration-notification-days'] = ApiClient.convertToType(data['password-expiration-notification-days'], 'String');
             }
             if (data.hasOwnProperty('password-length')) {
                 obj['password-length'] = ApiClient.convertToType(data['password-length'], 'Number');
@@ -244,6 +253,12 @@ UpdateAccountSettings.prototype['dynamic-secret-max-ttl-enable'] = undefined;
 UpdateAccountSettings.prototype['enable-item-sharing'] = undefined;
 
 /**
+ * Enable password expiration policy [true/false]
+ * @member {String} enable-password-expiration
+ */
+UpdateAccountSettings.prototype['enable-password-expiration'] = undefined;
+
+/**
  * If set to true, new version will be created on update
  * @member {String} force-new-versions
  */
@@ -334,6 +349,18 @@ UpdateAccountSettings.prototype['max-rotation-interval-enable'] = undefined;
  * @member {String} max-versions
  */
 UpdateAccountSettings.prototype['max-versions'] = undefined;
+
+/**
+ * Specifies the number of days that a password is valid before it must be changed. A default value of 90 days is used.
+ * @member {String} password-expiration-days
+ */
+UpdateAccountSettings.prototype['password-expiration-days'] = undefined;
+
+/**
+ * Specifies the number of days before a user receives notification that their password will expire. A default value of 14 days is used.
+ * @member {String} password-expiration-notification-days
+ */
+UpdateAccountSettings.prototype['password-expiration-notification-days'] = undefined;
 
 /**
  * Password length between 5 - to 50 characters

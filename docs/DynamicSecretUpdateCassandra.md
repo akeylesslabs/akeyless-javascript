@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **description** | **String** | Description of the object | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Dynamic secret name | 
-**newName** | **String** | Dynamic secret new name | [optional] 
+**newName** | **String** | Dynamic secret name | [optional] 
 **passwordLength** | **String** | The length of the password to be generated | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **ssl** | **Boolean** | Enable/Disable SSL [true/false] | [optional] [default to false]

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateMySql model module.
  * @module model/DynamicSecretUpdateMySql
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateMySql {
     /**
@@ -220,7 +220,7 @@ DynamicSecretUpdateMySql.prototype['mysql-username'] = undefined;
 DynamicSecretUpdateMySql.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateMySql.prototype['new-name'] = undefined;

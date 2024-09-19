@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGitlab model module.
  * @module model/DynamicSecretUpdateGitlab
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateGitlab {
     /**
@@ -190,7 +190,7 @@ DynamicSecretUpdateGitlab.prototype['json'] = false;
 DynamicSecretUpdateGitlab.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateGitlab.prototype['new-name'] = undefined;

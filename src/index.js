@@ -75,11 +75,15 @@ import AuthMethodUpdateSAML from './model/AuthMethodUpdateSAML';
 import AuthMethodUpdateUniversalIdentity from './model/AuthMethodUpdateUniversalIdentity';
 import AuthOutput from './model/AuthOutput';
 import AwsS3LogForwardingConfig from './model/AwsS3LogForwardingConfig';
+import AwsStorage from './model/AwsStorage';
 import AzureADAccessRules from './model/AzureADAccessRules';
 import AzureKeyVaultMigration from './model/AzureKeyVaultMigration';
 import AzureLogAnalyticsForwardingConfig from './model/AzureLogAnalyticsForwardingConfig';
 import AzurePayload from './model/AzurePayload';
+import AzureStorage from './model/AzureStorage';
 import AzureTargetDetails from './model/AzureTargetDetails';
+import BastionConfigReplyObj from './model/BastionConfigReplyObj';
+import BastionGlobalConf from './model/BastionGlobalConf';
 import BastionListEntry from './model/BastionListEntry';
 import BastionsList from './model/BastionsList';
 import BatchEncryptionRequestLine from './model/BatchEncryptionRequestLine';
@@ -462,6 +466,7 @@ import GatewayGetLdapAuthConfigOutput from './model/GatewayGetLdapAuthConfigOutp
 import GatewayGetLogForwarding from './model/GatewayGetLogForwarding';
 import GatewayGetMigration from './model/GatewayGetMigration';
 import GatewayGetProducer from './model/GatewayGetProducer';
+import GatewayGetRemoteAccess from './model/GatewayGetRemoteAccess';
 import GatewayGetTmpUsers from './model/GatewayGetTmpUsers';
 import GatewayListCustomerFragments from './model/GatewayListCustomerFragments';
 import GatewayListMigration from './model/GatewayListMigration';
@@ -560,6 +565,8 @@ import GatewayUpdateProducerSnowflake from './model/GatewayUpdateProducerSnowfla
 import GatewayUpdateProducerSnowflakeOutput from './model/GatewayUpdateProducerSnowflakeOutput';
 import GatewayUpdateProducerVenafi from './model/GatewayUpdateProducerVenafi';
 import GatewayUpdateProducerVenafiOutput from './model/GatewayUpdateProducerVenafiOutput';
+import GatewayUpdateRemoteAccess from './model/GatewayUpdateRemoteAccess';
+import GatewayUpdateRemoteAccessRdpRecordings from './model/GatewayUpdateRemoteAccessRdpRecordings';
 import GatewayUpdateTlsCert from './model/GatewayUpdateTlsCert';
 import GatewayUpdateTlsCertOutput from './model/GatewayUpdateTlsCertOutput';
 import GatewayUpdateTmpUsers from './model/GatewayUpdateTmpUsers';
@@ -606,6 +613,17 @@ import GodaddyTargetDetails from './model/GodaddyTargetDetails';
 import GoogleChronicleForwardingConfig from './model/GoogleChronicleForwardingConfig';
 import Group from './model/Group';
 import GwClusterIdentity from './model/GwClusterIdentity';
+import GwUpdateRemoteAccessSessionLogsAwsS3 from './model/GwUpdateRemoteAccessSessionLogsAwsS3';
+import GwUpdateRemoteAccessSessionLogsAzureAnalytics from './model/GwUpdateRemoteAccessSessionLogsAzureAnalytics';
+import GwUpdateRemoteAccessSessionLogsDatadog from './model/GwUpdateRemoteAccessSessionLogsDatadog';
+import GwUpdateRemoteAccessSessionLogsElasticsearch from './model/GwUpdateRemoteAccessSessionLogsElasticsearch';
+import GwUpdateRemoteAccessSessionLogsGoogleChronicle from './model/GwUpdateRemoteAccessSessionLogsGoogleChronicle';
+import GwUpdateRemoteAccessSessionLogsLogstash from './model/GwUpdateRemoteAccessSessionLogsLogstash';
+import GwUpdateRemoteAccessSessionLogsLogzIo from './model/GwUpdateRemoteAccessSessionLogsLogzIo';
+import GwUpdateRemoteAccessSessionLogsSplunk from './model/GwUpdateRemoteAccessSessionLogsSplunk';
+import GwUpdateRemoteAccessSessionLogsStdout from './model/GwUpdateRemoteAccessSessionLogsStdout';
+import GwUpdateRemoteAccessSessionLogsSumologic from './model/GwUpdateRemoteAccessSessionLogsSumologic';
+import GwUpdateRemoteAccessSessionLogsSyslog from './model/GwUpdateRemoteAccessSessionLogsSyslog';
 import HashiMigration from './model/HashiMigration';
 import HashiPayload from './model/HashiPayload';
 import HashiVaultTargetDetails from './model/HashiVaultTargetDetails';
@@ -690,6 +708,7 @@ import MongoDBTargetDetails from './model/MongoDBTargetDetails';
 import MoveObjects from './model/MoveObjects';
 import Name from './model/Name';
 import NativeK8sTargetDetails from './model/NativeK8sTargetDetails';
+import NextAutoRotationEvent from './model/NextAutoRotationEvent';
 import NotiForwarder from './model/NotiForwarder';
 import OAuth2AccessRules from './model/OAuth2AccessRules';
 import OAuth2CustomClaim from './model/OAuth2CustomClaim';
@@ -701,6 +720,7 @@ import OidcClientInfo from './model/OidcClientInfo';
 import OnePasswordMigration from './model/OnePasswordMigration';
 import OnePasswordPayload from './model/OnePasswordPayload';
 import PKICertificateIssueDetails from './model/PKICertificateIssueDetails';
+import PasswordExpirationInfo from './model/PasswordExpirationInfo';
 import PasswordPolicyInfo from './model/PasswordPolicyInfo';
 import PathRule from './model/PathRule';
 import PingTargetDetails from './model/PingTargetDetails';
@@ -718,6 +738,8 @@ import RenewCertificateOutput from './model/RenewCertificateOutput';
 import RequestAccess from './model/RequestAccess';
 import RequestAccessOutput from './model/RequestAccessOutput';
 import RequiredActivity from './model/RequiredActivity';
+import ResetAccessKey from './model/ResetAccessKey';
+import ResetAuthMethodAccessKeyOutput from './model/ResetAuthMethodAccessKeyOutput';
 import ReverseRBAC from './model/ReverseRBAC';
 import ReverseRBACClient from './model/ReverseRBACClient';
 import ReverseRBACOutput from './model/ReverseRBACOutput';
@@ -811,6 +833,8 @@ import SignRsaSsaPssOutput from './model/SignRsaSsaPssOutput';
 import SmInfo from './model/SmInfo';
 import SplunkLogForwardingConfig from './model/SplunkLogForwardingConfig';
 import SraInfo from './model/SraInfo';
+import SshBastionConf from './model/SshBastionConf';
+import SshBastionSessionTermination from './model/SshBastionSessionTermination';
 import StaticCredsAuth from './model/StaticCredsAuth';
 import StaticCredsAuthOutput from './model/StaticCredsAuthOutput';
 import StaticSecretDetailsInfo from './model/StaticSecretDetailsInfo';
@@ -1019,6 +1043,9 @@ import VerifyPKCS1 from './model/VerifyPKCS1';
 import VerifyPKICertOutput from './model/VerifyPKICertOutput';
 import VerifyPKICertWithClassicKey from './model/VerifyPKICertWithClassicKey';
 import VerifyRsaSsaPss from './model/VerifyRsaSsaPss';
+import WebBastionConf from './model/WebBastionConf';
+import WebBastionGuacamole from './model/WebBastionGuacamole';
+import WebBastionRdpRecord from './model/WebBastionRdpRecord';
 import WebHookNotiForwarderPublicDetails from './model/WebHookNotiForwarderPublicDetails';
 import WebTargetDetails from './model/WebTargetDetails';
 import WindowsService from './model/WindowsService';
@@ -1057,7 +1084,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 4.2.3
+* @version 4.2.4
 */
 export {
     /**
@@ -1439,6 +1466,12 @@ export {
     AwsS3LogForwardingConfig,
 
     /**
+     * The AwsStorage model constructor.
+     * @property {module:model/AwsStorage}
+     */
+    AwsStorage,
+
+    /**
      * The AzureADAccessRules model constructor.
      * @property {module:model/AzureADAccessRules}
      */
@@ -1463,10 +1496,28 @@ export {
     AzurePayload,
 
     /**
+     * The AzureStorage model constructor.
+     * @property {module:model/AzureStorage}
+     */
+    AzureStorage,
+
+    /**
      * The AzureTargetDetails model constructor.
      * @property {module:model/AzureTargetDetails}
      */
     AzureTargetDetails,
+
+    /**
+     * The BastionConfigReplyObj model constructor.
+     * @property {module:model/BastionConfigReplyObj}
+     */
+    BastionConfigReplyObj,
+
+    /**
+     * The BastionGlobalConf model constructor.
+     * @property {module:model/BastionGlobalConf}
+     */
+    BastionGlobalConf,
 
     /**
      * The BastionListEntry model constructor.
@@ -3761,6 +3812,12 @@ export {
     GatewayGetProducer,
 
     /**
+     * The GatewayGetRemoteAccess model constructor.
+     * @property {module:model/GatewayGetRemoteAccess}
+     */
+    GatewayGetRemoteAccess,
+
+    /**
      * The GatewayGetTmpUsers model constructor.
      * @property {module:model/GatewayGetTmpUsers}
      */
@@ -4349,6 +4406,18 @@ export {
     GatewayUpdateProducerVenafiOutput,
 
     /**
+     * The GatewayUpdateRemoteAccess model constructor.
+     * @property {module:model/GatewayUpdateRemoteAccess}
+     */
+    GatewayUpdateRemoteAccess,
+
+    /**
+     * The GatewayUpdateRemoteAccessRdpRecordings model constructor.
+     * @property {module:model/GatewayUpdateRemoteAccessRdpRecordings}
+     */
+    GatewayUpdateRemoteAccessRdpRecordings,
+
+    /**
      * The GatewayUpdateTlsCert model constructor.
      * @property {module:model/GatewayUpdateTlsCert}
      */
@@ -4623,6 +4692,72 @@ export {
      * @property {module:model/GwClusterIdentity}
      */
     GwClusterIdentity,
+
+    /**
+     * The GwUpdateRemoteAccessSessionLogsAwsS3 model constructor.
+     * @property {module:model/GwUpdateRemoteAccessSessionLogsAwsS3}
+     */
+    GwUpdateRemoteAccessSessionLogsAwsS3,
+
+    /**
+     * The GwUpdateRemoteAccessSessionLogsAzureAnalytics model constructor.
+     * @property {module:model/GwUpdateRemoteAccessSessionLogsAzureAnalytics}
+     */
+    GwUpdateRemoteAccessSessionLogsAzureAnalytics,
+
+    /**
+     * The GwUpdateRemoteAccessSessionLogsDatadog model constructor.
+     * @property {module:model/GwUpdateRemoteAccessSessionLogsDatadog}
+     */
+    GwUpdateRemoteAccessSessionLogsDatadog,
+
+    /**
+     * The GwUpdateRemoteAccessSessionLogsElasticsearch model constructor.
+     * @property {module:model/GwUpdateRemoteAccessSessionLogsElasticsearch}
+     */
+    GwUpdateRemoteAccessSessionLogsElasticsearch,
+
+    /**
+     * The GwUpdateRemoteAccessSessionLogsGoogleChronicle model constructor.
+     * @property {module:model/GwUpdateRemoteAccessSessionLogsGoogleChronicle}
+     */
+    GwUpdateRemoteAccessSessionLogsGoogleChronicle,
+
+    /**
+     * The GwUpdateRemoteAccessSessionLogsLogstash model constructor.
+     * @property {module:model/GwUpdateRemoteAccessSessionLogsLogstash}
+     */
+    GwUpdateRemoteAccessSessionLogsLogstash,
+
+    /**
+     * The GwUpdateRemoteAccessSessionLogsLogzIo model constructor.
+     * @property {module:model/GwUpdateRemoteAccessSessionLogsLogzIo}
+     */
+    GwUpdateRemoteAccessSessionLogsLogzIo,
+
+    /**
+     * The GwUpdateRemoteAccessSessionLogsSplunk model constructor.
+     * @property {module:model/GwUpdateRemoteAccessSessionLogsSplunk}
+     */
+    GwUpdateRemoteAccessSessionLogsSplunk,
+
+    /**
+     * The GwUpdateRemoteAccessSessionLogsStdout model constructor.
+     * @property {module:model/GwUpdateRemoteAccessSessionLogsStdout}
+     */
+    GwUpdateRemoteAccessSessionLogsStdout,
+
+    /**
+     * The GwUpdateRemoteAccessSessionLogsSumologic model constructor.
+     * @property {module:model/GwUpdateRemoteAccessSessionLogsSumologic}
+     */
+    GwUpdateRemoteAccessSessionLogsSumologic,
+
+    /**
+     * The GwUpdateRemoteAccessSessionLogsSyslog model constructor.
+     * @property {module:model/GwUpdateRemoteAccessSessionLogsSyslog}
+     */
+    GwUpdateRemoteAccessSessionLogsSyslog,
 
     /**
      * The HashiMigration model constructor.
@@ -5129,6 +5264,12 @@ export {
     NativeK8sTargetDetails,
 
     /**
+     * The NextAutoRotationEvent model constructor.
+     * @property {module:model/NextAutoRotationEvent}
+     */
+    NextAutoRotationEvent,
+
+    /**
      * The NotiForwarder model constructor.
      * @property {module:model/NotiForwarder}
      */
@@ -5193,6 +5334,12 @@ export {
      * @property {module:model/PKICertificateIssueDetails}
      */
     PKICertificateIssueDetails,
+
+    /**
+     * The PasswordExpirationInfo model constructor.
+     * @property {module:model/PasswordExpirationInfo}
+     */
+    PasswordExpirationInfo,
 
     /**
      * The PasswordPolicyInfo model constructor.
@@ -5295,6 +5442,18 @@ export {
      * @property {module:model/RequiredActivity}
      */
     RequiredActivity,
+
+    /**
+     * The ResetAccessKey model constructor.
+     * @property {module:model/ResetAccessKey}
+     */
+    ResetAccessKey,
+
+    /**
+     * The ResetAuthMethodAccessKeyOutput model constructor.
+     * @property {module:model/ResetAuthMethodAccessKeyOutput}
+     */
+    ResetAuthMethodAccessKeyOutput,
 
     /**
      * The ReverseRBAC model constructor.
@@ -5853,6 +6012,18 @@ export {
      * @property {module:model/SraInfo}
      */
     SraInfo,
+
+    /**
+     * The SshBastionConf model constructor.
+     * @property {module:model/SshBastionConf}
+     */
+    SshBastionConf,
+
+    /**
+     * The SshBastionSessionTermination model constructor.
+     * @property {module:model/SshBastionSessionTermination}
+     */
+    SshBastionSessionTermination,
 
     /**
      * The StaticCredsAuth model constructor.
@@ -7101,6 +7272,24 @@ export {
      * @property {module:model/VerifyRsaSsaPss}
      */
     VerifyRsaSsaPss,
+
+    /**
+     * The WebBastionConf model constructor.
+     * @property {module:model/WebBastionConf}
+     */
+    WebBastionConf,
+
+    /**
+     * The WebBastionGuacamole model constructor.
+     * @property {module:model/WebBastionGuacamole}
+     */
+    WebBastionGuacamole,
+
+    /**
+     * The WebBastionRdpRecord model constructor.
+     * @property {module:model/WebBastionRdpRecord}
+     */
+    WebBastionRdpRecord,
 
     /**
      * The WebHookNotiForwarderPublicDetails model constructor.

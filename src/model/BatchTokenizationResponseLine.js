@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BatchTokenizationResponseLine model module.
  * @module model/BatchTokenizationResponseLine
- * @version 4.2.3
+ * @version 4.2.4
  */
 class BatchTokenizationResponseLine {
     /**

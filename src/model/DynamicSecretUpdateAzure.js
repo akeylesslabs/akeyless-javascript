@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateAzure model module.
  * @module model/DynamicSecretUpdateAzure
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateAzure {
     /**
@@ -205,7 +205,7 @@ DynamicSecretUpdateAzure.prototype['json'] = false;
 DynamicSecretUpdateAzure.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateAzure.prototype['new-name'] = undefined;

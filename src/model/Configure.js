@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Configure model module.
  * @module model/Configure
- * @version 4.2.3
+ * @version 4.2.4
  */
 class Configure {
     /**
@@ -71,6 +71,15 @@ class Configure {
             if (data.hasOwnProperty('cert-data')) {
                 obj['cert-data'] = ApiClient.convertToType(data['cert-data'], 'String');
             }
+            if (data.hasOwnProperty('cert-issuer-name')) {
+                obj['cert-issuer-name'] = ApiClient.convertToType(data['cert-issuer-name'], 'String');
+            }
+            if (data.hasOwnProperty('cert-username')) {
+                obj['cert-username'] = ApiClient.convertToType(data['cert-username'], 'String');
+            }
+            if (data.hasOwnProperty('default-location-prefix')) {
+                obj['default-location-prefix'] = ApiClient.convertToType(data['default-location-prefix'], 'String');
+            }
             if (data.hasOwnProperty('gcp-audience')) {
                 obj['gcp-audience'] = ApiClient.convertToType(data['gcp-audience'], 'String');
             }
@@ -82,6 +91,9 @@ class Configure {
             }
             if (data.hasOwnProperty('key-data')) {
                 obj['key-data'] = ApiClient.convertToType(data['key-data'], 'String');
+            }
+            if (data.hasOwnProperty('legacy-signing-alg-name')) {
+                obj['legacy-signing-alg-name'] = ApiClient.convertToType(data['legacy-signing-alg-name'], 'Boolean');
             }
             if (data.hasOwnProperty('oci-auth-type')) {
                 obj['oci-auth-type'] = ApiClient.convertToType(data['oci-auth-type'], 'String');
@@ -146,6 +158,24 @@ Configure.prototype['azure_ad_object_id'] = undefined;
 Configure.prototype['cert-data'] = undefined;
 
 /**
+ * Certificate Issuer Name
+ * @member {String} cert-issuer-name
+ */
+Configure.prototype['cert-issuer-name'] = undefined;
+
+/**
+ * The username to sign in the SSH certificate (use a comma-separated list for more than one username)
+ * @member {String} cert-username
+ */
+Configure.prototype['cert-username'] = undefined;
+
+/**
+ * Default path prefix for name of items, targets and auth methods
+ * @member {String} default-location-prefix
+ */
+Configure.prototype['default-location-prefix'] = undefined;
+
+/**
  * GCP JWT audience
  * @member {String} gcp-audience
  * @default 'akeyless.io'
@@ -170,6 +200,12 @@ Configure.prototype['k8s-auth-config-name'] = undefined;
  * @member {String} key-data
  */
 Configure.prototype['key-data'] = undefined;
+
+/**
+ * Set this option to output legacy ('ssh-rsa-cert-v01@openssh.com') signing algorithm name in the certificate.
+ * @member {Boolean} legacy-signing-alg-name
+ */
+Configure.prototype['legacy-signing-alg-name'] = undefined;
 
 /**
  * The type of the OCI configuration to use [instance/apikey/resource] (relevant only for access-type=oci)

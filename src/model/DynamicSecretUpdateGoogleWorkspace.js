@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGoogleWorkspace model module.
  * @module model/DynamicSecretUpdateGoogleWorkspace
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateGoogleWorkspace {
     /**
@@ -184,7 +184,7 @@ DynamicSecretUpdateGoogleWorkspace.prototype['json'] = false;
 DynamicSecretUpdateGoogleWorkspace.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateGoogleWorkspace.prototype['new-name'] = undefined;

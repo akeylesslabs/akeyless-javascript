@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **newName** | **String** | New item name | [optional] 
 **passwordLength** | **String** | The length of the password to be generated | [optional] 
 **rmTag** | **[String]** | List of the existent tags that will be removed from this item | [optional] 
+**rotationEventIn** | **[String]** | How many days before the rotation of the item would you like to be notified | [optional] 
 **rotationHour** | **Number** | The Hour of the rotation in UTC | [optional] 
 **rotationInterval** | **String** | The number of days to wait between every automatic key rotation (1-365) | [optional] 
 **rotatorType** | **String** | The rotator type. options: [target/service-account-rotator] | 

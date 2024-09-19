@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyEcDsa model module.
  * @module model/VerifyEcDsa
- * @version 4.2.3
+ * @version 4.2.4
  */
 class VerifyEcDsa {
     /**

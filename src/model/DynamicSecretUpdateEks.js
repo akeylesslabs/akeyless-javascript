@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateEks model module.
  * @module model/DynamicSecretUpdateEks
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateEks {
     /**
@@ -195,7 +195,7 @@ DynamicSecretUpdateEks.prototype['json'] = false;
 DynamicSecretUpdateEks.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateEks.prototype['new-name'] = undefined;

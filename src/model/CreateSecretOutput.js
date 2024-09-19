@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecretOutput model module.
  * @module model/CreateSecretOutput
- * @version 4.2.3
+ * @version 4.2.4
  */
 class CreateSecretOutput {
     /**

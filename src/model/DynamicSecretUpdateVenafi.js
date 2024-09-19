@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateVenafi model module.
  * @module model/DynamicSecretUpdateVenafi
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateVenafi {
     /**
@@ -196,7 +196,7 @@ DynamicSecretUpdateVenafi.prototype['json'] = false;
 DynamicSecretUpdateVenafi.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateVenafi.prototype['new-name'] = undefined;

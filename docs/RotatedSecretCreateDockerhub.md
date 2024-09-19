@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **maxVersions** | **String** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **String** | Rotated secret name | 
 **passwordLength** | **String** | The length of the password to be generated | [optional] 
+**rotationEventIn** | **[String]** | How many days before the rotation of the item would you like to be notified | [optional] 
 **rotationHour** | **Number** | The Hour of the rotation in UTC | [optional] 
 **rotationInterval** | **String** | The number of days to wait between every automatic key rotation (1-365) | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 

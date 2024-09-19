@@ -13,11 +13,13 @@
 
 import ApiClient from '../ApiClient';
 import CertificateChainInfo from './CertificateChainInfo';
+import CertificateExpirationEvent from './CertificateExpirationEvent';
 import CertificateIssueInfo from './CertificateIssueInfo';
 import CertificateTemplateInfo from './CertificateTemplateInfo';
 import ClassicKeyDetailsInfo from './ClassicKeyDetailsInfo';
 import DynamicSecretProducerInfo from './DynamicSecretProducerInfo';
 import ImporterInfo from './ImporterInfo';
+import NextAutoRotationEvent from './NextAutoRotationEvent';
 import OidcClientInfo from './OidcClientInfo';
 import PasswordPolicyInfo from './PasswordPolicyInfo';
 import RotatedSecretDetailsInfo from './RotatedSecretDetailsInfo';
@@ -28,7 +30,7 @@ import TokenizerInfo from './TokenizerInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 4.2.3
+ * @version 4.2.4
  */
 class ItemGeneralInfo {
     /**
@@ -83,8 +85,14 @@ class ItemGeneralInfo {
             if (data.hasOwnProperty('dynamic_secret_producer_details')) {
                 obj['dynamic_secret_producer_details'] = DynamicSecretProducerInfo.constructFromObject(data['dynamic_secret_producer_details']);
             }
+            if (data.hasOwnProperty('expiration_events')) {
+                obj['expiration_events'] = ApiClient.convertToType(data['expiration_events'], [CertificateExpirationEvent]);
+            }
             if (data.hasOwnProperty('importer_info')) {
                 obj['importer_info'] = ImporterInfo.constructFromObject(data['importer_info']);
+            }
+            if (data.hasOwnProperty('next_rotation_events')) {
+                obj['next_rotation_events'] = ApiClient.convertToType(data['next_rotation_events'], [NextAutoRotationEvent]);
             }
             if (data.hasOwnProperty('oidc_client_info')) {
                 obj['oidc_client_info'] = OidcClientInfo.constructFromObject(data['oidc_client_info']);
@@ -152,9 +160,19 @@ ItemGeneralInfo.prototype['display_metadata'] = undefined;
 ItemGeneralInfo.prototype['dynamic_secret_producer_details'] = undefined;
 
 /**
+ * @member {Array.<module:model/CertificateExpirationEvent>} expiration_events
+ */
+ItemGeneralInfo.prototype['expiration_events'] = undefined;
+
+/**
  * @member {module:model/ImporterInfo} importer_info
  */
 ItemGeneralInfo.prototype['importer_info'] = undefined;
+
+/**
+ * @member {Array.<module:model/NextAutoRotationEvent>} next_rotation_events
+ */
+ItemGeneralInfo.prototype['next_rotation_events'] = undefined;
 
 /**
  * @member {module:model/OidcClientInfo} oidc_client_info

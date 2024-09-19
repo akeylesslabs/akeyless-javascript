@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateK8s model module.
  * @module model/DynamicSecretUpdateK8s
- * @version 4.2.3
+ * @version 4.2.4
  */
 class DynamicSecretUpdateK8s {
     /**
@@ -242,7 +242,7 @@ DynamicSecretUpdateK8s.prototype['k8s-service-account-type'] = undefined;
 DynamicSecretUpdateK8s.prototype['name'] = undefined;
 
 /**
- * Dynamic secret new name
+ * Dynamic secret name
  * @member {String} new-name
  */
 DynamicSecretUpdateK8s.prototype['new-name'] = undefined;

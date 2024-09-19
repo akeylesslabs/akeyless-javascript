@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 import AllowedIpSettings from './AllowedIpSettings';
 import DataProtectionSection from './DataProtectionSection';
 import DynamicSecretMaxTtl from './DynamicSecretMaxTtl';
+import PasswordExpirationInfo from './PasswordExpirationInfo';
 import PasswordPolicyInfo from './PasswordPolicyInfo';
 import RotationSecretMaxInterval from './RotationSecretMaxInterval';
 import SharingPolicyInfo from './SharingPolicyInfo';
@@ -23,7 +24,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 4.2.3
+ * @version 4.2.4
  */
 class AccountGeneralSettings {
     /**
@@ -87,6 +88,9 @@ class AccountGeneralSettings {
             }
             if (data.hasOwnProperty('lock_default_key')) {
                 obj['lock_default_key'] = ApiClient.convertToType(data['lock_default_key'], 'Boolean');
+            }
+            if (data.hasOwnProperty('password_expiration_info')) {
+                obj['password_expiration_info'] = PasswordExpirationInfo.constructFromObject(data['password_expiration_info']);
             }
             if (data.hasOwnProperty('password_policy')) {
                 obj['password_policy'] = PasswordPolicyInfo.constructFromObject(data['password_policy']);
@@ -165,6 +169,11 @@ AccountGeneralSettings.prototype['item_usage_event'] = undefined;
  * @member {Boolean} lock_default_key
  */
 AccountGeneralSettings.prototype['lock_default_key'] = undefined;
+
+/**
+ * @member {module:model/PasswordExpirationInfo} password_expiration_info
+ */
+AccountGeneralSettings.prototype['password_expiration_info'] = undefined;
 
 /**
  * @member {module:model/PasswordPolicyInfo} password_policy

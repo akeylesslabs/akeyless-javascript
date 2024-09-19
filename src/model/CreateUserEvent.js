@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateUserEvent model module.
  * @module model/CreateUserEvent
- * @version 4.2.3
+ * @version 4.2.4
  */
 class CreateUserEvent {
     /**
