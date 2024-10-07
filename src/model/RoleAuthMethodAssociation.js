@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleAuthMethodAssociation model module.
  * @module model/RoleAuthMethodAssociation
- * @version 4.2.4
+ * @version 4.2.5
  */
 class RoleAuthMethodAssociation {
     /**
@@ -60,6 +60,9 @@ class RoleAuthMethodAssociation {
             if (data.hasOwnProperty('auth_method_sub_claims')) {
                 obj['auth_method_sub_claims'] = ApiClient.convertToType(data['auth_method_sub_claims'], {'String': ['String']});
             }
+            if (data.hasOwnProperty('is_subclaims_with_operator')) {
+                obj['is_subclaims_with_operator'] = ApiClient.convertToType(data['is_subclaims_with_operator'], 'Boolean');
+            }
             if (data.hasOwnProperty('sub_claims_case_sensitive')) {
                 obj['sub_claims_case_sensitive'] = ApiClient.convertToType(data['sub_claims_case_sensitive'], 'Boolean');
             }
@@ -89,6 +92,11 @@ RoleAuthMethodAssociation.prototype['auth_method_name'] = undefined;
  * @member {Object.<String, Array.<String>>} auth_method_sub_claims
  */
 RoleAuthMethodAssociation.prototype['auth_method_sub_claims'] = undefined;
+
+/**
+ * @member {Boolean} is_subclaims_with_operator
+ */
+RoleAuthMethodAssociation.prototype['is_subclaims_with_operator'] = undefined;
 
 /**
  * @member {Boolean} sub_claims_case_sensitive

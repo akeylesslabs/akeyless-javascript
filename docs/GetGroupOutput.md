@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **groupAlias** | **String** |  | [optional] 
 **groupId** | **String** |  | [optional] 
 **groupName** | **String** |  | [optional] 
+**isSubclaimsWithOperator** | **Boolean** |  | [optional] 
 **modificationDate** | **Date** |  | [optional] 
 **userAssignments** | [**[AccessPermissionAssignment]**](AccessPermissionAssignment.md) |  | [optional] 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UidGenerateTokenOutput model module.
  * @module model/UidGenerateTokenOutput
- * @version 4.2.4
+ * @version 4.2.5
  */
 class UidGenerateTokenOutput {
     /**

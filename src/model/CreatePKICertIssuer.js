@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 4.2.4
+ * @version 4.2.5
  */
 class CreatePKICertIssuer {
     /**
@@ -89,6 +89,9 @@ class CreatePKICertIssuer {
             if (data.hasOwnProperty('create-public-crl')) {
                 obj['create-public-crl'] = ApiClient.convertToType(data['create-public-crl'], 'Boolean');
             }
+            if (data.hasOwnProperty('critical-key-usage')) {
+                obj['critical-key-usage'] = ApiClient.convertToType(data['critical-key-usage'], 'String');
+            }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
@@ -97,6 +100,9 @@ class CreatePKICertIssuer {
             }
             if (data.hasOwnProperty('destination-path')) {
                 obj['destination-path'] = ApiClient.convertToType(data['destination-path'], 'String');
+            }
+            if (data.hasOwnProperty('enable-acme')) {
+                obj['enable-acme'] = ApiClient.convertToType(data['enable-acme'], 'Boolean');
             }
             if (data.hasOwnProperty('expiration-event-in')) {
                 obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
@@ -244,6 +250,13 @@ CreatePKICertIssuer.prototype['create-private-crl'] = undefined;
 CreatePKICertIssuer.prototype['create-public-crl'] = undefined;
 
 /**
+ * Mark key usage as critical [true/false]
+ * @member {String} critical-key-usage
+ * @default 'true'
+ */
+CreatePKICertIssuer.prototype['critical-key-usage'] = 'true';
+
+/**
  * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
@@ -262,13 +275,19 @@ CreatePKICertIssuer.prototype['description'] = undefined;
 CreatePKICertIssuer.prototype['destination-path'] = undefined;
 
 /**
+ * If set, the cert issuer will support the acme protocol
+ * @member {Boolean} enable-acme
+ */
+CreatePKICertIssuer.prototype['enable-acme'] = undefined;
+
+/**
  * How many days before the expiration of the certificate would you like to be notified.
  * @member {Array.<String>} expiration-event-in
  */
 CreatePKICertIssuer.prototype['expiration-event-in'] = undefined;
 
 /**
- * The GW cluster URL to issue the certificate from, required in Public CA mode or to allow CRLs on private CA
+ * The GW cluster URL to issue the certificate from. Required in Public CA mode, to allow CRLs on private CA, or to enable ACME
  * @member {String} gw-cluster-url
  */
 CreatePKICertIssuer.prototype['gw-cluster-url'] = undefined;

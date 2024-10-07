@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateRedshift model module.
  * @module model/RotatedSecretCreateRedshift
- * @version 4.2.4
+ * @version 4.2.5
  */
 class RotatedSecretCreateRedshift {
     /**

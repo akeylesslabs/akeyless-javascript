@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **authMethodAccessId** | **String** |  | [optional] 
 **authMethodName** | **String** |  | [optional] 
 **authMethodSubClaims** | **{String: [String]}** |  | [optional] 
+**isSubclaimsWithOperator** | **Boolean** |  | [optional] 
 **subClaimsCaseSensitive** | **Boolean** |  | [optional] 
 
 

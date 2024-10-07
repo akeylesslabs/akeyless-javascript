@@ -17,7 +17,7 @@ import CertificateExpirationEvent from './CertificateExpirationEvent';
 /**
  * The PKICertificateIssueDetails model module.
  * @module model/PKICertificateIssueDetails
- * @version 4.2.4
+ * @version 4.2.5
  */
 class PKICertificateIssueDetails {
     /**
@@ -48,6 +48,9 @@ class PKICertificateIssueDetails {
         if (data) {
             obj = obj || new PKICertificateIssueDetails();
 
+            if (data.hasOwnProperty('acme_enabled')) {
+                obj['acme_enabled'] = ApiClient.convertToType(data['acme_enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('allow_any_name')) {
                 obj['allow_any_name'] = ApiClient.convertToType(data['allow_any_name'], 'Boolean');
             }
@@ -117,6 +120,9 @@ class PKICertificateIssueDetails {
             if (data.hasOwnProperty('locality')) {
                 obj['locality'] = ApiClient.convertToType(data['locality'], ['String']);
             }
+            if (data.hasOwnProperty('non_critical_key_usage')) {
+                obj['non_critical_key_usage'] = ApiClient.convertToType(data['non_critical_key_usage'], 'Boolean');
+            }
             if (data.hasOwnProperty('not_before_duration')) {
                 obj['not_before_duration'] = ApiClient.convertToType(data['not_before_duration'], 'Number');
             }
@@ -150,6 +156,11 @@ class PKICertificateIssueDetails {
 
 
 }
+
+/**
+ * @member {Boolean} acme_enabled
+ */
+PKICertificateIssueDetails.prototype['acme_enabled'] = undefined;
 
 /**
  * @member {Boolean} allow_any_name
@@ -268,6 +279,11 @@ PKICertificateIssueDetails.prototype['key_usage_list'] = undefined;
  * @member {Array.<String>} locality
  */
 PKICertificateIssueDetails.prototype['locality'] = undefined;
+
+/**
+ * @member {Boolean} non_critical_key_usage
+ */
+PKICertificateIssueDetails.prototype['non_critical_key_usage'] = undefined;
 
 /**
  * A Duration represents the elapsed time between two instants as an int64 nanosecond count. The representation limits the largest representable duration to approximately 290 years.

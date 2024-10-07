@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **assocId** | **String** |  | [optional] 
 **authMethodSubClaims** | **{String: [String]}** |  | [optional] 
 **isSubClaimsCaseSensitive** | **Boolean** |  | [optional] 
+**isSubclaimsWithOperator** | **Boolean** |  | [optional] 
 **roleName** | **String** |  | [optional] 
 **rules** | [**Rules**](Rules.md) |  | [optional] 
 

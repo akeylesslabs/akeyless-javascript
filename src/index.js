@@ -22,6 +22,7 @@ import AccessOrGroupPermissionAssignment from './model/AccessOrGroupPermissionAs
 import AccessPermissionAssignment from './model/AccessPermissionAssignment';
 import AccountGeneralSettings from './model/AccountGeneralSettings';
 import AccountObjectVersionSettingsOutput from './model/AccountObjectVersionSettingsOutput';
+import AcmeAccount from './model/AcmeAccount';
 import ActiveDirectoryMigration from './model/ActiveDirectoryMigration';
 import ActiveDirectoryPayload from './model/ActiveDirectoryPayload';
 import AddGatewayAllowedAccessId from './model/AddGatewayAllowedAccessId';
@@ -101,6 +102,7 @@ import CertificateIssueInfo from './model/CertificateIssueInfo';
 import CertificateTemplateInfo from './model/CertificateTemplateInfo';
 import CertificateVersionInfo from './model/CertificateVersionInfo';
 import CfInfo from './model/CfInfo';
+import ChangeAdminAccountPassword from './model/ChangeAdminAccountPassword';
 import ChefTargetDetails from './model/ChefTargetDetails';
 import ClassicKeyDetailsInfo from './model/ClassicKeyDetailsInfo';
 import ClassicKeyStatusInfo from './model/ClassicKeyStatusInfo';
@@ -231,6 +233,7 @@ import DSProducerDetails from './model/DSProducerDetails';
 import DataProtectionSection from './model/DataProtectionSection';
 import DatadogForwardingConfig from './model/DatadogForwardingConfig';
 import DbTargetDetails from './model/DbTargetDetails';
+import DeactivateAcmeAccount from './model/DeactivateAcmeAccount';
 import Decrypt from './model/Decrypt';
 import DecryptFile from './model/DecryptFile';
 import DecryptFileOutput from './model/DecryptFileOutput';
@@ -574,6 +577,8 @@ import GatewaysListResponse from './model/GatewaysListResponse';
 import GcpTargetDetails from './model/GcpTargetDetails';
 import GenCustomerFragment from './model/GenCustomerFragment';
 import GeneralConfigPart from './model/GeneralConfigPart';
+import GenerateAcmeEab from './model/GenerateAcmeEab';
+import GenerateAcmeEabOutput from './model/GenerateAcmeEabOutput';
 import GenerateCsr from './model/GenerateCsr';
 import GenerateCsrOutput from './model/GenerateCsrOutput';
 import GetAccountSettings from './model/GetAccountSettings';
@@ -679,6 +684,8 @@ import LdapTargetDetails from './model/LdapTargetDetails';
 import LeadershipConfigPart from './model/LeadershipConfigPart';
 import LinkedDetails from './model/LinkedDetails';
 import LinkedTargetDetails from './model/LinkedTargetDetails';
+import ListAcmeAccounts from './model/ListAcmeAccounts';
+import ListAcmeAccountsOutput from './model/ListAcmeAccountsOutput';
 import ListAuthMethods from './model/ListAuthMethods';
 import ListAuthMethodsOutput from './model/ListAuthMethodsOutput';
 import ListGateways from './model/ListGateways';
@@ -1084,7 +1091,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 4.2.4
+* @version 4.2.5
 */
 export {
     /**
@@ -1146,6 +1153,12 @@ export {
      * @property {module:model/AccountObjectVersionSettingsOutput}
      */
     AccountObjectVersionSettingsOutput,
+
+    /**
+     * The AcmeAccount model constructor.
+     * @property {module:model/AcmeAccount}
+     */
+    AcmeAccount,
 
     /**
      * The ActiveDirectoryMigration model constructor.
@@ -1620,6 +1633,12 @@ export {
      * @property {module:model/CfInfo}
      */
     CfInfo,
+
+    /**
+     * The ChangeAdminAccountPassword model constructor.
+     * @property {module:model/ChangeAdminAccountPassword}
+     */
+    ChangeAdminAccountPassword,
 
     /**
      * The ChefTargetDetails model constructor.
@@ -2400,6 +2419,12 @@ export {
      * @property {module:model/DbTargetDetails}
      */
     DbTargetDetails,
+
+    /**
+     * The DeactivateAcmeAccount model constructor.
+     * @property {module:model/DeactivateAcmeAccount}
+     */
+    DeactivateAcmeAccount,
 
     /**
      * The Decrypt model constructor.
@@ -4460,6 +4485,18 @@ export {
     GeneralConfigPart,
 
     /**
+     * The GenerateAcmeEab model constructor.
+     * @property {module:model/GenerateAcmeEab}
+     */
+    GenerateAcmeEab,
+
+    /**
+     * The GenerateAcmeEabOutput model constructor.
+     * @property {module:model/GenerateAcmeEabOutput}
+     */
+    GenerateAcmeEabOutput,
+
+    /**
      * The GenerateCsr model constructor.
      * @property {module:model/GenerateCsr}
      */
@@ -5088,6 +5125,18 @@ export {
      * @property {module:model/LinkedTargetDetails}
      */
     LinkedTargetDetails,
+
+    /**
+     * The ListAcmeAccounts model constructor.
+     * @property {module:model/ListAcmeAccounts}
+     */
+    ListAcmeAccounts,
+
+    /**
+     * The ListAcmeAccountsOutput model constructor.
+     * @property {module:model/ListAcmeAccountsOutput}
+     */
+    ListAcmeAccountsOutput,
 
     /**
      * The ListAuthMethods model constructor.

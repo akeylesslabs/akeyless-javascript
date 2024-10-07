@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **accessibility** | **String** | for personal password manager | [optional] [default to &#39;regular&#39;]
 **addTag** | **[String]** | List of the new tags that will be attached to this item | [optional] 
 **certFileData** | **String** | PEM Certificate in a Base64 format. Used for updating RSA keys&#39; certificates. | [optional] 
+**certificateFormat** | **String** |  | [optional] 
 **changeEvent** | **String** | Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret) | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] [default to &#39;default_metadata&#39;]

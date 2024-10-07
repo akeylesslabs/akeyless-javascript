@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateClassicKeyCertificate model module.
  * @module model/UpdateClassicKeyCertificate
- * @version 4.2.4
+ * @version 4.2.5
  */
 class UpdateClassicKeyCertificate {
     /**
@@ -53,6 +53,9 @@ class UpdateClassicKeyCertificate {
             if (data.hasOwnProperty('cert-file-data')) {
                 obj['cert-file-data'] = ApiClient.convertToType(data['cert-file-data'], 'String');
             }
+            if (data.hasOwnProperty('certificate-format')) {
+                obj['certificate-format'] = ApiClient.convertToType(data['certificate-format'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -77,6 +80,11 @@ class UpdateClassicKeyCertificate {
  * @member {String} cert-file-data
  */
 UpdateClassicKeyCertificate.prototype['cert-file-data'] = undefined;
+
+/**
+ * @member {String} certificate-format
+ */
+UpdateClassicKeyCertificate.prototype['certificate-format'] = undefined;
 
 /**
  * Set output format to JSON

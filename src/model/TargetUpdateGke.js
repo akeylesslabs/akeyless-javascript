@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateGke model module.
  * @module model/TargetUpdateGke
- * @version 4.2.4
+ * @version 4.2.5
  */
 class TargetUpdateGke {
     /**

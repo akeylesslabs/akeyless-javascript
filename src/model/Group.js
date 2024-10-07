@@ -17,7 +17,7 @@ import AccessPermissionAssignment from './AccessPermissionAssignment';
 /**
  * The Group model module.
  * @module model/Group
- * @version 4.2.4
+ * @version 4.2.5
  */
 class Group {
     /**
@@ -66,6 +66,9 @@ class Group {
             if (data.hasOwnProperty('group_name')) {
                 obj['group_name'] = ApiClient.convertToType(data['group_name'], 'String');
             }
+            if (data.hasOwnProperty('is_subclaims_with_operator')) {
+                obj['is_subclaims_with_operator'] = ApiClient.convertToType(data['is_subclaims_with_operator'], 'Boolean');
+            }
             if (data.hasOwnProperty('modification_date')) {
                 obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
             }
@@ -108,6 +111,11 @@ Group.prototype['group_id'] = undefined;
  * @member {String} group_name
  */
 Group.prototype['group_name'] = undefined;
+
+/**
+ * @member {Boolean} is_subclaims_with_operator
+ */
+Group.prototype['is_subclaims_with_operator'] = undefined;
 
 /**
  * @member {Date} modification_date

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 4.2.4
+ * @version 4.2.5
  */
 class UpdateItem {
     /**
@@ -60,6 +60,9 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('cert-file-data')) {
                 obj['cert-file-data'] = ApiClient.convertToType(data['cert-file-data'], 'String');
+            }
+            if (data.hasOwnProperty('certificate-format')) {
+                obj['certificate-format'] = ApiClient.convertToType(data['certificate-format'], 'String');
             }
             if (data.hasOwnProperty('change-event')) {
                 obj['change-event'] = ApiClient.convertToType(data['change-event'], 'String');
@@ -208,6 +211,11 @@ UpdateItem.prototype['add-tag'] = undefined;
  * @member {String} cert-file-data
  */
 UpdateItem.prototype['cert-file-data'] = undefined;
+
+/**
+ * @member {String} certificate-format
+ */
+UpdateItem.prototype['certificate-format'] = undefined;
 
 /**
  * Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret)

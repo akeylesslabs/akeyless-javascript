@@ -19,7 +19,7 @@ import UsageReportSummary from './UsageReportSummary';
 /**
  * The AllAnalyticsData model module.
  * @module model/AllAnalyticsData
- * @version 4.2.4
+ * @version 4.2.5
  */
 class AllAnalyticsData {
     /**

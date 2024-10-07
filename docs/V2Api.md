@@ -37,6 +37,7 @@ Method | HTTP request | Description
 [**authMethodUpdateOauth2**](V2Api.md#authMethodUpdateOauth2) | **POST** /auth-method-update-oauth2 | 
 [**authMethodUpdateSAML**](V2Api.md#authMethodUpdateSAML) | **POST** /auth-method-update-saml | 
 [**authMethodUpdateUniversalIdentity**](V2Api.md#authMethodUpdateUniversalIdentity) | **POST** /auth-method-update-universal-identity | 
+[**changeAdminAccountPassword**](V2Api.md#changeAdminAccountPassword) | **POST** /change-admin-account-password | 
 [**configure**](V2Api.md#configure) | **POST** /configure | 
 [**connect**](V2Api.md#connect) | **POST** /connect | 
 [**createAWSTarget**](V2Api.md#createAWSTarget) | **POST** /create-aws-target | 
@@ -94,6 +95,7 @@ Method | HTTP request | Description
 [**createWindowsTarget**](V2Api.md#createWindowsTarget) | **POST** /create-windows-target | 
 [**createZeroSSLTarget**](V2Api.md#createZeroSSLTarget) | **POST** /create-zerossl-target | 
 [**createldapTarget**](V2Api.md#createldapTarget) | **POST** /create-ldap-target | 
+[**deactivateAcmeAccount**](V2Api.md#deactivateAcmeAccount) | **POST** /deactivate-acme-account | 
 [**decrypt**](V2Api.md#decrypt) | **POST** /decrypt | 
 [**decryptBatch**](V2Api.md#decryptBatch) | **POST** /decrypt-batch | 
 [**decryptGPG**](V2Api.md#decryptGPG) | **POST** /decrypt-gpg | 
@@ -306,6 +308,7 @@ Method | HTTP request | Description
 [**gatewayUpdateRemoteAccessRdpRecordings**](V2Api.md#gatewayUpdateRemoteAccessRdpRecordings) | **POST** /gateway-update-remote-access-rdp-recording | 
 [**gatewayUpdateTlsCert**](V2Api.md#gatewayUpdateTlsCert) | **POST** /gateway-update-tls-cert | 
 [**gatewayUpdateTmpUsers**](V2Api.md#gatewayUpdateTmpUsers) | **POST** /gateway-update-producer-tmp-creds | 
+[**generateAcmeEab**](V2Api.md#generateAcmeEab) | **POST** /generate-acme-eab | 
 [**generateCsr**](V2Api.md#generateCsr) | **POST** /generate-csr | 
 [**getAccountLogo**](V2Api.md#getAccountLogo) | **POST** /get-account-logo | 
 [**getAccountSettings**](V2Api.md#getAccountSettings) | **POST** /get-account-settings | 
@@ -352,6 +355,7 @@ Method | HTTP request | Description
 [**kmipRenewServerCertificate**](V2Api.md#kmipRenewServerCertificate) | **POST** /kmip-renew-environment | 
 [**kmipServerSetup**](V2Api.md#kmipServerSetup) | **POST** /kmip-create-environment | 
 [**kmipSetServerState**](V2Api.md#kmipSetServerState) | **POST** /kmip-set-environment-state | 
+[**listAcmeAccounts**](V2Api.md#listAcmeAccounts) | **POST** /list-acme-accounts | 
 [**listAuthMethods**](V2Api.md#listAuthMethods) | **POST** /list-auth-methods | 
 [**listGateways**](V2Api.md#listGateways) | **POST** /list-gateways | 
 [**listGroups**](V2Api.md#listGroups) | **POST** /list-group | 
@@ -1934,6 +1938,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AuthMethodUpdateOutput**](AuthMethodUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## changeAdminAccountPassword
+
+> Object changeAdminAccountPassword(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ChangeAdminAccountPassword(); // ChangeAdminAccountPassword | 
+apiInstance.changeAdminAccountPassword(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ChangeAdminAccountPassword**](ChangeAdminAccountPassword.md)|  | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 
@@ -4328,6 +4374,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateLdapTargetOutput**](CreateLdapTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## deactivateAcmeAccount
+
+> Object deactivateAcmeAccount(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.DeactivateAcmeAccount(); // DeactivateAcmeAccount | 
+apiInstance.deactivateAcmeAccount(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DeactivateAcmeAccount**](DeactivateAcmeAccount.md)|  | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 
@@ -13249,6 +13337,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## generateAcmeEab
+
+> GenerateAcmeEabOutput generateAcmeEab(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.GenerateAcmeEab(); // GenerateAcmeEab | 
+apiInstance.generateAcmeEab(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GenerateAcmeEab**](GenerateAcmeEab.md)|  | 
+
+### Return type
+
+[**GenerateAcmeEabOutput**](GenerateAcmeEabOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## generateCsr
 
 > GenerateCsrOutput generateCsr(body)
@@ -15192,6 +15322,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**KmipSetServerStateOutput**](KmipSetServerStateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## listAcmeAccounts
+
+> ListAcmeAccountsOutput listAcmeAccounts(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ListAcmeAccounts(); // ListAcmeAccounts | 
+apiInstance.listAcmeAccounts(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ListAcmeAccounts**](ListAcmeAccounts.md)|  | 
+
+### Return type
+
+[**ListAcmeAccountsOutput**](ListAcmeAccountsOutput.md)
 
 ### Authorization
 

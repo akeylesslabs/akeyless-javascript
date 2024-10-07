@@ -19,7 +19,7 @@ import WebBastionConf from './WebBastionConf';
 /**
  * The BastionConfigReplyObj model module.
  * @module model/BastionConfigReplyObj
- * @version 4.2.4
+ * @version 4.2.5
  */
 class BastionConfigReplyObj {
     /**

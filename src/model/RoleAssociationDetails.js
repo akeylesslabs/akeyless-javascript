@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleAssociationDetails model module.
  * @module model/RoleAssociationDetails
- * @version 4.2.4
+ * @version 4.2.5
  */
 class RoleAssociationDetails {
     /**
@@ -57,6 +57,9 @@ class RoleAssociationDetails {
             if (data.hasOwnProperty('auth_method_sub_claims')) {
                 obj['auth_method_sub_claims'] = ApiClient.convertToType(data['auth_method_sub_claims'], {'String': ['String']});
             }
+            if (data.hasOwnProperty('is_subclaims_with_operator')) {
+                obj['is_subclaims_with_operator'] = ApiClient.convertToType(data['is_subclaims_with_operator'], 'Boolean');
+            }
             if (data.hasOwnProperty('role_name')) {
                 obj['role_name'] = ApiClient.convertToType(data['role_name'], 'String');
             }
@@ -84,6 +87,11 @@ RoleAssociationDetails.prototype['auth_method_name'] = undefined;
  * @member {Object.<String, Array.<String>>} auth_method_sub_claims
  */
 RoleAssociationDetails.prototype['auth_method_sub_claims'] = undefined;
+
+/**
+ * @member {Boolean} is_subclaims_with_operator
+ */
+RoleAssociationDetails.prototype['is_subclaims_with_operator'] = undefined;
 
 /**
  * @member {String} role_name

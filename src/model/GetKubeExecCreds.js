@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetKubeExecCreds model module.
  * @module model/GetKubeExecCreds
- * @version 4.2.4
+ * @version 4.2.5
  */
 class GetKubeExecCreds {
     /**
@@ -128,7 +128,7 @@ GetKubeExecCreds.prototype['common-name'] = undefined;
 GetKubeExecCreds.prototype['csr-data-base64'] = undefined;
 
 /**
- * A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: 'clientauth', 'serverauth'.
+ * A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: 'clientauth', 'serverauth'. If critical is present the extension will be marked as critical
  * @member {String} extended-key-usage
  */
 GetKubeExecCreds.prototype['extended-key-usage'] = undefined;

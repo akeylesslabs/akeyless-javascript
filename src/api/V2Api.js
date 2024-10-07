@@ -59,6 +59,7 @@ import BastionsList from '../model/BastionsList';
 import BatchEncryptionRequestLine from '../model/BatchEncryptionRequestLine';
 import BatchTokenizationRequestLine from '../model/BatchTokenizationRequestLine';
 import CacheConfigPart from '../model/CacheConfigPart';
+import ChangeAdminAccountPassword from '../model/ChangeAdminAccountPassword';
 import Configure from '../model/Configure';
 import ConfigureOutput from '../model/ConfigureOutput';
 import Connect from '../model/Connect';
@@ -173,6 +174,7 @@ import CreateWindowsTargetOutput from '../model/CreateWindowsTargetOutput';
 import CreateZeroSSLTarget from '../model/CreateZeroSSLTarget';
 import CreateZeroSSLTargetOutput from '../model/CreateZeroSSLTargetOutput';
 import DSProducerDetails from '../model/DSProducerDetails';
+import DeactivateAcmeAccount from '../model/DeactivateAcmeAccount';
 import Decrypt from '../model/Decrypt';
 import DecryptGPG from '../model/DecryptGPG';
 import DecryptGPGOutput from '../model/DecryptGPGOutput';
@@ -485,6 +487,8 @@ import GatewayUpdateTlsCert from '../model/GatewayUpdateTlsCert';
 import GatewayUpdateTlsCertOutput from '../model/GatewayUpdateTlsCertOutput';
 import GatewayUpdateTmpUsers from '../model/GatewayUpdateTmpUsers';
 import GatewaysListResponse from '../model/GatewaysListResponse';
+import GenerateAcmeEab from '../model/GenerateAcmeEab';
+import GenerateAcmeEabOutput from '../model/GenerateAcmeEabOutput';
 import GenerateCsr from '../model/GenerateCsr';
 import GenerateCsrOutput from '../model/GenerateCsrOutput';
 import GetAccountSettings from '../model/GetAccountSettings';
@@ -556,6 +560,8 @@ import KmipRenewServerCertificateOutput from '../model/KmipRenewServerCertificat
 import KmipServerSetup from '../model/KmipServerSetup';
 import KmipSetServerState from '../model/KmipSetServerState';
 import KmipSetServerStateOutput from '../model/KmipSetServerStateOutput';
+import ListAcmeAccounts from '../model/ListAcmeAccounts';
+import ListAcmeAccountsOutput from '../model/ListAcmeAccountsOutput';
 import ListAuthMethods from '../model/ListAuthMethods';
 import ListAuthMethodsOutput from '../model/ListAuthMethodsOutput';
 import ListGateways from '../model/ListGateways';
@@ -843,7 +849,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 4.2.4
+* @version 4.2.5
 */
 export default class V2Api {
 
@@ -2273,6 +2279,49 @@ export default class V2Api {
      */
     authMethodUpdateUniversalIdentity(body) {
       return this.authMethodUpdateUniversalIdentityWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/ChangeAdminAccountPassword} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    changeAdminAccountPasswordWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling changeAdminAccountPassword");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/change-admin-account-password', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ChangeAdminAccountPassword} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    changeAdminAccountPassword(body) {
+      return this.changeAdminAccountPasswordWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4724,6 +4773,49 @@ export default class V2Api {
      */
     createldapTarget(body) {
       return this.createldapTargetWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DeactivateAcmeAccount} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deactivateAcmeAccountWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling deactivateAcmeAccount");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/deactivate-acme-account', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DeactivateAcmeAccount} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deactivateAcmeAccount(body) {
+      return this.deactivateAcmeAccountWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -13836,6 +13928,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GenerateAcmeEab} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GenerateAcmeEabOutput} and HTTP response
+     */
+    generateAcmeEabWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling generateAcmeEab");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GenerateAcmeEabOutput;
+      return this.apiClient.callApi(
+        '/generate-acme-eab', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GenerateAcmeEab} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GenerateAcmeEabOutput}
+     */
+    generateAcmeEab(body) {
+      return this.generateAcmeEabWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GenerateCsr} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GenerateCsrOutput} and HTTP response
      */
@@ -15788,6 +15923,49 @@ export default class V2Api {
      */
     kmipSetServerState(opts) {
       return this.kmipSetServerStateWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/ListAcmeAccounts} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListAcmeAccountsOutput} and HTTP response
+     */
+    listAcmeAccountsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling listAcmeAccounts");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ListAcmeAccountsOutput;
+      return this.apiClient.callApi(
+        '/list-acme-accounts', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ListAcmeAccounts} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ListAcmeAccountsOutput}
+     */
+    listAcmeAccounts(body) {
+      return this.listAcmeAccountsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
