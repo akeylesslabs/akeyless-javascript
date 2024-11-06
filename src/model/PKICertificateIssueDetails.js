@@ -17,7 +17,7 @@ import CertificateExpirationEvent from './CertificateExpirationEvent';
 /**
  * The PKICertificateIssueDetails model module.
  * @module model/PKICertificateIssueDetails
- * @version 4.2.5
+ * @version 4.3.0
  */
 class PKICertificateIssueDetails {
     /**
@@ -68,6 +68,9 @@ class PKICertificateIssueDetails {
             }
             if (data.hasOwnProperty('allowed_uri_sans')) {
                 obj['allowed_uri_sans'] = ApiClient.convertToType(data['allowed_uri_sans'], ['String']);
+            }
+            if (data.hasOwnProperty('auto_renew_certificate')) {
+                obj['auto_renew_certificate'] = ApiClient.convertToType(data['auto_renew_certificate'], 'Boolean');
             }
             if (data.hasOwnProperty('basic_constraints_valid_for_non_ca')) {
                 obj['basic_constraints_valid_for_non_ca'] = ApiClient.convertToType(data['basic_constraints_valid_for_non_ca'], 'Boolean');
@@ -141,6 +144,9 @@ class PKICertificateIssueDetails {
             if (data.hasOwnProperty('province')) {
                 obj['province'] = ApiClient.convertToType(data['province'], ['String']);
             }
+            if (data.hasOwnProperty('renew_before_expiration_in_days')) {
+                obj['renew_before_expiration_in_days'] = ApiClient.convertToType(data['renew_before_expiration_in_days'], 'Number');
+            }
             if (data.hasOwnProperty('require_cn')) {
                 obj['require_cn'] = ApiClient.convertToType(data['require_cn'], 'Boolean');
             }
@@ -191,6 +197,11 @@ PKICertificateIssueDetails.prototype['allowed_extra_extensions'] = undefined;
  * @member {Array.<String>} allowed_uri_sans
  */
 PKICertificateIssueDetails.prototype['allowed_uri_sans'] = undefined;
+
+/**
+ * @member {Boolean} auto_renew_certificate
+ */
+PKICertificateIssueDetails.prototype['auto_renew_certificate'] = undefined;
 
 /**
  * @member {Boolean} basic_constraints_valid_for_non_ca
@@ -316,6 +327,11 @@ PKICertificateIssueDetails.prototype['protect_generated_certificates'] = undefin
  * @member {Array.<String>} province
  */
 PKICertificateIssueDetails.prototype['province'] = undefined;
+
+/**
+ * @member {Number} renew_before_expiration_in_days
+ */
+PKICertificateIssueDetails.prototype['renew_before_expiration_in_days'] = undefined;
 
 /**
  * @member {Boolean} require_cn

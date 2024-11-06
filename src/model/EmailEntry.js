@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailEntry model module.
  * @module model/EmailEntry
- * @version 4.2.5
+ * @version 4.3.0
  */
 class EmailEntry {
     /**

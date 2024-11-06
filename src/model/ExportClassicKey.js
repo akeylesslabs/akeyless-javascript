@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExportClassicKey model module.
  * @module model/ExportClassicKey
- * @version 4.2.5
+ * @version 4.3.0
  */
 class ExportClassicKey {
     /**
@@ -50,6 +50,9 @@ class ExportClassicKey {
         if (data) {
             obj = obj || new ExportClassicKey();
 
+            if (data.hasOwnProperty('accessibility')) {
+                obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
+            }
             if (data.hasOwnProperty('export-public-key')) {
                 obj['export-public-key'] = ApiClient.convertToType(data['export-public-key'], 'Boolean');
             }
@@ -77,6 +80,13 @@ class ExportClassicKey {
 
 
 }
+
+/**
+ * for personal password manager
+ * @member {String} accessibility
+ * @default 'regular'
+ */
+ExportClassicKey.prototype['accessibility'] = 'regular';
 
 /**
  * Use this option to output only public key

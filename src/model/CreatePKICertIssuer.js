@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 4.2.5
+ * @version 4.3.0
  */
 class CreatePKICertIssuer {
     /**
@@ -70,6 +70,9 @@ class CreatePKICertIssuer {
             }
             if (data.hasOwnProperty('allowed-uri-sans')) {
                 obj['allowed-uri-sans'] = ApiClient.convertToType(data['allowed-uri-sans'], 'String');
+            }
+            if (data.hasOwnProperty('auto-renew')) {
+                obj['auto-renew'] = ApiClient.convertToType(data['auto-renew'], 'Boolean');
             }
             if (data.hasOwnProperty('ca-target')) {
                 obj['ca-target'] = ApiClient.convertToType(data['ca-target'], 'String');
@@ -149,6 +152,9 @@ class CreatePKICertIssuer {
             if (data.hasOwnProperty('province')) {
                 obj['province'] = ApiClient.convertToType(data['province'], 'String');
             }
+            if (data.hasOwnProperty('scheduled-renew')) {
+                obj['scheduled-renew'] = ApiClient.convertToType(data['scheduled-renew'], 'Number');
+            }
             if (data.hasOwnProperty('server-flag')) {
                 obj['server-flag'] = ApiClient.convertToType(data['server-flag'], 'Boolean');
             }
@@ -212,6 +218,12 @@ CreatePKICertIssuer.prototype['allowed-extra-extensions'] = undefined;
  * @member {String} allowed-uri-sans
  */
 CreatePKICertIssuer.prototype['allowed-uri-sans'] = undefined;
+
+/**
+ * Automatically renew certificates before expiration
+ * @member {Boolean} auto-renew
+ */
+CreatePKICertIssuer.prototype['auto-renew'] = undefined;
 
 /**
  * The name of an existing CA target to attach this PKI Certificate Issuer to, required in Public CA mode
@@ -371,6 +383,12 @@ CreatePKICertIssuer.prototype['protect-certificates'] = undefined;
  * @member {String} province
  */
 CreatePKICertIssuer.prototype['province'] = undefined;
+
+/**
+ * Number of days before expiration to renew certificates
+ * @member {Number} scheduled-renew
+ */
+CreatePKICertIssuer.prototype['scheduled-renew'] = undefined;
 
 /**
  * If set, certificates will be flagged for server auth use

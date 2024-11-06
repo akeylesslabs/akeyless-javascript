@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGKETargetOutput model module.
  * @module model/UpdateGKETargetOutput
- * @version 4.2.5
+ * @version 4.3.0
  */
 class UpdateGKETargetOutput {
     /**

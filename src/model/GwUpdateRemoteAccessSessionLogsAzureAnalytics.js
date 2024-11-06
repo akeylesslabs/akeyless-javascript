@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GwUpdateRemoteAccessSessionLogsAzureAnalytics model module.
  * @module model/GwUpdateRemoteAccessSessionLogsAzureAnalytics
- * @version 4.2.5
+ * @version 4.3.0
  */
 class GwUpdateRemoteAccessSessionLogsAzureAnalytics {
     /**

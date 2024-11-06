@@ -28,6 +28,7 @@ import AuthMethodCreateCert from '../model/AuthMethodCreateCert';
 import AuthMethodCreateEmail from '../model/AuthMethodCreateEmail';
 import AuthMethodCreateGcp from '../model/AuthMethodCreateGcp';
 import AuthMethodCreateK8s from '../model/AuthMethodCreateK8s';
+import AuthMethodCreateKerberos from '../model/AuthMethodCreateKerberos';
 import AuthMethodCreateLdap from '../model/AuthMethodCreateLdap';
 import AuthMethodCreateOCI from '../model/AuthMethodCreateOCI';
 import AuthMethodCreateOIDC from '../model/AuthMethodCreateOIDC';
@@ -46,6 +47,7 @@ import AuthMethodUpdateCert from '../model/AuthMethodUpdateCert';
 import AuthMethodUpdateEmail from '../model/AuthMethodUpdateEmail';
 import AuthMethodUpdateGcp from '../model/AuthMethodUpdateGcp';
 import AuthMethodUpdateK8s from '../model/AuthMethodUpdateK8s';
+import AuthMethodUpdateKerberos from '../model/AuthMethodUpdateKerberos';
 import AuthMethodUpdateLdap from '../model/AuthMethodUpdateLdap';
 import AuthMethodUpdateOCI from '../model/AuthMethodUpdateOCI';
 import AuthMethodUpdateOIDC from '../model/AuthMethodUpdateOIDC';
@@ -144,6 +146,8 @@ import CreateOidcApp from '../model/CreateOidcApp';
 import CreateOidcAppOutput from '../model/CreateOidcAppOutput';
 import CreatePKICertIssuer from '../model/CreatePKICertIssuer';
 import CreatePKICertIssuerOutput from '../model/CreatePKICertIssuerOutput';
+import CreatePasskey from '../model/CreatePasskey';
+import CreatePasskeyOutput from '../model/CreatePasskeyOutput';
 import CreatePingTarget from '../model/CreatePingTarget';
 import CreatePingTargetOutput from '../model/CreatePingTargetOutput';
 import CreateRabbitMQTarget from '../model/CreateRabbitMQTarget';
@@ -482,6 +486,7 @@ import GatewayUpdateProducerSnowflake from '../model/GatewayUpdateProducerSnowfl
 import GatewayUpdateProducerSnowflakeOutput from '../model/GatewayUpdateProducerSnowflakeOutput';
 import GatewayUpdateProducerVenafi from '../model/GatewayUpdateProducerVenafi';
 import GatewayUpdateProducerVenafiOutput from '../model/GatewayUpdateProducerVenafiOutput';
+import GatewayUpdateRemoteAccess from '../model/GatewayUpdateRemoteAccess';
 import GatewayUpdateRemoteAccessRdpRecordings from '../model/GatewayUpdateRemoteAccessRdpRecordings';
 import GatewayUpdateTlsCert from '../model/GatewayUpdateTlsCert';
 import GatewayUpdateTlsCertOutput from '../model/GatewayUpdateTlsCertOutput';
@@ -560,6 +565,7 @@ import KmipRenewServerCertificateOutput from '../model/KmipRenewServerCertificat
 import KmipServerSetup from '../model/KmipServerSetup';
 import KmipSetServerState from '../model/KmipSetServerState';
 import KmipSetServerStateOutput from '../model/KmipSetServerStateOutput';
+import KubeconfigGenerateOutput from '../model/KubeconfigGenerateOutput';
 import ListAcmeAccounts from '../model/ListAcmeAccounts';
 import ListAcmeAccountsOutput from '../model/ListAcmeAccountsOutput';
 import ListAuthMethods from '../model/ListAuthMethods';
@@ -573,7 +579,9 @@ import ListItemsOutput from '../model/ListItemsOutput';
 import ListRoles from '../model/ListRoles';
 import ListRolesOutput from '../model/ListRolesOutput';
 import ListSRABastions from '../model/ListSRABastions';
+import ListSRASessions from '../model/ListSRASessions';
 import ListSharedItems from '../model/ListSharedItems';
+import ListSraSessionsOutput from '../model/ListSraSessionsOutput';
 import ListTargets from '../model/ListTargets';
 import ListTargetsOutput from '../model/ListTargetsOutput';
 import LogForwardingConfigPart from '../model/LogForwardingConfigPart';
@@ -588,6 +596,8 @@ import RenewCertificate from '../model/RenewCertificate';
 import RenewCertificateOutput from '../model/RenewCertificateOutput';
 import RequestAccess from '../model/RequestAccess';
 import RequestAccessOutput from '../model/RequestAccessOutput';
+import ResetAccessKey from '../model/ResetAccessKey';
+import ResetAuthMethodAccessKeyOutput from '../model/ResetAuthMethodAccessKeyOutput';
 import ReverseRBAC from '../model/ReverseRBAC';
 import ReverseRBACOutput from '../model/ReverseRBACOutput';
 import RevokeCertificate from '../model/RevokeCertificate';
@@ -849,7 +859,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 4.2.5
+* @version 4.3.0
 */
 export default class V2Api {
 
@@ -1333,6 +1343,49 @@ export default class V2Api {
      */
     authMethodCreateK8s(body) {
       return this.authMethodCreateK8sWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateKerberos} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateKerberosWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodCreateKerberos");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-kerberos', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateKerberos} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateKerberos(body) {
+      return this.authMethodCreateKerberosWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2021,6 +2074,49 @@ export default class V2Api {
      */
     authMethodUpdateK8s(body) {
       return this.authMethodUpdateK8sWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateKerberos} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodUpdateKerberosWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling authMethodUpdateKerberos");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-kerberos', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateKerberos} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodUpdateKerberos(body) {
+      return this.authMethodUpdateKerberosWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -4128,6 +4224,49 @@ export default class V2Api {
      */
     createPKICertIssuer(body) {
       return this.createPKICertIssuerWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreatePasskey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreatePasskeyOutput} and HTTP response
+     */
+    createPasskeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createPasskey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreatePasskeyOutput;
+      return this.apiClient.callApi(
+        '/create-passkey', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreatePasskey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreatePasskeyOutput}
+     */
+    createPasskey(body) {
+      return this.createPasskeyWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -13762,10 +13901,15 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GatewayUpdateRemoteAccess} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    gatewayUpdateRemoteAccessWithHttpInfo() {
-      let postBody = null;
+    gatewayUpdateRemoteAccessWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling gatewayUpdateRemoteAccess");
+      }
 
       let pathParams = {
       };
@@ -13777,7 +13921,7 @@ export default class V2Api {
       };
 
       let authNames = [];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Object;
       return this.apiClient.callApi(
@@ -13788,10 +13932,11 @@ export default class V2Api {
     }
 
     /**
+     * @param {module:model/GatewayUpdateRemoteAccess} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    gatewayUpdateRemoteAccess() {
-      return this.gatewayUpdateRemoteAccessWithHttpInfo()
+    gatewayUpdateRemoteAccess(body) {
+      return this.gatewayUpdateRemoteAccessWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -15930,6 +16075,43 @@ export default class V2Api {
 
 
     /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KubeconfigGenerateOutput} and HTTP response
+     */
+    kubeconfigGenerateWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = KubeconfigGenerateOutput;
+      return this.apiClient.callApi(
+        '/kubeconfig-generate', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KubeconfigGenerateOutput}
+     */
+    kubeconfigGenerate() {
+      return this.kubeconfigGenerateWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/ListAcmeAccounts} body 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListAcmeAccountsOutput} and HTTP response
      */
@@ -16224,6 +16406,49 @@ export default class V2Api {
      */
     listSRABastions(body) {
       return this.listSRABastionsWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/ListSRASessions} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListSraSessionsOutput} and HTTP response
+     */
+    listSRASessionsWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling listSRASessions");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ListSraSessionsOutput;
+      return this.apiClient.callApi(
+        '/list-sra-sessions', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ListSRASessions} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ListSraSessionsOutput}
+     */
+    listSRASessions(body) {
+      return this.listSRASessionsWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -16567,6 +16792,49 @@ export default class V2Api {
      */
     requestAccess(body) {
       return this.requestAccessWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/ResetAccessKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResetAuthMethodAccessKeyOutput} and HTTP response
+     */
+    resetAccessKeyWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling resetAccessKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ResetAuthMethodAccessKeyOutput;
+      return this.apiClient.callApi(
+        '/reset-access-key', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ResetAccessKey} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResetAuthMethodAccessKeyOutput}
+     */
+    resetAccessKey(body) {
+      return this.resetAccessKeyWithHttpInfo(body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -17,7 +17,7 @@ import WindowsService from './WindowsService';
 /**
  * The RotatedSecretDetailsInfo model module.
  * @module model/RotatedSecretDetailsInfo
- * @version 4.2.5
+ * @version 4.3.0
  */
 class RotatedSecretDetailsInfo {
     /**

@@ -18,7 +18,7 @@ import CertificateInfo from './CertificateInfo';
 /**
  * The CertificateChainInfo model module.
  * @module model/CertificateChainInfo
- * @version 4.2.5
+ * @version 4.3.0
  */
 class CertificateChainInfo {
     /**
@@ -49,6 +49,9 @@ class CertificateChainInfo {
         if (data) {
             obj = obj || new CertificateChainInfo();
 
+            if (data.hasOwnProperty('auto_renew_certificate')) {
+                obj['auto_renew_certificate'] = ApiClient.convertToType(data['auto_renew_certificate'], 'Boolean');
+            }
             if (data.hasOwnProperty('certificate_chain')) {
                 obj['certificate_chain'] = ApiClient.convertToType(data['certificate_chain'], [CertificateInfo]);
             }
@@ -73,8 +76,14 @@ class CertificateChainInfo {
             if (data.hasOwnProperty('certificate_status')) {
                 obj['certificate_status'] = ApiClient.convertToType(data['certificate_status'], 'String');
             }
+            if (data.hasOwnProperty('error_message')) {
+                obj['error_message'] = ApiClient.convertToType(data['error_message'], 'String');
+            }
             if (data.hasOwnProperty('expiration_events')) {
                 obj['expiration_events'] = ApiClient.convertToType(data['expiration_events'], [CertificateExpirationEvent]);
+            }
+            if (data.hasOwnProperty('renew_before_expiration_in_days')) {
+                obj['renew_before_expiration_in_days'] = ApiClient.convertToType(data['renew_before_expiration_in_days'], 'Number');
             }
         }
         return obj;
@@ -82,6 +91,11 @@ class CertificateChainInfo {
 
 
 }
+
+/**
+ * @member {Boolean} auto_renew_certificate
+ */
+CertificateChainInfo.prototype['auto_renew_certificate'] = undefined;
 
 /**
  * @member {Array.<module:model/CertificateInfo>} certificate_chain
@@ -124,9 +138,19 @@ CertificateChainInfo.prototype['certificate_pem'] = undefined;
 CertificateChainInfo.prototype['certificate_status'] = undefined;
 
 /**
+ * @member {String} error_message
+ */
+CertificateChainInfo.prototype['error_message'] = undefined;
+
+/**
  * @member {Array.<module:model/CertificateExpirationEvent>} expiration_events
  */
 CertificateChainInfo.prototype['expiration_events'] = undefined;
+
+/**
+ * @member {Number} renew_before_expiration_in_days
+ */
+CertificateChainInfo.prototype['renew_before_expiration_in_days'] = undefined;
 
 
 

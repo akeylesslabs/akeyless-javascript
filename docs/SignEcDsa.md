@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**accessibility** | **String** | for personal password manager | [optional] [default to &#39;regular&#39;]
 **displayId** | **String** | The display id of the EC key to use for the signing process | [optional] 
 **itemId** | **Number** | The item id of the EC key to use for the signing process | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]

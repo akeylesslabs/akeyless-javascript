@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignEcDsa model module.
  * @module model/SignEcDsa
- * @version 4.2.5
+ * @version 4.3.0
  */
 class SignEcDsa {
     /**
@@ -50,6 +50,9 @@ class SignEcDsa {
         if (data) {
             obj = obj || new SignEcDsa();
 
+            if (data.hasOwnProperty('accessibility')) {
+                obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
+            }
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
             }
@@ -83,6 +86,13 @@ class SignEcDsa {
 
 
 }
+
+/**
+ * for personal password manager
+ * @member {String} accessibility
+ * @default 'regular'
+ */
+SignEcDsa.prototype['accessibility'] = 'regular';
 
 /**
  * The display id of the EC key to use for the signing process

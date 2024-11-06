@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **accountId** | **String** |  | [optional] 
 **associatedGwIds** | **[Number]** |  | [optional] 
 **authMethodAccessId** | **String** |  | [optional] 
+**authMethodAdditionalData** | [**AuthMethodAdditionalData**](AuthMethodAdditionalData.md) |  | [optional] 
 **authMethodName** | **String** |  | [optional] 
 **authMethodRolesAssoc** | [**[AuthMethodRoleAssociation]**](AuthMethodRoleAssociation.md) |  | [optional] 
 **clientPermissions** | **[String]** |  | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetGroup model module.
  * @module model/GetGroup
- * @version 4.2.5
+ * @version 4.3.0
  */
 class GetGroup {
     /**

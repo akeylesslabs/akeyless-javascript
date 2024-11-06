@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AcmeAccount model module.
  * @module model/AcmeAccount
- * @version 4.2.5
+ * @version 4.3.0
  */
 class AcmeAccount {
     /**

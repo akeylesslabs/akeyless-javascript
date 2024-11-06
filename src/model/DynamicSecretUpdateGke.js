@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGke model module.
  * @module model/DynamicSecretUpdateGke
- * @version 4.2.5
+ * @version 4.3.0
  */
 class DynamicSecretUpdateGke {
     /**

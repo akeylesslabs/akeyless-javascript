@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Configure model module.
  * @module model/Configure
- * @version 4.2.5
+ * @version 4.3.0
  */
 class Configure {
     /**
@@ -80,6 +80,12 @@ class Configure {
             if (data.hasOwnProperty('default-location-prefix')) {
                 obj['default-location-prefix'] = ApiClient.convertToType(data['default-location-prefix'], 'String');
             }
+            if (data.hasOwnProperty('disable-pafxfast')) {
+                obj['disable-pafxfast'] = ApiClient.convertToType(data['disable-pafxfast'], 'String');
+            }
+            if (data.hasOwnProperty('gateway-spn')) {
+                obj['gateway-spn'] = ApiClient.convertToType(data['gateway-spn'], 'String');
+            }
             if (data.hasOwnProperty('gcp-audience')) {
                 obj['gcp-audience'] = ApiClient.convertToType(data['gcp-audience'], 'String');
             }
@@ -89,8 +95,17 @@ class Configure {
             if (data.hasOwnProperty('k8s-auth-config-name')) {
                 obj['k8s-auth-config-name'] = ApiClient.convertToType(data['k8s-auth-config-name'], 'String');
             }
+            if (data.hasOwnProperty('kerberos-username')) {
+                obj['kerberos-username'] = ApiClient.convertToType(data['kerberos-username'], 'String');
+            }
             if (data.hasOwnProperty('key-data')) {
                 obj['key-data'] = ApiClient.convertToType(data['key-data'], 'String');
+            }
+            if (data.hasOwnProperty('keytab-data')) {
+                obj['keytab-data'] = ApiClient.convertToType(data['keytab-data'], 'String');
+            }
+            if (data.hasOwnProperty('krb5-conf-data')) {
+                obj['krb5-conf-data'] = ApiClient.convertToType(data['krb5-conf-data'], 'String');
             }
             if (data.hasOwnProperty('legacy-signing-alg-name')) {
                 obj['legacy-signing-alg-name'] = ApiClient.convertToType(data['legacy-signing-alg-name'], 'Boolean');
@@ -176,6 +191,18 @@ Configure.prototype['cert-username'] = undefined;
 Configure.prototype['default-location-prefix'] = undefined;
 
 /**
+ * Disable the FAST negotiation in the Kerberos authentication method
+ * @member {String} disable-pafxfast
+ */
+Configure.prototype['disable-pafxfast'] = undefined;
+
+/**
+ * The service principal name of the gateway as registered in LDAP (i.e., HTTP/gateway)
+ * @member {String} gateway-spn
+ */
+Configure.prototype['gateway-spn'] = undefined;
+
+/**
  * GCP JWT audience
  * @member {String} gcp-audience
  * @default 'akeyless.io'
@@ -196,10 +223,28 @@ Configure.prototype['json'] = false;
 Configure.prototype['k8s-auth-config-name'] = undefined;
 
 /**
+ * TThe username for the entry within the keytab to authenticate via Kerberos
+ * @member {String} kerberos-username
+ */
+Configure.prototype['kerberos-username'] = undefined;
+
+/**
  * Private key data encoded in base64. Used if file was not provided.(relevant only for access-type=cert in Curl Context)
  * @member {String} key-data
  */
 Configure.prototype['key-data'] = undefined;
+
+/**
+ * Base64-encoded content of a valid keytab file, containing the service account's entry.
+ * @member {String} keytab-data
+ */
+Configure.prototype['keytab-data'] = undefined;
+
+/**
+ * Base64-encoded content of a valid krb5.conf file, specifying the settings and parameters required for Kerberos authentication.
+ * @member {String} krb5-conf-data
+ */
+Configure.prototype['krb5-conf-data'] = undefined;
 
 /**
  * Set this option to output legacy ('ssh-rsa-cert-v01@openssh.com') signing algorithm name in the certificate.

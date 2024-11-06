@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateDockerhub model module.
  * @module model/DynamicSecretUpdateDockerhub
- * @version 4.2.5
+ * @version 4.3.0
  */
 class DynamicSecretUpdateDockerhub {
     /**

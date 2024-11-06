@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateMongodb model module.
  * @module model/RotatedSecretUpdateMongodb
- * @version 4.2.5
+ * @version 4.3.0
  */
 class RotatedSecretUpdateMongodb {
     /**

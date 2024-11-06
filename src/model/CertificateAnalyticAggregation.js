@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CertificateAnalyticAggregation model module.
  * @module model/CertificateAnalyticAggregation
- * @version 4.2.5
+ * @version 4.3.0
  */
 class CertificateAnalyticAggregation {
     /**

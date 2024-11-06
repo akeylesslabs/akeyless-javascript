@@ -17,7 +17,7 @@ import ClassicKeyTargetInfo from './ClassicKeyTargetInfo';
 /**
  * The ClassicKeyDetailsInfo model module.
  * @module model/ClassicKeyDetailsInfo
- * @version 4.2.5
+ * @version 4.3.0
  */
 class ClassicKeyDetailsInfo {
     /**
@@ -54,6 +54,9 @@ class ClassicKeyDetailsInfo {
             if (data.hasOwnProperty('classic_key_id')) {
                 obj['classic_key_id'] = ApiClient.convertToType(data['classic_key_id'], 'String');
             }
+            if (data.hasOwnProperty('credential_id')) {
+                obj['credential_id'] = ApiClient.convertToType(data['credential_id'], 'String');
+            }
             if (data.hasOwnProperty('gw_cluster_id')) {
                 obj['gw_cluster_id'] = ApiClient.convertToType(data['gw_cluster_id'], 'Number');
             }
@@ -87,6 +90,12 @@ class ClassicKeyDetailsInfo {
             if (data.hasOwnProperty('targets')) {
                 obj['targets'] = ApiClient.convertToType(data['targets'], [ClassicKeyTargetInfo]);
             }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            }
+            if (data.hasOwnProperty('websites')) {
+                obj['websites'] = ApiClient.convertToType(data['websites'], ['String']);
+            }
         }
         return obj;
     }
@@ -103,6 +112,11 @@ ClassicKeyDetailsInfo.prototype['classic_key_attributes'] = undefined;
  * @member {String} classic_key_id
  */
 ClassicKeyDetailsInfo.prototype['classic_key_id'] = undefined;
+
+/**
+ * @member {String} credential_id
+ */
+ClassicKeyDetailsInfo.prototype['credential_id'] = undefined;
 
 /**
  * @member {Number} gw_cluster_id
@@ -159,6 +173,16 @@ ClassicKeyDetailsInfo.prototype['target_types'] = undefined;
  * @member {Array.<module:model/ClassicKeyTargetInfo>} targets
  */
 ClassicKeyDetailsInfo.prototype['targets'] = undefined;
+
+/**
+ * @member {String} username
+ */
+ClassicKeyDetailsInfo.prototype['username'] = undefined;
+
+/**
+ * @member {Array.<String>} websites
+ */
+ClassicKeyDetailsInfo.prototype['websites'] = undefined;
 
 
 

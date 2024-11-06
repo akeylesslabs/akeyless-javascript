@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UsageEventSetting model module.
  * @module model/UsageEventSetting
- * @version 4.2.5
+ * @version 4.3.0
  */
 class UsageEventSetting {
     /**

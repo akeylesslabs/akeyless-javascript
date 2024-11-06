@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateHashiVaultTargetOutput model module.
  * @module model/UpdateHashiVaultTargetOutput
- * @version 4.2.5
+ * @version 4.3.0
  */
 class UpdateHashiVaultTargetOutput {
     /**

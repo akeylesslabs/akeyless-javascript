@@ -19,6 +19,7 @@ import CertAccessRules from './CertAccessRules';
 import EmailPassAccessRules from './EmailPassAccessRules';
 import GCPAccessRules from './GCPAccessRules';
 import HuaweiAccessRules from './HuaweiAccessRules';
+import KerberosAccessRules from './KerberosAccessRules';
 import KubernetesAccessRules from './KubernetesAccessRules';
 import LDAPAccessRules from './LDAPAccessRules';
 import OAuth2AccessRules from './OAuth2AccessRules';
@@ -30,7 +31,7 @@ import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 4.2.5
+ * @version 4.3.0
  */
 class AuthMethodAccessInfo {
     /**
@@ -105,6 +106,9 @@ class AuthMethodAccessInfo {
             }
             if (data.hasOwnProperty('k8s_access_rules')) {
                 obj['k8s_access_rules'] = KubernetesAccessRules.constructFromObject(data['k8s_access_rules']);
+            }
+            if (data.hasOwnProperty('kerberos_access_rules')) {
+                obj['kerberos_access_rules'] = KerberosAccessRules.constructFromObject(data['kerberos_access_rules']);
             }
             if (data.hasOwnProperty('ldap_access_rules')) {
                 obj['ldap_access_rules'] = LDAPAccessRules.constructFromObject(data['ldap_access_rules']);
@@ -216,6 +220,11 @@ AuthMethodAccessInfo.prototype['jwt_ttl'] = undefined;
  * @member {module:model/KubernetesAccessRules} k8s_access_rules
  */
 AuthMethodAccessInfo.prototype['k8s_access_rules'] = undefined;
+
+/**
+ * @member {module:model/KerberosAccessRules} kerberos_access_rules
+ */
+AuthMethodAccessInfo.prototype['kerberos_access_rules'] = undefined;
 
 /**
  * @member {module:model/LDAPAccessRules} ldap_access_rules

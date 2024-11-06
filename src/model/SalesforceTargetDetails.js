@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SalesforceTargetDetails model module.
  * @module model/SalesforceTargetDetails
- * @version 4.2.5
+ * @version 4.3.0
  */
 class SalesforceTargetDetails {
     /**

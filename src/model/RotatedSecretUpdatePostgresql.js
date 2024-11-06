@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdatePostgresql model module.
  * @module model/RotatedSecretUpdatePostgresql
- * @version 4.2.5
+ * @version 4.3.0
  */
 class RotatedSecretUpdatePostgresql {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventForwarderUpdateWebhook model module.
  * @module model/EventForwarderUpdateWebhook
- * @version 4.2.5
+ * @version 4.3.0
  */
 class EventForwarderUpdateWebhook {
     /**
@@ -138,7 +138,7 @@ EventForwarderUpdateWebhook.prototype['auth-methods-event-source-locations'] = u
 EventForwarderUpdateWebhook.prototype['auth-token'] = undefined;
 
 /**
- * The Webhook authentication type [user-pass, token, certificate]
+ * The Webhook authentication type [user-pass, bearer-token, certificate]
  * @member {String} auth-type
  * @default 'user-pass'
  */
@@ -164,7 +164,7 @@ EventForwarderUpdateWebhook.prototype['description'] = undefined;
 EventForwarderUpdateWebhook.prototype['enable'] = 'true';
 
 /**
- * List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated]
+ * List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated, rate-limiting, usage-report]
  * @member {Array.<String>} event-types
  */
 EventForwarderUpdateWebhook.prototype['event-types'] = undefined;

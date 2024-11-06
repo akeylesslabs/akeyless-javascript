@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateAcmeEab model module.
  * @module model/GenerateAcmeEab
- * @version 4.2.5
+ * @version 4.3.0
  */
 class GenerateAcmeEab {
     /**

@@ -20,6 +20,7 @@ import GatewayMessageQueueInfo from './GatewayMessageQueueInfo';
 import GeneralConfigPart from './GeneralConfigPart';
 import K8SAuthsConfigPart from './K8SAuthsConfigPart';
 import KMIPConfigPart from './KMIPConfigPart';
+import KerberosConfigPart from './KerberosConfigPart';
 import LdapConfigPart from './LdapConfigPart';
 import LeadershipConfigPart from './LeadershipConfigPart';
 import LogForwardingConfigPart from './LogForwardingConfigPart';
@@ -30,7 +31,7 @@ import RotatorsConfigPart from './RotatorsConfigPart';
 /**
  * The AkeylessGatewayConfig model module.
  * @module model/AkeylessGatewayConfig
- * @version 4.2.5
+ * @version 4.3.0
  */
 class AkeylessGatewayConfig {
     /**
@@ -78,6 +79,9 @@ class AkeylessGatewayConfig {
             }
             if (data.hasOwnProperty('k8s_auths')) {
                 obj['k8s_auths'] = K8SAuthsConfigPart.constructFromObject(data['k8s_auths']);
+            }
+            if (data.hasOwnProperty('kerberos')) {
+                obj['kerberos'] = KerberosConfigPart.constructFromObject(data['kerberos']);
             }
             if (data.hasOwnProperty('kmip_clients')) {
                 obj['kmip_clients'] = KMIPConfigPart.constructFromObject(data['kmip_clients']);
@@ -145,6 +149,11 @@ AkeylessGatewayConfig.prototype['general'] = undefined;
  * @member {module:model/K8SAuthsConfigPart} k8s_auths
  */
 AkeylessGatewayConfig.prototype['k8s_auths'] = undefined;
+
+/**
+ * @member {module:model/KerberosConfigPart} kerberos
+ */
+AkeylessGatewayConfig.prototype['kerberos'] = undefined;
 
 /**
  * @member {module:model/KMIPConfigPart} kmip_clients

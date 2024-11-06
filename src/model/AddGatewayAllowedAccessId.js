@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddGatewayAllowedAccessId model module.
  * @module model/AddGatewayAllowedAccessId
- * @version 4.2.5
+ * @version 4.3.0
  */
 class AddGatewayAllowedAccessId {
     /**

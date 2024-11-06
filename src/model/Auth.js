@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 4.2.5
+ * @version 4.3.0
  */
 class Auth {
     /**
@@ -74,6 +74,12 @@ class Auth {
             if (data.hasOwnProperty('debug')) {
                 obj['debug'] = ApiClient.convertToType(data['debug'], 'Boolean');
             }
+            if (data.hasOwnProperty('disable-pafxfast')) {
+                obj['disable-pafxfast'] = ApiClient.convertToType(data['disable-pafxfast'], 'String');
+            }
+            if (data.hasOwnProperty('gateway-spn')) {
+                obj['gateway-spn'] = ApiClient.convertToType(data['gateway-spn'], 'String');
+            }
             if (data.hasOwnProperty('gateway-url')) {
                 obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
@@ -92,8 +98,17 @@ class Auth {
             if (data.hasOwnProperty('k8s-service-account-token')) {
                 obj['k8s-service-account-token'] = ApiClient.convertToType(data['k8s-service-account-token'], 'String');
             }
+            if (data.hasOwnProperty('kerberos-username')) {
+                obj['kerberos-username'] = ApiClient.convertToType(data['kerberos-username'], 'String');
+            }
             if (data.hasOwnProperty('key-data')) {
                 obj['key-data'] = ApiClient.convertToType(data['key-data'], 'String');
+            }
+            if (data.hasOwnProperty('keytab-data')) {
+                obj['keytab-data'] = ApiClient.convertToType(data['keytab-data'], 'String');
+            }
+            if (data.hasOwnProperty('krb5-conf-data')) {
+                obj['krb5-conf-data'] = ApiClient.convertToType(data['krb5-conf-data'], 'String');
             }
             if (data.hasOwnProperty('ldap_password')) {
                 obj['ldap_password'] = ApiClient.convertToType(data['ldap_password'], 'String');
@@ -175,6 +190,18 @@ Auth.prototype['cloud-id'] = undefined;
 Auth.prototype['debug'] = undefined;
 
 /**
+ * Disable the FAST negotiation in the Kerberos authentication method
+ * @member {String} disable-pafxfast
+ */
+Auth.prototype['disable-pafxfast'] = undefined;
+
+/**
+ * The service principal name of the gateway as registered in LDAP (i.e., HTTP/gateway)
+ * @member {String} gateway-spn
+ */
+Auth.prototype['gateway-spn'] = undefined;
+
+/**
  * Gateway URL relevant only for access-type=k8s/oauth2/saml/oidc
  * @member {String} gateway-url
  */
@@ -213,10 +240,28 @@ Auth.prototype['k8s-auth-config-name'] = undefined;
 Auth.prototype['k8s-service-account-token'] = undefined;
 
 /**
+ * TThe username for the entry within the keytab to authenticate via Kerberos
+ * @member {String} kerberos-username
+ */
+Auth.prototype['kerberos-username'] = undefined;
+
+/**
  * Private key data encoded in base64. Used if file was not provided.(relevant only for access-type=cert)
  * @member {String} key-data
  */
 Auth.prototype['key-data'] = undefined;
+
+/**
+ * Base64-encoded content of a valid keytab file, containing the service account's entry.
+ * @member {String} keytab-data
+ */
+Auth.prototype['keytab-data'] = undefined;
+
+/**
+ * Base64-encoded content of a valid krb5.conf file, specifying the settings and parameters required for Kerberos authentication.
+ * @member {String} krb5-conf-data
+ */
+Auth.prototype['krb5-conf-data'] = undefined;
 
 /**
  * LDAP password (relevant only for access-type=ldap)

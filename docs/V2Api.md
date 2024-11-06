@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**authMethodCreateEmail**](V2Api.md#authMethodCreateEmail) | **POST** /auth-method-create-email | 
 [**authMethodCreateGcp**](V2Api.md#authMethodCreateGcp) | **POST** /auth-method-create-gcp | 
 [**authMethodCreateK8s**](V2Api.md#authMethodCreateK8s) | **POST** /auth-method-create-k8s | 
+[**authMethodCreateKerberos**](V2Api.md#authMethodCreateKerberos) | **POST** /auth-method-create-kerberos | 
 [**authMethodCreateLdap**](V2Api.md#authMethodCreateLdap) | **POST** /auth-method-create-ldap | 
 [**authMethodCreateOCI**](V2Api.md#authMethodCreateOCI) | **POST** /auth-method-create-oci | 
 [**authMethodCreateOIDC**](V2Api.md#authMethodCreateOIDC) | **POST** /auth-method-create-oidc | 
@@ -31,6 +32,7 @@ Method | HTTP request | Description
 [**authMethodUpdateEmail**](V2Api.md#authMethodUpdateEmail) | **POST** /auth-method-update-email | 
 [**authMethodUpdateGcp**](V2Api.md#authMethodUpdateGcp) | **POST** /auth-method-update-gcp | 
 [**authMethodUpdateK8s**](V2Api.md#authMethodUpdateK8s) | **POST** /auth-method-update-k8s | 
+[**authMethodUpdateKerberos**](V2Api.md#authMethodUpdateKerberos) | **POST** /auth-method-update-kerberos | 
 [**authMethodUpdateLdap**](V2Api.md#authMethodUpdateLdap) | **POST** /auth-method-update-ldap | 
 [**authMethodUpdateOCI**](V2Api.md#authMethodUpdateOCI) | **POST** /auth-method-update-oci | 
 [**authMethodUpdateOIDC**](V2Api.md#authMethodUpdateOIDC) | **POST** /auth-method-update-oidc | 
@@ -80,6 +82,7 @@ Method | HTTP request | Description
 [**createNativeK8STarget**](V2Api.md#createNativeK8STarget) | **POST** /create-k8s-target | 
 [**createOidcApp**](V2Api.md#createOidcApp) | **POST** /create-oidc-app | 
 [**createPKICertIssuer**](V2Api.md#createPKICertIssuer) | **POST** /create-pki-cert-issuer | 
+[**createPasskey**](V2Api.md#createPasskey) | **POST** /create-passkey | 
 [**createPingTarget**](V2Api.md#createPingTarget) | **POST** /create-ping-target | 
 [**createRabbitMQTarget**](V2Api.md#createRabbitMQTarget) | **POST** /create-rabbitmq-target | 
 [**createRole**](V2Api.md#createRole) | **POST** /create-role | 
@@ -355,6 +358,7 @@ Method | HTTP request | Description
 [**kmipRenewServerCertificate**](V2Api.md#kmipRenewServerCertificate) | **POST** /kmip-renew-environment | 
 [**kmipServerSetup**](V2Api.md#kmipServerSetup) | **POST** /kmip-create-environment | 
 [**kmipSetServerState**](V2Api.md#kmipSetServerState) | **POST** /kmip-set-environment-state | 
+[**kubeconfigGenerate**](V2Api.md#kubeconfigGenerate) | **POST** /kubeconfig-generate | 
 [**listAcmeAccounts**](V2Api.md#listAcmeAccounts) | **POST** /list-acme-accounts | 
 [**listAuthMethods**](V2Api.md#listAuthMethods) | **POST** /list-auth-methods | 
 [**listGateways**](V2Api.md#listGateways) | **POST** /list-gateways | 
@@ -362,6 +366,7 @@ Method | HTTP request | Description
 [**listItems**](V2Api.md#listItems) | **POST** /list-items | 
 [**listRoles**](V2Api.md#listRoles) | **POST** /list-roles | 
 [**listSRABastions**](V2Api.md#listSRABastions) | **POST** /list-sra-bastions | 
+[**listSRASessions**](V2Api.md#listSRASessions) | **POST** /list-sra-sessions | 
 [**listSharedItems**](V2Api.md#listSharedItems) | **POST** /list-shared-items | 
 [**listTargets**](V2Api.md#listTargets) | **POST** /list-targets | 
 [**moveObjects**](V2Api.md#moveObjects) | **POST** /move-objects | 
@@ -370,6 +375,7 @@ Method | HTTP request | Description
 [**refreshKey**](V2Api.md#refreshKey) | **POST** /refresh-key | 
 [**renewCertificate**](V2Api.md#renewCertificate) | **POST** /renew-certificate | 
 [**requestAccess**](V2Api.md#requestAccess) | **POST** /request-access | 
+[**resetAccessKey**](V2Api.md#resetAccessKey) | **POST** /reset-access-key | 
 [**reverseRBAC**](V2Api.md#reverseRBAC) | **POST** /reverse-rbac | 
 [**revokeCertificate**](V2Api.md#revokeCertificate) | **POST** /revoke-certificate | 
 [**revokeCreds**](V2Api.md#revokeCreds) | **POST** /revoke-creds | 
@@ -1010,6 +1016,48 @@ apiInstance.authMethodCreateK8s(body).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**AuthMethodCreateK8s**](AuthMethodCreateK8s.md)|  | 
+
+### Return type
+
+[**AuthMethodCreateOutput**](AuthMethodCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## authMethodCreateKerberos
+
+> AuthMethodCreateOutput authMethodCreateKerberos(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.AuthMethodCreateKerberos(); // AuthMethodCreateKerberos | 
+apiInstance.authMethodCreateKerberos(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AuthMethodCreateKerberos**](AuthMethodCreateKerberos.md)|  | 
 
 ### Return type
 
@@ -1686,6 +1734,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AuthMethodUpdateOutput**](AuthMethodUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## authMethodUpdateKerberos
+
+> AuthMethodCreateOutput authMethodUpdateKerberos(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.AuthMethodUpdateKerberos(); // AuthMethodUpdateKerberos | 
+apiInstance.authMethodUpdateKerberos(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AuthMethodUpdateKerberos**](AuthMethodUpdateKerberos.md)|  | 
+
+### Return type
+
+[**AuthMethodCreateOutput**](AuthMethodCreateOutput.md)
 
 ### Authorization
 
@@ -3744,6 +3834,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreatePKICertIssuerOutput**](CreatePKICertIssuerOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createPasskey
+
+> CreatePasskeyOutput createPasskey(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.CreatePasskey(); // CreatePasskey | 
+apiInstance.createPasskey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreatePasskey**](CreatePasskey.md)|  | 
+
+### Return type
+
+[**CreatePasskeyOutput**](CreatePasskeyOutput.md)
 
 ### Authorization
 
@@ -13175,7 +13307,7 @@ No authorization required
 
 ## gatewayUpdateRemoteAccess
 
-> Object gatewayUpdateRemoteAccess()
+> Object gatewayUpdateRemoteAccess(body)
 
 
 
@@ -13185,7 +13317,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-apiInstance.gatewayUpdateRemoteAccess().then((data) => {
+let body = new akeyless.GatewayUpdateRemoteAccess(); // GatewayUpdateRemoteAccess | 
+apiInstance.gatewayUpdateRemoteAccess(body).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13195,7 +13328,10 @@ apiInstance.gatewayUpdateRemoteAccess().then((data) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateRemoteAccess**](GatewayUpdateRemoteAccess.md)|  | 
 
 ### Return type
 
@@ -13207,7 +13343,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -15333,6 +15469,44 @@ No authorization required
 - **Accept**: application/json
 
 
+## kubeconfigGenerate
+
+> KubeconfigGenerateOutput kubeconfigGenerate()
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+apiInstance.kubeconfigGenerate().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**KubeconfigGenerateOutput**](KubeconfigGenerateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## listAcmeAccounts
 
 > ListAcmeAccountsOutput listAcmeAccounts(body)
@@ -15616,6 +15790,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BastionsList**](BastionsList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## listSRASessions
+
+> ListSraSessionsOutput listSRASessions(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ListSRASessions(); // ListSRASessions | 
+apiInstance.listSRASessions(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ListSRASessions**](ListSRASessions.md)|  | 
+
+### Return type
+
+[**ListSraSessionsOutput**](ListSraSessionsOutput.md)
 
 ### Authorization
 
@@ -15954,6 +16170,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RequestAccessOutput**](RequestAccessOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## resetAccessKey
+
+> ResetAuthMethodAccessKeyOutput resetAccessKey(body)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let body = new akeyless.ResetAccessKey(); // ResetAccessKey | 
+apiInstance.resetAccessKey(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ResetAccessKey**](ResetAccessKey.md)|  | 
+
+### Return type
+
+[**ResetAuthMethodAccessKeyOutput**](ResetAuthMethodAccessKeyOutput.md)
 
 ### Authorization
 

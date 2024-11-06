@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetK8SAuthConfigOutput model module.
  * @module model/GatewayGetK8SAuthConfigOutput
- * @version 4.2.5
+ * @version 4.3.0
  */
 class GatewayGetK8SAuthConfigOutput {
     /**

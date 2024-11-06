@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteGatewayAllowedAccessId model module.
  * @module model/DeleteGatewayAllowedAccessId
- * @version 4.2.5
+ * @version 4.3.0
  */
 class DeleteGatewayAllowedAccessId {
     /**

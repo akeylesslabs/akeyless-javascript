@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ImportPasswords model module.
  * @module model/ImportPasswords
- * @version 4.2.5
+ * @version 4.3.0
  */
 class ImportPasswords {
     /**
@@ -92,7 +92,7 @@ class ImportPasswords {
 ImportPasswords.prototype['accessibility'] = 'personal';
 
 /**
- * Password format type [LastPass/Chrome/Firefox]
+ * Password format type [LastPass/Chrome/Firefox/1password/keeper/bitwarden/dashlane]
  * @member {String} format
  * @default 'LastPass'
  */

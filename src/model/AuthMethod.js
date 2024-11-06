@@ -13,12 +13,13 @@
 
 import ApiClient from '../ApiClient';
 import AuthMethodAccessInfo from './AuthMethodAccessInfo';
+import AuthMethodAdditionalData from './AuthMethodAdditionalData';
 import AuthMethodRoleAssociation from './AuthMethodRoleAssociation';
 
 /**
  * The AuthMethod model module.
  * @module model/AuthMethod
- * @version 4.2.5
+ * @version 4.3.0
  */
 class AuthMethod {
     /**
@@ -66,6 +67,9 @@ class AuthMethod {
             }
             if (data.hasOwnProperty('auth_method_access_id')) {
                 obj['auth_method_access_id'] = ApiClient.convertToType(data['auth_method_access_id'], 'String');
+            }
+            if (data.hasOwnProperty('auth_method_additional_data')) {
+                obj['auth_method_additional_data'] = AuthMethodAdditionalData.constructFromObject(data['auth_method_additional_data']);
             }
             if (data.hasOwnProperty('auth_method_name')) {
                 obj['auth_method_name'] = ApiClient.convertToType(data['auth_method_name'], 'String');
@@ -127,6 +131,11 @@ AuthMethod.prototype['associated_gw_ids'] = undefined;
  * @member {String} auth_method_access_id
  */
 AuthMethod.prototype['auth_method_access_id'] = undefined;
+
+/**
+ * @member {module:model/AuthMethodAdditionalData} auth_method_additional_data
+ */
+AuthMethod.prototype['auth_method_additional_data'] = undefined;
 
 /**
  * @member {String} auth_method_name

@@ -41,6 +41,7 @@ import AttributeTypeAndValue from './model/AttributeTypeAndValue';
 import Auth from './model/Auth';
 import AuthMethod from './model/AuthMethod';
 import AuthMethodAccessInfo from './model/AuthMethodAccessInfo';
+import AuthMethodAdditionalData from './model/AuthMethodAdditionalData';
 import AuthMethodCreateApiKey from './model/AuthMethodCreateApiKey';
 import AuthMethodCreateAwsIam from './model/AuthMethodCreateAwsIam';
 import AuthMethodCreateAzureAD from './model/AuthMethodCreateAzureAD';
@@ -48,6 +49,7 @@ import AuthMethodCreateCert from './model/AuthMethodCreateCert';
 import AuthMethodCreateEmail from './model/AuthMethodCreateEmail';
 import AuthMethodCreateGcp from './model/AuthMethodCreateGcp';
 import AuthMethodCreateK8s from './model/AuthMethodCreateK8s';
+import AuthMethodCreateKerberos from './model/AuthMethodCreateKerberos';
 import AuthMethodCreateLdap from './model/AuthMethodCreateLdap';
 import AuthMethodCreateOCI from './model/AuthMethodCreateOCI';
 import AuthMethodCreateOIDC from './model/AuthMethodCreateOIDC';
@@ -67,6 +69,7 @@ import AuthMethodUpdateCert from './model/AuthMethodUpdateCert';
 import AuthMethodUpdateEmail from './model/AuthMethodUpdateEmail';
 import AuthMethodUpdateGcp from './model/AuthMethodUpdateGcp';
 import AuthMethodUpdateK8s from './model/AuthMethodUpdateK8s';
+import AuthMethodUpdateKerberos from './model/AuthMethodUpdateKerberos';
 import AuthMethodUpdateLdap from './model/AuthMethodUpdateLdap';
 import AuthMethodUpdateOCI from './model/AuthMethodUpdateOCI';
 import AuthMethodUpdateOIDC from './model/AuthMethodUpdateOIDC';
@@ -196,6 +199,8 @@ import CreateOidcApp from './model/CreateOidcApp';
 import CreateOidcAppOutput from './model/CreateOidcAppOutput';
 import CreatePKICertIssuer from './model/CreatePKICertIssuer';
 import CreatePKICertIssuerOutput from './model/CreatePKICertIssuerOutput';
+import CreatePasskey from './model/CreatePasskey';
+import CreatePasskeyOutput from './model/CreatePasskeyOutput';
 import CreatePingTarget from './model/CreatePingTarget';
 import CreatePingTargetOutput from './model/CreatePingTargetOutput';
 import CreateRabbitMQTarget from './model/CreateRabbitMQTarget';
@@ -656,6 +661,9 @@ import KMIPClientUpdateResponse from './model/KMIPClientUpdateResponse';
 import KMIPConfigPart from './model/KMIPConfigPart';
 import KMIPEnvironmentCreateResponse from './model/KMIPEnvironmentCreateResponse';
 import KMIPServer from './model/KMIPServer';
+import KerberosAccessRules from './model/KerberosAccessRules';
+import KerberosAuthMethodInfo from './model/KerberosAuthMethodInfo';
+import KerberosConfigPart from './model/KerberosConfigPart';
 import KmipClientDeleteRule from './model/KmipClientDeleteRule';
 import KmipClientSetRule from './model/KmipClientSetRule';
 import KmipCreateClient from './model/KmipCreateClient';
@@ -675,6 +683,15 @@ import KmipRenewServerCertificateOutput from './model/KmipRenewServerCertificate
 import KmipServerSetup from './model/KmipServerSetup';
 import KmipSetServerState from './model/KmipSetServerState';
 import KmipSetServerStateOutput from './model/KmipSetServerStateOutput';
+import KubeConfigValue from './model/KubeConfigValue';
+import KubeconfigCluster from './model/KubeconfigCluster';
+import KubeconfigContext from './model/KubeconfigContext';
+import KubeconfigExec from './model/KubeconfigExec';
+import KubeconfigGenerateOutput from './model/KubeconfigGenerateOutput';
+import KubeconfigNamedCluster from './model/KubeconfigNamedCluster';
+import KubeconfigNamedContext from './model/KubeconfigNamedContext';
+import KubeconfigUser from './model/KubeconfigUser';
+import KubeconfigUserExec from './model/KubeconfigUserExec';
 import KubernetesAccessRules from './model/KubernetesAccessRules';
 import LDAPAccessRules from './model/LDAPAccessRules';
 import LastConfigChange from './model/LastConfigChange';
@@ -697,7 +714,9 @@ import ListItemsOutput from './model/ListItemsOutput';
 import ListRoles from './model/ListRoles';
 import ListRolesOutput from './model/ListRolesOutput';
 import ListSRABastions from './model/ListSRABastions';
+import ListSRASessions from './model/ListSRASessions';
 import ListSharedItems from './model/ListSharedItems';
+import ListSraSessionsOutput from './model/ListSraSessionsOutput';
 import ListTargets from './model/ListTargets';
 import ListTargetsOutput from './model/ListTargetsOutput';
 import LogForwardingConfigPart from './model/LogForwardingConfigPart';
@@ -840,6 +859,7 @@ import SignRsaSsaPssOutput from './model/SignRsaSsaPssOutput';
 import SmInfo from './model/SmInfo';
 import SplunkLogForwardingConfig from './model/SplunkLogForwardingConfig';
 import SraInfo from './model/SraInfo';
+import SraSessionEntryOut from './model/SraSessionEntryOut';
 import SshBastionConf from './model/SshBastionConf';
 import SshBastionSessionTermination from './model/SshBastionSessionTermination';
 import StaticCredsAuth from './model/StaticCredsAuth';
@@ -1091,7 +1111,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 4.2.5
+* @version 4.3.0
 */
 export {
     /**
@@ -1269,6 +1289,12 @@ export {
     AuthMethodAccessInfo,
 
     /**
+     * The AuthMethodAdditionalData model constructor.
+     * @property {module:model/AuthMethodAdditionalData}
+     */
+    AuthMethodAdditionalData,
+
+    /**
      * The AuthMethodCreateApiKey model constructor.
      * @property {module:model/AuthMethodCreateApiKey}
      */
@@ -1309,6 +1335,12 @@ export {
      * @property {module:model/AuthMethodCreateK8s}
      */
     AuthMethodCreateK8s,
+
+    /**
+     * The AuthMethodCreateKerberos model constructor.
+     * @property {module:model/AuthMethodCreateKerberos}
+     */
+    AuthMethodCreateKerberos,
 
     /**
      * The AuthMethodCreateLdap model constructor.
@@ -1423,6 +1455,12 @@ export {
      * @property {module:model/AuthMethodUpdateK8s}
      */
     AuthMethodUpdateK8s,
+
+    /**
+     * The AuthMethodUpdateKerberos model constructor.
+     * @property {module:model/AuthMethodUpdateKerberos}
+     */
+    AuthMethodUpdateKerberos,
 
     /**
      * The AuthMethodUpdateLdap model constructor.
@@ -2197,6 +2235,18 @@ export {
      * @property {module:model/CreatePKICertIssuerOutput}
      */
     CreatePKICertIssuerOutput,
+
+    /**
+     * The CreatePasskey model constructor.
+     * @property {module:model/CreatePasskey}
+     */
+    CreatePasskey,
+
+    /**
+     * The CreatePasskeyOutput model constructor.
+     * @property {module:model/CreatePasskeyOutput}
+     */
+    CreatePasskeyOutput,
 
     /**
      * The CreatePingTarget model constructor.
@@ -4959,6 +5009,24 @@ export {
     KMIPServer,
 
     /**
+     * The KerberosAccessRules model constructor.
+     * @property {module:model/KerberosAccessRules}
+     */
+    KerberosAccessRules,
+
+    /**
+     * The KerberosAuthMethodInfo model constructor.
+     * @property {module:model/KerberosAuthMethodInfo}
+     */
+    KerberosAuthMethodInfo,
+
+    /**
+     * The KerberosConfigPart model constructor.
+     * @property {module:model/KerberosConfigPart}
+     */
+    KerberosConfigPart,
+
+    /**
      * The KmipClientDeleteRule model constructor.
      * @property {module:model/KmipClientDeleteRule}
      */
@@ -5071,6 +5139,60 @@ export {
      * @property {module:model/KmipSetServerStateOutput}
      */
     KmipSetServerStateOutput,
+
+    /**
+     * The KubeConfigValue model constructor.
+     * @property {module:model/KubeConfigValue}
+     */
+    KubeConfigValue,
+
+    /**
+     * The KubeconfigCluster model constructor.
+     * @property {module:model/KubeconfigCluster}
+     */
+    KubeconfigCluster,
+
+    /**
+     * The KubeconfigContext model constructor.
+     * @property {module:model/KubeconfigContext}
+     */
+    KubeconfigContext,
+
+    /**
+     * The KubeconfigExec model constructor.
+     * @property {module:model/KubeconfigExec}
+     */
+    KubeconfigExec,
+
+    /**
+     * The KubeconfigGenerateOutput model constructor.
+     * @property {module:model/KubeconfigGenerateOutput}
+     */
+    KubeconfigGenerateOutput,
+
+    /**
+     * The KubeconfigNamedCluster model constructor.
+     * @property {module:model/KubeconfigNamedCluster}
+     */
+    KubeconfigNamedCluster,
+
+    /**
+     * The KubeconfigNamedContext model constructor.
+     * @property {module:model/KubeconfigNamedContext}
+     */
+    KubeconfigNamedContext,
+
+    /**
+     * The KubeconfigUser model constructor.
+     * @property {module:model/KubeconfigUser}
+     */
+    KubeconfigUser,
+
+    /**
+     * The KubeconfigUserExec model constructor.
+     * @property {module:model/KubeconfigUserExec}
+     */
+    KubeconfigUserExec,
 
     /**
      * The KubernetesAccessRules model constructor.
@@ -5205,10 +5327,22 @@ export {
     ListSRABastions,
 
     /**
+     * The ListSRASessions model constructor.
+     * @property {module:model/ListSRASessions}
+     */
+    ListSRASessions,
+
+    /**
      * The ListSharedItems model constructor.
      * @property {module:model/ListSharedItems}
      */
     ListSharedItems,
+
+    /**
+     * The ListSraSessionsOutput model constructor.
+     * @property {module:model/ListSraSessionsOutput}
+     */
+    ListSraSessionsOutput,
 
     /**
      * The ListTargets model constructor.
@@ -6061,6 +6195,12 @@ export {
      * @property {module:model/SraInfo}
      */
     SraInfo,
+
+    /**
+     * The SraSessionEntryOut model constructor.
+     * @property {module:model/SraSessionEntryOut}
+     */
+    SraSessionEntryOut,
 
     /**
      * The SshBastionConf model constructor.

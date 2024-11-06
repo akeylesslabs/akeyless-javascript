@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccessPermissionAssignment model module.
  * @module model/AccessPermissionAssignment
- * @version 4.2.5
+ * @version 4.3.0
  */
 class AccessPermissionAssignment {
     /**

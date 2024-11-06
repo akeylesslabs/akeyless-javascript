@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGitlabTargetOutput model module.
  * @module model/CreateGitlabTargetOutput
- * @version 4.2.5
+ * @version 4.3.0
  */
 class CreateGitlabTargetOutput {
     /**

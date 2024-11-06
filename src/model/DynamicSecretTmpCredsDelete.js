@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretTmpCredsDelete model module.
  * @module model/DynamicSecretTmpCredsDelete
- * @version 4.2.5
+ * @version 4.3.0
  */
 class DynamicSecretTmpCredsDelete {
     /**

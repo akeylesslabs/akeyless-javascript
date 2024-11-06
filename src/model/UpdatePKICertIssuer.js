@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 4.2.5
+ * @version 4.3.0
  */
 class UpdatePKICertIssuer {
     /**
@@ -73,6 +73,9 @@ class UpdatePKICertIssuer {
             }
             if (data.hasOwnProperty('allowed-uri-sans')) {
                 obj['allowed-uri-sans'] = ApiClient.convertToType(data['allowed-uri-sans'], 'String');
+            }
+            if (data.hasOwnProperty('auto-renew')) {
+                obj['auto-renew'] = ApiClient.convertToType(data['auto-renew'], 'Boolean');
             }
             if (data.hasOwnProperty('client-flag')) {
                 obj['client-flag'] = ApiClient.convertToType(data['client-flag'], 'Boolean');
@@ -155,6 +158,9 @@ class UpdatePKICertIssuer {
             if (data.hasOwnProperty('rm-tag')) {
                 obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
             }
+            if (data.hasOwnProperty('scheduled-renew')) {
+                obj['scheduled-renew'] = ApiClient.convertToType(data['scheduled-renew'], 'Number');
+            }
             if (data.hasOwnProperty('server-flag')) {
                 obj['server-flag'] = ApiClient.convertToType(data['server-flag'], 'Boolean');
             }
@@ -221,6 +227,12 @@ UpdatePKICertIssuer.prototype['allowed-extra-extensions'] = undefined;
  * @member {String} allowed-uri-sans
  */
 UpdatePKICertIssuer.prototype['allowed-uri-sans'] = undefined;
+
+/**
+ * Automatically renew certificates before expiration
+ * @member {Boolean} auto-renew
+ */
+UpdatePKICertIssuer.prototype['auto-renew'] = undefined;
 
 /**
  * If set, certificates will be flagged for client auth use
@@ -386,6 +398,12 @@ UpdatePKICertIssuer.prototype['province'] = undefined;
  * @member {Array.<String>} rm-tag
  */
 UpdatePKICertIssuer.prototype['rm-tag'] = undefined;
+
+/**
+ * Number of days before expiration to renew certificates
+ * @member {Number} scheduled-renew
+ */
+UpdatePKICertIssuer.prototype['scheduled-renew'] = undefined;
 
 /**
  * If set, certificates will be flagged for server auth use
