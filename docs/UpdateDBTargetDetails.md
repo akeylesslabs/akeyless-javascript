@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dbType** | **String** |  | [optional] 
-**hostName** | **String** |  | [optional] 
+**host** | **String** |  | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **keepPrevVersion** | **String** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **mongoDbName** | **String** |  | [optional] 

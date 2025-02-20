@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **creationDate** | **Date** |  | [optional] 
 **deleteProtection** | **Boolean** |  | [optional] 
 **description** | **String** |  | [optional] 
+**expirationEvents** | [**[AuthExpirationEvent]**](AuthExpirationEvent.md) |  | [optional] 
 **isApproved** | **Boolean** |  | [optional] 
 **modificationDate** | **Date** |  | [optional] 
 

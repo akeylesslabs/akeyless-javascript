@@ -18,7 +18,9 @@ Name | Type | Description | Notes
 **name** | **String** | Dynamic secret name | 
 **passwordLength** | **String** | The length of the password to be generated | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
-**secureAccessBastionIssuer** | **String** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
+**secureAccessBastionIssuer** | **String** | Deprecated. use secure-access-certificate-issuer | [optional] 
+**secureAccessCertificateIssuer** | **String** | Path to the SSH Certificate Issuer for your Akeyless Secure Access | [optional] 
+**secureAccessDelay** | **Number** | The delay duration, in seconds, to wait after generating just-in-time credentials. Accepted range: 0-120 seconds | [optional] 
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
 **secureAccessHost** | **[String]** | Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts) | [optional] 
 **secureAccessWeb** | **Boolean** | Enable Web Secure Remote Access | [optional] [default to false]

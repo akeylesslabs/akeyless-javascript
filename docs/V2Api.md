@@ -39,6 +39,7 @@ Method | HTTP request | Description
 [**authMethodUpdateOauth2**](V2Api.md#authMethodUpdateOauth2) | **POST** /auth-method-update-oauth2 | 
 [**authMethodUpdateSAML**](V2Api.md#authMethodUpdateSAML) | **POST** /auth-method-update-saml | 
 [**authMethodUpdateUniversalIdentity**](V2Api.md#authMethodUpdateUniversalIdentity) | **POST** /auth-method-update-universal-identity | 
+[**calcPasswordSecurityInfo**](V2Api.md#calcPasswordSecurityInfo) | **POST** /calc-password-security-info | 
 [**changeAdminAccountPassword**](V2Api.md#changeAdminAccountPassword) | **POST** /change-admin-account-password | 
 [**configure**](V2Api.md#configure) | **POST** /configure | 
 [**connect**](V2Api.md#connect) | **POST** /connect | 
@@ -141,7 +142,7 @@ Method | HTTP request | Description
 [**dynamicSecretCreateHanaDb**](V2Api.md#dynamicSecretCreateHanaDb) | **POST** /dynamic-secret-create-hanadb | 
 [**dynamicSecretCreateK8s**](V2Api.md#dynamicSecretCreateK8s) | **POST** /dynamic-secret-create-k8s | 
 [**dynamicSecretCreateLdap**](V2Api.md#dynamicSecretCreateLdap) | **POST** /dynamic-secret-create-ldap | 
-[**dynamicSecretCreateMongoDb**](V2Api.md#dynamicSecretCreateMongoDb) | **POST** /dynamic-secret-create-mongo | 
+[**dynamicSecretCreateMongoDb**](V2Api.md#dynamicSecretCreateMongoDb) | **POST** /dynamic-secret-create-mongodb | 
 [**dynamicSecretCreateMsSql**](V2Api.md#dynamicSecretCreateMsSql) | **POST** /dynamic-secret-create-mssql | 
 [**dynamicSecretCreateMySql**](V2Api.md#dynamicSecretCreateMySql) | **POST** /dynamic-secret-create-mysql | 
 [**dynamicSecretCreateOracleDb**](V2Api.md#dynamicSecretCreateOracleDb) | **POST** /dynamic-secret-create-oracle | 
@@ -312,6 +313,7 @@ Method | HTTP request | Description
 [**gatewayUpdateTlsCert**](V2Api.md#gatewayUpdateTlsCert) | **POST** /gateway-update-tls-cert | 
 [**gatewayUpdateTmpUsers**](V2Api.md#gatewayUpdateTmpUsers) | **POST** /gateway-update-producer-tmp-creds | 
 [**generateAcmeEab**](V2Api.md#generateAcmeEab) | **POST** /generate-acme-eab | 
+[**generateCA**](V2Api.md#generateCA) | **POST** /generate-ca | 
 [**generateCsr**](V2Api.md#generateCsr) | **POST** /generate-csr | 
 [**getAccountLogo**](V2Api.md#getAccountLogo) | **POST** /get-account-logo | 
 [**getAccountSettings**](V2Api.md#getAccountSettings) | **POST** /get-account-settings | 
@@ -401,8 +403,11 @@ Method | HTTP request | Description
 [**rotatedSecretCreateSnowflake**](V2Api.md#rotatedSecretCreateSnowflake) | **POST** /rotated-secret-create-snowflake | 
 [**rotatedSecretCreateSsh**](V2Api.md#rotatedSecretCreateSsh) | **POST** /rotated-secret-create-ssh | 
 [**rotatedSecretCreateWindows**](V2Api.md#rotatedSecretCreateWindows) | **POST** /rotated-secret-create-windows | 
+[**rotatedSecretDelete**](V2Api.md#rotatedSecretDelete) | **POST** /rotated-secret-delete | 
+[**rotatedSecretDeleteSync**](V2Api.md#rotatedSecretDeleteSync) | **POST** /rotated-secret-delete-sync | 
 [**rotatedSecretGetValue**](V2Api.md#rotatedSecretGetValue) | **POST** /rotated-secret-get-value | 
 [**rotatedSecretList**](V2Api.md#rotatedSecretList) | **POST** /rotated-secret-list | 
+[**rotatedSecretSync**](V2Api.md#rotatedSecretSync) | **POST** /rotated-secret-sync | 
 [**rotatedSecretUpdateAws**](V2Api.md#rotatedSecretUpdateAws) | **POST** /rotated-secret-update-aws | 
 [**rotatedSecretUpdateAzure**](V2Api.md#rotatedSecretUpdateAzure) | **POST** /rotated-secret-update-azure | 
 [**rotatedSecretUpdateCassandra**](V2Api.md#rotatedSecretUpdateCassandra) | **POST** /rotated-secret-update-cassandra | 
@@ -493,6 +498,7 @@ Method | HTTP request | Description
 [**uidListChildren**](V2Api.md#uidListChildren) | **POST** /uid-list-children | 
 [**uidRevokeToken**](V2Api.md#uidRevokeToken) | **POST** /uid-revoke-token | 
 [**uidRotateToken**](V2Api.md#uidRotateToken) | **POST** /uid-rotate-token | 
+[**unwrapToken**](V2Api.md#unwrapToken) | **POST** /unwrap-token | 
 [**updateAWSTarget**](V2Api.md#updateAWSTarget) | **POST** /update-aws-target | 
 [**updateAWSTargetDetails**](V2Api.md#updateAWSTargetDetails) | **POST** /update-aws-target-details | 
 [**updateAccountSettings**](V2Api.md#updateAccountSettings) | **POST** /update-account-settings | 
@@ -571,7 +577,7 @@ Method | HTTP request | Description
 
 ## aliasDetails
 
-> Object aliasDetails(body)
+> Object aliasDetails(aliasDetails)
 
 
 
@@ -581,8 +587,8 @@ Method | HTTP request | Description
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AliasDetails(); // AliasDetails | 
-apiInstance.aliasDetails(body).then((data) => {
+let aliasDetails = new akeyless.AliasDetails(); // AliasDetails | 
+apiInstance.aliasDetails(aliasDetails).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -595,7 +601,7 @@ apiInstance.aliasDetails(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AliasDetails**](AliasDetails.md)|  | 
+ **aliasDetails** | [**AliasDetails**](AliasDetails.md)|  | 
 
 ### Return type
 
@@ -613,7 +619,7 @@ No authorization required
 
 ## assocRoleAuthMethod
 
-> CreateRoleAuthMethodAssocOutput assocRoleAuthMethod(body)
+> CreateRoleAuthMethodAssocOutput assocRoleAuthMethod(assocRoleAuthMethod)
 
 
 
@@ -623,8 +629,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AssocRoleAuthMethod(); // AssocRoleAuthMethod | 
-apiInstance.assocRoleAuthMethod(body).then((data) => {
+let assocRoleAuthMethod = new akeyless.AssocRoleAuthMethod(); // AssocRoleAuthMethod | 
+apiInstance.assocRoleAuthMethod(assocRoleAuthMethod).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -637,7 +643,7 @@ apiInstance.assocRoleAuthMethod(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AssocRoleAuthMethod**](AssocRoleAuthMethod.md)|  | 
+ **assocRoleAuthMethod** | [**AssocRoleAuthMethod**](AssocRoleAuthMethod.md)|  | 
 
 ### Return type
 
@@ -655,7 +661,7 @@ No authorization required
 
 ## assocTargetItem
 
-> CreateTargetItemAssocOutput assocTargetItem(body)
+> CreateTargetItemAssocOutput assocTargetItem(assocTargetItem)
 
 
 
@@ -665,8 +671,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AssocTargetItem(); // AssocTargetItem | 
-apiInstance.assocTargetItem(body).then((data) => {
+let assocTargetItem = new akeyless.AssocTargetItem(); // AssocTargetItem | 
+apiInstance.assocTargetItem(assocTargetItem).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -679,7 +685,7 @@ apiInstance.assocTargetItem(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AssocTargetItem**](AssocTargetItem.md)|  | 
+ **assocTargetItem** | [**AssocTargetItem**](AssocTargetItem.md)|  | 
 
 ### Return type
 
@@ -697,7 +703,7 @@ No authorization required
 
 ## auth
 
-> AuthOutput auth(body)
+> AuthOutput auth(auth)
 
 
 
@@ -707,8 +713,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.Auth(); // Auth | 
-apiInstance.auth(body).then((data) => {
+let auth = new akeyless.Auth(); // Auth | 
+apiInstance.auth(auth).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -721,7 +727,7 @@ apiInstance.auth(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Auth**](Auth.md)|  | 
+ **auth** | [**Auth**](Auth.md)|  | 
 
 ### Return type
 
@@ -739,7 +745,7 @@ No authorization required
 
 ## authMethodCreateApiKey
 
-> AuthMethodCreateOutput authMethodCreateApiKey(body)
+> AuthMethodCreateOutput authMethodCreateApiKey(authMethodCreateApiKey)
 
 
 
@@ -749,8 +755,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodCreateApiKey(); // AuthMethodCreateApiKey | 
-apiInstance.authMethodCreateApiKey(body).then((data) => {
+let authMethodCreateApiKey = new akeyless.AuthMethodCreateApiKey(); // AuthMethodCreateApiKey | 
+apiInstance.authMethodCreateApiKey(authMethodCreateApiKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -763,7 +769,7 @@ apiInstance.authMethodCreateApiKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodCreateApiKey**](AuthMethodCreateApiKey.md)|  | 
+ **authMethodCreateApiKey** | [**AuthMethodCreateApiKey**](AuthMethodCreateApiKey.md)|  | 
 
 ### Return type
 
@@ -781,7 +787,7 @@ No authorization required
 
 ## authMethodCreateAwsIam
 
-> AuthMethodCreateOutput authMethodCreateAwsIam(body)
+> AuthMethodCreateOutput authMethodCreateAwsIam(authMethodCreateAwsIam)
 
 
 
@@ -791,8 +797,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodCreateAwsIam(); // AuthMethodCreateAwsIam | 
-apiInstance.authMethodCreateAwsIam(body).then((data) => {
+let authMethodCreateAwsIam = new akeyless.AuthMethodCreateAwsIam(); // AuthMethodCreateAwsIam | 
+apiInstance.authMethodCreateAwsIam(authMethodCreateAwsIam).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -805,7 +811,7 @@ apiInstance.authMethodCreateAwsIam(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodCreateAwsIam**](AuthMethodCreateAwsIam.md)|  | 
+ **authMethodCreateAwsIam** | [**AuthMethodCreateAwsIam**](AuthMethodCreateAwsIam.md)|  | 
 
 ### Return type
 
@@ -823,7 +829,7 @@ No authorization required
 
 ## authMethodCreateAzureAD
 
-> AuthMethodCreateOutput authMethodCreateAzureAD(body)
+> AuthMethodCreateOutput authMethodCreateAzureAD(authMethodCreateAzureAD)
 
 
 
@@ -833,8 +839,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodCreateAzureAD(); // AuthMethodCreateAzureAD | 
-apiInstance.authMethodCreateAzureAD(body).then((data) => {
+let authMethodCreateAzureAD = new akeyless.AuthMethodCreateAzureAD(); // AuthMethodCreateAzureAD | 
+apiInstance.authMethodCreateAzureAD(authMethodCreateAzureAD).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -847,7 +853,7 @@ apiInstance.authMethodCreateAzureAD(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodCreateAzureAD**](AuthMethodCreateAzureAD.md)|  | 
+ **authMethodCreateAzureAD** | [**AuthMethodCreateAzureAD**](AuthMethodCreateAzureAD.md)|  | 
 
 ### Return type
 
@@ -865,7 +871,7 @@ No authorization required
 
 ## authMethodCreateCert
 
-> AuthMethodCreateOutput authMethodCreateCert(body)
+> AuthMethodCreateOutput authMethodCreateCert(authMethodCreateCert)
 
 
 
@@ -875,8 +881,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodCreateCert(); // AuthMethodCreateCert | 
-apiInstance.authMethodCreateCert(body).then((data) => {
+let authMethodCreateCert = new akeyless.AuthMethodCreateCert(); // AuthMethodCreateCert | 
+apiInstance.authMethodCreateCert(authMethodCreateCert).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -889,7 +895,7 @@ apiInstance.authMethodCreateCert(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodCreateCert**](AuthMethodCreateCert.md)|  | 
+ **authMethodCreateCert** | [**AuthMethodCreateCert**](AuthMethodCreateCert.md)|  | 
 
 ### Return type
 
@@ -907,7 +913,7 @@ No authorization required
 
 ## authMethodCreateEmail
 
-> AuthMethodCreateOutput authMethodCreateEmail(body)
+> AuthMethodCreateOutput authMethodCreateEmail(authMethodCreateEmail)
 
 
 
@@ -917,8 +923,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodCreateEmail(); // AuthMethodCreateEmail | 
-apiInstance.authMethodCreateEmail(body).then((data) => {
+let authMethodCreateEmail = new akeyless.AuthMethodCreateEmail(); // AuthMethodCreateEmail | 
+apiInstance.authMethodCreateEmail(authMethodCreateEmail).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -931,7 +937,7 @@ apiInstance.authMethodCreateEmail(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodCreateEmail**](AuthMethodCreateEmail.md)|  | 
+ **authMethodCreateEmail** | [**AuthMethodCreateEmail**](AuthMethodCreateEmail.md)|  | 
 
 ### Return type
 
@@ -949,7 +955,7 @@ No authorization required
 
 ## authMethodCreateGcp
 
-> AuthMethodCreateOutput authMethodCreateGcp(body)
+> AuthMethodCreateOutput authMethodCreateGcp(authMethodCreateGcp)
 
 
 
@@ -959,8 +965,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodCreateGcp(); // AuthMethodCreateGcp | 
-apiInstance.authMethodCreateGcp(body).then((data) => {
+let authMethodCreateGcp = new akeyless.AuthMethodCreateGcp(); // AuthMethodCreateGcp | 
+apiInstance.authMethodCreateGcp(authMethodCreateGcp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -973,7 +979,7 @@ apiInstance.authMethodCreateGcp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodCreateGcp**](AuthMethodCreateGcp.md)|  | 
+ **authMethodCreateGcp** | [**AuthMethodCreateGcp**](AuthMethodCreateGcp.md)|  | 
 
 ### Return type
 
@@ -991,7 +997,7 @@ No authorization required
 
 ## authMethodCreateK8s
 
-> AuthMethodCreateOutput authMethodCreateK8s(body)
+> AuthMethodCreateOutput authMethodCreateK8s(authMethodCreateK8s)
 
 
 
@@ -1001,8 +1007,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodCreateK8s(); // AuthMethodCreateK8s | 
-apiInstance.authMethodCreateK8s(body).then((data) => {
+let authMethodCreateK8s = new akeyless.AuthMethodCreateK8s(); // AuthMethodCreateK8s | 
+apiInstance.authMethodCreateK8s(authMethodCreateK8s).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1015,7 +1021,7 @@ apiInstance.authMethodCreateK8s(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodCreateK8s**](AuthMethodCreateK8s.md)|  | 
+ **authMethodCreateK8s** | [**AuthMethodCreateK8s**](AuthMethodCreateK8s.md)|  | 
 
 ### Return type
 
@@ -1033,7 +1039,7 @@ No authorization required
 
 ## authMethodCreateKerberos
 
-> AuthMethodCreateOutput authMethodCreateKerberos(body)
+> AuthMethodCreateOutput authMethodCreateKerberos(authMethodCreateKerberos)
 
 
 
@@ -1043,8 +1049,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodCreateKerberos(); // AuthMethodCreateKerberos | 
-apiInstance.authMethodCreateKerberos(body).then((data) => {
+let authMethodCreateKerberos = new akeyless.AuthMethodCreateKerberos(); // AuthMethodCreateKerberos | 
+apiInstance.authMethodCreateKerberos(authMethodCreateKerberos).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1057,7 +1063,7 @@ apiInstance.authMethodCreateKerberos(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodCreateKerberos**](AuthMethodCreateKerberos.md)|  | 
+ **authMethodCreateKerberos** | [**AuthMethodCreateKerberos**](AuthMethodCreateKerberos.md)|  | 
 
 ### Return type
 
@@ -1075,7 +1081,7 @@ No authorization required
 
 ## authMethodCreateLdap
 
-> AuthMethodCreateOutput authMethodCreateLdap(body)
+> AuthMethodCreateOutput authMethodCreateLdap(authMethodCreateLdap)
 
 
 
@@ -1085,8 +1091,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodCreateLdap(); // AuthMethodCreateLdap | 
-apiInstance.authMethodCreateLdap(body).then((data) => {
+let authMethodCreateLdap = new akeyless.AuthMethodCreateLdap(); // AuthMethodCreateLdap | 
+apiInstance.authMethodCreateLdap(authMethodCreateLdap).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1099,7 +1105,7 @@ apiInstance.authMethodCreateLdap(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodCreateLdap**](AuthMethodCreateLdap.md)|  | 
+ **authMethodCreateLdap** | [**AuthMethodCreateLdap**](AuthMethodCreateLdap.md)|  | 
 
 ### Return type
 
@@ -1117,7 +1123,7 @@ No authorization required
 
 ## authMethodCreateOCI
 
-> AuthMethodCreateOutput authMethodCreateOCI(body)
+> AuthMethodCreateOutput authMethodCreateOCI(authMethodCreateOCI)
 
 
 
@@ -1127,8 +1133,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodCreateOCI(); // AuthMethodCreateOCI | 
-apiInstance.authMethodCreateOCI(body).then((data) => {
+let authMethodCreateOCI = new akeyless.AuthMethodCreateOCI(); // AuthMethodCreateOCI | 
+apiInstance.authMethodCreateOCI(authMethodCreateOCI).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1141,7 +1147,7 @@ apiInstance.authMethodCreateOCI(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodCreateOCI**](AuthMethodCreateOCI.md)|  | 
+ **authMethodCreateOCI** | [**AuthMethodCreateOCI**](AuthMethodCreateOCI.md)|  | 
 
 ### Return type
 
@@ -1159,7 +1165,7 @@ No authorization required
 
 ## authMethodCreateOIDC
 
-> AuthMethodCreateOutput authMethodCreateOIDC(body)
+> AuthMethodCreateOutput authMethodCreateOIDC(authMethodCreateOIDC)
 
 
 
@@ -1169,8 +1175,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodCreateOIDC(); // AuthMethodCreateOIDC | 
-apiInstance.authMethodCreateOIDC(body).then((data) => {
+let authMethodCreateOIDC = new akeyless.AuthMethodCreateOIDC(); // AuthMethodCreateOIDC | 
+apiInstance.authMethodCreateOIDC(authMethodCreateOIDC).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1183,7 +1189,7 @@ apiInstance.authMethodCreateOIDC(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodCreateOIDC**](AuthMethodCreateOIDC.md)|  | 
+ **authMethodCreateOIDC** | [**AuthMethodCreateOIDC**](AuthMethodCreateOIDC.md)|  | 
 
 ### Return type
 
@@ -1201,7 +1207,7 @@ No authorization required
 
 ## authMethodCreateOauth2
 
-> AuthMethodCreateOutput authMethodCreateOauth2(body)
+> AuthMethodCreateOutput authMethodCreateOauth2(authMethodCreateOauth2)
 
 
 
@@ -1211,8 +1217,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodCreateOauth2(); // AuthMethodCreateOauth2 | 
-apiInstance.authMethodCreateOauth2(body).then((data) => {
+let authMethodCreateOauth2 = new akeyless.AuthMethodCreateOauth2(); // AuthMethodCreateOauth2 | 
+apiInstance.authMethodCreateOauth2(authMethodCreateOauth2).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1225,7 +1231,7 @@ apiInstance.authMethodCreateOauth2(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodCreateOauth2**](AuthMethodCreateOauth2.md)|  | 
+ **authMethodCreateOauth2** | [**AuthMethodCreateOauth2**](AuthMethodCreateOauth2.md)|  | 
 
 ### Return type
 
@@ -1243,7 +1249,7 @@ No authorization required
 
 ## authMethodCreateSAML
 
-> AuthMethodCreateOutput authMethodCreateSAML(body)
+> AuthMethodCreateOutput authMethodCreateSAML(authMethodCreateSAML)
 
 
 
@@ -1253,8 +1259,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodCreateSAML(); // AuthMethodCreateSAML | 
-apiInstance.authMethodCreateSAML(body).then((data) => {
+let authMethodCreateSAML = new akeyless.AuthMethodCreateSAML(); // AuthMethodCreateSAML | 
+apiInstance.authMethodCreateSAML(authMethodCreateSAML).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1267,7 +1273,7 @@ apiInstance.authMethodCreateSAML(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodCreateSAML**](AuthMethodCreateSAML.md)|  | 
+ **authMethodCreateSAML** | [**AuthMethodCreateSAML**](AuthMethodCreateSAML.md)|  | 
 
 ### Return type
 
@@ -1285,7 +1291,7 @@ No authorization required
 
 ## authMethodCreateUniversalIdentity
 
-> AuthMethodCreateOutput authMethodCreateUniversalIdentity(body)
+> AuthMethodCreateOutput authMethodCreateUniversalIdentity(authMethodCreateUniversalIdentity)
 
 
 
@@ -1295,8 +1301,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodCreateUniversalIdentity(); // AuthMethodCreateUniversalIdentity | 
-apiInstance.authMethodCreateUniversalIdentity(body).then((data) => {
+let authMethodCreateUniversalIdentity = new akeyless.AuthMethodCreateUniversalIdentity(); // AuthMethodCreateUniversalIdentity | 
+apiInstance.authMethodCreateUniversalIdentity(authMethodCreateUniversalIdentity).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1309,7 +1315,7 @@ apiInstance.authMethodCreateUniversalIdentity(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodCreateUniversalIdentity**](AuthMethodCreateUniversalIdentity.md)|  | 
+ **authMethodCreateUniversalIdentity** | [**AuthMethodCreateUniversalIdentity**](AuthMethodCreateUniversalIdentity.md)|  | 
 
 ### Return type
 
@@ -1327,7 +1333,7 @@ No authorization required
 
 ## authMethodDelete
 
-> AuthMethodDeleteOutput authMethodDelete(body)
+> AuthMethodDeleteOutput authMethodDelete(authMethodDelete)
 
 
 
@@ -1337,8 +1343,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodDelete(); // AuthMethodDelete | 
-apiInstance.authMethodDelete(body).then((data) => {
+let authMethodDelete = new akeyless.AuthMethodDelete(); // AuthMethodDelete | 
+apiInstance.authMethodDelete(authMethodDelete).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1351,7 +1357,7 @@ apiInstance.authMethodDelete(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodDelete**](AuthMethodDelete.md)|  | 
+ **authMethodDelete** | [**AuthMethodDelete**](AuthMethodDelete.md)|  | 
 
 ### Return type
 
@@ -1369,7 +1375,7 @@ No authorization required
 
 ## authMethodGet
 
-> AuthMethod authMethodGet(body)
+> AuthMethod authMethodGet(authMethodGet)
 
 
 
@@ -1379,8 +1385,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodGet(); // AuthMethodGet | 
-apiInstance.authMethodGet(body).then((data) => {
+let authMethodGet = new akeyless.AuthMethodGet(); // AuthMethodGet | 
+apiInstance.authMethodGet(authMethodGet).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1393,7 +1399,7 @@ apiInstance.authMethodGet(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodGet**](AuthMethodGet.md)|  | 
+ **authMethodGet** | [**AuthMethodGet**](AuthMethodGet.md)|  | 
 
 ### Return type
 
@@ -1411,7 +1417,7 @@ No authorization required
 
 ## authMethodList
 
-> ListAuthMethodsOutput authMethodList(body)
+> ListAuthMethodsOutput authMethodList(authMethodList)
 
 
 
@@ -1421,8 +1427,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodList(); // AuthMethodList | 
-apiInstance.authMethodList(body).then((data) => {
+let authMethodList = new akeyless.AuthMethodList(); // AuthMethodList | 
+apiInstance.authMethodList(authMethodList).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1435,7 +1441,7 @@ apiInstance.authMethodList(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodList**](AuthMethodList.md)|  | 
+ **authMethodList** | [**AuthMethodList**](AuthMethodList.md)|  | 
 
 ### Return type
 
@@ -1453,7 +1459,7 @@ No authorization required
 
 ## authMethodUpdateApiKey
 
-> AuthMethodUpdateOutput authMethodUpdateApiKey(body)
+> AuthMethodUpdateOutput authMethodUpdateApiKey(authMethodUpdateApiKey)
 
 
 
@@ -1463,8 +1469,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodUpdateApiKey(); // AuthMethodUpdateApiKey | 
-apiInstance.authMethodUpdateApiKey(body).then((data) => {
+let authMethodUpdateApiKey = new akeyless.AuthMethodUpdateApiKey(); // AuthMethodUpdateApiKey | 
+apiInstance.authMethodUpdateApiKey(authMethodUpdateApiKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1477,7 +1483,7 @@ apiInstance.authMethodUpdateApiKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodUpdateApiKey**](AuthMethodUpdateApiKey.md)|  | 
+ **authMethodUpdateApiKey** | [**AuthMethodUpdateApiKey**](AuthMethodUpdateApiKey.md)|  | 
 
 ### Return type
 
@@ -1495,7 +1501,7 @@ No authorization required
 
 ## authMethodUpdateAwsIam
 
-> AuthMethodUpdateOutput authMethodUpdateAwsIam(body)
+> AuthMethodUpdateOutput authMethodUpdateAwsIam(authMethodUpdateAwsIam)
 
 
 
@@ -1505,8 +1511,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodUpdateAwsIam(); // AuthMethodUpdateAwsIam | 
-apiInstance.authMethodUpdateAwsIam(body).then((data) => {
+let authMethodUpdateAwsIam = new akeyless.AuthMethodUpdateAwsIam(); // AuthMethodUpdateAwsIam | 
+apiInstance.authMethodUpdateAwsIam(authMethodUpdateAwsIam).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1519,7 +1525,7 @@ apiInstance.authMethodUpdateAwsIam(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodUpdateAwsIam**](AuthMethodUpdateAwsIam.md)|  | 
+ **authMethodUpdateAwsIam** | [**AuthMethodUpdateAwsIam**](AuthMethodUpdateAwsIam.md)|  | 
 
 ### Return type
 
@@ -1537,7 +1543,7 @@ No authorization required
 
 ## authMethodUpdateAzureAD
 
-> AuthMethodUpdateOutput authMethodUpdateAzureAD(body)
+> AuthMethodUpdateOutput authMethodUpdateAzureAD(authMethodUpdateAzureAD)
 
 
 
@@ -1547,8 +1553,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodUpdateAzureAD(); // AuthMethodUpdateAzureAD | 
-apiInstance.authMethodUpdateAzureAD(body).then((data) => {
+let authMethodUpdateAzureAD = new akeyless.AuthMethodUpdateAzureAD(); // AuthMethodUpdateAzureAD | 
+apiInstance.authMethodUpdateAzureAD(authMethodUpdateAzureAD).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1561,7 +1567,7 @@ apiInstance.authMethodUpdateAzureAD(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodUpdateAzureAD**](AuthMethodUpdateAzureAD.md)|  | 
+ **authMethodUpdateAzureAD** | [**AuthMethodUpdateAzureAD**](AuthMethodUpdateAzureAD.md)|  | 
 
 ### Return type
 
@@ -1579,7 +1585,7 @@ No authorization required
 
 ## authMethodUpdateCert
 
-> AuthMethodUpdateOutput authMethodUpdateCert(body)
+> AuthMethodUpdateOutput authMethodUpdateCert(authMethodUpdateCert)
 
 
 
@@ -1589,8 +1595,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodUpdateCert(); // AuthMethodUpdateCert | 
-apiInstance.authMethodUpdateCert(body).then((data) => {
+let authMethodUpdateCert = new akeyless.AuthMethodUpdateCert(); // AuthMethodUpdateCert | 
+apiInstance.authMethodUpdateCert(authMethodUpdateCert).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1603,7 +1609,7 @@ apiInstance.authMethodUpdateCert(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodUpdateCert**](AuthMethodUpdateCert.md)|  | 
+ **authMethodUpdateCert** | [**AuthMethodUpdateCert**](AuthMethodUpdateCert.md)|  | 
 
 ### Return type
 
@@ -1621,7 +1627,7 @@ No authorization required
 
 ## authMethodUpdateEmail
 
-> AuthMethodUpdateOutput authMethodUpdateEmail(body)
+> AuthMethodUpdateOutput authMethodUpdateEmail(authMethodUpdateEmail)
 
 
 
@@ -1631,8 +1637,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodUpdateEmail(); // AuthMethodUpdateEmail | 
-apiInstance.authMethodUpdateEmail(body).then((data) => {
+let authMethodUpdateEmail = new akeyless.AuthMethodUpdateEmail(); // AuthMethodUpdateEmail | 
+apiInstance.authMethodUpdateEmail(authMethodUpdateEmail).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1645,7 +1651,7 @@ apiInstance.authMethodUpdateEmail(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodUpdateEmail**](AuthMethodUpdateEmail.md)|  | 
+ **authMethodUpdateEmail** | [**AuthMethodUpdateEmail**](AuthMethodUpdateEmail.md)|  | 
 
 ### Return type
 
@@ -1663,7 +1669,7 @@ No authorization required
 
 ## authMethodUpdateGcp
 
-> AuthMethodUpdateOutput authMethodUpdateGcp(body)
+> AuthMethodUpdateOutput authMethodUpdateGcp(authMethodUpdateGcp)
 
 
 
@@ -1673,8 +1679,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodUpdateGcp(); // AuthMethodUpdateGcp | 
-apiInstance.authMethodUpdateGcp(body).then((data) => {
+let authMethodUpdateGcp = new akeyless.AuthMethodUpdateGcp(); // AuthMethodUpdateGcp | 
+apiInstance.authMethodUpdateGcp(authMethodUpdateGcp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1687,7 +1693,7 @@ apiInstance.authMethodUpdateGcp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodUpdateGcp**](AuthMethodUpdateGcp.md)|  | 
+ **authMethodUpdateGcp** | [**AuthMethodUpdateGcp**](AuthMethodUpdateGcp.md)|  | 
 
 ### Return type
 
@@ -1705,7 +1711,7 @@ No authorization required
 
 ## authMethodUpdateK8s
 
-> AuthMethodUpdateOutput authMethodUpdateK8s(body)
+> AuthMethodUpdateOutput authMethodUpdateK8s(authMethodUpdateK8s)
 
 
 
@@ -1715,8 +1721,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodUpdateK8s(); // AuthMethodUpdateK8s | 
-apiInstance.authMethodUpdateK8s(body).then((data) => {
+let authMethodUpdateK8s = new akeyless.AuthMethodUpdateK8s(); // AuthMethodUpdateK8s | 
+apiInstance.authMethodUpdateK8s(authMethodUpdateK8s).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1729,7 +1735,7 @@ apiInstance.authMethodUpdateK8s(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodUpdateK8s**](AuthMethodUpdateK8s.md)|  | 
+ **authMethodUpdateK8s** | [**AuthMethodUpdateK8s**](AuthMethodUpdateK8s.md)|  | 
 
 ### Return type
 
@@ -1747,7 +1753,7 @@ No authorization required
 
 ## authMethodUpdateKerberos
 
-> AuthMethodCreateOutput authMethodUpdateKerberos(body)
+> AuthMethodCreateOutput authMethodUpdateKerberos(authMethodUpdateKerberos)
 
 
 
@@ -1757,8 +1763,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodUpdateKerberos(); // AuthMethodUpdateKerberos | 
-apiInstance.authMethodUpdateKerberos(body).then((data) => {
+let authMethodUpdateKerberos = new akeyless.AuthMethodUpdateKerberos(); // AuthMethodUpdateKerberos | 
+apiInstance.authMethodUpdateKerberos(authMethodUpdateKerberos).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1771,7 +1777,7 @@ apiInstance.authMethodUpdateKerberos(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodUpdateKerberos**](AuthMethodUpdateKerberos.md)|  | 
+ **authMethodUpdateKerberos** | [**AuthMethodUpdateKerberos**](AuthMethodUpdateKerberos.md)|  | 
 
 ### Return type
 
@@ -1789,7 +1795,7 @@ No authorization required
 
 ## authMethodUpdateLdap
 
-> AuthMethodUpdateOutput authMethodUpdateLdap(body)
+> AuthMethodUpdateOutput authMethodUpdateLdap(authMethodUpdateLdap)
 
 
 
@@ -1799,8 +1805,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodUpdateLdap(); // AuthMethodUpdateLdap | 
-apiInstance.authMethodUpdateLdap(body).then((data) => {
+let authMethodUpdateLdap = new akeyless.AuthMethodUpdateLdap(); // AuthMethodUpdateLdap | 
+apiInstance.authMethodUpdateLdap(authMethodUpdateLdap).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1813,7 +1819,7 @@ apiInstance.authMethodUpdateLdap(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodUpdateLdap**](AuthMethodUpdateLdap.md)|  | 
+ **authMethodUpdateLdap** | [**AuthMethodUpdateLdap**](AuthMethodUpdateLdap.md)|  | 
 
 ### Return type
 
@@ -1831,7 +1837,7 @@ No authorization required
 
 ## authMethodUpdateOCI
 
-> AuthMethodUpdateOutput authMethodUpdateOCI(body)
+> AuthMethodUpdateOutput authMethodUpdateOCI(authMethodUpdateOCI)
 
 
 
@@ -1841,8 +1847,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodUpdateOCI(); // AuthMethodUpdateOCI | 
-apiInstance.authMethodUpdateOCI(body).then((data) => {
+let authMethodUpdateOCI = new akeyless.AuthMethodUpdateOCI(); // AuthMethodUpdateOCI | 
+apiInstance.authMethodUpdateOCI(authMethodUpdateOCI).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1855,7 +1861,7 @@ apiInstance.authMethodUpdateOCI(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodUpdateOCI**](AuthMethodUpdateOCI.md)|  | 
+ **authMethodUpdateOCI** | [**AuthMethodUpdateOCI**](AuthMethodUpdateOCI.md)|  | 
 
 ### Return type
 
@@ -1873,7 +1879,7 @@ No authorization required
 
 ## authMethodUpdateOIDC
 
-> AuthMethodUpdateOutput authMethodUpdateOIDC(body)
+> AuthMethodUpdateOutput authMethodUpdateOIDC(authMethodUpdateOIDC)
 
 
 
@@ -1883,8 +1889,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodUpdateOIDC(); // AuthMethodUpdateOIDC | 
-apiInstance.authMethodUpdateOIDC(body).then((data) => {
+let authMethodUpdateOIDC = new akeyless.AuthMethodUpdateOIDC(); // AuthMethodUpdateOIDC | 
+apiInstance.authMethodUpdateOIDC(authMethodUpdateOIDC).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1897,7 +1903,7 @@ apiInstance.authMethodUpdateOIDC(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodUpdateOIDC**](AuthMethodUpdateOIDC.md)|  | 
+ **authMethodUpdateOIDC** | [**AuthMethodUpdateOIDC**](AuthMethodUpdateOIDC.md)|  | 
 
 ### Return type
 
@@ -1915,7 +1921,7 @@ No authorization required
 
 ## authMethodUpdateOauth2
 
-> AuthMethodUpdateOutput authMethodUpdateOauth2(body)
+> AuthMethodUpdateOutput authMethodUpdateOauth2(authMethodUpdateOauth2)
 
 
 
@@ -1925,8 +1931,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodUpdateOauth2(); // AuthMethodUpdateOauth2 | 
-apiInstance.authMethodUpdateOauth2(body).then((data) => {
+let authMethodUpdateOauth2 = new akeyless.AuthMethodUpdateOauth2(); // AuthMethodUpdateOauth2 | 
+apiInstance.authMethodUpdateOauth2(authMethodUpdateOauth2).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1939,7 +1945,7 @@ apiInstance.authMethodUpdateOauth2(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodUpdateOauth2**](AuthMethodUpdateOauth2.md)|  | 
+ **authMethodUpdateOauth2** | [**AuthMethodUpdateOauth2**](AuthMethodUpdateOauth2.md)|  | 
 
 ### Return type
 
@@ -1957,7 +1963,7 @@ No authorization required
 
 ## authMethodUpdateSAML
 
-> AuthMethodUpdateOutput authMethodUpdateSAML(body)
+> AuthMethodUpdateOutput authMethodUpdateSAML(authMethodUpdateSAML)
 
 
 
@@ -1967,8 +1973,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodUpdateSAML(); // AuthMethodUpdateSAML | 
-apiInstance.authMethodUpdateSAML(body).then((data) => {
+let authMethodUpdateSAML = new akeyless.AuthMethodUpdateSAML(); // AuthMethodUpdateSAML | 
+apiInstance.authMethodUpdateSAML(authMethodUpdateSAML).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1981,7 +1987,7 @@ apiInstance.authMethodUpdateSAML(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodUpdateSAML**](AuthMethodUpdateSAML.md)|  | 
+ **authMethodUpdateSAML** | [**AuthMethodUpdateSAML**](AuthMethodUpdateSAML.md)|  | 
 
 ### Return type
 
@@ -1999,7 +2005,7 @@ No authorization required
 
 ## authMethodUpdateUniversalIdentity
 
-> AuthMethodUpdateOutput authMethodUpdateUniversalIdentity(body)
+> AuthMethodUpdateOutput authMethodUpdateUniversalIdentity(authMethodUpdateUniversalIdentity)
 
 
 
@@ -2009,8 +2015,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.AuthMethodUpdateUniversalIdentity(); // AuthMethodUpdateUniversalIdentity | 
-apiInstance.authMethodUpdateUniversalIdentity(body).then((data) => {
+let authMethodUpdateUniversalIdentity = new akeyless.AuthMethodUpdateUniversalIdentity(); // AuthMethodUpdateUniversalIdentity | 
+apiInstance.authMethodUpdateUniversalIdentity(authMethodUpdateUniversalIdentity).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2023,7 +2029,7 @@ apiInstance.authMethodUpdateUniversalIdentity(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AuthMethodUpdateUniversalIdentity**](AuthMethodUpdateUniversalIdentity.md)|  | 
+ **authMethodUpdateUniversalIdentity** | [**AuthMethodUpdateUniversalIdentity**](AuthMethodUpdateUniversalIdentity.md)|  | 
 
 ### Return type
 
@@ -2039,9 +2045,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## changeAdminAccountPassword
+## calcPasswordSecurityInfo
 
-> Object changeAdminAccountPassword(body)
+> PasswordSecurityInfo calcPasswordSecurityInfo(calcPasswordSecurityInfo)
 
 
 
@@ -2051,8 +2057,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ChangeAdminAccountPassword(); // ChangeAdminAccountPassword | 
-apiInstance.changeAdminAccountPassword(body).then((data) => {
+let calcPasswordSecurityInfo = new akeyless.CalcPasswordSecurityInfo(); // CalcPasswordSecurityInfo | 
+apiInstance.calcPasswordSecurityInfo(calcPasswordSecurityInfo).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2065,7 +2071,49 @@ apiInstance.changeAdminAccountPassword(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ChangeAdminAccountPassword**](ChangeAdminAccountPassword.md)|  | 
+ **calcPasswordSecurityInfo** | [**CalcPasswordSecurityInfo**](CalcPasswordSecurityInfo.md)|  | 
+
+### Return type
+
+[**PasswordSecurityInfo**](PasswordSecurityInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## changeAdminAccountPassword
+
+> Object changeAdminAccountPassword(changeAdminAccountPassword)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let changeAdminAccountPassword = new akeyless.ChangeAdminAccountPassword(); // ChangeAdminAccountPassword | 
+apiInstance.changeAdminAccountPassword(changeAdminAccountPassword).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **changeAdminAccountPassword** | [**ChangeAdminAccountPassword**](ChangeAdminAccountPassword.md)|  | 
 
 ### Return type
 
@@ -2083,7 +2131,7 @@ No authorization required
 
 ## configure
 
-> ConfigureOutput configure(body)
+> ConfigureOutput configure(configure)
 
 
 
@@ -2093,8 +2141,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.Configure(); // Configure | 
-apiInstance.configure(body).then((data) => {
+let configure = new akeyless.Configure(); // Configure | 
+apiInstance.configure(configure).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2107,7 +2155,7 @@ apiInstance.configure(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Configure**](Configure.md)|  | 
+ **configure** | [**Configure**](Configure.md)|  | 
 
 ### Return type
 
@@ -2125,7 +2173,7 @@ No authorization required
 
 ## connect
 
-> Object connect(body)
+> Object connect(connect)
 
 
 
@@ -2135,8 +2183,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.Connect(); // Connect | 
-apiInstance.connect(body).then((data) => {
+let connect = new akeyless.Connect(); // Connect | 
+apiInstance.connect(connect).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2149,7 +2197,7 @@ apiInstance.connect(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Connect**](Connect.md)|  | 
+ **connect** | [**Connect**](Connect.md)|  | 
 
 ### Return type
 
@@ -2167,7 +2215,7 @@ No authorization required
 
 ## createAWSTarget
 
-> CreateAWSTargetOutput createAWSTarget(body)
+> CreateAWSTargetOutput createAWSTarget(createAWSTarget)
 
 
 
@@ -2177,8 +2225,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAWSTarget(); // CreateAWSTarget | 
-apiInstance.createAWSTarget(body).then((data) => {
+let createAWSTarget = new akeyless.CreateAWSTarget(); // CreateAWSTarget | 
+apiInstance.createAWSTarget(createAWSTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2191,7 +2239,7 @@ apiInstance.createAWSTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAWSTarget**](CreateAWSTarget.md)|  | 
+ **createAWSTarget** | [**CreateAWSTarget**](CreateAWSTarget.md)|  | 
 
 ### Return type
 
@@ -2209,7 +2257,7 @@ No authorization required
 
 ## createArtifactoryTarget
 
-> CreateArtifactoryTargetOutput createArtifactoryTarget(body)
+> CreateArtifactoryTargetOutput createArtifactoryTarget(createArtifactoryTarget)
 
 
 
@@ -2219,8 +2267,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateArtifactoryTarget(); // CreateArtifactoryTarget | 
-apiInstance.createArtifactoryTarget(body).then((data) => {
+let createArtifactoryTarget = new akeyless.CreateArtifactoryTarget(); // CreateArtifactoryTarget | 
+apiInstance.createArtifactoryTarget(createArtifactoryTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2233,7 +2281,7 @@ apiInstance.createArtifactoryTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateArtifactoryTarget**](CreateArtifactoryTarget.md)|  | 
+ **createArtifactoryTarget** | [**CreateArtifactoryTarget**](CreateArtifactoryTarget.md)|  | 
 
 ### Return type
 
@@ -2251,7 +2299,7 @@ No authorization required
 
 ## createAuthMethod
 
-> CreateAuthMethodOutput createAuthMethod(body)
+> CreateAuthMethodOutput createAuthMethod(createAuthMethod)
 
 
 
@@ -2261,8 +2309,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAuthMethod(); // CreateAuthMethod | 
-apiInstance.createAuthMethod(body).then((data) => {
+let createAuthMethod = new akeyless.CreateAuthMethod(); // CreateAuthMethod | 
+apiInstance.createAuthMethod(createAuthMethod).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2275,7 +2323,7 @@ apiInstance.createAuthMethod(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethod**](CreateAuthMethod.md)|  | 
+ **createAuthMethod** | [**CreateAuthMethod**](CreateAuthMethod.md)|  | 
 
 ### Return type
 
@@ -2293,7 +2341,7 @@ No authorization required
 
 ## createAuthMethodAWSIAM
 
-> CreateAuthMethodAWSIAMOutput createAuthMethodAWSIAM(body)
+> CreateAuthMethodAWSIAMOutput createAuthMethodAWSIAM(createAuthMethodAWSIAM)
 
 
 
@@ -2303,8 +2351,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAuthMethodAWSIAM(); // CreateAuthMethodAWSIAM | 
-apiInstance.createAuthMethodAWSIAM(body).then((data) => {
+let createAuthMethodAWSIAM = new akeyless.CreateAuthMethodAWSIAM(); // CreateAuthMethodAWSIAM | 
+apiInstance.createAuthMethodAWSIAM(createAuthMethodAWSIAM).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2317,7 +2365,7 @@ apiInstance.createAuthMethodAWSIAM(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodAWSIAM**](CreateAuthMethodAWSIAM.md)|  | 
+ **createAuthMethodAWSIAM** | [**CreateAuthMethodAWSIAM**](CreateAuthMethodAWSIAM.md)|  | 
 
 ### Return type
 
@@ -2335,7 +2383,7 @@ No authorization required
 
 ## createAuthMethodAzureAD
 
-> CreateAuthMethodAzureADOutput createAuthMethodAzureAD(body)
+> CreateAuthMethodAzureADOutput createAuthMethodAzureAD(createAuthMethodAzureAD)
 
 
 
@@ -2345,8 +2393,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAuthMethodAzureAD(); // CreateAuthMethodAzureAD | 
-apiInstance.createAuthMethodAzureAD(body).then((data) => {
+let createAuthMethodAzureAD = new akeyless.CreateAuthMethodAzureAD(); // CreateAuthMethodAzureAD | 
+apiInstance.createAuthMethodAzureAD(createAuthMethodAzureAD).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2359,7 +2407,7 @@ apiInstance.createAuthMethodAzureAD(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodAzureAD**](CreateAuthMethodAzureAD.md)|  | 
+ **createAuthMethodAzureAD** | [**CreateAuthMethodAzureAD**](CreateAuthMethodAzureAD.md)|  | 
 
 ### Return type
 
@@ -2377,7 +2425,7 @@ No authorization required
 
 ## createAuthMethodCert
 
-> CreateAuthMethodCertOutput createAuthMethodCert(body)
+> CreateAuthMethodCertOutput createAuthMethodCert(createAuthMethodCert)
 
 
 
@@ -2387,8 +2435,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAuthMethodCert(); // CreateAuthMethodCert | 
-apiInstance.createAuthMethodCert(body).then((data) => {
+let createAuthMethodCert = new akeyless.CreateAuthMethodCert(); // CreateAuthMethodCert | 
+apiInstance.createAuthMethodCert(createAuthMethodCert).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2401,7 +2449,7 @@ apiInstance.createAuthMethodCert(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodCert**](CreateAuthMethodCert.md)|  | 
+ **createAuthMethodCert** | [**CreateAuthMethodCert**](CreateAuthMethodCert.md)|  | 
 
 ### Return type
 
@@ -2419,7 +2467,7 @@ No authorization required
 
 ## createAuthMethodEmail
 
-> CreateAuthMethodEmailOutput createAuthMethodEmail(body)
+> CreateAuthMethodEmailOutput createAuthMethodEmail(createAuthMethodEmail)
 
 
 
@@ -2429,8 +2477,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAuthMethodEmail(); // CreateAuthMethodEmail | 
-apiInstance.createAuthMethodEmail(body).then((data) => {
+let createAuthMethodEmail = new akeyless.CreateAuthMethodEmail(); // CreateAuthMethodEmail | 
+apiInstance.createAuthMethodEmail(createAuthMethodEmail).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2443,7 +2491,7 @@ apiInstance.createAuthMethodEmail(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodEmail**](CreateAuthMethodEmail.md)|  | 
+ **createAuthMethodEmail** | [**CreateAuthMethodEmail**](CreateAuthMethodEmail.md)|  | 
 
 ### Return type
 
@@ -2461,7 +2509,7 @@ No authorization required
 
 ## createAuthMethodGCP
 
-> CreateAuthMethodGCPOutput createAuthMethodGCP(body)
+> CreateAuthMethodGCPOutput createAuthMethodGCP(createAuthMethodGCP)
 
 
 
@@ -2471,8 +2519,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAuthMethodGCP(); // CreateAuthMethodGCP | 
-apiInstance.createAuthMethodGCP(body).then((data) => {
+let createAuthMethodGCP = new akeyless.CreateAuthMethodGCP(); // CreateAuthMethodGCP | 
+apiInstance.createAuthMethodGCP(createAuthMethodGCP).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2485,7 +2533,7 @@ apiInstance.createAuthMethodGCP(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodGCP**](CreateAuthMethodGCP.md)|  | 
+ **createAuthMethodGCP** | [**CreateAuthMethodGCP**](CreateAuthMethodGCP.md)|  | 
 
 ### Return type
 
@@ -2503,7 +2551,7 @@ No authorization required
 
 ## createAuthMethodHuawei
 
-> CreateAuthMethodHuaweiOutput createAuthMethodHuawei(body)
+> CreateAuthMethodHuaweiOutput createAuthMethodHuawei(createAuthMethodHuawei)
 
 
 
@@ -2513,8 +2561,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAuthMethodHuawei(); // CreateAuthMethodHuawei | 
-apiInstance.createAuthMethodHuawei(body).then((data) => {
+let createAuthMethodHuawei = new akeyless.CreateAuthMethodHuawei(); // CreateAuthMethodHuawei | 
+apiInstance.createAuthMethodHuawei(createAuthMethodHuawei).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2527,7 +2575,7 @@ apiInstance.createAuthMethodHuawei(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodHuawei**](CreateAuthMethodHuawei.md)|  | 
+ **createAuthMethodHuawei** | [**CreateAuthMethodHuawei**](CreateAuthMethodHuawei.md)|  | 
 
 ### Return type
 
@@ -2545,7 +2593,7 @@ No authorization required
 
 ## createAuthMethodK8S
 
-> CreateAuthMethodK8SOutput createAuthMethodK8S(body)
+> CreateAuthMethodK8SOutput createAuthMethodK8S(createAuthMethodK8S)
 
 
 
@@ -2555,8 +2603,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAuthMethodK8S(); // CreateAuthMethodK8S | 
-apiInstance.createAuthMethodK8S(body).then((data) => {
+let createAuthMethodK8S = new akeyless.CreateAuthMethodK8S(); // CreateAuthMethodK8S | 
+apiInstance.createAuthMethodK8S(createAuthMethodK8S).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2569,7 +2617,7 @@ apiInstance.createAuthMethodK8S(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodK8S**](CreateAuthMethodK8S.md)|  | 
+ **createAuthMethodK8S** | [**CreateAuthMethodK8S**](CreateAuthMethodK8S.md)|  | 
 
 ### Return type
 
@@ -2587,7 +2635,7 @@ No authorization required
 
 ## createAuthMethodLDAP
 
-> CreateAuthMethodLDAPOutput createAuthMethodLDAP(body)
+> CreateAuthMethodLDAPOutput createAuthMethodLDAP(createAuthMethodLDAP)
 
 
 
@@ -2597,8 +2645,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAuthMethodLDAP(); // CreateAuthMethodLDAP | 
-apiInstance.createAuthMethodLDAP(body).then((data) => {
+let createAuthMethodLDAP = new akeyless.CreateAuthMethodLDAP(); // CreateAuthMethodLDAP | 
+apiInstance.createAuthMethodLDAP(createAuthMethodLDAP).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2611,7 +2659,7 @@ apiInstance.createAuthMethodLDAP(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodLDAP**](CreateAuthMethodLDAP.md)|  | 
+ **createAuthMethodLDAP** | [**CreateAuthMethodLDAP**](CreateAuthMethodLDAP.md)|  | 
 
 ### Return type
 
@@ -2629,7 +2677,7 @@ No authorization required
 
 ## createAuthMethodOAuth2
 
-> CreateAuthMethodOAuth2Output createAuthMethodOAuth2(body)
+> CreateAuthMethodOAuth2Output createAuthMethodOAuth2(createAuthMethodOAuth2)
 
 
 
@@ -2639,8 +2687,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAuthMethodOAuth2(); // CreateAuthMethodOAuth2 | 
-apiInstance.createAuthMethodOAuth2(body).then((data) => {
+let createAuthMethodOAuth2 = new akeyless.CreateAuthMethodOAuth2(); // CreateAuthMethodOAuth2 | 
+apiInstance.createAuthMethodOAuth2(createAuthMethodOAuth2).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2653,7 +2701,7 @@ apiInstance.createAuthMethodOAuth2(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodOAuth2**](CreateAuthMethodOAuth2.md)|  | 
+ **createAuthMethodOAuth2** | [**CreateAuthMethodOAuth2**](CreateAuthMethodOAuth2.md)|  | 
 
 ### Return type
 
@@ -2671,7 +2719,7 @@ No authorization required
 
 ## createAuthMethodOCI
 
-> CreateAuthMethodOCIOutput createAuthMethodOCI(body)
+> CreateAuthMethodOCIOutput createAuthMethodOCI(createAuthMethodOCI)
 
 
 
@@ -2681,8 +2729,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAuthMethodOCI(); // CreateAuthMethodOCI | 
-apiInstance.createAuthMethodOCI(body).then((data) => {
+let createAuthMethodOCI = new akeyless.CreateAuthMethodOCI(); // CreateAuthMethodOCI | 
+apiInstance.createAuthMethodOCI(createAuthMethodOCI).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2695,7 +2743,7 @@ apiInstance.createAuthMethodOCI(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodOCI**](CreateAuthMethodOCI.md)|  | 
+ **createAuthMethodOCI** | [**CreateAuthMethodOCI**](CreateAuthMethodOCI.md)|  | 
 
 ### Return type
 
@@ -2713,7 +2761,7 @@ No authorization required
 
 ## createAuthMethodOIDC
 
-> CreateAuthMethodOIDCOutput createAuthMethodOIDC(body)
+> CreateAuthMethodOIDCOutput createAuthMethodOIDC(createAuthMethodOIDC)
 
 
 
@@ -2723,8 +2771,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAuthMethodOIDC(); // CreateAuthMethodOIDC | 
-apiInstance.createAuthMethodOIDC(body).then((data) => {
+let createAuthMethodOIDC = new akeyless.CreateAuthMethodOIDC(); // CreateAuthMethodOIDC | 
+apiInstance.createAuthMethodOIDC(createAuthMethodOIDC).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2737,7 +2785,7 @@ apiInstance.createAuthMethodOIDC(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodOIDC**](CreateAuthMethodOIDC.md)|  | 
+ **createAuthMethodOIDC** | [**CreateAuthMethodOIDC**](CreateAuthMethodOIDC.md)|  | 
 
 ### Return type
 
@@ -2755,7 +2803,7 @@ No authorization required
 
 ## createAuthMethodSAML
 
-> CreateAuthMethodSAMLOutput createAuthMethodSAML(body)
+> CreateAuthMethodSAMLOutput createAuthMethodSAML(createAuthMethodSAML)
 
 
 
@@ -2765,8 +2813,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAuthMethodSAML(); // CreateAuthMethodSAML | 
-apiInstance.createAuthMethodSAML(body).then((data) => {
+let createAuthMethodSAML = new akeyless.CreateAuthMethodSAML(); // CreateAuthMethodSAML | 
+apiInstance.createAuthMethodSAML(createAuthMethodSAML).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2779,7 +2827,7 @@ apiInstance.createAuthMethodSAML(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodSAML**](CreateAuthMethodSAML.md)|  | 
+ **createAuthMethodSAML** | [**CreateAuthMethodSAML**](CreateAuthMethodSAML.md)|  | 
 
 ### Return type
 
@@ -2797,7 +2845,7 @@ No authorization required
 
 ## createAuthMethodUniversalIdentity
 
-> CreateAuthMethodUniversalIdentityOutput createAuthMethodUniversalIdentity(body)
+> CreateAuthMethodUniversalIdentityOutput createAuthMethodUniversalIdentity(createAuthMethodUniversalIdentity)
 
 
 
@@ -2807,8 +2855,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAuthMethodUniversalIdentity(); // CreateAuthMethodUniversalIdentity | 
-apiInstance.createAuthMethodUniversalIdentity(body).then((data) => {
+let createAuthMethodUniversalIdentity = new akeyless.CreateAuthMethodUniversalIdentity(); // CreateAuthMethodUniversalIdentity | 
+apiInstance.createAuthMethodUniversalIdentity(createAuthMethodUniversalIdentity).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2821,7 +2869,7 @@ apiInstance.createAuthMethodUniversalIdentity(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAuthMethodUniversalIdentity**](CreateAuthMethodUniversalIdentity.md)|  | 
+ **createAuthMethodUniversalIdentity** | [**CreateAuthMethodUniversalIdentity**](CreateAuthMethodUniversalIdentity.md)|  | 
 
 ### Return type
 
@@ -2839,7 +2887,7 @@ No authorization required
 
 ## createAzureTarget
 
-> CreateAzureTargetOutput createAzureTarget(body)
+> CreateAzureTargetOutput createAzureTarget(createAzureTarget)
 
 
 
@@ -2849,8 +2897,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateAzureTarget(); // CreateAzureTarget | 
-apiInstance.createAzureTarget(body).then((data) => {
+let createAzureTarget = new akeyless.CreateAzureTarget(); // CreateAzureTarget | 
+apiInstance.createAzureTarget(createAzureTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2863,7 +2911,7 @@ apiInstance.createAzureTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAzureTarget**](CreateAzureTarget.md)|  | 
+ **createAzureTarget** | [**CreateAzureTarget**](CreateAzureTarget.md)|  | 
 
 ### Return type
 
@@ -2881,7 +2929,7 @@ No authorization required
 
 ## createCertificate
 
-> CreateCertificateOutput createCertificate(body)
+> CreateCertificateOutput createCertificate(createCertificate)
 
 
 
@@ -2891,8 +2939,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateCertificate(); // CreateCertificate | 
-apiInstance.createCertificate(body).then((data) => {
+let createCertificate = new akeyless.CreateCertificate(); // CreateCertificate | 
+apiInstance.createCertificate(createCertificate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2905,7 +2953,7 @@ apiInstance.createCertificate(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateCertificate**](CreateCertificate.md)|  | 
+ **createCertificate** | [**CreateCertificate**](CreateCertificate.md)|  | 
 
 ### Return type
 
@@ -2923,7 +2971,7 @@ No authorization required
 
 ## createClassicKey
 
-> CreateClassicKeyOutput createClassicKey(body)
+> CreateClassicKeyOutput createClassicKey(createClassicKey)
 
 
 
@@ -2933,8 +2981,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateClassicKey(); // CreateClassicKey | 
-apiInstance.createClassicKey(body).then((data) => {
+let createClassicKey = new akeyless.CreateClassicKey(); // CreateClassicKey | 
+apiInstance.createClassicKey(createClassicKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2947,7 +2995,7 @@ apiInstance.createClassicKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateClassicKey**](CreateClassicKey.md)|  | 
+ **createClassicKey** | [**CreateClassicKey**](CreateClassicKey.md)|  | 
 
 ### Return type
 
@@ -2965,7 +3013,7 @@ No authorization required
 
 ## createDBTarget
 
-> CreateDBTargetOutput createDBTarget(body)
+> CreateDBTargetOutput createDBTarget(createDBTarget)
 
 
 
@@ -2975,8 +3023,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateDBTarget(); // CreateDBTarget | 
-apiInstance.createDBTarget(body).then((data) => {
+let createDBTarget = new akeyless.CreateDBTarget(); // CreateDBTarget | 
+apiInstance.createDBTarget(createDBTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2989,7 +3037,7 @@ apiInstance.createDBTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateDBTarget**](CreateDBTarget.md)|  | 
+ **createDBTarget** | [**CreateDBTarget**](CreateDBTarget.md)|  | 
 
 ### Return type
 
@@ -3007,7 +3055,7 @@ No authorization required
 
 ## createDFCKey
 
-> CreateDFCKeyOutput createDFCKey(body)
+> CreateDFCKeyOutput createDFCKey(createDFCKey)
 
 
 
@@ -3017,8 +3065,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateDFCKey(); // CreateDFCKey | 
-apiInstance.createDFCKey(body).then((data) => {
+let createDFCKey = new akeyless.CreateDFCKey(); // CreateDFCKey | 
+apiInstance.createDFCKey(createDFCKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3031,7 +3079,7 @@ apiInstance.createDFCKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateDFCKey**](CreateDFCKey.md)|  | 
+ **createDFCKey** | [**CreateDFCKey**](CreateDFCKey.md)|  | 
 
 ### Return type
 
@@ -3049,7 +3097,7 @@ No authorization required
 
 ## createDockerhubTarget
 
-> CreateDockerhubTargetOutput createDockerhubTarget(body)
+> CreateDockerhubTargetOutput createDockerhubTarget(createDockerhubTarget)
 
 
 
@@ -3059,8 +3107,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateDockerhubTarget(); // CreateDockerhubTarget | 
-apiInstance.createDockerhubTarget(body).then((data) => {
+let createDockerhubTarget = new akeyless.CreateDockerhubTarget(); // CreateDockerhubTarget | 
+apiInstance.createDockerhubTarget(createDockerhubTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3073,7 +3121,7 @@ apiInstance.createDockerhubTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateDockerhubTarget**](CreateDockerhubTarget.md)|  | 
+ **createDockerhubTarget** | [**CreateDockerhubTarget**](CreateDockerhubTarget.md)|  | 
 
 ### Return type
 
@@ -3091,7 +3139,7 @@ No authorization required
 
 ## createDynamicSecret
 
-> Object createDynamicSecret(body)
+> Object createDynamicSecret(createDynamicSecret)
 
 
 
@@ -3101,8 +3149,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateDynamicSecret(); // CreateDynamicSecret | 
-apiInstance.createDynamicSecret(body).then((data) => {
+let createDynamicSecret = new akeyless.CreateDynamicSecret(); // CreateDynamicSecret | 
+apiInstance.createDynamicSecret(createDynamicSecret).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3115,7 +3163,7 @@ apiInstance.createDynamicSecret(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateDynamicSecret**](CreateDynamicSecret.md)|  | 
+ **createDynamicSecret** | [**CreateDynamicSecret**](CreateDynamicSecret.md)|  | 
 
 ### Return type
 
@@ -3133,7 +3181,7 @@ No authorization required
 
 ## createEKSTarget
 
-> CreateEKSTargetOutput createEKSTarget(body)
+> CreateEKSTargetOutput createEKSTarget(createEKSTarget)
 
 
 
@@ -3143,8 +3191,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateEKSTarget(); // CreateEKSTarget | 
-apiInstance.createEKSTarget(body).then((data) => {
+let createEKSTarget = new akeyless.CreateEKSTarget(); // CreateEKSTarget | 
+apiInstance.createEKSTarget(createEKSTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3157,7 +3205,7 @@ apiInstance.createEKSTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateEKSTarget**](CreateEKSTarget.md)|  | 
+ **createEKSTarget** | [**CreateEKSTarget**](CreateEKSTarget.md)|  | 
 
 ### Return type
 
@@ -3175,7 +3223,7 @@ No authorization required
 
 ## createESM
 
-> CreateESMOutput createESM(body)
+> CreateESMOutput createESM(createESM)
 
 
 
@@ -3185,8 +3233,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateESM(); // CreateESM | 
-apiInstance.createESM(body).then((data) => {
+let createESM = new akeyless.CreateESM(); // CreateESM | 
+apiInstance.createESM(createESM).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3199,7 +3247,7 @@ apiInstance.createESM(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateESM**](CreateESM.md)|  | 
+ **createESM** | [**CreateESM**](CreateESM.md)|  | 
 
 ### Return type
 
@@ -3217,7 +3265,7 @@ No authorization required
 
 ## createEventForwarder
 
-> CreateEventForwarderOutput createEventForwarder(body)
+> CreateEventForwarderOutput createEventForwarder(createEventForwarder)
 
 
 
@@ -3227,8 +3275,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateEventForwarder(); // CreateEventForwarder | 
-apiInstance.createEventForwarder(body).then((data) => {
+let createEventForwarder = new akeyless.CreateEventForwarder(); // CreateEventForwarder | 
+apiInstance.createEventForwarder(createEventForwarder).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3241,7 +3289,7 @@ apiInstance.createEventForwarder(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateEventForwarder**](CreateEventForwarder.md)|  | 
+ **createEventForwarder** | [**CreateEventForwarder**](CreateEventForwarder.md)|  | 
 
 ### Return type
 
@@ -3259,7 +3307,7 @@ No authorization required
 
 ## createGKETarget
 
-> CreateGKETargetOutput createGKETarget(body)
+> CreateGKETargetOutput createGKETarget(createGKETarget)
 
 
 
@@ -3269,8 +3317,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateGKETarget(); // CreateGKETarget | 
-apiInstance.createGKETarget(body).then((data) => {
+let createGKETarget = new akeyless.CreateGKETarget(); // CreateGKETarget | 
+apiInstance.createGKETarget(createGKETarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3283,7 +3331,7 @@ apiInstance.createGKETarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateGKETarget**](CreateGKETarget.md)|  | 
+ **createGKETarget** | [**CreateGKETarget**](CreateGKETarget.md)|  | 
 
 ### Return type
 
@@ -3301,7 +3349,7 @@ No authorization required
 
 ## createGcpTarget
 
-> CreateGcpTargetOutput createGcpTarget(body)
+> CreateGcpTargetOutput createGcpTarget(createGcpTarget)
 
 
 
@@ -3311,8 +3359,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateGcpTarget(); // CreateGcpTarget | 
-apiInstance.createGcpTarget(body).then((data) => {
+let createGcpTarget = new akeyless.CreateGcpTarget(); // CreateGcpTarget | 
+apiInstance.createGcpTarget(createGcpTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3325,7 +3373,7 @@ apiInstance.createGcpTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateGcpTarget**](CreateGcpTarget.md)|  | 
+ **createGcpTarget** | [**CreateGcpTarget**](CreateGcpTarget.md)|  | 
 
 ### Return type
 
@@ -3343,7 +3391,7 @@ No authorization required
 
 ## createGithubTarget
 
-> CreateGithubTargetOutput createGithubTarget(body)
+> CreateGithubTargetOutput createGithubTarget(createGithubTarget)
 
 
 
@@ -3353,8 +3401,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateGithubTarget(); // CreateGithubTarget | 
-apiInstance.createGithubTarget(body).then((data) => {
+let createGithubTarget = new akeyless.CreateGithubTarget(); // CreateGithubTarget | 
+apiInstance.createGithubTarget(createGithubTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3367,7 +3415,7 @@ apiInstance.createGithubTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateGithubTarget**](CreateGithubTarget.md)|  | 
+ **createGithubTarget** | [**CreateGithubTarget**](CreateGithubTarget.md)|  | 
 
 ### Return type
 
@@ -3385,7 +3433,7 @@ No authorization required
 
 ## createGitlabTarget
 
-> CreateGitlabTargetOutput createGitlabTarget(body)
+> CreateGitlabTargetOutput createGitlabTarget(createGitlabTarget)
 
 
 
@@ -3395,8 +3443,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateGitlabTarget(); // CreateGitlabTarget | 
-apiInstance.createGitlabTarget(body).then((data) => {
+let createGitlabTarget = new akeyless.CreateGitlabTarget(); // CreateGitlabTarget | 
+apiInstance.createGitlabTarget(createGitlabTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3409,7 +3457,7 @@ apiInstance.createGitlabTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateGitlabTarget**](CreateGitlabTarget.md)|  | 
+ **createGitlabTarget** | [**CreateGitlabTarget**](CreateGitlabTarget.md)|  | 
 
 ### Return type
 
@@ -3427,7 +3475,7 @@ No authorization required
 
 ## createGlobalSignAtlasTarget
 
-> CreateGlobalSignAtlasTargetOutput createGlobalSignAtlasTarget(body)
+> CreateGlobalSignAtlasTargetOutput createGlobalSignAtlasTarget(createGlobalSignAtlasTarget)
 
 
 
@@ -3437,8 +3485,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateGlobalSignAtlasTarget(); // CreateGlobalSignAtlasTarget | 
-apiInstance.createGlobalSignAtlasTarget(body).then((data) => {
+let createGlobalSignAtlasTarget = new akeyless.CreateGlobalSignAtlasTarget(); // CreateGlobalSignAtlasTarget | 
+apiInstance.createGlobalSignAtlasTarget(createGlobalSignAtlasTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3451,7 +3499,7 @@ apiInstance.createGlobalSignAtlasTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateGlobalSignAtlasTarget**](CreateGlobalSignAtlasTarget.md)|  | 
+ **createGlobalSignAtlasTarget** | [**CreateGlobalSignAtlasTarget**](CreateGlobalSignAtlasTarget.md)|  | 
 
 ### Return type
 
@@ -3469,7 +3517,7 @@ No authorization required
 
 ## createGlobalSignTarget
 
-> CreateGlobalSignTargetOutput createGlobalSignTarget(body)
+> CreateGlobalSignTargetOutput createGlobalSignTarget(createGlobalSignTarget)
 
 
 
@@ -3479,8 +3527,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateGlobalSignTarget(); // CreateGlobalSignTarget | 
-apiInstance.createGlobalSignTarget(body).then((data) => {
+let createGlobalSignTarget = new akeyless.CreateGlobalSignTarget(); // CreateGlobalSignTarget | 
+apiInstance.createGlobalSignTarget(createGlobalSignTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3493,7 +3541,7 @@ apiInstance.createGlobalSignTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateGlobalSignTarget**](CreateGlobalSignTarget.md)|  | 
+ **createGlobalSignTarget** | [**CreateGlobalSignTarget**](CreateGlobalSignTarget.md)|  | 
 
 ### Return type
 
@@ -3511,7 +3559,7 @@ No authorization required
 
 ## createGodaddyTarget
 
-> CreateGodaddyTargetOutput createGodaddyTarget(body)
+> CreateGodaddyTargetOutput createGodaddyTarget(createGodaddyTarget)
 
 
 
@@ -3521,8 +3569,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateGodaddyTarget(); // CreateGodaddyTarget | 
-apiInstance.createGodaddyTarget(body).then((data) => {
+let createGodaddyTarget = new akeyless.CreateGodaddyTarget(); // CreateGodaddyTarget | 
+apiInstance.createGodaddyTarget(createGodaddyTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3535,7 +3583,7 @@ apiInstance.createGodaddyTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateGodaddyTarget**](CreateGodaddyTarget.md)|  | 
+ **createGodaddyTarget** | [**CreateGodaddyTarget**](CreateGodaddyTarget.md)|  | 
 
 ### Return type
 
@@ -3553,7 +3601,7 @@ No authorization required
 
 ## createGroup
 
-> CreateGroupOutput createGroup(body)
+> CreateGroupOutput createGroup(createGroup)
 
 
 
@@ -3563,8 +3611,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateGroup(); // CreateGroup | 
-apiInstance.createGroup(body).then((data) => {
+let createGroup = new akeyless.CreateGroup(); // CreateGroup | 
+apiInstance.createGroup(createGroup).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3577,7 +3625,7 @@ apiInstance.createGroup(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateGroup**](CreateGroup.md)|  | 
+ **createGroup** | [**CreateGroup**](CreateGroup.md)|  | 
 
 ### Return type
 
@@ -3595,7 +3643,7 @@ No authorization required
 
 ## createHashiVaultTarget
 
-> CreateHashiVaultTargetOutput createHashiVaultTarget(body)
+> CreateHashiVaultTargetOutput createHashiVaultTarget(createHashiVaultTarget)
 
 
 
@@ -3605,8 +3653,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateHashiVaultTarget(); // CreateHashiVaultTarget | 
-apiInstance.createHashiVaultTarget(body).then((data) => {
+let createHashiVaultTarget = new akeyless.CreateHashiVaultTarget(); // CreateHashiVaultTarget | 
+apiInstance.createHashiVaultTarget(createHashiVaultTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3619,7 +3667,7 @@ apiInstance.createHashiVaultTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateHashiVaultTarget**](CreateHashiVaultTarget.md)|  | 
+ **createHashiVaultTarget** | [**CreateHashiVaultTarget**](CreateHashiVaultTarget.md)|  | 
 
 ### Return type
 
@@ -3637,7 +3685,7 @@ No authorization required
 
 ## createKey
 
-> CreateKeyOutput createKey(body)
+> CreateKeyOutput createKey(createKey)
 
 
 
@@ -3647,8 +3695,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateKey(); // CreateKey | 
-apiInstance.createKey(body).then((data) => {
+let createKey = new akeyless.CreateKey(); // CreateKey | 
+apiInstance.createKey(createKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3661,7 +3709,7 @@ apiInstance.createKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateKey**](CreateKey.md)|  | 
+ **createKey** | [**CreateKey**](CreateKey.md)|  | 
 
 ### Return type
 
@@ -3679,7 +3727,7 @@ No authorization required
 
 ## createLinkedTarget
 
-> CreateLinkedTargetOutput createLinkedTarget(body)
+> CreateLinkedTargetOutput createLinkedTarget(createLinkedTarget)
 
 
 
@@ -3689,8 +3737,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateLinkedTarget(); // CreateLinkedTarget | 
-apiInstance.createLinkedTarget(body).then((data) => {
+let createLinkedTarget = new akeyless.CreateLinkedTarget(); // CreateLinkedTarget | 
+apiInstance.createLinkedTarget(createLinkedTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3703,7 +3751,7 @@ apiInstance.createLinkedTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateLinkedTarget**](CreateLinkedTarget.md)|  | 
+ **createLinkedTarget** | [**CreateLinkedTarget**](CreateLinkedTarget.md)|  | 
 
 ### Return type
 
@@ -3721,7 +3769,7 @@ No authorization required
 
 ## createNativeK8STarget
 
-> CreateNativeK8STargetOutput createNativeK8STarget(body)
+> CreateNativeK8STargetOutput createNativeK8STarget(createNativeK8STarget)
 
 
 
@@ -3731,8 +3779,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateNativeK8STarget(); // CreateNativeK8STarget | 
-apiInstance.createNativeK8STarget(body).then((data) => {
+let createNativeK8STarget = new akeyless.CreateNativeK8STarget(); // CreateNativeK8STarget | 
+apiInstance.createNativeK8STarget(createNativeK8STarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3745,7 +3793,7 @@ apiInstance.createNativeK8STarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateNativeK8STarget**](CreateNativeK8STarget.md)|  | 
+ **createNativeK8STarget** | [**CreateNativeK8STarget**](CreateNativeK8STarget.md)|  | 
 
 ### Return type
 
@@ -3763,7 +3811,7 @@ No authorization required
 
 ## createOidcApp
 
-> CreateOidcAppOutput createOidcApp(body)
+> CreateOidcAppOutput createOidcApp(createOidcApp)
 
 
 
@@ -3773,8 +3821,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateOidcApp(); // CreateOidcApp | 
-apiInstance.createOidcApp(body).then((data) => {
+let createOidcApp = new akeyless.CreateOidcApp(); // CreateOidcApp | 
+apiInstance.createOidcApp(createOidcApp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3787,7 +3835,7 @@ apiInstance.createOidcApp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateOidcApp**](CreateOidcApp.md)|  | 
+ **createOidcApp** | [**CreateOidcApp**](CreateOidcApp.md)|  | 
 
 ### Return type
 
@@ -3805,7 +3853,7 @@ No authorization required
 
 ## createPKICertIssuer
 
-> CreatePKICertIssuerOutput createPKICertIssuer(body)
+> CreatePKICertIssuerOutput createPKICertIssuer(createPKICertIssuer)
 
 
 
@@ -3815,8 +3863,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreatePKICertIssuer(); // CreatePKICertIssuer | 
-apiInstance.createPKICertIssuer(body).then((data) => {
+let createPKICertIssuer = new akeyless.CreatePKICertIssuer(); // CreatePKICertIssuer | 
+apiInstance.createPKICertIssuer(createPKICertIssuer).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3829,7 +3877,7 @@ apiInstance.createPKICertIssuer(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreatePKICertIssuer**](CreatePKICertIssuer.md)|  | 
+ **createPKICertIssuer** | [**CreatePKICertIssuer**](CreatePKICertIssuer.md)|  | 
 
 ### Return type
 
@@ -3847,7 +3895,7 @@ No authorization required
 
 ## createPasskey
 
-> CreatePasskeyOutput createPasskey(body)
+> CreatePasskeyOutput createPasskey(createPasskey)
 
 
 
@@ -3857,8 +3905,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreatePasskey(); // CreatePasskey | 
-apiInstance.createPasskey(body).then((data) => {
+let createPasskey = new akeyless.CreatePasskey(); // CreatePasskey | 
+apiInstance.createPasskey(createPasskey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3871,7 +3919,7 @@ apiInstance.createPasskey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreatePasskey**](CreatePasskey.md)|  | 
+ **createPasskey** | [**CreatePasskey**](CreatePasskey.md)|  | 
 
 ### Return type
 
@@ -3889,7 +3937,7 @@ No authorization required
 
 ## createPingTarget
 
-> CreatePingTargetOutput createPingTarget(body)
+> CreatePingTargetOutput createPingTarget(createPingTarget)
 
 
 
@@ -3899,8 +3947,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreatePingTarget(); // CreatePingTarget | 
-apiInstance.createPingTarget(body).then((data) => {
+let createPingTarget = new akeyless.CreatePingTarget(); // CreatePingTarget | 
+apiInstance.createPingTarget(createPingTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3913,7 +3961,7 @@ apiInstance.createPingTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreatePingTarget**](CreatePingTarget.md)|  | 
+ **createPingTarget** | [**CreatePingTarget**](CreatePingTarget.md)|  | 
 
 ### Return type
 
@@ -3931,7 +3979,7 @@ No authorization required
 
 ## createRabbitMQTarget
 
-> CreateRabbitMQTargetOutput createRabbitMQTarget(body)
+> CreateRabbitMQTargetOutput createRabbitMQTarget(createRabbitMQTarget)
 
 
 
@@ -3941,8 +3989,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateRabbitMQTarget(); // CreateRabbitMQTarget | 
-apiInstance.createRabbitMQTarget(body).then((data) => {
+let createRabbitMQTarget = new akeyless.CreateRabbitMQTarget(); // CreateRabbitMQTarget | 
+apiInstance.createRabbitMQTarget(createRabbitMQTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3955,7 +4003,7 @@ apiInstance.createRabbitMQTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateRabbitMQTarget**](CreateRabbitMQTarget.md)|  | 
+ **createRabbitMQTarget** | [**CreateRabbitMQTarget**](CreateRabbitMQTarget.md)|  | 
 
 ### Return type
 
@@ -3973,7 +4021,7 @@ No authorization required
 
 ## createRole
 
-> Object createRole(body)
+> Object createRole(createRole)
 
 
 
@@ -3983,8 +4031,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateRole(); // CreateRole | 
-apiInstance.createRole(body).then((data) => {
+let createRole = new akeyless.CreateRole(); // CreateRole | 
+apiInstance.createRole(createRole).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -3997,7 +4045,7 @@ apiInstance.createRole(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateRole**](CreateRole.md)|  | 
+ **createRole** | [**CreateRole**](CreateRole.md)|  | 
 
 ### Return type
 
@@ -4015,7 +4063,7 @@ No authorization required
 
 ## createRotatedSecret
 
-> CreateRotatedSecretOutput createRotatedSecret(body)
+> CreateRotatedSecretOutput createRotatedSecret(createRotatedSecret)
 
 
 
@@ -4025,8 +4073,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateRotatedSecret(); // CreateRotatedSecret | 
-apiInstance.createRotatedSecret(body).then((data) => {
+let createRotatedSecret = new akeyless.CreateRotatedSecret(); // CreateRotatedSecret | 
+apiInstance.createRotatedSecret(createRotatedSecret).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4039,7 +4087,7 @@ apiInstance.createRotatedSecret(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateRotatedSecret**](CreateRotatedSecret.md)|  | 
+ **createRotatedSecret** | [**CreateRotatedSecret**](CreateRotatedSecret.md)|  | 
 
 ### Return type
 
@@ -4057,7 +4105,7 @@ No authorization required
 
 ## createSSHCertIssuer
 
-> CreateSSHCertIssuerOutput createSSHCertIssuer(body)
+> CreateSSHCertIssuerOutput createSSHCertIssuer(createSSHCertIssuer)
 
 
 
@@ -4067,8 +4115,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateSSHCertIssuer(); // CreateSSHCertIssuer | 
-apiInstance.createSSHCertIssuer(body).then((data) => {
+let createSSHCertIssuer = new akeyless.CreateSSHCertIssuer(); // CreateSSHCertIssuer | 
+apiInstance.createSSHCertIssuer(createSSHCertIssuer).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4081,7 +4129,7 @@ apiInstance.createSSHCertIssuer(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateSSHCertIssuer**](CreateSSHCertIssuer.md)|  | 
+ **createSSHCertIssuer** | [**CreateSSHCertIssuer**](CreateSSHCertIssuer.md)|  | 
 
 ### Return type
 
@@ -4099,7 +4147,7 @@ No authorization required
 
 ## createSSHTarget
 
-> CreateSSHTargetOutput createSSHTarget(body)
+> CreateSSHTargetOutput createSSHTarget(createSSHTarget)
 
 
 
@@ -4109,8 +4157,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateSSHTarget(); // CreateSSHTarget | 
-apiInstance.createSSHTarget(body).then((data) => {
+let createSSHTarget = new akeyless.CreateSSHTarget(); // CreateSSHTarget | 
+apiInstance.createSSHTarget(createSSHTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4123,7 +4171,7 @@ apiInstance.createSSHTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateSSHTarget**](CreateSSHTarget.md)|  | 
+ **createSSHTarget** | [**CreateSSHTarget**](CreateSSHTarget.md)|  | 
 
 ### Return type
 
@@ -4141,7 +4189,7 @@ No authorization required
 
 ## createSalesforceTarget
 
-> CreateSalesforceTargetOutput createSalesforceTarget(body)
+> CreateSalesforceTargetOutput createSalesforceTarget(createSalesforceTarget)
 
 
 
@@ -4151,8 +4199,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateSalesforceTarget(); // CreateSalesforceTarget | 
-apiInstance.createSalesforceTarget(body).then((data) => {
+let createSalesforceTarget = new akeyless.CreateSalesforceTarget(); // CreateSalesforceTarget | 
+apiInstance.createSalesforceTarget(createSalesforceTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4165,7 +4213,7 @@ apiInstance.createSalesforceTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateSalesforceTarget**](CreateSalesforceTarget.md)|  | 
+ **createSalesforceTarget** | [**CreateSalesforceTarget**](CreateSalesforceTarget.md)|  | 
 
 ### Return type
 
@@ -4183,7 +4231,7 @@ No authorization required
 
 ## createSecret
 
-> CreateSecretOutput createSecret(body)
+> CreateSecretOutput createSecret(createSecret)
 
 
 
@@ -4193,8 +4241,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateSecret(); // CreateSecret | 
-apiInstance.createSecret(body).then((data) => {
+let createSecret = new akeyless.CreateSecret(); // CreateSecret | 
+apiInstance.createSecret(createSecret).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4207,7 +4255,7 @@ apiInstance.createSecret(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateSecret**](CreateSecret.md)|  | 
+ **createSecret** | [**CreateSecret**](CreateSecret.md)|  | 
 
 ### Return type
 
@@ -4225,7 +4273,7 @@ No authorization required
 
 ## createTokenizer
 
-> CreateTokenizerOutput createTokenizer(body)
+> CreateTokenizerOutput createTokenizer(createTokenizer)
 
 
 
@@ -4235,8 +4283,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateTokenizer(); // CreateTokenizer | 
-apiInstance.createTokenizer(body).then((data) => {
+let createTokenizer = new akeyless.CreateTokenizer(); // CreateTokenizer | 
+apiInstance.createTokenizer(createTokenizer).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4249,7 +4297,7 @@ apiInstance.createTokenizer(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateTokenizer**](CreateTokenizer.md)|  | 
+ **createTokenizer** | [**CreateTokenizer**](CreateTokenizer.md)|  | 
 
 ### Return type
 
@@ -4267,7 +4315,7 @@ No authorization required
 
 ## createUSC
 
-> CreateUSCOutput createUSC(body)
+> CreateUSCOutput createUSC(createUSC)
 
 
 
@@ -4277,8 +4325,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateUSC(); // CreateUSC | 
-apiInstance.createUSC(body).then((data) => {
+let createUSC = new akeyless.CreateUSC(); // CreateUSC | 
+apiInstance.createUSC(createUSC).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4291,7 +4339,7 @@ apiInstance.createUSC(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateUSC**](CreateUSC.md)|  | 
+ **createUSC** | [**CreateUSC**](CreateUSC.md)|  | 
 
 ### Return type
 
@@ -4309,7 +4357,7 @@ No authorization required
 
 ## createUserEvent
 
-> CreateUserEventOutput createUserEvent(body)
+> CreateUserEventOutput createUserEvent(createUserEvent)
 
 
 
@@ -4319,8 +4367,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateUserEvent(); // CreateUserEvent | 
-apiInstance.createUserEvent(body).then((data) => {
+let createUserEvent = new akeyless.CreateUserEvent(); // CreateUserEvent | 
+apiInstance.createUserEvent(createUserEvent).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4333,7 +4381,7 @@ apiInstance.createUserEvent(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateUserEvent**](CreateUserEvent.md)|  | 
+ **createUserEvent** | [**CreateUserEvent**](CreateUserEvent.md)|  | 
 
 ### Return type
 
@@ -4351,7 +4399,7 @@ No authorization required
 
 ## createWebTarget
 
-> CreateWebTargetOutput createWebTarget(body)
+> CreateWebTargetOutput createWebTarget(createWebTarget)
 
 
 
@@ -4361,8 +4409,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateWebTarget(); // CreateWebTarget | 
-apiInstance.createWebTarget(body).then((data) => {
+let createWebTarget = new akeyless.CreateWebTarget(); // CreateWebTarget | 
+apiInstance.createWebTarget(createWebTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4375,7 +4423,7 @@ apiInstance.createWebTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateWebTarget**](CreateWebTarget.md)|  | 
+ **createWebTarget** | [**CreateWebTarget**](CreateWebTarget.md)|  | 
 
 ### Return type
 
@@ -4393,7 +4441,7 @@ No authorization required
 
 ## createWindowsTarget
 
-> CreateWindowsTargetOutput createWindowsTarget(body)
+> CreateWindowsTargetOutput createWindowsTarget(createWindowsTarget)
 
 
 
@@ -4403,8 +4451,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateWindowsTarget(); // CreateWindowsTarget | 
-apiInstance.createWindowsTarget(body).then((data) => {
+let createWindowsTarget = new akeyless.CreateWindowsTarget(); // CreateWindowsTarget | 
+apiInstance.createWindowsTarget(createWindowsTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4417,7 +4465,7 @@ apiInstance.createWindowsTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateWindowsTarget**](CreateWindowsTarget.md)|  | 
+ **createWindowsTarget** | [**CreateWindowsTarget**](CreateWindowsTarget.md)|  | 
 
 ### Return type
 
@@ -4435,7 +4483,7 @@ No authorization required
 
 ## createZeroSSLTarget
 
-> CreateZeroSSLTargetOutput createZeroSSLTarget(body)
+> CreateZeroSSLTargetOutput createZeroSSLTarget(createZeroSSLTarget)
 
 
 
@@ -4445,8 +4493,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateZeroSSLTarget(); // CreateZeroSSLTarget | 
-apiInstance.createZeroSSLTarget(body).then((data) => {
+let createZeroSSLTarget = new akeyless.CreateZeroSSLTarget(); // CreateZeroSSLTarget | 
+apiInstance.createZeroSSLTarget(createZeroSSLTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4459,7 +4507,7 @@ apiInstance.createZeroSSLTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateZeroSSLTarget**](CreateZeroSSLTarget.md)|  | 
+ **createZeroSSLTarget** | [**CreateZeroSSLTarget**](CreateZeroSSLTarget.md)|  | 
 
 ### Return type
 
@@ -4477,7 +4525,7 @@ No authorization required
 
 ## createldapTarget
 
-> CreateLdapTargetOutput createldapTarget(body)
+> CreateLdapTargetOutput createldapTarget(createLdapTarget)
 
 
 
@@ -4487,8 +4535,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.CreateLdapTarget(); // CreateLdapTarget | 
-apiInstance.createldapTarget(body).then((data) => {
+let createLdapTarget = new akeyless.CreateLdapTarget(); // CreateLdapTarget | 
+apiInstance.createldapTarget(createLdapTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4501,7 +4549,7 @@ apiInstance.createldapTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateLdapTarget**](CreateLdapTarget.md)|  | 
+ **createLdapTarget** | [**CreateLdapTarget**](CreateLdapTarget.md)|  | 
 
 ### Return type
 
@@ -4519,7 +4567,7 @@ No authorization required
 
 ## deactivateAcmeAccount
 
-> Object deactivateAcmeAccount(body)
+> Object deactivateAcmeAccount(deactivateAcmeAccount)
 
 
 
@@ -4529,8 +4577,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeactivateAcmeAccount(); // DeactivateAcmeAccount | 
-apiInstance.deactivateAcmeAccount(body).then((data) => {
+let deactivateAcmeAccount = new akeyless.DeactivateAcmeAccount(); // DeactivateAcmeAccount | 
+apiInstance.deactivateAcmeAccount(deactivateAcmeAccount).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4543,7 +4591,7 @@ apiInstance.deactivateAcmeAccount(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeactivateAcmeAccount**](DeactivateAcmeAccount.md)|  | 
+ **deactivateAcmeAccount** | [**DeactivateAcmeAccount**](DeactivateAcmeAccount.md)|  | 
 
 ### Return type
 
@@ -4561,7 +4609,7 @@ No authorization required
 
 ## decrypt
 
-> DecryptOutput decrypt(body)
+> DecryptOutput decrypt(decrypt)
 
 
 
@@ -4571,8 +4619,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.Decrypt(); // Decrypt | 
-apiInstance.decrypt(body).then((data) => {
+let decrypt = new akeyless.Decrypt(); // Decrypt | 
+apiInstance.decrypt(decrypt).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4585,7 +4633,7 @@ apiInstance.decrypt(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Decrypt**](Decrypt.md)|  | 
+ **decrypt** | [**Decrypt**](Decrypt.md)|  | 
 
 ### Return type
 
@@ -4603,7 +4651,7 @@ No authorization required
 
 ## decryptBatch
 
-> DecryptOutput decryptBatch(body)
+> DecryptOutput decryptBatch(batchEncryptionRequestLine)
 
 
 
@@ -4613,8 +4661,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = [new akeyless.BatchEncryptionRequestLine()]; // [BatchEncryptionRequestLine] | 
-apiInstance.decryptBatch(body).then((data) => {
+let batchEncryptionRequestLine = [new akeyless.BatchEncryptionRequestLine()]; // [BatchEncryptionRequestLine] | 
+apiInstance.decryptBatch(batchEncryptionRequestLine).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4627,7 +4675,7 @@ apiInstance.decryptBatch(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[BatchEncryptionRequestLine]**](BatchEncryptionRequestLine.md)|  | 
+ **batchEncryptionRequestLine** | [**[BatchEncryptionRequestLine]**](BatchEncryptionRequestLine.md)|  | 
 
 ### Return type
 
@@ -4645,7 +4693,7 @@ No authorization required
 
 ## decryptGPG
 
-> DecryptGPGOutput decryptGPG(body)
+> DecryptGPGOutput decryptGPG(decryptGPG)
 
 
 
@@ -4655,8 +4703,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DecryptGPG(); // DecryptGPG | 
-apiInstance.decryptGPG(body).then((data) => {
+let decryptGPG = new akeyless.DecryptGPG(); // DecryptGPG | 
+apiInstance.decryptGPG(decryptGPG).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4669,7 +4717,7 @@ apiInstance.decryptGPG(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DecryptGPG**](DecryptGPG.md)|  | 
+ **decryptGPG** | [**DecryptGPG**](DecryptGPG.md)|  | 
 
 ### Return type
 
@@ -4687,7 +4735,7 @@ No authorization required
 
 ## decryptPKCS1
 
-> DecryptPKCS1Output decryptPKCS1(body)
+> DecryptPKCS1Output decryptPKCS1(decryptPKCS1)
 
 
 
@@ -4697,8 +4745,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DecryptPKCS1(); // DecryptPKCS1 | 
-apiInstance.decryptPKCS1(body).then((data) => {
+let decryptPKCS1 = new akeyless.DecryptPKCS1(); // DecryptPKCS1 | 
+apiInstance.decryptPKCS1(decryptPKCS1).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4711,7 +4759,7 @@ apiInstance.decryptPKCS1(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DecryptPKCS1**](DecryptPKCS1.md)|  | 
+ **decryptPKCS1** | [**DecryptPKCS1**](DecryptPKCS1.md)|  | 
 
 ### Return type
 
@@ -4729,7 +4777,7 @@ No authorization required
 
 ## decryptWithClassicKey
 
-> DecryptWithClassicKeyOutput decryptWithClassicKey(body)
+> DecryptWithClassicKeyOutput decryptWithClassicKey(decryptWithClassicKey)
 
 
 
@@ -4739,8 +4787,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DecryptWithClassicKey(); // DecryptWithClassicKey | 
-apiInstance.decryptWithClassicKey(body).then((data) => {
+let decryptWithClassicKey = new akeyless.DecryptWithClassicKey(); // DecryptWithClassicKey | 
+apiInstance.decryptWithClassicKey(decryptWithClassicKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4753,7 +4801,7 @@ apiInstance.decryptWithClassicKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DecryptWithClassicKey**](DecryptWithClassicKey.md)|  | 
+ **decryptWithClassicKey** | [**DecryptWithClassicKey**](DecryptWithClassicKey.md)|  | 
 
 ### Return type
 
@@ -4771,7 +4819,7 @@ No authorization required
 
 ## deleteAuthMethod
 
-> DeleteAuthMethodOutput deleteAuthMethod(body)
+> DeleteAuthMethodOutput deleteAuthMethod(deleteAuthMethod)
 
 
 
@@ -4781,8 +4829,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteAuthMethod(); // DeleteAuthMethod | 
-apiInstance.deleteAuthMethod(body).then((data) => {
+let deleteAuthMethod = new akeyless.DeleteAuthMethod(); // DeleteAuthMethod | 
+apiInstance.deleteAuthMethod(deleteAuthMethod).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4795,7 +4843,7 @@ apiInstance.deleteAuthMethod(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteAuthMethod**](DeleteAuthMethod.md)|  | 
+ **deleteAuthMethod** | [**DeleteAuthMethod**](DeleteAuthMethod.md)|  | 
 
 ### Return type
 
@@ -4813,7 +4861,7 @@ No authorization required
 
 ## deleteAuthMethods
 
-> DeleteAuthMethodsOutput deleteAuthMethods(body)
+> DeleteAuthMethodsOutput deleteAuthMethods(deleteAuthMethods)
 
 
 
@@ -4823,8 +4871,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteAuthMethods(); // DeleteAuthMethods | 
-apiInstance.deleteAuthMethods(body).then((data) => {
+let deleteAuthMethods = new akeyless.DeleteAuthMethods(); // DeleteAuthMethods | 
+apiInstance.deleteAuthMethods(deleteAuthMethods).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4837,7 +4885,7 @@ apiInstance.deleteAuthMethods(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteAuthMethods**](DeleteAuthMethods.md)|  | 
+ **deleteAuthMethods** | [**DeleteAuthMethods**](DeleteAuthMethods.md)|  | 
 
 ### Return type
 
@@ -4855,7 +4903,7 @@ No authorization required
 
 ## deleteEventForwarder
 
-> Object deleteEventForwarder(body)
+> Object deleteEventForwarder(deleteEventForwarder)
 
 
 
@@ -4865,8 +4913,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteEventForwarder(); // DeleteEventForwarder | 
-apiInstance.deleteEventForwarder(body).then((data) => {
+let deleteEventForwarder = new akeyless.DeleteEventForwarder(); // DeleteEventForwarder | 
+apiInstance.deleteEventForwarder(deleteEventForwarder).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4879,7 +4927,7 @@ apiInstance.deleteEventForwarder(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteEventForwarder**](DeleteEventForwarder.md)|  | 
+ **deleteEventForwarder** | [**DeleteEventForwarder**](DeleteEventForwarder.md)|  | 
 
 ### Return type
 
@@ -4897,7 +4945,7 @@ No authorization required
 
 ## deleteGatewayAllowedAccessId
 
-> Object deleteGatewayAllowedAccessId(body)
+> Object deleteGatewayAllowedAccessId(deleteGatewayAllowedAccessId)
 
 
 
@@ -4907,8 +4955,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteGatewayAllowedAccessId(); // DeleteGatewayAllowedAccessId | 
-apiInstance.deleteGatewayAllowedAccessId(body).then((data) => {
+let deleteGatewayAllowedAccessId = new akeyless.DeleteGatewayAllowedAccessId(); // DeleteGatewayAllowedAccessId | 
+apiInstance.deleteGatewayAllowedAccessId(deleteGatewayAllowedAccessId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4921,7 +4969,7 @@ apiInstance.deleteGatewayAllowedAccessId(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteGatewayAllowedAccessId**](DeleteGatewayAllowedAccessId.md)|  | 
+ **deleteGatewayAllowedAccessId** | [**DeleteGatewayAllowedAccessId**](DeleteGatewayAllowedAccessId.md)|  | 
 
 ### Return type
 
@@ -4939,7 +4987,7 @@ No authorization required
 
 ## deleteGroup
 
-> DeleteGroupOutput deleteGroup(body)
+> DeleteGroupOutput deleteGroup(deleteGroup)
 
 
 
@@ -4949,8 +4997,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteGroup(); // DeleteGroup | 
-apiInstance.deleteGroup(body).then((data) => {
+let deleteGroup = new akeyless.DeleteGroup(); // DeleteGroup | 
+apiInstance.deleteGroup(deleteGroup).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -4963,7 +5011,7 @@ apiInstance.deleteGroup(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteGroup**](DeleteGroup.md)|  | 
+ **deleteGroup** | [**DeleteGroup**](DeleteGroup.md)|  | 
 
 ### Return type
 
@@ -4981,7 +5029,7 @@ No authorization required
 
 ## deleteGwCluster
 
-> Object deleteGwCluster(body)
+> Object deleteGwCluster(deleteGwCluster)
 
 
 
@@ -4991,8 +5039,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteGwCluster(); // DeleteGwCluster | 
-apiInstance.deleteGwCluster(body).then((data) => {
+let deleteGwCluster = new akeyless.DeleteGwCluster(); // DeleteGwCluster | 
+apiInstance.deleteGwCluster(deleteGwCluster).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5005,7 +5053,7 @@ apiInstance.deleteGwCluster(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteGwCluster**](DeleteGwCluster.md)|  | 
+ **deleteGwCluster** | [**DeleteGwCluster**](DeleteGwCluster.md)|  | 
 
 ### Return type
 
@@ -5023,7 +5071,7 @@ No authorization required
 
 ## deleteItem
 
-> DeleteItemOutput deleteItem(body)
+> DeleteItemOutput deleteItem(deleteItem)
 
 
 
@@ -5033,8 +5081,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteItem(); // DeleteItem | 
-apiInstance.deleteItem(body).then((data) => {
+let deleteItem = new akeyless.DeleteItem(); // DeleteItem | 
+apiInstance.deleteItem(deleteItem).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5047,7 +5095,7 @@ apiInstance.deleteItem(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteItem**](DeleteItem.md)|  | 
+ **deleteItem** | [**DeleteItem**](DeleteItem.md)|  | 
 
 ### Return type
 
@@ -5065,7 +5113,7 @@ No authorization required
 
 ## deleteItems
 
-> DeleteItemsOutput deleteItems(body)
+> DeleteItemsOutput deleteItems(deleteItems)
 
 
 
@@ -5075,8 +5123,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteItems(); // DeleteItems | 
-apiInstance.deleteItems(body).then((data) => {
+let deleteItems = new akeyless.DeleteItems(); // DeleteItems | 
+apiInstance.deleteItems(deleteItems).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5089,7 +5137,7 @@ apiInstance.deleteItems(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteItems**](DeleteItems.md)|  | 
+ **deleteItems** | [**DeleteItems**](DeleteItems.md)|  | 
 
 ### Return type
 
@@ -5107,7 +5155,7 @@ No authorization required
 
 ## deleteRole
 
-> Object deleteRole(body)
+> Object deleteRole(deleteRole)
 
 
 
@@ -5117,8 +5165,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteRole(); // DeleteRole | 
-apiInstance.deleteRole(body).then((data) => {
+let deleteRole = new akeyless.DeleteRole(); // DeleteRole | 
+apiInstance.deleteRole(deleteRole).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5131,7 +5179,7 @@ apiInstance.deleteRole(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteRole**](DeleteRole.md)|  | 
+ **deleteRole** | [**DeleteRole**](DeleteRole.md)|  | 
 
 ### Return type
 
@@ -5149,7 +5197,7 @@ No authorization required
 
 ## deleteRoleAssociation
 
-> Object deleteRoleAssociation(body)
+> Object deleteRoleAssociation(deleteRoleAssociation)
 
 
 
@@ -5159,8 +5207,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteRoleAssociation(); // DeleteRoleAssociation | 
-apiInstance.deleteRoleAssociation(body).then((data) => {
+let deleteRoleAssociation = new akeyless.DeleteRoleAssociation(); // DeleteRoleAssociation | 
+apiInstance.deleteRoleAssociation(deleteRoleAssociation).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5173,7 +5221,7 @@ apiInstance.deleteRoleAssociation(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteRoleAssociation**](DeleteRoleAssociation.md)|  | 
+ **deleteRoleAssociation** | [**DeleteRoleAssociation**](DeleteRoleAssociation.md)|  | 
 
 ### Return type
 
@@ -5191,7 +5239,7 @@ No authorization required
 
 ## deleteRoleRule
 
-> DeleteRoleRuleOutput deleteRoleRule(body)
+> DeleteRoleRuleOutput deleteRoleRule(deleteRoleRule)
 
 
 
@@ -5201,8 +5249,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteRoleRule(); // DeleteRoleRule | 
-apiInstance.deleteRoleRule(body).then((data) => {
+let deleteRoleRule = new akeyless.DeleteRoleRule(); // DeleteRoleRule | 
+apiInstance.deleteRoleRule(deleteRoleRule).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5215,7 +5263,7 @@ apiInstance.deleteRoleRule(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteRoleRule**](DeleteRoleRule.md)|  | 
+ **deleteRoleRule** | [**DeleteRoleRule**](DeleteRoleRule.md)|  | 
 
 ### Return type
 
@@ -5233,7 +5281,7 @@ No authorization required
 
 ## deleteRoles
 
-> Object deleteRoles(body)
+> Object deleteRoles(deleteRoles)
 
 
 
@@ -5243,8 +5291,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteRoles(); // DeleteRoles | 
-apiInstance.deleteRoles(body).then((data) => {
+let deleteRoles = new akeyless.DeleteRoles(); // DeleteRoles | 
+apiInstance.deleteRoles(deleteRoles).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5257,7 +5305,7 @@ apiInstance.deleteRoles(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteRoles**](DeleteRoles.md)|  | 
+ **deleteRoles** | [**DeleteRoles**](DeleteRoles.md)|  | 
 
 ### Return type
 
@@ -5275,7 +5323,7 @@ No authorization required
 
 ## deleteTarget
 
-> Object deleteTarget(body)
+> Object deleteTarget(deleteTarget)
 
 
 
@@ -5285,8 +5333,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteTarget(); // DeleteTarget | 
-apiInstance.deleteTarget(body).then((data) => {
+let deleteTarget = new akeyless.DeleteTarget(); // DeleteTarget | 
+apiInstance.deleteTarget(deleteTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5299,7 +5347,7 @@ apiInstance.deleteTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteTarget**](DeleteTarget.md)|  | 
+ **deleteTarget** | [**DeleteTarget**](DeleteTarget.md)|  | 
 
 ### Return type
 
@@ -5317,7 +5365,7 @@ No authorization required
 
 ## deleteTargetAssociation
 
-> Object deleteTargetAssociation(body)
+> Object deleteTargetAssociation(deleteTargetAssociation)
 
 
 
@@ -5327,8 +5375,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteTargetAssociation(); // DeleteTargetAssociation | 
-apiInstance.deleteTargetAssociation(body).then((data) => {
+let deleteTargetAssociation = new akeyless.DeleteTargetAssociation(); // DeleteTargetAssociation | 
+apiInstance.deleteTargetAssociation(deleteTargetAssociation).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5341,7 +5389,7 @@ apiInstance.deleteTargetAssociation(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteTargetAssociation**](DeleteTargetAssociation.md)|  | 
+ **deleteTargetAssociation** | [**DeleteTargetAssociation**](DeleteTargetAssociation.md)|  | 
 
 ### Return type
 
@@ -5359,7 +5407,7 @@ No authorization required
 
 ## deleteTargets
 
-> Object deleteTargets(body)
+> Object deleteTargets(deleteTargets)
 
 
 
@@ -5369,8 +5417,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeleteTargets(); // DeleteTargets | 
-apiInstance.deleteTargets(body).then((data) => {
+let deleteTargets = new akeyless.DeleteTargets(); // DeleteTargets | 
+apiInstance.deleteTargets(deleteTargets).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5383,7 +5431,7 @@ apiInstance.deleteTargets(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteTargets**](DeleteTargets.md)|  | 
+ **deleteTargets** | [**DeleteTargets**](DeleteTargets.md)|  | 
 
 ### Return type
 
@@ -5401,7 +5449,7 @@ No authorization required
 
 ## deriveKey
 
-> DeriveKeyOutput deriveKey(body)
+> DeriveKeyOutput deriveKey(deriveKey)
 
 
 
@@ -5411,8 +5459,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DeriveKey(); // DeriveKey | 
-apiInstance.deriveKey(body).then((data) => {
+let deriveKey = new akeyless.DeriveKey(); // DeriveKey | 
+apiInstance.deriveKey(deriveKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5425,7 +5473,7 @@ apiInstance.deriveKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeriveKey**](DeriveKey.md)|  | 
+ **deriveKey** | [**DeriveKey**](DeriveKey.md)|  | 
 
 ### Return type
 
@@ -5443,7 +5491,7 @@ No authorization required
 
 ## describeAssoc
 
-> RoleAssociationDetails describeAssoc(body)
+> RoleAssociationDetails describeAssoc(describeAssoc)
 
 
 
@@ -5453,8 +5501,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DescribeAssoc(); // DescribeAssoc | 
-apiInstance.describeAssoc(body).then((data) => {
+let describeAssoc = new akeyless.DescribeAssoc(); // DescribeAssoc | 
+apiInstance.describeAssoc(describeAssoc).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5467,7 +5515,7 @@ apiInstance.describeAssoc(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DescribeAssoc**](DescribeAssoc.md)|  | 
+ **describeAssoc** | [**DescribeAssoc**](DescribeAssoc.md)|  | 
 
 ### Return type
 
@@ -5485,7 +5533,7 @@ No authorization required
 
 ## describeItem
 
-> Item describeItem(body)
+> Item describeItem(describeItem)
 
 
 
@@ -5495,8 +5543,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DescribeItem(); // DescribeItem | 
-apiInstance.describeItem(body).then((data) => {
+let describeItem = new akeyless.DescribeItem(); // DescribeItem | 
+apiInstance.describeItem(describeItem).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5509,7 +5557,7 @@ apiInstance.describeItem(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DescribeItem**](DescribeItem.md)|  | 
+ **describeItem** | [**DescribeItem**](DescribeItem.md)|  | 
 
 ### Return type
 
@@ -5527,7 +5575,7 @@ No authorization required
 
 ## describePermissions
 
-> DescribePermissionsOutput describePermissions(body)
+> DescribePermissionsOutput describePermissions(describePermissions)
 
 
 
@@ -5537,8 +5585,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DescribePermissions(); // DescribePermissions | 
-apiInstance.describePermissions(body).then((data) => {
+let describePermissions = new akeyless.DescribePermissions(); // DescribePermissions | 
+apiInstance.describePermissions(describePermissions).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5551,7 +5599,7 @@ apiInstance.describePermissions(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DescribePermissions**](DescribePermissions.md)|  | 
+ **describePermissions** | [**DescribePermissions**](DescribePermissions.md)|  | 
 
 ### Return type
 
@@ -5569,7 +5617,7 @@ No authorization required
 
 ## describeSubClaims
 
-> DescribeSubClaimsOutput describeSubClaims(body)
+> DescribeSubClaimsOutput describeSubClaims(describeSubClaims)
 
 
 
@@ -5579,8 +5627,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DescribeSubClaims(); // DescribeSubClaims | 
-apiInstance.describeSubClaims(body).then((data) => {
+let describeSubClaims = new akeyless.DescribeSubClaims(); // DescribeSubClaims | 
+apiInstance.describeSubClaims(describeSubClaims).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5593,7 +5641,7 @@ apiInstance.describeSubClaims(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DescribeSubClaims**](DescribeSubClaims.md)|  | 
+ **describeSubClaims** | [**DescribeSubClaims**](DescribeSubClaims.md)|  | 
 
 ### Return type
 
@@ -5611,7 +5659,7 @@ No authorization required
 
 ## detokenize
 
-> DetokenizeOutput detokenize(body)
+> DetokenizeOutput detokenize(detokenize)
 
 
 
@@ -5621,8 +5669,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.Detokenize(); // Detokenize | 
-apiInstance.detokenize(body).then((data) => {
+let detokenize = new akeyless.Detokenize(); // Detokenize | 
+apiInstance.detokenize(detokenize).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5635,7 +5683,7 @@ apiInstance.detokenize(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Detokenize**](Detokenize.md)|  | 
+ **detokenize** | [**Detokenize**](Detokenize.md)|  | 
 
 ### Return type
 
@@ -5653,7 +5701,7 @@ No authorization required
 
 ## detokenizeBatch
 
-> DetokenizeOutput detokenizeBatch(body)
+> DetokenizeOutput detokenizeBatch(batchTokenizationRequestLine)
 
 
 
@@ -5663,8 +5711,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = [new akeyless.BatchTokenizationRequestLine()]; // [BatchTokenizationRequestLine] | 
-apiInstance.detokenizeBatch(body).then((data) => {
+let batchTokenizationRequestLine = [new akeyless.BatchTokenizationRequestLine()]; // [BatchTokenizationRequestLine] | 
+apiInstance.detokenizeBatch(batchTokenizationRequestLine).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5677,7 +5725,7 @@ apiInstance.detokenizeBatch(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[BatchTokenizationRequestLine]**](BatchTokenizationRequestLine.md)|  | 
+ **batchTokenizationRequestLine** | [**[BatchTokenizationRequestLine]**](BatchTokenizationRequestLine.md)|  | 
 
 ### Return type
 
@@ -5695,7 +5743,7 @@ No authorization required
 
 ## dynamicSecretCreateArtifactory
 
-> DynamicSecretCreateOutput dynamicSecretCreateArtifactory(body)
+> DynamicSecretCreateOutput dynamicSecretCreateArtifactory(dynamicSecretCreateArtifactory)
 
 
 
@@ -5705,8 +5753,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateArtifactory(); // DynamicSecretCreateArtifactory | 
-apiInstance.dynamicSecretCreateArtifactory(body).then((data) => {
+let dynamicSecretCreateArtifactory = new akeyless.DynamicSecretCreateArtifactory(); // DynamicSecretCreateArtifactory | 
+apiInstance.dynamicSecretCreateArtifactory(dynamicSecretCreateArtifactory).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5719,7 +5767,7 @@ apiInstance.dynamicSecretCreateArtifactory(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateArtifactory**](DynamicSecretCreateArtifactory.md)|  | 
+ **dynamicSecretCreateArtifactory** | [**DynamicSecretCreateArtifactory**](DynamicSecretCreateArtifactory.md)|  | 
 
 ### Return type
 
@@ -5737,7 +5785,7 @@ No authorization required
 
 ## dynamicSecretCreateAws
 
-> DynamicSecretCreateOutput dynamicSecretCreateAws(body)
+> DynamicSecretCreateOutput dynamicSecretCreateAws(dynamicSecretCreateAws)
 
 
 
@@ -5747,8 +5795,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateAws(); // DynamicSecretCreateAws | 
-apiInstance.dynamicSecretCreateAws(body).then((data) => {
+let dynamicSecretCreateAws = new akeyless.DynamicSecretCreateAws(); // DynamicSecretCreateAws | 
+apiInstance.dynamicSecretCreateAws(dynamicSecretCreateAws).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5761,7 +5809,7 @@ apiInstance.dynamicSecretCreateAws(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateAws**](DynamicSecretCreateAws.md)|  | 
+ **dynamicSecretCreateAws** | [**DynamicSecretCreateAws**](DynamicSecretCreateAws.md)|  | 
 
 ### Return type
 
@@ -5779,7 +5827,7 @@ No authorization required
 
 ## dynamicSecretCreateAzure
 
-> DynamicSecretCreateOutput dynamicSecretCreateAzure(body)
+> DynamicSecretCreateOutput dynamicSecretCreateAzure(dynamicSecretCreateAzure)
 
 
 
@@ -5789,8 +5837,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateAzure(); // DynamicSecretCreateAzure | 
-apiInstance.dynamicSecretCreateAzure(body).then((data) => {
+let dynamicSecretCreateAzure = new akeyless.DynamicSecretCreateAzure(); // DynamicSecretCreateAzure | 
+apiInstance.dynamicSecretCreateAzure(dynamicSecretCreateAzure).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5803,7 +5851,7 @@ apiInstance.dynamicSecretCreateAzure(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateAzure**](DynamicSecretCreateAzure.md)|  | 
+ **dynamicSecretCreateAzure** | [**DynamicSecretCreateAzure**](DynamicSecretCreateAzure.md)|  | 
 
 ### Return type
 
@@ -5821,7 +5869,7 @@ No authorization required
 
 ## dynamicSecretCreateCassandra
 
-> DynamicSecretCreateOutput dynamicSecretCreateCassandra(body)
+> DynamicSecretCreateOutput dynamicSecretCreateCassandra(dynamicSecretCreateCassandra)
 
 
 
@@ -5831,8 +5879,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateCassandra(); // DynamicSecretCreateCassandra | 
-apiInstance.dynamicSecretCreateCassandra(body).then((data) => {
+let dynamicSecretCreateCassandra = new akeyless.DynamicSecretCreateCassandra(); // DynamicSecretCreateCassandra | 
+apiInstance.dynamicSecretCreateCassandra(dynamicSecretCreateCassandra).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5845,7 +5893,7 @@ apiInstance.dynamicSecretCreateCassandra(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateCassandra**](DynamicSecretCreateCassandra.md)|  | 
+ **dynamicSecretCreateCassandra** | [**DynamicSecretCreateCassandra**](DynamicSecretCreateCassandra.md)|  | 
 
 ### Return type
 
@@ -5874,7 +5922,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.DynamicSecretCreateCustom() // DynamicSecretCreateCustom | 
+  'dynamicSecretCreateCustom': new akeyless.DynamicSecretCreateCustom() // DynamicSecretCreateCustom | 
 };
 apiInstance.dynamicSecretCreateCustom(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -5889,7 +5937,7 @@ apiInstance.dynamicSecretCreateCustom(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateCustom**](DynamicSecretCreateCustom.md)|  | [optional] 
+ **dynamicSecretCreateCustom** | [**DynamicSecretCreateCustom**](DynamicSecretCreateCustom.md)|  | [optional] 
 
 ### Return type
 
@@ -5907,7 +5955,7 @@ No authorization required
 
 ## dynamicSecretCreateDockerhub
 
-> DynamicSecretCreateOutput dynamicSecretCreateDockerhub(body)
+> DynamicSecretCreateOutput dynamicSecretCreateDockerhub(dynamicSecretCreateDockerhub)
 
 
 
@@ -5917,8 +5965,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateDockerhub(); // DynamicSecretCreateDockerhub | 
-apiInstance.dynamicSecretCreateDockerhub(body).then((data) => {
+let dynamicSecretCreateDockerhub = new akeyless.DynamicSecretCreateDockerhub(); // DynamicSecretCreateDockerhub | 
+apiInstance.dynamicSecretCreateDockerhub(dynamicSecretCreateDockerhub).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5931,7 +5979,7 @@ apiInstance.dynamicSecretCreateDockerhub(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateDockerhub**](DynamicSecretCreateDockerhub.md)|  | 
+ **dynamicSecretCreateDockerhub** | [**DynamicSecretCreateDockerhub**](DynamicSecretCreateDockerhub.md)|  | 
 
 ### Return type
 
@@ -5949,7 +5997,7 @@ No authorization required
 
 ## dynamicSecretCreateEks
 
-> DynamicSecretCreateOutput dynamicSecretCreateEks(body)
+> DynamicSecretCreateOutput dynamicSecretCreateEks(dynamicSecretCreateEks)
 
 
 
@@ -5959,8 +6007,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateEks(); // DynamicSecretCreateEks | 
-apiInstance.dynamicSecretCreateEks(body).then((data) => {
+let dynamicSecretCreateEks = new akeyless.DynamicSecretCreateEks(); // DynamicSecretCreateEks | 
+apiInstance.dynamicSecretCreateEks(dynamicSecretCreateEks).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -5973,7 +6021,7 @@ apiInstance.dynamicSecretCreateEks(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateEks**](DynamicSecretCreateEks.md)|  | 
+ **dynamicSecretCreateEks** | [**DynamicSecretCreateEks**](DynamicSecretCreateEks.md)|  | 
 
 ### Return type
 
@@ -5991,7 +6039,7 @@ No authorization required
 
 ## dynamicSecretCreateGcp
 
-> DynamicSecretCreateOutput dynamicSecretCreateGcp(body)
+> DynamicSecretCreateOutput dynamicSecretCreateGcp(dynamicSecretCreateGcp)
 
 
 
@@ -6001,8 +6049,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateGcp(); // DynamicSecretCreateGcp | 
-apiInstance.dynamicSecretCreateGcp(body).then((data) => {
+let dynamicSecretCreateGcp = new akeyless.DynamicSecretCreateGcp(); // DynamicSecretCreateGcp | 
+apiInstance.dynamicSecretCreateGcp(dynamicSecretCreateGcp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6015,7 +6063,7 @@ apiInstance.dynamicSecretCreateGcp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateGcp**](DynamicSecretCreateGcp.md)|  | 
+ **dynamicSecretCreateGcp** | [**DynamicSecretCreateGcp**](DynamicSecretCreateGcp.md)|  | 
 
 ### Return type
 
@@ -6033,7 +6081,7 @@ No authorization required
 
 ## dynamicSecretCreateGithub
 
-> DynamicSecretCreateOutput dynamicSecretCreateGithub(body)
+> DynamicSecretCreateOutput dynamicSecretCreateGithub(dynamicSecretCreateGithub)
 
 
 
@@ -6043,8 +6091,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateGithub(); // DynamicSecretCreateGithub | 
-apiInstance.dynamicSecretCreateGithub(body).then((data) => {
+let dynamicSecretCreateGithub = new akeyless.DynamicSecretCreateGithub(); // DynamicSecretCreateGithub | 
+apiInstance.dynamicSecretCreateGithub(dynamicSecretCreateGithub).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6057,7 +6105,7 @@ apiInstance.dynamicSecretCreateGithub(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateGithub**](DynamicSecretCreateGithub.md)|  | 
+ **dynamicSecretCreateGithub** | [**DynamicSecretCreateGithub**](DynamicSecretCreateGithub.md)|  | 
 
 ### Return type
 
@@ -6075,7 +6123,7 @@ No authorization required
 
 ## dynamicSecretCreateGitlab
 
-> DynamicSecretCreateOutput dynamicSecretCreateGitlab(body)
+> DynamicSecretCreateOutput dynamicSecretCreateGitlab(dynamicSecretCreateGitlab)
 
 
 
@@ -6085,8 +6133,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateGitlab(); // DynamicSecretCreateGitlab | 
-apiInstance.dynamicSecretCreateGitlab(body).then((data) => {
+let dynamicSecretCreateGitlab = new akeyless.DynamicSecretCreateGitlab(); // DynamicSecretCreateGitlab | 
+apiInstance.dynamicSecretCreateGitlab(dynamicSecretCreateGitlab).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6099,7 +6147,7 @@ apiInstance.dynamicSecretCreateGitlab(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateGitlab**](DynamicSecretCreateGitlab.md)|  | 
+ **dynamicSecretCreateGitlab** | [**DynamicSecretCreateGitlab**](DynamicSecretCreateGitlab.md)|  | 
 
 ### Return type
 
@@ -6117,7 +6165,7 @@ No authorization required
 
 ## dynamicSecretCreateGke
 
-> DynamicSecretCreateOutput dynamicSecretCreateGke(body)
+> DynamicSecretCreateOutput dynamicSecretCreateGke(dynamicSecretCreateGke)
 
 
 
@@ -6127,8 +6175,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateGke(); // DynamicSecretCreateGke | 
-apiInstance.dynamicSecretCreateGke(body).then((data) => {
+let dynamicSecretCreateGke = new akeyless.DynamicSecretCreateGke(); // DynamicSecretCreateGke | 
+apiInstance.dynamicSecretCreateGke(dynamicSecretCreateGke).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6141,7 +6189,7 @@ apiInstance.dynamicSecretCreateGke(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateGke**](DynamicSecretCreateGke.md)|  | 
+ **dynamicSecretCreateGke** | [**DynamicSecretCreateGke**](DynamicSecretCreateGke.md)|  | 
 
 ### Return type
 
@@ -6159,7 +6207,7 @@ No authorization required
 
 ## dynamicSecretCreateGoogleWorkspace
 
-> DynamicSecretCreateOutput dynamicSecretCreateGoogleWorkspace(body)
+> DynamicSecretCreateOutput dynamicSecretCreateGoogleWorkspace(dynamicSecretCreateGoogleWorkspace)
 
 
 
@@ -6169,8 +6217,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateGoogleWorkspace(); // DynamicSecretCreateGoogleWorkspace | 
-apiInstance.dynamicSecretCreateGoogleWorkspace(body).then((data) => {
+let dynamicSecretCreateGoogleWorkspace = new akeyless.DynamicSecretCreateGoogleWorkspace(); // DynamicSecretCreateGoogleWorkspace | 
+apiInstance.dynamicSecretCreateGoogleWorkspace(dynamicSecretCreateGoogleWorkspace).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6183,7 +6231,7 @@ apiInstance.dynamicSecretCreateGoogleWorkspace(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateGoogleWorkspace**](DynamicSecretCreateGoogleWorkspace.md)|  | 
+ **dynamicSecretCreateGoogleWorkspace** | [**DynamicSecretCreateGoogleWorkspace**](DynamicSecretCreateGoogleWorkspace.md)|  | 
 
 ### Return type
 
@@ -6201,7 +6249,7 @@ No authorization required
 
 ## dynamicSecretCreateHanaDb
 
-> DynamicSecretCreateOutput dynamicSecretCreateHanaDb(body)
+> DynamicSecretCreateOutput dynamicSecretCreateHanaDb(dynamicSecretCreateHanaDb)
 
 
 
@@ -6211,8 +6259,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateHanaDb(); // DynamicSecretCreateHanaDb | 
-apiInstance.dynamicSecretCreateHanaDb(body).then((data) => {
+let dynamicSecretCreateHanaDb = new akeyless.DynamicSecretCreateHanaDb(); // DynamicSecretCreateHanaDb | 
+apiInstance.dynamicSecretCreateHanaDb(dynamicSecretCreateHanaDb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6225,7 +6273,7 @@ apiInstance.dynamicSecretCreateHanaDb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateHanaDb**](DynamicSecretCreateHanaDb.md)|  | 
+ **dynamicSecretCreateHanaDb** | [**DynamicSecretCreateHanaDb**](DynamicSecretCreateHanaDb.md)|  | 
 
 ### Return type
 
@@ -6243,7 +6291,7 @@ No authorization required
 
 ## dynamicSecretCreateK8s
 
-> DynamicSecretCreateOutput dynamicSecretCreateK8s(body)
+> DynamicSecretCreateOutput dynamicSecretCreateK8s(dynamicSecretCreateK8s)
 
 
 
@@ -6253,8 +6301,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateK8s(); // DynamicSecretCreateK8s | 
-apiInstance.dynamicSecretCreateK8s(body).then((data) => {
+let dynamicSecretCreateK8s = new akeyless.DynamicSecretCreateK8s(); // DynamicSecretCreateK8s | 
+apiInstance.dynamicSecretCreateK8s(dynamicSecretCreateK8s).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6267,7 +6315,7 @@ apiInstance.dynamicSecretCreateK8s(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateK8s**](DynamicSecretCreateK8s.md)|  | 
+ **dynamicSecretCreateK8s** | [**DynamicSecretCreateK8s**](DynamicSecretCreateK8s.md)|  | 
 
 ### Return type
 
@@ -6285,7 +6333,7 @@ No authorization required
 
 ## dynamicSecretCreateLdap
 
-> DynamicSecretCreateOutput dynamicSecretCreateLdap(body)
+> DynamicSecretCreateOutput dynamicSecretCreateLdap(dynamicSecretCreateLdap)
 
 
 
@@ -6295,8 +6343,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateLdap(); // DynamicSecretCreateLdap | 
-apiInstance.dynamicSecretCreateLdap(body).then((data) => {
+let dynamicSecretCreateLdap = new akeyless.DynamicSecretCreateLdap(); // DynamicSecretCreateLdap | 
+apiInstance.dynamicSecretCreateLdap(dynamicSecretCreateLdap).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6309,7 +6357,7 @@ apiInstance.dynamicSecretCreateLdap(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateLdap**](DynamicSecretCreateLdap.md)|  | 
+ **dynamicSecretCreateLdap** | [**DynamicSecretCreateLdap**](DynamicSecretCreateLdap.md)|  | 
 
 ### Return type
 
@@ -6327,7 +6375,7 @@ No authorization required
 
 ## dynamicSecretCreateMongoDb
 
-> DynamicSecretCreateOutput dynamicSecretCreateMongoDb(body)
+> DynamicSecretCreateOutput dynamicSecretCreateMongoDb(dynamicSecretCreateMongoDb)
 
 
 
@@ -6337,8 +6385,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateMongoDb(); // DynamicSecretCreateMongoDb | 
-apiInstance.dynamicSecretCreateMongoDb(body).then((data) => {
+let dynamicSecretCreateMongoDb = new akeyless.DynamicSecretCreateMongoDb(); // DynamicSecretCreateMongoDb | 
+apiInstance.dynamicSecretCreateMongoDb(dynamicSecretCreateMongoDb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6351,7 +6399,7 @@ apiInstance.dynamicSecretCreateMongoDb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateMongoDb**](DynamicSecretCreateMongoDb.md)|  | 
+ **dynamicSecretCreateMongoDb** | [**DynamicSecretCreateMongoDb**](DynamicSecretCreateMongoDb.md)|  | 
 
 ### Return type
 
@@ -6369,7 +6417,7 @@ No authorization required
 
 ## dynamicSecretCreateMsSql
 
-> DynamicSecretCreateOutput dynamicSecretCreateMsSql(body)
+> DynamicSecretCreateOutput dynamicSecretCreateMsSql(dynamicSecretCreateMsSql)
 
 
 
@@ -6379,8 +6427,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateMsSql(); // DynamicSecretCreateMsSql | 
-apiInstance.dynamicSecretCreateMsSql(body).then((data) => {
+let dynamicSecretCreateMsSql = new akeyless.DynamicSecretCreateMsSql(); // DynamicSecretCreateMsSql | 
+apiInstance.dynamicSecretCreateMsSql(dynamicSecretCreateMsSql).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6393,7 +6441,7 @@ apiInstance.dynamicSecretCreateMsSql(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateMsSql**](DynamicSecretCreateMsSql.md)|  | 
+ **dynamicSecretCreateMsSql** | [**DynamicSecretCreateMsSql**](DynamicSecretCreateMsSql.md)|  | 
 
 ### Return type
 
@@ -6411,7 +6459,7 @@ No authorization required
 
 ## dynamicSecretCreateMySql
 
-> DynamicSecretCreateOutput dynamicSecretCreateMySql(body)
+> DynamicSecretCreateOutput dynamicSecretCreateMySql(dynamicSecretCreateMySql)
 
 
 
@@ -6421,8 +6469,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateMySql(); // DynamicSecretCreateMySql | 
-apiInstance.dynamicSecretCreateMySql(body).then((data) => {
+let dynamicSecretCreateMySql = new akeyless.DynamicSecretCreateMySql(); // DynamicSecretCreateMySql | 
+apiInstance.dynamicSecretCreateMySql(dynamicSecretCreateMySql).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6435,7 +6483,7 @@ apiInstance.dynamicSecretCreateMySql(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateMySql**](DynamicSecretCreateMySql.md)|  | 
+ **dynamicSecretCreateMySql** | [**DynamicSecretCreateMySql**](DynamicSecretCreateMySql.md)|  | 
 
 ### Return type
 
@@ -6453,7 +6501,7 @@ No authorization required
 
 ## dynamicSecretCreateOracleDb
 
-> DynamicSecretCreateOutput dynamicSecretCreateOracleDb(body)
+> DynamicSecretCreateOutput dynamicSecretCreateOracleDb(dynamicSecretCreateOracleDb)
 
 
 
@@ -6463,8 +6511,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateOracleDb(); // DynamicSecretCreateOracleDb | 
-apiInstance.dynamicSecretCreateOracleDb(body).then((data) => {
+let dynamicSecretCreateOracleDb = new akeyless.DynamicSecretCreateOracleDb(); // DynamicSecretCreateOracleDb | 
+apiInstance.dynamicSecretCreateOracleDb(dynamicSecretCreateOracleDb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6477,7 +6525,7 @@ apiInstance.dynamicSecretCreateOracleDb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateOracleDb**](DynamicSecretCreateOracleDb.md)|  | 
+ **dynamicSecretCreateOracleDb** | [**DynamicSecretCreateOracleDb**](DynamicSecretCreateOracleDb.md)|  | 
 
 ### Return type
 
@@ -6495,7 +6543,7 @@ No authorization required
 
 ## dynamicSecretCreatePing
 
-> DynamicSecretCreateOutput dynamicSecretCreatePing(body)
+> DynamicSecretCreateOutput dynamicSecretCreatePing(dynamicSecretCreatePing)
 
 
 
@@ -6505,8 +6553,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreatePing(); // DynamicSecretCreatePing | 
-apiInstance.dynamicSecretCreatePing(body).then((data) => {
+let dynamicSecretCreatePing = new akeyless.DynamicSecretCreatePing(); // DynamicSecretCreatePing | 
+apiInstance.dynamicSecretCreatePing(dynamicSecretCreatePing).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6519,7 +6567,7 @@ apiInstance.dynamicSecretCreatePing(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreatePing**](DynamicSecretCreatePing.md)|  | 
+ **dynamicSecretCreatePing** | [**DynamicSecretCreatePing**](DynamicSecretCreatePing.md)|  | 
 
 ### Return type
 
@@ -6537,7 +6585,7 @@ No authorization required
 
 ## dynamicSecretCreatePostgreSql
 
-> DynamicSecretCreateOutput dynamicSecretCreatePostgreSql(body)
+> DynamicSecretCreateOutput dynamicSecretCreatePostgreSql(dynamicSecretCreatePostgreSql)
 
 
 
@@ -6547,8 +6595,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreatePostgreSql(); // DynamicSecretCreatePostgreSql | 
-apiInstance.dynamicSecretCreatePostgreSql(body).then((data) => {
+let dynamicSecretCreatePostgreSql = new akeyless.DynamicSecretCreatePostgreSql(); // DynamicSecretCreatePostgreSql | 
+apiInstance.dynamicSecretCreatePostgreSql(dynamicSecretCreatePostgreSql).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6561,7 +6609,7 @@ apiInstance.dynamicSecretCreatePostgreSql(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreatePostgreSql**](DynamicSecretCreatePostgreSql.md)|  | 
+ **dynamicSecretCreatePostgreSql** | [**DynamicSecretCreatePostgreSql**](DynamicSecretCreatePostgreSql.md)|  | 
 
 ### Return type
 
@@ -6579,7 +6627,7 @@ No authorization required
 
 ## dynamicSecretCreateRabbitMq
 
-> DynamicSecretCreateOutput dynamicSecretCreateRabbitMq(body)
+> DynamicSecretCreateOutput dynamicSecretCreateRabbitMq(dynamicSecretCreateRabbitMq)
 
 
 
@@ -6589,8 +6637,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateRabbitMq(); // DynamicSecretCreateRabbitMq | 
-apiInstance.dynamicSecretCreateRabbitMq(body).then((data) => {
+let dynamicSecretCreateRabbitMq = new akeyless.DynamicSecretCreateRabbitMq(); // DynamicSecretCreateRabbitMq | 
+apiInstance.dynamicSecretCreateRabbitMq(dynamicSecretCreateRabbitMq).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6603,7 +6651,7 @@ apiInstance.dynamicSecretCreateRabbitMq(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateRabbitMq**](DynamicSecretCreateRabbitMq.md)|  | 
+ **dynamicSecretCreateRabbitMq** | [**DynamicSecretCreateRabbitMq**](DynamicSecretCreateRabbitMq.md)|  | 
 
 ### Return type
 
@@ -6621,7 +6669,7 @@ No authorization required
 
 ## dynamicSecretCreateRdp
 
-> DynamicSecretCreateOutput dynamicSecretCreateRdp(body)
+> DynamicSecretCreateOutput dynamicSecretCreateRdp(dynamicSecretCreateRdp)
 
 
 
@@ -6631,8 +6679,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateRdp(); // DynamicSecretCreateRdp | 
-apiInstance.dynamicSecretCreateRdp(body).then((data) => {
+let dynamicSecretCreateRdp = new akeyless.DynamicSecretCreateRdp(); // DynamicSecretCreateRdp | 
+apiInstance.dynamicSecretCreateRdp(dynamicSecretCreateRdp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6645,7 +6693,7 @@ apiInstance.dynamicSecretCreateRdp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateRdp**](DynamicSecretCreateRdp.md)|  | 
+ **dynamicSecretCreateRdp** | [**DynamicSecretCreateRdp**](DynamicSecretCreateRdp.md)|  | 
 
 ### Return type
 
@@ -6663,7 +6711,7 @@ No authorization required
 
 ## dynamicSecretCreateRedis
 
-> DynamicSecretCreateOutput dynamicSecretCreateRedis(body)
+> DynamicSecretCreateOutput dynamicSecretCreateRedis(dynamicSecretCreateRedis)
 
 
 
@@ -6673,8 +6721,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateRedis(); // DynamicSecretCreateRedis | 
-apiInstance.dynamicSecretCreateRedis(body).then((data) => {
+let dynamicSecretCreateRedis = new akeyless.DynamicSecretCreateRedis(); // DynamicSecretCreateRedis | 
+apiInstance.dynamicSecretCreateRedis(dynamicSecretCreateRedis).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6687,7 +6735,7 @@ apiInstance.dynamicSecretCreateRedis(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateRedis**](DynamicSecretCreateRedis.md)|  | 
+ **dynamicSecretCreateRedis** | [**DynamicSecretCreateRedis**](DynamicSecretCreateRedis.md)|  | 
 
 ### Return type
 
@@ -6705,7 +6753,7 @@ No authorization required
 
 ## dynamicSecretCreateRedshift
 
-> DynamicSecretCreateOutput dynamicSecretCreateRedshift(body)
+> DynamicSecretCreateOutput dynamicSecretCreateRedshift(dynamicSecretCreateRedshift)
 
 
 
@@ -6715,8 +6763,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateRedshift(); // DynamicSecretCreateRedshift | 
-apiInstance.dynamicSecretCreateRedshift(body).then((data) => {
+let dynamicSecretCreateRedshift = new akeyless.DynamicSecretCreateRedshift(); // DynamicSecretCreateRedshift | 
+apiInstance.dynamicSecretCreateRedshift(dynamicSecretCreateRedshift).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6729,7 +6777,7 @@ apiInstance.dynamicSecretCreateRedshift(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateRedshift**](DynamicSecretCreateRedshift.md)|  | 
+ **dynamicSecretCreateRedshift** | [**DynamicSecretCreateRedshift**](DynamicSecretCreateRedshift.md)|  | 
 
 ### Return type
 
@@ -6747,7 +6795,7 @@ No authorization required
 
 ## dynamicSecretCreateSnowflake
 
-> DynamicSecretCreateOutput dynamicSecretCreateSnowflake(body)
+> DynamicSecretCreateOutput dynamicSecretCreateSnowflake(dynamicSecretCreateSnowflake)
 
 
 
@@ -6757,8 +6805,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateSnowflake(); // DynamicSecretCreateSnowflake | 
-apiInstance.dynamicSecretCreateSnowflake(body).then((data) => {
+let dynamicSecretCreateSnowflake = new akeyless.DynamicSecretCreateSnowflake(); // DynamicSecretCreateSnowflake | 
+apiInstance.dynamicSecretCreateSnowflake(dynamicSecretCreateSnowflake).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6771,7 +6819,7 @@ apiInstance.dynamicSecretCreateSnowflake(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateSnowflake**](DynamicSecretCreateSnowflake.md)|  | 
+ **dynamicSecretCreateSnowflake** | [**DynamicSecretCreateSnowflake**](DynamicSecretCreateSnowflake.md)|  | 
 
 ### Return type
 
@@ -6789,7 +6837,7 @@ No authorization required
 
 ## dynamicSecretCreateVenafi
 
-> DynamicSecretCreateOutput dynamicSecretCreateVenafi(body)
+> DynamicSecretCreateOutput dynamicSecretCreateVenafi(dynamicSecretCreateVenafi)
 
 
 
@@ -6799,8 +6847,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretCreateVenafi(); // DynamicSecretCreateVenafi | 
-apiInstance.dynamicSecretCreateVenafi(body).then((data) => {
+let dynamicSecretCreateVenafi = new akeyless.DynamicSecretCreateVenafi(); // DynamicSecretCreateVenafi | 
+apiInstance.dynamicSecretCreateVenafi(dynamicSecretCreateVenafi).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6813,7 +6861,7 @@ apiInstance.dynamicSecretCreateVenafi(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretCreateVenafi**](DynamicSecretCreateVenafi.md)|  | 
+ **dynamicSecretCreateVenafi** | [**DynamicSecretCreateVenafi**](DynamicSecretCreateVenafi.md)|  | 
 
 ### Return type
 
@@ -6831,7 +6879,7 @@ No authorization required
 
 ## dynamicSecretDelete
 
-> DynamicSecretDeleteOutput dynamicSecretDelete(body)
+> DynamicSecretDeleteOutput dynamicSecretDelete(dynamicSecretDelete)
 
 
 
@@ -6841,8 +6889,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretDelete(); // DynamicSecretDelete | 
-apiInstance.dynamicSecretDelete(body).then((data) => {
+let dynamicSecretDelete = new akeyless.DynamicSecretDelete(); // DynamicSecretDelete | 
+apiInstance.dynamicSecretDelete(dynamicSecretDelete).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6855,7 +6903,7 @@ apiInstance.dynamicSecretDelete(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretDelete**](DynamicSecretDelete.md)|  | 
+ **dynamicSecretDelete** | [**DynamicSecretDelete**](DynamicSecretDelete.md)|  | 
 
 ### Return type
 
@@ -6873,7 +6921,7 @@ No authorization required
 
 ## dynamicSecretGet
 
-> DSProducerDetails dynamicSecretGet(body)
+> DSProducerDetails dynamicSecretGet(dynamicSecretGet)
 
 
 
@@ -6883,8 +6931,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretGet(); // DynamicSecretGet | 
-apiInstance.dynamicSecretGet(body).then((data) => {
+let dynamicSecretGet = new akeyless.DynamicSecretGet(); // DynamicSecretGet | 
+apiInstance.dynamicSecretGet(dynamicSecretGet).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6897,7 +6945,7 @@ apiInstance.dynamicSecretGet(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretGet**](DynamicSecretGet.md)|  | 
+ **dynamicSecretGet** | [**DynamicSecretGet**](DynamicSecretGet.md)|  | 
 
 ### Return type
 
@@ -6915,7 +6963,7 @@ No authorization required
 
 ## dynamicSecretGetValue
 
-> {String: String} dynamicSecretGetValue(body)
+> {String: String} dynamicSecretGetValue(dynamicSecretGetValue)
 
 
 
@@ -6925,8 +6973,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretGetValue(); // DynamicSecretGetValue | 
-apiInstance.dynamicSecretGetValue(body).then((data) => {
+let dynamicSecretGetValue = new akeyless.DynamicSecretGetValue(); // DynamicSecretGetValue | 
+apiInstance.dynamicSecretGetValue(dynamicSecretGetValue).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6939,7 +6987,7 @@ apiInstance.dynamicSecretGetValue(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretGetValue**](DynamicSecretGetValue.md)|  | 
+ **dynamicSecretGetValue** | [**DynamicSecretGetValue**](DynamicSecretGetValue.md)|  | 
 
 ### Return type
 
@@ -6957,7 +7005,7 @@ No authorization required
 
 ## dynamicSecretList
 
-> GetProducersListReplyObj dynamicSecretList(body)
+> GetProducersListReplyObj dynamicSecretList(dynamicSecretList)
 
 
 
@@ -6967,8 +7015,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretList(); // DynamicSecretList | 
-apiInstance.dynamicSecretList(body).then((data) => {
+let dynamicSecretList = new akeyless.DynamicSecretList(); // DynamicSecretList | 
+apiInstance.dynamicSecretList(dynamicSecretList).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6981,7 +7029,7 @@ apiInstance.dynamicSecretList(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretList**](DynamicSecretList.md)|  | 
+ **dynamicSecretList** | [**DynamicSecretList**](DynamicSecretList.md)|  | 
 
 ### Return type
 
@@ -6999,7 +7047,7 @@ No authorization required
 
 ## dynamicSecretTmpCredsDelete
 
-> dynamicSecretTmpCredsDelete(body)
+> dynamicSecretTmpCredsDelete(dynamicSecretTmpCredsDelete)
 
 
 
@@ -7009,8 +7057,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretTmpCredsDelete(); // DynamicSecretTmpCredsDelete | 
-apiInstance.dynamicSecretTmpCredsDelete(body).then(() => {
+let dynamicSecretTmpCredsDelete = new akeyless.DynamicSecretTmpCredsDelete(); // DynamicSecretTmpCredsDelete | 
+apiInstance.dynamicSecretTmpCredsDelete(dynamicSecretTmpCredsDelete).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -7023,7 +7071,7 @@ apiInstance.dynamicSecretTmpCredsDelete(body).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretTmpCredsDelete**](DynamicSecretTmpCredsDelete.md)|  | 
+ **dynamicSecretTmpCredsDelete** | [**DynamicSecretTmpCredsDelete**](DynamicSecretTmpCredsDelete.md)|  | 
 
 ### Return type
 
@@ -7041,7 +7089,7 @@ No authorization required
 
 ## dynamicSecretTmpCredsGet
 
-> [TmpUserData] dynamicSecretTmpCredsGet(body)
+> [TmpUserData] dynamicSecretTmpCredsGet(dynamicSecretTmpCredsGet)
 
 
 
@@ -7051,8 +7099,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretTmpCredsGet(); // DynamicSecretTmpCredsGet | 
-apiInstance.dynamicSecretTmpCredsGet(body).then((data) => {
+let dynamicSecretTmpCredsGet = new akeyless.DynamicSecretTmpCredsGet(); // DynamicSecretTmpCredsGet | 
+apiInstance.dynamicSecretTmpCredsGet(dynamicSecretTmpCredsGet).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7065,7 +7113,7 @@ apiInstance.dynamicSecretTmpCredsGet(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretTmpCredsGet**](DynamicSecretTmpCredsGet.md)|  | 
+ **dynamicSecretTmpCredsGet** | [**DynamicSecretTmpCredsGet**](DynamicSecretTmpCredsGet.md)|  | 
 
 ### Return type
 
@@ -7083,7 +7131,7 @@ No authorization required
 
 ## dynamicSecretTmpCredsUpdate
 
-> dynamicSecretTmpCredsUpdate(body)
+> dynamicSecretTmpCredsUpdate(dynamicSecretTmpCredsUpdate)
 
 
 
@@ -7093,8 +7141,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretTmpCredsUpdate(); // DynamicSecretTmpCredsUpdate | 
-apiInstance.dynamicSecretTmpCredsUpdate(body).then(() => {
+let dynamicSecretTmpCredsUpdate = new akeyless.DynamicSecretTmpCredsUpdate(); // DynamicSecretTmpCredsUpdate | 
+apiInstance.dynamicSecretTmpCredsUpdate(dynamicSecretTmpCredsUpdate).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -7107,7 +7155,7 @@ apiInstance.dynamicSecretTmpCredsUpdate(body).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretTmpCredsUpdate**](DynamicSecretTmpCredsUpdate.md)|  | 
+ **dynamicSecretTmpCredsUpdate** | [**DynamicSecretTmpCredsUpdate**](DynamicSecretTmpCredsUpdate.md)|  | 
 
 ### Return type
 
@@ -7125,7 +7173,7 @@ No authorization required
 
 ## dynamicSecretUpdateArtifactory
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateArtifactory(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateArtifactory(dynamicSecretUpdateArtifactory)
 
 
 
@@ -7135,8 +7183,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateArtifactory(); // DynamicSecretUpdateArtifactory | 
-apiInstance.dynamicSecretUpdateArtifactory(body).then((data) => {
+let dynamicSecretUpdateArtifactory = new akeyless.DynamicSecretUpdateArtifactory(); // DynamicSecretUpdateArtifactory | 
+apiInstance.dynamicSecretUpdateArtifactory(dynamicSecretUpdateArtifactory).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7149,7 +7197,7 @@ apiInstance.dynamicSecretUpdateArtifactory(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateArtifactory**](DynamicSecretUpdateArtifactory.md)|  | 
+ **dynamicSecretUpdateArtifactory** | [**DynamicSecretUpdateArtifactory**](DynamicSecretUpdateArtifactory.md)|  | 
 
 ### Return type
 
@@ -7167,7 +7215,7 @@ No authorization required
 
 ## dynamicSecretUpdateAws
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateAws(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateAws(dynamicSecretUpdateAws)
 
 
 
@@ -7177,8 +7225,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateAws(); // DynamicSecretUpdateAws | 
-apiInstance.dynamicSecretUpdateAws(body).then((data) => {
+let dynamicSecretUpdateAws = new akeyless.DynamicSecretUpdateAws(); // DynamicSecretUpdateAws | 
+apiInstance.dynamicSecretUpdateAws(dynamicSecretUpdateAws).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7191,7 +7239,7 @@ apiInstance.dynamicSecretUpdateAws(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateAws**](DynamicSecretUpdateAws.md)|  | 
+ **dynamicSecretUpdateAws** | [**DynamicSecretUpdateAws**](DynamicSecretUpdateAws.md)|  | 
 
 ### Return type
 
@@ -7209,7 +7257,7 @@ No authorization required
 
 ## dynamicSecretUpdateAzure
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateAzure(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateAzure(dynamicSecretUpdateAzure)
 
 
 
@@ -7219,8 +7267,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateAzure(); // DynamicSecretUpdateAzure | 
-apiInstance.dynamicSecretUpdateAzure(body).then((data) => {
+let dynamicSecretUpdateAzure = new akeyless.DynamicSecretUpdateAzure(); // DynamicSecretUpdateAzure | 
+apiInstance.dynamicSecretUpdateAzure(dynamicSecretUpdateAzure).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7233,7 +7281,7 @@ apiInstance.dynamicSecretUpdateAzure(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateAzure**](DynamicSecretUpdateAzure.md)|  | 
+ **dynamicSecretUpdateAzure** | [**DynamicSecretUpdateAzure**](DynamicSecretUpdateAzure.md)|  | 
 
 ### Return type
 
@@ -7251,7 +7299,7 @@ No authorization required
 
 ## dynamicSecretUpdateCassandra
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateCassandra(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateCassandra(dynamicSecretUpdateCassandra)
 
 
 
@@ -7261,8 +7309,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateCassandra(); // DynamicSecretUpdateCassandra | 
-apiInstance.dynamicSecretUpdateCassandra(body).then((data) => {
+let dynamicSecretUpdateCassandra = new akeyless.DynamicSecretUpdateCassandra(); // DynamicSecretUpdateCassandra | 
+apiInstance.dynamicSecretUpdateCassandra(dynamicSecretUpdateCassandra).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7275,7 +7323,7 @@ apiInstance.dynamicSecretUpdateCassandra(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateCassandra**](DynamicSecretUpdateCassandra.md)|  | 
+ **dynamicSecretUpdateCassandra** | [**DynamicSecretUpdateCassandra**](DynamicSecretUpdateCassandra.md)|  | 
 
 ### Return type
 
@@ -7304,7 +7352,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.DynamicSecretUpdateCustom() // DynamicSecretUpdateCustom | 
+  'dynamicSecretUpdateCustom': new akeyless.DynamicSecretUpdateCustom() // DynamicSecretUpdateCustom | 
 };
 apiInstance.dynamicSecretUpdateCustom(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -7319,7 +7367,7 @@ apiInstance.dynamicSecretUpdateCustom(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateCustom**](DynamicSecretUpdateCustom.md)|  | [optional] 
+ **dynamicSecretUpdateCustom** | [**DynamicSecretUpdateCustom**](DynamicSecretUpdateCustom.md)|  | [optional] 
 
 ### Return type
 
@@ -7337,7 +7385,7 @@ No authorization required
 
 ## dynamicSecretUpdateDockerhub
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateDockerhub(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateDockerhub(dynamicSecretUpdateDockerhub)
 
 
 
@@ -7347,8 +7395,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateDockerhub(); // DynamicSecretUpdateDockerhub | 
-apiInstance.dynamicSecretUpdateDockerhub(body).then((data) => {
+let dynamicSecretUpdateDockerhub = new akeyless.DynamicSecretUpdateDockerhub(); // DynamicSecretUpdateDockerhub | 
+apiInstance.dynamicSecretUpdateDockerhub(dynamicSecretUpdateDockerhub).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7361,7 +7409,7 @@ apiInstance.dynamicSecretUpdateDockerhub(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateDockerhub**](DynamicSecretUpdateDockerhub.md)|  | 
+ **dynamicSecretUpdateDockerhub** | [**DynamicSecretUpdateDockerhub**](DynamicSecretUpdateDockerhub.md)|  | 
 
 ### Return type
 
@@ -7379,7 +7427,7 @@ No authorization required
 
 ## dynamicSecretUpdateEks
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateEks(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateEks(dynamicSecretUpdateEks)
 
 
 
@@ -7389,8 +7437,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateEks(); // DynamicSecretUpdateEks | 
-apiInstance.dynamicSecretUpdateEks(body).then((data) => {
+let dynamicSecretUpdateEks = new akeyless.DynamicSecretUpdateEks(); // DynamicSecretUpdateEks | 
+apiInstance.dynamicSecretUpdateEks(dynamicSecretUpdateEks).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7403,7 +7451,7 @@ apiInstance.dynamicSecretUpdateEks(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateEks**](DynamicSecretUpdateEks.md)|  | 
+ **dynamicSecretUpdateEks** | [**DynamicSecretUpdateEks**](DynamicSecretUpdateEks.md)|  | 
 
 ### Return type
 
@@ -7421,7 +7469,7 @@ No authorization required
 
 ## dynamicSecretUpdateGcp
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateGcp(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateGcp(dynamicSecretUpdateGcp)
 
 
 
@@ -7431,8 +7479,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateGcp(); // DynamicSecretUpdateGcp | 
-apiInstance.dynamicSecretUpdateGcp(body).then((data) => {
+let dynamicSecretUpdateGcp = new akeyless.DynamicSecretUpdateGcp(); // DynamicSecretUpdateGcp | 
+apiInstance.dynamicSecretUpdateGcp(dynamicSecretUpdateGcp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7445,7 +7493,7 @@ apiInstance.dynamicSecretUpdateGcp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateGcp**](DynamicSecretUpdateGcp.md)|  | 
+ **dynamicSecretUpdateGcp** | [**DynamicSecretUpdateGcp**](DynamicSecretUpdateGcp.md)|  | 
 
 ### Return type
 
@@ -7463,7 +7511,7 @@ No authorization required
 
 ## dynamicSecretUpdateGithub
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateGithub(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateGithub(dynamicSecretUpdateGithub)
 
 
 
@@ -7473,8 +7521,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateGithub(); // DynamicSecretUpdateGithub | 
-apiInstance.dynamicSecretUpdateGithub(body).then((data) => {
+let dynamicSecretUpdateGithub = new akeyless.DynamicSecretUpdateGithub(); // DynamicSecretUpdateGithub | 
+apiInstance.dynamicSecretUpdateGithub(dynamicSecretUpdateGithub).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7487,7 +7535,7 @@ apiInstance.dynamicSecretUpdateGithub(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateGithub**](DynamicSecretUpdateGithub.md)|  | 
+ **dynamicSecretUpdateGithub** | [**DynamicSecretUpdateGithub**](DynamicSecretUpdateGithub.md)|  | 
 
 ### Return type
 
@@ -7505,7 +7553,7 @@ No authorization required
 
 ## dynamicSecretUpdateGitlab
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateGitlab(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateGitlab(dynamicSecretUpdateGitlab)
 
 
 
@@ -7515,8 +7563,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateGitlab(); // DynamicSecretUpdateGitlab | 
-apiInstance.dynamicSecretUpdateGitlab(body).then((data) => {
+let dynamicSecretUpdateGitlab = new akeyless.DynamicSecretUpdateGitlab(); // DynamicSecretUpdateGitlab | 
+apiInstance.dynamicSecretUpdateGitlab(dynamicSecretUpdateGitlab).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7529,7 +7577,7 @@ apiInstance.dynamicSecretUpdateGitlab(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateGitlab**](DynamicSecretUpdateGitlab.md)|  | 
+ **dynamicSecretUpdateGitlab** | [**DynamicSecretUpdateGitlab**](DynamicSecretUpdateGitlab.md)|  | 
 
 ### Return type
 
@@ -7547,7 +7595,7 @@ No authorization required
 
 ## dynamicSecretUpdateGke
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateGke(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateGke(dynamicSecretUpdateGke)
 
 
 
@@ -7557,8 +7605,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateGke(); // DynamicSecretUpdateGke | 
-apiInstance.dynamicSecretUpdateGke(body).then((data) => {
+let dynamicSecretUpdateGke = new akeyless.DynamicSecretUpdateGke(); // DynamicSecretUpdateGke | 
+apiInstance.dynamicSecretUpdateGke(dynamicSecretUpdateGke).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7571,7 +7619,7 @@ apiInstance.dynamicSecretUpdateGke(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateGke**](DynamicSecretUpdateGke.md)|  | 
+ **dynamicSecretUpdateGke** | [**DynamicSecretUpdateGke**](DynamicSecretUpdateGke.md)|  | 
 
 ### Return type
 
@@ -7589,7 +7637,7 @@ No authorization required
 
 ## dynamicSecretUpdateGoogleWorkspace
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateGoogleWorkspace(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateGoogleWorkspace(dynamicSecretUpdateGoogleWorkspace)
 
 
 
@@ -7599,8 +7647,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateGoogleWorkspace(); // DynamicSecretUpdateGoogleWorkspace | 
-apiInstance.dynamicSecretUpdateGoogleWorkspace(body).then((data) => {
+let dynamicSecretUpdateGoogleWorkspace = new akeyless.DynamicSecretUpdateGoogleWorkspace(); // DynamicSecretUpdateGoogleWorkspace | 
+apiInstance.dynamicSecretUpdateGoogleWorkspace(dynamicSecretUpdateGoogleWorkspace).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7613,7 +7661,7 @@ apiInstance.dynamicSecretUpdateGoogleWorkspace(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateGoogleWorkspace**](DynamicSecretUpdateGoogleWorkspace.md)|  | 
+ **dynamicSecretUpdateGoogleWorkspace** | [**DynamicSecretUpdateGoogleWorkspace**](DynamicSecretUpdateGoogleWorkspace.md)|  | 
 
 ### Return type
 
@@ -7631,7 +7679,7 @@ No authorization required
 
 ## dynamicSecretUpdateHanaDb
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateHanaDb(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateHanaDb(dynamicSecretUpdateHanaDb)
 
 
 
@@ -7641,8 +7689,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateHanaDb(); // DynamicSecretUpdateHanaDb | 
-apiInstance.dynamicSecretUpdateHanaDb(body).then((data) => {
+let dynamicSecretUpdateHanaDb = new akeyless.DynamicSecretUpdateHanaDb(); // DynamicSecretUpdateHanaDb | 
+apiInstance.dynamicSecretUpdateHanaDb(dynamicSecretUpdateHanaDb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7655,7 +7703,7 @@ apiInstance.dynamicSecretUpdateHanaDb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateHanaDb**](DynamicSecretUpdateHanaDb.md)|  | 
+ **dynamicSecretUpdateHanaDb** | [**DynamicSecretUpdateHanaDb**](DynamicSecretUpdateHanaDb.md)|  | 
 
 ### Return type
 
@@ -7673,7 +7721,7 @@ No authorization required
 
 ## dynamicSecretUpdateK8s
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateK8s(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateK8s(dynamicSecretUpdateK8s)
 
 
 
@@ -7683,8 +7731,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateK8s(); // DynamicSecretUpdateK8s | 
-apiInstance.dynamicSecretUpdateK8s(body).then((data) => {
+let dynamicSecretUpdateK8s = new akeyless.DynamicSecretUpdateK8s(); // DynamicSecretUpdateK8s | 
+apiInstance.dynamicSecretUpdateK8s(dynamicSecretUpdateK8s).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7697,7 +7745,7 @@ apiInstance.dynamicSecretUpdateK8s(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateK8s**](DynamicSecretUpdateK8s.md)|  | 
+ **dynamicSecretUpdateK8s** | [**DynamicSecretUpdateK8s**](DynamicSecretUpdateK8s.md)|  | 
 
 ### Return type
 
@@ -7715,7 +7763,7 @@ No authorization required
 
 ## dynamicSecretUpdateLdap
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateLdap(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateLdap(dynamicSecretUpdateLdap)
 
 
 
@@ -7725,8 +7773,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateLdap(); // DynamicSecretUpdateLdap | 
-apiInstance.dynamicSecretUpdateLdap(body).then((data) => {
+let dynamicSecretUpdateLdap = new akeyless.DynamicSecretUpdateLdap(); // DynamicSecretUpdateLdap | 
+apiInstance.dynamicSecretUpdateLdap(dynamicSecretUpdateLdap).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7739,7 +7787,7 @@ apiInstance.dynamicSecretUpdateLdap(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateLdap**](DynamicSecretUpdateLdap.md)|  | 
+ **dynamicSecretUpdateLdap** | [**DynamicSecretUpdateLdap**](DynamicSecretUpdateLdap.md)|  | 
 
 ### Return type
 
@@ -7757,7 +7805,7 @@ No authorization required
 
 ## dynamicSecretUpdateMongoDb
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateMongoDb(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateMongoDb(dynamicSecretUpdateMongoDb)
 
 
 
@@ -7767,8 +7815,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateMongoDb(); // DynamicSecretUpdateMongoDb | 
-apiInstance.dynamicSecretUpdateMongoDb(body).then((data) => {
+let dynamicSecretUpdateMongoDb = new akeyless.DynamicSecretUpdateMongoDb(); // DynamicSecretUpdateMongoDb | 
+apiInstance.dynamicSecretUpdateMongoDb(dynamicSecretUpdateMongoDb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7781,7 +7829,7 @@ apiInstance.dynamicSecretUpdateMongoDb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateMongoDb**](DynamicSecretUpdateMongoDb.md)|  | 
+ **dynamicSecretUpdateMongoDb** | [**DynamicSecretUpdateMongoDb**](DynamicSecretUpdateMongoDb.md)|  | 
 
 ### Return type
 
@@ -7799,7 +7847,7 @@ No authorization required
 
 ## dynamicSecretUpdateMsSql
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateMsSql(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateMsSql(dynamicSecretUpdateMsSql)
 
 
 
@@ -7809,8 +7857,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateMsSql(); // DynamicSecretUpdateMsSql | 
-apiInstance.dynamicSecretUpdateMsSql(body).then((data) => {
+let dynamicSecretUpdateMsSql = new akeyless.DynamicSecretUpdateMsSql(); // DynamicSecretUpdateMsSql | 
+apiInstance.dynamicSecretUpdateMsSql(dynamicSecretUpdateMsSql).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7823,7 +7871,7 @@ apiInstance.dynamicSecretUpdateMsSql(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateMsSql**](DynamicSecretUpdateMsSql.md)|  | 
+ **dynamicSecretUpdateMsSql** | [**DynamicSecretUpdateMsSql**](DynamicSecretUpdateMsSql.md)|  | 
 
 ### Return type
 
@@ -7841,7 +7889,7 @@ No authorization required
 
 ## dynamicSecretUpdateMySql
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateMySql(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateMySql(dynamicSecretUpdateMySql)
 
 
 
@@ -7851,8 +7899,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateMySql(); // DynamicSecretUpdateMySql | 
-apiInstance.dynamicSecretUpdateMySql(body).then((data) => {
+let dynamicSecretUpdateMySql = new akeyless.DynamicSecretUpdateMySql(); // DynamicSecretUpdateMySql | 
+apiInstance.dynamicSecretUpdateMySql(dynamicSecretUpdateMySql).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7865,7 +7913,7 @@ apiInstance.dynamicSecretUpdateMySql(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateMySql**](DynamicSecretUpdateMySql.md)|  | 
+ **dynamicSecretUpdateMySql** | [**DynamicSecretUpdateMySql**](DynamicSecretUpdateMySql.md)|  | 
 
 ### Return type
 
@@ -7883,7 +7931,7 @@ No authorization required
 
 ## dynamicSecretUpdateOracleDb
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateOracleDb(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateOracleDb(dynamicSecretUpdateOracleDb)
 
 
 
@@ -7893,8 +7941,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateOracleDb(); // DynamicSecretUpdateOracleDb | 
-apiInstance.dynamicSecretUpdateOracleDb(body).then((data) => {
+let dynamicSecretUpdateOracleDb = new akeyless.DynamicSecretUpdateOracleDb(); // DynamicSecretUpdateOracleDb | 
+apiInstance.dynamicSecretUpdateOracleDb(dynamicSecretUpdateOracleDb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7907,7 +7955,7 @@ apiInstance.dynamicSecretUpdateOracleDb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateOracleDb**](DynamicSecretUpdateOracleDb.md)|  | 
+ **dynamicSecretUpdateOracleDb** | [**DynamicSecretUpdateOracleDb**](DynamicSecretUpdateOracleDb.md)|  | 
 
 ### Return type
 
@@ -7925,7 +7973,7 @@ No authorization required
 
 ## dynamicSecretUpdatePing
 
-> DynamicSecretUpdateOutput dynamicSecretUpdatePing(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdatePing(dynamicSecretUpdatePing)
 
 
 
@@ -7935,8 +7983,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdatePing(); // DynamicSecretUpdatePing | 
-apiInstance.dynamicSecretUpdatePing(body).then((data) => {
+let dynamicSecretUpdatePing = new akeyless.DynamicSecretUpdatePing(); // DynamicSecretUpdatePing | 
+apiInstance.dynamicSecretUpdatePing(dynamicSecretUpdatePing).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7949,7 +7997,7 @@ apiInstance.dynamicSecretUpdatePing(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdatePing**](DynamicSecretUpdatePing.md)|  | 
+ **dynamicSecretUpdatePing** | [**DynamicSecretUpdatePing**](DynamicSecretUpdatePing.md)|  | 
 
 ### Return type
 
@@ -7967,7 +8015,7 @@ No authorization required
 
 ## dynamicSecretUpdatePostgreSql
 
-> DynamicSecretUpdateOutput dynamicSecretUpdatePostgreSql(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdatePostgreSql(dynamicSecretUpdatePostgreSql)
 
 
 
@@ -7977,8 +8025,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdatePostgreSql(); // DynamicSecretUpdatePostgreSql | 
-apiInstance.dynamicSecretUpdatePostgreSql(body).then((data) => {
+let dynamicSecretUpdatePostgreSql = new akeyless.DynamicSecretUpdatePostgreSql(); // DynamicSecretUpdatePostgreSql | 
+apiInstance.dynamicSecretUpdatePostgreSql(dynamicSecretUpdatePostgreSql).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7991,7 +8039,7 @@ apiInstance.dynamicSecretUpdatePostgreSql(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdatePostgreSql**](DynamicSecretUpdatePostgreSql.md)|  | 
+ **dynamicSecretUpdatePostgreSql** | [**DynamicSecretUpdatePostgreSql**](DynamicSecretUpdatePostgreSql.md)|  | 
 
 ### Return type
 
@@ -8009,7 +8057,7 @@ No authorization required
 
 ## dynamicSecretUpdateRabbitMq
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateRabbitMq(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateRabbitMq(dynamicSecretUpdateRabbitMq)
 
 
 
@@ -8019,8 +8067,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateRabbitMq(); // DynamicSecretUpdateRabbitMq | 
-apiInstance.dynamicSecretUpdateRabbitMq(body).then((data) => {
+let dynamicSecretUpdateRabbitMq = new akeyless.DynamicSecretUpdateRabbitMq(); // DynamicSecretUpdateRabbitMq | 
+apiInstance.dynamicSecretUpdateRabbitMq(dynamicSecretUpdateRabbitMq).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8033,7 +8081,7 @@ apiInstance.dynamicSecretUpdateRabbitMq(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateRabbitMq**](DynamicSecretUpdateRabbitMq.md)|  | 
+ **dynamicSecretUpdateRabbitMq** | [**DynamicSecretUpdateRabbitMq**](DynamicSecretUpdateRabbitMq.md)|  | 
 
 ### Return type
 
@@ -8051,7 +8099,7 @@ No authorization required
 
 ## dynamicSecretUpdateRdp
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateRdp(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateRdp(dynamicSecretUpdateRdp)
 
 
 
@@ -8061,8 +8109,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateRdp(); // DynamicSecretUpdateRdp | 
-apiInstance.dynamicSecretUpdateRdp(body).then((data) => {
+let dynamicSecretUpdateRdp = new akeyless.DynamicSecretUpdateRdp(); // DynamicSecretUpdateRdp | 
+apiInstance.dynamicSecretUpdateRdp(dynamicSecretUpdateRdp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8075,7 +8123,7 @@ apiInstance.dynamicSecretUpdateRdp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateRdp**](DynamicSecretUpdateRdp.md)|  | 
+ **dynamicSecretUpdateRdp** | [**DynamicSecretUpdateRdp**](DynamicSecretUpdateRdp.md)|  | 
 
 ### Return type
 
@@ -8093,7 +8141,7 @@ No authorization required
 
 ## dynamicSecretUpdateRedis
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateRedis(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateRedis(dynamicSecretUpdateRedis)
 
 
 
@@ -8103,8 +8151,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateRedis(); // DynamicSecretUpdateRedis | 
-apiInstance.dynamicSecretUpdateRedis(body).then((data) => {
+let dynamicSecretUpdateRedis = new akeyless.DynamicSecretUpdateRedis(); // DynamicSecretUpdateRedis | 
+apiInstance.dynamicSecretUpdateRedis(dynamicSecretUpdateRedis).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8117,7 +8165,7 @@ apiInstance.dynamicSecretUpdateRedis(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateRedis**](DynamicSecretUpdateRedis.md)|  | 
+ **dynamicSecretUpdateRedis** | [**DynamicSecretUpdateRedis**](DynamicSecretUpdateRedis.md)|  | 
 
 ### Return type
 
@@ -8135,7 +8183,7 @@ No authorization required
 
 ## dynamicSecretUpdateRedshift
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateRedshift(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateRedshift(dynamicSecretUpdateRedshift)
 
 
 
@@ -8145,8 +8193,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateRedshift(); // DynamicSecretUpdateRedshift | 
-apiInstance.dynamicSecretUpdateRedshift(body).then((data) => {
+let dynamicSecretUpdateRedshift = new akeyless.DynamicSecretUpdateRedshift(); // DynamicSecretUpdateRedshift | 
+apiInstance.dynamicSecretUpdateRedshift(dynamicSecretUpdateRedshift).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8159,7 +8207,7 @@ apiInstance.dynamicSecretUpdateRedshift(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateRedshift**](DynamicSecretUpdateRedshift.md)|  | 
+ **dynamicSecretUpdateRedshift** | [**DynamicSecretUpdateRedshift**](DynamicSecretUpdateRedshift.md)|  | 
 
 ### Return type
 
@@ -8177,7 +8225,7 @@ No authorization required
 
 ## dynamicSecretUpdateSnowflake
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateSnowflake(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateSnowflake(dynamicSecretUpdateSnowflake)
 
 
 
@@ -8187,8 +8235,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateSnowflake(); // DynamicSecretUpdateSnowflake | 
-apiInstance.dynamicSecretUpdateSnowflake(body).then((data) => {
+let dynamicSecretUpdateSnowflake = new akeyless.DynamicSecretUpdateSnowflake(); // DynamicSecretUpdateSnowflake | 
+apiInstance.dynamicSecretUpdateSnowflake(dynamicSecretUpdateSnowflake).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8201,7 +8249,7 @@ apiInstance.dynamicSecretUpdateSnowflake(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateSnowflake**](DynamicSecretUpdateSnowflake.md)|  | 
+ **dynamicSecretUpdateSnowflake** | [**DynamicSecretUpdateSnowflake**](DynamicSecretUpdateSnowflake.md)|  | 
 
 ### Return type
 
@@ -8219,7 +8267,7 @@ No authorization required
 
 ## dynamicSecretUpdateVenafi
 
-> DynamicSecretUpdateOutput dynamicSecretUpdateVenafi(body)
+> DynamicSecretUpdateOutput dynamicSecretUpdateVenafi(dynamicSecretUpdateVenafi)
 
 
 
@@ -8229,8 +8277,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.DynamicSecretUpdateVenafi(); // DynamicSecretUpdateVenafi | 
-apiInstance.dynamicSecretUpdateVenafi(body).then((data) => {
+let dynamicSecretUpdateVenafi = new akeyless.DynamicSecretUpdateVenafi(); // DynamicSecretUpdateVenafi | 
+apiInstance.dynamicSecretUpdateVenafi(dynamicSecretUpdateVenafi).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8243,7 +8291,7 @@ apiInstance.dynamicSecretUpdateVenafi(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DynamicSecretUpdateVenafi**](DynamicSecretUpdateVenafi.md)|  | 
+ **dynamicSecretUpdateVenafi** | [**DynamicSecretUpdateVenafi**](DynamicSecretUpdateVenafi.md)|  | 
 
 ### Return type
 
@@ -8261,7 +8309,7 @@ No authorization required
 
 ## encrypt
 
-> EncryptOutput encrypt(body)
+> EncryptOutput encrypt(encrypt)
 
 
 
@@ -8271,8 +8319,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.Encrypt(); // Encrypt | 
-apiInstance.encrypt(body).then((data) => {
+let encrypt = new akeyless.Encrypt(); // Encrypt | 
+apiInstance.encrypt(encrypt).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8285,7 +8333,7 @@ apiInstance.encrypt(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Encrypt**](Encrypt.md)|  | 
+ **encrypt** | [**Encrypt**](Encrypt.md)|  | 
 
 ### Return type
 
@@ -8303,7 +8351,7 @@ No authorization required
 
 ## encryptBatch
 
-> EncryptOutput encryptBatch(body)
+> EncryptOutput encryptBatch(batchEncryptionRequestLine)
 
 
 
@@ -8313,8 +8361,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = [new akeyless.BatchEncryptionRequestLine()]; // [BatchEncryptionRequestLine] | 
-apiInstance.encryptBatch(body).then((data) => {
+let batchEncryptionRequestLine = [new akeyless.BatchEncryptionRequestLine()]; // [BatchEncryptionRequestLine] | 
+apiInstance.encryptBatch(batchEncryptionRequestLine).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8327,7 +8375,7 @@ apiInstance.encryptBatch(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[BatchEncryptionRequestLine]**](BatchEncryptionRequestLine.md)|  | 
+ **batchEncryptionRequestLine** | [**[BatchEncryptionRequestLine]**](BatchEncryptionRequestLine.md)|  | 
 
 ### Return type
 
@@ -8345,7 +8393,7 @@ No authorization required
 
 ## encryptGPG
 
-> EncryptGPGOutput encryptGPG(body)
+> EncryptGPGOutput encryptGPG(encryptGPG)
 
 
 
@@ -8355,8 +8403,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EncryptGPG(); // EncryptGPG | 
-apiInstance.encryptGPG(body).then((data) => {
+let encryptGPG = new akeyless.EncryptGPG(); // EncryptGPG | 
+apiInstance.encryptGPG(encryptGPG).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8369,7 +8417,7 @@ apiInstance.encryptGPG(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EncryptGPG**](EncryptGPG.md)|  | 
+ **encryptGPG** | [**EncryptGPG**](EncryptGPG.md)|  | 
 
 ### Return type
 
@@ -8387,7 +8435,7 @@ No authorization required
 
 ## encryptWithClassicKey
 
-> EncryptOutput encryptWithClassicKey(body)
+> EncryptOutput encryptWithClassicKey(encryptWithClassicKey)
 
 
 
@@ -8397,8 +8445,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EncryptWithClassicKey(); // EncryptWithClassicKey | 
-apiInstance.encryptWithClassicKey(body).then((data) => {
+let encryptWithClassicKey = new akeyless.EncryptWithClassicKey(); // EncryptWithClassicKey | 
+apiInstance.encryptWithClassicKey(encryptWithClassicKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8411,7 +8459,7 @@ apiInstance.encryptWithClassicKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EncryptWithClassicKey**](EncryptWithClassicKey.md)|  | 
+ **encryptWithClassicKey** | [**EncryptWithClassicKey**](EncryptWithClassicKey.md)|  | 
 
 ### Return type
 
@@ -8429,7 +8477,7 @@ No authorization required
 
 ## esmCreate
 
-> EsmCreateSecretOutput esmCreate(body)
+> EsmCreateSecretOutput esmCreate(esmCreate)
 
 
 
@@ -8439,8 +8487,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EsmCreate(); // EsmCreate | 
-apiInstance.esmCreate(body).then((data) => {
+let esmCreate = new akeyless.EsmCreate(); // EsmCreate | 
+apiInstance.esmCreate(esmCreate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8453,7 +8501,7 @@ apiInstance.esmCreate(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EsmCreate**](EsmCreate.md)|  | 
+ **esmCreate** | [**EsmCreate**](EsmCreate.md)|  | 
 
 ### Return type
 
@@ -8471,7 +8519,7 @@ No authorization required
 
 ## esmDelete
 
-> EsmDeleteSecretOutput esmDelete(body)
+> EsmDeleteSecretOutput esmDelete(esmDelete)
 
 
 
@@ -8481,8 +8529,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EsmDelete(); // EsmDelete | 
-apiInstance.esmDelete(body).then((data) => {
+let esmDelete = new akeyless.EsmDelete(); // EsmDelete | 
+apiInstance.esmDelete(esmDelete).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8495,7 +8543,7 @@ apiInstance.esmDelete(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EsmDelete**](EsmDelete.md)|  | 
+ **esmDelete** | [**EsmDelete**](EsmDelete.md)|  | 
 
 ### Return type
 
@@ -8513,7 +8561,7 @@ No authorization required
 
 ## esmGet
 
-> EsmGetSecretOutput esmGet(body)
+> EsmGetSecretOutput esmGet(esmGet)
 
 
 
@@ -8523,8 +8571,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EsmGet(); // EsmGet | 
-apiInstance.esmGet(body).then((data) => {
+let esmGet = new akeyless.EsmGet(); // EsmGet | 
+apiInstance.esmGet(esmGet).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8537,7 +8585,7 @@ apiInstance.esmGet(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EsmGet**](EsmGet.md)|  | 
+ **esmGet** | [**EsmGet**](EsmGet.md)|  | 
 
 ### Return type
 
@@ -8555,7 +8603,7 @@ No authorization required
 
 ## esmList
 
-> EsmListSecretsOutput esmList(body)
+> EsmListSecretsOutput esmList(esmList)
 
 
 
@@ -8565,8 +8613,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EsmList(); // EsmList | 
-apiInstance.esmList(body).then((data) => {
+let esmList = new akeyless.EsmList(); // EsmList | 
+apiInstance.esmList(esmList).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8579,7 +8627,7 @@ apiInstance.esmList(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EsmList**](EsmList.md)|  | 
+ **esmList** | [**EsmList**](EsmList.md)|  | 
 
 ### Return type
 
@@ -8597,7 +8645,7 @@ No authorization required
 
 ## esmUpdate
 
-> EsmUpdateSecretOutput esmUpdate(body)
+> EsmUpdateSecretOutput esmUpdate(esmUpdate)
 
 
 
@@ -8607,8 +8655,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EsmUpdate(); // EsmUpdate | 
-apiInstance.esmUpdate(body).then((data) => {
+let esmUpdate = new akeyless.EsmUpdate(); // EsmUpdate | 
+apiInstance.esmUpdate(esmUpdate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8621,7 +8669,7 @@ apiInstance.esmUpdate(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EsmUpdate**](EsmUpdate.md)|  | 
+ **esmUpdate** | [**EsmUpdate**](EsmUpdate.md)|  | 
 
 ### Return type
 
@@ -8639,7 +8687,7 @@ No authorization required
 
 ## eventAction
 
-> Object eventAction(body)
+> Object eventAction(eventAction)
 
 
 
@@ -8649,8 +8697,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EventAction(); // EventAction | 
-apiInstance.eventAction(body).then((data) => {
+let eventAction = new akeyless.EventAction(); // EventAction | 
+apiInstance.eventAction(eventAction).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8663,7 +8711,7 @@ apiInstance.eventAction(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventAction**](EventAction.md)|  | 
+ **eventAction** | [**EventAction**](EventAction.md)|  | 
 
 ### Return type
 
@@ -8681,7 +8729,7 @@ No authorization required
 
 ## eventForwarderCreateEmail
 
-> EventForwarderCreateUpdateOutput eventForwarderCreateEmail(body)
+> EventForwarderCreateUpdateOutput eventForwarderCreateEmail(eventForwarderCreateEmail)
 
 
 
@@ -8691,8 +8739,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EventForwarderCreateEmail(); // EventForwarderCreateEmail | 
-apiInstance.eventForwarderCreateEmail(body).then((data) => {
+let eventForwarderCreateEmail = new akeyless.EventForwarderCreateEmail(); // EventForwarderCreateEmail | 
+apiInstance.eventForwarderCreateEmail(eventForwarderCreateEmail).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8705,7 +8753,7 @@ apiInstance.eventForwarderCreateEmail(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventForwarderCreateEmail**](EventForwarderCreateEmail.md)|  | 
+ **eventForwarderCreateEmail** | [**EventForwarderCreateEmail**](EventForwarderCreateEmail.md)|  | 
 
 ### Return type
 
@@ -8723,7 +8771,7 @@ No authorization required
 
 ## eventForwarderCreateServiceNow
 
-> EventForwarderCreateUpdateOutput eventForwarderCreateServiceNow(body)
+> EventForwarderCreateUpdateOutput eventForwarderCreateServiceNow(eventForwarderCreateServiceNow)
 
 
 
@@ -8733,8 +8781,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EventForwarderCreateServiceNow(); // EventForwarderCreateServiceNow | 
-apiInstance.eventForwarderCreateServiceNow(body).then((data) => {
+let eventForwarderCreateServiceNow = new akeyless.EventForwarderCreateServiceNow(); // EventForwarderCreateServiceNow | 
+apiInstance.eventForwarderCreateServiceNow(eventForwarderCreateServiceNow).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8747,7 +8795,7 @@ apiInstance.eventForwarderCreateServiceNow(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventForwarderCreateServiceNow**](EventForwarderCreateServiceNow.md)|  | 
+ **eventForwarderCreateServiceNow** | [**EventForwarderCreateServiceNow**](EventForwarderCreateServiceNow.md)|  | 
 
 ### Return type
 
@@ -8765,7 +8813,7 @@ No authorization required
 
 ## eventForwarderCreateSlack
 
-> EventForwarderCreateUpdateOutput eventForwarderCreateSlack(body)
+> EventForwarderCreateUpdateOutput eventForwarderCreateSlack(eventForwarderCreateSlack)
 
 
 
@@ -8775,8 +8823,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EventForwarderCreateSlack(); // EventForwarderCreateSlack | 
-apiInstance.eventForwarderCreateSlack(body).then((data) => {
+let eventForwarderCreateSlack = new akeyless.EventForwarderCreateSlack(); // EventForwarderCreateSlack | 
+apiInstance.eventForwarderCreateSlack(eventForwarderCreateSlack).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8789,7 +8837,7 @@ apiInstance.eventForwarderCreateSlack(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventForwarderCreateSlack**](EventForwarderCreateSlack.md)|  | 
+ **eventForwarderCreateSlack** | [**EventForwarderCreateSlack**](EventForwarderCreateSlack.md)|  | 
 
 ### Return type
 
@@ -8807,7 +8855,7 @@ No authorization required
 
 ## eventForwarderCreateWebhook
 
-> EventForwarderCreateUpdateOutput eventForwarderCreateWebhook(body)
+> EventForwarderCreateUpdateOutput eventForwarderCreateWebhook(eventForwarderCreateWebhook)
 
 
 
@@ -8817,8 +8865,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EventForwarderCreateWebhook(); // EventForwarderCreateWebhook | 
-apiInstance.eventForwarderCreateWebhook(body).then((data) => {
+let eventForwarderCreateWebhook = new akeyless.EventForwarderCreateWebhook(); // EventForwarderCreateWebhook | 
+apiInstance.eventForwarderCreateWebhook(eventForwarderCreateWebhook).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8831,7 +8879,7 @@ apiInstance.eventForwarderCreateWebhook(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventForwarderCreateWebhook**](EventForwarderCreateWebhook.md)|  | 
+ **eventForwarderCreateWebhook** | [**EventForwarderCreateWebhook**](EventForwarderCreateWebhook.md)|  | 
 
 ### Return type
 
@@ -8849,7 +8897,7 @@ No authorization required
 
 ## eventForwarderDelete
 
-> EventForwarderDeleteOutput eventForwarderDelete(body)
+> EventForwarderDeleteOutput eventForwarderDelete(eventForwarderDelete)
 
 
 
@@ -8859,8 +8907,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EventForwarderDelete(); // EventForwarderDelete | 
-apiInstance.eventForwarderDelete(body).then((data) => {
+let eventForwarderDelete = new akeyless.EventForwarderDelete(); // EventForwarderDelete | 
+apiInstance.eventForwarderDelete(eventForwarderDelete).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8873,7 +8921,7 @@ apiInstance.eventForwarderDelete(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventForwarderDelete**](EventForwarderDelete.md)|  | 
+ **eventForwarderDelete** | [**EventForwarderDelete**](EventForwarderDelete.md)|  | 
 
 ### Return type
 
@@ -8891,7 +8939,7 @@ No authorization required
 
 ## eventForwarderGet
 
-> EventForwarderGetOutput eventForwarderGet(body)
+> EventForwarderGetOutput eventForwarderGet(eventForwarderGet)
 
 
 
@@ -8901,8 +8949,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EventForwarderGet(); // EventForwarderGet | 
-apiInstance.eventForwarderGet(body).then((data) => {
+let eventForwarderGet = new akeyless.EventForwarderGet(); // EventForwarderGet | 
+apiInstance.eventForwarderGet(eventForwarderGet).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8915,7 +8963,7 @@ apiInstance.eventForwarderGet(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventForwarderGet**](EventForwarderGet.md)|  | 
+ **eventForwarderGet** | [**EventForwarderGet**](EventForwarderGet.md)|  | 
 
 ### Return type
 
@@ -8933,7 +8981,7 @@ No authorization required
 
 ## eventForwarderUpdateEmail
 
-> EventForwarderCreateUpdateOutput eventForwarderUpdateEmail(body)
+> EventForwarderCreateUpdateOutput eventForwarderUpdateEmail(eventForwarderUpdateEmail)
 
 
 
@@ -8943,8 +8991,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EventForwarderUpdateEmail(); // EventForwarderUpdateEmail | 
-apiInstance.eventForwarderUpdateEmail(body).then((data) => {
+let eventForwarderUpdateEmail = new akeyless.EventForwarderUpdateEmail(); // EventForwarderUpdateEmail | 
+apiInstance.eventForwarderUpdateEmail(eventForwarderUpdateEmail).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8957,7 +9005,7 @@ apiInstance.eventForwarderUpdateEmail(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventForwarderUpdateEmail**](EventForwarderUpdateEmail.md)|  | 
+ **eventForwarderUpdateEmail** | [**EventForwarderUpdateEmail**](EventForwarderUpdateEmail.md)|  | 
 
 ### Return type
 
@@ -8975,7 +9023,7 @@ No authorization required
 
 ## eventForwarderUpdateServiceNow
 
-> EventForwarderCreateUpdateOutput eventForwarderUpdateServiceNow(body)
+> EventForwarderCreateUpdateOutput eventForwarderUpdateServiceNow(eventForwarderUpdateServiceNow)
 
 
 
@@ -8985,8 +9033,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EventForwarderUpdateServiceNow(); // EventForwarderUpdateServiceNow | 
-apiInstance.eventForwarderUpdateServiceNow(body).then((data) => {
+let eventForwarderUpdateServiceNow = new akeyless.EventForwarderUpdateServiceNow(); // EventForwarderUpdateServiceNow | 
+apiInstance.eventForwarderUpdateServiceNow(eventForwarderUpdateServiceNow).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -8999,7 +9047,7 @@ apiInstance.eventForwarderUpdateServiceNow(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventForwarderUpdateServiceNow**](EventForwarderUpdateServiceNow.md)|  | 
+ **eventForwarderUpdateServiceNow** | [**EventForwarderUpdateServiceNow**](EventForwarderUpdateServiceNow.md)|  | 
 
 ### Return type
 
@@ -9017,7 +9065,7 @@ No authorization required
 
 ## eventForwarderUpdateSlack
 
-> EventForwarderCreateUpdateOutput eventForwarderUpdateSlack(body)
+> EventForwarderCreateUpdateOutput eventForwarderUpdateSlack(eventForwarderUpdateSlack)
 
 
 
@@ -9027,8 +9075,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EventForwarderUpdateSlack(); // EventForwarderUpdateSlack | 
-apiInstance.eventForwarderUpdateSlack(body).then((data) => {
+let eventForwarderUpdateSlack = new akeyless.EventForwarderUpdateSlack(); // EventForwarderUpdateSlack | 
+apiInstance.eventForwarderUpdateSlack(eventForwarderUpdateSlack).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9041,7 +9089,7 @@ apiInstance.eventForwarderUpdateSlack(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventForwarderUpdateSlack**](EventForwarderUpdateSlack.md)|  | 
+ **eventForwarderUpdateSlack** | [**EventForwarderUpdateSlack**](EventForwarderUpdateSlack.md)|  | 
 
 ### Return type
 
@@ -9059,7 +9107,7 @@ No authorization required
 
 ## eventForwarderUpdateWebhook
 
-> EventForwarderCreateUpdateOutput eventForwarderUpdateWebhook(body)
+> EventForwarderCreateUpdateOutput eventForwarderUpdateWebhook(eventForwarderUpdateWebhook)
 
 
 
@@ -9069,8 +9117,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.EventForwarderUpdateWebhook(); // EventForwarderUpdateWebhook | 
-apiInstance.eventForwarderUpdateWebhook(body).then((data) => {
+let eventForwarderUpdateWebhook = new akeyless.EventForwarderUpdateWebhook(); // EventForwarderUpdateWebhook | 
+apiInstance.eventForwarderUpdateWebhook(eventForwarderUpdateWebhook).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9083,7 +9131,7 @@ apiInstance.eventForwarderUpdateWebhook(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EventForwarderUpdateWebhook**](EventForwarderUpdateWebhook.md)|  | 
+ **eventForwarderUpdateWebhook** | [**EventForwarderUpdateWebhook**](EventForwarderUpdateWebhook.md)|  | 
 
 ### Return type
 
@@ -9101,7 +9149,7 @@ No authorization required
 
 ## exportClassicKey
 
-> ExportClassicKeyOutput exportClassicKey(body)
+> ExportClassicKeyOutput exportClassicKey(exportClassicKey)
 
 
 
@@ -9111,8 +9159,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ExportClassicKey(); // ExportClassicKey | 
-apiInstance.exportClassicKey(body).then((data) => {
+let exportClassicKey = new akeyless.ExportClassicKey(); // ExportClassicKey | 
+apiInstance.exportClassicKey(exportClassicKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9125,7 +9173,7 @@ apiInstance.exportClassicKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ExportClassicKey**](ExportClassicKey.md)|  | 
+ **exportClassicKey** | [**ExportClassicKey**](ExportClassicKey.md)|  | 
 
 ### Return type
 
@@ -9143,7 +9191,7 @@ No authorization required
 
 ## gatewayCreateAllowedAccess
 
-> AllowedAccess gatewayCreateAllowedAccess(body)
+> AllowedAccess gatewayCreateAllowedAccess(gatewayCreateAllowedAccess)
 
 
 
@@ -9153,8 +9201,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateAllowedAccess(); // GatewayCreateAllowedAccess | 
-apiInstance.gatewayCreateAllowedAccess(body).then((data) => {
+let gatewayCreateAllowedAccess = new akeyless.GatewayCreateAllowedAccess(); // GatewayCreateAllowedAccess | 
+apiInstance.gatewayCreateAllowedAccess(gatewayCreateAllowedAccess).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9167,7 +9215,7 @@ apiInstance.gatewayCreateAllowedAccess(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateAllowedAccess**](GatewayCreateAllowedAccess.md)|  | 
+ **gatewayCreateAllowedAccess** | [**GatewayCreateAllowedAccess**](GatewayCreateAllowedAccess.md)|  | 
 
 ### Return type
 
@@ -9185,7 +9233,7 @@ No authorization required
 
 ## gatewayCreateK8SAuthConfig
 
-> GatewayCreateK8SAuthConfigOutput gatewayCreateK8SAuthConfig(body)
+> GatewayCreateK8SAuthConfigOutput gatewayCreateK8SAuthConfig(gatewayCreateK8SAuthConfig)
 
 
 
@@ -9195,8 +9243,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateK8SAuthConfig(); // GatewayCreateK8SAuthConfig | 
-apiInstance.gatewayCreateK8SAuthConfig(body).then((data) => {
+let gatewayCreateK8SAuthConfig = new akeyless.GatewayCreateK8SAuthConfig(); // GatewayCreateK8SAuthConfig | 
+apiInstance.gatewayCreateK8SAuthConfig(gatewayCreateK8SAuthConfig).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9209,7 +9257,7 @@ apiInstance.gatewayCreateK8SAuthConfig(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateK8SAuthConfig**](GatewayCreateK8SAuthConfig.md)|  | 
+ **gatewayCreateK8SAuthConfig** | [**GatewayCreateK8SAuthConfig**](GatewayCreateK8SAuthConfig.md)|  | 
 
 ### Return type
 
@@ -9227,7 +9275,7 @@ No authorization required
 
 ## gatewayCreateMigration
 
-> GatewayMigrationCreateOutput gatewayCreateMigration(body)
+> GatewayMigrationCreateOutput gatewayCreateMigration(gatewayCreateMigration)
 
 
 
@@ -9237,8 +9285,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateMigration(); // GatewayCreateMigration | 
-apiInstance.gatewayCreateMigration(body).then((data) => {
+let gatewayCreateMigration = new akeyless.GatewayCreateMigration(); // GatewayCreateMigration | 
+apiInstance.gatewayCreateMigration(gatewayCreateMigration).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9251,7 +9299,7 @@ apiInstance.gatewayCreateMigration(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateMigration**](GatewayCreateMigration.md)|  | 
+ **gatewayCreateMigration** | [**GatewayCreateMigration**](GatewayCreateMigration.md)|  | 
 
 ### Return type
 
@@ -9269,7 +9317,7 @@ No authorization required
 
 ## gatewayCreateProducerArtifactory
 
-> GatewayCreateProducerArtifactoryOutput gatewayCreateProducerArtifactory(body)
+> GatewayCreateProducerArtifactoryOutput gatewayCreateProducerArtifactory(gatewayCreateProducerArtifactory)
 
 
 
@@ -9279,8 +9327,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerArtifactory(); // GatewayCreateProducerArtifactory | 
-apiInstance.gatewayCreateProducerArtifactory(body).then((data) => {
+let gatewayCreateProducerArtifactory = new akeyless.GatewayCreateProducerArtifactory(); // GatewayCreateProducerArtifactory | 
+apiInstance.gatewayCreateProducerArtifactory(gatewayCreateProducerArtifactory).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9293,7 +9341,7 @@ apiInstance.gatewayCreateProducerArtifactory(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerArtifactory**](GatewayCreateProducerArtifactory.md)|  | 
+ **gatewayCreateProducerArtifactory** | [**GatewayCreateProducerArtifactory**](GatewayCreateProducerArtifactory.md)|  | 
 
 ### Return type
 
@@ -9311,7 +9359,7 @@ No authorization required
 
 ## gatewayCreateProducerAws
 
-> GatewayCreateProducerAwsOutput gatewayCreateProducerAws(body)
+> GatewayCreateProducerAwsOutput gatewayCreateProducerAws(gatewayCreateProducerAws)
 
 
 
@@ -9321,8 +9369,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerAws(); // GatewayCreateProducerAws | 
-apiInstance.gatewayCreateProducerAws(body).then((data) => {
+let gatewayCreateProducerAws = new akeyless.GatewayCreateProducerAws(); // GatewayCreateProducerAws | 
+apiInstance.gatewayCreateProducerAws(gatewayCreateProducerAws).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9335,7 +9383,7 @@ apiInstance.gatewayCreateProducerAws(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerAws**](GatewayCreateProducerAws.md)|  | 
+ **gatewayCreateProducerAws** | [**GatewayCreateProducerAws**](GatewayCreateProducerAws.md)|  | 
 
 ### Return type
 
@@ -9353,7 +9401,7 @@ No authorization required
 
 ## gatewayCreateProducerAzure
 
-> GatewayCreateProducerAzureOutput gatewayCreateProducerAzure(body)
+> GatewayCreateProducerAzureOutput gatewayCreateProducerAzure(gatewayCreateProducerAzure)
 
 
 
@@ -9363,8 +9411,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerAzure(); // GatewayCreateProducerAzure | 
-apiInstance.gatewayCreateProducerAzure(body).then((data) => {
+let gatewayCreateProducerAzure = new akeyless.GatewayCreateProducerAzure(); // GatewayCreateProducerAzure | 
+apiInstance.gatewayCreateProducerAzure(gatewayCreateProducerAzure).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9377,7 +9425,7 @@ apiInstance.gatewayCreateProducerAzure(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerAzure**](GatewayCreateProducerAzure.md)|  | 
+ **gatewayCreateProducerAzure** | [**GatewayCreateProducerAzure**](GatewayCreateProducerAzure.md)|  | 
 
 ### Return type
 
@@ -9395,7 +9443,7 @@ No authorization required
 
 ## gatewayCreateProducerCassandra
 
-> GatewayCreateProducerCassandraOutput gatewayCreateProducerCassandra(body)
+> GatewayCreateProducerCassandraOutput gatewayCreateProducerCassandra(gatewayCreateProducerCassandra)
 
 
 
@@ -9405,8 +9453,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerCassandra(); // GatewayCreateProducerCassandra | 
-apiInstance.gatewayCreateProducerCassandra(body).then((data) => {
+let gatewayCreateProducerCassandra = new akeyless.GatewayCreateProducerCassandra(); // GatewayCreateProducerCassandra | 
+apiInstance.gatewayCreateProducerCassandra(gatewayCreateProducerCassandra).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9419,7 +9467,7 @@ apiInstance.gatewayCreateProducerCassandra(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerCassandra**](GatewayCreateProducerCassandra.md)|  | 
+ **gatewayCreateProducerCassandra** | [**GatewayCreateProducerCassandra**](GatewayCreateProducerCassandra.md)|  | 
 
 ### Return type
 
@@ -9437,7 +9485,7 @@ No authorization required
 
 ## gatewayCreateProducerChef
 
-> GatewayCreateProducerChefOutput gatewayCreateProducerChef(body)
+> GatewayCreateProducerChefOutput gatewayCreateProducerChef(gatewayCreateProducerChef)
 
 
 
@@ -9447,8 +9495,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerChef(); // GatewayCreateProducerChef | 
-apiInstance.gatewayCreateProducerChef(body).then((data) => {
+let gatewayCreateProducerChef = new akeyless.GatewayCreateProducerChef(); // GatewayCreateProducerChef | 
+apiInstance.gatewayCreateProducerChef(gatewayCreateProducerChef).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9461,7 +9509,7 @@ apiInstance.gatewayCreateProducerChef(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerChef**](GatewayCreateProducerChef.md)|  | 
+ **gatewayCreateProducerChef** | [**GatewayCreateProducerChef**](GatewayCreateProducerChef.md)|  | 
 
 ### Return type
 
@@ -9490,7 +9538,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.GatewayCreateProducerCustom() // GatewayCreateProducerCustom | 
+  'gatewayCreateProducerCustom': new akeyless.GatewayCreateProducerCustom() // GatewayCreateProducerCustom | 
 };
 apiInstance.gatewayCreateProducerCustom(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -9505,7 +9553,7 @@ apiInstance.gatewayCreateProducerCustom(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerCustom**](GatewayCreateProducerCustom.md)|  | [optional] 
+ **gatewayCreateProducerCustom** | [**GatewayCreateProducerCustom**](GatewayCreateProducerCustom.md)|  | [optional] 
 
 ### Return type
 
@@ -9523,7 +9571,7 @@ No authorization required
 
 ## gatewayCreateProducerDockerhub
 
-> GatewayCreateProducerDockerhubOutput gatewayCreateProducerDockerhub(body)
+> GatewayCreateProducerDockerhubOutput gatewayCreateProducerDockerhub(gatewayCreateProducerDockerhub)
 
 
 
@@ -9533,8 +9581,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerDockerhub(); // GatewayCreateProducerDockerhub | 
-apiInstance.gatewayCreateProducerDockerhub(body).then((data) => {
+let gatewayCreateProducerDockerhub = new akeyless.GatewayCreateProducerDockerhub(); // GatewayCreateProducerDockerhub | 
+apiInstance.gatewayCreateProducerDockerhub(gatewayCreateProducerDockerhub).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9547,7 +9595,7 @@ apiInstance.gatewayCreateProducerDockerhub(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerDockerhub**](GatewayCreateProducerDockerhub.md)|  | 
+ **gatewayCreateProducerDockerhub** | [**GatewayCreateProducerDockerhub**](GatewayCreateProducerDockerhub.md)|  | 
 
 ### Return type
 
@@ -9565,7 +9613,7 @@ No authorization required
 
 ## gatewayCreateProducerEks
 
-> GatewayCreateProducerEksOutput gatewayCreateProducerEks(body)
+> GatewayCreateProducerEksOutput gatewayCreateProducerEks(gatewayCreateProducerEks)
 
 
 
@@ -9575,8 +9623,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerEks(); // GatewayCreateProducerEks | 
-apiInstance.gatewayCreateProducerEks(body).then((data) => {
+let gatewayCreateProducerEks = new akeyless.GatewayCreateProducerEks(); // GatewayCreateProducerEks | 
+apiInstance.gatewayCreateProducerEks(gatewayCreateProducerEks).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9589,7 +9637,7 @@ apiInstance.gatewayCreateProducerEks(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerEks**](GatewayCreateProducerEks.md)|  | 
+ **gatewayCreateProducerEks** | [**GatewayCreateProducerEks**](GatewayCreateProducerEks.md)|  | 
 
 ### Return type
 
@@ -9607,7 +9655,7 @@ No authorization required
 
 ## gatewayCreateProducerGcp
 
-> GatewayCreateProducerGcpOutput gatewayCreateProducerGcp(body)
+> GatewayCreateProducerGcpOutput gatewayCreateProducerGcp(gatewayCreateProducerGcp)
 
 
 
@@ -9617,8 +9665,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerGcp(); // GatewayCreateProducerGcp | 
-apiInstance.gatewayCreateProducerGcp(body).then((data) => {
+let gatewayCreateProducerGcp = new akeyless.GatewayCreateProducerGcp(); // GatewayCreateProducerGcp | 
+apiInstance.gatewayCreateProducerGcp(gatewayCreateProducerGcp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9631,7 +9679,7 @@ apiInstance.gatewayCreateProducerGcp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerGcp**](GatewayCreateProducerGcp.md)|  | 
+ **gatewayCreateProducerGcp** | [**GatewayCreateProducerGcp**](GatewayCreateProducerGcp.md)|  | 
 
 ### Return type
 
@@ -9649,7 +9697,7 @@ No authorization required
 
 ## gatewayCreateProducerGithub
 
-> GatewayCreateProducerGithubOutput gatewayCreateProducerGithub(body)
+> GatewayCreateProducerGithubOutput gatewayCreateProducerGithub(gatewayCreateProducerGithub)
 
 
 
@@ -9659,8 +9707,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerGithub(); // GatewayCreateProducerGithub | 
-apiInstance.gatewayCreateProducerGithub(body).then((data) => {
+let gatewayCreateProducerGithub = new akeyless.GatewayCreateProducerGithub(); // GatewayCreateProducerGithub | 
+apiInstance.gatewayCreateProducerGithub(gatewayCreateProducerGithub).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9673,7 +9721,7 @@ apiInstance.gatewayCreateProducerGithub(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerGithub**](GatewayCreateProducerGithub.md)|  | 
+ **gatewayCreateProducerGithub** | [**GatewayCreateProducerGithub**](GatewayCreateProducerGithub.md)|  | 
 
 ### Return type
 
@@ -9691,7 +9739,7 @@ No authorization required
 
 ## gatewayCreateProducerGke
 
-> GatewayCreateProducerGkeOutput gatewayCreateProducerGke(body)
+> GatewayCreateProducerGkeOutput gatewayCreateProducerGke(gatewayCreateProducerGke)
 
 
 
@@ -9701,8 +9749,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerGke(); // GatewayCreateProducerGke | 
-apiInstance.gatewayCreateProducerGke(body).then((data) => {
+let gatewayCreateProducerGke = new akeyless.GatewayCreateProducerGke(); // GatewayCreateProducerGke | 
+apiInstance.gatewayCreateProducerGke(gatewayCreateProducerGke).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9715,7 +9763,7 @@ apiInstance.gatewayCreateProducerGke(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerGke**](GatewayCreateProducerGke.md)|  | 
+ **gatewayCreateProducerGke** | [**GatewayCreateProducerGke**](GatewayCreateProducerGke.md)|  | 
 
 ### Return type
 
@@ -9733,7 +9781,7 @@ No authorization required
 
 ## gatewayCreateProducerHanaDb
 
-> GatewayCreateProducerHanaDbOutput gatewayCreateProducerHanaDb(body)
+> GatewayCreateProducerHanaDbOutput gatewayCreateProducerHanaDb(gatewayCreateProducerHanaDb)
 
 
 
@@ -9743,8 +9791,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerHanaDb(); // GatewayCreateProducerHanaDb | 
-apiInstance.gatewayCreateProducerHanaDb(body).then((data) => {
+let gatewayCreateProducerHanaDb = new akeyless.GatewayCreateProducerHanaDb(); // GatewayCreateProducerHanaDb | 
+apiInstance.gatewayCreateProducerHanaDb(gatewayCreateProducerHanaDb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9757,7 +9805,7 @@ apiInstance.gatewayCreateProducerHanaDb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerHanaDb**](GatewayCreateProducerHanaDb.md)|  | 
+ **gatewayCreateProducerHanaDb** | [**GatewayCreateProducerHanaDb**](GatewayCreateProducerHanaDb.md)|  | 
 
 ### Return type
 
@@ -9775,7 +9823,7 @@ No authorization required
 
 ## gatewayCreateProducerLdap
 
-> GatewayCreateProducerLdapOutput gatewayCreateProducerLdap(body)
+> GatewayCreateProducerLdapOutput gatewayCreateProducerLdap(gatewayCreateProducerLdap)
 
 
 
@@ -9785,8 +9833,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerLdap(); // GatewayCreateProducerLdap | 
-apiInstance.gatewayCreateProducerLdap(body).then((data) => {
+let gatewayCreateProducerLdap = new akeyless.GatewayCreateProducerLdap(); // GatewayCreateProducerLdap | 
+apiInstance.gatewayCreateProducerLdap(gatewayCreateProducerLdap).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9799,7 +9847,7 @@ apiInstance.gatewayCreateProducerLdap(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerLdap**](GatewayCreateProducerLdap.md)|  | 
+ **gatewayCreateProducerLdap** | [**GatewayCreateProducerLdap**](GatewayCreateProducerLdap.md)|  | 
 
 ### Return type
 
@@ -9817,7 +9865,7 @@ No authorization required
 
 ## gatewayCreateProducerMSSQL
 
-> GatewayCreateProducerMSSQLOutput gatewayCreateProducerMSSQL(body)
+> GatewayCreateProducerMSSQLOutput gatewayCreateProducerMSSQL(gatewayCreateProducerMSSQL)
 
 
 
@@ -9827,8 +9875,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerMSSQL(); // GatewayCreateProducerMSSQL | 
-apiInstance.gatewayCreateProducerMSSQL(body).then((data) => {
+let gatewayCreateProducerMSSQL = new akeyless.GatewayCreateProducerMSSQL(); // GatewayCreateProducerMSSQL | 
+apiInstance.gatewayCreateProducerMSSQL(gatewayCreateProducerMSSQL).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9841,7 +9889,7 @@ apiInstance.gatewayCreateProducerMSSQL(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerMSSQL**](GatewayCreateProducerMSSQL.md)|  | 
+ **gatewayCreateProducerMSSQL** | [**GatewayCreateProducerMSSQL**](GatewayCreateProducerMSSQL.md)|  | 
 
 ### Return type
 
@@ -9859,7 +9907,7 @@ No authorization required
 
 ## gatewayCreateProducerMongo
 
-> GatewayCreateProducerMongoOutput gatewayCreateProducerMongo(body)
+> GatewayCreateProducerMongoOutput gatewayCreateProducerMongo(gatewayCreateProducerMongo)
 
 
 
@@ -9869,8 +9917,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerMongo(); // GatewayCreateProducerMongo | 
-apiInstance.gatewayCreateProducerMongo(body).then((data) => {
+let gatewayCreateProducerMongo = new akeyless.GatewayCreateProducerMongo(); // GatewayCreateProducerMongo | 
+apiInstance.gatewayCreateProducerMongo(gatewayCreateProducerMongo).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9883,7 +9931,7 @@ apiInstance.gatewayCreateProducerMongo(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerMongo**](GatewayCreateProducerMongo.md)|  | 
+ **gatewayCreateProducerMongo** | [**GatewayCreateProducerMongo**](GatewayCreateProducerMongo.md)|  | 
 
 ### Return type
 
@@ -9901,7 +9949,7 @@ No authorization required
 
 ## gatewayCreateProducerMySQL
 
-> GatewayCreateProducerMySQLOutput gatewayCreateProducerMySQL(body)
+> GatewayCreateProducerMySQLOutput gatewayCreateProducerMySQL(gatewayCreateProducerMySQL)
 
 
 
@@ -9911,8 +9959,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerMySQL(); // GatewayCreateProducerMySQL | 
-apiInstance.gatewayCreateProducerMySQL(body).then((data) => {
+let gatewayCreateProducerMySQL = new akeyless.GatewayCreateProducerMySQL(); // GatewayCreateProducerMySQL | 
+apiInstance.gatewayCreateProducerMySQL(gatewayCreateProducerMySQL).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9925,7 +9973,7 @@ apiInstance.gatewayCreateProducerMySQL(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerMySQL**](GatewayCreateProducerMySQL.md)|  | 
+ **gatewayCreateProducerMySQL** | [**GatewayCreateProducerMySQL**](GatewayCreateProducerMySQL.md)|  | 
 
 ### Return type
 
@@ -9943,7 +9991,7 @@ No authorization required
 
 ## gatewayCreateProducerNativeK8S
 
-> GatewayCreateProducerNativeK8SOutput gatewayCreateProducerNativeK8S(body)
+> GatewayCreateProducerNativeK8SOutput gatewayCreateProducerNativeK8S(gatewayCreateProducerNativeK8S)
 
 
 
@@ -9953,8 +10001,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerNativeK8S(); // GatewayCreateProducerNativeK8S | 
-apiInstance.gatewayCreateProducerNativeK8S(body).then((data) => {
+let gatewayCreateProducerNativeK8S = new akeyless.GatewayCreateProducerNativeK8S(); // GatewayCreateProducerNativeK8S | 
+apiInstance.gatewayCreateProducerNativeK8S(gatewayCreateProducerNativeK8S).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -9967,7 +10015,7 @@ apiInstance.gatewayCreateProducerNativeK8S(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerNativeK8S**](GatewayCreateProducerNativeK8S.md)|  | 
+ **gatewayCreateProducerNativeK8S** | [**GatewayCreateProducerNativeK8S**](GatewayCreateProducerNativeK8S.md)|  | 
 
 ### Return type
 
@@ -9985,7 +10033,7 @@ No authorization required
 
 ## gatewayCreateProducerOracleDb
 
-> GatewayCreateProducerOracleDbOutput gatewayCreateProducerOracleDb(body)
+> GatewayCreateProducerOracleDbOutput gatewayCreateProducerOracleDb(gatewayCreateProducerOracleDb)
 
 
 
@@ -9995,8 +10043,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerOracleDb(); // GatewayCreateProducerOracleDb | 
-apiInstance.gatewayCreateProducerOracleDb(body).then((data) => {
+let gatewayCreateProducerOracleDb = new akeyless.GatewayCreateProducerOracleDb(); // GatewayCreateProducerOracleDb | 
+apiInstance.gatewayCreateProducerOracleDb(gatewayCreateProducerOracleDb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10009,7 +10057,7 @@ apiInstance.gatewayCreateProducerOracleDb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerOracleDb**](GatewayCreateProducerOracleDb.md)|  | 
+ **gatewayCreateProducerOracleDb** | [**GatewayCreateProducerOracleDb**](GatewayCreateProducerOracleDb.md)|  | 
 
 ### Return type
 
@@ -10027,7 +10075,7 @@ No authorization required
 
 ## gatewayCreateProducerPing
 
-> GatewayCreateProducerPingOutput gatewayCreateProducerPing(body)
+> GatewayCreateProducerPingOutput gatewayCreateProducerPing(gatewayCreateProducerPing)
 
 
 
@@ -10037,8 +10085,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerPing(); // GatewayCreateProducerPing | 
-apiInstance.gatewayCreateProducerPing(body).then((data) => {
+let gatewayCreateProducerPing = new akeyless.GatewayCreateProducerPing(); // GatewayCreateProducerPing | 
+apiInstance.gatewayCreateProducerPing(gatewayCreateProducerPing).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10051,7 +10099,7 @@ apiInstance.gatewayCreateProducerPing(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerPing**](GatewayCreateProducerPing.md)|  | 
+ **gatewayCreateProducerPing** | [**GatewayCreateProducerPing**](GatewayCreateProducerPing.md)|  | 
 
 ### Return type
 
@@ -10069,7 +10117,7 @@ No authorization required
 
 ## gatewayCreateProducerPostgreSQL
 
-> GatewayCreateProducerPostgreSQLOutput gatewayCreateProducerPostgreSQL(body)
+> GatewayCreateProducerPostgreSQLOutput gatewayCreateProducerPostgreSQL(gatewayCreateProducerPostgreSQL)
 
 
 
@@ -10079,8 +10127,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerPostgreSQL(); // GatewayCreateProducerPostgreSQL | 
-apiInstance.gatewayCreateProducerPostgreSQL(body).then((data) => {
+let gatewayCreateProducerPostgreSQL = new akeyless.GatewayCreateProducerPostgreSQL(); // GatewayCreateProducerPostgreSQL | 
+apiInstance.gatewayCreateProducerPostgreSQL(gatewayCreateProducerPostgreSQL).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10093,7 +10141,7 @@ apiInstance.gatewayCreateProducerPostgreSQL(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerPostgreSQL**](GatewayCreateProducerPostgreSQL.md)|  | 
+ **gatewayCreateProducerPostgreSQL** | [**GatewayCreateProducerPostgreSQL**](GatewayCreateProducerPostgreSQL.md)|  | 
 
 ### Return type
 
@@ -10111,7 +10159,7 @@ No authorization required
 
 ## gatewayCreateProducerRabbitMQ
 
-> GatewayCreateProducerRabbitMQOutput gatewayCreateProducerRabbitMQ(body)
+> GatewayCreateProducerRabbitMQOutput gatewayCreateProducerRabbitMQ(gatewayCreateProducerRabbitMQ)
 
 
 
@@ -10121,8 +10169,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerRabbitMQ(); // GatewayCreateProducerRabbitMQ | 
-apiInstance.gatewayCreateProducerRabbitMQ(body).then((data) => {
+let gatewayCreateProducerRabbitMQ = new akeyless.GatewayCreateProducerRabbitMQ(); // GatewayCreateProducerRabbitMQ | 
+apiInstance.gatewayCreateProducerRabbitMQ(gatewayCreateProducerRabbitMQ).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10135,7 +10183,7 @@ apiInstance.gatewayCreateProducerRabbitMQ(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerRabbitMQ**](GatewayCreateProducerRabbitMQ.md)|  | 
+ **gatewayCreateProducerRabbitMQ** | [**GatewayCreateProducerRabbitMQ**](GatewayCreateProducerRabbitMQ.md)|  | 
 
 ### Return type
 
@@ -10153,7 +10201,7 @@ No authorization required
 
 ## gatewayCreateProducerRdp
 
-> GatewayCreateProducerRdpOutput gatewayCreateProducerRdp(body)
+> GatewayCreateProducerRdpOutput gatewayCreateProducerRdp(gatewayCreateProducerRdp)
 
 
 
@@ -10163,8 +10211,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerRdp(); // GatewayCreateProducerRdp | 
-apiInstance.gatewayCreateProducerRdp(body).then((data) => {
+let gatewayCreateProducerRdp = new akeyless.GatewayCreateProducerRdp(); // GatewayCreateProducerRdp | 
+apiInstance.gatewayCreateProducerRdp(gatewayCreateProducerRdp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10177,7 +10225,7 @@ apiInstance.gatewayCreateProducerRdp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerRdp**](GatewayCreateProducerRdp.md)|  | 
+ **gatewayCreateProducerRdp** | [**GatewayCreateProducerRdp**](GatewayCreateProducerRdp.md)|  | 
 
 ### Return type
 
@@ -10195,7 +10243,7 @@ No authorization required
 
 ## gatewayCreateProducerRedis
 
-> GatewayCreateProducerRedisOutput gatewayCreateProducerRedis(body)
+> GatewayCreateProducerRedisOutput gatewayCreateProducerRedis(gatewayCreateProducerRedis)
 
 
 
@@ -10205,8 +10253,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerRedis(); // GatewayCreateProducerRedis | 
-apiInstance.gatewayCreateProducerRedis(body).then((data) => {
+let gatewayCreateProducerRedis = new akeyless.GatewayCreateProducerRedis(); // GatewayCreateProducerRedis | 
+apiInstance.gatewayCreateProducerRedis(gatewayCreateProducerRedis).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10219,7 +10267,7 @@ apiInstance.gatewayCreateProducerRedis(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerRedis**](GatewayCreateProducerRedis.md)|  | 
+ **gatewayCreateProducerRedis** | [**GatewayCreateProducerRedis**](GatewayCreateProducerRedis.md)|  | 
 
 ### Return type
 
@@ -10237,7 +10285,7 @@ No authorization required
 
 ## gatewayCreateProducerRedshift
 
-> GatewayCreateProducerRedshiftOutput gatewayCreateProducerRedshift(body)
+> GatewayCreateProducerRedshiftOutput gatewayCreateProducerRedshift(gatewayCreateProducerRedshift)
 
 
 
@@ -10247,8 +10295,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerRedshift(); // GatewayCreateProducerRedshift | 
-apiInstance.gatewayCreateProducerRedshift(body).then((data) => {
+let gatewayCreateProducerRedshift = new akeyless.GatewayCreateProducerRedshift(); // GatewayCreateProducerRedshift | 
+apiInstance.gatewayCreateProducerRedshift(gatewayCreateProducerRedshift).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10261,7 +10309,7 @@ apiInstance.gatewayCreateProducerRedshift(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerRedshift**](GatewayCreateProducerRedshift.md)|  | 
+ **gatewayCreateProducerRedshift** | [**GatewayCreateProducerRedshift**](GatewayCreateProducerRedshift.md)|  | 
 
 ### Return type
 
@@ -10279,7 +10327,7 @@ No authorization required
 
 ## gatewayCreateProducerSnowflake
 
-> GatewayCreateProducerSnowflakeOutput gatewayCreateProducerSnowflake(body)
+> GatewayCreateProducerSnowflakeOutput gatewayCreateProducerSnowflake(gatewayCreateProducerSnowflake)
 
 
 
@@ -10289,8 +10337,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerSnowflake(); // GatewayCreateProducerSnowflake | 
-apiInstance.gatewayCreateProducerSnowflake(body).then((data) => {
+let gatewayCreateProducerSnowflake = new akeyless.GatewayCreateProducerSnowflake(); // GatewayCreateProducerSnowflake | 
+apiInstance.gatewayCreateProducerSnowflake(gatewayCreateProducerSnowflake).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10303,7 +10351,7 @@ apiInstance.gatewayCreateProducerSnowflake(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerSnowflake**](GatewayCreateProducerSnowflake.md)|  | 
+ **gatewayCreateProducerSnowflake** | [**GatewayCreateProducerSnowflake**](GatewayCreateProducerSnowflake.md)|  | 
 
 ### Return type
 
@@ -10321,7 +10369,7 @@ No authorization required
 
 ## gatewayCreateProducerVenafi
 
-> GatewayCreateProducerVenafiOutput gatewayCreateProducerVenafi(body)
+> GatewayCreateProducerVenafiOutput gatewayCreateProducerVenafi(gatewayCreateProducerVenafi)
 
 
 
@@ -10331,8 +10379,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayCreateProducerVenafi(); // GatewayCreateProducerVenafi | 
-apiInstance.gatewayCreateProducerVenafi(body).then((data) => {
+let gatewayCreateProducerVenafi = new akeyless.GatewayCreateProducerVenafi(); // GatewayCreateProducerVenafi | 
+apiInstance.gatewayCreateProducerVenafi(gatewayCreateProducerVenafi).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10345,7 +10393,7 @@ apiInstance.gatewayCreateProducerVenafi(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerVenafi**](GatewayCreateProducerVenafi.md)|  | 
+ **gatewayCreateProducerVenafi** | [**GatewayCreateProducerVenafi**](GatewayCreateProducerVenafi.md)|  | 
 
 ### Return type
 
@@ -10363,7 +10411,7 @@ No authorization required
 
 ## gatewayDeleteAllowedAccess
 
-> GatewayDeleteAllowedAccessOutput gatewayDeleteAllowedAccess(body)
+> GatewayDeleteAllowedAccessOutput gatewayDeleteAllowedAccess(gatewayDeleteAllowedAccess)
 
 
 
@@ -10373,8 +10421,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayDeleteAllowedAccess(); // GatewayDeleteAllowedAccess | 
-apiInstance.gatewayDeleteAllowedAccess(body).then((data) => {
+let gatewayDeleteAllowedAccess = new akeyless.GatewayDeleteAllowedAccess(); // GatewayDeleteAllowedAccess | 
+apiInstance.gatewayDeleteAllowedAccess(gatewayDeleteAllowedAccess).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10387,7 +10435,7 @@ apiInstance.gatewayDeleteAllowedAccess(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayDeleteAllowedAccess**](GatewayDeleteAllowedAccess.md)|  | 
+ **gatewayDeleteAllowedAccess** | [**GatewayDeleteAllowedAccess**](GatewayDeleteAllowedAccess.md)|  | 
 
 ### Return type
 
@@ -10405,7 +10453,7 @@ No authorization required
 
 ## gatewayDeleteK8SAuthConfig
 
-> GatewayDeleteK8SAuthConfigOutput gatewayDeleteK8SAuthConfig(body)
+> GatewayDeleteK8SAuthConfigOutput gatewayDeleteK8SAuthConfig(gatewayDeleteK8SAuthConfig)
 
 
 
@@ -10415,8 +10463,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayDeleteK8SAuthConfig(); // GatewayDeleteK8SAuthConfig | 
-apiInstance.gatewayDeleteK8SAuthConfig(body).then((data) => {
+let gatewayDeleteK8SAuthConfig = new akeyless.GatewayDeleteK8SAuthConfig(); // GatewayDeleteK8SAuthConfig | 
+apiInstance.gatewayDeleteK8SAuthConfig(gatewayDeleteK8SAuthConfig).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10429,7 +10477,7 @@ apiInstance.gatewayDeleteK8SAuthConfig(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayDeleteK8SAuthConfig**](GatewayDeleteK8SAuthConfig.md)|  | 
+ **gatewayDeleteK8SAuthConfig** | [**GatewayDeleteK8SAuthConfig**](GatewayDeleteK8SAuthConfig.md)|  | 
 
 ### Return type
 
@@ -10447,7 +10495,7 @@ No authorization required
 
 ## gatewayDeleteMigration
 
-> GatewayMigrationDeleteOutput gatewayDeleteMigration(body)
+> GatewayMigrationDeleteOutput gatewayDeleteMigration(gatewayDeleteMigration)
 
 
 
@@ -10457,8 +10505,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayDeleteMigration(); // GatewayDeleteMigration | 
-apiInstance.gatewayDeleteMigration(body).then((data) => {
+let gatewayDeleteMigration = new akeyless.GatewayDeleteMigration(); // GatewayDeleteMigration | 
+apiInstance.gatewayDeleteMigration(gatewayDeleteMigration).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10471,7 +10519,7 @@ apiInstance.gatewayDeleteMigration(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayDeleteMigration**](GatewayDeleteMigration.md)|  | 
+ **gatewayDeleteMigration** | [**GatewayDeleteMigration**](GatewayDeleteMigration.md)|  | 
 
 ### Return type
 
@@ -10489,7 +10537,7 @@ No authorization required
 
 ## gatewayDeleteProducer
 
-> GatewayDeleteProducerOutput gatewayDeleteProducer(body)
+> GatewayDeleteProducerOutput gatewayDeleteProducer(gatewayDeleteProducer)
 
 
 
@@ -10499,8 +10547,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayDeleteProducer(); // GatewayDeleteProducer | 
-apiInstance.gatewayDeleteProducer(body).then((data) => {
+let gatewayDeleteProducer = new akeyless.GatewayDeleteProducer(); // GatewayDeleteProducer | 
+apiInstance.gatewayDeleteProducer(gatewayDeleteProducer).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10513,7 +10561,7 @@ apiInstance.gatewayDeleteProducer(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayDeleteProducer**](GatewayDeleteProducer.md)|  | 
+ **gatewayDeleteProducer** | [**GatewayDeleteProducer**](GatewayDeleteProducer.md)|  | 
 
 ### Return type
 
@@ -10531,7 +10579,7 @@ No authorization required
 
 ## gatewayDownloadCustomerFragments
 
-> GatewayDownloadCustomerFragmentsOutput gatewayDownloadCustomerFragments(body)
+> GatewayDownloadCustomerFragmentsOutput gatewayDownloadCustomerFragments(gatewayDownloadCustomerFragments)
 
 
 
@@ -10541,8 +10589,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayDownloadCustomerFragments(); // GatewayDownloadCustomerFragments | 
-apiInstance.gatewayDownloadCustomerFragments(body).then((data) => {
+let gatewayDownloadCustomerFragments = new akeyless.GatewayDownloadCustomerFragments(); // GatewayDownloadCustomerFragments | 
+apiInstance.gatewayDownloadCustomerFragments(gatewayDownloadCustomerFragments).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10555,7 +10603,7 @@ apiInstance.gatewayDownloadCustomerFragments(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayDownloadCustomerFragments**](GatewayDownloadCustomerFragments.md)|  | 
+ **gatewayDownloadCustomerFragments** | [**GatewayDownloadCustomerFragments**](GatewayDownloadCustomerFragments.md)|  | 
 
 ### Return type
 
@@ -10573,7 +10621,7 @@ No authorization required
 
 ## gatewayGetAllowedAccess
 
-> AllowedAccess gatewayGetAllowedAccess(body)
+> AllowedAccess gatewayGetAllowedAccess(gatewayGetAllowedAccess)
 
 
 
@@ -10583,8 +10631,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayGetAllowedAccess(); // GatewayGetAllowedAccess | 
-apiInstance.gatewayGetAllowedAccess(body).then((data) => {
+let gatewayGetAllowedAccess = new akeyless.GatewayGetAllowedAccess(); // GatewayGetAllowedAccess | 
+apiInstance.gatewayGetAllowedAccess(gatewayGetAllowedAccess).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10597,7 +10645,7 @@ apiInstance.gatewayGetAllowedAccess(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayGetAllowedAccess**](GatewayGetAllowedAccess.md)|  | 
+ **gatewayGetAllowedAccess** | [**GatewayGetAllowedAccess**](GatewayGetAllowedAccess.md)|  | 
 
 ### Return type
 
@@ -10615,7 +10663,7 @@ No authorization required
 
 ## gatewayGetCache
 
-> CacheConfigPart gatewayGetCache(body)
+> CacheConfigPart gatewayGetCache(gatewayGetCache)
 
 
 
@@ -10625,8 +10673,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayGetCache(); // GatewayGetCache | 
-apiInstance.gatewayGetCache(body).then((data) => {
+let gatewayGetCache = new akeyless.GatewayGetCache(); // GatewayGetCache | 
+apiInstance.gatewayGetCache(gatewayGetCache).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10639,7 +10687,7 @@ apiInstance.gatewayGetCache(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayGetCache**](GatewayGetCache.md)|  | 
+ **gatewayGetCache** | [**GatewayGetCache**](GatewayGetCache.md)|  | 
 
 ### Return type
 
@@ -10657,7 +10705,7 @@ No authorization required
 
 ## gatewayGetConfig
 
-> AkeylessGatewayConfig gatewayGetConfig(body)
+> AkeylessGatewayConfig gatewayGetConfig(gatewayGetConfig)
 
 
 
@@ -10667,8 +10715,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayGetConfig(); // GatewayGetConfig | 
-apiInstance.gatewayGetConfig(body).then((data) => {
+let gatewayGetConfig = new akeyless.GatewayGetConfig(); // GatewayGetConfig | 
+apiInstance.gatewayGetConfig(gatewayGetConfig).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10681,7 +10729,7 @@ apiInstance.gatewayGetConfig(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayGetConfig**](GatewayGetConfig.md)|  | 
+ **gatewayGetConfig** | [**GatewayGetConfig**](GatewayGetConfig.md)|  | 
 
 ### Return type
 
@@ -10699,7 +10747,7 @@ No authorization required
 
 ## gatewayGetDefaults
 
-> GatewayGetDefaultsOutput gatewayGetDefaults(body)
+> GatewayGetDefaultsOutput gatewayGetDefaults(gatewayGetDefaults)
 
 
 
@@ -10709,8 +10757,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayGetDefaults(); // GatewayGetDefaults | 
-apiInstance.gatewayGetDefaults(body).then((data) => {
+let gatewayGetDefaults = new akeyless.GatewayGetDefaults(); // GatewayGetDefaults | 
+apiInstance.gatewayGetDefaults(gatewayGetDefaults).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10723,7 +10771,7 @@ apiInstance.gatewayGetDefaults(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayGetDefaults**](GatewayGetDefaults.md)|  | 
+ **gatewayGetDefaults** | [**GatewayGetDefaults**](GatewayGetDefaults.md)|  | 
 
 ### Return type
 
@@ -10741,7 +10789,7 @@ No authorization required
 
 ## gatewayGetK8SAuthConfig
 
-> GatewayGetK8SAuthConfigOutput gatewayGetK8SAuthConfig(body)
+> GatewayGetK8SAuthConfigOutput gatewayGetK8SAuthConfig(gatewayGetK8SAuthConfig)
 
 
 
@@ -10751,8 +10799,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayGetK8SAuthConfig(); // GatewayGetK8SAuthConfig | 
-apiInstance.gatewayGetK8SAuthConfig(body).then((data) => {
+let gatewayGetK8SAuthConfig = new akeyless.GatewayGetK8SAuthConfig(); // GatewayGetK8SAuthConfig | 
+apiInstance.gatewayGetK8SAuthConfig(gatewayGetK8SAuthConfig).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10765,7 +10813,7 @@ apiInstance.gatewayGetK8SAuthConfig(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayGetK8SAuthConfig**](GatewayGetK8SAuthConfig.md)|  | 
+ **gatewayGetK8SAuthConfig** | [**GatewayGetK8SAuthConfig**](GatewayGetK8SAuthConfig.md)|  | 
 
 ### Return type
 
@@ -10783,7 +10831,7 @@ No authorization required
 
 ## gatewayGetLdapAuthConfig
 
-> GatewayGetLdapAuthConfigOutput gatewayGetLdapAuthConfig(body)
+> GatewayGetLdapAuthConfigOutput gatewayGetLdapAuthConfig(gatewayGetLdapAuthConfig)
 
 
 
@@ -10793,8 +10841,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayGetLdapAuthConfig(); // GatewayGetLdapAuthConfig | 
-apiInstance.gatewayGetLdapAuthConfig(body).then((data) => {
+let gatewayGetLdapAuthConfig = new akeyless.GatewayGetLdapAuthConfig(); // GatewayGetLdapAuthConfig | 
+apiInstance.gatewayGetLdapAuthConfig(gatewayGetLdapAuthConfig).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10807,7 +10855,7 @@ apiInstance.gatewayGetLdapAuthConfig(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayGetLdapAuthConfig**](GatewayGetLdapAuthConfig.md)|  | 
+ **gatewayGetLdapAuthConfig** | [**GatewayGetLdapAuthConfig**](GatewayGetLdapAuthConfig.md)|  | 
 
 ### Return type
 
@@ -10825,7 +10873,7 @@ No authorization required
 
 ## gatewayGetLogForwarding
 
-> LogForwardingConfigPart gatewayGetLogForwarding(body)
+> LogForwardingConfigPart gatewayGetLogForwarding(gatewayGetLogForwarding)
 
 
 
@@ -10835,8 +10883,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayGetLogForwarding(); // GatewayGetLogForwarding | 
-apiInstance.gatewayGetLogForwarding(body).then((data) => {
+let gatewayGetLogForwarding = new akeyless.GatewayGetLogForwarding(); // GatewayGetLogForwarding | 
+apiInstance.gatewayGetLogForwarding(gatewayGetLogForwarding).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10849,7 +10897,7 @@ apiInstance.gatewayGetLogForwarding(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayGetLogForwarding**](GatewayGetLogForwarding.md)|  | 
+ **gatewayGetLogForwarding** | [**GatewayGetLogForwarding**](GatewayGetLogForwarding.md)|  | 
 
 ### Return type
 
@@ -10867,7 +10915,7 @@ No authorization required
 
 ## gatewayGetMigration
 
-> GatewayMigrationGetOutput gatewayGetMigration(body)
+> GatewayMigrationGetOutput gatewayGetMigration(gatewayGetMigration)
 
 
 
@@ -10877,8 +10925,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayGetMigration(); // GatewayGetMigration | 
-apiInstance.gatewayGetMigration(body).then((data) => {
+let gatewayGetMigration = new akeyless.GatewayGetMigration(); // GatewayGetMigration | 
+apiInstance.gatewayGetMigration(gatewayGetMigration).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10891,7 +10939,7 @@ apiInstance.gatewayGetMigration(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayGetMigration**](GatewayGetMigration.md)|  | 
+ **gatewayGetMigration** | [**GatewayGetMigration**](GatewayGetMigration.md)|  | 
 
 ### Return type
 
@@ -10909,7 +10957,7 @@ No authorization required
 
 ## gatewayGetProducer
 
-> DSProducerDetails gatewayGetProducer(body)
+> DSProducerDetails gatewayGetProducer(gatewayGetProducer)
 
 
 
@@ -10919,8 +10967,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayGetProducer(); // GatewayGetProducer | 
-apiInstance.gatewayGetProducer(body).then((data) => {
+let gatewayGetProducer = new akeyless.GatewayGetProducer(); // GatewayGetProducer | 
+apiInstance.gatewayGetProducer(gatewayGetProducer).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10933,7 +10981,7 @@ apiInstance.gatewayGetProducer(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayGetProducer**](GatewayGetProducer.md)|  | 
+ **gatewayGetProducer** | [**GatewayGetProducer**](GatewayGetProducer.md)|  | 
 
 ### Return type
 
@@ -10951,7 +10999,7 @@ No authorization required
 
 ## gatewayGetRemoteAccess
 
-> BastionConfigReplyObj gatewayGetRemoteAccess(body)
+> BastionConfigReplyObj gatewayGetRemoteAccess(gatewayGetRemoteAccess)
 
 
 
@@ -10961,8 +11009,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayGetRemoteAccess(); // GatewayGetRemoteAccess | 
-apiInstance.gatewayGetRemoteAccess(body).then((data) => {
+let gatewayGetRemoteAccess = new akeyless.GatewayGetRemoteAccess(); // GatewayGetRemoteAccess | 
+apiInstance.gatewayGetRemoteAccess(gatewayGetRemoteAccess).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -10975,7 +11023,7 @@ apiInstance.gatewayGetRemoteAccess(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayGetRemoteAccess**](GatewayGetRemoteAccess.md)|  | 
+ **gatewayGetRemoteAccess** | [**GatewayGetRemoteAccess**](GatewayGetRemoteAccess.md)|  | 
 
 ### Return type
 
@@ -10993,7 +11041,7 @@ No authorization required
 
 ## gatewayGetTmpUsers
 
-> [TmpUserData] gatewayGetTmpUsers(body)
+> [TmpUserData] gatewayGetTmpUsers(gatewayGetTmpUsers)
 
 
 
@@ -11003,8 +11051,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayGetTmpUsers(); // GatewayGetTmpUsers | 
-apiInstance.gatewayGetTmpUsers(body).then((data) => {
+let gatewayGetTmpUsers = new akeyless.GatewayGetTmpUsers(); // GatewayGetTmpUsers | 
+apiInstance.gatewayGetTmpUsers(gatewayGetTmpUsers).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11017,7 +11065,7 @@ apiInstance.gatewayGetTmpUsers(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayGetTmpUsers**](GatewayGetTmpUsers.md)|  | 
+ **gatewayGetTmpUsers** | [**GatewayGetTmpUsers**](GatewayGetTmpUsers.md)|  | 
 
 ### Return type
 
@@ -11035,7 +11083,7 @@ No authorization required
 
 ## gatewayListCustomerFragments
 
-> {String: Object} gatewayListCustomerFragments(body)
+> {String: Object} gatewayListCustomerFragments(gatewayListCustomerFragments)
 
 
 
@@ -11045,8 +11093,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayListCustomerFragments(); // GatewayListCustomerFragments | 
-apiInstance.gatewayListCustomerFragments(body).then((data) => {
+let gatewayListCustomerFragments = new akeyless.GatewayListCustomerFragments(); // GatewayListCustomerFragments | 
+apiInstance.gatewayListCustomerFragments(gatewayListCustomerFragments).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11059,7 +11107,7 @@ apiInstance.gatewayListCustomerFragments(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayListCustomerFragments**](GatewayListCustomerFragments.md)|  | 
+ **gatewayListCustomerFragments** | [**GatewayListCustomerFragments**](GatewayListCustomerFragments.md)|  | 
 
 ### Return type
 
@@ -11077,7 +11125,7 @@ No authorization required
 
 ## gatewayListMigration
 
-> GatewayMigrationListOutput gatewayListMigration(body)
+> GatewayMigrationListOutput gatewayListMigration(gatewayListMigration)
 
 
 
@@ -11087,8 +11135,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayListMigration(); // GatewayListMigration | 
-apiInstance.gatewayListMigration(body).then((data) => {
+let gatewayListMigration = new akeyless.GatewayListMigration(); // GatewayListMigration | 
+apiInstance.gatewayListMigration(gatewayListMigration).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11101,7 +11149,7 @@ apiInstance.gatewayListMigration(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayListMigration**](GatewayListMigration.md)|  | 
+ **gatewayListMigration** | [**GatewayListMigration**](GatewayListMigration.md)|  | 
 
 ### Return type
 
@@ -11119,7 +11167,7 @@ No authorization required
 
 ## gatewayListProducers
 
-> GetProducersListReplyObj gatewayListProducers(body)
+> GetProducersListReplyObj gatewayListProducers(gatewayListProducers)
 
 
 
@@ -11129,8 +11177,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayListProducers(); // GatewayListProducers | 
-apiInstance.gatewayListProducers(body).then((data) => {
+let gatewayListProducers = new akeyless.GatewayListProducers(); // GatewayListProducers | 
+apiInstance.gatewayListProducers(gatewayListProducers).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11143,7 +11191,7 @@ apiInstance.gatewayListProducers(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayListProducers**](GatewayListProducers.md)|  | 
+ **gatewayListProducers** | [**GatewayListProducers**](GatewayListProducers.md)|  | 
 
 ### Return type
 
@@ -11161,7 +11209,7 @@ No authorization required
 
 ## gatewayListRotatedSecrets
 
-> ListItemsOutput gatewayListRotatedSecrets(body)
+> ListItemsOutput gatewayListRotatedSecrets(gatewayListRotatedSecrets)
 
 
 
@@ -11171,8 +11219,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayListRotatedSecrets(); // GatewayListRotatedSecrets | 
-apiInstance.gatewayListRotatedSecrets(body).then((data) => {
+let gatewayListRotatedSecrets = new akeyless.GatewayListRotatedSecrets(); // GatewayListRotatedSecrets | 
+apiInstance.gatewayListRotatedSecrets(gatewayListRotatedSecrets).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11185,7 +11233,7 @@ apiInstance.gatewayListRotatedSecrets(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayListRotatedSecrets**](GatewayListRotatedSecrets.md)|  | 
+ **gatewayListRotatedSecrets** | [**GatewayListRotatedSecrets**](GatewayListRotatedSecrets.md)|  | 
 
 ### Return type
 
@@ -11214,7 +11262,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.GatewayMigratePersonalItems() // GatewayMigratePersonalItems | 
+  'gatewayMigratePersonalItems': new akeyless.GatewayMigratePersonalItems() // GatewayMigratePersonalItems | 
 };
 apiInstance.gatewayMigratePersonalItems(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -11229,7 +11277,7 @@ apiInstance.gatewayMigratePersonalItems(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayMigratePersonalItems**](GatewayMigratePersonalItems.md)|  | [optional] 
+ **gatewayMigratePersonalItems** | [**GatewayMigratePersonalItems**](GatewayMigratePersonalItems.md)|  | [optional] 
 
 ### Return type
 
@@ -11247,7 +11295,7 @@ No authorization required
 
 ## gatewayRevokeTmpUsers
 
-> gatewayRevokeTmpUsers(body)
+> gatewayRevokeTmpUsers(gatewayRevokeTmpUsers)
 
 
 
@@ -11257,8 +11305,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayRevokeTmpUsers(); // GatewayRevokeTmpUsers | 
-apiInstance.gatewayRevokeTmpUsers(body).then(() => {
+let gatewayRevokeTmpUsers = new akeyless.GatewayRevokeTmpUsers(); // GatewayRevokeTmpUsers | 
+apiInstance.gatewayRevokeTmpUsers(gatewayRevokeTmpUsers).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -11271,7 +11319,7 @@ apiInstance.gatewayRevokeTmpUsers(body).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayRevokeTmpUsers**](GatewayRevokeTmpUsers.md)|  | 
+ **gatewayRevokeTmpUsers** | [**GatewayRevokeTmpUsers**](GatewayRevokeTmpUsers.md)|  | 
 
 ### Return type
 
@@ -11289,7 +11337,7 @@ No authorization required
 
 ## gatewayStartProducer
 
-> GatewayStartProducerOutput gatewayStartProducer(body)
+> GatewayStartProducerOutput gatewayStartProducer(gatewayStartProducer)
 
 
 
@@ -11299,8 +11347,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayStartProducer(); // GatewayStartProducer | 
-apiInstance.gatewayStartProducer(body).then((data) => {
+let gatewayStartProducer = new akeyless.GatewayStartProducer(); // GatewayStartProducer | 
+apiInstance.gatewayStartProducer(gatewayStartProducer).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11313,7 +11361,7 @@ apiInstance.gatewayStartProducer(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayStartProducer**](GatewayStartProducer.md)|  | 
+ **gatewayStartProducer** | [**GatewayStartProducer**](GatewayStartProducer.md)|  | 
 
 ### Return type
 
@@ -11331,7 +11379,7 @@ No authorization required
 
 ## gatewayStatusMigration
 
-> MigrationStatusReplyObj gatewayStatusMigration(body)
+> MigrationStatusReplyObj gatewayStatusMigration(gatewayStatusMigration)
 
 
 
@@ -11341,8 +11389,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayStatusMigration(); // GatewayStatusMigration | 
-apiInstance.gatewayStatusMigration(body).then((data) => {
+let gatewayStatusMigration = new akeyless.GatewayStatusMigration(); // GatewayStatusMigration | 
+apiInstance.gatewayStatusMigration(gatewayStatusMigration).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11355,7 +11403,7 @@ apiInstance.gatewayStatusMigration(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayStatusMigration**](GatewayStatusMigration.md)|  | 
+ **gatewayStatusMigration** | [**GatewayStatusMigration**](GatewayStatusMigration.md)|  | 
 
 ### Return type
 
@@ -11373,7 +11421,7 @@ No authorization required
 
 ## gatewayStopProducer
 
-> GatewayStopProducerOutput gatewayStopProducer(body)
+> GatewayStopProducerOutput gatewayStopProducer(gatewayStopProducer)
 
 
 
@@ -11383,8 +11431,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayStopProducer(); // GatewayStopProducer | 
-apiInstance.gatewayStopProducer(body).then((data) => {
+let gatewayStopProducer = new akeyless.GatewayStopProducer(); // GatewayStopProducer | 
+apiInstance.gatewayStopProducer(gatewayStopProducer).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11397,7 +11445,7 @@ apiInstance.gatewayStopProducer(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayStopProducer**](GatewayStopProducer.md)|  | 
+ **gatewayStopProducer** | [**GatewayStopProducer**](GatewayStopProducer.md)|  | 
 
 ### Return type
 
@@ -11415,7 +11463,7 @@ No authorization required
 
 ## gatewaySyncMigration
 
-> GatewayMigrationSyncOutput gatewaySyncMigration(body)
+> GatewayMigrationSyncOutput gatewaySyncMigration(gatewaySyncMigration)
 
 
 
@@ -11425,8 +11473,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewaySyncMigration(); // GatewaySyncMigration | 
-apiInstance.gatewaySyncMigration(body).then((data) => {
+let gatewaySyncMigration = new akeyless.GatewaySyncMigration(); // GatewaySyncMigration | 
+apiInstance.gatewaySyncMigration(gatewaySyncMigration).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11439,7 +11487,7 @@ apiInstance.gatewaySyncMigration(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewaySyncMigration**](GatewaySyncMigration.md)|  | 
+ **gatewaySyncMigration** | [**GatewaySyncMigration**](GatewaySyncMigration.md)|  | 
 
 ### Return type
 
@@ -11457,7 +11505,7 @@ No authorization required
 
 ## gatewayUpdateAllowedAccess
 
-> AllowedAccess gatewayUpdateAllowedAccess(body)
+> AllowedAccess gatewayUpdateAllowedAccess(gatewayUpdateAllowedAccess)
 
 
 
@@ -11467,8 +11515,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateAllowedAccess(); // GatewayUpdateAllowedAccess | 
-apiInstance.gatewayUpdateAllowedAccess(body).then((data) => {
+let gatewayUpdateAllowedAccess = new akeyless.GatewayUpdateAllowedAccess(); // GatewayUpdateAllowedAccess | 
+apiInstance.gatewayUpdateAllowedAccess(gatewayUpdateAllowedAccess).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11481,7 +11529,7 @@ apiInstance.gatewayUpdateAllowedAccess(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateAllowedAccess**](GatewayUpdateAllowedAccess.md)|  | 
+ **gatewayUpdateAllowedAccess** | [**GatewayUpdateAllowedAccess**](GatewayUpdateAllowedAccess.md)|  | 
 
 ### Return type
 
@@ -11499,7 +11547,7 @@ No authorization required
 
 ## gatewayUpdateCache
 
-> GatewayUpdateOutput gatewayUpdateCache(body)
+> GatewayUpdateOutput gatewayUpdateCache(gatewayUpdateCache)
 
 
 
@@ -11509,8 +11557,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateCache(); // GatewayUpdateCache | 
-apiInstance.gatewayUpdateCache(body).then((data) => {
+let gatewayUpdateCache = new akeyless.GatewayUpdateCache(); // GatewayUpdateCache | 
+apiInstance.gatewayUpdateCache(gatewayUpdateCache).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11523,7 +11571,7 @@ apiInstance.gatewayUpdateCache(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateCache**](GatewayUpdateCache.md)|  | 
+ **gatewayUpdateCache** | [**GatewayUpdateCache**](GatewayUpdateCache.md)|  | 
 
 ### Return type
 
@@ -11541,7 +11589,7 @@ No authorization required
 
 ## gatewayUpdateDefaults
 
-> GatewayUpdateOutput gatewayUpdateDefaults(body)
+> GatewayUpdateOutput gatewayUpdateDefaults(gatewayUpdateDefaults)
 
 
 
@@ -11551,8 +11599,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateDefaults(); // GatewayUpdateDefaults | 
-apiInstance.gatewayUpdateDefaults(body).then((data) => {
+let gatewayUpdateDefaults = new akeyless.GatewayUpdateDefaults(); // GatewayUpdateDefaults | 
+apiInstance.gatewayUpdateDefaults(gatewayUpdateDefaults).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11565,7 +11613,7 @@ apiInstance.gatewayUpdateDefaults(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateDefaults**](GatewayUpdateDefaults.md)|  | 
+ **gatewayUpdateDefaults** | [**GatewayUpdateDefaults**](GatewayUpdateDefaults.md)|  | 
 
 ### Return type
 
@@ -11583,7 +11631,7 @@ No authorization required
 
 ## gatewayUpdateItem
 
-> GatewayUpdateItemOutput gatewayUpdateItem(body)
+> GatewayUpdateItemOutput gatewayUpdateItem(gatewayUpdateItem)
 
 
 
@@ -11593,8 +11641,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateItem(); // GatewayUpdateItem | 
-apiInstance.gatewayUpdateItem(body).then((data) => {
+let gatewayUpdateItem = new akeyless.GatewayUpdateItem(); // GatewayUpdateItem | 
+apiInstance.gatewayUpdateItem(gatewayUpdateItem).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11607,7 +11655,7 @@ apiInstance.gatewayUpdateItem(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateItem**](GatewayUpdateItem.md)|  | 
+ **gatewayUpdateItem** | [**GatewayUpdateItem**](GatewayUpdateItem.md)|  | 
 
 ### Return type
 
@@ -11625,7 +11673,7 @@ No authorization required
 
 ## gatewayUpdateK8SAuthConfig
 
-> GatewayUpdateK8SAuthConfigOutput gatewayUpdateK8SAuthConfig(body)
+> GatewayUpdateK8SAuthConfigOutput gatewayUpdateK8SAuthConfig(gatewayUpdateK8SAuthConfig)
 
 
 
@@ -11635,8 +11683,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateK8SAuthConfig(); // GatewayUpdateK8SAuthConfig | 
-apiInstance.gatewayUpdateK8SAuthConfig(body).then((data) => {
+let gatewayUpdateK8SAuthConfig = new akeyless.GatewayUpdateK8SAuthConfig(); // GatewayUpdateK8SAuthConfig | 
+apiInstance.gatewayUpdateK8SAuthConfig(gatewayUpdateK8SAuthConfig).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11649,7 +11697,7 @@ apiInstance.gatewayUpdateK8SAuthConfig(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateK8SAuthConfig**](GatewayUpdateK8SAuthConfig.md)|  | 
+ **gatewayUpdateK8SAuthConfig** | [**GatewayUpdateK8SAuthConfig**](GatewayUpdateK8SAuthConfig.md)|  | 
 
 ### Return type
 
@@ -11667,7 +11715,7 @@ No authorization required
 
 ## gatewayUpdateLdapAuthConfig
 
-> GatewayUpdateLdapAuthConfigOutput gatewayUpdateLdapAuthConfig(body)
+> GatewayUpdateLdapAuthConfigOutput gatewayUpdateLdapAuthConfig(gatewayUpdateLdapAuthConfig)
 
 
 
@@ -11677,8 +11725,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateLdapAuthConfig(); // GatewayUpdateLdapAuthConfig | 
-apiInstance.gatewayUpdateLdapAuthConfig(body).then((data) => {
+let gatewayUpdateLdapAuthConfig = new akeyless.GatewayUpdateLdapAuthConfig(); // GatewayUpdateLdapAuthConfig | 
+apiInstance.gatewayUpdateLdapAuthConfig(gatewayUpdateLdapAuthConfig).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11691,7 +11739,7 @@ apiInstance.gatewayUpdateLdapAuthConfig(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateLdapAuthConfig**](GatewayUpdateLdapAuthConfig.md)|  | 
+ **gatewayUpdateLdapAuthConfig** | [**GatewayUpdateLdapAuthConfig**](GatewayUpdateLdapAuthConfig.md)|  | 
 
 ### Return type
 
@@ -11709,7 +11757,7 @@ No authorization required
 
 ## gatewayUpdateLogForwardingAwsS3
 
-> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingAwsS3(body)
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingAwsS3(gatewayUpdateLogForwardingAwsS3)
 
 
 
@@ -11719,8 +11767,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateLogForwardingAwsS3(); // GatewayUpdateLogForwardingAwsS3 | 
-apiInstance.gatewayUpdateLogForwardingAwsS3(body).then((data) => {
+let gatewayUpdateLogForwardingAwsS3 = new akeyless.GatewayUpdateLogForwardingAwsS3(); // GatewayUpdateLogForwardingAwsS3 | 
+apiInstance.gatewayUpdateLogForwardingAwsS3(gatewayUpdateLogForwardingAwsS3).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11733,7 +11781,7 @@ apiInstance.gatewayUpdateLogForwardingAwsS3(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateLogForwardingAwsS3**](GatewayUpdateLogForwardingAwsS3.md)|  | 
+ **gatewayUpdateLogForwardingAwsS3** | [**GatewayUpdateLogForwardingAwsS3**](GatewayUpdateLogForwardingAwsS3.md)|  | 
 
 ### Return type
 
@@ -11751,7 +11799,7 @@ No authorization required
 
 ## gatewayUpdateLogForwardingAzureAnalytics
 
-> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingAzureAnalytics(body)
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingAzureAnalytics(gatewayUpdateLogForwardingAzureAnalytics)
 
 
 
@@ -11761,8 +11809,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateLogForwardingAzureAnalytics(); // GatewayUpdateLogForwardingAzureAnalytics | 
-apiInstance.gatewayUpdateLogForwardingAzureAnalytics(body).then((data) => {
+let gatewayUpdateLogForwardingAzureAnalytics = new akeyless.GatewayUpdateLogForwardingAzureAnalytics(); // GatewayUpdateLogForwardingAzureAnalytics | 
+apiInstance.gatewayUpdateLogForwardingAzureAnalytics(gatewayUpdateLogForwardingAzureAnalytics).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11775,7 +11823,7 @@ apiInstance.gatewayUpdateLogForwardingAzureAnalytics(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateLogForwardingAzureAnalytics**](GatewayUpdateLogForwardingAzureAnalytics.md)|  | 
+ **gatewayUpdateLogForwardingAzureAnalytics** | [**GatewayUpdateLogForwardingAzureAnalytics**](GatewayUpdateLogForwardingAzureAnalytics.md)|  | 
 
 ### Return type
 
@@ -11793,7 +11841,7 @@ No authorization required
 
 ## gatewayUpdateLogForwardingDatadog
 
-> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingDatadog(body)
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingDatadog(gatewayUpdateLogForwardingDatadog)
 
 
 
@@ -11803,8 +11851,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateLogForwardingDatadog(); // GatewayUpdateLogForwardingDatadog | 
-apiInstance.gatewayUpdateLogForwardingDatadog(body).then((data) => {
+let gatewayUpdateLogForwardingDatadog = new akeyless.GatewayUpdateLogForwardingDatadog(); // GatewayUpdateLogForwardingDatadog | 
+apiInstance.gatewayUpdateLogForwardingDatadog(gatewayUpdateLogForwardingDatadog).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11817,7 +11865,7 @@ apiInstance.gatewayUpdateLogForwardingDatadog(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateLogForwardingDatadog**](GatewayUpdateLogForwardingDatadog.md)|  | 
+ **gatewayUpdateLogForwardingDatadog** | [**GatewayUpdateLogForwardingDatadog**](GatewayUpdateLogForwardingDatadog.md)|  | 
 
 ### Return type
 
@@ -11835,7 +11883,7 @@ No authorization required
 
 ## gatewayUpdateLogForwardingElasticsearch
 
-> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingElasticsearch(body)
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingElasticsearch(gatewayUpdateLogForwardingElasticsearch)
 
 
 
@@ -11845,8 +11893,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateLogForwardingElasticsearch(); // GatewayUpdateLogForwardingElasticsearch | 
-apiInstance.gatewayUpdateLogForwardingElasticsearch(body).then((data) => {
+let gatewayUpdateLogForwardingElasticsearch = new akeyless.GatewayUpdateLogForwardingElasticsearch(); // GatewayUpdateLogForwardingElasticsearch | 
+apiInstance.gatewayUpdateLogForwardingElasticsearch(gatewayUpdateLogForwardingElasticsearch).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11859,7 +11907,7 @@ apiInstance.gatewayUpdateLogForwardingElasticsearch(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateLogForwardingElasticsearch**](GatewayUpdateLogForwardingElasticsearch.md)|  | 
+ **gatewayUpdateLogForwardingElasticsearch** | [**GatewayUpdateLogForwardingElasticsearch**](GatewayUpdateLogForwardingElasticsearch.md)|  | 
 
 ### Return type
 
@@ -11877,7 +11925,7 @@ No authorization required
 
 ## gatewayUpdateLogForwardingGoogleChronicle
 
-> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingGoogleChronicle(body)
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingGoogleChronicle(gatewayUpdateLogForwardingGoogleChronicle)
 
 
 
@@ -11887,8 +11935,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateLogForwardingGoogleChronicle(); // GatewayUpdateLogForwardingGoogleChronicle | 
-apiInstance.gatewayUpdateLogForwardingGoogleChronicle(body).then((data) => {
+let gatewayUpdateLogForwardingGoogleChronicle = new akeyless.GatewayUpdateLogForwardingGoogleChronicle(); // GatewayUpdateLogForwardingGoogleChronicle | 
+apiInstance.gatewayUpdateLogForwardingGoogleChronicle(gatewayUpdateLogForwardingGoogleChronicle).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11901,7 +11949,7 @@ apiInstance.gatewayUpdateLogForwardingGoogleChronicle(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateLogForwardingGoogleChronicle**](GatewayUpdateLogForwardingGoogleChronicle.md)|  | 
+ **gatewayUpdateLogForwardingGoogleChronicle** | [**GatewayUpdateLogForwardingGoogleChronicle**](GatewayUpdateLogForwardingGoogleChronicle.md)|  | 
 
 ### Return type
 
@@ -11919,7 +11967,7 @@ No authorization required
 
 ## gatewayUpdateLogForwardingLogstash
 
-> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingLogstash(body)
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingLogstash(gatewayUpdateLogForwardingLogstash)
 
 
 
@@ -11929,8 +11977,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateLogForwardingLogstash(); // GatewayUpdateLogForwardingLogstash | 
-apiInstance.gatewayUpdateLogForwardingLogstash(body).then((data) => {
+let gatewayUpdateLogForwardingLogstash = new akeyless.GatewayUpdateLogForwardingLogstash(); // GatewayUpdateLogForwardingLogstash | 
+apiInstance.gatewayUpdateLogForwardingLogstash(gatewayUpdateLogForwardingLogstash).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11943,7 +11991,7 @@ apiInstance.gatewayUpdateLogForwardingLogstash(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateLogForwardingLogstash**](GatewayUpdateLogForwardingLogstash.md)|  | 
+ **gatewayUpdateLogForwardingLogstash** | [**GatewayUpdateLogForwardingLogstash**](GatewayUpdateLogForwardingLogstash.md)|  | 
 
 ### Return type
 
@@ -11961,7 +12009,7 @@ No authorization required
 
 ## gatewayUpdateLogForwardingLogzIo
 
-> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingLogzIo(body)
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingLogzIo(gatewayUpdateLogForwardingLogzIo)
 
 
 
@@ -11971,8 +12019,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateLogForwardingLogzIo(); // GatewayUpdateLogForwardingLogzIo | 
-apiInstance.gatewayUpdateLogForwardingLogzIo(body).then((data) => {
+let gatewayUpdateLogForwardingLogzIo = new akeyless.GatewayUpdateLogForwardingLogzIo(); // GatewayUpdateLogForwardingLogzIo | 
+apiInstance.gatewayUpdateLogForwardingLogzIo(gatewayUpdateLogForwardingLogzIo).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -11985,7 +12033,7 @@ apiInstance.gatewayUpdateLogForwardingLogzIo(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateLogForwardingLogzIo**](GatewayUpdateLogForwardingLogzIo.md)|  | 
+ **gatewayUpdateLogForwardingLogzIo** | [**GatewayUpdateLogForwardingLogzIo**](GatewayUpdateLogForwardingLogzIo.md)|  | 
 
 ### Return type
 
@@ -12003,7 +12051,7 @@ No authorization required
 
 ## gatewayUpdateLogForwardingSplunk
 
-> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingSplunk(body)
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingSplunk(gatewayUpdateLogForwardingSplunk)
 
 
 
@@ -12013,8 +12061,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateLogForwardingSplunk(); // GatewayUpdateLogForwardingSplunk | 
-apiInstance.gatewayUpdateLogForwardingSplunk(body).then((data) => {
+let gatewayUpdateLogForwardingSplunk = new akeyless.GatewayUpdateLogForwardingSplunk(); // GatewayUpdateLogForwardingSplunk | 
+apiInstance.gatewayUpdateLogForwardingSplunk(gatewayUpdateLogForwardingSplunk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12027,7 +12075,7 @@ apiInstance.gatewayUpdateLogForwardingSplunk(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateLogForwardingSplunk**](GatewayUpdateLogForwardingSplunk.md)|  | 
+ **gatewayUpdateLogForwardingSplunk** | [**GatewayUpdateLogForwardingSplunk**](GatewayUpdateLogForwardingSplunk.md)|  | 
 
 ### Return type
 
@@ -12045,7 +12093,7 @@ No authorization required
 
 ## gatewayUpdateLogForwardingStdout
 
-> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingStdout(body)
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingStdout(gatewayUpdateLogForwardingStdout)
 
 
 
@@ -12055,8 +12103,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateLogForwardingStdout(); // GatewayUpdateLogForwardingStdout | 
-apiInstance.gatewayUpdateLogForwardingStdout(body).then((data) => {
+let gatewayUpdateLogForwardingStdout = new akeyless.GatewayUpdateLogForwardingStdout(); // GatewayUpdateLogForwardingStdout | 
+apiInstance.gatewayUpdateLogForwardingStdout(gatewayUpdateLogForwardingStdout).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12069,7 +12117,7 @@ apiInstance.gatewayUpdateLogForwardingStdout(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateLogForwardingStdout**](GatewayUpdateLogForwardingStdout.md)|  | 
+ **gatewayUpdateLogForwardingStdout** | [**GatewayUpdateLogForwardingStdout**](GatewayUpdateLogForwardingStdout.md)|  | 
 
 ### Return type
 
@@ -12087,7 +12135,7 @@ No authorization required
 
 ## gatewayUpdateLogForwardingSumologic
 
-> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingSumologic(body)
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingSumologic(gatewayUpdateLogForwardingSumologic)
 
 
 
@@ -12097,8 +12145,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateLogForwardingSumologic(); // GatewayUpdateLogForwardingSumologic | 
-apiInstance.gatewayUpdateLogForwardingSumologic(body).then((data) => {
+let gatewayUpdateLogForwardingSumologic = new akeyless.GatewayUpdateLogForwardingSumologic(); // GatewayUpdateLogForwardingSumologic | 
+apiInstance.gatewayUpdateLogForwardingSumologic(gatewayUpdateLogForwardingSumologic).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12111,7 +12159,7 @@ apiInstance.gatewayUpdateLogForwardingSumologic(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateLogForwardingSumologic**](GatewayUpdateLogForwardingSumologic.md)|  | 
+ **gatewayUpdateLogForwardingSumologic** | [**GatewayUpdateLogForwardingSumologic**](GatewayUpdateLogForwardingSumologic.md)|  | 
 
 ### Return type
 
@@ -12129,7 +12177,7 @@ No authorization required
 
 ## gatewayUpdateLogForwardingSyslog
 
-> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingSyslog(body)
+> GatewayUpdateLogForwardingOutput gatewayUpdateLogForwardingSyslog(gatewayUpdateLogForwardingSyslog)
 
 
 
@@ -12139,8 +12187,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateLogForwardingSyslog(); // GatewayUpdateLogForwardingSyslog | 
-apiInstance.gatewayUpdateLogForwardingSyslog(body).then((data) => {
+let gatewayUpdateLogForwardingSyslog = new akeyless.GatewayUpdateLogForwardingSyslog(); // GatewayUpdateLogForwardingSyslog | 
+apiInstance.gatewayUpdateLogForwardingSyslog(gatewayUpdateLogForwardingSyslog).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12153,7 +12201,7 @@ apiInstance.gatewayUpdateLogForwardingSyslog(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateLogForwardingSyslog**](GatewayUpdateLogForwardingSyslog.md)|  | 
+ **gatewayUpdateLogForwardingSyslog** | [**GatewayUpdateLogForwardingSyslog**](GatewayUpdateLogForwardingSyslog.md)|  | 
 
 ### Return type
 
@@ -12171,7 +12219,7 @@ No authorization required
 
 ## gatewayUpdateMigration
 
-> GatewayMigrationUpdateOutput gatewayUpdateMigration(body)
+> GatewayMigrationUpdateOutput gatewayUpdateMigration(gatewayUpdateMigration)
 
 
 
@@ -12181,8 +12229,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateMigration(); // GatewayUpdateMigration | 
-apiInstance.gatewayUpdateMigration(body).then((data) => {
+let gatewayUpdateMigration = new akeyless.GatewayUpdateMigration(); // GatewayUpdateMigration | 
+apiInstance.gatewayUpdateMigration(gatewayUpdateMigration).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12195,7 +12243,7 @@ apiInstance.gatewayUpdateMigration(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateMigration**](GatewayUpdateMigration.md)|  | 
+ **gatewayUpdateMigration** | [**GatewayUpdateMigration**](GatewayUpdateMigration.md)|  | 
 
 ### Return type
 
@@ -12213,7 +12261,7 @@ No authorization required
 
 ## gatewayUpdateProducerArtifactory
 
-> GatewayUpdateProducerArtifactoryOutput gatewayUpdateProducerArtifactory(body)
+> GatewayUpdateProducerArtifactoryOutput gatewayUpdateProducerArtifactory(gatewayUpdateProducerArtifactory)
 
 
 
@@ -12223,8 +12271,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerArtifactory(); // GatewayUpdateProducerArtifactory | 
-apiInstance.gatewayUpdateProducerArtifactory(body).then((data) => {
+let gatewayUpdateProducerArtifactory = new akeyless.GatewayUpdateProducerArtifactory(); // GatewayUpdateProducerArtifactory | 
+apiInstance.gatewayUpdateProducerArtifactory(gatewayUpdateProducerArtifactory).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12237,7 +12285,7 @@ apiInstance.gatewayUpdateProducerArtifactory(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerArtifactory**](GatewayUpdateProducerArtifactory.md)|  | 
+ **gatewayUpdateProducerArtifactory** | [**GatewayUpdateProducerArtifactory**](GatewayUpdateProducerArtifactory.md)|  | 
 
 ### Return type
 
@@ -12255,7 +12303,7 @@ No authorization required
 
 ## gatewayUpdateProducerAws
 
-> GatewayUpdateProducerAwsOutput gatewayUpdateProducerAws(body)
+> GatewayUpdateProducerAwsOutput gatewayUpdateProducerAws(gatewayUpdateProducerAws)
 
 
 
@@ -12265,8 +12313,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerAws(); // GatewayUpdateProducerAws | 
-apiInstance.gatewayUpdateProducerAws(body).then((data) => {
+let gatewayUpdateProducerAws = new akeyless.GatewayUpdateProducerAws(); // GatewayUpdateProducerAws | 
+apiInstance.gatewayUpdateProducerAws(gatewayUpdateProducerAws).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12279,7 +12327,7 @@ apiInstance.gatewayUpdateProducerAws(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerAws**](GatewayUpdateProducerAws.md)|  | 
+ **gatewayUpdateProducerAws** | [**GatewayUpdateProducerAws**](GatewayUpdateProducerAws.md)|  | 
 
 ### Return type
 
@@ -12297,7 +12345,7 @@ No authorization required
 
 ## gatewayUpdateProducerAzure
 
-> GatewayUpdateProducerAzureOutput gatewayUpdateProducerAzure(body)
+> GatewayUpdateProducerAzureOutput gatewayUpdateProducerAzure(gatewayUpdateProducerAzure)
 
 
 
@@ -12307,8 +12355,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerAzure(); // GatewayUpdateProducerAzure | 
-apiInstance.gatewayUpdateProducerAzure(body).then((data) => {
+let gatewayUpdateProducerAzure = new akeyless.GatewayUpdateProducerAzure(); // GatewayUpdateProducerAzure | 
+apiInstance.gatewayUpdateProducerAzure(gatewayUpdateProducerAzure).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12321,7 +12369,7 @@ apiInstance.gatewayUpdateProducerAzure(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerAzure**](GatewayUpdateProducerAzure.md)|  | 
+ **gatewayUpdateProducerAzure** | [**GatewayUpdateProducerAzure**](GatewayUpdateProducerAzure.md)|  | 
 
 ### Return type
 
@@ -12339,7 +12387,7 @@ No authorization required
 
 ## gatewayUpdateProducerCassandra
 
-> GatewayUpdateProducerCassandraOutput gatewayUpdateProducerCassandra(body)
+> GatewayUpdateProducerCassandraOutput gatewayUpdateProducerCassandra(gatewayUpdateProducerCassandra)
 
 
 
@@ -12349,8 +12397,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerCassandra(); // GatewayUpdateProducerCassandra | 
-apiInstance.gatewayUpdateProducerCassandra(body).then((data) => {
+let gatewayUpdateProducerCassandra = new akeyless.GatewayUpdateProducerCassandra(); // GatewayUpdateProducerCassandra | 
+apiInstance.gatewayUpdateProducerCassandra(gatewayUpdateProducerCassandra).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12363,7 +12411,7 @@ apiInstance.gatewayUpdateProducerCassandra(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerCassandra**](GatewayUpdateProducerCassandra.md)|  | 
+ **gatewayUpdateProducerCassandra** | [**GatewayUpdateProducerCassandra**](GatewayUpdateProducerCassandra.md)|  | 
 
 ### Return type
 
@@ -12381,7 +12429,7 @@ No authorization required
 
 ## gatewayUpdateProducerChef
 
-> GatewayUpdateProducerChefOutput gatewayUpdateProducerChef(body)
+> GatewayUpdateProducerChefOutput gatewayUpdateProducerChef(gatewayUpdateProducerChef)
 
 
 
@@ -12391,8 +12439,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerChef(); // GatewayUpdateProducerChef | 
-apiInstance.gatewayUpdateProducerChef(body).then((data) => {
+let gatewayUpdateProducerChef = new akeyless.GatewayUpdateProducerChef(); // GatewayUpdateProducerChef | 
+apiInstance.gatewayUpdateProducerChef(gatewayUpdateProducerChef).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12405,7 +12453,7 @@ apiInstance.gatewayUpdateProducerChef(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerChef**](GatewayUpdateProducerChef.md)|  | 
+ **gatewayUpdateProducerChef** | [**GatewayUpdateProducerChef**](GatewayUpdateProducerChef.md)|  | 
 
 ### Return type
 
@@ -12434,7 +12482,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.GatewayUpdateProducerCustom() // GatewayUpdateProducerCustom | 
+  'gatewayUpdateProducerCustom': new akeyless.GatewayUpdateProducerCustom() // GatewayUpdateProducerCustom | 
 };
 apiInstance.gatewayUpdateProducerCustom(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -12449,7 +12497,7 @@ apiInstance.gatewayUpdateProducerCustom(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerCustom**](GatewayUpdateProducerCustom.md)|  | [optional] 
+ **gatewayUpdateProducerCustom** | [**GatewayUpdateProducerCustom**](GatewayUpdateProducerCustom.md)|  | [optional] 
 
 ### Return type
 
@@ -12467,7 +12515,7 @@ No authorization required
 
 ## gatewayUpdateProducerDockerhub
 
-> GatewayUpdateProducerDockerhubOutput gatewayUpdateProducerDockerhub(body)
+> GatewayUpdateProducerDockerhubOutput gatewayUpdateProducerDockerhub(gatewayUpdateProducerDockerhub)
 
 
 
@@ -12477,8 +12525,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerDockerhub(); // GatewayUpdateProducerDockerhub | 
-apiInstance.gatewayUpdateProducerDockerhub(body).then((data) => {
+let gatewayUpdateProducerDockerhub = new akeyless.GatewayUpdateProducerDockerhub(); // GatewayUpdateProducerDockerhub | 
+apiInstance.gatewayUpdateProducerDockerhub(gatewayUpdateProducerDockerhub).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12491,7 +12539,7 @@ apiInstance.gatewayUpdateProducerDockerhub(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerDockerhub**](GatewayUpdateProducerDockerhub.md)|  | 
+ **gatewayUpdateProducerDockerhub** | [**GatewayUpdateProducerDockerhub**](GatewayUpdateProducerDockerhub.md)|  | 
 
 ### Return type
 
@@ -12509,7 +12557,7 @@ No authorization required
 
 ## gatewayUpdateProducerEks
 
-> GatewayUpdateProducerEksOutput gatewayUpdateProducerEks(body)
+> GatewayUpdateProducerEksOutput gatewayUpdateProducerEks(gatewayUpdateProducerEks)
 
 
 
@@ -12519,8 +12567,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerEks(); // GatewayUpdateProducerEks | 
-apiInstance.gatewayUpdateProducerEks(body).then((data) => {
+let gatewayUpdateProducerEks = new akeyless.GatewayUpdateProducerEks(); // GatewayUpdateProducerEks | 
+apiInstance.gatewayUpdateProducerEks(gatewayUpdateProducerEks).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12533,7 +12581,7 @@ apiInstance.gatewayUpdateProducerEks(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerEks**](GatewayUpdateProducerEks.md)|  | 
+ **gatewayUpdateProducerEks** | [**GatewayUpdateProducerEks**](GatewayUpdateProducerEks.md)|  | 
 
 ### Return type
 
@@ -12551,7 +12599,7 @@ No authorization required
 
 ## gatewayUpdateProducerGcp
 
-> GatewayUpdateProducerGcpOutput gatewayUpdateProducerGcp(body)
+> GatewayUpdateProducerGcpOutput gatewayUpdateProducerGcp(gatewayUpdateProducerGcp)
 
 
 
@@ -12561,8 +12609,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerGcp(); // GatewayUpdateProducerGcp | 
-apiInstance.gatewayUpdateProducerGcp(body).then((data) => {
+let gatewayUpdateProducerGcp = new akeyless.GatewayUpdateProducerGcp(); // GatewayUpdateProducerGcp | 
+apiInstance.gatewayUpdateProducerGcp(gatewayUpdateProducerGcp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12575,7 +12623,7 @@ apiInstance.gatewayUpdateProducerGcp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerGcp**](GatewayUpdateProducerGcp.md)|  | 
+ **gatewayUpdateProducerGcp** | [**GatewayUpdateProducerGcp**](GatewayUpdateProducerGcp.md)|  | 
 
 ### Return type
 
@@ -12593,7 +12641,7 @@ No authorization required
 
 ## gatewayUpdateProducerGithub
 
-> GatewayUpdateProducerGithubOutput gatewayUpdateProducerGithub(body)
+> GatewayUpdateProducerGithubOutput gatewayUpdateProducerGithub(gatewayUpdateProducerGithub)
 
 
 
@@ -12603,8 +12651,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerGithub(); // GatewayUpdateProducerGithub | 
-apiInstance.gatewayUpdateProducerGithub(body).then((data) => {
+let gatewayUpdateProducerGithub = new akeyless.GatewayUpdateProducerGithub(); // GatewayUpdateProducerGithub | 
+apiInstance.gatewayUpdateProducerGithub(gatewayUpdateProducerGithub).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12617,7 +12665,7 @@ apiInstance.gatewayUpdateProducerGithub(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerGithub**](GatewayUpdateProducerGithub.md)|  | 
+ **gatewayUpdateProducerGithub** | [**GatewayUpdateProducerGithub**](GatewayUpdateProducerGithub.md)|  | 
 
 ### Return type
 
@@ -12635,7 +12683,7 @@ No authorization required
 
 ## gatewayUpdateProducerGke
 
-> GatewayUpdateProducerGkeOutput gatewayUpdateProducerGke(body)
+> GatewayUpdateProducerGkeOutput gatewayUpdateProducerGke(gatewayUpdateProducerGke)
 
 
 
@@ -12645,8 +12693,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerGke(); // GatewayUpdateProducerGke | 
-apiInstance.gatewayUpdateProducerGke(body).then((data) => {
+let gatewayUpdateProducerGke = new akeyless.GatewayUpdateProducerGke(); // GatewayUpdateProducerGke | 
+apiInstance.gatewayUpdateProducerGke(gatewayUpdateProducerGke).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12659,7 +12707,7 @@ apiInstance.gatewayUpdateProducerGke(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerGke**](GatewayUpdateProducerGke.md)|  | 
+ **gatewayUpdateProducerGke** | [**GatewayUpdateProducerGke**](GatewayUpdateProducerGke.md)|  | 
 
 ### Return type
 
@@ -12677,7 +12725,7 @@ No authorization required
 
 ## gatewayUpdateProducerHanaDb
 
-> GatewayUpdateProducerHanaDbOutput gatewayUpdateProducerHanaDb(body)
+> GatewayUpdateProducerHanaDbOutput gatewayUpdateProducerHanaDb(gatewayUpdateProducerHanaDb)
 
 
 
@@ -12687,8 +12735,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerHanaDb(); // GatewayUpdateProducerHanaDb | 
-apiInstance.gatewayUpdateProducerHanaDb(body).then((data) => {
+let gatewayUpdateProducerHanaDb = new akeyless.GatewayUpdateProducerHanaDb(); // GatewayUpdateProducerHanaDb | 
+apiInstance.gatewayUpdateProducerHanaDb(gatewayUpdateProducerHanaDb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12701,7 +12749,7 @@ apiInstance.gatewayUpdateProducerHanaDb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerHanaDb**](GatewayUpdateProducerHanaDb.md)|  | 
+ **gatewayUpdateProducerHanaDb** | [**GatewayUpdateProducerHanaDb**](GatewayUpdateProducerHanaDb.md)|  | 
 
 ### Return type
 
@@ -12719,7 +12767,7 @@ No authorization required
 
 ## gatewayUpdateProducerLdap
 
-> GatewayUpdateProducerLdapOutput gatewayUpdateProducerLdap(body)
+> GatewayUpdateProducerLdapOutput gatewayUpdateProducerLdap(gatewayUpdateProducerLdap)
 
 
 
@@ -12729,8 +12777,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerLdap(); // GatewayUpdateProducerLdap | 
-apiInstance.gatewayUpdateProducerLdap(body).then((data) => {
+let gatewayUpdateProducerLdap = new akeyless.GatewayUpdateProducerLdap(); // GatewayUpdateProducerLdap | 
+apiInstance.gatewayUpdateProducerLdap(gatewayUpdateProducerLdap).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12743,7 +12791,7 @@ apiInstance.gatewayUpdateProducerLdap(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerLdap**](GatewayUpdateProducerLdap.md)|  | 
+ **gatewayUpdateProducerLdap** | [**GatewayUpdateProducerLdap**](GatewayUpdateProducerLdap.md)|  | 
 
 ### Return type
 
@@ -12761,7 +12809,7 @@ No authorization required
 
 ## gatewayUpdateProducerMSSQL
 
-> GatewayUpdateProducerMSSQLOutput gatewayUpdateProducerMSSQL(body)
+> GatewayUpdateProducerMSSQLOutput gatewayUpdateProducerMSSQL(gatewayUpdateProducerMSSQL)
 
 
 
@@ -12771,8 +12819,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerMSSQL(); // GatewayUpdateProducerMSSQL | 
-apiInstance.gatewayUpdateProducerMSSQL(body).then((data) => {
+let gatewayUpdateProducerMSSQL = new akeyless.GatewayUpdateProducerMSSQL(); // GatewayUpdateProducerMSSQL | 
+apiInstance.gatewayUpdateProducerMSSQL(gatewayUpdateProducerMSSQL).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12785,7 +12833,7 @@ apiInstance.gatewayUpdateProducerMSSQL(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerMSSQL**](GatewayUpdateProducerMSSQL.md)|  | 
+ **gatewayUpdateProducerMSSQL** | [**GatewayUpdateProducerMSSQL**](GatewayUpdateProducerMSSQL.md)|  | 
 
 ### Return type
 
@@ -12803,7 +12851,7 @@ No authorization required
 
 ## gatewayUpdateProducerMongo
 
-> GatewayUpdateProducerMongoOutput gatewayUpdateProducerMongo(body)
+> GatewayUpdateProducerMongoOutput gatewayUpdateProducerMongo(gatewayUpdateProducerMongo)
 
 
 
@@ -12813,8 +12861,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerMongo(); // GatewayUpdateProducerMongo | 
-apiInstance.gatewayUpdateProducerMongo(body).then((data) => {
+let gatewayUpdateProducerMongo = new akeyless.GatewayUpdateProducerMongo(); // GatewayUpdateProducerMongo | 
+apiInstance.gatewayUpdateProducerMongo(gatewayUpdateProducerMongo).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12827,7 +12875,7 @@ apiInstance.gatewayUpdateProducerMongo(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerMongo**](GatewayUpdateProducerMongo.md)|  | 
+ **gatewayUpdateProducerMongo** | [**GatewayUpdateProducerMongo**](GatewayUpdateProducerMongo.md)|  | 
 
 ### Return type
 
@@ -12845,7 +12893,7 @@ No authorization required
 
 ## gatewayUpdateProducerMySQL
 
-> GatewayUpdateProducerMySQLOutput gatewayUpdateProducerMySQL(body)
+> GatewayUpdateProducerMySQLOutput gatewayUpdateProducerMySQL(gatewayUpdateProducerMySQL)
 
 
 
@@ -12855,8 +12903,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerMySQL(); // GatewayUpdateProducerMySQL | 
-apiInstance.gatewayUpdateProducerMySQL(body).then((data) => {
+let gatewayUpdateProducerMySQL = new akeyless.GatewayUpdateProducerMySQL(); // GatewayUpdateProducerMySQL | 
+apiInstance.gatewayUpdateProducerMySQL(gatewayUpdateProducerMySQL).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12869,7 +12917,7 @@ apiInstance.gatewayUpdateProducerMySQL(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerMySQL**](GatewayUpdateProducerMySQL.md)|  | 
+ **gatewayUpdateProducerMySQL** | [**GatewayUpdateProducerMySQL**](GatewayUpdateProducerMySQL.md)|  | 
 
 ### Return type
 
@@ -12887,7 +12935,7 @@ No authorization required
 
 ## gatewayUpdateProducerNativeK8S
 
-> GatewayUpdateProducerNativeK8SOutput gatewayUpdateProducerNativeK8S(body)
+> GatewayUpdateProducerNativeK8SOutput gatewayUpdateProducerNativeK8S(gatewayUpdateProducerNativeK8S)
 
 
 
@@ -12897,8 +12945,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerNativeK8S(); // GatewayUpdateProducerNativeK8S | 
-apiInstance.gatewayUpdateProducerNativeK8S(body).then((data) => {
+let gatewayUpdateProducerNativeK8S = new akeyless.GatewayUpdateProducerNativeK8S(); // GatewayUpdateProducerNativeK8S | 
+apiInstance.gatewayUpdateProducerNativeK8S(gatewayUpdateProducerNativeK8S).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12911,7 +12959,7 @@ apiInstance.gatewayUpdateProducerNativeK8S(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerNativeK8S**](GatewayUpdateProducerNativeK8S.md)|  | 
+ **gatewayUpdateProducerNativeK8S** | [**GatewayUpdateProducerNativeK8S**](GatewayUpdateProducerNativeK8S.md)|  | 
 
 ### Return type
 
@@ -12929,7 +12977,7 @@ No authorization required
 
 ## gatewayUpdateProducerOracleDb
 
-> GatewayUpdateProducerOracleDbOutput gatewayUpdateProducerOracleDb(body)
+> GatewayUpdateProducerOracleDbOutput gatewayUpdateProducerOracleDb(gatewayUpdateProducerOracleDb)
 
 
 
@@ -12939,8 +12987,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerOracleDb(); // GatewayUpdateProducerOracleDb | 
-apiInstance.gatewayUpdateProducerOracleDb(body).then((data) => {
+let gatewayUpdateProducerOracleDb = new akeyless.GatewayUpdateProducerOracleDb(); // GatewayUpdateProducerOracleDb | 
+apiInstance.gatewayUpdateProducerOracleDb(gatewayUpdateProducerOracleDb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12953,7 +13001,7 @@ apiInstance.gatewayUpdateProducerOracleDb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerOracleDb**](GatewayUpdateProducerOracleDb.md)|  | 
+ **gatewayUpdateProducerOracleDb** | [**GatewayUpdateProducerOracleDb**](GatewayUpdateProducerOracleDb.md)|  | 
 
 ### Return type
 
@@ -12971,7 +13019,7 @@ No authorization required
 
 ## gatewayUpdateProducerPing
 
-> GatewayUpdateProducerPingOutput gatewayUpdateProducerPing(body)
+> GatewayUpdateProducerPingOutput gatewayUpdateProducerPing(gatewayUpdateProducerPing)
 
 
 
@@ -12981,8 +13029,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerPing(); // GatewayUpdateProducerPing | 
-apiInstance.gatewayUpdateProducerPing(body).then((data) => {
+let gatewayUpdateProducerPing = new akeyless.GatewayUpdateProducerPing(); // GatewayUpdateProducerPing | 
+apiInstance.gatewayUpdateProducerPing(gatewayUpdateProducerPing).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -12995,7 +13043,7 @@ apiInstance.gatewayUpdateProducerPing(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerPing**](GatewayUpdateProducerPing.md)|  | 
+ **gatewayUpdateProducerPing** | [**GatewayUpdateProducerPing**](GatewayUpdateProducerPing.md)|  | 
 
 ### Return type
 
@@ -13013,7 +13061,7 @@ No authorization required
 
 ## gatewayUpdateProducerPostgreSQL
 
-> GatewayUpdateProducerPostgreSQLOutput gatewayUpdateProducerPostgreSQL(body)
+> GatewayUpdateProducerPostgreSQLOutput gatewayUpdateProducerPostgreSQL(gatewayUpdateProducerPostgreSQL)
 
 
 
@@ -13023,8 +13071,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerPostgreSQL(); // GatewayUpdateProducerPostgreSQL | 
-apiInstance.gatewayUpdateProducerPostgreSQL(body).then((data) => {
+let gatewayUpdateProducerPostgreSQL = new akeyless.GatewayUpdateProducerPostgreSQL(); // GatewayUpdateProducerPostgreSQL | 
+apiInstance.gatewayUpdateProducerPostgreSQL(gatewayUpdateProducerPostgreSQL).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13037,7 +13085,7 @@ apiInstance.gatewayUpdateProducerPostgreSQL(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerPostgreSQL**](GatewayUpdateProducerPostgreSQL.md)|  | 
+ **gatewayUpdateProducerPostgreSQL** | [**GatewayUpdateProducerPostgreSQL**](GatewayUpdateProducerPostgreSQL.md)|  | 
 
 ### Return type
 
@@ -13055,7 +13103,7 @@ No authorization required
 
 ## gatewayUpdateProducerRabbitMQ
 
-> GatewayUpdateProducerRabbitMQOutput gatewayUpdateProducerRabbitMQ(body)
+> GatewayUpdateProducerRabbitMQOutput gatewayUpdateProducerRabbitMQ(gatewayUpdateProducerRabbitMQ)
 
 
 
@@ -13065,8 +13113,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerRabbitMQ(); // GatewayUpdateProducerRabbitMQ | 
-apiInstance.gatewayUpdateProducerRabbitMQ(body).then((data) => {
+let gatewayUpdateProducerRabbitMQ = new akeyless.GatewayUpdateProducerRabbitMQ(); // GatewayUpdateProducerRabbitMQ | 
+apiInstance.gatewayUpdateProducerRabbitMQ(gatewayUpdateProducerRabbitMQ).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13079,7 +13127,7 @@ apiInstance.gatewayUpdateProducerRabbitMQ(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerRabbitMQ**](GatewayUpdateProducerRabbitMQ.md)|  | 
+ **gatewayUpdateProducerRabbitMQ** | [**GatewayUpdateProducerRabbitMQ**](GatewayUpdateProducerRabbitMQ.md)|  | 
 
 ### Return type
 
@@ -13097,7 +13145,7 @@ No authorization required
 
 ## gatewayUpdateProducerRdp
 
-> GatewayUpdateProducerRdpOutput gatewayUpdateProducerRdp(body)
+> GatewayUpdateProducerRdpOutput gatewayUpdateProducerRdp(gatewayUpdateProducerRdp)
 
 
 
@@ -13107,8 +13155,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerRdp(); // GatewayUpdateProducerRdp | 
-apiInstance.gatewayUpdateProducerRdp(body).then((data) => {
+let gatewayUpdateProducerRdp = new akeyless.GatewayUpdateProducerRdp(); // GatewayUpdateProducerRdp | 
+apiInstance.gatewayUpdateProducerRdp(gatewayUpdateProducerRdp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13121,7 +13169,7 @@ apiInstance.gatewayUpdateProducerRdp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerRdp**](GatewayUpdateProducerRdp.md)|  | 
+ **gatewayUpdateProducerRdp** | [**GatewayUpdateProducerRdp**](GatewayUpdateProducerRdp.md)|  | 
 
 ### Return type
 
@@ -13139,7 +13187,7 @@ No authorization required
 
 ## gatewayUpdateProducerRedis
 
-> GatewayUpdateProducerRedisOutput gatewayUpdateProducerRedis(body)
+> GatewayUpdateProducerRedisOutput gatewayUpdateProducerRedis(gatewayUpdateProducerRedis)
 
 
 
@@ -13149,8 +13197,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerRedis(); // GatewayUpdateProducerRedis | 
-apiInstance.gatewayUpdateProducerRedis(body).then((data) => {
+let gatewayUpdateProducerRedis = new akeyless.GatewayUpdateProducerRedis(); // GatewayUpdateProducerRedis | 
+apiInstance.gatewayUpdateProducerRedis(gatewayUpdateProducerRedis).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13163,7 +13211,7 @@ apiInstance.gatewayUpdateProducerRedis(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerRedis**](GatewayUpdateProducerRedis.md)|  | 
+ **gatewayUpdateProducerRedis** | [**GatewayUpdateProducerRedis**](GatewayUpdateProducerRedis.md)|  | 
 
 ### Return type
 
@@ -13181,7 +13229,7 @@ No authorization required
 
 ## gatewayUpdateProducerRedshift
 
-> GatewayUpdateProducerRedshiftOutput gatewayUpdateProducerRedshift(body)
+> GatewayUpdateProducerRedshiftOutput gatewayUpdateProducerRedshift(gatewayUpdateProducerRedshift)
 
 
 
@@ -13191,8 +13239,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerRedshift(); // GatewayUpdateProducerRedshift | 
-apiInstance.gatewayUpdateProducerRedshift(body).then((data) => {
+let gatewayUpdateProducerRedshift = new akeyless.GatewayUpdateProducerRedshift(); // GatewayUpdateProducerRedshift | 
+apiInstance.gatewayUpdateProducerRedshift(gatewayUpdateProducerRedshift).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13205,7 +13253,7 @@ apiInstance.gatewayUpdateProducerRedshift(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerRedshift**](GatewayUpdateProducerRedshift.md)|  | 
+ **gatewayUpdateProducerRedshift** | [**GatewayUpdateProducerRedshift**](GatewayUpdateProducerRedshift.md)|  | 
 
 ### Return type
 
@@ -13223,7 +13271,7 @@ No authorization required
 
 ## gatewayUpdateProducerSnowflake
 
-> GatewayUpdateProducerSnowflakeOutput gatewayUpdateProducerSnowflake(body)
+> GatewayUpdateProducerSnowflakeOutput gatewayUpdateProducerSnowflake(gatewayUpdateProducerSnowflake)
 
 
 
@@ -13233,8 +13281,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerSnowflake(); // GatewayUpdateProducerSnowflake | 
-apiInstance.gatewayUpdateProducerSnowflake(body).then((data) => {
+let gatewayUpdateProducerSnowflake = new akeyless.GatewayUpdateProducerSnowflake(); // GatewayUpdateProducerSnowflake | 
+apiInstance.gatewayUpdateProducerSnowflake(gatewayUpdateProducerSnowflake).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13247,7 +13295,7 @@ apiInstance.gatewayUpdateProducerSnowflake(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerSnowflake**](GatewayUpdateProducerSnowflake.md)|  | 
+ **gatewayUpdateProducerSnowflake** | [**GatewayUpdateProducerSnowflake**](GatewayUpdateProducerSnowflake.md)|  | 
 
 ### Return type
 
@@ -13265,7 +13313,7 @@ No authorization required
 
 ## gatewayUpdateProducerVenafi
 
-> GatewayUpdateProducerVenafiOutput gatewayUpdateProducerVenafi(body)
+> GatewayUpdateProducerVenafiOutput gatewayUpdateProducerVenafi(gatewayUpdateProducerVenafi)
 
 
 
@@ -13275,8 +13323,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateProducerVenafi(); // GatewayUpdateProducerVenafi | 
-apiInstance.gatewayUpdateProducerVenafi(body).then((data) => {
+let gatewayUpdateProducerVenafi = new akeyless.GatewayUpdateProducerVenafi(); // GatewayUpdateProducerVenafi | 
+apiInstance.gatewayUpdateProducerVenafi(gatewayUpdateProducerVenafi).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13289,7 +13337,7 @@ apiInstance.gatewayUpdateProducerVenafi(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateProducerVenafi**](GatewayUpdateProducerVenafi.md)|  | 
+ **gatewayUpdateProducerVenafi** | [**GatewayUpdateProducerVenafi**](GatewayUpdateProducerVenafi.md)|  | 
 
 ### Return type
 
@@ -13307,7 +13355,7 @@ No authorization required
 
 ## gatewayUpdateRemoteAccess
 
-> Object gatewayUpdateRemoteAccess(body)
+> Object gatewayUpdateRemoteAccess(gatewayUpdateRemoteAccess)
 
 
 
@@ -13317,8 +13365,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateRemoteAccess(); // GatewayUpdateRemoteAccess | 
-apiInstance.gatewayUpdateRemoteAccess(body).then((data) => {
+let gatewayUpdateRemoteAccess = new akeyless.GatewayUpdateRemoteAccess(); // GatewayUpdateRemoteAccess | 
+apiInstance.gatewayUpdateRemoteAccess(gatewayUpdateRemoteAccess).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13331,7 +13379,7 @@ apiInstance.gatewayUpdateRemoteAccess(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateRemoteAccess**](GatewayUpdateRemoteAccess.md)|  | 
+ **gatewayUpdateRemoteAccess** | [**GatewayUpdateRemoteAccess**](GatewayUpdateRemoteAccess.md)|  | 
 
 ### Return type
 
@@ -13349,7 +13397,7 @@ No authorization required
 
 ## gatewayUpdateRemoteAccessRdpRecordings
 
-> Object gatewayUpdateRemoteAccessRdpRecordings(body)
+> Object gatewayUpdateRemoteAccessRdpRecordings(gatewayUpdateRemoteAccessRdpRecordings)
 
 
 
@@ -13359,8 +13407,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateRemoteAccessRdpRecordings(); // GatewayUpdateRemoteAccessRdpRecordings | 
-apiInstance.gatewayUpdateRemoteAccessRdpRecordings(body).then((data) => {
+let gatewayUpdateRemoteAccessRdpRecordings = new akeyless.GatewayUpdateRemoteAccessRdpRecordings(); // GatewayUpdateRemoteAccessRdpRecordings | 
+apiInstance.gatewayUpdateRemoteAccessRdpRecordings(gatewayUpdateRemoteAccessRdpRecordings).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13373,7 +13421,7 @@ apiInstance.gatewayUpdateRemoteAccessRdpRecordings(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateRemoteAccessRdpRecordings**](GatewayUpdateRemoteAccessRdpRecordings.md)|  | 
+ **gatewayUpdateRemoteAccessRdpRecordings** | [**GatewayUpdateRemoteAccessRdpRecordings**](GatewayUpdateRemoteAccessRdpRecordings.md)|  | 
 
 ### Return type
 
@@ -13391,7 +13439,7 @@ No authorization required
 
 ## gatewayUpdateTlsCert
 
-> GatewayUpdateTlsCertOutput gatewayUpdateTlsCert(body)
+> GatewayUpdateTlsCertOutput gatewayUpdateTlsCert(gatewayUpdateTlsCert)
 
 
 
@@ -13401,8 +13449,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateTlsCert(); // GatewayUpdateTlsCert | 
-apiInstance.gatewayUpdateTlsCert(body).then((data) => {
+let gatewayUpdateTlsCert = new akeyless.GatewayUpdateTlsCert(); // GatewayUpdateTlsCert | 
+apiInstance.gatewayUpdateTlsCert(gatewayUpdateTlsCert).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13415,7 +13463,7 @@ apiInstance.gatewayUpdateTlsCert(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateTlsCert**](GatewayUpdateTlsCert.md)|  | 
+ **gatewayUpdateTlsCert** | [**GatewayUpdateTlsCert**](GatewayUpdateTlsCert.md)|  | 
 
 ### Return type
 
@@ -13433,7 +13481,7 @@ No authorization required
 
 ## gatewayUpdateTmpUsers
 
-> gatewayUpdateTmpUsers(body)
+> gatewayUpdateTmpUsers(gatewayUpdateTmpUsers)
 
 
 
@@ -13443,8 +13491,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GatewayUpdateTmpUsers(); // GatewayUpdateTmpUsers | 
-apiInstance.gatewayUpdateTmpUsers(body).then(() => {
+let gatewayUpdateTmpUsers = new akeyless.GatewayUpdateTmpUsers(); // GatewayUpdateTmpUsers | 
+apiInstance.gatewayUpdateTmpUsers(gatewayUpdateTmpUsers).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -13457,7 +13505,7 @@ apiInstance.gatewayUpdateTmpUsers(body).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GatewayUpdateTmpUsers**](GatewayUpdateTmpUsers.md)|  | 
+ **gatewayUpdateTmpUsers** | [**GatewayUpdateTmpUsers**](GatewayUpdateTmpUsers.md)|  | 
 
 ### Return type
 
@@ -13475,7 +13523,7 @@ No authorization required
 
 ## generateAcmeEab
 
-> GenerateAcmeEabOutput generateAcmeEab(body)
+> GenerateAcmeEabOutput generateAcmeEab(generateAcmeEab)
 
 
 
@@ -13485,8 +13533,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GenerateAcmeEab(); // GenerateAcmeEab | 
-apiInstance.generateAcmeEab(body).then((data) => {
+let generateAcmeEab = new akeyless.GenerateAcmeEab(); // GenerateAcmeEab | 
+apiInstance.generateAcmeEab(generateAcmeEab).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13499,7 +13547,7 @@ apiInstance.generateAcmeEab(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GenerateAcmeEab**](GenerateAcmeEab.md)|  | 
+ **generateAcmeEab** | [**GenerateAcmeEab**](GenerateAcmeEab.md)|  | 
 
 ### Return type
 
@@ -13515,9 +13563,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## generateCsr
+## generateCA
 
-> GenerateCsrOutput generateCsr(body)
+> GenerateCAOutput generateCA(generateCA)
 
 
 
@@ -13527,8 +13575,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GenerateCsr(); // GenerateCsr | 
-apiInstance.generateCsr(body).then((data) => {
+let generateCA = new akeyless.GenerateCA(); // GenerateCA | 
+apiInstance.generateCA(generateCA).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13541,7 +13589,49 @@ apiInstance.generateCsr(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GenerateCsr**](GenerateCsr.md)|  | 
+ **generateCA** | [**GenerateCA**](GenerateCA.md)|  | 
+
+### Return type
+
+[**GenerateCAOutput**](GenerateCAOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## generateCsr
+
+> GenerateCsrOutput generateCsr(generateCsr)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let generateCsr = new akeyless.GenerateCsr(); // GenerateCsr | 
+apiInstance.generateCsr(generateCsr).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **generateCsr** | [**GenerateCsr**](GenerateCsr.md)|  | 
 
 ### Return type
 
@@ -13597,7 +13687,7 @@ No authorization required
 
 ## getAccountSettings
 
-> GetAccountSettingsCommandOutput getAccountSettings(body)
+> GetAccountSettingsCommandOutput getAccountSettings(getAccountSettings)
 
 
 
@@ -13607,8 +13697,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetAccountSettings(); // GetAccountSettings | 
-apiInstance.getAccountSettings(body).then((data) => {
+let getAccountSettings = new akeyless.GetAccountSettings(); // GetAccountSettings | 
+apiInstance.getAccountSettings(getAccountSettings).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13621,7 +13711,7 @@ apiInstance.getAccountSettings(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetAccountSettings**](GetAccountSettings.md)|  | 
+ **getAccountSettings** | [**GetAccountSettings**](GetAccountSettings.md)|  | 
 
 ### Return type
 
@@ -13639,7 +13729,7 @@ No authorization required
 
 ## getAnalyticsData
 
-> AllAnalyticsData getAnalyticsData(body)
+> AllAnalyticsData getAnalyticsData(getAnalyticsData)
 
 
 
@@ -13649,8 +13739,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetAnalyticsData(); // GetAnalyticsData | 
-apiInstance.getAnalyticsData(body).then((data) => {
+let getAnalyticsData = new akeyless.GetAnalyticsData(); // GetAnalyticsData | 
+apiInstance.getAnalyticsData(getAnalyticsData).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13663,7 +13753,7 @@ apiInstance.getAnalyticsData(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetAnalyticsData**](GetAnalyticsData.md)|  | 
+ **getAnalyticsData** | [**GetAnalyticsData**](GetAnalyticsData.md)|  | 
 
 ### Return type
 
@@ -13681,7 +13771,7 @@ No authorization required
 
 ## getAuthMethod
 
-> AuthMethod getAuthMethod(body)
+> AuthMethod getAuthMethod(getAuthMethod)
 
 
 
@@ -13691,8 +13781,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetAuthMethod(); // GetAuthMethod | 
-apiInstance.getAuthMethod(body).then((data) => {
+let getAuthMethod = new akeyless.GetAuthMethod(); // GetAuthMethod | 
+apiInstance.getAuthMethod(getAuthMethod).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13705,7 +13795,7 @@ apiInstance.getAuthMethod(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetAuthMethod**](GetAuthMethod.md)|  | 
+ **getAuthMethod** | [**GetAuthMethod**](GetAuthMethod.md)|  | 
 
 ### Return type
 
@@ -13723,7 +13813,7 @@ No authorization required
 
 ## getCertificateValue
 
-> GetCertificateValueOutput getCertificateValue(body)
+> GetCertificateValueOutput getCertificateValue(getCertificateValue)
 
 
 
@@ -13733,8 +13823,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetCertificateValue(); // GetCertificateValue | 
-apiInstance.getCertificateValue(body).then((data) => {
+let getCertificateValue = new akeyless.GetCertificateValue(); // GetCertificateValue | 
+apiInstance.getCertificateValue(getCertificateValue).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13747,7 +13837,7 @@ apiInstance.getCertificateValue(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetCertificateValue**](GetCertificateValue.md)|  | 
+ **getCertificateValue** | [**GetCertificateValue**](GetCertificateValue.md)|  | 
 
 ### Return type
 
@@ -13765,7 +13855,7 @@ No authorization required
 
 ## getDynamicSecretValue
 
-> Object getDynamicSecretValue(body)
+> Object getDynamicSecretValue(getDynamicSecretValue)
 
 
 
@@ -13775,8 +13865,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetDynamicSecretValue(); // GetDynamicSecretValue | 
-apiInstance.getDynamicSecretValue(body).then((data) => {
+let getDynamicSecretValue = new akeyless.GetDynamicSecretValue(); // GetDynamicSecretValue | 
+apiInstance.getDynamicSecretValue(getDynamicSecretValue).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13789,7 +13879,7 @@ apiInstance.getDynamicSecretValue(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetDynamicSecretValue**](GetDynamicSecretValue.md)|  | 
+ **getDynamicSecretValue** | [**GetDynamicSecretValue**](GetDynamicSecretValue.md)|  | 
 
 ### Return type
 
@@ -13807,7 +13897,7 @@ No authorization required
 
 ## getEventForwarder
 
-> GetEventForwarderOutput getEventForwarder(body)
+> GetEventForwarderOutput getEventForwarder(getEventForwarder)
 
 
 
@@ -13817,8 +13907,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetEventForwarder(); // GetEventForwarder | 
-apiInstance.getEventForwarder(body).then((data) => {
+let getEventForwarder = new akeyless.GetEventForwarder(); // GetEventForwarder | 
+apiInstance.getEventForwarder(getEventForwarder).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13831,7 +13921,7 @@ apiInstance.getEventForwarder(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetEventForwarder**](GetEventForwarder.md)|  | 
+ **getEventForwarder** | [**GetEventForwarder**](GetEventForwarder.md)|  | 
 
 ### Return type
 
@@ -13849,7 +13939,7 @@ No authorization required
 
 ## getGroup
 
-> GetGroupOutput getGroup(body)
+> GetGroupOutput getGroup(getGroup)
 
 
 
@@ -13859,8 +13949,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetGroup(); // GetGroup | 
-apiInstance.getGroup(body).then((data) => {
+let getGroup = new akeyless.GetGroup(); // GetGroup | 
+apiInstance.getGroup(getGroup).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13873,7 +13963,7 @@ apiInstance.getGroup(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetGroup**](GetGroup.md)|  | 
+ **getGroup** | [**GetGroup**](GetGroup.md)|  | 
 
 ### Return type
 
@@ -13891,7 +13981,7 @@ No authorization required
 
 ## getKubeExecCreds
 
-> GetKubeExecCredsOutput getKubeExecCreds(body)
+> GetKubeExecCredsOutput getKubeExecCreds(getKubeExecCreds)
 
 
 
@@ -13901,8 +13991,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetKubeExecCreds(); // GetKubeExecCreds | 
-apiInstance.getKubeExecCreds(body).then((data) => {
+let getKubeExecCreds = new akeyless.GetKubeExecCreds(); // GetKubeExecCreds | 
+apiInstance.getKubeExecCreds(getKubeExecCreds).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13915,7 +14005,7 @@ apiInstance.getKubeExecCreds(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetKubeExecCreds**](GetKubeExecCreds.md)|  | 
+ **getKubeExecCreds** | [**GetKubeExecCreds**](GetKubeExecCreds.md)|  | 
 
 ### Return type
 
@@ -13933,7 +14023,7 @@ No authorization required
 
 ## getLastUserEventStatus
 
-> GetUserEventStatusOutput getLastUserEventStatus(body)
+> GetUserEventStatusOutput getLastUserEventStatus(getLastUserEventStatus)
 
 
 
@@ -13943,8 +14033,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetLastUserEventStatus(); // GetLastUserEventStatus | 
-apiInstance.getLastUserEventStatus(body).then((data) => {
+let getLastUserEventStatus = new akeyless.GetLastUserEventStatus(); // GetLastUserEventStatus | 
+apiInstance.getLastUserEventStatus(getLastUserEventStatus).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13957,7 +14047,7 @@ apiInstance.getLastUserEventStatus(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetLastUserEventStatus**](GetLastUserEventStatus.md)|  | 
+ **getLastUserEventStatus** | [**GetLastUserEventStatus**](GetLastUserEventStatus.md)|  | 
 
 ### Return type
 
@@ -13975,7 +14065,7 @@ No authorization required
 
 ## getPKICertificate
 
-> GetPKICertificateOutput getPKICertificate(body)
+> GetPKICertificateOutput getPKICertificate(getPKICertificate)
 
 
 
@@ -13985,8 +14075,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetPKICertificate(); // GetPKICertificate | 
-apiInstance.getPKICertificate(body).then((data) => {
+let getPKICertificate = new akeyless.GetPKICertificate(); // GetPKICertificate | 
+apiInstance.getPKICertificate(getPKICertificate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -13999,7 +14089,7 @@ apiInstance.getPKICertificate(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetPKICertificate**](GetPKICertificate.md)|  | 
+ **getPKICertificate** | [**GetPKICertificate**](GetPKICertificate.md)|  | 
 
 ### Return type
 
@@ -14017,7 +14107,7 @@ No authorization required
 
 ## getRSAPublic
 
-> GetRSAPublicOutput getRSAPublic(body)
+> GetRSAPublicOutput getRSAPublic(getRSAPublic)
 
 
 
@@ -14027,8 +14117,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetRSAPublic(); // GetRSAPublic | 
-apiInstance.getRSAPublic(body).then((data) => {
+let getRSAPublic = new akeyless.GetRSAPublic(); // GetRSAPublic | 
+apiInstance.getRSAPublic(getRSAPublic).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14041,7 +14131,7 @@ apiInstance.getRSAPublic(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetRSAPublic**](GetRSAPublic.md)|  | 
+ **getRSAPublic** | [**GetRSAPublic**](GetRSAPublic.md)|  | 
 
 ### Return type
 
@@ -14059,7 +14149,7 @@ No authorization required
 
 ## getRole
 
-> Role getRole(body)
+> Role getRole(getRole)
 
 
 
@@ -14069,8 +14159,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetRole(); // GetRole | 
-apiInstance.getRole(body).then((data) => {
+let getRole = new akeyless.GetRole(); // GetRole | 
+apiInstance.getRole(getRole).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14083,7 +14173,7 @@ apiInstance.getRole(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetRole**](GetRole.md)|  | 
+ **getRole** | [**GetRole**](GetRole.md)|  | 
 
 ### Return type
 
@@ -14101,7 +14191,7 @@ No authorization required
 
 ## getRotatedSecretValue
 
-> Object getRotatedSecretValue(body)
+> Object getRotatedSecretValue(getRotatedSecretValue)
 
 
 
@@ -14111,8 +14201,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetRotatedSecretValue(); // GetRotatedSecretValue | 
-apiInstance.getRotatedSecretValue(body).then((data) => {
+let getRotatedSecretValue = new akeyless.GetRotatedSecretValue(); // GetRotatedSecretValue | 
+apiInstance.getRotatedSecretValue(getRotatedSecretValue).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14125,7 +14215,7 @@ apiInstance.getRotatedSecretValue(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetRotatedSecretValue**](GetRotatedSecretValue.md)|  | 
+ **getRotatedSecretValue** | [**GetRotatedSecretValue**](GetRotatedSecretValue.md)|  | 
 
 ### Return type
 
@@ -14143,7 +14233,7 @@ No authorization required
 
 ## getSSHCertificate
 
-> GetSSHCertificateOutput getSSHCertificate(body)
+> GetSSHCertificateOutput getSSHCertificate(getSSHCertificate)
 
 
 
@@ -14153,8 +14243,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetSSHCertificate(); // GetSSHCertificate | 
-apiInstance.getSSHCertificate(body).then((data) => {
+let getSSHCertificate = new akeyless.GetSSHCertificate(); // GetSSHCertificate | 
+apiInstance.getSSHCertificate(getSSHCertificate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14167,7 +14257,7 @@ apiInstance.getSSHCertificate(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetSSHCertificate**](GetSSHCertificate.md)|  | 
+ **getSSHCertificate** | [**GetSSHCertificate**](GetSSHCertificate.md)|  | 
 
 ### Return type
 
@@ -14185,7 +14275,7 @@ No authorization required
 
 ## getSecretValue
 
-> Object getSecretValue(body)
+> Object getSecretValue(getSecretValue)
 
 
 
@@ -14195,8 +14285,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetSecretValue(); // GetSecretValue | 
-apiInstance.getSecretValue(body).then((data) => {
+let getSecretValue = new akeyless.GetSecretValue(); // GetSecretValue | 
+apiInstance.getSecretValue(getSecretValue).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14209,7 +14299,7 @@ apiInstance.getSecretValue(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetSecretValue**](GetSecretValue.md)|  | 
+ **getSecretValue** | [**GetSecretValue**](GetSecretValue.md)|  | 
 
 ### Return type
 
@@ -14227,7 +14317,7 @@ No authorization required
 
 ## getTags
 
-> [String] getTags(body)
+> [String] getTags(getTags)
 
 
 
@@ -14237,8 +14327,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetTags(); // GetTags | 
-apiInstance.getTags(body).then((data) => {
+let getTags = new akeyless.GetTags(); // GetTags | 
+apiInstance.getTags(getTags).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14251,7 +14341,7 @@ apiInstance.getTags(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetTags**](GetTags.md)|  | 
+ **getTags** | [**GetTags**](GetTags.md)|  | 
 
 ### Return type
 
@@ -14269,7 +14359,7 @@ No authorization required
 
 ## getTarget
 
-> Target getTarget(body)
+> Target getTarget(getTarget)
 
 
 
@@ -14279,8 +14369,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetTarget(); // GetTarget | 
-apiInstance.getTarget(body).then((data) => {
+let getTarget = new akeyless.GetTarget(); // GetTarget | 
+apiInstance.getTarget(getTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14293,7 +14383,7 @@ apiInstance.getTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetTarget**](GetTarget.md)|  | 
+ **getTarget** | [**GetTarget**](GetTarget.md)|  | 
 
 ### Return type
 
@@ -14311,7 +14401,7 @@ No authorization required
 
 ## getTargetDetails
 
-> GetTargetDetailsOutput getTargetDetails(body)
+> GetTargetDetailsOutput getTargetDetails(getTargetDetails)
 
 
 
@@ -14321,8 +14411,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GetTargetDetails(); // GetTargetDetails | 
-apiInstance.getTargetDetails(body).then((data) => {
+let getTargetDetails = new akeyless.GetTargetDetails(); // GetTargetDetails | 
+apiInstance.getTargetDetails(getTargetDetails).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14335,7 +14425,7 @@ apiInstance.getTargetDetails(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GetTargetDetails**](GetTargetDetails.md)|  | 
+ **getTargetDetails** | [**GetTargetDetails**](GetTargetDetails.md)|  | 
 
 ### Return type
 
@@ -14353,7 +14443,7 @@ No authorization required
 
 ## gwUpdateRemoteAccessSessionLogsAwsS3
 
-> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsAwsS3(body)
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsAwsS3(gwUpdateRemoteAccessSessionLogsAwsS3)
 
 
 
@@ -14363,8 +14453,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GwUpdateRemoteAccessSessionLogsAwsS3(); // GwUpdateRemoteAccessSessionLogsAwsS3 | 
-apiInstance.gwUpdateRemoteAccessSessionLogsAwsS3(body).then((data) => {
+let gwUpdateRemoteAccessSessionLogsAwsS3 = new akeyless.GwUpdateRemoteAccessSessionLogsAwsS3(); // GwUpdateRemoteAccessSessionLogsAwsS3 | 
+apiInstance.gwUpdateRemoteAccessSessionLogsAwsS3(gwUpdateRemoteAccessSessionLogsAwsS3).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14377,7 +14467,7 @@ apiInstance.gwUpdateRemoteAccessSessionLogsAwsS3(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GwUpdateRemoteAccessSessionLogsAwsS3**](GwUpdateRemoteAccessSessionLogsAwsS3.md)|  | 
+ **gwUpdateRemoteAccessSessionLogsAwsS3** | [**GwUpdateRemoteAccessSessionLogsAwsS3**](GwUpdateRemoteAccessSessionLogsAwsS3.md)|  | 
 
 ### Return type
 
@@ -14395,7 +14485,7 @@ No authorization required
 
 ## gwUpdateRemoteAccessSessionLogsAzureAnalytics
 
-> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsAzureAnalytics(body)
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsAzureAnalytics(gwUpdateRemoteAccessSessionLogsAzureAnalytics)
 
 
 
@@ -14405,8 +14495,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GwUpdateRemoteAccessSessionLogsAzureAnalytics(); // GwUpdateRemoteAccessSessionLogsAzureAnalytics | 
-apiInstance.gwUpdateRemoteAccessSessionLogsAzureAnalytics(body).then((data) => {
+let gwUpdateRemoteAccessSessionLogsAzureAnalytics = new akeyless.GwUpdateRemoteAccessSessionLogsAzureAnalytics(); // GwUpdateRemoteAccessSessionLogsAzureAnalytics | 
+apiInstance.gwUpdateRemoteAccessSessionLogsAzureAnalytics(gwUpdateRemoteAccessSessionLogsAzureAnalytics).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14419,7 +14509,7 @@ apiInstance.gwUpdateRemoteAccessSessionLogsAzureAnalytics(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GwUpdateRemoteAccessSessionLogsAzureAnalytics**](GwUpdateRemoteAccessSessionLogsAzureAnalytics.md)|  | 
+ **gwUpdateRemoteAccessSessionLogsAzureAnalytics** | [**GwUpdateRemoteAccessSessionLogsAzureAnalytics**](GwUpdateRemoteAccessSessionLogsAzureAnalytics.md)|  | 
 
 ### Return type
 
@@ -14437,7 +14527,7 @@ No authorization required
 
 ## gwUpdateRemoteAccessSessionLogsDatadog
 
-> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsDatadog(body)
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsDatadog(gwUpdateRemoteAccessSessionLogsDatadog)
 
 
 
@@ -14447,8 +14537,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GwUpdateRemoteAccessSessionLogsDatadog(); // GwUpdateRemoteAccessSessionLogsDatadog | 
-apiInstance.gwUpdateRemoteAccessSessionLogsDatadog(body).then((data) => {
+let gwUpdateRemoteAccessSessionLogsDatadog = new akeyless.GwUpdateRemoteAccessSessionLogsDatadog(); // GwUpdateRemoteAccessSessionLogsDatadog | 
+apiInstance.gwUpdateRemoteAccessSessionLogsDatadog(gwUpdateRemoteAccessSessionLogsDatadog).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14461,7 +14551,7 @@ apiInstance.gwUpdateRemoteAccessSessionLogsDatadog(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GwUpdateRemoteAccessSessionLogsDatadog**](GwUpdateRemoteAccessSessionLogsDatadog.md)|  | 
+ **gwUpdateRemoteAccessSessionLogsDatadog** | [**GwUpdateRemoteAccessSessionLogsDatadog**](GwUpdateRemoteAccessSessionLogsDatadog.md)|  | 
 
 ### Return type
 
@@ -14479,7 +14569,7 @@ No authorization required
 
 ## gwUpdateRemoteAccessSessionLogsElasticsearch
 
-> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsElasticsearch(body)
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsElasticsearch(gwUpdateRemoteAccessSessionLogsElasticsearch)
 
 
 
@@ -14489,8 +14579,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GwUpdateRemoteAccessSessionLogsElasticsearch(); // GwUpdateRemoteAccessSessionLogsElasticsearch | 
-apiInstance.gwUpdateRemoteAccessSessionLogsElasticsearch(body).then((data) => {
+let gwUpdateRemoteAccessSessionLogsElasticsearch = new akeyless.GwUpdateRemoteAccessSessionLogsElasticsearch(); // GwUpdateRemoteAccessSessionLogsElasticsearch | 
+apiInstance.gwUpdateRemoteAccessSessionLogsElasticsearch(gwUpdateRemoteAccessSessionLogsElasticsearch).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14503,7 +14593,7 @@ apiInstance.gwUpdateRemoteAccessSessionLogsElasticsearch(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GwUpdateRemoteAccessSessionLogsElasticsearch**](GwUpdateRemoteAccessSessionLogsElasticsearch.md)|  | 
+ **gwUpdateRemoteAccessSessionLogsElasticsearch** | [**GwUpdateRemoteAccessSessionLogsElasticsearch**](GwUpdateRemoteAccessSessionLogsElasticsearch.md)|  | 
 
 ### Return type
 
@@ -14521,7 +14611,7 @@ No authorization required
 
 ## gwUpdateRemoteAccessSessionLogsGoogleChronicle
 
-> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsGoogleChronicle(body)
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsGoogleChronicle(gwUpdateRemoteAccessSessionLogsGoogleChronicle)
 
 
 
@@ -14531,8 +14621,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GwUpdateRemoteAccessSessionLogsGoogleChronicle(); // GwUpdateRemoteAccessSessionLogsGoogleChronicle | 
-apiInstance.gwUpdateRemoteAccessSessionLogsGoogleChronicle(body).then((data) => {
+let gwUpdateRemoteAccessSessionLogsGoogleChronicle = new akeyless.GwUpdateRemoteAccessSessionLogsGoogleChronicle(); // GwUpdateRemoteAccessSessionLogsGoogleChronicle | 
+apiInstance.gwUpdateRemoteAccessSessionLogsGoogleChronicle(gwUpdateRemoteAccessSessionLogsGoogleChronicle).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14545,7 +14635,7 @@ apiInstance.gwUpdateRemoteAccessSessionLogsGoogleChronicle(body).then((data) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GwUpdateRemoteAccessSessionLogsGoogleChronicle**](GwUpdateRemoteAccessSessionLogsGoogleChronicle.md)|  | 
+ **gwUpdateRemoteAccessSessionLogsGoogleChronicle** | [**GwUpdateRemoteAccessSessionLogsGoogleChronicle**](GwUpdateRemoteAccessSessionLogsGoogleChronicle.md)|  | 
 
 ### Return type
 
@@ -14563,7 +14653,7 @@ No authorization required
 
 ## gwUpdateRemoteAccessSessionLogsLogstash
 
-> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsLogstash(body)
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsLogstash(gwUpdateRemoteAccessSessionLogsLogstash)
 
 
 
@@ -14573,8 +14663,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GwUpdateRemoteAccessSessionLogsLogstash(); // GwUpdateRemoteAccessSessionLogsLogstash | 
-apiInstance.gwUpdateRemoteAccessSessionLogsLogstash(body).then((data) => {
+let gwUpdateRemoteAccessSessionLogsLogstash = new akeyless.GwUpdateRemoteAccessSessionLogsLogstash(); // GwUpdateRemoteAccessSessionLogsLogstash | 
+apiInstance.gwUpdateRemoteAccessSessionLogsLogstash(gwUpdateRemoteAccessSessionLogsLogstash).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14587,7 +14677,7 @@ apiInstance.gwUpdateRemoteAccessSessionLogsLogstash(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GwUpdateRemoteAccessSessionLogsLogstash**](GwUpdateRemoteAccessSessionLogsLogstash.md)|  | 
+ **gwUpdateRemoteAccessSessionLogsLogstash** | [**GwUpdateRemoteAccessSessionLogsLogstash**](GwUpdateRemoteAccessSessionLogsLogstash.md)|  | 
 
 ### Return type
 
@@ -14605,7 +14695,7 @@ No authorization required
 
 ## gwUpdateRemoteAccessSessionLogsLogzIo
 
-> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsLogzIo(body)
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsLogzIo(gwUpdateRemoteAccessSessionLogsLogzIo)
 
 
 
@@ -14615,8 +14705,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GwUpdateRemoteAccessSessionLogsLogzIo(); // GwUpdateRemoteAccessSessionLogsLogzIo | 
-apiInstance.gwUpdateRemoteAccessSessionLogsLogzIo(body).then((data) => {
+let gwUpdateRemoteAccessSessionLogsLogzIo = new akeyless.GwUpdateRemoteAccessSessionLogsLogzIo(); // GwUpdateRemoteAccessSessionLogsLogzIo | 
+apiInstance.gwUpdateRemoteAccessSessionLogsLogzIo(gwUpdateRemoteAccessSessionLogsLogzIo).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14629,7 +14719,7 @@ apiInstance.gwUpdateRemoteAccessSessionLogsLogzIo(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GwUpdateRemoteAccessSessionLogsLogzIo**](GwUpdateRemoteAccessSessionLogsLogzIo.md)|  | 
+ **gwUpdateRemoteAccessSessionLogsLogzIo** | [**GwUpdateRemoteAccessSessionLogsLogzIo**](GwUpdateRemoteAccessSessionLogsLogzIo.md)|  | 
 
 ### Return type
 
@@ -14647,7 +14737,7 @@ No authorization required
 
 ## gwUpdateRemoteAccessSessionLogsSplunk
 
-> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsSplunk(body)
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsSplunk(gwUpdateRemoteAccessSessionLogsSplunk)
 
 
 
@@ -14657,8 +14747,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GwUpdateRemoteAccessSessionLogsSplunk(); // GwUpdateRemoteAccessSessionLogsSplunk | 
-apiInstance.gwUpdateRemoteAccessSessionLogsSplunk(body).then((data) => {
+let gwUpdateRemoteAccessSessionLogsSplunk = new akeyless.GwUpdateRemoteAccessSessionLogsSplunk(); // GwUpdateRemoteAccessSessionLogsSplunk | 
+apiInstance.gwUpdateRemoteAccessSessionLogsSplunk(gwUpdateRemoteAccessSessionLogsSplunk).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14671,7 +14761,7 @@ apiInstance.gwUpdateRemoteAccessSessionLogsSplunk(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GwUpdateRemoteAccessSessionLogsSplunk**](GwUpdateRemoteAccessSessionLogsSplunk.md)|  | 
+ **gwUpdateRemoteAccessSessionLogsSplunk** | [**GwUpdateRemoteAccessSessionLogsSplunk**](GwUpdateRemoteAccessSessionLogsSplunk.md)|  | 
 
 ### Return type
 
@@ -14689,7 +14779,7 @@ No authorization required
 
 ## gwUpdateRemoteAccessSessionLogsStdout
 
-> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsStdout(body)
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsStdout(gwUpdateRemoteAccessSessionLogsStdout)
 
 
 
@@ -14699,8 +14789,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GwUpdateRemoteAccessSessionLogsStdout(); // GwUpdateRemoteAccessSessionLogsStdout | 
-apiInstance.gwUpdateRemoteAccessSessionLogsStdout(body).then((data) => {
+let gwUpdateRemoteAccessSessionLogsStdout = new akeyless.GwUpdateRemoteAccessSessionLogsStdout(); // GwUpdateRemoteAccessSessionLogsStdout | 
+apiInstance.gwUpdateRemoteAccessSessionLogsStdout(gwUpdateRemoteAccessSessionLogsStdout).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14713,7 +14803,7 @@ apiInstance.gwUpdateRemoteAccessSessionLogsStdout(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GwUpdateRemoteAccessSessionLogsStdout**](GwUpdateRemoteAccessSessionLogsStdout.md)|  | 
+ **gwUpdateRemoteAccessSessionLogsStdout** | [**GwUpdateRemoteAccessSessionLogsStdout**](GwUpdateRemoteAccessSessionLogsStdout.md)|  | 
 
 ### Return type
 
@@ -14731,7 +14821,7 @@ No authorization required
 
 ## gwUpdateRemoteAccessSessionLogsSumologic
 
-> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsSumologic(body)
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsSumologic(gwUpdateRemoteAccessSessionLogsSumologic)
 
 
 
@@ -14741,8 +14831,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GwUpdateRemoteAccessSessionLogsSumologic(); // GwUpdateRemoteAccessSessionLogsSumologic | 
-apiInstance.gwUpdateRemoteAccessSessionLogsSumologic(body).then((data) => {
+let gwUpdateRemoteAccessSessionLogsSumologic = new akeyless.GwUpdateRemoteAccessSessionLogsSumologic(); // GwUpdateRemoteAccessSessionLogsSumologic | 
+apiInstance.gwUpdateRemoteAccessSessionLogsSumologic(gwUpdateRemoteAccessSessionLogsSumologic).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14755,7 +14845,7 @@ apiInstance.gwUpdateRemoteAccessSessionLogsSumologic(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GwUpdateRemoteAccessSessionLogsSumologic**](GwUpdateRemoteAccessSessionLogsSumologic.md)|  | 
+ **gwUpdateRemoteAccessSessionLogsSumologic** | [**GwUpdateRemoteAccessSessionLogsSumologic**](GwUpdateRemoteAccessSessionLogsSumologic.md)|  | 
 
 ### Return type
 
@@ -14773,7 +14863,7 @@ No authorization required
 
 ## gwUpdateRemoteAccessSessionLogsSyslog
 
-> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsSyslog(body)
+> GatewayUpdateLogForwardingOutput gwUpdateRemoteAccessSessionLogsSyslog(gwUpdateRemoteAccessSessionLogsSyslog)
 
 
 
@@ -14783,8 +14873,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.GwUpdateRemoteAccessSessionLogsSyslog(); // GwUpdateRemoteAccessSessionLogsSyslog | 
-apiInstance.gwUpdateRemoteAccessSessionLogsSyslog(body).then((data) => {
+let gwUpdateRemoteAccessSessionLogsSyslog = new akeyless.GwUpdateRemoteAccessSessionLogsSyslog(); // GwUpdateRemoteAccessSessionLogsSyslog | 
+apiInstance.gwUpdateRemoteAccessSessionLogsSyslog(gwUpdateRemoteAccessSessionLogsSyslog).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14797,7 +14887,7 @@ apiInstance.gwUpdateRemoteAccessSessionLogsSyslog(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GwUpdateRemoteAccessSessionLogsSyslog**](GwUpdateRemoteAccessSessionLogsSyslog.md)|  | 
+ **gwUpdateRemoteAccessSessionLogsSyslog** | [**GwUpdateRemoteAccessSessionLogsSyslog**](GwUpdateRemoteAccessSessionLogsSyslog.md)|  | 
 
 ### Return type
 
@@ -14815,7 +14905,7 @@ No authorization required
 
 ## hmac
 
-> HmacOutput hmac(body)
+> HmacOutput hmac(hmac)
 
 
 
@@ -14825,8 +14915,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.Hmac(); // Hmac | 
-apiInstance.hmac(body).then((data) => {
+let hmac = new akeyless.Hmac(); // Hmac | 
+apiInstance.hmac(hmac).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14839,7 +14929,7 @@ apiInstance.hmac(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Hmac**](Hmac.md)|  | 
+ **hmac** | [**Hmac**](Hmac.md)|  | 
 
 ### Return type
 
@@ -14857,7 +14947,7 @@ No authorization required
 
 ## importPasswords
 
-> ImportPasswordsOutput importPasswords(body)
+> ImportPasswordsOutput importPasswords(importPasswords)
 
 
 
@@ -14867,8 +14957,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ImportPasswords(); // ImportPasswords | 
-apiInstance.importPasswords(body).then((data) => {
+let importPasswords = new akeyless.ImportPasswords(); // ImportPasswords | 
+apiInstance.importPasswords(importPasswords).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -14881,7 +14971,7 @@ apiInstance.importPasswords(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ImportPasswords**](ImportPasswords.md)|  | 
+ **importPasswords** | [**ImportPasswords**](ImportPasswords.md)|  | 
 
 ### Return type
 
@@ -14910,7 +15000,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.KmipClientDeleteRule() // KmipClientDeleteRule | 
+  'kmipClientDeleteRule': new akeyless.KmipClientDeleteRule() // KmipClientDeleteRule | 
 };
 apiInstance.kmipClientDeleteRule(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -14925,7 +15015,7 @@ apiInstance.kmipClientDeleteRule(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KmipClientDeleteRule**](KmipClientDeleteRule.md)|  | [optional] 
+ **kmipClientDeleteRule** | [**KmipClientDeleteRule**](KmipClientDeleteRule.md)|  | [optional] 
 
 ### Return type
 
@@ -14954,7 +15044,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.KmipClientSetRule() // KmipClientSetRule | 
+  'kmipClientSetRule': new akeyless.KmipClientSetRule() // KmipClientSetRule | 
 };
 apiInstance.kmipClientSetRule(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -14969,7 +15059,7 @@ apiInstance.kmipClientSetRule(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KmipClientSetRule**](KmipClientSetRule.md)|  | [optional] 
+ **kmipClientSetRule** | [**KmipClientSetRule**](KmipClientSetRule.md)|  | [optional] 
 
 ### Return type
 
@@ -14998,7 +15088,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.KmipCreateClient() // KmipCreateClient | 
+  'kmipCreateClient': new akeyless.KmipCreateClient() // KmipCreateClient | 
 };
 apiInstance.kmipCreateClient(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -15013,7 +15103,7 @@ apiInstance.kmipCreateClient(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KmipCreateClient**](KmipCreateClient.md)|  | [optional] 
+ **kmipCreateClient** | [**KmipCreateClient**](KmipCreateClient.md)|  | [optional] 
 
 ### Return type
 
@@ -15042,7 +15132,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.KmipDeleteClient() // KmipDeleteClient | 
+  'kmipDeleteClient': new akeyless.KmipDeleteClient() // KmipDeleteClient | 
 };
 apiInstance.kmipDeleteClient(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -15057,7 +15147,7 @@ apiInstance.kmipDeleteClient(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KmipDeleteClient**](KmipDeleteClient.md)|  | [optional] 
+ **kmipDeleteClient** | [**KmipDeleteClient**](KmipDeleteClient.md)|  | [optional] 
 
 ### Return type
 
@@ -15086,7 +15176,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.KmipDeleteServer() // KmipDeleteServer | 
+  'kmipDeleteServer': new akeyless.KmipDeleteServer() // KmipDeleteServer | 
 };
 apiInstance.kmipDeleteServer(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -15101,7 +15191,7 @@ apiInstance.kmipDeleteServer(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KmipDeleteServer**](KmipDeleteServer.md)|  | [optional] 
+ **kmipDeleteServer** | [**KmipDeleteServer**](KmipDeleteServer.md)|  | [optional] 
 
 ### Return type
 
@@ -15130,7 +15220,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.KmipDescribeClient() // KmipDescribeClient | 
+  'kmipDescribeClient': new akeyless.KmipDescribeClient() // KmipDescribeClient | 
 };
 apiInstance.kmipDescribeClient(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -15145,7 +15235,7 @@ apiInstance.kmipDescribeClient(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KmipDescribeClient**](KmipDescribeClient.md)|  | [optional] 
+ **kmipDescribeClient** | [**KmipDescribeClient**](KmipDescribeClient.md)|  | [optional] 
 
 ### Return type
 
@@ -15174,7 +15264,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.KmipDescribeServer() // KmipDescribeServer | 
+  'kmipDescribeServer': new akeyless.KmipDescribeServer() // KmipDescribeServer | 
 };
 apiInstance.kmipDescribeServer(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -15189,7 +15279,7 @@ apiInstance.kmipDescribeServer(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KmipDescribeServer**](KmipDescribeServer.md)|  | [optional] 
+ **kmipDescribeServer** | [**KmipDescribeServer**](KmipDescribeServer.md)|  | [optional] 
 
 ### Return type
 
@@ -15218,7 +15308,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.KmipListClients() // KmipListClients | 
+  'kmipListClients': new akeyless.KmipListClients() // KmipListClients | 
 };
 apiInstance.kmipListClients(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -15233,7 +15323,7 @@ apiInstance.kmipListClients(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KmipListClients**](KmipListClients.md)|  | [optional] 
+ **kmipListClients** | [**KmipListClients**](KmipListClients.md)|  | [optional] 
 
 ### Return type
 
@@ -15262,7 +15352,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.KmipMoveServer() // KmipMoveServer | 
+  'kmipMoveServer': new akeyless.KmipMoveServer() // KmipMoveServer | 
 };
 apiInstance.kmipMoveServer(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -15277,7 +15367,7 @@ apiInstance.kmipMoveServer(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KmipMoveServer**](KmipMoveServer.md)|  | [optional] 
+ **kmipMoveServer** | [**KmipMoveServer**](KmipMoveServer.md)|  | [optional] 
 
 ### Return type
 
@@ -15306,7 +15396,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.KmipRenewClientCertificate() // KmipRenewClientCertificate | 
+  'kmipRenewClientCertificate': new akeyless.KmipRenewClientCertificate() // KmipRenewClientCertificate | 
 };
 apiInstance.kmipRenewClientCertificate(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -15321,7 +15411,7 @@ apiInstance.kmipRenewClientCertificate(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KmipRenewClientCertificate**](KmipRenewClientCertificate.md)|  | [optional] 
+ **kmipRenewClientCertificate** | [**KmipRenewClientCertificate**](KmipRenewClientCertificate.md)|  | [optional] 
 
 ### Return type
 
@@ -15350,7 +15440,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.KmipRenewServerCertificate() // KmipRenewServerCertificate | 
+  'kmipRenewServerCertificate': new akeyless.KmipRenewServerCertificate() // KmipRenewServerCertificate | 
 };
 apiInstance.kmipRenewServerCertificate(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -15365,7 +15455,7 @@ apiInstance.kmipRenewServerCertificate(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KmipRenewServerCertificate**](KmipRenewServerCertificate.md)|  | [optional] 
+ **kmipRenewServerCertificate** | [**KmipRenewServerCertificate**](KmipRenewServerCertificate.md)|  | [optional] 
 
 ### Return type
 
@@ -15394,7 +15484,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.KmipServerSetup() // KmipServerSetup | 
+  'kmipServerSetup': new akeyless.KmipServerSetup() // KmipServerSetup | 
 };
 apiInstance.kmipServerSetup(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -15409,7 +15499,7 @@ apiInstance.kmipServerSetup(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KmipServerSetup**](KmipServerSetup.md)|  | [optional] 
+ **kmipServerSetup** | [**KmipServerSetup**](KmipServerSetup.md)|  | [optional] 
 
 ### Return type
 
@@ -15438,7 +15528,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.KmipSetServerState() // KmipSetServerState | 
+  'kmipSetServerState': new akeyless.KmipSetServerState() // KmipSetServerState | 
 };
 apiInstance.kmipSetServerState(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -15453,7 +15543,7 @@ apiInstance.kmipSetServerState(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KmipSetServerState**](KmipSetServerState.md)|  | [optional] 
+ **kmipSetServerState** | [**KmipSetServerState**](KmipSetServerState.md)|  | [optional] 
 
 ### Return type
 
@@ -15509,7 +15599,7 @@ No authorization required
 
 ## listAcmeAccounts
 
-> ListAcmeAccountsOutput listAcmeAccounts(body)
+> ListAcmeAccountsOutput listAcmeAccounts(listAcmeAccounts)
 
 
 
@@ -15519,8 +15609,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ListAcmeAccounts(); // ListAcmeAccounts | 
-apiInstance.listAcmeAccounts(body).then((data) => {
+let listAcmeAccounts = new akeyless.ListAcmeAccounts(); // ListAcmeAccounts | 
+apiInstance.listAcmeAccounts(listAcmeAccounts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -15533,7 +15623,7 @@ apiInstance.listAcmeAccounts(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ListAcmeAccounts**](ListAcmeAccounts.md)|  | 
+ **listAcmeAccounts** | [**ListAcmeAccounts**](ListAcmeAccounts.md)|  | 
 
 ### Return type
 
@@ -15551,7 +15641,7 @@ No authorization required
 
 ## listAuthMethods
 
-> ListAuthMethodsOutput listAuthMethods(body)
+> ListAuthMethodsOutput listAuthMethods(listAuthMethods)
 
 
 
@@ -15561,8 +15651,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ListAuthMethods(); // ListAuthMethods | 
-apiInstance.listAuthMethods(body).then((data) => {
+let listAuthMethods = new akeyless.ListAuthMethods(); // ListAuthMethods | 
+apiInstance.listAuthMethods(listAuthMethods).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -15575,7 +15665,7 @@ apiInstance.listAuthMethods(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ListAuthMethods**](ListAuthMethods.md)|  | 
+ **listAuthMethods** | [**ListAuthMethods**](ListAuthMethods.md)|  | 
 
 ### Return type
 
@@ -15593,7 +15683,7 @@ No authorization required
 
 ## listGateways
 
-> GatewaysListResponse listGateways(body)
+> GatewaysListResponse listGateways(listGateways)
 
 
 
@@ -15603,8 +15693,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ListGateways(); // ListGateways | 
-apiInstance.listGateways(body).then((data) => {
+let listGateways = new akeyless.ListGateways(); // ListGateways | 
+apiInstance.listGateways(listGateways).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -15617,7 +15707,7 @@ apiInstance.listGateways(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ListGateways**](ListGateways.md)|  | 
+ **listGateways** | [**ListGateways**](ListGateways.md)|  | 
 
 ### Return type
 
@@ -15635,7 +15725,7 @@ No authorization required
 
 ## listGroups
 
-> ListGroupsOutput listGroups(body)
+> ListGroupsOutput listGroups(listGroups)
 
 
 
@@ -15645,8 +15735,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ListGroups(); // ListGroups | 
-apiInstance.listGroups(body).then((data) => {
+let listGroups = new akeyless.ListGroups(); // ListGroups | 
+apiInstance.listGroups(listGroups).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -15659,7 +15749,7 @@ apiInstance.listGroups(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ListGroups**](ListGroups.md)|  | 
+ **listGroups** | [**ListGroups**](ListGroups.md)|  | 
 
 ### Return type
 
@@ -15677,7 +15767,7 @@ No authorization required
 
 ## listItems
 
-> ListItemsInPathOutput listItems(body)
+> ListItemsInPathOutput listItems(listItems)
 
 
 
@@ -15687,8 +15777,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ListItems(); // ListItems | 
-apiInstance.listItems(body).then((data) => {
+let listItems = new akeyless.ListItems(); // ListItems | 
+apiInstance.listItems(listItems).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -15701,7 +15791,7 @@ apiInstance.listItems(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ListItems**](ListItems.md)|  | 
+ **listItems** | [**ListItems**](ListItems.md)|  | 
 
 ### Return type
 
@@ -15719,7 +15809,7 @@ No authorization required
 
 ## listRoles
 
-> ListRolesOutput listRoles(body)
+> ListRolesOutput listRoles(listRoles)
 
 
 
@@ -15729,8 +15819,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ListRoles(); // ListRoles | 
-apiInstance.listRoles(body).then((data) => {
+let listRoles = new akeyless.ListRoles(); // ListRoles | 
+apiInstance.listRoles(listRoles).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -15743,7 +15833,7 @@ apiInstance.listRoles(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ListRoles**](ListRoles.md)|  | 
+ **listRoles** | [**ListRoles**](ListRoles.md)|  | 
 
 ### Return type
 
@@ -15761,7 +15851,7 @@ No authorization required
 
 ## listSRABastions
 
-> BastionsList listSRABastions(body)
+> BastionsList listSRABastions(listSRABastions)
 
 
 
@@ -15771,8 +15861,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ListSRABastions(); // ListSRABastions | 
-apiInstance.listSRABastions(body).then((data) => {
+let listSRABastions = new akeyless.ListSRABastions(); // ListSRABastions | 
+apiInstance.listSRABastions(listSRABastions).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -15785,7 +15875,7 @@ apiInstance.listSRABastions(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ListSRABastions**](ListSRABastions.md)|  | 
+ **listSRABastions** | [**ListSRABastions**](ListSRABastions.md)|  | 
 
 ### Return type
 
@@ -15803,7 +15893,7 @@ No authorization required
 
 ## listSRASessions
 
-> ListSraSessionsOutput listSRASessions(body)
+> ListSraSessionsOutput listSRASessions(listSRASessions)
 
 
 
@@ -15813,8 +15903,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ListSRASessions(); // ListSRASessions | 
-apiInstance.listSRASessions(body).then((data) => {
+let listSRASessions = new akeyless.ListSRASessions(); // ListSRASessions | 
+apiInstance.listSRASessions(listSRASessions).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -15827,7 +15917,7 @@ apiInstance.listSRASessions(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ListSRASessions**](ListSRASessions.md)|  | 
+ **listSRASessions** | [**ListSRASessions**](ListSRASessions.md)|  | 
 
 ### Return type
 
@@ -15845,7 +15935,7 @@ No authorization required
 
 ## listSharedItems
 
-> listSharedItems(body)
+> listSharedItems(listSharedItems)
 
 
 
@@ -15855,8 +15945,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ListSharedItems(); // ListSharedItems | 
-apiInstance.listSharedItems(body).then(() => {
+let listSharedItems = new akeyless.ListSharedItems(); // ListSharedItems | 
+apiInstance.listSharedItems(listSharedItems).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -15869,7 +15959,7 @@ apiInstance.listSharedItems(body).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ListSharedItems**](ListSharedItems.md)|  | 
+ **listSharedItems** | [**ListSharedItems**](ListSharedItems.md)|  | 
 
 ### Return type
 
@@ -15887,7 +15977,7 @@ No authorization required
 
 ## listTargets
 
-> ListTargetsOutput listTargets(body)
+> ListTargetsOutput listTargets(listTargets)
 
 
 
@@ -15897,8 +15987,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ListTargets(); // ListTargets | 
-apiInstance.listTargets(body).then((data) => {
+let listTargets = new akeyless.ListTargets(); // ListTargets | 
+apiInstance.listTargets(listTargets).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -15911,7 +16001,7 @@ apiInstance.listTargets(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ListTargets**](ListTargets.md)|  | 
+ **listTargets** | [**ListTargets**](ListTargets.md)|  | 
 
 ### Return type
 
@@ -15929,7 +16019,7 @@ No authorization required
 
 ## moveObjects
 
-> Object moveObjects(body)
+> Object moveObjects(moveObjects)
 
 
 
@@ -15939,8 +16029,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.MoveObjects(); // MoveObjects | 
-apiInstance.moveObjects(body).then((data) => {
+let moveObjects = new akeyless.MoveObjects(); // MoveObjects | 
+apiInstance.moveObjects(moveObjects).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -15953,7 +16043,7 @@ apiInstance.moveObjects(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MoveObjects**](MoveObjects.md)|  | 
+ **moveObjects** | [**MoveObjects**](MoveObjects.md)|  | 
 
 ### Return type
 
@@ -15971,7 +16061,7 @@ No authorization required
 
 ## provisionCertificate
 
-> ProvisionCertificateOutput provisionCertificate(body)
+> ProvisionCertificateOutput provisionCertificate(provisionCertificate)
 
 
 
@@ -15981,8 +16071,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ProvisionCertificate(); // ProvisionCertificate | 
-apiInstance.provisionCertificate(body).then((data) => {
+let provisionCertificate = new akeyless.ProvisionCertificate(); // ProvisionCertificate | 
+apiInstance.provisionCertificate(provisionCertificate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -15995,7 +16085,7 @@ apiInstance.provisionCertificate(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProvisionCertificate**](ProvisionCertificate.md)|  | 
+ **provisionCertificate** | [**ProvisionCertificate**](ProvisionCertificate.md)|  | 
 
 ### Return type
 
@@ -16024,7 +16114,7 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let opts = {
-  'body': new akeyless.RawCreds() // RawCreds | 
+  'rawCreds': new akeyless.RawCreds() // RawCreds | 
 };
 apiInstance.rawCreds(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -16039,7 +16129,7 @@ apiInstance.rawCreds(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RawCreds**](RawCreds.md)|  | [optional] 
+ **rawCreds** | [**RawCreds**](RawCreds.md)|  | [optional] 
 
 ### Return type
 
@@ -16057,7 +16147,7 @@ No authorization required
 
 ## refreshKey
 
-> RefreshKeyOutput refreshKey(body)
+> RefreshKeyOutput refreshKey(refreshKey)
 
 
 
@@ -16067,8 +16157,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RefreshKey(); // RefreshKey | 
-apiInstance.refreshKey(body).then((data) => {
+let refreshKey = new akeyless.RefreshKey(); // RefreshKey | 
+apiInstance.refreshKey(refreshKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16081,7 +16171,7 @@ apiInstance.refreshKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RefreshKey**](RefreshKey.md)|  | 
+ **refreshKey** | [**RefreshKey**](RefreshKey.md)|  | 
 
 ### Return type
 
@@ -16099,7 +16189,7 @@ No authorization required
 
 ## renewCertificate
 
-> RenewCertificateOutput renewCertificate(body)
+> RenewCertificateOutput renewCertificate(renewCertificate)
 
 
 
@@ -16109,8 +16199,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RenewCertificate(); // RenewCertificate | 
-apiInstance.renewCertificate(body).then((data) => {
+let renewCertificate = new akeyless.RenewCertificate(); // RenewCertificate | 
+apiInstance.renewCertificate(renewCertificate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16123,7 +16213,7 @@ apiInstance.renewCertificate(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RenewCertificate**](RenewCertificate.md)|  | 
+ **renewCertificate** | [**RenewCertificate**](RenewCertificate.md)|  | 
 
 ### Return type
 
@@ -16141,7 +16231,7 @@ No authorization required
 
 ## requestAccess
 
-> RequestAccessOutput requestAccess(body)
+> RequestAccessOutput requestAccess(requestAccess)
 
 
 
@@ -16151,8 +16241,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RequestAccess(); // RequestAccess | 
-apiInstance.requestAccess(body).then((data) => {
+let requestAccess = new akeyless.RequestAccess(); // RequestAccess | 
+apiInstance.requestAccess(requestAccess).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16165,7 +16255,7 @@ apiInstance.requestAccess(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RequestAccess**](RequestAccess.md)|  | 
+ **requestAccess** | [**RequestAccess**](RequestAccess.md)|  | 
 
 ### Return type
 
@@ -16183,7 +16273,7 @@ No authorization required
 
 ## resetAccessKey
 
-> ResetAuthMethodAccessKeyOutput resetAccessKey(body)
+> ResetAuthMethodAccessKeyOutput resetAccessKey(resetAccessKey)
 
 
 
@@ -16193,8 +16283,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ResetAccessKey(); // ResetAccessKey | 
-apiInstance.resetAccessKey(body).then((data) => {
+let resetAccessKey = new akeyless.ResetAccessKey(); // ResetAccessKey | 
+apiInstance.resetAccessKey(resetAccessKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16207,7 +16297,7 @@ apiInstance.resetAccessKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ResetAccessKey**](ResetAccessKey.md)|  | 
+ **resetAccessKey** | [**ResetAccessKey**](ResetAccessKey.md)|  | 
 
 ### Return type
 
@@ -16225,7 +16315,7 @@ No authorization required
 
 ## reverseRBAC
 
-> ReverseRBACOutput reverseRBAC(body)
+> ReverseRBACOutput reverseRBAC(reverseRBAC)
 
 
 
@@ -16235,8 +16325,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ReverseRBAC(); // ReverseRBAC | 
-apiInstance.reverseRBAC(body).then((data) => {
+let reverseRBAC = new akeyless.ReverseRBAC(); // ReverseRBAC | 
+apiInstance.reverseRBAC(reverseRBAC).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16249,7 +16339,7 @@ apiInstance.reverseRBAC(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ReverseRBAC**](ReverseRBAC.md)|  | 
+ **reverseRBAC** | [**ReverseRBAC**](ReverseRBAC.md)|  | 
 
 ### Return type
 
@@ -16267,7 +16357,7 @@ No authorization required
 
 ## revokeCertificate
 
-> Object revokeCertificate(body)
+> Object revokeCertificate(revokeCertificate)
 
 
 
@@ -16277,8 +16367,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RevokeCertificate(); // RevokeCertificate | 
-apiInstance.revokeCertificate(body).then((data) => {
+let revokeCertificate = new akeyless.RevokeCertificate(); // RevokeCertificate | 
+apiInstance.revokeCertificate(revokeCertificate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16291,7 +16381,7 @@ apiInstance.revokeCertificate(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RevokeCertificate**](RevokeCertificate.md)|  | 
+ **revokeCertificate** | [**RevokeCertificate**](RevokeCertificate.md)|  | 
 
 ### Return type
 
@@ -16347,7 +16437,7 @@ No authorization required
 
 ## rollbackSecret
 
-> RollbackSecretOutput rollbackSecret(body)
+> RollbackSecretOutput rollbackSecret(rollbackSecret)
 
 
 
@@ -16357,8 +16447,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RollbackSecret(); // RollbackSecret | 
-apiInstance.rollbackSecret(body).then((data) => {
+let rollbackSecret = new akeyless.RollbackSecret(); // RollbackSecret | 
+apiInstance.rollbackSecret(rollbackSecret).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16371,7 +16461,7 @@ apiInstance.rollbackSecret(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RollbackSecret**](RollbackSecret.md)|  | 
+ **rollbackSecret** | [**RollbackSecret**](RollbackSecret.md)|  | 
 
 ### Return type
 
@@ -16389,7 +16479,7 @@ No authorization required
 
 ## rotateKey
 
-> RotateKeyOutput rotateKey(body)
+> RotateKeyOutput rotateKey(rotateKey)
 
 
 
@@ -16399,8 +16489,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotateKey(); // RotateKey | 
-apiInstance.rotateKey(body).then((data) => {
+let rotateKey = new akeyless.RotateKey(); // RotateKey | 
+apiInstance.rotateKey(rotateKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16413,7 +16503,7 @@ apiInstance.rotateKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotateKey**](RotateKey.md)|  | 
+ **rotateKey** | [**RotateKey**](RotateKey.md)|  | 
 
 ### Return type
 
@@ -16431,7 +16521,7 @@ No authorization required
 
 ## rotateOidcClientSecret
 
-> RotateOidcClientOutput rotateOidcClientSecret(body)
+> RotateOidcClientOutput rotateOidcClientSecret(rotateOidcClientSecret)
 
 
 
@@ -16441,8 +16531,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotateOidcClientSecret(); // RotateOidcClientSecret | 
-apiInstance.rotateOidcClientSecret(body).then((data) => {
+let rotateOidcClientSecret = new akeyless.RotateOidcClientSecret(); // RotateOidcClientSecret | 
+apiInstance.rotateOidcClientSecret(rotateOidcClientSecret).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16455,7 +16545,7 @@ apiInstance.rotateOidcClientSecret(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotateOidcClientSecret**](RotateOidcClientSecret.md)|  | 
+ **rotateOidcClientSecret** | [**RotateOidcClientSecret**](RotateOidcClientSecret.md)|  | 
 
 ### Return type
 
@@ -16473,7 +16563,7 @@ No authorization required
 
 ## rotateSecret
 
-> RotatedSecretOutput rotateSecret(body)
+> RotatedSecretOutput rotateSecret(rotateSecret)
 
 
 
@@ -16483,8 +16573,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotateSecret(); // RotateSecret | 
-apiInstance.rotateSecret(body).then((data) => {
+let rotateSecret = new akeyless.RotateSecret(); // RotateSecret | 
+apiInstance.rotateSecret(rotateSecret).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16497,7 +16587,7 @@ apiInstance.rotateSecret(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotateSecret**](RotateSecret.md)|  | 
+ **rotateSecret** | [**RotateSecret**](RotateSecret.md)|  | 
 
 ### Return type
 
@@ -16515,7 +16605,7 @@ No authorization required
 
 ## rotatedSecretCreateAws
 
-> RotatedSecretCreateOutput rotatedSecretCreateAws(body)
+> RotatedSecretCreateOutput rotatedSecretCreateAws(rotatedSecretCreateAws)
 
 
 
@@ -16525,8 +16615,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateAws(); // RotatedSecretCreateAws | 
-apiInstance.rotatedSecretCreateAws(body).then((data) => {
+let rotatedSecretCreateAws = new akeyless.RotatedSecretCreateAws(); // RotatedSecretCreateAws | 
+apiInstance.rotatedSecretCreateAws(rotatedSecretCreateAws).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16539,7 +16629,7 @@ apiInstance.rotatedSecretCreateAws(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateAws**](RotatedSecretCreateAws.md)|  | 
+ **rotatedSecretCreateAws** | [**RotatedSecretCreateAws**](RotatedSecretCreateAws.md)|  | 
 
 ### Return type
 
@@ -16557,7 +16647,7 @@ No authorization required
 
 ## rotatedSecretCreateAzure
 
-> RotatedSecretCreateOutput rotatedSecretCreateAzure(body)
+> RotatedSecretCreateOutput rotatedSecretCreateAzure(rotatedSecretCreateAzure)
 
 
 
@@ -16567,8 +16657,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateAzure(); // RotatedSecretCreateAzure | 
-apiInstance.rotatedSecretCreateAzure(body).then((data) => {
+let rotatedSecretCreateAzure = new akeyless.RotatedSecretCreateAzure(); // RotatedSecretCreateAzure | 
+apiInstance.rotatedSecretCreateAzure(rotatedSecretCreateAzure).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16581,7 +16671,7 @@ apiInstance.rotatedSecretCreateAzure(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateAzure**](RotatedSecretCreateAzure.md)|  | 
+ **rotatedSecretCreateAzure** | [**RotatedSecretCreateAzure**](RotatedSecretCreateAzure.md)|  | 
 
 ### Return type
 
@@ -16599,7 +16689,7 @@ No authorization required
 
 ## rotatedSecretCreateCassandra
 
-> RotatedSecretCreateOutput rotatedSecretCreateCassandra(body)
+> RotatedSecretCreateOutput rotatedSecretCreateCassandra(rotatedSecretCreateCassandra)
 
 
 
@@ -16609,8 +16699,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateCassandra(); // RotatedSecretCreateCassandra | 
-apiInstance.rotatedSecretCreateCassandra(body).then((data) => {
+let rotatedSecretCreateCassandra = new akeyless.RotatedSecretCreateCassandra(); // RotatedSecretCreateCassandra | 
+apiInstance.rotatedSecretCreateCassandra(rotatedSecretCreateCassandra).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16623,7 +16713,7 @@ apiInstance.rotatedSecretCreateCassandra(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateCassandra**](RotatedSecretCreateCassandra.md)|  | 
+ **rotatedSecretCreateCassandra** | [**RotatedSecretCreateCassandra**](RotatedSecretCreateCassandra.md)|  | 
 
 ### Return type
 
@@ -16641,7 +16731,7 @@ No authorization required
 
 ## rotatedSecretCreateCustom
 
-> RotatedSecretCreateOutput rotatedSecretCreateCustom(body)
+> RotatedSecretCreateOutput rotatedSecretCreateCustom(rotatedSecretCreateCustom)
 
 
 
@@ -16651,8 +16741,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateCustom(); // RotatedSecretCreateCustom | 
-apiInstance.rotatedSecretCreateCustom(body).then((data) => {
+let rotatedSecretCreateCustom = new akeyless.RotatedSecretCreateCustom(); // RotatedSecretCreateCustom | 
+apiInstance.rotatedSecretCreateCustom(rotatedSecretCreateCustom).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16665,7 +16755,7 @@ apiInstance.rotatedSecretCreateCustom(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateCustom**](RotatedSecretCreateCustom.md)|  | 
+ **rotatedSecretCreateCustom** | [**RotatedSecretCreateCustom**](RotatedSecretCreateCustom.md)|  | 
 
 ### Return type
 
@@ -16683,7 +16773,7 @@ No authorization required
 
 ## rotatedSecretCreateDockerhub
 
-> RotatedSecretCreateOutput rotatedSecretCreateDockerhub(body)
+> RotatedSecretCreateOutput rotatedSecretCreateDockerhub(rotatedSecretCreateDockerhub)
 
 
 
@@ -16693,8 +16783,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateDockerhub(); // RotatedSecretCreateDockerhub | 
-apiInstance.rotatedSecretCreateDockerhub(body).then((data) => {
+let rotatedSecretCreateDockerhub = new akeyless.RotatedSecretCreateDockerhub(); // RotatedSecretCreateDockerhub | 
+apiInstance.rotatedSecretCreateDockerhub(rotatedSecretCreateDockerhub).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16707,7 +16797,7 @@ apiInstance.rotatedSecretCreateDockerhub(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateDockerhub**](RotatedSecretCreateDockerhub.md)|  | 
+ **rotatedSecretCreateDockerhub** | [**RotatedSecretCreateDockerhub**](RotatedSecretCreateDockerhub.md)|  | 
 
 ### Return type
 
@@ -16725,7 +16815,7 @@ No authorization required
 
 ## rotatedSecretCreateGcp
 
-> RotatedSecretCreateOutput rotatedSecretCreateGcp(body)
+> RotatedSecretCreateOutput rotatedSecretCreateGcp(rotatedSecretCreateGcp)
 
 
 
@@ -16735,8 +16825,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateGcp(); // RotatedSecretCreateGcp | 
-apiInstance.rotatedSecretCreateGcp(body).then((data) => {
+let rotatedSecretCreateGcp = new akeyless.RotatedSecretCreateGcp(); // RotatedSecretCreateGcp | 
+apiInstance.rotatedSecretCreateGcp(rotatedSecretCreateGcp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16749,7 +16839,7 @@ apiInstance.rotatedSecretCreateGcp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateGcp**](RotatedSecretCreateGcp.md)|  | 
+ **rotatedSecretCreateGcp** | [**RotatedSecretCreateGcp**](RotatedSecretCreateGcp.md)|  | 
 
 ### Return type
 
@@ -16767,7 +16857,7 @@ No authorization required
 
 ## rotatedSecretCreateHanadb
 
-> RotatedSecretCreateOutput rotatedSecretCreateHanadb(body)
+> RotatedSecretCreateOutput rotatedSecretCreateHanadb(rotatedSecretCreateHanadb)
 
 
 
@@ -16777,8 +16867,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateHanadb(); // RotatedSecretCreateHanadb | 
-apiInstance.rotatedSecretCreateHanadb(body).then((data) => {
+let rotatedSecretCreateHanadb = new akeyless.RotatedSecretCreateHanadb(); // RotatedSecretCreateHanadb | 
+apiInstance.rotatedSecretCreateHanadb(rotatedSecretCreateHanadb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16791,7 +16881,7 @@ apiInstance.rotatedSecretCreateHanadb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateHanadb**](RotatedSecretCreateHanadb.md)|  | 
+ **rotatedSecretCreateHanadb** | [**RotatedSecretCreateHanadb**](RotatedSecretCreateHanadb.md)|  | 
 
 ### Return type
 
@@ -16809,7 +16899,7 @@ No authorization required
 
 ## rotatedSecretCreateLdap
 
-> RotatedSecretCreateOutput rotatedSecretCreateLdap(body)
+> RotatedSecretCreateOutput rotatedSecretCreateLdap(rotatedSecretCreateLdap)
 
 
 
@@ -16819,8 +16909,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateLdap(); // RotatedSecretCreateLdap | 
-apiInstance.rotatedSecretCreateLdap(body).then((data) => {
+let rotatedSecretCreateLdap = new akeyless.RotatedSecretCreateLdap(); // RotatedSecretCreateLdap | 
+apiInstance.rotatedSecretCreateLdap(rotatedSecretCreateLdap).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16833,7 +16923,7 @@ apiInstance.rotatedSecretCreateLdap(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateLdap**](RotatedSecretCreateLdap.md)|  | 
+ **rotatedSecretCreateLdap** | [**RotatedSecretCreateLdap**](RotatedSecretCreateLdap.md)|  | 
 
 ### Return type
 
@@ -16851,7 +16941,7 @@ No authorization required
 
 ## rotatedSecretCreateMongodb
 
-> RotatedSecretCreateOutput rotatedSecretCreateMongodb(body)
+> RotatedSecretCreateOutput rotatedSecretCreateMongodb(rotatedSecretCreateMongodb)
 
 
 
@@ -16861,8 +16951,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateMongodb(); // RotatedSecretCreateMongodb | 
-apiInstance.rotatedSecretCreateMongodb(body).then((data) => {
+let rotatedSecretCreateMongodb = new akeyless.RotatedSecretCreateMongodb(); // RotatedSecretCreateMongodb | 
+apiInstance.rotatedSecretCreateMongodb(rotatedSecretCreateMongodb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16875,7 +16965,7 @@ apiInstance.rotatedSecretCreateMongodb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateMongodb**](RotatedSecretCreateMongodb.md)|  | 
+ **rotatedSecretCreateMongodb** | [**RotatedSecretCreateMongodb**](RotatedSecretCreateMongodb.md)|  | 
 
 ### Return type
 
@@ -16893,7 +16983,7 @@ No authorization required
 
 ## rotatedSecretCreateMssql
 
-> RotatedSecretCreateOutput rotatedSecretCreateMssql(body)
+> RotatedSecretCreateOutput rotatedSecretCreateMssql(rotatedSecretCreateMssql)
 
 
 
@@ -16903,8 +16993,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateMssql(); // RotatedSecretCreateMssql | 
-apiInstance.rotatedSecretCreateMssql(body).then((data) => {
+let rotatedSecretCreateMssql = new akeyless.RotatedSecretCreateMssql(); // RotatedSecretCreateMssql | 
+apiInstance.rotatedSecretCreateMssql(rotatedSecretCreateMssql).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16917,7 +17007,7 @@ apiInstance.rotatedSecretCreateMssql(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateMssql**](RotatedSecretCreateMssql.md)|  | 
+ **rotatedSecretCreateMssql** | [**RotatedSecretCreateMssql**](RotatedSecretCreateMssql.md)|  | 
 
 ### Return type
 
@@ -16935,7 +17025,7 @@ No authorization required
 
 ## rotatedSecretCreateMysql
 
-> RotatedSecretCreateOutput rotatedSecretCreateMysql(body)
+> RotatedSecretCreateOutput rotatedSecretCreateMysql(rotatedSecretCreateMysql)
 
 
 
@@ -16945,8 +17035,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateMysql(); // RotatedSecretCreateMysql | 
-apiInstance.rotatedSecretCreateMysql(body).then((data) => {
+let rotatedSecretCreateMysql = new akeyless.RotatedSecretCreateMysql(); // RotatedSecretCreateMysql | 
+apiInstance.rotatedSecretCreateMysql(rotatedSecretCreateMysql).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -16959,7 +17049,7 @@ apiInstance.rotatedSecretCreateMysql(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateMysql**](RotatedSecretCreateMysql.md)|  | 
+ **rotatedSecretCreateMysql** | [**RotatedSecretCreateMysql**](RotatedSecretCreateMysql.md)|  | 
 
 ### Return type
 
@@ -16977,7 +17067,7 @@ No authorization required
 
 ## rotatedSecretCreateOracledb
 
-> RotatedSecretCreateOutput rotatedSecretCreateOracledb(body)
+> RotatedSecretCreateOutput rotatedSecretCreateOracledb(rotatedSecretCreateOracledb)
 
 
 
@@ -16987,8 +17077,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateOracledb(); // RotatedSecretCreateOracledb | 
-apiInstance.rotatedSecretCreateOracledb(body).then((data) => {
+let rotatedSecretCreateOracledb = new akeyless.RotatedSecretCreateOracledb(); // RotatedSecretCreateOracledb | 
+apiInstance.rotatedSecretCreateOracledb(rotatedSecretCreateOracledb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17001,7 +17091,7 @@ apiInstance.rotatedSecretCreateOracledb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateOracledb**](RotatedSecretCreateOracledb.md)|  | 
+ **rotatedSecretCreateOracledb** | [**RotatedSecretCreateOracledb**](RotatedSecretCreateOracledb.md)|  | 
 
 ### Return type
 
@@ -17019,7 +17109,7 @@ No authorization required
 
 ## rotatedSecretCreatePostgresql
 
-> RotatedSecretCreateOutput rotatedSecretCreatePostgresql(body)
+> RotatedSecretCreateOutput rotatedSecretCreatePostgresql(rotatedSecretCreatePostgresql)
 
 
 
@@ -17029,8 +17119,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreatePostgresql(); // RotatedSecretCreatePostgresql | 
-apiInstance.rotatedSecretCreatePostgresql(body).then((data) => {
+let rotatedSecretCreatePostgresql = new akeyless.RotatedSecretCreatePostgresql(); // RotatedSecretCreatePostgresql | 
+apiInstance.rotatedSecretCreatePostgresql(rotatedSecretCreatePostgresql).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17043,7 +17133,7 @@ apiInstance.rotatedSecretCreatePostgresql(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreatePostgresql**](RotatedSecretCreatePostgresql.md)|  | 
+ **rotatedSecretCreatePostgresql** | [**RotatedSecretCreatePostgresql**](RotatedSecretCreatePostgresql.md)|  | 
 
 ### Return type
 
@@ -17061,7 +17151,7 @@ No authorization required
 
 ## rotatedSecretCreateRedis
 
-> RotatedSecretCreateOutput rotatedSecretCreateRedis(body)
+> RotatedSecretCreateOutput rotatedSecretCreateRedis(rotatedSecretCreateRedis)
 
 
 
@@ -17071,8 +17161,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateRedis(); // RotatedSecretCreateRedis | 
-apiInstance.rotatedSecretCreateRedis(body).then((data) => {
+let rotatedSecretCreateRedis = new akeyless.RotatedSecretCreateRedis(); // RotatedSecretCreateRedis | 
+apiInstance.rotatedSecretCreateRedis(rotatedSecretCreateRedis).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17085,7 +17175,7 @@ apiInstance.rotatedSecretCreateRedis(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateRedis**](RotatedSecretCreateRedis.md)|  | 
+ **rotatedSecretCreateRedis** | [**RotatedSecretCreateRedis**](RotatedSecretCreateRedis.md)|  | 
 
 ### Return type
 
@@ -17103,7 +17193,7 @@ No authorization required
 
 ## rotatedSecretCreateRedshift
 
-> RotatedSecretCreateOutput rotatedSecretCreateRedshift(body)
+> RotatedSecretCreateOutput rotatedSecretCreateRedshift(rotatedSecretCreateRedshift)
 
 
 
@@ -17113,8 +17203,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateRedshift(); // RotatedSecretCreateRedshift | 
-apiInstance.rotatedSecretCreateRedshift(body).then((data) => {
+let rotatedSecretCreateRedshift = new akeyless.RotatedSecretCreateRedshift(); // RotatedSecretCreateRedshift | 
+apiInstance.rotatedSecretCreateRedshift(rotatedSecretCreateRedshift).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17127,7 +17217,7 @@ apiInstance.rotatedSecretCreateRedshift(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateRedshift**](RotatedSecretCreateRedshift.md)|  | 
+ **rotatedSecretCreateRedshift** | [**RotatedSecretCreateRedshift**](RotatedSecretCreateRedshift.md)|  | 
 
 ### Return type
 
@@ -17145,7 +17235,7 @@ No authorization required
 
 ## rotatedSecretCreateSnowflake
 
-> RotatedSecretCreateOutput rotatedSecretCreateSnowflake(body)
+> RotatedSecretCreateOutput rotatedSecretCreateSnowflake(rotatedSecretCreateSnowflake)
 
 
 
@@ -17155,8 +17245,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateSnowflake(); // RotatedSecretCreateSnowflake | 
-apiInstance.rotatedSecretCreateSnowflake(body).then((data) => {
+let rotatedSecretCreateSnowflake = new akeyless.RotatedSecretCreateSnowflake(); // RotatedSecretCreateSnowflake | 
+apiInstance.rotatedSecretCreateSnowflake(rotatedSecretCreateSnowflake).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17169,7 +17259,7 @@ apiInstance.rotatedSecretCreateSnowflake(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateSnowflake**](RotatedSecretCreateSnowflake.md)|  | 
+ **rotatedSecretCreateSnowflake** | [**RotatedSecretCreateSnowflake**](RotatedSecretCreateSnowflake.md)|  | 
 
 ### Return type
 
@@ -17187,7 +17277,7 @@ No authorization required
 
 ## rotatedSecretCreateSsh
 
-> RotatedSecretCreateOutput rotatedSecretCreateSsh(body)
+> RotatedSecretCreateOutput rotatedSecretCreateSsh(rotatedSecretCreateSsh)
 
 
 
@@ -17197,8 +17287,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateSsh(); // RotatedSecretCreateSsh | 
-apiInstance.rotatedSecretCreateSsh(body).then((data) => {
+let rotatedSecretCreateSsh = new akeyless.RotatedSecretCreateSsh(); // RotatedSecretCreateSsh | 
+apiInstance.rotatedSecretCreateSsh(rotatedSecretCreateSsh).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17211,7 +17301,7 @@ apiInstance.rotatedSecretCreateSsh(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateSsh**](RotatedSecretCreateSsh.md)|  | 
+ **rotatedSecretCreateSsh** | [**RotatedSecretCreateSsh**](RotatedSecretCreateSsh.md)|  | 
 
 ### Return type
 
@@ -17229,7 +17319,7 @@ No authorization required
 
 ## rotatedSecretCreateWindows
 
-> RotatedSecretCreateOutput rotatedSecretCreateWindows(body)
+> RotatedSecretCreateOutput rotatedSecretCreateWindows(rotatedSecretCreateWindows)
 
 
 
@@ -17239,8 +17329,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretCreateWindows(); // RotatedSecretCreateWindows | 
-apiInstance.rotatedSecretCreateWindows(body).then((data) => {
+let rotatedSecretCreateWindows = new akeyless.RotatedSecretCreateWindows(); // RotatedSecretCreateWindows | 
+apiInstance.rotatedSecretCreateWindows(rotatedSecretCreateWindows).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17253,7 +17343,7 @@ apiInstance.rotatedSecretCreateWindows(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretCreateWindows**](RotatedSecretCreateWindows.md)|  | 
+ **rotatedSecretCreateWindows** | [**RotatedSecretCreateWindows**](RotatedSecretCreateWindows.md)|  | 
 
 ### Return type
 
@@ -17269,9 +17359,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## rotatedSecretGetValue
+## rotatedSecretDelete
 
-> {String: Object} rotatedSecretGetValue(body)
+> DeleteItemOutput rotatedSecretDelete(rotatedSecretDelete)
 
 
 
@@ -17281,8 +17371,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretGetValue(); // RotatedSecretGetValue | 
-apiInstance.rotatedSecretGetValue(body).then((data) => {
+let rotatedSecretDelete = new akeyless.RotatedSecretDelete(); // RotatedSecretDelete | 
+apiInstance.rotatedSecretDelete(rotatedSecretDelete).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17295,7 +17385,91 @@ apiInstance.rotatedSecretGetValue(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretGetValue**](RotatedSecretGetValue.md)|  | 
+ **rotatedSecretDelete** | [**RotatedSecretDelete**](RotatedSecretDelete.md)|  | 
+
+### Return type
+
+[**DeleteItemOutput**](DeleteItemOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretDeleteSync
+
+> Object rotatedSecretDeleteSync(rotatedSecretDeleteSync)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretDeleteSync = new akeyless.RotatedSecretDeleteSync(); // RotatedSecretDeleteSync | 
+apiInstance.rotatedSecretDeleteSync(rotatedSecretDeleteSync).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretDeleteSync** | [**RotatedSecretDeleteSync**](RotatedSecretDeleteSync.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretGetValue
+
+> {String: Object} rotatedSecretGetValue(rotatedSecretGetValue)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretGetValue = new akeyless.RotatedSecretGetValue(); // RotatedSecretGetValue | 
+apiInstance.rotatedSecretGetValue(rotatedSecretGetValue).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretGetValue** | [**RotatedSecretGetValue**](RotatedSecretGetValue.md)|  | 
 
 ### Return type
 
@@ -17313,7 +17487,7 @@ No authorization required
 
 ## rotatedSecretList
 
-> GetProducersListReplyObj rotatedSecretList(body)
+> GetProducersListReplyObj rotatedSecretList(rotatedSecretList)
 
 
 
@@ -17323,8 +17497,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretList(); // RotatedSecretList | 
-apiInstance.rotatedSecretList(body).then((data) => {
+let rotatedSecretList = new akeyless.RotatedSecretList(); // RotatedSecretList | 
+apiInstance.rotatedSecretList(rotatedSecretList).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17337,7 +17511,7 @@ apiInstance.rotatedSecretList(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretList**](RotatedSecretList.md)|  | 
+ **rotatedSecretList** | [**RotatedSecretList**](RotatedSecretList.md)|  | 
 
 ### Return type
 
@@ -17353,9 +17527,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## rotatedSecretUpdateAws
+## rotatedSecretSync
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateAws(body)
+> Object rotatedSecretSync(rotatedSecretSync)
 
 
 
@@ -17365,8 +17539,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateAws(); // RotatedSecretUpdateAws | 
-apiInstance.rotatedSecretUpdateAws(body).then((data) => {
+let rotatedSecretSync = new akeyless.RotatedSecretSync(); // RotatedSecretSync | 
+apiInstance.rotatedSecretSync(rotatedSecretSync).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17379,7 +17553,49 @@ apiInstance.rotatedSecretUpdateAws(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateAws**](RotatedSecretUpdateAws.md)|  | 
+ **rotatedSecretSync** | [**RotatedSecretSync**](RotatedSecretSync.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateAws
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateAws(rotatedSecretUpdateAws)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretUpdateAws = new akeyless.RotatedSecretUpdateAws(); // RotatedSecretUpdateAws | 
+apiInstance.rotatedSecretUpdateAws(rotatedSecretUpdateAws).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretUpdateAws** | [**RotatedSecretUpdateAws**](RotatedSecretUpdateAws.md)|  | 
 
 ### Return type
 
@@ -17397,7 +17613,7 @@ No authorization required
 
 ## rotatedSecretUpdateAzure
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateAzure(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateAzure(rotatedSecretUpdateAzure)
 
 
 
@@ -17407,8 +17623,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateAzure(); // RotatedSecretUpdateAzure | 
-apiInstance.rotatedSecretUpdateAzure(body).then((data) => {
+let rotatedSecretUpdateAzure = new akeyless.RotatedSecretUpdateAzure(); // RotatedSecretUpdateAzure | 
+apiInstance.rotatedSecretUpdateAzure(rotatedSecretUpdateAzure).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17421,7 +17637,7 @@ apiInstance.rotatedSecretUpdateAzure(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateAzure**](RotatedSecretUpdateAzure.md)|  | 
+ **rotatedSecretUpdateAzure** | [**RotatedSecretUpdateAzure**](RotatedSecretUpdateAzure.md)|  | 
 
 ### Return type
 
@@ -17439,7 +17655,7 @@ No authorization required
 
 ## rotatedSecretUpdateCassandra
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateCassandra(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateCassandra(rotatedSecretUpdateCassandra)
 
 
 
@@ -17449,8 +17665,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateCassandra(); // RotatedSecretUpdateCassandra | 
-apiInstance.rotatedSecretUpdateCassandra(body).then((data) => {
+let rotatedSecretUpdateCassandra = new akeyless.RotatedSecretUpdateCassandra(); // RotatedSecretUpdateCassandra | 
+apiInstance.rotatedSecretUpdateCassandra(rotatedSecretUpdateCassandra).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17463,7 +17679,7 @@ apiInstance.rotatedSecretUpdateCassandra(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateCassandra**](RotatedSecretUpdateCassandra.md)|  | 
+ **rotatedSecretUpdateCassandra** | [**RotatedSecretUpdateCassandra**](RotatedSecretUpdateCassandra.md)|  | 
 
 ### Return type
 
@@ -17481,7 +17697,7 @@ No authorization required
 
 ## rotatedSecretUpdateCustom
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateCustom(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateCustom(rotatedSecretUpdateCustom)
 
 
 
@@ -17491,8 +17707,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateCustom(); // RotatedSecretUpdateCustom | 
-apiInstance.rotatedSecretUpdateCustom(body).then((data) => {
+let rotatedSecretUpdateCustom = new akeyless.RotatedSecretUpdateCustom(); // RotatedSecretUpdateCustom | 
+apiInstance.rotatedSecretUpdateCustom(rotatedSecretUpdateCustom).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17505,7 +17721,7 @@ apiInstance.rotatedSecretUpdateCustom(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateCustom**](RotatedSecretUpdateCustom.md)|  | 
+ **rotatedSecretUpdateCustom** | [**RotatedSecretUpdateCustom**](RotatedSecretUpdateCustom.md)|  | 
 
 ### Return type
 
@@ -17523,7 +17739,7 @@ No authorization required
 
 ## rotatedSecretUpdateDockerhub
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateDockerhub(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateDockerhub(rotatedSecretUpdateDockerhub)
 
 
 
@@ -17533,8 +17749,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateDockerhub(); // RotatedSecretUpdateDockerhub | 
-apiInstance.rotatedSecretUpdateDockerhub(body).then((data) => {
+let rotatedSecretUpdateDockerhub = new akeyless.RotatedSecretUpdateDockerhub(); // RotatedSecretUpdateDockerhub | 
+apiInstance.rotatedSecretUpdateDockerhub(rotatedSecretUpdateDockerhub).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17547,7 +17763,7 @@ apiInstance.rotatedSecretUpdateDockerhub(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateDockerhub**](RotatedSecretUpdateDockerhub.md)|  | 
+ **rotatedSecretUpdateDockerhub** | [**RotatedSecretUpdateDockerhub**](RotatedSecretUpdateDockerhub.md)|  | 
 
 ### Return type
 
@@ -17565,7 +17781,7 @@ No authorization required
 
 ## rotatedSecretUpdateGcp
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateGcp(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateGcp(rotatedSecretUpdateGcp)
 
 
 
@@ -17575,8 +17791,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateGcp(); // RotatedSecretUpdateGcp | 
-apiInstance.rotatedSecretUpdateGcp(body).then((data) => {
+let rotatedSecretUpdateGcp = new akeyless.RotatedSecretUpdateGcp(); // RotatedSecretUpdateGcp | 
+apiInstance.rotatedSecretUpdateGcp(rotatedSecretUpdateGcp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17589,7 +17805,7 @@ apiInstance.rotatedSecretUpdateGcp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateGcp**](RotatedSecretUpdateGcp.md)|  | 
+ **rotatedSecretUpdateGcp** | [**RotatedSecretUpdateGcp**](RotatedSecretUpdateGcp.md)|  | 
 
 ### Return type
 
@@ -17607,7 +17823,7 @@ No authorization required
 
 ## rotatedSecretUpdateHanadb
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateHanadb(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateHanadb(rotatedSecretUpdateHanadb)
 
 
 
@@ -17617,8 +17833,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateHanadb(); // RotatedSecretUpdateHanadb | 
-apiInstance.rotatedSecretUpdateHanadb(body).then((data) => {
+let rotatedSecretUpdateHanadb = new akeyless.RotatedSecretUpdateHanadb(); // RotatedSecretUpdateHanadb | 
+apiInstance.rotatedSecretUpdateHanadb(rotatedSecretUpdateHanadb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17631,7 +17847,7 @@ apiInstance.rotatedSecretUpdateHanadb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateHanadb**](RotatedSecretUpdateHanadb.md)|  | 
+ **rotatedSecretUpdateHanadb** | [**RotatedSecretUpdateHanadb**](RotatedSecretUpdateHanadb.md)|  | 
 
 ### Return type
 
@@ -17649,7 +17865,7 @@ No authorization required
 
 ## rotatedSecretUpdateLdap
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateLdap(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateLdap(rotatedSecretUpdateLdap)
 
 
 
@@ -17659,8 +17875,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateLdap(); // RotatedSecretUpdateLdap | 
-apiInstance.rotatedSecretUpdateLdap(body).then((data) => {
+let rotatedSecretUpdateLdap = new akeyless.RotatedSecretUpdateLdap(); // RotatedSecretUpdateLdap | 
+apiInstance.rotatedSecretUpdateLdap(rotatedSecretUpdateLdap).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17673,7 +17889,7 @@ apiInstance.rotatedSecretUpdateLdap(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateLdap**](RotatedSecretUpdateLdap.md)|  | 
+ **rotatedSecretUpdateLdap** | [**RotatedSecretUpdateLdap**](RotatedSecretUpdateLdap.md)|  | 
 
 ### Return type
 
@@ -17691,7 +17907,7 @@ No authorization required
 
 ## rotatedSecretUpdateMongodb
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateMongodb(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateMongodb(rotatedSecretUpdateMongodb)
 
 
 
@@ -17701,8 +17917,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateMongodb(); // RotatedSecretUpdateMongodb | 
-apiInstance.rotatedSecretUpdateMongodb(body).then((data) => {
+let rotatedSecretUpdateMongodb = new akeyless.RotatedSecretUpdateMongodb(); // RotatedSecretUpdateMongodb | 
+apiInstance.rotatedSecretUpdateMongodb(rotatedSecretUpdateMongodb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17715,7 +17931,7 @@ apiInstance.rotatedSecretUpdateMongodb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateMongodb**](RotatedSecretUpdateMongodb.md)|  | 
+ **rotatedSecretUpdateMongodb** | [**RotatedSecretUpdateMongodb**](RotatedSecretUpdateMongodb.md)|  | 
 
 ### Return type
 
@@ -17733,7 +17949,7 @@ No authorization required
 
 ## rotatedSecretUpdateMssql
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateMssql(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateMssql(rotatedSecretUpdateMssql)
 
 
 
@@ -17743,8 +17959,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateMssql(); // RotatedSecretUpdateMssql | 
-apiInstance.rotatedSecretUpdateMssql(body).then((data) => {
+let rotatedSecretUpdateMssql = new akeyless.RotatedSecretUpdateMssql(); // RotatedSecretUpdateMssql | 
+apiInstance.rotatedSecretUpdateMssql(rotatedSecretUpdateMssql).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17757,7 +17973,7 @@ apiInstance.rotatedSecretUpdateMssql(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateMssql**](RotatedSecretUpdateMssql.md)|  | 
+ **rotatedSecretUpdateMssql** | [**RotatedSecretUpdateMssql**](RotatedSecretUpdateMssql.md)|  | 
 
 ### Return type
 
@@ -17775,7 +17991,7 @@ No authorization required
 
 ## rotatedSecretUpdateMysql
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateMysql(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateMysql(rotatedSecretUpdateMysql)
 
 
 
@@ -17785,8 +18001,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateMysql(); // RotatedSecretUpdateMysql | 
-apiInstance.rotatedSecretUpdateMysql(body).then((data) => {
+let rotatedSecretUpdateMysql = new akeyless.RotatedSecretUpdateMysql(); // RotatedSecretUpdateMysql | 
+apiInstance.rotatedSecretUpdateMysql(rotatedSecretUpdateMysql).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17799,7 +18015,7 @@ apiInstance.rotatedSecretUpdateMysql(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateMysql**](RotatedSecretUpdateMysql.md)|  | 
+ **rotatedSecretUpdateMysql** | [**RotatedSecretUpdateMysql**](RotatedSecretUpdateMysql.md)|  | 
 
 ### Return type
 
@@ -17817,7 +18033,7 @@ No authorization required
 
 ## rotatedSecretUpdateOracledb
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateOracledb(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateOracledb(rotatedSecretUpdateOracledb)
 
 
 
@@ -17827,8 +18043,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateOracledb(); // RotatedSecretUpdateOracledb | 
-apiInstance.rotatedSecretUpdateOracledb(body).then((data) => {
+let rotatedSecretUpdateOracledb = new akeyless.RotatedSecretUpdateOracledb(); // RotatedSecretUpdateOracledb | 
+apiInstance.rotatedSecretUpdateOracledb(rotatedSecretUpdateOracledb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17841,7 +18057,7 @@ apiInstance.rotatedSecretUpdateOracledb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateOracledb**](RotatedSecretUpdateOracledb.md)|  | 
+ **rotatedSecretUpdateOracledb** | [**RotatedSecretUpdateOracledb**](RotatedSecretUpdateOracledb.md)|  | 
 
 ### Return type
 
@@ -17859,7 +18075,7 @@ No authorization required
 
 ## rotatedSecretUpdatePostgresql
 
-> RotatedSecretUpdateOutput rotatedSecretUpdatePostgresql(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdatePostgresql(rotatedSecretUpdatePostgresql)
 
 
 
@@ -17869,8 +18085,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdatePostgresql(); // RotatedSecretUpdatePostgresql | 
-apiInstance.rotatedSecretUpdatePostgresql(body).then((data) => {
+let rotatedSecretUpdatePostgresql = new akeyless.RotatedSecretUpdatePostgresql(); // RotatedSecretUpdatePostgresql | 
+apiInstance.rotatedSecretUpdatePostgresql(rotatedSecretUpdatePostgresql).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17883,7 +18099,7 @@ apiInstance.rotatedSecretUpdatePostgresql(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdatePostgresql**](RotatedSecretUpdatePostgresql.md)|  | 
+ **rotatedSecretUpdatePostgresql** | [**RotatedSecretUpdatePostgresql**](RotatedSecretUpdatePostgresql.md)|  | 
 
 ### Return type
 
@@ -17901,7 +18117,7 @@ No authorization required
 
 ## rotatedSecretUpdateRedis
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateRedis(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateRedis(rotatedSecretUpdateRedis)
 
 
 
@@ -17911,8 +18127,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateRedis(); // RotatedSecretUpdateRedis | 
-apiInstance.rotatedSecretUpdateRedis(body).then((data) => {
+let rotatedSecretUpdateRedis = new akeyless.RotatedSecretUpdateRedis(); // RotatedSecretUpdateRedis | 
+apiInstance.rotatedSecretUpdateRedis(rotatedSecretUpdateRedis).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17925,7 +18141,7 @@ apiInstance.rotatedSecretUpdateRedis(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateRedis**](RotatedSecretUpdateRedis.md)|  | 
+ **rotatedSecretUpdateRedis** | [**RotatedSecretUpdateRedis**](RotatedSecretUpdateRedis.md)|  | 
 
 ### Return type
 
@@ -17943,7 +18159,7 @@ No authorization required
 
 ## rotatedSecretUpdateRedshift
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateRedshift(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateRedshift(rotatedSecretUpdateRedshift)
 
 
 
@@ -17953,8 +18169,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateRedshift(); // RotatedSecretUpdateRedshift | 
-apiInstance.rotatedSecretUpdateRedshift(body).then((data) => {
+let rotatedSecretUpdateRedshift = new akeyless.RotatedSecretUpdateRedshift(); // RotatedSecretUpdateRedshift | 
+apiInstance.rotatedSecretUpdateRedshift(rotatedSecretUpdateRedshift).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -17967,7 +18183,7 @@ apiInstance.rotatedSecretUpdateRedshift(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateRedshift**](RotatedSecretUpdateRedshift.md)|  | 
+ **rotatedSecretUpdateRedshift** | [**RotatedSecretUpdateRedshift**](RotatedSecretUpdateRedshift.md)|  | 
 
 ### Return type
 
@@ -17985,7 +18201,7 @@ No authorization required
 
 ## rotatedSecretUpdateSnowflake
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateSnowflake(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateSnowflake(rotatedSecretUpdateSnowflake)
 
 
 
@@ -17995,8 +18211,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateSnowflake(); // RotatedSecretUpdateSnowflake | 
-apiInstance.rotatedSecretUpdateSnowflake(body).then((data) => {
+let rotatedSecretUpdateSnowflake = new akeyless.RotatedSecretUpdateSnowflake(); // RotatedSecretUpdateSnowflake | 
+apiInstance.rotatedSecretUpdateSnowflake(rotatedSecretUpdateSnowflake).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18009,7 +18225,7 @@ apiInstance.rotatedSecretUpdateSnowflake(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateSnowflake**](RotatedSecretUpdateSnowflake.md)|  | 
+ **rotatedSecretUpdateSnowflake** | [**RotatedSecretUpdateSnowflake**](RotatedSecretUpdateSnowflake.md)|  | 
 
 ### Return type
 
@@ -18027,7 +18243,7 @@ No authorization required
 
 ## rotatedSecretUpdateSsh
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateSsh(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateSsh(rotatedSecretUpdateSsh)
 
 
 
@@ -18037,8 +18253,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateSsh(); // RotatedSecretUpdateSsh | 
-apiInstance.rotatedSecretUpdateSsh(body).then((data) => {
+let rotatedSecretUpdateSsh = new akeyless.RotatedSecretUpdateSsh(); // RotatedSecretUpdateSsh | 
+apiInstance.rotatedSecretUpdateSsh(rotatedSecretUpdateSsh).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18051,7 +18267,7 @@ apiInstance.rotatedSecretUpdateSsh(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateSsh**](RotatedSecretUpdateSsh.md)|  | 
+ **rotatedSecretUpdateSsh** | [**RotatedSecretUpdateSsh**](RotatedSecretUpdateSsh.md)|  | 
 
 ### Return type
 
@@ -18069,7 +18285,7 @@ No authorization required
 
 ## rotatedSecretUpdateWindows
 
-> RotatedSecretUpdateOutput rotatedSecretUpdateWindows(body)
+> RotatedSecretUpdateOutput rotatedSecretUpdateWindows(rotatedSecretUpdateWindows)
 
 
 
@@ -18079,8 +18295,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.RotatedSecretUpdateWindows(); // RotatedSecretUpdateWindows | 
-apiInstance.rotatedSecretUpdateWindows(body).then((data) => {
+let rotatedSecretUpdateWindows = new akeyless.RotatedSecretUpdateWindows(); // RotatedSecretUpdateWindows | 
+apiInstance.rotatedSecretUpdateWindows(rotatedSecretUpdateWindows).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18093,7 +18309,7 @@ apiInstance.rotatedSecretUpdateWindows(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotatedSecretUpdateWindows**](RotatedSecretUpdateWindows.md)|  | 
+ **rotatedSecretUpdateWindows** | [**RotatedSecretUpdateWindows**](RotatedSecretUpdateWindows.md)|  | 
 
 ### Return type
 
@@ -18111,7 +18327,7 @@ No authorization required
 
 ## setItemState
 
-> Object setItemState(body)
+> Object setItemState(setItemState)
 
 
 
@@ -18121,8 +18337,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.SetItemState(); // SetItemState | 
-apiInstance.setItemState(body).then((data) => {
+let setItemState = new akeyless.SetItemState(); // SetItemState | 
+apiInstance.setItemState(setItemState).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18135,7 +18351,7 @@ apiInstance.setItemState(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SetItemState**](SetItemState.md)|  | 
+ **setItemState** | [**SetItemState**](SetItemState.md)|  | 
 
 ### Return type
 
@@ -18153,7 +18369,7 @@ No authorization required
 
 ## setRoleRule
 
-> Object setRoleRule(body)
+> Object setRoleRule(setRoleRule)
 
 
 
@@ -18163,8 +18379,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.SetRoleRule(); // SetRoleRule | 
-apiInstance.setRoleRule(body).then((data) => {
+let setRoleRule = new akeyless.SetRoleRule(); // SetRoleRule | 
+apiInstance.setRoleRule(setRoleRule).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18177,7 +18393,7 @@ apiInstance.setRoleRule(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SetRoleRule**](SetRoleRule.md)|  | 
+ **setRoleRule** | [**SetRoleRule**](SetRoleRule.md)|  | 
 
 ### Return type
 
@@ -18195,7 +18411,7 @@ No authorization required
 
 ## shareItem
 
-> shareItem(body)
+> ShareItemOutput shareItem(shareItem)
 
 
 
@@ -18205,9 +18421,9 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ShareItem(); // ShareItem | 
-apiInstance.shareItem(body).then(() => {
-  console.log('API called successfully.');
+let shareItem = new akeyless.ShareItem(); // ShareItem | 
+apiInstance.shareItem(shareItem).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -18219,11 +18435,11 @@ apiInstance.shareItem(body).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ShareItem**](ShareItem.md)|  | 
+ **shareItem** | [**ShareItem**](ShareItem.md)|  | 
 
 ### Return type
 
-null (empty response body)
+[**ShareItemOutput**](ShareItemOutput.md)
 
 ### Authorization
 
@@ -18237,7 +18453,7 @@ No authorization required
 
 ## signDataWithClassicKey
 
-> SignOutput signDataWithClassicKey(body)
+> SignOutput signDataWithClassicKey(signDataWithClassicKey)
 
 
 
@@ -18247,8 +18463,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.SignDataWithClassicKey(); // SignDataWithClassicKey | 
-apiInstance.signDataWithClassicKey(body).then((data) => {
+let signDataWithClassicKey = new akeyless.SignDataWithClassicKey(); // SignDataWithClassicKey | 
+apiInstance.signDataWithClassicKey(signDataWithClassicKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18261,7 +18477,7 @@ apiInstance.signDataWithClassicKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SignDataWithClassicKey**](SignDataWithClassicKey.md)|  | 
+ **signDataWithClassicKey** | [**SignDataWithClassicKey**](SignDataWithClassicKey.md)|  | 
 
 ### Return type
 
@@ -18279,7 +18495,7 @@ No authorization required
 
 ## signEcDsa
 
-> SignEcDsaOutput signEcDsa(body)
+> SignEcDsaOutput signEcDsa(signEcDsa)
 
 
 
@@ -18289,8 +18505,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.SignEcDsa(); // SignEcDsa | 
-apiInstance.signEcDsa(body).then((data) => {
+let signEcDsa = new akeyless.SignEcDsa(); // SignEcDsa | 
+apiInstance.signEcDsa(signEcDsa).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18303,7 +18519,7 @@ apiInstance.signEcDsa(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SignEcDsa**](SignEcDsa.md)|  | 
+ **signEcDsa** | [**SignEcDsa**](SignEcDsa.md)|  | 
 
 ### Return type
 
@@ -18321,7 +18537,7 @@ No authorization required
 
 ## signGPG
 
-> SignGPGOutput signGPG(body)
+> SignGPGOutput signGPG(signGPG)
 
 
 
@@ -18331,8 +18547,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.SignGPG(); // SignGPG | 
-apiInstance.signGPG(body).then((data) => {
+let signGPG = new akeyless.SignGPG(); // SignGPG | 
+apiInstance.signGPG(signGPG).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18345,7 +18561,7 @@ apiInstance.signGPG(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SignGPG**](SignGPG.md)|  | 
+ **signGPG** | [**SignGPG**](SignGPG.md)|  | 
 
 ### Return type
 
@@ -18363,7 +18579,7 @@ No authorization required
 
 ## signJWTWithClassicKey
 
-> SignJWTOutput signJWTWithClassicKey(body)
+> SignJWTOutput signJWTWithClassicKey(signJWTWithClassicKey)
 
 
 
@@ -18373,8 +18589,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.SignJWTWithClassicKey(); // SignJWTWithClassicKey | 
-apiInstance.signJWTWithClassicKey(body).then((data) => {
+let signJWTWithClassicKey = new akeyless.SignJWTWithClassicKey(); // SignJWTWithClassicKey | 
+apiInstance.signJWTWithClassicKey(signJWTWithClassicKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18387,7 +18603,7 @@ apiInstance.signJWTWithClassicKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SignJWTWithClassicKey**](SignJWTWithClassicKey.md)|  | 
+ **signJWTWithClassicKey** | [**SignJWTWithClassicKey**](SignJWTWithClassicKey.md)|  | 
 
 ### Return type
 
@@ -18405,7 +18621,7 @@ No authorization required
 
 ## signPKCS1
 
-> SignPKCS1Output signPKCS1(body)
+> SignPKCS1Output signPKCS1(signPKCS1)
 
 
 
@@ -18415,8 +18631,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.SignPKCS1(); // SignPKCS1 | 
-apiInstance.signPKCS1(body).then((data) => {
+let signPKCS1 = new akeyless.SignPKCS1(); // SignPKCS1 | 
+apiInstance.signPKCS1(signPKCS1).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18429,7 +18645,7 @@ apiInstance.signPKCS1(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SignPKCS1**](SignPKCS1.md)|  | 
+ **signPKCS1** | [**SignPKCS1**](SignPKCS1.md)|  | 
 
 ### Return type
 
@@ -18447,7 +18663,7 @@ No authorization required
 
 ## signPKICertWithClassicKey
 
-> SignPKICertOutput signPKICertWithClassicKey(body)
+> SignPKICertOutput signPKICertWithClassicKey(signPKICertWithClassicKey)
 
 
 
@@ -18457,8 +18673,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.SignPKICertWithClassicKey(); // SignPKICertWithClassicKey | 
-apiInstance.signPKICertWithClassicKey(body).then((data) => {
+let signPKICertWithClassicKey = new akeyless.SignPKICertWithClassicKey(); // SignPKICertWithClassicKey | 
+apiInstance.signPKICertWithClassicKey(signPKICertWithClassicKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18471,7 +18687,7 @@ apiInstance.signPKICertWithClassicKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SignPKICertWithClassicKey**](SignPKICertWithClassicKey.md)|  | 
+ **signPKICertWithClassicKey** | [**SignPKICertWithClassicKey**](SignPKICertWithClassicKey.md)|  | 
 
 ### Return type
 
@@ -18489,7 +18705,7 @@ No authorization required
 
 ## signRsaSsaPss
 
-> SignRsaSsaPssOutput signRsaSsaPss(body)
+> SignRsaSsaPssOutput signRsaSsaPss(signRsaSsaPss)
 
 
 
@@ -18499,8 +18715,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.SignRsaSsaPss(); // SignRsaSsaPss | 
-apiInstance.signRsaSsaPss(body).then((data) => {
+let signRsaSsaPss = new akeyless.SignRsaSsaPss(); // SignRsaSsaPss | 
+apiInstance.signRsaSsaPss(signRsaSsaPss).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18513,7 +18729,7 @@ apiInstance.signRsaSsaPss(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SignRsaSsaPss**](SignRsaSsaPss.md)|  | 
+ **signRsaSsaPss** | [**SignRsaSsaPss**](SignRsaSsaPss.md)|  | 
 
 ### Return type
 
@@ -18531,7 +18747,7 @@ No authorization required
 
 ## staticCredsAuth
 
-> StaticCredsAuthOutput staticCredsAuth(body)
+> StaticCredsAuthOutput staticCredsAuth(staticCredsAuth)
 
 
 
@@ -18541,8 +18757,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.StaticCredsAuth(); // StaticCredsAuth | 
-apiInstance.staticCredsAuth(body).then((data) => {
+let staticCredsAuth = new akeyless.StaticCredsAuth(); // StaticCredsAuth | 
+apiInstance.staticCredsAuth(staticCredsAuth).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18555,7 +18771,7 @@ apiInstance.staticCredsAuth(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**StaticCredsAuth**](StaticCredsAuth.md)|  | 
+ **staticCredsAuth** | [**StaticCredsAuth**](StaticCredsAuth.md)|  | 
 
 ### Return type
 
@@ -18573,7 +18789,7 @@ No authorization required
 
 ## targetCreateArtifactory
 
-> TargetCreateOutput targetCreateArtifactory(body)
+> TargetCreateOutput targetCreateArtifactory(targetCreateArtifactory)
 
 
 
@@ -18583,8 +18799,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateArtifactory(); // TargetCreateArtifactory | 
-apiInstance.targetCreateArtifactory(body).then((data) => {
+let targetCreateArtifactory = new akeyless.TargetCreateArtifactory(); // TargetCreateArtifactory | 
+apiInstance.targetCreateArtifactory(targetCreateArtifactory).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18597,7 +18813,7 @@ apiInstance.targetCreateArtifactory(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateArtifactory**](TargetCreateArtifactory.md)|  | 
+ **targetCreateArtifactory** | [**TargetCreateArtifactory**](TargetCreateArtifactory.md)|  | 
 
 ### Return type
 
@@ -18615,7 +18831,7 @@ No authorization required
 
 ## targetCreateAws
 
-> TargetCreateOutput targetCreateAws(body)
+> TargetCreateOutput targetCreateAws(targetCreateAws)
 
 
 
@@ -18625,8 +18841,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateAws(); // TargetCreateAws | 
-apiInstance.targetCreateAws(body).then((data) => {
+let targetCreateAws = new akeyless.TargetCreateAws(); // TargetCreateAws | 
+apiInstance.targetCreateAws(targetCreateAws).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18639,7 +18855,7 @@ apiInstance.targetCreateAws(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateAws**](TargetCreateAws.md)|  | 
+ **targetCreateAws** | [**TargetCreateAws**](TargetCreateAws.md)|  | 
 
 ### Return type
 
@@ -18657,7 +18873,7 @@ No authorization required
 
 ## targetCreateAzure
 
-> TargetCreateOutput targetCreateAzure(body)
+> TargetCreateOutput targetCreateAzure(targetCreateAzure)
 
 
 
@@ -18667,8 +18883,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateAzure(); // TargetCreateAzure | 
-apiInstance.targetCreateAzure(body).then((data) => {
+let targetCreateAzure = new akeyless.TargetCreateAzure(); // TargetCreateAzure | 
+apiInstance.targetCreateAzure(targetCreateAzure).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18681,7 +18897,7 @@ apiInstance.targetCreateAzure(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateAzure**](TargetCreateAzure.md)|  | 
+ **targetCreateAzure** | [**TargetCreateAzure**](TargetCreateAzure.md)|  | 
 
 ### Return type
 
@@ -18699,7 +18915,7 @@ No authorization required
 
 ## targetCreateDB
 
-> TargetCreateOutput targetCreateDB(body)
+> TargetCreateOutput targetCreateDB(targetCreateDB)
 
 
 
@@ -18709,8 +18925,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateDB(); // TargetCreateDB | 
-apiInstance.targetCreateDB(body).then((data) => {
+let targetCreateDB = new akeyless.TargetCreateDB(); // TargetCreateDB | 
+apiInstance.targetCreateDB(targetCreateDB).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18723,7 +18939,7 @@ apiInstance.targetCreateDB(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateDB**](TargetCreateDB.md)|  | 
+ **targetCreateDB** | [**TargetCreateDB**](TargetCreateDB.md)|  | 
 
 ### Return type
 
@@ -18741,7 +18957,7 @@ No authorization required
 
 ## targetCreateDockerhub
 
-> TargetCreateOutput targetCreateDockerhub(body)
+> TargetCreateOutput targetCreateDockerhub(targetCreateDockerhub)
 
 
 
@@ -18751,8 +18967,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateDockerhub(); // TargetCreateDockerhub | 
-apiInstance.targetCreateDockerhub(body).then((data) => {
+let targetCreateDockerhub = new akeyless.TargetCreateDockerhub(); // TargetCreateDockerhub | 
+apiInstance.targetCreateDockerhub(targetCreateDockerhub).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18765,7 +18981,7 @@ apiInstance.targetCreateDockerhub(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateDockerhub**](TargetCreateDockerhub.md)|  | 
+ **targetCreateDockerhub** | [**TargetCreateDockerhub**](TargetCreateDockerhub.md)|  | 
 
 ### Return type
 
@@ -18783,7 +18999,7 @@ No authorization required
 
 ## targetCreateEks
 
-> TargetCreateOutput targetCreateEks(body)
+> TargetCreateOutput targetCreateEks(targetCreateEks)
 
 
 
@@ -18793,8 +19009,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateEks(); // TargetCreateEks | 
-apiInstance.targetCreateEks(body).then((data) => {
+let targetCreateEks = new akeyless.TargetCreateEks(); // TargetCreateEks | 
+apiInstance.targetCreateEks(targetCreateEks).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18807,7 +19023,7 @@ apiInstance.targetCreateEks(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateEks**](TargetCreateEks.md)|  | 
+ **targetCreateEks** | [**TargetCreateEks**](TargetCreateEks.md)|  | 
 
 ### Return type
 
@@ -18825,7 +19041,7 @@ No authorization required
 
 ## targetCreateGcp
 
-> TargetCreateOutput targetCreateGcp(body)
+> TargetCreateOutput targetCreateGcp(targetCreateGcp)
 
 
 
@@ -18835,8 +19051,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateGcp(); // TargetCreateGcp | 
-apiInstance.targetCreateGcp(body).then((data) => {
+let targetCreateGcp = new akeyless.TargetCreateGcp(); // TargetCreateGcp | 
+apiInstance.targetCreateGcp(targetCreateGcp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18849,7 +19065,7 @@ apiInstance.targetCreateGcp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateGcp**](TargetCreateGcp.md)|  | 
+ **targetCreateGcp** | [**TargetCreateGcp**](TargetCreateGcp.md)|  | 
 
 ### Return type
 
@@ -18867,7 +19083,7 @@ No authorization required
 
 ## targetCreateGithub
 
-> TargetCreateOutput targetCreateGithub(body)
+> TargetCreateOutput targetCreateGithub(targetCreateGithub)
 
 
 
@@ -18877,8 +19093,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateGithub(); // TargetCreateGithub | 
-apiInstance.targetCreateGithub(body).then((data) => {
+let targetCreateGithub = new akeyless.TargetCreateGithub(); // TargetCreateGithub | 
+apiInstance.targetCreateGithub(targetCreateGithub).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18891,7 +19107,7 @@ apiInstance.targetCreateGithub(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateGithub**](TargetCreateGithub.md)|  | 
+ **targetCreateGithub** | [**TargetCreateGithub**](TargetCreateGithub.md)|  | 
 
 ### Return type
 
@@ -18909,7 +19125,7 @@ No authorization required
 
 ## targetCreateGitlab
 
-> TargetCreateOutput targetCreateGitlab(body)
+> TargetCreateOutput targetCreateGitlab(targetCreateGitlab)
 
 
 
@@ -18919,8 +19135,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateGitlab(); // TargetCreateGitlab | 
-apiInstance.targetCreateGitlab(body).then((data) => {
+let targetCreateGitlab = new akeyless.TargetCreateGitlab(); // TargetCreateGitlab | 
+apiInstance.targetCreateGitlab(targetCreateGitlab).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18933,7 +19149,7 @@ apiInstance.targetCreateGitlab(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateGitlab**](TargetCreateGitlab.md)|  | 
+ **targetCreateGitlab** | [**TargetCreateGitlab**](TargetCreateGitlab.md)|  | 
 
 ### Return type
 
@@ -18951,7 +19167,7 @@ No authorization required
 
 ## targetCreateGke
 
-> TargetCreateOutput targetCreateGke(body)
+> TargetCreateOutput targetCreateGke(targetCreateGke)
 
 
 
@@ -18961,8 +19177,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateGke(); // TargetCreateGke | 
-apiInstance.targetCreateGke(body).then((data) => {
+let targetCreateGke = new akeyless.TargetCreateGke(); // TargetCreateGke | 
+apiInstance.targetCreateGke(targetCreateGke).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -18975,7 +19191,7 @@ apiInstance.targetCreateGke(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateGke**](TargetCreateGke.md)|  | 
+ **targetCreateGke** | [**TargetCreateGke**](TargetCreateGke.md)|  | 
 
 ### Return type
 
@@ -18993,7 +19209,7 @@ No authorization required
 
 ## targetCreateGlobalSign
 
-> TargetCreateOutput targetCreateGlobalSign(body)
+> TargetCreateOutput targetCreateGlobalSign(targetCreateGlobalSign)
 
 
 
@@ -19003,8 +19219,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateGlobalSign(); // TargetCreateGlobalSign | 
-apiInstance.targetCreateGlobalSign(body).then((data) => {
+let targetCreateGlobalSign = new akeyless.TargetCreateGlobalSign(); // TargetCreateGlobalSign | 
+apiInstance.targetCreateGlobalSign(targetCreateGlobalSign).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19017,7 +19233,7 @@ apiInstance.targetCreateGlobalSign(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateGlobalSign**](TargetCreateGlobalSign.md)|  | 
+ **targetCreateGlobalSign** | [**TargetCreateGlobalSign**](TargetCreateGlobalSign.md)|  | 
 
 ### Return type
 
@@ -19035,7 +19251,7 @@ No authorization required
 
 ## targetCreateGlobalSignAtlas
 
-> TargetCreateOutput targetCreateGlobalSignAtlas(body)
+> TargetCreateOutput targetCreateGlobalSignAtlas(targetCreateGlobalSignAtlas)
 
 
 
@@ -19045,8 +19261,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateGlobalSignAtlas(); // TargetCreateGlobalSignAtlas | 
-apiInstance.targetCreateGlobalSignAtlas(body).then((data) => {
+let targetCreateGlobalSignAtlas = new akeyless.TargetCreateGlobalSignAtlas(); // TargetCreateGlobalSignAtlas | 
+apiInstance.targetCreateGlobalSignAtlas(targetCreateGlobalSignAtlas).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19059,7 +19275,7 @@ apiInstance.targetCreateGlobalSignAtlas(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateGlobalSignAtlas**](TargetCreateGlobalSignAtlas.md)|  | 
+ **targetCreateGlobalSignAtlas** | [**TargetCreateGlobalSignAtlas**](TargetCreateGlobalSignAtlas.md)|  | 
 
 ### Return type
 
@@ -19077,7 +19293,7 @@ No authorization required
 
 ## targetCreateGodaddy
 
-> TargetCreateOutput targetCreateGodaddy(body)
+> TargetCreateOutput targetCreateGodaddy(targetCreateGodaddy)
 
 
 
@@ -19087,8 +19303,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateGodaddy(); // TargetCreateGodaddy | 
-apiInstance.targetCreateGodaddy(body).then((data) => {
+let targetCreateGodaddy = new akeyless.TargetCreateGodaddy(); // TargetCreateGodaddy | 
+apiInstance.targetCreateGodaddy(targetCreateGodaddy).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19101,7 +19317,7 @@ apiInstance.targetCreateGodaddy(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateGodaddy**](TargetCreateGodaddy.md)|  | 
+ **targetCreateGodaddy** | [**TargetCreateGodaddy**](TargetCreateGodaddy.md)|  | 
 
 ### Return type
 
@@ -19119,7 +19335,7 @@ No authorization required
 
 ## targetCreateHashiVault
 
-> TargetCreateOutput targetCreateHashiVault(body)
+> TargetCreateOutput targetCreateHashiVault(targetCreateHashiVault)
 
 
 
@@ -19129,8 +19345,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateHashiVault(); // TargetCreateHashiVault | 
-apiInstance.targetCreateHashiVault(body).then((data) => {
+let targetCreateHashiVault = new akeyless.TargetCreateHashiVault(); // TargetCreateHashiVault | 
+apiInstance.targetCreateHashiVault(targetCreateHashiVault).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19143,7 +19359,7 @@ apiInstance.targetCreateHashiVault(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateHashiVault**](TargetCreateHashiVault.md)|  | 
+ **targetCreateHashiVault** | [**TargetCreateHashiVault**](TargetCreateHashiVault.md)|  | 
 
 ### Return type
 
@@ -19161,7 +19377,7 @@ No authorization required
 
 ## targetCreateK8s
 
-> TargetCreateOutput targetCreateK8s(body)
+> TargetCreateOutput targetCreateK8s(targetCreateK8s)
 
 
 
@@ -19171,8 +19387,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateK8s(); // TargetCreateK8s | 
-apiInstance.targetCreateK8s(body).then((data) => {
+let targetCreateK8s = new akeyless.TargetCreateK8s(); // TargetCreateK8s | 
+apiInstance.targetCreateK8s(targetCreateK8s).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19185,7 +19401,7 @@ apiInstance.targetCreateK8s(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateK8s**](TargetCreateK8s.md)|  | 
+ **targetCreateK8s** | [**TargetCreateK8s**](TargetCreateK8s.md)|  | 
 
 ### Return type
 
@@ -19203,7 +19419,7 @@ No authorization required
 
 ## targetCreateLdap
 
-> TargetCreateOutput targetCreateLdap(body)
+> TargetCreateOutput targetCreateLdap(targetCreateLdap)
 
 
 
@@ -19213,8 +19429,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateLdap(); // TargetCreateLdap | 
-apiInstance.targetCreateLdap(body).then((data) => {
+let targetCreateLdap = new akeyless.TargetCreateLdap(); // TargetCreateLdap | 
+apiInstance.targetCreateLdap(targetCreateLdap).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19227,7 +19443,7 @@ apiInstance.targetCreateLdap(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateLdap**](TargetCreateLdap.md)|  | 
+ **targetCreateLdap** | [**TargetCreateLdap**](TargetCreateLdap.md)|  | 
 
 ### Return type
 
@@ -19245,7 +19461,7 @@ No authorization required
 
 ## targetCreateLinked
 
-> TargetCreateOutput targetCreateLinked(body)
+> TargetCreateOutput targetCreateLinked(targetCreateLinked)
 
 
 
@@ -19255,8 +19471,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateLinked(); // TargetCreateLinked | 
-apiInstance.targetCreateLinked(body).then((data) => {
+let targetCreateLinked = new akeyless.TargetCreateLinked(); // TargetCreateLinked | 
+apiInstance.targetCreateLinked(targetCreateLinked).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19269,7 +19485,7 @@ apiInstance.targetCreateLinked(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateLinked**](TargetCreateLinked.md)|  | 
+ **targetCreateLinked** | [**TargetCreateLinked**](TargetCreateLinked.md)|  | 
 
 ### Return type
 
@@ -19287,7 +19503,7 @@ No authorization required
 
 ## targetCreatePing
 
-> TargetCreateOutput targetCreatePing(body)
+> TargetCreateOutput targetCreatePing(targetCreatePing)
 
 
 
@@ -19297,8 +19513,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreatePing(); // TargetCreatePing | 
-apiInstance.targetCreatePing(body).then((data) => {
+let targetCreatePing = new akeyless.TargetCreatePing(); // TargetCreatePing | 
+apiInstance.targetCreatePing(targetCreatePing).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19311,7 +19527,7 @@ apiInstance.targetCreatePing(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreatePing**](TargetCreatePing.md)|  | 
+ **targetCreatePing** | [**TargetCreatePing**](TargetCreatePing.md)|  | 
 
 ### Return type
 
@@ -19329,7 +19545,7 @@ No authorization required
 
 ## targetCreateRabbitMq
 
-> TargetCreateOutput targetCreateRabbitMq(body)
+> TargetCreateOutput targetCreateRabbitMq(targetCreateRabbitMq)
 
 
 
@@ -19339,8 +19555,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateRabbitMq(); // TargetCreateRabbitMq | 
-apiInstance.targetCreateRabbitMq(body).then((data) => {
+let targetCreateRabbitMq = new akeyless.TargetCreateRabbitMq(); // TargetCreateRabbitMq | 
+apiInstance.targetCreateRabbitMq(targetCreateRabbitMq).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19353,7 +19569,7 @@ apiInstance.targetCreateRabbitMq(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateRabbitMq**](TargetCreateRabbitMq.md)|  | 
+ **targetCreateRabbitMq** | [**TargetCreateRabbitMq**](TargetCreateRabbitMq.md)|  | 
 
 ### Return type
 
@@ -19371,7 +19587,7 @@ No authorization required
 
 ## targetCreateSalesforce
 
-> TargetCreateOutput targetCreateSalesforce(body)
+> TargetCreateOutput targetCreateSalesforce(targetCreateSalesforce)
 
 
 
@@ -19381,8 +19597,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateSalesforce(); // TargetCreateSalesforce | 
-apiInstance.targetCreateSalesforce(body).then((data) => {
+let targetCreateSalesforce = new akeyless.TargetCreateSalesforce(); // TargetCreateSalesforce | 
+apiInstance.targetCreateSalesforce(targetCreateSalesforce).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19395,7 +19611,7 @@ apiInstance.targetCreateSalesforce(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateSalesforce**](TargetCreateSalesforce.md)|  | 
+ **targetCreateSalesforce** | [**TargetCreateSalesforce**](TargetCreateSalesforce.md)|  | 
 
 ### Return type
 
@@ -19413,7 +19629,7 @@ No authorization required
 
 ## targetCreateSectigo
 
-> TargetCreateOutput targetCreateSectigo(body)
+> TargetCreateOutput targetCreateSectigo(targetCreateSectigo)
 
 
 
@@ -19423,8 +19639,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateSectigo(); // TargetCreateSectigo | 
-apiInstance.targetCreateSectigo(body).then((data) => {
+let targetCreateSectigo = new akeyless.TargetCreateSectigo(); // TargetCreateSectigo | 
+apiInstance.targetCreateSectigo(targetCreateSectigo).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19437,7 +19653,7 @@ apiInstance.targetCreateSectigo(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateSectigo**](TargetCreateSectigo.md)|  | 
+ **targetCreateSectigo** | [**TargetCreateSectigo**](TargetCreateSectigo.md)|  | 
 
 ### Return type
 
@@ -19455,7 +19671,7 @@ No authorization required
 
 ## targetCreateSsh
 
-> TargetCreateOutput targetCreateSsh(body)
+> TargetCreateOutput targetCreateSsh(targetCreateSsh)
 
 
 
@@ -19465,8 +19681,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateSsh(); // TargetCreateSsh | 
-apiInstance.targetCreateSsh(body).then((data) => {
+let targetCreateSsh = new akeyless.TargetCreateSsh(); // TargetCreateSsh | 
+apiInstance.targetCreateSsh(targetCreateSsh).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19479,7 +19695,7 @@ apiInstance.targetCreateSsh(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateSsh**](TargetCreateSsh.md)|  | 
+ **targetCreateSsh** | [**TargetCreateSsh**](TargetCreateSsh.md)|  | 
 
 ### Return type
 
@@ -19497,7 +19713,7 @@ No authorization required
 
 ## targetCreateWeb
 
-> TargetCreateOutput targetCreateWeb(body)
+> TargetCreateOutput targetCreateWeb(targetCreateWeb)
 
 
 
@@ -19507,8 +19723,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateWeb(); // TargetCreateWeb | 
-apiInstance.targetCreateWeb(body).then((data) => {
+let targetCreateWeb = new akeyless.TargetCreateWeb(); // TargetCreateWeb | 
+apiInstance.targetCreateWeb(targetCreateWeb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19521,7 +19737,7 @@ apiInstance.targetCreateWeb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateWeb**](TargetCreateWeb.md)|  | 
+ **targetCreateWeb** | [**TargetCreateWeb**](TargetCreateWeb.md)|  | 
 
 ### Return type
 
@@ -19539,7 +19755,7 @@ No authorization required
 
 ## targetCreateWindows
 
-> TargetCreateOutput targetCreateWindows(body)
+> TargetCreateOutput targetCreateWindows(targetCreateWindows)
 
 
 
@@ -19549,8 +19765,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateWindows(); // TargetCreateWindows | 
-apiInstance.targetCreateWindows(body).then((data) => {
+let targetCreateWindows = new akeyless.TargetCreateWindows(); // TargetCreateWindows | 
+apiInstance.targetCreateWindows(targetCreateWindows).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19563,7 +19779,7 @@ apiInstance.targetCreateWindows(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateWindows**](TargetCreateWindows.md)|  | 
+ **targetCreateWindows** | [**TargetCreateWindows**](TargetCreateWindows.md)|  | 
 
 ### Return type
 
@@ -19581,7 +19797,7 @@ No authorization required
 
 ## targetCreateZeroSSL
 
-> TargetCreateOutput targetCreateZeroSSL(body)
+> TargetCreateOutput targetCreateZeroSSL(targetCreateZeroSSL)
 
 
 
@@ -19591,8 +19807,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetCreateZeroSSL(); // TargetCreateZeroSSL | 
-apiInstance.targetCreateZeroSSL(body).then((data) => {
+let targetCreateZeroSSL = new akeyless.TargetCreateZeroSSL(); // TargetCreateZeroSSL | 
+apiInstance.targetCreateZeroSSL(targetCreateZeroSSL).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19605,7 +19821,7 @@ apiInstance.targetCreateZeroSSL(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetCreateZeroSSL**](TargetCreateZeroSSL.md)|  | 
+ **targetCreateZeroSSL** | [**TargetCreateZeroSSL**](TargetCreateZeroSSL.md)|  | 
 
 ### Return type
 
@@ -19623,7 +19839,7 @@ No authorization required
 
 ## targetDelete
 
-> Object targetDelete(body)
+> Object targetDelete(targetDelete)
 
 
 
@@ -19633,8 +19849,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetDelete(); // TargetDelete | 
-apiInstance.targetDelete(body).then((data) => {
+let targetDelete = new akeyless.TargetDelete(); // TargetDelete | 
+apiInstance.targetDelete(targetDelete).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19647,7 +19863,7 @@ apiInstance.targetDelete(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetDelete**](TargetDelete.md)|  | 
+ **targetDelete** | [**TargetDelete**](TargetDelete.md)|  | 
 
 ### Return type
 
@@ -19665,7 +19881,7 @@ No authorization required
 
 ## targetGet
 
-> Target targetGet(body)
+> Target targetGet(targetGet)
 
 
 
@@ -19675,8 +19891,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetGet(); // TargetGet | 
-apiInstance.targetGet(body).then((data) => {
+let targetGet = new akeyless.TargetGet(); // TargetGet | 
+apiInstance.targetGet(targetGet).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19689,7 +19905,7 @@ apiInstance.targetGet(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetGet**](TargetGet.md)|  | 
+ **targetGet** | [**TargetGet**](TargetGet.md)|  | 
 
 ### Return type
 
@@ -19707,7 +19923,7 @@ No authorization required
 
 ## targetGetDetails
 
-> GetTargetDetailsOutput targetGetDetails(body)
+> GetTargetDetailsOutput targetGetDetails(targetGetDetails)
 
 
 
@@ -19717,8 +19933,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetGetDetails(); // TargetGetDetails | 
-apiInstance.targetGetDetails(body).then((data) => {
+let targetGetDetails = new akeyless.TargetGetDetails(); // TargetGetDetails | 
+apiInstance.targetGetDetails(targetGetDetails).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19731,7 +19947,7 @@ apiInstance.targetGetDetails(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetGetDetails**](TargetGetDetails.md)|  | 
+ **targetGetDetails** | [**TargetGetDetails**](TargetGetDetails.md)|  | 
 
 ### Return type
 
@@ -19749,7 +19965,7 @@ No authorization required
 
 ## targetList
 
-> ListTargetsOutput targetList(body)
+> ListTargetsOutput targetList(targetList)
 
 
 
@@ -19759,8 +19975,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetList(); // TargetList | 
-apiInstance.targetList(body).then((data) => {
+let targetList = new akeyless.TargetList(); // TargetList | 
+apiInstance.targetList(targetList).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19773,7 +19989,7 @@ apiInstance.targetList(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetList**](TargetList.md)|  | 
+ **targetList** | [**TargetList**](TargetList.md)|  | 
 
 ### Return type
 
@@ -19791,7 +20007,7 @@ No authorization required
 
 ## targetUpdateArtifactory
 
-> TargetUpdateOutput targetUpdateArtifactory(body)
+> TargetUpdateOutput targetUpdateArtifactory(targetUpdateArtifactory)
 
 
 
@@ -19801,8 +20017,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateArtifactory(); // TargetUpdateArtifactory | 
-apiInstance.targetUpdateArtifactory(body).then((data) => {
+let targetUpdateArtifactory = new akeyless.TargetUpdateArtifactory(); // TargetUpdateArtifactory | 
+apiInstance.targetUpdateArtifactory(targetUpdateArtifactory).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19815,7 +20031,7 @@ apiInstance.targetUpdateArtifactory(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateArtifactory**](TargetUpdateArtifactory.md)|  | 
+ **targetUpdateArtifactory** | [**TargetUpdateArtifactory**](TargetUpdateArtifactory.md)|  | 
 
 ### Return type
 
@@ -19833,7 +20049,7 @@ No authorization required
 
 ## targetUpdateAws
 
-> TargetUpdateOutput targetUpdateAws(body)
+> TargetUpdateOutput targetUpdateAws(targetUpdateAws)
 
 
 
@@ -19843,8 +20059,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateAws(); // TargetUpdateAws | 
-apiInstance.targetUpdateAws(body).then((data) => {
+let targetUpdateAws = new akeyless.TargetUpdateAws(); // TargetUpdateAws | 
+apiInstance.targetUpdateAws(targetUpdateAws).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19857,7 +20073,7 @@ apiInstance.targetUpdateAws(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateAws**](TargetUpdateAws.md)|  | 
+ **targetUpdateAws** | [**TargetUpdateAws**](TargetUpdateAws.md)|  | 
 
 ### Return type
 
@@ -19875,7 +20091,7 @@ No authorization required
 
 ## targetUpdateAzure
 
-> TargetUpdateOutput targetUpdateAzure(body)
+> TargetUpdateOutput targetUpdateAzure(targetUpdateAzure)
 
 
 
@@ -19885,8 +20101,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateAzure(); // TargetUpdateAzure | 
-apiInstance.targetUpdateAzure(body).then((data) => {
+let targetUpdateAzure = new akeyless.TargetUpdateAzure(); // TargetUpdateAzure | 
+apiInstance.targetUpdateAzure(targetUpdateAzure).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19899,7 +20115,7 @@ apiInstance.targetUpdateAzure(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateAzure**](TargetUpdateAzure.md)|  | 
+ **targetUpdateAzure** | [**TargetUpdateAzure**](TargetUpdateAzure.md)|  | 
 
 ### Return type
 
@@ -19917,7 +20133,7 @@ No authorization required
 
 ## targetUpdateDB
 
-> TargetUpdateOutput targetUpdateDB(body)
+> TargetUpdateOutput targetUpdateDB(targetUpdateDB)
 
 
 
@@ -19927,8 +20143,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateDB(); // TargetUpdateDB | 
-apiInstance.targetUpdateDB(body).then((data) => {
+let targetUpdateDB = new akeyless.TargetUpdateDB(); // TargetUpdateDB | 
+apiInstance.targetUpdateDB(targetUpdateDB).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19941,7 +20157,7 @@ apiInstance.targetUpdateDB(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateDB**](TargetUpdateDB.md)|  | 
+ **targetUpdateDB** | [**TargetUpdateDB**](TargetUpdateDB.md)|  | 
 
 ### Return type
 
@@ -19959,7 +20175,7 @@ No authorization required
 
 ## targetUpdateDockerhub
 
-> TargetUpdateOutput targetUpdateDockerhub(body)
+> TargetUpdateOutput targetUpdateDockerhub(targetUpdateDockerhub)
 
 
 
@@ -19969,8 +20185,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateDockerhub(); // TargetUpdateDockerhub | 
-apiInstance.targetUpdateDockerhub(body).then((data) => {
+let targetUpdateDockerhub = new akeyless.TargetUpdateDockerhub(); // TargetUpdateDockerhub | 
+apiInstance.targetUpdateDockerhub(targetUpdateDockerhub).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -19983,7 +20199,7 @@ apiInstance.targetUpdateDockerhub(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateDockerhub**](TargetUpdateDockerhub.md)|  | 
+ **targetUpdateDockerhub** | [**TargetUpdateDockerhub**](TargetUpdateDockerhub.md)|  | 
 
 ### Return type
 
@@ -20001,7 +20217,7 @@ No authorization required
 
 ## targetUpdateEks
 
-> TargetUpdateOutput targetUpdateEks(body)
+> TargetUpdateOutput targetUpdateEks(targetUpdateEks)
 
 
 
@@ -20011,8 +20227,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateEks(); // TargetUpdateEks | 
-apiInstance.targetUpdateEks(body).then((data) => {
+let targetUpdateEks = new akeyless.TargetUpdateEks(); // TargetUpdateEks | 
+apiInstance.targetUpdateEks(targetUpdateEks).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20025,7 +20241,7 @@ apiInstance.targetUpdateEks(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateEks**](TargetUpdateEks.md)|  | 
+ **targetUpdateEks** | [**TargetUpdateEks**](TargetUpdateEks.md)|  | 
 
 ### Return type
 
@@ -20043,7 +20259,7 @@ No authorization required
 
 ## targetUpdateGcp
 
-> TargetUpdateOutput targetUpdateGcp(body)
+> TargetUpdateOutput targetUpdateGcp(targetUpdateGcp)
 
 
 
@@ -20053,8 +20269,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateGcp(); // TargetUpdateGcp | 
-apiInstance.targetUpdateGcp(body).then((data) => {
+let targetUpdateGcp = new akeyless.TargetUpdateGcp(); // TargetUpdateGcp | 
+apiInstance.targetUpdateGcp(targetUpdateGcp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20067,7 +20283,7 @@ apiInstance.targetUpdateGcp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateGcp**](TargetUpdateGcp.md)|  | 
+ **targetUpdateGcp** | [**TargetUpdateGcp**](TargetUpdateGcp.md)|  | 
 
 ### Return type
 
@@ -20085,7 +20301,7 @@ No authorization required
 
 ## targetUpdateGithub
 
-> TargetUpdateOutput targetUpdateGithub(body)
+> TargetUpdateOutput targetUpdateGithub(targetUpdateGithub)
 
 
 
@@ -20095,8 +20311,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateGithub(); // TargetUpdateGithub | 
-apiInstance.targetUpdateGithub(body).then((data) => {
+let targetUpdateGithub = new akeyless.TargetUpdateGithub(); // TargetUpdateGithub | 
+apiInstance.targetUpdateGithub(targetUpdateGithub).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20109,7 +20325,7 @@ apiInstance.targetUpdateGithub(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateGithub**](TargetUpdateGithub.md)|  | 
+ **targetUpdateGithub** | [**TargetUpdateGithub**](TargetUpdateGithub.md)|  | 
 
 ### Return type
 
@@ -20127,7 +20343,7 @@ No authorization required
 
 ## targetUpdateGitlab
 
-> TargetUpdateOutput targetUpdateGitlab(body)
+> TargetUpdateOutput targetUpdateGitlab(targetUpdateGitlab)
 
 
 
@@ -20137,8 +20353,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateGitlab(); // TargetUpdateGitlab | 
-apiInstance.targetUpdateGitlab(body).then((data) => {
+let targetUpdateGitlab = new akeyless.TargetUpdateGitlab(); // TargetUpdateGitlab | 
+apiInstance.targetUpdateGitlab(targetUpdateGitlab).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20151,7 +20367,7 @@ apiInstance.targetUpdateGitlab(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateGitlab**](TargetUpdateGitlab.md)|  | 
+ **targetUpdateGitlab** | [**TargetUpdateGitlab**](TargetUpdateGitlab.md)|  | 
 
 ### Return type
 
@@ -20169,7 +20385,7 @@ No authorization required
 
 ## targetUpdateGke
 
-> TargetUpdateOutput targetUpdateGke(body)
+> TargetUpdateOutput targetUpdateGke(targetUpdateGke)
 
 
 
@@ -20179,8 +20395,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateGke(); // TargetUpdateGke | 
-apiInstance.targetUpdateGke(body).then((data) => {
+let targetUpdateGke = new akeyless.TargetUpdateGke(); // TargetUpdateGke | 
+apiInstance.targetUpdateGke(targetUpdateGke).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20193,7 +20409,7 @@ apiInstance.targetUpdateGke(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateGke**](TargetUpdateGke.md)|  | 
+ **targetUpdateGke** | [**TargetUpdateGke**](TargetUpdateGke.md)|  | 
 
 ### Return type
 
@@ -20211,7 +20427,7 @@ No authorization required
 
 ## targetUpdateGlobalSign
 
-> TargetUpdateOutput targetUpdateGlobalSign(body)
+> TargetUpdateOutput targetUpdateGlobalSign(targetUpdateGlobalSign)
 
 
 
@@ -20221,8 +20437,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateGlobalSign(); // TargetUpdateGlobalSign | 
-apiInstance.targetUpdateGlobalSign(body).then((data) => {
+let targetUpdateGlobalSign = new akeyless.TargetUpdateGlobalSign(); // TargetUpdateGlobalSign | 
+apiInstance.targetUpdateGlobalSign(targetUpdateGlobalSign).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20235,7 +20451,7 @@ apiInstance.targetUpdateGlobalSign(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateGlobalSign**](TargetUpdateGlobalSign.md)|  | 
+ **targetUpdateGlobalSign** | [**TargetUpdateGlobalSign**](TargetUpdateGlobalSign.md)|  | 
 
 ### Return type
 
@@ -20253,7 +20469,7 @@ No authorization required
 
 ## targetUpdateGlobalSignAtlas
 
-> TargetUpdateOutput targetUpdateGlobalSignAtlas(body)
+> TargetUpdateOutput targetUpdateGlobalSignAtlas(targetUpdateGlobalSignAtlas)
 
 
 
@@ -20263,8 +20479,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateGlobalSignAtlas(); // TargetUpdateGlobalSignAtlas | 
-apiInstance.targetUpdateGlobalSignAtlas(body).then((data) => {
+let targetUpdateGlobalSignAtlas = new akeyless.TargetUpdateGlobalSignAtlas(); // TargetUpdateGlobalSignAtlas | 
+apiInstance.targetUpdateGlobalSignAtlas(targetUpdateGlobalSignAtlas).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20277,7 +20493,7 @@ apiInstance.targetUpdateGlobalSignAtlas(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateGlobalSignAtlas**](TargetUpdateGlobalSignAtlas.md)|  | 
+ **targetUpdateGlobalSignAtlas** | [**TargetUpdateGlobalSignAtlas**](TargetUpdateGlobalSignAtlas.md)|  | 
 
 ### Return type
 
@@ -20295,7 +20511,7 @@ No authorization required
 
 ## targetUpdateGodaddy
 
-> TargetUpdateOutput targetUpdateGodaddy(body)
+> TargetUpdateOutput targetUpdateGodaddy(targetUpdateGodaddy)
 
 
 
@@ -20305,8 +20521,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateGodaddy(); // TargetUpdateGodaddy | 
-apiInstance.targetUpdateGodaddy(body).then((data) => {
+let targetUpdateGodaddy = new akeyless.TargetUpdateGodaddy(); // TargetUpdateGodaddy | 
+apiInstance.targetUpdateGodaddy(targetUpdateGodaddy).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20319,7 +20535,7 @@ apiInstance.targetUpdateGodaddy(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateGodaddy**](TargetUpdateGodaddy.md)|  | 
+ **targetUpdateGodaddy** | [**TargetUpdateGodaddy**](TargetUpdateGodaddy.md)|  | 
 
 ### Return type
 
@@ -20337,7 +20553,7 @@ No authorization required
 
 ## targetUpdateHashiVault
 
-> TargetUpdateOutput targetUpdateHashiVault(body)
+> TargetUpdateOutput targetUpdateHashiVault(targetUpdateHashiVault)
 
 
 
@@ -20347,8 +20563,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateHashiVault(); // TargetUpdateHashiVault | 
-apiInstance.targetUpdateHashiVault(body).then((data) => {
+let targetUpdateHashiVault = new akeyless.TargetUpdateHashiVault(); // TargetUpdateHashiVault | 
+apiInstance.targetUpdateHashiVault(targetUpdateHashiVault).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20361,7 +20577,7 @@ apiInstance.targetUpdateHashiVault(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateHashiVault**](TargetUpdateHashiVault.md)|  | 
+ **targetUpdateHashiVault** | [**TargetUpdateHashiVault**](TargetUpdateHashiVault.md)|  | 
 
 ### Return type
 
@@ -20379,7 +20595,7 @@ No authorization required
 
 ## targetUpdateK8s
 
-> TargetUpdateOutput targetUpdateK8s(body)
+> TargetUpdateOutput targetUpdateK8s(targetUpdateK8s)
 
 
 
@@ -20389,8 +20605,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateK8s(); // TargetUpdateK8s | 
-apiInstance.targetUpdateK8s(body).then((data) => {
+let targetUpdateK8s = new akeyless.TargetUpdateK8s(); // TargetUpdateK8s | 
+apiInstance.targetUpdateK8s(targetUpdateK8s).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20403,7 +20619,7 @@ apiInstance.targetUpdateK8s(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateK8s**](TargetUpdateK8s.md)|  | 
+ **targetUpdateK8s** | [**TargetUpdateK8s**](TargetUpdateK8s.md)|  | 
 
 ### Return type
 
@@ -20421,7 +20637,7 @@ No authorization required
 
 ## targetUpdateLdap
 
-> TargetUpdateOutput targetUpdateLdap(body)
+> TargetUpdateOutput targetUpdateLdap(targetUpdateLdap)
 
 
 
@@ -20431,8 +20647,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateLdap(); // TargetUpdateLdap | 
-apiInstance.targetUpdateLdap(body).then((data) => {
+let targetUpdateLdap = new akeyless.TargetUpdateLdap(); // TargetUpdateLdap | 
+apiInstance.targetUpdateLdap(targetUpdateLdap).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20445,7 +20661,7 @@ apiInstance.targetUpdateLdap(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateLdap**](TargetUpdateLdap.md)|  | 
+ **targetUpdateLdap** | [**TargetUpdateLdap**](TargetUpdateLdap.md)|  | 
 
 ### Return type
 
@@ -20463,7 +20679,7 @@ No authorization required
 
 ## targetUpdateLinked
 
-> TargetUpdateOutput targetUpdateLinked(body)
+> TargetUpdateOutput targetUpdateLinked(targetUpdateLinked)
 
 
 
@@ -20473,8 +20689,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateLinked(); // TargetUpdateLinked | 
-apiInstance.targetUpdateLinked(body).then((data) => {
+let targetUpdateLinked = new akeyless.TargetUpdateLinked(); // TargetUpdateLinked | 
+apiInstance.targetUpdateLinked(targetUpdateLinked).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20487,7 +20703,7 @@ apiInstance.targetUpdateLinked(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateLinked**](TargetUpdateLinked.md)|  | 
+ **targetUpdateLinked** | [**TargetUpdateLinked**](TargetUpdateLinked.md)|  | 
 
 ### Return type
 
@@ -20505,7 +20721,7 @@ No authorization required
 
 ## targetUpdatePing
 
-> TargetUpdateOutput targetUpdatePing(body)
+> TargetUpdateOutput targetUpdatePing(targetUpdatePing)
 
 
 
@@ -20515,8 +20731,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdatePing(); // TargetUpdatePing | 
-apiInstance.targetUpdatePing(body).then((data) => {
+let targetUpdatePing = new akeyless.TargetUpdatePing(); // TargetUpdatePing | 
+apiInstance.targetUpdatePing(targetUpdatePing).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20529,7 +20745,7 @@ apiInstance.targetUpdatePing(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdatePing**](TargetUpdatePing.md)|  | 
+ **targetUpdatePing** | [**TargetUpdatePing**](TargetUpdatePing.md)|  | 
 
 ### Return type
 
@@ -20547,7 +20763,7 @@ No authorization required
 
 ## targetUpdateRabbitMq
 
-> TargetUpdateOutput targetUpdateRabbitMq(body)
+> TargetUpdateOutput targetUpdateRabbitMq(targetUpdateRabbitMq)
 
 
 
@@ -20557,8 +20773,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateRabbitMq(); // TargetUpdateRabbitMq | 
-apiInstance.targetUpdateRabbitMq(body).then((data) => {
+let targetUpdateRabbitMq = new akeyless.TargetUpdateRabbitMq(); // TargetUpdateRabbitMq | 
+apiInstance.targetUpdateRabbitMq(targetUpdateRabbitMq).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20571,7 +20787,7 @@ apiInstance.targetUpdateRabbitMq(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateRabbitMq**](TargetUpdateRabbitMq.md)|  | 
+ **targetUpdateRabbitMq** | [**TargetUpdateRabbitMq**](TargetUpdateRabbitMq.md)|  | 
 
 ### Return type
 
@@ -20589,7 +20805,7 @@ No authorization required
 
 ## targetUpdateSalesforce
 
-> TargetUpdateOutput targetUpdateSalesforce(body)
+> TargetUpdateOutput targetUpdateSalesforce(targetUpdateSalesforce)
 
 
 
@@ -20599,8 +20815,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateSalesforce(); // TargetUpdateSalesforce | 
-apiInstance.targetUpdateSalesforce(body).then((data) => {
+let targetUpdateSalesforce = new akeyless.TargetUpdateSalesforce(); // TargetUpdateSalesforce | 
+apiInstance.targetUpdateSalesforce(targetUpdateSalesforce).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20613,7 +20829,7 @@ apiInstance.targetUpdateSalesforce(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateSalesforce**](TargetUpdateSalesforce.md)|  | 
+ **targetUpdateSalesforce** | [**TargetUpdateSalesforce**](TargetUpdateSalesforce.md)|  | 
 
 ### Return type
 
@@ -20631,7 +20847,7 @@ No authorization required
 
 ## targetUpdateSectigo
 
-> TargetUpdateOutput targetUpdateSectigo(body)
+> TargetUpdateOutput targetUpdateSectigo(targetUpdateSectigo)
 
 
 
@@ -20641,8 +20857,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateSectigo(); // TargetUpdateSectigo | 
-apiInstance.targetUpdateSectigo(body).then((data) => {
+let targetUpdateSectigo = new akeyless.TargetUpdateSectigo(); // TargetUpdateSectigo | 
+apiInstance.targetUpdateSectigo(targetUpdateSectigo).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20655,7 +20871,7 @@ apiInstance.targetUpdateSectigo(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateSectigo**](TargetUpdateSectigo.md)|  | 
+ **targetUpdateSectigo** | [**TargetUpdateSectigo**](TargetUpdateSectigo.md)|  | 
 
 ### Return type
 
@@ -20673,7 +20889,7 @@ No authorization required
 
 ## targetUpdateSsh
 
-> TargetUpdateOutput targetUpdateSsh(body)
+> TargetUpdateOutput targetUpdateSsh(targetUpdateSsh)
 
 
 
@@ -20683,8 +20899,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateSsh(); // TargetUpdateSsh | 
-apiInstance.targetUpdateSsh(body).then((data) => {
+let targetUpdateSsh = new akeyless.TargetUpdateSsh(); // TargetUpdateSsh | 
+apiInstance.targetUpdateSsh(targetUpdateSsh).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20697,7 +20913,7 @@ apiInstance.targetUpdateSsh(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateSsh**](TargetUpdateSsh.md)|  | 
+ **targetUpdateSsh** | [**TargetUpdateSsh**](TargetUpdateSsh.md)|  | 
 
 ### Return type
 
@@ -20715,7 +20931,7 @@ No authorization required
 
 ## targetUpdateWeb
 
-> TargetUpdateOutput targetUpdateWeb(body)
+> TargetUpdateOutput targetUpdateWeb(targetUpdateWeb)
 
 
 
@@ -20725,8 +20941,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateWeb(); // TargetUpdateWeb | 
-apiInstance.targetUpdateWeb(body).then((data) => {
+let targetUpdateWeb = new akeyless.TargetUpdateWeb(); // TargetUpdateWeb | 
+apiInstance.targetUpdateWeb(targetUpdateWeb).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20739,7 +20955,7 @@ apiInstance.targetUpdateWeb(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateWeb**](TargetUpdateWeb.md)|  | 
+ **targetUpdateWeb** | [**TargetUpdateWeb**](TargetUpdateWeb.md)|  | 
 
 ### Return type
 
@@ -20757,7 +20973,7 @@ No authorization required
 
 ## targetUpdateWindows
 
-> TargetUpdateOutput targetUpdateWindows(body)
+> TargetUpdateOutput targetUpdateWindows(targetUpdateWindows)
 
 
 
@@ -20767,8 +20983,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateWindows(); // TargetUpdateWindows | 
-apiInstance.targetUpdateWindows(body).then((data) => {
+let targetUpdateWindows = new akeyless.TargetUpdateWindows(); // TargetUpdateWindows | 
+apiInstance.targetUpdateWindows(targetUpdateWindows).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20781,7 +20997,7 @@ apiInstance.targetUpdateWindows(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateWindows**](TargetUpdateWindows.md)|  | 
+ **targetUpdateWindows** | [**TargetUpdateWindows**](TargetUpdateWindows.md)|  | 
 
 ### Return type
 
@@ -20799,7 +21015,7 @@ No authorization required
 
 ## targetUpdateZeroSSL
 
-> TargetUpdateOutput targetUpdateZeroSSL(body)
+> TargetUpdateOutput targetUpdateZeroSSL(targetUpdateZeroSSL)
 
 
 
@@ -20809,8 +21025,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.TargetUpdateZeroSSL(); // TargetUpdateZeroSSL | 
-apiInstance.targetUpdateZeroSSL(body).then((data) => {
+let targetUpdateZeroSSL = new akeyless.TargetUpdateZeroSSL(); // TargetUpdateZeroSSL | 
+apiInstance.targetUpdateZeroSSL(targetUpdateZeroSSL).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20823,7 +21039,7 @@ apiInstance.targetUpdateZeroSSL(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TargetUpdateZeroSSL**](TargetUpdateZeroSSL.md)|  | 
+ **targetUpdateZeroSSL** | [**TargetUpdateZeroSSL**](TargetUpdateZeroSSL.md)|  | 
 
 ### Return type
 
@@ -20841,7 +21057,7 @@ No authorization required
 
 ## tokenize
 
-> TokenizeOutput tokenize(body)
+> TokenizeOutput tokenize(tokenize)
 
 
 
@@ -20851,8 +21067,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.Tokenize(); // Tokenize | 
-apiInstance.tokenize(body).then((data) => {
+let tokenize = new akeyless.Tokenize(); // Tokenize | 
+apiInstance.tokenize(tokenize).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20865,7 +21081,7 @@ apiInstance.tokenize(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Tokenize**](Tokenize.md)|  | 
+ **tokenize** | [**Tokenize**](Tokenize.md)|  | 
 
 ### Return type
 
@@ -20883,7 +21099,7 @@ No authorization required
 
 ## tokenizeBatch
 
-> TokenizeOutput tokenizeBatch(body)
+> TokenizeOutput tokenizeBatch(batchTokenizationRequestLine)
 
 
 
@@ -20893,8 +21109,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = [new akeyless.BatchTokenizationRequestLine()]; // [BatchTokenizationRequestLine] | 
-apiInstance.tokenizeBatch(body).then((data) => {
+let batchTokenizationRequestLine = [new akeyless.BatchTokenizationRequestLine()]; // [BatchTokenizationRequestLine] | 
+apiInstance.tokenizeBatch(batchTokenizationRequestLine).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20907,7 +21123,7 @@ apiInstance.tokenizeBatch(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**[BatchTokenizationRequestLine]**](BatchTokenizationRequestLine.md)|  | 
+ **batchTokenizationRequestLine** | [**[BatchTokenizationRequestLine]**](BatchTokenizationRequestLine.md)|  | 
 
 ### Return type
 
@@ -20925,7 +21141,7 @@ No authorization required
 
 ## uidCreateChildToken
 
-> UidCreateChildTokenOutput uidCreateChildToken(body)
+> UidCreateChildTokenOutput uidCreateChildToken(uidCreateChildToken)
 
 
 
@@ -20935,8 +21151,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UidCreateChildToken(); // UidCreateChildToken | 
-apiInstance.uidCreateChildToken(body).then((data) => {
+let uidCreateChildToken = new akeyless.UidCreateChildToken(); // UidCreateChildToken | 
+apiInstance.uidCreateChildToken(uidCreateChildToken).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20949,7 +21165,7 @@ apiInstance.uidCreateChildToken(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UidCreateChildToken**](UidCreateChildToken.md)|  | 
+ **uidCreateChildToken** | [**UidCreateChildToken**](UidCreateChildToken.md)|  | 
 
 ### Return type
 
@@ -20967,7 +21183,7 @@ No authorization required
 
 ## uidGenerateToken
 
-> UidGenerateTokenOutput uidGenerateToken(body)
+> UidGenerateTokenOutput uidGenerateToken(uidGenerateToken)
 
 
 
@@ -20977,8 +21193,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UidGenerateToken(); // UidGenerateToken | 
-apiInstance.uidGenerateToken(body).then((data) => {
+let uidGenerateToken = new akeyless.UidGenerateToken(); // UidGenerateToken | 
+apiInstance.uidGenerateToken(uidGenerateToken).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -20991,7 +21207,7 @@ apiInstance.uidGenerateToken(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UidGenerateToken**](UidGenerateToken.md)|  | 
+ **uidGenerateToken** | [**UidGenerateToken**](UidGenerateToken.md)|  | 
 
 ### Return type
 
@@ -21009,7 +21225,7 @@ No authorization required
 
 ## uidListChildren
 
-> UniversalIdentityDetails uidListChildren(body)
+> UniversalIdentityDetails uidListChildren(uidListChildren)
 
 
 
@@ -21019,8 +21235,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UidListChildren(); // UidListChildren | 
-apiInstance.uidListChildren(body).then((data) => {
+let uidListChildren = new akeyless.UidListChildren(); // UidListChildren | 
+apiInstance.uidListChildren(uidListChildren).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21033,7 +21249,7 @@ apiInstance.uidListChildren(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UidListChildren**](UidListChildren.md)|  | 
+ **uidListChildren** | [**UidListChildren**](UidListChildren.md)|  | 
 
 ### Return type
 
@@ -21051,7 +21267,7 @@ No authorization required
 
 ## uidRevokeToken
 
-> Object uidRevokeToken(body)
+> Object uidRevokeToken(uidRevokeToken)
 
 
 
@@ -21061,8 +21277,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UidRevokeToken(); // UidRevokeToken | 
-apiInstance.uidRevokeToken(body).then((data) => {
+let uidRevokeToken = new akeyless.UidRevokeToken(); // UidRevokeToken | 
+apiInstance.uidRevokeToken(uidRevokeToken).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21075,7 +21291,7 @@ apiInstance.uidRevokeToken(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UidRevokeToken**](UidRevokeToken.md)|  | 
+ **uidRevokeToken** | [**UidRevokeToken**](UidRevokeToken.md)|  | 
 
 ### Return type
 
@@ -21093,7 +21309,7 @@ No authorization required
 
 ## uidRotateToken
 
-> UidRotateTokenOutput uidRotateToken(body)
+> UidRotateTokenOutput uidRotateToken(uidRotateToken)
 
 
 
@@ -21103,8 +21319,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UidRotateToken(); // UidRotateToken | 
-apiInstance.uidRotateToken(body).then((data) => {
+let uidRotateToken = new akeyless.UidRotateToken(); // UidRotateToken | 
+apiInstance.uidRotateToken(uidRotateToken).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21117,7 +21333,7 @@ apiInstance.uidRotateToken(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UidRotateToken**](UidRotateToken.md)|  | 
+ **uidRotateToken** | [**UidRotateToken**](UidRotateToken.md)|  | 
 
 ### Return type
 
@@ -21133,9 +21349,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## updateAWSTarget
+## unwrapToken
 
-> Object updateAWSTarget(body)
+> UnwrapTokenOutput unwrapToken(unwrapToken)
 
 
 
@@ -21145,8 +21361,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAWSTarget(); // UpdateAWSTarget | 
-apiInstance.updateAWSTarget(body).then((data) => {
+let unwrapToken = new akeyless.UnwrapToken(); // UnwrapToken | 
+apiInstance.unwrapToken(unwrapToken).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21159,7 +21375,49 @@ apiInstance.updateAWSTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAWSTarget**](UpdateAWSTarget.md)|  | 
+ **unwrapToken** | [**UnwrapToken**](UnwrapToken.md)|  | 
+
+### Return type
+
+[**UnwrapTokenOutput**](UnwrapTokenOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateAWSTarget
+
+> Object updateAWSTarget(updateAWSTarget)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let updateAWSTarget = new akeyless.UpdateAWSTarget(); // UpdateAWSTarget | 
+apiInstance.updateAWSTarget(updateAWSTarget).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **updateAWSTarget** | [**UpdateAWSTarget**](UpdateAWSTarget.md)|  | 
 
 ### Return type
 
@@ -21177,7 +21435,7 @@ No authorization required
 
 ## updateAWSTargetDetails
 
-> UpdateTargetOutput updateAWSTargetDetails(body)
+> UpdateTargetOutput updateAWSTargetDetails(updateAWSTargetDetails)
 
 
 
@@ -21187,8 +21445,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAWSTargetDetails(); // UpdateAWSTargetDetails | 
-apiInstance.updateAWSTargetDetails(body).then((data) => {
+let updateAWSTargetDetails = new akeyless.UpdateAWSTargetDetails(); // UpdateAWSTargetDetails | 
+apiInstance.updateAWSTargetDetails(updateAWSTargetDetails).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21201,7 +21459,7 @@ apiInstance.updateAWSTargetDetails(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAWSTargetDetails**](UpdateAWSTargetDetails.md)|  | 
+ **updateAWSTargetDetails** | [**UpdateAWSTargetDetails**](UpdateAWSTargetDetails.md)|  | 
 
 ### Return type
 
@@ -21219,7 +21477,7 @@ No authorization required
 
 ## updateAccountSettings
 
-> UpdateAccountSettingsOutput updateAccountSettings(body)
+> UpdateAccountSettingsOutput updateAccountSettings(updateAccountSettings)
 
 
 
@@ -21229,8 +21487,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAccountSettings(); // UpdateAccountSettings | 
-apiInstance.updateAccountSettings(body).then((data) => {
+let updateAccountSettings = new akeyless.UpdateAccountSettings(); // UpdateAccountSettings | 
+apiInstance.updateAccountSettings(updateAccountSettings).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21243,7 +21501,7 @@ apiInstance.updateAccountSettings(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAccountSettings**](UpdateAccountSettings.md)|  | 
+ **updateAccountSettings** | [**UpdateAccountSettings**](UpdateAccountSettings.md)|  | 
 
 ### Return type
 
@@ -21261,7 +21519,7 @@ No authorization required
 
 ## updateArtifactoryTarget
 
-> UpdateArtifactoryTargetOutput updateArtifactoryTarget(body)
+> UpdateArtifactoryTargetOutput updateArtifactoryTarget(updateArtifactoryTarget)
 
 
 
@@ -21271,8 +21529,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateArtifactoryTarget(); // UpdateArtifactoryTarget | 
-apiInstance.updateArtifactoryTarget(body).then((data) => {
+let updateArtifactoryTarget = new akeyless.UpdateArtifactoryTarget(); // UpdateArtifactoryTarget | 
+apiInstance.updateArtifactoryTarget(updateArtifactoryTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21285,7 +21543,7 @@ apiInstance.updateArtifactoryTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateArtifactoryTarget**](UpdateArtifactoryTarget.md)|  | 
+ **updateArtifactoryTarget** | [**UpdateArtifactoryTarget**](UpdateArtifactoryTarget.md)|  | 
 
 ### Return type
 
@@ -21303,7 +21561,7 @@ No authorization required
 
 ## updateAssoc
 
-> Object updateAssoc(body)
+> Object updateAssoc(updateAssoc)
 
 
 
@@ -21313,8 +21571,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAssoc(); // UpdateAssoc | 
-apiInstance.updateAssoc(body).then((data) => {
+let updateAssoc = new akeyless.UpdateAssoc(); // UpdateAssoc | 
+apiInstance.updateAssoc(updateAssoc).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21327,7 +21585,7 @@ apiInstance.updateAssoc(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAssoc**](UpdateAssoc.md)|  | 
+ **updateAssoc** | [**UpdateAssoc**](UpdateAssoc.md)|  | 
 
 ### Return type
 
@@ -21345,7 +21603,7 @@ No authorization required
 
 ## updateAuthMethod
 
-> UpdateAuthMethodOutput updateAuthMethod(body)
+> UpdateAuthMethodOutput updateAuthMethod(updateAuthMethod)
 
 
 
@@ -21355,8 +21613,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAuthMethod(); // UpdateAuthMethod | 
-apiInstance.updateAuthMethod(body).then((data) => {
+let updateAuthMethod = new akeyless.UpdateAuthMethod(); // UpdateAuthMethod | 
+apiInstance.updateAuthMethod(updateAuthMethod).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21369,7 +21627,7 @@ apiInstance.updateAuthMethod(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAuthMethod**](UpdateAuthMethod.md)|  | 
+ **updateAuthMethod** | [**UpdateAuthMethod**](UpdateAuthMethod.md)|  | 
 
 ### Return type
 
@@ -21387,7 +21645,7 @@ No authorization required
 
 ## updateAuthMethodAWSIAM
 
-> Object updateAuthMethodAWSIAM(body)
+> Object updateAuthMethodAWSIAM(updateAuthMethodAWSIAM)
 
 
 
@@ -21397,8 +21655,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAuthMethodAWSIAM(); // UpdateAuthMethodAWSIAM | 
-apiInstance.updateAuthMethodAWSIAM(body).then((data) => {
+let updateAuthMethodAWSIAM = new akeyless.UpdateAuthMethodAWSIAM(); // UpdateAuthMethodAWSIAM | 
+apiInstance.updateAuthMethodAWSIAM(updateAuthMethodAWSIAM).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21411,7 +21669,7 @@ apiInstance.updateAuthMethodAWSIAM(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAuthMethodAWSIAM**](UpdateAuthMethodAWSIAM.md)|  | 
+ **updateAuthMethodAWSIAM** | [**UpdateAuthMethodAWSIAM**](UpdateAuthMethodAWSIAM.md)|  | 
 
 ### Return type
 
@@ -21429,7 +21687,7 @@ No authorization required
 
 ## updateAuthMethodAzureAD
 
-> Object updateAuthMethodAzureAD(body)
+> Object updateAuthMethodAzureAD(updateAuthMethodAzureAD)
 
 
 
@@ -21439,8 +21697,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAuthMethodAzureAD(); // UpdateAuthMethodAzureAD | 
-apiInstance.updateAuthMethodAzureAD(body).then((data) => {
+let updateAuthMethodAzureAD = new akeyless.UpdateAuthMethodAzureAD(); // UpdateAuthMethodAzureAD | 
+apiInstance.updateAuthMethodAzureAD(updateAuthMethodAzureAD).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21453,7 +21711,7 @@ apiInstance.updateAuthMethodAzureAD(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAuthMethodAzureAD**](UpdateAuthMethodAzureAD.md)|  | 
+ **updateAuthMethodAzureAD** | [**UpdateAuthMethodAzureAD**](UpdateAuthMethodAzureAD.md)|  | 
 
 ### Return type
 
@@ -21471,7 +21729,7 @@ No authorization required
 
 ## updateAuthMethodCert
 
-> UpdateAuthMethodCertOutput updateAuthMethodCert(body)
+> UpdateAuthMethodCertOutput updateAuthMethodCert(updateAuthMethodCert)
 
 
 
@@ -21481,8 +21739,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAuthMethodCert(); // UpdateAuthMethodCert | 
-apiInstance.updateAuthMethodCert(body).then((data) => {
+let updateAuthMethodCert = new akeyless.UpdateAuthMethodCert(); // UpdateAuthMethodCert | 
+apiInstance.updateAuthMethodCert(updateAuthMethodCert).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21495,7 +21753,7 @@ apiInstance.updateAuthMethodCert(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAuthMethodCert**](UpdateAuthMethodCert.md)|  | 
+ **updateAuthMethodCert** | [**UpdateAuthMethodCert**](UpdateAuthMethodCert.md)|  | 
 
 ### Return type
 
@@ -21513,7 +21771,7 @@ No authorization required
 
 ## updateAuthMethodGCP
 
-> Object updateAuthMethodGCP(body)
+> Object updateAuthMethodGCP(updateAuthMethodGCP)
 
 
 
@@ -21523,8 +21781,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAuthMethodGCP(); // UpdateAuthMethodGCP | 
-apiInstance.updateAuthMethodGCP(body).then((data) => {
+let updateAuthMethodGCP = new akeyless.UpdateAuthMethodGCP(); // UpdateAuthMethodGCP | 
+apiInstance.updateAuthMethodGCP(updateAuthMethodGCP).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21537,7 +21795,7 @@ apiInstance.updateAuthMethodGCP(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAuthMethodGCP**](UpdateAuthMethodGCP.md)|  | 
+ **updateAuthMethodGCP** | [**UpdateAuthMethodGCP**](UpdateAuthMethodGCP.md)|  | 
 
 ### Return type
 
@@ -21555,7 +21813,7 @@ No authorization required
 
 ## updateAuthMethodK8S
 
-> UpdateAuthMethodK8SOutput updateAuthMethodK8S(body)
+> UpdateAuthMethodK8SOutput updateAuthMethodK8S(updateAuthMethodK8S)
 
 
 
@@ -21565,8 +21823,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAuthMethodK8S(); // UpdateAuthMethodK8S | 
-apiInstance.updateAuthMethodK8S(body).then((data) => {
+let updateAuthMethodK8S = new akeyless.UpdateAuthMethodK8S(); // UpdateAuthMethodK8S | 
+apiInstance.updateAuthMethodK8S(updateAuthMethodK8S).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21579,7 +21837,7 @@ apiInstance.updateAuthMethodK8S(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAuthMethodK8S**](UpdateAuthMethodK8S.md)|  | 
+ **updateAuthMethodK8S** | [**UpdateAuthMethodK8S**](UpdateAuthMethodK8S.md)|  | 
 
 ### Return type
 
@@ -21597,7 +21855,7 @@ No authorization required
 
 ## updateAuthMethodLDAP
 
-> UpdateAuthMethodLDAPOutput updateAuthMethodLDAP(body)
+> UpdateAuthMethodLDAPOutput updateAuthMethodLDAP(updateAuthMethodLDAP)
 
 
 
@@ -21607,8 +21865,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAuthMethodLDAP(); // UpdateAuthMethodLDAP | 
-apiInstance.updateAuthMethodLDAP(body).then((data) => {
+let updateAuthMethodLDAP = new akeyless.UpdateAuthMethodLDAP(); // UpdateAuthMethodLDAP | 
+apiInstance.updateAuthMethodLDAP(updateAuthMethodLDAP).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21621,7 +21879,7 @@ apiInstance.updateAuthMethodLDAP(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAuthMethodLDAP**](UpdateAuthMethodLDAP.md)|  | 
+ **updateAuthMethodLDAP** | [**UpdateAuthMethodLDAP**](UpdateAuthMethodLDAP.md)|  | 
 
 ### Return type
 
@@ -21639,7 +21897,7 @@ No authorization required
 
 ## updateAuthMethodOAuth2
 
-> Object updateAuthMethodOAuth2(body)
+> Object updateAuthMethodOAuth2(updateAuthMethodOAuth2)
 
 
 
@@ -21649,8 +21907,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAuthMethodOAuth2(); // UpdateAuthMethodOAuth2 | 
-apiInstance.updateAuthMethodOAuth2(body).then((data) => {
+let updateAuthMethodOAuth2 = new akeyless.UpdateAuthMethodOAuth2(); // UpdateAuthMethodOAuth2 | 
+apiInstance.updateAuthMethodOAuth2(updateAuthMethodOAuth2).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21663,7 +21921,7 @@ apiInstance.updateAuthMethodOAuth2(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAuthMethodOAuth2**](UpdateAuthMethodOAuth2.md)|  | 
+ **updateAuthMethodOAuth2** | [**UpdateAuthMethodOAuth2**](UpdateAuthMethodOAuth2.md)|  | 
 
 ### Return type
 
@@ -21681,7 +21939,7 @@ No authorization required
 
 ## updateAuthMethodOCI
 
-> UpdateAuthMethodOCIOutput updateAuthMethodOCI(body)
+> UpdateAuthMethodOCIOutput updateAuthMethodOCI(updateAuthMethodOCI)
 
 
 
@@ -21691,8 +21949,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAuthMethodOCI(); // UpdateAuthMethodOCI | 
-apiInstance.updateAuthMethodOCI(body).then((data) => {
+let updateAuthMethodOCI = new akeyless.UpdateAuthMethodOCI(); // UpdateAuthMethodOCI | 
+apiInstance.updateAuthMethodOCI(updateAuthMethodOCI).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21705,7 +21963,7 @@ apiInstance.updateAuthMethodOCI(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAuthMethodOCI**](UpdateAuthMethodOCI.md)|  | 
+ **updateAuthMethodOCI** | [**UpdateAuthMethodOCI**](UpdateAuthMethodOCI.md)|  | 
 
 ### Return type
 
@@ -21723,7 +21981,7 @@ No authorization required
 
 ## updateAuthMethodOIDC
 
-> Object updateAuthMethodOIDC(body)
+> Object updateAuthMethodOIDC(updateAuthMethodOIDC)
 
 
 
@@ -21733,8 +21991,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAuthMethodOIDC(); // UpdateAuthMethodOIDC | 
-apiInstance.updateAuthMethodOIDC(body).then((data) => {
+let updateAuthMethodOIDC = new akeyless.UpdateAuthMethodOIDC(); // UpdateAuthMethodOIDC | 
+apiInstance.updateAuthMethodOIDC(updateAuthMethodOIDC).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21747,7 +22005,7 @@ apiInstance.updateAuthMethodOIDC(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAuthMethodOIDC**](UpdateAuthMethodOIDC.md)|  | 
+ **updateAuthMethodOIDC** | [**UpdateAuthMethodOIDC**](UpdateAuthMethodOIDC.md)|  | 
 
 ### Return type
 
@@ -21765,7 +22023,7 @@ No authorization required
 
 ## updateAuthMethodSAML
 
-> Object updateAuthMethodSAML(body)
+> Object updateAuthMethodSAML(updateAuthMethodSAML)
 
 
 
@@ -21775,8 +22033,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAuthMethodSAML(); // UpdateAuthMethodSAML | 
-apiInstance.updateAuthMethodSAML(body).then((data) => {
+let updateAuthMethodSAML = new akeyless.UpdateAuthMethodSAML(); // UpdateAuthMethodSAML | 
+apiInstance.updateAuthMethodSAML(updateAuthMethodSAML).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21789,7 +22047,7 @@ apiInstance.updateAuthMethodSAML(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAuthMethodSAML**](UpdateAuthMethodSAML.md)|  | 
+ **updateAuthMethodSAML** | [**UpdateAuthMethodSAML**](UpdateAuthMethodSAML.md)|  | 
 
 ### Return type
 
@@ -21807,7 +22065,7 @@ No authorization required
 
 ## updateAuthMethodUniversalIdentity
 
-> Object updateAuthMethodUniversalIdentity(body)
+> Object updateAuthMethodUniversalIdentity(updateAuthMethodUniversalIdentity)
 
 
 
@@ -21817,8 +22075,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAuthMethodUniversalIdentity(); // UpdateAuthMethodUniversalIdentity | 
-apiInstance.updateAuthMethodUniversalIdentity(body).then((data) => {
+let updateAuthMethodUniversalIdentity = new akeyless.UpdateAuthMethodUniversalIdentity(); // UpdateAuthMethodUniversalIdentity | 
+apiInstance.updateAuthMethodUniversalIdentity(updateAuthMethodUniversalIdentity).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21831,7 +22089,7 @@ apiInstance.updateAuthMethodUniversalIdentity(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAuthMethodUniversalIdentity**](UpdateAuthMethodUniversalIdentity.md)|  | 
+ **updateAuthMethodUniversalIdentity** | [**UpdateAuthMethodUniversalIdentity**](UpdateAuthMethodUniversalIdentity.md)|  | 
 
 ### Return type
 
@@ -21849,7 +22107,7 @@ No authorization required
 
 ## updateAzureTarget
 
-> UpdateAzureTargetOutput updateAzureTarget(body)
+> UpdateAzureTargetOutput updateAzureTarget(updateAzureTarget)
 
 
 
@@ -21859,8 +22117,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateAzureTarget(); // UpdateAzureTarget | 
-apiInstance.updateAzureTarget(body).then((data) => {
+let updateAzureTarget = new akeyless.UpdateAzureTarget(); // UpdateAzureTarget | 
+apiInstance.updateAzureTarget(updateAzureTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21873,7 +22131,7 @@ apiInstance.updateAzureTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAzureTarget**](UpdateAzureTarget.md)|  | 
+ **updateAzureTarget** | [**UpdateAzureTarget**](UpdateAzureTarget.md)|  | 
 
 ### Return type
 
@@ -21891,7 +22149,7 @@ No authorization required
 
 ## updateCertificateValue
 
-> UpdateCertificateOutput updateCertificateValue(body)
+> UpdateCertificateOutput updateCertificateValue(updateCertificateValue)
 
 
 
@@ -21901,8 +22159,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateCertificateValue(); // UpdateCertificateValue | 
-apiInstance.updateCertificateValue(body).then((data) => {
+let updateCertificateValue = new akeyless.UpdateCertificateValue(); // UpdateCertificateValue | 
+apiInstance.updateCertificateValue(updateCertificateValue).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21915,7 +22173,7 @@ apiInstance.updateCertificateValue(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateCertificateValue**](UpdateCertificateValue.md)|  | 
+ **updateCertificateValue** | [**UpdateCertificateValue**](UpdateCertificateValue.md)|  | 
 
 ### Return type
 
@@ -21933,7 +22191,7 @@ No authorization required
 
 ## updateClassicKeyCertificate
 
-> Object updateClassicKeyCertificate(body)
+> Object updateClassicKeyCertificate(updateClassicKeyCertificate)
 
 
 
@@ -21943,8 +22201,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateClassicKeyCertificate(); // UpdateClassicKeyCertificate | 
-apiInstance.updateClassicKeyCertificate(body).then((data) => {
+let updateClassicKeyCertificate = new akeyless.UpdateClassicKeyCertificate(); // UpdateClassicKeyCertificate | 
+apiInstance.updateClassicKeyCertificate(updateClassicKeyCertificate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21957,7 +22215,7 @@ apiInstance.updateClassicKeyCertificate(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateClassicKeyCertificate**](UpdateClassicKeyCertificate.md)|  | 
+ **updateClassicKeyCertificate** | [**UpdateClassicKeyCertificate**](UpdateClassicKeyCertificate.md)|  | 
 
 ### Return type
 
@@ -21975,7 +22233,7 @@ No authorization required
 
 ## updateDBTarget
 
-> UpdateDBTargetOutput updateDBTarget(body)
+> UpdateDBTargetOutput updateDBTarget(updateDBTarget)
 
 
 
@@ -21985,8 +22243,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateDBTarget(); // UpdateDBTarget | 
-apiInstance.updateDBTarget(body).then((data) => {
+let updateDBTarget = new akeyless.UpdateDBTarget(); // UpdateDBTarget | 
+apiInstance.updateDBTarget(updateDBTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -21999,7 +22257,7 @@ apiInstance.updateDBTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateDBTarget**](UpdateDBTarget.md)|  | 
+ **updateDBTarget** | [**UpdateDBTarget**](UpdateDBTarget.md)|  | 
 
 ### Return type
 
@@ -22017,7 +22275,7 @@ No authorization required
 
 ## updateDBTargetDetails
 
-> UpdateTargetOutput updateDBTargetDetails(body)
+> UpdateTargetOutput updateDBTargetDetails(updateDBTargetDetails)
 
 
 
@@ -22027,8 +22285,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateDBTargetDetails(); // UpdateDBTargetDetails | 
-apiInstance.updateDBTargetDetails(body).then((data) => {
+let updateDBTargetDetails = new akeyless.UpdateDBTargetDetails(); // UpdateDBTargetDetails | 
+apiInstance.updateDBTargetDetails(updateDBTargetDetails).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22041,7 +22299,7 @@ apiInstance.updateDBTargetDetails(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateDBTargetDetails**](UpdateDBTargetDetails.md)|  | 
+ **updateDBTargetDetails** | [**UpdateDBTargetDetails**](UpdateDBTargetDetails.md)|  | 
 
 ### Return type
 
@@ -22059,7 +22317,7 @@ No authorization required
 
 ## updateDockerhubTarget
 
-> UpdateDockerhubTargetOutput updateDockerhubTarget(body)
+> UpdateDockerhubTargetOutput updateDockerhubTarget(updateDockerhubTarget)
 
 
 
@@ -22069,8 +22327,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateDockerhubTarget(); // UpdateDockerhubTarget | 
-apiInstance.updateDockerhubTarget(body).then((data) => {
+let updateDockerhubTarget = new akeyless.UpdateDockerhubTarget(); // UpdateDockerhubTarget | 
+apiInstance.updateDockerhubTarget(updateDockerhubTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22083,7 +22341,7 @@ apiInstance.updateDockerhubTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateDockerhubTarget**](UpdateDockerhubTarget.md)|  | 
+ **updateDockerhubTarget** | [**UpdateDockerhubTarget**](UpdateDockerhubTarget.md)|  | 
 
 ### Return type
 
@@ -22101,7 +22359,7 @@ No authorization required
 
 ## updateEKSTarget
 
-> UpdateEKSTargetOutput updateEKSTarget(body)
+> UpdateEKSTargetOutput updateEKSTarget(updateEKSTarget)
 
 
 
@@ -22111,8 +22369,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateEKSTarget(); // UpdateEKSTarget | 
-apiInstance.updateEKSTarget(body).then((data) => {
+let updateEKSTarget = new akeyless.UpdateEKSTarget(); // UpdateEKSTarget | 
+apiInstance.updateEKSTarget(updateEKSTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22125,7 +22383,7 @@ apiInstance.updateEKSTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateEKSTarget**](UpdateEKSTarget.md)|  | 
+ **updateEKSTarget** | [**UpdateEKSTarget**](UpdateEKSTarget.md)|  | 
 
 ### Return type
 
@@ -22143,7 +22401,7 @@ No authorization required
 
 ## updateEventForwarder
 
-> Object updateEventForwarder(body)
+> Object updateEventForwarder(updateEventForwarder)
 
 
 
@@ -22153,8 +22411,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateEventForwarder(); // UpdateEventForwarder | 
-apiInstance.updateEventForwarder(body).then((data) => {
+let updateEventForwarder = new akeyless.UpdateEventForwarder(); // UpdateEventForwarder | 
+apiInstance.updateEventForwarder(updateEventForwarder).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22167,7 +22425,7 @@ apiInstance.updateEventForwarder(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateEventForwarder**](UpdateEventForwarder.md)|  | 
+ **updateEventForwarder** | [**UpdateEventForwarder**](UpdateEventForwarder.md)|  | 
 
 ### Return type
 
@@ -22185,7 +22443,7 @@ No authorization required
 
 ## updateGKETarget
 
-> UpdateGKETargetOutput updateGKETarget(body)
+> UpdateGKETargetOutput updateGKETarget(updateGKETarget)
 
 
 
@@ -22195,8 +22453,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateGKETarget(); // UpdateGKETarget | 
-apiInstance.updateGKETarget(body).then((data) => {
+let updateGKETarget = new akeyless.UpdateGKETarget(); // UpdateGKETarget | 
+apiInstance.updateGKETarget(updateGKETarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22209,7 +22467,7 @@ apiInstance.updateGKETarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateGKETarget**](UpdateGKETarget.md)|  | 
+ **updateGKETarget** | [**UpdateGKETarget**](UpdateGKETarget.md)|  | 
 
 ### Return type
 
@@ -22227,7 +22485,7 @@ No authorization required
 
 ## updateGcpTarget
 
-> UpdateGcpTargetOutput updateGcpTarget(body)
+> UpdateGcpTargetOutput updateGcpTarget(updateGcpTarget)
 
 
 
@@ -22237,8 +22495,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateGcpTarget(); // UpdateGcpTarget | 
-apiInstance.updateGcpTarget(body).then((data) => {
+let updateGcpTarget = new akeyless.UpdateGcpTarget(); // UpdateGcpTarget | 
+apiInstance.updateGcpTarget(updateGcpTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22251,7 +22509,7 @@ apiInstance.updateGcpTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateGcpTarget**](UpdateGcpTarget.md)|  | 
+ **updateGcpTarget** | [**UpdateGcpTarget**](UpdateGcpTarget.md)|  | 
 
 ### Return type
 
@@ -22269,7 +22527,7 @@ No authorization required
 
 ## updateGithubTarget
 
-> UpdateGithubTargetOutput updateGithubTarget(body)
+> UpdateGithubTargetOutput updateGithubTarget(updateGithubTarget)
 
 
 
@@ -22279,8 +22537,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateGithubTarget(); // UpdateGithubTarget | 
-apiInstance.updateGithubTarget(body).then((data) => {
+let updateGithubTarget = new akeyless.UpdateGithubTarget(); // UpdateGithubTarget | 
+apiInstance.updateGithubTarget(updateGithubTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22293,7 +22551,7 @@ apiInstance.updateGithubTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateGithubTarget**](UpdateGithubTarget.md)|  | 
+ **updateGithubTarget** | [**UpdateGithubTarget**](UpdateGithubTarget.md)|  | 
 
 ### Return type
 
@@ -22311,7 +22569,7 @@ No authorization required
 
 ## updateGitlabTarget
 
-> UpdateGitlabTargetOutput updateGitlabTarget(body)
+> UpdateGitlabTargetOutput updateGitlabTarget(updateGitlabTarget)
 
 
 
@@ -22321,8 +22579,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateGitlabTarget(); // UpdateGitlabTarget | 
-apiInstance.updateGitlabTarget(body).then((data) => {
+let updateGitlabTarget = new akeyless.UpdateGitlabTarget(); // UpdateGitlabTarget | 
+apiInstance.updateGitlabTarget(updateGitlabTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22335,7 +22593,7 @@ apiInstance.updateGitlabTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateGitlabTarget**](UpdateGitlabTarget.md)|  | 
+ **updateGitlabTarget** | [**UpdateGitlabTarget**](UpdateGitlabTarget.md)|  | 
 
 ### Return type
 
@@ -22353,7 +22611,7 @@ No authorization required
 
 ## updateGlobalSignAtlasTarget
 
-> UpdateGlobalSignAtlasTargetOutput updateGlobalSignAtlasTarget(body)
+> UpdateGlobalSignAtlasTargetOutput updateGlobalSignAtlasTarget(updateGlobalSignAtlasTarget)
 
 
 
@@ -22363,8 +22621,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateGlobalSignAtlasTarget(); // UpdateGlobalSignAtlasTarget | 
-apiInstance.updateGlobalSignAtlasTarget(body).then((data) => {
+let updateGlobalSignAtlasTarget = new akeyless.UpdateGlobalSignAtlasTarget(); // UpdateGlobalSignAtlasTarget | 
+apiInstance.updateGlobalSignAtlasTarget(updateGlobalSignAtlasTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22377,7 +22635,7 @@ apiInstance.updateGlobalSignAtlasTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateGlobalSignAtlasTarget**](UpdateGlobalSignAtlasTarget.md)|  | 
+ **updateGlobalSignAtlasTarget** | [**UpdateGlobalSignAtlasTarget**](UpdateGlobalSignAtlasTarget.md)|  | 
 
 ### Return type
 
@@ -22395,7 +22653,7 @@ No authorization required
 
 ## updateGlobalSignTarget
 
-> UpdateGlobalSignTargetOutput updateGlobalSignTarget(body)
+> UpdateGlobalSignTargetOutput updateGlobalSignTarget(updateGlobalSignTarget)
 
 
 
@@ -22405,8 +22663,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateGlobalSignTarget(); // UpdateGlobalSignTarget | 
-apiInstance.updateGlobalSignTarget(body).then((data) => {
+let updateGlobalSignTarget = new akeyless.UpdateGlobalSignTarget(); // UpdateGlobalSignTarget | 
+apiInstance.updateGlobalSignTarget(updateGlobalSignTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22419,7 +22677,7 @@ apiInstance.updateGlobalSignTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateGlobalSignTarget**](UpdateGlobalSignTarget.md)|  | 
+ **updateGlobalSignTarget** | [**UpdateGlobalSignTarget**](UpdateGlobalSignTarget.md)|  | 
 
 ### Return type
 
@@ -22437,7 +22695,7 @@ No authorization required
 
 ## updateGodaddyTarget
 
-> UpdateGodaddyTargetOutput updateGodaddyTarget(body)
+> UpdateGodaddyTargetOutput updateGodaddyTarget(updateGodaddyTarget)
 
 
 
@@ -22447,8 +22705,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateGodaddyTarget(); // UpdateGodaddyTarget | 
-apiInstance.updateGodaddyTarget(body).then((data) => {
+let updateGodaddyTarget = new akeyless.UpdateGodaddyTarget(); // UpdateGodaddyTarget | 
+apiInstance.updateGodaddyTarget(updateGodaddyTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22461,7 +22719,7 @@ apiInstance.updateGodaddyTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateGodaddyTarget**](UpdateGodaddyTarget.md)|  | 
+ **updateGodaddyTarget** | [**UpdateGodaddyTarget**](UpdateGodaddyTarget.md)|  | 
 
 ### Return type
 
@@ -22479,7 +22737,7 @@ No authorization required
 
 ## updateGroup
 
-> UpdateGroupOutput updateGroup(body)
+> UpdateGroupOutput updateGroup(updateGroup)
 
 
 
@@ -22489,8 +22747,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateGroup(); // UpdateGroup | 
-apiInstance.updateGroup(body).then((data) => {
+let updateGroup = new akeyless.UpdateGroup(); // UpdateGroup | 
+apiInstance.updateGroup(updateGroup).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22503,7 +22761,7 @@ apiInstance.updateGroup(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateGroup**](UpdateGroup.md)|  | 
+ **updateGroup** | [**UpdateGroup**](UpdateGroup.md)|  | 
 
 ### Return type
 
@@ -22521,7 +22779,7 @@ No authorization required
 
 ## updateHashiVaultTarget
 
-> UpdateHashiVaultTargetOutput updateHashiVaultTarget(body)
+> UpdateHashiVaultTargetOutput updateHashiVaultTarget(updateHashiVaultTarget)
 
 
 
@@ -22531,8 +22789,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateHashiVaultTarget(); // UpdateHashiVaultTarget | 
-apiInstance.updateHashiVaultTarget(body).then((data) => {
+let updateHashiVaultTarget = new akeyless.UpdateHashiVaultTarget(); // UpdateHashiVaultTarget | 
+apiInstance.updateHashiVaultTarget(updateHashiVaultTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22545,7 +22803,7 @@ apiInstance.updateHashiVaultTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateHashiVaultTarget**](UpdateHashiVaultTarget.md)|  | 
+ **updateHashiVaultTarget** | [**UpdateHashiVaultTarget**](UpdateHashiVaultTarget.md)|  | 
 
 ### Return type
 
@@ -22563,7 +22821,7 @@ No authorization required
 
 ## updateItem
 
-> UpdateItemOutput updateItem(body)
+> UpdateItemOutput updateItem(updateItem)
 
 
 
@@ -22573,8 +22831,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateItem(); // UpdateItem | 
-apiInstance.updateItem(body).then((data) => {
+let updateItem = new akeyless.UpdateItem(); // UpdateItem | 
+apiInstance.updateItem(updateItem).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22587,7 +22845,7 @@ apiInstance.updateItem(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateItem**](UpdateItem.md)|  | 
+ **updateItem** | [**UpdateItem**](UpdateItem.md)|  | 
 
 ### Return type
 
@@ -22605,7 +22863,7 @@ No authorization required
 
 ## updateLdapTarget
 
-> UpdateLdapTargetOutput updateLdapTarget(body)
+> UpdateLdapTargetOutput updateLdapTarget(updateLdapTarget)
 
 
 
@@ -22615,8 +22873,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateLdapTarget(); // UpdateLdapTarget | 
-apiInstance.updateLdapTarget(body).then((data) => {
+let updateLdapTarget = new akeyless.UpdateLdapTarget(); // UpdateLdapTarget | 
+apiInstance.updateLdapTarget(updateLdapTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22629,7 +22887,7 @@ apiInstance.updateLdapTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateLdapTarget**](UpdateLdapTarget.md)|  | 
+ **updateLdapTarget** | [**UpdateLdapTarget**](UpdateLdapTarget.md)|  | 
 
 ### Return type
 
@@ -22647,7 +22905,7 @@ No authorization required
 
 ## updateLdapTargetDetails
 
-> UpdateTargetOutput updateLdapTargetDetails(body)
+> UpdateTargetOutput updateLdapTargetDetails(updateLdapTargetDetails)
 
 
 
@@ -22657,8 +22915,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateLdapTargetDetails(); // UpdateLdapTargetDetails | 
-apiInstance.updateLdapTargetDetails(body).then((data) => {
+let updateLdapTargetDetails = new akeyless.UpdateLdapTargetDetails(); // UpdateLdapTargetDetails | 
+apiInstance.updateLdapTargetDetails(updateLdapTargetDetails).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22671,7 +22929,7 @@ apiInstance.updateLdapTargetDetails(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateLdapTargetDetails**](UpdateLdapTargetDetails.md)|  | 
+ **updateLdapTargetDetails** | [**UpdateLdapTargetDetails**](UpdateLdapTargetDetails.md)|  | 
 
 ### Return type
 
@@ -22689,7 +22947,7 @@ No authorization required
 
 ## updateLinkedTarget
 
-> Object updateLinkedTarget(body)
+> Object updateLinkedTarget(updateLinkedTarget)
 
 
 
@@ -22699,8 +22957,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateLinkedTarget(); // UpdateLinkedTarget | 
-apiInstance.updateLinkedTarget(body).then((data) => {
+let updateLinkedTarget = new akeyless.UpdateLinkedTarget(); // UpdateLinkedTarget | 
+apiInstance.updateLinkedTarget(updateLinkedTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22713,7 +22971,7 @@ apiInstance.updateLinkedTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateLinkedTarget**](UpdateLinkedTarget.md)|  | 
+ **updateLinkedTarget** | [**UpdateLinkedTarget**](UpdateLinkedTarget.md)|  | 
 
 ### Return type
 
@@ -22731,7 +22989,7 @@ No authorization required
 
 ## updateNativeK8STarget
 
-> UpdateNativeK8STargetOutput updateNativeK8STarget(body)
+> UpdateNativeK8STargetOutput updateNativeK8STarget(updateNativeK8STarget)
 
 
 
@@ -22741,8 +22999,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateNativeK8STarget(); // UpdateNativeK8STarget | 
-apiInstance.updateNativeK8STarget(body).then((data) => {
+let updateNativeK8STarget = new akeyless.UpdateNativeK8STarget(); // UpdateNativeK8STarget | 
+apiInstance.updateNativeK8STarget(updateNativeK8STarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22755,7 +23013,7 @@ apiInstance.updateNativeK8STarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateNativeK8STarget**](UpdateNativeK8STarget.md)|  | 
+ **updateNativeK8STarget** | [**UpdateNativeK8STarget**](UpdateNativeK8STarget.md)|  | 
 
 ### Return type
 
@@ -22773,7 +23031,7 @@ No authorization required
 
 ## updateOidcApp
 
-> Object updateOidcApp(body)
+> Object updateOidcApp(updateOidcApp)
 
 
 
@@ -22783,8 +23041,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateOidcApp(); // UpdateOidcApp | 
-apiInstance.updateOidcApp(body).then((data) => {
+let updateOidcApp = new akeyless.UpdateOidcApp(); // UpdateOidcApp | 
+apiInstance.updateOidcApp(updateOidcApp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22797,7 +23055,7 @@ apiInstance.updateOidcApp(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateOidcApp**](UpdateOidcApp.md)|  | 
+ **updateOidcApp** | [**UpdateOidcApp**](UpdateOidcApp.md)|  | 
 
 ### Return type
 
@@ -22815,7 +23073,7 @@ No authorization required
 
 ## updatePKICertIssuer
 
-> UpdatePKICertIssuerOutput updatePKICertIssuer(body)
+> UpdatePKICertIssuerOutput updatePKICertIssuer(updatePKICertIssuer)
 
 
 
@@ -22825,8 +23083,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdatePKICertIssuer(); // UpdatePKICertIssuer | 
-apiInstance.updatePKICertIssuer(body).then((data) => {
+let updatePKICertIssuer = new akeyless.UpdatePKICertIssuer(); // UpdatePKICertIssuer | 
+apiInstance.updatePKICertIssuer(updatePKICertIssuer).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22839,7 +23097,7 @@ apiInstance.updatePKICertIssuer(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdatePKICertIssuer**](UpdatePKICertIssuer.md)|  | 
+ **updatePKICertIssuer** | [**UpdatePKICertIssuer**](UpdatePKICertIssuer.md)|  | 
 
 ### Return type
 
@@ -22857,7 +23115,7 @@ No authorization required
 
 ## updatePingTarget
 
-> Object updatePingTarget(body)
+> Object updatePingTarget(updatePingTarget)
 
 
 
@@ -22867,8 +23125,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdatePingTarget(); // UpdatePingTarget | 
-apiInstance.updatePingTarget(body).then((data) => {
+let updatePingTarget = new akeyless.UpdatePingTarget(); // UpdatePingTarget | 
+apiInstance.updatePingTarget(updatePingTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22881,7 +23139,7 @@ apiInstance.updatePingTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdatePingTarget**](UpdatePingTarget.md)|  | 
+ **updatePingTarget** | [**UpdatePingTarget**](UpdatePingTarget.md)|  | 
 
 ### Return type
 
@@ -22899,7 +23157,7 @@ No authorization required
 
 ## updateRDPTargetDetails
 
-> UpdateTargetOutput updateRDPTargetDetails(body)
+> UpdateTargetOutput updateRDPTargetDetails(updateRDPTargetDetails)
 
 
 
@@ -22909,8 +23167,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateRDPTargetDetails(); // UpdateRDPTargetDetails | 
-apiInstance.updateRDPTargetDetails(body).then((data) => {
+let updateRDPTargetDetails = new akeyless.UpdateRDPTargetDetails(); // UpdateRDPTargetDetails | 
+apiInstance.updateRDPTargetDetails(updateRDPTargetDetails).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22923,7 +23181,7 @@ apiInstance.updateRDPTargetDetails(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateRDPTargetDetails**](UpdateRDPTargetDetails.md)|  | 
+ **updateRDPTargetDetails** | [**UpdateRDPTargetDetails**](UpdateRDPTargetDetails.md)|  | 
 
 ### Return type
 
@@ -22941,7 +23199,7 @@ No authorization required
 
 ## updateRabbitMQTarget
 
-> UpdateRabbitMQTargetOutput updateRabbitMQTarget(body)
+> UpdateRabbitMQTargetOutput updateRabbitMQTarget(updateRabbitMQTarget)
 
 
 
@@ -22951,8 +23209,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateRabbitMQTarget(); // UpdateRabbitMQTarget | 
-apiInstance.updateRabbitMQTarget(body).then((data) => {
+let updateRabbitMQTarget = new akeyless.UpdateRabbitMQTarget(); // UpdateRabbitMQTarget | 
+apiInstance.updateRabbitMQTarget(updateRabbitMQTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -22965,7 +23223,7 @@ apiInstance.updateRabbitMQTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateRabbitMQTarget**](UpdateRabbitMQTarget.md)|  | 
+ **updateRabbitMQTarget** | [**UpdateRabbitMQTarget**](UpdateRabbitMQTarget.md)|  | 
 
 ### Return type
 
@@ -22983,7 +23241,7 @@ No authorization required
 
 ## updateRabbitMQTargetDetails
 
-> UpdateTargetOutput updateRabbitMQTargetDetails(body)
+> UpdateTargetOutput updateRabbitMQTargetDetails(updateRabbitMQTargetDetails)
 
 
 
@@ -22993,8 +23251,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateRabbitMQTargetDetails(); // UpdateRabbitMQTargetDetails | 
-apiInstance.updateRabbitMQTargetDetails(body).then((data) => {
+let updateRabbitMQTargetDetails = new akeyless.UpdateRabbitMQTargetDetails(); // UpdateRabbitMQTargetDetails | 
+apiInstance.updateRabbitMQTargetDetails(updateRabbitMQTargetDetails).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23007,7 +23265,7 @@ apiInstance.updateRabbitMQTargetDetails(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateRabbitMQTargetDetails**](UpdateRabbitMQTargetDetails.md)|  | 
+ **updateRabbitMQTargetDetails** | [**UpdateRabbitMQTargetDetails**](UpdateRabbitMQTargetDetails.md)|  | 
 
 ### Return type
 
@@ -23025,7 +23283,7 @@ No authorization required
 
 ## updateRole
 
-> UpdateRoleOutput updateRole(body)
+> UpdateRoleOutput updateRole(updateRole)
 
 
 
@@ -23035,8 +23293,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateRole(); // UpdateRole | 
-apiInstance.updateRole(body).then((data) => {
+let updateRole = new akeyless.UpdateRole(); // UpdateRole | 
+apiInstance.updateRole(updateRole).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23049,7 +23307,7 @@ apiInstance.updateRole(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateRole**](UpdateRole.md)|  | 
+ **updateRole** | [**UpdateRole**](UpdateRole.md)|  | 
 
 ### Return type
 
@@ -23067,7 +23325,7 @@ No authorization required
 
 ## updateRotatedSecret
 
-> UpdateRotatedSecretOutput updateRotatedSecret(body)
+> UpdateRotatedSecretOutput updateRotatedSecret(updateRotatedSecret)
 
 
 
@@ -23077,8 +23335,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateRotatedSecret(); // UpdateRotatedSecret | 
-apiInstance.updateRotatedSecret(body).then((data) => {
+let updateRotatedSecret = new akeyless.UpdateRotatedSecret(); // UpdateRotatedSecret | 
+apiInstance.updateRotatedSecret(updateRotatedSecret).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23091,7 +23349,7 @@ apiInstance.updateRotatedSecret(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateRotatedSecret**](UpdateRotatedSecret.md)|  | 
+ **updateRotatedSecret** | [**UpdateRotatedSecret**](UpdateRotatedSecret.md)|  | 
 
 ### Return type
 
@@ -23109,7 +23367,7 @@ No authorization required
 
 ## updateRotationSettings
 
-> RotateKeyOutput updateRotationSettings(body)
+> RotateKeyOutput updateRotationSettings(updateRotationSettings)
 
 
 
@@ -23119,8 +23377,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateRotationSettings(); // UpdateRotationSettings | 
-apiInstance.updateRotationSettings(body).then((data) => {
+let updateRotationSettings = new akeyless.UpdateRotationSettings(); // UpdateRotationSettings | 
+apiInstance.updateRotationSettings(updateRotationSettings).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23133,7 +23391,7 @@ apiInstance.updateRotationSettings(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateRotationSettings**](UpdateRotationSettings.md)|  | 
+ **updateRotationSettings** | [**UpdateRotationSettings**](UpdateRotationSettings.md)|  | 
 
 ### Return type
 
@@ -23151,7 +23409,7 @@ No authorization required
 
 ## updateSSHCertIssuer
 
-> UpdateSSHCertIssuerOutput updateSSHCertIssuer(body)
+> UpdateSSHCertIssuerOutput updateSSHCertIssuer(updateSSHCertIssuer)
 
 
 
@@ -23161,8 +23419,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateSSHCertIssuer(); // UpdateSSHCertIssuer | 
-apiInstance.updateSSHCertIssuer(body).then((data) => {
+let updateSSHCertIssuer = new akeyless.UpdateSSHCertIssuer(); // UpdateSSHCertIssuer | 
+apiInstance.updateSSHCertIssuer(updateSSHCertIssuer).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23175,7 +23433,7 @@ apiInstance.updateSSHCertIssuer(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateSSHCertIssuer**](UpdateSSHCertIssuer.md)|  | 
+ **updateSSHCertIssuer** | [**UpdateSSHCertIssuer**](UpdateSSHCertIssuer.md)|  | 
 
 ### Return type
 
@@ -23193,7 +23451,7 @@ No authorization required
 
 ## updateSSHTarget
 
-> UpdateSSHTargetOutput updateSSHTarget(body)
+> UpdateSSHTargetOutput updateSSHTarget(updateSSHTarget)
 
 
 
@@ -23203,8 +23461,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateSSHTarget(); // UpdateSSHTarget | 
-apiInstance.updateSSHTarget(body).then((data) => {
+let updateSSHTarget = new akeyless.UpdateSSHTarget(); // UpdateSSHTarget | 
+apiInstance.updateSSHTarget(updateSSHTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23217,7 +23475,7 @@ apiInstance.updateSSHTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateSSHTarget**](UpdateSSHTarget.md)|  | 
+ **updateSSHTarget** | [**UpdateSSHTarget**](UpdateSSHTarget.md)|  | 
 
 ### Return type
 
@@ -23235,7 +23493,7 @@ No authorization required
 
 ## updateSSHTargetDetails
 
-> UpdateTargetOutput updateSSHTargetDetails(body)
+> UpdateTargetOutput updateSSHTargetDetails(updateSSHTargetDetails)
 
 
 
@@ -23245,8 +23503,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateSSHTargetDetails(); // UpdateSSHTargetDetails | 
-apiInstance.updateSSHTargetDetails(body).then((data) => {
+let updateSSHTargetDetails = new akeyless.UpdateSSHTargetDetails(); // UpdateSSHTargetDetails | 
+apiInstance.updateSSHTargetDetails(updateSSHTargetDetails).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23259,7 +23517,7 @@ apiInstance.updateSSHTargetDetails(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateSSHTargetDetails**](UpdateSSHTargetDetails.md)|  | 
+ **updateSSHTargetDetails** | [**UpdateSSHTargetDetails**](UpdateSSHTargetDetails.md)|  | 
 
 ### Return type
 
@@ -23277,7 +23535,7 @@ No authorization required
 
 ## updateSalesforceTarget
 
-> UpdateSalesforceTargetOutput updateSalesforceTarget(body)
+> UpdateSalesforceTargetOutput updateSalesforceTarget(updateSalesforceTarget)
 
 
 
@@ -23287,8 +23545,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateSalesforceTarget(); // UpdateSalesforceTarget | 
-apiInstance.updateSalesforceTarget(body).then((data) => {
+let updateSalesforceTarget = new akeyless.UpdateSalesforceTarget(); // UpdateSalesforceTarget | 
+apiInstance.updateSalesforceTarget(updateSalesforceTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23301,7 +23559,7 @@ apiInstance.updateSalesforceTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateSalesforceTarget**](UpdateSalesforceTarget.md)|  | 
+ **updateSalesforceTarget** | [**UpdateSalesforceTarget**](UpdateSalesforceTarget.md)|  | 
 
 ### Return type
 
@@ -23319,7 +23577,7 @@ No authorization required
 
 ## updateSecretVal
 
-> UpdateSecretValOutput updateSecretVal(body)
+> UpdateSecretValOutput updateSecretVal(updateSecretVal)
 
 
 
@@ -23329,8 +23587,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateSecretVal(); // UpdateSecretVal | 
-apiInstance.updateSecretVal(body).then((data) => {
+let updateSecretVal = new akeyless.UpdateSecretVal(); // UpdateSecretVal | 
+apiInstance.updateSecretVal(updateSecretVal).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23343,7 +23601,7 @@ apiInstance.updateSecretVal(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateSecretVal**](UpdateSecretVal.md)|  | 
+ **updateSecretVal** | [**UpdateSecretVal**](UpdateSecretVal.md)|  | 
 
 ### Return type
 
@@ -23361,7 +23619,7 @@ No authorization required
 
 ## updateTarget
 
-> UpdateTargetOutput updateTarget(body)
+> UpdateTargetOutput updateTarget(updateTarget)
 
 
 
@@ -23371,8 +23629,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateTarget(); // UpdateTarget | 
-apiInstance.updateTarget(body).then((data) => {
+let updateTarget = new akeyless.UpdateTarget(); // UpdateTarget | 
+apiInstance.updateTarget(updateTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23385,7 +23643,7 @@ apiInstance.updateTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateTarget**](UpdateTarget.md)|  | 
+ **updateTarget** | [**UpdateTarget**](UpdateTarget.md)|  | 
 
 ### Return type
 
@@ -23403,7 +23661,7 @@ No authorization required
 
 ## updateTargetDetails
 
-> UpdateTargetOutput updateTargetDetails(body)
+> UpdateTargetOutput updateTargetDetails(updateTargetDetails)
 
 
 
@@ -23413,8 +23671,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateTargetDetails(); // UpdateTargetDetails | 
-apiInstance.updateTargetDetails(body).then((data) => {
+let updateTargetDetails = new akeyless.UpdateTargetDetails(); // UpdateTargetDetails | 
+apiInstance.updateTargetDetails(updateTargetDetails).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23427,7 +23685,7 @@ apiInstance.updateTargetDetails(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateTargetDetails**](UpdateTargetDetails.md)|  | 
+ **updateTargetDetails** | [**UpdateTargetDetails**](UpdateTargetDetails.md)|  | 
 
 ### Return type
 
@@ -23445,7 +23703,7 @@ No authorization required
 
 ## updateWebTarget
 
-> UpdateWebTargetOutput updateWebTarget(body)
+> UpdateWebTargetOutput updateWebTarget(updateWebTarget)
 
 
 
@@ -23455,8 +23713,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateWebTarget(); // UpdateWebTarget | 
-apiInstance.updateWebTarget(body).then((data) => {
+let updateWebTarget = new akeyless.UpdateWebTarget(); // UpdateWebTarget | 
+apiInstance.updateWebTarget(updateWebTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23469,7 +23727,7 @@ apiInstance.updateWebTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateWebTarget**](UpdateWebTarget.md)|  | 
+ **updateWebTarget** | [**UpdateWebTarget**](UpdateWebTarget.md)|  | 
 
 ### Return type
 
@@ -23487,7 +23745,7 @@ No authorization required
 
 ## updateWebTargetDetails
 
-> UpdateTargetOutput updateWebTargetDetails(body)
+> UpdateTargetOutput updateWebTargetDetails(updateWebTargetDetails)
 
 
 
@@ -23497,8 +23755,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateWebTargetDetails(); // UpdateWebTargetDetails | 
-apiInstance.updateWebTargetDetails(body).then((data) => {
+let updateWebTargetDetails = new akeyless.UpdateWebTargetDetails(); // UpdateWebTargetDetails | 
+apiInstance.updateWebTargetDetails(updateWebTargetDetails).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23511,7 +23769,7 @@ apiInstance.updateWebTargetDetails(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateWebTargetDetails**](UpdateWebTargetDetails.md)|  | 
+ **updateWebTargetDetails** | [**UpdateWebTargetDetails**](UpdateWebTargetDetails.md)|  | 
 
 ### Return type
 
@@ -23529,7 +23787,7 @@ No authorization required
 
 ## updateWindowsTarget
 
-> Object updateWindowsTarget(body)
+> Object updateWindowsTarget(updateWindowsTarget)
 
 
 
@@ -23539,8 +23797,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateWindowsTarget(); // UpdateWindowsTarget | 
-apiInstance.updateWindowsTarget(body).then((data) => {
+let updateWindowsTarget = new akeyless.UpdateWindowsTarget(); // UpdateWindowsTarget | 
+apiInstance.updateWindowsTarget(updateWindowsTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23553,7 +23811,7 @@ apiInstance.updateWindowsTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateWindowsTarget**](UpdateWindowsTarget.md)|  | 
+ **updateWindowsTarget** | [**UpdateWindowsTarget**](UpdateWindowsTarget.md)|  | 
 
 ### Return type
 
@@ -23571,7 +23829,7 @@ No authorization required
 
 ## updateZeroSSLTarget
 
-> UpdateZeroSSLTargetOutput updateZeroSSLTarget(body)
+> UpdateZeroSSLTargetOutput updateZeroSSLTarget(updateZeroSSLTarget)
 
 
 
@@ -23581,8 +23839,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UpdateZeroSSLTarget(); // UpdateZeroSSLTarget | 
-apiInstance.updateZeroSSLTarget(body).then((data) => {
+let updateZeroSSLTarget = new akeyless.UpdateZeroSSLTarget(); // UpdateZeroSSLTarget | 
+apiInstance.updateZeroSSLTarget(updateZeroSSLTarget).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23595,7 +23853,7 @@ apiInstance.updateZeroSSLTarget(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateZeroSSLTarget**](UpdateZeroSSLTarget.md)|  | 
+ **updateZeroSSLTarget** | [**UpdateZeroSSLTarget**](UpdateZeroSSLTarget.md)|  | 
 
 ### Return type
 
@@ -23613,7 +23871,7 @@ No authorization required
 
 ## uploadRSA
 
-> Object uploadRSA(body)
+> Object uploadRSA(uploadRSA)
 
 
 
@@ -23623,8 +23881,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UploadRSA(); // UploadRSA | 
-apiInstance.uploadRSA(body).then((data) => {
+let uploadRSA = new akeyless.UploadRSA(); // UploadRSA | 
+apiInstance.uploadRSA(uploadRSA).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23637,7 +23895,7 @@ apiInstance.uploadRSA(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadRSA**](UploadRSA.md)|  | 
+ **uploadRSA** | [**UploadRSA**](UploadRSA.md)|  | 
 
 ### Return type
 
@@ -23655,7 +23913,7 @@ No authorization required
 
 ## uscCreate
 
-> UscCreateSecretOutput uscCreate(body)
+> UscCreateSecretOutput uscCreate(uscUpdate)
 
 
 
@@ -23665,8 +23923,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UscUpdate(); // UscUpdate | 
-apiInstance.uscCreate(body).then((data) => {
+let uscUpdate = new akeyless.UscUpdate(); // UscUpdate | 
+apiInstance.uscCreate(uscUpdate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23679,7 +23937,7 @@ apiInstance.uscCreate(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UscUpdate**](UscUpdate.md)|  | 
+ **uscUpdate** | [**UscUpdate**](UscUpdate.md)|  | 
 
 ### Return type
 
@@ -23697,7 +23955,7 @@ No authorization required
 
 ## uscDelete
 
-> UscDeleteSecretOutput uscDelete(body)
+> UscDeleteSecretOutput uscDelete(uscDelete)
 
 
 
@@ -23707,8 +23965,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UscDelete(); // UscDelete | 
-apiInstance.uscDelete(body).then((data) => {
+let uscDelete = new akeyless.UscDelete(); // UscDelete | 
+apiInstance.uscDelete(uscDelete).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23721,7 +23979,7 @@ apiInstance.uscDelete(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UscDelete**](UscDelete.md)|  | 
+ **uscDelete** | [**UscDelete**](UscDelete.md)|  | 
 
 ### Return type
 
@@ -23739,7 +23997,7 @@ No authorization required
 
 ## uscGet
 
-> UscGetSecretOutput uscGet(body)
+> UscGetSecretOutput uscGet(uscGet)
 
 
 
@@ -23749,8 +24007,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UscGet(); // UscGet | 
-apiInstance.uscGet(body).then((data) => {
+let uscGet = new akeyless.UscGet(); // UscGet | 
+apiInstance.uscGet(uscGet).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23763,7 +24021,7 @@ apiInstance.uscGet(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UscGet**](UscGet.md)|  | 
+ **uscGet** | [**UscGet**](UscGet.md)|  | 
 
 ### Return type
 
@@ -23781,7 +24039,7 @@ No authorization required
 
 ## uscList
 
-> UscListSecretsOutput uscList(body)
+> UscListSecretsOutput uscList(uscList)
 
 
 
@@ -23791,8 +24049,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.UscList(); // UscList | 
-apiInstance.uscList(body).then((data) => {
+let uscList = new akeyless.UscList(); // UscList | 
+apiInstance.uscList(uscList).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23805,7 +24063,7 @@ apiInstance.uscList(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UscList**](UscList.md)|  | 
+ **uscList** | [**UscList**](UscList.md)|  | 
 
 ### Return type
 
@@ -23861,7 +24119,7 @@ No authorization required
 
 ## validateToken
 
-> ValidateTokenOutput validateToken(body)
+> ValidateTokenOutput validateToken(validateToken)
 
 
 
@@ -23871,8 +24129,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.ValidateToken(); // ValidateToken | 
-apiInstance.validateToken(body).then((data) => {
+let validateToken = new akeyless.ValidateToken(); // ValidateToken | 
+apiInstance.validateToken(validateToken).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23885,7 +24143,7 @@ apiInstance.validateToken(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ValidateToken**](ValidateToken.md)|  | 
+ **validateToken** | [**ValidateToken**](ValidateToken.md)|  | 
 
 ### Return type
 
@@ -23903,7 +24161,7 @@ No authorization required
 
 ## verifyDataWithClassicKey
 
-> VerifyPKICertOutput verifyDataWithClassicKey(body)
+> VerifyPKICertOutput verifyDataWithClassicKey(verifyDataWithClassicKey)
 
 
 
@@ -23913,8 +24171,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.VerifyDataWithClassicKey(); // VerifyDataWithClassicKey | 
-apiInstance.verifyDataWithClassicKey(body).then((data) => {
+let verifyDataWithClassicKey = new akeyless.VerifyDataWithClassicKey(); // VerifyDataWithClassicKey | 
+apiInstance.verifyDataWithClassicKey(verifyDataWithClassicKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23927,7 +24185,7 @@ apiInstance.verifyDataWithClassicKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**VerifyDataWithClassicKey**](VerifyDataWithClassicKey.md)|  | 
+ **verifyDataWithClassicKey** | [**VerifyDataWithClassicKey**](VerifyDataWithClassicKey.md)|  | 
 
 ### Return type
 
@@ -23945,7 +24203,7 @@ No authorization required
 
 ## verifyEcDsa
 
-> Object verifyEcDsa(body)
+> Object verifyEcDsa(verifyEcDsa)
 
 
 
@@ -23955,8 +24213,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.VerifyEcDsa(); // VerifyEcDsa | 
-apiInstance.verifyEcDsa(body).then((data) => {
+let verifyEcDsa = new akeyless.VerifyEcDsa(); // VerifyEcDsa | 
+apiInstance.verifyEcDsa(verifyEcDsa).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23969,7 +24227,7 @@ apiInstance.verifyEcDsa(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**VerifyEcDsa**](VerifyEcDsa.md)|  | 
+ **verifyEcDsa** | [**VerifyEcDsa**](VerifyEcDsa.md)|  | 
 
 ### Return type
 
@@ -23987,7 +24245,7 @@ No authorization required
 
 ## verifyGPG
 
-> Object verifyGPG(body)
+> Object verifyGPG(verifyGPG)
 
 
 
@@ -23997,8 +24255,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.VerifyGPG(); // VerifyGPG | 
-apiInstance.verifyGPG(body).then((data) => {
+let verifyGPG = new akeyless.VerifyGPG(); // VerifyGPG | 
+apiInstance.verifyGPG(verifyGPG).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -24011,7 +24269,7 @@ apiInstance.verifyGPG(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**VerifyGPG**](VerifyGPG.md)|  | 
+ **verifyGPG** | [**VerifyGPG**](VerifyGPG.md)|  | 
 
 ### Return type
 
@@ -24029,7 +24287,7 @@ No authorization required
 
 ## verifyJWTWithClassicKey
 
-> VerifyJWTOutput verifyJWTWithClassicKey(body)
+> VerifyJWTOutput verifyJWTWithClassicKey(verifyJWTWithClassicKey)
 
 
 
@@ -24039,8 +24297,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.VerifyJWTWithClassicKey(); // VerifyJWTWithClassicKey | 
-apiInstance.verifyJWTWithClassicKey(body).then((data) => {
+let verifyJWTWithClassicKey = new akeyless.VerifyJWTWithClassicKey(); // VerifyJWTWithClassicKey | 
+apiInstance.verifyJWTWithClassicKey(verifyJWTWithClassicKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -24053,7 +24311,7 @@ apiInstance.verifyJWTWithClassicKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**VerifyJWTWithClassicKey**](VerifyJWTWithClassicKey.md)|  | 
+ **verifyJWTWithClassicKey** | [**VerifyJWTWithClassicKey**](VerifyJWTWithClassicKey.md)|  | 
 
 ### Return type
 
@@ -24071,7 +24329,7 @@ No authorization required
 
 ## verifyPKCS1
 
-> Object verifyPKCS1(body)
+> Object verifyPKCS1(verifyPKCS1)
 
 
 
@@ -24081,8 +24339,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.VerifyPKCS1(); // VerifyPKCS1 | 
-apiInstance.verifyPKCS1(body).then((data) => {
+let verifyPKCS1 = new akeyless.VerifyPKCS1(); // VerifyPKCS1 | 
+apiInstance.verifyPKCS1(verifyPKCS1).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -24095,7 +24353,7 @@ apiInstance.verifyPKCS1(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**VerifyPKCS1**](VerifyPKCS1.md)|  | 
+ **verifyPKCS1** | [**VerifyPKCS1**](VerifyPKCS1.md)|  | 
 
 ### Return type
 
@@ -24113,7 +24371,7 @@ No authorization required
 
 ## verifyPKICertWithClassicKey
 
-> VerifyPKICertOutput verifyPKICertWithClassicKey(body)
+> VerifyPKICertOutput verifyPKICertWithClassicKey(verifyPKICertWithClassicKey)
 
 
 
@@ -24123,8 +24381,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.VerifyPKICertWithClassicKey(); // VerifyPKICertWithClassicKey | 
-apiInstance.verifyPKICertWithClassicKey(body).then((data) => {
+let verifyPKICertWithClassicKey = new akeyless.VerifyPKICertWithClassicKey(); // VerifyPKICertWithClassicKey | 
+apiInstance.verifyPKICertWithClassicKey(verifyPKICertWithClassicKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -24137,7 +24395,7 @@ apiInstance.verifyPKICertWithClassicKey(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**VerifyPKICertWithClassicKey**](VerifyPKICertWithClassicKey.md)|  | 
+ **verifyPKICertWithClassicKey** | [**VerifyPKICertWithClassicKey**](VerifyPKICertWithClassicKey.md)|  | 
 
 ### Return type
 
@@ -24155,7 +24413,7 @@ No authorization required
 
 ## verifyRsaSsaPss
 
-> Object verifyRsaSsaPss(body)
+> Object verifyRsaSsaPss(verifyRsaSsaPss)
 
 
 
@@ -24165,8 +24423,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let body = new akeyless.VerifyRsaSsaPss(); // VerifyRsaSsaPss | 
-apiInstance.verifyRsaSsaPss(body).then((data) => {
+let verifyRsaSsaPss = new akeyless.VerifyRsaSsaPss(); // VerifyRsaSsaPss | 
+apiInstance.verifyRsaSsaPss(verifyRsaSsaPss).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -24179,7 +24437,7 @@ apiInstance.verifyRsaSsaPss(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**VerifyRsaSsaPss**](VerifyRsaSsaPss.md)|  | 
+ **verifyRsaSsaPss** | [**VerifyRsaSsaPss**](VerifyRsaSsaPss.md)|  | 
 
 ### Return type
 

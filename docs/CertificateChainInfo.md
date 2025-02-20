@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **certificateChain** | [**[CertificateInfo]**](CertificateInfo.md) |  | [optional] 
 **certificateFormat** | **String** |  | [optional] 
 **certificateHasPrivateKey** | **Boolean** |  | [optional] 
+**certificateIssuerGwClusterId** | **Number** |  | [optional] 
 **certificateIssuerGwClusterUrl** | **String** |  | [optional] 
 **certificateIssuerItemId** | **Number** |  | [optional] 
 **certificateIssuerName** | **String** |  | [optional] 

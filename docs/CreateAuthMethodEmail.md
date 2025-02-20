@@ -10,10 +10,13 @@ Name | Type | Description | Notes
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Auth Method description | [optional] 
 **email** | **String** | An email address to be invited to have access | 
+**enableMfa** | **String** | Enable MFA for this authentication method [True / False] | [optional] 
+**expirationEventIn** | **[String]** | How many days before the expiration of the auth method would you like to be notified. | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **jwtTtl** | **Number** | Jwt TTL | [optional] [default to 0]
+**mfaType** | **String** | Enable two-factor-authentication via [email/auth app] | [optional] [default to &#39;email&#39;]
 **name** | **String** | Auth Method name | 
 **productType** | **[String]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca] | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

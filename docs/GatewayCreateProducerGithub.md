@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **tokenPermissions** | **[String]** | Optional - installation token&#39;s allowed permissions | [optional] 
 **tokenRepositories** | **[String]** | Optional - installation token&#39;s allowed repositories | [optional] 
+**tokenTtl** | **String** | Token TTL | [optional] [default to &#39;60m&#39;]
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 
 

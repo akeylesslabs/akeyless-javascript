@@ -20,7 +20,8 @@ Name | Type | Description | Notes
 **rotationHour** | **Number** | The Hour of the rotation in UTC | [optional] 
 **rotationInterval** | **String** | The number of days to wait between every automatic key rotation (1-365) | [optional] 
 **rotatorType** | **String** | The rotator type. options: [target/password] | 
-**secureAccessBastionIssuer** | **String** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
+**secureAccessBastionIssuer** | **String** | Deprecated. use secure-access-certificate-issuer | [optional] 
+**secureAccessCertificateIssuer** | **String** | Path to the SSH Certificate Issuer for your Akeyless Secure Access | [optional] 
 **secureAccessDbName** | **String** | The DB name (relevant only for DB Dynamic-Secret) | [optional] 
 **secureAccessDbSchema** | **String** | The DB schema | [optional] 
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 

@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **paths** | **[String]** |  | [optional] 
 **protectionKey** | **String** |  | [optional] 
 **runnerType** | **String** |  | [optional] 
-**slackNotiForwarderPublicDetails** | [**Object**](.md) |  | [optional] 
+**slackNotiForwarderPublicDetails** | **Object** |  | [optional] 
 **timespanInSeconds** | **Number** |  | [optional] 
 **toEmails** | [**[EmailEntry]**](EmailEntry.md) |  | [optional] 
 **userEmail** | **String** |  | [optional] 

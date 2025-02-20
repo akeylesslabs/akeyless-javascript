@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **encEmailWithSharedKey** | **String** | EncEmailWithSharedKey is the email of this auth method, encrypted with the shared auth/uam key (for use in uam) | [optional] 
 **hashPass** | **String** | The password value | [optional] 
 **lastResetPassword** | **Date** | The last password change date | [optional] 
+**mfaType** | **String** |  | [optional] 
 
 

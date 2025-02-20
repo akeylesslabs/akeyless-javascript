@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **boundSaNames** | **[String]** | A list of service account names that the access is restricted to | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Auth Method description | [optional] 
+**expirationEventIn** | **[String]** | How many days before the expiration of the auth method would you like to be notified. | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **genKey** | **String** | Automatically generate key-pair for K8S configuration. If set to false, a public key needs to be provided [true/false] | [optional] [default to &#39;true&#39;]
 **gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 

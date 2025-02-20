@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **name** | **String** | Target name | 
 **newVersion** | **Boolean** | Deprecated | [optional] 
 **protectionKey** | **String** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
-**rabbitmqServerPassword** | **String** |  | [optional] 
-**rabbitmqServerUri** | **String** |  | [optional] 
-**rabbitmqServerUser** | **String** |  | [optional] 
+**pwd** | **String** |  | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**uri** | **String** |  | [optional] 
+**user** | **String** |  | [optional] 
 
 

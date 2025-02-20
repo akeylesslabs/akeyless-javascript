@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **defaultSecretLocation** | **String** |  | [optional] 
 **displayName** | **String** |  | [optional] 
 **id** | **Number** |  | [optional] 
+**isKerberosAuthEnabled** | **Boolean** |  | [optional] 
+**isLdapAuthEnabled** | **Boolean** |  | [optional] 
 **serverlessType** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 **statusDescription** | **String** |  | [optional] 

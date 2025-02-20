@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **expiration** | **Date** |  | [optional] 
 **lastRetrieved** | **Date** |  | [optional] 
-**location** | [**Object**](.md) |  | [optional] 
+**location** | **Object** |  | [optional] 
 **name** | **String** |  | [optional] 
 **secretId** | **String** |  | [optional] 
 **status** | **Boolean** |  | [optional] 

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **authMethodSubClaims** | **{String: [String]}** |  | [optional] 
 **isSubClaimsCaseSensitive** | **Boolean** |  | [optional] 
 **isSubclaimsWithOperator** | **Boolean** |  | [optional] 
+**roleId** | **Number** |  | [optional] 
 **roleName** | **String** |  | [optional] 
 **rules** | [**Rules**](Rules.md) |  | [optional] 
 

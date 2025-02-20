@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **denyInheritance** | **Boolean** | Deny from root to create children | [optional] 
 **denyRotate** | **Boolean** | Deny from the token to rotate | [optional] 
 **description** | **String** | Auth Method description | [optional] 
+**expirationEventIn** | **[String]** | How many days before the expiration of the auth method would you like to be notified. | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]

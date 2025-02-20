@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **rotationInterval** | **Number** |  | [optional] 
 **sharedBy** | [**RuleAssigner**](RuleAssigner.md) |  | [optional] 
 **targetVersions** | [**[TargetItemVersion]**](TargetItemVersion.md) |  | [optional] 
+**uscSyncAssociatedItems** | [**[ItemUSCSyncAssociation]**](ItemUSCSyncAssociation.md) | for USC item, hold rotated-secrets that are associated to him for rotated-secret, holds the associated USCs | [optional] 
 **withCustomerFragment** | **Boolean** |  | [optional] 
 
 

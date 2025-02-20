@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **blockConcurrentConnections** | **Boolean** |  | [optional] 
 **blockConcurrentConnectionsLevel** | **String** |  | [optional] 
 **category** | **String** |  | [optional] 
+**connectionDelaySeconds** | **Number** |  | [optional] 
 **dashboardUrl** | **String** |  | [optional] 
 **dbName** | **String** |  | [optional] 
 **domain** | **String** |  | [optional] 

@@ -27,8 +27,8 @@ Name | Type | Description | Notes
 **secureAccessRdpDomain** | **String** | Default domain name server. i.e. microsoft.com | [optional] 
 **secureAccessUrl** | **String** | Destination URL to inject secrets | [optional] 
 **secureAccessWeb** | **Boolean** | Enable Web Secure Remote Access | [optional] [default to false]
-**secureAccessWebBrowsing** | **Boolean** | Secure browser via Akeyless Web Access Bastion | [optional] [default to false]
-**secureAccessWebProxy** | **Boolean** | Web-Proxy via Akeyless Web Access Bastion | [optional] [default to false]
+**secureAccessWebBrowsing** | **Boolean** | Secure browser via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to false]
+**secureAccessWebProxy** | **Boolean** | Web-Proxy via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to false]
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **target** | **[String]** | A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times | [optional] 
 **targetName** | **String** | Target name | 

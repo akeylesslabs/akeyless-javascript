@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **azureSubscriptionId** | **String** |  | [optional] 
 **azureTenantId** | **String** |  | [optional] 
 **azureUsername** | **String** |  | [optional] 
+**expirationDate** | **Date** |  | [optional] 
 **useGwCloudIdentity** | **Boolean** |  | [optional] 
 
 

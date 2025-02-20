@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **externalUsername** | **String** | Externally provided username [true/false] | [optional] [default to &#39;false&#39;]
+**fixedUserClaimKeyname** | **String** | For externally provided users, denotes the key-name of IdP claim to extract the username from (relevant only for external-username&#x3D;true) | [optional] [default to &#39;ext_username&#39;]
 **groupDn** | **String** | Group DN which the temporary user should be added | [optional] 
 **hostProvider** | **String** | Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
@@ -18,6 +19,7 @@ Name | Type | Description | Notes
 **name** | **String** | Dynamic secret name | 
 **passwordLength** | **String** | The length of the password to be generated | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
+**secureAccessDelay** | **Number** | The delay duration, in seconds, to wait after generating just-in-time credentials. Accepted range: 0-120 seconds | [optional] 
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
 **secureAccessHost** | **[String]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
 **secureAccessRdGatewayServer** | **String** | RD Gateway server | [optional] 

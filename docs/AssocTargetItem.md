@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **certificatePath** | **String** | A path on the target to store the certificate pem file (relevant only for certificate provisioning) | [optional] 
 **chainPath** | **String** | A path on the target to store the full chain pem file (relevant only for certificate provisioning) | [optional] 
 **disablePreviousKeyVersion** | **Boolean** | Automatically disable previous key version (required for azure targets) | [optional] [default to false]
+**externalKeyName** | **String** | The external key name to associate with the classic key (Relevant only for Classic Key AWS/Azure/GCP targets) | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **keyOperations** | **[String]** | A list of allowed operations for the key (required for azure targets) | [optional] 
 **keyringName** | **String** | Keyring name of the GCP KMS (required for gcp targets) | [optional] 
