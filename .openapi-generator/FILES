@@ -85,6 +85,7 @@ docs/BatchEncryptionResponseLine.md
 docs/BatchTokenizationRequestLine.md
 docs/BatchTokenizationResponseLine.md
 docs/CFConfigPart.md
+docs/CaCertificatesConfigPart.md
 docs/CacheConfigPart.md
 docs/CalcPasswordSecurityInfo.md
 docs/CertAccessRules.md
@@ -93,6 +94,7 @@ docs/CertificateChainInfo.md
 docs/CertificateExpirationEvent.md
 docs/CertificateInfo.md
 docs/CertificateIssueInfo.md
+docs/CertificateStore.md
 docs/CertificateTemplateInfo.md
 docs/CertificateVersionInfo.md
 docs/CfInfo.md
@@ -241,6 +243,7 @@ docs/DecryptPKCS1Output.md
 docs/DecryptWithClassicKey.md
 docs/DecryptWithClassicKeyOutput.md
 docs/DefaultConfigPart.md
+docs/DefaultHomePage.md
 docs/DeleteAuthMethod.md
 docs/DeleteAuthMethodOutput.md
 docs/DeleteAuthMethods.md
@@ -1179,6 +1182,7 @@ src/model/BatchEncryptionResponseLine.js
 src/model/BatchTokenizationRequestLine.js
 src/model/BatchTokenizationResponseLine.js
 src/model/CFConfigPart.js
+src/model/CaCertificatesConfigPart.js
 src/model/CacheConfigPart.js
 src/model/CalcPasswordSecurityInfo.js
 src/model/CertAccessRules.js
@@ -1187,6 +1191,7 @@ src/model/CertificateChainInfo.js
 src/model/CertificateExpirationEvent.js
 src/model/CertificateInfo.js
 src/model/CertificateIssueInfo.js
+src/model/CertificateStore.js
 src/model/CertificateTemplateInfo.js
 src/model/CertificateVersionInfo.js
 src/model/CfInfo.js
@@ -1335,6 +1340,7 @@ src/model/DecryptPKCS1Output.js
 src/model/DecryptWithClassicKey.js
 src/model/DecryptWithClassicKeyOutput.js
 src/model/DefaultConfigPart.js
+src/model/DefaultHomePage.js
 src/model/DeleteAuthMethod.js
 src/model/DeleteAuthMethodOutput.js
 src/model/DeleteAuthMethods.js
@@ -2183,24 +2189,6 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/AuthExpirationEvent.spec.js
-test/model/CalcPasswordSecurityInfo.spec.js
-test/model/EmailError.spec.js
-test/model/GatewayNameInfo.spec.js
-test/model/GenerateCA.spec.js
-test/model/GenerateCAOutput.spec.js
-test/model/ItemUSCSyncAssociation.spec.js
-test/model/PasswordBreachInfo.spec.js
-test/model/PasswordScoreInfo.spec.js
-test/model/PasswordScoreSetting.spec.js
-test/model/PasswordSecurityInfo.spec.js
-test/model/RemoteSecretInfo.spec.js
-test/model/ResponseStopShareItem.spec.js
-test/model/RotatedSecretDelete.spec.js
-test/model/RotatedSecretDeleteSync.spec.js
-test/model/RotatedSecretSync.spec.js
-test/model/ShareItemOutput.spec.js
-test/model/SharingItemFullInfo.spec.js
-test/model/UnwrapToken.spec.js
-test/model/UnwrapTokenOutput.spec.js
-test/model/WalletDetails.spec.js
+test/model/CaCertificatesConfigPart.spec.js
+test/model/CertificateStore.spec.js
+test/model/DefaultHomePage.spec.js

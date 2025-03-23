@@ -23913,7 +23913,7 @@ No authorization required
 
 ## uscCreate
 
-> UscCreateSecretOutput uscCreate(uscUpdate)
+> UscCreateSecretOutput uscCreate(uscCreate)
 
 
 
@@ -23923,8 +23923,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-let uscUpdate = new akeyless.UscUpdate(); // UscUpdate | 
-apiInstance.uscCreate(uscUpdate).then((data) => {
+let uscCreate = new akeyless.UscCreate(); // UscCreate | 
+apiInstance.uscCreate(uscCreate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -23937,7 +23937,7 @@ apiInstance.uscCreate(uscUpdate).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uscUpdate** | [**UscUpdate**](UscUpdate.md)|  | 
+ **uscCreate** | [**UscCreate**](UscCreate.md)|  | 
 
 ### Return type
 
@@ -24081,7 +24081,7 @@ No authorization required
 
 ## uscUpdate
 
-> UscUpdateSecretOutput uscUpdate()
+> UscUpdateSecretOutput uscUpdate(uscUpdate)
 
 
 
@@ -24091,7 +24091,8 @@ No authorization required
 import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
-apiInstance.uscUpdate().then((data) => {
+let uscUpdate = new akeyless.UscUpdate(); // UscUpdate | 
+apiInstance.uscUpdate(uscUpdate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -24101,7 +24102,10 @@ apiInstance.uscUpdate().then((data) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uscUpdate** | [**UscUpdate**](UscUpdate.md)|  | 
 
 ### Return type
 
@@ -24113,7 +24117,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

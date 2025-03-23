@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **enable** | **Boolean** |  | [optional] 
 **endpoint** | **String** |  | [optional] 
 **enforceHostsRestriction** | **Boolean** |  | [optional] 
+**gwClusterId** | **Number** |  | [optional] 
 **host** | **[String]** |  | [optional] 
 **hostProviderType** | **String** |  | [optional] 
 **isCli** | **Boolean** |  | [optional] 

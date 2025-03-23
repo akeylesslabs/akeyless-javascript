@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **deleteProtection** | **Boolean** |  | [optional] 
 **modificationDate** | **Date** |  | [optional] 
 **roleAuthMethodsAssoc** | [**[RoleAuthMethodAssociation]**](RoleAuthMethodAssociation.md) |  | [optional] 
+**roleId** | **Number** |  | [optional] 
 **roleName** | **String** |  | [optional] 
 **rules** | [**Rules**](Rules.md) |  | [optional] 
 

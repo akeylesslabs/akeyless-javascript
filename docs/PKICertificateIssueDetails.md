@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **allowSubdomains** | **Boolean** |  | [optional] 
 **allowedDomainsList** | **[String]** |  | [optional] 
 **allowedExtraExtensions** | **{String: [String]}** |  | [optional] 
+**allowedIpSans** | **[String]** |  | [optional] 
 **allowedUriSans** | **[String]** |  | [optional] 
 **autoRenewCertificate** | **Boolean** |  | [optional] 
 **basicConstraintsValidForNonCa** | **Boolean** |  | [optional] 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **certificate** | **String** |  | [optional] 
+**connectionType** | **String** |  | [optional] 
 **domainName** | **String** |  | [optional] 
 **hostname** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 
