@@ -488,6 +488,7 @@ import GatewayUpdateProducerSnowflakeOutput from '../model/GatewayUpdateProducer
 import GatewayUpdateProducerVenafi from '../model/GatewayUpdateProducerVenafi';
 import GatewayUpdateProducerVenafiOutput from '../model/GatewayUpdateProducerVenafiOutput';
 import GatewayUpdateRemoteAccess from '../model/GatewayUpdateRemoteAccess';
+import GatewayUpdateRemoteAccessDesktopApp from '../model/GatewayUpdateRemoteAccessDesktopApp';
 import GatewayUpdateRemoteAccessRdpRecordings from '../model/GatewayUpdateRemoteAccessRdpRecordings';
 import GatewayUpdateTlsCert from '../model/GatewayUpdateTlsCert';
 import GatewayUpdateTlsCertOutput from '../model/GatewayUpdateTlsCertOutput';
@@ -870,7 +871,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.1
+* @version 5.0.2
 */
 export default class V2Api {
 
@@ -13991,6 +13992,49 @@ export default class V2Api {
      */
     gatewayUpdateRemoteAccess(gatewayUpdateRemoteAccess) {
       return this.gatewayUpdateRemoteAccessWithHttpInfo(gatewayUpdateRemoteAccess)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GatewayUpdateRemoteAccessDesktopApp} gatewayUpdateRemoteAccessDesktopApp 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    gatewayUpdateRemoteAccessDesktopAppWithHttpInfo(gatewayUpdateRemoteAccessDesktopApp) {
+      let postBody = gatewayUpdateRemoteAccessDesktopApp;
+      // verify the required parameter 'gatewayUpdateRemoteAccessDesktopApp' is set
+      if (gatewayUpdateRemoteAccessDesktopApp === undefined || gatewayUpdateRemoteAccessDesktopApp === null) {
+        throw new Error("Missing the required parameter 'gatewayUpdateRemoteAccessDesktopApp' when calling gatewayUpdateRemoteAccessDesktopApp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/gateway-update-remote-access-desktop-app', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GatewayUpdateRemoteAccessDesktopApp} gatewayUpdateRemoteAccessDesktopApp 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    gatewayUpdateRemoteAccessDesktopApp(gatewayUpdateRemoteAccessDesktopApp) {
+      return this.gatewayUpdateRemoteAccessDesktopAppWithHttpInfo(gatewayUpdateRemoteAccessDesktopApp)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

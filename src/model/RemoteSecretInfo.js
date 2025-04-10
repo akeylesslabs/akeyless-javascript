@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RemoteSecretInfo model module.
  * @module model/RemoteSecretInfo
- * @version 5.0.1
+ * @version 5.0.2
  */
 class RemoteSecretInfo {
     /**

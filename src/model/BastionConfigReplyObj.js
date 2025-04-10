@@ -13,13 +13,14 @@
 
 import ApiClient from '../ApiClient';
 import BastionGlobalConf from './BastionGlobalConf';
+import SraDesktopAppConf from './SraDesktopAppConf';
 import SshBastionConf from './SshBastionConf';
 import WebBastionConf from './WebBastionConf';
 
 /**
  * The BastionConfigReplyObj model module.
  * @module model/BastionConfigReplyObj
- * @version 5.0.1
+ * @version 5.0.2
  */
 class BastionConfigReplyObj {
     /**
@@ -50,11 +51,11 @@ class BastionConfigReplyObj {
         if (data) {
             obj = obj || new BastionConfigReplyObj();
 
-            if (data.hasOwnProperty('api_gateway_url')) {
-                obj['api_gateway_url'] = ApiClient.convertToType(data['api_gateway_url'], 'String');
-            }
             if (data.hasOwnProperty('cluster_id')) {
                 obj['cluster_id'] = ApiClient.convertToType(data['cluster_id'], 'String');
+            }
+            if (data.hasOwnProperty('desktop_app')) {
+                obj['desktop_app'] = SraDesktopAppConf.constructFromObject(data['desktop_app']);
             }
             if (data.hasOwnProperty('gator_cluster_id')) {
                 obj['gator_cluster_id'] = ApiClient.convertToType(data['gator_cluster_id'], 'Number');
@@ -79,12 +80,12 @@ class BastionConfigReplyObj {
      */
     static validateJSON(data) {
         // ensure the json data is a string
-        if (data['api_gateway_url'] && !(typeof data['api_gateway_url'] === 'string' || data['api_gateway_url'] instanceof String)) {
-            throw new Error("Expected the field `api_gateway_url` to be a primitive type in the JSON string but got " + data['api_gateway_url']);
-        }
-        // ensure the json data is a string
         if (data['cluster_id'] && !(typeof data['cluster_id'] === 'string' || data['cluster_id'] instanceof String)) {
             throw new Error("Expected the field `cluster_id` to be a primitive type in the JSON string but got " + data['cluster_id']);
+        }
+        // validate the optional field `desktop_app`
+        if (data['desktop_app']) { // data not null
+          SraDesktopAppConf.validateJSON(data['desktop_app']);
         }
         // validate the optional field `global`
         if (data['global']) { // data not null
@@ -108,14 +109,14 @@ class BastionConfigReplyObj {
 
 
 /**
- * @member {String} api_gateway_url
- */
-BastionConfigReplyObj.prototype['api_gateway_url'] = undefined;
-
-/**
  * @member {String} cluster_id
  */
 BastionConfigReplyObj.prototype['cluster_id'] = undefined;
+
+/**
+ * @member {module:model/SraDesktopAppConf} desktop_app
+ */
+BastionConfigReplyObj.prototype['desktop_app'] = undefined;
 
 /**
  * @member {Number} gator_cluster_id

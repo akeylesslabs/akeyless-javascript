@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateSsh model module.
  * @module model/RotatedSecretUpdateSsh
- * @version 5.0.1
+ * @version 5.0.2
  */
 class RotatedSecretUpdateSsh {
     /**
@@ -43,6 +43,7 @@ class RotatedSecretUpdateSsh {
         obj['rotate-after-disconnect'] = 'false';
         obj['rotator-type'] = rotatorType;
         obj['secure-access-allow-external-user'] = false;
+        obj['secure-access-target-type'] = 'false';
     }
 
     /**
@@ -145,6 +146,9 @@ class RotatedSecretUpdateSsh {
             }
             if (data.hasOwnProperty('secure-access-ssh-user')) {
                 obj['secure-access-ssh-user'] = ApiClient.convertToType(data['secure-access-ssh-user'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-target-type')) {
+                obj['secure-access-target-type'] = ApiClient.convertToType(data['secure-access-target-type'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -275,6 +279,10 @@ class RotatedSecretUpdateSsh {
         // ensure the json data is a string
         if (data['secure-access-ssh-user'] && !(typeof data['secure-access-ssh-user'] === 'string' || data['secure-access-ssh-user'] instanceof String)) {
             throw new Error("Expected the field `secure-access-ssh-user` to be a primitive type in the JSON string but got " + data['secure-access-ssh-user']);
+        }
+        // ensure the json data is a string
+        if (data['secure-access-target-type'] && !(typeof data['secure-access-target-type'] === 'string' || data['secure-access-target-type'] instanceof String)) {
+            throw new Error("Expected the field `secure-access-target-type` to be a primitive type in the JSON string but got " + data['secure-access-target-type']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -477,6 +485,13 @@ RotatedSecretUpdateSsh.prototype['secure-access-rdp-user'] = undefined;
  * @member {String} secure-access-ssh-user
  */
 RotatedSecretUpdateSsh.prototype['secure-access-ssh-user'] = undefined;
+
+/**
+ * Specify target type. Options are ssh or rdp
+ * @member {String} secure-access-target-type
+ * @default 'false'
+ */
+RotatedSecretUpdateSsh.prototype['secure-access-target-type'] = 'false';
 
 /**
  * Authentication token (see `/auth` and `/configure`)

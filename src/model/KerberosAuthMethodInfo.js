@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KerberosAuthMethodInfo model module.
  * @module model/KerberosAuthMethodInfo
- * @version 5.0.1
+ * @version 5.0.2
  */
 class KerberosAuthMethodInfo {
     /**

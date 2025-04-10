@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GwUpdateRemoteAccessSessionLogsLogstash model module.
  * @module model/GwUpdateRemoteAccessSessionLogsLogstash
- * @version 5.0.1
+ * @version 5.0.2
  */
 class GwUpdateRemoteAccessSessionLogsLogstash {
     /**

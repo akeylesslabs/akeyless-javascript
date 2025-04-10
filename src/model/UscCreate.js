@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscCreate model module.
  * @module model/UscCreate
- * @version 5.0.1
+ * @version 5.0.2
  */
 class UscCreate {
     /**
@@ -67,6 +67,9 @@ class UscCreate {
             if (data.hasOwnProperty('namespace')) {
                 obj['namespace'] = ApiClient.convertToType(data['namespace'], 'String');
             }
+            if (data.hasOwnProperty('object-type')) {
+                obj['object-type'] = ApiClient.convertToType(data['object-type'], 'String');
+            }
             if (data.hasOwnProperty('secret-name')) {
                 obj['secret-name'] = ApiClient.convertToType(data['secret-name'], 'String');
             }
@@ -108,6 +111,10 @@ class UscCreate {
         // ensure the json data is a string
         if (data['namespace'] && !(typeof data['namespace'] === 'string' || data['namespace'] instanceof String)) {
             throw new Error("Expected the field `namespace` to be a primitive type in the JSON string but got " + data['namespace']);
+        }
+        // ensure the json data is a string
+        if (data['object-type'] && !(typeof data['object-type'] === 'string' || data['object-type'] instanceof String)) {
+            throw new Error("Expected the field `object-type` to be a primitive type in the JSON string but got " + data['object-type']);
         }
         // ensure the json data is a string
         if (data['secret-name'] && !(typeof data['secret-name'] === 'string' || data['secret-name'] instanceof String)) {
@@ -162,6 +169,11 @@ UscCreate.prototype['json'] = false;
  * @member {String} namespace
  */
 UscCreate.prototype['namespace'] = undefined;
+
+/**
+ * @member {String} object-type
+ */
+UscCreate.prototype['object-type'] = undefined;
 
 /**
  * Name for the new universal secrets

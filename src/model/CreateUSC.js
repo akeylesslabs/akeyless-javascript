@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateUSC model module.
  * @module model/CreateUSC
- * @version 5.0.1
+ * @version 5.0.2
  */
 class CreateUSC {
     /**
@@ -40,6 +40,7 @@ class CreateUSC {
         obj['json'] = false;
         obj['name'] = name;
         obj['target-to-associate'] = targetToAssociate;
+        obj['use-prefix-as-filter'] = 'false';
     }
 
     /**
@@ -82,6 +83,12 @@ class CreateUSC {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('usc-prefix')) {
+                obj['usc-prefix'] = ApiClient.convertToType(data['usc-prefix'], 'String');
+            }
+            if (data.hasOwnProperty('use-prefix-as-filter')) {
+                obj['use-prefix-as-filter'] = ApiClient.convertToType(data['use-prefix-as-filter'], 'String');
             }
         }
         return obj;
@@ -134,6 +141,14 @@ class CreateUSC {
         // ensure the json data is a string
         if (data['uid-token'] && !(typeof data['uid-token'] === 'string' || data['uid-token'] instanceof String)) {
             throw new Error("Expected the field `uid-token` to be a primitive type in the JSON string but got " + data['uid-token']);
+        }
+        // ensure the json data is a string
+        if (data['usc-prefix'] && !(typeof data['usc-prefix'] === 'string' || data['usc-prefix'] instanceof String)) {
+            throw new Error("Expected the field `usc-prefix` to be a primitive type in the JSON string but got " + data['usc-prefix']);
+        }
+        // ensure the json data is a string
+        if (data['use-prefix-as-filter'] && !(typeof data['use-prefix-as-filter'] === 'string' || data['use-prefix-as-filter'] instanceof String)) {
+            throw new Error("Expected the field `use-prefix-as-filter` to be a primitive type in the JSON string but got " + data['use-prefix-as-filter']);
         }
 
         return true;
@@ -204,6 +219,19 @@ CreateUSC.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 CreateUSC.prototype['uid-token'] = undefined;
+
+/**
+ * Prefix for all secrets created in AWS Secrets Manager
+ * @member {String} usc-prefix
+ */
+CreateUSC.prototype['usc-prefix'] = undefined;
+
+/**
+ * Whether to filter the USC secret list using the specified usc-prefix [true/false]
+ * @member {String} use-prefix-as-filter
+ * @default 'false'
+ */
+CreateUSC.prototype['use-prefix-as-filter'] = 'false';
 
 
 

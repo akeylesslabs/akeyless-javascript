@@ -273,6 +273,7 @@ docs/DescribePermissions.md
 docs/DescribePermissionsOutput.md
 docs/DescribeSubClaims.md
 docs/DescribeSubClaimsOutput.md
+docs/DesktopAppConf.md
 docs/Detokenize.md
 docs/DetokenizeOutput.md
 docs/DockerhubTargetDetails.md
@@ -390,7 +391,6 @@ docs/GCPAccessRules.md
 docs/GCPPayload.md
 docs/GCPSecretsMigration.md
 docs/GKETargetDetails.md
-docs/GatewayBasicInfo.md
 docs/GatewayCreateAllowedAccess.md
 docs/GatewayCreateK8SAuthConfig.md
 docs/GatewayCreateK8SAuthConfigOutput.md
@@ -455,6 +455,7 @@ docs/GatewayDeleteK8SAuthConfigOutput.md
 docs/GatewayDeleteMigration.md
 docs/GatewayDeleteProducer.md
 docs/GatewayDeleteProducerOutput.md
+docs/GatewayDetailsForItemReplyObj.md
 docs/GatewayDownloadCustomerFragments.md
 docs/GatewayDownloadCustomerFragmentsOutput.md
 docs/GatewayGetAllowedAccess.md
@@ -570,6 +571,7 @@ docs/GatewayUpdateProducerSnowflakeOutput.md
 docs/GatewayUpdateProducerVenafi.md
 docs/GatewayUpdateProducerVenafiOutput.md
 docs/GatewayUpdateRemoteAccess.md
+docs/GatewayUpdateRemoteAccessDesktopApp.md
 docs/GatewayUpdateRemoteAccessRdpRecordings.md
 docs/GatewayUpdateTlsCert.md
 docs/GatewayUpdateTlsCertOutput.md
@@ -868,6 +870,7 @@ docs/SignRsaSsaPss.md
 docs/SignRsaSsaPssOutput.md
 docs/SmInfo.md
 docs/SplunkLogForwardingConfig.md
+docs/SraDesktopAppConf.md
 docs/SraInfo.md
 docs/SraSessionEntryOut.md
 docs/SshBastionConf.md
@@ -1370,6 +1373,7 @@ src/model/DescribePermissions.js
 src/model/DescribePermissionsOutput.js
 src/model/DescribeSubClaims.js
 src/model/DescribeSubClaimsOutput.js
+src/model/DesktopAppConf.js
 src/model/Detokenize.js
 src/model/DetokenizeOutput.js
 src/model/DockerhubTargetDetails.js
@@ -1487,7 +1491,6 @@ src/model/GCPAccessRules.js
 src/model/GCPPayload.js
 src/model/GCPSecretsMigration.js
 src/model/GKETargetDetails.js
-src/model/GatewayBasicInfo.js
 src/model/GatewayCreateAllowedAccess.js
 src/model/GatewayCreateK8SAuthConfig.js
 src/model/GatewayCreateK8SAuthConfigOutput.js
@@ -1552,6 +1555,7 @@ src/model/GatewayDeleteK8SAuthConfigOutput.js
 src/model/GatewayDeleteMigration.js
 src/model/GatewayDeleteProducer.js
 src/model/GatewayDeleteProducerOutput.js
+src/model/GatewayDetailsForItemReplyObj.js
 src/model/GatewayDownloadCustomerFragments.js
 src/model/GatewayDownloadCustomerFragmentsOutput.js
 src/model/GatewayGetAllowedAccess.js
@@ -1667,6 +1671,7 @@ src/model/GatewayUpdateProducerSnowflakeOutput.js
 src/model/GatewayUpdateProducerVenafi.js
 src/model/GatewayUpdateProducerVenafiOutput.js
 src/model/GatewayUpdateRemoteAccess.js
+src/model/GatewayUpdateRemoteAccessDesktopApp.js
 src/model/GatewayUpdateRemoteAccessRdpRecordings.js
 src/model/GatewayUpdateTlsCert.js
 src/model/GatewayUpdateTlsCertOutput.js
@@ -1965,6 +1970,7 @@ src/model/SignRsaSsaPss.js
 src/model/SignRsaSsaPssOutput.js
 src/model/SmInfo.js
 src/model/SplunkLogForwardingConfig.js
+src/model/SraDesktopAppConf.js
 src/model/SraInfo.js
 src/model/SraSessionEntryOut.js
 src/model/SshBastionConf.js
@@ -2189,6 +2195,7 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/CaCertificatesConfigPart.spec.js
-test/model/CertificateStore.spec.js
-test/model/DefaultHomePage.spec.js
+test/model/DesktopAppConf.spec.js
+test/model/GatewayDetailsForItemReplyObj.spec.js
+test/model/GatewayUpdateRemoteAccessDesktopApp.spec.js
+test/model/SraDesktopAppConf.spec.js

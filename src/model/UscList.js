@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscList model module.
  * @module model/UscList
- * @version 5.0.1
+ * @version 5.0.2
  */
 class UscList {
     /**
@@ -54,6 +54,9 @@ class UscList {
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
+            if (data.hasOwnProperty('object-type')) {
+                obj['object-type'] = ApiClient.convertToType(data['object-type'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -78,6 +81,10 @@ class UscList {
             if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
+        }
+        // ensure the json data is a string
+        if (data['object-type'] && !(typeof data['object-type'] === 'string' || data['object-type'] instanceof String)) {
+            throw new Error("Expected the field `object-type` to be a primitive type in the JSON string but got " + data['object-type']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -106,6 +113,11 @@ UscList.RequiredProperties = ["usc-name"];
  * @default false
  */
 UscList.prototype['json'] = false;
+
+/**
+ * @member {String} object-type
+ */
+UscList.prototype['object-type'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **host** | **[String]** |  | [optional] 
 **hostProviderType** | **String** |  | [optional] 
 **isCli** | **Boolean** |  | [optional] 
+**isDesktopApp** | **Boolean** |  | [optional] 
 **isWeb** | **Boolean** |  | [optional] 
 **isolated** | **Boolean** |  | [optional] 
 **_native** | **Boolean** |  | [optional] 

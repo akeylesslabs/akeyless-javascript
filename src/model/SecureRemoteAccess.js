@@ -18,7 +18,7 @@ import TargetNameWithHosts from './TargetNameWithHosts';
 /**
  * The SecureRemoteAccess model module.
  * @module model/SecureRemoteAccess
- * @version 5.0.1
+ * @version 5.0.2
  */
 class SecureRemoteAccess {
     /**
@@ -111,6 +111,9 @@ class SecureRemoteAccess {
             }
             if (data.hasOwnProperty('is_cli')) {
                 obj['is_cli'] = ApiClient.convertToType(data['is_cli'], 'Boolean');
+            }
+            if (data.hasOwnProperty('is_desktop_app')) {
+                obj['is_desktop_app'] = ApiClient.convertToType(data['is_desktop_app'], 'Boolean');
             }
             if (data.hasOwnProperty('is_web')) {
                 obj['is_web'] = ApiClient.convertToType(data['is_web'], 'Boolean');
@@ -376,6 +379,11 @@ SecureRemoteAccess.prototype['host_provider_type'] = undefined;
  * @member {Boolean} is_cli
  */
 SecureRemoteAccess.prototype['is_cli'] = undefined;
+
+/**
+ * @member {Boolean} is_desktop_app
+ */
+SecureRemoteAccess.prototype['is_desktop_app'] = undefined;
 
 /**
  * @member {Boolean} is_web

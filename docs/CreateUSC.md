@@ -14,5 +14,7 @@ Name | Type | Description | Notes
 **targetToAssociate** | **String** | Target Universal Secrets Connector to connect | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**uscPrefix** | **String** | Prefix for all secrets created in AWS Secrets Manager | [optional] 
+**usePrefixAsFilter** | **String** | Whether to filter the USC secret list using the specified usc-prefix [true/false] | [optional] [default to &#39;false&#39;]
 
 

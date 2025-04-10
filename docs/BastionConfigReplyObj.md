@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**apiGatewayUrl** | **String** |  | [optional] 
 **clusterId** | **String** |  | [optional] 
+**desktopApp** | [**SraDesktopAppConf**](SraDesktopAppConf.md) |  | [optional] 
 **gatorClusterId** | **Number** |  | [optional] 
 **global** | [**BastionGlobalConf**](BastionGlobalConf.md) |  | [optional] 
 **sshBastion** | [**SshBastionConf**](SshBastionConf.md) |  | [optional] 

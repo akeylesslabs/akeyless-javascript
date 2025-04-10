@@ -17,7 +17,7 @@ import AcmeAccount from './AcmeAccount';
 /**
  * The ListAcmeAccountsOutput model module.
  * @module model/ListAcmeAccountsOutput
- * @version 5.0.1
+ * @version 5.0.2
  */
 class ListAcmeAccountsOutput {
     /**

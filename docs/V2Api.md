@@ -309,6 +309,7 @@ Method | HTTP request | Description
 [**gatewayUpdateProducerSnowflake**](V2Api.md#gatewayUpdateProducerSnowflake) | **POST** /gateway-update-producer-snowflake | 
 [**gatewayUpdateProducerVenafi**](V2Api.md#gatewayUpdateProducerVenafi) | **POST** /gateway-update-producer-certificate-automation | 
 [**gatewayUpdateRemoteAccess**](V2Api.md#gatewayUpdateRemoteAccess) | **POST** /gateway-update-remote-access | 
+[**gatewayUpdateRemoteAccessDesktopApp**](V2Api.md#gatewayUpdateRemoteAccessDesktopApp) | **POST** /gateway-update-remote-access-desktop-app | 
 [**gatewayUpdateRemoteAccessRdpRecordings**](V2Api.md#gatewayUpdateRemoteAccessRdpRecordings) | **POST** /gateway-update-remote-access-rdp-recording | 
 [**gatewayUpdateTlsCert**](V2Api.md#gatewayUpdateTlsCert) | **POST** /gateway-update-tls-cert | 
 [**gatewayUpdateTmpUsers**](V2Api.md#gatewayUpdateTmpUsers) | **POST** /gateway-update-producer-tmp-creds | 
@@ -13380,6 +13381,48 @@ apiInstance.gatewayUpdateRemoteAccess(gatewayUpdateRemoteAccess).then((data) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gatewayUpdateRemoteAccess** | [**GatewayUpdateRemoteAccess**](GatewayUpdateRemoteAccess.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## gatewayUpdateRemoteAccessDesktopApp
+
+> Object gatewayUpdateRemoteAccessDesktopApp(gatewayUpdateRemoteAccessDesktopApp)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let gatewayUpdateRemoteAccessDesktopApp = new akeyless.GatewayUpdateRemoteAccessDesktopApp(); // GatewayUpdateRemoteAccessDesktopApp | 
+apiInstance.gatewayUpdateRemoteAccessDesktopApp(gatewayUpdateRemoteAccessDesktopApp).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **gatewayUpdateRemoteAccessDesktopApp** | [**GatewayUpdateRemoteAccessDesktopApp**](GatewayUpdateRemoteAccessDesktopApp.md)|  | 
 
 ### Return type
 

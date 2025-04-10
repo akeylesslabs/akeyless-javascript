@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Connect model module.
  * @module model/Connect
- * @version 5.0.1
+ * @version 5.0.2
  */
 class Connect {
     /**
@@ -365,7 +365,7 @@ Connect.prototype['token'] = undefined;
 Connect.prototype['uid-token'] = undefined;
 
 /**
- * Enable ssh-agent
+ * Deprecated
  * @member {Boolean} use-ssh-agent
  */
 Connect.prototype['use-ssh-agent'] = undefined;

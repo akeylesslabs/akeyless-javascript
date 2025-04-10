@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **secretId** | **String** |  | [optional] 
 **status** | **Boolean** |  | [optional] 
 **tags** | **{String: String}** |  | [optional] 
+**thumbprint** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
 **version** | **Number** |  | [optional] 
 

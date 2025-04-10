@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecretInfo model module.
  * @module model/SecretInfo
- * @version 5.0.1
+ * @version 5.0.2
  */
 class SecretInfo {
     /**
@@ -74,6 +74,9 @@ class SecretInfo {
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], {'String': 'String'});
             }
+            if (data.hasOwnProperty('thumbprint')) {
+                obj['thumbprint'] = ApiClient.convertToType(data['thumbprint'], 'String');
+            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
@@ -101,6 +104,10 @@ class SecretInfo {
         // ensure the json data is a string
         if (data['secret_id'] && !(typeof data['secret_id'] === 'string' || data['secret_id'] instanceof String)) {
             throw new Error("Expected the field `secret_id` to be a primitive type in the JSON string but got " + data['secret_id']);
+        }
+        // ensure the json data is a string
+        if (data['thumbprint'] && !(typeof data['thumbprint'] === 'string' || data['thumbprint'] instanceof String)) {
+            throw new Error("Expected the field `thumbprint` to be a primitive type in the JSON string but got " + data['thumbprint']);
         }
         // ensure the json data is a string
         if (data['type'] && !(typeof data['type'] === 'string' || data['type'] instanceof String)) {
@@ -159,6 +166,11 @@ SecretInfo.prototype['status'] = undefined;
  * @member {Object.<String, String>} tags
  */
 SecretInfo.prototype['tags'] = undefined;
+
+/**
+ * @member {String} thumbprint
+ */
+SecretInfo.prototype['thumbprint'] = undefined;
 
 /**
  * @member {String} type

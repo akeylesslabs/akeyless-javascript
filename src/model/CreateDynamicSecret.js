@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDynamicSecret model module.
  * @module model/CreateDynamicSecret
- * @version 5.0.1
+ * @version 5.0.2
  */
 class CreateDynamicSecret {
     /**

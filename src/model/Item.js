@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 import BastionsList from './BastionsList';
 import CertificateIssueInfo from './CertificateIssueInfo';
-import GatewayBasicInfo from './GatewayBasicInfo';
+import GatewayDetailsForItemReplyObj from './GatewayDetailsForItemReplyObj';
 import ItemGeneralInfo from './ItemGeneralInfo';
 import ItemTargetAssociation from './ItemTargetAssociation';
 import ItemUSCSyncAssociation from './ItemUSCSyncAssociation';
@@ -26,7 +26,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 5.0.1
+ * @version 5.0.2
  */
 class Item {
     /**
@@ -100,7 +100,7 @@ class Item {
                 obj['display_id'] = ApiClient.convertToType(data['display_id'], 'String');
             }
             if (data.hasOwnProperty('gateway_details')) {
-                obj['gateway_details'] = ApiClient.convertToType(data['gateway_details'], [GatewayBasicInfo]);
+                obj['gateway_details'] = ApiClient.convertToType(data['gateway_details'], [GatewayDetailsForItemReplyObj]);
             }
             if (data.hasOwnProperty('is_access_request_enabled')) {
                 obj['is_access_request_enabled'] = ApiClient.convertToType(data['is_access_request_enabled'], 'Boolean');
@@ -236,7 +236,7 @@ class Item {
             }
             // validate the optional field `gateway_details` (array)
             for (const item of data['gateway_details']) {
-                GatewayBasicInfo.validateJSON(item);
+                GatewayDetailsForItemReplyObj.validateJSON(item);
             };
         }
         // validate the optional field `item_general_info`
@@ -407,7 +407,7 @@ Item.prototype['deletion_date'] = undefined;
 Item.prototype['display_id'] = undefined;
 
 /**
- * @member {Array.<module:model/GatewayBasicInfo>} gateway_details
+ * @member {Array.<module:model/GatewayDetailsForItemReplyObj>} gateway_details
  */
 Item.prototype['gateway_details'] = undefined;
 

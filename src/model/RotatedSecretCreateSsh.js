@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateSsh model module.
  * @module model/RotatedSecretCreateSsh
- * @version 5.0.1
+ * @version 5.0.2
  */
 class RotatedSecretCreateSsh {
     /**
@@ -43,6 +43,7 @@ class RotatedSecretCreateSsh {
         obj['rotate-after-disconnect'] = 'false';
         obj['rotator-type'] = rotatorType;
         obj['secure-access-allow-external-user'] = false;
+        obj['secure-access-target-type'] = 'false';
         obj['target-name'] = targetName;
     }
 
@@ -134,6 +135,9 @@ class RotatedSecretCreateSsh {
             }
             if (data.hasOwnProperty('secure-access-ssh-user')) {
                 obj['secure-access-ssh-user'] = ApiClient.convertToType(data['secure-access-ssh-user'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-target-type')) {
+                obj['secure-access-target-type'] = ApiClient.convertToType(data['secure-access-target-type'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -254,6 +258,10 @@ class RotatedSecretCreateSsh {
         // ensure the json data is a string
         if (data['secure-access-ssh-user'] && !(typeof data['secure-access-ssh-user'] === 'string' || data['secure-access-ssh-user'] instanceof String)) {
             throw new Error("Expected the field `secure-access-ssh-user` to be a primitive type in the JSON string but got " + data['secure-access-ssh-user']);
+        }
+        // ensure the json data is a string
+        if (data['secure-access-target-type'] && !(typeof data['secure-access-target-type'] === 'string' || data['secure-access-target-type'] instanceof String)) {
+            throw new Error("Expected the field `secure-access-target-type` to be a primitive type in the JSON string but got " + data['secure-access-target-type']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
@@ -439,6 +447,13 @@ RotatedSecretCreateSsh.prototype['secure-access-rdp-user'] = undefined;
  * @member {String} secure-access-ssh-user
  */
 RotatedSecretCreateSsh.prototype['secure-access-ssh-user'] = undefined;
+
+/**
+ * Specify target type. Options are ssh or rdp
+ * @member {String} secure-access-target-type
+ * @default 'false'
+ */
+RotatedSecretCreateSsh.prototype['secure-access-target-type'] = 'false';
 
 /**
  * Add tags attached to this object

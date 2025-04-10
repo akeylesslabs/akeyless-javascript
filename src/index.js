@@ -284,6 +284,7 @@ import DescribePermissions from './model/DescribePermissions';
 import DescribePermissionsOutput from './model/DescribePermissionsOutput';
 import DescribeSubClaims from './model/DescribeSubClaims';
 import DescribeSubClaimsOutput from './model/DescribeSubClaimsOutput';
+import DesktopAppConf from './model/DesktopAppConf';
 import Detokenize from './model/Detokenize';
 import DetokenizeOutput from './model/DetokenizeOutput';
 import DockerhubTargetDetails from './model/DockerhubTargetDetails';
@@ -401,7 +402,6 @@ import GCPAccessRules from './model/GCPAccessRules';
 import GCPPayload from './model/GCPPayload';
 import GCPSecretsMigration from './model/GCPSecretsMigration';
 import GKETargetDetails from './model/GKETargetDetails';
-import GatewayBasicInfo from './model/GatewayBasicInfo';
 import GatewayCreateAllowedAccess from './model/GatewayCreateAllowedAccess';
 import GatewayCreateK8SAuthConfig from './model/GatewayCreateK8SAuthConfig';
 import GatewayCreateK8SAuthConfigOutput from './model/GatewayCreateK8SAuthConfigOutput';
@@ -466,6 +466,7 @@ import GatewayDeleteK8SAuthConfigOutput from './model/GatewayDeleteK8SAuthConfig
 import GatewayDeleteMigration from './model/GatewayDeleteMigration';
 import GatewayDeleteProducer from './model/GatewayDeleteProducer';
 import GatewayDeleteProducerOutput from './model/GatewayDeleteProducerOutput';
+import GatewayDetailsForItemReplyObj from './model/GatewayDetailsForItemReplyObj';
 import GatewayDownloadCustomerFragments from './model/GatewayDownloadCustomerFragments';
 import GatewayDownloadCustomerFragmentsOutput from './model/GatewayDownloadCustomerFragmentsOutput';
 import GatewayGetAllowedAccess from './model/GatewayGetAllowedAccess';
@@ -581,6 +582,7 @@ import GatewayUpdateProducerSnowflakeOutput from './model/GatewayUpdateProducerS
 import GatewayUpdateProducerVenafi from './model/GatewayUpdateProducerVenafi';
 import GatewayUpdateProducerVenafiOutput from './model/GatewayUpdateProducerVenafiOutput';
 import GatewayUpdateRemoteAccess from './model/GatewayUpdateRemoteAccess';
+import GatewayUpdateRemoteAccessDesktopApp from './model/GatewayUpdateRemoteAccessDesktopApp';
 import GatewayUpdateRemoteAccessRdpRecordings from './model/GatewayUpdateRemoteAccessRdpRecordings';
 import GatewayUpdateTlsCert from './model/GatewayUpdateTlsCert';
 import GatewayUpdateTlsCertOutput from './model/GatewayUpdateTlsCertOutput';
@@ -879,6 +881,7 @@ import SignRsaSsaPss from './model/SignRsaSsaPss';
 import SignRsaSsaPssOutput from './model/SignRsaSsaPssOutput';
 import SmInfo from './model/SmInfo';
 import SplunkLogForwardingConfig from './model/SplunkLogForwardingConfig';
+import SraDesktopAppConf from './model/SraDesktopAppConf';
 import SraInfo from './model/SraInfo';
 import SraSessionEntryOut from './model/SraSessionEntryOut';
 import SshBastionConf from './model/SshBastionConf';
@@ -1135,7 +1138,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.1
+* @version 5.0.2
 */
 export {
     /**
@@ -2771,6 +2774,12 @@ export {
     DescribeSubClaimsOutput,
 
     /**
+     * The DesktopAppConf model constructor.
+     * @property {module:model/DesktopAppConf}
+     */
+    DesktopAppConf,
+
+    /**
      * The Detokenize model constructor.
      * @property {module:model/Detokenize}
      */
@@ -3473,12 +3482,6 @@ export {
     GKETargetDetails,
 
     /**
-     * The GatewayBasicInfo model constructor.
-     * @property {module:model/GatewayBasicInfo}
-     */
-    GatewayBasicInfo,
-
-    /**
      * The GatewayCreateAllowedAccess model constructor.
      * @property {module:model/GatewayCreateAllowedAccess}
      */
@@ -3861,6 +3864,12 @@ export {
      * @property {module:model/GatewayDeleteProducerOutput}
      */
     GatewayDeleteProducerOutput,
+
+    /**
+     * The GatewayDetailsForItemReplyObj model constructor.
+     * @property {module:model/GatewayDetailsForItemReplyObj}
+     */
+    GatewayDetailsForItemReplyObj,
 
     /**
      * The GatewayDownloadCustomerFragments model constructor.
@@ -4551,6 +4560,12 @@ export {
      * @property {module:model/GatewayUpdateRemoteAccess}
      */
     GatewayUpdateRemoteAccess,
+
+    /**
+     * The GatewayUpdateRemoteAccessDesktopApp model constructor.
+     * @property {module:model/GatewayUpdateRemoteAccessDesktopApp}
+     */
+    GatewayUpdateRemoteAccessDesktopApp,
 
     /**
      * The GatewayUpdateRemoteAccessRdpRecordings model constructor.
@@ -6339,6 +6354,12 @@ export {
      * @property {module:model/SplunkLogForwardingConfig}
      */
     SplunkLogForwardingConfig,
+
+    /**
+     * The SraDesktopAppConf model constructor.
+     * @property {module:model/SraDesktopAppConf}
+     */
+    SraDesktopAppConf,
 
     /**
      * The SraInfo model constructor.

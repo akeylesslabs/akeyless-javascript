@@ -17,7 +17,7 @@ import RemoteSecretInfo from './RemoteSecretInfo';
 /**
  * The ItemUSCSyncAssociation model module.
  * @module model/ItemUSCSyncAssociation
- * @version 5.0.1
+ * @version 5.0.2
  */
 class ItemUSCSyncAssociation {
     /**

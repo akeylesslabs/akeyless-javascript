@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerLdap model module.
  * @module model/GatewayUpdateProducerLdap
- * @version 5.0.1
+ * @version 5.0.2
  */
 class GatewayUpdateProducerLdap {
     /**
@@ -98,6 +98,12 @@ class GatewayUpdateProducerLdap {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-issuer')) {
+                obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-certificate-issuer')) {
+                obj['secure-access-certificate-issuer'] = ApiClient.convertToType(data['secure-access-certificate-issuer'], 'String');
             }
             if (data.hasOwnProperty('secure-access-delay')) {
                 obj['secure-access-delay'] = ApiClient.convertToType(data['secure-access-delay'], 'Number');
@@ -212,6 +218,14 @@ class GatewayUpdateProducerLdap {
         // ensure the json data is a string
         if (data['producer-encryption-key-name'] && !(typeof data['producer-encryption-key-name'] === 'string' || data['producer-encryption-key-name'] instanceof String)) {
             throw new Error("Expected the field `producer-encryption-key-name` to be a primitive type in the JSON string but got " + data['producer-encryption-key-name']);
+        }
+        // ensure the json data is a string
+        if (data['secure-access-bastion-issuer'] && !(typeof data['secure-access-bastion-issuer'] === 'string' || data['secure-access-bastion-issuer'] instanceof String)) {
+            throw new Error("Expected the field `secure-access-bastion-issuer` to be a primitive type in the JSON string but got " + data['secure-access-bastion-issuer']);
+        }
+        // ensure the json data is a string
+        if (data['secure-access-certificate-issuer'] && !(typeof data['secure-access-certificate-issuer'] === 'string' || data['secure-access-certificate-issuer'] instanceof String)) {
+            throw new Error("Expected the field `secure-access-certificate-issuer` to be a primitive type in the JSON string but got " + data['secure-access-certificate-issuer']);
         }
         // ensure the json data is a string
         if (data['secure-access-enable'] && !(typeof data['secure-access-enable'] === 'string' || data['secure-access-enable'] instanceof String)) {
@@ -365,6 +379,18 @@ GatewayUpdateProducerLdap.prototype['password-length'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayUpdateProducerLdap.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * Deprecated. use secure-access-certificate-issuer
+ * @member {String} secure-access-bastion-issuer
+ */
+GatewayUpdateProducerLdap.prototype['secure-access-bastion-issuer'] = undefined;
+
+/**
+ * Path to the SSH Certificate Issuer for your Akeyless Secure Access
+ * @member {String} secure-access-certificate-issuer
+ */
+GatewayUpdateProducerLdap.prototype['secure-access-certificate-issuer'] = undefined;
 
 /**
  * The delay duration, in seconds, to wait after generating just-in-time credentials. Accepted range: 0-120 seconds

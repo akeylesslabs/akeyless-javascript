@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdatePing model module.
  * @module model/TargetUpdatePing
- * @version 5.0.1
+ * @version 5.0.2
  */
 class TargetUpdatePing {
     /**

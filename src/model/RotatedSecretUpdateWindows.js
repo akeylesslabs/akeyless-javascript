@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateWindows model module.
  * @module model/RotatedSecretUpdateWindows
- * @version 5.0.1
+ * @version 5.0.2
  */
 class RotatedSecretUpdateWindows {
     /**
@@ -121,6 +121,12 @@ class RotatedSecretUpdateWindows {
             }
             if (data.hasOwnProperty('secure-access-allow-external-user')) {
                 obj['secure-access-allow-external-user'] = ApiClient.convertToType(data['secure-access-allow-external-user'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-bastion-issuer')) {
+                obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-certificate-issuer')) {
+                obj['secure-access-certificate-issuer'] = ApiClient.convertToType(data['secure-access-certificate-issuer'], 'String');
             }
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
@@ -231,6 +237,14 @@ class RotatedSecretUpdateWindows {
         // ensure the json data is a string
         if (data['same-password'] && !(typeof data['same-password'] === 'string' || data['same-password'] instanceof String)) {
             throw new Error("Expected the field `same-password` to be a primitive type in the JSON string but got " + data['same-password']);
+        }
+        // ensure the json data is a string
+        if (data['secure-access-bastion-issuer'] && !(typeof data['secure-access-bastion-issuer'] === 'string' || data['secure-access-bastion-issuer'] instanceof String)) {
+            throw new Error("Expected the field `secure-access-bastion-issuer` to be a primitive type in the JSON string but got " + data['secure-access-bastion-issuer']);
+        }
+        // ensure the json data is a string
+        if (data['secure-access-certificate-issuer'] && !(typeof data['secure-access-certificate-issuer'] === 'string' || data['secure-access-certificate-issuer'] instanceof String)) {
+            throw new Error("Expected the field `secure-access-certificate-issuer` to be a primitive type in the JSON string but got " + data['secure-access-certificate-issuer']);
         }
         // ensure the json data is a string
         if (data['secure-access-enable'] && !(typeof data['secure-access-enable'] === 'string' || data['secure-access-enable'] instanceof String)) {
@@ -401,6 +415,18 @@ RotatedSecretUpdateWindows.prototype['same-password'] = undefined;
  * @default false
  */
 RotatedSecretUpdateWindows.prototype['secure-access-allow-external-user'] = false;
+
+/**
+ * Deprecated. use secure-access-certificate-issuer
+ * @member {String} secure-access-bastion-issuer
+ */
+RotatedSecretUpdateWindows.prototype['secure-access-bastion-issuer'] = undefined;
+
+/**
+ * Path to the SSH Certificate Issuer for your Akeyless Secure Access
+ * @member {String} secure-access-certificate-issuer
+ */
+RotatedSecretUpdateWindows.prototype['secure-access-certificate-issuer'] = undefined;
 
 /**
  * Enable/Disable secure remote access [true/false]

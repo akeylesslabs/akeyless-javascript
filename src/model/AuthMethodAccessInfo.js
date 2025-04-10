@@ -31,7 +31,7 @@ import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 5.0.1
+ * @version 5.0.2
  */
 class AuthMethodAccessInfo {
     /**
