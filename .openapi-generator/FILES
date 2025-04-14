@@ -737,6 +737,7 @@ docs/Name.md
 docs/NativeK8sTargetDetails.md
 docs/NextAutoRotationEvent.md
 docs/NotiForwarder.md
+docs/NullString.md
 docs/OAuth2AccessRules.md
 docs/OAuth2CustomClaim.md
 docs/OCIAccessRules.md
@@ -1837,6 +1838,7 @@ src/model/Name.js
 src/model/NativeK8sTargetDetails.js
 src/model/NextAutoRotationEvent.js
 src/model/NotiForwarder.js
+src/model/NullString.js
 src/model/OAuth2AccessRules.js
 src/model/OAuth2CustomClaim.js
 src/model/OCIAccessRules.js
@@ -2195,7 +2197,4 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/DesktopAppConf.spec.js
-test/model/GatewayDetailsForItemReplyObj.spec.js
-test/model/GatewayUpdateRemoteAccessDesktopApp.spec.js
-test/model/SraDesktopAppConf.spec.js
+test/model/NullString.spec.js

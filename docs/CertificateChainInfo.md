@@ -14,8 +14,13 @@ Name | Type | Description | Notes
 **certificateIssuerName** | **String** |  | [optional] 
 **certificatePem** | **String** |  | [optional] 
 **certificateStatus** | **String** |  | [optional] 
+**commonName** | **String** |  | [optional] 
 **errorMessage** | **String** |  | [optional] 
+**expirationDate** | **Date** |  | [optional] 
 **expirationEvents** | [**[CertificateExpirationEvent]**](CertificateExpirationEvent.md) |  | [optional] 
+**externalCaId** | [**NullString**](NullString.md) |  | [optional] 
+**issuanceStatus** | **String** |  | [optional] 
+**notBefore** | **Date** |  | [optional] 
 **renewBeforeExpirationInDays** | **Number** |  | [optional] 
 
 
