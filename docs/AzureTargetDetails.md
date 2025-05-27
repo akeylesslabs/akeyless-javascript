@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **azureUsername** | **String** |  | [optional] 
 **connectionType** | **String** |  | [optional] 
 **expirationDate** | **Date** |  | [optional] 
+**graceRotatedSecretKey** | **String** |  | [optional] 
 **useGwCloudIdentity** | **Boolean** |  | [optional] 
 
 

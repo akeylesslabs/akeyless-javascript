@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **revocationStatement** | **String** | PostgreSQL Revocation statements | [optional] 
 **secureAccessBastionIssuer** | **String** | Deprecated. use secure-access-certificate-issuer | [optional] 
 **secureAccessCertificateIssuer** | **String** | Path to the SSH Certificate Issuer for your Akeyless Secure Access | [optional] 
+**secureAccessDbName** | **String** | The DB name (relevant only for DB Dynamic-Secret) | [optional] 
 **secureAccessDbSchema** | **String** | The DB schema | [optional] 
 **secureAccessDelay** | **Number** | The delay duration, in seconds, to wait after generating just-in-time credentials. Accepted range: 0-120 seconds | [optional] 
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 

@@ -765,7 +765,6 @@ docs/RawCreds.md
 docs/RefreshKey.md
 docs/RefreshKeyOutput.md
 docs/RegexpTokenizerInfo.md
-docs/RemoteSecretInfo.md
 docs/RenewCertificate.md
 docs/RenewCertificateOutput.md
 docs/RequestAccess.md
@@ -1071,6 +1070,7 @@ docs/UscGet.md
 docs/UscGetSecretOutput.md
 docs/UscList.md
 docs/UscListSecretsOutput.md
+docs/UscSyncInfo.md
 docs/UscUpdate.md
 docs/UscUpdateSecretOutput.md
 docs/V2Api.md
@@ -1866,7 +1866,6 @@ src/model/RawCreds.js
 src/model/RefreshKey.js
 src/model/RefreshKeyOutput.js
 src/model/RegexpTokenizerInfo.js
-src/model/RemoteSecretInfo.js
 src/model/RenewCertificate.js
 src/model/RenewCertificateOutput.js
 src/model/RequestAccess.js
@@ -2172,6 +2171,7 @@ src/model/UscGet.js
 src/model/UscGetSecretOutput.js
 src/model/UscList.js
 src/model/UscListSecretsOutput.js
+src/model/UscSyncInfo.js
 src/model/UscUpdate.js
 src/model/UscUpdateSecretOutput.js
 src/model/ValidateToken.js
@@ -2197,4 +2197,4 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/NullString.spec.js
+test/model/UscSyncInfo.spec.js
