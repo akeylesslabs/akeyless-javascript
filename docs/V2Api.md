@@ -438,6 +438,8 @@ Method | HTTP request | Description
 [**signPKICertWithClassicKey**](V2Api.md#signPKICertWithClassicKey) | **POST** /sign-pki-cert-with-classic-key | 
 [**signRsaSsaPss**](V2Api.md#signRsaSsaPss) | **POST** /sign-rsassa-pss | 
 [**staticCredsAuth**](V2Api.md#staticCredsAuth) | **POST** /static-creds-auth | 
+[**staticSecretDeleteSync**](V2Api.md#staticSecretDeleteSync) | **POST** /static-secret-delete-sync | 
+[**staticSecretSync**](V2Api.md#staticSecretSync) | **POST** /static-secret-sync | 
 [**targetCreateArtifactory**](V2Api.md#targetCreateArtifactory) | **POST** /target-create-artifactory | 
 [**targetCreateAws**](V2Api.md#targetCreateAws) | **POST** /target-create-aws | 
 [**targetCreateAzure**](V2Api.md#targetCreateAzure) | **POST** /target-create-azure | 
@@ -17446,7 +17448,7 @@ No authorization required
 
 ## rotatedSecretDeleteSync
 
-> Object rotatedSecretDeleteSync(rotatedSecretDeleteSync)
+> RotatedSecretDeleteSyncOutput rotatedSecretDeleteSync(rotatedSecretDeleteSync)
 
 
 
@@ -17474,7 +17476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**RotatedSecretDeleteSyncOutput**](RotatedSecretDeleteSyncOutput.md)
 
 ### Authorization
 
@@ -18819,6 +18821,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**StaticCredsAuthOutput**](StaticCredsAuthOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## staticSecretDeleteSync
+
+> StaticSecretDeleteSyncOutput staticSecretDeleteSync(staticSecretDeleteSync)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let staticSecretDeleteSync = new akeyless.StaticSecretDeleteSync(); // StaticSecretDeleteSync | 
+apiInstance.staticSecretDeleteSync(staticSecretDeleteSync).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **staticSecretDeleteSync** | [**StaticSecretDeleteSync**](StaticSecretDeleteSync.md)|  | 
+
+### Return type
+
+[**StaticSecretDeleteSyncOutput**](StaticSecretDeleteSyncOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## staticSecretSync
+
+> SecretSyncOutput staticSecretSync(staticSecretSync)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let staticSecretSync = new akeyless.StaticSecretSync(); // StaticSecretSync | 
+apiInstance.staticSecretSync(staticSecretSync).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **staticSecretSync** | [**StaticSecretSync**](StaticSecretSync.md)|  | 
+
+### Return type
+
+[**SecretSyncOutput**](SecretSyncOutput.md)
 
 ### Authorization
 

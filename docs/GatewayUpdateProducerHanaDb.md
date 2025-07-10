@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**customUsernameTemplate** | **String** | Customize how temporary usernames are generated using go template | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **hanaDbname** | **String** | HanaDb Name | [optional] 
 **hanadbCreateStatements** | **String** | HanaDb Creation statements | [optional] 

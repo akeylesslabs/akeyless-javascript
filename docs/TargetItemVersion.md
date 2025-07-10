@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessDate** | **Date** |  | [optional] 
 **accessDateDisplay** | **String** |  | [optional] 
+**accessId** | **String** |  | [optional] 
 **certificateVersionInfo** | [**CertificateVersionInfo**](CertificateVersionInfo.md) |  | [optional] 
 **creationDate** | **Date** |  | [optional] 
 **customerFragmentId** | **String** |  | [optional] 
@@ -15,6 +16,7 @@ Name | Type | Description | Notes
 **modificationDate** | **Date** |  | [optional] 
 **protectionKeyName** | **String** |  | [optional] 
 **targetName** | **String** |  | [optional] 
+**uniqueIdentifier** | **String** |  | [optional] 
 **version** | **Number** |  | [optional] 
 **withCustomerFragment** | **Boolean** |  | [optional] 
 

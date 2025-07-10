@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **providerType** | **String** |  | [optional] 
 **bindDn** | **String** | Bind DN | [optional] 
 **bindDnPassword** | **String** | Bind DN Password | [optional] 
+**customUsernameTemplate** | **String** | Customize how temporary usernames are generated using go template | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **externalUsername** | **String** | Externally provided username [true/false] | [optional] [default to &#39;false&#39;]

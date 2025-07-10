@@ -3,6 +3,7 @@
 .travis.yml
 README.md
 docs/APIKeyAccessRules.md
+docs/AWSGatewayCloudIdentityExternalIdOpt.md
 docs/AWSIAMAccessRules.md
 docs/AWSPayload.md
 docs/AWSSecretsMigration.md
@@ -92,6 +93,7 @@ docs/CertAccessRules.md
 docs/CertificateAnalyticAggregation.md
 docs/CertificateChainInfo.md
 docs/CertificateExpirationEvent.md
+docs/CertificateExpirationEventsSettings.md
 docs/CertificateInfo.md
 docs/CertificateIssueInfo.md
 docs/CertificateStore.md
@@ -809,6 +811,7 @@ docs/RotatedSecretCreateSsh.md
 docs/RotatedSecretCreateWindows.md
 docs/RotatedSecretDelete.md
 docs/RotatedSecretDeleteSync.md
+docs/RotatedSecretDeleteSyncOutput.md
 docs/RotatedSecretDetailsInfo.md
 docs/RotatedSecretGetValue.md
 docs/RotatedSecretList.md
@@ -844,6 +847,7 @@ docs/SSHCertificateIssueDetails.md
 docs/SSHTargetDetails.md
 docs/SalesforceTargetDetails.md
 docs/SecretInfo.md
+docs/SecretSyncOutput.md
 docs/SectigoTargetDetails.md
 docs/SecureRemoteAccess.md
 docs/ServerInventoryMigration.md
@@ -877,7 +881,10 @@ docs/SshBastionConf.md
 docs/SshBastionSessionTermination.md
 docs/StaticCredsAuth.md
 docs/StaticCredsAuthOutput.md
+docs/StaticSecretDeleteSync.md
+docs/StaticSecretDeleteSyncOutput.md
 docs/StaticSecretDetailsInfo.md
+docs/StaticSecretSync.md
 docs/SumologicLogForwardingConfig.md
 docs/SyslogLogForwardingConfig.md
 docs/SystemAccessCredentialsReplyObj.md
@@ -1104,6 +1111,7 @@ src/ApiClient.js
 src/api/V2Api.js
 src/index.js
 src/model/APIKeyAccessRules.js
+src/model/AWSGatewayCloudIdentityExternalIdOpt.js
 src/model/AWSIAMAccessRules.js
 src/model/AWSPayload.js
 src/model/AWSSecretsMigration.js
@@ -1193,6 +1201,7 @@ src/model/CertAccessRules.js
 src/model/CertificateAnalyticAggregation.js
 src/model/CertificateChainInfo.js
 src/model/CertificateExpirationEvent.js
+src/model/CertificateExpirationEventsSettings.js
 src/model/CertificateInfo.js
 src/model/CertificateIssueInfo.js
 src/model/CertificateStore.js
@@ -1910,6 +1919,7 @@ src/model/RotatedSecretCreateSsh.js
 src/model/RotatedSecretCreateWindows.js
 src/model/RotatedSecretDelete.js
 src/model/RotatedSecretDeleteSync.js
+src/model/RotatedSecretDeleteSyncOutput.js
 src/model/RotatedSecretDetailsInfo.js
 src/model/RotatedSecretGetValue.js
 src/model/RotatedSecretList.js
@@ -1945,6 +1955,7 @@ src/model/SSHCertificateIssueDetails.js
 src/model/SSHTargetDetails.js
 src/model/SalesforceTargetDetails.js
 src/model/SecretInfo.js
+src/model/SecretSyncOutput.js
 src/model/SectigoTargetDetails.js
 src/model/SecureRemoteAccess.js
 src/model/ServerInventoryMigration.js
@@ -1978,7 +1989,10 @@ src/model/SshBastionConf.js
 src/model/SshBastionSessionTermination.js
 src/model/StaticCredsAuth.js
 src/model/StaticCredsAuthOutput.js
+src/model/StaticSecretDeleteSync.js
+src/model/StaticSecretDeleteSyncOutput.js
 src/model/StaticSecretDetailsInfo.js
+src/model/StaticSecretSync.js
 src/model/SumologicLogForwardingConfig.js
 src/model/SyslogLogForwardingConfig.js
 src/model/SystemAccessCredentialsReplyObj.js
@@ -2197,4 +2211,10 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/UscSyncInfo.spec.js
+test/model/AWSGatewayCloudIdentityExternalIdOpt.spec.js
+test/model/CertificateExpirationEventsSettings.spec.js
+test/model/RotatedSecretDeleteSyncOutput.spec.js
+test/model/SecretSyncOutput.spec.js
+test/model/StaticSecretDeleteSync.spec.js
+test/model/StaticSecretDeleteSyncOutput.spec.js
+test/model/StaticSecretSync.spec.js
