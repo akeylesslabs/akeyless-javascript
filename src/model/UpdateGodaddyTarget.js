@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGodaddyTarget model module.
  * @module model/UpdateGodaddyTarget
- * @version 5.0.5
+ * @version 5.0.6
  */
 class UpdateGodaddyTarget {
     /**
@@ -68,6 +68,9 @@ class UpdateGodaddyTarget {
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('customer_id')) {
+                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -140,6 +143,10 @@ class UpdateGodaddyTarget {
         // ensure the json data is a string
         if (data['comment'] && !(typeof data['comment'] === 'string' || data['comment'] instanceof String)) {
             throw new Error("Expected the field `comment` to be a primitive type in the JSON string but got " + data['comment']);
+        }
+        // ensure the json data is a string
+        if (data['customer_id'] && !(typeof data['customer_id'] === 'string' || data['customer_id'] instanceof String)) {
+            throw new Error("Expected the field `customer_id` to be a primitive type in the JSON string but got " + data['customer_id']);
         }
         // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
@@ -217,6 +224,12 @@ UpdateGodaddyTarget.prototype['api-key'] = undefined;
  * @member {String} comment
  */
 UpdateGodaddyTarget.prototype['comment'] = undefined;
+
+/**
+ * Customer ID (ShopperId) required for renewal of imported certificates
+ * @member {String} customer_id
+ */
+UpdateGodaddyTarget.prototype['customer_id'] = undefined;
 
 /**
  * Description of the object

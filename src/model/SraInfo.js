@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SraInfo model module.
  * @module model/SraInfo
- * @version 5.0.5
+ * @version 5.0.6
  */
 class SraInfo {
     /**

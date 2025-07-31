@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateAws model module.
  * @module model/DynamicSecretUpdateAws
- * @version 5.0.5
+ * @version 5.0.6
  */
 class DynamicSecretUpdateAws {
     /**

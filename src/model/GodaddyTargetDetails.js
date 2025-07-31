@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GodaddyTargetDetails model module.
  * @module model/GodaddyTargetDetails
- * @version 5.0.5
+ * @version 5.0.6
  */
 class GodaddyTargetDetails {
     /**
@@ -66,6 +66,9 @@ class GodaddyTargetDetails {
             if (data.hasOwnProperty('secret')) {
                 obj['secret'] = ApiClient.convertToType(data['secret'], 'String');
             }
+            if (data.hasOwnProperty('shopper_id')) {
+                obj['shopper_id'] = ApiClient.convertToType(data['shopper_id'], 'String');
+            }
             if (data.hasOwnProperty('timeout')) {
                 obj['timeout'] = ApiClient.convertToType(data['timeout'], 'Number');
             }
@@ -105,6 +108,10 @@ class GodaddyTargetDetails {
         // ensure the json data is a string
         if (data['secret'] && !(typeof data['secret'] === 'string' || data['secret'] instanceof String)) {
             throw new Error("Expected the field `secret` to be a primitive type in the JSON string but got " + data['secret']);
+        }
+        // ensure the json data is a string
+        if (data['shopper_id'] && !(typeof data['shopper_id'] === 'string' || data['shopper_id'] instanceof String)) {
+            throw new Error("Expected the field `shopper_id` to be a primitive type in the JSON string but got " + data['shopper_id']);
         }
         // ensure the json data is a string
         if (data['validation_email'] && !(typeof data['validation_email'] === 'string' || data['validation_email'] instanceof String)) {
@@ -148,6 +155,12 @@ GodaddyTargetDetails.prototype['key'] = undefined;
  * @member {String} secret
  */
 GodaddyTargetDetails.prototype['secret'] = undefined;
+
+/**
+ * Optional, used to find the certificate ID in GoDaddy's API
+ * @member {String} shopper_id
+ */
+GodaddyTargetDetails.prototype['shopper_id'] = undefined;
 
 /**
  * A Duration represents the elapsed time between two instants as an int64 nanosecond count. The representation limits the largest representable duration to approximately 290 years.

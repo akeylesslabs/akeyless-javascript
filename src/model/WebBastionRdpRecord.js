@@ -18,7 +18,7 @@ import AzureStorage from './AzureStorage';
 /**
  * The WebBastionRdpRecord model module.
  * @module model/WebBastionRdpRecord
- * @version 5.0.5
+ * @version 5.0.6
  */
 class WebBastionRdpRecord {
     /**
@@ -55,6 +55,15 @@ class WebBastionRdpRecord {
             if (data.hasOwnProperty('azure')) {
                 obj['azure'] = AzureStorage.constructFromObject(data['azure']);
             }
+            if (data.hasOwnProperty('compress')) {
+                obj['compress'] = ApiClient.convertToType(data['compress'], 'Boolean');
+            }
+            if (data.hasOwnProperty('encryption_key')) {
+                obj['encryption_key'] = ApiClient.convertToType(data['encryption_key'], 'String');
+            }
+            if (data.hasOwnProperty('recording_quality')) {
+                obj['recording_quality'] = ApiClient.convertToType(data['recording_quality'], 'String');
+            }
             if (data.hasOwnProperty('storage_type')) {
                 obj['storage_type'] = ApiClient.convertToType(data['storage_type'], 'String');
             }
@@ -75,6 +84,14 @@ class WebBastionRdpRecord {
         // validate the optional field `azure`
         if (data['azure']) { // data not null
           AzureStorage.validateJSON(data['azure']);
+        }
+        // ensure the json data is a string
+        if (data['encryption_key'] && !(typeof data['encryption_key'] === 'string' || data['encryption_key'] instanceof String)) {
+            throw new Error("Expected the field `encryption_key` to be a primitive type in the JSON string but got " + data['encryption_key']);
+        }
+        // ensure the json data is a string
+        if (data['recording_quality'] && !(typeof data['recording_quality'] === 'string' || data['recording_quality'] instanceof String)) {
+            throw new Error("Expected the field `recording_quality` to be a primitive type in the JSON string but got " + data['recording_quality']);
         }
         // ensure the json data is a string
         if (data['storage_type'] && !(typeof data['storage_type'] === 'string' || data['storage_type'] instanceof String)) {
@@ -98,6 +115,21 @@ WebBastionRdpRecord.prototype['aws'] = undefined;
  * @member {module:model/AzureStorage} azure
  */
 WebBastionRdpRecord.prototype['azure'] = undefined;
+
+/**
+ * @member {Boolean} compress
+ */
+WebBastionRdpRecord.prototype['compress'] = undefined;
+
+/**
+ * @member {String} encryption_key
+ */
+WebBastionRdpRecord.prototype['encryption_key'] = undefined;
+
+/**
+ * @member {String} recording_quality
+ */
+WebBastionRdpRecord.prototype['recording_quality'] = undefined;
 
 /**
  * @member {String} storage_type

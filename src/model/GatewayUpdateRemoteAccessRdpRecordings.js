@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateRemoteAccessRdpRecordings model module.
  * @module model/GatewayUpdateRemoteAccessRdpRecordings
- * @version 5.0.5
+ * @version 5.0.6
  */
 class GatewayUpdateRemoteAccessRdpRecordings {
     /**
@@ -85,6 +85,15 @@ class GatewayUpdateRemoteAccessRdpRecordings {
             if (data.hasOwnProperty('rdp-session-recording')) {
                 obj['rdp-session-recording'] = ApiClient.convertToType(data['rdp-session-recording'], 'String');
             }
+            if (data.hasOwnProperty('rdp-session-recording-compress')) {
+                obj['rdp-session-recording-compress'] = ApiClient.convertToType(data['rdp-session-recording-compress'], 'Boolean');
+            }
+            if (data.hasOwnProperty('rdp-session-recording-encryption-key')) {
+                obj['rdp-session-recording-encryption-key'] = ApiClient.convertToType(data['rdp-session-recording-encryption-key'], 'String');
+            }
+            if (data.hasOwnProperty('rdp-session-recording-quality')) {
+                obj['rdp-session-recording-quality'] = ApiClient.convertToType(data['rdp-session-recording-quality'], 'String');
+            }
             if (data.hasOwnProperty('rdp-session-storage')) {
                 obj['rdp-session-storage'] = ApiClient.convertToType(data['rdp-session-storage'], 'String');
             }
@@ -147,6 +156,14 @@ class GatewayUpdateRemoteAccessRdpRecordings {
         // ensure the json data is a string
         if (data['rdp-session-recording'] && !(typeof data['rdp-session-recording'] === 'string' || data['rdp-session-recording'] instanceof String)) {
             throw new Error("Expected the field `rdp-session-recording` to be a primitive type in the JSON string but got " + data['rdp-session-recording']);
+        }
+        // ensure the json data is a string
+        if (data['rdp-session-recording-encryption-key'] && !(typeof data['rdp-session-recording-encryption-key'] === 'string' || data['rdp-session-recording-encryption-key'] instanceof String)) {
+            throw new Error("Expected the field `rdp-session-recording-encryption-key` to be a primitive type in the JSON string but got " + data['rdp-session-recording-encryption-key']);
+        }
+        // ensure the json data is a string
+        if (data['rdp-session-recording-quality'] && !(typeof data['rdp-session-recording-quality'] === 'string' || data['rdp-session-recording-quality'] instanceof String)) {
+            throw new Error("Expected the field `rdp-session-recording-quality` to be a primitive type in the JSON string but got " + data['rdp-session-recording-quality']);
         }
         // ensure the json data is a string
         if (data['rdp-session-storage'] && !(typeof data['rdp-session-storage'] === 'string' || data['rdp-session-storage'] instanceof String)) {
@@ -241,6 +258,24 @@ GatewayUpdateRemoteAccessRdpRecordings.prototype['json'] = false;
  * @member {String} rdp-session-recording
  */
 GatewayUpdateRemoteAccessRdpRecordings.prototype['rdp-session-recording'] = undefined;
+
+/**
+ * Whether to compress recording files before upload
+ * @member {Boolean} rdp-session-recording-compress
+ */
+GatewayUpdateRemoteAccessRdpRecordings.prototype['rdp-session-recording-compress'] = undefined;
+
+/**
+ * If provided, this key will be used to encrypt uploaded recordings.
+ * @member {String} rdp-session-recording-encryption-key
+ */
+GatewayUpdateRemoteAccessRdpRecordings.prototype['rdp-session-recording-encryption-key'] = undefined;
+
+/**
+ * RDP session recording quality [low/medium/high]
+ * @member {String} rdp-session-recording-quality
+ */
+GatewayUpdateRemoteAccessRdpRecordings.prototype['rdp-session-recording-quality'] = undefined;
 
 /**
  * Rdp session recording storage destination [local/aws/azure]

@@ -2211,10 +2211,3 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/AWSGatewayCloudIdentityExternalIdOpt.spec.js
-test/model/CertificateExpirationEventsSettings.spec.js
-test/model/RotatedSecretDeleteSyncOutput.spec.js
-test/model/SecretSyncOutput.spec.js
-test/model/StaticSecretDeleteSync.spec.js
-test/model/StaticSecretDeleteSyncOutput.spec.js
-test/model/StaticSecretSync.spec.js

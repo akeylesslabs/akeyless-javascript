@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LogzIoLogForwardingConfig model module.
  * @module model/LogzIoLogForwardingConfig
- * @version 5.0.5
+ * @version 5.0.6
  */
 class LogzIoLogForwardingConfig {
     /**

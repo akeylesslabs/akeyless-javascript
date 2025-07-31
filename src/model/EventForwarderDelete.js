@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventForwarderDelete model module.
  * @module model/EventForwarderDelete
- * @version 5.0.5
+ * @version 5.0.6
  */
 class EventForwarderDelete {
     /**

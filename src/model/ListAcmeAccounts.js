@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListAcmeAccounts model module.
  * @module model/ListAcmeAccounts
- * @version 5.0.5
+ * @version 5.0.6
  */
 class ListAcmeAccounts {
     /**

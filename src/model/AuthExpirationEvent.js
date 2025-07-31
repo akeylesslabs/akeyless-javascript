@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthExpirationEvent model module.
  * @module model/AuthExpirationEvent
- * @version 5.0.5
+ * @version 5.0.6
  */
 class AuthExpirationEvent {
     /**

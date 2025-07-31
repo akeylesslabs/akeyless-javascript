@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateGodaddy model module.
  * @module model/TargetUpdateGodaddy
- * @version 5.0.5
+ * @version 5.0.6
  */
 class TargetUpdateGodaddy {
     /**
@@ -64,6 +64,9 @@ class TargetUpdateGodaddy {
 
             if (data.hasOwnProperty('api-key')) {
                 obj['api-key'] = ApiClient.convertToType(data['api-key'], 'String');
+            }
+            if (data.hasOwnProperty('customer_id')) {
+                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -129,6 +132,10 @@ class TargetUpdateGodaddy {
         // ensure the json data is a string
         if (data['api-key'] && !(typeof data['api-key'] === 'string' || data['api-key'] instanceof String)) {
             throw new Error("Expected the field `api-key` to be a primitive type in the JSON string but got " + data['api-key']);
+        }
+        // ensure the json data is a string
+        if (data['customer_id'] && !(typeof data['customer_id'] === 'string' || data['customer_id'] instanceof String)) {
+            throw new Error("Expected the field `customer_id` to be a primitive type in the JSON string but got " + data['customer_id']);
         }
         // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
@@ -200,6 +207,12 @@ TargetUpdateGodaddy.RequiredProperties = ["api-key", "imap-fqdn", "imap-password
  * @member {String} api-key
  */
 TargetUpdateGodaddy.prototype['api-key'] = undefined;
+
+/**
+ * Customer ID (ShopperId) required for renewal of imported certificates
+ * @member {String} customer_id
+ */
+TargetUpdateGodaddy.prototype['customer_id'] = undefined;
 
 /**
  * Description of the object

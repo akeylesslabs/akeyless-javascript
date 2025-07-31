@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SshBastionSessionTermination model module.
  * @module model/SshBastionSessionTermination
- * @version 5.0.5
+ * @version 5.0.6
  */
 class SshBastionSessionTermination {
     /**

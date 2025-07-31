@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateK8s model module.
  * @module model/DynamicSecretCreateK8s
- * @version 5.0.5
+ * @version 5.0.6
  */
 class DynamicSecretCreateK8s {
     /**
@@ -90,6 +90,9 @@ class DynamicSecretCreateK8s {
             }
             if (data.hasOwnProperty('k8s-predefined-role-type')) {
                 obj['k8s-predefined-role-type'] = ApiClient.convertToType(data['k8s-predefined-role-type'], 'String');
+            }
+            if (data.hasOwnProperty('k8s-rolebinding-yaml-data')) {
+                obj['k8s-rolebinding-yaml-data'] = ApiClient.convertToType(data['k8s-rolebinding-yaml-data'], 'String');
             }
             if (data.hasOwnProperty('k8s-rolebinding-yaml-def')) {
                 obj['k8s-rolebinding-yaml-def'] = ApiClient.convertToType(data['k8s-rolebinding-yaml-def'], 'String');
@@ -213,6 +216,10 @@ class DynamicSecretCreateK8s {
         // ensure the json data is a string
         if (data['k8s-predefined-role-type'] && !(typeof data['k8s-predefined-role-type'] === 'string' || data['k8s-predefined-role-type'] instanceof String)) {
             throw new Error("Expected the field `k8s-predefined-role-type` to be a primitive type in the JSON string but got " + data['k8s-predefined-role-type']);
+        }
+        // ensure the json data is a string
+        if (data['k8s-rolebinding-yaml-data'] && !(typeof data['k8s-rolebinding-yaml-data'] === 'string' || data['k8s-rolebinding-yaml-data'] instanceof String)) {
+            throw new Error("Expected the field `k8s-rolebinding-yaml-data` to be a primitive type in the JSON string but got " + data['k8s-rolebinding-yaml-data']);
         }
         // ensure the json data is a string
         if (data['k8s-rolebinding-yaml-def'] && !(typeof data['k8s-rolebinding-yaml-def'] === 'string' || data['k8s-rolebinding-yaml-def'] instanceof String)) {
@@ -355,6 +362,12 @@ DynamicSecretCreateK8s.prototype['k8s-predefined-role-name'] = undefined;
  * @member {String} k8s-predefined-role-type
  */
 DynamicSecretCreateK8s.prototype['k8s-predefined-role-type'] = undefined;
+
+/**
+ * Content of the yaml in a Base64 format.
+ * @member {String} k8s-rolebinding-yaml-data
+ */
+DynamicSecretCreateK8s.prototype['k8s-rolebinding-yaml-data'] = undefined;
 
 /**
  * Path to yaml file that contains definitions of K8S role and role binding (relevant only for k8s-service-account-type=dynamic)

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProvisionCertificateOutput model module.
  * @module model/ProvisionCertificateOutput
- * @version 5.0.5
+ * @version 5.0.6
  */
 class ProvisionCertificateOutput {
     /**

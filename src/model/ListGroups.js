@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListGroups model module.
  * @module model/ListGroups
- * @version 5.0.5
+ * @version 5.0.6
  */
 class ListGroups {
     /**

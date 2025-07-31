@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateEmail model module.
  * @module model/AuthMethodUpdateEmail
- * @version 5.0.5
+ * @version 5.0.6
  */
 class AuthMethodUpdateEmail {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateWeb model module.
  * @module model/TargetCreateWeb
- * @version 5.0.5
+ * @version 5.0.6
  */
 class TargetCreateWeb {
     /**

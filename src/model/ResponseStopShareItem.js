@@ -17,7 +17,7 @@ import EmailError from './EmailError';
 /**
  * The ResponseStopShareItem model module.
  * @module model/ResponseStopShareItem
- * @version 5.0.5
+ * @version 5.0.6
  */
 class ResponseStopShareItem {
     /**
