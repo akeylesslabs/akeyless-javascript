@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StaticSecretSync model module.
  * @module model/StaticSecretSync
- * @version 5.0.6
+ * @version 5.0.7
  */
 class StaticSecretSync {
     /**
@@ -50,6 +50,9 @@ class StaticSecretSync {
         if (data) {
             obj = obj || new StaticSecretSync();
 
+            if (data.hasOwnProperty('filter-secret-value')) {
+                obj['filter-secret-value'] = ApiClient.convertToType(data['filter-secret-value'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -88,6 +91,10 @@ class StaticSecretSync {
             }
         }
         // ensure the json data is a string
+        if (data['filter-secret-value'] && !(typeof data['filter-secret-value'] === 'string' || data['filter-secret-value'] instanceof String)) {
+            throw new Error("Expected the field `filter-secret-value` to be a primitive type in the JSON string but got " + data['filter-secret-value']);
+        }
+        // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
         }
@@ -119,6 +126,12 @@ class StaticSecretSync {
 }
 
 StaticSecretSync.RequiredProperties = ["name"];
+
+/**
+ * JQ expression to filter or transform the secret value
+ * @member {String} filter-secret-value
+ */
+StaticSecretSync.prototype['filter-secret-value'] = undefined;
 
 /**
  * Set output format to JSON

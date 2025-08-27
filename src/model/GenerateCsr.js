@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateCsr model module.
  * @module model/GenerateCsr
- * @version 5.0.6
+ * @version 5.0.7
  */
 class GenerateCsr {
     /**
@@ -39,6 +39,7 @@ class GenerateCsr {
     static initialize(obj, commonName, keyType, name) { 
         obj['common-name'] = commonName;
         obj['export-private-key'] = false;
+        obj['hash-algorithm'] = 'SHA256';
         obj['json'] = false;
         obj['key-type'] = keyType || 'classic-key';
         obj['name'] = name;
@@ -88,6 +89,9 @@ class GenerateCsr {
             }
             if (data.hasOwnProperty('generate-key')) {
                 obj['generate-key'] = ApiClient.convertToType(data['generate-key'], 'Boolean');
+            }
+            if (data.hasOwnProperty('hash-algorithm')) {
+                obj['hash-algorithm'] = ApiClient.convertToType(data['hash-algorithm'], 'String');
             }
             if (data.hasOwnProperty('ip-addresses')) {
                 obj['ip-addresses'] = ApiClient.convertToType(data['ip-addresses'], 'String');
@@ -166,6 +170,10 @@ class GenerateCsr {
         // ensure the json data is a string
         if (data['email-addresses'] && !(typeof data['email-addresses'] === 'string' || data['email-addresses'] instanceof String)) {
             throw new Error("Expected the field `email-addresses` to be a primitive type in the JSON string but got " + data['email-addresses']);
+        }
+        // ensure the json data is a string
+        if (data['hash-algorithm'] && !(typeof data['hash-algorithm'] === 'string' || data['hash-algorithm'] instanceof String)) {
+            throw new Error("Expected the field `hash-algorithm` to be a primitive type in the JSON string but got " + data['hash-algorithm']);
         }
         // ensure the json data is a string
         if (data['ip-addresses'] && !(typeof data['ip-addresses'] === 'string' || data['ip-addresses'] instanceof String)) {
@@ -273,6 +281,13 @@ GenerateCsr.prototype['export-private-key'] = false;
  * @member {Boolean} generate-key
  */
 GenerateCsr.prototype['generate-key'] = undefined;
+
+/**
+ * Specifies the hash algorithm used for the encryption key's operations, available options: SHA256, SHA384, SHA512
+ * @member {String} hash-algorithm
+ * @default 'SHA256'
+ */
+GenerateCsr.prototype['hash-algorithm'] = 'SHA256';
 
 /**
  * A comma-separated list of ip addresses alternative names

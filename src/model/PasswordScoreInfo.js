@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PasswordScoreInfo model module.
  * @module model/PasswordScoreInfo
- * @version 5.0.6
+ * @version 5.0.7
  */
 class PasswordScoreInfo {
     /**

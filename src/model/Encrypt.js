@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Encrypt model module.
  * @module model/Encrypt
- * @version 5.0.6
+ * @version 5.0.7
  */
 class Encrypt {
     /**

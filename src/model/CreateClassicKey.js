@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 5.0.6
+ * @version 5.0.7
  */
 class CreateClassicKey {
     /**
@@ -38,6 +38,7 @@ class CreateClassicKey {
      */
     static initialize(obj, alg, name) { 
         obj['alg'] = alg;
+        obj['hash-algorithm'] = 'SHA256';
         obj['json'] = false;
         obj['name'] = name;
     }
@@ -103,6 +104,9 @@ class CreateClassicKey {
             }
             if (data.hasOwnProperty('gpg-alg')) {
                 obj['gpg-alg'] = ApiClient.convertToType(data['gpg-alg'], 'String');
+            }
+            if (data.hasOwnProperty('hash-algorithm')) {
+                obj['hash-algorithm'] = ApiClient.convertToType(data['hash-algorithm'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -211,6 +215,10 @@ class CreateClassicKey {
             throw new Error("Expected the field `gpg-alg` to be a primitive type in the JSON string but got " + data['gpg-alg']);
         }
         // ensure the json data is a string
+        if (data['hash-algorithm'] && !(typeof data['hash-algorithm'] === 'string' || data['hash-algorithm'] instanceof String)) {
+            throw new Error("Expected the field `hash-algorithm` to be a primitive type in the JSON string but got " + data['hash-algorithm']);
+        }
+        // ensure the json data is a string
         if (data['key-data'] && !(typeof data['key-data'] === 'string' || data['key-data'] instanceof String)) {
             throw new Error("Expected the field `key-data` to be a primitive type in the JSON string but got " + data['key-data']);
         }
@@ -286,7 +294,7 @@ CreateClassicKey.prototype['certificate-common-name'] = undefined;
 CreateClassicKey.prototype['certificate-country'] = undefined;
 
 /**
- * Digest algorithm to be used for the certificate key signing. Currently, we support only \"sha256\" so we hide this option for CLI.
+ * Digest algorithm to be used for the certificate key signing.
  * @member {String} certificate-digest-algo
  */
 CreateClassicKey.prototype['certificate-digest-algo'] = undefined;
@@ -355,6 +363,13 @@ CreateClassicKey.prototype['generate-self-signed-certificate'] = undefined;
  * @member {String} gpg-alg
  */
 CreateClassicKey.prototype['gpg-alg'] = undefined;
+
+/**
+ * Specifies the hash algorithm used for the encryption key's operations, available options: [SHA256, SHA384, SHA512]
+ * @member {String} hash-algorithm
+ * @default 'SHA256'
+ */
+CreateClassicKey.prototype['hash-algorithm'] = 'SHA256';
 
 /**
  * Set output format to JSON

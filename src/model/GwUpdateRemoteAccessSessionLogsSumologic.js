@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GwUpdateRemoteAccessSessionLogsSumologic model module.
  * @module model/GwUpdateRemoteAccessSessionLogsSumologic
- * @version 5.0.6
+ * @version 5.0.7
  */
 class GwUpdateRemoteAccessSessionLogsSumologic {
     /**

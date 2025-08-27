@@ -591,6 +591,7 @@ import GatewayUpdateTlsCertOutput from './model/GatewayUpdateTlsCertOutput';
 import GatewayUpdateTmpUsers from './model/GatewayUpdateTmpUsers';
 import GatewaysListResponse from './model/GatewaysListResponse';
 import GcpTargetDetails from './model/GcpTargetDetails';
+import GeminiTargetDetails from './model/GeminiTargetDetails';
 import GenCustomerFragment from './model/GenCustomerFragment';
 import GeneralConfigPart from './model/GeneralConfigPart';
 import GenerateAcmeEab from './model/GenerateAcmeEab';
@@ -760,6 +761,7 @@ import ObjectVersionSettingsOutput from './model/ObjectVersionSettingsOutput';
 import OidcClientInfo from './model/OidcClientInfo';
 import OnePasswordMigration from './model/OnePasswordMigration';
 import OnePasswordPayload from './model/OnePasswordPayload';
+import OpenAITargetDetails from './model/OpenAITargetDetails';
 import PKICertificateIssueDetails from './model/PKICertificateIssueDetails';
 import PasswordBreachInfo from './model/PasswordBreachInfo';
 import PasswordExpirationInfo from './model/PasswordExpirationInfo';
@@ -908,6 +910,7 @@ import TargetCreateDB from './model/TargetCreateDB';
 import TargetCreateDockerhub from './model/TargetCreateDockerhub';
 import TargetCreateEks from './model/TargetCreateEks';
 import TargetCreateGcp from './model/TargetCreateGcp';
+import TargetCreateGemini from './model/TargetCreateGemini';
 import TargetCreateGithub from './model/TargetCreateGithub';
 import TargetCreateGitlab from './model/TargetCreateGitlab';
 import TargetCreateGke from './model/TargetCreateGke';
@@ -918,6 +921,7 @@ import TargetCreateHashiVault from './model/TargetCreateHashiVault';
 import TargetCreateK8s from './model/TargetCreateK8s';
 import TargetCreateLdap from './model/TargetCreateLdap';
 import TargetCreateLinked from './model/TargetCreateLinked';
+import TargetCreateOpenAI from './model/TargetCreateOpenAI';
 import TargetCreateOutput from './model/TargetCreateOutput';
 import TargetCreatePing from './model/TargetCreatePing';
 import TargetCreateRabbitMq from './model/TargetCreateRabbitMq';
@@ -942,6 +946,7 @@ import TargetUpdateDB from './model/TargetUpdateDB';
 import TargetUpdateDockerhub from './model/TargetUpdateDockerhub';
 import TargetUpdateEks from './model/TargetUpdateEks';
 import TargetUpdateGcp from './model/TargetUpdateGcp';
+import TargetUpdateGemini from './model/TargetUpdateGemini';
 import TargetUpdateGithub from './model/TargetUpdateGithub';
 import TargetUpdateGitlab from './model/TargetUpdateGitlab';
 import TargetUpdateGke from './model/TargetUpdateGke';
@@ -952,6 +957,7 @@ import TargetUpdateHashiVault from './model/TargetUpdateHashiVault';
 import TargetUpdateK8s from './model/TargetUpdateK8s';
 import TargetUpdateLdap from './model/TargetUpdateLdap';
 import TargetUpdateLinked from './model/TargetUpdateLinked';
+import TargetUpdateOpenAI from './model/TargetUpdateOpenAI';
 import TargetUpdateOutput from './model/TargetUpdateOutput';
 import TargetUpdatePing from './model/TargetUpdatePing';
 import TargetUpdateRabbitMq from './model/TargetUpdateRabbitMq';
@@ -1146,7 +1152,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.6
+* @version 5.0.7
 */
 export {
     /**
@@ -4624,6 +4630,12 @@ export {
     GcpTargetDetails,
 
     /**
+     * The GeminiTargetDetails model constructor.
+     * @property {module:model/GeminiTargetDetails}
+     */
+    GeminiTargetDetails,
+
+    /**
      * The GenCustomerFragment model constructor.
      * @property {module:model/GenCustomerFragment}
      */
@@ -5638,6 +5650,12 @@ export {
     OnePasswordPayload,
 
     /**
+     * The OpenAITargetDetails model constructor.
+     * @property {module:model/OpenAITargetDetails}
+     */
+    OpenAITargetDetails,
+
+    /**
      * The PKICertificateIssueDetails model constructor.
      * @property {module:model/PKICertificateIssueDetails}
      */
@@ -6526,6 +6544,12 @@ export {
     TargetCreateGcp,
 
     /**
+     * The TargetCreateGemini model constructor.
+     * @property {module:model/TargetCreateGemini}
+     */
+    TargetCreateGemini,
+
+    /**
      * The TargetCreateGithub model constructor.
      * @property {module:model/TargetCreateGithub}
      */
@@ -6584,6 +6608,12 @@ export {
      * @property {module:model/TargetCreateLinked}
      */
     TargetCreateLinked,
+
+    /**
+     * The TargetCreateOpenAI model constructor.
+     * @property {module:model/TargetCreateOpenAI}
+     */
+    TargetCreateOpenAI,
 
     /**
      * The TargetCreateOutput model constructor.
@@ -6730,6 +6760,12 @@ export {
     TargetUpdateGcp,
 
     /**
+     * The TargetUpdateGemini model constructor.
+     * @property {module:model/TargetUpdateGemini}
+     */
+    TargetUpdateGemini,
+
+    /**
      * The TargetUpdateGithub model constructor.
      * @property {module:model/TargetUpdateGithub}
      */
@@ -6788,6 +6824,12 @@ export {
      * @property {module:model/TargetUpdateLinked}
      */
     TargetUpdateLinked,
+
+    /**
+     * The TargetUpdateOpenAI model constructor.
+     * @property {module:model/TargetUpdateOpenAI}
+     */
+    TargetUpdateOpenAI,
 
     /**
      * The TargetUpdateOutput model constructor.

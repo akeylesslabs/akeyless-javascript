@@ -22,6 +22,7 @@ import DockerhubTargetDetails from './DockerhubTargetDetails';
 import EKSTargetDetails from './EKSTargetDetails';
 import GKETargetDetails from './GKETargetDetails';
 import GcpTargetDetails from './GcpTargetDetails';
+import GeminiTargetDetails from './GeminiTargetDetails';
 import GithubTargetDetails from './GithubTargetDetails';
 import GitlabTargetDetails from './GitlabTargetDetails';
 import GlobalSignAtlasTargetDetails from './GlobalSignAtlasTargetDetails';
@@ -32,6 +33,7 @@ import LdapTargetDetails from './LdapTargetDetails';
 import LinkedTargetDetails from './LinkedTargetDetails';
 import MongoDBTargetDetails from './MongoDBTargetDetails';
 import NativeK8sTargetDetails from './NativeK8sTargetDetails';
+import OpenAITargetDetails from './OpenAITargetDetails';
 import PingTargetDetails from './PingTargetDetails';
 import RabbitMQTargetDetails from './RabbitMQTargetDetails';
 import SSHTargetDetails from './SSHTargetDetails';
@@ -45,7 +47,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 5.0.6
+ * @version 5.0.7
  */
 class TargetTypeDetailsInput {
     /**
@@ -103,6 +105,9 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('gcp_target_details')) {
                 obj['gcp_target_details'] = GcpTargetDetails.constructFromObject(data['gcp_target_details']);
             }
+            if (data.hasOwnProperty('gemini_target_details')) {
+                obj['gemini_target_details'] = GeminiTargetDetails.constructFromObject(data['gemini_target_details']);
+            }
             if (data.hasOwnProperty('github_target_details')) {
                 obj['github_target_details'] = GithubTargetDetails.constructFromObject(data['github_target_details']);
             }
@@ -135,6 +140,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('native_k8s_target_details')) {
                 obj['native_k8s_target_details'] = NativeK8sTargetDetails.constructFromObject(data['native_k8s_target_details']);
+            }
+            if (data.hasOwnProperty('openai_target_details')) {
+                obj['openai_target_details'] = OpenAITargetDetails.constructFromObject(data['openai_target_details']);
             }
             if (data.hasOwnProperty('ping_target_details')) {
                 obj['ping_target_details'] = PingTargetDetails.constructFromObject(data['ping_target_details']);
@@ -209,6 +217,10 @@ class TargetTypeDetailsInput {
         if (data['gcp_target_details']) { // data not null
           GcpTargetDetails.validateJSON(data['gcp_target_details']);
         }
+        // validate the optional field `gemini_target_details`
+        if (data['gemini_target_details']) { // data not null
+          GeminiTargetDetails.validateJSON(data['gemini_target_details']);
+        }
         // validate the optional field `github_target_details`
         if (data['github_target_details']) { // data not null
           GithubTargetDetails.validateJSON(data['github_target_details']);
@@ -252,6 +264,10 @@ class TargetTypeDetailsInput {
         // validate the optional field `native_k8s_target_details`
         if (data['native_k8s_target_details']) { // data not null
           NativeK8sTargetDetails.validateJSON(data['native_k8s_target_details']);
+        }
+        // validate the optional field `openai_target_details`
+        if (data['openai_target_details']) { // data not null
+          OpenAITargetDetails.validateJSON(data['openai_target_details']);
         }
         // validate the optional field `ping_target_details`
         if (data['ping_target_details']) { // data not null
@@ -344,6 +360,11 @@ TargetTypeDetailsInput.prototype['eks_target_details'] = undefined;
 TargetTypeDetailsInput.prototype['gcp_target_details'] = undefined;
 
 /**
+ * @member {module:model/GeminiTargetDetails} gemini_target_details
+ */
+TargetTypeDetailsInput.prototype['gemini_target_details'] = undefined;
+
+/**
  * @member {module:model/GithubTargetDetails} github_target_details
  */
 TargetTypeDetailsInput.prototype['github_target_details'] = undefined;
@@ -397,6 +418,11 @@ TargetTypeDetailsInput.prototype['mongo_db_target_details'] = undefined;
  * @member {module:model/NativeK8sTargetDetails} native_k8s_target_details
  */
 TargetTypeDetailsInput.prototype['native_k8s_target_details'] = undefined;
+
+/**
+ * @member {module:model/OpenAITargetDetails} openai_target_details
+ */
+TargetTypeDetailsInput.prototype['openai_target_details'] = undefined;
 
 /**
  * @member {module:model/PingTargetDetails} ping_target_details

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CertificateTemplateInfo model module.
  * @module model/CertificateTemplateInfo
- * @version 5.0.6
+ * @version 5.0.7
  */
 class CertificateTemplateInfo {
     /**
@@ -58,6 +58,9 @@ class CertificateTemplateInfo {
             }
             if (data.hasOwnProperty('digest_algo')) {
                 obj['digest_algo'] = ApiClient.convertToType(data['digest_algo'], 'String');
+            }
+            if (data.hasOwnProperty('hash_algorithm')) {
+                obj['hash_algorithm'] = ApiClient.convertToType(data['hash_algorithm'], 'String');
             }
             if (data.hasOwnProperty('locality')) {
                 obj['locality'] = ApiClient.convertToType(data['locality'], 'String');
@@ -101,6 +104,10 @@ class CertificateTemplateInfo {
             throw new Error("Expected the field `digest_algo` to be a primitive type in the JSON string but got " + data['digest_algo']);
         }
         // ensure the json data is a string
+        if (data['hash_algorithm'] && !(typeof data['hash_algorithm'] === 'string' || data['hash_algorithm'] instanceof String)) {
+            throw new Error("Expected the field `hash_algorithm` to be a primitive type in the JSON string but got " + data['hash_algorithm']);
+        }
+        // ensure the json data is a string
         if (data['locality'] && !(typeof data['locality'] === 'string' || data['locality'] instanceof String)) {
             throw new Error("Expected the field `locality` to be a primitive type in the JSON string but got " + data['locality']);
         }
@@ -140,6 +147,11 @@ CertificateTemplateInfo.prototype['csr_cnf_base_64'] = undefined;
  * @member {String} digest_algo
  */
 CertificateTemplateInfo.prototype['digest_algo'] = undefined;
+
+/**
+ * @member {String} hash_algorithm
+ */
+CertificateTemplateInfo.prototype['hash_algorithm'] = undefined;
 
 /**
  * @member {String} locality

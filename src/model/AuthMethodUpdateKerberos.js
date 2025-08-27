@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateKerberos model module.
  * @module model/AuthMethodUpdateKerberos
- * @version 5.0.6
+ * @version 5.0.7
  */
 class AuthMethodUpdateKerberos {
     /**

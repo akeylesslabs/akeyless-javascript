@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDFCKey model module.
  * @module model/CreateDFCKey
- * @version 5.0.6
+ * @version 5.0.7
  */
 class CreateDFCKey {
     /**
@@ -37,6 +37,7 @@ class CreateDFCKey {
      */
     static initialize(obj, alg, name) { 
         obj['alg'] = alg;
+        obj['hash-algorithm'] = 'SHA256';
         obj['json'] = false;
         obj['name'] = name;
         obj['split-level'] = 3;
@@ -100,6 +101,9 @@ class CreateDFCKey {
             }
             if (data.hasOwnProperty('generate-self-signed-certificate')) {
                 obj['generate-self-signed-certificate'] = ApiClient.convertToType(data['generate-self-signed-certificate'], 'Boolean');
+            }
+            if (data.hasOwnProperty('hash-algorithm')) {
+                obj['hash-algorithm'] = ApiClient.convertToType(data['hash-algorithm'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -201,6 +205,10 @@ class CreateDFCKey {
             throw new Error("Expected the field `expiration-event-in` to be an array in the JSON data but got " + data['expiration-event-in']);
         }
         // ensure the json data is a string
+        if (data['hash-algorithm'] && !(typeof data['hash-algorithm'] === 'string' || data['hash-algorithm'] instanceof String)) {
+            throw new Error("Expected the field `hash-algorithm` to be a primitive type in the JSON string but got " + data['hash-algorithm']);
+        }
+        // ensure the json data is a string
         if (data['metadata'] && !(typeof data['metadata'] === 'string' || data['metadata'] instanceof String)) {
             throw new Error("Expected the field `metadata` to be a primitive type in the JSON string but got " + data['metadata']);
         }
@@ -262,7 +270,7 @@ CreateDFCKey.prototype['certificate-common-name'] = undefined;
 CreateDFCKey.prototype['certificate-country'] = undefined;
 
 /**
- * Digest algorithm to be used for the certificate key signing. Currently, we support only \"sha256\" so we hide this option for CLI.
+ * Digest algorithm to be used for the certificate key signing.
  * @member {String} certificate-digest-algo
  */
 CreateDFCKey.prototype['certificate-digest-algo'] = undefined;
@@ -331,6 +339,13 @@ CreateDFCKey.prototype['expiration-event-in'] = undefined;
  * @member {Boolean} generate-self-signed-certificate
  */
 CreateDFCKey.prototype['generate-self-signed-certificate'] = undefined;
+
+/**
+ * Specifies the hash algorithm used for the encryption key's operations, available options: [SHA256, SHA384, SHA512]
+ * @member {String} hash-algorithm
+ * @default 'SHA256'
+ */
+CreateDFCKey.prototype['hash-algorithm'] = 'SHA256';
 
 /**
  * Set output format to JSON

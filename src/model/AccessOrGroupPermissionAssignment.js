@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccessOrGroupPermissionAssignment model module.
  * @module model/AccessOrGroupPermissionAssignment
- * @version 5.0.6
+ * @version 5.0.7
  */
 class AccessOrGroupPermissionAssignment {
     /**

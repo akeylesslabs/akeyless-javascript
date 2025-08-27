@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLdapTarget model module.
  * @module model/UpdateLdapTarget
- * @version 5.0.6
+ * @version 5.0.7
  */
 class UpdateLdapTarget {
     /**

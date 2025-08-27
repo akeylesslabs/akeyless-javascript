@@ -447,6 +447,7 @@ Method | HTTP request | Description
 [**targetCreateDockerhub**](V2Api.md#targetCreateDockerhub) | **POST** /target-create-dockerhub | 
 [**targetCreateEks**](V2Api.md#targetCreateEks) | **POST** /target-create-eks | 
 [**targetCreateGcp**](V2Api.md#targetCreateGcp) | **POST** /target-create-gcp | 
+[**targetCreateGemini**](V2Api.md#targetCreateGemini) | **POST** /target-create-gemini | 
 [**targetCreateGithub**](V2Api.md#targetCreateGithub) | **POST** /target-create-github | 
 [**targetCreateGitlab**](V2Api.md#targetCreateGitlab) | **POST** /target-create-gitlab | 
 [**targetCreateGke**](V2Api.md#targetCreateGke) | **POST** /target-create-gke | 
@@ -457,6 +458,7 @@ Method | HTTP request | Description
 [**targetCreateK8s**](V2Api.md#targetCreateK8s) | **POST** /target-create-k8s | 
 [**targetCreateLdap**](V2Api.md#targetCreateLdap) | **POST** /target-create-ldap | 
 [**targetCreateLinked**](V2Api.md#targetCreateLinked) | **POST** /target-create-linked | 
+[**targetCreateOpenAI**](V2Api.md#targetCreateOpenAI) | **POST** /target-create-openai | 
 [**targetCreatePing**](V2Api.md#targetCreatePing) | **POST** /target-create-ping | 
 [**targetCreateRabbitMq**](V2Api.md#targetCreateRabbitMq) | **POST** /target-create-rabbitmq | 
 [**targetCreateSalesforce**](V2Api.md#targetCreateSalesforce) | **POST** /target-create-salesforce | 
@@ -476,6 +478,7 @@ Method | HTTP request | Description
 [**targetUpdateDockerhub**](V2Api.md#targetUpdateDockerhub) | **POST** /target-update-dockerhub | 
 [**targetUpdateEks**](V2Api.md#targetUpdateEks) | **POST** /target-update-eks | 
 [**targetUpdateGcp**](V2Api.md#targetUpdateGcp) | **POST** /target-update-gcp | 
+[**targetUpdateGemini**](V2Api.md#targetUpdateGemini) | **POST** /target-update-gemini | 
 [**targetUpdateGithub**](V2Api.md#targetUpdateGithub) | **POST** /target-update-github | 
 [**targetUpdateGitlab**](V2Api.md#targetUpdateGitlab) | **POST** /target-update-gitlab | 
 [**targetUpdateGke**](V2Api.md#targetUpdateGke) | **POST** /target-update-gke | 
@@ -486,6 +489,7 @@ Method | HTTP request | Description
 [**targetUpdateK8s**](V2Api.md#targetUpdateK8s) | **POST** /target-update-k8s | 
 [**targetUpdateLdap**](V2Api.md#targetUpdateLdap) | **POST** /target-update-ldap | 
 [**targetUpdateLinked**](V2Api.md#targetUpdateLinked) | **POST** /target-update-linked | 
+[**targetUpdateOpenAI**](V2Api.md#targetUpdateOpenAI) | **POST** /target-update-openai | 
 [**targetUpdatePing**](V2Api.md#targetUpdatePing) | **POST** /target-update-ping | 
 [**targetUpdateRabbitMq**](V2Api.md#targetUpdateRabbitMq) | **POST** /target-update-rabbitmq | 
 [**targetUpdateSalesforce**](V2Api.md#targetUpdateSalesforce) | **POST** /target-update-salesforce | 
@@ -19210,6 +19214,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetCreateGemini
+
+> TargetCreateOutput targetCreateGemini(targetCreateGemini)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateGemini = new akeyless.TargetCreateGemini(); // TargetCreateGemini | 
+apiInstance.targetCreateGemini(targetCreateGemini).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateGemini** | [**TargetCreateGemini**](TargetCreateGemini.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetCreateGithub
 
 > TargetCreateOutput targetCreateGithub(targetCreateGithub)
@@ -19615,6 +19661,48 @@ apiInstance.targetCreateLinked(targetCreateLinked).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetCreateLinked** | [**TargetCreateLinked**](TargetCreateLinked.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetCreateOpenAI
+
+> TargetCreateOutput targetCreateOpenAI(targetCreateOpenAI)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateOpenAI = new akeyless.TargetCreateOpenAI(); // TargetCreateOpenAI | 
+apiInstance.targetCreateOpenAI(targetCreateOpenAI).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateOpenAI** | [**TargetCreateOpenAI**](TargetCreateOpenAI.md)|  | 
 
 ### Return type
 
@@ -20428,6 +20516,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetUpdateGemini
+
+> TargetUpdateOutput targetUpdateGemini(targetUpdateGemini)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateGemini = new akeyless.TargetUpdateGemini(); // TargetUpdateGemini | 
+apiInstance.targetUpdateGemini(targetUpdateGemini).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateGemini** | [**TargetUpdateGemini**](TargetUpdateGemini.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetUpdateGithub
 
 > TargetUpdateOutput targetUpdateGithub(targetUpdateGithub)
@@ -20833,6 +20963,48 @@ apiInstance.targetUpdateLinked(targetUpdateLinked).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetUpdateLinked** | [**TargetUpdateLinked**](TargetUpdateLinked.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetUpdateOpenAI
+
+> TargetUpdateOutput targetUpdateOpenAI(targetUpdateOpenAI)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateOpenAI = new akeyless.TargetUpdateOpenAI(); // TargetUpdateOpenAI | 
+apiInstance.targetUpdateOpenAI(targetUpdateOpenAI).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateOpenAI** | [**TargetUpdateOpenAI**](TargetUpdateOpenAI.md)|  | 
 
 ### Return type
 

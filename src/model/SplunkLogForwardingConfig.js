@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SplunkLogForwardingConfig model module.
  * @module model/SplunkLogForwardingConfig
- * @version 5.0.6
+ * @version 5.0.7
  */
 class SplunkLogForwardingConfig {
     /**
@@ -47,6 +47,9 @@ class SplunkLogForwardingConfig {
         if (data) {
             obj = obj || new SplunkLogForwardingConfig();
 
+            if (data.hasOwnProperty('splunk_enable_batch')) {
+                obj['splunk_enable_batch'] = ApiClient.convertToType(data['splunk_enable_batch'], 'String');
+            }
             if (data.hasOwnProperty('splunk_enable_tls')) {
                 obj['splunk_enable_tls'] = ApiClient.convertToType(data['splunk_enable_tls'], 'Boolean');
             }
@@ -79,6 +82,10 @@ class SplunkLogForwardingConfig {
      */
     static validateJSON(data) {
         // ensure the json data is a string
+        if (data['splunk_enable_batch'] && !(typeof data['splunk_enable_batch'] === 'string' || data['splunk_enable_batch'] instanceof String)) {
+            throw new Error("Expected the field `splunk_enable_batch` to be a primitive type in the JSON string but got " + data['splunk_enable_batch']);
+        }
+        // ensure the json data is a string
         if (data['splunk_index'] && !(typeof data['splunk_index'] === 'string' || data['splunk_index'] instanceof String)) {
             throw new Error("Expected the field `splunk_index` to be a primitive type in the JSON string but got " + data['splunk_index']);
         }
@@ -110,6 +117,11 @@ class SplunkLogForwardingConfig {
 }
 
 
+
+/**
+ * @member {String} splunk_enable_batch
+ */
+SplunkLogForwardingConfig.prototype['splunk_enable_batch'] = undefined;
 
 /**
  * @member {Boolean} splunk_enable_tls

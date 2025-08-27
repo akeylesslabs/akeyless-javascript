@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CertificateVersionInfo model module.
  * @module model/CertificateVersionInfo
- * @version 5.0.6
+ * @version 5.0.7
  */
 class CertificateVersionInfo {
     /**

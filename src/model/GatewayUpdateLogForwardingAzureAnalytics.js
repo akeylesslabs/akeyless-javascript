@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLogForwardingAzureAnalytics model module.
  * @module model/GatewayUpdateLogForwardingAzureAnalytics
- * @version 5.0.6
+ * @version 5.0.7
  */
 class GatewayUpdateLogForwardingAzureAnalytics {
     /**
@@ -36,6 +36,7 @@ class GatewayUpdateLogForwardingAzureAnalytics {
      */
     static initialize(obj) { 
         obj['enable'] = 'true';
+        obj['enable-batch'] = 'true';
         obj['json'] = false;
         obj['output-format'] = 'text';
         obj['pull-interval'] = '10';
@@ -54,6 +55,9 @@ class GatewayUpdateLogForwardingAzureAnalytics {
 
             if (data.hasOwnProperty('enable')) {
                 obj['enable'] = ApiClient.convertToType(data['enable'], 'String');
+            }
+            if (data.hasOwnProperty('enable-batch')) {
+                obj['enable-batch'] = ApiClient.convertToType(data['enable-batch'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -89,6 +93,10 @@ class GatewayUpdateLogForwardingAzureAnalytics {
         // ensure the json data is a string
         if (data['enable'] && !(typeof data['enable'] === 'string' || data['enable'] instanceof String)) {
             throw new Error("Expected the field `enable` to be a primitive type in the JSON string but got " + data['enable']);
+        }
+        // ensure the json data is a string
+        if (data['enable-batch'] && !(typeof data['enable-batch'] === 'string' || data['enable-batch'] instanceof String)) {
+            throw new Error("Expected the field `enable-batch` to be a primitive type in the JSON string but got " + data['enable-batch']);
         }
         // ensure the json data is a string
         if (data['output-format'] && !(typeof data['output-format'] === 'string' || data['output-format'] instanceof String)) {
@@ -129,6 +137,13 @@ class GatewayUpdateLogForwardingAzureAnalytics {
  * @default 'true'
  */
 GatewayUpdateLogForwardingAzureAnalytics.prototype['enable'] = 'true';
+
+/**
+ * Enable batch forwarding [true/false]
+ * @member {String} enable-batch
+ * @default 'true'
+ */
+GatewayUpdateLogForwardingAzureAnalytics.prototype['enable-batch'] = 'true';
 
 /**
  * Set output format to JSON

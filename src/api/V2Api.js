@@ -693,6 +693,7 @@ import TargetCreateDB from '../model/TargetCreateDB';
 import TargetCreateDockerhub from '../model/TargetCreateDockerhub';
 import TargetCreateEks from '../model/TargetCreateEks';
 import TargetCreateGcp from '../model/TargetCreateGcp';
+import TargetCreateGemini from '../model/TargetCreateGemini';
 import TargetCreateGithub from '../model/TargetCreateGithub';
 import TargetCreateGitlab from '../model/TargetCreateGitlab';
 import TargetCreateGke from '../model/TargetCreateGke';
@@ -703,6 +704,7 @@ import TargetCreateHashiVault from '../model/TargetCreateHashiVault';
 import TargetCreateK8s from '../model/TargetCreateK8s';
 import TargetCreateLdap from '../model/TargetCreateLdap';
 import TargetCreateLinked from '../model/TargetCreateLinked';
+import TargetCreateOpenAI from '../model/TargetCreateOpenAI';
 import TargetCreateOutput from '../model/TargetCreateOutput';
 import TargetCreatePing from '../model/TargetCreatePing';
 import TargetCreateRabbitMq from '../model/TargetCreateRabbitMq';
@@ -723,6 +725,7 @@ import TargetUpdateDB from '../model/TargetUpdateDB';
 import TargetUpdateDockerhub from '../model/TargetUpdateDockerhub';
 import TargetUpdateEks from '../model/TargetUpdateEks';
 import TargetUpdateGcp from '../model/TargetUpdateGcp';
+import TargetUpdateGemini from '../model/TargetUpdateGemini';
 import TargetUpdateGithub from '../model/TargetUpdateGithub';
 import TargetUpdateGitlab from '../model/TargetUpdateGitlab';
 import TargetUpdateGke from '../model/TargetUpdateGke';
@@ -733,6 +736,7 @@ import TargetUpdateHashiVault from '../model/TargetUpdateHashiVault';
 import TargetUpdateK8s from '../model/TargetUpdateK8s';
 import TargetUpdateLdap from '../model/TargetUpdateLdap';
 import TargetUpdateLinked from '../model/TargetUpdateLinked';
+import TargetUpdateOpenAI from '../model/TargetUpdateOpenAI';
 import TargetUpdateOutput from '../model/TargetUpdateOutput';
 import TargetUpdatePing from '../model/TargetUpdatePing';
 import TargetUpdateRabbitMq from '../model/TargetUpdateRabbitMq';
@@ -876,7 +880,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.6
+* @version 5.0.7
 */
 export default class V2Api {
 
@@ -19906,6 +19910,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetCreateGemini} targetCreateGemini 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateGeminiWithHttpInfo(targetCreateGemini) {
+      let postBody = targetCreateGemini;
+      // verify the required parameter 'targetCreateGemini' is set
+      if (targetCreateGemini === undefined || targetCreateGemini === null) {
+        throw new Error("Missing the required parameter 'targetCreateGemini' when calling targetCreateGemini");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-gemini', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateGemini} targetCreateGemini 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateGemini(targetCreateGemini) {
+      return this.targetCreateGeminiWithHttpInfo(targetCreateGemini)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetCreateGithub} targetCreateGithub 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
      */
@@ -20329,6 +20376,49 @@ export default class V2Api {
      */
     targetCreateLinked(targetCreateLinked) {
       return this.targetCreateLinkedWithHttpInfo(targetCreateLinked)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateOpenAI} targetCreateOpenAI 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateOpenAIWithHttpInfo(targetCreateOpenAI) {
+      let postBody = targetCreateOpenAI;
+      // verify the required parameter 'targetCreateOpenAI' is set
+      if (targetCreateOpenAI === undefined || targetCreateOpenAI === null) {
+        throw new Error("Missing the required parameter 'targetCreateOpenAI' when calling targetCreateOpenAI");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-openai', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateOpenAI} targetCreateOpenAI 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateOpenAI(targetCreateOpenAI) {
+      return this.targetCreateOpenAIWithHttpInfo(targetCreateOpenAI)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -21153,6 +21243,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetUpdateGemini} targetUpdateGemini 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateGeminiWithHttpInfo(targetUpdateGemini) {
+      let postBody = targetUpdateGemini;
+      // verify the required parameter 'targetUpdateGemini' is set
+      if (targetUpdateGemini === undefined || targetUpdateGemini === null) {
+        throw new Error("Missing the required parameter 'targetUpdateGemini' when calling targetUpdateGemini");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-gemini', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateGemini} targetUpdateGemini 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateGemini(targetUpdateGemini) {
+      return this.targetUpdateGeminiWithHttpInfo(targetUpdateGemini)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetUpdateGithub} targetUpdateGithub 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
      */
@@ -21576,6 +21709,49 @@ export default class V2Api {
      */
     targetUpdateLinked(targetUpdateLinked) {
       return this.targetUpdateLinkedWithHttpInfo(targetUpdateLinked)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateOpenAI} targetUpdateOpenAI 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateOpenAIWithHttpInfo(targetUpdateOpenAI) {
+      let postBody = targetUpdateOpenAI;
+      // verify the required parameter 'targetUpdateOpenAI' is set
+      if (targetUpdateOpenAI === undefined || targetUpdateOpenAI === null) {
+        throw new Error("Missing the required parameter 'targetUpdateOpenAI' when calling targetUpdateOpenAI");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-openai', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateOpenAI} targetUpdateOpenAI 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateOpenAI(targetUpdateOpenAI) {
+      return this.targetUpdateOpenAIWithHttpInfo(targetUpdateOpenAI)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

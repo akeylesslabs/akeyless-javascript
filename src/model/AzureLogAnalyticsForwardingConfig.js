@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AzureLogAnalyticsForwardingConfig model module.
  * @module model/AzureLogAnalyticsForwardingConfig
- * @version 5.0.6
+ * @version 5.0.7
  */
 class AzureLogAnalyticsForwardingConfig {
     /**
@@ -47,6 +47,9 @@ class AzureLogAnalyticsForwardingConfig {
         if (data) {
             obj = obj || new AzureLogAnalyticsForwardingConfig();
 
+            if (data.hasOwnProperty('azure_enable_batch')) {
+                obj['azure_enable_batch'] = ApiClient.convertToType(data['azure_enable_batch'], 'String');
+            }
             if (data.hasOwnProperty('azure_workspace_id')) {
                 obj['azure_workspace_id'] = ApiClient.convertToType(data['azure_workspace_id'], 'String');
             }
@@ -64,6 +67,10 @@ class AzureLogAnalyticsForwardingConfig {
      */
     static validateJSON(data) {
         // ensure the json data is a string
+        if (data['azure_enable_batch'] && !(typeof data['azure_enable_batch'] === 'string' || data['azure_enable_batch'] instanceof String)) {
+            throw new Error("Expected the field `azure_enable_batch` to be a primitive type in the JSON string but got " + data['azure_enable_batch']);
+        }
+        // ensure the json data is a string
         if (data['azure_workspace_id'] && !(typeof data['azure_workspace_id'] === 'string' || data['azure_workspace_id'] instanceof String)) {
             throw new Error("Expected the field `azure_workspace_id` to be a primitive type in the JSON string but got " + data['azure_workspace_id']);
         }
@@ -79,6 +86,11 @@ class AzureLogAnalyticsForwardingConfig {
 }
 
 
+
+/**
+ * @member {String} azure_enable_batch
+ */
+AzureLogAnalyticsForwardingConfig.prototype['azure_enable_batch'] = undefined;
 
 /**
  * @member {String} azure_workspace_id
