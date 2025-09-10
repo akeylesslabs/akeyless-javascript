@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AliasDetailsOutput model module.
  * @module model/AliasDetailsOutput
- * @version 5.0.7
+ * @version 5.0.8
  */
 class AliasDetailsOutput {
     /**

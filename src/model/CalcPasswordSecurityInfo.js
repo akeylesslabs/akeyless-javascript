@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CalcPasswordSecurityInfo model module.
  * @module model/CalcPasswordSecurityInfo
- * @version 5.0.7
+ * @version 5.0.8
  */
 class CalcPasswordSecurityInfo {
     /**

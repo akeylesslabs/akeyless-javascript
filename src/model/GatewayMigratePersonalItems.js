@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayMigratePersonalItems model module.
  * @module model/GatewayMigratePersonalItems
- * @version 5.0.7
+ * @version 5.0.8
  */
 class GatewayMigratePersonalItems {
     /**

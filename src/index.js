@@ -604,6 +604,8 @@ import GetAccountSettings from './model/GetAccountSettings';
 import GetAccountSettingsCommandOutput from './model/GetAccountSettingsCommandOutput';
 import GetAnalyticsData from './model/GetAnalyticsData';
 import GetAuthMethod from './model/GetAuthMethod';
+import GetCertChallenge from './model/GetCertChallenge';
+import GetCertChallengeOutput from './model/GetCertChallengeOutput';
 import GetCertificateValue from './model/GetCertificateValue';
 import GetCertificateValueOutput from './model/GetCertificateValueOutput';
 import GetDynamicSecretValue from './model/GetDynamicSecretValue';
@@ -1152,7 +1154,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.7
+* @version 5.0.8
 */
 export {
     /**
@@ -4706,6 +4708,18 @@ export {
      * @property {module:model/GetAuthMethod}
      */
     GetAuthMethod,
+
+    /**
+     * The GetCertChallenge model constructor.
+     * @property {module:model/GetCertChallenge}
+     */
+    GetCertChallenge,
+
+    /**
+     * The GetCertChallengeOutput model constructor.
+     * @property {module:model/GetCertChallengeOutput}
+     */
+    GetCertChallengeOutput,
 
     /**
      * The GetCertificateValue model constructor.

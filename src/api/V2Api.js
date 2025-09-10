@@ -504,6 +504,8 @@ import GetAccountSettings from '../model/GetAccountSettings';
 import GetAccountSettingsCommandOutput from '../model/GetAccountSettingsCommandOutput';
 import GetAnalyticsData from '../model/GetAnalyticsData';
 import GetAuthMethod from '../model/GetAuthMethod';
+import GetCertChallenge from '../model/GetCertChallenge';
+import GetCertChallengeOutput from '../model/GetCertChallengeOutput';
 import GetCertificateValue from '../model/GetCertificateValue';
 import GetCertificateValueOutput from '../model/GetCertificateValueOutput';
 import GetDynamicSecretValue from '../model/GetDynamicSecretValue';
@@ -880,7 +882,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.7
+* @version 5.0.8
 */
 export default class V2Api {
 
@@ -14468,6 +14470,49 @@ export default class V2Api {
      */
     getAuthMethod(getAuthMethod) {
       return this.getAuthMethodWithHttpInfo(getAuthMethod)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/GetCertChallenge} getCertChallenge 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GetCertChallengeOutput} and HTTP response
+     */
+    getCertChallengeWithHttpInfo(getCertChallenge) {
+      let postBody = getCertChallenge;
+      // verify the required parameter 'getCertChallenge' is set
+      if (getCertChallenge === undefined || getCertChallenge === null) {
+        throw new Error("Missing the required parameter 'getCertChallenge' when calling getCertChallenge");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GetCertChallengeOutput;
+      return this.apiClient.callApi(
+        '/get-cert-challenge', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GetCertChallenge} getCertChallenge 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GetCertChallengeOutput}
+     */
+    getCertChallenge(getCertChallenge) {
+      return this.getCertChallengeWithHttpInfo(getCertChallenge)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

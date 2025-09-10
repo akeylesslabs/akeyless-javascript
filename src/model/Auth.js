@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 5.0.7
+ * @version 5.0.8
  */
 class Auth {
     /**
@@ -68,6 +68,9 @@ class Auth {
             }
             if (data.hasOwnProperty('admin-password')) {
                 obj['admin-password'] = ApiClient.convertToType(data['admin-password'], 'String');
+            }
+            if (data.hasOwnProperty('cert-challenge')) {
+                obj['cert-challenge'] = ApiClient.convertToType(data['cert-challenge'], 'String');
             }
             if (data.hasOwnProperty('cert-data')) {
                 obj['cert-data'] = ApiClient.convertToType(data['cert-data'], 'String');
@@ -129,6 +132,9 @@ class Auth {
             if (data.hasOwnProperty('otp')) {
                 obj['otp'] = ApiClient.convertToType(data['otp'], 'String');
             }
+            if (data.hasOwnProperty('signed-cert-challenge')) {
+                obj['signed-cert-challenge'] = ApiClient.convertToType(data['signed-cert-challenge'], 'String');
+            }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
@@ -171,6 +177,10 @@ class Auth {
         // ensure the json data is a string
         if (data['admin-password'] && !(typeof data['admin-password'] === 'string' || data['admin-password'] instanceof String)) {
             throw new Error("Expected the field `admin-password` to be a primitive type in the JSON string but got " + data['admin-password']);
+        }
+        // ensure the json data is a string
+        if (data['cert-challenge'] && !(typeof data['cert-challenge'] === 'string' || data['cert-challenge'] instanceof String)) {
+            throw new Error("Expected the field `cert-challenge` to be a primitive type in the JSON string but got " + data['cert-challenge']);
         }
         // ensure the json data is a string
         if (data['cert-data'] && !(typeof data['cert-data'] === 'string' || data['cert-data'] instanceof String)) {
@@ -245,6 +255,10 @@ class Auth {
             throw new Error("Expected the field `otp` to be a primitive type in the JSON string but got " + data['otp']);
         }
         // ensure the json data is a string
+        if (data['signed-cert-challenge'] && !(typeof data['signed-cert-challenge'] === 'string' || data['signed-cert-challenge'] instanceof String)) {
+            throw new Error("Expected the field `signed-cert-challenge` to be a primitive type in the JSON string but got " + data['signed-cert-challenge']);
+        }
+        // ensure the json data is a string
         if (data['uid-token'] && !(typeof data['uid-token'] === 'string' || data['uid-token'] instanceof String)) {
             throw new Error("Expected the field `uid-token` to be a primitive type in the JSON string but got " + data['uid-token']);
         }
@@ -297,6 +311,12 @@ Auth.prototype['admin-email'] = undefined;
  * @member {String} admin-password
  */
 Auth.prototype['admin-password'] = undefined;
+
+/**
+ * Certificate challenge encoded in base64. (relevant only for access-type=cert)
+ * @member {String} cert-challenge
+ */
+Auth.prototype['cert-challenge'] = undefined;
 
 /**
  * Certificate data encoded in base64. Used if file was not provided. (relevant only for access-type=cert)
@@ -418,6 +438,12 @@ Auth.prototype['oci-group-ocid'] = undefined;
  * @member {String} otp
  */
 Auth.prototype['otp'] = undefined;
+
+/**
+ * Signed certificate challenge encoded in base64. (relevant only for access-type=cert)
+ * @member {String} signed-cert-challenge
+ */
+Auth.prototype['signed-cert-challenge'] = undefined;
 
 /**
  * The universal_identity token (relevant only for access-type=universal_identity)

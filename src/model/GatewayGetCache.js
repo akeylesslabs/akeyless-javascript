@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetCache model module.
  * @module model/GatewayGetCache
- * @version 5.0.7
+ * @version 5.0.8
  */
 class GatewayGetCache {
     /**

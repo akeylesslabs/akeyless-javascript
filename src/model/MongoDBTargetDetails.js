@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MongoDBTargetDetails model module.
  * @module model/MongoDBTargetDetails
- * @version 5.0.7
+ * @version 5.0.8
  */
 class MongoDBTargetDetails {
     /**

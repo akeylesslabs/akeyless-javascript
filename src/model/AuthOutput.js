@@ -17,7 +17,7 @@ import SystemAccessCredentialsReplyObj from './SystemAccessCredentialsReplyObj';
 /**
  * The AuthOutput model module.
  * @module model/AuthOutput
- * @version 5.0.7
+ * @version 5.0.8
  */
 class AuthOutput {
     /**
@@ -54,6 +54,9 @@ class AuthOutput {
             if (data.hasOwnProperty('creds')) {
                 obj['creds'] = SystemAccessCredentialsReplyObj.constructFromObject(data['creds']);
             }
+            if (data.hasOwnProperty('expiration')) {
+                obj['expiration'] = ApiClient.convertToType(data['expiration'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -74,6 +77,10 @@ class AuthOutput {
         // validate the optional field `creds`
         if (data['creds']) { // data not null
           SystemAccessCredentialsReplyObj.validateJSON(data['creds']);
+        }
+        // ensure the json data is a string
+        if (data['expiration'] && !(typeof data['expiration'] === 'string' || data['expiration'] instanceof String)) {
+            throw new Error("Expected the field `expiration` to be a primitive type in the JSON string but got " + data['expiration']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -97,6 +104,11 @@ AuthOutput.prototype['complete_auth_link'] = undefined;
  * @member {module:model/SystemAccessCredentialsReplyObj} creds
  */
 AuthOutput.prototype['creds'] = undefined;
+
+/**
+ * @member {String} expiration
+ */
+AuthOutput.prototype['expiration'] = undefined;
 
 /**
  * @member {String} token

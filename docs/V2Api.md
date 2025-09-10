@@ -320,6 +320,7 @@ Method | HTTP request | Description
 [**getAccountSettings**](V2Api.md#getAccountSettings) | **POST** /get-account-settings | 
 [**getAnalyticsData**](V2Api.md#getAnalyticsData) | **POST** /get-analytics-data | 
 [**getAuthMethod**](V2Api.md#getAuthMethod) | **POST** /get-auth-method | 
+[**getCertChallenge**](V2Api.md#getCertChallenge) | **POST** /get-cert-challenge | 
 [**getCertificateValue**](V2Api.md#getCertificateValue) | **POST** /get-certificate-value | 
 [**getDynamicSecretValue**](V2Api.md#getDynamicSecretValue) | **POST** /get-dynamic-secret-value | 
 [**getEventForwarder**](V2Api.md#getEventForwarder) | **POST** /get-event-forwarder | 
@@ -13849,6 +13850,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AuthMethod**](AuthMethod.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## getCertChallenge
+
+> GetCertChallengeOutput getCertChallenge(getCertChallenge)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let getCertChallenge = new akeyless.GetCertChallenge(); // GetCertChallenge | 
+apiInstance.getCertChallenge(getCertChallenge).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **getCertChallenge** | [**GetCertChallenge**](GetCertChallenge.md)|  | 
+
+### Return type
+
+[**GetCertChallengeOutput**](GetCertChallengeOutput.md)
 
 ### Authorization
 

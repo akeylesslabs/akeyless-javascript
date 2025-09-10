@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GeminiTargetDetails model module.
  * @module model/GeminiTargetDetails
- * @version 5.0.7
+ * @version 5.0.8
  */
 class GeminiTargetDetails {
     /**
@@ -51,8 +51,8 @@ class GeminiTargetDetails {
             if (data.hasOwnProperty('api_key')) {
                 obj['api_key'] = ApiClient.convertToType(data['api_key'], 'String');
             }
-            if (data.hasOwnProperty('base_url')) {
-                obj['base_url'] = ApiClient.convertToType(data['base_url'], 'String');
+            if (data.hasOwnProperty('gemini_url')) {
+                obj['gemini_url'] = ApiClient.convertToType(data['gemini_url'], 'String');
             }
             if (data.hasOwnProperty('model')) {
                 obj['model'] = ApiClient.convertToType(data['model'], 'String');
@@ -72,8 +72,8 @@ class GeminiTargetDetails {
             throw new Error("Expected the field `api_key` to be a primitive type in the JSON string but got " + data['api_key']);
         }
         // ensure the json data is a string
-        if (data['base_url'] && !(typeof data['base_url'] === 'string' || data['base_url'] instanceof String)) {
-            throw new Error("Expected the field `base_url` to be a primitive type in the JSON string but got " + data['base_url']);
+        if (data['gemini_url'] && !(typeof data['gemini_url'] === 'string' || data['gemini_url'] instanceof String)) {
+            throw new Error("Expected the field `gemini_url` to be a primitive type in the JSON string but got " + data['gemini_url']);
         }
         // ensure the json data is a string
         if (data['model'] && !(typeof data['model'] === 'string' || data['model'] instanceof String)) {
@@ -94,9 +94,9 @@ class GeminiTargetDetails {
 GeminiTargetDetails.prototype['api_key'] = undefined;
 
 /**
- * @member {String} base_url
+ * @member {String} gemini_url
  */
-GeminiTargetDetails.prototype['base_url'] = undefined;
+GeminiTargetDetails.prototype['gemini_url'] = undefined;
 
 /**
  * @member {String} model

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotationSettings model module.
  * @module model/UpdateRotationSettings
- * @version 5.0.7
+ * @version 5.0.8
  */
 class UpdateRotationSettings {
     /**

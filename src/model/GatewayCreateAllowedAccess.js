@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateAllowedAccess model module.
  * @module model/GatewayCreateAllowedAccess
- * @version 5.0.7
+ * @version 5.0.8
  */
 class GatewayCreateAllowedAccess {
     /**
@@ -175,7 +175,7 @@ GatewayCreateAllowedAccess.prototype['json'] = false;
 GatewayCreateAllowedAccess.prototype['name'] = undefined;
 
 /**
- * Permissions  Comma-seperated list of permissions for this allowed access. Available permissions: [defaults,targets,classic_keys,automatic_migration,ldap_auth,dynamic_secret,k8s_auth,log_forwarding,zero_knowledge_encryption,rotated_secret,caching,event_forwarding,admin,kmip,general]
+ * Permissions  Comma-seperated list of permissions for this allowed access. Available permissions: [defaults,targets,classic_keys,automatic_migration,ldap_auth,dynamic_secret,k8s_auth,log_forwarding,zero_knowledge_encryption,rotated_secret,caching,event_forwarding,admin,kmip,general,rotate_secret_value]
  * @member {String} permissions
  */
 GatewayCreateAllowedAccess.prototype['permissions'] = undefined;

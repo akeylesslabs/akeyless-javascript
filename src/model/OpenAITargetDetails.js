@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OpenAITargetDetails model module.
  * @module model/OpenAITargetDetails
- * @version 5.0.7
+ * @version 5.0.8
  */
 class OpenAITargetDetails {
     /**
@@ -54,11 +54,11 @@ class OpenAITargetDetails {
             if (data.hasOwnProperty('api_key_id')) {
                 obj['api_key_id'] = ApiClient.convertToType(data['api_key_id'], 'String');
             }
-            if (data.hasOwnProperty('base_url')) {
-                obj['base_url'] = ApiClient.convertToType(data['base_url'], 'String');
-            }
             if (data.hasOwnProperty('model')) {
                 obj['model'] = ApiClient.convertToType(data['model'], 'String');
+            }
+            if (data.hasOwnProperty('openai_url')) {
+                obj['openai_url'] = ApiClient.convertToType(data['openai_url'], 'String');
             }
             if (data.hasOwnProperty('organization_id')) {
                 obj['organization_id'] = ApiClient.convertToType(data['organization_id'], 'String');
@@ -82,12 +82,12 @@ class OpenAITargetDetails {
             throw new Error("Expected the field `api_key_id` to be a primitive type in the JSON string but got " + data['api_key_id']);
         }
         // ensure the json data is a string
-        if (data['base_url'] && !(typeof data['base_url'] === 'string' || data['base_url'] instanceof String)) {
-            throw new Error("Expected the field `base_url` to be a primitive type in the JSON string but got " + data['base_url']);
-        }
-        // ensure the json data is a string
         if (data['model'] && !(typeof data['model'] === 'string' || data['model'] instanceof String)) {
             throw new Error("Expected the field `model` to be a primitive type in the JSON string but got " + data['model']);
+        }
+        // ensure the json data is a string
+        if (data['openai_url'] && !(typeof data['openai_url'] === 'string' || data['openai_url'] instanceof String)) {
+            throw new Error("Expected the field `openai_url` to be a primitive type in the JSON string but got " + data['openai_url']);
         }
         // ensure the json data is a string
         if (data['organization_id'] && !(typeof data['organization_id'] === 'string' || data['organization_id'] instanceof String)) {
@@ -113,14 +113,14 @@ OpenAITargetDetails.prototype['api_key'] = undefined;
 OpenAITargetDetails.prototype['api_key_id'] = undefined;
 
 /**
- * @member {String} base_url
- */
-OpenAITargetDetails.prototype['base_url'] = undefined;
-
-/**
  * @member {String} model
  */
 OpenAITargetDetails.prototype['model'] = undefined;
+
+/**
+ * @member {String} openai_url
+ */
+OpenAITargetDetails.prototype['openai_url'] = undefined;
 
 /**
  * @member {String} organization_id

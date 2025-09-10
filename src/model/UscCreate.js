@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscCreate model module.
  * @module model/UscCreate
- * @version 5.0.7
+ * @version 5.0.8
  */
 class UscCreate {
     /**

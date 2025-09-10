@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateAcmeEabOutput model module.
  * @module model/GenerateAcmeEabOutput
- * @version 5.0.7
+ * @version 5.0.8
  */
 class GenerateAcmeEabOutput {
     /**

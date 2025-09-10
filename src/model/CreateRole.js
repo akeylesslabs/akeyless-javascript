@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRole model module.
  * @module model/CreateRole
- * @version 5.0.7
+ * @version 5.0.8
  */
 class CreateRole {
     /**
@@ -79,6 +79,9 @@ class CreateRole {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('reverse-rbac-access')) {
+                obj['reverse-rbac-access'] = ApiClient.convertToType(data['reverse-rbac-access'], 'String');
             }
             if (data.hasOwnProperty('sra-reports-access')) {
                 obj['sra-reports-access'] = ApiClient.convertToType(data['sra-reports-access'], 'String');
@@ -143,6 +146,10 @@ class CreateRole {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['reverse-rbac-access'] && !(typeof data['reverse-rbac-access'] === 'string' || data['reverse-rbac-access'] instanceof String)) {
+            throw new Error("Expected the field `reverse-rbac-access` to be a primitive type in the JSON string but got " + data['reverse-rbac-access']);
         }
         // ensure the json data is a string
         if (data['sra-reports-access'] && !(typeof data['sra-reports-access'] === 'string' || data['sra-reports-access'] instanceof String)) {
@@ -229,6 +236,12 @@ CreateRole.prototype['json'] = false;
  * @member {String} name
  */
 CreateRole.prototype['name'] = undefined;
+
+/**
+ * Allow this role to view Reverse RBAC. Supported values: 'own', 'all'.
+ * @member {String} reverse-rbac-access
+ */
+CreateRole.prototype['reverse-rbac-access'] = undefined;
 
 /**
  * Allow this role to view SRA Clusters. Currently only 'none', 'own', 'all' values are supported.

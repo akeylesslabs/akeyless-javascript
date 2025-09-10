@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **apiKey** | **String** |  | [optional] 
-**baseUrl** | **String** |  | [optional] 
+**geminiUrl** | **String** |  | [optional] 
 **model** | **String** |  | [optional] 
 
 

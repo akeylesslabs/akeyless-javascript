@@ -17,7 +17,7 @@ import AuthMethodRoleAssociation from './AuthMethodRoleAssociation';
 /**
  * The ReverseRBACClient model module.
  * @module model/ReverseRBACClient
- * @version 5.0.7
+ * @version 5.0.8
  */
 class ReverseRBACClient {
     /**
@@ -50,6 +50,9 @@ class ReverseRBACClient {
 
             if (data.hasOwnProperty('assocs')) {
                 obj['assocs'] = ApiClient.convertToType(data['assocs'], [AuthMethodRoleAssociation]);
+            }
+            if (data.hasOwnProperty('auth_method_id')) {
+                obj['auth_method_id'] = ApiClient.convertToType(data['auth_method_id'], 'Number');
             }
             if (data.hasOwnProperty('auth_method_name')) {
                 obj['auth_method_name'] = ApiClient.convertToType(data['auth_method_name'], 'String');
@@ -91,6 +94,11 @@ class ReverseRBACClient {
  * @member {Array.<module:model/AuthMethodRoleAssociation>} assocs
  */
 ReverseRBACClient.prototype['assocs'] = undefined;
+
+/**
+ * @member {Number} auth_method_id
+ */
+ReverseRBACClient.prototype['auth_method_id'] = undefined;
 
 /**
  * @member {String} auth_method_name

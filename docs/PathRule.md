@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **capabilities** | **[String]** | The approved/denied capabilities in the path | [optional] 
 **cb** | **Number** |  | [optional] 
 **isLimitAccess** | **Boolean** | flag that indicate that this rule is allowed to be access RemainingAccess of times. | [optional] 
+**itemId** | **Number** | The item id this rule directly refers to (when applicable) | [optional] 
 **numberOfAccessUsed** | **Number** |  | [optional] 
 **numberOfAllowedAccess** | **Number** |  | [optional] 
 **path** | **String** | The path the rule refers to | [optional] 

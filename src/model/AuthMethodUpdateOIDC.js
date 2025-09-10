@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateOIDC model module.
  * @module model/AuthMethodUpdateOIDC
- * @version 5.0.7
+ * @version 5.0.8
  */
 class AuthMethodUpdateOIDC {
     /**

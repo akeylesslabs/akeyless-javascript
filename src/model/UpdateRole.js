@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 5.0.7
+ * @version 5.0.8
  */
 class UpdateRole {
     /**
@@ -85,6 +85,9 @@ class UpdateRole {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
+            if (data.hasOwnProperty('reverse-rbac-access')) {
+                obj['reverse-rbac-access'] = ApiClient.convertToType(data['reverse-rbac-access'], 'String');
+            }
             if (data.hasOwnProperty('sra-reports-access')) {
                 obj['sra-reports-access'] = ApiClient.convertToType(data['sra-reports-access'], 'String');
             }
@@ -152,6 +155,10 @@ class UpdateRole {
         // ensure the json data is a string
         if (data['new-name'] && !(typeof data['new-name'] === 'string' || data['new-name'] instanceof String)) {
             throw new Error("Expected the field `new-name` to be a primitive type in the JSON string but got " + data['new-name']);
+        }
+        // ensure the json data is a string
+        if (data['reverse-rbac-access'] && !(typeof data['reverse-rbac-access'] === 'string' || data['reverse-rbac-access'] instanceof String)) {
+            throw new Error("Expected the field `reverse-rbac-access` to be a primitive type in the JSON string but got " + data['reverse-rbac-access']);
         }
         // ensure the json data is a string
         if (data['sra-reports-access'] && !(typeof data['sra-reports-access'] === 'string' || data['sra-reports-access'] instanceof String)) {
@@ -246,6 +253,12 @@ UpdateRole.prototype['new-comment'] = 'default_comment';
  * @member {String} new-name
  */
 UpdateRole.prototype['new-name'] = undefined;
+
+/**
+ * Allow this role to view Reverse RBAC. Supported values: 'own', 'all'.
+ * @member {String} reverse-rbac-access
+ */
+UpdateRole.prototype['reverse-rbac-access'] = undefined;
 
 /**
  * Allow this role to view SRA Clusters. Currently only 'none', 'own', 'all' values are supported.

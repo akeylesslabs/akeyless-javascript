@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateVenafi model module.
  * @module model/DynamicSecretUpdateVenafi
- * @version 5.0.7
+ * @version 5.0.8
  */
 class DynamicSecretUpdateVenafi {
     /**

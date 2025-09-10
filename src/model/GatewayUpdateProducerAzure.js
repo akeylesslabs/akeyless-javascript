@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerAzure model module.
  * @module model/GatewayUpdateProducerAzure
- * @version 5.0.7
+ * @version 5.0.8
  */
 class GatewayUpdateProducerAzure {
     /**

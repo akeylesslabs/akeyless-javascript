@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleAuthMethodAssociation model module.
  * @module model/RoleAuthMethodAssociation
- * @version 5.0.7
+ * @version 5.0.8
  */
 class RoleAuthMethodAssociation {
     /**
@@ -53,6 +53,9 @@ class RoleAuthMethodAssociation {
             }
             if (data.hasOwnProperty('auth_method_access_id')) {
                 obj['auth_method_access_id'] = ApiClient.convertToType(data['auth_method_access_id'], 'String');
+            }
+            if (data.hasOwnProperty('auth_method_id')) {
+                obj['auth_method_id'] = ApiClient.convertToType(data['auth_method_id'], 'Number');
             }
             if (data.hasOwnProperty('auth_method_name')) {
                 obj['auth_method_name'] = ApiClient.convertToType(data['auth_method_name'], 'String');
@@ -106,6 +109,11 @@ RoleAuthMethodAssociation.prototype['assoc_id'] = undefined;
  * @member {String} auth_method_access_id
  */
 RoleAuthMethodAssociation.prototype['auth_method_access_id'] = undefined;
+
+/**
+ * @member {Number} auth_method_id
+ */
+RoleAuthMethodAssociation.prototype['auth_method_id'] = undefined;
 
 /**
  * @member {String} auth_method_name

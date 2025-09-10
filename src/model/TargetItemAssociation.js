@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetItemAssociation model module.
  * @module model/TargetItemAssociation
- * @version 5.0.7
+ * @version 5.0.8
  */
 class TargetItemAssociation {
     /**
@@ -56,6 +56,9 @@ class TargetItemAssociation {
             }
             if (data.hasOwnProperty('cluster_id')) {
                 obj['cluster_id'] = ApiClient.convertToType(data['cluster_id'], 'Number');
+            }
+            if (data.hasOwnProperty('item_id')) {
+                obj['item_id'] = ApiClient.convertToType(data['item_id'], 'Number');
             }
             if (data.hasOwnProperty('item_name')) {
                 obj['item_name'] = ApiClient.convertToType(data['item_name'], 'String');
@@ -115,6 +118,11 @@ TargetItemAssociation.prototype['attributes'] = undefined;
  * @member {Number} cluster_id
  */
 TargetItemAssociation.prototype['cluster_id'] = undefined;
+
+/**
+ * @member {Number} item_id
+ */
+TargetItemAssociation.prototype['item_id'] = undefined;
 
 /**
  * @member {String} item_name

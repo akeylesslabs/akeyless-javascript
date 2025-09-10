@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLogForwardingLogzIo model module.
  * @module model/GatewayUpdateLogForwardingLogzIo
- * @version 5.0.7
+ * @version 5.0.8
  */
 class GatewayUpdateLogForwardingLogzIo {
     /**

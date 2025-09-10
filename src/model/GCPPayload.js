@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GCPPayload model module.
  * @module model/GCPPayload
- * @version 5.0.7
+ * @version 5.0.8
  */
 class GCPPayload {
     /**

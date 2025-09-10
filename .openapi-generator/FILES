@@ -593,6 +593,8 @@ docs/GetAccountSettings.md
 docs/GetAccountSettingsCommandOutput.md
 docs/GetAnalyticsData.md
 docs/GetAuthMethod.md
+docs/GetCertChallenge.md
+docs/GetCertChallengeOutput.md
 docs/GetCertificateValue.md
 docs/GetCertificateValueOutput.md
 docs/GetDynamicSecretValue.md
@@ -1707,6 +1709,8 @@ src/model/GetAccountSettings.js
 src/model/GetAccountSettingsCommandOutput.js
 src/model/GetAnalyticsData.js
 src/model/GetAuthMethod.js
+src/model/GetCertChallenge.js
+src/model/GetCertChallengeOutput.js
 src/model/GetCertificateValue.js
 src/model/GetCertificateValueOutput.js
 src/model/GetDynamicSecretValue.js
@@ -2223,9 +2227,5 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/GeminiTargetDetails.spec.js
-test/model/OpenAITargetDetails.spec.js
-test/model/TargetCreateGemini.spec.js
-test/model/TargetCreateOpenAI.spec.js
-test/model/TargetUpdateGemini.spec.js
-test/model/TargetUpdateOpenAI.spec.js
+test/model/GetCertChallenge.spec.js
+test/model/GetCertChallengeOutput.spec.js

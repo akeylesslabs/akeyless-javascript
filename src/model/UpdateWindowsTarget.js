@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateWindowsTarget model module.
  * @module model/UpdateWindowsTarget
- * @version 5.0.7
+ * @version 5.0.8
  */
 class UpdateWindowsTarget {
     /**

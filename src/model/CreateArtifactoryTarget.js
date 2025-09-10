@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateArtifactoryTarget model module.
  * @module model/CreateArtifactoryTarget
- * @version 5.0.7
+ * @version 5.0.8
  */
 class CreateArtifactoryTarget {
     /**

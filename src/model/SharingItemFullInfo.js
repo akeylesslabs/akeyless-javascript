@@ -17,7 +17,7 @@ import RuleAssigner from './RuleAssigner';
 /**
  * The SharingItemFullInfo model module.
  * @module model/SharingItemFullInfo
- * @version 5.0.7
+ * @version 5.0.8
  */
 class SharingItemFullInfo {
     /**
@@ -59,6 +59,9 @@ class SharingItemFullInfo {
             }
             if (data.hasOwnProperty('is_limit_access')) {
                 obj['is_limit_access'] = ApiClient.convertToType(data['is_limit_access'], 'Boolean');
+            }
+            if (data.hasOwnProperty('item_id')) {
+                obj['item_id'] = ApiClient.convertToType(data['item_id'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -147,6 +150,12 @@ SharingItemFullInfo.prototype['cb'] = undefined;
  * @member {Boolean} is_limit_access
  */
 SharingItemFullInfo.prototype['is_limit_access'] = undefined;
+
+/**
+ * The item id this rule directly refers to (when applicable)
+ * @member {Number} item_id
+ */
+SharingItemFullInfo.prototype['item_id'] = undefined;
 
 /**
  * @member {String} name

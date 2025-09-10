@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GwUpdateRemoteAccessSessionLogsDatadog model module.
  * @module model/GwUpdateRemoteAccessSessionLogsDatadog
- * @version 5.0.7
+ * @version 5.0.8
  */
 class GwUpdateRemoteAccessSessionLogsDatadog {
     /**
