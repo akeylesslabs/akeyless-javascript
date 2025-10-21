@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GwUpdateRemoteAccessSessionLogsElasticsearch model module.
  * @module model/GwUpdateRemoteAccessSessionLogsElasticsearch
- * @version 5.0.10
+ * @version 5.0.11
  */
 class GwUpdateRemoteAccessSessionLogsElasticsearch {
     /**

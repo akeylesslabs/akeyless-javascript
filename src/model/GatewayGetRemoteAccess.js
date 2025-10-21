@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetRemoteAccess model module.
  * @module model/GatewayGetRemoteAccess
- * @version 5.0.10
+ * @version 5.0.11
  */
 class GatewayGetRemoteAccess {
     /**

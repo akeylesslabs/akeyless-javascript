@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerPingOutput model module.
  * @module model/GatewayCreateProducerPingOutput
- * @version 5.0.10
+ * @version 5.0.11
  */
 class GatewayCreateProducerPingOutput {
     /**

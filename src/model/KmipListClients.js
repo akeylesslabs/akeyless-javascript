@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipListClients model module.
  * @module model/KmipListClients
- * @version 5.0.10
+ * @version 5.0.11
  */
 class KmipListClients {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeactivateAcmeAccount model module.
  * @module model/DeactivateAcmeAccount
- * @version 5.0.10
+ * @version 5.0.11
  */
 class DeactivateAcmeAccount {
     /**

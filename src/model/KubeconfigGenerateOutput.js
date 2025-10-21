@@ -17,7 +17,7 @@ import KubeConfigValue from './KubeConfigValue';
 /**
  * The KubeconfigGenerateOutput model module.
  * @module model/KubeconfigGenerateOutput
- * @version 5.0.10
+ * @version 5.0.11
  */
 class KubeconfigGenerateOutput {
     /**

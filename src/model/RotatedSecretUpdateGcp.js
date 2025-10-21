@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateGcp model module.
  * @module model/RotatedSecretUpdateGcp
- * @version 5.0.10
+ * @version 5.0.11
  */
 class RotatedSecretUpdateGcp {
     /**

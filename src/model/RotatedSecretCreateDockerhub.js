@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateDockerhub model module.
  * @module model/RotatedSecretCreateDockerhub
- * @version 5.0.10
+ * @version 5.0.11
  */
 class RotatedSecretCreateDockerhub {
     /**

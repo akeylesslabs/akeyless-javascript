@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetTargetDetails model module.
  * @module model/GetTargetDetails
- * @version 5.0.10
+ * @version 5.0.11
  */
 class GetTargetDetails {
     /**

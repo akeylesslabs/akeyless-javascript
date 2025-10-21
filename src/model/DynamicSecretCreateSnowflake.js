@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateSnowflake model module.
  * @module model/DynamicSecretCreateSnowflake
- * @version 5.0.10
+ * @version 5.0.11
  */
 class DynamicSecretCreateSnowflake {
     /**

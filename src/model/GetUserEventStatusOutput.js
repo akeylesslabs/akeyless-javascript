@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetUserEventStatusOutput model module.
  * @module model/GetUserEventStatusOutput
- * @version 5.0.10
+ * @version 5.0.11
  */
 class GetUserEventStatusOutput {
     /**

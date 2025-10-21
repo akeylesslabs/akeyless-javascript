@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscGet model module.
  * @module model/UscGet
- * @version 5.0.10
+ * @version 5.0.11
  */
 class UscGet {
     /**

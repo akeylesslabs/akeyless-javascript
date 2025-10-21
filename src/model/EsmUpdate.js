@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EsmUpdate model module.
  * @module model/EsmUpdate
- * @version 5.0.10
+ * @version 5.0.11
  */
 class EsmUpdate {
     /**

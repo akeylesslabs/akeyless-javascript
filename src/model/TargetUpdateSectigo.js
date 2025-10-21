@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateSectigo model module.
  * @module model/TargetUpdateSectigo
- * @version 5.0.10
+ * @version 5.0.11
  */
 class TargetUpdateSectigo {
     /**

@@ -17,7 +17,7 @@ import ClientData from './ClientData';
 /**
  * The GetKubeExecCredsOutput model module.
  * @module model/GetKubeExecCredsOutput
- * @version 5.0.10
+ * @version 5.0.11
  */
 class GetKubeExecCredsOutput {
     /**

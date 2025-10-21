@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerGcpOutput model module.
  * @module model/GatewayCreateProducerGcpOutput
- * @version 5.0.10
+ * @version 5.0.11
  */
 class GatewayCreateProducerGcpOutput {
     /**
