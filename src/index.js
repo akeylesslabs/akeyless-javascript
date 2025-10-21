@@ -309,6 +309,7 @@ import DynamicSecretCreateLdap from './model/DynamicSecretCreateLdap';
 import DynamicSecretCreateMongoDb from './model/DynamicSecretCreateMongoDb';
 import DynamicSecretCreateMsSql from './model/DynamicSecretCreateMsSql';
 import DynamicSecretCreateMySql from './model/DynamicSecretCreateMySql';
+import DynamicSecretCreateOpenAI from './model/DynamicSecretCreateOpenAI';
 import DynamicSecretCreateOracleDb from './model/DynamicSecretCreateOracleDb';
 import DynamicSecretCreateOutput from './model/DynamicSecretCreateOutput';
 import DynamicSecretCreatePing from './model/DynamicSecretCreatePing';
@@ -348,6 +349,7 @@ import DynamicSecretUpdateLdap from './model/DynamicSecretUpdateLdap';
 import DynamicSecretUpdateMongoDb from './model/DynamicSecretUpdateMongoDb';
 import DynamicSecretUpdateMsSql from './model/DynamicSecretUpdateMsSql';
 import DynamicSecretUpdateMySql from './model/DynamicSecretUpdateMySql';
+import DynamicSecretUpdateOpenAI from './model/DynamicSecretUpdateOpenAI';
 import DynamicSecretUpdateOracleDb from './model/DynamicSecretUpdateOracleDb';
 import DynamicSecretUpdateOutput from './model/DynamicSecretUpdateOutput';
 import DynamicSecretUpdatePing from './model/DynamicSecretUpdatePing';
@@ -386,6 +388,7 @@ import EventAction from './model/EventAction';
 import EventForwarderCreateEmail from './model/EventForwarderCreateEmail';
 import EventForwarderCreateServiceNow from './model/EventForwarderCreateServiceNow';
 import EventForwarderCreateSlack from './model/EventForwarderCreateSlack';
+import EventForwarderCreateTeams from './model/EventForwarderCreateTeams';
 import EventForwarderCreateUpdateOutput from './model/EventForwarderCreateUpdateOutput';
 import EventForwarderCreateWebhook from './model/EventForwarderCreateWebhook';
 import EventForwarderDelete from './model/EventForwarderDelete';
@@ -395,6 +398,7 @@ import EventForwarderGetOutput from './model/EventForwarderGetOutput';
 import EventForwarderUpdateEmail from './model/EventForwarderUpdateEmail';
 import EventForwarderUpdateServiceNow from './model/EventForwarderUpdateServiceNow';
 import EventForwarderUpdateSlack from './model/EventForwarderUpdateSlack';
+import EventForwarderUpdateTeams from './model/EventForwarderUpdateTeams';
 import EventForwarderUpdateWebhook from './model/EventForwarderUpdateWebhook';
 import ExportClassicKey from './model/ExportClassicKey';
 import ExportClassicKeyOutput from './model/ExportClassicKeyOutput';
@@ -1154,7 +1158,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.8
+* @version 5.0.9
 */
 export {
     /**
@@ -2940,6 +2944,12 @@ export {
     DynamicSecretCreateMySql,
 
     /**
+     * The DynamicSecretCreateOpenAI model constructor.
+     * @property {module:model/DynamicSecretCreateOpenAI}
+     */
+    DynamicSecretCreateOpenAI,
+
+    /**
      * The DynamicSecretCreateOracleDb model constructor.
      * @property {module:model/DynamicSecretCreateOracleDb}
      */
@@ -3174,6 +3184,12 @@ export {
     DynamicSecretUpdateMySql,
 
     /**
+     * The DynamicSecretUpdateOpenAI model constructor.
+     * @property {module:model/DynamicSecretUpdateOpenAI}
+     */
+    DynamicSecretUpdateOpenAI,
+
+    /**
      * The DynamicSecretUpdateOracleDb model constructor.
      * @property {module:model/DynamicSecretUpdateOracleDb}
      */
@@ -3402,6 +3418,12 @@ export {
     EventForwarderCreateSlack,
 
     /**
+     * The EventForwarderCreateTeams model constructor.
+     * @property {module:model/EventForwarderCreateTeams}
+     */
+    EventForwarderCreateTeams,
+
+    /**
      * The EventForwarderCreateUpdateOutput model constructor.
      * @property {module:model/EventForwarderCreateUpdateOutput}
      */
@@ -3454,6 +3476,12 @@ export {
      * @property {module:model/EventForwarderUpdateSlack}
      */
     EventForwarderUpdateSlack,
+
+    /**
+     * The EventForwarderUpdateTeams model constructor.
+     * @property {module:model/EventForwarderUpdateTeams}
+     */
+    EventForwarderUpdateTeams,
 
     /**
      * The EventForwarderUpdateWebhook model constructor.

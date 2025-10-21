@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OpenAITargetDetails model module.
  * @module model/OpenAITargetDetails
- * @version 5.0.8
+ * @version 5.0.9
  */
 class OpenAITargetDetails {
     /**
@@ -54,14 +54,14 @@ class OpenAITargetDetails {
             if (data.hasOwnProperty('api_key_id')) {
                 obj['api_key_id'] = ApiClient.convertToType(data['api_key_id'], 'String');
             }
-            if (data.hasOwnProperty('model')) {
-                obj['model'] = ApiClient.convertToType(data['model'], 'String');
-            }
             if (data.hasOwnProperty('openai_url')) {
                 obj['openai_url'] = ApiClient.convertToType(data['openai_url'], 'String');
             }
             if (data.hasOwnProperty('organization_id')) {
                 obj['organization_id'] = ApiClient.convertToType(data['organization_id'], 'String');
+            }
+            if (data.hasOwnProperty('project_id')) {
+                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
             }
         }
         return obj;
@@ -82,16 +82,16 @@ class OpenAITargetDetails {
             throw new Error("Expected the field `api_key_id` to be a primitive type in the JSON string but got " + data['api_key_id']);
         }
         // ensure the json data is a string
-        if (data['model'] && !(typeof data['model'] === 'string' || data['model'] instanceof String)) {
-            throw new Error("Expected the field `model` to be a primitive type in the JSON string but got " + data['model']);
-        }
-        // ensure the json data is a string
         if (data['openai_url'] && !(typeof data['openai_url'] === 'string' || data['openai_url'] instanceof String)) {
             throw new Error("Expected the field `openai_url` to be a primitive type in the JSON string but got " + data['openai_url']);
         }
         // ensure the json data is a string
         if (data['organization_id'] && !(typeof data['organization_id'] === 'string' || data['organization_id'] instanceof String)) {
             throw new Error("Expected the field `organization_id` to be a primitive type in the JSON string but got " + data['organization_id']);
+        }
+        // ensure the json data is a string
+        if (data['project_id'] && !(typeof data['project_id'] === 'string' || data['project_id'] instanceof String)) {
+            throw new Error("Expected the field `project_id` to be a primitive type in the JSON string but got " + data['project_id']);
         }
 
         return true;
@@ -113,11 +113,6 @@ OpenAITargetDetails.prototype['api_key'] = undefined;
 OpenAITargetDetails.prototype['api_key_id'] = undefined;
 
 /**
- * @member {String} model
- */
-OpenAITargetDetails.prototype['model'] = undefined;
-
-/**
  * @member {String} openai_url
  */
 OpenAITargetDetails.prototype['openai_url'] = undefined;
@@ -126,6 +121,11 @@ OpenAITargetDetails.prototype['openai_url'] = undefined;
  * @member {String} organization_id
  */
 OpenAITargetDetails.prototype['organization_id'] = undefined;
+
+/**
+ * @member {String} project_id
+ */
+OpenAITargetDetails.prototype['project_id'] = undefined;
 
 
 

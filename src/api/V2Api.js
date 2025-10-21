@@ -237,6 +237,7 @@ import DynamicSecretCreateLdap from '../model/DynamicSecretCreateLdap';
 import DynamicSecretCreateMongoDb from '../model/DynamicSecretCreateMongoDb';
 import DynamicSecretCreateMsSql from '../model/DynamicSecretCreateMsSql';
 import DynamicSecretCreateMySql from '../model/DynamicSecretCreateMySql';
+import DynamicSecretCreateOpenAI from '../model/DynamicSecretCreateOpenAI';
 import DynamicSecretCreateOracleDb from '../model/DynamicSecretCreateOracleDb';
 import DynamicSecretCreateOutput from '../model/DynamicSecretCreateOutput';
 import DynamicSecretCreatePing from '../model/DynamicSecretCreatePing';
@@ -273,6 +274,7 @@ import DynamicSecretUpdateLdap from '../model/DynamicSecretUpdateLdap';
 import DynamicSecretUpdateMongoDb from '../model/DynamicSecretUpdateMongoDb';
 import DynamicSecretUpdateMsSql from '../model/DynamicSecretUpdateMsSql';
 import DynamicSecretUpdateMySql from '../model/DynamicSecretUpdateMySql';
+import DynamicSecretUpdateOpenAI from '../model/DynamicSecretUpdateOpenAI';
 import DynamicSecretUpdateOracleDb from '../model/DynamicSecretUpdateOracleDb';
 import DynamicSecretUpdateOutput from '../model/DynamicSecretUpdateOutput';
 import DynamicSecretUpdatePing from '../model/DynamicSecretUpdatePing';
@@ -302,6 +304,7 @@ import EventAction from '../model/EventAction';
 import EventForwarderCreateEmail from '../model/EventForwarderCreateEmail';
 import EventForwarderCreateServiceNow from '../model/EventForwarderCreateServiceNow';
 import EventForwarderCreateSlack from '../model/EventForwarderCreateSlack';
+import EventForwarderCreateTeams from '../model/EventForwarderCreateTeams';
 import EventForwarderCreateUpdateOutput from '../model/EventForwarderCreateUpdateOutput';
 import EventForwarderCreateWebhook from '../model/EventForwarderCreateWebhook';
 import EventForwarderDelete from '../model/EventForwarderDelete';
@@ -311,6 +314,7 @@ import EventForwarderGetOutput from '../model/EventForwarderGetOutput';
 import EventForwarderUpdateEmail from '../model/EventForwarderUpdateEmail';
 import EventForwarderUpdateServiceNow from '../model/EventForwarderUpdateServiceNow';
 import EventForwarderUpdateSlack from '../model/EventForwarderUpdateSlack';
+import EventForwarderUpdateTeams from '../model/EventForwarderUpdateTeams';
 import EventForwarderUpdateWebhook from '../model/EventForwarderUpdateWebhook';
 import ExportClassicKey from '../model/ExportClassicKey';
 import ExportClassicKeyOutput from '../model/ExportClassicKeyOutput';
@@ -882,7 +886,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.8
+* @version 5.0.9
 */
 export default class V2Api {
 
@@ -6962,6 +6966,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/DynamicSecretCreateOpenAI} dynamicSecretCreateOpenAI 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateOpenAIWithHttpInfo(dynamicSecretCreateOpenAI) {
+      let postBody = dynamicSecretCreateOpenAI;
+      // verify the required parameter 'dynamicSecretCreateOpenAI' is set
+      if (dynamicSecretCreateOpenAI === undefined || dynamicSecretCreateOpenAI === null) {
+        throw new Error("Missing the required parameter 'dynamicSecretCreateOpenAI' when calling dynamicSecretCreateOpenAI");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-openai', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateOpenAI} dynamicSecretCreateOpenAI 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateOpenAI(dynamicSecretCreateOpenAI) {
+      return this.dynamicSecretCreateOpenAIWithHttpInfo(dynamicSecretCreateOpenAI)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/DynamicSecretCreateOracleDb} dynamicSecretCreateOracleDb 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
      */
@@ -8423,6 +8470,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/DynamicSecretUpdateOpenAI} dynamicSecretUpdateOpenAI 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateOpenAIWithHttpInfo(dynamicSecretUpdateOpenAI) {
+      let postBody = dynamicSecretUpdateOpenAI;
+      // verify the required parameter 'dynamicSecretUpdateOpenAI' is set
+      if (dynamicSecretUpdateOpenAI === undefined || dynamicSecretUpdateOpenAI === null) {
+        throw new Error("Missing the required parameter 'dynamicSecretUpdateOpenAI' when calling dynamicSecretUpdateOpenAI");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-openai', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateOpenAI} dynamicSecretUpdateOpenAI 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateOpenAI(dynamicSecretUpdateOpenAI) {
+      return this.dynamicSecretUpdateOpenAIWithHttpInfo(dynamicSecretUpdateOpenAI)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/DynamicSecretUpdateOracleDb} dynamicSecretUpdateOracleDb 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
      */
@@ -9369,6 +9459,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/EventForwarderCreateTeams} eventForwarderCreateTeams 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventForwarderCreateUpdateOutput} and HTTP response
+     */
+    eventForwarderCreateTeamsWithHttpInfo(eventForwarderCreateTeams) {
+      let postBody = eventForwarderCreateTeams;
+      // verify the required parameter 'eventForwarderCreateTeams' is set
+      if (eventForwarderCreateTeams === undefined || eventForwarderCreateTeams === null) {
+        throw new Error("Missing the required parameter 'eventForwarderCreateTeams' when calling eventForwarderCreateTeams");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EventForwarderCreateUpdateOutput;
+      return this.apiClient.callApi(
+        '/event-forwarder-create-teams', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EventForwarderCreateTeams} eventForwarderCreateTeams 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventForwarderCreateUpdateOutput}
+     */
+    eventForwarderCreateTeams(eventForwarderCreateTeams) {
+      return this.eventForwarderCreateTeamsWithHttpInfo(eventForwarderCreateTeams)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/EventForwarderCreateWebhook} eventForwarderCreateWebhook 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventForwarderCreateUpdateOutput} and HTTP response
      */
@@ -9620,6 +9753,49 @@ export default class V2Api {
      */
     eventForwarderUpdateSlack(eventForwarderUpdateSlack) {
       return this.eventForwarderUpdateSlackWithHttpInfo(eventForwarderUpdateSlack)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/EventForwarderUpdateTeams} eventForwarderUpdateTeams 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventForwarderCreateUpdateOutput} and HTTP response
+     */
+    eventForwarderUpdateTeamsWithHttpInfo(eventForwarderUpdateTeams) {
+      let postBody = eventForwarderUpdateTeams;
+      // verify the required parameter 'eventForwarderUpdateTeams' is set
+      if (eventForwarderUpdateTeams === undefined || eventForwarderUpdateTeams === null) {
+        throw new Error("Missing the required parameter 'eventForwarderUpdateTeams' when calling eventForwarderUpdateTeams");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EventForwarderCreateUpdateOutput;
+      return this.apiClient.callApi(
+        '/event-forwarder-update-teams', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/EventForwarderUpdateTeams} eventForwarderUpdateTeams 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventForwarderCreateUpdateOutput}
+     */
+    eventForwarderUpdateTeams(eventForwarderUpdateTeams) {
+      return this.eventForwarderUpdateTeamsWithHttpInfo(eventForwarderUpdateTeams)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

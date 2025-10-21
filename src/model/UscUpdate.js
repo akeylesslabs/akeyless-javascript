@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscUpdate model module.
  * @module model/UscUpdate
- * @version 5.0.8
+ * @version 5.0.9
  */
 class UscUpdate {
     /**
@@ -82,6 +82,9 @@ class UscUpdate {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
+            if (data.hasOwnProperty('usc-encryption-key')) {
+                obj['usc-encryption-key'] = ApiClient.convertToType(data['usc-encryption-key'], 'String');
+            }
             if (data.hasOwnProperty('usc-name')) {
                 obj['usc-name'] = ApiClient.convertToType(data['usc-name'], 'String');
             }
@@ -127,6 +130,10 @@ class UscUpdate {
         // ensure the json data is a string
         if (data['uid-token'] && !(typeof data['uid-token'] === 'string' || data['uid-token'] instanceof String)) {
             throw new Error("Expected the field `uid-token` to be a primitive type in the JSON string but got " + data['uid-token']);
+        }
+        // ensure the json data is a string
+        if (data['usc-encryption-key'] && !(typeof data['usc-encryption-key'] === 'string' || data['usc-encryption-key'] instanceof String)) {
+            throw new Error("Expected the field `usc-encryption-key` to be a primitive type in the JSON string but got " + data['usc-encryption-key']);
         }
         // ensure the json data is a string
         if (data['usc-name'] && !(typeof data['usc-name'] === 'string' || data['usc-name'] instanceof String)) {
@@ -199,6 +206,12 @@ UscUpdate.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UscUpdate.prototype['uid-token'] = undefined;
+
+/**
+ * Optional, The name of the remote key that used to encrypt the secret value (if empty, the default key will be used)
+ * @member {String} usc-encryption-key
+ */
+UscUpdate.prototype['usc-encryption-key'] = undefined;
 
 /**
  * Name of the Universal Secrets Connector item

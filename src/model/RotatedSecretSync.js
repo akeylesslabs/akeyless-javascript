@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretSync model module.
  * @module model/RotatedSecretSync
- * @version 5.0.8
+ * @version 5.0.9
  */
 class RotatedSecretSync {
     /**

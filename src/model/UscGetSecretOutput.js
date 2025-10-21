@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscGetSecretOutput model module.
  * @module model/UscGetSecretOutput
- * @version 5.0.8
+ * @version 5.0.9
  */
 class UscGetSecretOutput {
     /**
@@ -50,6 +50,9 @@ class UscGetSecretOutput {
             if (data.hasOwnProperty('binary_value')) {
                 obj['binary_value'] = ApiClient.convertToType(data['binary_value'], 'Boolean');
             }
+            if (data.hasOwnProperty('encryption_key')) {
+                obj['encryption_key'] = ApiClient.convertToType(data['encryption_key'], 'String');
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
@@ -72,6 +75,10 @@ class UscGetSecretOutput {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>UscGetSecretOutput</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['encryption_key'] && !(typeof data['encryption_key'] === 'string' || data['encryption_key'] instanceof String)) {
+            throw new Error("Expected the field `encryption_key` to be a primitive type in the JSON string but got " + data['encryption_key']);
+        }
         // ensure the json data is a string
         if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
             throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
@@ -97,6 +104,11 @@ class UscGetSecretOutput {
  * @member {Boolean} binary_value
  */
 UscGetSecretOutput.prototype['binary_value'] = undefined;
+
+/**
+ * @member {String} encryption_key
+ */
+UscGetSecretOutput.prototype['encryption_key'] = undefined;
 
 /**
  * @member {String} id

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecretInfo model module.
  * @module model/SecretInfo
- * @version 5.0.8
+ * @version 5.0.9
  */
 class SecretInfo {
     /**
@@ -55,6 +55,9 @@ class SecretInfo {
             }
             if (data.hasOwnProperty('expiration')) {
                 obj['expiration'] = ApiClient.convertToType(data['expiration'], 'Date');
+            }
+            if (data.hasOwnProperty('key_id')) {
+                obj['key_id'] = ApiClient.convertToType(data['key_id'], 'String');
             }
             if (data.hasOwnProperty('last_retrieved')) {
                 obj['last_retrieved'] = ApiClient.convertToType(data['last_retrieved'], 'Date');
@@ -98,6 +101,10 @@ class SecretInfo {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
         // ensure the json data is a string
+        if (data['key_id'] && !(typeof data['key_id'] === 'string' || data['key_id'] instanceof String)) {
+            throw new Error("Expected the field `key_id` to be a primitive type in the JSON string but got " + data['key_id']);
+        }
+        // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
         }
@@ -136,6 +143,11 @@ SecretInfo.prototype['description'] = undefined;
  * @member {Date} expiration
  */
 SecretInfo.prototype['expiration'] = undefined;
+
+/**
+ * @member {String} key_id
+ */
+SecretInfo.prototype['key_id'] = undefined;
 
 /**
  * @member {Date} last_retrieved

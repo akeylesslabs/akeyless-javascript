@@ -145,6 +145,7 @@ Method | HTTP request | Description
 [**dynamicSecretCreateMongoDb**](V2Api.md#dynamicSecretCreateMongoDb) | **POST** /dynamic-secret-create-mongodb | 
 [**dynamicSecretCreateMsSql**](V2Api.md#dynamicSecretCreateMsSql) | **POST** /dynamic-secret-create-mssql | 
 [**dynamicSecretCreateMySql**](V2Api.md#dynamicSecretCreateMySql) | **POST** /dynamic-secret-create-mysql | 
+[**dynamicSecretCreateOpenAI**](V2Api.md#dynamicSecretCreateOpenAI) | **POST** /dynamic-secret-create-openai | 
 [**dynamicSecretCreateOracleDb**](V2Api.md#dynamicSecretCreateOracleDb) | **POST** /dynamic-secret-create-oracle | 
 [**dynamicSecretCreatePing**](V2Api.md#dynamicSecretCreatePing) | **POST** /dynamic-secret-create-ping | 
 [**dynamicSecretCreatePostgreSql**](V2Api.md#dynamicSecretCreatePostgreSql) | **POST** /dynamic-secret-create-postgresql | 
@@ -179,6 +180,7 @@ Method | HTTP request | Description
 [**dynamicSecretUpdateMongoDb**](V2Api.md#dynamicSecretUpdateMongoDb) | **POST** /dynamic-secret-update-mongo | 
 [**dynamicSecretUpdateMsSql**](V2Api.md#dynamicSecretUpdateMsSql) | **POST** /dynamic-secret-update-mssql | 
 [**dynamicSecretUpdateMySql**](V2Api.md#dynamicSecretUpdateMySql) | **POST** /dynamic-secret-update-mysql | 
+[**dynamicSecretUpdateOpenAI**](V2Api.md#dynamicSecretUpdateOpenAI) | **POST** /dynamic-secret-update-openai | 
 [**dynamicSecretUpdateOracleDb**](V2Api.md#dynamicSecretUpdateOracleDb) | **POST** /dynamic-secret-update-oracle | 
 [**dynamicSecretUpdatePing**](V2Api.md#dynamicSecretUpdatePing) | **POST** /dynamic-secret-update-ping | 
 [**dynamicSecretUpdatePostgreSql**](V2Api.md#dynamicSecretUpdatePostgreSql) | **POST** /dynamic-secret-update-postgresql | 
@@ -201,12 +203,14 @@ Method | HTTP request | Description
 [**eventForwarderCreateEmail**](V2Api.md#eventForwarderCreateEmail) | **POST** /event-forwarder-create-email | 
 [**eventForwarderCreateServiceNow**](V2Api.md#eventForwarderCreateServiceNow) | **POST** /event-forwarder-create-servicenow | 
 [**eventForwarderCreateSlack**](V2Api.md#eventForwarderCreateSlack) | **POST** /event-forwarder-create-slack | 
+[**eventForwarderCreateTeams**](V2Api.md#eventForwarderCreateTeams) | **POST** /event-forwarder-create-teams | 
 [**eventForwarderCreateWebhook**](V2Api.md#eventForwarderCreateWebhook) | **POST** /event-forwarder-create-webhook | 
 [**eventForwarderDelete**](V2Api.md#eventForwarderDelete) | **POST** /event-forwarder-delete | 
 [**eventForwarderGet**](V2Api.md#eventForwarderGet) | **POST** /event-forwarder-get | 
 [**eventForwarderUpdateEmail**](V2Api.md#eventForwarderUpdateEmail) | **POST** /event-forwarder-update-email | 
 [**eventForwarderUpdateServiceNow**](V2Api.md#eventForwarderUpdateServiceNow) | **POST** /event-forwarder-update-servicenow | 
 [**eventForwarderUpdateSlack**](V2Api.md#eventForwarderUpdateSlack) | **POST** /event-forwarder-update-slack | 
+[**eventForwarderUpdateTeams**](V2Api.md#eventForwarderUpdateTeams) | **POST** /event-forwarder-update-teams | 
 [**eventForwarderUpdateWebhook**](V2Api.md#eventForwarderUpdateWebhook) | **POST** /event-forwarder-update-webhook | 
 [**exportClassicKey**](V2Api.md#exportClassicKey) | **POST** /export-classic-key | 
 [**gatewayCreateAllowedAccess**](V2Api.md#gatewayCreateAllowedAccess) | **POST** /gateway-create-allowed-access | 
@@ -6507,6 +6511,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## dynamicSecretCreateOpenAI
+
+> DynamicSecretCreateOutput dynamicSecretCreateOpenAI(dynamicSecretCreateOpenAI)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let dynamicSecretCreateOpenAI = new akeyless.DynamicSecretCreateOpenAI(); // DynamicSecretCreateOpenAI | 
+apiInstance.dynamicSecretCreateOpenAI(dynamicSecretCreateOpenAI).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dynamicSecretCreateOpenAI** | [**DynamicSecretCreateOpenAI**](DynamicSecretCreateOpenAI.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## dynamicSecretCreateOracleDb
 
 > DynamicSecretCreateOutput dynamicSecretCreateOracleDb(dynamicSecretCreateOracleDb)
@@ -7937,6 +7983,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## dynamicSecretUpdateOpenAI
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateOpenAI(dynamicSecretUpdateOpenAI)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let dynamicSecretUpdateOpenAI = new akeyless.DynamicSecretUpdateOpenAI(); // DynamicSecretUpdateOpenAI | 
+apiInstance.dynamicSecretUpdateOpenAI(dynamicSecretUpdateOpenAI).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dynamicSecretUpdateOpenAI** | [**DynamicSecretUpdateOpenAI**](DynamicSecretUpdateOpenAI.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## dynamicSecretUpdateOracleDb
 
 > DynamicSecretUpdateOutput dynamicSecretUpdateOracleDb(dynamicSecretUpdateOracleDb)
@@ -8861,6 +8949,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## eventForwarderCreateTeams
+
+> EventForwarderCreateUpdateOutput eventForwarderCreateTeams(eventForwarderCreateTeams)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let eventForwarderCreateTeams = new akeyless.EventForwarderCreateTeams(); // EventForwarderCreateTeams | 
+apiInstance.eventForwarderCreateTeams(eventForwarderCreateTeams).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eventForwarderCreateTeams** | [**EventForwarderCreateTeams**](EventForwarderCreateTeams.md)|  | 
+
+### Return type
+
+[**EventForwarderCreateUpdateOutput**](EventForwarderCreateUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## eventForwarderCreateWebhook
 
 > EventForwarderCreateUpdateOutput eventForwarderCreateWebhook(eventForwarderCreateWebhook)
@@ -9098,6 +9228,48 @@ apiInstance.eventForwarderUpdateSlack(eventForwarderUpdateSlack).then((data) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eventForwarderUpdateSlack** | [**EventForwarderUpdateSlack**](EventForwarderUpdateSlack.md)|  | 
+
+### Return type
+
+[**EventForwarderCreateUpdateOutput**](EventForwarderCreateUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## eventForwarderUpdateTeams
+
+> EventForwarderCreateUpdateOutput eventForwarderUpdateTeams(eventForwarderUpdateTeams)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let eventForwarderUpdateTeams = new akeyless.EventForwarderUpdateTeams(); // EventForwarderUpdateTeams | 
+apiInstance.eventForwarderUpdateTeams(eventForwarderUpdateTeams).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eventForwarderUpdateTeams** | [**EventForwarderUpdateTeams**](EventForwarderUpdateTeams.md)|  | 
 
 ### Return type
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateLdap model module.
  * @module model/DynamicSecretCreateLdap
- * @version 5.0.8
+ * @version 5.0.9
  */
 class DynamicSecretCreateLdap {
     /**

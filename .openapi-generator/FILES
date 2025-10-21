@@ -298,6 +298,7 @@ docs/DynamicSecretCreateLdap.md
 docs/DynamicSecretCreateMongoDb.md
 docs/DynamicSecretCreateMsSql.md
 docs/DynamicSecretCreateMySql.md
+docs/DynamicSecretCreateOpenAI.md
 docs/DynamicSecretCreateOracleDb.md
 docs/DynamicSecretCreateOutput.md
 docs/DynamicSecretCreatePing.md
@@ -337,6 +338,7 @@ docs/DynamicSecretUpdateLdap.md
 docs/DynamicSecretUpdateMongoDb.md
 docs/DynamicSecretUpdateMsSql.md
 docs/DynamicSecretUpdateMySql.md
+docs/DynamicSecretUpdateOpenAI.md
 docs/DynamicSecretUpdateOracleDb.md
 docs/DynamicSecretUpdateOutput.md
 docs/DynamicSecretUpdatePing.md
@@ -375,6 +377,7 @@ docs/EventAction.md
 docs/EventForwarderCreateEmail.md
 docs/EventForwarderCreateServiceNow.md
 docs/EventForwarderCreateSlack.md
+docs/EventForwarderCreateTeams.md
 docs/EventForwarderCreateUpdateOutput.md
 docs/EventForwarderCreateWebhook.md
 docs/EventForwarderDelete.md
@@ -384,6 +387,7 @@ docs/EventForwarderGetOutput.md
 docs/EventForwarderUpdateEmail.md
 docs/EventForwarderUpdateServiceNow.md
 docs/EventForwarderUpdateSlack.md
+docs/EventForwarderUpdateTeams.md
 docs/EventForwarderUpdateWebhook.md
 docs/ExportClassicKey.md
 docs/ExportClassicKeyOutput.md
@@ -1414,6 +1418,7 @@ src/model/DynamicSecretCreateLdap.js
 src/model/DynamicSecretCreateMongoDb.js
 src/model/DynamicSecretCreateMsSql.js
 src/model/DynamicSecretCreateMySql.js
+src/model/DynamicSecretCreateOpenAI.js
 src/model/DynamicSecretCreateOracleDb.js
 src/model/DynamicSecretCreateOutput.js
 src/model/DynamicSecretCreatePing.js
@@ -1453,6 +1458,7 @@ src/model/DynamicSecretUpdateLdap.js
 src/model/DynamicSecretUpdateMongoDb.js
 src/model/DynamicSecretUpdateMsSql.js
 src/model/DynamicSecretUpdateMySql.js
+src/model/DynamicSecretUpdateOpenAI.js
 src/model/DynamicSecretUpdateOracleDb.js
 src/model/DynamicSecretUpdateOutput.js
 src/model/DynamicSecretUpdatePing.js
@@ -1491,6 +1497,7 @@ src/model/EventAction.js
 src/model/EventForwarderCreateEmail.js
 src/model/EventForwarderCreateServiceNow.js
 src/model/EventForwarderCreateSlack.js
+src/model/EventForwarderCreateTeams.js
 src/model/EventForwarderCreateUpdateOutput.js
 src/model/EventForwarderCreateWebhook.js
 src/model/EventForwarderDelete.js
@@ -1500,6 +1507,7 @@ src/model/EventForwarderGetOutput.js
 src/model/EventForwarderUpdateEmail.js
 src/model/EventForwarderUpdateServiceNow.js
 src/model/EventForwarderUpdateSlack.js
+src/model/EventForwarderUpdateTeams.js
 src/model/EventForwarderUpdateWebhook.js
 src/model/ExportClassicKey.js
 src/model/ExportClassicKeyOutput.js
@@ -2227,5 +2235,7 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/GetCertChallenge.spec.js
-test/model/GetCertChallengeOutput.spec.js
+test/model/DynamicSecretCreateOpenAI.spec.js
+test/model/DynamicSecretUpdateOpenAI.spec.js
+test/model/EventForwarderCreateTeams.spec.js
+test/model/EventForwarderUpdateTeams.spec.js

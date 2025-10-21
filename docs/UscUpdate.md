@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **tags** | **{String: String}** | Tags for the universal secrets | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**uscEncryptionKey** | **String** | Optional, The name of the remote key that used to encrypt the secret value (if empty, the default key will be used) | [optional] 
 **uscName** | **String** | Name of the Universal Secrets Connector item | 
 **value** | **String** | Value of the universal secrets item, either text or base64 encoded binary | 
 

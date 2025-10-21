@@ -19,7 +19,7 @@ import WebHookNotiForwarderPublicDetails from './WebHookNotiForwarderPublicDetai
 /**
  * The NotiForwarder model module.
  * @module model/NotiForwarder
- * @version 5.0.8
+ * @version 5.0.9
  */
 class NotiForwarder {
     /**
@@ -112,6 +112,9 @@ class NotiForwarder {
             }
             if (data.hasOwnProperty('slack_noti_forwarder_public_details')) {
                 obj['slack_noti_forwarder_public_details'] = ApiClient.convertToType(data['slack_noti_forwarder_public_details'], Object);
+            }
+            if (data.hasOwnProperty('teams_noti_forwarder_public_details')) {
+                obj['teams_noti_forwarder_public_details'] = ApiClient.convertToType(data['teams_noti_forwarder_public_details'], Object);
             }
             if (data.hasOwnProperty('timespan_in_seconds')) {
                 obj['timespan_in_seconds'] = ApiClient.convertToType(data['timespan_in_seconds'], 'Number');
@@ -335,6 +338,11 @@ NotiForwarder.prototype['runner_type'] = undefined;
  * @member {Object} slack_noti_forwarder_public_details
  */
 NotiForwarder.prototype['slack_noti_forwarder_public_details'] = undefined;
+
+/**
+ * @member {Object} teams_noti_forwarder_public_details
+ */
+NotiForwarder.prototype['teams_noti_forwarder_public_details'] = undefined;
 
 /**
  * @member {Number} timespan_in_seconds

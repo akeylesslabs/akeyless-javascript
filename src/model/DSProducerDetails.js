@@ -20,7 +20,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 5.0.8
+ * @version 5.0.9
  */
 class DSProducerDetails {
     /**
@@ -71,6 +71,12 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('administrative_port')) {
                 obj['administrative_port'] = ApiClient.convertToType(data['administrative_port'], 'String');
+            }
+            if (data.hasOwnProperty('api_key')) {
+                obj['api_key'] = ApiClient.convertToType(data['api_key'], 'String');
+            }
+            if (data.hasOwnProperty('api_key_id')) {
+                obj['api_key_id'] = ApiClient.convertToType(data['api_key_id'], 'String');
             }
             if (data.hasOwnProperty('artifactory_admin_apikey')) {
                 obj['artifactory_admin_apikey'] = ApiClient.convertToType(data['artifactory_admin_apikey'], 'String');
@@ -609,6 +615,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('mysql_revocation_statements')) {
                 obj['mysql_revocation_statements'] = ApiClient.convertToType(data['mysql_revocation_statements'], 'String');
             }
+            if (data.hasOwnProperty('openai_url')) {
+                obj['openai_url'] = ApiClient.convertToType(data['openai_url'], 'String');
+            }
             if (data.hasOwnProperty('oracle_creation_statements')) {
                 obj['oracle_creation_statements'] = ApiClient.convertToType(data['oracle_creation_statements'], 'String');
             }
@@ -617,6 +626,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('oracle_wallet_details')) {
                 obj['oracle_wallet_details'] = WalletDetails.constructFromObject(data['oracle_wallet_details']);
+            }
+            if (data.hasOwnProperty('organization_id')) {
+                obj['organization_id'] = ApiClient.convertToType(data['organization_id'], 'String');
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
@@ -641,6 +653,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('privileged_user')) {
                 obj['privileged_user'] = ApiClient.convertToType(data['privileged_user'], 'String');
+            }
+            if (data.hasOwnProperty('project_id')) {
+                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
             }
             if (data.hasOwnProperty('rabbitmq_server_password')) {
                 obj['rabbitmq_server_password'] = ApiClient.convertToType(data['rabbitmq_server_password'], 'String');
@@ -836,6 +851,14 @@ class DSProducerDetails {
         // ensure the json data is a string
         if (data['administrative_port'] && !(typeof data['administrative_port'] === 'string' || data['administrative_port'] instanceof String)) {
             throw new Error("Expected the field `administrative_port` to be a primitive type in the JSON string but got " + data['administrative_port']);
+        }
+        // ensure the json data is a string
+        if (data['api_key'] && !(typeof data['api_key'] === 'string' || data['api_key'] instanceof String)) {
+            throw new Error("Expected the field `api_key` to be a primitive type in the JSON string but got " + data['api_key']);
+        }
+        // ensure the json data is a string
+        if (data['api_key_id'] && !(typeof data['api_key_id'] === 'string' || data['api_key_id'] instanceof String)) {
+            throw new Error("Expected the field `api_key_id` to be a primitive type in the JSON string but got " + data['api_key_id']);
         }
         // ensure the json data is a string
         if (data['artifactory_admin_apikey'] && !(typeof data['artifactory_admin_apikey'] === 'string' || data['artifactory_admin_apikey'] instanceof String)) {
@@ -1484,6 +1507,10 @@ class DSProducerDetails {
             throw new Error("Expected the field `mysql_revocation_statements` to be a primitive type in the JSON string but got " + data['mysql_revocation_statements']);
         }
         // ensure the json data is a string
+        if (data['openai_url'] && !(typeof data['openai_url'] === 'string' || data['openai_url'] instanceof String)) {
+            throw new Error("Expected the field `openai_url` to be a primitive type in the JSON string but got " + data['openai_url']);
+        }
+        // ensure the json data is a string
         if (data['oracle_creation_statements'] && !(typeof data['oracle_creation_statements'] === 'string' || data['oracle_creation_statements'] instanceof String)) {
             throw new Error("Expected the field `oracle_creation_statements` to be a primitive type in the JSON string but got " + data['oracle_creation_statements']);
         }
@@ -1494,6 +1521,10 @@ class DSProducerDetails {
         // validate the optional field `oracle_wallet_details`
         if (data['oracle_wallet_details']) { // data not null
           WalletDetails.validateJSON(data['oracle_wallet_details']);
+        }
+        // ensure the json data is a string
+        if (data['organization_id'] && !(typeof data['organization_id'] === 'string' || data['organization_id'] instanceof String)) {
+            throw new Error("Expected the field `organization_id` to be a primitive type in the JSON string but got " + data['organization_id']);
         }
         // ensure the json data is a string
         if (data['password'] && !(typeof data['password'] === 'string' || data['password'] instanceof String)) {
@@ -1522,6 +1553,10 @@ class DSProducerDetails {
         // ensure the json data is a string
         if (data['privileged_user'] && !(typeof data['privileged_user'] === 'string' || data['privileged_user'] instanceof String)) {
             throw new Error("Expected the field `privileged_user` to be a primitive type in the JSON string but got " + data['privileged_user']);
+        }
+        // ensure the json data is a string
+        if (data['project_id'] && !(typeof data['project_id'] === 'string' || data['project_id'] instanceof String)) {
+            throw new Error("Expected the field `project_id` to be a primitive type in the JSON string but got " + data['project_id']);
         }
         // ensure the json data is a string
         if (data['rabbitmq_server_password'] && !(typeof data['rabbitmq_server_password'] === 'string' || data['rabbitmq_server_password'] instanceof String)) {
@@ -1738,6 +1773,16 @@ DSProducerDetails.prototype['admin_rotation_interval_days'] = undefined;
  * @member {String} administrative_port
  */
 DSProducerDetails.prototype['administrative_port'] = undefined;
+
+/**
+ * @member {String} api_key
+ */
+DSProducerDetails.prototype['api_key'] = undefined;
+
+/**
+ * @member {String} api_key_id
+ */
+DSProducerDetails.prototype['api_key_id'] = undefined;
 
 /**
  * @member {String} artifactory_admin_apikey
@@ -2650,6 +2695,11 @@ DSProducerDetails.prototype['mysql_creation_statements'] = undefined;
 DSProducerDetails.prototype['mysql_revocation_statements'] = undefined;
 
 /**
+ * @member {String} openai_url
+ */
+DSProducerDetails.prototype['openai_url'] = undefined;
+
+/**
  * @member {String} oracle_creation_statements
  */
 DSProducerDetails.prototype['oracle_creation_statements'] = undefined;
@@ -2663,6 +2713,11 @@ DSProducerDetails.prototype['oracle_revocation_statements'] = undefined;
  * @member {module:model/WalletDetails} oracle_wallet_details
  */
 DSProducerDetails.prototype['oracle_wallet_details'] = undefined;
+
+/**
+ * @member {String} organization_id
+ */
+DSProducerDetails.prototype['organization_id'] = undefined;
 
 /**
  * @member {String} password
@@ -2703,6 +2758,11 @@ DSProducerDetails.prototype['postgres_revocation_statements'] = undefined;
  * @member {String} privileged_user
  */
 DSProducerDetails.prototype['privileged_user'] = undefined;
+
+/**
+ * @member {String} project_id
+ */
+DSProducerDetails.prototype['project_id'] = undefined;
 
 /**
  * @member {String} rabbitmq_server_password
