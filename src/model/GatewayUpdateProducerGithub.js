@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerGithub model module.
  * @module model/GatewayUpdateProducerGithub
- * @version 5.0.11
+ * @version 5.0.9
  */
 class GatewayUpdateProducerGithub {
     /**

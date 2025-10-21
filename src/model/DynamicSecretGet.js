@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretGet model module.
  * @module model/DynamicSecretGet
- * @version 5.0.11
+ * @version 5.0.9
  */
 class DynamicSecretGet {
     /**

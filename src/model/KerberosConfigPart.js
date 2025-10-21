@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KerberosConfigPart model module.
  * @module model/KerberosConfigPart
- * @version 5.0.11
+ * @version 5.0.9
  */
 class KerberosConfigPart {
     /**
