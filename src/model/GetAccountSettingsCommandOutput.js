@@ -22,7 +22,7 @@ import SystemAccessCredsSettings from './SystemAccessCredsSettings';
 /**
  * The GetAccountSettingsCommandOutput model module.
  * @module model/GetAccountSettingsCommandOutput
- * @version 5.0.9
+ * @version 5.0.12
  */
 class GetAccountSettingsCommandOutput {
     /**

@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerGoogleWorkspaceOutput model module.
  * @module model/GatewayCreateProducerGoogleWorkspaceOutput
- * @version 5.0.9
+ * @version 5.0.12
  */
 class GatewayCreateProducerGoogleWorkspaceOutput {
     /**

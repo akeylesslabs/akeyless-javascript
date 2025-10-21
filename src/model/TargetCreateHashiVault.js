@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateHashiVault model module.
  * @module model/TargetCreateHashiVault
- * @version 5.0.9
+ * @version 5.0.12
  */
 class TargetCreateHashiVault {
     /**
