@@ -2235,7 +2235,3 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/DynamicSecretCreateOpenAI.spec.js
-test/model/DynamicSecretUpdateOpenAI.spec.js
-test/model/EventForwarderCreateTeams.spec.js
-test/model/EventForwarderUpdateTeams.spec.js
