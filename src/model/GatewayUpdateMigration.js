@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 5.0.9
+ * @version 5.0.10
  */
 class GatewayUpdateMigration {
     /**
@@ -64,21 +64,6 @@ class GatewayUpdateMigration {
         if (data) {
             obj = obj || new GatewayUpdateMigration();
 
-            if (data.hasOwnProperty('1password-email')) {
-                obj['1password-email'] = ApiClient.convertToType(data['1password-email'], 'String');
-            }
-            if (data.hasOwnProperty('1password-password')) {
-                obj['1password-password'] = ApiClient.convertToType(data['1password-password'], 'String');
-            }
-            if (data.hasOwnProperty('1password-secret-key')) {
-                obj['1password-secret-key'] = ApiClient.convertToType(data['1password-secret-key'], 'String');
-            }
-            if (data.hasOwnProperty('1password-url')) {
-                obj['1password-url'] = ApiClient.convertToType(data['1password-url'], 'String');
-            }
-            if (data.hasOwnProperty('1password-vaults')) {
-                obj['1password-vaults'] = ApiClient.convertToType(data['1password-vaults'], ['String']);
-            }
             if (data.hasOwnProperty('ServiceAccountKeyDecoded')) {
                 obj['ServiceAccountKeyDecoded'] = ApiClient.convertToType(data['ServiceAccountKeyDecoded'], 'String');
             }
@@ -274,26 +259,6 @@ class GatewayUpdateMigration {
             if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
-        }
-        // ensure the json data is a string
-        if (data['1password-email'] && !(typeof data['1password-email'] === 'string' || data['1password-email'] instanceof String)) {
-            throw new Error("Expected the field `1password-email` to be a primitive type in the JSON string but got " + data['1password-email']);
-        }
-        // ensure the json data is a string
-        if (data['1password-password'] && !(typeof data['1password-password'] === 'string' || data['1password-password'] instanceof String)) {
-            throw new Error("Expected the field `1password-password` to be a primitive type in the JSON string but got " + data['1password-password']);
-        }
-        // ensure the json data is a string
-        if (data['1password-secret-key'] && !(typeof data['1password-secret-key'] === 'string' || data['1password-secret-key'] instanceof String)) {
-            throw new Error("Expected the field `1password-secret-key` to be a primitive type in the JSON string but got " + data['1password-secret-key']);
-        }
-        // ensure the json data is a string
-        if (data['1password-url'] && !(typeof data['1password-url'] === 'string' || data['1password-url'] instanceof String)) {
-            throw new Error("Expected the field `1password-url` to be a primitive type in the JSON string but got " + data['1password-url']);
-        }
-        // ensure the json data is an array
-        if (!Array.isArray(data['1password-vaults'])) {
-            throw new Error("Expected the field `1password-vaults` to be an array in the JSON data but got " + data['1password-vaults']);
         }
         // ensure the json data is a string
         if (data['ServiceAccountKeyDecoded'] && !(typeof data['ServiceAccountKeyDecoded'] === 'string' || data['ServiceAccountKeyDecoded'] instanceof String)) {
@@ -519,36 +484,6 @@ class GatewayUpdateMigration {
 }
 
 GatewayUpdateMigration.RequiredProperties = ["si-target-name", "si-users-path-template", "target-location"];
-
-/**
- * 1Password user email to connect to the API
- * @member {String} 1password-email
- */
-GatewayUpdateMigration.prototype['1password-email'] = undefined;
-
-/**
- * 1Password user password to connect to the API
- * @member {String} 1password-password
- */
-GatewayUpdateMigration.prototype['1password-password'] = undefined;
-
-/**
- * 1Password user secret key to connect to the API
- * @member {String} 1password-secret-key
- */
-GatewayUpdateMigration.prototype['1password-secret-key'] = undefined;
-
-/**
- * 1Password api container url
- * @member {String} 1password-url
- */
-GatewayUpdateMigration.prototype['1password-url'] = undefined;
-
-/**
- * 1Password list of vault to get the items from
- * @member {Array.<String>} 1password-vaults
- */
-GatewayUpdateMigration.prototype['1password-vaults'] = undefined;
 
 /**
  * @member {String} ServiceAccountKeyDecoded

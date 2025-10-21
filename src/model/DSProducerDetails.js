@@ -20,7 +20,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 5.0.9
+ * @version 5.0.10
  */
 class DSProducerDetails {
     /**
@@ -323,6 +323,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('gcp_key_algo')) {
                 obj['gcp_key_algo'] = ApiClient.convertToType(data['gcp_key_algo'], 'String');
+            }
+            if (data.hasOwnProperty('gcp_project_id')) {
+                obj['gcp_project_id'] = ApiClient.convertToType(data['gcp_project_id'], 'String');
             }
             if (data.hasOwnProperty('gcp_role_bindings')) {
                 obj['gcp_role_bindings'] = ApiClient.convertToType(data['gcp_role_bindings'], {'String': ['String']});
@@ -1139,6 +1142,10 @@ class DSProducerDetails {
         // ensure the json data is a string
         if (data['gcp_key_algo'] && !(typeof data['gcp_key_algo'] === 'string' || data['gcp_key_algo'] instanceof String)) {
             throw new Error("Expected the field `gcp_key_algo` to be a primitive type in the JSON string but got " + data['gcp_key_algo']);
+        }
+        // ensure the json data is a string
+        if (data['gcp_project_id'] && !(typeof data['gcp_project_id'] === 'string' || data['gcp_project_id'] instanceof String)) {
+            throw new Error("Expected the field `gcp_project_id` to be a primitive type in the JSON string but got " + data['gcp_project_id']);
         }
         // ensure the json data is a string
         if (data['gcp_service_account_email'] && !(typeof data['gcp_service_account_email'] === 'string' || data['gcp_service_account_email'] instanceof String)) {
@@ -2197,6 +2204,11 @@ DSProducerDetails.prototype['fixed_user_only'] = undefined;
  * @member {String} gcp_key_algo
  */
 DSProducerDetails.prototype['gcp_key_algo'] = undefined;
+
+/**
+ * @member {String} gcp_project_id
+ */
+DSProducerDetails.prototype['gcp_project_id'] = undefined;
 
 /**
  * @member {Object.<String, Array.<String>>} gcp_role_bindings

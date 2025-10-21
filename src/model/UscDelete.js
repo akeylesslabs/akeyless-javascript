@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscDelete model module.
  * @module model/UscDelete
- * @version 5.0.9
+ * @version 5.0.10
  */
 class UscDelete {
     /**

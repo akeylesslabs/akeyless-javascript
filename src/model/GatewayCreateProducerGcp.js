@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGcp model module.
  * @module model/GatewayCreateProducerGcp
- * @version 5.0.9
+ * @version 5.0.10
  */
 class GatewayCreateProducerGcp {
     /**
@@ -68,6 +68,9 @@ class GatewayCreateProducerGcp {
             }
             if (data.hasOwnProperty('gcp-key-algo')) {
                 obj['gcp-key-algo'] = ApiClient.convertToType(data['gcp-key-algo'], 'String');
+            }
+            if (data.hasOwnProperty('gcp-project-id')) {
+                obj['gcp-project-id'] = ApiClient.convertToType(data['gcp-project-id'], 'String');
             }
             if (data.hasOwnProperty('gcp-sa-email')) {
                 obj['gcp-sa-email'] = ApiClient.convertToType(data['gcp-sa-email'], 'String');
@@ -140,6 +143,10 @@ class GatewayCreateProducerGcp {
         // ensure the json data is a string
         if (data['gcp-key-algo'] && !(typeof data['gcp-key-algo'] === 'string' || data['gcp-key-algo'] instanceof String)) {
             throw new Error("Expected the field `gcp-key-algo` to be a primitive type in the JSON string but got " + data['gcp-key-algo']);
+        }
+        // ensure the json data is a string
+        if (data['gcp-project-id'] && !(typeof data['gcp-project-id'] === 'string' || data['gcp-project-id'] instanceof String)) {
+            throw new Error("Expected the field `gcp-project-id` to be a primitive type in the JSON string but got " + data['gcp-project-id']);
         }
         // ensure the json data is a string
         if (data['gcp-sa-email'] && !(typeof data['gcp-sa-email'] === 'string' || data['gcp-sa-email'] instanceof String)) {
@@ -222,6 +229,12 @@ GatewayCreateProducerGcp.prototype['gcp-key'] = undefined;
  * @member {String} gcp-key-algo
  */
 GatewayCreateProducerGcp.prototype['gcp-key-algo'] = undefined;
+
+/**
+ * GCP Project ID override for dynamic secret operations (tmp service accounts)
+ * @member {String} gcp-project-id
+ */
+GatewayCreateProducerGcp.prototype['gcp-project-id'] = undefined;
 
 /**
  * The email of the fixed service acocunt to generate keys or tokens for. (revelant for service-account-type=fixed)

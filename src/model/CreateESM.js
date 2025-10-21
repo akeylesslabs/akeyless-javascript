@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateESM model module.
  * @module model/CreateESM
- * @version 5.0.9
+ * @version 5.0.10
  */
 class CreateESM {
     /**
@@ -61,6 +61,9 @@ class CreateESM {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('gcp-project-id')) {
+                obj['gcp-project-id'] = ApiClient.convertToType(data['gcp-project-id'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -112,6 +115,10 @@ class CreateESM {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
         // ensure the json data is a string
+        if (data['gcp-project-id'] && !(typeof data['gcp-project-id'] === 'string' || data['gcp-project-id'] instanceof String)) {
+            throw new Error("Expected the field `gcp-project-id` to be a primitive type in the JSON string but got " + data['gcp-project-id']);
+        }
+        // ensure the json data is a string
         if (data['k8s-namespace'] && !(typeof data['k8s-namespace'] === 'string' || data['k8s-namespace'] instanceof String)) {
             throw new Error("Expected the field `k8s-namespace` to be a primitive type in the JSON string but got " + data['k8s-namespace']);
         }
@@ -161,6 +168,12 @@ CreateESM.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 CreateESM.prototype['description'] = undefined;
+
+/**
+ * GCP Project ID (Relevant only for GCP targets)
+ * @member {String} gcp-project-id
+ */
+CreateESM.prototype['gcp-project-id'] = undefined;
 
 /**
  * Set output format to JSON

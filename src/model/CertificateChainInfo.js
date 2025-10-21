@@ -19,7 +19,7 @@ import NullString from './NullString';
 /**
  * The CertificateChainInfo model module.
  * @module model/CertificateChainInfo
- * @version 5.0.9
+ * @version 5.0.10
  */
 class CertificateChainInfo {
     /**

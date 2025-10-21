@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipSetServerStateOutput model module.
  * @module model/KmipSetServerStateOutput
- * @version 5.0.9
+ * @version 5.0.10
  */
 class KmipSetServerStateOutput {
     /**

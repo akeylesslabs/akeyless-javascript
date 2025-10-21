@@ -95,6 +95,7 @@ Name | Type | Description | Notes
 **failureMessage** | **String** |  | [optional] 
 **fixedUserOnly** | **String** |  | [optional] 
 **gcpKeyAlgo** | **String** |  | [optional] 
+**gcpProjectId** | **String** |  | [optional] 
 **gcpRoleBindings** | **{String: [String]}** |  | [optional] 
 **gcpServiceAccountEmail** | **String** | GCPServiceAccountEmail overrides the deprecated field from the target | [optional] 
 **gcpServiceAccountKey** | **String** |  | [optional] 

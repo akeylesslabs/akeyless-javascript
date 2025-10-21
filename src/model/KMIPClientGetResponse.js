@@ -17,7 +17,7 @@ import KMIPClient from './KMIPClient';
 /**
  * The KMIPClientGetResponse model module.
  * @module model/KMIPClientGetResponse
- * @version 5.0.9
+ * @version 5.0.10
  */
 class KMIPClientGetResponse {
     /**
