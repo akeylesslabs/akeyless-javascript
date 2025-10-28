@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateGemini model module.
  * @module model/TargetCreateGemini
- * @version 5.0.12
+ * @version 5.0.13
  */
 class TargetCreateGemini {
     /**
@@ -70,9 +70,6 @@ class TargetCreateGemini {
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
-            if (data.hasOwnProperty('model')) {
-                obj['model'] = ApiClient.convertToType(data['model'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -117,10 +114,6 @@ class TargetCreateGemini {
         // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
             throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
-        }
-        // ensure the json data is a string
-        if (data['model'] && !(typeof data['model'] === 'string' || data['model'] instanceof String)) {
-            throw new Error("Expected the field `model` to be a primitive type in the JSON string but got " + data['model']);
         }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
@@ -180,12 +173,6 @@ TargetCreateGemini.prototype['key'] = undefined;
  * @member {String} max-versions
  */
 TargetCreateGemini.prototype['max-versions'] = undefined;
-
-/**
- * Default model to use with Gemini
- * @member {String} model
- */
-TargetCreateGemini.prototype['model'] = undefined;
 
 /**
  * Target name

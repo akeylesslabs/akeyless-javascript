@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **customUsernameTemplate** | **String** | Customize how temporary usernames are generated using go template | [optional] 
 **dbName** | **String** | Database name | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
+**itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **keyAlgo** | **String** |  | [optional] 
 **name** | **String** | Dynamic secret name | 

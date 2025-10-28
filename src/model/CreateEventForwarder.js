@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEventForwarder model module.
  * @module model/CreateEventForwarder
- * @version 5.0.12
+ * @version 5.0.13
  */
 class CreateEventForwarder {
     /**

@@ -4,6 +4,11 @@ All URIs are relative to *https://api.akeyless.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**accountCustomFieldCreate**](V2Api.md#accountCustomFieldCreate) | **POST** /account-custom-field-create | Create a new custom field.
+[**accountCustomFieldDelete**](V2Api.md#accountCustomFieldDelete) | **POST** /account-custom-field-delete | Delete a custom field.
+[**accountCustomFieldGet**](V2Api.md#accountCustomFieldGet) | **POST** /account-custom-field-get | Get an account custom field by ID.
+[**accountCustomFieldList**](V2Api.md#accountCustomFieldList) | **POST** /account-custom-field-list | List all account custom fields.
+[**accountCustomFieldUpdate**](V2Api.md#accountCustomFieldUpdate) | **POST** /account-custom-field-update | Update a custom field.
 [**aliasDetails**](V2Api.md#aliasDetails) | **POST** /alias-details | 
 [**assocRoleAuthMethod**](V2Api.md#assocRoleAuthMethod) | **POST** /assoc-role-am | 
 [**assocTargetItem**](V2Api.md#assocTargetItem) | **POST** /assoc-target-item | 
@@ -585,6 +590,218 @@ Method | HTTP request | Description
 [**verifyPKICertWithClassicKey**](V2Api.md#verifyPKICertWithClassicKey) | **POST** /verify-pki-cert-with-classic-key | 
 [**verifyRsaSsaPss**](V2Api.md#verifyRsaSsaPss) | **POST** /verify-rsassa-pss | 
 
+
+
+## accountCustomFieldCreate
+
+> AccountCustomFieldCreateOutput accountCustomFieldCreate(accountCustomFieldCreate)
+
+Create a new custom field.
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let accountCustomFieldCreate = new akeyless.AccountCustomFieldCreate(); // AccountCustomFieldCreate | 
+apiInstance.accountCustomFieldCreate(accountCustomFieldCreate).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountCustomFieldCreate** | [**AccountCustomFieldCreate**](AccountCustomFieldCreate.md)|  | 
+
+### Return type
+
+[**AccountCustomFieldCreateOutput**](AccountCustomFieldCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## accountCustomFieldDelete
+
+> Object accountCustomFieldDelete(accountCustomFieldDelete)
+
+Delete a custom field.
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let accountCustomFieldDelete = new akeyless.AccountCustomFieldDelete(); // AccountCustomFieldDelete | 
+apiInstance.accountCustomFieldDelete(accountCustomFieldDelete).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountCustomFieldDelete** | [**AccountCustomFieldDelete**](AccountCustomFieldDelete.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## accountCustomFieldGet
+
+> AccountCustomFieldGetOutput accountCustomFieldGet(accountCustomFieldGet)
+
+Get an account custom field by ID.
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let accountCustomFieldGet = new akeyless.AccountCustomFieldGet(); // AccountCustomFieldGet | 
+apiInstance.accountCustomFieldGet(accountCustomFieldGet).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountCustomFieldGet** | [**AccountCustomFieldGet**](AccountCustomFieldGet.md)|  | 
+
+### Return type
+
+[**AccountCustomFieldGetOutput**](AccountCustomFieldGetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## accountCustomFieldList
+
+> Object accountCustomFieldList(accountCustomFieldList)
+
+List all account custom fields.
+
+Returns a list of all custom fields configured for the account, optionally filtered by object and object type.
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let accountCustomFieldList = new akeyless.AccountCustomFieldList(); // AccountCustomFieldList | 
+apiInstance.accountCustomFieldList(accountCustomFieldList).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountCustomFieldList** | [**AccountCustomFieldList**](AccountCustomFieldList.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## accountCustomFieldUpdate
+
+> Object accountCustomFieldUpdate(accountCustomFieldUpdate)
+
+Update a custom field.
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let accountCustomFieldUpdate = new akeyless.AccountCustomFieldUpdate(); // AccountCustomFieldUpdate | 
+apiInstance.accountCustomFieldUpdate(accountCustomFieldUpdate).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountCustomFieldUpdate** | [**AccountCustomFieldUpdate**](AccountCustomFieldUpdate.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## aliasDetails

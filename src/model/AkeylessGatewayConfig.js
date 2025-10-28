@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import AdminsConfigPart from './AdminsConfigPart';
+import AiInsightsConfigPart from './AiInsightsConfigPart';
 import CFConfigPart from './CFConfigPart';
 import CaCertificatesConfigPart from './CaCertificatesConfigPart';
 import CacheConfigPart from './CacheConfigPart';
@@ -32,7 +33,7 @@ import RotatorsConfigPart from './RotatorsConfigPart';
 /**
  * The AkeylessGatewayConfig model module.
  * @module model/AkeylessGatewayConfig
- * @version 5.0.12
+ * @version 5.0.13
  */
 class AkeylessGatewayConfig {
     /**
@@ -65,6 +66,9 @@ class AkeylessGatewayConfig {
 
             if (data.hasOwnProperty('admins')) {
                 obj['admins'] = AdminsConfigPart.constructFromObject(data['admins']);
+            }
+            if (data.hasOwnProperty('ai_insights')) {
+                obj['ai_insights'] = AiInsightsConfigPart.constructFromObject(data['ai_insights']);
             }
             if (data.hasOwnProperty('ca_certificates')) {
                 obj['ca_certificates'] = CaCertificatesConfigPart.constructFromObject(data['ca_certificates']);
@@ -130,6 +134,10 @@ class AkeylessGatewayConfig {
         // validate the optional field `admins`
         if (data['admins']) { // data not null
           AdminsConfigPart.validateJSON(data['admins']);
+        }
+        // validate the optional field `ai_insights`
+        if (data['ai_insights']) { // data not null
+          AiInsightsConfigPart.validateJSON(data['ai_insights']);
         }
         // validate the optional field `ca_certificates`
         if (data['ca_certificates']) { // data not null
@@ -208,6 +216,11 @@ class AkeylessGatewayConfig {
  * @member {module:model/AdminsConfigPart} admins
  */
 AkeylessGatewayConfig.prototype['admins'] = undefined;
+
+/**
+ * @member {module:model/AiInsightsConfigPart} ai_insights
+ */
+AkeylessGatewayConfig.prototype['ai_insights'] = undefined;
 
 /**
  * @member {module:model/CaCertificatesConfigPart} ca_certificates

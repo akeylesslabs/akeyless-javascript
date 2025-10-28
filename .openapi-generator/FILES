@@ -10,6 +10,13 @@ docs/AWSSecretsMigration.md
 docs/AWSTargetDetails.md
 docs/AccessOrGroupPermissionAssignment.md
 docs/AccessPermissionAssignment.md
+docs/AccountCustomFieldCreate.md
+docs/AccountCustomFieldCreateOutput.md
+docs/AccountCustomFieldDelete.md
+docs/AccountCustomFieldGet.md
+docs/AccountCustomFieldGetOutput.md
+docs/AccountCustomFieldList.md
+docs/AccountCustomFieldUpdate.md
 docs/AccountGeneralSettings.md
 docs/AccountObjectVersionSettingsOutput.md
 docs/AcmeAccount.md
@@ -17,6 +24,8 @@ docs/ActiveDirectoryMigration.md
 docs/ActiveDirectoryPayload.md
 docs/AddGatewayAllowedAccessId.md
 docs/AdminsConfigPart.md
+docs/AiInsightsConfigPart.md
+docs/AiInsightsSetting.md
 docs/AkeylessGatewayConfig.md
 docs/AliasDetails.md
 docs/AliasDetailsOutput.md
@@ -653,6 +662,7 @@ docs/ImportPasswords.md
 docs/ImportPasswordsOutput.md
 docs/ImporterInfo.md
 docs/Item.md
+docs/ItemCustomFieldsDetails.md
 docs/ItemGeneralInfo.md
 docs/ItemSraStatus.md
 docs/ItemTargetAssociation.md
@@ -747,6 +757,7 @@ docs/NativeK8sTargetDetails.md
 docs/NextAutoRotationEvent.md
 docs/NotiForwarder.md
 docs/NullString.md
+docs/NullTime.md
 docs/OAuth2AccessRules.md
 docs/OAuth2CustomClaim.md
 docs/OCIAccessRules.md
@@ -1130,6 +1141,13 @@ src/model/AWSSecretsMigration.js
 src/model/AWSTargetDetails.js
 src/model/AccessOrGroupPermissionAssignment.js
 src/model/AccessPermissionAssignment.js
+src/model/AccountCustomFieldCreate.js
+src/model/AccountCustomFieldCreateOutput.js
+src/model/AccountCustomFieldDelete.js
+src/model/AccountCustomFieldGet.js
+src/model/AccountCustomFieldGetOutput.js
+src/model/AccountCustomFieldList.js
+src/model/AccountCustomFieldUpdate.js
 src/model/AccountGeneralSettings.js
 src/model/AccountObjectVersionSettingsOutput.js
 src/model/AcmeAccount.js
@@ -1137,6 +1155,8 @@ src/model/ActiveDirectoryMigration.js
 src/model/ActiveDirectoryPayload.js
 src/model/AddGatewayAllowedAccessId.js
 src/model/AdminsConfigPart.js
+src/model/AiInsightsConfigPart.js
+src/model/AiInsightsSetting.js
 src/model/AkeylessGatewayConfig.js
 src/model/AliasDetails.js
 src/model/AliasDetailsOutput.js
@@ -1773,6 +1793,7 @@ src/model/ImportPasswords.js
 src/model/ImportPasswordsOutput.js
 src/model/ImporterInfo.js
 src/model/Item.js
+src/model/ItemCustomFieldsDetails.js
 src/model/ItemGeneralInfo.js
 src/model/ItemSraStatus.js
 src/model/ItemTargetAssociation.js
@@ -1867,6 +1888,7 @@ src/model/NativeK8sTargetDetails.js
 src/model/NextAutoRotationEvent.js
 src/model/NotiForwarder.js
 src/model/NullString.js
+src/model/NullTime.js
 src/model/OAuth2AccessRules.js
 src/model/OAuth2CustomClaim.js
 src/model/OCIAccessRules.js
@@ -2235,3 +2257,14 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
+test/model/AccountCustomFieldCreate.spec.js
+test/model/AccountCustomFieldCreateOutput.spec.js
+test/model/AccountCustomFieldDelete.spec.js
+test/model/AccountCustomFieldGet.spec.js
+test/model/AccountCustomFieldGetOutput.spec.js
+test/model/AccountCustomFieldList.spec.js
+test/model/AccountCustomFieldUpdate.spec.js
+test/model/AiInsightsConfigPart.spec.js
+test/model/AiInsightsSetting.spec.js
+test/model/ItemCustomFieldsDetails.spec.js
+test/model/NullTime.spec.js

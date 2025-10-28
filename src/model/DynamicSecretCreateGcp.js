@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateGcp model module.
  * @module model/DynamicSecretCreateGcp
- * @version 5.0.12
+ * @version 5.0.13
  */
 class DynamicSecretCreateGcp {
     /**
@@ -72,14 +72,14 @@ class DynamicSecretCreateGcp {
             if (data.hasOwnProperty('gcp-key-algo')) {
                 obj['gcp-key-algo'] = ApiClient.convertToType(data['gcp-key-algo'], 'String');
             }
-            if (data.hasOwnProperty('gcp-project-id')) {
-                obj['gcp-project-id'] = ApiClient.convertToType(data['gcp-project-id'], 'String');
-            }
             if (data.hasOwnProperty('gcp-sa-email')) {
                 obj['gcp-sa-email'] = ApiClient.convertToType(data['gcp-sa-email'], 'String');
             }
             if (data.hasOwnProperty('gcp-token-scopes')) {
                 obj['gcp-token-scopes'] = ApiClient.convertToType(data['gcp-token-scopes'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -150,10 +150,6 @@ class DynamicSecretCreateGcp {
         // ensure the json data is a string
         if (data['gcp-key-algo'] && !(typeof data['gcp-key-algo'] === 'string' || data['gcp-key-algo'] instanceof String)) {
             throw new Error("Expected the field `gcp-key-algo` to be a primitive type in the JSON string but got " + data['gcp-key-algo']);
-        }
-        // ensure the json data is a string
-        if (data['gcp-project-id'] && !(typeof data['gcp-project-id'] === 'string' || data['gcp-project-id'] instanceof String)) {
-            throw new Error("Expected the field `gcp-project-id` to be a primitive type in the JSON string but got " + data['gcp-project-id']);
         }
         // ensure the json data is a string
         if (data['gcp-sa-email'] && !(typeof data['gcp-sa-email'] === 'string' || data['gcp-sa-email'] instanceof String)) {
@@ -244,12 +240,6 @@ DynamicSecretCreateGcp.prototype['gcp-key'] = undefined;
 DynamicSecretCreateGcp.prototype['gcp-key-algo'] = undefined;
 
 /**
- * GCP Project ID override for dynamic secret operations (tmp service accounts)
- * @member {String} gcp-project-id
- */
-DynamicSecretCreateGcp.prototype['gcp-project-id'] = undefined;
-
-/**
  * The email of the fixed service acocunt to generate keys or tokens for. (revelant for service-account-type=fixed)
  * @member {String} gcp-sa-email
  */
@@ -260,6 +250,12 @@ DynamicSecretCreateGcp.prototype['gcp-sa-email'] = undefined;
  * @member {String} gcp-token-scopes
  */
 DynamicSecretCreateGcp.prototype['gcp-token-scopes'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+DynamicSecretCreateGcp.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

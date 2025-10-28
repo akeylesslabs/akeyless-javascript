@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateCustom model module.
  * @module model/RotatedSecretUpdateCustom
- * @version 5.0.12
+ * @version 5.0.13
  */
 class RotatedSecretUpdateCustom {
     /**
@@ -77,6 +77,9 @@ class RotatedSecretUpdateCustom {
             }
             if (data.hasOwnProperty('enable-password-policy')) {
                 obj['enable-password-policy'] = ApiClient.convertToType(data['enable-password-policy'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -363,6 +366,12 @@ RotatedSecretUpdateCustom.prototype['description'] = 'default_metadata';
  * @member {String} enable-password-policy
  */
 RotatedSecretUpdateCustom.prototype['enable-password-policy'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+RotatedSecretUpdateCustom.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

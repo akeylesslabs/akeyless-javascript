@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateOpenAI model module.
  * @module model/TargetCreateOpenAI
- * @version 5.0.12
+ * @version 5.0.13
  */
 class TargetCreateOpenAI {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAzure model module.
  * @module model/GatewayCreateProducerAzure
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayCreateProducerAzure {
     /**
@@ -85,6 +85,9 @@ class GatewayCreateProducerAzure {
             }
             if (data.hasOwnProperty('fixed-user-only')) {
                 obj['fixed-user-only'] = ApiClient.convertToType(data['fixed-user-only'], 'Boolean');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -307,6 +310,12 @@ GatewayCreateProducerAzure.prototype['fixed-user-claim-keyname'] = 'false';
  * @default false
  */
 GatewayCreateProducerAzure.prototype['fixed-user-only'] = false;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+GatewayCreateProducerAzure.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

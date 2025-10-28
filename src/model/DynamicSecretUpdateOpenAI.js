@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateOpenAI model module.
  * @module model/DynamicSecretUpdateOpenAI
- * @version 5.0.12
+ * @version 5.0.13
  */
 class DynamicSecretUpdateOpenAI {
     /**
@@ -60,6 +60,9 @@ class DynamicSecretUpdateOpenAI {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -181,6 +184,12 @@ DynamicSecretUpdateOpenAI.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 DynamicSecretUpdateOpenAI.prototype['description'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+DynamicSecretUpdateOpenAI.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

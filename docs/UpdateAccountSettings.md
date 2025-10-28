@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **String** | Address | [optional] 
+**allowedEmailDomains** | **[String]** | Limits email sharing to the specified domains. Relevant only when item sharing is enabled. By default, all domains are allowed. | [optional] 
 **boundIps** | **[String]** | A default list of comma-separated CIDR block that are allowed to authenticate. | [optional] 
 **city** | **String** | City | [optional] 
 **companyName** | **String** | Company name | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **dpEnableClassicKeyProtection** | **String** | Set to update protection with classic keys state [true/false] | [optional] 
 **dynamicSecretMaxTtl** | **Number** | Set the maximum ttl for dynamic secrets | [optional] 
 **dynamicSecretMaxTtlEnable** | **String** | Set a maximum ttl for dynamic secrets [true/false] | [optional] 
+**enableAiInsights** | **String** | Enable AI insights [true/false] | [optional] 
 **enableDefaultCertificateExpirationEvent** | **String** | How many days before the expiration of the certificate would you like to be notified. [true/false] | [optional] 
 **enableItemSharing** | **String** | Enable sharing items [true/false] | [optional] 
 **enablePasswordExpiration** | **String** | Enable password expiration policy [true/false] | [optional] 

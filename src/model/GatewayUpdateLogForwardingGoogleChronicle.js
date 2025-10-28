@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLogForwardingGoogleChronicle model module.
  * @module model/GatewayUpdateLogForwardingGoogleChronicle
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayUpdateLogForwardingGoogleChronicle {
     /**

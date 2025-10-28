@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateAws model module.
  * @module model/RotatedSecretUpdateAws
- * @version 5.0.12
+ * @version 5.0.13
  */
 class RotatedSecretUpdateAws {
     /**
@@ -86,6 +86,9 @@ class RotatedSecretUpdateAws {
             }
             if (data.hasOwnProperty('grace-rotation-interval')) {
                 obj['grace-rotation-interval'] = ApiClient.convertToType(data['grace-rotation-interval'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -341,6 +344,12 @@ RotatedSecretUpdateAws.prototype['grace-rotation-hour'] = undefined;
  * @member {String} grace-rotation-interval
  */
 RotatedSecretUpdateAws.prototype['grace-rotation-interval'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+RotatedSecretUpdateAws.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

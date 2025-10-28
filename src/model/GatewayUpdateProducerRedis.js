@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRedis model module.
  * @module model/GatewayUpdateProducerRedis
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayUpdateProducerRedis {
     /**
@@ -66,6 +66,9 @@ class GatewayUpdateProducerRedis {
             }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -229,6 +232,12 @@ GatewayUpdateProducerRedis.prototype['delete_protection'] = undefined;
  * @default '127.0.0.1'
  */
 GatewayUpdateProducerRedis.prototype['host'] = '127.0.0.1';
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+GatewayUpdateProducerRedis.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

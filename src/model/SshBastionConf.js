@@ -18,7 +18,7 @@ import SshBastionSessionTermination from './SshBastionSessionTermination';
 /**
  * The SshBastionConf model module.
  * @module model/SshBastionConf
- * @version 5.0.12
+ * @version 5.0.13
  */
 class SshBastionConf {
     /**

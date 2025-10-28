@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodList model module.
  * @module model/AuthMethodList
- * @version 5.0.12
+ * @version 5.0.13
  */
 class AuthMethodList {
     /**

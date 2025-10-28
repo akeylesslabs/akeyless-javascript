@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateDockerhub model module.
  * @module model/DynamicSecretUpdateDockerhub
- * @version 5.0.12
+ * @version 5.0.13
  */
 class DynamicSecretUpdateDockerhub {
     /**
@@ -66,6 +66,9 @@ class DynamicSecretUpdateDockerhub {
             }
             if (data.hasOwnProperty('dockerhub-username')) {
                 obj['dockerhub-username'] = ApiClient.convertToType(data['dockerhub-username'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -200,6 +203,12 @@ DynamicSecretUpdateDockerhub.prototype['dockerhub-token-scopes'] = undefined;
  * @member {String} dockerhub-username
  */
 DynamicSecretUpdateDockerhub.prototype['dockerhub-username'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+DynamicSecretUpdateDockerhub.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

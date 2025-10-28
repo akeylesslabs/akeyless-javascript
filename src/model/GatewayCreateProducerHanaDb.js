@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerHanaDb model module.
  * @module model/GatewayCreateProducerHanaDb
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayCreateProducerHanaDb {
     /**
@@ -81,6 +81,9 @@ class GatewayCreateProducerHanaDb {
             }
             if (data.hasOwnProperty('hanadb-username')) {
                 obj['hanadb-username'] = ApiClient.convertToType(data['hanadb-username'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -302,6 +305,12 @@ GatewayCreateProducerHanaDb.prototype['hanadb-revocation-statements'] = undefine
  * @member {String} hanadb-username
  */
 GatewayCreateProducerHanaDb.prototype['hanadb-username'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+GatewayCreateProducerHanaDb.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

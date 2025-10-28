@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRdp model module.
  * @module model/GatewayUpdateProducerRdp
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayUpdateProducerRdp {
     /**
@@ -70,6 +70,9 @@ class GatewayUpdateProducerRdp {
             }
             if (data.hasOwnProperty('fixed-user-only')) {
                 obj['fixed-user-only'] = ApiClient.convertToType(data['fixed-user-only'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -302,6 +305,12 @@ GatewayUpdateProducerRdp.prototype['fixed-user-claim-keyname'] = 'ext_username';
  * @default 'false'
  */
 GatewayUpdateProducerRdp.prototype['fixed-user-only'] = 'false';
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+GatewayUpdateProducerRdp.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

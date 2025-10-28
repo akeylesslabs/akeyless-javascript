@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConfigHash model module.
  * @module model/ConfigHash
- * @version 5.0.12
+ * @version 5.0.13
  */
 class ConfigHash {
     /**
@@ -49,6 +49,9 @@ class ConfigHash {
 
             if (data.hasOwnProperty('admins')) {
                 obj['admins'] = ApiClient.convertToType(data['admins'], 'String');
+            }
+            if (data.hasOwnProperty('ai_insights')) {
+                obj['ai_insights'] = ApiClient.convertToType(data['ai_insights'], 'String');
             }
             if (data.hasOwnProperty('cache')) {
                 obj['cache'] = ApiClient.convertToType(data['cache'], 'String');
@@ -111,6 +114,10 @@ class ConfigHash {
         // ensure the json data is a string
         if (data['admins'] && !(typeof data['admins'] === 'string' || data['admins'] instanceof String)) {
             throw new Error("Expected the field `admins` to be a primitive type in the JSON string but got " + data['admins']);
+        }
+        // ensure the json data is a string
+        if (data['ai_insights'] && !(typeof data['ai_insights'] === 'string' || data['ai_insights'] instanceof String)) {
+            throw new Error("Expected the field `ai_insights` to be a primitive type in the JSON string but got " + data['ai_insights']);
         }
         // ensure the json data is a string
         if (data['cache'] && !(typeof data['cache'] === 'string' || data['cache'] instanceof String)) {
@@ -181,6 +188,11 @@ class ConfigHash {
  * @member {String} admins
  */
 ConfigHash.prototype['admins'] = undefined;
+
+/**
+ * @member {String} ai_insights
+ */
+ConfigHash.prototype['ai_insights'] = undefined;
 
 /**
  * @member {String} cache

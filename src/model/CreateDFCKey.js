@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDFCKey model module.
  * @module model/CreateDFCKey
- * @version 5.0.12
+ * @version 5.0.13
  */
 class CreateDFCKey {
     /**
@@ -104,6 +104,9 @@ class CreateDFCKey {
             }
             if (data.hasOwnProperty('hash-algorithm')) {
                 obj['hash-algorithm'] = ApiClient.convertToType(data['hash-algorithm'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -346,6 +349,12 @@ CreateDFCKey.prototype['generate-self-signed-certificate'] = undefined;
  * @default 'SHA256'
  */
 CreateDFCKey.prototype['hash-algorithm'] = 'SHA256';
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+CreateDFCKey.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

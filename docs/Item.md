@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **isAccessRequestEnabled** | **Boolean** |  | [optional] 
 **isEnabled** | **Boolean** |  | [optional] 
 **itemAccessibility** | **Number** |  | [optional] 
+**itemCustomFieldsDetails** | [**[ItemCustomFieldsDetails]**](ItemCustomFieldsDetails.md) |  | [optional] 
 **itemGeneralInfo** | [**ItemGeneralInfo**](ItemGeneralInfo.md) |  | [optional] 
 **itemId** | **Number** |  | [optional] 
 **itemMetadata** | **String** |  | [optional] 

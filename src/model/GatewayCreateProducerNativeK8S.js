@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerNativeK8S model module.
  * @module model/GatewayCreateProducerNativeK8S
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayCreateProducerNativeK8S {
     /**
@@ -60,6 +60,9 @@ class GatewayCreateProducerNativeK8S {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -294,6 +297,12 @@ GatewayCreateProducerNativeK8S.prototype['custom-username-template'] = undefined
  * @member {String} delete_protection
  */
 GatewayCreateProducerNativeK8S.prototype['delete_protection'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+GatewayCreateProducerNativeK8S.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

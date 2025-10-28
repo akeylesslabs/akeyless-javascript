@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 import BastionsList from './BastionsList';
 import CertificateIssueInfo from './CertificateIssueInfo';
 import GatewayDetailsForItemReplyObj from './GatewayDetailsForItemReplyObj';
+import ItemCustomFieldsDetails from './ItemCustomFieldsDetails';
 import ItemGeneralInfo from './ItemGeneralInfo';
 import ItemTargetAssociation from './ItemTargetAssociation';
 import ItemUSCSyncAssociation from './ItemUSCSyncAssociation';
@@ -26,7 +27,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 5.0.12
+ * @version 5.0.13
  */
 class Item {
     /**
@@ -110,6 +111,9 @@ class Item {
             }
             if (data.hasOwnProperty('item_accessibility')) {
                 obj['item_accessibility'] = ApiClient.convertToType(data['item_accessibility'], 'Number');
+            }
+            if (data.hasOwnProperty('item_custom_fields_details')) {
+                obj['item_custom_fields_details'] = ApiClient.convertToType(data['item_custom_fields_details'], [ItemCustomFieldsDetails]);
             }
             if (data.hasOwnProperty('item_general_info')) {
                 obj['item_general_info'] = ItemGeneralInfo.constructFromObject(data['item_general_info']);
@@ -237,6 +241,16 @@ class Item {
             // validate the optional field `gateway_details` (array)
             for (const item of data['gateway_details']) {
                 GatewayDetailsForItemReplyObj.validateJSON(item);
+            };
+        }
+        if (data['item_custom_fields_details']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['item_custom_fields_details'])) {
+                throw new Error("Expected the field `item_custom_fields_details` to be an array in the JSON data but got " + data['item_custom_fields_details']);
+            }
+            // validate the optional field `item_custom_fields_details` (array)
+            for (const item of data['item_custom_fields_details']) {
+                ItemCustomFieldsDetails.validateJSON(item);
             };
         }
         // validate the optional field `item_general_info`
@@ -425,6 +439,11 @@ Item.prototype['is_enabled'] = undefined;
  * @member {Number} item_accessibility
  */
 Item.prototype['item_accessibility'] = undefined;
+
+/**
+ * @member {Array.<module:model/ItemCustomFieldsDetails>} item_custom_fields_details
+ */
+Item.prototype['item_custom_fields_details'] = undefined;
 
 /**
  * @member {module:model/ItemGeneralInfo} item_general_info

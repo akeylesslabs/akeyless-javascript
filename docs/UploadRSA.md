@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **expirationEventIn** | **[String]** | How many days before the expiration of the certificate would you like to be notified. | [optional] 
+**itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **metadata** | **String** | Deprecated - use description | [optional] 
 **name** | **String** | Name of key to be created | 

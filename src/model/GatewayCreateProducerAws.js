@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAws model module.
  * @module model/GatewayCreateProducerAws
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayCreateProducerAws {
     /**
@@ -98,6 +98,9 @@ class GatewayCreateProducerAws {
             }
             if (data.hasOwnProperty('enable-admin-rotation')) {
                 obj['enable-admin-rotation'] = ApiClient.convertToType(data['enable-admin-rotation'], 'Boolean');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -363,6 +366,12 @@ GatewayCreateProducerAws.prototype['delete_protection'] = undefined;
  * @default false
  */
 GatewayCreateProducerAws.prototype['enable-admin-rotation'] = false;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+GatewayCreateProducerAws.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

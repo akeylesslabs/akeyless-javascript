@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 5.0.12
+ * @version 5.0.13
  */
 class UpdateItem {
     /**
@@ -85,6 +85,9 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('host-provider')) {
                 obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -455,6 +458,12 @@ UpdateItem.prototype['expiration-event-in'] = undefined;
  * @member {String} host-provider
  */
 UpdateItem.prototype['host-provider'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+UpdateItem.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

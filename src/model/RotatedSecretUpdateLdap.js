@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateLdap model module.
  * @module model/RotatedSecretUpdateLdap
- * @version 5.0.12
+ * @version 5.0.13
  */
 class RotatedSecretUpdateLdap {
     /**
@@ -77,6 +77,9 @@ class RotatedSecretUpdateLdap {
             }
             if (data.hasOwnProperty('host-provider')) {
                 obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -349,6 +352,12 @@ RotatedSecretUpdateLdap.prototype['description'] = 'default_metadata';
  * @member {String} host-provider
  */
 RotatedSecretUpdateLdap.prototype['host-provider'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+RotatedSecretUpdateLdap.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

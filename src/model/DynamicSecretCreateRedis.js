@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateRedis model module.
  * @module model/DynamicSecretCreateRedis
- * @version 5.0.12
+ * @version 5.0.13
  */
 class DynamicSecretCreateRedis {
     /**
@@ -69,6 +69,9 @@ class DynamicSecretCreateRedis {
             }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -235,6 +238,12 @@ DynamicSecretCreateRedis.prototype['description'] = undefined;
  * @default '127.0.0.1'
  */
 DynamicSecretCreateRedis.prototype['host'] = '127.0.0.1';
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+DynamicSecretCreateRedis.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

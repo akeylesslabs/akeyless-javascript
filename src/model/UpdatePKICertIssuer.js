@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 5.0.12
+ * @version 5.0.13
  */
 class UpdatePKICertIssuer {
     /**
@@ -123,6 +123,9 @@ class UpdatePKICertIssuer {
             }
             if (data.hasOwnProperty('is-ca')) {
                 obj['is-ca'] = ApiClient.convertToType(data['is-ca'], 'Boolean');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -461,6 +464,12 @@ UpdatePKICertIssuer.prototype['gw-cluster-url'] = undefined;
  * @member {Boolean} is-ca
  */
 UpdatePKICertIssuer.prototype['is-ca'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+UpdatePKICertIssuer.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

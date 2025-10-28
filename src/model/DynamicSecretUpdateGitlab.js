@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGitlab model module.
  * @module model/DynamicSecretUpdateGitlab
- * @version 5.0.12
+ * @version 5.0.13
  */
 class DynamicSecretUpdateGitlab {
     /**
@@ -85,6 +85,9 @@ class DynamicSecretUpdateGitlab {
             }
             if (data.hasOwnProperty('installation-organization')) {
                 obj['installation-organization'] = ApiClient.convertToType(data['installation-organization'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -263,6 +266,12 @@ DynamicSecretUpdateGitlab.prototype['group-name'] = undefined;
  * @member {String} installation-organization
  */
 DynamicSecretUpdateGitlab.prototype['installation-organization'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+DynamicSecretUpdateGitlab.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

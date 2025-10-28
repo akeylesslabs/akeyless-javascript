@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGithub model module.
  * @module model/GatewayCreateProducerGithub
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayCreateProducerGithub {
     /**
@@ -73,6 +73,9 @@ class GatewayCreateProducerGithub {
             }
             if (data.hasOwnProperty('installation-repository')) {
                 obj['installation-repository'] = ApiClient.convertToType(data['installation-repository'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -220,6 +223,12 @@ GatewayCreateProducerGithub.prototype['installation-organization'] = undefined;
  * @member {String} installation-repository
  */
 GatewayCreateProducerGithub.prototype['installation-repository'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+GatewayCreateProducerGithub.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

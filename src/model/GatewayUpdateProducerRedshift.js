@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRedshift model module.
  * @module model/GatewayUpdateProducerRedshift
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayUpdateProducerRedshift {
     /**
@@ -63,6 +63,9 @@ class GatewayUpdateProducerRedshift {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -236,6 +239,12 @@ GatewayUpdateProducerRedshift.prototype['custom-username-template'] = undefined;
  * @member {String} delete_protection
  */
 GatewayUpdateProducerRedshift.prototype['delete_protection'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+GatewayUpdateProducerRedshift.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

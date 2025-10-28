@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateMongodb model module.
  * @module model/RotatedSecretUpdateMongodb
- * @version 5.0.12
+ * @version 5.0.13
  */
 class RotatedSecretUpdateMongodb {
     /**
@@ -68,6 +68,9 @@ class RotatedSecretUpdateMongodb {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -287,6 +290,12 @@ RotatedSecretUpdateMongodb.prototype['delete_protection'] = undefined;
  * @default 'default_metadata'
  */
 RotatedSecretUpdateMongodb.prototype['description'] = 'default_metadata';
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+RotatedSecretUpdateMongodb.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

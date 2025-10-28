@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateChef model module.
  * @module model/DynamicSecretCreateChef
- * @version 5.0.12
+ * @version 5.0.13
  */
 class DynamicSecretCreateChef {
     /**
@@ -73,6 +73,9 @@ class DynamicSecretCreateChef {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -230,6 +233,12 @@ DynamicSecretCreateChef.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 DynamicSecretCreateChef.prototype['description'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+DynamicSecretCreateChef.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

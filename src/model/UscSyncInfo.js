@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscSyncInfo model module.
  * @module model/UscSyncInfo
- * @version 5.0.12
+ * @version 5.0.13
  */
 class UscSyncInfo {
     /**

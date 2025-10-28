@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ChangeAdminAccountPassword model module.
  * @module model/ChangeAdminAccountPassword
- * @version 5.0.12
+ * @version 5.0.13
  */
 class ChangeAdminAccountPassword {
     /**

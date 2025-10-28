@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **customUsernameTemplate** | **String** | Customize how temporary usernames are generated using go template | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **enableAdminRotation** | **Boolean** | Automatic admin credentials rotation | [optional] [default to false]
+**itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Dynamic secret name | 
 **passwordLength** | **String** | The length of the password to be generated | [optional] 

@@ -30,7 +30,7 @@ import TokenizerInfo from './TokenizerInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 5.0.12
+ * @version 5.0.13
  */
 class ItemGeneralInfo {
     /**

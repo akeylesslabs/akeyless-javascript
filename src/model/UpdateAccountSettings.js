@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 5.0.12
+ * @version 5.0.13
  */
 class UpdateAccountSettings {
     /**
@@ -52,6 +52,9 @@ class UpdateAccountSettings {
             if (data.hasOwnProperty('address')) {
                 obj['address'] = ApiClient.convertToType(data['address'], 'String');
             }
+            if (data.hasOwnProperty('allowed-email-domains')) {
+                obj['allowed-email-domains'] = ApiClient.convertToType(data['allowed-email-domains'], ['String']);
+            }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
             }
@@ -84,6 +87,9 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('dynamic-secret-max-ttl-enable')) {
                 obj['dynamic-secret-max-ttl-enable'] = ApiClient.convertToType(data['dynamic-secret-max-ttl-enable'], 'String');
+            }
+            if (data.hasOwnProperty('enable-ai-insights')) {
+                obj['enable-ai-insights'] = ApiClient.convertToType(data['enable-ai-insights'], 'String');
             }
             if (data.hasOwnProperty('enable-default-certificate-expiration-event')) {
                 obj['enable-default-certificate-expiration-event'] = ApiClient.convertToType(data['enable-default-certificate-expiration-event'], 'String');
@@ -202,6 +208,10 @@ class UpdateAccountSettings {
             throw new Error("Expected the field `address` to be a primitive type in the JSON string but got " + data['address']);
         }
         // ensure the json data is an array
+        if (!Array.isArray(data['allowed-email-domains'])) {
+            throw new Error("Expected the field `allowed-email-domains` to be an array in the JSON data but got " + data['allowed-email-domains']);
+        }
+        // ensure the json data is an array
         if (!Array.isArray(data['bound-ips'])) {
             throw new Error("Expected the field `bound-ips` to be an array in the JSON data but got " + data['bound-ips']);
         }
@@ -240,6 +250,10 @@ class UpdateAccountSettings {
         // ensure the json data is a string
         if (data['dynamic-secret-max-ttl-enable'] && !(typeof data['dynamic-secret-max-ttl-enable'] === 'string' || data['dynamic-secret-max-ttl-enable'] instanceof String)) {
             throw new Error("Expected the field `dynamic-secret-max-ttl-enable` to be a primitive type in the JSON string but got " + data['dynamic-secret-max-ttl-enable']);
+        }
+        // ensure the json data is a string
+        if (data['enable-ai-insights'] && !(typeof data['enable-ai-insights'] === 'string' || data['enable-ai-insights'] instanceof String)) {
+            throw new Error("Expected the field `enable-ai-insights` to be a primitive type in the JSON string but got " + data['enable-ai-insights']);
         }
         // ensure the json data is a string
         if (data['enable-default-certificate-expiration-event'] && !(typeof data['enable-default-certificate-expiration-event'] === 'string' || data['enable-default-certificate-expiration-event'] instanceof String)) {
@@ -365,6 +379,12 @@ class UpdateAccountSettings {
 UpdateAccountSettings.prototype['address'] = undefined;
 
 /**
+ * Limits email sharing to the specified domains. Relevant only when item sharing is enabled. By default, all domains are allowed.
+ * @member {Array.<String>} allowed-email-domains
+ */
+UpdateAccountSettings.prototype['allowed-email-domains'] = undefined;
+
+/**
  * A default list of comma-separated CIDR block that are allowed to authenticate.
  * @member {Array.<String>} bound-ips
  */
@@ -429,6 +449,12 @@ UpdateAccountSettings.prototype['dynamic-secret-max-ttl'] = undefined;
  * @member {String} dynamic-secret-max-ttl-enable
  */
 UpdateAccountSettings.prototype['dynamic-secret-max-ttl-enable'] = undefined;
+
+/**
+ * Enable AI insights [true/false]
+ * @member {String} enable-ai-insights
+ */
+UpdateAccountSettings.prototype['enable-ai-insights'] = undefined;
 
 /**
  * How many days before the expiration of the certificate would you like to be notified. [true/false]

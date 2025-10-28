@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GeminiTargetDetails model module.
  * @module model/GeminiTargetDetails
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GeminiTargetDetails {
     /**
@@ -54,9 +54,6 @@ class GeminiTargetDetails {
             if (data.hasOwnProperty('gemini_url')) {
                 obj['gemini_url'] = ApiClient.convertToType(data['gemini_url'], 'String');
             }
-            if (data.hasOwnProperty('model')) {
-                obj['model'] = ApiClient.convertToType(data['model'], 'String');
-            }
         }
         return obj;
     }
@@ -74,10 +71,6 @@ class GeminiTargetDetails {
         // ensure the json data is a string
         if (data['gemini_url'] && !(typeof data['gemini_url'] === 'string' || data['gemini_url'] instanceof String)) {
             throw new Error("Expected the field `gemini_url` to be a primitive type in the JSON string but got " + data['gemini_url']);
-        }
-        // ensure the json data is a string
-        if (data['model'] && !(typeof data['model'] === 'string' || data['model'] instanceof String)) {
-            throw new Error("Expected the field `model` to be a primitive type in the JSON string but got " + data['model']);
         }
 
         return true;
@@ -97,11 +90,6 @@ GeminiTargetDetails.prototype['api_key'] = undefined;
  * @member {String} gemini_url
  */
 GeminiTargetDetails.prototype['gemini_url'] = undefined;
-
-/**
- * @member {String} model
- */
-GeminiTargetDetails.prototype['model'] = undefined;
 
 
 

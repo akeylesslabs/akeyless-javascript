@@ -146,6 +146,7 @@ Name | Type | Description | Notes
 **implementationType** | **String** |  | [optional] 
 **isFixedUser** | **String** |  | [optional] 
 **issuer** | **String** | relevant for CLIENT_TLS_CERTIFICATE client authentication type | [optional] 
+**itemCustomFieldsDetails** | [**[ItemCustomFieldsDetails]**](ItemCustomFieldsDetails.md) |  | [optional] 
 **itemTargetsAssoc** | [**[ItemTargetAssociation]**](ItemTargetAssociation.md) |  | [optional] 
 **jwks** | **String** |  | [optional] 
 **jwksUrl** | **String** |  | [optional] 

@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import AWSGatewayCloudIdentityExternalIdOpt from './AWSGatewayCloudIdentityExternalIdOpt';
+import ItemCustomFieldsDetails from './ItemCustomFieldsDetails';
 import ItemTargetAssociation from './ItemTargetAssociation';
 import SecureRemoteAccess from './SecureRemoteAccess';
 import WalletDetails from './WalletDetails';
@@ -20,7 +21,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 5.0.12
+ * @version 5.0.13
  */
 class DSProducerDetails {
     /**
@@ -476,6 +477,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('issuer')) {
                 obj['issuer'] = ApiClient.convertToType(data['issuer'], 'String');
+            }
+            if (data.hasOwnProperty('item_custom_fields_details')) {
+                obj['item_custom_fields_details'] = ApiClient.convertToType(data['item_custom_fields_details'], [ItemCustomFieldsDetails]);
             }
             if (data.hasOwnProperty('item_targets_assoc')) {
                 obj['item_targets_assoc'] = ApiClient.convertToType(data['item_targets_assoc'], [ItemTargetAssociation]);
@@ -1330,6 +1334,16 @@ class DSProducerDetails {
         // ensure the json data is a string
         if (data['issuer'] && !(typeof data['issuer'] === 'string' || data['issuer'] instanceof String)) {
             throw new Error("Expected the field `issuer` to be a primitive type in the JSON string but got " + data['issuer']);
+        }
+        if (data['item_custom_fields_details']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['item_custom_fields_details'])) {
+                throw new Error("Expected the field `item_custom_fields_details` to be an array in the JSON data but got " + data['item_custom_fields_details']);
+            }
+            // validate the optional field `item_custom_fields_details` (array)
+            for (const item of data['item_custom_fields_details']) {
+                ItemCustomFieldsDetails.validateJSON(item);
+            };
         }
         if (data['item_targets_assoc']) { // data not null
             // ensure the json data is an array
@@ -2461,6 +2475,11 @@ DSProducerDetails.prototype['is_fixed_user'] = undefined;
  * @member {String} issuer
  */
 DSProducerDetails.prototype['issuer'] = undefined;
+
+/**
+ * @member {Array.<module:model/ItemCustomFieldsDetails>} item_custom_fields_details
+ */
+DSProducerDetails.prototype['item_custom_fields_details'] = undefined;
 
 /**
  * @member {Array.<module:model/ItemTargetAssociation>} item_targets_assoc

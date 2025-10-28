@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerGke model module.
  * @module model/GatewayUpdateProducerGke
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayUpdateProducerGke {
     /**
@@ -70,6 +70,9 @@ class GatewayUpdateProducerGke {
             }
             if (data.hasOwnProperty('gke-service-account-email')) {
                 obj['gke-service-account-email'] = ApiClient.convertToType(data['gke-service-account-email'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -251,6 +254,12 @@ GatewayUpdateProducerGke.prototype['gke-cluster-name'] = undefined;
  * @member {String} gke-service-account-email
  */
 GatewayUpdateProducerGke.prototype['gke-service-account-email'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+GatewayUpdateProducerGke.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

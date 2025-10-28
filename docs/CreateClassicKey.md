@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **generateSelfSignedCertificate** | **Boolean** | Whether to generate a self signed certificate with the key. If set, --certificate-ttl must be provided. | [optional] 
 **gpgAlg** | **String** | gpg alg: Relevant only if GPG key type selected; options: [RSA1024, RSA2048, RSA3072, RSA4096, Ed25519] | [optional] 
 **hashAlgorithm** | **String** | Specifies the hash algorithm used for the encryption key&#39;s operations, available options: [SHA256, SHA384, SHA512] | [optional] [default to &#39;SHA256&#39;]
+**itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **keyData** | **String** | Base64-encoded classic key value | [optional] 
 **metadata** | **String** | Deprecated - use description | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateCustom model module.
  * @module model/RotatedSecretCreateCustom
- * @version 5.0.12
+ * @version 5.0.13
  */
 class RotatedSecretCreateCustom {
     /**
@@ -76,6 +76,9 @@ class RotatedSecretCreateCustom {
             }
             if (data.hasOwnProperty('enable-password-policy')) {
                 obj['enable-password-policy'] = ApiClient.convertToType(data['enable-password-policy'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -344,6 +347,12 @@ RotatedSecretCreateCustom.prototype['description'] = undefined;
  * @member {String} enable-password-policy
  */
 RotatedSecretCreateCustom.prototype['enable-password-policy'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+RotatedSecretCreateCustom.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

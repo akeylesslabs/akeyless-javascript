@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerChef model module.
  * @module model/GatewayUpdateProducerChef
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayUpdateProducerChef {
     /**
@@ -70,6 +70,9 @@ class GatewayUpdateProducerChef {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -224,6 +227,12 @@ GatewayUpdateProducerChef.prototype['custom-username-template'] = undefined;
  * @member {String} delete_protection
  */
 GatewayUpdateProducerChef.prototype['delete_protection'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+GatewayUpdateProducerChef.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

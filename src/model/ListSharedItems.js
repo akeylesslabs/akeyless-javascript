@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListSharedItems model module.
  * @module model/ListSharedItems
- * @version 5.0.12
+ * @version 5.0.13
  */
 class ListSharedItems {
     /**

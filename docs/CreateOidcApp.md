@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **audience** | **String** | A comma separated list of allowed audiences | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
+**itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **key** | **String** | The name of a key that used to encrypt the OIDC application (if empty, the account default protectionKey key will be used) | [optional] 
 **metadata** | **String** | Deprecated - use description | [optional] 

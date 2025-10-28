@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **fixedUserClaimKeyname** | **String** | FixedUserClaimKeyname | [optional] [default to &#39;false&#39;]
 **fixedUserOnly** | **Boolean** | Fixed user | [optional] [default to false]
+**itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Dynamic secret name | 
 **newName** | **String** | Dynamic secret name | [optional] 

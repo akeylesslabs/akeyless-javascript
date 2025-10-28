@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **gkeClusterEndpoint** | **String** | GKE cluster URL endpoint | [optional] 
 **gkeClusterName** | **String** | GKE cluster name | [optional] 
 **gkeServiceAccountEmail** | **String** | GKE service account email | [optional] 
+**itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Dynamic secret name | 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 

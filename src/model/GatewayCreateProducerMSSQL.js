@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMSSQL model module.
  * @module model/GatewayCreateProducerMSSQL
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayCreateProducerMSSQL {
     /**
@@ -60,6 +60,9 @@ class GatewayCreateProducerMSSQL {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -261,6 +264,12 @@ GatewayCreateProducerMSSQL.prototype['custom-username-template'] = undefined;
  * @member {String} delete_protection
  */
 GatewayCreateProducerMSSQL.prototype['delete_protection'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+GatewayCreateProducerMSSQL.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

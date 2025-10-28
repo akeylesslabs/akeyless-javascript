@@ -17,7 +17,7 @@ import MigrationsConfigPart from './MigrationsConfigPart';
 /**
  * The GatewayMigrationListOutput model module.
  * @module model/GatewayMigrationListOutput
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayMigrationListOutput {
     /**

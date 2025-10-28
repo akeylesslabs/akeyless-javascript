@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
+**itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Dynamic secret name | 
 **pingAdministrativePort** | **String** | Ping Federate administrative port | [optional] [default to &#39;9999&#39;]

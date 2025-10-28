@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerOracleDb model module.
  * @module model/GatewayUpdateProducerOracleDb
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayUpdateProducerOracleDb {
     /**
@@ -67,6 +67,9 @@ class GatewayUpdateProducerOracleDb {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -278,6 +281,12 @@ GatewayUpdateProducerOracleDb.prototype['db-server-name'] = undefined;
  * @member {String} delete_protection
  */
 GatewayUpdateProducerOracleDb.prototype['delete_protection'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+GatewayUpdateProducerOracleDb.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

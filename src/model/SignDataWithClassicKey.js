@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignDataWithClassicKey model module.
  * @module model/SignDataWithClassicKey
- * @version 5.0.12
+ * @version 5.0.13
  */
 class SignDataWithClassicKey {
     /**

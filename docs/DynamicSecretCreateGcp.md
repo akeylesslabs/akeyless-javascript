@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **gcpCredType** | **String** |  | [optional] 
 **gcpKey** | **String** | Base64-encoded service account private key text | [optional] 
 **gcpKeyAlgo** | **String** | Service account key algorithm, e.g. KEY_ALG_RSA_1024 | [optional] 
-**gcpProjectId** | **String** | GCP Project ID override for dynamic secret operations (tmp service accounts) | [optional] 
 **gcpSaEmail** | **String** | The email of the fixed service acocunt to generate keys or tokens for. (revelant for service-account-type&#x3D;fixed) | [optional] 
 **gcpTokenScopes** | **String** | Access token scopes list, e.g. scope1,scope2 | [optional] 
+**itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Dynamic secret name | 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 

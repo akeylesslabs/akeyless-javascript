@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateEks model module.
  * @module model/DynamicSecretCreateEks
- * @version 5.0.12
+ * @version 5.0.13
  */
 class DynamicSecretCreateEks {
     /**
@@ -80,6 +80,9 @@ class DynamicSecretCreateEks {
             }
             if (data.hasOwnProperty('eks-secret-access-key')) {
                 obj['eks-secret-access-key'] = ApiClient.convertToType(data['eks-secret-access-key'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -285,6 +288,12 @@ DynamicSecretCreateEks.prototype['eks-region'] = 'us-east-2';
  * @member {String} eks-secret-access-key
  */
 DynamicSecretCreateEks.prototype['eks-secret-access-key'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+DynamicSecretCreateEks.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

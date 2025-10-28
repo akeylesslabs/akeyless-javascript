@@ -20,7 +20,7 @@ import AuthMethodRoleAssociation from './AuthMethodRoleAssociation';
 /**
  * The AuthMethod model module.
  * @module model/AuthMethod
- * @version 5.0.12
+ * @version 5.0.13
  */
 class AuthMethod {
     /**

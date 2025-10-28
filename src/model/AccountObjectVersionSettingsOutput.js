@@ -17,7 +17,7 @@ import ObjectVersionSettingsOutput from './ObjectVersionSettingsOutput';
 /**
  * The AccountObjectVersionSettingsOutput model module.
  * @module model/AccountObjectVersionSettingsOutput
- * @version 5.0.12
+ * @version 5.0.13
  */
 class AccountObjectVersionSettingsOutput {
     /**

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **externalUsername** | **String** | Externally provided username [true/false] | [optional] [default to &#39;false&#39;]
 **fixedUserClaimKeyname** | **String** | For externally provided users, denotes the key-name of IdP claim to extract the username from (relevant only for external-username&#x3D;true) | [optional] 
 **hostProvider** | **String** | Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret | [optional] 
+**itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **metadata** | **String** | Deprecated - use description | [optional] 
 **name** | **String** | SSH certificate issuer name | 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 5.0.12
+ * @version 5.0.13
  */
 class CreateClassicKey {
     /**
@@ -107,6 +107,9 @@ class CreateClassicKey {
             }
             if (data.hasOwnProperty('hash-algorithm')) {
                 obj['hash-algorithm'] = ApiClient.convertToType(data['hash-algorithm'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -370,6 +373,12 @@ CreateClassicKey.prototype['gpg-alg'] = undefined;
  * @default 'SHA256'
  */
 CreateClassicKey.prototype['hash-algorithm'] = 'SHA256';
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+CreateClassicKey.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

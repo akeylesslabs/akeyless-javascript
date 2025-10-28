@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMongo model module.
  * @module model/GatewayCreateProducerMongo
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayCreateProducerMongo {
     /**
@@ -59,6 +59,9 @@ class GatewayCreateProducerMongo {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -288,6 +291,12 @@ GatewayCreateProducerMongo.prototype['custom-username-template'] = undefined;
  * @member {String} delete_protection
  */
 GatewayCreateProducerMongo.prototype['delete_protection'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+GatewayCreateProducerMongo.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

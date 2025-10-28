@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateSsh model module.
  * @module model/RotatedSecretUpdateSsh
- * @version 5.0.12
+ * @version 5.0.13
  */
 class RotatedSecretUpdateSsh {
     /**
@@ -71,6 +71,9 @@ class RotatedSecretUpdateSsh {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -332,6 +335,12 @@ RotatedSecretUpdateSsh.prototype['delete_protection'] = undefined;
  * @default 'default_metadata'
  */
 RotatedSecretUpdateSsh.prototype['description'] = 'default_metadata';
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+RotatedSecretUpdateSsh.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

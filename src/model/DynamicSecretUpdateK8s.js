@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateK8s model module.
  * @module model/DynamicSecretUpdateK8s
- * @version 5.0.12
+ * @version 5.0.13
  */
 class DynamicSecretUpdateK8s {
     /**
@@ -63,6 +63,9 @@ class DynamicSecretUpdateK8s {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -314,6 +317,12 @@ DynamicSecretUpdateK8s.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 DynamicSecretUpdateK8s.prototype['description'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+DynamicSecretUpdateK8s.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

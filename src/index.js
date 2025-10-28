@@ -21,6 +21,13 @@ import AWSSecretsMigration from './model/AWSSecretsMigration';
 import AWSTargetDetails from './model/AWSTargetDetails';
 import AccessOrGroupPermissionAssignment from './model/AccessOrGroupPermissionAssignment';
 import AccessPermissionAssignment from './model/AccessPermissionAssignment';
+import AccountCustomFieldCreate from './model/AccountCustomFieldCreate';
+import AccountCustomFieldCreateOutput from './model/AccountCustomFieldCreateOutput';
+import AccountCustomFieldDelete from './model/AccountCustomFieldDelete';
+import AccountCustomFieldGet from './model/AccountCustomFieldGet';
+import AccountCustomFieldGetOutput from './model/AccountCustomFieldGetOutput';
+import AccountCustomFieldList from './model/AccountCustomFieldList';
+import AccountCustomFieldUpdate from './model/AccountCustomFieldUpdate';
 import AccountGeneralSettings from './model/AccountGeneralSettings';
 import AccountObjectVersionSettingsOutput from './model/AccountObjectVersionSettingsOutput';
 import AcmeAccount from './model/AcmeAccount';
@@ -28,6 +35,8 @@ import ActiveDirectoryMigration from './model/ActiveDirectoryMigration';
 import ActiveDirectoryPayload from './model/ActiveDirectoryPayload';
 import AddGatewayAllowedAccessId from './model/AddGatewayAllowedAccessId';
 import AdminsConfigPart from './model/AdminsConfigPart';
+import AiInsightsConfigPart from './model/AiInsightsConfigPart';
+import AiInsightsSetting from './model/AiInsightsSetting';
 import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
 import AliasDetails from './model/AliasDetails';
 import AliasDetailsOutput from './model/AliasDetailsOutput';
@@ -664,6 +673,7 @@ import ImportPasswords from './model/ImportPasswords';
 import ImportPasswordsOutput from './model/ImportPasswordsOutput';
 import ImporterInfo from './model/ImporterInfo';
 import Item from './model/Item';
+import ItemCustomFieldsDetails from './model/ItemCustomFieldsDetails';
 import ItemGeneralInfo from './model/ItemGeneralInfo';
 import ItemSraStatus from './model/ItemSraStatus';
 import ItemTargetAssociation from './model/ItemTargetAssociation';
@@ -758,6 +768,7 @@ import NativeK8sTargetDetails from './model/NativeK8sTargetDetails';
 import NextAutoRotationEvent from './model/NextAutoRotationEvent';
 import NotiForwarder from './model/NotiForwarder';
 import NullString from './model/NullString';
+import NullTime from './model/NullTime';
 import OAuth2AccessRules from './model/OAuth2AccessRules';
 import OAuth2CustomClaim from './model/OAuth2CustomClaim';
 import OCIAccessRules from './model/OCIAccessRules';
@@ -1158,7 +1169,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.12
+* @version 5.0.13
 */
 export {
     /**
@@ -1216,6 +1227,48 @@ export {
     AccessPermissionAssignment,
 
     /**
+     * The AccountCustomFieldCreate model constructor.
+     * @property {module:model/AccountCustomFieldCreate}
+     */
+    AccountCustomFieldCreate,
+
+    /**
+     * The AccountCustomFieldCreateOutput model constructor.
+     * @property {module:model/AccountCustomFieldCreateOutput}
+     */
+    AccountCustomFieldCreateOutput,
+
+    /**
+     * The AccountCustomFieldDelete model constructor.
+     * @property {module:model/AccountCustomFieldDelete}
+     */
+    AccountCustomFieldDelete,
+
+    /**
+     * The AccountCustomFieldGet model constructor.
+     * @property {module:model/AccountCustomFieldGet}
+     */
+    AccountCustomFieldGet,
+
+    /**
+     * The AccountCustomFieldGetOutput model constructor.
+     * @property {module:model/AccountCustomFieldGetOutput}
+     */
+    AccountCustomFieldGetOutput,
+
+    /**
+     * The AccountCustomFieldList model constructor.
+     * @property {module:model/AccountCustomFieldList}
+     */
+    AccountCustomFieldList,
+
+    /**
+     * The AccountCustomFieldUpdate model constructor.
+     * @property {module:model/AccountCustomFieldUpdate}
+     */
+    AccountCustomFieldUpdate,
+
+    /**
      * The AccountGeneralSettings model constructor.
      * @property {module:model/AccountGeneralSettings}
      */
@@ -1256,6 +1309,18 @@ export {
      * @property {module:model/AdminsConfigPart}
      */
     AdminsConfigPart,
+
+    /**
+     * The AiInsightsConfigPart model constructor.
+     * @property {module:model/AiInsightsConfigPart}
+     */
+    AiInsightsConfigPart,
+
+    /**
+     * The AiInsightsSetting model constructor.
+     * @property {module:model/AiInsightsSetting}
+     */
+    AiInsightsSetting,
 
     /**
      * The AkeylessGatewayConfig model constructor.
@@ -5074,6 +5139,12 @@ export {
     Item,
 
     /**
+     * The ItemCustomFieldsDetails model constructor.
+     * @property {module:model/ItemCustomFieldsDetails}
+     */
+    ItemCustomFieldsDetails,
+
+    /**
      * The ItemGeneralInfo model constructor.
      * @property {module:model/ItemGeneralInfo}
      */
@@ -5636,6 +5707,12 @@ export {
      * @property {module:model/NullString}
      */
     NullString,
+
+    /**
+     * The NullTime model constructor.
+     * @property {module:model/NullTime}
+     */
+    NullTime,
 
     /**
      * The OAuth2AccessRules model constructor.

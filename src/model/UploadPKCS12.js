@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadPKCS12 model module.
  * @module model/UploadPKCS12
- * @version 5.0.12
+ * @version 5.0.13
  */
 class UploadPKCS12 {
     /**
@@ -66,6 +66,9 @@ class UploadPKCS12 {
             }
             if (data.hasOwnProperty('in')) {
                 obj['in'] = ApiClient.convertToType(data['in'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -179,6 +182,12 @@ UploadPKCS12.prototype['description'] = undefined;
  * @member {String} in
  */
 UploadPKCS12.prototype['in'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+UploadPKCS12.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

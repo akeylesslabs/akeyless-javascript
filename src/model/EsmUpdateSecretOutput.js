@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EsmUpdateSecretOutput model module.
  * @module model/EsmUpdateSecretOutput
- * @version 5.0.12
+ * @version 5.0.13
  */
 class EsmUpdateSecretOutput {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateDockerhub model module.
  * @module model/RotatedSecretUpdateDockerhub
- * @version 5.0.12
+ * @version 5.0.13
  */
 class RotatedSecretUpdateDockerhub {
     /**
@@ -66,6 +66,9 @@ class RotatedSecretUpdateDockerhub {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -226,6 +229,12 @@ RotatedSecretUpdateDockerhub.prototype['delete_protection'] = undefined;
  * @default 'default_metadata'
  */
 RotatedSecretUpdateDockerhub.prototype['description'] = 'default_metadata';
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+RotatedSecretUpdateDockerhub.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

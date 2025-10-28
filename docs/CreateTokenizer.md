@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **description** | **String** | Description of the object | [optional] 
 **encodingTemplate** | **String** | The Encoding output template to use in regexp vaultless tokenization | [optional] 
 **encryptionKeyName** | **String** | AES key name to use in vaultless tokenization | [optional] 
+**itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **metadata** | **String** | Deprecated - use description | [optional] 
 **name** | **String** | Tokenizer name | 

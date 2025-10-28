@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SharingPolicyInfo model module.
  * @module model/SharingPolicyInfo
- * @version 5.0.12
+ * @version 5.0.13
  */
 class SharingPolicyInfo {
     /**
@@ -47,6 +47,9 @@ class SharingPolicyInfo {
         if (data) {
             obj = obj || new SharingPolicyInfo();
 
+            if (data.hasOwnProperty('allowed_email_domains')) {
+                obj['allowed_email_domains'] = ApiClient.convertToType(data['allowed_email_domains'], ['String']);
+            }
             if (data.hasOwnProperty('default_share_link_ttl')) {
                 obj['default_share_link_ttl'] = ApiClient.convertToType(data['default_share_link_ttl'], 'Number');
             }
@@ -63,6 +66,10 @@ class SharingPolicyInfo {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>SharingPolicyInfo</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is an array
+        if (!Array.isArray(data['allowed_email_domains'])) {
+            throw new Error("Expected the field `allowed_email_domains` to be an array in the JSON data but got " + data['allowed_email_domains']);
+        }
 
         return true;
     }
@@ -71,6 +78,12 @@ class SharingPolicyInfo {
 }
 
 
+
+/**
+ * AllowedEmailDomains limits email sharing to these domains. By default all domains are allowed.
+ * @member {Array.<String>} allowed_email_domains
+ */
+SharingPolicyInfo.prototype['allowed_email_domains'] = undefined;
 
 /**
  * @member {Number} default_share_link_ttl

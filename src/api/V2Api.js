@@ -13,6 +13,13 @@
 
 
 import ApiClient from "../ApiClient";
+import AccountCustomFieldCreate from '../model/AccountCustomFieldCreate';
+import AccountCustomFieldCreateOutput from '../model/AccountCustomFieldCreateOutput';
+import AccountCustomFieldDelete from '../model/AccountCustomFieldDelete';
+import AccountCustomFieldGet from '../model/AccountCustomFieldGet';
+import AccountCustomFieldGetOutput from '../model/AccountCustomFieldGetOutput';
+import AccountCustomFieldList from '../model/AccountCustomFieldList';
+import AccountCustomFieldUpdate from '../model/AccountCustomFieldUpdate';
 import AkeylessGatewayConfig from '../model/AkeylessGatewayConfig';
 import AliasDetails from '../model/AliasDetails';
 import AllAnalyticsData from '../model/AllAnalyticsData';
@@ -886,7 +893,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.12
+* @version 5.0.13
 */
 export default class V2Api {
 
@@ -901,6 +908,233 @@ export default class V2Api {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+
+    /**
+     * Create a new custom field.
+     * @param {module:model/AccountCustomFieldCreate} accountCustomFieldCreate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AccountCustomFieldCreateOutput} and HTTP response
+     */
+    accountCustomFieldCreateWithHttpInfo(accountCustomFieldCreate) {
+      let postBody = accountCustomFieldCreate;
+      // verify the required parameter 'accountCustomFieldCreate' is set
+      if (accountCustomFieldCreate === undefined || accountCustomFieldCreate === null) {
+        throw new Error("Missing the required parameter 'accountCustomFieldCreate' when calling accountCustomFieldCreate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AccountCustomFieldCreateOutput;
+      return this.apiClient.callApi(
+        '/account-custom-field-create', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create a new custom field.
+     * @param {module:model/AccountCustomFieldCreate} accountCustomFieldCreate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AccountCustomFieldCreateOutput}
+     */
+    accountCustomFieldCreate(accountCustomFieldCreate) {
+      return this.accountCustomFieldCreateWithHttpInfo(accountCustomFieldCreate)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a custom field.
+     * @param {module:model/AccountCustomFieldDelete} accountCustomFieldDelete 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    accountCustomFieldDeleteWithHttpInfo(accountCustomFieldDelete) {
+      let postBody = accountCustomFieldDelete;
+      // verify the required parameter 'accountCustomFieldDelete' is set
+      if (accountCustomFieldDelete === undefined || accountCustomFieldDelete === null) {
+        throw new Error("Missing the required parameter 'accountCustomFieldDelete' when calling accountCustomFieldDelete");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/account-custom-field-delete', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete a custom field.
+     * @param {module:model/AccountCustomFieldDelete} accountCustomFieldDelete 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    accountCustomFieldDelete(accountCustomFieldDelete) {
+      return this.accountCustomFieldDeleteWithHttpInfo(accountCustomFieldDelete)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get an account custom field by ID.
+     * @param {module:model/AccountCustomFieldGet} accountCustomFieldGet 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AccountCustomFieldGetOutput} and HTTP response
+     */
+    accountCustomFieldGetWithHttpInfo(accountCustomFieldGet) {
+      let postBody = accountCustomFieldGet;
+      // verify the required parameter 'accountCustomFieldGet' is set
+      if (accountCustomFieldGet === undefined || accountCustomFieldGet === null) {
+        throw new Error("Missing the required parameter 'accountCustomFieldGet' when calling accountCustomFieldGet");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AccountCustomFieldGetOutput;
+      return this.apiClient.callApi(
+        '/account-custom-field-get', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get an account custom field by ID.
+     * @param {module:model/AccountCustomFieldGet} accountCustomFieldGet 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AccountCustomFieldGetOutput}
+     */
+    accountCustomFieldGet(accountCustomFieldGet) {
+      return this.accountCustomFieldGetWithHttpInfo(accountCustomFieldGet)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List all account custom fields.
+     * Returns a list of all custom fields configured for the account, optionally filtered by object and object type.
+     * @param {module:model/AccountCustomFieldList} accountCustomFieldList 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    accountCustomFieldListWithHttpInfo(accountCustomFieldList) {
+      let postBody = accountCustomFieldList;
+      // verify the required parameter 'accountCustomFieldList' is set
+      if (accountCustomFieldList === undefined || accountCustomFieldList === null) {
+        throw new Error("Missing the required parameter 'accountCustomFieldList' when calling accountCustomFieldList");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/account-custom-field-list', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * List all account custom fields.
+     * Returns a list of all custom fields configured for the account, optionally filtered by object and object type.
+     * @param {module:model/AccountCustomFieldList} accountCustomFieldList 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    accountCustomFieldList(accountCustomFieldList) {
+      return this.accountCustomFieldListWithHttpInfo(accountCustomFieldList)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update a custom field.
+     * @param {module:model/AccountCustomFieldUpdate} accountCustomFieldUpdate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    accountCustomFieldUpdateWithHttpInfo(accountCustomFieldUpdate) {
+      let postBody = accountCustomFieldUpdate;
+      // verify the required parameter 'accountCustomFieldUpdate' is set
+      if (accountCustomFieldUpdate === undefined || accountCustomFieldUpdate === null) {
+        throw new Error("Missing the required parameter 'accountCustomFieldUpdate' when calling accountCustomFieldUpdate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/account-custom-field-update', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update a custom field.
+     * @param {module:model/AccountCustomFieldUpdate} accountCustomFieldUpdate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    accountCustomFieldUpdate(accountCustomFieldUpdate) {
+      return this.accountCustomFieldUpdateWithHttpInfo(accountCustomFieldUpdate)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
 
     /**

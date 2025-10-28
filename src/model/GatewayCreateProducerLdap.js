@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerLdap model module.
  * @module model/GatewayCreateProducerLdap
- * @version 5.0.12
+ * @version 5.0.13
  */
 class GatewayCreateProducerLdap {
     /**
@@ -80,6 +80,9 @@ class GatewayCreateProducerLdap {
             }
             if (data.hasOwnProperty('host-provider')) {
                 obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -342,6 +345,12 @@ GatewayCreateProducerLdap.prototype['group-dn'] = undefined;
  * @member {String} host-provider
  */
 GatewayCreateProducerLdap.prototype['host-provider'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+GatewayCreateProducerLdap.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

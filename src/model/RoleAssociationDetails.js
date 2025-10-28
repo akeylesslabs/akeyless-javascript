@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RoleAssociationDetails model module.
  * @module model/RoleAssociationDetails
- * @version 5.0.12
+ * @version 5.0.13
  */
 class RoleAssociationDetails {
     /**

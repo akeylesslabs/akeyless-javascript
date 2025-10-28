@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateGoogleWorkspace model module.
  * @module model/DynamicSecretCreateGoogleWorkspace
- * @version 5.0.12
+ * @version 5.0.13
  */
 class DynamicSecretCreateGoogleWorkspace {
     /**
@@ -83,6 +83,9 @@ class DynamicSecretCreateGoogleWorkspace {
             }
             if (data.hasOwnProperty('group-role')) {
                 obj['group-role'] = ApiClient.convertToType(data['group-role'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -276,6 +279,12 @@ DynamicSecretCreateGoogleWorkspace.prototype['group-email'] = undefined;
  * @member {String} group-role
  */
 DynamicSecretCreateGoogleWorkspace.prototype['group-role'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+DynamicSecretCreateGoogleWorkspace.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

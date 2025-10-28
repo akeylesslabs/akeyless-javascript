@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CertificateStore model module.
  * @module model/CertificateStore
- * @version 5.0.12
+ * @version 5.0.13
  */
 class CertificateStore {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateVenafi model module.
  * @module model/DynamicSecretUpdateVenafi
- * @version 5.0.12
+ * @version 5.0.13
  */
 class DynamicSecretUpdateVenafi {
     /**
@@ -75,6 +75,9 @@ class DynamicSecretUpdateVenafi {
             }
             if (data.hasOwnProperty('enable-admin-rotation')) {
                 obj['enable-admin-rotation'] = ApiClient.convertToType(data['enable-admin-rotation'], 'Boolean');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -280,6 +283,12 @@ DynamicSecretUpdateVenafi.prototype['description'] = undefined;
  * @default false
  */
 DynamicSecretUpdateVenafi.prototype['enable-admin-rotation'] = false;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+DynamicSecretUpdateVenafi.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

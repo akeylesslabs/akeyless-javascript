@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateAws model module.
  * @module model/RotatedSecretCreateAws
- * @version 5.0.12
+ * @version 5.0.13
  */
 class RotatedSecretCreateAws {
     /**
@@ -86,6 +86,9 @@ class RotatedSecretCreateAws {
             }
             if (data.hasOwnProperty('grace-rotation-interval')) {
                 obj['grace-rotation-interval'] = ApiClient.convertToType(data['grace-rotation-interval'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -330,6 +333,12 @@ RotatedSecretCreateAws.prototype['grace-rotation-hour'] = undefined;
  * @member {String} grace-rotation-interval
  */
 RotatedSecretCreateAws.prototype['grace-rotation-interval'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+RotatedSecretCreateAws.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

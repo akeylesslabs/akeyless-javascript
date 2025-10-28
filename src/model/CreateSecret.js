@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 5.0.12
+ * @version 5.0.13
  */
 class CreateSecret {
     /**
@@ -77,6 +77,9 @@ class CreateSecret {
             }
             if (data.hasOwnProperty('inject-url')) {
                 obj['inject-url'] = ApiClient.convertToType(data['inject-url'], ['String']);
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -322,6 +325,12 @@ CreateSecret.prototype['format'] = 'text';
  * @member {Array.<String>} inject-url
  */
 CreateSecret.prototype['inject-url'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+CreateSecret.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

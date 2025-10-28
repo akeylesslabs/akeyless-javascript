@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import AiInsightsSetting from './AiInsightsSetting';
 import AllowedIpSettings from './AllowedIpSettings';
 import CertificateExpirationEventsSettings from './CertificateExpirationEventsSettings';
 import DataProtectionSection from './DataProtectionSection';
@@ -27,7 +28,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 5.0.12
+ * @version 5.0.13
  */
 class AccountGeneralSettings {
     /**
@@ -64,6 +65,9 @@ class AccountGeneralSettings {
             }
             if (data.hasOwnProperty('account_default_key_name')) {
                 obj['account_default_key_name'] = ApiClient.convertToType(data['account_default_key_name'], 'String');
+            }
+            if (data.hasOwnProperty('ai_insights')) {
+                obj['ai_insights'] = AiInsightsSetting.constructFromObject(data['ai_insights']);
             }
             if (data.hasOwnProperty('allowed_clients_ips')) {
                 obj['allowed_clients_ips'] = AllowedIpSettings.constructFromObject(data['allowed_clients_ips']);
@@ -135,6 +139,10 @@ class AccountGeneralSettings {
         // ensure the json data is a string
         if (data['account_default_key_name'] && !(typeof data['account_default_key_name'] === 'string' || data['account_default_key_name'] instanceof String)) {
             throw new Error("Expected the field `account_default_key_name` to be a primitive type in the JSON string but got " + data['account_default_key_name']);
+        }
+        // validate the optional field `ai_insights`
+        if (data['ai_insights']) { // data not null
+          AiInsightsSetting.validateJSON(data['ai_insights']);
         }
         // validate the optional field `allowed_clients_ips`
         if (data['allowed_clients_ips']) { // data not null
@@ -212,6 +220,11 @@ AccountGeneralSettings.prototype['account_default_key_item_id'] = undefined;
  * @member {String} account_default_key_name
  */
 AccountGeneralSettings.prototype['account_default_key_name'] = undefined;
+
+/**
+ * @member {module:model/AiInsightsSetting} ai_insights
+ */
+AccountGeneralSettings.prototype['ai_insights'] = undefined;
 
 /**
  * @member {module:model/AllowedIpSettings} allowed_clients_ips

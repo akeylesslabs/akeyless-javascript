@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeItem model module.
  * @module model/DescribeItem
- * @version 5.0.12
+ * @version 5.0.13
  */
 class DescribeItem {
     /**
@@ -39,6 +39,7 @@ class DescribeItem {
         obj['bastion-details'] = false;
         obj['der-certificate-format'] = false;
         obj['gateway-details'] = false;
+        obj['item-custom-fields-details'] = false;
         obj['json'] = false;
         obj['name'] = name;
         obj['services-details'] = false;
@@ -70,6 +71,9 @@ class DescribeItem {
             }
             if (data.hasOwnProperty('gateway-details')) {
                 obj['gateway-details'] = ApiClient.convertToType(data['gateway-details'], 'Boolean');
+            }
+            if (data.hasOwnProperty('item-custom-fields-details')) {
+                obj['item-custom-fields-details'] = ApiClient.convertToType(data['item-custom-fields-details'], 'Boolean');
             }
             if (data.hasOwnProperty('item-id')) {
                 obj['item-id'] = ApiClient.convertToType(data['item-id'], 'Number');
@@ -170,6 +174,13 @@ DescribeItem.prototype['display-id'] = undefined;
  * @default false
  */
 DescribeItem.prototype['gateway-details'] = false;
+
+/**
+ * Include all item custom fields details
+ * @member {Boolean} item-custom-fields-details
+ * @default false
+ */
+DescribeItem.prototype['item-custom-fields-details'] = false;
 
 /**
  * Item id of the item

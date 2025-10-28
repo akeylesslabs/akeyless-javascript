@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UploadRSA model module.
  * @module model/UploadRSA
- * @version 5.0.12
+ * @version 5.0.13
  */
 class UploadRSA {
     /**
@@ -74,6 +74,9 @@ class UploadRSA {
             }
             if (data.hasOwnProperty('expiration-event-in')) {
                 obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -223,6 +226,12 @@ UploadRSA.prototype['description'] = undefined;
  * @member {Array.<String>} expiration-event-in
  */
 UploadRSA.prototype['expiration-event-in'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+UploadRSA.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

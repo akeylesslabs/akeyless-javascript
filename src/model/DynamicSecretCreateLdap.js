@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateLdap model module.
  * @module model/DynamicSecretCreateLdap
- * @version 5.0.12
+ * @version 5.0.13
  */
 class DynamicSecretCreateLdap {
     /**
@@ -83,6 +83,9 @@ class DynamicSecretCreateLdap {
             }
             if (data.hasOwnProperty('host-provider')) {
                 obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -355,6 +358,12 @@ DynamicSecretCreateLdap.prototype['group-dn'] = undefined;
  * @member {String} host-provider
  */
 DynamicSecretCreateLdap.prototype['host-provider'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+DynamicSecretCreateLdap.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

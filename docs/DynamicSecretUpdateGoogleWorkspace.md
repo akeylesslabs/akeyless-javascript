@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **gcpKey** | **String** | Base64-encoded service account private key text | [optional] 
 **groupEmail** | **String** | A group email, relevant only for group access-mode | [optional] 
 **groupRole** | **String** |  | [optional] 
+**itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Dynamic secret name | 
 **newName** | **String** | Dynamic secret name | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateTokenizer model module.
  * @module model/CreateTokenizer
- * @version 5.0.12
+ * @version 5.0.13
  */
 class CreateTokenizer {
     /**
@@ -72,6 +72,9 @@ class CreateTokenizer {
             }
             if (data.hasOwnProperty('encryption-key-name')) {
                 obj['encryption-key-name'] = ApiClient.convertToType(data['encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -223,6 +226,12 @@ CreateTokenizer.prototype['encoding-template'] = undefined;
  * @member {String} encryption-key-name
  */
 CreateTokenizer.prototype['encryption-key-name'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+CreateTokenizer.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON

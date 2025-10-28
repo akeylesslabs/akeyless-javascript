@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateCertificate model module.
  * @module model/CreateCertificate
- * @version 5.0.12
+ * @version 5.0.13
  */
 class CreateCertificate {
     /**
@@ -64,6 +64,9 @@ class CreateCertificate {
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('item-custom-fields')) {
+                obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -191,6 +194,12 @@ CreateCertificate.prototype['expiration-event-in'] = undefined;
  * @member {String} format
  */
 CreateCertificate.prototype['format'] = undefined;
+
+/**
+ * Additional custom fields to associate with the item
+ * @member {Object.<String, String>} item-custom-fields
+ */
+CreateCertificate.prototype['item-custom-fields'] = undefined;
 
 /**
  * Set output format to JSON
