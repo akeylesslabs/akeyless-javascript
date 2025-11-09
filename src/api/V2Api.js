@@ -325,6 +325,12 @@ import EventForwarderUpdateTeams from '../model/EventForwarderUpdateTeams';
 import EventForwarderUpdateWebhook from '../model/EventForwarderUpdateWebhook';
 import ExportClassicKey from '../model/ExportClassicKey';
 import ExportClassicKeyOutput from '../model/ExportClassicKeyOutput';
+import FolderCreate from '../model/FolderCreate';
+import FolderCreateOutput from '../model/FolderCreateOutput';
+import FolderDelete from '../model/FolderDelete';
+import FolderGet from '../model/FolderGet';
+import FolderGetOutput from '../model/FolderGetOutput';
+import FolderUpdate from '../model/FolderUpdate';
 import GatewayCreateAllowedAccess from '../model/GatewayCreateAllowedAccess';
 import GatewayCreateK8SAuthConfig from '../model/GatewayCreateK8SAuthConfig';
 import GatewayCreateK8SAuthConfigOutput from '../model/GatewayCreateK8SAuthConfigOutput';
@@ -893,7 +899,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.13
+* @version 5.0.14
 */
 export default class V2Api {
 
@@ -10116,6 +10122,178 @@ export default class V2Api {
      */
     exportClassicKey(exportClassicKey) {
       return this.exportClassicKeyWithHttpInfo(exportClassicKey)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/FolderCreate} folderCreate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FolderCreateOutput} and HTTP response
+     */
+    folderCreateWithHttpInfo(folderCreate) {
+      let postBody = folderCreate;
+      // verify the required parameter 'folderCreate' is set
+      if (folderCreate === undefined || folderCreate === null) {
+        throw new Error("Missing the required parameter 'folderCreate' when calling folderCreate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = FolderCreateOutput;
+      return this.apiClient.callApi(
+        '/folder-create', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/FolderCreate} folderCreate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FolderCreateOutput}
+     */
+    folderCreate(folderCreate) {
+      return this.folderCreateWithHttpInfo(folderCreate)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/FolderDelete} folderDelete 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    folderDeleteWithHttpInfo(folderDelete) {
+      let postBody = folderDelete;
+      // verify the required parameter 'folderDelete' is set
+      if (folderDelete === undefined || folderDelete === null) {
+        throw new Error("Missing the required parameter 'folderDelete' when calling folderDelete");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/folder-delete', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/FolderDelete} folderDelete 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    folderDelete(folderDelete) {
+      return this.folderDeleteWithHttpInfo(folderDelete)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/FolderGet} folderGet 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FolderGetOutput} and HTTP response
+     */
+    folderGetWithHttpInfo(folderGet) {
+      let postBody = folderGet;
+      // verify the required parameter 'folderGet' is set
+      if (folderGet === undefined || folderGet === null) {
+        throw new Error("Missing the required parameter 'folderGet' when calling folderGet");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = FolderGetOutput;
+      return this.apiClient.callApi(
+        '/folder-get', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/FolderGet} folderGet 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FolderGetOutput}
+     */
+    folderGet(folderGet) {
+      return this.folderGetWithHttpInfo(folderGet)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/FolderUpdate} folderUpdate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    folderUpdateWithHttpInfo(folderUpdate) {
+      let postBody = folderUpdate;
+      // verify the required parameter 'folderUpdate' is set
+      if (folderUpdate === undefined || folderUpdate === null) {
+        throw new Error("Missing the required parameter 'folderUpdate' when calling folderUpdate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/folder-update', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/FolderUpdate} folderUpdate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    folderUpdate(folderUpdate) {
+      return this.folderUpdateWithHttpInfo(folderUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

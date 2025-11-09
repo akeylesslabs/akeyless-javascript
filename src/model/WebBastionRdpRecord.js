@@ -18,7 +18,7 @@ import AzureStorage from './AzureStorage';
 /**
  * The WebBastionRdpRecord model module.
  * @module model/WebBastionRdpRecord
- * @version 5.0.13
+ * @version 5.0.14
  */
 class WebBastionRdpRecord {
     /**

@@ -17,7 +17,7 @@ import KubeconfigUserExec from './KubeconfigUserExec';
 /**
  * The KubeconfigUser model module.
  * @module model/KubeconfigUser
- * @version 5.0.13
+ * @version 5.0.14
  */
 class KubeconfigUser {
     /**

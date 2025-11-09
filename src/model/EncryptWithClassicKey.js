@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptWithClassicKey model module.
  * @module model/EncryptWithClassicKey
- * @version 5.0.13
+ * @version 5.0.14
  */
 class EncryptWithClassicKey {
     /**
@@ -38,6 +38,7 @@ class EncryptWithClassicKey {
      */
     static initialize(obj, displayId, plaintext, version) { 
         obj['display-id'] = displayId;
+        obj['ignore-cache'] = 'false';
         obj['json'] = false;
         obj['plaintext'] = plaintext;
         obj['version'] = version;
@@ -56,6 +57,9 @@ class EncryptWithClassicKey {
 
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
+            }
+            if (data.hasOwnProperty('ignore-cache')) {
+                obj['ignore-cache'] = ApiClient.convertToType(data['ignore-cache'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -93,6 +97,10 @@ class EncryptWithClassicKey {
             throw new Error("Expected the field `display-id` to be a primitive type in the JSON string but got " + data['display-id']);
         }
         // ensure the json data is a string
+        if (data['ignore-cache'] && !(typeof data['ignore-cache'] === 'string' || data['ignore-cache'] instanceof String)) {
+            throw new Error("Expected the field `ignore-cache` to be a primitive type in the JSON string but got " + data['ignore-cache']);
+        }
+        // ensure the json data is a string
         if (data['plaintext'] && !(typeof data['plaintext'] === 'string' || data['plaintext'] instanceof String)) {
             throw new Error("Expected the field `plaintext` to be a primitive type in the JSON string but got " + data['plaintext']);
         }
@@ -118,6 +126,13 @@ EncryptWithClassicKey.RequiredProperties = ["display-id", "plaintext", "version"
  * @member {String} display-id
  */
 EncryptWithClassicKey.prototype['display-id'] = undefined;
+
+/**
+ * Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI
+ * @member {String} ignore-cache
+ * @default 'false'
+ */
+EncryptWithClassicKey.prototype['ignore-cache'] = 'false';
 
 /**
  * Set output format to JSON

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetRoleRule model module.
  * @module model/SetRoleRule
- * @version 5.0.13
+ * @version 5.0.14
  */
 class SetRoleRule {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRole model module.
  * @module model/CreateRole
- * @version 5.0.13
+ * @version 5.0.14
  */
 class CreateRole {
     /**
@@ -70,6 +70,9 @@ class CreateRole {
             }
             if (data.hasOwnProperty('event-forwarders-access')) {
                 obj['event-forwarders-access'] = ApiClient.convertToType(data['event-forwarders-access'], 'String');
+            }
+            if (data.hasOwnProperty('event-forwarders-name')) {
+                obj['event-forwarders-name'] = ApiClient.convertToType(data['event-forwarders-name'], ['String']);
             }
             if (data.hasOwnProperty('gw-analytics-access')) {
                 obj['gw-analytics-access'] = ApiClient.convertToType(data['gw-analytics-access'], 'String');
@@ -138,6 +141,10 @@ class CreateRole {
         // ensure the json data is a string
         if (data['event-forwarders-access'] && !(typeof data['event-forwarders-access'] === 'string' || data['event-forwarders-access'] instanceof String)) {
             throw new Error("Expected the field `event-forwarders-access` to be a primitive type in the JSON string but got " + data['event-forwarders-access']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['event-forwarders-name'])) {
+            throw new Error("Expected the field `event-forwarders-name` to be an array in the JSON data but got " + data['event-forwarders-name']);
         }
         // ensure the json data is a string
         if (data['gw-analytics-access'] && !(typeof data['gw-analytics-access'] === 'string' || data['gw-analytics-access'] instanceof String)) {
@@ -217,6 +224,12 @@ CreateRole.prototype['event-center-access'] = undefined;
  * @member {String} event-forwarders-access
  */
 CreateRole.prototype['event-forwarders-access'] = undefined;
+
+/**
+ * Allow this role to manage the following Event Forwarders.
+ * @member {Array.<String>} event-forwarders-name
+ */
+CreateRole.prototype['event-forwarders-name'] = undefined;
 
 /**
  * Allow this role to view gw analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.

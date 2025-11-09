@@ -218,6 +218,10 @@ Method | HTTP request | Description
 [**eventForwarderUpdateTeams**](V2Api.md#eventForwarderUpdateTeams) | **POST** /event-forwarder-update-teams | 
 [**eventForwarderUpdateWebhook**](V2Api.md#eventForwarderUpdateWebhook) | **POST** /event-forwarder-update-webhook | 
 [**exportClassicKey**](V2Api.md#exportClassicKey) | **POST** /export-classic-key | 
+[**folderCreate**](V2Api.md#folderCreate) | **POST** /folder-create | 
+[**folderDelete**](V2Api.md#folderDelete) | **POST** /folder-delete | 
+[**folderGet**](V2Api.md#folderGet) | **POST** /folder-get | 
+[**folderUpdate**](V2Api.md#folderUpdate) | **POST** /folder-update | 
 [**gatewayCreateAllowedAccess**](V2Api.md#gatewayCreateAllowedAccess) | **POST** /gateway-create-allowed-access | 
 [**gatewayCreateK8SAuthConfig**](V2Api.md#gatewayCreateK8SAuthConfig) | **POST** /gateway-create-k8s-auth-config | 
 [**gatewayCreateMigration**](V2Api.md#gatewayCreateMigration) | **POST** /gateway-create-migration | 
@@ -9575,6 +9579,174 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ExportClassicKeyOutput**](ExportClassicKeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## folderCreate
+
+> FolderCreateOutput folderCreate(folderCreate)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let folderCreate = new akeyless.FolderCreate(); // FolderCreate | 
+apiInstance.folderCreate(folderCreate).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folderCreate** | [**FolderCreate**](FolderCreate.md)|  | 
+
+### Return type
+
+[**FolderCreateOutput**](FolderCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## folderDelete
+
+> Object folderDelete(folderDelete)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let folderDelete = new akeyless.FolderDelete(); // FolderDelete | 
+apiInstance.folderDelete(folderDelete).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folderDelete** | [**FolderDelete**](FolderDelete.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## folderGet
+
+> FolderGetOutput folderGet(folderGet)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let folderGet = new akeyless.FolderGet(); // FolderGet | 
+apiInstance.folderGet(folderGet).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folderGet** | [**FolderGet**](FolderGet.md)|  | 
+
+### Return type
+
+[**FolderGetOutput**](FolderGetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## folderUpdate
+
+> Object folderUpdate(folderUpdate)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let folderUpdate = new akeyless.FolderUpdate(); // FolderUpdate | 
+apiInstance.folderUpdate(folderUpdate).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folderUpdate** | [**FolderUpdate**](FolderUpdate.md)|  | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 

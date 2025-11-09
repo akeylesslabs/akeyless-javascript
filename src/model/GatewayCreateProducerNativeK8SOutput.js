@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerNativeK8SOutput model module.
  * @module model/GatewayCreateProducerNativeK8SOutput
- * @version 5.0.13
+ * @version 5.0.14
  */
 class GatewayCreateProducerNativeK8SOutput {
     /**

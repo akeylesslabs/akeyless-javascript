@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GeminiTargetDetails model module.
  * @module model/GeminiTargetDetails
- * @version 5.0.13
+ * @version 5.0.14
  */
 class GeminiTargetDetails {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PasswordBreachInfo model module.
  * @module model/PasswordBreachInfo
- * @version 5.0.13
+ * @version 5.0.14
  */
 class PasswordBreachInfo {
     /**

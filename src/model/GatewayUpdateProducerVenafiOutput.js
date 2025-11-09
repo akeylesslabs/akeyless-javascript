@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayUpdateProducerVenafiOutput model module.
  * @module model/GatewayUpdateProducerVenafiOutput
- * @version 5.0.13
+ * @version 5.0.14
  */
 class GatewayUpdateProducerVenafiOutput {
     /**

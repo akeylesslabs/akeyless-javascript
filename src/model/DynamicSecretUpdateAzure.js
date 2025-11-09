@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateAzure model module.
  * @module model/DynamicSecretUpdateAzure
- * @version 5.0.13
+ * @version 5.0.14
  */
 class DynamicSecretUpdateAzure {
     /**

@@ -413,6 +413,12 @@ import ExportClassicKey from './model/ExportClassicKey';
 import ExportClassicKeyOutput from './model/ExportClassicKeyOutput';
 import Extension from './model/Extension';
 import ExternalKMSKeyId from './model/ExternalKMSKeyId';
+import FolderCreate from './model/FolderCreate';
+import FolderCreateOutput from './model/FolderCreateOutput';
+import FolderDelete from './model/FolderDelete';
+import FolderGet from './model/FolderGet';
+import FolderGetOutput from './model/FolderGetOutput';
+import FolderUpdate from './model/FolderUpdate';
 import GCPAccessRules from './model/GCPAccessRules';
 import GCPPayload from './model/GCPPayload';
 import GCPSecretsMigration from './model/GCPSecretsMigration';
@@ -624,6 +630,7 @@ import GetCertificateValueOutput from './model/GetCertificateValueOutput';
 import GetDynamicSecretValue from './model/GetDynamicSecretValue';
 import GetEventForwarder from './model/GetEventForwarder';
 import GetEventForwarderOutput from './model/GetEventForwarderOutput';
+import GetFolderOutput from './model/GetFolderOutput';
 import GetGroup from './model/GetGroup';
 import GetGroupOutput from './model/GetGroupOutput';
 import GetKubeExecCreds from './model/GetKubeExecCreds';
@@ -1169,7 +1176,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.13
+* @version 5.0.14
 */
 export {
     /**
@@ -3579,6 +3586,42 @@ export {
     ExternalKMSKeyId,
 
     /**
+     * The FolderCreate model constructor.
+     * @property {module:model/FolderCreate}
+     */
+    FolderCreate,
+
+    /**
+     * The FolderCreateOutput model constructor.
+     * @property {module:model/FolderCreateOutput}
+     */
+    FolderCreateOutput,
+
+    /**
+     * The FolderDelete model constructor.
+     * @property {module:model/FolderDelete}
+     */
+    FolderDelete,
+
+    /**
+     * The FolderGet model constructor.
+     * @property {module:model/FolderGet}
+     */
+    FolderGet,
+
+    /**
+     * The FolderGetOutput model constructor.
+     * @property {module:model/FolderGetOutput}
+     */
+    FolderGetOutput,
+
+    /**
+     * The FolderUpdate model constructor.
+     * @property {module:model/FolderUpdate}
+     */
+    FolderUpdate,
+
+    /**
      * The GCPAccessRules model constructor.
      * @property {module:model/GCPAccessRules}
      */
@@ -4843,6 +4886,12 @@ export {
      * @property {module:model/GetEventForwarderOutput}
      */
     GetEventForwarderOutput,
+
+    /**
+     * The GetFolderOutput model constructor.
+     * @property {module:model/GetFolderOutput}
+     */
+    GetFolderOutput,
 
     /**
      * The GetGroup model constructor.

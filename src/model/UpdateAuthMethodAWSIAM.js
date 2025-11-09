@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAWSIAM model module.
  * @module model/UpdateAuthMethodAWSIAM
- * @version 5.0.13
+ * @version 5.0.14
  */
 class UpdateAuthMethodAWSIAM {
     /**

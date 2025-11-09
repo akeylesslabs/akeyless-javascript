@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateRabbitMq model module.
  * @module model/DynamicSecretUpdateRabbitMq
- * @version 5.0.13
+ * @version 5.0.14
  */
 class DynamicSecretUpdateRabbitMq {
     /**

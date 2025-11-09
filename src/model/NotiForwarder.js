@@ -19,7 +19,7 @@ import WebHookNotiForwarderPublicDetails from './WebHookNotiForwarderPublicDetai
 /**
  * The NotiForwarder model module.
  * @module model/NotiForwarder
- * @version 5.0.13
+ * @version 5.0.14
  */
 class NotiForwarder {
     /**
