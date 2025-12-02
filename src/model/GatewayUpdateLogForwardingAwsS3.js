@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLogForwardingAwsS3 model module.
  * @module model/GatewayUpdateLogForwardingAwsS3
- * @version 5.0.14
+ * @version 5.0.15
  */
 class GatewayUpdateLogForwardingAwsS3 {
     /**

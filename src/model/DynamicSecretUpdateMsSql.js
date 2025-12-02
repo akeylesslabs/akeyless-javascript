@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateMsSql model module.
  * @module model/DynamicSecretUpdateMsSql
- * @version 5.0.14
+ * @version 5.0.15
  */
 class DynamicSecretUpdateMsSql {
     /**
@@ -69,6 +69,9 @@ class DynamicSecretUpdateMsSql {
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
+            if (data.hasOwnProperty('mssql-allowed-db-names')) {
+                obj['mssql-allowed-db-names'] = ApiClient.convertToType(data['mssql-allowed-db-names'], 'String');
             }
             if (data.hasOwnProperty('mssql-create-statements')) {
                 obj['mssql-create-statements'] = ApiClient.convertToType(data['mssql-create-statements'], 'String');
@@ -169,6 +172,10 @@ class DynamicSecretUpdateMsSql {
         // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
+        }
+        // ensure the json data is a string
+        if (data['mssql-allowed-db-names'] && !(typeof data['mssql-allowed-db-names'] === 'string' || data['mssql-allowed-db-names'] instanceof String)) {
+            throw new Error("Expected the field `mssql-allowed-db-names` to be a primitive type in the JSON string but got " + data['mssql-allowed-db-names']);
         }
         // ensure the json data is a string
         if (data['mssql-create-statements'] && !(typeof data['mssql-create-statements'] === 'string' || data['mssql-create-statements'] instanceof String)) {
@@ -297,6 +304,12 @@ DynamicSecretUpdateMsSql.prototype['item-custom-fields'] = undefined;
  * @default false
  */
 DynamicSecretUpdateMsSql.prototype['json'] = false;
+
+/**
+ * CSV of allowed DB names for runtime selection when getting the secret value. Empty => use target DB only; \"*\" => any DB allowed; One or more names => user must choose from this list
+ * @member {String} mssql-allowed-db-names
+ */
+DynamicSecretUpdateMsSql.prototype['mssql-allowed-db-names'] = undefined;
 
 /**
  * MSSQL Creation statements

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessExpires** | **Number** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
+**allowedClientType** | **[String]** |  | [optional] 
 **auditLogsClaims** | **[String]** | Subclaims to include in audit logs, e.g \&quot;--audit-logs-claims email --audit-logs-claims username\&quot; | [optional] 
 **authUrl** | **String** | sts URL | [optional] [default to &#39;https://iam.myhwclouds.com:443/v3&#39;]
 **boundDomainId** | **[String]** | A list of domain IDs that the access is restricted to | [optional] 

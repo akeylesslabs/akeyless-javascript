@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventForwarderUpdateTeams model module.
  * @module model/EventForwarderUpdateTeams
- * @version 5.0.14
+ * @version 5.0.15
  */
 class EventForwarderUpdateTeams {
     /**

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessExpires** | **Number** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
+**allowedClientType** | **[String]** |  | [optional] 
 **audience** | **String** | Deprecated (Deprecated) The audience in the JWT | [optional] [default to &#39;https://management.azure.com/&#39;]
 **auditLogsClaims** | **[String]** | Subclaims to include in audit logs, e.g \&quot;--audit-logs-claims email --audit-logs-claims username\&quot; | [optional] 
 **boundGroupId** | **[String]** | A list of group ids that the access is restricted to | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAzureAD model module.
  * @module model/UpdateAuthMethodAzureAD
- * @version 5.0.14
+ * @version 5.0.15
  */
 class UpdateAuthMethodAzureAD {
     /**
@@ -60,6 +60,9 @@ class UpdateAuthMethodAzureAD {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('allowed-client-type')) {
+                obj['allowed-client-type'] = ApiClient.convertToType(data['allowed-client-type'], ['String']);
             }
             if (data.hasOwnProperty('audience')) {
                 obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
@@ -157,6 +160,10 @@ class UpdateAuthMethodAzureAD {
             if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['allowed-client-type'])) {
+            throw new Error("Expected the field `allowed-client-type` to be an array in the JSON data but got " + data['allowed-client-type']);
         }
         // ensure the json data is a string
         if (data['audience'] && !(typeof data['audience'] === 'string' || data['audience'] instanceof String)) {
@@ -269,6 +276,11 @@ UpdateAuthMethodAzureAD.RequiredProperties = ["bound-tenant-id", "name"];
  * @default 0
  */
 UpdateAuthMethodAzureAD.prototype['access-expires'] = 0;
+
+/**
+ * @member {Array.<String>} allowed-client-type
+ */
+UpdateAuthMethodAzureAD.prototype['allowed-client-type'] = undefined;
 
 /**
  * Deprecated (Deprecated) The audience in the JWT

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGcp model module.
  * @module model/DynamicSecretUpdateGcp
- * @version 5.0.14
+ * @version 5.0.15
  */
 class DynamicSecretUpdateGcp {
     /**
@@ -24,11 +24,10 @@ class DynamicSecretUpdateGcp {
      * dynamicSecretUpdateGcp is a command that updates a GCP dynamic secret
      * @alias module:model/DynamicSecretUpdateGcp
      * @param name {String} Dynamic secret name
-     * @param serviceAccountType {String} The type of the gcp dynamic secret. Options[fixed, dynamic]
      */
-    constructor(name, serviceAccountType) { 
+    constructor(name) { 
         
-        DynamicSecretUpdateGcp.initialize(this, name, serviceAccountType);
+        DynamicSecretUpdateGcp.initialize(this, name);
     }
 
     /**
@@ -36,10 +35,13 @@ class DynamicSecretUpdateGcp {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, serviceAccountType) { 
+    static initialize(obj, name) { 
+        obj['fixed-user-claim-keyname'] = 'ext_email';
         obj['json'] = false;
         obj['name'] = name;
-        obj['service-account-type'] = serviceAccountType || 'fixed';
+        obj['secure-access-web-browsing'] = false;
+        obj['secure-access-web-proxy'] = false;
+        obj['service-account-type'] = 'fixed';
         obj['user-ttl'] = '60m';
     }
 
@@ -54,6 +56,9 @@ class DynamicSecretUpdateGcp {
         if (data) {
             obj = obj || new DynamicSecretUpdateGcp();
 
+            if (data.hasOwnProperty('access-type')) {
+                obj['access-type'] = ApiClient.convertToType(data['access-type'], 'String');
+            }
             if (data.hasOwnProperty('custom-username-template')) {
                 obj['custom-username-template'] = ApiClient.convertToType(data['custom-username-template'], 'String');
             }
@@ -62,6 +67,9 @@ class DynamicSecretUpdateGcp {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('fixed-user-claim-keyname')) {
+                obj['fixed-user-claim-keyname'] = ApiClient.convertToType(data['fixed-user-claim-keyname'], 'String');
             }
             if (data.hasOwnProperty('gcp-cred-type')) {
                 obj['gcp-cred-type'] = ApiClient.convertToType(data['gcp-cred-type'], 'String');
@@ -99,6 +107,24 @@ class DynamicSecretUpdateGcp {
             if (data.hasOwnProperty('role-binding')) {
                 obj['role-binding'] = ApiClient.convertToType(data['role-binding'], 'String');
             }
+            if (data.hasOwnProperty('role-names')) {
+                obj['role-names'] = ApiClient.convertToType(data['role-names'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-delay')) {
+                obj['secure-access-delay'] = ApiClient.convertToType(data['secure-access-delay'], 'Number');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-url')) {
+                obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-proxy')) {
+                obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
+            }
             if (data.hasOwnProperty('service-account-type')) {
                 obj['service-account-type'] = ApiClient.convertToType(data['service-account-type'], 'String');
             }
@@ -134,6 +160,10 @@ class DynamicSecretUpdateGcp {
             }
         }
         // ensure the json data is a string
+        if (data['access-type'] && !(typeof data['access-type'] === 'string' || data['access-type'] instanceof String)) {
+            throw new Error("Expected the field `access-type` to be a primitive type in the JSON string but got " + data['access-type']);
+        }
+        // ensure the json data is a string
         if (data['custom-username-template'] && !(typeof data['custom-username-template'] === 'string' || data['custom-username-template'] instanceof String)) {
             throw new Error("Expected the field `custom-username-template` to be a primitive type in the JSON string but got " + data['custom-username-template']);
         }
@@ -144,6 +174,10 @@ class DynamicSecretUpdateGcp {
         // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
+        }
+        // ensure the json data is a string
+        if (data['fixed-user-claim-keyname'] && !(typeof data['fixed-user-claim-keyname'] === 'string' || data['fixed-user-claim-keyname'] instanceof String)) {
+            throw new Error("Expected the field `fixed-user-claim-keyname` to be a primitive type in the JSON string but got " + data['fixed-user-claim-keyname']);
         }
         // ensure the json data is a string
         if (data['gcp-cred-type'] && !(typeof data['gcp-cred-type'] === 'string' || data['gcp-cred-type'] instanceof String)) {
@@ -186,6 +220,18 @@ class DynamicSecretUpdateGcp {
             throw new Error("Expected the field `role-binding` to be a primitive type in the JSON string but got " + data['role-binding']);
         }
         // ensure the json data is a string
+        if (data['role-names'] && !(typeof data['role-names'] === 'string' || data['role-names'] instanceof String)) {
+            throw new Error("Expected the field `role-names` to be a primitive type in the JSON string but got " + data['role-names']);
+        }
+        // ensure the json data is a string
+        if (data['secure-access-enable'] && !(typeof data['secure-access-enable'] === 'string' || data['secure-access-enable'] instanceof String)) {
+            throw new Error("Expected the field `secure-access-enable` to be a primitive type in the JSON string but got " + data['secure-access-enable']);
+        }
+        // ensure the json data is a string
+        if (data['secure-access-url'] && !(typeof data['secure-access-url'] === 'string' || data['secure-access-url'] instanceof String)) {
+            throw new Error("Expected the field `secure-access-url` to be a primitive type in the JSON string but got " + data['secure-access-url']);
+        }
+        // ensure the json data is a string
         if (data['service-account-type'] && !(typeof data['service-account-type'] === 'string' || data['service-account-type'] instanceof String)) {
             throw new Error("Expected the field `service-account-type` to be a primitive type in the JSON string but got " + data['service-account-type']);
         }
@@ -216,7 +262,12 @@ class DynamicSecretUpdateGcp {
 
 }
 
-DynamicSecretUpdateGcp.RequiredProperties = ["name", "service-account-type"];
+DynamicSecretUpdateGcp.RequiredProperties = ["name"];
+
+/**
+ * @member {String} access-type
+ */
+DynamicSecretUpdateGcp.prototype['access-type'] = undefined;
 
 /**
  * Customize how temporary usernames are generated using go template
@@ -237,6 +288,13 @@ DynamicSecretUpdateGcp.prototype['delete_protection'] = undefined;
 DynamicSecretUpdateGcp.prototype['description'] = undefined;
 
 /**
+ * For externally provided users, denotes the key-name of IdP claim to extract the username from (Relevant only when --access-type=external)
+ * @member {String} fixed-user-claim-keyname
+ * @default 'ext_email'
+ */
+DynamicSecretUpdateGcp.prototype['fixed-user-claim-keyname'] = 'ext_email';
+
+/**
  * @member {String} gcp-cred-type
  */
 DynamicSecretUpdateGcp.prototype['gcp-cred-type'] = undefined;
@@ -248,25 +306,25 @@ DynamicSecretUpdateGcp.prototype['gcp-cred-type'] = undefined;
 DynamicSecretUpdateGcp.prototype['gcp-key'] = undefined;
 
 /**
- * Service account key algorithm, e.g. KEY_ALG_RSA_1024
+ * Service account key algorithm, e.g. KEY_ALG_RSA_1024 (Relevant only when --access-type=sa and --gcp-cred-type=key)
  * @member {String} gcp-key-algo
  */
 DynamicSecretUpdateGcp.prototype['gcp-key-algo'] = undefined;
 
 /**
- * GCP Project ID override for dynamic secret operations (tmp service accounts)
+ * GCP Project ID override for dynamic secret operations
  * @member {String} gcp-project-id
  */
 DynamicSecretUpdateGcp.prototype['gcp-project-id'] = undefined;
 
 /**
- * The email of the fixed service acocunt to generate keys or tokens for. (revelant for service-account-type=fixed)
+ * The email of the fixed service account to generate keys or tokens for (Relevant only when --access-type=sa and --service-account-type=fixed)
  * @member {String} gcp-sa-email
  */
 DynamicSecretUpdateGcp.prototype['gcp-sa-email'] = undefined;
 
 /**
- * Access token scopes list, e.g. scope1,scope2
+ * Access token scopes list, e.g. scope1,scope2 (Relevant only when --access-type=sa; required when --gcp-cred-type=token)
  * @member {String} gcp-token-scopes
  */
 DynamicSecretUpdateGcp.prototype['gcp-token-scopes'] = undefined;
@@ -303,13 +361,51 @@ DynamicSecretUpdateGcp.prototype['new-name'] = undefined;
 DynamicSecretUpdateGcp.prototype['producer-encryption-key-name'] = undefined;
 
 /**
- * Role binding definitions in json format
+ * Role binding definitions in JSON format (Relevant only when --access-type=sa and --service-account-type=dynamic)
  * @member {String} role-binding
  */
 DynamicSecretUpdateGcp.prototype['role-binding'] = undefined;
 
 /**
- * The type of the gcp dynamic secret. Options[fixed, dynamic]
+ * Comma-separated list of GCP roles to assign to the user (Relevant only when --access-type=external)
+ * @member {String} role-names
+ */
+DynamicSecretUpdateGcp.prototype['role-names'] = undefined;
+
+/**
+ * The delay duration, in seconds, to wait after generating just-in-time credentials. Accepted range: 0-120 seconds
+ * @member {Number} secure-access-delay
+ */
+DynamicSecretUpdateGcp.prototype['secure-access-delay'] = undefined;
+
+/**
+ * Enable/Disable secure remote access [true/false]
+ * @member {String} secure-access-enable
+ */
+DynamicSecretUpdateGcp.prototype['secure-access-enable'] = undefined;
+
+/**
+ * Destination URL to inject secrets
+ * @member {String} secure-access-url
+ */
+DynamicSecretUpdateGcp.prototype['secure-access-url'] = undefined;
+
+/**
+ * Secure browser via Akeyless's Secure Remote Access (SRA)
+ * @member {Boolean} secure-access-web-browsing
+ * @default false
+ */
+DynamicSecretUpdateGcp.prototype['secure-access-web-browsing'] = false;
+
+/**
+ * Web-Proxy via Akeyless's Secure Remote Access (SRA)
+ * @member {Boolean} secure-access-web-proxy
+ * @default false
+ */
+DynamicSecretUpdateGcp.prototype['secure-access-web-proxy'] = false;
+
+/**
+ * The type of the GCP service account. Options [fixed, dynamic] (Relevant only when --access-type=sa)
  * @member {String} service-account-type
  * @default 'fixed'
  */

@@ -17,7 +17,7 @@ import CertificateExpirationEvent from './CertificateExpirationEvent';
 /**
  * The PKICertificateIssueDetails model module.
  * @module model/PKICertificateIssueDetails
- * @version 5.0.14
+ * @version 5.0.15
  */
 class PKICertificateIssueDetails {
     /**
@@ -93,8 +93,14 @@ class PKICertificateIssueDetails {
             if (data.hasOwnProperty('create_private_crl')) {
                 obj['create_private_crl'] = ApiClient.convertToType(data['create_private_crl'], 'Boolean');
             }
+            if (data.hasOwnProperty('create_private_ocsp')) {
+                obj['create_private_ocsp'] = ApiClient.convertToType(data['create_private_ocsp'], 'Boolean');
+            }
             if (data.hasOwnProperty('create_public_crl')) {
                 obj['create_public_crl'] = ApiClient.convertToType(data['create_public_crl'], 'Boolean');
+            }
+            if (data.hasOwnProperty('create_public_ocsp')) {
+                obj['create_public_ocsp'] = ApiClient.convertToType(data['create_public_ocsp'], 'Boolean');
             }
             if (data.hasOwnProperty('destination_path')) {
                 obj['destination_path'] = ApiClient.convertToType(data['destination_path'], 'String');
@@ -137,6 +143,9 @@ class PKICertificateIssueDetails {
             }
             if (data.hasOwnProperty('not_before_duration')) {
                 obj['not_before_duration'] = ApiClient.convertToType(data['not_before_duration'], 'Number');
+            }
+            if (data.hasOwnProperty('ocsp_next_update')) {
+                obj['ocsp_next_update'] = ApiClient.convertToType(data['ocsp_next_update'], 'Number');
             }
             if (data.hasOwnProperty('organization_list')) {
                 obj['organization_list'] = ApiClient.convertToType(data['organization_list'], ['String']);
@@ -337,9 +346,21 @@ PKICertificateIssueDetails.prototype['country'] = undefined;
 PKICertificateIssueDetails.prototype['create_private_crl'] = undefined;
 
 /**
+ * CreatePrivateOcsp enables exposing an OCSP endpoint on the Gateway and embedding its URL in the AIA extension of issued certificates.
+ * @member {Boolean} create_private_ocsp
+ */
+PKICertificateIssueDetails.prototype['create_private_ocsp'] = undefined;
+
+/**
  * @member {Boolean} create_public_crl
  */
 PKICertificateIssueDetails.prototype['create_public_crl'] = undefined;
+
+/**
+ * CreatePublicOcsp enables exposing a public OCSP endpoint on the Gateway and embedding its URL in the AIA extension of issued certificates.
+ * @member {Boolean} create_public_ocsp
+ */
+PKICertificateIssueDetails.prototype['create_public_ocsp'] = undefined;
 
 /**
  * DestinationPath is the destination to save generated certificates
@@ -414,6 +435,12 @@ PKICertificateIssueDetails.prototype['non_critical_key_usage'] = undefined;
  * @member {Number} not_before_duration
  */
 PKICertificateIssueDetails.prototype['not_before_duration'] = undefined;
+
+/**
+ * OcspNextUpdate defines the desired NextUpdate window for OCSP responses. Value is in seconds; 0 means not set. Minimum enforced is 10 minutes.
+ * @member {Number} ocsp_next_update
+ */
+PKICertificateIssueDetails.prototype['ocsp_next_update'] = undefined;
 
 /**
  * @member {Array.<String>} organization_list

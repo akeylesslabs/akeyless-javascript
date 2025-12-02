@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodUniversalIdentity model module.
  * @module model/UpdateAuthMethodUniversalIdentity
- * @version 5.0.14
+ * @version 5.0.15
  */
 class UpdateAuthMethodUniversalIdentity {
     /**
@@ -56,6 +56,9 @@ class UpdateAuthMethodUniversalIdentity {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('allowed-client-type')) {
+                obj['allowed-client-type'] = ApiClient.convertToType(data['allowed-client-type'], ['String']);
             }
             if (data.hasOwnProperty('audit-logs-claims')) {
                 obj['audit-logs-claims'] = ApiClient.convertToType(data['audit-logs-claims'], ['String']);
@@ -125,6 +128,10 @@ class UpdateAuthMethodUniversalIdentity {
             }
         }
         // ensure the json data is an array
+        if (!Array.isArray(data['allowed-client-type'])) {
+            throw new Error("Expected the field `allowed-client-type` to be an array in the JSON data but got " + data['allowed-client-type']);
+        }
+        // ensure the json data is an array
         if (!Array.isArray(data['audit-logs-claims'])) {
             throw new Error("Expected the field `audit-logs-claims` to be an array in the JSON data but got " + data['audit-logs-claims']);
         }
@@ -183,6 +190,11 @@ UpdateAuthMethodUniversalIdentity.RequiredProperties = ["name"];
  * @default 0
  */
 UpdateAuthMethodUniversalIdentity.prototype['access-expires'] = 0;
+
+/**
+ * @member {Array.<String>} allowed-client-type
+ */
+UpdateAuthMethodUniversalIdentity.prototype['allowed-client-type'] = undefined;
 
 /**
  * Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMongo model module.
  * @module model/GatewayCreateProducerMongo
- * @version 5.0.14
+ * @version 5.0.15
  */
 class GatewayCreateProducerMongo {
     /**
@@ -92,6 +92,9 @@ class GatewayCreateProducerMongo {
             }
             if (data.hasOwnProperty('mongodb-roles')) {
                 obj['mongodb-roles'] = ApiClient.convertToType(data['mongodb-roles'], 'String');
+            }
+            if (data.hasOwnProperty('mongodb-scopes')) {
+                obj['mongodb-scopes'] = ApiClient.convertToType(data['mongodb-scopes'], 'String');
             }
             if (data.hasOwnProperty('mongodb-server-uri')) {
                 obj['mongodb-server-uri'] = ApiClient.convertToType(data['mongodb-server-uri'], 'String');
@@ -206,6 +209,10 @@ class GatewayCreateProducerMongo {
         // ensure the json data is a string
         if (data['mongodb-roles'] && !(typeof data['mongodb-roles'] === 'string' || data['mongodb-roles'] instanceof String)) {
             throw new Error("Expected the field `mongodb-roles` to be a primitive type in the JSON string but got " + data['mongodb-roles']);
+        }
+        // ensure the json data is a string
+        if (data['mongodb-scopes'] && !(typeof data['mongodb-scopes'] === 'string' || data['mongodb-scopes'] instanceof String)) {
+            throw new Error("Expected the field `mongodb-scopes` to be a primitive type in the JSON string but got " + data['mongodb-scopes']);
         }
         // ensure the json data is a string
         if (data['mongodb-server-uri'] && !(typeof data['mongodb-server-uri'] === 'string' || data['mongodb-server-uri'] instanceof String)) {
@@ -359,6 +366,12 @@ GatewayCreateProducerMongo.prototype['mongodb-password'] = undefined;
  * @default '[]'
  */
 GatewayCreateProducerMongo.prototype['mongodb-roles'] = '[]';
+
+/**
+ * MongoDB Scopes (Atlas only)
+ * @member {String} mongodb-scopes
+ */
+GatewayCreateProducerMongo.prototype['mongodb-scopes'] = undefined;
 
 /**
  * MongoDB server URI

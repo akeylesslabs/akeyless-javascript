@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretGetValue model module.
  * @module model/DynamicSecretGetValue
- * @version 5.0.14
+ * @version 5.0.15
  */
 class DynamicSecretGetValue {
     /**
@@ -53,6 +53,9 @@ class DynamicSecretGetValue {
 
             if (data.hasOwnProperty('args')) {
                 obj['args'] = ApiClient.convertToType(data['args'], ['String']);
+            }
+            if (data.hasOwnProperty('dbname')) {
+                obj['dbname'] = ApiClient.convertToType(data['dbname'], 'String');
             }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
@@ -96,6 +99,10 @@ class DynamicSecretGetValue {
             throw new Error("Expected the field `args` to be an array in the JSON data but got " + data['args']);
         }
         // ensure the json data is a string
+        if (data['dbname'] && !(typeof data['dbname'] === 'string' || data['dbname'] instanceof String)) {
+            throw new Error("Expected the field `dbname` to be a primitive type in the JSON string but got " + data['dbname']);
+        }
+        // ensure the json data is a string
         if (data['host'] && !(typeof data['host'] === 'string' || data['host'] instanceof String)) {
             throw new Error("Expected the field `host` to be a primitive type in the JSON string but got " + data['host']);
         }
@@ -129,6 +136,12 @@ DynamicSecretGetValue.RequiredProperties = ["name"];
  * @member {Array.<String>} args
  */
 DynamicSecretGetValue.prototype['args'] = undefined;
+
+/**
+ * DBName: Optional override DB name (works only if DS allows it. only relevant for MSSQL)
+ * @member {String} dbname
+ */
+DynamicSecretGetValue.prototype['dbname'] = undefined;
 
 /**
  * Host

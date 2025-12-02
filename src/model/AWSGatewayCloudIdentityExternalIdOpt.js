@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AWSGatewayCloudIdentityExternalIdOpt model module.
  * @module model/AWSGatewayCloudIdentityExternalIdOpt
- * @version 5.0.14
+ * @version 5.0.15
  */
 class AWSGatewayCloudIdentityExternalIdOpt {
     /**

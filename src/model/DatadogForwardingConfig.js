@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DatadogForwardingConfig model module.
  * @module model/DatadogForwardingConfig
- * @version 5.0.14
+ * @version 5.0.15
  */
 class DatadogForwardingConfig {
     /**

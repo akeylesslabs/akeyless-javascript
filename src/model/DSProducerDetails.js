@@ -21,7 +21,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 5.0.14
+ * @version 5.0.15
  */
 class DSProducerDetails {
     /**
@@ -322,6 +322,12 @@ class DSProducerDetails {
             if (data.hasOwnProperty('fixed_user_only')) {
                 obj['fixed_user_only'] = ApiClient.convertToType(data['fixed_user_only'], 'String');
             }
+            if (data.hasOwnProperty('gcp_access_type')) {
+                obj['gcp_access_type'] = ApiClient.convertToType(data['gcp_access_type'], 'String');
+            }
+            if (data.hasOwnProperty('gcp_fixed_user_claim_keyname')) {
+                obj['gcp_fixed_user_claim_keyname'] = ApiClient.convertToType(data['gcp_fixed_user_claim_keyname'], 'String');
+            }
             if (data.hasOwnProperty('gcp_key_algo')) {
                 obj['gcp_key_algo'] = ApiClient.convertToType(data['gcp_key_algo'], 'String');
             }
@@ -330,6 +336,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('gcp_role_bindings')) {
                 obj['gcp_role_bindings'] = ApiClient.convertToType(data['gcp_role_bindings'], {'String': ['String']});
+            }
+            if (data.hasOwnProperty('gcp_role_names')) {
+                obj['gcp_role_names'] = ApiClient.convertToType(data['gcp_role_names'], 'String');
             }
             if (data.hasOwnProperty('gcp_service_account_email')) {
                 obj['gcp_service_account_email'] = ApiClient.convertToType(data['gcp_service_account_email'], 'String');
@@ -601,6 +610,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('mongodb_roles')) {
                 obj['mongodb_roles'] = ApiClient.convertToType(data['mongodb_roles'], 'String');
             }
+            if (data.hasOwnProperty('mongodb_scopes')) {
+                obj['mongodb_scopes'] = ApiClient.convertToType(data['mongodb_scopes'], 'String');
+            }
             if (data.hasOwnProperty('mongodb_uri_connection')) {
                 obj['mongodb_uri_connection'] = ApiClient.convertToType(data['mongodb_uri_connection'], 'String');
             }
@@ -609,6 +621,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('mongodb_username')) {
                 obj['mongodb_username'] = ApiClient.convertToType(data['mongodb_username'], 'String');
+            }
+            if (data.hasOwnProperty('mssql_allowed_db_names')) {
+                obj['mssql_allowed_db_names'] = ApiClient.convertToType(data['mssql_allowed_db_names'], 'String');
             }
             if (data.hasOwnProperty('mssql_creation_statements')) {
                 obj['mssql_creation_statements'] = ApiClient.convertToType(data['mssql_creation_statements'], 'String');
@@ -1144,12 +1159,24 @@ class DSProducerDetails {
             throw new Error("Expected the field `fixed_user_only` to be a primitive type in the JSON string but got " + data['fixed_user_only']);
         }
         // ensure the json data is a string
+        if (data['gcp_access_type'] && !(typeof data['gcp_access_type'] === 'string' || data['gcp_access_type'] instanceof String)) {
+            throw new Error("Expected the field `gcp_access_type` to be a primitive type in the JSON string but got " + data['gcp_access_type']);
+        }
+        // ensure the json data is a string
+        if (data['gcp_fixed_user_claim_keyname'] && !(typeof data['gcp_fixed_user_claim_keyname'] === 'string' || data['gcp_fixed_user_claim_keyname'] instanceof String)) {
+            throw new Error("Expected the field `gcp_fixed_user_claim_keyname` to be a primitive type in the JSON string but got " + data['gcp_fixed_user_claim_keyname']);
+        }
+        // ensure the json data is a string
         if (data['gcp_key_algo'] && !(typeof data['gcp_key_algo'] === 'string' || data['gcp_key_algo'] instanceof String)) {
             throw new Error("Expected the field `gcp_key_algo` to be a primitive type in the JSON string but got " + data['gcp_key_algo']);
         }
         // ensure the json data is a string
         if (data['gcp_project_id'] && !(typeof data['gcp_project_id'] === 'string' || data['gcp_project_id'] instanceof String)) {
             throw new Error("Expected the field `gcp_project_id` to be a primitive type in the JSON string but got " + data['gcp_project_id']);
+        }
+        // ensure the json data is a string
+        if (data['gcp_role_names'] && !(typeof data['gcp_role_names'] === 'string' || data['gcp_role_names'] instanceof String)) {
+            throw new Error("Expected the field `gcp_role_names` to be a primitive type in the JSON string but got " + data['gcp_role_names']);
         }
         // ensure the json data is a string
         if (data['gcp_service_account_email'] && !(typeof data['gcp_service_account_email'] === 'string' || data['gcp_service_account_email'] instanceof String)) {
@@ -1500,6 +1527,10 @@ class DSProducerDetails {
             throw new Error("Expected the field `mongodb_roles` to be a primitive type in the JSON string but got " + data['mongodb_roles']);
         }
         // ensure the json data is a string
+        if (data['mongodb_scopes'] && !(typeof data['mongodb_scopes'] === 'string' || data['mongodb_scopes'] instanceof String)) {
+            throw new Error("Expected the field `mongodb_scopes` to be a primitive type in the JSON string but got " + data['mongodb_scopes']);
+        }
+        // ensure the json data is a string
         if (data['mongodb_uri_connection'] && !(typeof data['mongodb_uri_connection'] === 'string' || data['mongodb_uri_connection'] instanceof String)) {
             throw new Error("Expected the field `mongodb_uri_connection` to be a primitive type in the JSON string but got " + data['mongodb_uri_connection']);
         }
@@ -1510,6 +1541,10 @@ class DSProducerDetails {
         // ensure the json data is a string
         if (data['mongodb_username'] && !(typeof data['mongodb_username'] === 'string' || data['mongodb_username'] instanceof String)) {
             throw new Error("Expected the field `mongodb_username` to be a primitive type in the JSON string but got " + data['mongodb_username']);
+        }
+        // ensure the json data is a string
+        if (data['mssql_allowed_db_names'] && !(typeof data['mssql_allowed_db_names'] === 'string' || data['mssql_allowed_db_names'] instanceof String)) {
+            throw new Error("Expected the field `mssql_allowed_db_names` to be a primitive type in the JSON string but got " + data['mssql_allowed_db_names']);
         }
         // ensure the json data is a string
         if (data['mssql_creation_statements'] && !(typeof data['mssql_creation_statements'] === 'string' || data['mssql_creation_statements'] instanceof String)) {
@@ -2215,6 +2250,16 @@ DSProducerDetails.prototype['failure_message'] = undefined;
 DSProducerDetails.prototype['fixed_user_only'] = undefined;
 
 /**
+ * @member {String} gcp_access_type
+ */
+DSProducerDetails.prototype['gcp_access_type'] = undefined;
+
+/**
+ * @member {String} gcp_fixed_user_claim_keyname
+ */
+DSProducerDetails.prototype['gcp_fixed_user_claim_keyname'] = undefined;
+
+/**
  * @member {String} gcp_key_algo
  */
 DSProducerDetails.prototype['gcp_key_algo'] = undefined;
@@ -2228,6 +2273,11 @@ DSProducerDetails.prototype['gcp_project_id'] = undefined;
  * @member {Object.<String, Array.<String>>} gcp_role_bindings
  */
 DSProducerDetails.prototype['gcp_role_bindings'] = undefined;
+
+/**
+ * @member {String} gcp_role_names
+ */
+DSProducerDetails.prototype['gcp_role_names'] = undefined;
 
 /**
  * GCPServiceAccountEmail overrides the deprecated field from the target
@@ -2690,6 +2740,11 @@ DSProducerDetails.prototype['mongodb_password'] = undefined;
 DSProducerDetails.prototype['mongodb_roles'] = undefined;
 
 /**
+ * @member {String} mongodb_scopes
+ */
+DSProducerDetails.prototype['mongodb_scopes'] = undefined;
+
+/**
  * mongodb fields
  * @member {String} mongodb_uri_connection
  */
@@ -2704,6 +2759,12 @@ DSProducerDetails.prototype['mongodb_uri_options'] = undefined;
  * @member {String} mongodb_username
  */
 DSProducerDetails.prototype['mongodb_username'] = undefined;
+
+/**
+ * Comma-separated list of allowed DB names for runtime selection when fetching the secret value. Empty string => use target DB name only (no override allowed) \"*\" => any DB name is allowed One or more names => user must select one of the provided names
+ * @member {String} mssql_allowed_db_names
+ */
+DSProducerDetails.prototype['mssql_allowed_db_names'] = undefined;
 
 /**
  * @member {String} mssql_creation_statements

@@ -17,7 +17,7 @@ import WindowsService from './WindowsService';
 /**
  * The RotatedSecretDetailsInfo model module.
  * @module model/RotatedSecretDetailsInfo
- * @version 5.0.14
+ * @version 5.0.15
  */
 class RotatedSecretDetailsInfo {
     /**
@@ -67,6 +67,9 @@ class RotatedSecretDetailsInfo {
             if (data.hasOwnProperty('gw_cluster_id')) {
                 obj['gw_cluster_id'] = ApiClient.convertToType(data['gw_cluster_id'], 'Number');
             }
+            if (data.hasOwnProperty('iis_apps_details')) {
+                obj['iis_apps_details'] = ApiClient.convertToType(data['iis_apps_details'], [WindowsService]);
+            }
             if (data.hasOwnProperty('last_rotation_error')) {
                 obj['last_rotation_error'] = ApiClient.convertToType(data['last_rotation_error'], 'String');
             }
@@ -81,6 +84,9 @@ class RotatedSecretDetailsInfo {
             }
             if (data.hasOwnProperty('number_of_versions_to_save')) {
                 obj['number_of_versions_to_save'] = ApiClient.convertToType(data['number_of_versions_to_save'], 'Number');
+            }
+            if (data.hasOwnProperty('public_key_remote_path')) {
+                obj['public_key_remote_path'] = ApiClient.convertToType(data['public_key_remote_path'], 'String');
             }
             if (data.hasOwnProperty('rotation_hour')) {
                 obj['rotation_hour'] = ApiClient.convertToType(data['rotation_hour'], 'Number');
@@ -119,6 +125,16 @@ class RotatedSecretDetailsInfo {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>RotatedSecretDetailsInfo</code>.
      */
     static validateJSON(data) {
+        if (data['iis_apps_details']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['iis_apps_details'])) {
+                throw new Error("Expected the field `iis_apps_details` to be an array in the JSON data but got " + data['iis_apps_details']);
+            }
+            // validate the optional field `iis_apps_details` (array)
+            for (const item of data['iis_apps_details']) {
+                WindowsService.validateJSON(item);
+            };
+        }
         // ensure the json data is a string
         if (data['last_rotation_error'] && !(typeof data['last_rotation_error'] === 'string' || data['last_rotation_error'] instanceof String)) {
             throw new Error("Expected the field `last_rotation_error` to be a primitive type in the JSON string but got " + data['last_rotation_error']);
@@ -126,6 +142,10 @@ class RotatedSecretDetailsInfo {
         // ensure the json data is a string
         if (data['next_auto_rotate_type'] && !(typeof data['next_auto_rotate_type'] === 'string' || data['next_auto_rotate_type'] instanceof String)) {
             throw new Error("Expected the field `next_auto_rotate_type` to be a primitive type in the JSON string but got " + data['next_auto_rotate_type']);
+        }
+        // ensure the json data is a string
+        if (data['public_key_remote_path'] && !(typeof data['public_key_remote_path'] === 'string' || data['public_key_remote_path'] instanceof String)) {
+            throw new Error("Expected the field `public_key_remote_path` to be a primitive type in the JSON string but got " + data['public_key_remote_path']);
         }
         // ensure the json data is a string
         if (data['rotation_statement'] && !(typeof data['rotation_statement'] === 'string' || data['rotation_statement'] instanceof String)) {
@@ -193,6 +213,11 @@ RotatedSecretDetailsInfo.prototype['grace_rotation_interval'] = undefined;
 RotatedSecretDetailsInfo.prototype['gw_cluster_id'] = undefined;
 
 /**
+ * @member {Array.<module:model/WindowsService>} iis_apps_details
+ */
+RotatedSecretDetailsInfo.prototype['iis_apps_details'] = undefined;
+
+/**
  * @member {String} last_rotation_error
  */
 RotatedSecretDetailsInfo.prototype['last_rotation_error'] = undefined;
@@ -216,6 +241,11 @@ RotatedSecretDetailsInfo.prototype['next_auto_rotate_type'] = undefined;
  * @member {Number} number_of_versions_to_save
  */
 RotatedSecretDetailsInfo.prototype['number_of_versions_to_save'] = undefined;
+
+/**
+ * @member {String} public_key_remote_path
+ */
+RotatedSecretDetailsInfo.prototype['public_key_remote_path'] = undefined;
 
 /**
  * @member {Number} rotation_hour

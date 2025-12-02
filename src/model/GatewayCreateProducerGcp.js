@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerGcp model module.
  * @module model/GatewayCreateProducerGcp
- * @version 5.0.14
+ * @version 5.0.15
  */
 class GatewayCreateProducerGcp {
     /**
@@ -24,11 +24,10 @@ class GatewayCreateProducerGcp {
      * gatewayCreateProducerGcp is a command that creates a GCP producer [Deprecated: Use dynamic-secret-create-gcp command]
      * @alias module:model/GatewayCreateProducerGcp
      * @param name {String} Dynamic secret name
-     * @param serviceAccountType {String} The type of the gcp dynamic secret. Options[fixed, dynamic]
      */
-    constructor(name, serviceAccountType) { 
+    constructor(name) { 
         
-        GatewayCreateProducerGcp.initialize(this, name, serviceAccountType);
+        GatewayCreateProducerGcp.initialize(this, name);
     }
 
     /**
@@ -36,10 +35,13 @@ class GatewayCreateProducerGcp {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, serviceAccountType) { 
+    static initialize(obj, name) { 
+        obj['fixed-user-claim-keyname'] = 'ext_email';
         obj['json'] = false;
         obj['name'] = name;
-        obj['service-account-type'] = serviceAccountType || 'fixed';
+        obj['secure-access-web-browsing'] = false;
+        obj['secure-access-web-proxy'] = false;
+        obj['service-account-type'] = 'fixed';
         obj['user-ttl'] = '60m';
     }
 
@@ -54,11 +56,17 @@ class GatewayCreateProducerGcp {
         if (data) {
             obj = obj || new GatewayCreateProducerGcp();
 
+            if (data.hasOwnProperty('access-type')) {
+                obj['access-type'] = ApiClient.convertToType(data['access-type'], 'String');
+            }
             if (data.hasOwnProperty('custom-username-template')) {
                 obj['custom-username-template'] = ApiClient.convertToType(data['custom-username-template'], 'String');
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('fixed-user-claim-keyname')) {
+                obj['fixed-user-claim-keyname'] = ApiClient.convertToType(data['fixed-user-claim-keyname'], 'String');
             }
             if (data.hasOwnProperty('gcp-cred-type')) {
                 obj['gcp-cred-type'] = ApiClient.convertToType(data['gcp-cred-type'], 'String');
@@ -92,6 +100,24 @@ class GatewayCreateProducerGcp {
             }
             if (data.hasOwnProperty('role-binding')) {
                 obj['role-binding'] = ApiClient.convertToType(data['role-binding'], 'String');
+            }
+            if (data.hasOwnProperty('role-names')) {
+                obj['role-names'] = ApiClient.convertToType(data['role-names'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-delay')) {
+                obj['secure-access-delay'] = ApiClient.convertToType(data['secure-access-delay'], 'Number');
+            }
+            if (data.hasOwnProperty('secure-access-enable')) {
+                obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-url')) {
+                obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-proxy')) {
+                obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
             if (data.hasOwnProperty('service-account-type')) {
                 obj['service-account-type'] = ApiClient.convertToType(data['service-account-type'], 'String');
@@ -128,12 +154,20 @@ class GatewayCreateProducerGcp {
             }
         }
         // ensure the json data is a string
+        if (data['access-type'] && !(typeof data['access-type'] === 'string' || data['access-type'] instanceof String)) {
+            throw new Error("Expected the field `access-type` to be a primitive type in the JSON string but got " + data['access-type']);
+        }
+        // ensure the json data is a string
         if (data['custom-username-template'] && !(typeof data['custom-username-template'] === 'string' || data['custom-username-template'] instanceof String)) {
             throw new Error("Expected the field `custom-username-template` to be a primitive type in the JSON string but got " + data['custom-username-template']);
         }
         // ensure the json data is a string
         if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
             throw new Error("Expected the field `delete_protection` to be a primitive type in the JSON string but got " + data['delete_protection']);
+        }
+        // ensure the json data is a string
+        if (data['fixed-user-claim-keyname'] && !(typeof data['fixed-user-claim-keyname'] === 'string' || data['fixed-user-claim-keyname'] instanceof String)) {
+            throw new Error("Expected the field `fixed-user-claim-keyname` to be a primitive type in the JSON string but got " + data['fixed-user-claim-keyname']);
         }
         // ensure the json data is a string
         if (data['gcp-cred-type'] && !(typeof data['gcp-cred-type'] === 'string' || data['gcp-cred-type'] instanceof String)) {
@@ -172,6 +206,18 @@ class GatewayCreateProducerGcp {
             throw new Error("Expected the field `role-binding` to be a primitive type in the JSON string but got " + data['role-binding']);
         }
         // ensure the json data is a string
+        if (data['role-names'] && !(typeof data['role-names'] === 'string' || data['role-names'] instanceof String)) {
+            throw new Error("Expected the field `role-names` to be a primitive type in the JSON string but got " + data['role-names']);
+        }
+        // ensure the json data is a string
+        if (data['secure-access-enable'] && !(typeof data['secure-access-enable'] === 'string' || data['secure-access-enable'] instanceof String)) {
+            throw new Error("Expected the field `secure-access-enable` to be a primitive type in the JSON string but got " + data['secure-access-enable']);
+        }
+        // ensure the json data is a string
+        if (data['secure-access-url'] && !(typeof data['secure-access-url'] === 'string' || data['secure-access-url'] instanceof String)) {
+            throw new Error("Expected the field `secure-access-url` to be a primitive type in the JSON string but got " + data['secure-access-url']);
+        }
+        // ensure the json data is a string
         if (data['service-account-type'] && !(typeof data['service-account-type'] === 'string' || data['service-account-type'] instanceof String)) {
             throw new Error("Expected the field `service-account-type` to be a primitive type in the JSON string but got " + data['service-account-type']);
         }
@@ -202,7 +248,12 @@ class GatewayCreateProducerGcp {
 
 }
 
-GatewayCreateProducerGcp.RequiredProperties = ["name", "service-account-type"];
+GatewayCreateProducerGcp.RequiredProperties = ["name"];
+
+/**
+ * @member {String} access-type
+ */
+GatewayCreateProducerGcp.prototype['access-type'] = undefined;
 
 /**
  * Customize how temporary usernames are generated using go template
@@ -217,6 +268,13 @@ GatewayCreateProducerGcp.prototype['custom-username-template'] = undefined;
 GatewayCreateProducerGcp.prototype['delete_protection'] = undefined;
 
 /**
+ * For externally provided users, denotes the key-name of IdP claim to extract the username from (Relevant only when --access-type=external)
+ * @member {String} fixed-user-claim-keyname
+ * @default 'ext_email'
+ */
+GatewayCreateProducerGcp.prototype['fixed-user-claim-keyname'] = 'ext_email';
+
+/**
  * @member {String} gcp-cred-type
  */
 GatewayCreateProducerGcp.prototype['gcp-cred-type'] = undefined;
@@ -228,25 +286,25 @@ GatewayCreateProducerGcp.prototype['gcp-cred-type'] = undefined;
 GatewayCreateProducerGcp.prototype['gcp-key'] = undefined;
 
 /**
- * Service account key algorithm, e.g. KEY_ALG_RSA_1024
+ * Service account key algorithm, e.g. KEY_ALG_RSA_1024 (Relevant only when --access-type=sa and --gcp-cred-type=key)
  * @member {String} gcp-key-algo
  */
 GatewayCreateProducerGcp.prototype['gcp-key-algo'] = undefined;
 
 /**
- * GCP Project ID override for dynamic secret operations (tmp service accounts)
+ * GCP Project ID override for dynamic secret operations
  * @member {String} gcp-project-id
  */
 GatewayCreateProducerGcp.prototype['gcp-project-id'] = undefined;
 
 /**
- * The email of the fixed service acocunt to generate keys or tokens for. (revelant for service-account-type=fixed)
+ * The email of the fixed service account to generate keys or tokens for (Relevant only when --access-type=sa and --service-account-type=fixed)
  * @member {String} gcp-sa-email
  */
 GatewayCreateProducerGcp.prototype['gcp-sa-email'] = undefined;
 
 /**
- * Access token scopes list, e.g. scope1,scope2
+ * Access token scopes list, e.g. scope1,scope2 (Relevant only when --access-type=sa; required when --gcp-cred-type=token)
  * @member {String} gcp-token-scopes
  */
 GatewayCreateProducerGcp.prototype['gcp-token-scopes'] = undefined;
@@ -277,13 +335,51 @@ GatewayCreateProducerGcp.prototype['name'] = undefined;
 GatewayCreateProducerGcp.prototype['producer-encryption-key-name'] = undefined;
 
 /**
- * Role binding definitions in json format
+ * Role binding definitions in JSON format (Relevant only when --access-type=sa and --service-account-type=dynamic)
  * @member {String} role-binding
  */
 GatewayCreateProducerGcp.prototype['role-binding'] = undefined;
 
 /**
- * The type of the gcp dynamic secret. Options[fixed, dynamic]
+ * Comma-separated list of GCP roles to assign to the user (Relevant only when --access-type=external)
+ * @member {String} role-names
+ */
+GatewayCreateProducerGcp.prototype['role-names'] = undefined;
+
+/**
+ * The delay duration, in seconds, to wait after generating just-in-time credentials. Accepted range: 0-120 seconds
+ * @member {Number} secure-access-delay
+ */
+GatewayCreateProducerGcp.prototype['secure-access-delay'] = undefined;
+
+/**
+ * Enable/Disable secure remote access [true/false]
+ * @member {String} secure-access-enable
+ */
+GatewayCreateProducerGcp.prototype['secure-access-enable'] = undefined;
+
+/**
+ * Destination URL to inject secrets
+ * @member {String} secure-access-url
+ */
+GatewayCreateProducerGcp.prototype['secure-access-url'] = undefined;
+
+/**
+ * Secure browser via Akeyless's Secure Remote Access (SRA)
+ * @member {Boolean} secure-access-web-browsing
+ * @default false
+ */
+GatewayCreateProducerGcp.prototype['secure-access-web-browsing'] = false;
+
+/**
+ * Web-Proxy via Akeyless's Secure Remote Access (SRA)
+ * @member {Boolean} secure-access-web-proxy
+ * @default false
+ */
+GatewayCreateProducerGcp.prototype['secure-access-web-proxy'] = false;
+
+/**
+ * The type of the GCP service account. Options [fixed, dynamic] (Relevant only when --access-type=sa)
  * @member {String} service-account-type
  * @default 'fixed'
  */

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretDeleteSync model module.
  * @module model/RotatedSecretDeleteSync
- * @version 5.0.14
+ * @version 5.0.15
  */
 class RotatedSecretDeleteSync {
     /**
@@ -58,6 +58,9 @@ class RotatedSecretDeleteSync {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('remote-secret-name')) {
+                obj['remote-secret-name'] = ApiClient.convertToType(data['remote-secret-name'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -86,6 +89,10 @@ class RotatedSecretDeleteSync {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['remote-secret-name'] && !(typeof data['remote-secret-name'] === 'string' || data['remote-secret-name'] instanceof String)) {
+            throw new Error("Expected the field `remote-secret-name` to be a primitive type in the JSON string but got " + data['remote-secret-name']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -120,6 +127,12 @@ RotatedSecretDeleteSync.prototype['json'] = false;
  * @member {String} name
  */
 RotatedSecretDeleteSync.prototype['name'] = undefined;
+
+/**
+ * Remote Secret Name to disambiguate when multiple syncs exist under the same USC
+ * @member {String} remote-secret-name
+ */
+RotatedSecretDeleteSync.prototype['remote-secret-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

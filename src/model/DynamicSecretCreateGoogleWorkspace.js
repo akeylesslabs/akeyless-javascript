@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateGoogleWorkspace model module.
  * @module model/DynamicSecretCreateGoogleWorkspace
- * @version 5.0.14
+ * @version 5.0.15
  */
 class DynamicSecretCreateGoogleWorkspace {
     /**
@@ -101,6 +101,9 @@ class DynamicSecretCreateGoogleWorkspace {
             }
             if (data.hasOwnProperty('role-scope')) {
                 obj['role-scope'] = ApiClient.convertToType(data['role-scope'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-delay')) {
+                obj['secure-access-delay'] = ApiClient.convertToType(data['secure-access-delay'], 'Number');
             }
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
@@ -315,6 +318,12 @@ DynamicSecretCreateGoogleWorkspace.prototype['role-name'] = undefined;
  * @member {String} role-scope
  */
 DynamicSecretCreateGoogleWorkspace.prototype['role-scope'] = undefined;
+
+/**
+ * The delay duration, in seconds, to wait after generating just-in-time credentials. Accepted range: 0-120 seconds
+ * @member {Number} secure-access-delay
+ */
+DynamicSecretCreateGoogleWorkspace.prototype['secure-access-delay'] = undefined;
 
 /**
  * Enable/Disable secure remote access [true/false]

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ActiveDirectoryPayload model module.
  * @module model/ActiveDirectoryPayload
- * @version 5.0.14
+ * @version 5.0.15
  */
 class ActiveDirectoryPayload {
     /**
@@ -61,6 +61,9 @@ class ActiveDirectoryPayload {
             }
             if (data.hasOwnProperty('computer_base_dn')) {
                 obj['computer_base_dn'] = ApiClient.convertToType(data['computer_base_dn'], 'String');
+            }
+            if (data.hasOwnProperty('discover_iis_apps')) {
+                obj['discover_iis_apps'] = ApiClient.convertToType(data['discover_iis_apps'], 'Boolean');
             }
             if (data.hasOwnProperty('discover_local_users')) {
                 obj['discover_local_users'] = ApiClient.convertToType(data['discover_local_users'], 'Boolean');
@@ -208,6 +211,11 @@ ActiveDirectoryPayload.prototype['auto_rotate_rotation_hour'] = undefined;
  * @member {String} computer_base_dn
  */
 ActiveDirectoryPayload.prototype['computer_base_dn'] = undefined;
+
+/**
+ * @member {Boolean} discover_iis_apps
+ */
+ActiveDirectoryPayload.prototype['discover_iis_apps'] = undefined;
 
 /**
  * Deprecated

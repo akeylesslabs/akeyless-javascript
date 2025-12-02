@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateOIDC model module.
  * @module model/AuthMethodUpdateOIDC
- * @version 5.0.14
+ * @version 5.0.15
  */
 class AuthMethodUpdateOIDC {
     /**
@@ -57,6 +57,9 @@ class AuthMethodUpdateOIDC {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('allowed-client-type')) {
+                obj['allowed-client-type'] = ApiClient.convertToType(data['allowed-client-type'], ['String']);
             }
             if (data.hasOwnProperty('allowed-redirect-uri')) {
                 obj['allowed-redirect-uri'] = ApiClient.convertToType(data['allowed-redirect-uri'], ['String']);
@@ -142,6 +145,10 @@ class AuthMethodUpdateOIDC {
             if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['allowed-client-type'])) {
+            throw new Error("Expected the field `allowed-client-type` to be an array in the JSON data but got " + data['allowed-client-type']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['allowed-redirect-uri'])) {
@@ -238,6 +245,11 @@ AuthMethodUpdateOIDC.RequiredProperties = ["name", "unique-identifier"];
  * @default 0
  */
 AuthMethodUpdateOIDC.prototype['access-expires'] = 0;
+
+/**
+ * @member {Array.<String>} allowed-client-type
+ */
+AuthMethodUpdateOIDC.prototype['allowed-client-type'] = undefined;
 
 /**
  * Allowed redirect URIs after the authentication

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 5.0.14
+ * @version 5.0.15
  */
 class CreatePKICertIssuer {
     /**
@@ -94,8 +94,14 @@ class CreatePKICertIssuer {
             if (data.hasOwnProperty('create-private-crl')) {
                 obj['create-private-crl'] = ApiClient.convertToType(data['create-private-crl'], 'Boolean');
             }
+            if (data.hasOwnProperty('create-private-ocsp')) {
+                obj['create-private-ocsp'] = ApiClient.convertToType(data['create-private-ocsp'], 'Boolean');
+            }
             if (data.hasOwnProperty('create-public-crl')) {
                 obj['create-public-crl'] = ApiClient.convertToType(data['create-public-crl'], 'Boolean');
+            }
+            if (data.hasOwnProperty('create-public-ocsp')) {
+                obj['create-public-ocsp'] = ApiClient.convertToType(data['create-public-ocsp'], 'Boolean');
             }
             if (data.hasOwnProperty('critical-key-usage')) {
                 obj['critical-key-usage'] = ApiClient.convertToType(data['critical-key-usage'], 'String');
@@ -150,6 +156,9 @@ class CreatePKICertIssuer {
             }
             if (data.hasOwnProperty('not-require-cn')) {
                 obj['not-require-cn'] = ApiClient.convertToType(data['not-require-cn'], 'Boolean');
+            }
+            if (data.hasOwnProperty('ocsp-ttl')) {
+                obj['ocsp-ttl'] = ApiClient.convertToType(data['ocsp-ttl'], 'String');
             }
             if (data.hasOwnProperty('organizational-units')) {
                 obj['organizational-units'] = ApiClient.convertToType(data['organizational-units'], 'String');
@@ -269,6 +278,10 @@ class CreatePKICertIssuer {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['ocsp-ttl'] && !(typeof data['ocsp-ttl'] === 'string' || data['ocsp-ttl'] instanceof String)) {
+            throw new Error("Expected the field `ocsp-ttl` to be a primitive type in the JSON string but got " + data['ocsp-ttl']);
         }
         // ensure the json data is a string
         if (data['organizational-units'] && !(typeof data['organizational-units'] === 'string' || data['organizational-units'] instanceof String)) {
@@ -398,10 +411,20 @@ CreatePKICertIssuer.prototype['country'] = undefined;
 CreatePKICertIssuer.prototype['create-private-crl'] = undefined;
 
 /**
+ * @member {Boolean} create-private-ocsp
+ */
+CreatePKICertIssuer.prototype['create-private-ocsp'] = undefined;
+
+/**
  * Set this to allow the cert issuer will expose a public CRL endpoint
  * @member {Boolean} create-public-crl
  */
 CreatePKICertIssuer.prototype['create-public-crl'] = undefined;
+
+/**
+ * @member {Boolean} create-public-ocsp
+ */
+CreatePKICertIssuer.prototype['create-public-ocsp'] = undefined;
 
 /**
  * Mark key usage as critical [true/false]
@@ -514,6 +537,11 @@ CreatePKICertIssuer.prototype['not-enforce-hostnames'] = undefined;
  * @member {Boolean} not-require-cn
  */
 CreatePKICertIssuer.prototype['not-require-cn'] = undefined;
+
+/**
+ * @member {String} ocsp-ttl
+ */
+CreatePKICertIssuer.prototype['ocsp-ttl'] = undefined;
 
 /**
  * A comma-separated list of organizational units (OU) that will be set in the issued certificate

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RequestAccess model module.
  * @module model/RequestAccess
- * @version 5.0.14
+ * @version 5.0.15
  */
 class RequestAccess {
     /**

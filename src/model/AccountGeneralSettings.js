@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import AiInsightsSetting from './AiInsightsSetting';
+import AllowedClientType from './AllowedClientType';
 import AllowedIpSettings from './AllowedIpSettings';
 import CertificateExpirationEventsSettings from './CertificateExpirationEventsSettings';
 import DataProtectionSection from './DataProtectionSection';
@@ -28,7 +29,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 5.0.14
+ * @version 5.0.15
  */
 class AccountGeneralSettings {
     /**
@@ -68,6 +69,9 @@ class AccountGeneralSettings {
             }
             if (data.hasOwnProperty('ai_insights')) {
                 obj['ai_insights'] = AiInsightsSetting.constructFromObject(data['ai_insights']);
+            }
+            if (data.hasOwnProperty('allowed_client_types')) {
+                obj['allowed_client_types'] = AllowedClientType.constructFromObject(data['allowed_client_types']);
             }
             if (data.hasOwnProperty('allowed_clients_ips')) {
                 obj['allowed_clients_ips'] = AllowedIpSettings.constructFromObject(data['allowed_clients_ips']);
@@ -143,6 +147,10 @@ class AccountGeneralSettings {
         // validate the optional field `ai_insights`
         if (data['ai_insights']) { // data not null
           AiInsightsSetting.validateJSON(data['ai_insights']);
+        }
+        // validate the optional field `allowed_client_types`
+        if (data['allowed_client_types']) { // data not null
+          AllowedClientType.validateJSON(data['allowed_client_types']);
         }
         // validate the optional field `allowed_clients_ips`
         if (data['allowed_clients_ips']) { // data not null
@@ -225,6 +233,11 @@ AccountGeneralSettings.prototype['account_default_key_name'] = undefined;
  * @member {module:model/AiInsightsSetting} ai_insights
  */
 AccountGeneralSettings.prototype['ai_insights'] = undefined;
+
+/**
+ * @member {module:model/AllowedClientType} allowed_client_types
+ */
+AccountGeneralSettings.prototype['allowed_client_types'] = undefined;
 
 /**
  * @member {module:model/AllowedIpSettings} allowed_clients_ips

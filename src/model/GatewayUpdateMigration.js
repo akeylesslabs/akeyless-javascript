@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 5.0.14
+ * @version 5.0.15
  */
 class GatewayUpdateMigration {
     /**
@@ -38,6 +38,7 @@ class GatewayUpdateMigration {
      * Only for internal use.
      */
     static initialize(obj, siTargetName, siUsersPathTemplate, targetLocation) { 
+        obj['ad-discover-iis-app'] = 'false';
         obj['ad-discover-services'] = 'false';
         obj['ad-ssh-port'] = '22';
         obj['ad-target-format'] = 'linked';
@@ -72,6 +73,9 @@ class GatewayUpdateMigration {
             }
             if (data.hasOwnProperty('ad-computer-base-dn')) {
                 obj['ad-computer-base-dn'] = ApiClient.convertToType(data['ad-computer-base-dn'], 'String');
+            }
+            if (data.hasOwnProperty('ad-discover-iis-app')) {
+                obj['ad-discover-iis-app'] = ApiClient.convertToType(data['ad-discover-iis-app'], 'String');
             }
             if (data.hasOwnProperty('ad-discover-services')) {
                 obj['ad-discover-services'] = ApiClient.convertToType(data['ad-discover-services'], 'String');
@@ -271,6 +275,10 @@ class GatewayUpdateMigration {
         // ensure the json data is a string
         if (data['ad-computer-base-dn'] && !(typeof data['ad-computer-base-dn'] === 'string' || data['ad-computer-base-dn'] instanceof String)) {
             throw new Error("Expected the field `ad-computer-base-dn` to be a primitive type in the JSON string but got " + data['ad-computer-base-dn']);
+        }
+        // ensure the json data is a string
+        if (data['ad-discover-iis-app'] && !(typeof data['ad-discover-iis-app'] === 'string' || data['ad-discover-iis-app'] instanceof String)) {
+            throw new Error("Expected the field `ad-discover-iis-app` to be a primitive type in the JSON string but got " + data['ad-discover-iis-app']);
         }
         // ensure the json data is a string
         if (data['ad-discover-services'] && !(typeof data['ad-discover-services'] === 'string' || data['ad-discover-services'] instanceof String)) {
@@ -501,6 +509,13 @@ GatewayUpdateMigration.prototype['ad-auto-rotate'] = undefined;
  * @member {String} ad-computer-base-dn
  */
 GatewayUpdateMigration.prototype['ad-computer-base-dn'] = undefined;
+
+/**
+ * Enable/Disable discovery of IIS application from each domain server as part of the SSH/Windows Rotated Secrets. Default is false. (Relevant only for Active Directory migration)
+ * @member {String} ad-discover-iis-app
+ * @default 'false'
+ */
+GatewayUpdateMigration.prototype['ad-discover-iis-app'] = 'false';
 
 /**
  * Enable/Disable discovery of Windows services from each domain server as part of the SSH/Windows Rotated Secrets. Default is false. (Relevant only for Active Directory migration)

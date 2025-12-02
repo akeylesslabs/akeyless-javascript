@@ -43,6 +43,7 @@ import AliasDetailsOutput from './model/AliasDetailsOutput';
 import AllAnalyticsData from './model/AllAnalyticsData';
 import AllowedAccess from './model/AllowedAccess';
 import AllowedAccessOld from './model/AllowedAccessOld';
+import AllowedClientType from './model/AllowedClientType';
 import AllowedIpSettings from './model/AllowedIpSettings';
 import ArtifactoryTargetDetails from './model/ArtifactoryTargetDetails';
 import AssocRoleAuthMethod from './model/AssocRoleAuthMethod';
@@ -774,6 +775,7 @@ import Name from './model/Name';
 import NativeK8sTargetDetails from './model/NativeK8sTargetDetails';
 import NextAutoRotationEvent from './model/NextAutoRotationEvent';
 import NotiForwarder from './model/NotiForwarder';
+import NotiForwarderDetailsInput from './model/NotiForwarderDetailsInput';
 import NullString from './model/NullString';
 import NullTime from './model/NullTime';
 import OAuth2AccessRules from './model/OAuth2AccessRules';
@@ -909,6 +911,7 @@ import SignPKICertOutput from './model/SignPKICertOutput';
 import SignPKICertWithClassicKey from './model/SignPKICertWithClassicKey';
 import SignRsaSsaPss from './model/SignRsaSsaPss';
 import SignRsaSsaPssOutput from './model/SignRsaSsaPssOutput';
+import SlackNotiForwarderDetails from './model/SlackNotiForwarderDetails';
 import SmInfo from './model/SmInfo';
 import SplunkLogForwardingConfig from './model/SplunkLogForwardingConfig';
 import SraDesktopAppConf from './model/SraDesktopAppConf';
@@ -991,6 +994,7 @@ import TargetUpdateSsh from './model/TargetUpdateSsh';
 import TargetUpdateWeb from './model/TargetUpdateWeb';
 import TargetUpdateWindows from './model/TargetUpdateWindows';
 import TargetUpdateZeroSSL from './model/TargetUpdateZeroSSL';
+import TeamsNotiForwarderDetails from './model/TeamsNotiForwarderDetails';
 import TmpUserData from './model/TmpUserData';
 import Tokenize from './model/Tokenize';
 import TokenizeOutput from './model/TokenizeOutput';
@@ -1140,6 +1144,7 @@ import WebBastionGuacamole from './model/WebBastionGuacamole';
 import WebBastionRdpRecord from './model/WebBastionRdpRecord';
 import WebHookNotiForwarderPublicDetails from './model/WebHookNotiForwarderPublicDetails';
 import WebTargetDetails from './model/WebTargetDetails';
+import WebhookNotiForwarderDetails from './model/WebhookNotiForwarderDetails';
 import WindowsService from './model/WindowsService';
 import WindowsServiceAttributes from './model/WindowsServiceAttributes';
 import WindowsTargetDetails from './model/WindowsTargetDetails';
@@ -1176,7 +1181,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.14
+* @version 5.0.15
 */
 export {
     /**
@@ -1364,6 +1369,12 @@ export {
      * @property {module:model/AllowedAccessOld}
      */
     AllowedAccessOld,
+
+    /**
+     * The AllowedClientType model constructor.
+     * @property {module:model/AllowedClientType}
+     */
+    AllowedClientType,
 
     /**
      * The AllowedIpSettings model constructor.
@@ -5752,6 +5763,12 @@ export {
     NotiForwarder,
 
     /**
+     * The NotiForwarderDetailsInput model constructor.
+     * @property {module:model/NotiForwarderDetailsInput}
+     */
+    NotiForwarderDetailsInput,
+
+    /**
      * The NullString model constructor.
      * @property {module:model/NullString}
      */
@@ -6562,6 +6579,12 @@ export {
     SignRsaSsaPssOutput,
 
     /**
+     * The SlackNotiForwarderDetails model constructor.
+     * @property {module:model/SlackNotiForwarderDetails}
+     */
+    SlackNotiForwarderDetails,
+
+    /**
      * The SmInfo model constructor.
      * @property {module:model/SmInfo}
      */
@@ -7052,6 +7075,12 @@ export {
      * @property {module:model/TargetUpdateZeroSSL}
      */
     TargetUpdateZeroSSL,
+
+    /**
+     * The TeamsNotiForwarderDetails model constructor.
+     * @property {module:model/TeamsNotiForwarderDetails}
+     */
+    TeamsNotiForwarderDetails,
 
     /**
      * The TmpUserData model constructor.
@@ -7946,6 +7975,12 @@ export {
      * @property {module:model/WebTargetDetails}
      */
     WebTargetDetails,
+
+    /**
+     * The WebhookNotiForwarderDetails model constructor.
+     * @property {module:model/WebhookNotiForwarderDetails}
+     */
+    WebhookNotiForwarderDetails,
 
     /**
      * The WindowsService model constructor.

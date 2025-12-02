@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateCassandra model module.
  * @module model/RotatedSecretUpdateCassandra
- * @version 5.0.14
+ * @version 5.0.15
  */
 class RotatedSecretUpdateCassandra {
     /**

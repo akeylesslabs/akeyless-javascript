@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateOpenAI model module.
  * @module model/TargetUpdateOpenAI
- * @version 5.0.14
+ * @version 5.0.15
  */
 class TargetUpdateOpenAI {
     /**

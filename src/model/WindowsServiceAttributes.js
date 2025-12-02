@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WindowsServiceAttributes model module.
  * @module model/WindowsServiceAttributes
- * @version 5.0.14
+ * @version 5.0.15
  */
 class WindowsServiceAttributes {
     /**
@@ -50,8 +50,14 @@ class WindowsServiceAttributes {
             if (data.hasOwnProperty('connection_type')) {
                 obj['connection_type'] = ApiClient.convertToType(data['connection_type'], 'String');
             }
+            if (data.hasOwnProperty('iis_app_pool')) {
+                obj['iis_app_pool'] = ApiClient.convertToType(data['iis_app_pool'], 'Boolean');
+            }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
+            }
+            if (data.hasOwnProperty('skip_restart')) {
+                obj['skip_restart'] = ApiClient.convertToType(data['skip_restart'], 'Boolean');
             }
             if (data.hasOwnProperty('use_tls')) {
                 obj['use_tls'] = ApiClient.convertToType(data['use_tls'], 'Boolean');
@@ -89,9 +95,21 @@ class WindowsServiceAttributes {
 WindowsServiceAttributes.prototype['connection_type'] = undefined;
 
 /**
+ * IISAppPool marks this entry as an IIS Application Pool rather than a Windows Service
+ * @member {Boolean} iis_app_pool
+ */
+WindowsServiceAttributes.prototype['iis_app_pool'] = undefined;
+
+/**
  * @member {String} port
  */
 WindowsServiceAttributes.prototype['port'] = undefined;
+
+/**
+ * SkipRestart allows skipping recycle/start of the IIS App Pool after credential update
+ * @member {Boolean} skip_restart
+ */
+WindowsServiceAttributes.prototype['skip_restart'] = undefined;
 
 /**
  * @member {Boolean} use_tls

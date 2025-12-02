@@ -32,6 +32,7 @@ docs/AliasDetailsOutput.md
 docs/AllAnalyticsData.md
 docs/AllowedAccess.md
 docs/AllowedAccessOld.md
+docs/AllowedClientType.md
 docs/AllowedIpSettings.md
 docs/ArtifactoryTargetDetails.md
 docs/AssocRoleAuthMethod.md
@@ -763,6 +764,7 @@ docs/Name.md
 docs/NativeK8sTargetDetails.md
 docs/NextAutoRotationEvent.md
 docs/NotiForwarder.md
+docs/NotiForwarderDetailsInput.md
 docs/NullString.md
 docs/NullTime.md
 docs/OAuth2AccessRules.md
@@ -898,6 +900,7 @@ docs/SignPKICertOutput.md
 docs/SignPKICertWithClassicKey.md
 docs/SignRsaSsaPss.md
 docs/SignRsaSsaPssOutput.md
+docs/SlackNotiForwarderDetails.md
 docs/SmInfo.md
 docs/SplunkLogForwardingConfig.md
 docs/SraDesktopAppConf.md
@@ -980,6 +983,7 @@ docs/TargetUpdateSsh.md
 docs/TargetUpdateWeb.md
 docs/TargetUpdateWindows.md
 docs/TargetUpdateZeroSSL.md
+docs/TeamsNotiForwarderDetails.md
 docs/TmpUserData.md
 docs/Tokenize.md
 docs/TokenizeOutput.md
@@ -1130,6 +1134,7 @@ docs/WebBastionGuacamole.md
 docs/WebBastionRdpRecord.md
 docs/WebHookNotiForwarderPublicDetails.md
 docs/WebTargetDetails.md
+docs/WebhookNotiForwarderDetails.md
 docs/WindowsService.md
 docs/WindowsServiceAttributes.md
 docs/WindowsTargetDetails.md
@@ -1170,6 +1175,7 @@ src/model/AliasDetailsOutput.js
 src/model/AllAnalyticsData.js
 src/model/AllowedAccess.js
 src/model/AllowedAccessOld.js
+src/model/AllowedClientType.js
 src/model/AllowedIpSettings.js
 src/model/ArtifactoryTargetDetails.js
 src/model/AssocRoleAuthMethod.js
@@ -1901,6 +1907,7 @@ src/model/Name.js
 src/model/NativeK8sTargetDetails.js
 src/model/NextAutoRotationEvent.js
 src/model/NotiForwarder.js
+src/model/NotiForwarderDetailsInput.js
 src/model/NullString.js
 src/model/NullTime.js
 src/model/OAuth2AccessRules.js
@@ -2036,6 +2043,7 @@ src/model/SignPKICertOutput.js
 src/model/SignPKICertWithClassicKey.js
 src/model/SignRsaSsaPss.js
 src/model/SignRsaSsaPssOutput.js
+src/model/SlackNotiForwarderDetails.js
 src/model/SmInfo.js
 src/model/SplunkLogForwardingConfig.js
 src/model/SraDesktopAppConf.js
@@ -2118,6 +2126,7 @@ src/model/TargetUpdateSsh.js
 src/model/TargetUpdateWeb.js
 src/model/TargetUpdateWindows.js
 src/model/TargetUpdateZeroSSL.js
+src/model/TeamsNotiForwarderDetails.js
 src/model/TmpUserData.js
 src/model/Tokenize.js
 src/model/TokenizeOutput.js
@@ -2267,14 +2276,13 @@ src/model/WebBastionGuacamole.js
 src/model/WebBastionRdpRecord.js
 src/model/WebHookNotiForwarderPublicDetails.js
 src/model/WebTargetDetails.js
+src/model/WebhookNotiForwarderDetails.js
 src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/FolderCreate.spec.js
-test/model/FolderCreateOutput.spec.js
-test/model/FolderDelete.spec.js
-test/model/FolderGet.spec.js
-test/model/FolderGetOutput.spec.js
-test/model/FolderUpdate.spec.js
-test/model/GetFolderOutput.spec.js
+test/model/AllowedClientType.spec.js
+test/model/NotiForwarderDetailsInput.spec.js
+test/model/SlackNotiForwarderDetails.spec.js
+test/model/TeamsNotiForwarderDetails.spec.js
+test/model/WebhookNotiForwarderDetails.spec.js

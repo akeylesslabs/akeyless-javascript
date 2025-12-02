@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WebHookNotiForwarderPublicDetails model module.
  * @module model/WebHookNotiForwarderPublicDetails
- * @version 5.0.14
+ * @version 5.0.15
  */
 class WebHookNotiForwarderPublicDetails {
     /**

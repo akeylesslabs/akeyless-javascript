@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import NotiForwarder from './NotiForwarder';
+import NotiForwarderDetailsInput from './NotiForwarderDetailsInput';
 
 /**
  * The EventForwarderGetOutput model module.
  * @module model/EventForwarderGetOutput
- * @version 5.0.14
+ * @version 5.0.15
  */
 class EventForwarderGetOutput {
     /**
@@ -51,6 +52,9 @@ class EventForwarderGetOutput {
             if (data.hasOwnProperty('event_forwarder')) {
                 obj['event_forwarder'] = NotiForwarder.constructFromObject(data['event_forwarder']);
             }
+            if (data.hasOwnProperty('event_forwarder_details')) {
+                obj['event_forwarder_details'] = NotiForwarderDetailsInput.constructFromObject(data['event_forwarder_details']);
+            }
         }
         return obj;
     }
@@ -65,6 +69,10 @@ class EventForwarderGetOutput {
         if (data['event_forwarder']) { // data not null
           NotiForwarder.validateJSON(data['event_forwarder']);
         }
+        // validate the optional field `event_forwarder_details`
+        if (data['event_forwarder_details']) { // data not null
+          NotiForwarderDetailsInput.validateJSON(data['event_forwarder_details']);
+        }
 
         return true;
     }
@@ -78,6 +86,11 @@ class EventForwarderGetOutput {
  * @member {module:model/NotiForwarder} event_forwarder
  */
 EventForwarderGetOutput.prototype['event_forwarder'] = undefined;
+
+/**
+ * @member {module:model/NotiForwarderDetailsInput} event_forwarder_details
+ */
+EventForwarderGetOutput.prototype['event_forwarder_details'] = undefined;
 
 
 

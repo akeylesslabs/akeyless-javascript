@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodOAuth2 model module.
  * @module model/UpdateAuthMethodOAuth2
- * @version 5.0.14
+ * @version 5.0.15
  */
 class UpdateAuthMethodOAuth2 {
     /**
@@ -57,6 +57,9 @@ class UpdateAuthMethodOAuth2 {
 
             if (data.hasOwnProperty('access-expires')) {
                 obj['access-expires'] = ApiClient.convertToType(data['access-expires'], 'Number');
+            }
+            if (data.hasOwnProperty('allowed-client-type')) {
+                obj['allowed-client-type'] = ApiClient.convertToType(data['allowed-client-type'], ['String']);
             }
             if (data.hasOwnProperty('audience')) {
                 obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
@@ -145,6 +148,10 @@ class UpdateAuthMethodOAuth2 {
             if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['allowed-client-type'])) {
+            throw new Error("Expected the field `allowed-client-type` to be an array in the JSON data but got " + data['allowed-client-type']);
         }
         // ensure the json data is a string
         if (data['audience'] && !(typeof data['audience'] === 'string' || data['audience'] instanceof String)) {
@@ -245,6 +252,11 @@ UpdateAuthMethodOAuth2.RequiredProperties = ["name", "unique-identifier"];
  * @default 0
  */
 UpdateAuthMethodOAuth2.prototype['access-expires'] = 0;
+
+/**
+ * @member {Array.<String>} allowed-client-type
+ */
+UpdateAuthMethodOAuth2.prototype['allowed-client-type'] = undefined;
 
 /**
  * The audience in the JWT

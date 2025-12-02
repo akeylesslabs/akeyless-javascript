@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **description** | **String** | Description of the object | [optional] 
 **itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
+**mssqlAllowedDbNames** | **String** | CSV of allowed DB names for runtime selection when getting the secret value. Empty &#x3D;&gt; use target DB only; \&quot;*\&quot; &#x3D;&gt; any DB allowed; One or more names &#x3D;&gt; user must choose from this list | [optional] 
 **mssqlCreateStatements** | **String** | MSSQL Creation statements | [optional] 
 **mssqlDbname** | **String** | MSSQL Name | [optional] 
 **mssqlHost** | **String** | MSSQL Host | [optional] [default to &#39;127.0.0.1&#39;]

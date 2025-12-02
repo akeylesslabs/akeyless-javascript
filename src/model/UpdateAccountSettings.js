@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 5.0.14
+ * @version 5.0.15
  */
 class UpdateAccountSettings {
     /**
@@ -51,6 +51,9 @@ class UpdateAccountSettings {
 
             if (data.hasOwnProperty('address')) {
                 obj['address'] = ApiClient.convertToType(data['address'], 'String');
+            }
+            if (data.hasOwnProperty('allowed-client-type')) {
+                obj['allowed-client-type'] = ApiClient.convertToType(data['allowed-client-type'], ['String']);
             }
             if (data.hasOwnProperty('allowed-email-domains')) {
                 obj['allowed-email-domains'] = ApiClient.convertToType(data['allowed-email-domains'], ['String']);
@@ -133,6 +136,9 @@ class UpdateAccountSettings {
             if (data.hasOwnProperty('jwt-ttl-min')) {
                 obj['jwt-ttl-min'] = ApiClient.convertToType(data['jwt-ttl-min'], 'Number');
             }
+            if (data.hasOwnProperty('lock-allowed-client-type')) {
+                obj['lock-allowed-client-type'] = ApiClient.convertToType(data['lock-allowed-client-type'], 'String');
+            }
             if (data.hasOwnProperty('lock-bound-ips')) {
                 obj['lock-bound-ips'] = ApiClient.convertToType(data['lock-bound-ips'], 'String');
             }
@@ -206,6 +212,10 @@ class UpdateAccountSettings {
         // ensure the json data is a string
         if (data['address'] && !(typeof data['address'] === 'string' || data['address'] instanceof String)) {
             throw new Error("Expected the field `address` to be a primitive type in the JSON string but got " + data['address']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['allowed-client-type'])) {
+            throw new Error("Expected the field `allowed-client-type` to be an array in the JSON data but got " + data['allowed-client-type']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['allowed-email-domains'])) {
@@ -296,6 +306,10 @@ class UpdateAccountSettings {
             throw new Error("Expected the field `items-deletion-protection` to be a primitive type in the JSON string but got " + data['items-deletion-protection']);
         }
         // ensure the json data is a string
+        if (data['lock-allowed-client-type'] && !(typeof data['lock-allowed-client-type'] === 'string' || data['lock-allowed-client-type'] instanceof String)) {
+            throw new Error("Expected the field `lock-allowed-client-type` to be a primitive type in the JSON string but got " + data['lock-allowed-client-type']);
+        }
+        // ensure the json data is a string
         if (data['lock-bound-ips'] && !(typeof data['lock-bound-ips'] === 'string' || data['lock-bound-ips'] instanceof String)) {
             throw new Error("Expected the field `lock-bound-ips` to be a primitive type in the JSON string but got " + data['lock-bound-ips']);
         }
@@ -377,6 +391,11 @@ class UpdateAccountSettings {
  * @member {String} address
  */
 UpdateAccountSettings.prototype['address'] = undefined;
+
+/**
+ * @member {Array.<String>} allowed-client-type
+ */
+UpdateAccountSettings.prototype['allowed-client-type'] = undefined;
 
 /**
  * Limits email sharing to the specified domains. Relevant only when item sharing is enabled. By default, all domains are allowed.
@@ -541,6 +560,11 @@ UpdateAccountSettings.prototype['jwt-ttl-max'] = undefined;
  * @member {Number} jwt-ttl-min
  */
 UpdateAccountSettings.prototype['jwt-ttl-min'] = undefined;
+
+/**
+ * @member {String} lock-allowed-client-type
+ */
+UpdateAccountSettings.prototype['lock-allowed-client-type'] = undefined;
 
 /**
  * Lock bound-ips setting globally in the account.
