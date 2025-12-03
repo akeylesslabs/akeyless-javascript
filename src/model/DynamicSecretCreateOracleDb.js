@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateOracleDb model module.
  * @module model/DynamicSecretCreateOracleDb
- * @version 5.0.15
+ * @version 5.0.16
  */
 class DynamicSecretCreateOracleDb {
     /**

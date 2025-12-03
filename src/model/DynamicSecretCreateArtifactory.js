@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateArtifactory model module.
  * @module model/DynamicSecretCreateArtifactory
- * @version 5.0.15
+ * @version 5.0.16
  */
 class DynamicSecretCreateArtifactory {
     /**

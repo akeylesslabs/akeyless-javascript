@@ -2281,8 +2281,3 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/AllowedClientType.spec.js
-test/model/NotiForwarderDetailsInput.spec.js
-test/model/SlackNotiForwarderDetails.spec.js
-test/model/TeamsNotiForwarderDetails.spec.js
-test/model/WebhookNotiForwarderDetails.spec.js

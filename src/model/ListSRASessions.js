@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListSRASessions model module.
  * @module model/ListSRASessions
- * @version 5.0.15
+ * @version 5.0.16
  */
 class ListSRASessions {
     /**

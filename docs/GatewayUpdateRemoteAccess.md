@@ -4,7 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**allowedSshUrl** | **String** | Specify a valid SSH-URL to tunnel to SSH session | [optional] [default to &#39;use-existing&#39;]
 **allowedUrls** | **String** | List of valid URLs to redirect from the Portal back to the remote access server (in a comma-delimited list) | [optional] [default to &#39;use-existing&#39;]
+**defaultSessionTtlMinutes** | **String** | Default session TTL in minutes | [optional] [default to &#39;use-existing&#39;]
 **hideSessionRecording** | **String** | Specifies whether to show/hide if the session is currently recorded [true/false] | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **kexalgs** | **String** | Decide which algorithm will be used as part of the SSH initial hand-shake process | [optional] [default to &#39;use-existing&#39;]

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateRedis model module.
  * @module model/DynamicSecretUpdateRedis
- * @version 5.0.15
+ * @version 5.0.16
  */
 class DynamicSecretUpdateRedis {
     /**

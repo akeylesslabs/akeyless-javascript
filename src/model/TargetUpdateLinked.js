@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateLinked model module.
  * @module model/TargetUpdateLinked
- * @version 5.0.15
+ * @version 5.0.16
  */
 class TargetUpdateLinked {
     /**

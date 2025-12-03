@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateRemoteAccess model module.
  * @module model/GatewayUpdateRemoteAccess
- * @version 5.0.15
+ * @version 5.0.16
  */
 class GatewayUpdateRemoteAccess {
     /**
@@ -35,7 +35,9 @@ class GatewayUpdateRemoteAccess {
      * Only for internal use.
      */
     static initialize(obj) { 
+        obj['allowed-ssh-url'] = 'use-existing';
         obj['allowed-urls'] = 'use-existing';
+        obj['default-session-ttl-minutes'] = 'use-existing';
         obj['json'] = false;
         obj['kexalgs'] = 'use-existing';
         obj['keyboard-layout'] = 'use-existing';
@@ -54,8 +56,14 @@ class GatewayUpdateRemoteAccess {
         if (data) {
             obj = obj || new GatewayUpdateRemoteAccess();
 
+            if (data.hasOwnProperty('allowed-ssh-url')) {
+                obj['allowed-ssh-url'] = ApiClient.convertToType(data['allowed-ssh-url'], 'String');
+            }
             if (data.hasOwnProperty('allowed-urls')) {
                 obj['allowed-urls'] = ApiClient.convertToType(data['allowed-urls'], 'String');
+            }
+            if (data.hasOwnProperty('default-session-ttl-minutes')) {
+                obj['default-session-ttl-minutes'] = ApiClient.convertToType(data['default-session-ttl-minutes'], 'String');
             }
             if (data.hasOwnProperty('hide-session-recording')) {
                 obj['hide-session-recording'] = ApiClient.convertToType(data['hide-session-recording'], 'String');
@@ -95,8 +103,16 @@ class GatewayUpdateRemoteAccess {
      */
     static validateJSON(data) {
         // ensure the json data is a string
+        if (data['allowed-ssh-url'] && !(typeof data['allowed-ssh-url'] === 'string' || data['allowed-ssh-url'] instanceof String)) {
+            throw new Error("Expected the field `allowed-ssh-url` to be a primitive type in the JSON string but got " + data['allowed-ssh-url']);
+        }
+        // ensure the json data is a string
         if (data['allowed-urls'] && !(typeof data['allowed-urls'] === 'string' || data['allowed-urls'] instanceof String)) {
             throw new Error("Expected the field `allowed-urls` to be a primitive type in the JSON string but got " + data['allowed-urls']);
+        }
+        // ensure the json data is a string
+        if (data['default-session-ttl-minutes'] && !(typeof data['default-session-ttl-minutes'] === 'string' || data['default-session-ttl-minutes'] instanceof String)) {
+            throw new Error("Expected the field `default-session-ttl-minutes` to be a primitive type in the JSON string but got " + data['default-session-ttl-minutes']);
         }
         // ensure the json data is a string
         if (data['hide-session-recording'] && !(typeof data['hide-session-recording'] === 'string' || data['hide-session-recording'] instanceof String)) {
@@ -140,11 +156,25 @@ class GatewayUpdateRemoteAccess {
 
 
 /**
+ * Specify a valid SSH-URL to tunnel to SSH session
+ * @member {String} allowed-ssh-url
+ * @default 'use-existing'
+ */
+GatewayUpdateRemoteAccess.prototype['allowed-ssh-url'] = 'use-existing';
+
+/**
  * List of valid URLs to redirect from the Portal back to the remote access server (in a comma-delimited list)
  * @member {String} allowed-urls
  * @default 'use-existing'
  */
 GatewayUpdateRemoteAccess.prototype['allowed-urls'] = 'use-existing';
+
+/**
+ * Default session TTL in minutes
+ * @member {String} default-session-ttl-minutes
+ * @default 'use-existing'
+ */
+GatewayUpdateRemoteAccess.prototype['default-session-ttl-minutes'] = 'use-existing';
 
 /**
  * Specifies whether to show/hide if the session is currently recorded [true/false]

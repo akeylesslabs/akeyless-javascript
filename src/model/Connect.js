@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Connect model module.
  * @module model/Connect
- * @version 5.0.15
+ * @version 5.0.16
  */
 class Connect {
     /**

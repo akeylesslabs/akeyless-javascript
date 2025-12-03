@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BastionGlobalConf model module.
  * @module model/BastionGlobalConf
- * @version 5.0.15
+ * @version 5.0.16
  */
 class BastionGlobalConf {
     /**
@@ -50,6 +50,12 @@ class BastionGlobalConf {
             if (data.hasOwnProperty('allowed_bastion_urls')) {
                 obj['allowed_bastion_urls'] = ApiClient.convertToType(data['allowed_bastion_urls'], ['String']);
             }
+            if (data.hasOwnProperty('allowed_ssh_url')) {
+                obj['allowed_ssh_url'] = ApiClient.convertToType(data['allowed_ssh_url'], 'String');
+            }
+            if (data.hasOwnProperty('default_session_ttl_minutes')) {
+                obj['default_session_ttl_minutes'] = ApiClient.convertToType(data['default_session_ttl_minutes'], 'Number');
+            }
             if (data.hasOwnProperty('legacy_signing_alg')) {
                 obj['legacy_signing_alg'] = ApiClient.convertToType(data['legacy_signing_alg'], 'Boolean');
             }
@@ -74,6 +80,10 @@ class BastionGlobalConf {
             throw new Error("Expected the field `allowed_bastion_urls` to be an array in the JSON data but got " + data['allowed_bastion_urls']);
         }
         // ensure the json data is a string
+        if (data['allowed_ssh_url'] && !(typeof data['allowed_ssh_url'] === 'string' || data['allowed_ssh_url'] instanceof String)) {
+            throw new Error("Expected the field `allowed_ssh_url` to be a primitive type in the JSON string but got " + data['allowed_ssh_url']);
+        }
+        // ensure the json data is a string
         if (data['rdp_username_sub_claim'] && !(typeof data['rdp_username_sub_claim'] === 'string' || data['rdp_username_sub_claim'] instanceof String)) {
             throw new Error("Expected the field `rdp_username_sub_claim` to be a primitive type in the JSON string but got " + data['rdp_username_sub_claim']);
         }
@@ -94,6 +104,16 @@ class BastionGlobalConf {
  * @member {Array.<String>} allowed_bastion_urls
  */
 BastionGlobalConf.prototype['allowed_bastion_urls'] = undefined;
+
+/**
+ * @member {String} allowed_ssh_url
+ */
+BastionGlobalConf.prototype['allowed_ssh_url'] = undefined;
+
+/**
+ * @member {Number} default_session_ttl_minutes
+ */
+BastionGlobalConf.prototype['default_session_ttl_minutes'] = undefined;
 
 /**
  * @member {Boolean} legacy_signing_alg

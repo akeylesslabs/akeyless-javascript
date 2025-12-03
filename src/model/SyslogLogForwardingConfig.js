@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SyslogLogForwardingConfig model module.
  * @module model/SyslogLogForwardingConfig
- * @version 5.0.15
+ * @version 5.0.16
  */
 class SyslogLogForwardingConfig {
     /**

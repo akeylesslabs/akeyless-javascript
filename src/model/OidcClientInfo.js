@@ -17,7 +17,7 @@ import AccessOrGroupPermissionAssignment from './AccessOrGroupPermissionAssignme
 /**
  * The OidcClientInfo model module.
  * @module model/OidcClientInfo
- * @version 5.0.15
+ * @version 5.0.16
  */
 class OidcClientInfo {
     /**
