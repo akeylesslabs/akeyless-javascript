@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 5.0.16
+ * @version 5.0.17
  */
 class CreatePKICertIssuer {
     /**
@@ -411,6 +411,7 @@ CreatePKICertIssuer.prototype['country'] = undefined;
 CreatePKICertIssuer.prototype['create-private-crl'] = undefined;
 
 /**
+ * Set this to enable an OCSP endpoint in the Gateway and include its URL in AIA
  * @member {Boolean} create-private-ocsp
  */
 CreatePKICertIssuer.prototype['create-private-ocsp'] = undefined;
@@ -422,6 +423,7 @@ CreatePKICertIssuer.prototype['create-private-ocsp'] = undefined;
 CreatePKICertIssuer.prototype['create-public-crl'] = undefined;
 
 /**
+ * Set this to enable a public OCSP endpoint and include its URL in AIA (served by UAM and includes account id)
  * @member {Boolean} create-public-ocsp
  */
 CreatePKICertIssuer.prototype['create-public-ocsp'] = undefined;
@@ -539,6 +541,7 @@ CreatePKICertIssuer.prototype['not-enforce-hostnames'] = undefined;
 CreatePKICertIssuer.prototype['not-require-cn'] = undefined;
 
 /**
+ * OCSP NextUpdate window for OCSP responses (min 10m). Supports s,m,h,d suffix.
  * @member {String} ocsp-ttl
  */
 CreatePKICertIssuer.prototype['ocsp-ttl'] = undefined;

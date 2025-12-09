@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateUniversalIdentity model module.
  * @module model/AuthMethodCreateUniversalIdentity
- * @version 5.0.16
+ * @version 5.0.17
  */
 class AuthMethodCreateUniversalIdentity {
     /**
@@ -185,6 +185,7 @@ AuthMethodCreateUniversalIdentity.RequiredProperties = ["name"];
 AuthMethodCreateUniversalIdentity.prototype['access-expires'] = 0;
 
 /**
+ * limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]
  * @member {Array.<String>} allowed-client-type
  */
 AuthMethodCreateUniversalIdentity.prototype['allowed-client-type'] = undefined;

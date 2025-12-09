@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateOauth2 model module.
  * @module model/AuthMethodUpdateOauth2
- * @version 5.0.16
+ * @version 5.0.17
  */
 class AuthMethodUpdateOauth2 {
     /**
@@ -254,6 +254,7 @@ AuthMethodUpdateOauth2.RequiredProperties = ["name", "unique-identifier"];
 AuthMethodUpdateOauth2.prototype['access-expires'] = 0;
 
 /**
+ * limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]
  * @member {Array.<String>} allowed-client-type
  */
 AuthMethodUpdateOauth2.prototype['allowed-client-type'] = undefined;

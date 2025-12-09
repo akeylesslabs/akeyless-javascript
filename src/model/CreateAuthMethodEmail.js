@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodEmail model module.
  * @module model/CreateAuthMethodEmail
- * @version 5.0.16
+ * @version 5.0.17
  */
 class CreateAuthMethodEmail {
     /**
@@ -199,6 +199,7 @@ CreateAuthMethodEmail.RequiredProperties = ["email", "name"];
 CreateAuthMethodEmail.prototype['access-expires'] = 0;
 
 /**
+ * limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]
  * @member {Array.<String>} allowed-client-type
  */
 CreateAuthMethodEmail.prototype['allowed-client-type'] = undefined;

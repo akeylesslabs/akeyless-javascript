@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodOIDC model module.
  * @module model/CreateAuthMethodOIDC
- * @version 5.0.16
+ * @version 5.0.17
  */
 class CreateAuthMethodOIDC {
     /**
@@ -240,6 +240,7 @@ CreateAuthMethodOIDC.RequiredProperties = ["name", "unique-identifier"];
 CreateAuthMethodOIDC.prototype['access-expires'] = 0;
 
 /**
+ * limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]
  * @member {Array.<String>} allowed-client-type
  */
 CreateAuthMethodOIDC.prototype['allowed-client-type'] = undefined;

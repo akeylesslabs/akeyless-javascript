@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 5.0.16
+ * @version 5.0.17
  */
 class UpdateAccountSettings {
     /**
@@ -393,6 +393,7 @@ class UpdateAccountSettings {
 UpdateAccountSettings.prototype['address'] = undefined;
 
 /**
+ * A default list of client types that are allowed to authenticate [cli,ui,gateway-admin,sdk,mobile,extension].
  * @member {Array.<String>} allowed-client-type
  */
 UpdateAccountSettings.prototype['allowed-client-type'] = undefined;
@@ -562,6 +563,7 @@ UpdateAccountSettings.prototype['jwt-ttl-max'] = undefined;
 UpdateAccountSettings.prototype['jwt-ttl-min'] = undefined;
 
 /**
+ * Lock allowed-client-type setting in the account [true/false].
  * @member {String} lock-allowed-client-type
  */
 UpdateAccountSettings.prototype['lock-allowed-client-type'] = undefined;

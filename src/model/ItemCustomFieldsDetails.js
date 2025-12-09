@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ItemCustomFieldsDetails model module.
  * @module model/ItemCustomFieldsDetails
- * @version 5.0.16
+ * @version 5.0.17
  */
 class ItemCustomFieldsDetails {
     /**

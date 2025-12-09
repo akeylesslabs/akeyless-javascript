@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NextAutoRotationEvent model module.
  * @module model/NextAutoRotationEvent
- * @version 5.0.16
+ * @version 5.0.17
  */
 class NextAutoRotationEvent {
     /**

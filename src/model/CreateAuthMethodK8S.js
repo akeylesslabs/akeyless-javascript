@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodK8S model module.
  * @module model/CreateAuthMethodK8S
- * @version 5.0.16
+ * @version 5.0.17
  */
 class CreateAuthMethodK8S {
     /**
@@ -218,6 +218,7 @@ CreateAuthMethodK8S.RequiredProperties = ["name"];
 CreateAuthMethodK8S.prototype['access-expires'] = 0;
 
 /**
+ * limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]
  * @member {Array.<String>} allowed-client-type
  */
 CreateAuthMethodK8S.prototype['allowed-client-type'] = undefined;

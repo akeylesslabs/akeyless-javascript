@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateOCI model module.
  * @module model/AuthMethodCreateOCI
- * @version 5.0.16
+ * @version 5.0.17
  */
 class AuthMethodCreateOCI {
     /**
@@ -193,6 +193,7 @@ AuthMethodCreateOCI.RequiredProperties = ["group-ocid", "name", "tenant-ocid"];
 AuthMethodCreateOCI.prototype['access-expires'] = 0;
 
 /**
+ * limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]
  * @member {Array.<String>} allowed-client-type
  */
 AuthMethodCreateOCI.prototype['allowed-client-type'] = undefined;

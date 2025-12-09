@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodSAML model module.
  * @module model/CreateAuthMethodSAML
- * @version 5.0.16
+ * @version 5.0.17
  */
 class CreateAuthMethodSAML {
     /**
@@ -212,6 +212,7 @@ CreateAuthMethodSAML.RequiredProperties = ["name", "unique-identifier"];
 CreateAuthMethodSAML.prototype['access-expires'] = 0;
 
 /**
+ * limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]
  * @member {Array.<String>} allowed-client-type
  */
 CreateAuthMethodSAML.prototype['allowed-client-type'] = undefined;

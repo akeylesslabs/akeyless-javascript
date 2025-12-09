@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateUserEventOutput model module.
  * @module model/CreateUserEventOutput
- * @version 5.0.16
+ * @version 5.0.17
  */
 class CreateUserEventOutput {
     /**

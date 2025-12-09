@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscDeleteSecretOutput model module.
  * @module model/UscDeleteSecretOutput
- * @version 5.0.16
+ * @version 5.0.17
  */
 class UscDeleteSecretOutput {
     /**

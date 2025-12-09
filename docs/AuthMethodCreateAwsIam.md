@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessExpires** | **Number** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
-**allowedClientType** | **[String]** |  | [optional] 
+**allowedClientType** | **[String]** | limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension] | [optional] 
 **auditLogsClaims** | **[String]** | Subclaims to include in audit logs, e.g \&quot;--audit-logs-claims email --audit-logs-claims username\&quot; | [optional] 
 **boundArn** | **[String]** | A list of full arns that the access is restricted to | [optional] 
 **boundAwsAccountId** | **[String]** | A list of AWS account-IDs that the access is restricted to | 

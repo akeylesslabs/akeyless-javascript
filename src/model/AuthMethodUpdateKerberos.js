@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateKerberos model module.
  * @module model/AuthMethodUpdateKerberos
- * @version 5.0.16
+ * @version 5.0.17
  */
 class AuthMethodUpdateKerberos {
     /**
@@ -290,6 +290,7 @@ AuthMethodUpdateKerberos.RequiredProperties = ["name"];
 AuthMethodUpdateKerberos.prototype['access-expires'] = 0;
 
 /**
+ * limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]
  * @member {Array.<String>} allowed-client-type
  */
 AuthMethodUpdateKerberos.prototype['allowed-client-type'] = undefined;

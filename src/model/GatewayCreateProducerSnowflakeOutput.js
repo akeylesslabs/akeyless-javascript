@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerSnowflakeOutput model module.
  * @module model/GatewayCreateProducerSnowflakeOutput
- * @version 5.0.16
+ * @version 5.0.17
  */
 class GatewayCreateProducerSnowflakeOutput {
     /**

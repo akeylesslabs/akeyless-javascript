@@ -17,7 +17,7 @@ import KMIPClient from './KMIPClient';
 /**
  * The KMIPClientListResponse model module.
  * @module model/KMIPClientListResponse
- * @version 5.0.16
+ * @version 5.0.17
  */
 class KMIPClientListResponse {
     /**

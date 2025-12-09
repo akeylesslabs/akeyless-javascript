@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountCustomFieldGet model module.
  * @module model/AccountCustomFieldGet
- * @version 5.0.16
+ * @version 5.0.17
  */
 class AccountCustomFieldGet {
     /**

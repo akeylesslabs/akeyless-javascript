@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateCert model module.
  * @module model/AuthMethodUpdateCert
- * @version 5.0.16
+ * @version 5.0.17
  */
 class AuthMethodUpdateCert {
     /**
@@ -254,6 +254,7 @@ AuthMethodUpdateCert.RequiredProperties = ["name", "unique-identifier"];
 AuthMethodUpdateCert.prototype['access-expires'] = 0;
 
 /**
+ * limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]
  * @member {Array.<String>} allowed-client-type
  */
 AuthMethodUpdateCert.prototype['allowed-client-type'] = undefined;

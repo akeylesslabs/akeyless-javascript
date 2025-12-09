@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptPKCS1 model module.
  * @module model/DecryptPKCS1
- * @version 5.0.16
+ * @version 5.0.17
  */
 class DecryptPKCS1 {
     /**

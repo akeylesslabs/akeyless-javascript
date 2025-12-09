@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyJWTWithClassicKey model module.
  * @module model/VerifyJWTWithClassicKey
- * @version 5.0.16
+ * @version 5.0.17
  */
 class VerifyJWTWithClassicKey {
     /**

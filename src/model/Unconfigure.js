@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Unconfigure model module.
  * @module model/Unconfigure
- * @version 5.0.16
+ * @version 5.0.17
  */
 class Unconfigure {
     /**

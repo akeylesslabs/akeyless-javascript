@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateAwsIam model module.
  * @module model/AuthMethodCreateAwsIam
- * @version 5.0.16
+ * @version 5.0.17
  */
 class AuthMethodCreateAwsIam {
     /**
@@ -241,6 +241,7 @@ AuthMethodCreateAwsIam.RequiredProperties = ["bound-aws-account-id", "name"];
 AuthMethodCreateAwsIam.prototype['access-expires'] = 0;
 
 /**
+ * limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]
  * @member {Array.<String>} allowed-client-type
  */
 AuthMethodCreateAwsIam.prototype['allowed-client-type'] = undefined;

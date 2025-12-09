@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayDeleteK8SAuthConfig model module.
  * @module model/GatewayDeleteK8SAuthConfig
- * @version 5.0.16
+ * @version 5.0.17
  */
 class GatewayDeleteK8SAuthConfig {
     /**

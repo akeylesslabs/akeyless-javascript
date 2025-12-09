@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAWSIAM model module.
  * @module model/CreateAuthMethodAWSIAM
- * @version 5.0.16
+ * @version 5.0.17
  */
 class CreateAuthMethodAWSIAM {
     /**
@@ -241,6 +241,7 @@ CreateAuthMethodAWSIAM.RequiredProperties = ["bound-aws-account-id", "name"];
 CreateAuthMethodAWSIAM.prototype['access-expires'] = 0;
 
 /**
+ * limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]
  * @member {Array.<String>} allowed-client-type
  */
 CreateAuthMethodAWSIAM.prototype['allowed-client-type'] = undefined;

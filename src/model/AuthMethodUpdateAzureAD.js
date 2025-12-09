@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateAzureAD model module.
  * @module model/AuthMethodUpdateAzureAD
- * @version 5.0.16
+ * @version 5.0.17
  */
 class AuthMethodUpdateAzureAD {
     /**
@@ -278,6 +278,7 @@ AuthMethodUpdateAzureAD.RequiredProperties = ["bound-tenant-id", "name"];
 AuthMethodUpdateAzureAD.prototype['access-expires'] = 0;
 
 /**
+ * limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]
  * @member {Array.<String>} allowed-client-type
  */
 AuthMethodUpdateAzureAD.prototype['allowed-client-type'] = undefined;

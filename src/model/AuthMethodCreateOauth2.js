@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateOauth2 model module.
  * @module model/AuthMethodCreateOauth2
- * @version 5.0.16
+ * @version 5.0.17
  */
 class AuthMethodCreateOauth2 {
     /**
@@ -247,6 +247,7 @@ AuthMethodCreateOauth2.RequiredProperties = ["name", "unique-identifier"];
 AuthMethodCreateOauth2.prototype['access-expires'] = 0;
 
 /**
+ * limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]
  * @member {Array.<String>} allowed-client-type
  */
 AuthMethodCreateOauth2.prototype['allowed-client-type'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateGcp model module.
  * @module model/AuthMethodCreateGcp
- * @version 5.0.16
+ * @version 5.0.17
  */
 class AuthMethodCreateGcp {
     /**
@@ -242,6 +242,7 @@ AuthMethodCreateGcp.RequiredProperties = ["audience", "name", "type"];
 AuthMethodCreateGcp.prototype['access-expires'] = 0;
 
 /**
+ * limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]
  * @member {Array.<String>} allowed-client-type
  */
 AuthMethodCreateGcp.prototype['allowed-client-type'] = undefined;
