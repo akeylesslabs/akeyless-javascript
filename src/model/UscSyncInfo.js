@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscSyncInfo model module.
  * @module model/UscSyncInfo
- * @version 5.0.17
+ * @version 5.0.18
  */
 class UscSyncInfo {
     /**
@@ -47,6 +47,9 @@ class UscSyncInfo {
         if (data) {
             obj = obj || new UscSyncInfo();
 
+            if (data.hasOwnProperty('delete_remote')) {
+                obj['delete_remote'] = ApiClient.convertToType(data['delete_remote'], 'Boolean');
+            }
             if (data.hasOwnProperty('jq_secret_filter')) {
                 obj['jq_secret_filter'] = ApiClient.convertToType(data['jq_secret_filter'], 'String');
             }
@@ -100,6 +103,11 @@ class UscSyncInfo {
 }
 
 
+
+/**
+ * @member {Boolean} delete_remote
+ */
+UscSyncInfo.prototype['delete_remote'] = undefined;
 
 /**
  * @member {String} jq_secret_filter

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 5.0.17
+ * @version 5.0.18
  */
 class ListItems {
     /**
@@ -36,6 +36,7 @@ class ListItems {
     static initialize(obj) { 
         obj['accessibility'] = 'regular';
         obj['auto-pagination'] = 'enabled';
+        obj['current-folder'] = false;
         obj['json'] = false;
         obj['sra-only'] = false;
     }
@@ -59,6 +60,9 @@ class ListItems {
             }
             if (data.hasOwnProperty('auto-pagination')) {
                 obj['auto-pagination'] = ApiClient.convertToType(data['auto-pagination'], 'String');
+            }
+            if (data.hasOwnProperty('current-folder')) {
+                obj['current-folder'] = ApiClient.convertToType(data['current-folder'], 'Boolean');
             }
             if (data.hasOwnProperty('filter')) {
                 obj['filter'] = ApiClient.convertToType(data['filter'], 'String');
@@ -178,6 +182,13 @@ ListItems.prototype['advanced-filter'] = undefined;
  * @default 'enabled'
  */
 ListItems.prototype['auto-pagination'] = 'enabled';
+
+/**
+ * List only items in the current folder (excludes subfolders)
+ * @member {Boolean} current-folder
+ * @default false
+ */
+ListItems.prototype['current-folder'] = false;
 
 /**
  * Filter by item name or part of it

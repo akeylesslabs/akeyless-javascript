@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetAnalyticsData model module.
  * @module model/GetAnalyticsData
- * @version 5.0.17
+ * @version 5.0.18
  */
 class GetAnalyticsData {
     /**

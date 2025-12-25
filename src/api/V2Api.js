@@ -645,6 +645,7 @@ import RotatedSecretCreateLdap from '../model/RotatedSecretCreateLdap';
 import RotatedSecretCreateMongodb from '../model/RotatedSecretCreateMongodb';
 import RotatedSecretCreateMssql from '../model/RotatedSecretCreateMssql';
 import RotatedSecretCreateMysql from '../model/RotatedSecretCreateMysql';
+import RotatedSecretCreateOpenAI from '../model/RotatedSecretCreateOpenAI';
 import RotatedSecretCreateOracledb from '../model/RotatedSecretCreateOracledb';
 import RotatedSecretCreateOutput from '../model/RotatedSecretCreateOutput';
 import RotatedSecretCreatePostgresql from '../model/RotatedSecretCreatePostgresql';
@@ -671,6 +672,7 @@ import RotatedSecretUpdateLdap from '../model/RotatedSecretUpdateLdap';
 import RotatedSecretUpdateMongodb from '../model/RotatedSecretUpdateMongodb';
 import RotatedSecretUpdateMssql from '../model/RotatedSecretUpdateMssql';
 import RotatedSecretUpdateMysql from '../model/RotatedSecretUpdateMysql';
+import RotatedSecretUpdateOpenAI from '../model/RotatedSecretUpdateOpenAI';
 import RotatedSecretUpdateOracledb from '../model/RotatedSecretUpdateOracledb';
 import RotatedSecretUpdateOutput from '../model/RotatedSecretUpdateOutput';
 import RotatedSecretUpdatePostgresql from '../model/RotatedSecretUpdatePostgresql';
@@ -899,7 +901,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.17
+* @version 5.0.18
 */
 export default class V2Api {
 
@@ -18393,6 +18395,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/RotatedSecretCreateOpenAI} rotatedSecretCreateOpenAI 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateOpenAIWithHttpInfo(rotatedSecretCreateOpenAI) {
+      let postBody = rotatedSecretCreateOpenAI;
+      // verify the required parameter 'rotatedSecretCreateOpenAI' is set
+      if (rotatedSecretCreateOpenAI === undefined || rotatedSecretCreateOpenAI === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretCreateOpenAI' when calling rotatedSecretCreateOpenAI");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-openai', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateOpenAI} rotatedSecretCreateOpenAI 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateOpenAI(rotatedSecretCreateOpenAI) {
+      return this.rotatedSecretCreateOpenAIWithHttpInfo(rotatedSecretCreateOpenAI)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/RotatedSecretCreateOracledb} rotatedSecretCreateOracledb 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
      */
@@ -19375,6 +19420,49 @@ export default class V2Api {
      */
     rotatedSecretUpdateMysql(rotatedSecretUpdateMysql) {
       return this.rotatedSecretUpdateMysqlWithHttpInfo(rotatedSecretUpdateMysql)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateOpenAI} rotatedSecretUpdateOpenAI 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateOpenAIWithHttpInfo(rotatedSecretUpdateOpenAI) {
+      let postBody = rotatedSecretUpdateOpenAI;
+      // verify the required parameter 'rotatedSecretUpdateOpenAI' is set
+      if (rotatedSecretUpdateOpenAI === undefined || rotatedSecretUpdateOpenAI === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretUpdateOpenAI' when calling rotatedSecretUpdateOpenAI");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-openai', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateOpenAI} rotatedSecretUpdateOpenAI 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateOpenAI(rotatedSecretUpdateOpenAI) {
+      return this.rotatedSecretUpdateOpenAIWithHttpInfo(rotatedSecretUpdateOpenAI)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretDeleteSync model module.
  * @module model/RotatedSecretDeleteSync
- * @version 5.0.17
+ * @version 5.0.18
  */
 class RotatedSecretDeleteSync {
     /**
@@ -36,6 +36,7 @@ class RotatedSecretDeleteSync {
      * Only for internal use.
      */
     static initialize(obj, name, uscName) { 
+        obj['delete-from-usc'] = false;
         obj['json'] = false;
         obj['name'] = name;
         obj['usc-name'] = uscName;
@@ -52,6 +53,9 @@ class RotatedSecretDeleteSync {
         if (data) {
             obj = obj || new RotatedSecretDeleteSync();
 
+            if (data.hasOwnProperty('delete-from-usc')) {
+                obj['delete-from-usc'] = ApiClient.convertToType(data['delete-from-usc'], 'Boolean');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -114,6 +118,13 @@ class RotatedSecretDeleteSync {
 }
 
 RotatedSecretDeleteSync.RequiredProperties = ["name", "usc-name"];
+
+/**
+ * Delete the secret from the remote target USC as well
+ * @member {Boolean} delete-from-usc
+ * @default false
+ */
+RotatedSecretDeleteSync.prototype['delete-from-usc'] = false;
 
 /**
  * Set output format to JSON

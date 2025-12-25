@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HashiVaultTargetDetails model module.
  * @module model/HashiVaultTargetDetails
- * @version 5.0.17
+ * @version 5.0.18
  */
 class HashiVaultTargetDetails {
     /**

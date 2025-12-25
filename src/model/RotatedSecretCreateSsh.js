@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateSsh model module.
  * @module model/RotatedSecretCreateSsh
- * @version 5.0.17
+ * @version 5.0.18
  */
 class RotatedSecretCreateSsh {
     /**
      * Constructs a new <code>RotatedSecretCreateSsh</code>.
      * @alias module:model/RotatedSecretCreateSsh
      * @param name {String} Rotated secret name
-     * @param rotatorType {String} The rotator type. options: [target/password]
+     * @param rotatorType {String} The rotator type. options: [target/password/key]
      * @param targetName {String} Target name
      */
     constructor(name, rotatorType, targetName) { 
@@ -423,7 +423,7 @@ RotatedSecretCreateSsh.prototype['rotation-interval'] = undefined;
 RotatedSecretCreateSsh.prototype['rotator-custom-cmd'] = undefined;
 
 /**
- * The rotator type. options: [target/password]
+ * The rotator type. options: [target/password/key]
  * @member {String} rotator-type
  */
 RotatedSecretCreateSsh.prototype['rotator-type'] = undefined;

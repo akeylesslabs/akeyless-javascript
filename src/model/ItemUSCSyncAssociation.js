@@ -17,7 +17,7 @@ import UscSyncInfo from './UscSyncInfo';
 /**
  * The ItemUSCSyncAssociation model module.
  * @module model/ItemUSCSyncAssociation
- * @version 5.0.17
+ * @version 5.0.18
  */
 class ItemUSCSyncAssociation {
     /**
@@ -54,6 +54,9 @@ class ItemUSCSyncAssociation {
             }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = UscSyncInfo.constructFromObject(data['attributes']);
+            }
+            if (data.hasOwnProperty('delete_remote')) {
+                obj['delete_remote'] = ApiClient.convertToType(data['delete_remote'], 'Boolean');
             }
             if (data.hasOwnProperty('item_id')) {
                 obj['item_id'] = ApiClient.convertToType(data['item_id'], 'Number');
@@ -108,6 +111,11 @@ ItemUSCSyncAssociation.prototype['assoc_id'] = undefined;
  * @member {module:model/UscSyncInfo} attributes
  */
 ItemUSCSyncAssociation.prototype['attributes'] = undefined;
+
+/**
+ * @member {Boolean} delete_remote
+ */
+ItemUSCSyncAssociation.prototype['delete_remote'] = undefined;
 
 /**
  * @member {Number} item_id

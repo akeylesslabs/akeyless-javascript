@@ -29,7 +29,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 5.0.17
+ * @version 5.0.18
  */
 class AccountGeneralSettings {
     /**
@@ -69,6 +69,9 @@ class AccountGeneralSettings {
             }
             if (data.hasOwnProperty('ai_insights')) {
                 obj['ai_insights'] = AiInsightsSetting.constructFromObject(data['ai_insights']);
+            }
+            if (data.hasOwnProperty('allow_auto_fill')) {
+                obj['allow_auto_fill'] = ApiClient.convertToType(data['allow_auto_fill'], 'Boolean');
             }
             if (data.hasOwnProperty('allowed_client_types')) {
                 obj['allowed_client_types'] = AllowedClientType.constructFromObject(data['allowed_client_types']);
@@ -233,6 +236,11 @@ AccountGeneralSettings.prototype['account_default_key_name'] = undefined;
  * @member {module:model/AiInsightsSetting} ai_insights
  */
 AccountGeneralSettings.prototype['ai_insights'] = undefined;
+
+/**
+ * @member {Boolean} allow_auto_fill
+ */
+AccountGeneralSettings.prototype['allow_auto_fill'] = undefined;
 
 /**
  * @member {module:model/AllowedClientType} allowed_client_types

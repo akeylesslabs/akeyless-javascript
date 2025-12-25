@@ -17,7 +17,7 @@ import GetFolderOutput from './GetFolderOutput';
 /**
  * The FolderGetOutput model module.
  * @module model/FolderGetOutput
- * @version 5.0.17
+ * @version 5.0.18
  */
 class FolderGetOutput {
     /**

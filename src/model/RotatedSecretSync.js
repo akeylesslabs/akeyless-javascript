@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretSync model module.
  * @module model/RotatedSecretSync
- * @version 5.0.17
+ * @version 5.0.18
  */
 class RotatedSecretSync {
     /**
@@ -50,6 +50,9 @@ class RotatedSecretSync {
         if (data) {
             obj = obj || new RotatedSecretSync();
 
+            if (data.hasOwnProperty('DeleteRemote')) {
+                obj['DeleteRemote'] = ApiClient.convertToType(data['DeleteRemote'], 'Boolean');
+            }
             if (data.hasOwnProperty('filter-secret-value')) {
                 obj['filter-secret-value'] = ApiClient.convertToType(data['filter-secret-value'], 'String');
             }
@@ -126,6 +129,12 @@ class RotatedSecretSync {
 }
 
 RotatedSecretSync.RequiredProperties = ["name"];
+
+/**
+ * Delete the secret from remote secret manager (for association create/update)
+ * @member {Boolean} DeleteRemote
+ */
+RotatedSecretSync.prototype['DeleteRemote'] = undefined;
 
 /**
  * JQ expression to filter or transform the secret value

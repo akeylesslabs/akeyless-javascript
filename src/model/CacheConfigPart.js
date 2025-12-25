@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CacheConfigPart model module.
  * @module model/CacheConfigPart
- * @version 5.0.17
+ * @version 5.0.18
  */
 class CacheConfigPart {
     /**

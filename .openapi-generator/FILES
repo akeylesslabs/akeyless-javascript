@@ -829,6 +829,7 @@ docs/RotatedSecretCreateLdap.md
 docs/RotatedSecretCreateMongodb.md
 docs/RotatedSecretCreateMssql.md
 docs/RotatedSecretCreateMysql.md
+docs/RotatedSecretCreateOpenAI.md
 docs/RotatedSecretCreateOracledb.md
 docs/RotatedSecretCreateOutput.md
 docs/RotatedSecretCreatePostgresql.md
@@ -856,6 +857,7 @@ docs/RotatedSecretUpdateLdap.md
 docs/RotatedSecretUpdateMongodb.md
 docs/RotatedSecretUpdateMssql.md
 docs/RotatedSecretUpdateMysql.md
+docs/RotatedSecretUpdateOpenAI.md
 docs/RotatedSecretUpdateOracledb.md
 docs/RotatedSecretUpdateOutput.md
 docs/RotatedSecretUpdatePostgresql.md
@@ -1972,6 +1974,7 @@ src/model/RotatedSecretCreateLdap.js
 src/model/RotatedSecretCreateMongodb.js
 src/model/RotatedSecretCreateMssql.js
 src/model/RotatedSecretCreateMysql.js
+src/model/RotatedSecretCreateOpenAI.js
 src/model/RotatedSecretCreateOracledb.js
 src/model/RotatedSecretCreateOutput.js
 src/model/RotatedSecretCreatePostgresql.js
@@ -1999,6 +2002,7 @@ src/model/RotatedSecretUpdateLdap.js
 src/model/RotatedSecretUpdateMongodb.js
 src/model/RotatedSecretUpdateMssql.js
 src/model/RotatedSecretUpdateMysql.js
+src/model/RotatedSecretUpdateOpenAI.js
 src/model/RotatedSecretUpdateOracledb.js
 src/model/RotatedSecretUpdateOutput.js
 src/model/RotatedSecretUpdatePostgresql.js
@@ -2281,3 +2285,5 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
+test/model/RotatedSecretCreateOpenAI.spec.js
+test/model/RotatedSecretUpdateOpenAI.spec.js

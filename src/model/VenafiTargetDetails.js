@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VenafiTargetDetails model module.
  * @module model/VenafiTargetDetails
- * @version 5.0.17
+ * @version 5.0.18
  */
 class VenafiTargetDetails {
     /**

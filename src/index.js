@@ -840,6 +840,7 @@ import RotatedSecretCreateLdap from './model/RotatedSecretCreateLdap';
 import RotatedSecretCreateMongodb from './model/RotatedSecretCreateMongodb';
 import RotatedSecretCreateMssql from './model/RotatedSecretCreateMssql';
 import RotatedSecretCreateMysql from './model/RotatedSecretCreateMysql';
+import RotatedSecretCreateOpenAI from './model/RotatedSecretCreateOpenAI';
 import RotatedSecretCreateOracledb from './model/RotatedSecretCreateOracledb';
 import RotatedSecretCreateOutput from './model/RotatedSecretCreateOutput';
 import RotatedSecretCreatePostgresql from './model/RotatedSecretCreatePostgresql';
@@ -867,6 +868,7 @@ import RotatedSecretUpdateLdap from './model/RotatedSecretUpdateLdap';
 import RotatedSecretUpdateMongodb from './model/RotatedSecretUpdateMongodb';
 import RotatedSecretUpdateMssql from './model/RotatedSecretUpdateMssql';
 import RotatedSecretUpdateMysql from './model/RotatedSecretUpdateMysql';
+import RotatedSecretUpdateOpenAI from './model/RotatedSecretUpdateOpenAI';
 import RotatedSecretUpdateOracledb from './model/RotatedSecretUpdateOracledb';
 import RotatedSecretUpdateOutput from './model/RotatedSecretUpdateOutput';
 import RotatedSecretUpdatePostgresql from './model/RotatedSecretUpdatePostgresql';
@@ -1181,7 +1183,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.17
+* @version 5.0.18
 */
 export {
     /**
@@ -6153,6 +6155,12 @@ export {
     RotatedSecretCreateMysql,
 
     /**
+     * The RotatedSecretCreateOpenAI model constructor.
+     * @property {module:model/RotatedSecretCreateOpenAI}
+     */
+    RotatedSecretCreateOpenAI,
+
+    /**
      * The RotatedSecretCreateOracledb model constructor.
      * @property {module:model/RotatedSecretCreateOracledb}
      */
@@ -6313,6 +6321,12 @@ export {
      * @property {module:model/RotatedSecretUpdateMysql}
      */
     RotatedSecretUpdateMysql,
+
+    /**
+     * The RotatedSecretUpdateOpenAI model constructor.
+     * @property {module:model/RotatedSecretUpdateOpenAI}
+     */
+    RotatedSecretUpdateOpenAI,
 
     /**
      * The RotatedSecretUpdateOracledb model constructor.

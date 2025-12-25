@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CertificateExpirationEvent model module.
  * @module model/CertificateExpirationEvent
- * @version 5.0.17
+ * @version 5.0.18
  */
 class CertificateExpirationEvent {
     /**

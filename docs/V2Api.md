@@ -411,6 +411,7 @@ Method | HTTP request | Description
 [**rotatedSecretCreateMongodb**](V2Api.md#rotatedSecretCreateMongodb) | **POST** /rotated-secret-create-mongodb | 
 [**rotatedSecretCreateMssql**](V2Api.md#rotatedSecretCreateMssql) | **POST** /rotated-secret-create-mssql | 
 [**rotatedSecretCreateMysql**](V2Api.md#rotatedSecretCreateMysql) | **POST** /rotated-secret-create-mysql | 
+[**rotatedSecretCreateOpenAI**](V2Api.md#rotatedSecretCreateOpenAI) | **POST** /rotated-secret-create-openai | 
 [**rotatedSecretCreateOracledb**](V2Api.md#rotatedSecretCreateOracledb) | **POST** /rotated-secret-create-oracledb | 
 [**rotatedSecretCreatePostgresql**](V2Api.md#rotatedSecretCreatePostgresql) | **POST** /rotated-secret-create-postgresql | 
 [**rotatedSecretCreateRedis**](V2Api.md#rotatedSecretCreateRedis) | **POST** /rotated-secret-create-redis | 
@@ -434,6 +435,7 @@ Method | HTTP request | Description
 [**rotatedSecretUpdateMongodb**](V2Api.md#rotatedSecretUpdateMongodb) | **POST** /rotated-secret-update-mongodb | 
 [**rotatedSecretUpdateMssql**](V2Api.md#rotatedSecretUpdateMssql) | **POST** /rotated-secret-update-mssql | 
 [**rotatedSecretUpdateMysql**](V2Api.md#rotatedSecretUpdateMysql) | **POST** /rotated-secret-update-mysql | 
+[**rotatedSecretUpdateOpenAI**](V2Api.md#rotatedSecretUpdateOpenAI) | **POST** /rotated-secret-update-openai | 
 [**rotatedSecretUpdateOracledb**](V2Api.md#rotatedSecretUpdateOracledb) | **POST** /rotated-secret-update-oracledb | 
 [**rotatedSecretUpdatePostgresql**](V2Api.md#rotatedSecretUpdatePostgresql) | **POST** /rotated-secret-update-postgresql | 
 [**rotatedSecretUpdateRedis**](V2Api.md#rotatedSecretUpdateRedis) | **POST** /rotated-secret-update-redis | 
@@ -17718,6 +17720,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## rotatedSecretCreateOpenAI
+
+> RotatedSecretCreateOutput rotatedSecretCreateOpenAI(rotatedSecretCreateOpenAI)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretCreateOpenAI = new akeyless.RotatedSecretCreateOpenAI(); // RotatedSecretCreateOpenAI | 
+apiInstance.rotatedSecretCreateOpenAI(rotatedSecretCreateOpenAI).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretCreateOpenAI** | [**RotatedSecretCreateOpenAI**](RotatedSecretCreateOpenAI.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## rotatedSecretCreateOracledb
 
 > RotatedSecretCreateOutput rotatedSecretCreateOracledb(rotatedSecretCreateOracledb)
@@ -18669,6 +18713,48 @@ apiInstance.rotatedSecretUpdateMysql(rotatedSecretUpdateMysql).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rotatedSecretUpdateMysql** | [**RotatedSecretUpdateMysql**](RotatedSecretUpdateMysql.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateOpenAI
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateOpenAI(rotatedSecretUpdateOpenAI)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretUpdateOpenAI = new akeyless.RotatedSecretUpdateOpenAI(); // RotatedSecretUpdateOpenAI | 
+apiInstance.rotatedSecretUpdateOpenAI(rotatedSecretUpdateOpenAI).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretUpdateOpenAI** | [**RotatedSecretUpdateOpenAI**](RotatedSecretUpdateOpenAI.md)|  | 
 
 ### Return type
 
