@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretList model module.
  * @module model/RotatedSecretList
- * @version 5.0.18
+ * @version 5.0.19
  */
 class RotatedSecretList {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateMssql model module.
  * @module model/RotatedSecretCreateMssql
- * @version 5.0.18
+ * @version 5.0.19
  */
 class RotatedSecretCreateMssql {
     /**

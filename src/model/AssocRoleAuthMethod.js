@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocRoleAuthMethod model module.
  * @module model/AssocRoleAuthMethod
- * @version 5.0.18
+ * @version 5.0.19
  */
 class AssocRoleAuthMethod {
     /**

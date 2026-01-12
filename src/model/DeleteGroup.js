@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteGroup model module.
  * @module model/DeleteGroup
- * @version 5.0.18
+ * @version 5.0.19
  */
 class DeleteGroup {
     /**

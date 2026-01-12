@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MigrationStatus model module.
  * @module model/MigrationStatus
- * @version 5.0.18
+ * @version 5.0.19
  */
 class MigrationStatus {
     /**

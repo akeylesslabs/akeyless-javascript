@@ -17,7 +17,7 @@ import NullTime from './NullTime';
 /**
  * The AccountCustomFieldGetOutput model module.
  * @module model/AccountCustomFieldGetOutput
- * @version 5.0.18
+ * @version 5.0.19
  */
 class AccountCustomFieldGetOutput {
     /**

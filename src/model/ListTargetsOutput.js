@@ -17,7 +17,7 @@ import Target from './Target';
 /**
  * The ListTargetsOutput model module.
  * @module model/ListTargetsOutput
- * @version 5.0.18
+ * @version 5.0.19
  */
 class ListTargetsOutput {
     /**

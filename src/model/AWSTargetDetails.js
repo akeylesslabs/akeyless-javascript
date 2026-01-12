@@ -17,7 +17,7 @@ import AWSGatewayCloudIdentityExternalIdOpt from './AWSGatewayCloudIdentityExter
 /**
  * The AWSTargetDetails model module.
  * @module model/AWSTargetDetails
- * @version 5.0.18
+ * @version 5.0.19
  */
 class AWSTargetDetails {
     /**

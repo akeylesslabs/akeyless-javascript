@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 import AWSSecretsMigration from './AWSSecretsMigration';
 import ActiveDirectoryMigration from './ActiveDirectoryMigration';
 import AzureKeyVaultMigration from './AzureKeyVaultMigration';
+import CertificateMigration from './CertificateMigration';
 import GCPSecretsMigration from './GCPSecretsMigration';
 import HashiMigration from './HashiMigration';
 import K8SMigration from './K8SMigration';
@@ -25,7 +26,7 @@ import ServerInventoryMigration from './ServerInventoryMigration';
 /**
  * The MigrationsConfigPart model module.
  * @module model/MigrationsConfigPart
- * @version 5.0.18
+ * @version 5.0.19
  */
 class MigrationsConfigPart {
     /**
@@ -64,6 +65,9 @@ class MigrationsConfigPart {
             }
             if (data.hasOwnProperty('azure_kv_migrations')) {
                 obj['azure_kv_migrations'] = ApiClient.convertToType(data['azure_kv_migrations'], [AzureKeyVaultMigration]);
+            }
+            if (data.hasOwnProperty('certificate_migrations')) {
+                obj['certificate_migrations'] = ApiClient.convertToType(data['certificate_migrations'], [CertificateMigration]);
             }
             if (data.hasOwnProperty('gcp_secrets_migrations')) {
                 obj['gcp_secrets_migrations'] = ApiClient.convertToType(data['gcp_secrets_migrations'], [GCPSecretsMigration]);
@@ -121,6 +125,16 @@ class MigrationsConfigPart {
             // validate the optional field `azure_kv_migrations` (array)
             for (const item of data['azure_kv_migrations']) {
                 AzureKeyVaultMigration.validateJSON(item);
+            };
+        }
+        if (data['certificate_migrations']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['certificate_migrations'])) {
+                throw new Error("Expected the field `certificate_migrations` to be an array in the JSON data but got " + data['certificate_migrations']);
+            }
+            // validate the optional field `certificate_migrations` (array)
+            for (const item of data['certificate_migrations']) {
+                CertificateMigration.validateJSON(item);
             };
         }
         if (data['gcp_secrets_migrations']) { // data not null
@@ -206,6 +220,11 @@ MigrationsConfigPart.prototype['aws_secrets_migrations'] = undefined;
  * @member {Array.<module:model/AzureKeyVaultMigration>} azure_kv_migrations
  */
 MigrationsConfigPart.prototype['azure_kv_migrations'] = undefined;
+
+/**
+ * @member {Array.<module:model/CertificateMigration>} certificate_migrations
+ */
+MigrationsConfigPart.prototype['certificate_migrations'] = undefined;
 
 /**
  * @member {Array.<module:model/GCPSecretsMigration>} gcp_secrets_migrations

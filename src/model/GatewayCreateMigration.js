@@ -16,21 +16,22 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateMigration model module.
  * @module model/GatewayCreateMigration
- * @version 5.0.18
+ * @version 5.0.19
  */
 class GatewayCreateMigration {
     /**
      * Constructs a new <code>GatewayCreateMigration</code>.
      * gatewayCreateMigration is a command that create migration
      * @alias module:model/GatewayCreateMigration
+     * @param hosts {String} A comma separated list of IPs, CIDR ranges, or DNS names to scan
      * @param name {String} Migration name
      * @param siTargetName {String} SSH, Windows or Linked Target Name. (Relevant only for Server Inventory migration)
      * @param siUsersPathTemplate {String} Path location template for migrating users as Rotated Secrets e.g.: .../Users/{{COMPUTER_NAME}}/{{USERNAME}} (Relevant only for Server Inventory migration)
      * @param targetLocation {String} Target location in Akeyless for imported secrets
      */
-    constructor(name, siTargetName, siUsersPathTemplate, targetLocation) { 
+    constructor(hosts, name, siTargetName, siUsersPathTemplate, targetLocation) { 
         
-        GatewayCreateMigration.initialize(this, name, siTargetName, siUsersPathTemplate, targetLocation);
+        GatewayCreateMigration.initialize(this, hosts, name, siTargetName, siUsersPathTemplate, targetLocation);
     }
 
     /**
@@ -38,7 +39,7 @@ class GatewayCreateMigration {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, siTargetName, siUsersPathTemplate, targetLocation) { 
+    static initialize(obj, hosts, name, siTargetName, siUsersPathTemplate, targetLocation) { 
         obj['ad-discover-iis-app'] = 'false';
         obj['ad-discover-services'] = 'false';
         obj['ad-ssh-port'] = '22';
@@ -48,8 +49,10 @@ class GatewayCreateMigration {
         obj['ad-winrm-port'] = '5986';
         obj['aws-region'] = 'us-east-2';
         obj['hashi-json'] = 'true';
+        obj['hosts'] = hosts;
         obj['json'] = false;
         obj['name'] = name;
+        obj['port-ranges'] = '443';
         obj['si-sra-enable-rdp'] = 'false';
         obj['si-target-name'] = siTargetName;
         obj['si-users-path-template'] = siUsersPathTemplate;
@@ -160,6 +163,9 @@ class GatewayCreateMigration {
             if (data.hasOwnProperty('azure-tenant-id')) {
                 obj['azure-tenant-id'] = ApiClient.convertToType(data['azure-tenant-id'], 'String');
             }
+            if (data.hasOwnProperty('expiration-event-in')) {
+                obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
+            }
             if (data.hasOwnProperty('gcp-key')) {
                 obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
             }
@@ -174,6 +180,9 @@ class GatewayCreateMigration {
             }
             if (data.hasOwnProperty('hashi-url')) {
                 obj['hashi-url'] = ApiClient.convertToType(data['hashi-url'], 'String');
+            }
+            if (data.hasOwnProperty('hosts')) {
+                obj['hosts'] = ApiClient.convertToType(data['hosts'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -207,6 +216,9 @@ class GatewayCreateMigration {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('port-ranges')) {
+                obj['port-ranges'] = ApiClient.convertToType(data['port-ranges'], 'String');
             }
             if (data.hasOwnProperty('protection-key')) {
                 obj['protection-key'] = ApiClient.convertToType(data['protection-key'], 'String');
@@ -379,6 +391,10 @@ class GatewayCreateMigration {
         if (data['azure-tenant-id'] && !(typeof data['azure-tenant-id'] === 'string' || data['azure-tenant-id'] instanceof String)) {
             throw new Error("Expected the field `azure-tenant-id` to be a primitive type in the JSON string but got " + data['azure-tenant-id']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['expiration-event-in'])) {
+            throw new Error("Expected the field `expiration-event-in` to be an array in the JSON data but got " + data['expiration-event-in']);
+        }
         // ensure the json data is a string
         if (data['gcp-key'] && !(typeof data['gcp-key'] === 'string' || data['gcp-key'] instanceof String)) {
             throw new Error("Expected the field `gcp-key` to be a primitive type in the JSON string but got " + data['gcp-key']);
@@ -398,6 +414,10 @@ class GatewayCreateMigration {
         // ensure the json data is a string
         if (data['hashi-url'] && !(typeof data['hashi-url'] === 'string' || data['hashi-url'] instanceof String)) {
             throw new Error("Expected the field `hashi-url` to be a primitive type in the JSON string but got " + data['hashi-url']);
+        }
+        // ensure the json data is a string
+        if (data['hosts'] && !(typeof data['hosts'] === 'string' || data['hosts'] instanceof String)) {
+            throw new Error("Expected the field `hosts` to be a primitive type in the JSON string but got " + data['hosts']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['k8s-ca-certificate'])) {
@@ -434,6 +454,10 @@ class GatewayCreateMigration {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['port-ranges'] && !(typeof data['port-ranges'] === 'string' || data['port-ranges'] instanceof String)) {
+            throw new Error("Expected the field `port-ranges` to be a primitive type in the JSON string but got " + data['port-ranges']);
         }
         // ensure the json data is a string
         if (data['protection-key'] && !(typeof data['protection-key'] === 'string' || data['protection-key'] instanceof String)) {
@@ -486,7 +510,7 @@ class GatewayCreateMigration {
 
 }
 
-GatewayCreateMigration.RequiredProperties = ["name", "si-target-name", "si-users-path-template", "target-location"];
+GatewayCreateMigration.RequiredProperties = ["hosts", "name", "si-target-name", "si-users-path-template", "target-location"];
 
 /**
  * @member {String} ServiceAccountKeyDecoded
@@ -682,6 +706,12 @@ GatewayCreateMigration.prototype['azure-secret'] = undefined;
 GatewayCreateMigration.prototype['azure-tenant-id'] = undefined;
 
 /**
+ * How many days before the expiration of the certificate would you like to be notified.
+ * @member {Array.<String>} expiration-event-in
+ */
+GatewayCreateMigration.prototype['expiration-event-in'] = undefined;
+
+/**
  * Base64-encoded GCP Service Account private key text with sufficient permissions to Secrets Manager, Minimum required permission is Secret Manager Secret Accessor, e.g. 'roles/secretmanager.secretAccessor' (relevant only for GCP migration)
  * @member {String} gcp-key
  */
@@ -711,6 +741,12 @@ GatewayCreateMigration.prototype['hashi-token'] = undefined;
  * @member {String} hashi-url
  */
 GatewayCreateMigration.prototype['hashi-url'] = undefined;
+
+/**
+ * A comma separated list of IPs, CIDR ranges, or DNS names to scan
+ * @member {String} hosts
+ */
+GatewayCreateMigration.prototype['hosts'] = undefined;
 
 /**
  * Set output format to JSON
@@ -780,6 +816,13 @@ GatewayCreateMigration.prototype['k8s-username'] = undefined;
 GatewayCreateMigration.prototype['name'] = undefined;
 
 /**
+ * A comma separated list of port ranges Examples: \"80,443\" or \"80,443,8080-8090\" or \"443\"
+ * @member {String} port-ranges
+ * @default '443'
+ */
+GatewayCreateMigration.prototype['port-ranges'] = '443';
+
+/**
  * The name of the key that protects the classic key value (if empty, the account default key will be used)
  * @member {String} protection-key
  */
@@ -847,7 +890,7 @@ GatewayCreateMigration.prototype['target-location'] = undefined;
 GatewayCreateMigration.prototype['token'] = undefined;
 
 /**
- * Migration type (hashi/aws/gcp/k8s/azure_kv/active_directory)
+ * Migration type (hashi/aws/gcp/k8s/azure_kv/active_directory/server_inventory/certificate)
  * @member {String} type
  */
 GatewayCreateMigration.prototype['type'] = undefined;

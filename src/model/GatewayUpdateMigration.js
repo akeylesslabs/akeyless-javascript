@@ -16,20 +16,21 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 5.0.18
+ * @version 5.0.19
  */
 class GatewayUpdateMigration {
     /**
      * Constructs a new <code>GatewayUpdateMigration</code>.
      * gatewayUpdateMigration is a command that update migration
      * @alias module:model/GatewayUpdateMigration
+     * @param hosts {String} A comma separated list of IPs, CIDR ranges, or DNS names to scan
      * @param siTargetName {String} SSH, Windows or Linked Target Name. (Relevant only for Server Inventory migration)
      * @param siUsersPathTemplate {String} Path location template for migrating users as Rotated Secrets e.g.: .../Users/{{COMPUTER_NAME}}/{{USERNAME}} (Relevant only for Server Inventory migration)
      * @param targetLocation {String} Target location in Akeyless for imported secrets
      */
-    constructor(siTargetName, siUsersPathTemplate, targetLocation) { 
+    constructor(hosts, siTargetName, siUsersPathTemplate, targetLocation) { 
         
-        GatewayUpdateMigration.initialize(this, siTargetName, siUsersPathTemplate, targetLocation);
+        GatewayUpdateMigration.initialize(this, hosts, siTargetName, siUsersPathTemplate, targetLocation);
     }
 
     /**
@@ -37,7 +38,7 @@ class GatewayUpdateMigration {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, siTargetName, siUsersPathTemplate, targetLocation) { 
+    static initialize(obj, hosts, siTargetName, siUsersPathTemplate, targetLocation) { 
         obj['ad-discover-iis-app'] = 'false';
         obj['ad-discover-services'] = 'false';
         obj['ad-ssh-port'] = '22';
@@ -47,7 +48,9 @@ class GatewayUpdateMigration {
         obj['ad-winrm-port'] = '5986';
         obj['aws-region'] = 'us-east-2';
         obj['hashi-json'] = 'true';
+        obj['hosts'] = hosts;
         obj['json'] = false;
+        obj['port-ranges'] = '443';
         obj['si-sra-enable-rdp'] = 'false';
         obj['si-target-name'] = siTargetName;
         obj['si-users-path-template'] = siUsersPathTemplate;
@@ -158,6 +161,9 @@ class GatewayUpdateMigration {
             if (data.hasOwnProperty('azure-tenant-id')) {
                 obj['azure-tenant-id'] = ApiClient.convertToType(data['azure-tenant-id'], 'String');
             }
+            if (data.hasOwnProperty('expiration-event-in')) {
+                obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
+            }
             if (data.hasOwnProperty('gcp-key')) {
                 obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
             }
@@ -172,6 +178,9 @@ class GatewayUpdateMigration {
             }
             if (data.hasOwnProperty('hashi-url')) {
                 obj['hashi-url'] = ApiClient.convertToType(data['hashi-url'], 'String');
+            }
+            if (data.hasOwnProperty('hosts')) {
+                obj['hosts'] = ApiClient.convertToType(data['hosts'], 'String');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -211,6 +220,9 @@ class GatewayUpdateMigration {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('port-ranges')) {
+                obj['port-ranges'] = ApiClient.convertToType(data['port-ranges'], 'String');
             }
             if (data.hasOwnProperty('protection-key')) {
                 obj['protection-key'] = ApiClient.convertToType(data['protection-key'], 'String');
@@ -380,6 +392,10 @@ class GatewayUpdateMigration {
         if (data['azure-tenant-id'] && !(typeof data['azure-tenant-id'] === 'string' || data['azure-tenant-id'] instanceof String)) {
             throw new Error("Expected the field `azure-tenant-id` to be a primitive type in the JSON string but got " + data['azure-tenant-id']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['expiration-event-in'])) {
+            throw new Error("Expected the field `expiration-event-in` to be an array in the JSON data but got " + data['expiration-event-in']);
+        }
         // ensure the json data is a string
         if (data['gcp-key'] && !(typeof data['gcp-key'] === 'string' || data['gcp-key'] instanceof String)) {
             throw new Error("Expected the field `gcp-key` to be a primitive type in the JSON string but got " + data['gcp-key']);
@@ -399,6 +415,10 @@ class GatewayUpdateMigration {
         // ensure the json data is a string
         if (data['hashi-url'] && !(typeof data['hashi-url'] === 'string' || data['hashi-url'] instanceof String)) {
             throw new Error("Expected the field `hashi-url` to be a primitive type in the JSON string but got " + data['hashi-url']);
+        }
+        // ensure the json data is a string
+        if (data['hosts'] && !(typeof data['hosts'] === 'string' || data['hosts'] instanceof String)) {
+            throw new Error("Expected the field `hosts` to be a primitive type in the JSON string but got " + data['hosts']);
         }
         // ensure the json data is a string
         if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
@@ -443,6 +463,10 @@ class GatewayUpdateMigration {
         // ensure the json data is a string
         if (data['new-name'] && !(typeof data['new-name'] === 'string' || data['new-name'] instanceof String)) {
             throw new Error("Expected the field `new-name` to be a primitive type in the JSON string but got " + data['new-name']);
+        }
+        // ensure the json data is a string
+        if (data['port-ranges'] && !(typeof data['port-ranges'] === 'string' || data['port-ranges'] instanceof String)) {
+            throw new Error("Expected the field `port-ranges` to be a primitive type in the JSON string but got " + data['port-ranges']);
         }
         // ensure the json data is a string
         if (data['protection-key'] && !(typeof data['protection-key'] === 'string' || data['protection-key'] instanceof String)) {
@@ -491,7 +515,7 @@ class GatewayUpdateMigration {
 
 }
 
-GatewayUpdateMigration.RequiredProperties = ["si-target-name", "si-users-path-template", "target-location"];
+GatewayUpdateMigration.RequiredProperties = ["hosts", "si-target-name", "si-users-path-template", "target-location"];
 
 /**
  * @member {String} ServiceAccountKeyDecoded
@@ -687,6 +711,12 @@ GatewayUpdateMigration.prototype['azure-secret'] = undefined;
 GatewayUpdateMigration.prototype['azure-tenant-id'] = undefined;
 
 /**
+ * How many days before the expiration of the certificate would you like to be notified.
+ * @member {Array.<String>} expiration-event-in
+ */
+GatewayUpdateMigration.prototype['expiration-event-in'] = undefined;
+
+/**
  * Base64-encoded GCP Service Account private key text with sufficient permissions to Secrets Manager, Minimum required permission is Secret Manager Secret Accessor, e.g. 'roles/secretmanager.secretAccessor' (relevant only for GCP migration)
  * @member {String} gcp-key
  */
@@ -716,6 +746,12 @@ GatewayUpdateMigration.prototype['hashi-token'] = undefined;
  * @member {String} hashi-url
  */
 GatewayUpdateMigration.prototype['hashi-url'] = undefined;
+
+/**
+ * A comma separated list of IPs, CIDR ranges, or DNS names to scan
+ * @member {String} hosts
+ */
+GatewayUpdateMigration.prototype['hosts'] = undefined;
 
 /**
  * Migration ID (Can be retrieved with gateway-list-migration command)
@@ -795,6 +831,13 @@ GatewayUpdateMigration.prototype['name'] = undefined;
  * @member {String} new-name
  */
 GatewayUpdateMigration.prototype['new-name'] = undefined;
+
+/**
+ * A comma separated list of port ranges Examples: \"80,443\" or \"80,443,8080-8090\" or \"443\"
+ * @member {String} port-ranges
+ * @default '443'
+ */
+GatewayUpdateMigration.prototype['port-ranges'] = '443';
 
 /**
  * The name of the key that protects the classic key value (if empty, the account default key will be used)

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WindowsTargetDetails model module.
  * @module model/WindowsTargetDetails
- * @version 5.0.18
+ * @version 5.0.19
  */
 class WindowsTargetDetails {
     /**

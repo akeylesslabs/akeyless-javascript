@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RevokeCertificate model module.
  * @module model/RevokeCertificate
- * @version 5.0.18
+ * @version 5.0.19
  */
 class RevokeCertificate {
     /**

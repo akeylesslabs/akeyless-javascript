@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscDelete model module.
  * @module model/UscDelete
- * @version 5.0.18
+ * @version 5.0.19
  */
 class UscDelete {
     /**
@@ -53,6 +53,9 @@ class UscDelete {
         if (data) {
             obj = obj || new UscDelete();
 
+            if (data.hasOwnProperty('force-delete')) {
+                obj['force-delete'] = ApiClient.convertToType(data['force-delete'], 'Boolean');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -115,6 +118,12 @@ class UscDelete {
 }
 
 UscDelete.RequiredProperties = ["secret-id", "usc-name"];
+
+/**
+ * Force delete objects that are soft deleted by default (relavent only for Azure target)
+ * @member {Boolean} force-delete
+ */
+UscDelete.prototype['force-delete'] = undefined;
 
 /**
  * Set output format to JSON

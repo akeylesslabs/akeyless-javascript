@@ -113,10 +113,15 @@ import CalcPasswordSecurityInfo from './model/CalcPasswordSecurityInfo';
 import CertAccessRules from './model/CertAccessRules';
 import CertificateAnalyticAggregation from './model/CertificateAnalyticAggregation';
 import CertificateChainInfo from './model/CertificateChainInfo';
+import CertificateDiscovery from './model/CertificateDiscovery';
+import CertificateDiscoveryOutput from './model/CertificateDiscoveryOutput';
 import CertificateExpirationEvent from './model/CertificateExpirationEvent';
 import CertificateExpirationEventsSettings from './model/CertificateExpirationEventsSettings';
 import CertificateInfo from './model/CertificateInfo';
 import CertificateIssueInfo from './model/CertificateIssueInfo';
+import CertificateMigration from './model/CertificateMigration';
+import CertificatePayload from './model/CertificatePayload';
+import CertificateScanTarget from './model/CertificateScanTarget';
 import CertificateStore from './model/CertificateStore';
 import CertificateTemplateInfo from './model/CertificateTemplateInfo';
 import CertificateVersionInfo from './model/CertificateVersionInfo';
@@ -887,6 +892,7 @@ import SAMLAttribute from './model/SAMLAttribute';
 import SSHCertificateIssueDetails from './model/SSHCertificateIssueDetails';
 import SSHTargetDetails from './model/SSHTargetDetails';
 import SalesforceTargetDetails from './model/SalesforceTargetDetails';
+import ScanResults from './model/ScanResults';
 import SecretInfo from './model/SecretInfo';
 import SecretSyncOutput from './model/SecretSyncOutput';
 import SectigoTargetDetails from './model/SectigoTargetDetails';
@@ -961,6 +967,7 @@ import TargetCreateWeb from './model/TargetCreateWeb';
 import TargetCreateWindows from './model/TargetCreateWindows';
 import TargetCreateZeroSSL from './model/TargetCreateZeroSSL';
 import TargetDelete from './model/TargetDelete';
+import TargetError from './model/TargetError';
 import TargetGet from './model/TargetGet';
 import TargetGetDetails from './model/TargetGetDetails';
 import TargetItemAssociation from './model/TargetItemAssociation';
@@ -1183,7 +1190,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.18
+* @version 5.0.19
 */
 export {
     /**
@@ -1793,6 +1800,18 @@ export {
     CertificateChainInfo,
 
     /**
+     * The CertificateDiscovery model constructor.
+     * @property {module:model/CertificateDiscovery}
+     */
+    CertificateDiscovery,
+
+    /**
+     * The CertificateDiscoveryOutput model constructor.
+     * @property {module:model/CertificateDiscoveryOutput}
+     */
+    CertificateDiscoveryOutput,
+
+    /**
      * The CertificateExpirationEvent model constructor.
      * @property {module:model/CertificateExpirationEvent}
      */
@@ -1815,6 +1834,24 @@ export {
      * @property {module:model/CertificateIssueInfo}
      */
     CertificateIssueInfo,
+
+    /**
+     * The CertificateMigration model constructor.
+     * @property {module:model/CertificateMigration}
+     */
+    CertificateMigration,
+
+    /**
+     * The CertificatePayload model constructor.
+     * @property {module:model/CertificatePayload}
+     */
+    CertificatePayload,
+
+    /**
+     * The CertificateScanTarget model constructor.
+     * @property {module:model/CertificateScanTarget}
+     */
+    CertificateScanTarget,
 
     /**
      * The CertificateStore model constructor.
@@ -6437,6 +6474,12 @@ export {
     SalesforceTargetDetails,
 
     /**
+     * The ScanResults model constructor.
+     * @property {module:model/ScanResults}
+     */
+    ScanResults,
+
+    /**
      * The SecretInfo model constructor.
      * @property {module:model/SecretInfo}
      */
@@ -6879,6 +6922,12 @@ export {
      * @property {module:model/TargetDelete}
      */
     TargetDelete,
+
+    /**
+     * The TargetError model constructor.
+     * @property {module:model/TargetError}
+     */
+    TargetError,
 
     /**
      * The TargetGet model constructor.

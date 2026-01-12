@@ -102,10 +102,15 @@ docs/CalcPasswordSecurityInfo.md
 docs/CertAccessRules.md
 docs/CertificateAnalyticAggregation.md
 docs/CertificateChainInfo.md
+docs/CertificateDiscovery.md
+docs/CertificateDiscoveryOutput.md
 docs/CertificateExpirationEvent.md
 docs/CertificateExpirationEventsSettings.md
 docs/CertificateInfo.md
 docs/CertificateIssueInfo.md
+docs/CertificateMigration.md
+docs/CertificatePayload.md
+docs/CertificateScanTarget.md
 docs/CertificateStore.md
 docs/CertificateTemplateInfo.md
 docs/CertificateVersionInfo.md
@@ -876,6 +881,7 @@ docs/SAMLAttribute.md
 docs/SSHCertificateIssueDetails.md
 docs/SSHTargetDetails.md
 docs/SalesforceTargetDetails.md
+docs/ScanResults.md
 docs/SecretInfo.md
 docs/SecretSyncOutput.md
 docs/SectigoTargetDetails.md
@@ -950,6 +956,7 @@ docs/TargetCreateWeb.md
 docs/TargetCreateWindows.md
 docs/TargetCreateZeroSSL.md
 docs/TargetDelete.md
+docs/TargetError.md
 docs/TargetGet.md
 docs/TargetGetDetails.md
 docs/TargetItemAssociation.md
@@ -1247,10 +1254,15 @@ src/model/CalcPasswordSecurityInfo.js
 src/model/CertAccessRules.js
 src/model/CertificateAnalyticAggregation.js
 src/model/CertificateChainInfo.js
+src/model/CertificateDiscovery.js
+src/model/CertificateDiscoveryOutput.js
 src/model/CertificateExpirationEvent.js
 src/model/CertificateExpirationEventsSettings.js
 src/model/CertificateInfo.js
 src/model/CertificateIssueInfo.js
+src/model/CertificateMigration.js
+src/model/CertificatePayload.js
+src/model/CertificateScanTarget.js
 src/model/CertificateStore.js
 src/model/CertificateTemplateInfo.js
 src/model/CertificateVersionInfo.js
@@ -2021,6 +2033,7 @@ src/model/SAMLAttribute.js
 src/model/SSHCertificateIssueDetails.js
 src/model/SSHTargetDetails.js
 src/model/SalesforceTargetDetails.js
+src/model/ScanResults.js
 src/model/SecretInfo.js
 src/model/SecretSyncOutput.js
 src/model/SectigoTargetDetails.js
@@ -2095,6 +2108,7 @@ src/model/TargetCreateWeb.js
 src/model/TargetCreateWindows.js
 src/model/TargetCreateZeroSSL.js
 src/model/TargetDelete.js
+src/model/TargetError.js
 src/model/TargetGet.js
 src/model/TargetGetDetails.js
 src/model/TargetItemAssociation.js
@@ -2285,5 +2299,10 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/RotatedSecretCreateOpenAI.spec.js
-test/model/RotatedSecretUpdateOpenAI.spec.js
+test/model/CertificateDiscovery.spec.js
+test/model/CertificateDiscoveryOutput.spec.js
+test/model/CertificateMigration.spec.js
+test/model/CertificatePayload.spec.js
+test/model/CertificateScanTarget.spec.js
+test/model/ScanResults.spec.js
+test/model/TargetError.spec.js

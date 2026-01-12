@@ -69,6 +69,8 @@ import BatchEncryptionRequestLine from '../model/BatchEncryptionRequestLine';
 import BatchTokenizationRequestLine from '../model/BatchTokenizationRequestLine';
 import CacheConfigPart from '../model/CacheConfigPart';
 import CalcPasswordSecurityInfo from '../model/CalcPasswordSecurityInfo';
+import CertificateDiscovery from '../model/CertificateDiscovery';
+import CertificateDiscoveryOutput from '../model/CertificateDiscoveryOutput';
 import ChangeAdminAccountPassword from '../model/ChangeAdminAccountPassword';
 import Configure from '../model/Configure';
 import ConfigureOutput from '../model/ConfigureOutput';
@@ -901,7 +903,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.18
+* @version 5.0.19
 */
 export default class V2Api {
 
@@ -2687,6 +2689,49 @@ export default class V2Api {
      */
     calcPasswordSecurityInfo(calcPasswordSecurityInfo) {
       return this.calcPasswordSecurityInfoWithHttpInfo(calcPasswordSecurityInfo)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CertificateDiscovery} certificateDiscovery 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CertificateDiscoveryOutput} and HTTP response
+     */
+    certificateDiscoveryWithHttpInfo(certificateDiscovery) {
+      let postBody = certificateDiscovery;
+      // verify the required parameter 'certificateDiscovery' is set
+      if (certificateDiscovery === undefined || certificateDiscovery === null) {
+        throw new Error("Missing the required parameter 'certificateDiscovery' when calling certificateDiscovery");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CertificateDiscoveryOutput;
+      return this.apiClient.callApi(
+        '/certificate-discovery', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CertificateDiscovery} certificateDiscovery 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CertificateDiscoveryOutput}
+     */
+    certificateDiscovery(certificateDiscovery) {
+      return this.certificateDiscoveryWithHttpInfo(certificateDiscovery)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

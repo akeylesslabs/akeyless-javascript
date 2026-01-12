@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventAction model module.
  * @module model/EventAction
- * @version 5.0.18
+ * @version 5.0.19
  */
 class EventAction {
     /**

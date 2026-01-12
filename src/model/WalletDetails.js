@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WalletDetails model module.
  * @module model/WalletDetails
- * @version 5.0.18
+ * @version 5.0.19
  */
 class WalletDetails {
     /**

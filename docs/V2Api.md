@@ -45,6 +45,7 @@ Method | HTTP request | Description
 [**authMethodUpdateSAML**](V2Api.md#authMethodUpdateSAML) | **POST** /auth-method-update-saml | 
 [**authMethodUpdateUniversalIdentity**](V2Api.md#authMethodUpdateUniversalIdentity) | **POST** /auth-method-update-universal-identity | 
 [**calcPasswordSecurityInfo**](V2Api.md#calcPasswordSecurityInfo) | **POST** /calc-password-security-info | 
+[**certificateDiscovery**](V2Api.md#certificateDiscovery) | **POST** /certificate-discovery | 
 [**changeAdminAccountPassword**](V2Api.md#changeAdminAccountPassword) | **POST** /change-admin-account-password | 
 [**configure**](V2Api.md#configure) | **POST** /configure | 
 [**connect**](V2Api.md#connect) | **POST** /connect | 
@@ -2311,6 +2312,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PasswordSecurityInfo**](PasswordSecurityInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## certificateDiscovery
+
+> CertificateDiscoveryOutput certificateDiscovery(certificateDiscovery)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let certificateDiscovery = new akeyless.CertificateDiscovery(); // CertificateDiscovery | 
+apiInstance.certificateDiscovery(certificateDiscovery).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **certificateDiscovery** | [**CertificateDiscovery**](CertificateDiscovery.md)|  | 
+
+### Return type
+
+[**CertificateDiscoveryOutput**](CertificateDiscoveryOutput.md)
 
 ### Authorization
 

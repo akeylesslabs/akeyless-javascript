@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateRdp model module.
  * @module model/DynamicSecretUpdateRdp
- * @version 5.0.18
+ * @version 5.0.19
  */
 class DynamicSecretUpdateRdp {
     /**

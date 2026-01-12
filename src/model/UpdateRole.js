@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 5.0.18
+ * @version 5.0.19
  */
 class UpdateRole {
     /**
@@ -192,7 +192,7 @@ UpdateRole.RequiredProperties = ["name"];
 UpdateRole.prototype['analytics-access'] = undefined;
 
 /**
- * Allow this role to view audit logs. Currently only 'none', 'own' and 'all' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.
+ * Allow this role to view audit logs. Currently only 'none', 'own', 'scoped' and 'all' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.
  * @member {String} audit-access
  */
 UpdateRole.prototype['audit-access'] = undefined;
@@ -211,7 +211,7 @@ UpdateRole.prototype['delete_protection'] = undefined;
 UpdateRole.prototype['description'] = 'default_comment';
 
 /**
- * Allow this role to view Event Center. Currently only 'none', 'own' and 'all' values are supported
+ * Allow this role to view Event Center. Currently only 'none', 'scoped' and 'all' values are supported
  * @member {String} event-center-access
  */
 UpdateRole.prototype['event-center-access'] = undefined;
@@ -223,7 +223,7 @@ UpdateRole.prototype['event-center-access'] = undefined;
 UpdateRole.prototype['event-forwarder-access'] = undefined;
 
 /**
- * Allow this role to view gw analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.
+ * Allow this role to view gw analytics. Currently only 'none', 'scoped', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.
  * @member {String} gw-analytics-access
  */
 UpdateRole.prototype['gw-analytics-access'] = undefined;
@@ -255,13 +255,13 @@ UpdateRole.prototype['new-comment'] = 'default_comment';
 UpdateRole.prototype['new-name'] = undefined;
 
 /**
- * Allow this role to view Reverse RBAC. Supported values: 'own', 'all'.
+ * Allow this role to view Reverse RBAC. Supported values: 'scoped', 'all'.
  * @member {String} reverse-rbac-access
  */
 UpdateRole.prototype['reverse-rbac-access'] = undefined;
 
 /**
- * Allow this role to view SRA Clusters. Currently only 'none', 'own', 'all' values are supported.
+ * Allow this role to view SRA Clusters. Currently only 'none', 'scoped', 'all' values are supported.
  * @member {String} sra-reports-access
  */
 UpdateRole.prototype['sra-reports-access'] = undefined;
