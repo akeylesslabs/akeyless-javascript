@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **namespace** | **String** | The namespace (relevant for Hashi vault target) | [optional] 
 **objectType** | **String** |  | [optional] 
 **pfxPassword** | **String** | Optional, the passphrase that protects the private key within the pfx certificate (Relevant only for Azure KV certificates) | [optional] 
+**region** | **String** | Optional, create secret in a specific region (GCP only). If empty, a global secret will be created (provider default). | [optional] 
 **secretName** | **String** | Name for the new universal secrets | 
 **tags** | **{String: String}** | Tags for the universal secrets | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

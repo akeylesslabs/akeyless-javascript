@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateSsh model module.
  * @module model/RotatedSecretUpdateSsh
- * @version 5.0.19
+ * @version 5.0.20
  */
 class RotatedSecretUpdateSsh {
     /**

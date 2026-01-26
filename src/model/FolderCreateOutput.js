@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FolderCreateOutput model module.
  * @module model/FolderCreateOutput
- * @version 5.0.19
+ * @version 5.0.20
  */
 class FolderCreateOutput {
     /**

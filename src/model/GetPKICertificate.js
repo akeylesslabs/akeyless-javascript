@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPKICertificate model module.
  * @module model/GetPKICertificate
- * @version 5.0.19
+ * @version 5.0.20
  */
 class GetPKICertificate {
     /**
@@ -184,7 +184,7 @@ GetPKICertificate.prototype['common-name'] = undefined;
 GetPKICertificate.prototype['csr-data-base64'] = undefined;
 
 /**
- * A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: 'clientauth', 'serverauth'. If critical is present the extension will be marked as critical
+ * A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: 'clientauth', 'serverauth', 'codesigning'. If critical is present the extension will be marked as critical
  * @member {String} extended-key-usage
  */
 GetPKICertificate.prototype['extended-key-usage'] = undefined;

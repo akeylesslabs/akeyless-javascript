@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ServerInventoryPayload model module.
  * @module model/ServerInventoryPayload
- * @version 5.0.19
+ * @version 5.0.20
  */
 class ServerInventoryPayload {
     /**

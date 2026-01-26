@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **lastRetrieved** | **Date** |  | [optional] 
 **location** | **Object** |  | [optional] 
 **name** | **String** |  | [optional] 
+**region** | **String** |  | [optional] 
 **secretId** | **String** |  | [optional] 
 **status** | **Boolean** |  | [optional] 
 **tags** | **{String: String}** |  | [optional] 

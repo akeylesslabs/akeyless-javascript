@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import CertificateExpirationEvent from './CertificateExpirationEvent';
 
 /**
  * The GeneralConfigPart model module.
  * @module model/GeneralConfigPart
- * @version 5.0.19
+ * @version 5.0.20
  */
 class GeneralConfigPart {
     /**
@@ -86,6 +87,15 @@ class GeneralConfigPart {
             if (data.hasOwnProperty('tls_cert')) {
                 obj['tls_cert'] = ApiClient.convertToType(data['tls_cert'], 'String');
             }
+            if (data.hasOwnProperty('tls_cert_common_name')) {
+                obj['tls_cert_common_name'] = ApiClient.convertToType(data['tls_cert_common_name'], 'String');
+            }
+            if (data.hasOwnProperty('tls_cert_expiration_date')) {
+                obj['tls_cert_expiration_date'] = ApiClient.convertToType(data['tls_cert_expiration_date'], 'Date');
+            }
+            if (data.hasOwnProperty('tls_cert_expiration_events')) {
+                obj['tls_cert_expiration_events'] = ApiClient.convertToType(data['tls_cert_expiration_events'], [CertificateExpirationEvent]);
+            }
             if (data.hasOwnProperty('tls_key')) {
                 obj['tls_key'] = ApiClient.convertToType(data['tls_key'], 'String');
             }
@@ -122,6 +132,20 @@ class GeneralConfigPart {
         // ensure the json data is a string
         if (data['tls_cert'] && !(typeof data['tls_cert'] === 'string' || data['tls_cert'] instanceof String)) {
             throw new Error("Expected the field `tls_cert` to be a primitive type in the JSON string but got " + data['tls_cert']);
+        }
+        // ensure the json data is a string
+        if (data['tls_cert_common_name'] && !(typeof data['tls_cert_common_name'] === 'string' || data['tls_cert_common_name'] instanceof String)) {
+            throw new Error("Expected the field `tls_cert_common_name` to be a primitive type in the JSON string but got " + data['tls_cert_common_name']);
+        }
+        if (data['tls_cert_expiration_events']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['tls_cert_expiration_events'])) {
+                throw new Error("Expected the field `tls_cert_expiration_events` to be an array in the JSON data but got " + data['tls_cert_expiration_events']);
+            }
+            // validate the optional field `tls_cert_expiration_events` (array)
+            for (const item of data['tls_cert_expiration_events']) {
+                CertificateExpirationEvent.validateJSON(item);
+            };
         }
         // ensure the json data is a string
         if (data['tls_key'] && !(typeof data['tls_key'] === 'string' || data['tls_key'] instanceof String)) {
@@ -201,6 +225,21 @@ GeneralConfigPart.prototype['tcp_port'] = undefined;
  * @member {String} tls_cert
  */
 GeneralConfigPart.prototype['tls_cert'] = undefined;
+
+/**
+ * @member {String} tls_cert_common_name
+ */
+GeneralConfigPart.prototype['tls_cert_common_name'] = undefined;
+
+/**
+ * @member {Date} tls_cert_expiration_date
+ */
+GeneralConfigPart.prototype['tls_cert_expiration_date'] = undefined;
+
+/**
+ * @member {Array.<module:model/CertificateExpirationEvent>} tls_cert_expiration_events
+ */
+GeneralConfigPart.prototype['tls_cert_expiration_events'] = undefined;
 
 /**
  * @member {String} tls_key

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerVenafi model module.
  * @module model/GatewayUpdateProducerVenafi
- * @version 5.0.19
+ * @version 5.0.20
  */
 class GatewayUpdateProducerVenafi {
     /**

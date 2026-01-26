@@ -17,7 +17,7 @@ import RuleAssigner from './RuleAssigner';
 /**
  * The SharingItemFullInfo model module.
  * @module model/SharingItemFullInfo
- * @version 5.0.19
+ * @version 5.0.20
  */
 class SharingItemFullInfo {
     /**

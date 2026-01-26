@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 5.0.19
+ * @version 5.0.20
  */
 class UpdateItem {
     /**
@@ -82,6 +82,9 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('expiration-event-in')) {
                 obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
+            }
+            if (data.hasOwnProperty('gcp-sm-regions')) {
+                obj['gcp-sm-regions'] = ApiClient.convertToType(data['gcp-sm-regions'], 'String');
             }
             if (data.hasOwnProperty('host-provider')) {
                 obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
@@ -257,6 +260,10 @@ class UpdateItem {
         // ensure the json data is an array
         if (!Array.isArray(data['expiration-event-in'])) {
             throw new Error("Expected the field `expiration-event-in` to be an array in the JSON data but got " + data['expiration-event-in']);
+        }
+        // ensure the json data is a string
+        if (data['gcp-sm-regions'] && !(typeof data['gcp-sm-regions'] === 'string' || data['gcp-sm-regions'] instanceof String)) {
+            throw new Error("Expected the field `gcp-sm-regions` to be a primitive type in the JSON string but got " + data['gcp-sm-regions']);
         }
         // ensure the json data is a string
         if (data['host-provider'] && !(typeof data['host-provider'] === 'string' || data['host-provider'] instanceof String)) {
@@ -452,6 +459,12 @@ UpdateItem.prototype['description'] = 'default_metadata';
  * @member {Array.<String>} expiration-event-in
  */
 UpdateItem.prototype['expiration-event-in'] = undefined;
+
+/**
+ * GCP Secret Manager regions to query for regional secrets (comma-separated, e.g., us-east1,us-west1). Max 12 regions. USC with GCP targets only.
+ * @member {String} gcp-sm-regions
+ */
+UpdateItem.prototype['gcp-sm-regions'] = undefined;
 
 /**
  * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret

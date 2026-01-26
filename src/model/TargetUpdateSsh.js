@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateSsh model module.
  * @module model/TargetUpdateSsh
- * @version 5.0.19
+ * @version 5.0.20
  */
 class TargetUpdateSsh {
     /**

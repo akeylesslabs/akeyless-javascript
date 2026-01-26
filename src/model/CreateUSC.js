@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateUSC model module.
  * @module model/CreateUSC
- * @version 5.0.19
+ * @version 5.0.20
  */
 class CreateUSC {
     /**
@@ -65,6 +65,9 @@ class CreateUSC {
             }
             if (data.hasOwnProperty('gcp-project-id')) {
                 obj['gcp-project-id'] = ApiClient.convertToType(data['gcp-project-id'], 'String');
+            }
+            if (data.hasOwnProperty('gcp-sm-regions')) {
+                obj['gcp-sm-regions'] = ApiClient.convertToType(data['gcp-sm-regions'], 'String');
             }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
@@ -127,6 +130,10 @@ class CreateUSC {
         // ensure the json data is a string
         if (data['gcp-project-id'] && !(typeof data['gcp-project-id'] === 'string' || data['gcp-project-id'] instanceof String)) {
             throw new Error("Expected the field `gcp-project-id` to be a primitive type in the JSON string but got " + data['gcp-project-id']);
+        }
+        // ensure the json data is a string
+        if (data['gcp-sm-regions'] && !(typeof data['gcp-sm-regions'] === 'string' || data['gcp-sm-regions'] instanceof String)) {
+            throw new Error("Expected the field `gcp-sm-regions` to be a primitive type in the JSON string but got " + data['gcp-sm-regions']);
         }
         // ensure the json data is a string
         if (data['k8s-namespace'] && !(typeof data['k8s-namespace'] === 'string' || data['k8s-namespace'] instanceof String)) {
@@ -192,6 +199,12 @@ CreateUSC.prototype['description'] = undefined;
  * @member {String} gcp-project-id
  */
 CreateUSC.prototype['gcp-project-id'] = undefined;
+
+/**
+ * GCP Secret Manager regions to query for regional secrets (comma-separated, e.g., us-east1,us-west1). Max 12 regions. Required when listing with object-type=regional-secrets.
+ * @member {String} gcp-sm-regions
+ */
+CreateUSC.prototype['gcp-sm-regions'] = undefined;
 
 /**
  * Additional custom fields to associate with the item

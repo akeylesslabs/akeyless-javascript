@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateTlsCert model module.
  * @module model/GatewayUpdateTlsCert
- * @version 5.0.19
+ * @version 5.0.20
  */
 class GatewayUpdateTlsCert {
     /**
@@ -52,6 +52,9 @@ class GatewayUpdateTlsCert {
             if (data.hasOwnProperty('cert-data')) {
                 obj['cert-data'] = ApiClient.convertToType(data['cert-data'], 'String');
             }
+            if (data.hasOwnProperty('expiration-event-in')) {
+                obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -77,6 +80,10 @@ class GatewayUpdateTlsCert {
         // ensure the json data is a string
         if (data['cert-data'] && !(typeof data['cert-data'] === 'string' || data['cert-data'] instanceof String)) {
             throw new Error("Expected the field `cert-data` to be a primitive type in the JSON string but got " + data['cert-data']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['expiration-event-in'])) {
+            throw new Error("Expected the field `expiration-event-in` to be an array in the JSON data but got " + data['expiration-event-in']);
         }
         // ensure the json data is a string
         if (data['key-data'] && !(typeof data['key-data'] === 'string' || data['key-data'] instanceof String)) {
@@ -104,6 +111,12 @@ class GatewayUpdateTlsCert {
  * @member {String} cert-data
  */
 GatewayUpdateTlsCert.prototype['cert-data'] = undefined;
+
+/**
+ * How many days before the expiration of the certificate would you like to be notified.
+ * @member {Array.<String>} expiration-event-in
+ */
+GatewayUpdateTlsCert.prototype['expiration-event-in'] = undefined;
 
 /**
  * Set output format to JSON

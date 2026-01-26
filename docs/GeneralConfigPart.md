@@ -17,6 +17,9 @@ Name | Type | Description | Notes
 **notifyOnStatusChange** | **Boolean** |  | [optional] 
 **tcpPort** | **String** |  | [optional] 
 **tlsCert** | **String** |  | [optional] 
+**tlsCertCommonName** | **String** |  | [optional] 
+**tlsCertExpirationDate** | **Date** |  | [optional] 
+**tlsCertExpirationEvents** | [**[CertificateExpirationEvent]**](CertificateExpirationEvent.md) |  | [optional] 
 **tlsKey** | **String** |  | [optional] 
 
 

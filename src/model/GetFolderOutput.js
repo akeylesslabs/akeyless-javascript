@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetFolderOutput model module.
  * @module model/GetFolderOutput
- * @version 5.0.19
+ * @version 5.0.20
  */
 class GetFolderOutput {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateMongoDb model module.
  * @module model/DynamicSecretUpdateMongoDb
- * @version 5.0.19
+ * @version 5.0.20
  */
 class DynamicSecretUpdateMongoDb {
     /**

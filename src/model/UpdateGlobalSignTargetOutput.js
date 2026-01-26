@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGlobalSignTargetOutput model module.
  * @module model/UpdateGlobalSignTargetOutput
- * @version 5.0.19
+ * @version 5.0.20
  */
 class UpdateGlobalSignTargetOutput {
     /**

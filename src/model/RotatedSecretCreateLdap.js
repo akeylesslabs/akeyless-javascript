@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateLdap model module.
  * @module model/RotatedSecretCreateLdap
- * @version 5.0.19
+ * @version 5.0.20
  */
 class RotatedSecretCreateLdap {
     /**

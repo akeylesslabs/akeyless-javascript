@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StaticSecretDeleteSyncOutput model module.
  * @module model/StaticSecretDeleteSyncOutput
- * @version 5.0.19
+ * @version 5.0.20
  */
 class StaticSecretDeleteSyncOutput {
     /**

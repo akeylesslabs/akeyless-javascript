@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscCreate model module.
  * @module model/UscCreate
- * @version 5.0.19
+ * @version 5.0.20
  */
 class UscCreate {
     /**
@@ -73,6 +73,9 @@ class UscCreate {
             if (data.hasOwnProperty('pfx-password')) {
                 obj['pfx-password'] = ApiClient.convertToType(data['pfx-password'], 'String');
             }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
+            }
             if (data.hasOwnProperty('secret-name')) {
                 obj['secret-name'] = ApiClient.convertToType(data['secret-name'], 'String');
             }
@@ -125,6 +128,10 @@ class UscCreate {
         // ensure the json data is a string
         if (data['pfx-password'] && !(typeof data['pfx-password'] === 'string' || data['pfx-password'] instanceof String)) {
             throw new Error("Expected the field `pfx-password` to be a primitive type in the JSON string but got " + data['pfx-password']);
+        }
+        // ensure the json data is a string
+        if (data['region'] && !(typeof data['region'] === 'string' || data['region'] instanceof String)) {
+            throw new Error("Expected the field `region` to be a primitive type in the JSON string but got " + data['region']);
         }
         // ensure the json data is a string
         if (data['secret-name'] && !(typeof data['secret-name'] === 'string' || data['secret-name'] instanceof String)) {
@@ -194,6 +201,12 @@ UscCreate.prototype['object-type'] = undefined;
  * @member {String} pfx-password
  */
 UscCreate.prototype['pfx-password'] = undefined;
+
+/**
+ * Optional, create secret in a specific region (GCP only). If empty, a global secret will be created (provider default).
+ * @member {String} region
+ */
+UscCreate.prototype['region'] = undefined;
 
 /**
  * Name for the new universal secrets

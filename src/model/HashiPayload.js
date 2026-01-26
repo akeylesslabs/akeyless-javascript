@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HashiPayload model module.
  * @module model/HashiPayload
- * @version 5.0.19
+ * @version 5.0.20
  */
 class HashiPayload {
     /**

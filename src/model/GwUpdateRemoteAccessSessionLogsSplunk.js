@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GwUpdateRemoteAccessSessionLogsSplunk model module.
  * @module model/GwUpdateRemoteAccessSessionLogsSplunk
- * @version 5.0.19
+ * @version 5.0.20
  */
 class GwUpdateRemoteAccessSessionLogsSplunk {
     /**

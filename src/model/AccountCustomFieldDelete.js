@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountCustomFieldDelete model module.
  * @module model/AccountCustomFieldDelete
- * @version 5.0.19
+ * @version 5.0.20
  */
 class AccountCustomFieldDelete {
     /**

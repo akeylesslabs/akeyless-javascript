@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetError model module.
  * @module model/TargetError
- * @version 5.0.19
+ * @version 5.0.20
  */
 class TargetError {
     /**

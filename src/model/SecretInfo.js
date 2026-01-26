@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecretInfo model module.
  * @module model/SecretInfo
- * @version 5.0.19
+ * @version 5.0.20
  */
 class SecretInfo {
     /**
@@ -68,6 +68,9 @@ class SecretInfo {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
+            }
             if (data.hasOwnProperty('secret_id')) {
                 obj['secret_id'] = ApiClient.convertToType(data['secret_id'], 'String');
             }
@@ -107,6 +110,10 @@ class SecretInfo {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['region'] && !(typeof data['region'] === 'string' || data['region'] instanceof String)) {
+            throw new Error("Expected the field `region` to be a primitive type in the JSON string but got " + data['region']);
         }
         // ensure the json data is a string
         if (data['secret_id'] && !(typeof data['secret_id'] === 'string' || data['secret_id'] instanceof String)) {
@@ -163,6 +170,11 @@ SecretInfo.prototype['location'] = undefined;
  * @member {String} name
  */
 SecretInfo.prototype['name'] = undefined;
+
+/**
+ * @member {String} region
+ */
+SecretInfo.prototype['region'] = undefined;
 
 /**
  * @member {String} secret_id

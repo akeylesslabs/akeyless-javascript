@@ -2299,10 +2299,3 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/CertificateDiscovery.spec.js
-test/model/CertificateDiscoveryOutput.spec.js
-test/model/CertificateMigration.spec.js
-test/model/CertificatePayload.spec.js
-test/model/CertificateScanTarget.spec.js
-test/model/ScanResults.spec.js
-test/model/TargetError.spec.js

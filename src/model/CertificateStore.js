@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import CertificateExpirationEvent from './CertificateExpirationEvent';
 
 /**
  * The CertificateStore model module.
  * @module model/CertificateStore
- * @version 5.0.19
+ * @version 5.0.20
  */
 class CertificateStore {
     /**
@@ -56,6 +57,9 @@ class CertificateStore {
             if (data.hasOwnProperty('expiration_date')) {
                 obj['expiration_date'] = ApiClient.convertToType(data['expiration_date'], 'Date');
             }
+            if (data.hasOwnProperty('expiration_events')) {
+                obj['expiration_events'] = ApiClient.convertToType(data['expiration_events'], [CertificateExpirationEvent]);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -76,6 +80,16 @@ class CertificateStore {
         // ensure the json data is a string
         if (data['common_name'] && !(typeof data['common_name'] === 'string' || data['common_name'] instanceof String)) {
             throw new Error("Expected the field `common_name` to be a primitive type in the JSON string but got " + data['common_name']);
+        }
+        if (data['expiration_events']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['expiration_events'])) {
+                throw new Error("Expected the field `expiration_events` to be an array in the JSON data but got " + data['expiration_events']);
+            }
+            // validate the optional field `expiration_events` (array)
+            for (const item of data['expiration_events']) {
+                CertificateExpirationEvent.validateJSON(item);
+            };
         }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
@@ -104,6 +118,11 @@ CertificateStore.prototype['common_name'] = undefined;
  * @member {Date} expiration_date
  */
 CertificateStore.prototype['expiration_date'] = undefined;
+
+/**
+ * @member {Array.<module:model/CertificateExpirationEvent>} expiration_events
+ */
+CertificateStore.prototype['expiration_events'] = undefined;
 
 /**
  * @member {String} name

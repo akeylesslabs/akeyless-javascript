@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateZeroSSL model module.
  * @module model/TargetUpdateZeroSSL
- * @version 5.0.19
+ * @version 5.0.20
  */
 class TargetUpdateZeroSSL {
     /**

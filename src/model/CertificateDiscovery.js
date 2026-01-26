@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CertificateDiscovery model module.
  * @module model/CertificateDiscovery
- * @version 5.0.19
+ * @version 5.0.20
  */
 class CertificateDiscovery {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BatchEncryptionResponseLine model module.
  * @module model/BatchEncryptionResponseLine
- * @version 5.0.19
+ * @version 5.0.20
  */
 class BatchEncryptionResponseLine {
     /**
