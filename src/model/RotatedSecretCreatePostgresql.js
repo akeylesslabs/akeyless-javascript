@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreatePostgresql model module.
  * @module model/RotatedSecretCreatePostgresql
- * @version 5.0.20
+ * @version 5.0.21
  */
 class RotatedSecretCreatePostgresql {
     /**
@@ -24,7 +24,7 @@ class RotatedSecretCreatePostgresql {
      * @alias module:model/RotatedSecretCreatePostgresql
      * @param name {String} Rotated secret name
      * @param rotatorType {String} The rotator type. options: [target/password]
-     * @param targetName {String} Target name
+     * @param targetName {String} The target name to associate
      */
     constructor(name, rotatorType, targetName) { 
         
@@ -417,7 +417,7 @@ RotatedSecretCreatePostgresql.prototype['secure-access-web'] = false;
 RotatedSecretCreatePostgresql.prototype['tags'] = undefined;
 
 /**
- * Target name
+ * The target name to associate
  * @member {String} target-name
  */
 RotatedSecretCreatePostgresql.prototype['target-name'] = undefined;

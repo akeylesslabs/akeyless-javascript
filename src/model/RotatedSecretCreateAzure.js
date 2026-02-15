@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateAzure model module.
  * @module model/RotatedSecretCreateAzure
- * @version 5.0.20
+ * @version 5.0.21
  */
 class RotatedSecretCreateAzure {
     /**
@@ -24,7 +24,7 @@ class RotatedSecretCreateAzure {
      * @alias module:model/RotatedSecretCreateAzure
      * @param name {String} Rotated secret name
      * @param rotatorType {String} The rotator type. options: [target/password/api-key/azure-storage-account]
-     * @param targetName {String} Target name
+     * @param targetName {String} The target name to associate
      */
     constructor(name, rotatorType, targetName) { 
         
@@ -92,6 +92,9 @@ class RotatedSecretCreateAzure {
             }
             if (data.hasOwnProperty('grace-rotation-interval')) {
                 obj['grace-rotation-interval'] = ApiClient.convertToType(data['grace-rotation-interval'], 'String');
+            }
+            if (data.hasOwnProperty('grace-rotation-timing')) {
+                obj['grace-rotation-timing'] = ApiClient.convertToType(data['grace-rotation-timing'], 'String');
             }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
@@ -225,6 +228,10 @@ class RotatedSecretCreateAzure {
             throw new Error("Expected the field `grace-rotation-interval` to be a primitive type in the JSON string but got " + data['grace-rotation-interval']);
         }
         // ensure the json data is a string
+        if (data['grace-rotation-timing'] && !(typeof data['grace-rotation-timing'] === 'string' || data['grace-rotation-timing'] instanceof String)) {
+            throw new Error("Expected the field `grace-rotation-timing` to be a primitive type in the JSON string but got " + data['grace-rotation-timing']);
+        }
+        // ensure the json data is a string
         if (data['key'] && !(typeof data['key'] === 'string' || data['key'] instanceof String)) {
             throw new Error("Expected the field `key` to be a primitive type in the JSON string but got " + data['key']);
         }
@@ -356,7 +363,7 @@ RotatedSecretCreateAzure.prototype['description'] = undefined;
 RotatedSecretCreateAzure.prototype['explicitly-set-sa'] = 'false';
 
 /**
- * Create a new access key without deleting the old key from AWS/Azure/GCP for backup (relevant only for AWS/Azure/GCP) [true/false]
+ * Enable graceful rotation (keep both versions temporarily). When enabled, a new secret version is created while the previous version is kept for the grace period, so both versions exist for a limited time. [true/false]
  * @member {String} grace-rotation
  */
 RotatedSecretCreateAzure.prototype['grace-rotation'] = undefined;
@@ -372,6 +379,12 @@ RotatedSecretCreateAzure.prototype['grace-rotation-hour'] = undefined;
  * @member {String} grace-rotation-interval
  */
 RotatedSecretCreateAzure.prototype['grace-rotation-interval'] = undefined;
+
+/**
+ * When to create the new version relative to the rotation date [after/before]
+ * @member {String} grace-rotation-timing
+ */
+RotatedSecretCreateAzure.prototype['grace-rotation-timing'] = undefined;
 
 /**
  * Additional custom fields to associate with the item
@@ -505,7 +518,7 @@ RotatedSecretCreateAzure.prototype['storage-account-key-name'] = undefined;
 RotatedSecretCreateAzure.prototype['tags'] = undefined;
 
 /**
- * Target name
+ * The target name to associate
  * @member {String} target-name
  */
 RotatedSecretCreateAzure.prototype['target-name'] = undefined;

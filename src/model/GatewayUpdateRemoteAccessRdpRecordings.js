@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateRemoteAccessRdpRecordings model module.
  * @module model/GatewayUpdateRemoteAccessRdpRecordings
- * @version 5.0.20
+ * @version 5.0.21
  */
 class GatewayUpdateRemoteAccessRdpRecordings {
     /**

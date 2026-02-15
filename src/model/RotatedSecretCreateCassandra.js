@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateCassandra model module.
  * @module model/RotatedSecretCreateCassandra
- * @version 5.0.20
+ * @version 5.0.21
  */
 class RotatedSecretCreateCassandra {
     /**
@@ -24,7 +24,7 @@ class RotatedSecretCreateCassandra {
      * @alias module:model/RotatedSecretCreateCassandra
      * @param name {String} Rotated secret name
      * @param rotatorType {String} The rotator type. options: [target/password]
-     * @param targetName {String} Target name
+     * @param targetName {String} The target name to associate
      */
     constructor(name, rotatorType, targetName) { 
         
@@ -313,7 +313,7 @@ RotatedSecretCreateCassandra.prototype['rotator-type'] = undefined;
 RotatedSecretCreateCassandra.prototype['tags'] = undefined;
 
 /**
- * Target name
+ * The target name to associate
  * @member {String} target-name
  */
 RotatedSecretCreateCassandra.prototype['target-name'] = undefined;

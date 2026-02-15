@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateSnowflake model module.
  * @module model/RotatedSecretCreateSnowflake
- * @version 5.0.20
+ * @version 5.0.21
  */
 class RotatedSecretCreateSnowflake {
     /**
@@ -24,7 +24,7 @@ class RotatedSecretCreateSnowflake {
      * @alias module:model/RotatedSecretCreateSnowflake
      * @param name {String} Rotated secret name
      * @param rotatorType {String} The rotator type. options: [target/password/key]
-     * @param targetName {String} Target name
+     * @param targetName {String} The target name to associate
      */
     constructor(name, rotatorType, targetName) { 
         
@@ -339,7 +339,7 @@ RotatedSecretCreateSnowflake.prototype['rotator-type'] = undefined;
 RotatedSecretCreateSnowflake.prototype['tags'] = undefined;
 
 /**
- * Target name
+ * The target name to associate
  * @member {String} target-name
  */
 RotatedSecretCreateSnowflake.prototype['target-name'] = undefined;

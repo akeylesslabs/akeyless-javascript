@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GCPPayload model module.
  * @module model/GCPPayload
- * @version 5.0.20
+ * @version 5.0.21
  */
 class GCPPayload {
     /**
@@ -50,6 +50,12 @@ class GCPPayload {
             if (data.hasOwnProperty('gcp_credentials_json')) {
                 obj['gcp_credentials_json'] = ApiClient.convertToType(data['gcp_credentials_json'], 'String');
             }
+            if (data.hasOwnProperty('project_id')) {
+                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
+            }
+            if (data.hasOwnProperty('use_gw_cloud_identity')) {
+                obj['use_gw_cloud_identity'] = ApiClient.convertToType(data['use_gw_cloud_identity'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -64,6 +70,10 @@ class GCPPayload {
         if (data['gcp_credentials_json'] && !(typeof data['gcp_credentials_json'] === 'string' || data['gcp_credentials_json'] instanceof String)) {
             throw new Error("Expected the field `gcp_credentials_json` to be a primitive type in the JSON string but got " + data['gcp_credentials_json']);
         }
+        // ensure the json data is a string
+        if (data['project_id'] && !(typeof data['project_id'] === 'string' || data['project_id'] instanceof String)) {
+            throw new Error("Expected the field `project_id` to be a primitive type in the JSON string but got " + data['project_id']);
+        }
 
         return true;
     }
@@ -77,6 +87,16 @@ class GCPPayload {
  * @member {String} gcp_credentials_json
  */
 GCPPayload.prototype['gcp_credentials_json'] = undefined;
+
+/**
+ * @member {String} project_id
+ */
+GCPPayload.prototype['project_id'] = undefined;
+
+/**
+ * @member {Boolean} use_gw_cloud_identity
+ */
+GCPPayload.prototype['use_gw_cloud_identity'] = undefined;
 
 
 

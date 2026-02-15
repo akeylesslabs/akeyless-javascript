@@ -11,9 +11,10 @@ Name | Type | Description | Notes
 **awsRegion** | **String** | Aws Region | [optional] [default to &#39;us-east-2&#39;]
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
-**graceRotation** | **String** | Create a new access key without deleting the old key from AWS/Azure/GCP for backup (relevant only for AWS/Azure/GCP) [true/false] | [optional] 
+**graceRotation** | **String** | Enable graceful rotation (keep both versions temporarily). When enabled, a new secret version is created while the previous version is kept for the grace period, so both versions exist for a limited time. [true/false] | [optional] 
 **graceRotationHour** | **Number** | The Hour of the grace rotation in UTC | [optional] 
 **graceRotationInterval** | **String** | The number of days to wait before deleting the old key (must be bigger than rotation-interval) | [optional] 
+**graceRotationTiming** | **String** | When to create the new version relative to the rotation date [after/before] | [optional] 
 **itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **key** | **String** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
@@ -31,7 +32,7 @@ Name | Type | Description | Notes
 **secureAccessCertificateIssuer** | **String** | Path to the SSH Certificate Issuer for your Akeyless Secure Access | [optional] 
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
-**targetName** | **String** | Target name | 
+**targetName** | **String** | The target name to associate | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LinkedDetails model module.
  * @module model/LinkedDetails
- * @version 5.0.20
+ * @version 5.0.21
  */
 class LinkedDetails {
     /**

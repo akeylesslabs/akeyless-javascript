@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateHanadb model module.
  * @module model/RotatedSecretCreateHanadb
- * @version 5.0.20
+ * @version 5.0.21
  */
 class RotatedSecretCreateHanadb {
     /**
@@ -24,7 +24,7 @@ class RotatedSecretCreateHanadb {
      * @alias module:model/RotatedSecretCreateHanadb
      * @param name {String} Rotated secret name
      * @param rotatorType {String} The rotator type. options: [target/password]
-     * @param targetName {String} Target name
+     * @param targetName {String} The target name to associate
      */
     constructor(name, rotatorType, targetName) { 
         
@@ -313,7 +313,7 @@ RotatedSecretCreateHanadb.prototype['rotator-type'] = undefined;
 RotatedSecretCreateHanadb.prototype['tags'] = undefined;
 
 /**
- * Target name
+ * The target name to associate
  * @member {String} target-name
  */
 RotatedSecretCreateHanadb.prototype['target-name'] = undefined;

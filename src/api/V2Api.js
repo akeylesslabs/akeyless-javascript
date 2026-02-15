@@ -613,6 +613,14 @@ import LogForwardingConfigPart from '../model/LogForwardingConfigPart';
 import MigrationStatusReplyObj from '../model/MigrationStatusReplyObj';
 import MoveObjects from '../model/MoveObjects';
 import PasswordSecurityInfo from '../model/PasswordSecurityInfo';
+import PoliciesCreateOutput from '../model/PoliciesCreateOutput';
+import PoliciesDelete from '../model/PoliciesDelete';
+import PoliciesGet from '../model/PoliciesGet';
+import PoliciesGetOutput from '../model/PoliciesGetOutput';
+import PoliciesList from '../model/PoliciesList';
+import PoliciesListOutput from '../model/PoliciesListOutput';
+import PolicyCreateKeys from '../model/PolicyCreateKeys';
+import PolicyUpdateKeys from '../model/PolicyUpdateKeys';
 import ProvisionCertificate from '../model/ProvisionCertificate';
 import ProvisionCertificateOutput from '../model/ProvisionCertificateOutput';
 import RawCreds from '../model/RawCreds';
@@ -654,6 +662,7 @@ import RotatedSecretCreatePostgresql from '../model/RotatedSecretCreatePostgresq
 import RotatedSecretCreateRedis from '../model/RotatedSecretCreateRedis';
 import RotatedSecretCreateRedshift from '../model/RotatedSecretCreateRedshift';
 import RotatedSecretCreateSnowflake from '../model/RotatedSecretCreateSnowflake';
+import RotatedSecretCreateSplunk from '../model/RotatedSecretCreateSplunk';
 import RotatedSecretCreateSsh from '../model/RotatedSecretCreateSsh';
 import RotatedSecretCreateWindows from '../model/RotatedSecretCreateWindows';
 import RotatedSecretDelete from '../model/RotatedSecretDelete';
@@ -681,6 +690,7 @@ import RotatedSecretUpdatePostgresql from '../model/RotatedSecretUpdatePostgresq
 import RotatedSecretUpdateRedis from '../model/RotatedSecretUpdateRedis';
 import RotatedSecretUpdateRedshift from '../model/RotatedSecretUpdateRedshift';
 import RotatedSecretUpdateSnowflake from '../model/RotatedSecretUpdateSnowflake';
+import RotatedSecretUpdateSplunk from '../model/RotatedSecretUpdateSplunk';
 import RotatedSecretUpdateSsh from '../model/RotatedSecretUpdateSsh';
 import RotatedSecretUpdateWindows from '../model/RotatedSecretUpdateWindows';
 import SecretSyncOutput from '../model/SecretSyncOutput';
@@ -726,6 +736,7 @@ import TargetCreateGodaddy from '../model/TargetCreateGodaddy';
 import TargetCreateHashiVault from '../model/TargetCreateHashiVault';
 import TargetCreateK8s from '../model/TargetCreateK8s';
 import TargetCreateLdap from '../model/TargetCreateLdap';
+import TargetCreateLetsEncrypt from '../model/TargetCreateLetsEncrypt';
 import TargetCreateLinked from '../model/TargetCreateLinked';
 import TargetCreateOpenAI from '../model/TargetCreateOpenAI';
 import TargetCreateOutput from '../model/TargetCreateOutput';
@@ -733,6 +744,7 @@ import TargetCreatePing from '../model/TargetCreatePing';
 import TargetCreateRabbitMq from '../model/TargetCreateRabbitMq';
 import TargetCreateSalesforce from '../model/TargetCreateSalesforce';
 import TargetCreateSectigo from '../model/TargetCreateSectigo';
+import TargetCreateSplunk from '../model/TargetCreateSplunk';
 import TargetCreateSsh from '../model/TargetCreateSsh';
 import TargetCreateWeb from '../model/TargetCreateWeb';
 import TargetCreateWindows from '../model/TargetCreateWindows';
@@ -758,6 +770,7 @@ import TargetUpdateGodaddy from '../model/TargetUpdateGodaddy';
 import TargetUpdateHashiVault from '../model/TargetUpdateHashiVault';
 import TargetUpdateK8s from '../model/TargetUpdateK8s';
 import TargetUpdateLdap from '../model/TargetUpdateLdap';
+import TargetUpdateLetsEncrypt from '../model/TargetUpdateLetsEncrypt';
 import TargetUpdateLinked from '../model/TargetUpdateLinked';
 import TargetUpdateOpenAI from '../model/TargetUpdateOpenAI';
 import TargetUpdateOutput from '../model/TargetUpdateOutput';
@@ -903,7 +916,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.20
+* @version 5.0.21
 */
 export default class V2Api {
 
@@ -17415,6 +17428,221 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/PoliciesDelete} policiesDelete 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    policiesDeleteWithHttpInfo(policiesDelete) {
+      let postBody = policiesDelete;
+      // verify the required parameter 'policiesDelete' is set
+      if (policiesDelete === undefined || policiesDelete === null) {
+        throw new Error("Missing the required parameter 'policiesDelete' when calling policiesDelete");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/policy-delete', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/PoliciesDelete} policiesDelete 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    policiesDelete(policiesDelete) {
+      return this.policiesDeleteWithHttpInfo(policiesDelete)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/PoliciesGet} policiesGet 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoliciesGetOutput} and HTTP response
+     */
+    policiesGetWithHttpInfo(policiesGet) {
+      let postBody = policiesGet;
+      // verify the required parameter 'policiesGet' is set
+      if (policiesGet === undefined || policiesGet === null) {
+        throw new Error("Missing the required parameter 'policiesGet' when calling policiesGet");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PoliciesGetOutput;
+      return this.apiClient.callApi(
+        '/policy-get', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/PoliciesGet} policiesGet 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoliciesGetOutput}
+     */
+    policiesGet(policiesGet) {
+      return this.policiesGetWithHttpInfo(policiesGet)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/PoliciesList} policiesList 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoliciesListOutput} and HTTP response
+     */
+    policiesListWithHttpInfo(policiesList) {
+      let postBody = policiesList;
+      // verify the required parameter 'policiesList' is set
+      if (policiesList === undefined || policiesList === null) {
+        throw new Error("Missing the required parameter 'policiesList' when calling policiesList");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PoliciesListOutput;
+      return this.apiClient.callApi(
+        '/policy-list', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/PoliciesList} policiesList 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoliciesListOutput}
+     */
+    policiesList(policiesList) {
+      return this.policiesListWithHttpInfo(policiesList)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/PolicyCreateKeys} policyCreateKeys 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoliciesCreateOutput} and HTTP response
+     */
+    policyCreateKeysWithHttpInfo(policyCreateKeys) {
+      let postBody = policyCreateKeys;
+      // verify the required parameter 'policyCreateKeys' is set
+      if (policyCreateKeys === undefined || policyCreateKeys === null) {
+        throw new Error("Missing the required parameter 'policyCreateKeys' when calling policyCreateKeys");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PoliciesCreateOutput;
+      return this.apiClient.callApi(
+        '/policy-create-keys', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/PolicyCreateKeys} policyCreateKeys 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoliciesCreateOutput}
+     */
+    policyCreateKeys(policyCreateKeys) {
+      return this.policyCreateKeysWithHttpInfo(policyCreateKeys)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/PolicyUpdateKeys} policyUpdateKeys 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    policyUpdateKeysWithHttpInfo(policyUpdateKeys) {
+      let postBody = policyUpdateKeys;
+      // verify the required parameter 'policyUpdateKeys' is set
+      if (policyUpdateKeys === undefined || policyUpdateKeys === null) {
+        throw new Error("Missing the required parameter 'policyUpdateKeys' when calling policyUpdateKeys");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/policy-update-keys', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/PolicyUpdateKeys} policyUpdateKeys 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    policyUpdateKeys(policyUpdateKeys) {
+      return this.policyUpdateKeysWithHttpInfo(policyUpdateKeys)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/ProvisionCertificate} provisionCertificate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProvisionCertificateOutput} and HTTP response
      */
@@ -18698,6 +18926,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/RotatedSecretCreateSplunk} rotatedSecretCreateSplunk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateSplunkWithHttpInfo(rotatedSecretCreateSplunk) {
+      let postBody = rotatedSecretCreateSplunk;
+      // verify the required parameter 'rotatedSecretCreateSplunk' is set
+      if (rotatedSecretCreateSplunk === undefined || rotatedSecretCreateSplunk === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretCreateSplunk' when calling rotatedSecretCreateSplunk");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-splunk', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateSplunk} rotatedSecretCreateSplunk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateSplunk(rotatedSecretCreateSplunk) {
+      return this.rotatedSecretCreateSplunkWithHttpInfo(rotatedSecretCreateSplunk)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/RotatedSecretCreateSsh} rotatedSecretCreateSsh 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
      */
@@ -19723,6 +19994,49 @@ export default class V2Api {
      */
     rotatedSecretUpdateSnowflake(rotatedSecretUpdateSnowflake) {
       return this.rotatedSecretUpdateSnowflakeWithHttpInfo(rotatedSecretUpdateSnowflake)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateSplunk} rotatedSecretUpdateSplunk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateSplunkWithHttpInfo(rotatedSecretUpdateSplunk) {
+      let postBody = rotatedSecretUpdateSplunk;
+      // verify the required parameter 'rotatedSecretUpdateSplunk' is set
+      if (rotatedSecretUpdateSplunk === undefined || rotatedSecretUpdateSplunk === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretUpdateSplunk' when calling rotatedSecretUpdateSplunk");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-splunk', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateSplunk} rotatedSecretUpdateSplunk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateSplunk(rotatedSecretUpdateSplunk) {
+      return this.rotatedSecretUpdateSplunkWithHttpInfo(rotatedSecretUpdateSplunk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -21106,6 +21420,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetCreateLetsEncrypt} targetCreateLetsEncrypt 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateLetsEncryptWithHttpInfo(targetCreateLetsEncrypt) {
+      let postBody = targetCreateLetsEncrypt;
+      // verify the required parameter 'targetCreateLetsEncrypt' is set
+      if (targetCreateLetsEncrypt === undefined || targetCreateLetsEncrypt === null) {
+        throw new Error("Missing the required parameter 'targetCreateLetsEncrypt' when calling targetCreateLetsEncrypt");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-lets-encrypt', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateLetsEncrypt} targetCreateLetsEncrypt 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateLetsEncrypt(targetCreateLetsEncrypt) {
+      return this.targetCreateLetsEncryptWithHttpInfo(targetCreateLetsEncrypt)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetCreateLinked} targetCreateLinked 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
      */
@@ -21357,6 +21714,49 @@ export default class V2Api {
      */
     targetCreateSectigo(targetCreateSectigo) {
       return this.targetCreateSectigoWithHttpInfo(targetCreateSectigo)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateSplunk} targetCreateSplunk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateSplunkWithHttpInfo(targetCreateSplunk) {
+      let postBody = targetCreateSplunk;
+      // verify the required parameter 'targetCreateSplunk' is set
+      if (targetCreateSplunk === undefined || targetCreateSplunk === null) {
+        throw new Error("Missing the required parameter 'targetCreateSplunk' when calling targetCreateSplunk");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-splunk', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateSplunk} targetCreateSplunk 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateSplunk(targetCreateSplunk) {
+      return this.targetCreateSplunkWithHttpInfo(targetCreateSplunk)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -22432,6 +22832,49 @@ export default class V2Api {
      */
     targetUpdateLdap(targetUpdateLdap) {
       return this.targetUpdateLdapWithHttpInfo(targetUpdateLdap)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateLetsEncrypt} targetUpdateLetsEncrypt 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateLetsEncryptWithHttpInfo(targetUpdateLetsEncrypt) {
+      let postBody = targetUpdateLetsEncrypt;
+      // verify the required parameter 'targetUpdateLetsEncrypt' is set
+      if (targetUpdateLetsEncrypt === undefined || targetUpdateLetsEncrypt === null) {
+        throw new Error("Missing the required parameter 'targetUpdateLetsEncrypt' when calling targetUpdateLetsEncrypt");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-lets-encrypt', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateLetsEncrypt} targetUpdateLetsEncrypt 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateLetsEncrypt(targetUpdateLetsEncrypt) {
+      return this.targetUpdateLetsEncryptWithHttpInfo(targetUpdateLetsEncrypt)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

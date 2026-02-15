@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **graceRotation** | **Boolean** |  | [optional] 
 **graceRotationHour** | **Number** |  | [optional] 
 **graceRotationInterval** | **Number** |  | [optional] 
+**graceRotationTiming** | **String** |  | [optional] 
 **gwClusterId** | **Number** |  | [optional] 
 **iisAppsDetails** | [**[WindowsService]**](WindowsService.md) |  | [optional] 
 **lastRotationError** | **String** |  | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NullTime model module.
  * @module model/NullTime
- * @version 5.0.20
+ * @version 5.0.21
  */
 class NullTime {
     /**

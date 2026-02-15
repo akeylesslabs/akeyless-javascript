@@ -743,6 +743,7 @@ import LastStatusInfo from './model/LastStatusInfo';
 import LdapConfigPart from './model/LdapConfigPart';
 import LdapTargetDetails from './model/LdapTargetDetails';
 import LeadershipConfigPart from './model/LeadershipConfigPart';
+import LetsEncryptTargetDetails from './model/LetsEncryptTargetDetails';
 import LinkedDetails from './model/LinkedDetails';
 import LinkedTargetDetails from './model/LinkedTargetDetails';
 import ListAcmeAccounts from './model/ListAcmeAccounts';
@@ -802,6 +803,15 @@ import PasswordScoreSetting from './model/PasswordScoreSetting';
 import PasswordSecurityInfo from './model/PasswordSecurityInfo';
 import PathRule from './model/PathRule';
 import PingTargetDetails from './model/PingTargetDetails';
+import PoliciesCreateOutput from './model/PoliciesCreateOutput';
+import PoliciesDelete from './model/PoliciesDelete';
+import PoliciesGet from './model/PoliciesGet';
+import PoliciesGetOutput from './model/PoliciesGetOutput';
+import PoliciesList from './model/PoliciesList';
+import PoliciesListOutput from './model/PoliciesListOutput';
+import PolicyCreateKeys from './model/PolicyCreateKeys';
+import PolicyOutput from './model/PolicyOutput';
+import PolicyUpdateKeys from './model/PolicyUpdateKeys';
 import Producer from './model/Producer';
 import ProducersConfigPart from './model/ProducersConfigPart';
 import ProvisionCertificate from './model/ProvisionCertificate';
@@ -852,6 +862,7 @@ import RotatedSecretCreatePostgresql from './model/RotatedSecretCreatePostgresql
 import RotatedSecretCreateRedis from './model/RotatedSecretCreateRedis';
 import RotatedSecretCreateRedshift from './model/RotatedSecretCreateRedshift';
 import RotatedSecretCreateSnowflake from './model/RotatedSecretCreateSnowflake';
+import RotatedSecretCreateSplunk from './model/RotatedSecretCreateSplunk';
 import RotatedSecretCreateSsh from './model/RotatedSecretCreateSsh';
 import RotatedSecretCreateWindows from './model/RotatedSecretCreateWindows';
 import RotatedSecretDelete from './model/RotatedSecretDelete';
@@ -880,6 +891,7 @@ import RotatedSecretUpdatePostgresql from './model/RotatedSecretUpdatePostgresql
 import RotatedSecretUpdateRedis from './model/RotatedSecretUpdateRedis';
 import RotatedSecretUpdateRedshift from './model/RotatedSecretUpdateRedshift';
 import RotatedSecretUpdateSnowflake from './model/RotatedSecretUpdateSnowflake';
+import RotatedSecretUpdateSplunk from './model/RotatedSecretUpdateSplunk';
 import RotatedSecretUpdateSsh from './model/RotatedSecretUpdateSsh';
 import RotatedSecretUpdateWindows from './model/RotatedSecretUpdateWindows';
 import RotationSecretMaxInterval from './model/RotationSecretMaxInterval';
@@ -922,6 +934,8 @@ import SignRsaSsaPssOutput from './model/SignRsaSsaPssOutput';
 import SlackNotiForwarderDetails from './model/SlackNotiForwarderDetails';
 import SmInfo from './model/SmInfo';
 import SplunkLogForwardingConfig from './model/SplunkLogForwardingConfig';
+import SplunkPayload from './model/SplunkPayload';
+import SplunkTargetDetails from './model/SplunkTargetDetails';
 import SraDesktopAppConf from './model/SraDesktopAppConf';
 import SraInfo from './model/SraInfo';
 import SraSessionEntryOut from './model/SraSessionEntryOut';
@@ -955,6 +969,7 @@ import TargetCreateGodaddy from './model/TargetCreateGodaddy';
 import TargetCreateHashiVault from './model/TargetCreateHashiVault';
 import TargetCreateK8s from './model/TargetCreateK8s';
 import TargetCreateLdap from './model/TargetCreateLdap';
+import TargetCreateLetsEncrypt from './model/TargetCreateLetsEncrypt';
 import TargetCreateLinked from './model/TargetCreateLinked';
 import TargetCreateOpenAI from './model/TargetCreateOpenAI';
 import TargetCreateOutput from './model/TargetCreateOutput';
@@ -962,6 +977,7 @@ import TargetCreatePing from './model/TargetCreatePing';
 import TargetCreateRabbitMq from './model/TargetCreateRabbitMq';
 import TargetCreateSalesforce from './model/TargetCreateSalesforce';
 import TargetCreateSectigo from './model/TargetCreateSectigo';
+import TargetCreateSplunk from './model/TargetCreateSplunk';
 import TargetCreateSsh from './model/TargetCreateSsh';
 import TargetCreateWeb from './model/TargetCreateWeb';
 import TargetCreateWindows from './model/TargetCreateWindows';
@@ -992,6 +1008,7 @@ import TargetUpdateGodaddy from './model/TargetUpdateGodaddy';
 import TargetUpdateHashiVault from './model/TargetUpdateHashiVault';
 import TargetUpdateK8s from './model/TargetUpdateK8s';
 import TargetUpdateLdap from './model/TargetUpdateLdap';
+import TargetUpdateLetsEncrypt from './model/TargetUpdateLetsEncrypt';
 import TargetUpdateLinked from './model/TargetUpdateLinked';
 import TargetUpdateOpenAI from './model/TargetUpdateOpenAI';
 import TargetUpdateOutput from './model/TargetUpdateOutput';
@@ -1190,7 +1207,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.20
+* @version 5.0.21
 */
 export {
     /**
@@ -5580,6 +5597,12 @@ export {
     LeadershipConfigPart,
 
     /**
+     * The LetsEncryptTargetDetails model constructor.
+     * @property {module:model/LetsEncryptTargetDetails}
+     */
+    LetsEncryptTargetDetails,
+
+    /**
      * The LinkedDetails model constructor.
      * @property {module:model/LinkedDetails}
      */
@@ -5934,6 +5957,60 @@ export {
     PingTargetDetails,
 
     /**
+     * The PoliciesCreateOutput model constructor.
+     * @property {module:model/PoliciesCreateOutput}
+     */
+    PoliciesCreateOutput,
+
+    /**
+     * The PoliciesDelete model constructor.
+     * @property {module:model/PoliciesDelete}
+     */
+    PoliciesDelete,
+
+    /**
+     * The PoliciesGet model constructor.
+     * @property {module:model/PoliciesGet}
+     */
+    PoliciesGet,
+
+    /**
+     * The PoliciesGetOutput model constructor.
+     * @property {module:model/PoliciesGetOutput}
+     */
+    PoliciesGetOutput,
+
+    /**
+     * The PoliciesList model constructor.
+     * @property {module:model/PoliciesList}
+     */
+    PoliciesList,
+
+    /**
+     * The PoliciesListOutput model constructor.
+     * @property {module:model/PoliciesListOutput}
+     */
+    PoliciesListOutput,
+
+    /**
+     * The PolicyCreateKeys model constructor.
+     * @property {module:model/PolicyCreateKeys}
+     */
+    PolicyCreateKeys,
+
+    /**
+     * The PolicyOutput model constructor.
+     * @property {module:model/PolicyOutput}
+     */
+    PolicyOutput,
+
+    /**
+     * The PolicyUpdateKeys model constructor.
+     * @property {module:model/PolicyUpdateKeys}
+     */
+    PolicyUpdateKeys,
+
+    /**
      * The Producer model constructor.
      * @property {module:model/Producer}
      */
@@ -6234,6 +6311,12 @@ export {
     RotatedSecretCreateSnowflake,
 
     /**
+     * The RotatedSecretCreateSplunk model constructor.
+     * @property {module:model/RotatedSecretCreateSplunk}
+     */
+    RotatedSecretCreateSplunk,
+
+    /**
      * The RotatedSecretCreateSsh model constructor.
      * @property {module:model/RotatedSecretCreateSsh}
      */
@@ -6400,6 +6483,12 @@ export {
      * @property {module:model/RotatedSecretUpdateSnowflake}
      */
     RotatedSecretUpdateSnowflake,
+
+    /**
+     * The RotatedSecretUpdateSplunk model constructor.
+     * @property {module:model/RotatedSecretUpdateSplunk}
+     */
+    RotatedSecretUpdateSplunk,
 
     /**
      * The RotatedSecretUpdateSsh model constructor.
@@ -6654,6 +6743,18 @@ export {
     SplunkLogForwardingConfig,
 
     /**
+     * The SplunkPayload model constructor.
+     * @property {module:model/SplunkPayload}
+     */
+    SplunkPayload,
+
+    /**
+     * The SplunkTargetDetails model constructor.
+     * @property {module:model/SplunkTargetDetails}
+     */
+    SplunkTargetDetails,
+
+    /**
      * The SraDesktopAppConf model constructor.
      * @property {module:model/SraDesktopAppConf}
      */
@@ -6852,6 +6953,12 @@ export {
     TargetCreateLdap,
 
     /**
+     * The TargetCreateLetsEncrypt model constructor.
+     * @property {module:model/TargetCreateLetsEncrypt}
+     */
+    TargetCreateLetsEncrypt,
+
+    /**
      * The TargetCreateLinked model constructor.
      * @property {module:model/TargetCreateLinked}
      */
@@ -6892,6 +6999,12 @@ export {
      * @property {module:model/TargetCreateSectigo}
      */
     TargetCreateSectigo,
+
+    /**
+     * The TargetCreateSplunk model constructor.
+     * @property {module:model/TargetCreateSplunk}
+     */
+    TargetCreateSplunk,
 
     /**
      * The TargetCreateSsh model constructor.
@@ -7072,6 +7185,12 @@ export {
      * @property {module:model/TargetUpdateLdap}
      */
     TargetUpdateLdap,
+
+    /**
+     * The TargetUpdateLetsEncrypt model constructor.
+     * @property {module:model/TargetUpdateLetsEncrypt}
+     */
+    TargetUpdateLetsEncrypt,
 
     /**
      * The TargetUpdateLinked model constructor.

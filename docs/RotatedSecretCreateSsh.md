@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **secureAccessSshUser** | **String** | Override the SSH username as indicated in SSH Certificate Issuer | [optional] 
 **secureAccessTargetType** | **String** | Specify target type. Options are ssh or rdp | [optional] [default to &#39;false&#39;]
 **tags** | **[String]** | Add tags attached to this object | [optional] 
-**targetName** | **String** | Target name | 
+**targetName** | **String** | The target name to associate | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 

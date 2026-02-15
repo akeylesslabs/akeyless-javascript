@@ -388,6 +388,11 @@ Method | HTTP request | Description
 [**listSharedItems**](V2Api.md#listSharedItems) | **POST** /list-shared-items | 
 [**listTargets**](V2Api.md#listTargets) | **POST** /list-targets | 
 [**moveObjects**](V2Api.md#moveObjects) | **POST** /move-objects | 
+[**policiesDelete**](V2Api.md#policiesDelete) | **POST** /policy-delete | 
+[**policiesGet**](V2Api.md#policiesGet) | **POST** /policy-get | 
+[**policiesList**](V2Api.md#policiesList) | **POST** /policy-list | 
+[**policyCreateKeys**](V2Api.md#policyCreateKeys) | **POST** /policy-create-keys | 
+[**policyUpdateKeys**](V2Api.md#policyUpdateKeys) | **POST** /policy-update-keys | 
 [**provisionCertificate**](V2Api.md#provisionCertificate) | **POST** /provision-certificate | 
 [**rawCreds**](V2Api.md#rawCreds) | **POST** /raw-creds | 
 [**refreshKey**](V2Api.md#refreshKey) | **POST** /refresh-key | 
@@ -418,6 +423,7 @@ Method | HTTP request | Description
 [**rotatedSecretCreateRedis**](V2Api.md#rotatedSecretCreateRedis) | **POST** /rotated-secret-create-redis | 
 [**rotatedSecretCreateRedshift**](V2Api.md#rotatedSecretCreateRedshift) | **POST** /rotated-secret-create-redshift | 
 [**rotatedSecretCreateSnowflake**](V2Api.md#rotatedSecretCreateSnowflake) | **POST** /rotated-secret-create-snowflake | 
+[**rotatedSecretCreateSplunk**](V2Api.md#rotatedSecretCreateSplunk) | **POST** /rotated-secret-create-splunk | 
 [**rotatedSecretCreateSsh**](V2Api.md#rotatedSecretCreateSsh) | **POST** /rotated-secret-create-ssh | 
 [**rotatedSecretCreateWindows**](V2Api.md#rotatedSecretCreateWindows) | **POST** /rotated-secret-create-windows | 
 [**rotatedSecretDelete**](V2Api.md#rotatedSecretDelete) | **POST** /rotated-secret-delete | 
@@ -442,6 +448,7 @@ Method | HTTP request | Description
 [**rotatedSecretUpdateRedis**](V2Api.md#rotatedSecretUpdateRedis) | **POST** /rotated-secret-update-redis | 
 [**rotatedSecretUpdateRedshift**](V2Api.md#rotatedSecretUpdateRedshift) | **POST** /rotated-secret-update-redshift | 
 [**rotatedSecretUpdateSnowflake**](V2Api.md#rotatedSecretUpdateSnowflake) | **POST** /rotated-secret-update-snowflake | 
+[**rotatedSecretUpdateSplunk**](V2Api.md#rotatedSecretUpdateSplunk) | **POST** /rotated-secret-update-splunk | 
 [**rotatedSecretUpdateSsh**](V2Api.md#rotatedSecretUpdateSsh) | **POST** /rotated-secret-update-ssh | 
 [**rotatedSecretUpdateWindows**](V2Api.md#rotatedSecretUpdateWindows) | **POST** /rotated-secret-update-windows | 
 [**setItemState**](V2Api.md#setItemState) | **POST** /set-item-state | 
@@ -474,12 +481,14 @@ Method | HTTP request | Description
 [**targetCreateHashiVault**](V2Api.md#targetCreateHashiVault) | **POST** /target-create-hashi-vault | 
 [**targetCreateK8s**](V2Api.md#targetCreateK8s) | **POST** /target-create-k8s | 
 [**targetCreateLdap**](V2Api.md#targetCreateLdap) | **POST** /target-create-ldap | 
+[**targetCreateLetsEncrypt**](V2Api.md#targetCreateLetsEncrypt) | **POST** /target-create-lets-encrypt | 
 [**targetCreateLinked**](V2Api.md#targetCreateLinked) | **POST** /target-create-linked | 
 [**targetCreateOpenAI**](V2Api.md#targetCreateOpenAI) | **POST** /target-create-openai | 
 [**targetCreatePing**](V2Api.md#targetCreatePing) | **POST** /target-create-ping | 
 [**targetCreateRabbitMq**](V2Api.md#targetCreateRabbitMq) | **POST** /target-create-rabbitmq | 
 [**targetCreateSalesforce**](V2Api.md#targetCreateSalesforce) | **POST** /target-create-salesforce | 
 [**targetCreateSectigo**](V2Api.md#targetCreateSectigo) | **POST** /target-create-sectigo | 
+[**targetCreateSplunk**](V2Api.md#targetCreateSplunk) | **POST** /target-create-splunk | 
 [**targetCreateSsh**](V2Api.md#targetCreateSsh) | **POST** /target-create-ssh | 
 [**targetCreateWeb**](V2Api.md#targetCreateWeb) | **POST** /target-create-web | 
 [**targetCreateWindows**](V2Api.md#targetCreateWindows) | **POST** /target-create-windows | 
@@ -505,6 +514,7 @@ Method | HTTP request | Description
 [**targetUpdateHashiVault**](V2Api.md#targetUpdateHashiVault) | **POST** /target-update-hashi-vault | 
 [**targetUpdateK8s**](V2Api.md#targetUpdateK8s) | **POST** /target-update-k8s | 
 [**targetUpdateLdap**](V2Api.md#targetUpdateLdap) | **POST** /target-update-ldap | 
+[**targetUpdateLetsEncrypt**](V2Api.md#targetUpdateLetsEncrypt) | **POST** /target-update-lets-encrypt | 
 [**targetUpdateLinked**](V2Api.md#targetUpdateLinked) | **POST** /target-update-linked | 
 [**targetUpdateOpenAI**](V2Api.md#targetUpdateOpenAI) | **POST** /target-update-openai | 
 [**targetUpdatePing**](V2Api.md#targetUpdatePing) | **POST** /target-update-ping | 
@@ -16757,6 +16767,216 @@ No authorization required
 - **Accept**: application/json
 
 
+## policiesDelete
+
+> Object policiesDelete(policiesDelete)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let policiesDelete = new akeyless.PoliciesDelete(); // PoliciesDelete | 
+apiInstance.policiesDelete(policiesDelete).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policiesDelete** | [**PoliciesDelete**](PoliciesDelete.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## policiesGet
+
+> PoliciesGetOutput policiesGet(policiesGet)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let policiesGet = new akeyless.PoliciesGet(); // PoliciesGet | 
+apiInstance.policiesGet(policiesGet).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policiesGet** | [**PoliciesGet**](PoliciesGet.md)|  | 
+
+### Return type
+
+[**PoliciesGetOutput**](PoliciesGetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## policiesList
+
+> PoliciesListOutput policiesList(policiesList)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let policiesList = new akeyless.PoliciesList(); // PoliciesList | 
+apiInstance.policiesList(policiesList).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policiesList** | [**PoliciesList**](PoliciesList.md)|  | 
+
+### Return type
+
+[**PoliciesListOutput**](PoliciesListOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## policyCreateKeys
+
+> PoliciesCreateOutput policyCreateKeys(policyCreateKeys)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let policyCreateKeys = new akeyless.PolicyCreateKeys(); // PolicyCreateKeys | 
+apiInstance.policyCreateKeys(policyCreateKeys).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policyCreateKeys** | [**PolicyCreateKeys**](PolicyCreateKeys.md)|  | 
+
+### Return type
+
+[**PoliciesCreateOutput**](PoliciesCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## policyUpdateKeys
+
+> Object policyUpdateKeys(policyUpdateKeys)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let policyUpdateKeys = new akeyless.PolicyUpdateKeys(); // PolicyUpdateKeys | 
+apiInstance.policyUpdateKeys(policyUpdateKeys).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policyUpdateKeys** | [**PolicyUpdateKeys**](PolicyUpdateKeys.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## provisionCertificate
 
 > ProvisionCertificateOutput provisionCertificate(provisionCertificate)
@@ -18015,6 +18235,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## rotatedSecretCreateSplunk
+
+> RotatedSecretCreateOutput rotatedSecretCreateSplunk(rotatedSecretCreateSplunk)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretCreateSplunk = new akeyless.RotatedSecretCreateSplunk(); // RotatedSecretCreateSplunk | 
+apiInstance.rotatedSecretCreateSplunk(rotatedSecretCreateSplunk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretCreateSplunk** | [**RotatedSecretCreateSplunk**](RotatedSecretCreateSplunk.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## rotatedSecretCreateSsh
 
 > RotatedSecretCreateOutput rotatedSecretCreateSsh(rotatedSecretCreateSsh)
@@ -19008,6 +19270,48 @@ apiInstance.rotatedSecretUpdateSnowflake(rotatedSecretUpdateSnowflake).then((dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rotatedSecretUpdateSnowflake** | [**RotatedSecretUpdateSnowflake**](RotatedSecretUpdateSnowflake.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateSplunk
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateSplunk(rotatedSecretUpdateSplunk)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretUpdateSplunk = new akeyless.RotatedSecretUpdateSplunk(); // RotatedSecretUpdateSplunk | 
+apiInstance.rotatedSecretUpdateSplunk(rotatedSecretUpdateSplunk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretUpdateSplunk** | [**RotatedSecretUpdateSplunk**](RotatedSecretUpdateSplunk.md)|  | 
 
 ### Return type
 
@@ -20367,6 +20671,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetCreateLetsEncrypt
+
+> TargetCreateOutput targetCreateLetsEncrypt(targetCreateLetsEncrypt)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateLetsEncrypt = new akeyless.TargetCreateLetsEncrypt(); // TargetCreateLetsEncrypt | 
+apiInstance.targetCreateLetsEncrypt(targetCreateLetsEncrypt).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateLetsEncrypt** | [**TargetCreateLetsEncrypt**](TargetCreateLetsEncrypt.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetCreateLinked
 
 > TargetCreateOutput targetCreateLinked(targetCreateLinked)
@@ -20604,6 +20950,48 @@ apiInstance.targetCreateSectigo(targetCreateSectigo).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetCreateSectigo** | [**TargetCreateSectigo**](TargetCreateSectigo.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetCreateSplunk
+
+> TargetCreateOutput targetCreateSplunk(targetCreateSplunk)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateSplunk = new akeyless.TargetCreateSplunk(); // TargetCreateSplunk | 
+apiInstance.targetCreateSplunk(targetCreateSplunk).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateSplunk** | [**TargetCreateSplunk**](TargetCreateSplunk.md)|  | 
 
 ### Return type
 
@@ -21654,6 +22042,48 @@ apiInstance.targetUpdateLdap(targetUpdateLdap).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetUpdateLdap** | [**TargetUpdateLdap**](TargetUpdateLdap.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetUpdateLetsEncrypt
+
+> TargetUpdateOutput targetUpdateLetsEncrypt(targetUpdateLetsEncrypt)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateLetsEncrypt = new akeyless.TargetUpdateLetsEncrypt(); // TargetUpdateLetsEncrypt | 
+apiInstance.targetUpdateLetsEncrypt(targetUpdateLetsEncrypt).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateLetsEncrypt** | [**TargetUpdateLetsEncrypt**](TargetUpdateLetsEncrypt.md)|  | 
 
 ### Return type
 

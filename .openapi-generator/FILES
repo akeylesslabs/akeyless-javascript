@@ -732,6 +732,7 @@ docs/LastStatusInfo.md
 docs/LdapConfigPart.md
 docs/LdapTargetDetails.md
 docs/LeadershipConfigPart.md
+docs/LetsEncryptTargetDetails.md
 docs/LinkedDetails.md
 docs/LinkedTargetDetails.md
 docs/ListAcmeAccounts.md
@@ -791,6 +792,15 @@ docs/PasswordScoreSetting.md
 docs/PasswordSecurityInfo.md
 docs/PathRule.md
 docs/PingTargetDetails.md
+docs/PoliciesCreateOutput.md
+docs/PoliciesDelete.md
+docs/PoliciesGet.md
+docs/PoliciesGetOutput.md
+docs/PoliciesList.md
+docs/PoliciesListOutput.md
+docs/PolicyCreateKeys.md
+docs/PolicyOutput.md
+docs/PolicyUpdateKeys.md
 docs/Producer.md
 docs/ProducersConfigPart.md
 docs/ProvisionCertificate.md
@@ -841,6 +851,7 @@ docs/RotatedSecretCreatePostgresql.md
 docs/RotatedSecretCreateRedis.md
 docs/RotatedSecretCreateRedshift.md
 docs/RotatedSecretCreateSnowflake.md
+docs/RotatedSecretCreateSplunk.md
 docs/RotatedSecretCreateSsh.md
 docs/RotatedSecretCreateWindows.md
 docs/RotatedSecretDelete.md
@@ -869,6 +880,7 @@ docs/RotatedSecretUpdatePostgresql.md
 docs/RotatedSecretUpdateRedis.md
 docs/RotatedSecretUpdateRedshift.md
 docs/RotatedSecretUpdateSnowflake.md
+docs/RotatedSecretUpdateSplunk.md
 docs/RotatedSecretUpdateSsh.md
 docs/RotatedSecretUpdateWindows.md
 docs/RotationSecretMaxInterval.md
@@ -911,6 +923,8 @@ docs/SignRsaSsaPssOutput.md
 docs/SlackNotiForwarderDetails.md
 docs/SmInfo.md
 docs/SplunkLogForwardingConfig.md
+docs/SplunkPayload.md
+docs/SplunkTargetDetails.md
 docs/SraDesktopAppConf.md
 docs/SraInfo.md
 docs/SraSessionEntryOut.md
@@ -944,6 +958,7 @@ docs/TargetCreateGodaddy.md
 docs/TargetCreateHashiVault.md
 docs/TargetCreateK8s.md
 docs/TargetCreateLdap.md
+docs/TargetCreateLetsEncrypt.md
 docs/TargetCreateLinked.md
 docs/TargetCreateOpenAI.md
 docs/TargetCreateOutput.md
@@ -951,6 +966,7 @@ docs/TargetCreatePing.md
 docs/TargetCreateRabbitMq.md
 docs/TargetCreateSalesforce.md
 docs/TargetCreateSectigo.md
+docs/TargetCreateSplunk.md
 docs/TargetCreateSsh.md
 docs/TargetCreateWeb.md
 docs/TargetCreateWindows.md
@@ -981,6 +997,7 @@ docs/TargetUpdateGodaddy.md
 docs/TargetUpdateHashiVault.md
 docs/TargetUpdateK8s.md
 docs/TargetUpdateLdap.md
+docs/TargetUpdateLetsEncrypt.md
 docs/TargetUpdateLinked.md
 docs/TargetUpdateOpenAI.md
 docs/TargetUpdateOutput.md
@@ -1884,6 +1901,7 @@ src/model/LastStatusInfo.js
 src/model/LdapConfigPart.js
 src/model/LdapTargetDetails.js
 src/model/LeadershipConfigPart.js
+src/model/LetsEncryptTargetDetails.js
 src/model/LinkedDetails.js
 src/model/LinkedTargetDetails.js
 src/model/ListAcmeAccounts.js
@@ -1943,6 +1961,15 @@ src/model/PasswordScoreSetting.js
 src/model/PasswordSecurityInfo.js
 src/model/PathRule.js
 src/model/PingTargetDetails.js
+src/model/PoliciesCreateOutput.js
+src/model/PoliciesDelete.js
+src/model/PoliciesGet.js
+src/model/PoliciesGetOutput.js
+src/model/PoliciesList.js
+src/model/PoliciesListOutput.js
+src/model/PolicyCreateKeys.js
+src/model/PolicyOutput.js
+src/model/PolicyUpdateKeys.js
 src/model/Producer.js
 src/model/ProducersConfigPart.js
 src/model/ProvisionCertificate.js
@@ -1993,6 +2020,7 @@ src/model/RotatedSecretCreatePostgresql.js
 src/model/RotatedSecretCreateRedis.js
 src/model/RotatedSecretCreateRedshift.js
 src/model/RotatedSecretCreateSnowflake.js
+src/model/RotatedSecretCreateSplunk.js
 src/model/RotatedSecretCreateSsh.js
 src/model/RotatedSecretCreateWindows.js
 src/model/RotatedSecretDelete.js
@@ -2021,6 +2049,7 @@ src/model/RotatedSecretUpdatePostgresql.js
 src/model/RotatedSecretUpdateRedis.js
 src/model/RotatedSecretUpdateRedshift.js
 src/model/RotatedSecretUpdateSnowflake.js
+src/model/RotatedSecretUpdateSplunk.js
 src/model/RotatedSecretUpdateSsh.js
 src/model/RotatedSecretUpdateWindows.js
 src/model/RotationSecretMaxInterval.js
@@ -2063,6 +2092,8 @@ src/model/SignRsaSsaPssOutput.js
 src/model/SlackNotiForwarderDetails.js
 src/model/SmInfo.js
 src/model/SplunkLogForwardingConfig.js
+src/model/SplunkPayload.js
+src/model/SplunkTargetDetails.js
 src/model/SraDesktopAppConf.js
 src/model/SraInfo.js
 src/model/SraSessionEntryOut.js
@@ -2096,6 +2127,7 @@ src/model/TargetCreateGodaddy.js
 src/model/TargetCreateHashiVault.js
 src/model/TargetCreateK8s.js
 src/model/TargetCreateLdap.js
+src/model/TargetCreateLetsEncrypt.js
 src/model/TargetCreateLinked.js
 src/model/TargetCreateOpenAI.js
 src/model/TargetCreateOutput.js
@@ -2103,6 +2135,7 @@ src/model/TargetCreatePing.js
 src/model/TargetCreateRabbitMq.js
 src/model/TargetCreateSalesforce.js
 src/model/TargetCreateSectigo.js
+src/model/TargetCreateSplunk.js
 src/model/TargetCreateSsh.js
 src/model/TargetCreateWeb.js
 src/model/TargetCreateWindows.js
@@ -2133,6 +2166,7 @@ src/model/TargetUpdateGodaddy.js
 src/model/TargetUpdateHashiVault.js
 src/model/TargetUpdateK8s.js
 src/model/TargetUpdateLdap.js
+src/model/TargetUpdateLetsEncrypt.js
 src/model/TargetUpdateLinked.js
 src/model/TargetUpdateOpenAI.js
 src/model/TargetUpdateOutput.js
@@ -2299,3 +2333,20 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
+test/model/LetsEncryptTargetDetails.spec.js
+test/model/PoliciesCreateOutput.spec.js
+test/model/PoliciesDelete.spec.js
+test/model/PoliciesGet.spec.js
+test/model/PoliciesGetOutput.spec.js
+test/model/PoliciesList.spec.js
+test/model/PoliciesListOutput.spec.js
+test/model/PolicyCreateKeys.spec.js
+test/model/PolicyOutput.spec.js
+test/model/PolicyUpdateKeys.spec.js
+test/model/RotatedSecretCreateSplunk.spec.js
+test/model/RotatedSecretUpdateSplunk.spec.js
+test/model/SplunkPayload.spec.js
+test/model/SplunkTargetDetails.spec.js
+test/model/TargetCreateLetsEncrypt.spec.js
+test/model/TargetCreateSplunk.spec.js
+test/model/TargetUpdateLetsEncrypt.spec.js

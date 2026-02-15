@@ -18,7 +18,7 @@ import SraSessionEntryOut from './SraSessionEntryOut';
 /**
  * The ListSraSessionsOutput model module.
  * @module model/ListSraSessionsOutput
- * @version 5.0.20
+ * @version 5.0.21
  */
 class ListSraSessionsOutput {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KubeconfigExec model module.
  * @module model/KubeconfigExec
- * @version 5.0.20
+ * @version 5.0.21
  */
 class KubeconfigExec {
     /**

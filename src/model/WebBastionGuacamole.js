@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WebBastionGuacamole model module.
  * @module model/WebBastionGuacamole
- * @version 5.0.20
+ * @version 5.0.21
  */
 class WebBastionGuacamole {
     /**

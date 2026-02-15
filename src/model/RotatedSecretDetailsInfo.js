@@ -17,7 +17,7 @@ import WindowsService from './WindowsService';
 /**
  * The RotatedSecretDetailsInfo model module.
  * @module model/RotatedSecretDetailsInfo
- * @version 5.0.20
+ * @version 5.0.21
  */
 class RotatedSecretDetailsInfo {
     /**
@@ -63,6 +63,9 @@ class RotatedSecretDetailsInfo {
             }
             if (data.hasOwnProperty('grace_rotation_interval')) {
                 obj['grace_rotation_interval'] = ApiClient.convertToType(data['grace_rotation_interval'], 'Number');
+            }
+            if (data.hasOwnProperty('grace_rotation_timing')) {
+                obj['grace_rotation_timing'] = ApiClient.convertToType(data['grace_rotation_timing'], 'String');
             }
             if (data.hasOwnProperty('gw_cluster_id')) {
                 obj['gw_cluster_id'] = ApiClient.convertToType(data['gw_cluster_id'], 'Number');
@@ -125,6 +128,10 @@ class RotatedSecretDetailsInfo {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>RotatedSecretDetailsInfo</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['grace_rotation_timing'] && !(typeof data['grace_rotation_timing'] === 'string' || data['grace_rotation_timing'] instanceof String)) {
+            throw new Error("Expected the field `grace_rotation_timing` to be a primitive type in the JSON string but got " + data['grace_rotation_timing']);
+        }
         if (data['iis_apps_details']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['iis_apps_details'])) {
@@ -206,6 +213,11 @@ RotatedSecretDetailsInfo.prototype['grace_rotation_hour'] = undefined;
  * @member {Number} grace_rotation_interval
  */
 RotatedSecretDetailsInfo.prototype['grace_rotation_interval'] = undefined;
+
+/**
+ * @member {String} grace_rotation_timing
+ */
+RotatedSecretDetailsInfo.prototype['grace_rotation_timing'] = undefined;
 
 /**
  * @member {Number} gw_cluster_id

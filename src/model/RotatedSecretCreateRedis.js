@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateRedis model module.
  * @module model/RotatedSecretCreateRedis
- * @version 5.0.20
+ * @version 5.0.21
  */
 class RotatedSecretCreateRedis {
     /**
@@ -24,7 +24,7 @@ class RotatedSecretCreateRedis {
      * @alias module:model/RotatedSecretCreateRedis
      * @param name {String} Rotated secret name
      * @param rotatorType {String} The rotator type. options: [target/password]
-     * @param targetName {String} Target name
+     * @param targetName {String} The target name to associate
      */
     constructor(name, rotatorType, targetName) { 
         
@@ -313,7 +313,7 @@ RotatedSecretCreateRedis.prototype['rotator-type'] = undefined;
 RotatedSecretCreateRedis.prototype['tags'] = undefined;
 
 /**
- * Target name
+ * The target name to associate
  * @member {String} target-name
  */
 RotatedSecretCreateRedis.prototype['target-name'] = undefined;

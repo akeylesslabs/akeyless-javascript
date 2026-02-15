@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateMigration model module.
  * @module model/GatewayCreateMigration
- * @version 5.0.20
+ * @version 5.0.21
  */
 class GatewayCreateMigration {
     /**
@@ -169,6 +169,9 @@ class GatewayCreateMigration {
             if (data.hasOwnProperty('gcp-key')) {
                 obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
             }
+            if (data.hasOwnProperty('gcp-project-id')) {
+                obj['gcp-project-id'] = ApiClient.convertToType(data['gcp-project-id'], 'String');
+            }
             if (data.hasOwnProperty('hashi-json')) {
                 obj['hashi-json'] = ApiClient.convertToType(data['hashi-json'], 'String');
             }
@@ -258,6 +261,9 @@ class GatewayCreateMigration {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('use-gw-cloud-identity')) {
+                obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
             }
         }
         return obj;
@@ -398,6 +404,10 @@ class GatewayCreateMigration {
         // ensure the json data is a string
         if (data['gcp-key'] && !(typeof data['gcp-key'] === 'string' || data['gcp-key'] instanceof String)) {
             throw new Error("Expected the field `gcp-key` to be a primitive type in the JSON string but got " + data['gcp-key']);
+        }
+        // ensure the json data is a string
+        if (data['gcp-project-id'] && !(typeof data['gcp-project-id'] === 'string' || data['gcp-project-id'] instanceof String)) {
+            throw new Error("Expected the field `gcp-project-id` to be a primitive type in the JSON string but got " + data['gcp-project-id']);
         }
         // ensure the json data is a string
         if (data['hashi-json'] && !(typeof data['hashi-json'] === 'string' || data['hashi-json'] instanceof String)) {
@@ -718,6 +728,12 @@ GatewayCreateMigration.prototype['expiration-event-in'] = undefined;
 GatewayCreateMigration.prototype['gcp-key'] = undefined;
 
 /**
+ * GCP Project ID (cross-project override)
+ * @member {String} gcp-project-id
+ */
+GatewayCreateMigration.prototype['gcp-project-id'] = undefined;
+
+/**
  * Import secret key as json value or independent secrets (relevant only for HasiCorp Vault migration) [true/false]
  * @member {String} hashi-json
  * @default 'true'
@@ -900,6 +916,12 @@ GatewayCreateMigration.prototype['type'] = undefined;
  * @member {String} uid-token
  */
 GatewayCreateMigration.prototype['uid-token'] = undefined;
+
+/**
+ * Use the GW's Cloud IAM
+ * @member {Boolean} use-gw-cloud-identity
+ */
+GatewayCreateMigration.prototype['use-gw-cloud-identity'] = undefined;
 
 
 

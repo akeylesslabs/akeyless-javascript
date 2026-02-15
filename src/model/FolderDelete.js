@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FolderDelete model module.
  * @module model/FolderDelete
- * @version 5.0.20
+ * @version 5.0.21
  */
 class FolderDelete {
     /**

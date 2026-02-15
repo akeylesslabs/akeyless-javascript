@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateOpenAI model module.
  * @module model/RotatedSecretCreateOpenAI
- * @version 5.0.20
+ * @version 5.0.21
  */
 class RotatedSecretCreateOpenAI {
     /**
@@ -25,7 +25,7 @@ class RotatedSecretCreateOpenAI {
      * @alias module:model/RotatedSecretCreateOpenAI
      * @param name {String} Rotated secret name
      * @param rotatorType {String} The rotator type. options: [target/api-key]
-     * @param targetName {String} Target name
+     * @param targetName {String} The target name to associate
      */
     constructor(name, rotatorType, targetName) { 
         
@@ -314,7 +314,7 @@ RotatedSecretCreateOpenAI.prototype['rotator-type'] = undefined;
 RotatedSecretCreateOpenAI.prototype['tags'] = undefined;
 
 /**
- * Target name
+ * The target name to associate
  * @member {String} target-name
  */
 RotatedSecretCreateOpenAI.prototype['target-name'] = undefined;

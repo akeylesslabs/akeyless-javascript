@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateSsh model module.
  * @module model/RotatedSecretCreateSsh
- * @version 5.0.20
+ * @version 5.0.21
  */
 class RotatedSecretCreateSsh {
     /**
@@ -24,7 +24,7 @@ class RotatedSecretCreateSsh {
      * @alias module:model/RotatedSecretCreateSsh
      * @param name {String} Rotated secret name
      * @param rotatorType {String} The rotator type. options: [target/password/key]
-     * @param targetName {String} Target name
+     * @param targetName {String} The target name to associate
      */
     constructor(name, rotatorType, targetName) { 
         
@@ -497,7 +497,7 @@ RotatedSecretCreateSsh.prototype['secure-access-target-type'] = 'false';
 RotatedSecretCreateSsh.prototype['tags'] = undefined;
 
 /**
- * Target name
+ * The target name to associate
  * @member {String} target-name
  */
 RotatedSecretCreateSsh.prototype['target-name'] = undefined;

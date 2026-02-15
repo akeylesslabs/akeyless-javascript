@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **secureAccessWebBrowsing** | **Boolean** | Secure browser via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to false]
 **secureAccessWebProxy** | **Boolean** | Web-Proxy via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to false]
 **tags** | **[String]** | Add tags attached to this object | [optional] 
-**targetName** | **String** | Target name | 
+**targetName** | **String** | The target name to associate | 
 **timeoutSec** | **Number** | Maximum allowed time in seconds for the custom rotator to return the results | [optional] [default to 40]
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 

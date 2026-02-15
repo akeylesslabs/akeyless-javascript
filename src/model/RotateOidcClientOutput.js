@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotateOidcClientOutput model module.
  * @module model/RotateOidcClientOutput
- * @version 5.0.20
+ * @version 5.0.21
  */
 class RotateOidcClientOutput {
     /**

@@ -30,6 +30,7 @@ import GlobalSignGCCTargetDetails from './GlobalSignGCCTargetDetails';
 import GodaddyTargetDetails from './GodaddyTargetDetails';
 import HashiVaultTargetDetails from './HashiVaultTargetDetails';
 import LdapTargetDetails from './LdapTargetDetails';
+import LetsEncryptTargetDetails from './LetsEncryptTargetDetails';
 import LinkedTargetDetails from './LinkedTargetDetails';
 import MongoDBTargetDetails from './MongoDBTargetDetails';
 import NativeK8sTargetDetails from './NativeK8sTargetDetails';
@@ -39,6 +40,7 @@ import RabbitMQTargetDetails from './RabbitMQTargetDetails';
 import SSHTargetDetails from './SSHTargetDetails';
 import SalesforceTargetDetails from './SalesforceTargetDetails';
 import SectigoTargetDetails from './SectigoTargetDetails';
+import SplunkTargetDetails from './SplunkTargetDetails';
 import VenafiTargetDetails from './VenafiTargetDetails';
 import WebTargetDetails from './WebTargetDetails';
 import WindowsTargetDetails from './WindowsTargetDetails';
@@ -47,7 +49,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 5.0.20
+ * @version 5.0.21
  */
 class TargetTypeDetailsInput {
     /**
@@ -132,6 +134,9 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('ldap_target_details')) {
                 obj['ldap_target_details'] = LdapTargetDetails.constructFromObject(data['ldap_target_details']);
             }
+            if (data.hasOwnProperty('letsencrypt_target_details')) {
+                obj['letsencrypt_target_details'] = LetsEncryptTargetDetails.constructFromObject(data['letsencrypt_target_details']);
+            }
             if (data.hasOwnProperty('linked_target_details')) {
                 obj['linked_target_details'] = LinkedTargetDetails.constructFromObject(data['linked_target_details']);
             }
@@ -155,6 +160,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('sectigo_target_details')) {
                 obj['sectigo_target_details'] = SectigoTargetDetails.constructFromObject(data['sectigo_target_details']);
+            }
+            if (data.hasOwnProperty('splunk_target_details')) {
+                obj['splunk_target_details'] = SplunkTargetDetails.constructFromObject(data['splunk_target_details']);
             }
             if (data.hasOwnProperty('ssh_target_details')) {
                 obj['ssh_target_details'] = SSHTargetDetails.constructFromObject(data['ssh_target_details']);
@@ -253,6 +261,10 @@ class TargetTypeDetailsInput {
         if (data['ldap_target_details']) { // data not null
           LdapTargetDetails.validateJSON(data['ldap_target_details']);
         }
+        // validate the optional field `letsencrypt_target_details`
+        if (data['letsencrypt_target_details']) { // data not null
+          LetsEncryptTargetDetails.validateJSON(data['letsencrypt_target_details']);
+        }
         // validate the optional field `linked_target_details`
         if (data['linked_target_details']) { // data not null
           LinkedTargetDetails.validateJSON(data['linked_target_details']);
@@ -284,6 +296,10 @@ class TargetTypeDetailsInput {
         // validate the optional field `sectigo_target_details`
         if (data['sectigo_target_details']) { // data not null
           SectigoTargetDetails.validateJSON(data['sectigo_target_details']);
+        }
+        // validate the optional field `splunk_target_details`
+        if (data['splunk_target_details']) { // data not null
+          SplunkTargetDetails.validateJSON(data['splunk_target_details']);
         }
         // validate the optional field `ssh_target_details`
         if (data['ssh_target_details']) { // data not null
@@ -405,6 +421,11 @@ TargetTypeDetailsInput.prototype['hashi_vault_target_details'] = undefined;
 TargetTypeDetailsInput.prototype['ldap_target_details'] = undefined;
 
 /**
+ * @member {module:model/LetsEncryptTargetDetails} letsencrypt_target_details
+ */
+TargetTypeDetailsInput.prototype['letsencrypt_target_details'] = undefined;
+
+/**
  * @member {module:model/LinkedTargetDetails} linked_target_details
  */
 TargetTypeDetailsInput.prototype['linked_target_details'] = undefined;
@@ -443,6 +464,11 @@ TargetTypeDetailsInput.prototype['salesforce_target_details'] = undefined;
  * @member {module:model/SectigoTargetDetails} sectigo_target_details
  */
 TargetTypeDetailsInput.prototype['sectigo_target_details'] = undefined;
+
+/**
+ * @member {module:model/SplunkTargetDetails} splunk_target_details
+ */
+TargetTypeDetailsInput.prototype['splunk_target_details'] = undefined;
 
 /**
  * @member {module:model/SSHTargetDetails} ssh_target_details

@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateCustom model module.
  * @module model/RotatedSecretCreateCustom
- * @version 5.0.20
+ * @version 5.0.21
  */
 class RotatedSecretCreateCustom {
     /**
      * Constructs a new <code>RotatedSecretCreateCustom</code>.
      * @alias module:model/RotatedSecretCreateCustom
      * @param name {String} Rotated secret name
-     * @param targetName {String} Target name
+     * @param targetName {String} The target name to associate
      */
     constructor(name, targetName) { 
         
@@ -493,7 +493,7 @@ RotatedSecretCreateCustom.prototype['secure-access-web-proxy'] = false;
 RotatedSecretCreateCustom.prototype['tags'] = undefined;
 
 /**
- * Target name
+ * The target name to associate
  * @member {String} target-name
  */
 RotatedSecretCreateCustom.prototype['target-name'] = undefined;

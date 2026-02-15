@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateAws model module.
  * @module model/RotatedSecretCreateAws
- * @version 5.0.20
+ * @version 5.0.21
  */
 class RotatedSecretCreateAws {
     /**
@@ -24,7 +24,7 @@ class RotatedSecretCreateAws {
      * @alias module:model/RotatedSecretCreateAws
      * @param name {String} Rotated secret name
      * @param rotatorType {String} The rotator type. options: [target/api-key]
-     * @param targetName {String} Target name
+     * @param targetName {String} The target name to associate
      */
     constructor(name, rotatorType, targetName) { 
         
@@ -86,6 +86,9 @@ class RotatedSecretCreateAws {
             }
             if (data.hasOwnProperty('grace-rotation-interval')) {
                 obj['grace-rotation-interval'] = ApiClient.convertToType(data['grace-rotation-interval'], 'String');
+            }
+            if (data.hasOwnProperty('grace-rotation-timing')) {
+                obj['grace-rotation-timing'] = ApiClient.convertToType(data['grace-rotation-timing'], 'String');
             }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
@@ -198,6 +201,10 @@ class RotatedSecretCreateAws {
         // ensure the json data is a string
         if (data['grace-rotation-interval'] && !(typeof data['grace-rotation-interval'] === 'string' || data['grace-rotation-interval'] instanceof String)) {
             throw new Error("Expected the field `grace-rotation-interval` to be a primitive type in the JSON string but got " + data['grace-rotation-interval']);
+        }
+        // ensure the json data is a string
+        if (data['grace-rotation-timing'] && !(typeof data['grace-rotation-timing'] === 'string' || data['grace-rotation-timing'] instanceof String)) {
+            throw new Error("Expected the field `grace-rotation-timing` to be a primitive type in the JSON string but got " + data['grace-rotation-timing']);
         }
         // ensure the json data is a string
         if (data['key'] && !(typeof data['key'] === 'string' || data['key'] instanceof String)) {
@@ -317,7 +324,7 @@ RotatedSecretCreateAws.prototype['delete_protection'] = undefined;
 RotatedSecretCreateAws.prototype['description'] = undefined;
 
 /**
- * Create a new access key without deleting the old key from AWS/Azure/GCP for backup (relevant only for AWS/Azure/GCP) [true/false]
+ * Enable graceful rotation (keep both versions temporarily). When enabled, a new secret version is created while the previous version is kept for the grace period, so both versions exist for a limited time. [true/false]
  * @member {String} grace-rotation
  */
 RotatedSecretCreateAws.prototype['grace-rotation'] = undefined;
@@ -333,6 +340,12 @@ RotatedSecretCreateAws.prototype['grace-rotation-hour'] = undefined;
  * @member {String} grace-rotation-interval
  */
 RotatedSecretCreateAws.prototype['grace-rotation-interval'] = undefined;
+
+/**
+ * When to create the new version relative to the rotation date [after/before]
+ * @member {String} grace-rotation-timing
+ */
+RotatedSecretCreateAws.prototype['grace-rotation-timing'] = undefined;
 
 /**
  * Additional custom fields to associate with the item
@@ -439,7 +452,7 @@ RotatedSecretCreateAws.prototype['secure-access-enable'] = undefined;
 RotatedSecretCreateAws.prototype['tags'] = undefined;
 
 /**
- * Target name
+ * The target name to associate
  * @member {String} target-name
  */
 RotatedSecretCreateAws.prototype['target-name'] = undefined;

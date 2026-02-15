@@ -18,7 +18,7 @@ import SSHCertificateIssueDetails from './SSHCertificateIssueDetails';
 /**
  * The CertificateIssueInfo model module.
  * @module model/CertificateIssueInfo
- * @version 5.0.20
+ * @version 5.0.21
  */
 class CertificateIssueInfo {
     /**

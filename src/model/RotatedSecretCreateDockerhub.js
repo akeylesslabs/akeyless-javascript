@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateDockerhub model module.
  * @module model/RotatedSecretCreateDockerhub
- * @version 5.0.20
+ * @version 5.0.21
  */
 class RotatedSecretCreateDockerhub {
     /**
      * Constructs a new <code>RotatedSecretCreateDockerhub</code>.
      * @alias module:model/RotatedSecretCreateDockerhub
      * @param name {String} Rotated secret name
-     * @param targetName {String} Target name
+     * @param targetName {String} The target name to associate
      */
     constructor(name, targetName) { 
         
@@ -272,7 +272,7 @@ RotatedSecretCreateDockerhub.prototype['rotation-interval'] = undefined;
 RotatedSecretCreateDockerhub.prototype['tags'] = undefined;
 
 /**
- * Target name
+ * The target name to associate
  * @member {String} target-name
  */
 RotatedSecretCreateDockerhub.prototype['target-name'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateRedshift model module.
  * @module model/RotatedSecretCreateRedshift
- * @version 5.0.20
+ * @version 5.0.21
  */
 class RotatedSecretCreateRedshift {
     /**
@@ -24,7 +24,7 @@ class RotatedSecretCreateRedshift {
      * @alias module:model/RotatedSecretCreateRedshift
      * @param name {String} Rotated secret name
      * @param rotatorType {String} The rotator type. options: [target/password]
-     * @param targetName {String} Target name
+     * @param targetName {String} The target name to associate
      */
     constructor(name, rotatorType, targetName) { 
         
@@ -367,7 +367,7 @@ RotatedSecretCreateRedshift.prototype['secure-access-host'] = undefined;
 RotatedSecretCreateRedshift.prototype['tags'] = undefined;
 
 /**
- * Target name
+ * The target name to associate
  * @member {String} target-name
  */
 RotatedSecretCreateRedshift.prototype['target-name'] = undefined;
