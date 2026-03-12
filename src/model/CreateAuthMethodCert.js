@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodCert model module.
  * @module model/CreateAuthMethodCert
- * @version 5.0.21
+ * @version 5.0.22
  */
 class CreateAuthMethodCert {
     /**
@@ -117,6 +117,9 @@ class CreateAuthMethodCert {
             }
             if (data.hasOwnProperty('product-type')) {
                 obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
+            }
+            if (data.hasOwnProperty('require-crl-dp')) {
+                obj['require-crl-dp'] = ApiClient.convertToType(data['require-crl-dp'], 'Boolean');
             }
             if (data.hasOwnProperty('revoked-cert-ids')) {
                 obj['revoked-cert-ids'] = ApiClient.convertToType(data['revoked-cert-ids'], ['String']);
@@ -367,6 +370,12 @@ CreateAuthMethodCert.prototype['name'] = undefined;
  * @member {Array.<String>} product-type
  */
 CreateAuthMethodCert.prototype['product-type'] = undefined;
+
+/**
+ * Require certificate CRL distribution points (CDP) and enforce CRL validation during authentication.
+ * @member {Boolean} require-crl-dp
+ */
+CreateAuthMethodCert.prototype['require-crl-dp'] = undefined;
 
 /**
  * A list of revoked cert ids

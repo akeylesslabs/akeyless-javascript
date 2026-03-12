@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateSplunk model module.
  * @module model/RotatedSecretCreateSplunk
- * @version 5.0.21
+ * @version 5.0.22
  */
 class RotatedSecretCreateSplunk {
     /**

@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import HTTPChallengeInfo from './HTTPChallengeInfo';
 
 /**
  * The GetPKICertificateOutput model module.
  * @module model/GetPKICertificateOutput
- * @version 5.0.21
+ * @version 5.0.22
  */
 class GetPKICertificateOutput {
     /**
@@ -56,6 +57,9 @@ class GetPKICertificateOutput {
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], 'String');
             }
+            if (data.hasOwnProperty('http_challenge_info')) {
+                obj['http_challenge_info'] = HTTPChallengeInfo.constructFromObject(data['http_challenge_info']);
+            }
             if (data.hasOwnProperty('parent_cert')) {
                 obj['parent_cert'] = ApiClient.convertToType(data['parent_cert'], 'String');
             }
@@ -82,6 +86,10 @@ class GetPKICertificateOutput {
         // ensure the json data is a string
         if (data['data'] && !(typeof data['data'] === 'string' || data['data'] instanceof String)) {
             throw new Error("Expected the field `data` to be a primitive type in the JSON string but got " + data['data']);
+        }
+        // validate the optional field `http_challenge_info`
+        if (data['http_challenge_info']) { // data not null
+          HTTPChallengeInfo.validateJSON(data['http_challenge_info']);
         }
         // ensure the json data is a string
         if (data['parent_cert'] && !(typeof data['parent_cert'] === 'string' || data['parent_cert'] instanceof String)) {
@@ -118,6 +126,11 @@ GetPKICertificateOutput.prototype['cert_item_id'] = undefined;
  * @member {String} data
  */
 GetPKICertificateOutput.prototype['data'] = undefined;
+
+/**
+ * @member {module:model/HTTPChallengeInfo} http_challenge_info
+ */
+GetPKICertificateOutput.prototype['http_challenge_info'] = undefined;
 
 /**
  * @member {String} parent_cert

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountCustomFieldCreate model module.
  * @module model/AccountCustomFieldCreate
- * @version 5.0.21
+ * @version 5.0.22
  */
 class AccountCustomFieldCreate {
     /**

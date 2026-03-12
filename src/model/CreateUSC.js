@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateUSC model module.
  * @module model/CreateUSC
- * @version 5.0.21
+ * @version 5.0.22
  */
 class CreateUSC {
     /**
@@ -37,8 +37,10 @@ class CreateUSC {
      * Only for internal use.
      */
     static initialize(obj, name, targetToAssociate) { 
+        obj['github-scope'] = 'repository';
         obj['json'] = false;
         obj['name'] = name;
+        obj['repository-access'] = 'public';
         obj['target-to-associate'] = targetToAssociate;
         obj['use-prefix-as-filter'] = 'false';
     }
@@ -63,11 +65,17 @@ class CreateUSC {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('environment-names')) {
+                obj['environment-names'] = ApiClient.convertToType(data['environment-names'], 'String');
+            }
             if (data.hasOwnProperty('gcp-project-id')) {
                 obj['gcp-project-id'] = ApiClient.convertToType(data['gcp-project-id'], 'String');
             }
             if (data.hasOwnProperty('gcp-sm-regions')) {
                 obj['gcp-sm-regions'] = ApiClient.convertToType(data['gcp-sm-regions'], 'String');
+            }
+            if (data.hasOwnProperty('github-scope')) {
+                obj['github-scope'] = ApiClient.convertToType(data['github-scope'], 'String');
             }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
@@ -80,6 +88,15 @@ class CreateUSC {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('organization-name')) {
+                obj['organization-name'] = ApiClient.convertToType(data['organization-name'], 'String');
+            }
+            if (data.hasOwnProperty('repository-access')) {
+                obj['repository-access'] = ApiClient.convertToType(data['repository-access'], 'String');
+            }
+            if (data.hasOwnProperty('repository-names')) {
+                obj['repository-names'] = ApiClient.convertToType(data['repository-names'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -128,6 +145,10 @@ class CreateUSC {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
         // ensure the json data is a string
+        if (data['environment-names'] && !(typeof data['environment-names'] === 'string' || data['environment-names'] instanceof String)) {
+            throw new Error("Expected the field `environment-names` to be a primitive type in the JSON string but got " + data['environment-names']);
+        }
+        // ensure the json data is a string
         if (data['gcp-project-id'] && !(typeof data['gcp-project-id'] === 'string' || data['gcp-project-id'] instanceof String)) {
             throw new Error("Expected the field `gcp-project-id` to be a primitive type in the JSON string but got " + data['gcp-project-id']);
         }
@@ -136,12 +157,28 @@ class CreateUSC {
             throw new Error("Expected the field `gcp-sm-regions` to be a primitive type in the JSON string but got " + data['gcp-sm-regions']);
         }
         // ensure the json data is a string
+        if (data['github-scope'] && !(typeof data['github-scope'] === 'string' || data['github-scope'] instanceof String)) {
+            throw new Error("Expected the field `github-scope` to be a primitive type in the JSON string but got " + data['github-scope']);
+        }
+        // ensure the json data is a string
         if (data['k8s-namespace'] && !(typeof data['k8s-namespace'] === 'string' || data['k8s-namespace'] instanceof String)) {
             throw new Error("Expected the field `k8s-namespace` to be a primitive type in the JSON string but got " + data['k8s-namespace']);
         }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['organization-name'] && !(typeof data['organization-name'] === 'string' || data['organization-name'] instanceof String)) {
+            throw new Error("Expected the field `organization-name` to be a primitive type in the JSON string but got " + data['organization-name']);
+        }
+        // ensure the json data is a string
+        if (data['repository-access'] && !(typeof data['repository-access'] === 'string' || data['repository-access'] instanceof String)) {
+            throw new Error("Expected the field `repository-access` to be a primitive type in the JSON string but got " + data['repository-access']);
+        }
+        // ensure the json data is a string
+        if (data['repository-names'] && !(typeof data['repository-names'] === 'string' || data['repository-names'] instanceof String)) {
+            throw new Error("Expected the field `repository-names` to be a primitive type in the JSON string but got " + data['repository-names']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
@@ -195,6 +232,12 @@ CreateUSC.prototype['delete_protection'] = undefined;
 CreateUSC.prototype['description'] = undefined;
 
 /**
+ * The environments in repo-name/environment-name format, comma-separated (only relevant for: github-scope=repository-environment)
+ * @member {String} environment-names
+ */
+CreateUSC.prototype['environment-names'] = undefined;
+
+/**
  * GCP Project ID (Relevant only for GCP targets)
  * @member {String} gcp-project-id
  */
@@ -205,6 +248,13 @@ CreateUSC.prototype['gcp-project-id'] = undefined;
  * @member {String} gcp-sm-regions
  */
 CreateUSC.prototype['gcp-sm-regions'] = undefined;
+
+/**
+ * The scope where secrets will be created, available options: [repository, organization, repository-environment]
+ * @member {String} github-scope
+ * @default 'repository'
+ */
+CreateUSC.prototype['github-scope'] = 'repository';
 
 /**
  * Additional custom fields to associate with the item
@@ -230,6 +280,24 @@ CreateUSC.prototype['k8s-namespace'] = undefined;
  * @member {String} name
  */
 CreateUSC.prototype['name'] = undefined;
+
+/**
+ * The organization name to create the secret in (only relevant for: github-scope=organization)
+ * @member {String} organization-name
+ */
+CreateUSC.prototype['organization-name'] = undefined;
+
+/**
+ * @member {String} repository-access
+ * @default 'public'
+ */
+CreateUSC.prototype['repository-access'] = 'public';
+
+/**
+ * The repository names, comma-separated (only relevant for: github-scope=repository)
+ * @member {String} repository-names
+ */
+CreateUSC.prototype['repository-names'] = undefined;
 
 /**
  * List of the tags attached to this Universal Secrets Connector

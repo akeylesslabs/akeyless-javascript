@@ -17,7 +17,7 @@ import MigrationItems from './MigrationItems';
 /**
  * The MigrationStatusReplyObj model module.
  * @module model/MigrationStatusReplyObj
- * @version 5.0.21
+ * @version 5.0.22
  */
 class MigrationStatusReplyObj {
     /**
@@ -48,6 +48,9 @@ class MigrationStatusReplyObj {
         if (data) {
             obj = obj || new MigrationStatusReplyObj();
 
+            if (data.hasOwnProperty('certificates')) {
+                obj['certificates'] = MigrationItems.constructFromObject(data['certificates']);
+            }
             if (data.hasOwnProperty('computers')) {
                 obj['computers'] = ApiClient.convertToType(data['computers'], 'Number');
             }
@@ -103,6 +106,10 @@ class MigrationStatusReplyObj {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>MigrationStatusReplyObj</code>.
      */
     static validateJSON(data) {
+        // validate the optional field `certificates`
+        if (data['certificates']) { // data not null
+          MigrationItems.validateJSON(data['certificates']);
+        }
         // ensure the json data is a string
         if (data['duration_time'] && !(typeof data['duration_time'] === 'string' || data['duration_time'] instanceof String)) {
             throw new Error("Expected the field `duration_time` to be a primitive type in the JSON string but got " + data['duration_time']);
@@ -159,6 +166,11 @@ class MigrationStatusReplyObj {
 }
 
 
+
+/**
+ * @member {module:model/MigrationItems} certificates
+ */
+MigrationStatusReplyObj.prototype['certificates'] = undefined;
 
 /**
  * @member {Number} computers

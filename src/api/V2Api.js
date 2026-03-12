@@ -901,8 +901,12 @@ import UscList from '../model/UscList';
 import UscListSecretsOutput from '../model/UscListSecretsOutput';
 import UscUpdate from '../model/UscUpdate';
 import UscUpdateSecretOutput from '../model/UscUpdateSecretOutput';
+import ValidateCertificateChallenge from '../model/ValidateCertificateChallenge';
+import ValidateCertificateChallengeOutput from '../model/ValidateCertificateChallengeOutput';
 import ValidateToken from '../model/ValidateToken';
 import ValidateTokenOutput from '../model/ValidateTokenOutput';
+import VaultAddress from '../model/VaultAddress';
+import VaultAddressOutput from '../model/VaultAddressOutput';
 import VerifyDataWithClassicKey from '../model/VerifyDataWithClassicKey';
 import VerifyEcDsa from '../model/VerifyEcDsa';
 import VerifyGPG from '../model/VerifyGPG';
@@ -916,7 +920,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.21
+* @version 5.0.22
 */
 export default class V2Api {
 
@@ -26451,6 +26455,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/ValidateCertificateChallenge} validateCertificateChallenge 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ValidateCertificateChallengeOutput} and HTTP response
+     */
+    validateCertificateChallengeWithHttpInfo(validateCertificateChallenge) {
+      let postBody = validateCertificateChallenge;
+      // verify the required parameter 'validateCertificateChallenge' is set
+      if (validateCertificateChallenge === undefined || validateCertificateChallenge === null) {
+        throw new Error("Missing the required parameter 'validateCertificateChallenge' when calling validateCertificateChallenge");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ValidateCertificateChallengeOutput;
+      return this.apiClient.callApi(
+        '/validate-certificate-challenge', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ValidateCertificateChallenge} validateCertificateChallenge 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ValidateCertificateChallengeOutput}
+     */
+    validateCertificateChallenge(validateCertificateChallenge) {
+      return this.validateCertificateChallengeWithHttpInfo(validateCertificateChallenge)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/ValidateToken} validateToken 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ValidateTokenOutput} and HTTP response
      */
@@ -26487,6 +26534,49 @@ export default class V2Api {
      */
     validateToken(validateToken) {
       return this.validateTokenWithHttpInfo(validateToken)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/VaultAddress} vaultAddress 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VaultAddressOutput} and HTTP response
+     */
+    vaultAddressWithHttpInfo(vaultAddress) {
+      let postBody = vaultAddress;
+      // verify the required parameter 'vaultAddress' is set
+      if (vaultAddress === undefined || vaultAddress === null) {
+        throw new Error("Missing the required parameter 'vaultAddress' when calling vaultAddress");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = VaultAddressOutput;
+      return this.apiClient.callApi(
+        '/vault-address', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/VaultAddress} vaultAddress 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VaultAddressOutput}
+     */
+    vaultAddress(vaultAddress) {
+      return this.vaultAddressWithHttpInfo(vaultAddress)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

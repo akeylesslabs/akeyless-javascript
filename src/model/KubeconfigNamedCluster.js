@@ -17,7 +17,7 @@ import KubeconfigCluster from './KubeconfigCluster';
 /**
  * The KubeconfigNamedCluster model module.
  * @module model/KubeconfigNamedCluster
- * @version 5.0.21
+ * @version 5.0.22
  */
 class KubeconfigNamedCluster {
     /**

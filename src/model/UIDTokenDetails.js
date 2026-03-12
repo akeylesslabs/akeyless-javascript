@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UIDTokenDetails model module.
  * @module model/UIDTokenDetails
- * @version 5.0.21
+ * @version 5.0.22
  */
 class UIDTokenDetails {
     /**

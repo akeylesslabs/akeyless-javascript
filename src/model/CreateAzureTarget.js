@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAzureTarget model module.
  * @module model/CreateAzureTarget
- * @version 5.0.21
+ * @version 5.0.22
  */
 class CreateAzureTarget {
     /**
@@ -36,6 +36,7 @@ class CreateAzureTarget {
      * Only for internal use.
      */
     static initialize(obj, name) { 
+        obj['azure-cloud'] = 'AzureCloud';
         obj['connection-type'] = 'credentials';
         obj['json'] = false;
         obj['name'] = name;
@@ -52,6 +53,9 @@ class CreateAzureTarget {
         if (data) {
             obj = obj || new CreateAzureTarget();
 
+            if (data.hasOwnProperty('azure-cloud')) {
+                obj['azure-cloud'] = ApiClient.convertToType(data['azure-cloud'], 'String');
+            }
             if (data.hasOwnProperty('client-id')) {
                 obj['client-id'] = ApiClient.convertToType(data['client-id'], 'String');
             }
@@ -117,6 +121,10 @@ class CreateAzureTarget {
             }
         }
         // ensure the json data is a string
+        if (data['azure-cloud'] && !(typeof data['azure-cloud'] === 'string' || data['azure-cloud'] instanceof String)) {
+            throw new Error("Expected the field `azure-cloud` to be a primitive type in the JSON string but got " + data['azure-cloud']);
+        }
+        // ensure the json data is a string
         if (data['client-id'] && !(typeof data['client-id'] === 'string' || data['client-id'] instanceof String)) {
             throw new Error("Expected the field `client-id` to be a primitive type in the JSON string but got " + data['client-id']);
         }
@@ -180,6 +188,13 @@ class CreateAzureTarget {
 }
 
 CreateAzureTarget.RequiredProperties = ["name"];
+
+/**
+ * Azure cloud environment to use. Values: AzureCloud (default), AzureUSGovernment, AzureChinaCloud.
+ * @member {String} azure-cloud
+ * @default 'AzureCloud'
+ */
+CreateAzureTarget.prototype['azure-cloud'] = 'AzureCloud';
 
 /**
  * Azure client/application id

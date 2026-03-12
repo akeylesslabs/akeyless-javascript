@@ -598,7 +598,9 @@ Method | HTTP request | Description
 [**uscGet**](V2Api.md#uscGet) | **POST** /usc-get | 
 [**uscList**](V2Api.md#uscList) | **POST** /usc-list | 
 [**uscUpdate**](V2Api.md#uscUpdate) | **POST** /usc-update | 
+[**validateCertificateChallenge**](V2Api.md#validateCertificateChallenge) | **POST** /validate-certificate-challenge | 
 [**validateToken**](V2Api.md#validateToken) | **POST** /validate-token | 
+[**vaultAddress**](V2Api.md#vaultAddress) | **POST** /vault-address | 
 [**verifyDataWithClassicKey**](V2Api.md#verifyDataWithClassicKey) | **POST** /verify-data-with-classic-key | 
 [**verifyEcDsa**](V2Api.md#verifyEcDsa) | **POST** /verify-ecdsa | 
 [**verifyGPG**](V2Api.md#verifyGPG) | **POST** /verify-gpg | 
@@ -25585,6 +25587,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## validateCertificateChallenge
+
+> ValidateCertificateChallengeOutput validateCertificateChallenge(validateCertificateChallenge)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let validateCertificateChallenge = new akeyless.ValidateCertificateChallenge(); // ValidateCertificateChallenge | 
+apiInstance.validateCertificateChallenge(validateCertificateChallenge).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **validateCertificateChallenge** | [**ValidateCertificateChallenge**](ValidateCertificateChallenge.md)|  | 
+
+### Return type
+
+[**ValidateCertificateChallengeOutput**](ValidateCertificateChallengeOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## validateToken
 
 > ValidateTokenOutput validateToken(validateToken)
@@ -25616,6 +25660,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ValidateTokenOutput**](ValidateTokenOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## vaultAddress
+
+> VaultAddressOutput vaultAddress(vaultAddress)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let vaultAddress = new akeyless.VaultAddress(); // VaultAddress | 
+apiInstance.vaultAddress(vaultAddress).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vaultAddress** | [**VaultAddress**](VaultAddress.md)|  | 
+
+### Return type
+
+[**VaultAddressOutput**](VaultAddressOutput.md)
 
 ### Authorization
 

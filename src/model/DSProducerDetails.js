@@ -21,7 +21,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 5.0.21
+ * @version 5.0.22
  */
 class DSProducerDetails {
     /**
@@ -147,6 +147,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('azure_client_secret')) {
                 obj['azure_client_secret'] = ApiClient.convertToType(data['azure_client_secret'], 'String');
+            }
+            if (data.hasOwnProperty('azure_cloud')) {
+                obj['azure_cloud'] = ApiClient.convertToType(data['azure_cloud'], 'String');
             }
             if (data.hasOwnProperty('azure_fixed_user_name_sub_claim_key')) {
                 obj['azure_fixed_user_name_sub_claim_key'] = ApiClient.convertToType(data['azure_fixed_user_name_sub_claim_key'], 'String');
@@ -965,6 +968,10 @@ class DSProducerDetails {
         // ensure the json data is a string
         if (data['azure_client_secret'] && !(typeof data['azure_client_secret'] === 'string' || data['azure_client_secret'] instanceof String)) {
             throw new Error("Expected the field `azure_client_secret` to be a primitive type in the JSON string but got " + data['azure_client_secret']);
+        }
+        // ensure the json data is a string
+        if (data['azure_cloud'] && !(typeof data['azure_cloud'] === 'string' || data['azure_cloud'] instanceof String)) {
+            throw new Error("Expected the field `azure_cloud` to be a primitive type in the JSON string but got " + data['azure_cloud']);
         }
         // ensure the json data is a string
         if (data['azure_fixed_user_name_sub_claim_key'] && !(typeof data['azure_fixed_user_name_sub_claim_key'] === 'string' || data['azure_fixed_user_name_sub_claim_key'] instanceof String)) {
@@ -1954,6 +1961,11 @@ DSProducerDetails.prototype['azure_client_id'] = undefined;
  * @member {String} azure_client_secret
  */
 DSProducerDetails.prototype['azure_client_secret'] = undefined;
+
+/**
+ * @member {String} azure_cloud
+ */
+DSProducerDetails.prototype['azure_cloud'] = undefined;
 
 /**
  * @member {String} azure_fixed_user_name_sub_claim_key

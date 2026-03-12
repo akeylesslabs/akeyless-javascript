@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CertAccessRules model module.
  * @module model/CertAccessRules
- * @version 5.0.21
+ * @version 5.0.22
  */
 class CertAccessRules {
     /**
@@ -70,6 +70,9 @@ class CertAccessRules {
             }
             if (data.hasOwnProperty('certificate')) {
                 obj['certificate'] = ApiClient.convertToType(data['certificate'], 'String');
+            }
+            if (data.hasOwnProperty('require_crl_dp')) {
+                obj['require_crl_dp'] = ApiClient.convertToType(data['require_crl_dp'], 'Boolean');
             }
             if (data.hasOwnProperty('revoked_cert_ids')) {
                 obj['revoked_cert_ids'] = ApiClient.convertToType(data['revoked_cert_ids'], ['String']);
@@ -183,6 +186,12 @@ CertAccessRules.prototype['bound_uri_sans'] = undefined;
  * @member {String} certificate
  */
 CertAccessRules.prototype['certificate'] = undefined;
+
+/**
+ * RequireCrlDp indicates whether CRL distribution points are required on the leaf client certificate, and whether CRL validation must be enforced during authentication.
+ * @member {Boolean} require_crl_dp
+ */
+CertAccessRules.prototype['require_crl_dp'] = undefined;
 
 /**
  * A list of revoked cert ids

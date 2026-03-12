@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 5.0.21
+ * @version 5.0.22
  */
 class GatewayUpdateMigration {
     /**
@@ -73,6 +73,12 @@ class GatewayUpdateMigration {
             }
             if (data.hasOwnProperty('ad-auto-rotate')) {
                 obj['ad-auto-rotate'] = ApiClient.convertToType(data['ad-auto-rotate'], 'String');
+            }
+            if (data.hasOwnProperty('ad-cert-expiration-event-in')) {
+                obj['ad-cert-expiration-event-in'] = ApiClient.convertToType(data['ad-cert-expiration-event-in'], ['String']);
+            }
+            if (data.hasOwnProperty('ad-certificates-path-template')) {
+                obj['ad-certificates-path-template'] = ApiClient.convertToType(data['ad-certificates-path-template'], 'String');
             }
             if (data.hasOwnProperty('ad-computer-base-dn')) {
                 obj['ad-computer-base-dn'] = ApiClient.convertToType(data['ad-computer-base-dn'], 'String');
@@ -140,6 +146,9 @@ class GatewayUpdateMigration {
             if (data.hasOwnProperty('ad_discover_local_users')) {
                 obj['ad_discover_local_users'] = ApiClient.convertToType(data['ad_discover_local_users'], 'String');
             }
+            if (data.hasOwnProperty('ai-certificate-discovery')) {
+                obj['ai-certificate-discovery'] = ApiClient.convertToType(data['ai-certificate-discovery'], 'String');
+            }
             if (data.hasOwnProperty('aws-key')) {
                 obj['aws-key'] = ApiClient.convertToType(data['aws-key'], 'String');
             }
@@ -160,6 +169,18 @@ class GatewayUpdateMigration {
             }
             if (data.hasOwnProperty('azure-tenant-id')) {
                 obj['azure-tenant-id'] = ApiClient.convertToType(data['azure-tenant-id'], 'String');
+            }
+            if (data.hasOwnProperty('conjur-account')) {
+                obj['conjur-account'] = ApiClient.convertToType(data['conjur-account'], 'String');
+            }
+            if (data.hasOwnProperty('conjur-api-key')) {
+                obj['conjur-api-key'] = ApiClient.convertToType(data['conjur-api-key'], 'String');
+            }
+            if (data.hasOwnProperty('conjur-url')) {
+                obj['conjur-url'] = ApiClient.convertToType(data['conjur-url'], 'String');
+            }
+            if (data.hasOwnProperty('conjur-username')) {
+                obj['conjur-username'] = ApiClient.convertToType(data['conjur-username'], 'String');
             }
             if (data.hasOwnProperty('expiration-event-in')) {
                 obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
@@ -290,6 +311,14 @@ class GatewayUpdateMigration {
         if (data['ad-auto-rotate'] && !(typeof data['ad-auto-rotate'] === 'string' || data['ad-auto-rotate'] instanceof String)) {
             throw new Error("Expected the field `ad-auto-rotate` to be a primitive type in the JSON string but got " + data['ad-auto-rotate']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['ad-cert-expiration-event-in'])) {
+            throw new Error("Expected the field `ad-cert-expiration-event-in` to be an array in the JSON data but got " + data['ad-cert-expiration-event-in']);
+        }
+        // ensure the json data is a string
+        if (data['ad-certificates-path-template'] && !(typeof data['ad-certificates-path-template'] === 'string' || data['ad-certificates-path-template'] instanceof String)) {
+            throw new Error("Expected the field `ad-certificates-path-template` to be a primitive type in the JSON string but got " + data['ad-certificates-path-template']);
+        }
         // ensure the json data is a string
         if (data['ad-computer-base-dn'] && !(typeof data['ad-computer-base-dn'] === 'string' || data['ad-computer-base-dn'] instanceof String)) {
             throw new Error("Expected the field `ad-computer-base-dn` to be a primitive type in the JSON string but got " + data['ad-computer-base-dn']);
@@ -371,6 +400,10 @@ class GatewayUpdateMigration {
             throw new Error("Expected the field `ad_discover_local_users` to be a primitive type in the JSON string but got " + data['ad_discover_local_users']);
         }
         // ensure the json data is a string
+        if (data['ai-certificate-discovery'] && !(typeof data['ai-certificate-discovery'] === 'string' || data['ai-certificate-discovery'] instanceof String)) {
+            throw new Error("Expected the field `ai-certificate-discovery` to be a primitive type in the JSON string but got " + data['ai-certificate-discovery']);
+        }
+        // ensure the json data is a string
         if (data['aws-key'] && !(typeof data['aws-key'] === 'string' || data['aws-key'] instanceof String)) {
             throw new Error("Expected the field `aws-key` to be a primitive type in the JSON string but got " + data['aws-key']);
         }
@@ -397,6 +430,22 @@ class GatewayUpdateMigration {
         // ensure the json data is a string
         if (data['azure-tenant-id'] && !(typeof data['azure-tenant-id'] === 'string' || data['azure-tenant-id'] instanceof String)) {
             throw new Error("Expected the field `azure-tenant-id` to be a primitive type in the JSON string but got " + data['azure-tenant-id']);
+        }
+        // ensure the json data is a string
+        if (data['conjur-account'] && !(typeof data['conjur-account'] === 'string' || data['conjur-account'] instanceof String)) {
+            throw new Error("Expected the field `conjur-account` to be a primitive type in the JSON string but got " + data['conjur-account']);
+        }
+        // ensure the json data is a string
+        if (data['conjur-api-key'] && !(typeof data['conjur-api-key'] === 'string' || data['conjur-api-key'] instanceof String)) {
+            throw new Error("Expected the field `conjur-api-key` to be a primitive type in the JSON string but got " + data['conjur-api-key']);
+        }
+        // ensure the json data is a string
+        if (data['conjur-url'] && !(typeof data['conjur-url'] === 'string' || data['conjur-url'] instanceof String)) {
+            throw new Error("Expected the field `conjur-url` to be a primitive type in the JSON string but got " + data['conjur-url']);
+        }
+        // ensure the json data is a string
+        if (data['conjur-username'] && !(typeof data['conjur-username'] === 'string' || data['conjur-username'] instanceof String)) {
+            throw new Error("Expected the field `conjur-username` to be a primitive type in the JSON string but got " + data['conjur-username']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['expiration-event-in'])) {
@@ -539,6 +588,18 @@ GatewayUpdateMigration.prototype['ServiceAccountKeyDecoded'] = undefined;
 GatewayUpdateMigration.prototype['ad-auto-rotate'] = undefined;
 
 /**
+ * How many days before the expiration of discovered certificates would you like to be notified (Relevant only for Active Directory migration with certificate discovery enabled)
+ * @member {Array.<String>} ad-cert-expiration-event-in
+ */
+GatewayUpdateMigration.prototype['ad-cert-expiration-event-in'] = undefined;
+
+/**
+ * Path location template for migrating certificates e.g.: /Certificates/{{COMMON_NAME}} (Relevant only for Active Directory migration with certificate discovery enabled)
+ * @member {String} ad-certificates-path-template
+ */
+GatewayUpdateMigration.prototype['ad-certificates-path-template'] = undefined;
+
+/**
  * Distinguished Name of Computer objects (servers) to search in Active Directory e.g.: CN=Computers,DC=example,DC=com (Relevant only for Active Directory migration)
  * @member {String} ad-computer-base-dn
  */
@@ -678,6 +739,12 @@ GatewayUpdateMigration.prototype['ad-winrm-port'] = '5986';
 GatewayUpdateMigration.prototype['ad_discover_local_users'] = undefined;
 
 /**
+ * Enable AI-assisted certificate discovery (only when AI Insight is enabled on the Gateway)
+ * @member {String} ai-certificate-discovery
+ */
+GatewayUpdateMigration.prototype['ai-certificate-discovery'] = undefined;
+
+/**
  * AWS Secret Access Key (relevant only for AWS migration)
  * @member {String} aws-key
  */
@@ -719,6 +786,30 @@ GatewayUpdateMigration.prototype['azure-secret'] = undefined;
  * @member {String} azure-tenant-id
  */
 GatewayUpdateMigration.prototype['azure-tenant-id'] = undefined;
+
+/**
+ * Conjur account name set on your Conjur server (relevant only for Conjur migration).
+ * @member {String} conjur-account
+ */
+GatewayUpdateMigration.prototype['conjur-account'] = undefined;
+
+/**
+ * Conjur API Key for the specified user (relevant only for Conjur migration).
+ * @member {String} conjur-api-key
+ */
+GatewayUpdateMigration.prototype['conjur-api-key'] = undefined;
+
+/**
+ * Conjur server base URL (relevant only for Conjur migration). If conjur-url is HTTPS and Conjur uses a private CA/self-signed certificate, make the CA bundle available on the Gateway and set CONJUR_SSL_CERT_PATH to its path.
+ * @member {String} conjur-url
+ */
+GatewayUpdateMigration.prototype['conjur-url'] = undefined;
+
+/**
+ * Conjur username used to authenticate (relevant only for Conjur migration).
+ * @member {String} conjur-username
+ */
+GatewayUpdateMigration.prototype['conjur-username'] = undefined;
 
 /**
  * How many days before the expiration of the certificate would you like to be notified.

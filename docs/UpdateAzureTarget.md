@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**azureCloud** | **String** | Azure cloud environment to use. Values: AzureCloud (default), AzureUSGovernment, AzureChinaCloud. | [optional] [default to &#39;AzureCloud&#39;]
 **clientId** | **String** | Azure client/application id | [optional] 
 **clientSecret** | **String** | Azure client secret | [optional] 
 **comment** | **String** | Deprecated - use description | [optional] 

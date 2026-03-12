@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AzureADAccessRules model module.
  * @module model/AzureADAccessRules
- * @version 5.0.21
+ * @version 5.0.22
  */
 class AzureADAccessRules {
     /**
@@ -50,6 +50,9 @@ class AzureADAccessRules {
 
             if (data.hasOwnProperty('ad_endpoint')) {
                 obj['ad_endpoint'] = ApiClient.convertToType(data['ad_endpoint'], 'String');
+            }
+            if (data.hasOwnProperty('azure_cloud')) {
+                obj['azure_cloud'] = ApiClient.convertToType(data['azure_cloud'], 'String');
             }
             if (data.hasOwnProperty('bound_group_ids')) {
                 obj['bound_group_ids'] = ApiClient.convertToType(data['bound_group_ids'], ['String']);
@@ -100,6 +103,10 @@ class AzureADAccessRules {
         // ensure the json data is a string
         if (data['ad_endpoint'] && !(typeof data['ad_endpoint'] === 'string' || data['ad_endpoint'] instanceof String)) {
             throw new Error("Expected the field `ad_endpoint` to be a primitive type in the JSON string but got " + data['ad_endpoint']);
+        }
+        // ensure the json data is a string
+        if (data['azure_cloud'] && !(typeof data['azure_cloud'] === 'string' || data['azure_cloud'] instanceof String)) {
+            throw new Error("Expected the field `azure_cloud` to be a primitive type in the JSON string but got " + data['azure_cloud']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['bound_group_ids'])) {
@@ -163,6 +170,12 @@ class AzureADAccessRules {
  * @member {String} ad_endpoint
  */
 AzureADAccessRules.prototype['ad_endpoint'] = undefined;
+
+/**
+ * Azure cloud environment [AzureCloud/AzureUSGovernment/AzureChinaCloud]. For create/update, cloud is inferred from jwks_uri.
+ * @member {String} azure_cloud
+ */
+AzureADAccessRules.prototype['azure_cloud'] = undefined;
 
 /**
  * The list of group ids that login is restricted to.

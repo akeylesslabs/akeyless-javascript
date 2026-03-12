@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import CertificateExpirationEvent from './CertificateExpirationEvent';
 
 /**
  * The ActiveDirectoryPayload model module.
  * @module model/ActiveDirectoryPayload
- * @version 5.0.21
+ * @version 5.0.22
  */
 class ActiveDirectoryPayload {
     /**
@@ -50,6 +51,9 @@ class ActiveDirectoryPayload {
             if (data.hasOwnProperty('active_directory_target_id')) {
                 obj['active_directory_target_id'] = ApiClient.convertToType(data['active_directory_target_id'], 'Number');
             }
+            if (data.hasOwnProperty('ai_certificate_discovery')) {
+                obj['ai_certificate_discovery'] = ApiClient.convertToType(data['ai_certificate_discovery'], 'Boolean');
+            }
             if (data.hasOwnProperty('auto_rotate')) {
                 obj['auto_rotate'] = ApiClient.convertToType(data['auto_rotate'], 'Boolean');
             }
@@ -58,6 +62,12 @@ class ActiveDirectoryPayload {
             }
             if (data.hasOwnProperty('auto_rotate_rotation_hour')) {
                 obj['auto_rotate_rotation_hour'] = ApiClient.convertToType(data['auto_rotate_rotation_hour'], 'Number');
+            }
+            if (data.hasOwnProperty('certificates_expiration_events')) {
+                obj['certificates_expiration_events'] = ApiClient.convertToType(data['certificates_expiration_events'], [CertificateExpirationEvent]);
+            }
+            if (data.hasOwnProperty('certificates_path_template')) {
+                obj['certificates_path_template'] = ApiClient.convertToType(data['certificates_path_template'], 'String');
             }
             if (data.hasOwnProperty('computer_base_dn')) {
                 obj['computer_base_dn'] = ApiClient.convertToType(data['computer_base_dn'], 'String');
@@ -126,6 +136,20 @@ class ActiveDirectoryPayload {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ActiveDirectoryPayload</code>.
      */
     static validateJSON(data) {
+        if (data['certificates_expiration_events']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['certificates_expiration_events'])) {
+                throw new Error("Expected the field `certificates_expiration_events` to be an array in the JSON data but got " + data['certificates_expiration_events']);
+            }
+            // validate the optional field `certificates_expiration_events` (array)
+            for (const item of data['certificates_expiration_events']) {
+                CertificateExpirationEvent.validateJSON(item);
+            };
+        }
+        // ensure the json data is a string
+        if (data['certificates_path_template'] && !(typeof data['certificates_path_template'] === 'string' || data['certificates_path_template'] instanceof String)) {
+            throw new Error("Expected the field `certificates_path_template` to be a primitive type in the JSON string but got " + data['certificates_path_template']);
+        }
         // ensure the json data is a string
         if (data['computer_base_dn'] && !(typeof data['computer_base_dn'] === 'string' || data['computer_base_dn'] instanceof String)) {
             throw new Error("Expected the field `computer_base_dn` to be a primitive type in the JSON string but got " + data['computer_base_dn']);
@@ -193,6 +217,11 @@ class ActiveDirectoryPayload {
 ActiveDirectoryPayload.prototype['active_directory_target_id'] = undefined;
 
 /**
+ * @member {Boolean} ai_certificate_discovery
+ */
+ActiveDirectoryPayload.prototype['ai_certificate_discovery'] = undefined;
+
+/**
  * @member {Boolean} auto_rotate
  */
 ActiveDirectoryPayload.prototype['auto_rotate'] = undefined;
@@ -206,6 +235,16 @@ ActiveDirectoryPayload.prototype['auto_rotate_interval_in_days'] = undefined;
  * @member {Number} auto_rotate_rotation_hour
  */
 ActiveDirectoryPayload.prototype['auto_rotate_rotation_hour'] = undefined;
+
+/**
+ * @member {Array.<module:model/CertificateExpirationEvent>} certificates_expiration_events
+ */
+ActiveDirectoryPayload.prototype['certificates_expiration_events'] = undefined;
+
+/**
+ * @member {String} certificates_path_template
+ */
+ActiveDirectoryPayload.prototype['certificates_path_template'] = undefined;
 
 /**
  * @member {String} computer_base_dn

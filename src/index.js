@@ -138,6 +138,8 @@ import ConfigChange from './model/ConfigChange';
 import ConfigHash from './model/ConfigHash';
 import Configure from './model/Configure';
 import ConfigureOutput from './model/ConfigureOutput';
+import ConjurMigration from './model/ConjurMigration';
+import ConjurPayload from './model/ConjurPayload';
 import Connect from './model/Connect';
 import CreateAWSTarget from './model/CreateAWSTarget';
 import CreateAWSTargetOutput from './model/CreateAWSTargetOutput';
@@ -270,6 +272,7 @@ import DecryptPKCS1 from './model/DecryptPKCS1';
 import DecryptPKCS1Output from './model/DecryptPKCS1Output';
 import DecryptWithClassicKey from './model/DecryptWithClassicKey';
 import DecryptWithClassicKeyOutput from './model/DecryptWithClassicKeyOutput';
+import DefaultAuthMethodSettings from './model/DefaultAuthMethodSettings';
 import DefaultConfigPart from './model/DefaultConfigPart';
 import DefaultHomePage from './model/DefaultHomePage';
 import DeleteAuthMethod from './model/DeleteAuthMethod';
@@ -657,6 +660,7 @@ import GetTarget from './model/GetTarget';
 import GetTargetDetails from './model/GetTargetDetails';
 import GetTargetDetailsOutput from './model/GetTargetDetailsOutput';
 import GetUserEventStatusOutput from './model/GetUserEventStatusOutput';
+import GithubMetadata from './model/GithubMetadata';
 import GithubTargetDetails from './model/GithubTargetDetails';
 import GitlabTargetDetails from './model/GitlabTargetDetails';
 import GlobalSignAtlasTargetDetails from './model/GlobalSignAtlasTargetDetails';
@@ -676,6 +680,7 @@ import GwUpdateRemoteAccessSessionLogsSplunk from './model/GwUpdateRemoteAccessS
 import GwUpdateRemoteAccessSessionLogsStdout from './model/GwUpdateRemoteAccessSessionLogsStdout';
 import GwUpdateRemoteAccessSessionLogsSumologic from './model/GwUpdateRemoteAccessSessionLogsSumologic';
 import GwUpdateRemoteAccessSessionLogsSyslog from './model/GwUpdateRemoteAccessSessionLogsSyslog';
+import HTTPChallengeInfo from './model/HTTPChallengeInfo';
 import HashiMigration from './model/HashiMigration';
 import HashiPayload from './model/HashiPayload';
 import HashiVaultTargetDetails from './model/HashiVaultTargetDetails';
@@ -685,6 +690,7 @@ import HuaweiAccessRules from './model/HuaweiAccessRules';
 import ImportPasswords from './model/ImportPasswords';
 import ImportPasswordsOutput from './model/ImportPasswordsOutput';
 import ImporterInfo from './model/ImporterInfo';
+import IssuerOverviewInfo from './model/IssuerOverviewInfo';
 import Item from './model/Item';
 import ItemCustomFieldsDetails from './model/ItemCustomFieldsDetails';
 import ItemGeneralInfo from './model/ItemGeneralInfo';
@@ -1151,8 +1157,12 @@ import UscListSecretsOutput from './model/UscListSecretsOutput';
 import UscSyncInfo from './model/UscSyncInfo';
 import UscUpdate from './model/UscUpdate';
 import UscUpdateSecretOutput from './model/UscUpdateSecretOutput';
+import ValidateCertificateChallenge from './model/ValidateCertificateChallenge';
+import ValidateCertificateChallengeOutput from './model/ValidateCertificateChallengeOutput';
 import ValidateToken from './model/ValidateToken';
 import ValidateTokenOutput from './model/ValidateTokenOutput';
+import VaultAddress from './model/VaultAddress';
+import VaultAddressOutput from './model/VaultAddressOutput';
 import VaultlessTokenizerInfo from './model/VaultlessTokenizerInfo';
 import VenafiTargetDetails from './model/VenafiTargetDetails';
 import VerifyDataWithClassicKey from './model/VerifyDataWithClassicKey';
@@ -1207,7 +1217,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.21
+* @version 5.0.22
 */
 export {
     /**
@@ -1965,6 +1975,18 @@ export {
      * @property {module:model/ConfigureOutput}
      */
     ConfigureOutput,
+
+    /**
+     * The ConjurMigration model constructor.
+     * @property {module:model/ConjurMigration}
+     */
+    ConjurMigration,
+
+    /**
+     * The ConjurPayload model constructor.
+     * @property {module:model/ConjurPayload}
+     */
+    ConjurPayload,
 
     /**
      * The Connect model constructor.
@@ -2757,6 +2779,12 @@ export {
      * @property {module:model/DecryptWithClassicKeyOutput}
      */
     DecryptWithClassicKeyOutput,
+
+    /**
+     * The DefaultAuthMethodSettings model constructor.
+     * @property {module:model/DefaultAuthMethodSettings}
+     */
+    DefaultAuthMethodSettings,
 
     /**
      * The DefaultConfigPart model constructor.
@@ -5081,6 +5109,12 @@ export {
     GetUserEventStatusOutput,
 
     /**
+     * The GithubMetadata model constructor.
+     * @property {module:model/GithubMetadata}
+     */
+    GithubMetadata,
+
+    /**
      * The GithubTargetDetails model constructor.
      * @property {module:model/GithubTargetDetails}
      */
@@ -5195,6 +5229,12 @@ export {
     GwUpdateRemoteAccessSessionLogsSyslog,
 
     /**
+     * The HTTPChallengeInfo model constructor.
+     * @property {module:model/HTTPChallengeInfo}
+     */
+    HTTPChallengeInfo,
+
+    /**
      * The HashiMigration model constructor.
      * @property {module:model/HashiMigration}
      */
@@ -5247,6 +5287,12 @@ export {
      * @property {module:model/ImporterInfo}
      */
     ImporterInfo,
+
+    /**
+     * The IssuerOverviewInfo model constructor.
+     * @property {module:model/IssuerOverviewInfo}
+     */
+    IssuerOverviewInfo,
 
     /**
      * The Item model constructor.
@@ -8045,6 +8091,18 @@ export {
     UscUpdateSecretOutput,
 
     /**
+     * The ValidateCertificateChallenge model constructor.
+     * @property {module:model/ValidateCertificateChallenge}
+     */
+    ValidateCertificateChallenge,
+
+    /**
+     * The ValidateCertificateChallengeOutput model constructor.
+     * @property {module:model/ValidateCertificateChallengeOutput}
+     */
+    ValidateCertificateChallengeOutput,
+
+    /**
      * The ValidateToken model constructor.
      * @property {module:model/ValidateToken}
      */
@@ -8055,6 +8113,18 @@ export {
      * @property {module:model/ValidateTokenOutput}
      */
     ValidateTokenOutput,
+
+    /**
+     * The VaultAddress model constructor.
+     * @property {module:model/VaultAddress}
+     */
+    VaultAddress,
+
+    /**
+     * The VaultAddressOutput model constructor.
+     * @property {module:model/VaultAddressOutput}
+     */
+    VaultAddressOutput,
 
     /**
      * The VaultlessTokenizerInfo model constructor.

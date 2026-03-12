@@ -17,6 +17,7 @@ import AllowedClientType from './AllowedClientType';
 import AllowedIpSettings from './AllowedIpSettings';
 import CertificateExpirationEventsSettings from './CertificateExpirationEventsSettings';
 import DataProtectionSection from './DataProtectionSection';
+import DefaultAuthMethodSettings from './DefaultAuthMethodSettings';
 import DefaultHomePage from './DefaultHomePage';
 import DynamicSecretMaxTtl from './DynamicSecretMaxTtl';
 import PasswordExpirationInfo from './PasswordExpirationInfo';
@@ -29,7 +30,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 5.0.21
+ * @version 5.0.22
  */
 class AccountGeneralSettings {
     /**
@@ -90,6 +91,9 @@ class AccountGeneralSettings {
             }
             if (data.hasOwnProperty('data_protection_section')) {
                 obj['data_protection_section'] = DataProtectionSection.constructFromObject(data['data_protection_section']);
+            }
+            if (data.hasOwnProperty('default_auth_method')) {
+                obj['default_auth_method'] = DefaultAuthMethodSettings.constructFromObject(data['default_auth_method']);
             }
             if (data.hasOwnProperty('default_home_page')) {
                 obj['default_home_page'] = DefaultHomePage.constructFromObject(data['default_home_page']);
@@ -174,6 +178,10 @@ class AccountGeneralSettings {
         // validate the optional field `data_protection_section`
         if (data['data_protection_section']) { // data not null
           DataProtectionSection.validateJSON(data['data_protection_section']);
+        }
+        // validate the optional field `default_auth_method`
+        if (data['default_auth_method']) { // data not null
+          DefaultAuthMethodSettings.validateJSON(data['default_auth_method']);
         }
         // validate the optional field `default_home_page`
         if (data['default_home_page']) { // data not null
@@ -271,6 +279,11 @@ AccountGeneralSettings.prototype['certificate_expiration_events'] = undefined;
  * @member {module:model/DataProtectionSection} data_protection_section
  */
 AccountGeneralSettings.prototype['data_protection_section'] = undefined;
+
+/**
+ * @member {module:model/DefaultAuthMethodSettings} default_auth_method
+ */
+AccountGeneralSettings.prototype['default_auth_method'] = undefined;
 
 /**
  * @member {module:model/DefaultHomePage} default_home_page

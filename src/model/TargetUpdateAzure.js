@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateAzure model module.
  * @module model/TargetUpdateAzure
- * @version 5.0.21
+ * @version 5.0.22
  */
 class TargetUpdateAzure {
     /**
@@ -35,6 +35,7 @@ class TargetUpdateAzure {
      * Only for internal use.
      */
     static initialize(obj, name) { 
+        obj['azure-cloud'] = 'AzureCloud';
         obj['connection-type'] = 'credentials';
         obj['json'] = false;
         obj['name'] = name;
@@ -51,6 +52,9 @@ class TargetUpdateAzure {
         if (data) {
             obj = obj || new TargetUpdateAzure();
 
+            if (data.hasOwnProperty('azure-cloud')) {
+                obj['azure-cloud'] = ApiClient.convertToType(data['azure-cloud'], 'String');
+            }
             if (data.hasOwnProperty('client-id')) {
                 obj['client-id'] = ApiClient.convertToType(data['client-id'], 'String');
             }
@@ -117,6 +121,10 @@ class TargetUpdateAzure {
             if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
+        }
+        // ensure the json data is a string
+        if (data['azure-cloud'] && !(typeof data['azure-cloud'] === 'string' || data['azure-cloud'] instanceof String)) {
+            throw new Error("Expected the field `azure-cloud` to be a primitive type in the JSON string but got " + data['azure-cloud']);
         }
         // ensure the json data is a string
         if (data['client-id'] && !(typeof data['client-id'] === 'string' || data['client-id'] instanceof String)) {
@@ -186,6 +194,13 @@ class TargetUpdateAzure {
 }
 
 TargetUpdateAzure.RequiredProperties = ["name"];
+
+/**
+ * Azure cloud environment to use. Values: AzureCloud (default), AzureUSGovernment, AzureChinaCloud.
+ * @member {String} azure-cloud
+ * @default 'AzureCloud'
+ */
+TargetUpdateAzure.prototype['azure-cloud'] = 'AzureCloud';
 
 /**
  * Azure client/application id

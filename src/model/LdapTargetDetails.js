@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LdapTargetDetails model module.
  * @module model/LdapTargetDetails
- * @version 5.0.21
+ * @version 5.0.22
  */
 class LdapTargetDetails {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateEks model module.
  * @module model/DynamicSecretCreateEks
- * @version 5.0.21
+ * @version 5.0.22
  */
 class DynamicSecretCreateEks {
     /**

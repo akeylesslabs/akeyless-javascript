@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Configure model module.
  * @module model/Configure
- * @version 5.0.21
+ * @version 5.0.22
  */
 class Configure {
     /**
@@ -35,6 +35,7 @@ class Configure {
      */
     static initialize(obj) { 
         obj['access-type'] = 'access_key';
+        obj['azure-cloud'] = 'AzureCloud';
         obj['gcp-audience'] = 'akeyless.io';
         obj['json'] = false;
         obj['oci-auth-type'] = 'apikey';
@@ -71,6 +72,9 @@ class Configure {
             }
             if (data.hasOwnProperty('azure-ad-object-id')) {
                 obj['azure-ad-object-id'] = ApiClient.convertToType(data['azure-ad-object-id'], 'String');
+            }
+            if (data.hasOwnProperty('azure-cloud')) {
+                obj['azure-cloud'] = ApiClient.convertToType(data['azure-cloud'], 'String');
             }
             if (data.hasOwnProperty('cert-data')) {
                 obj['cert-data'] = ApiClient.convertToType(data['cert-data'], 'String');
@@ -160,6 +164,10 @@ class Configure {
         // ensure the json data is a string
         if (data['azure-ad-object-id'] && !(typeof data['azure-ad-object-id'] === 'string' || data['azure-ad-object-id'] instanceof String)) {
             throw new Error("Expected the field `azure-ad-object-id` to be a primitive type in the JSON string but got " + data['azure-ad-object-id']);
+        }
+        // ensure the json data is a string
+        if (data['azure-cloud'] && !(typeof data['azure-cloud'] === 'string' || data['azure-cloud'] instanceof String)) {
+            throw new Error("Expected the field `azure-cloud` to be a primitive type in the JSON string but got " + data['azure-cloud']);
         }
         // ensure the json data is a string
         if (data['cert-data'] && !(typeof data['cert-data'] === 'string' || data['cert-data'] instanceof String)) {
@@ -272,6 +280,13 @@ Configure.prototype['admin-password'] = undefined;
  * @member {String} azure-ad-object-id
  */
 Configure.prototype['azure-ad-object-id'] = undefined;
+
+/**
+ * Azure cloud environment to use. Values: AzureCloud (default), AzureUSGovernment, AzureChinaCloud.
+ * @member {String} azure-cloud
+ * @default 'AzureCloud'
+ */
+Configure.prototype['azure-cloud'] = 'AzureCloud';
 
 /**
  * Certificate data encoded in base64. Used if file was not provided. (relevant only for access-type=cert in Curl Context)

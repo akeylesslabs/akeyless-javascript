@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import GithubMetadata from './GithubMetadata';
 
 /**
  * The SecretInfo model module.
  * @module model/SecretInfo
- * @version 5.0.21
+ * @version 5.0.22
  */
 class SecretInfo {
     /**
@@ -55,6 +56,9 @@ class SecretInfo {
             }
             if (data.hasOwnProperty('expiration')) {
                 obj['expiration'] = ApiClient.convertToType(data['expiration'], 'Date');
+            }
+            if (data.hasOwnProperty('github')) {
+                obj['github'] = GithubMetadata.constructFromObject(data['github']);
             }
             if (data.hasOwnProperty('key_id')) {
                 obj['key_id'] = ApiClient.convertToType(data['key_id'], 'String');
@@ -103,6 +107,10 @@ class SecretInfo {
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
+        // validate the optional field `github`
+        if (data['github']) { // data not null
+          GithubMetadata.validateJSON(data['github']);
+        }
         // ensure the json data is a string
         if (data['key_id'] && !(typeof data['key_id'] === 'string' || data['key_id'] instanceof String)) {
             throw new Error("Expected the field `key_id` to be a primitive type in the JSON string but got " + data['key_id']);
@@ -150,6 +158,11 @@ SecretInfo.prototype['description'] = undefined;
  * @member {Date} expiration
  */
 SecretInfo.prototype['expiration'] = undefined;
+
+/**
+ * @member {module:model/GithubMetadata} github
+ */
+SecretInfo.prototype['github'] = undefined;
 
 /**
  * @member {String} key_id

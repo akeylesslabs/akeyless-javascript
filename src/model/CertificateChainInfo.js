@@ -19,7 +19,7 @@ import NullString from './NullString';
 /**
  * The CertificateChainInfo model module.
  * @module model/CertificateChainInfo
- * @version 5.0.21
+ * @version 5.0.22
  */
 class CertificateChainInfo {
     /**
@@ -82,6 +82,9 @@ class CertificateChainInfo {
             }
             if (data.hasOwnProperty('common_name')) {
                 obj['common_name'] = ApiClient.convertToType(data['common_name'], 'String');
+            }
+            if (data.hasOwnProperty('csr_pem')) {
+                obj['csr_pem'] = ApiClient.convertToType(data['csr_pem'], 'String');
             }
             if (data.hasOwnProperty('error_message')) {
                 obj['error_message'] = ApiClient.convertToType(data['error_message'], 'String');
@@ -147,6 +150,10 @@ class CertificateChainInfo {
         // ensure the json data is a string
         if (data['common_name'] && !(typeof data['common_name'] === 'string' || data['common_name'] instanceof String)) {
             throw new Error("Expected the field `common_name` to be a primitive type in the JSON string but got " + data['common_name']);
+        }
+        // ensure the json data is a string
+        if (data['csr_pem'] && !(typeof data['csr_pem'] === 'string' || data['csr_pem'] instanceof String)) {
+            throw new Error("Expected the field `csr_pem` to be a primitive type in the JSON string but got " + data['csr_pem']);
         }
         // ensure the json data is a string
         if (data['error_message'] && !(typeof data['error_message'] === 'string' || data['error_message'] instanceof String)) {
@@ -233,6 +240,12 @@ CertificateChainInfo.prototype['certificate_status'] = undefined;
  * @member {String} common_name
  */
 CertificateChainInfo.prototype['common_name'] = undefined;
+
+/**
+ * CSRPEM contains the PEM-encoded CSR for pending certificates (HTTP-01 challenge)
+ * @member {String} csr_pem
+ */
+CertificateChainInfo.prototype['csr_pem'] = undefined;
 
 /**
  * @member {String} error_message

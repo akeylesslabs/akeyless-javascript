@@ -17,7 +17,7 @@ import KerberosAuthMethodInfo from './KerberosAuthMethodInfo';
 /**
  * The AuthMethodAdditionalData model module.
  * @module model/AuthMethodAdditionalData
- * @version 5.0.21
+ * @version 5.0.22
  */
 class AuthMethodAdditionalData {
     /**

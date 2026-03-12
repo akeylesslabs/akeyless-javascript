@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PolicyOutput model module.
  * @module model/PolicyOutput
- * @version 5.0.21
+ * @version 5.0.22
  */
 class PolicyOutput {
     /**

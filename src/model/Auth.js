@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 5.0.21
+ * @version 5.0.22
  */
 class Auth {
     /**
@@ -35,6 +35,7 @@ class Auth {
      */
     static initialize(obj) { 
         obj['access-type'] = 'access_key';
+        obj['azure-cloud'] = 'AzureCloud';
         obj['gcp-audience'] = 'akeyless.io';
         obj['json'] = false;
         obj['oci-auth-type'] = 'apikey';
@@ -68,6 +69,9 @@ class Auth {
             }
             if (data.hasOwnProperty('admin-password')) {
                 obj['admin-password'] = ApiClient.convertToType(data['admin-password'], 'String');
+            }
+            if (data.hasOwnProperty('azure-cloud')) {
+                obj['azure-cloud'] = ApiClient.convertToType(data['azure-cloud'], 'String');
             }
             if (data.hasOwnProperty('cert-challenge')) {
                 obj['cert-challenge'] = ApiClient.convertToType(data['cert-challenge'], 'String');
@@ -177,6 +181,10 @@ class Auth {
         // ensure the json data is a string
         if (data['admin-password'] && !(typeof data['admin-password'] === 'string' || data['admin-password'] instanceof String)) {
             throw new Error("Expected the field `admin-password` to be a primitive type in the JSON string but got " + data['admin-password']);
+        }
+        // ensure the json data is a string
+        if (data['azure-cloud'] && !(typeof data['azure-cloud'] === 'string' || data['azure-cloud'] instanceof String)) {
+            throw new Error("Expected the field `azure-cloud` to be a primitive type in the JSON string but got " + data['azure-cloud']);
         }
         // ensure the json data is a string
         if (data['cert-challenge'] && !(typeof data['cert-challenge'] === 'string' || data['cert-challenge'] instanceof String)) {
@@ -311,6 +319,13 @@ Auth.prototype['admin-email'] = undefined;
  * @member {String} admin-password
  */
 Auth.prototype['admin-password'] = undefined;
+
+/**
+ * Azure cloud environment to use. Values: AzureCloud (default), AzureUSGovernment, AzureChinaCloud.
+ * @member {String} azure-cloud
+ * @default 'AzureCloud'
+ */
+Auth.prototype['azure-cloud'] = 'AzureCloud';
 
 /**
  * Certificate challenge encoded in base64. (relevant only for access-type=cert)

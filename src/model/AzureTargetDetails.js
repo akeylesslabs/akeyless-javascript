@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AzureTargetDetails model module.
  * @module model/AzureTargetDetails
- * @version 5.0.21
+ * @version 5.0.22
  */
 class AzureTargetDetails {
     /**
@@ -52,6 +52,9 @@ class AzureTargetDetails {
             }
             if (data.hasOwnProperty('azure_client_secret')) {
                 obj['azure_client_secret'] = ApiClient.convertToType(data['azure_client_secret'], 'String');
+            }
+            if (data.hasOwnProperty('azure_cloud')) {
+                obj['azure_cloud'] = ApiClient.convertToType(data['azure_cloud'], 'String');
             }
             if (data.hasOwnProperty('azure_resource_group_name')) {
                 obj['azure_resource_group_name'] = ApiClient.convertToType(data['azure_resource_group_name'], 'String');
@@ -99,6 +102,10 @@ class AzureTargetDetails {
             throw new Error("Expected the field `azure_client_secret` to be a primitive type in the JSON string but got " + data['azure_client_secret']);
         }
         // ensure the json data is a string
+        if (data['azure_cloud'] && !(typeof data['azure_cloud'] === 'string' || data['azure_cloud'] instanceof String)) {
+            throw new Error("Expected the field `azure_cloud` to be a primitive type in the JSON string but got " + data['azure_cloud']);
+        }
+        // ensure the json data is a string
         if (data['azure_resource_group_name'] && !(typeof data['azure_resource_group_name'] === 'string' || data['azure_resource_group_name'] instanceof String)) {
             throw new Error("Expected the field `azure_resource_group_name` to be a primitive type in the JSON string but got " + data['azure_resource_group_name']);
         }
@@ -144,6 +151,11 @@ AzureTargetDetails.prototype['azure_client_id'] = undefined;
  * @member {String} azure_client_secret
  */
 AzureTargetDetails.prototype['azure_client_secret'] = undefined;
+
+/**
+ * @member {String} azure_cloud
+ */
+AzureTargetDetails.prototype['azure_cloud'] = undefined;
 
 /**
  * @member {String} azure_resource_group_name

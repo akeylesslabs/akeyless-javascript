@@ -19,6 +19,7 @@ import CertificateTemplateInfo from './CertificateTemplateInfo';
 import ClassicKeyDetailsInfo from './ClassicKeyDetailsInfo';
 import DynamicSecretProducerInfo from './DynamicSecretProducerInfo';
 import ImporterInfo from './ImporterInfo';
+import IssuerOverviewInfo from './IssuerOverviewInfo';
 import NextAutoRotationEvent from './NextAutoRotationEvent';
 import OidcClientInfo from './OidcClientInfo';
 import PasswordPolicyInfo from './PasswordPolicyInfo';
@@ -30,7 +31,7 @@ import TokenizerInfo from './TokenizerInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 5.0.21
+ * @version 5.0.22
  */
 class ItemGeneralInfo {
     /**
@@ -90,6 +91,9 @@ class ItemGeneralInfo {
             }
             if (data.hasOwnProperty('importer_info')) {
                 obj['importer_info'] = ImporterInfo.constructFromObject(data['importer_info']);
+            }
+            if (data.hasOwnProperty('issuer_overview_info')) {
+                obj['issuer_overview_info'] = IssuerOverviewInfo.constructFromObject(data['issuer_overview_info']);
             }
             if (data.hasOwnProperty('next_rotation_events')) {
                 obj['next_rotation_events'] = ApiClient.convertToType(data['next_rotation_events'], [NextAutoRotationEvent]);
@@ -167,6 +171,10 @@ class ItemGeneralInfo {
         // validate the optional field `importer_info`
         if (data['importer_info']) { // data not null
           ImporterInfo.validateJSON(data['importer_info']);
+        }
+        // validate the optional field `issuer_overview_info`
+        if (data['issuer_overview_info']) { // data not null
+          IssuerOverviewInfo.validateJSON(data['issuer_overview_info']);
         }
         if (data['next_rotation_events']) { // data not null
             // ensure the json data is an array
@@ -260,6 +268,11 @@ ItemGeneralInfo.prototype['expiration_events'] = undefined;
  * @member {module:model/ImporterInfo} importer_info
  */
 ItemGeneralInfo.prototype['importer_info'] = undefined;
+
+/**
+ * @member {module:model/IssuerOverviewInfo} issuer_overview_info
+ */
+ItemGeneralInfo.prototype['issuer_overview_info'] = undefined;
 
 /**
  * @member {Array.<module:model/NextAutoRotationEvent>} next_rotation_events

@@ -5,9 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **activeDirectoryTargetId** | **Number** |  | [optional] 
+**aiCertificateDiscovery** | **Boolean** |  | [optional] 
 **autoRotate** | **Boolean** |  | [optional] 
 **autoRotateIntervalInDays** | **Number** |  | [optional] 
 **autoRotateRotationHour** | **Number** |  | [optional] 
+**certificatesExpirationEvents** | [**[CertificateExpirationEvent]**](CertificateExpirationEvent.md) |  | [optional] 
+**certificatesPathTemplate** | **String** |  | [optional] 
 **computerBaseDn** | **String** |  | [optional] 
 **discoverIisApps** | **Boolean** |  | [optional] 
 **discoverLocalUsers** | **Boolean** | Deprecated | [optional] 

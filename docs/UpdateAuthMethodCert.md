@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **name** | **String** | Auth Method name | 
 **newName** | **String** | Auth Method new name | [optional] 
 **productType** | **[String]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca] | [optional] 
+**requireCrlDp** | **Boolean** | Require certificate CRL distribution points (CDP) and enforce CRL validation during authentication. | [optional] 
 **revokedCertIds** | **[String]** | A list of revoked cert ids | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
