@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscCreate model module.
  * @module model/UscCreate
- * @version 5.0.22
+ * @version 5.0.23
  */
 class UscCreate {
     /**
@@ -79,6 +79,9 @@ class UscCreate {
             if (data.hasOwnProperty('secret-name')) {
                 obj['secret-name'] = ApiClient.convertToType(data['secret-name'], 'String');
             }
+            if (data.hasOwnProperty('selected-repositories')) {
+                obj['selected-repositories'] = ApiClient.convertToType(data['selected-repositories'], 'String');
+            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], {'String': 'String'});
             }
@@ -136,6 +139,10 @@ class UscCreate {
         // ensure the json data is a string
         if (data['secret-name'] && !(typeof data['secret-name'] === 'string' || data['secret-name'] instanceof String)) {
             throw new Error("Expected the field `secret-name` to be a primitive type in the JSON string but got " + data['secret-name']);
+        }
+        // ensure the json data is a string
+        if (data['selected-repositories'] && !(typeof data['selected-repositories'] === 'string' || data['selected-repositories'] instanceof String)) {
+            throw new Error("Expected the field `selected-repositories` to be a primitive type in the JSON string but got " + data['selected-repositories']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -213,6 +220,11 @@ UscCreate.prototype['region'] = undefined;
  * @member {String} secret-name
  */
 UscCreate.prototype['secret-name'] = undefined;
+
+/**
+ * @member {String} selected-repositories
+ */
+UscCreate.prototype['selected-repositories'] = undefined;
 
 /**
  * Tags for the universal secrets

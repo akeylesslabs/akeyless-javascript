@@ -11,7 +11,8 @@ Name | Type | Description | Notes
 **maxVersions** | **String** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **String** | Target name | 
 **password** | **String** | Splunk Password (used when authenticating with username/password) | [optional] 
-**token** | **String** | Splunk Token (used when authenticating with token) | [optional] 
+**splunkToken** | **String** | Splunk Token (used when authenticating with token) | [optional] 
+**token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **tokenOwner** | **String** | Splunk Token Owner (required when using token authentication for rotation) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **url** | **String** | Splunk server URL | 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 5.0.22
+ * @version 5.0.23
  */
 class CreateSecret {
     /**
@@ -83,6 +83,9 @@ class CreateSecret {
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
+            if (data.hasOwnProperty('lock-during-sra-session')) {
+                obj['lock-during-sra-session'] = ApiClient.convertToType(data['lock-during-sra-session'], 'String');
             }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
@@ -192,6 +195,10 @@ class CreateSecret {
         // ensure the json data is an array
         if (!Array.isArray(data['inject-url'])) {
             throw new Error("Expected the field `inject-url` to be an array in the JSON data but got " + data['inject-url']);
+        }
+        // ensure the json data is a string
+        if (data['lock-during-sra-session'] && !(typeof data['lock-during-sra-session'] === 'string' || data['lock-during-sra-session'] instanceof String)) {
+            throw new Error("Expected the field `lock-during-sra-session` to be a primitive type in the JSON string but got " + data['lock-during-sra-session']);
         }
         // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
@@ -338,6 +345,12 @@ CreateSecret.prototype['item-custom-fields'] = undefined;
  * @default false
  */
 CreateSecret.prototype['json'] = false;
+
+/**
+ * Lock this secret for read/update while an SRA session is active
+ * @member {String} lock-during-sra-session
+ */
+CreateSecret.prototype['lock-during-sra-session'] = undefined;
 
 /**
  * Set the maximum number of versions, limited by the account settings defaults.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FolderGet model module.
  * @module model/FolderGet
- * @version 5.0.22
+ * @version 5.0.23
  */
 class FolderGet {
     /**

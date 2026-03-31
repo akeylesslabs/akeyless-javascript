@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AwsStorage model module.
  * @module model/AwsStorage
- * @version 5.0.22
+ * @version 5.0.23
  */
 class AwsStorage {
     /**
@@ -59,6 +59,9 @@ class AwsStorage {
             if (data.hasOwnProperty('bucket')) {
                 obj['bucket'] = ApiClient.convertToType(data['bucket'], 'String');
             }
+            if (data.hasOwnProperty('endpoint_url')) {
+                obj['endpoint_url'] = ApiClient.convertToType(data['endpoint_url'], 'String');
+            }
             if (data.hasOwnProperty('prefix')) {
                 obj['prefix'] = ApiClient.convertToType(data['prefix'], 'String');
             }
@@ -90,6 +93,10 @@ class AwsStorage {
         // ensure the json data is a string
         if (data['bucket'] && !(typeof data['bucket'] === 'string' || data['bucket'] instanceof String)) {
             throw new Error("Expected the field `bucket` to be a primitive type in the JSON string but got " + data['bucket']);
+        }
+        // ensure the json data is a string
+        if (data['endpoint_url'] && !(typeof data['endpoint_url'] === 'string' || data['endpoint_url'] instanceof String)) {
+            throw new Error("Expected the field `endpoint_url` to be a primitive type in the JSON string but got " + data['endpoint_url']);
         }
         // ensure the json data is a string
         if (data['prefix'] && !(typeof data['prefix'] === 'string' || data['prefix'] instanceof String)) {
@@ -128,6 +135,11 @@ AwsStorage.prototype['auth_type'] = undefined;
  * @member {String} bucket
  */
 AwsStorage.prototype['bucket'] = undefined;
+
+/**
+ * @member {String} endpoint_url
+ */
+AwsStorage.prototype['endpoint_url'] = undefined;
 
 /**
  * @member {String} prefix

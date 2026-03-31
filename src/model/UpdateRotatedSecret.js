@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 5.0.22
+ * @version 5.0.23
  */
 class UpdateRotatedSecret {
     /**
@@ -41,7 +41,6 @@ class UpdateRotatedSecret {
         obj['json'] = false;
         obj['name'] = name;
         obj['new-metadata'] = 'default_metadata';
-        obj['rotate-after-disconnect'] = 'false';
         obj['rotator-creds-type'] = 'use-self-creds';
         obj['secure-access-allow-external-user'] = false;
         obj['secure-access-web'] = false;
@@ -102,6 +101,9 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('lock-during-sra-session')) {
+                obj['lock-during-sra-session'] = ApiClient.convertToType(data['lock-during-sra-session'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -278,6 +280,10 @@ class UpdateRotatedSecret {
         // ensure the json data is a string
         if (data['key'] && !(typeof data['key'] === 'string' || data['key'] instanceof String)) {
             throw new Error("Expected the field `key` to be a primitive type in the JSON string but got " + data['key']);
+        }
+        // ensure the json data is a string
+        if (data['lock-during-sra-session'] && !(typeof data['lock-during-sra-session'] === 'string' || data['lock-during-sra-session'] instanceof String)) {
+            throw new Error("Expected the field `lock-during-sra-session` to be a primitive type in the JSON string but got " + data['lock-during-sra-session']);
         }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
@@ -487,6 +493,12 @@ UpdateRotatedSecret.prototype['keep-prev-version'] = undefined;
 UpdateRotatedSecret.prototype['key'] = undefined;
 
 /**
+ * Lock this secret for read/update while an SRA session is active
+ * @member {String} lock-during-sra-session
+ */
+UpdateRotatedSecret.prototype['lock-during-sra-session'] = undefined;
+
+/**
  * Secret name
  * @member {String} name
  */
@@ -518,11 +530,10 @@ UpdateRotatedSecret.prototype['new-version'] = undefined;
 UpdateRotatedSecret.prototype['rm-tag'] = undefined;
 
 /**
- * Rotate the value of the secret after SRA session ends [true/false]
+ * StringOrBool accepts JSON strings, booleans, and numbers for backward compatibility with older SDK versions that send boolean values for rotate-after-disconnect.
  * @member {String} rotate-after-disconnect
- * @default 'false'
  */
-UpdateRotatedSecret.prototype['rotate-after-disconnect'] = 'false';
+UpdateRotatedSecret.prototype['rotate-after-disconnect'] = undefined;
 
 /**
  * rotated-username password

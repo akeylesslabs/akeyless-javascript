@@ -20,6 +20,7 @@ import DataProtectionSection from './DataProtectionSection';
 import DefaultAuthMethodSettings from './DefaultAuthMethodSettings';
 import DefaultHomePage from './DefaultHomePage';
 import DynamicSecretMaxTtl from './DynamicSecretMaxTtl';
+import ItemLockingSetting from './ItemLockingSetting';
 import PasswordExpirationInfo from './PasswordExpirationInfo';
 import PasswordPolicyInfo from './PasswordPolicyInfo';
 import PasswordScoreSetting from './PasswordScoreSetting';
@@ -30,7 +31,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 5.0.22
+ * @version 5.0.23
  */
 class AccountGeneralSettings {
     /**
@@ -107,11 +108,17 @@ class AccountGeneralSettings {
             if (data.hasOwnProperty('hide_personal_folder')) {
                 obj['hide_personal_folder'] = ApiClient.convertToType(data['hide_personal_folder'], 'Boolean');
             }
+            if (data.hasOwnProperty('hide_secret_reveal_copy')) {
+                obj['hide_secret_reveal_copy'] = ApiClient.convertToType(data['hide_secret_reveal_copy'], 'Boolean');
+            }
             if (data.hasOwnProperty('hide_static_password')) {
                 obj['hide_static_password'] = ApiClient.convertToType(data['hide_static_password'], 'Boolean');
             }
             if (data.hasOwnProperty('invalid_characters')) {
                 obj['invalid_characters'] = ApiClient.convertToType(data['invalid_characters'], 'String');
+            }
+            if (data.hasOwnProperty('item_locking')) {
+                obj['item_locking'] = ItemLockingSetting.constructFromObject(data['item_locking']);
             }
             if (data.hasOwnProperty('item_usage_event')) {
                 obj['item_usage_event'] = UsageEventSetting.constructFromObject(data['item_usage_event']);
@@ -194,6 +201,10 @@ class AccountGeneralSettings {
         // ensure the json data is a string
         if (data['invalid_characters'] && !(typeof data['invalid_characters'] === 'string' || data['invalid_characters'] instanceof String)) {
             throw new Error("Expected the field `invalid_characters` to be a primitive type in the JSON string but got " + data['invalid_characters']);
+        }
+        // validate the optional field `item_locking`
+        if (data['item_locking']) { // data not null
+          ItemLockingSetting.validateJSON(data['item_locking']);
         }
         // validate the optional field `item_usage_event`
         if (data['item_usage_event']) { // data not null
@@ -306,6 +317,11 @@ AccountGeneralSettings.prototype['enable_request_for_access'] = undefined;
 AccountGeneralSettings.prototype['hide_personal_folder'] = undefined;
 
 /**
+ * @member {Boolean} hide_secret_reveal_copy
+ */
+AccountGeneralSettings.prototype['hide_secret_reveal_copy'] = undefined;
+
+/**
  * @member {Boolean} hide_static_password
  */
 AccountGeneralSettings.prototype['hide_static_password'] = undefined;
@@ -315,6 +331,11 @@ AccountGeneralSettings.prototype['hide_static_password'] = undefined;
  * @member {String} invalid_characters
  */
 AccountGeneralSettings.prototype['invalid_characters'] = undefined;
+
+/**
+ * @member {module:model/ItemLockingSetting} item_locking
+ */
+AccountGeneralSettings.prototype['item_locking'] = undefined;
 
 /**
  * @member {module:model/UsageEventSetting} item_usage_event

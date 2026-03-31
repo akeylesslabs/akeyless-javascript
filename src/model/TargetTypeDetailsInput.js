@@ -18,6 +18,7 @@ import AzureTargetDetails from './AzureTargetDetails';
 import ChefTargetDetails from './ChefTargetDetails';
 import CustomTargetDetails from './CustomTargetDetails';
 import DbTargetDetails from './DbTargetDetails';
+import DigiCertTargetDetails from './DigiCertTargetDetails';
 import DockerhubTargetDetails from './DockerhubTargetDetails';
 import EKSTargetDetails from './EKSTargetDetails';
 import GKETargetDetails from './GKETargetDetails';
@@ -28,6 +29,7 @@ import GitlabTargetDetails from './GitlabTargetDetails';
 import GlobalSignAtlasTargetDetails from './GlobalSignAtlasTargetDetails';
 import GlobalSignGCCTargetDetails from './GlobalSignGCCTargetDetails';
 import GodaddyTargetDetails from './GodaddyTargetDetails';
+import GoogleTrustTargetDetails from './GoogleTrustTargetDetails';
 import HashiVaultTargetDetails from './HashiVaultTargetDetails';
 import LdapTargetDetails from './LdapTargetDetails';
 import LetsEncryptTargetDetails from './LetsEncryptTargetDetails';
@@ -49,7 +51,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 5.0.22
+ * @version 5.0.23
  */
 class TargetTypeDetailsInput {
     /**
@@ -98,6 +100,9 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('db_target_details')) {
                 obj['db_target_details'] = DbTargetDetails.constructFromObject(data['db_target_details']);
             }
+            if (data.hasOwnProperty('digicert_target_details')) {
+                obj['digicert_target_details'] = DigiCertTargetDetails.constructFromObject(data['digicert_target_details']);
+            }
             if (data.hasOwnProperty('dockerhub_target_details')) {
                 obj['dockerhub_target_details'] = DockerhubTargetDetails.constructFromObject(data['dockerhub_target_details']);
             }
@@ -127,6 +132,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('godaddy_target_details')) {
                 obj['godaddy_target_details'] = GodaddyTargetDetails.constructFromObject(data['godaddy_target_details']);
+            }
+            if (data.hasOwnProperty('google_trust_target_details')) {
+                obj['google_trust_target_details'] = GoogleTrustTargetDetails.constructFromObject(data['google_trust_target_details']);
             }
             if (data.hasOwnProperty('hashi_vault_target_details')) {
                 obj['hashi_vault_target_details'] = HashiVaultTargetDetails.constructFromObject(data['hashi_vault_target_details']);
@@ -213,6 +221,10 @@ class TargetTypeDetailsInput {
         if (data['db_target_details']) { // data not null
           DbTargetDetails.validateJSON(data['db_target_details']);
         }
+        // validate the optional field `digicert_target_details`
+        if (data['digicert_target_details']) { // data not null
+          DigiCertTargetDetails.validateJSON(data['digicert_target_details']);
+        }
         // validate the optional field `dockerhub_target_details`
         if (data['dockerhub_target_details']) { // data not null
           DockerhubTargetDetails.validateJSON(data['dockerhub_target_details']);
@@ -252,6 +264,10 @@ class TargetTypeDetailsInput {
         // validate the optional field `godaddy_target_details`
         if (data['godaddy_target_details']) { // data not null
           GodaddyTargetDetails.validateJSON(data['godaddy_target_details']);
+        }
+        // validate the optional field `google_trust_target_details`
+        if (data['google_trust_target_details']) { // data not null
+          GoogleTrustTargetDetails.validateJSON(data['google_trust_target_details']);
         }
         // validate the optional field `hashi_vault_target_details`
         if (data['hashi_vault_target_details']) { // data not null
@@ -361,6 +377,11 @@ TargetTypeDetailsInput.prototype['custom_target_details'] = undefined;
 TargetTypeDetailsInput.prototype['db_target_details'] = undefined;
 
 /**
+ * @member {module:model/DigiCertTargetDetails} digicert_target_details
+ */
+TargetTypeDetailsInput.prototype['digicert_target_details'] = undefined;
+
+/**
  * @member {module:model/DockerhubTargetDetails} dockerhub_target_details
  */
 TargetTypeDetailsInput.prototype['dockerhub_target_details'] = undefined;
@@ -409,6 +430,11 @@ TargetTypeDetailsInput.prototype['globalsign_target_details'] = undefined;
  * @member {module:model/GodaddyTargetDetails} godaddy_target_details
  */
 TargetTypeDetailsInput.prototype['godaddy_target_details'] = undefined;
+
+/**
+ * @member {module:model/GoogleTrustTargetDetails} google_trust_target_details
+ */
+TargetTypeDetailsInput.prototype['google_trust_target_details'] = undefined;
 
 /**
  * @member {module:model/HashiVaultTargetDetails} hashi_vault_target_details

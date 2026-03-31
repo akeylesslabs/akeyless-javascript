@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **lastRetrieved** | **Date** |  | [optional] 
 **location** | **Object** |  | [optional] 
 **name** | **String** |  | [optional] 
+**namespace** | **String** |  | [optional] 
 **region** | **String** |  | [optional] 
 **secretId** | **String** |  | [optional] 
 **status** | **Boolean** |  | [optional] 

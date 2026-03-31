@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReverseRBAC model module.
  * @module model/ReverseRBAC
- * @version 5.0.22
+ * @version 5.0.23
  */
 class ReverseRBAC {
     /**
@@ -24,7 +24,7 @@ class ReverseRBAC {
      * reverseRBAC is a command that shows which auth methods have access to a particular object.
      * @alias module:model/ReverseRBAC
      * @param path {String} Path to an object
-     * @param type {String} Type of object (item, am, role)
+     * @param type {String} Type of object (item, am, role, target, sra, ara)
      */
     constructor(path, type) { 
         
@@ -129,7 +129,7 @@ ReverseRBAC.prototype['path'] = undefined;
 ReverseRBAC.prototype['token'] = undefined;
 
 /**
- * Type of object (item, am, role)
+ * Type of object (item, am, role, target, sra, ara)
  * @member {String} type
  */
 ReverseRBAC.prototype['type'] = undefined;

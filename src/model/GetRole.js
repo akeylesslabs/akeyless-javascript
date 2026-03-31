@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetRole model module.
  * @module model/GetRole
- * @version 5.0.22
+ * @version 5.0.23
  */
 class GetRole {
     /**

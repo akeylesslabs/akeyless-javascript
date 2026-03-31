@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **creationDate** | **Date** |  | [optional] 
 **isAccessRequestEnabled** | **Boolean** |  | [optional] 
 **lastVersion** | **Number** |  | [optional] 
+**lockingInfo** | [**LockingInfo**](LockingInfo.md) |  | [optional] 
 **modificationDate** | **Date** |  | [optional] 
 **parentTargetName** | **String** |  | [optional] 
 **protectionKeyName** | **String** |  | [optional] 

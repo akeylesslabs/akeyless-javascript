@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VaultAddressOutput model module.
  * @module model/VaultAddressOutput
- * @version 5.0.22
+ * @version 5.0.23
  */
 class VaultAddressOutput {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UniversalIdentityAccessRules model module.
  * @module model/UniversalIdentityAccessRules
- * @version 5.0.22
+ * @version 5.0.23
  */
 class UniversalIdentityAccessRules {
     /**
@@ -47,11 +47,17 @@ class UniversalIdentityAccessRules {
         if (data) {
             obj = obj || new UniversalIdentityAccessRules();
 
+            if (data.hasOwnProperty('child_ttl_limit')) {
+                obj['child_ttl_limit'] = ApiClient.convertToType(data['child_ttl_limit'], 'Number');
+            }
             if (data.hasOwnProperty('deny_inheritance')) {
                 obj['deny_inheritance'] = ApiClient.convertToType(data['deny_inheritance'], 'Boolean');
             }
             if (data.hasOwnProperty('deny_rotate')) {
                 obj['deny_rotate'] = ApiClient.convertToType(data['deny_rotate'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tree_length')) {
+                obj['tree_length'] = ApiClient.convertToType(data['tree_length'], 'Number');
             }
             if (data.hasOwnProperty('ttl')) {
                 obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
@@ -76,6 +82,11 @@ class UniversalIdentityAccessRules {
 
 
 /**
+ * @member {Number} child_ttl_limit
+ */
+UniversalIdentityAccessRules.prototype['child_ttl_limit'] = undefined;
+
+/**
  * @member {Boolean} deny_inheritance
  */
 UniversalIdentityAccessRules.prototype['deny_inheritance'] = undefined;
@@ -84,6 +95,11 @@ UniversalIdentityAccessRules.prototype['deny_inheritance'] = undefined;
  * @member {Boolean} deny_rotate
  */
 UniversalIdentityAccessRules.prototype['deny_rotate'] = undefined;
+
+/**
+ * @member {Number} tree_length
+ */
+UniversalIdentityAccessRules.prototype['tree_length'] = undefined;
 
 /**
  * @member {Number} ttl

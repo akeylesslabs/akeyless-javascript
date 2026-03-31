@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 5.0.22
+ * @version 5.0.23
  */
 class UpdateItem {
     /**
@@ -40,7 +40,6 @@ class UpdateItem {
         obj['json'] = false;
         obj['name'] = name;
         obj['new-metadata'] = 'default_metadata';
-        obj['rotate-after-disconnect'] = 'false';
         obj['secure-access-web-browsing'] = false;
         obj['secure-access-web-proxy'] = false;
     }
@@ -94,6 +93,9 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
+            if (data.hasOwnProperty('lock-during-sra-session')) {
+                obj['lock-during-sra-session'] = ApiClient.convertToType(data['lock-during-sra-session'], 'String');
             }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
@@ -268,6 +270,10 @@ class UpdateItem {
         // ensure the json data is a string
         if (data['host-provider'] && !(typeof data['host-provider'] === 'string' || data['host-provider'] instanceof String)) {
             throw new Error("Expected the field `host-provider` to be a primitive type in the JSON string but got " + data['host-provider']);
+        }
+        // ensure the json data is a string
+        if (data['lock-during-sra-session'] && !(typeof data['lock-during-sra-session'] === 'string' || data['lock-during-sra-session'] instanceof String)) {
+            throw new Error("Expected the field `lock-during-sra-session` to be a primitive type in the JSON string but got " + data['lock-during-sra-session']);
         }
         // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
@@ -486,6 +492,12 @@ UpdateItem.prototype['item-custom-fields'] = undefined;
 UpdateItem.prototype['json'] = false;
 
 /**
+ * Lock this secret for read/update while an SRA session is active
+ * @member {String} lock-during-sra-session
+ */
+UpdateItem.prototype['lock-during-sra-session'] = undefined;
+
+/**
  * Set the maximum number of versions, limited by the account settings defaults.
  * @member {String} max-versions
  */
@@ -517,11 +529,10 @@ UpdateItem.prototype['new-name'] = undefined;
 UpdateItem.prototype['rm-tag'] = undefined;
 
 /**
- * Rotate the value of the secret after SRA session ends [true/false]
+ * StringOrBool accepts JSON strings, booleans, and numbers for backward compatibility with older SDK versions that send boolean values for rotate-after-disconnect.
  * @member {String} rotate-after-disconnect
- * @default 'false'
  */
-UpdateItem.prototype['rotate-after-disconnect'] = 'false';
+UpdateItem.prototype['rotate-after-disconnect'] = undefined;
 
 /**
  * List of the new hosts that will be attached to SRA servers host

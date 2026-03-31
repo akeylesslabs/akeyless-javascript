@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HashiPayload model module.
  * @module model/HashiPayload
- * @version 5.0.22
+ * @version 5.0.23
  */
 class HashiPayload {
     /**
@@ -47,6 +47,9 @@ class HashiPayload {
         if (data) {
             obj = obj || new HashiPayload();
 
+            if (data.hasOwnProperty('delete_sync_on_deletion')) {
+                obj['delete_sync_on_deletion'] = ApiClient.convertToType(data['delete_sync_on_deletion'], 'Boolean');
+            }
             if (data.hasOwnProperty('import_as_json')) {
                 obj['import_as_json'] = ApiClient.convertToType(data['import_as_json'], 'Boolean');
             }
@@ -58,6 +61,9 @@ class HashiPayload {
             }
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            }
+            if (data.hasOwnProperty('usc_name')) {
+                obj['usc_name'] = ApiClient.convertToType(data['usc_name'], 'String');
             }
         }
         return obj;
@@ -81,6 +87,10 @@ class HashiPayload {
         if (data['url'] && !(typeof data['url'] === 'string' || data['url'] instanceof String)) {
             throw new Error("Expected the field `url` to be a primitive type in the JSON string but got " + data['url']);
         }
+        // ensure the json data is a string
+        if (data['usc_name'] && !(typeof data['usc_name'] === 'string' || data['usc_name'] instanceof String)) {
+            throw new Error("Expected the field `usc_name` to be a primitive type in the JSON string but got " + data['usc_name']);
+        }
 
         return true;
     }
@@ -89,6 +99,11 @@ class HashiPayload {
 }
 
 
+
+/**
+ * @member {Boolean} delete_sync_on_deletion
+ */
+HashiPayload.prototype['delete_sync_on_deletion'] = undefined;
 
 /**
  * @member {Boolean} import_as_json
@@ -109,6 +124,11 @@ HashiPayload.prototype['token'] = undefined;
  * @member {String} url
  */
 HashiPayload.prototype['url'] = undefined;
+
+/**
+ * @member {String} usc_name
+ */
+HashiPayload.prototype['usc_name'] = undefined;
 
 
 

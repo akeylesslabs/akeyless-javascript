@@ -307,6 +307,7 @@ import DescribeSubClaimsOutput from './model/DescribeSubClaimsOutput';
 import DesktopAppConf from './model/DesktopAppConf';
 import Detokenize from './model/Detokenize';
 import DetokenizeOutput from './model/DetokenizeOutput';
+import DigiCertTargetDetails from './model/DigiCertTargetDetails';
 import DockerhubTargetDetails from './model/DockerhubTargetDetails';
 import DynamicSecretCreateArtifactory from './model/DynamicSecretCreateArtifactory';
 import DynamicSecretCreateAws from './model/DynamicSecretCreateAws';
@@ -667,6 +668,7 @@ import GlobalSignAtlasTargetDetails from './model/GlobalSignAtlasTargetDetails';
 import GlobalSignGCCTargetDetails from './model/GlobalSignGCCTargetDetails';
 import GodaddyTargetDetails from './model/GodaddyTargetDetails';
 import GoogleChronicleForwardingConfig from './model/GoogleChronicleForwardingConfig';
+import GoogleTrustTargetDetails from './model/GoogleTrustTargetDetails';
 import Group from './model/Group';
 import GwClusterIdentity from './model/GwClusterIdentity';
 import GwUpdateRemoteAccessSessionLogsAwsS3 from './model/GwUpdateRemoteAccessSessionLogsAwsS3';
@@ -694,6 +696,7 @@ import IssuerOverviewInfo from './model/IssuerOverviewInfo';
 import Item from './model/Item';
 import ItemCustomFieldsDetails from './model/ItemCustomFieldsDetails';
 import ItemGeneralInfo from './model/ItemGeneralInfo';
+import ItemLockingSetting from './model/ItemLockingSetting';
 import ItemSraStatus from './model/ItemSraStatus';
 import ItemTargetAssociation from './model/ItemTargetAssociation';
 import ItemUSCSyncAssociation from './model/ItemUSCSyncAssociation';
@@ -770,6 +773,9 @@ import ListSharedItems from './model/ListSharedItems';
 import ListSraSessionsOutput from './model/ListSraSessionsOutput';
 import ListTargets from './model/ListTargets';
 import ListTargetsOutput from './model/ListTargetsOutput';
+import LockItem from './model/LockItem';
+import LockTarget from './model/LockTarget';
+import LockingInfo from './model/LockingInfo';
 import LogForwardingConfigPart from './model/LogForwardingConfigPart';
 import LogstashLogForwardingConfig from './model/LogstashLogForwardingConfig';
 import LogzIoLogForwardingConfig from './model/LogzIoLogForwardingConfig';
@@ -785,6 +791,7 @@ import MongoDBTargetDetails from './model/MongoDBTargetDetails';
 import MoveObjects from './model/MoveObjects';
 import Name from './model/Name';
 import NativeK8sTargetDetails from './model/NativeK8sTargetDetails';
+import NetappStorage from './model/NetappStorage';
 import NextAutoRotationEvent from './model/NextAutoRotationEvent';
 import NotiForwarder from './model/NotiForwarder';
 import NotiForwarderDetailsInput from './model/NotiForwarderDetailsInput';
@@ -954,6 +961,7 @@ import StaticSecretDeleteSyncOutput from './model/StaticSecretDeleteSyncOutput';
 import StaticSecretDetailsInfo from './model/StaticSecretDetailsInfo';
 import StaticSecretSync from './model/StaticSecretSync';
 import SumologicLogForwardingConfig from './model/SumologicLogForwardingConfig';
+import SyncCounters from './model/SyncCounters';
 import SyslogLogForwardingConfig from './model/SyslogLogForwardingConfig';
 import SystemAccessCredentialsReplyObj from './model/SystemAccessCredentialsReplyObj';
 import SystemAccessCredsSettings from './model/SystemAccessCredsSettings';
@@ -962,6 +970,7 @@ import TargetCreateArtifactory from './model/TargetCreateArtifactory';
 import TargetCreateAws from './model/TargetCreateAws';
 import TargetCreateAzure from './model/TargetCreateAzure';
 import TargetCreateDB from './model/TargetCreateDB';
+import TargetCreateDigiCert from './model/TargetCreateDigiCert';
 import TargetCreateDockerhub from './model/TargetCreateDockerhub';
 import TargetCreateEks from './model/TargetCreateEks';
 import TargetCreateGcp from './model/TargetCreateGcp';
@@ -972,6 +981,7 @@ import TargetCreateGke from './model/TargetCreateGke';
 import TargetCreateGlobalSign from './model/TargetCreateGlobalSign';
 import TargetCreateGlobalSignAtlas from './model/TargetCreateGlobalSignAtlas';
 import TargetCreateGodaddy from './model/TargetCreateGodaddy';
+import TargetCreateGoogleTrust from './model/TargetCreateGoogleTrust';
 import TargetCreateHashiVault from './model/TargetCreateHashiVault';
 import TargetCreateK8s from './model/TargetCreateK8s';
 import TargetCreateLdap from './model/TargetCreateLdap';
@@ -1001,6 +1011,7 @@ import TargetUpdateArtifactory from './model/TargetUpdateArtifactory';
 import TargetUpdateAws from './model/TargetUpdateAws';
 import TargetUpdateAzure from './model/TargetUpdateAzure';
 import TargetUpdateDB from './model/TargetUpdateDB';
+import TargetUpdateDigiCert from './model/TargetUpdateDigiCert';
 import TargetUpdateDockerhub from './model/TargetUpdateDockerhub';
 import TargetUpdateEks from './model/TargetUpdateEks';
 import TargetUpdateGcp from './model/TargetUpdateGcp';
@@ -1011,6 +1022,7 @@ import TargetUpdateGke from './model/TargetUpdateGke';
 import TargetUpdateGlobalSign from './model/TargetUpdateGlobalSign';
 import TargetUpdateGlobalSignAtlas from './model/TargetUpdateGlobalSignAtlas';
 import TargetUpdateGodaddy from './model/TargetUpdateGodaddy';
+import TargetUpdateGoogleTrust from './model/TargetUpdateGoogleTrust';
 import TargetUpdateHashiVault from './model/TargetUpdateHashiVault';
 import TargetUpdateK8s from './model/TargetUpdateK8s';
 import TargetUpdateLdap from './model/TargetUpdateLdap';
@@ -1043,6 +1055,8 @@ import UidRotateTokenOutput from './model/UidRotateTokenOutput';
 import Unconfigure from './model/Unconfigure';
 import UniversalIdentityAccessRules from './model/UniversalIdentityAccessRules';
 import UniversalIdentityDetails from './model/UniversalIdentityDetails';
+import UnlockItem from './model/UnlockItem';
+import UnlockTarget from './model/UnlockTarget';
 import UnwrapToken from './model/UnwrapToken';
 import UnwrapTokenOutput from './model/UnwrapTokenOutput';
 import Update from './model/Update';
@@ -1217,7 +1231,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.22
+* @version 5.0.23
 */
 export {
     /**
@@ -2989,6 +3003,12 @@ export {
      * @property {module:model/DetokenizeOutput}
      */
     DetokenizeOutput,
+
+    /**
+     * The DigiCertTargetDetails model constructor.
+     * @property {module:model/DigiCertTargetDetails}
+     */
+    DigiCertTargetDetails,
 
     /**
      * The DockerhubTargetDetails model constructor.
@@ -5151,6 +5171,12 @@ export {
     GoogleChronicleForwardingConfig,
 
     /**
+     * The GoogleTrustTargetDetails model constructor.
+     * @property {module:model/GoogleTrustTargetDetails}
+     */
+    GoogleTrustTargetDetails,
+
+    /**
      * The Group model constructor.
      * @property {module:model/Group}
      */
@@ -5311,6 +5337,12 @@ export {
      * @property {module:model/ItemGeneralInfo}
      */
     ItemGeneralInfo,
+
+    /**
+     * The ItemLockingSetting model constructor.
+     * @property {module:model/ItemLockingSetting}
+     */
+    ItemLockingSetting,
 
     /**
      * The ItemSraStatus model constructor.
@@ -5769,6 +5801,24 @@ export {
     ListTargetsOutput,
 
     /**
+     * The LockItem model constructor.
+     * @property {module:model/LockItem}
+     */
+    LockItem,
+
+    /**
+     * The LockTarget model constructor.
+     * @property {module:model/LockTarget}
+     */
+    LockTarget,
+
+    /**
+     * The LockingInfo model constructor.
+     * @property {module:model/LockingInfo}
+     */
+    LockingInfo,
+
+    /**
      * The LogForwardingConfigPart model constructor.
      * @property {module:model/LogForwardingConfigPart}
      */
@@ -5857,6 +5907,12 @@ export {
      * @property {module:model/NativeK8sTargetDetails}
      */
     NativeK8sTargetDetails,
+
+    /**
+     * The NetappStorage model constructor.
+     * @property {module:model/NetappStorage}
+     */
+    NetappStorage,
 
     /**
      * The NextAutoRotationEvent model constructor.
@@ -6873,6 +6929,12 @@ export {
     SumologicLogForwardingConfig,
 
     /**
+     * The SyncCounters model constructor.
+     * @property {module:model/SyncCounters}
+     */
+    SyncCounters,
+
+    /**
      * The SyslogLogForwardingConfig model constructor.
      * @property {module:model/SyslogLogForwardingConfig}
      */
@@ -6919,6 +6981,12 @@ export {
      * @property {module:model/TargetCreateDB}
      */
     TargetCreateDB,
+
+    /**
+     * The TargetCreateDigiCert model constructor.
+     * @property {module:model/TargetCreateDigiCert}
+     */
+    TargetCreateDigiCert,
 
     /**
      * The TargetCreateDockerhub model constructor.
@@ -6979,6 +7047,12 @@ export {
      * @property {module:model/TargetCreateGodaddy}
      */
     TargetCreateGodaddy,
+
+    /**
+     * The TargetCreateGoogleTrust model constructor.
+     * @property {module:model/TargetCreateGoogleTrust}
+     */
+    TargetCreateGoogleTrust,
 
     /**
      * The TargetCreateHashiVault model constructor.
@@ -7155,6 +7229,12 @@ export {
     TargetUpdateDB,
 
     /**
+     * The TargetUpdateDigiCert model constructor.
+     * @property {module:model/TargetUpdateDigiCert}
+     */
+    TargetUpdateDigiCert,
+
+    /**
      * The TargetUpdateDockerhub model constructor.
      * @property {module:model/TargetUpdateDockerhub}
      */
@@ -7213,6 +7293,12 @@ export {
      * @property {module:model/TargetUpdateGodaddy}
      */
     TargetUpdateGodaddy,
+
+    /**
+     * The TargetUpdateGoogleTrust model constructor.
+     * @property {module:model/TargetUpdateGoogleTrust}
+     */
+    TargetUpdateGoogleTrust,
 
     /**
      * The TargetUpdateHashiVault model constructor.
@@ -7405,6 +7491,18 @@ export {
      * @property {module:model/UniversalIdentityDetails}
      */
     UniversalIdentityDetails,
+
+    /**
+     * The UnlockItem model constructor.
+     * @property {module:model/UnlockItem}
+     */
+    UnlockItem,
+
+    /**
+     * The UnlockTarget model constructor.
+     * @property {module:model/UnlockTarget}
+     */
+    UnlockTarget,
 
     /**
      * The UnwrapToken model constructor.

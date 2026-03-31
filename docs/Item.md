@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **lastRotationDate** | **Date** |  | [optional] 
 **lastVersion** | **Number** |  | [optional] 
 **linkedDetails** | [**LinkedDetails**](LinkedDetails.md) |  | [optional] 
+**lockingInfo** | [**LockingInfo**](LockingInfo.md) |  | [optional] 
 **modificationDate** | **Date** |  | [optional] 
 **nextRotationDate** | **Date** |  | [optional] 
 **protectionKeyName** | **String** |  | [optional] 

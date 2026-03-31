@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateUniversalIdentity model module.
  * @module model/AuthMethodCreateUniversalIdentity
- * @version 5.0.22
+ * @version 5.0.23
  */
 class AuthMethodCreateUniversalIdentity {
     /**
@@ -37,9 +37,11 @@ class AuthMethodCreateUniversalIdentity {
      */
     static initialize(obj, name) { 
         obj['access-expires'] = 0;
+        obj['child-ttl-limit'] = 43200;
         obj['json'] = false;
         obj['jwt-ttl'] = 0;
         obj['name'] = name;
+        obj['tree-length'] = 200;
         obj['ttl'] = 60;
     }
 
@@ -65,6 +67,9 @@ class AuthMethodCreateUniversalIdentity {
             }
             if (data.hasOwnProperty('bound-ips')) {
                 obj['bound-ips'] = ApiClient.convertToType(data['bound-ips'], ['String']);
+            }
+            if (data.hasOwnProperty('child-ttl-limit')) {
+                obj['child-ttl-limit'] = ApiClient.convertToType(data['child-ttl-limit'], 'Number');
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
@@ -101,6 +106,9 @@ class AuthMethodCreateUniversalIdentity {
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
+            }
+            if (data.hasOwnProperty('tree-length')) {
+                obj['tree-length'] = ApiClient.convertToType(data['tree-length'], 'Number');
             }
             if (data.hasOwnProperty('ttl')) {
                 obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
@@ -203,6 +211,13 @@ AuthMethodCreateUniversalIdentity.prototype['audit-logs-claims'] = undefined;
 AuthMethodCreateUniversalIdentity.prototype['bound-ips'] = undefined;
 
 /**
+ * Maximum child token ttl allowed in uid-create-child-token
+ * @member {Number} child-ttl-limit
+ * @default 43200
+ */
+AuthMethodCreateUniversalIdentity.prototype['child-ttl-limit'] = 43200;
+
+/**
  * Protection from accidental deletion of this object [true/false]
  * @member {String} delete_protection
  */
@@ -275,6 +290,13 @@ AuthMethodCreateUniversalIdentity.prototype['product-type'] = undefined;
  * @member {String} token
  */
 AuthMethodCreateUniversalIdentity.prototype['token'] = undefined;
+
+/**
+ * Maximum UID tree depth allowed (child of child of ...)
+ * @member {Number} tree-length
+ * @default 200
+ */
+AuthMethodCreateUniversalIdentity.prototype['tree-length'] = 200;
 
 /**
  * Token ttl

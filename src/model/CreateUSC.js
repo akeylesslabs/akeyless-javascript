@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateUSC model module.
  * @module model/CreateUSC
- * @version 5.0.22
+ * @version 5.0.23
  */
 class CreateUSC {
     /**
@@ -282,7 +282,7 @@ CreateUSC.prototype['k8s-namespace'] = undefined;
 CreateUSC.prototype['name'] = undefined;
 
 /**
- * The organization name to create the secret in (only relevant for: github-scope=organization)
+ * The organization name to create the secret in
  * @member {String} organization-name
  */
 CreateUSC.prototype['organization-name'] = undefined;

@@ -21,13 +21,14 @@ import ItemTargetAssociation from './ItemTargetAssociation';
 import ItemUSCSyncAssociation from './ItemUSCSyncAssociation';
 import ItemVersion from './ItemVersion';
 import LinkedDetails from './LinkedDetails';
+import LockingInfo from './LockingInfo';
 import RuleAssigner from './RuleAssigner';
 import TargetItemVersion from './TargetItemVersion';
 
 /**
  * The Item model module.
  * @module model/Item
- * @version 5.0.22
+ * @version 5.0.23
  */
 class Item {
     /**
@@ -156,6 +157,9 @@ class Item {
             }
             if (data.hasOwnProperty('linked_details')) {
                 obj['linked_details'] = LinkedDetails.constructFromObject(data['linked_details']);
+            }
+            if (data.hasOwnProperty('locking_info')) {
+                obj['locking_info'] = LockingInfo.constructFromObject(data['locking_info']);
             }
             if (data.hasOwnProperty('modification_date')) {
                 obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
@@ -304,6 +308,10 @@ class Item {
         // validate the optional field `linked_details`
         if (data['linked_details']) { // data not null
           LinkedDetails.validateJSON(data['linked_details']);
+        }
+        // validate the optional field `locking_info`
+        if (data['locking_info']) { // data not null
+          LockingInfo.validateJSON(data['locking_info']);
         }
         // ensure the json data is a string
         if (data['protection_key_name'] && !(typeof data['protection_key_name'] === 'string' || data['protection_key_name'] instanceof String)) {
@@ -515,6 +523,11 @@ Item.prototype['last_version'] = undefined;
  * @member {module:model/LinkedDetails} linked_details
  */
 Item.prototype['linked_details'] = undefined;
+
+/**
+ * @member {module:model/LockingInfo} locking_info
+ */
+Item.prototype['locking_info'] = undefined;
 
 /**
  * @member {Date} modification_date

@@ -17,7 +17,7 @@ import GithubMetadata from './GithubMetadata';
 /**
  * The SecretInfo model module.
  * @module model/SecretInfo
- * @version 5.0.22
+ * @version 5.0.23
  */
 class SecretInfo {
     /**
@@ -72,6 +72,9 @@ class SecretInfo {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('namespace')) {
+                obj['namespace'] = ApiClient.convertToType(data['namespace'], 'String');
+            }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
@@ -118,6 +121,10 @@ class SecretInfo {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['namespace'] && !(typeof data['namespace'] === 'string' || data['namespace'] instanceof String)) {
+            throw new Error("Expected the field `namespace` to be a primitive type in the JSON string but got " + data['namespace']);
         }
         // ensure the json data is a string
         if (data['region'] && !(typeof data['region'] === 'string' || data['region'] instanceof String)) {
@@ -183,6 +190,11 @@ SecretInfo.prototype['location'] = undefined;
  * @member {String} name
  */
 SecretInfo.prototype['name'] = undefined;
+
+/**
+ * @member {String} namespace
+ */
+SecretInfo.prototype['namespace'] = undefined;
 
 /**
  * @member {String} region

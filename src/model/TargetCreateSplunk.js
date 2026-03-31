@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateSplunk model module.
  * @module model/TargetCreateSplunk
- * @version 5.0.22
+ * @version 5.0.23
  */
 class TargetCreateSplunk {
     /**
@@ -75,6 +75,9 @@ class TargetCreateSplunk {
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
+            if (data.hasOwnProperty('splunk-token')) {
+                obj['splunk-token'] = ApiClient.convertToType(data['splunk-token'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -132,6 +135,10 @@ class TargetCreateSplunk {
         // ensure the json data is a string
         if (data['password'] && !(typeof data['password'] === 'string' || data['password'] instanceof String)) {
             throw new Error("Expected the field `password` to be a primitive type in the JSON string but got " + data['password']);
+        }
+        // ensure the json data is a string
+        if (data['splunk-token'] && !(typeof data['splunk-token'] === 'string' || data['splunk-token'] instanceof String)) {
+            throw new Error("Expected the field `splunk-token` to be a primitive type in the JSON string but got " + data['splunk-token']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -207,6 +214,12 @@ TargetCreateSplunk.prototype['password'] = undefined;
 
 /**
  * Splunk Token (used when authenticating with token)
+ * @member {String} splunk-token
+ */
+TargetCreateSplunk.prototype['splunk-token'] = undefined;
+
+/**
+ * Authentication token (see `/auth` and `/configure`)
  * @member {String} token
  */
 TargetCreateSplunk.prototype['token'] = undefined;

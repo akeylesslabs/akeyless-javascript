@@ -16,18 +16,19 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateLetsEncrypt model module.
  * @module model/TargetCreateLetsEncrypt
- * @version 5.0.22
+ * @version 5.0.23
  */
 class TargetCreateLetsEncrypt {
     /**
      * Constructs a new <code>TargetCreateLetsEncrypt</code>.
      * targetCreateLetsEncrypt is a command that creates a new Let&#39;s Encrypt target
      * @alias module:model/TargetCreateLetsEncrypt
+     * @param email {String} Email address for ACME account registration
      * @param name {String} Target name
      */
-    constructor(name) { 
+    constructor(email, name) { 
         
-        TargetCreateLetsEncrypt.initialize(this, name);
+        TargetCreateLetsEncrypt.initialize(this, email, name);
     }
 
     /**
@@ -35,8 +36,9 @@ class TargetCreateLetsEncrypt {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name) { 
+    static initialize(obj, email, name) { 
         obj['acme-challenge'] = 'http';
+        obj['email'] = email;
         obj['json'] = false;
         obj['lets-encrypt-url'] = 'production';
         obj['name'] = name;
@@ -178,7 +180,7 @@ class TargetCreateLetsEncrypt {
 
 }
 
-TargetCreateLetsEncrypt.RequiredProperties = ["name"];
+TargetCreateLetsEncrypt.RequiredProperties = ["email", "name"];
 
 /**
  * @member {String} acme-challenge

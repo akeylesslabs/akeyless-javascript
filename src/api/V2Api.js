@@ -609,6 +609,8 @@ import ListSharedItems from '../model/ListSharedItems';
 import ListSraSessionsOutput from '../model/ListSraSessionsOutput';
 import ListTargets from '../model/ListTargets';
 import ListTargetsOutput from '../model/ListTargetsOutput';
+import LockItem from '../model/LockItem';
+import LockTarget from '../model/LockTarget';
 import LogForwardingConfigPart from '../model/LogForwardingConfigPart';
 import MigrationStatusReplyObj from '../model/MigrationStatusReplyObj';
 import MoveObjects from '../model/MoveObjects';
@@ -723,6 +725,7 @@ import TargetCreateArtifactory from '../model/TargetCreateArtifactory';
 import TargetCreateAws from '../model/TargetCreateAws';
 import TargetCreateAzure from '../model/TargetCreateAzure';
 import TargetCreateDB from '../model/TargetCreateDB';
+import TargetCreateDigiCert from '../model/TargetCreateDigiCert';
 import TargetCreateDockerhub from '../model/TargetCreateDockerhub';
 import TargetCreateEks from '../model/TargetCreateEks';
 import TargetCreateGcp from '../model/TargetCreateGcp';
@@ -733,6 +736,7 @@ import TargetCreateGke from '../model/TargetCreateGke';
 import TargetCreateGlobalSign from '../model/TargetCreateGlobalSign';
 import TargetCreateGlobalSignAtlas from '../model/TargetCreateGlobalSignAtlas';
 import TargetCreateGodaddy from '../model/TargetCreateGodaddy';
+import TargetCreateGoogleTrust from '../model/TargetCreateGoogleTrust';
 import TargetCreateHashiVault from '../model/TargetCreateHashiVault';
 import TargetCreateK8s from '../model/TargetCreateK8s';
 import TargetCreateLdap from '../model/TargetCreateLdap';
@@ -757,6 +761,7 @@ import TargetUpdateArtifactory from '../model/TargetUpdateArtifactory';
 import TargetUpdateAws from '../model/TargetUpdateAws';
 import TargetUpdateAzure from '../model/TargetUpdateAzure';
 import TargetUpdateDB from '../model/TargetUpdateDB';
+import TargetUpdateDigiCert from '../model/TargetUpdateDigiCert';
 import TargetUpdateDockerhub from '../model/TargetUpdateDockerhub';
 import TargetUpdateEks from '../model/TargetUpdateEks';
 import TargetUpdateGcp from '../model/TargetUpdateGcp';
@@ -767,6 +772,7 @@ import TargetUpdateGke from '../model/TargetUpdateGke';
 import TargetUpdateGlobalSign from '../model/TargetUpdateGlobalSign';
 import TargetUpdateGlobalSignAtlas from '../model/TargetUpdateGlobalSignAtlas';
 import TargetUpdateGodaddy from '../model/TargetUpdateGodaddy';
+import TargetUpdateGoogleTrust from '../model/TargetUpdateGoogleTrust';
 import TargetUpdateHashiVault from '../model/TargetUpdateHashiVault';
 import TargetUpdateK8s from '../model/TargetUpdateK8s';
 import TargetUpdateLdap from '../model/TargetUpdateLdap';
@@ -794,6 +800,8 @@ import UidRevokeToken from '../model/UidRevokeToken';
 import UidRotateToken from '../model/UidRotateToken';
 import UidRotateTokenOutput from '../model/UidRotateTokenOutput';
 import UniversalIdentityDetails from '../model/UniversalIdentityDetails';
+import UnlockItem from '../model/UnlockItem';
+import UnlockTarget from '../model/UnlockTarget';
 import UnwrapToken from '../model/UnwrapToken';
 import UnwrapTokenOutput from '../model/UnwrapTokenOutput';
 import UpdateAWSTarget from '../model/UpdateAWSTarget';
@@ -920,7 +928,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.22
+* @version 5.0.23
 */
 export default class V2Api {
 
@@ -17389,6 +17397,92 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/LockItem} lockItem 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    lockItemWithHttpInfo(lockItem) {
+      let postBody = lockItem;
+      // verify the required parameter 'lockItem' is set
+      if (lockItem === undefined || lockItem === null) {
+        throw new Error("Missing the required parameter 'lockItem' when calling lockItem");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/lock-item', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/LockItem} lockItem 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    lockItem(lockItem) {
+      return this.lockItemWithHttpInfo(lockItem)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/LockTarget} lockTarget 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    lockTargetWithHttpInfo(lockTarget) {
+      let postBody = lockTarget;
+      // verify the required parameter 'lockTarget' is set
+      if (lockTarget === undefined || lockTarget === null) {
+        throw new Error("Missing the required parameter 'lockTarget' when calling lockTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/lock-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/LockTarget} lockTarget 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    lockTarget(lockTarget) {
+      return this.lockTargetWithHttpInfo(lockTarget)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/MoveObjects} moveObjects 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
@@ -20865,6 +20959,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetCreateDigiCert} targetCreateDigiCert 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateDigiCertWithHttpInfo(targetCreateDigiCert) {
+      let postBody = targetCreateDigiCert;
+      // verify the required parameter 'targetCreateDigiCert' is set
+      if (targetCreateDigiCert === undefined || targetCreateDigiCert === null) {
+        throw new Error("Missing the required parameter 'targetCreateDigiCert' when calling targetCreateDigiCert");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-digicert', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateDigiCert} targetCreateDigiCert 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateDigiCert(targetCreateDigiCert) {
+      return this.targetCreateDigiCertWithHttpInfo(targetCreateDigiCert)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetCreateDockerhub} targetCreateDockerhub 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
      */
@@ -21288,6 +21425,49 @@ export default class V2Api {
      */
     targetCreateGodaddy(targetCreateGodaddy) {
       return this.targetCreateGodaddyWithHttpInfo(targetCreateGodaddy)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateGoogleTrust} targetCreateGoogleTrust 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateGoogleTrustWithHttpInfo(targetCreateGoogleTrust) {
+      let postBody = targetCreateGoogleTrust;
+      // verify the required parameter 'targetCreateGoogleTrust' is set
+      if (targetCreateGoogleTrust === undefined || targetCreateGoogleTrust === null) {
+        throw new Error("Missing the required parameter 'targetCreateGoogleTrust' when calling targetCreateGoogleTrust");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-google-trust', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateGoogleTrust} targetCreateGoogleTrust 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateGoogleTrust(targetCreateGoogleTrust) {
+      return this.targetCreateGoogleTrustWithHttpInfo(targetCreateGoogleTrust)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -22284,6 +22464,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetUpdateDigiCert} targetUpdateDigiCert 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateDigiCertWithHttpInfo(targetUpdateDigiCert) {
+      let postBody = targetUpdateDigiCert;
+      // verify the required parameter 'targetUpdateDigiCert' is set
+      if (targetUpdateDigiCert === undefined || targetUpdateDigiCert === null) {
+        throw new Error("Missing the required parameter 'targetUpdateDigiCert' when calling targetUpdateDigiCert");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-digicert', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateDigiCert} targetUpdateDigiCert 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateDigiCert(targetUpdateDigiCert) {
+      return this.targetUpdateDigiCertWithHttpInfo(targetUpdateDigiCert)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetUpdateDockerhub} targetUpdateDockerhub 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
      */
@@ -22707,6 +22930,49 @@ export default class V2Api {
      */
     targetUpdateGodaddy(targetUpdateGodaddy) {
       return this.targetUpdateGodaddyWithHttpInfo(targetUpdateGodaddy)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateGoogleTrust} targetUpdateGoogleTrust 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateGoogleTrustWithHttpInfo(targetUpdateGoogleTrust) {
+      let postBody = targetUpdateGoogleTrust;
+      // verify the required parameter 'targetUpdateGoogleTrust' is set
+      if (targetUpdateGoogleTrust === undefined || targetUpdateGoogleTrust === null) {
+        throw new Error("Missing the required parameter 'targetUpdateGoogleTrust' when calling targetUpdateGoogleTrust");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-google-trust', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateGoogleTrust} targetUpdateGoogleTrust 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateGoogleTrust(targetUpdateGoogleTrust) {
+      return this.targetUpdateGoogleTrustWithHttpInfo(targetUpdateGoogleTrust)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -23610,6 +23876,92 @@ export default class V2Api {
      */
     uidRotateToken(uidRotateToken) {
       return this.uidRotateTokenWithHttpInfo(uidRotateToken)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UnlockItem} unlockItem 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    unlockItemWithHttpInfo(unlockItem) {
+      let postBody = unlockItem;
+      // verify the required parameter 'unlockItem' is set
+      if (unlockItem === undefined || unlockItem === null) {
+        throw new Error("Missing the required parameter 'unlockItem' when calling unlockItem");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/unlock-item', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UnlockItem} unlockItem 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    unlockItem(unlockItem) {
+      return this.unlockItemWithHttpInfo(unlockItem)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UnlockTarget} unlockTarget 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    unlockTargetWithHttpInfo(unlockTarget) {
+      let postBody = unlockTarget;
+      // verify the required parameter 'unlockTarget' is set
+      if (unlockTarget === undefined || unlockTarget === null) {
+        throw new Error("Missing the required parameter 'unlockTarget' when calling unlockTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/unlock-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UnlockTarget} unlockTarget 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    unlockTarget(unlockTarget) {
+      return this.unlockTargetWithHttpInfo(unlockTarget)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

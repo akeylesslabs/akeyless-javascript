@@ -387,6 +387,8 @@ Method | HTTP request | Description
 [**listSRASessions**](V2Api.md#listSRASessions) | **POST** /list-sra-sessions | 
 [**listSharedItems**](V2Api.md#listSharedItems) | **POST** /list-shared-items | 
 [**listTargets**](V2Api.md#listTargets) | **POST** /list-targets | 
+[**lockItem**](V2Api.md#lockItem) | **POST** /lock-item | 
+[**lockTarget**](V2Api.md#lockTarget) | **POST** /lock-target | 
 [**moveObjects**](V2Api.md#moveObjects) | **POST** /move-objects | 
 [**policiesDelete**](V2Api.md#policiesDelete) | **POST** /policy-delete | 
 [**policiesGet**](V2Api.md#policiesGet) | **POST** /policy-get | 
@@ -468,6 +470,7 @@ Method | HTTP request | Description
 [**targetCreateAws**](V2Api.md#targetCreateAws) | **POST** /target-create-aws | 
 [**targetCreateAzure**](V2Api.md#targetCreateAzure) | **POST** /target-create-azure | 
 [**targetCreateDB**](V2Api.md#targetCreateDB) | **POST** /target-create-db | 
+[**targetCreateDigiCert**](V2Api.md#targetCreateDigiCert) | **POST** /target-create-digicert | 
 [**targetCreateDockerhub**](V2Api.md#targetCreateDockerhub) | **POST** /target-create-dockerhub | 
 [**targetCreateEks**](V2Api.md#targetCreateEks) | **POST** /target-create-eks | 
 [**targetCreateGcp**](V2Api.md#targetCreateGcp) | **POST** /target-create-gcp | 
@@ -478,6 +481,7 @@ Method | HTTP request | Description
 [**targetCreateGlobalSign**](V2Api.md#targetCreateGlobalSign) | **POST** /target-create-globalsign | 
 [**targetCreateGlobalSignAtlas**](V2Api.md#targetCreateGlobalSignAtlas) | **POST** /target-create-globalsign-atlas | 
 [**targetCreateGodaddy**](V2Api.md#targetCreateGodaddy) | **POST** /target-create-godaddy | 
+[**targetCreateGoogleTrust**](V2Api.md#targetCreateGoogleTrust) | **POST** /target-create-google-trust | 
 [**targetCreateHashiVault**](V2Api.md#targetCreateHashiVault) | **POST** /target-create-hashi-vault | 
 [**targetCreateK8s**](V2Api.md#targetCreateK8s) | **POST** /target-create-k8s | 
 [**targetCreateLdap**](V2Api.md#targetCreateLdap) | **POST** /target-create-ldap | 
@@ -501,6 +505,7 @@ Method | HTTP request | Description
 [**targetUpdateAws**](V2Api.md#targetUpdateAws) | **POST** /target-update-aws | 
 [**targetUpdateAzure**](V2Api.md#targetUpdateAzure) | **POST** /target-update-azure | 
 [**targetUpdateDB**](V2Api.md#targetUpdateDB) | **POST** /target-update-db | 
+[**targetUpdateDigiCert**](V2Api.md#targetUpdateDigiCert) | **POST** /target-update-digicert | 
 [**targetUpdateDockerhub**](V2Api.md#targetUpdateDockerhub) | **POST** /target-update-dockerhub | 
 [**targetUpdateEks**](V2Api.md#targetUpdateEks) | **POST** /target-update-eks | 
 [**targetUpdateGcp**](V2Api.md#targetUpdateGcp) | **POST** /target-update-gcp | 
@@ -511,6 +516,7 @@ Method | HTTP request | Description
 [**targetUpdateGlobalSign**](V2Api.md#targetUpdateGlobalSign) | **POST** /target-update-globalsign | 
 [**targetUpdateGlobalSignAtlas**](V2Api.md#targetUpdateGlobalSignAtlas) | **POST** /target-update-globalsign-atlas | 
 [**targetUpdateGodaddy**](V2Api.md#targetUpdateGodaddy) | **POST** /target-update-godaddy | 
+[**targetUpdateGoogleTrust**](V2Api.md#targetUpdateGoogleTrust) | **POST** /target-update-google-trust | 
 [**targetUpdateHashiVault**](V2Api.md#targetUpdateHashiVault) | **POST** /target-update-hashi-vault | 
 [**targetUpdateK8s**](V2Api.md#targetUpdateK8s) | **POST** /target-update-k8s | 
 [**targetUpdateLdap**](V2Api.md#targetUpdateLdap) | **POST** /target-update-ldap | 
@@ -532,6 +538,8 @@ Method | HTTP request | Description
 [**uidListChildren**](V2Api.md#uidListChildren) | **POST** /uid-list-children | 
 [**uidRevokeToken**](V2Api.md#uidRevokeToken) | **POST** /uid-revoke-token | 
 [**uidRotateToken**](V2Api.md#uidRotateToken) | **POST** /uid-rotate-token | 
+[**unlockItem**](V2Api.md#unlockItem) | **POST** /unlock-item | 
+[**unlockTarget**](V2Api.md#unlockTarget) | **POST** /unlock-target | 
 [**unwrapToken**](V2Api.md#unwrapToken) | **POST** /unwrap-token | 
 [**updateAWSTarget**](V2Api.md#updateAWSTarget) | **POST** /update-aws-target | 
 [**updateAWSTargetDetails**](V2Api.md#updateAWSTargetDetails) | **POST** /update-aws-target-details | 
@@ -16727,6 +16735,90 @@ No authorization required
 - **Accept**: application/json
 
 
+## lockItem
+
+> Object lockItem(lockItem)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let lockItem = new akeyless.LockItem(); // LockItem | 
+apiInstance.lockItem(lockItem).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **lockItem** | [**LockItem**](LockItem.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## lockTarget
+
+> Object lockTarget(lockTarget)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let lockTarget = new akeyless.LockTarget(); // LockTarget | 
+apiInstance.lockTarget(lockTarget).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **lockTarget** | [**LockTarget**](LockTarget.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## moveObjects
 
 > Object moveObjects(moveObjects)
@@ -20127,6 +20219,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetCreateDigiCert
+
+> TargetCreateOutput targetCreateDigiCert(targetCreateDigiCert)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateDigiCert = new akeyless.TargetCreateDigiCert(); // TargetCreateDigiCert | 
+apiInstance.targetCreateDigiCert(targetCreateDigiCert).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateDigiCert** | [**TargetCreateDigiCert**](TargetCreateDigiCert.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetCreateDockerhub
 
 > TargetCreateOutput targetCreateDockerhub(targetCreateDockerhub)
@@ -20532,6 +20666,48 @@ apiInstance.targetCreateGodaddy(targetCreateGodaddy).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetCreateGodaddy** | [**TargetCreateGodaddy**](TargetCreateGodaddy.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetCreateGoogleTrust
+
+> TargetCreateOutput targetCreateGoogleTrust(targetCreateGoogleTrust)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateGoogleTrust = new akeyless.TargetCreateGoogleTrust(); // TargetCreateGoogleTrust | 
+apiInstance.targetCreateGoogleTrust(targetCreateGoogleTrust).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateGoogleTrust** | [**TargetCreateGoogleTrust**](TargetCreateGoogleTrust.md)|  | 
 
 ### Return type
 
@@ -21513,6 +21689,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetUpdateDigiCert
+
+> TargetUpdateOutput targetUpdateDigiCert(targetUpdateDigiCert)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateDigiCert = new akeyless.TargetUpdateDigiCert(); // TargetUpdateDigiCert | 
+apiInstance.targetUpdateDigiCert(targetUpdateDigiCert).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateDigiCert** | [**TargetUpdateDigiCert**](TargetUpdateDigiCert.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetUpdateDockerhub
 
 > TargetUpdateOutput targetUpdateDockerhub(targetUpdateDockerhub)
@@ -21918,6 +22136,48 @@ apiInstance.targetUpdateGodaddy(targetUpdateGodaddy).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetUpdateGodaddy** | [**TargetUpdateGodaddy**](TargetUpdateGodaddy.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetUpdateGoogleTrust
+
+> TargetUpdateOutput targetUpdateGoogleTrust(targetUpdateGoogleTrust)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateGoogleTrust = new akeyless.TargetUpdateGoogleTrust(); // TargetUpdateGoogleTrust | 
+apiInstance.targetUpdateGoogleTrust(targetUpdateGoogleTrust).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateGoogleTrust** | [**TargetUpdateGoogleTrust**](TargetUpdateGoogleTrust.md)|  | 
 
 ### Return type
 
@@ -22804,6 +23064,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UidRotateTokenOutput**](UidRotateTokenOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## unlockItem
+
+> Object unlockItem(unlockItem)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let unlockItem = new akeyless.UnlockItem(); // UnlockItem | 
+apiInstance.unlockItem(unlockItem).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unlockItem** | [**UnlockItem**](UnlockItem.md)|  | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## unlockTarget
+
+> Object unlockTarget(unlockTarget)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let unlockTarget = new akeyless.UnlockTarget(); // UnlockTarget | 
+apiInstance.unlockTarget(unlockTarget).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unlockTarget** | [**UnlockTarget**](UnlockTarget.md)|  | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 

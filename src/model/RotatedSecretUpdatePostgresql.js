@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdatePostgresql model module.
  * @module model/RotatedSecretUpdatePostgresql
- * @version 5.0.22
+ * @version 5.0.23
  */
 class RotatedSecretUpdatePostgresql {
     /**
@@ -39,7 +39,6 @@ class RotatedSecretUpdatePostgresql {
         obj['description'] = 'default_metadata';
         obj['json'] = false;
         obj['name'] = name;
-        obj['rotate-after-disconnect'] = 'false';
         obj['secure-access-web'] = false;
     }
 
@@ -80,6 +79,9 @@ class RotatedSecretUpdatePostgresql {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('lock-during-sra-session')) {
+                obj['lock-during-sra-session'] = ApiClient.convertToType(data['lock-during-sra-session'], 'String');
             }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
@@ -184,6 +186,10 @@ class RotatedSecretUpdatePostgresql {
         // ensure the json data is a string
         if (data['key'] && !(typeof data['key'] === 'string' || data['key'] instanceof String)) {
             throw new Error("Expected the field `key` to be a primitive type in the JSON string but got " + data['key']);
+        }
+        // ensure the json data is a string
+        if (data['lock-during-sra-session'] && !(typeof data['lock-during-sra-session'] === 'string' || data['lock-during-sra-session'] instanceof String)) {
+            throw new Error("Expected the field `lock-during-sra-session` to be a primitive type in the JSON string but got " + data['lock-during-sra-session']);
         }
         // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
@@ -324,6 +330,12 @@ RotatedSecretUpdatePostgresql.prototype['keep-prev-version'] = undefined;
 RotatedSecretUpdatePostgresql.prototype['key'] = undefined;
 
 /**
+ * Lock this secret for read/update while an SRA session is active
+ * @member {String} lock-during-sra-session
+ */
+RotatedSecretUpdatePostgresql.prototype['lock-during-sra-session'] = undefined;
+
+/**
  * Set the maximum number of versions, limited by the account settings defaults.
  * @member {String} max-versions
  */
@@ -354,11 +366,10 @@ RotatedSecretUpdatePostgresql.prototype['password-length'] = undefined;
 RotatedSecretUpdatePostgresql.prototype['rm-tag'] = undefined;
 
 /**
- * Rotate the value of the secret after SRA session ends [true/false]
+ * StringOrBool accepts JSON strings, booleans, and numbers for backward compatibility with older SDK versions that send boolean values for rotate-after-disconnect.
  * @member {String} rotate-after-disconnect
- * @default 'false'
  */
-RotatedSecretUpdatePostgresql.prototype['rotate-after-disconnect'] = 'false';
+RotatedSecretUpdatePostgresql.prototype['rotate-after-disconnect'] = undefined;
 
 /**
  * rotated-username password (relevant only for rotator-type=password)

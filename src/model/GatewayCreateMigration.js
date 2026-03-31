@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateMigration model module.
  * @module model/GatewayCreateMigration
- * @version 5.0.22
+ * @version 5.0.23
  */
 class GatewayCreateMigration {
     /**
@@ -184,6 +184,9 @@ class GatewayCreateMigration {
             if (data.hasOwnProperty('conjur-username')) {
                 obj['conjur-username'] = ApiClient.convertToType(data['conjur-username'], 'String');
             }
+            if (data.hasOwnProperty('delete-remote')) {
+                obj['delete-remote'] = ApiClient.convertToType(data['delete-remote'], 'Boolean');
+            }
             if (data.hasOwnProperty('expiration-event-in')) {
                 obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
             }
@@ -282,6 +285,9 @@ class GatewayCreateMigration {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('usc-name')) {
+                obj['usc-name'] = ApiClient.convertToType(data['usc-name'], 'String');
             }
             if (data.hasOwnProperty('use-gw-cloud-identity')) {
                 obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
@@ -562,6 +568,10 @@ class GatewayCreateMigration {
         if (data['uid-token'] && !(typeof data['uid-token'] === 'string' || data['uid-token'] instanceof String)) {
             throw new Error("Expected the field `uid-token` to be a primitive type in the JSON string but got " + data['uid-token']);
         }
+        // ensure the json data is a string
+        if (data['usc-name'] && !(typeof data['usc-name'] === 'string' || data['usc-name'] instanceof String)) {
+            throw new Error("Expected the field `usc-name` to be a primitive type in the JSON string but got " + data['usc-name']);
+        }
 
         return true;
     }
@@ -807,6 +817,12 @@ GatewayCreateMigration.prototype['conjur-url'] = undefined;
 GatewayCreateMigration.prototype['conjur-username'] = undefined;
 
 /**
+ * Delete the secret from the remote target as well, relevant only when usc-name is not empty (relevant only for HasiCorp Vault migration)
+ * @member {Boolean} delete-remote
+ */
+GatewayCreateMigration.prototype['delete-remote'] = undefined;
+
+/**
  * How many days before the expiration of the certificate would you like to be notified.
  * @member {Array.<String>} expiration-event-in
  */
@@ -1007,6 +1023,12 @@ GatewayCreateMigration.prototype['type'] = undefined;
  * @member {String} uid-token
  */
 GatewayCreateMigration.prototype['uid-token'] = undefined;
+
+/**
+ * Universal Secret Connector name
+ * @member {String} usc-name
+ */
+GatewayCreateMigration.prototype['usc-name'] = undefined;
 
 /**
  * Use the GW's Cloud IAM

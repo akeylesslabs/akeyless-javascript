@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateSsh model module.
  * @module model/RotatedSecretUpdateSsh
- * @version 5.0.22
+ * @version 5.0.23
  */
 class RotatedSecretUpdateSsh {
     /**
@@ -40,7 +40,6 @@ class RotatedSecretUpdateSsh {
         obj['description'] = 'default_metadata';
         obj['json'] = false;
         obj['name'] = name;
-        obj['rotate-after-disconnect'] = 'false';
         obj['rotator-type'] = rotatorType;
         obj['secure-access-allow-external-user'] = false;
         obj['secure-access-target-type'] = 'false';
@@ -86,6 +85,9 @@ class RotatedSecretUpdateSsh {
             }
             if (data.hasOwnProperty('key-data-base64')) {
                 obj['key-data-base64'] = ApiClient.convertToType(data['key-data-base64'], 'String');
+            }
+            if (data.hasOwnProperty('lock-during-sra-session')) {
+                obj['lock-during-sra-session'] = ApiClient.convertToType(data['lock-during-sra-session'], 'String');
             }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
@@ -212,6 +214,10 @@ class RotatedSecretUpdateSsh {
         // ensure the json data is a string
         if (data['key-data-base64'] && !(typeof data['key-data-base64'] === 'string' || data['key-data-base64'] instanceof String)) {
             throw new Error("Expected the field `key-data-base64` to be a primitive type in the JSON string but got " + data['key-data-base64']);
+        }
+        // ensure the json data is a string
+        if (data['lock-during-sra-session'] && !(typeof data['lock-during-sra-session'] === 'string' || data['lock-during-sra-session'] instanceof String)) {
+            throw new Error("Expected the field `lock-during-sra-session` to be a primitive type in the JSON string but got " + data['lock-during-sra-session']);
         }
         // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
@@ -382,6 +388,12 @@ RotatedSecretUpdateSsh.prototype['key'] = undefined;
 RotatedSecretUpdateSsh.prototype['key-data-base64'] = undefined;
 
 /**
+ * Lock this secret for read/update while an SRA session is active
+ * @member {String} lock-during-sra-session
+ */
+RotatedSecretUpdateSsh.prototype['lock-during-sra-session'] = undefined;
+
+/**
  * Set the maximum number of versions, limited by the account settings defaults.
  * @member {String} max-versions
  */
@@ -418,11 +430,10 @@ RotatedSecretUpdateSsh.prototype['public-key-remote-path'] = undefined;
 RotatedSecretUpdateSsh.prototype['rm-tag'] = undefined;
 
 /**
- * Rotate the value of the secret after SRA session ends [true/false]
+ * StringOrBool accepts JSON strings, booleans, and numbers for backward compatibility with older SDK versions that send boolean values for rotate-after-disconnect.
  * @member {String} rotate-after-disconnect
- * @default 'false'
  */
-RotatedSecretUpdateSsh.prototype['rotate-after-disconnect'] = 'false';
+RotatedSecretUpdateSsh.prototype['rotate-after-disconnect'] = undefined;
 
 /**
  * rotated-username password (relevant only for rotator-type=password)

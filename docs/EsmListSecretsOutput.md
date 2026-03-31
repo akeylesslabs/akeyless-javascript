@@ -5,5 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **secretsList** | [**[SecretInfo]**](SecretInfo.md) |  | [optional] 
+**warnings** | **[String]** |  | [optional] 
 
 

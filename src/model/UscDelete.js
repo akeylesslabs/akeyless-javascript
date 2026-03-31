@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscDelete model module.
  * @module model/UscDelete
- * @version 5.0.22
+ * @version 5.0.23
  */
 class UscDelete {
     /**
@@ -62,8 +62,14 @@ class UscDelete {
             if (data.hasOwnProperty('namespace')) {
                 obj['namespace'] = ApiClient.convertToType(data['namespace'], 'String');
             }
+            if (data.hasOwnProperty('object-type')) {
+                obj['object-type'] = ApiClient.convertToType(data['object-type'], 'String');
+            }
             if (data.hasOwnProperty('secret-id')) {
                 obj['secret-id'] = ApiClient.convertToType(data['secret-id'], 'String');
+            }
+            if (data.hasOwnProperty('selected-repositories')) {
+                obj['selected-repositories'] = ApiClient.convertToType(data['selected-repositories'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -95,8 +101,16 @@ class UscDelete {
             throw new Error("Expected the field `namespace` to be a primitive type in the JSON string but got " + data['namespace']);
         }
         // ensure the json data is a string
+        if (data['object-type'] && !(typeof data['object-type'] === 'string' || data['object-type'] instanceof String)) {
+            throw new Error("Expected the field `object-type` to be a primitive type in the JSON string but got " + data['object-type']);
+        }
+        // ensure the json data is a string
         if (data['secret-id'] && !(typeof data['secret-id'] === 'string' || data['secret-id'] instanceof String)) {
             throw new Error("Expected the field `secret-id` to be a primitive type in the JSON string but got " + data['secret-id']);
+        }
+        // ensure the json data is a string
+        if (data['selected-repositories'] && !(typeof data['selected-repositories'] === 'string' || data['selected-repositories'] instanceof String)) {
+            throw new Error("Expected the field `selected-repositories` to be a primitive type in the JSON string but got " + data['selected-repositories']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -139,10 +153,21 @@ UscDelete.prototype['json'] = false;
 UscDelete.prototype['namespace'] = undefined;
 
 /**
+ * @member {String} object-type
+ */
+UscDelete.prototype['object-type'] = undefined;
+
+/**
  * The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to delete
  * @member {String} secret-id
  */
 UscDelete.prototype['secret-id'] = undefined;
+
+/**
+ * GitHub selected repositories. For repository scope: repo name. For repository-environment scope: repo/env (format: repo-name/env-name). Required when multiple repos/envs configured.
+ * @member {String} selected-repositories
+ */
+UscDelete.prototype['selected-repositories'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

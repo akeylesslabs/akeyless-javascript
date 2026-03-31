@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribePermissions model module.
  * @module model/DescribePermissions
- * @version 5.0.22
+ * @version 5.0.23
  */
 class DescribePermissions {
     /**
@@ -24,7 +24,7 @@ class DescribePermissions {
      * describePermissions is a command that shows which permissions your have to a particular path.
      * @alias module:model/DescribePermissions
      * @param path {String} Path to an object
-     * @param type {String} Type of object (item, am, role, target)
+     * @param type {String} Type of object (item, am, role, target, sra, ara)
      */
     constructor(path, type) { 
         
@@ -129,7 +129,7 @@ DescribePermissions.prototype['path'] = undefined;
 DescribePermissions.prototype['token'] = undefined;
 
 /**
- * Type of object (item, am, role, target)
+ * Type of object (item, am, role, target, sra, ara)
  * @member {String} type
  */
 DescribePermissions.prototype['type'] = undefined;

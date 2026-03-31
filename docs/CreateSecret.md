@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **injectUrl** | **[String]** | For Password Management use, reflect the website context | [optional] 
 **itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
+**lockDuringSraSession** | **String** | Lock this secret for read/update while an SRA session is active | [optional] 
 **maxVersions** | **String** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **metadata** | **String** | Deprecated - use description | [optional] 
 **multilineValue** | **Boolean** | The provided value is a multiline value (separated by &#39;\\n&#39;) | [optional] 

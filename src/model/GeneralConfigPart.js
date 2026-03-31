@@ -17,7 +17,7 @@ import CertificateExpirationEvent from './CertificateExpirationEvent';
 /**
  * The GeneralConfigPart model module.
  * @module model/GeneralConfigPart
- * @version 5.0.22
+ * @version 5.0.23
  */
 class GeneralConfigPart {
     /**
@@ -57,6 +57,9 @@ class GeneralConfigPart {
             if (data.hasOwnProperty('display_name')) {
                 obj['display_name'] = ApiClient.convertToType(data['display_name'], 'String');
             }
+            if (data.hasOwnProperty('enable_json_body_limit')) {
+                obj['enable_json_body_limit'] = ApiClient.convertToType(data['enable_json_body_limit'], 'Boolean');
+            }
             if (data.hasOwnProperty('enable_sni_proxy')) {
                 obj['enable_sni_proxy'] = ApiClient.convertToType(data['enable_sni_proxy'], 'Boolean');
             }
@@ -77,6 +80,9 @@ class GeneralConfigPart {
             }
             if (data.hasOwnProperty('hvp_route_version')) {
                 obj['hvp_route_version'] = ApiClient.convertToType(data['hvp_route_version'], 'Number');
+            }
+            if (data.hasOwnProperty('json_body_limit_mb')) {
+                obj['json_body_limit_mb'] = ApiClient.convertToType(data['json_body_limit_mb'], 'Number');
             }
             if (data.hasOwnProperty('notify_on_status_change')) {
                 obj['notify_on_status_change'] = ApiClient.convertToType(data['notify_on_status_change'], 'Boolean');
@@ -177,6 +183,11 @@ GeneralConfigPart.prototype['api_token_ttl'] = undefined;
 GeneralConfigPart.prototype['display_name'] = undefined;
 
 /**
+ * @member {Boolean} enable_json_body_limit
+ */
+GeneralConfigPart.prototype['enable_json_body_limit'] = undefined;
+
+/**
  * @member {Boolean} enable_sni_proxy
  */
 GeneralConfigPart.prototype['enable_sni_proxy'] = undefined;
@@ -210,6 +221,11 @@ GeneralConfigPart.prototype['gw_cluster_url'] = undefined;
  * @member {Number} hvp_route_version
  */
 GeneralConfigPart.prototype['hvp_route_version'] = undefined;
+
+/**
+ * @member {Number} json_body_limit_mb
+ */
+GeneralConfigPart.prototype['json_body_limit_mb'] = undefined;
 
 /**
  * @member {Boolean} notify_on_status_change

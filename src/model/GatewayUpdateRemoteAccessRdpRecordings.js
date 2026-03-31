@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateRemoteAccessRdpRecordings model module.
  * @module model/GatewayUpdateRemoteAccessRdpRecordings
- * @version 5.0.22
+ * @version 5.0.23
  */
 class GatewayUpdateRemoteAccessRdpRecordings {
     /**
@@ -57,6 +57,9 @@ class GatewayUpdateRemoteAccessRdpRecordings {
             }
             if (data.hasOwnProperty('aws-storage-bucket-prefix')) {
                 obj['aws-storage-bucket-prefix'] = ApiClient.convertToType(data['aws-storage-bucket-prefix'], 'String');
+            }
+            if (data.hasOwnProperty('aws-storage-endpoint-url')) {
+                obj['aws-storage-endpoint-url'] = ApiClient.convertToType(data['aws-storage-endpoint-url'], 'String');
             }
             if (data.hasOwnProperty('aws-storage-region')) {
                 obj['aws-storage-region'] = ApiClient.convertToType(data['aws-storage-region'], 'String');
@@ -124,6 +127,10 @@ class GatewayUpdateRemoteAccessRdpRecordings {
         // ensure the json data is a string
         if (data['aws-storage-bucket-prefix'] && !(typeof data['aws-storage-bucket-prefix'] === 'string' || data['aws-storage-bucket-prefix'] instanceof String)) {
             throw new Error("Expected the field `aws-storage-bucket-prefix` to be a primitive type in the JSON string but got " + data['aws-storage-bucket-prefix']);
+        }
+        // ensure the json data is a string
+        if (data['aws-storage-endpoint-url'] && !(typeof data['aws-storage-endpoint-url'] === 'string' || data['aws-storage-endpoint-url'] instanceof String)) {
+            throw new Error("Expected the field `aws-storage-endpoint-url` to be a primitive type in the JSON string but got " + data['aws-storage-endpoint-url']);
         }
         // ensure the json data is a string
         if (data['aws-storage-region'] && !(typeof data['aws-storage-region'] === 'string' || data['aws-storage-region'] instanceof String)) {
@@ -203,6 +210,12 @@ GatewayUpdateRemoteAccessRdpRecordings.prototype['aws-storage-bucket-name'] = un
  * @member {String} aws-storage-bucket-prefix
  */
 GatewayUpdateRemoteAccessRdpRecordings.prototype['aws-storage-bucket-prefix'] = undefined;
+
+/**
+ * Custom AWS endpoint URL for S3-compatible storage (e.g. a private AWS endpoint)
+ * @member {String} aws-storage-endpoint-url
+ */
+GatewayUpdateRemoteAccessRdpRecordings.prototype['aws-storage-endpoint-url'] = undefined;
 
 /**
  * The region where the storage is located

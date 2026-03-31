@@ -296,6 +296,7 @@ docs/DescribeSubClaimsOutput.md
 docs/DesktopAppConf.md
 docs/Detokenize.md
 docs/DetokenizeOutput.md
+docs/DigiCertTargetDetails.md
 docs/DockerhubTargetDetails.md
 docs/DynamicSecretCreateArtifactory.md
 docs/DynamicSecretCreateAws.md
@@ -656,6 +657,7 @@ docs/GlobalSignAtlasTargetDetails.md
 docs/GlobalSignGCCTargetDetails.md
 docs/GodaddyTargetDetails.md
 docs/GoogleChronicleForwardingConfig.md
+docs/GoogleTrustTargetDetails.md
 docs/Group.md
 docs/GwClusterIdentity.md
 docs/GwUpdateRemoteAccessSessionLogsAwsS3.md
@@ -683,6 +685,7 @@ docs/IssuerOverviewInfo.md
 docs/Item.md
 docs/ItemCustomFieldsDetails.md
 docs/ItemGeneralInfo.md
+docs/ItemLockingSetting.md
 docs/ItemSraStatus.md
 docs/ItemTargetAssociation.md
 docs/ItemUSCSyncAssociation.md
@@ -759,6 +762,9 @@ docs/ListSharedItems.md
 docs/ListSraSessionsOutput.md
 docs/ListTargets.md
 docs/ListTargetsOutput.md
+docs/LockItem.md
+docs/LockTarget.md
+docs/LockingInfo.md
 docs/LogForwardingConfigPart.md
 docs/LogstashLogForwardingConfig.md
 docs/LogzIoLogForwardingConfig.md
@@ -774,6 +780,7 @@ docs/MongoDBTargetDetails.md
 docs/MoveObjects.md
 docs/Name.md
 docs/NativeK8sTargetDetails.md
+docs/NetappStorage.md
 docs/NextAutoRotationEvent.md
 docs/NotiForwarder.md
 docs/NotiForwarderDetailsInput.md
@@ -943,6 +950,7 @@ docs/StaticSecretDeleteSyncOutput.md
 docs/StaticSecretDetailsInfo.md
 docs/StaticSecretSync.md
 docs/SumologicLogForwardingConfig.md
+docs/SyncCounters.md
 docs/SyslogLogForwardingConfig.md
 docs/SystemAccessCredentialsReplyObj.md
 docs/SystemAccessCredsSettings.md
@@ -951,6 +959,7 @@ docs/TargetCreateArtifactory.md
 docs/TargetCreateAws.md
 docs/TargetCreateAzure.md
 docs/TargetCreateDB.md
+docs/TargetCreateDigiCert.md
 docs/TargetCreateDockerhub.md
 docs/TargetCreateEks.md
 docs/TargetCreateGcp.md
@@ -961,6 +970,7 @@ docs/TargetCreateGke.md
 docs/TargetCreateGlobalSign.md
 docs/TargetCreateGlobalSignAtlas.md
 docs/TargetCreateGodaddy.md
+docs/TargetCreateGoogleTrust.md
 docs/TargetCreateHashiVault.md
 docs/TargetCreateK8s.md
 docs/TargetCreateLdap.md
@@ -990,6 +1000,7 @@ docs/TargetUpdateArtifactory.md
 docs/TargetUpdateAws.md
 docs/TargetUpdateAzure.md
 docs/TargetUpdateDB.md
+docs/TargetUpdateDigiCert.md
 docs/TargetUpdateDockerhub.md
 docs/TargetUpdateEks.md
 docs/TargetUpdateGcp.md
@@ -1000,6 +1011,7 @@ docs/TargetUpdateGke.md
 docs/TargetUpdateGlobalSign.md
 docs/TargetUpdateGlobalSignAtlas.md
 docs/TargetUpdateGodaddy.md
+docs/TargetUpdateGoogleTrust.md
 docs/TargetUpdateHashiVault.md
 docs/TargetUpdateK8s.md
 docs/TargetUpdateLdap.md
@@ -1032,6 +1044,8 @@ docs/UidRotateTokenOutput.md
 docs/Unconfigure.md
 docs/UniversalIdentityAccessRules.md
 docs/UniversalIdentityDetails.md
+docs/UnlockItem.md
+docs/UnlockTarget.md
 docs/UnwrapToken.md
 docs/UnwrapTokenOutput.md
 docs/Update.md
@@ -1475,6 +1489,7 @@ src/model/DescribeSubClaimsOutput.js
 src/model/DesktopAppConf.js
 src/model/Detokenize.js
 src/model/DetokenizeOutput.js
+src/model/DigiCertTargetDetails.js
 src/model/DockerhubTargetDetails.js
 src/model/DynamicSecretCreateArtifactory.js
 src/model/DynamicSecretCreateAws.js
@@ -1835,6 +1850,7 @@ src/model/GlobalSignAtlasTargetDetails.js
 src/model/GlobalSignGCCTargetDetails.js
 src/model/GodaddyTargetDetails.js
 src/model/GoogleChronicleForwardingConfig.js
+src/model/GoogleTrustTargetDetails.js
 src/model/Group.js
 src/model/GwClusterIdentity.js
 src/model/GwUpdateRemoteAccessSessionLogsAwsS3.js
@@ -1862,6 +1878,7 @@ src/model/IssuerOverviewInfo.js
 src/model/Item.js
 src/model/ItemCustomFieldsDetails.js
 src/model/ItemGeneralInfo.js
+src/model/ItemLockingSetting.js
 src/model/ItemSraStatus.js
 src/model/ItemTargetAssociation.js
 src/model/ItemUSCSyncAssociation.js
@@ -1938,6 +1955,9 @@ src/model/ListSharedItems.js
 src/model/ListSraSessionsOutput.js
 src/model/ListTargets.js
 src/model/ListTargetsOutput.js
+src/model/LockItem.js
+src/model/LockTarget.js
+src/model/LockingInfo.js
 src/model/LogForwardingConfigPart.js
 src/model/LogstashLogForwardingConfig.js
 src/model/LogzIoLogForwardingConfig.js
@@ -1953,6 +1973,7 @@ src/model/MongoDBTargetDetails.js
 src/model/MoveObjects.js
 src/model/Name.js
 src/model/NativeK8sTargetDetails.js
+src/model/NetappStorage.js
 src/model/NextAutoRotationEvent.js
 src/model/NotiForwarder.js
 src/model/NotiForwarderDetailsInput.js
@@ -2122,6 +2143,7 @@ src/model/StaticSecretDeleteSyncOutput.js
 src/model/StaticSecretDetailsInfo.js
 src/model/StaticSecretSync.js
 src/model/SumologicLogForwardingConfig.js
+src/model/SyncCounters.js
 src/model/SyslogLogForwardingConfig.js
 src/model/SystemAccessCredentialsReplyObj.js
 src/model/SystemAccessCredsSettings.js
@@ -2130,6 +2152,7 @@ src/model/TargetCreateArtifactory.js
 src/model/TargetCreateAws.js
 src/model/TargetCreateAzure.js
 src/model/TargetCreateDB.js
+src/model/TargetCreateDigiCert.js
 src/model/TargetCreateDockerhub.js
 src/model/TargetCreateEks.js
 src/model/TargetCreateGcp.js
@@ -2140,6 +2163,7 @@ src/model/TargetCreateGke.js
 src/model/TargetCreateGlobalSign.js
 src/model/TargetCreateGlobalSignAtlas.js
 src/model/TargetCreateGodaddy.js
+src/model/TargetCreateGoogleTrust.js
 src/model/TargetCreateHashiVault.js
 src/model/TargetCreateK8s.js
 src/model/TargetCreateLdap.js
@@ -2169,6 +2193,7 @@ src/model/TargetUpdateArtifactory.js
 src/model/TargetUpdateAws.js
 src/model/TargetUpdateAzure.js
 src/model/TargetUpdateDB.js
+src/model/TargetUpdateDigiCert.js
 src/model/TargetUpdateDockerhub.js
 src/model/TargetUpdateEks.js
 src/model/TargetUpdateGcp.js
@@ -2179,6 +2204,7 @@ src/model/TargetUpdateGke.js
 src/model/TargetUpdateGlobalSign.js
 src/model/TargetUpdateGlobalSignAtlas.js
 src/model/TargetUpdateGodaddy.js
+src/model/TargetUpdateGoogleTrust.js
 src/model/TargetUpdateHashiVault.js
 src/model/TargetUpdateK8s.js
 src/model/TargetUpdateLdap.js
@@ -2211,6 +2237,8 @@ src/model/UidRotateTokenOutput.js
 src/model/Unconfigure.js
 src/model/UniversalIdentityAccessRules.js
 src/model/UniversalIdentityDetails.js
+src/model/UnlockItem.js
+src/model/UnlockTarget.js
 src/model/UnwrapToken.js
 src/model/UnwrapTokenOutput.js
 src/model/Update.js
@@ -2353,13 +2381,17 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/ConjurMigration.spec.js
-test/model/ConjurPayload.spec.js
-test/model/DefaultAuthMethodSettings.spec.js
-test/model/GithubMetadata.spec.js
-test/model/HTTPChallengeInfo.spec.js
-test/model/IssuerOverviewInfo.spec.js
-test/model/ValidateCertificateChallenge.spec.js
-test/model/ValidateCertificateChallengeOutput.spec.js
-test/model/VaultAddress.spec.js
-test/model/VaultAddressOutput.spec.js
+test/model/DigiCertTargetDetails.spec.js
+test/model/GoogleTrustTargetDetails.spec.js
+test/model/ItemLockingSetting.spec.js
+test/model/LockItem.spec.js
+test/model/LockTarget.spec.js
+test/model/LockingInfo.spec.js
+test/model/NetappStorage.spec.js
+test/model/SyncCounters.spec.js
+test/model/TargetCreateDigiCert.spec.js
+test/model/TargetCreateGoogleTrust.spec.js
+test/model/TargetUpdateDigiCert.spec.js
+test/model/TargetUpdateGoogleTrust.spec.js
+test/model/UnlockItem.spec.js
+test/model/UnlockTarget.spec.js

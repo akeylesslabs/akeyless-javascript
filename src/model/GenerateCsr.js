@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateCsr model module.
  * @module model/GenerateCsr
- * @version 5.0.22
+ * @version 5.0.23
  */
 class GenerateCsr {
     /**

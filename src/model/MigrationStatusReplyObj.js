@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import MigrationItems from './MigrationItems';
+import SyncCounters from './SyncCounters';
 
 /**
  * The MigrationStatusReplyObj model module.
  * @module model/MigrationStatusReplyObj
- * @version 5.0.22
+ * @version 5.0.23
  */
 class MigrationStatusReplyObj {
     /**
@@ -93,6 +94,9 @@ class MigrationStatusReplyObj {
             if (data.hasOwnProperty('start_time')) {
                 obj['start_time'] = ApiClient.convertToType(data['start_time'], 'String');
             }
+            if (data.hasOwnProperty('sync')) {
+                obj['sync'] = SyncCounters.constructFromObject(data['sync']);
+            }
             if (data.hasOwnProperty('targets')) {
                 obj['targets'] = MigrationItems.constructFromObject(data['targets']);
             }
@@ -153,6 +157,10 @@ class MigrationStatusReplyObj {
         // ensure the json data is a string
         if (data['start_time'] && !(typeof data['start_time'] === 'string' || data['start_time'] instanceof String)) {
             throw new Error("Expected the field `start_time` to be a primitive type in the JSON string but got " + data['start_time']);
+        }
+        // validate the optional field `sync`
+        if (data['sync']) { // data not null
+          SyncCounters.validateJSON(data['sync']);
         }
         // validate the optional field `targets`
         if (data['targets']) { // data not null
@@ -241,6 +249,11 @@ MigrationStatusReplyObj.prototype['rotated_secrets'] = undefined;
  * @member {String} start_time
  */
 MigrationStatusReplyObj.prototype['start_time'] = undefined;
+
+/**
+ * @member {module:model/SyncCounters} sync
+ */
+MigrationStatusReplyObj.prototype['sync'] = undefined;
 
 /**
  * @member {module:model/MigrationItems} targets

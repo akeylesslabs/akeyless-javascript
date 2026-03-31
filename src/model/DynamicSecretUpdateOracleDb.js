@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateOracleDb model module.
  * @module model/DynamicSecretUpdateOracleDb
- * @version 5.0.22
+ * @version 5.0.23
  */
 class DynamicSecretUpdateOracleDb {
     /**

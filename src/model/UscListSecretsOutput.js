@@ -17,7 +17,7 @@ import SecretInfo from './SecretInfo';
 /**
  * The UscListSecretsOutput model module.
  * @module model/UscListSecretsOutput
- * @version 5.0.22
+ * @version 5.0.23
  */
 class UscListSecretsOutput {
     /**
@@ -51,6 +51,9 @@ class UscListSecretsOutput {
             if (data.hasOwnProperty('secrets_list')) {
                 obj['secrets_list'] = ApiClient.convertToType(data['secrets_list'], [SecretInfo]);
             }
+            if (data.hasOwnProperty('warnings')) {
+                obj['warnings'] = ApiClient.convertToType(data['warnings'], ['String']);
+            }
         }
         return obj;
     }
@@ -71,6 +74,10 @@ class UscListSecretsOutput {
                 SecretInfo.validateJSON(item);
             };
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['warnings'])) {
+            throw new Error("Expected the field `warnings` to be an array in the JSON data but got " + data['warnings']);
+        }
 
         return true;
     }
@@ -84,6 +91,11 @@ class UscListSecretsOutput {
  * @member {Array.<module:model/SecretInfo>} secrets_list
  */
 UscListSecretsOutput.prototype['secrets_list'] = undefined;
+
+/**
+ * @member {Array.<String>} warnings
+ */
+UscListSecretsOutput.prototype['warnings'] = undefined;
 
 
 

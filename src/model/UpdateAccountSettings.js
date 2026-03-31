@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 5.0.22
+ * @version 5.0.23
  */
 class UpdateAccountSettings {
     /**
@@ -118,6 +118,9 @@ class UpdateAccountSettings {
             if (data.hasOwnProperty('invalid-characters')) {
                 obj['invalid-characters'] = ApiClient.convertToType(data['invalid-characters'], 'String');
             }
+            if (data.hasOwnProperty('item-locking-enabled')) {
+                obj['item-locking-enabled'] = ApiClient.convertToType(data['item-locking-enabled'], 'String');
+            }
             if (data.hasOwnProperty('item-type')) {
                 obj['item-type'] = ApiClient.convertToType(data['item-type'], 'String');
             }
@@ -147,6 +150,9 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('lock-gw-bound-ips')) {
                 obj['lock-gw-bound-ips'] = ApiClient.convertToType(data['lock-gw-bound-ips'], 'String');
+            }
+            if (data.hasOwnProperty('lock-max-ttl')) {
+                obj['lock-max-ttl'] = ApiClient.convertToType(data['lock-max-ttl'], 'Number');
             }
             if (data.hasOwnProperty('max-rotation-interval')) {
                 obj['max-rotation-interval'] = ApiClient.convertToType(data['max-rotation-interval'], 'Number');
@@ -296,6 +302,10 @@ class UpdateAccountSettings {
         // ensure the json data is a string
         if (data['invalid-characters'] && !(typeof data['invalid-characters'] === 'string' || data['invalid-characters'] instanceof String)) {
             throw new Error("Expected the field `invalid-characters` to be a primitive type in the JSON string but got " + data['invalid-characters']);
+        }
+        // ensure the json data is a string
+        if (data['item-locking-enabled'] && !(typeof data['item-locking-enabled'] === 'string' || data['item-locking-enabled'] instanceof String)) {
+            throw new Error("Expected the field `item-locking-enabled` to be a primitive type in the JSON string but got " + data['item-locking-enabled']);
         }
         // ensure the json data is a string
         if (data['item-type'] && !(typeof data['item-type'] === 'string' || data['item-type'] instanceof String)) {
@@ -526,6 +536,12 @@ UpdateAccountSettings.prototype['hide-static-password'] = undefined;
 UpdateAccountSettings.prototype['invalid-characters'] = 'notReceivedInvalidCharacter';
 
 /**
+ * Enable item locking feature [true/false]
+ * @member {String} item-locking-enabled
+ */
+UpdateAccountSettings.prototype['item-locking-enabled'] = undefined;
+
+/**
  * VersionSettingsObjectType defines object types for account version settings
  * @member {String} item-type
  */
@@ -585,6 +601,12 @@ UpdateAccountSettings.prototype['lock-default-key'] = undefined;
  * @member {String} lock-gw-bound-ips
  */
 UpdateAccountSettings.prototype['lock-gw-bound-ips'] = undefined;
+
+/**
+ * Set the maximum TTL for item/target locks in minutes
+ * @member {Number} lock-max-ttl
+ */
+UpdateAccountSettings.prototype['lock-max-ttl'] = undefined;
 
 /**
  * Set the maximum rotation interval for rotated secrets auto rotation settings

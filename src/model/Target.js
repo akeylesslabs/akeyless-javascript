@@ -13,12 +13,13 @@
 
 import ApiClient from '../ApiClient';
 import ItemVersion from './ItemVersion';
+import LockingInfo from './LockingInfo';
 import TargetItemAssociation from './TargetItemAssociation';
 
 /**
  * The Target model module.
  * @module model/Target
- * @version 5.0.22
+ * @version 5.0.23
  */
 class Target {
     /**
@@ -75,6 +76,9 @@ class Target {
             }
             if (data.hasOwnProperty('last_version')) {
                 obj['last_version'] = ApiClient.convertToType(data['last_version'], 'Number');
+            }
+            if (data.hasOwnProperty('locking_info')) {
+                obj['locking_info'] = LockingInfo.constructFromObject(data['locking_info']);
             }
             if (data.hasOwnProperty('modification_date')) {
                 obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
@@ -134,6 +138,10 @@ class Target {
         // ensure the json data is a string
         if (data['comment'] && !(typeof data['comment'] === 'string' || data['comment'] instanceof String)) {
             throw new Error("Expected the field `comment` to be a primitive type in the JSON string but got " + data['comment']);
+        }
+        // validate the optional field `locking_info`
+        if (data['locking_info']) { // data not null
+          LockingInfo.validateJSON(data['locking_info']);
         }
         // ensure the json data is a string
         if (data['parent_target_name'] && !(typeof data['parent_target_name'] === 'string' || data['parent_target_name'] instanceof String)) {
@@ -233,6 +241,11 @@ Target.prototype['is_access_request_enabled'] = undefined;
  * @member {Number} last_version
  */
 Target.prototype['last_version'] = undefined;
+
+/**
+ * @member {module:model/LockingInfo} locking_info
+ */
+Target.prototype['locking_info'] = undefined;
 
 /**
  * @member {Date} modification_date

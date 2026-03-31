@@ -18,7 +18,7 @@ import TargetNameWithHosts from './TargetNameWithHosts';
 /**
  * The SecureRemoteAccess model module.
  * @module model/SecureRemoteAccess
- * @version 5.0.22
+ * @version 5.0.23
  */
 class SecureRemoteAccess {
     /**
@@ -121,6 +121,9 @@ class SecureRemoteAccess {
             if (data.hasOwnProperty('isolated')) {
                 obj['isolated'] = ApiClient.convertToType(data['isolated'], 'Boolean');
             }
+            if (data.hasOwnProperty('lock_during_sra_session')) {
+                obj['lock_during_sra_session'] = ApiClient.convertToType(data['lock_during_sra_session'], 'Boolean');
+            }
             if (data.hasOwnProperty('native')) {
                 obj['native'] = ApiClient.convertToType(data['native'], 'Boolean');
             }
@@ -135,6 +138,9 @@ class SecureRemoteAccess {
             }
             if (data.hasOwnProperty('rotate_after_disconnect')) {
                 obj['rotate_after_disconnect'] = ApiClient.convertToType(data['rotate_after_disconnect'], 'Boolean');
+            }
+            if (data.hasOwnProperty('rotate_after_disconnect_delay_mins')) {
+                obj['rotate_after_disconnect_delay_mins'] = ApiClient.convertToType(data['rotate_after_disconnect_delay_mins'], 'Number');
             }
             if (data.hasOwnProperty('schema')) {
                 obj['schema'] = ApiClient.convertToType(data['schema'], 'String');
@@ -396,6 +402,11 @@ SecureRemoteAccess.prototype['is_web'] = undefined;
 SecureRemoteAccess.prototype['isolated'] = undefined;
 
 /**
+ * @member {Boolean} lock_during_sra_session
+ */
+SecureRemoteAccess.prototype['lock_during_sra_session'] = undefined;
+
+/**
  * @member {Boolean} native
  */
 SecureRemoteAccess.prototype['native'] = undefined;
@@ -419,6 +430,11 @@ SecureRemoteAccess.prototype['region'] = undefined;
  * @member {Boolean} rotate_after_disconnect
  */
 SecureRemoteAccess.prototype['rotate_after_disconnect'] = undefined;
+
+/**
+ * @member {Number} rotate_after_disconnect_delay_mins
+ */
+SecureRemoteAccess.prototype['rotate_after_disconnect_delay_mins'] = undefined;
 
 /**
  * @member {String} schema

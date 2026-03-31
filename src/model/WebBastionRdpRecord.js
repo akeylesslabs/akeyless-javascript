@@ -14,11 +14,12 @@
 import ApiClient from '../ApiClient';
 import AwsStorage from './AwsStorage';
 import AzureStorage from './AzureStorage';
+import NetappStorage from './NetappStorage';
 
 /**
  * The WebBastionRdpRecord model module.
  * @module model/WebBastionRdpRecord
- * @version 5.0.22
+ * @version 5.0.23
  */
 class WebBastionRdpRecord {
     /**
@@ -61,6 +62,9 @@ class WebBastionRdpRecord {
             if (data.hasOwnProperty('encryption_key')) {
                 obj['encryption_key'] = ApiClient.convertToType(data['encryption_key'], 'String');
             }
+            if (data.hasOwnProperty('netapp')) {
+                obj['netapp'] = NetappStorage.constructFromObject(data['netapp']);
+            }
             if (data.hasOwnProperty('recording_quality')) {
                 obj['recording_quality'] = ApiClient.convertToType(data['recording_quality'], 'String');
             }
@@ -88,6 +92,10 @@ class WebBastionRdpRecord {
         // ensure the json data is a string
         if (data['encryption_key'] && !(typeof data['encryption_key'] === 'string' || data['encryption_key'] instanceof String)) {
             throw new Error("Expected the field `encryption_key` to be a primitive type in the JSON string but got " + data['encryption_key']);
+        }
+        // validate the optional field `netapp`
+        if (data['netapp']) { // data not null
+          NetappStorage.validateJSON(data['netapp']);
         }
         // ensure the json data is a string
         if (data['recording_quality'] && !(typeof data['recording_quality'] === 'string' || data['recording_quality'] instanceof String)) {
@@ -125,6 +133,11 @@ WebBastionRdpRecord.prototype['compress'] = undefined;
  * @member {String} encryption_key
  */
 WebBastionRdpRecord.prototype['encryption_key'] = undefined;
+
+/**
+ * @member {module:model/NetappStorage} netapp
+ */
+WebBastionRdpRecord.prototype['netapp'] = undefined;
 
 /**
  * @member {String} recording_quality
