@@ -695,6 +695,7 @@ import RotatedSecretUpdateSnowflake from '../model/RotatedSecretUpdateSnowflake'
 import RotatedSecretUpdateSplunk from '../model/RotatedSecretUpdateSplunk';
 import RotatedSecretUpdateSsh from '../model/RotatedSecretUpdateSsh';
 import RotatedSecretUpdateWindows from '../model/RotatedSecretUpdateWindows';
+import RuntimeAuthorityCommand from '../model/RuntimeAuthorityCommand';
 import SecretSyncOutput from '../model/SecretSyncOutput';
 import SetItemState from '../model/SetItemState';
 import SetRoleRule from '../model/SetRoleRule';
@@ -928,7 +929,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.23
+* @version 5.0.24
 */
 export default class V2Api {
 
@@ -7345,7 +7346,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = DynamicSecretCreateOutput;
       return this.apiClient.callApi(
-        '/dynamic-secret-create-oracle', 'POST',
+        '/dynamic-secret-create-oracledb', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -7947,7 +7948,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = [TmpUserData];
       return this.apiClient.callApi(
-        '/dynamic-secret-tmp-creds-Get', 'POST',
+        '/dynamic-secret-tmp-creds-get', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -8548,7 +8549,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = DynamicSecretUpdateOutput;
       return this.apiClient.callApi(
-        '/dynamic-secret-update-hana', 'POST',
+        '/dynamic-secret-update-hanadb', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -8677,7 +8678,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = DynamicSecretUpdateOutput;
       return this.apiClient.callApi(
-        '/dynamic-secret-update-mongo', 'POST',
+        '/dynamic-secret-update-mongodb', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -20221,6 +20222,49 @@ export default class V2Api {
      */
     rotatedSecretUpdateWindows(rotatedSecretUpdateWindows) {
       return this.rotatedSecretUpdateWindowsWithHttpInfo(rotatedSecretUpdateWindows)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RuntimeAuthorityCommand} runtimeAuthorityCommand 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    runtimeAuthorityWithHttpInfo(runtimeAuthorityCommand) {
+      let postBody = runtimeAuthorityCommand;
+      // verify the required parameter 'runtimeAuthorityCommand' is set
+      if (runtimeAuthorityCommand === undefined || runtimeAuthorityCommand === null) {
+        throw new Error("Missing the required parameter 'runtimeAuthorityCommand' when calling runtimeAuthority");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/runtime-authority', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RuntimeAuthorityCommand} runtimeAuthorityCommand 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    runtimeAuthority(runtimeAuthorityCommand) {
+      return this.runtimeAuthorityWithHttpInfo(runtimeAuthorityCommand)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

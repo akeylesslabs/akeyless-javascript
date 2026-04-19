@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayMigrationCreateOutput model module.
  * @module model/GatewayMigrationCreateOutput
- * @version 5.0.23
+ * @version 5.0.24
  */
 class GatewayMigrationCreateOutput {
     /**
@@ -47,6 +47,9 @@ class GatewayMigrationCreateOutput {
         if (data) {
             obj = obj || new GatewayMigrationCreateOutput();
 
+            if (data.hasOwnProperty('migration_id')) {
+                obj['migration_id'] = ApiClient.convertToType(data['migration_id'], 'String');
+            }
             if (data.hasOwnProperty('migration_name')) {
                 obj['migration_name'] = ApiClient.convertToType(data['migration_name'], 'String');
             }
@@ -61,6 +64,10 @@ class GatewayMigrationCreateOutput {
      */
     static validateJSON(data) {
         // ensure the json data is a string
+        if (data['migration_id'] && !(typeof data['migration_id'] === 'string' || data['migration_id'] instanceof String)) {
+            throw new Error("Expected the field `migration_id` to be a primitive type in the JSON string but got " + data['migration_id']);
+        }
+        // ensure the json data is a string
         if (data['migration_name'] && !(typeof data['migration_name'] === 'string' || data['migration_name'] instanceof String)) {
             throw new Error("Expected the field `migration_name` to be a primitive type in the JSON string but got " + data['migration_name']);
         }
@@ -72,6 +79,11 @@ class GatewayMigrationCreateOutput {
 }
 
 
+
+/**
+ * @member {String} migration_id
+ */
+GatewayMigrationCreateOutput.prototype['migration_id'] = undefined;
 
 /**
  * @member {String} migration_name

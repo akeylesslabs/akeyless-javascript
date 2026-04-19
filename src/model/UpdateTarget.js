@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateTarget model module.
  * @module model/UpdateTarget
- * @version 5.0.23
+ * @version 5.0.24
  */
 class UpdateTarget {
     /**
@@ -52,6 +52,9 @@ class UpdateTarget {
         if (data) {
             obj = obj || new UpdateTarget();
 
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -93,6 +96,10 @@ class UpdateTarget {
             }
         }
         // ensure the json data is a string
+        if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
+            throw new Error("Expected the field `delete_protection` to be a primitive type in the JSON string but got " + data['delete_protection']);
+        }
+        // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
@@ -128,6 +135,12 @@ class UpdateTarget {
 }
 
 UpdateTarget.RequiredProperties = ["name"];
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+UpdateTarget.prototype['delete_protection'] = undefined;
 
 /**
  * Description of the object

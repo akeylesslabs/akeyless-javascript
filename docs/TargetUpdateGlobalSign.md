@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **contactFirstName** | **String** | First name of the GlobalSign GCC account contact | 
 **contactLastName** | **String** | Last name of the GlobalSign GCC account contact | 
 **contactPhone** | **String** | Telephone of the GlobalSign GCC account contact | 
+**deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **keepPrevVersion** | **String** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 

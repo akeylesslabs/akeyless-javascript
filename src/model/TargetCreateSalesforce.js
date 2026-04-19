@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateSalesforce model module.
  * @module model/TargetCreateSalesforce
- * @version 5.0.23
+ * @version 5.0.24
  */
 class TargetCreateSalesforce {
     /**
@@ -76,6 +76,9 @@ class TargetCreateSalesforce {
             }
             if (data.hasOwnProperty('client-secret')) {
                 obj['client-secret'] = ApiClient.convertToType(data['client-secret'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -149,6 +152,10 @@ class TargetCreateSalesforce {
         // ensure the json data is a string
         if (data['client-secret'] && !(typeof data['client-secret'] === 'string' || data['client-secret'] instanceof String)) {
             throw new Error("Expected the field `client-secret` to be a primitive type in the JSON string but got " + data['client-secret']);
+        }
+        // ensure the json data is a string
+        if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
+            throw new Error("Expected the field `delete_protection` to be a primitive type in the JSON string but got " + data['delete_protection']);
         }
         // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
@@ -234,6 +241,12 @@ TargetCreateSalesforce.prototype['client-id'] = undefined;
  * @member {String} client-secret
  */
 TargetCreateSalesforce.prototype['client-secret'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+TargetCreateSalesforce.prototype['delete_protection'] = undefined;
 
 /**
  * Description of the object

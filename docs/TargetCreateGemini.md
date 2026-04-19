@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **apiKey** | **String** | API key for Gemini | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **geminiUrl** | **String** | Base URL of the Gemini API | [optional] [default to &#39;https://generativelanguage.googleapis.com&#39;]
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]

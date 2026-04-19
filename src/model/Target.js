@@ -19,7 +19,7 @@ import TargetItemAssociation from './TargetItemAssociation';
 /**
  * The Target model module.
  * @module model/Target
- * @version 5.0.23
+ * @version 5.0.24
  */
 class Target {
     /**
@@ -70,6 +70,9 @@ class Target {
             }
             if (data.hasOwnProperty('creation_date')) {
                 obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'Boolean');
             }
             if (data.hasOwnProperty('is_access_request_enabled')) {
                 obj['is_access_request_enabled'] = ApiClient.convertToType(data['is_access_request_enabled'], 'Boolean');
@@ -231,6 +234,11 @@ Target.prototype['comment'] = undefined;
  * @member {Date} creation_date
  */
 Target.prototype['creation_date'] = undefined;
+
+/**
+ * @member {Boolean} delete_protection
+ */
+Target.prototype['delete_protection'] = undefined;
 
 /**
  * @member {Boolean} is_access_request_enabled

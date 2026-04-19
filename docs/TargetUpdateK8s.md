@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **k8sAuthType** | **String** | K8S auth type [token/certificate] | [optional] [default to &#39;token&#39;]

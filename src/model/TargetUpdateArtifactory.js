@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateArtifactory model module.
  * @module model/TargetUpdateArtifactory
- * @version 5.0.23
+ * @version 5.0.24
  */
 class TargetUpdateArtifactory {
     /**
@@ -64,6 +64,9 @@ class TargetUpdateArtifactory {
             }
             if (data.hasOwnProperty('base-url')) {
                 obj['base-url'] = ApiClient.convertToType(data['base-url'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -119,6 +122,10 @@ class TargetUpdateArtifactory {
         // ensure the json data is a string
         if (data['base-url'] && !(typeof data['base-url'] === 'string' || data['base-url'] instanceof String)) {
             throw new Error("Expected the field `base-url` to be a primitive type in the JSON string but got " + data['base-url']);
+        }
+        // ensure the json data is a string
+        if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
+            throw new Error("Expected the field `delete_protection` to be a primitive type in the JSON string but got " + data['delete_protection']);
         }
         // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
@@ -178,6 +185,12 @@ TargetUpdateArtifactory.prototype['artifactory-admin-pwd'] = undefined;
  * @member {String} base-url
  */
 TargetUpdateArtifactory.prototype['base-url'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+TargetUpdateArtifactory.prototype['delete_protection'] = undefined;
 
 /**
  * Description of the object

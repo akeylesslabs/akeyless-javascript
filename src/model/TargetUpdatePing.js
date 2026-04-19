@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdatePing model module.
  * @module model/TargetUpdatePing
- * @version 5.0.23
+ * @version 5.0.24
  */
 class TargetUpdatePing {
     /**
@@ -58,6 +58,9 @@ class TargetUpdatePing {
             }
             if (data.hasOwnProperty('authorization-port')) {
                 obj['authorization-port'] = ApiClient.convertToType(data['authorization-port'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -118,6 +121,10 @@ class TargetUpdatePing {
         // ensure the json data is a string
         if (data['authorization-port'] && !(typeof data['authorization-port'] === 'string' || data['authorization-port'] instanceof String)) {
             throw new Error("Expected the field `authorization-port` to be a primitive type in the JSON string but got " + data['authorization-port']);
+        }
+        // ensure the json data is a string
+        if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
+            throw new Error("Expected the field `delete_protection` to be a primitive type in the JSON string but got " + data['delete_protection']);
         }
         // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
@@ -185,6 +192,12 @@ TargetUpdatePing.prototype['administrative-port'] = '9999';
  * @default '9031'
  */
 TargetUpdatePing.prototype['authorization-port'] = '9031';
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+TargetUpdatePing.prototype['delete_protection'] = undefined;
 
 /**
  * Description of the object

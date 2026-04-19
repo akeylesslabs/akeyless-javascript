@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import AgenticRules from './AgenticRules';
 import CertificateChainInfo from './CertificateChainInfo';
 import CertificateExpirationEvent from './CertificateExpirationEvent';
 import CertificateIssueInfo from './CertificateIssueInfo';
@@ -31,7 +32,7 @@ import TokenizerInfo from './TokenizerInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 5.0.23
+ * @version 5.0.24
  */
 class ItemGeneralInfo {
     /**
@@ -62,6 +63,9 @@ class ItemGeneralInfo {
         if (data) {
             obj = obj || new ItemGeneralInfo();
 
+            if (data.hasOwnProperty('agentic_rules')) {
+                obj['agentic_rules'] = AgenticRules.constructFromObject(data['agentic_rules']);
+            }
             if (data.hasOwnProperty('cert_issue_details')) {
                 obj['cert_issue_details'] = CertificateIssueInfo.constructFromObject(data['cert_issue_details']);
             }
@@ -126,6 +130,10 @@ class ItemGeneralInfo {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ItemGeneralInfo</code>.
      */
     static validateJSON(data) {
+        // validate the optional field `agentic_rules`
+        if (data['agentic_rules']) { // data not null
+          AgenticRules.validateJSON(data['agentic_rules']);
+        }
         // validate the optional field `cert_issue_details`
         if (data['cert_issue_details']) { // data not null
           CertificateIssueInfo.validateJSON(data['cert_issue_details']);
@@ -218,6 +226,11 @@ class ItemGeneralInfo {
 }
 
 
+
+/**
+ * @member {module:model/AgenticRules} agentic_rules
+ */
+ItemGeneralInfo.prototype['agentic_rules'] = undefined;
 
 /**
  * @member {module:model/CertificateIssueInfo} cert_issue_details

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListItems model module.
  * @module model/ListItems
- * @version 5.0.23
+ * @version 5.0.24
  */
 class ListItems {
     /**
@@ -35,6 +35,7 @@ class ListItems {
      */
     static initialize(obj) { 
         obj['accessibility'] = 'regular';
+        obj['ara-only'] = false;
         obj['auto-pagination'] = 'enabled';
         obj['current-folder'] = false;
         obj['json'] = false;
@@ -57,6 +58,9 @@ class ListItems {
             }
             if (data.hasOwnProperty('advanced-filter')) {
                 obj['advanced-filter'] = ApiClient.convertToType(data['advanced-filter'], 'String');
+            }
+            if (data.hasOwnProperty('ara-only')) {
+                obj['ara-only'] = ApiClient.convertToType(data['ara-only'], 'Boolean');
             }
             if (data.hasOwnProperty('auto-pagination')) {
                 obj['auto-pagination'] = ApiClient.convertToType(data['auto-pagination'], 'String');
@@ -175,6 +179,13 @@ ListItems.prototype['accessibility'] = 'regular';
  * @member {String} advanced-filter
  */
 ListItems.prototype['advanced-filter'] = undefined;
+
+/**
+ * Filter by items with ARA functionality enabled
+ * @member {Boolean} ara-only
+ * @default false
+ */
+ListItems.prototype['ara-only'] = false;
 
 /**
  * Retrieve all items using pagination, when disabled retrieving only first 1000 items

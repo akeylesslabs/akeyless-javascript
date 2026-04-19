@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HTTPChallengeInfo model module.
  * @module model/HTTPChallengeInfo
- * @version 5.0.23
+ * @version 5.0.24
  */
 class HTTPChallengeInfo {
     /**

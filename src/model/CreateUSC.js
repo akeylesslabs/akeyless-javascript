@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateUSC model module.
  * @module model/CreateUSC
- * @version 5.0.23
+ * @version 5.0.24
  */
 class CreateUSC {
     /**
@@ -113,8 +113,14 @@ class CreateUSC {
             if (data.hasOwnProperty('usc-prefix')) {
                 obj['usc-prefix'] = ApiClient.convertToType(data['usc-prefix'], 'String');
             }
+            if (data.hasOwnProperty('usc-tags')) {
+                obj['usc-tags'] = ApiClient.convertToType(data['usc-tags'], 'String');
+            }
             if (data.hasOwnProperty('use-prefix-as-filter')) {
                 obj['use-prefix-as-filter'] = ApiClient.convertToType(data['use-prefix-as-filter'], 'String');
+            }
+            if (data.hasOwnProperty('use-tags-as-filter')) {
+                obj['use-tags-as-filter'] = ApiClient.convertToType(data['use-tags-as-filter'], 'Boolean');
             }
         }
         return obj;
@@ -199,6 +205,10 @@ class CreateUSC {
         // ensure the json data is a string
         if (data['usc-prefix'] && !(typeof data['usc-prefix'] === 'string' || data['usc-prefix'] instanceof String)) {
             throw new Error("Expected the field `usc-prefix` to be a primitive type in the JSON string but got " + data['usc-prefix']);
+        }
+        // ensure the json data is a string
+        if (data['usc-tags'] && !(typeof data['usc-tags'] === 'string' || data['usc-tags'] instanceof String)) {
+            throw new Error("Expected the field `usc-tags` to be a primitive type in the JSON string but got " + data['usc-tags']);
         }
         // ensure the json data is a string
         if (data['use-prefix-as-filter'] && !(typeof data['use-prefix-as-filter'] === 'string' || data['use-prefix-as-filter'] instanceof String)) {
@@ -330,11 +340,23 @@ CreateUSC.prototype['uid-token'] = undefined;
 CreateUSC.prototype['usc-prefix'] = undefined;
 
 /**
+ * Comma-separated list of tags to apply to all secrets created on the remote USC
+ * @member {String} usc-tags
+ */
+CreateUSC.prototype['usc-tags'] = undefined;
+
+/**
  * Whether to filter the USC secret list using the specified usc-prefix [true/false]
  * @member {String} use-prefix-as-filter
  * @default 'false'
  */
 CreateUSC.prototype['use-prefix-as-filter'] = 'false';
+
+/**
+ * Filter the USC secret list by the value(s) of --usc-tags. [true|false]
+ * @member {Boolean} use-tags-as-filter
+ */
+CreateUSC.prototype['use-tags-as-filter'] = undefined;
 
 
 

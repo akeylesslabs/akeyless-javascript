@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateGoogleTrust model module.
  * @module model/TargetUpdateGoogleTrust
- * @version 5.0.23
+ * @version 5.0.24
  */
 class TargetUpdateGoogleTrust {
     /**
@@ -58,6 +58,9 @@ class TargetUpdateGoogleTrust {
 
             if (data.hasOwnProperty('acme-challenge')) {
                 obj['acme-challenge'] = ApiClient.convertToType(data['acme-challenge'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -132,6 +135,10 @@ class TargetUpdateGoogleTrust {
         // ensure the json data is a string
         if (data['acme-challenge'] && !(typeof data['acme-challenge'] === 'string' || data['acme-challenge'] instanceof String)) {
             throw new Error("Expected the field `acme-challenge` to be a primitive type in the JSON string but got " + data['acme-challenge']);
+        }
+        // ensure the json data is a string
+        if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
+            throw new Error("Expected the field `delete_protection` to be a primitive type in the JSON string but got " + data['delete_protection']);
         }
         // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
@@ -216,6 +223,12 @@ TargetUpdateGoogleTrust.RequiredProperties = ["email", "name"];
  * @default 'dns'
  */
 TargetUpdateGoogleTrust.prototype['acme-challenge'] = 'dns';
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+TargetUpdateGoogleTrust.prototype['delete_protection'] = undefined;
 
 /**
  * Description of the object

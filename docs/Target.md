@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **clientPermissions** | **[String]** |  | [optional] 
 **comment** | **String** |  | [optional] 
 **creationDate** | **Date** |  | [optional] 
+**deleteProtection** | **Boolean** |  | [optional] 
 **isAccessRequestEnabled** | **Boolean** |  | [optional] 
 **lastVersion** | **Number** |  | [optional] 
 **lockingInfo** | [**LockingInfo**](LockingInfo.md) |  | [optional] 

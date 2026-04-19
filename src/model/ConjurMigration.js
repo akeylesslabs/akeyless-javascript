@@ -18,7 +18,7 @@ import MigrationGeneral from './MigrationGeneral';
 /**
  * The ConjurMigration model module.
  * @module model/ConjurMigration
- * @version 5.0.23
+ * @version 5.0.24
  */
 class ConjurMigration {
     /**

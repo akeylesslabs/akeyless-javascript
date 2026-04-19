@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateEks model module.
  * @module model/DynamicSecretUpdateEks
- * @version 5.0.23
+ * @version 5.0.24
  */
 class DynamicSecretUpdateEks {
     /**

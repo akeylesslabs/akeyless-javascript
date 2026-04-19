@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscList model module.
  * @module model/UscList
- * @version 5.0.23
+ * @version 5.0.24
  */
 class UscList {
     /**
@@ -57,6 +57,12 @@ class UscList {
             if (data.hasOwnProperty('object-type')) {
                 obj['object-type'] = ApiClient.convertToType(data['object-type'], 'String');
             }
+            if (data.hasOwnProperty('page-size')) {
+                obj['page-size'] = ApiClient.convertToType(data['page-size'], 'Number');
+            }
+            if (data.hasOwnProperty('page-token')) {
+                obj['page-token'] = ApiClient.convertToType(data['page-token'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -85,6 +91,10 @@ class UscList {
         // ensure the json data is a string
         if (data['object-type'] && !(typeof data['object-type'] === 'string' || data['object-type'] instanceof String)) {
             throw new Error("Expected the field `object-type` to be a primitive type in the JSON string but got " + data['object-type']);
+        }
+        // ensure the json data is a string
+        if (data['page-token'] && !(typeof data['page-token'] === 'string' || data['page-token'] instanceof String)) {
+            throw new Error("Expected the field `page-token` to be a primitive type in the JSON string but got " + data['page-token']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -118,6 +128,18 @@ UscList.prototype['json'] = false;
  * @member {String} object-type
  */
 UscList.prototype['object-type'] = undefined;
+
+/**
+ * Optional: number of items requested per response (Azure KV). When set, response may include next_token
+ * @member {Number} page-size
+ */
+UscList.prototype['page-size'] = undefined;
+
+/**
+ * Optional: continuation token returned by a previous usc list --page-size call
+ * @member {String} page-token
+ */
+UscList.prototype['page-token'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

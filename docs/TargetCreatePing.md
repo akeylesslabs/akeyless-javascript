@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **administrativePort** | **String** | Ping Federate administrative port | [optional] [default to &#39;9999&#39;]
 **authorizationPort** | **String** | Ping Federate authorization port | [optional] [default to &#39;9031&#39;]
+**deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **key** | **String** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 5.0.23
+ * @version 5.0.24
  */
 class UpdateRole {
     /**
@@ -54,6 +54,9 @@ class UpdateRole {
 
             if (data.hasOwnProperty('analytics-access')) {
                 obj['analytics-access'] = ApiClient.convertToType(data['analytics-access'], 'String');
+            }
+            if (data.hasOwnProperty('ara-reports-access')) {
+                obj['ara-reports-access'] = ApiClient.convertToType(data['ara-reports-access'], 'String');
             }
             if (data.hasOwnProperty('audit-access')) {
                 obj['audit-access'] = ApiClient.convertToType(data['audit-access'], 'String');
@@ -119,6 +122,10 @@ class UpdateRole {
         // ensure the json data is a string
         if (data['analytics-access'] && !(typeof data['analytics-access'] === 'string' || data['analytics-access'] instanceof String)) {
             throw new Error("Expected the field `analytics-access` to be a primitive type in the JSON string but got " + data['analytics-access']);
+        }
+        // ensure the json data is a string
+        if (data['ara-reports-access'] && !(typeof data['ara-reports-access'] === 'string' || data['ara-reports-access'] instanceof String)) {
+            throw new Error("Expected the field `ara-reports-access` to be a primitive type in the JSON string but got " + data['ara-reports-access']);
         }
         // ensure the json data is a string
         if (data['audit-access'] && !(typeof data['audit-access'] === 'string' || data['audit-access'] instanceof String)) {
@@ -190,6 +197,12 @@ UpdateRole.RequiredProperties = ["name"];
  * @member {String} analytics-access
  */
 UpdateRole.prototype['analytics-access'] = undefined;
+
+/**
+ * Allow this role to view Agentic Runtime Authority Dashboard. Currently only 'none', 'scoped', 'all' values are supported.
+ * @member {String} ara-reports-access
+ */
+UpdateRole.prototype['ara-reports-access'] = undefined;
 
 /**
  * Allow this role to view audit logs. Currently only 'none', 'own', 'scoped' and 'all' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.

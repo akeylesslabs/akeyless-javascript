@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import AWSGatewayCloudIdentityExternalIdOpt from './AWSGatewayCloudIdentityExternalIdOpt';
+import AgenticRules from './AgenticRules';
 import ItemCustomFieldsDetails from './ItemCustomFieldsDetails';
 import ItemTargetAssociation from './ItemTargetAssociation';
 import SecureRemoteAccess from './SecureRemoteAccess';
@@ -21,7 +22,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 5.0.23
+ * @version 5.0.24
  */
 class DSProducerDetails {
     /**
@@ -72,6 +73,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('administrative_port')) {
                 obj['administrative_port'] = ApiClient.convertToType(data['administrative_port'], 'String');
+            }
+            if (data.hasOwnProperty('agentic_rules')) {
+                obj['agentic_rules'] = AgenticRules.constructFromObject(data['agentic_rules']);
             }
             if (data.hasOwnProperty('api_key')) {
                 obj['api_key'] = ApiClient.convertToType(data['api_key'], 'String');
@@ -876,6 +880,10 @@ class DSProducerDetails {
         // ensure the json data is a string
         if (data['administrative_port'] && !(typeof data['administrative_port'] === 'string' || data['administrative_port'] instanceof String)) {
             throw new Error("Expected the field `administrative_port` to be a primitive type in the JSON string but got " + data['administrative_port']);
+        }
+        // validate the optional field `agentic_rules`
+        if (data['agentic_rules']) { // data not null
+          AgenticRules.validateJSON(data['agentic_rules']);
         }
         // ensure the json data is a string
         if (data['api_key'] && !(typeof data['api_key'] === 'string' || data['api_key'] instanceof String)) {
@@ -1836,6 +1844,11 @@ DSProducerDetails.prototype['admin_rotation_interval_days'] = undefined;
  * @member {String} administrative_port
  */
 DSProducerDetails.prototype['administrative_port'] = undefined;
+
+/**
+ * @member {module:model/AgenticRules} agentic_rules
+ */
+DSProducerDetails.prototype['agentic_rules'] = undefined;
 
 /**
  * @member {String} api_key

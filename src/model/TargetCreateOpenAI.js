@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateOpenAI model module.
  * @module model/TargetCreateOpenAI
- * @version 5.0.23
+ * @version 5.0.24
  */
 class TargetCreateOpenAI {
     /**
@@ -57,6 +57,9 @@ class TargetCreateOpenAI {
             }
             if (data.hasOwnProperty('api-key-id')) {
                 obj['api-key-id'] = ApiClient.convertToType(data['api-key-id'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -111,6 +114,10 @@ class TargetCreateOpenAI {
         // ensure the json data is a string
         if (data['api-key-id'] && !(typeof data['api-key-id'] === 'string' || data['api-key-id'] instanceof String)) {
             throw new Error("Expected the field `api-key-id` to be a primitive type in the JSON string but got " + data['api-key-id']);
+        }
+        // ensure the json data is a string
+        if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
+            throw new Error("Expected the field `delete_protection` to be a primitive type in the JSON string but got " + data['delete_protection']);
         }
         // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
@@ -168,6 +175,12 @@ TargetCreateOpenAI.prototype['api-key'] = undefined;
  * @member {String} api-key-id
  */
 TargetCreateOpenAI.prototype['api-key-id'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+TargetCreateOpenAI.prototype['delete_protection'] = undefined;
 
 /**
  * Description of the object

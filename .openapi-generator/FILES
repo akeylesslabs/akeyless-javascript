@@ -24,6 +24,8 @@ docs/ActiveDirectoryMigration.md
 docs/ActiveDirectoryPayload.md
 docs/AddGatewayAllowedAccessId.md
 docs/AdminsConfigPart.md
+docs/AgenticRule.md
+docs/AgenticRules.md
 docs/AiInsightsConfigPart.md
 docs/AiInsightsSetting.md
 docs/AkeylessGatewayConfig.md
@@ -901,6 +903,7 @@ docs/Rotator.md
 docs/RotatorsConfigPart.md
 docs/RuleAssigner.md
 docs/Rules.md
+docs/RuntimeAuthorityCommand.md
 docs/SAMLAccessRules.md
 docs/SAMLAttribute.md
 docs/SSHCertificateIssueDetails.md
@@ -913,6 +916,8 @@ docs/SectigoTargetDetails.md
 docs/SecureRemoteAccess.md
 docs/ServerInventoryMigration.md
 docs/ServerInventoryPayload.md
+docs/SetDefaultProfile.md
+docs/SetDefaultProfileOutput.md
 docs/SetItemState.md
 docs/SetRoleRule.md
 docs/ShareItem.md
@@ -1217,6 +1222,8 @@ src/model/ActiveDirectoryMigration.js
 src/model/ActiveDirectoryPayload.js
 src/model/AddGatewayAllowedAccessId.js
 src/model/AdminsConfigPart.js
+src/model/AgenticRule.js
+src/model/AgenticRules.js
 src/model/AiInsightsConfigPart.js
 src/model/AiInsightsSetting.js
 src/model/AkeylessGatewayConfig.js
@@ -2094,6 +2101,7 @@ src/model/Rotator.js
 src/model/RotatorsConfigPart.js
 src/model/RuleAssigner.js
 src/model/Rules.js
+src/model/RuntimeAuthorityCommand.js
 src/model/SAMLAccessRules.js
 src/model/SAMLAttribute.js
 src/model/SSHCertificateIssueDetails.js
@@ -2106,6 +2114,8 @@ src/model/SectigoTargetDetails.js
 src/model/SecureRemoteAccess.js
 src/model/ServerInventoryMigration.js
 src/model/ServerInventoryPayload.js
+src/model/SetDefaultProfile.js
+src/model/SetDefaultProfileOutput.js
 src/model/SetItemState.js
 src/model/SetRoleRule.js
 src/model/ShareItem.js
@@ -2381,17 +2391,8 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/DigiCertTargetDetails.spec.js
-test/model/GoogleTrustTargetDetails.spec.js
-test/model/ItemLockingSetting.spec.js
-test/model/LockItem.spec.js
-test/model/LockTarget.spec.js
-test/model/LockingInfo.spec.js
-test/model/NetappStorage.spec.js
-test/model/SyncCounters.spec.js
-test/model/TargetCreateDigiCert.spec.js
-test/model/TargetCreateGoogleTrust.spec.js
-test/model/TargetUpdateDigiCert.spec.js
-test/model/TargetUpdateGoogleTrust.spec.js
-test/model/UnlockItem.spec.js
-test/model/UnlockTarget.spec.js
+test/model/AgenticRule.spec.js
+test/model/AgenticRules.spec.js
+test/model/RuntimeAuthorityCommand.spec.js
+test/model/SetDefaultProfile.spec.js
+test/model/SetDefaultProfileOutput.spec.js

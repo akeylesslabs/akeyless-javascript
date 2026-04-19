@@ -17,7 +17,7 @@ import SecretInfo from './SecretInfo';
 /**
  * The UscListSecretsOutput model module.
  * @module model/UscListSecretsOutput
- * @version 5.0.23
+ * @version 5.0.24
  */
 class UscListSecretsOutput {
     /**
@@ -48,6 +48,9 @@ class UscListSecretsOutput {
         if (data) {
             obj = obj || new UscListSecretsOutput();
 
+            if (data.hasOwnProperty('next_token')) {
+                obj['next_token'] = ApiClient.convertToType(data['next_token'], 'String');
+            }
             if (data.hasOwnProperty('secrets_list')) {
                 obj['secrets_list'] = ApiClient.convertToType(data['secrets_list'], [SecretInfo]);
             }
@@ -64,6 +67,10 @@ class UscListSecretsOutput {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>UscListSecretsOutput</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['next_token'] && !(typeof data['next_token'] === 'string' || data['next_token'] instanceof String)) {
+            throw new Error("Expected the field `next_token` to be a primitive type in the JSON string but got " + data['next_token']);
+        }
         if (data['secrets_list']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['secrets_list'])) {
@@ -86,6 +93,11 @@ class UscListSecretsOutput {
 }
 
 
+
+/**
+ * @member {String} next_token
+ */
+UscListSecretsOutput.prototype['next_token'] = undefined;
 
 /**
  * @member {Array.<module:model/SecretInfo>} secrets_list

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateGlobalSign model module.
  * @module model/TargetCreateGlobalSign
- * @version 5.0.23
+ * @version 5.0.24
  */
 class TargetCreateGlobalSign {
     /**
@@ -76,6 +76,9 @@ class TargetCreateGlobalSign {
             }
             if (data.hasOwnProperty('contact-phone')) {
                 obj['contact-phone'] = ApiClient.convertToType(data['contact-phone'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -141,6 +144,10 @@ class TargetCreateGlobalSign {
         // ensure the json data is a string
         if (data['contact-phone'] && !(typeof data['contact-phone'] === 'string' || data['contact-phone'] instanceof String)) {
             throw new Error("Expected the field `contact-phone` to be a primitive type in the JSON string but got " + data['contact-phone']);
+        }
+        // ensure the json data is a string
+        if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
+            throw new Error("Expected the field `delete_protection` to be a primitive type in the JSON string but got " + data['delete_protection']);
         }
         // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
@@ -214,6 +221,12 @@ TargetCreateGlobalSign.prototype['contact-last-name'] = undefined;
  * @member {String} contact-phone
  */
 TargetCreateGlobalSign.prototype['contact-phone'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+TargetCreateGlobalSign.prototype['delete_protection'] = undefined;
 
 /**
  * Description of the object

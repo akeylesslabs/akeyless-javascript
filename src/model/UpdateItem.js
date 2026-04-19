@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 5.0.23
+ * @version 5.0.24
  */
 class UpdateItem {
     /**
@@ -211,6 +211,12 @@ class UpdateItem {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
+            if (data.hasOwnProperty('usc-tags')) {
+                obj['usc-tags'] = ApiClient.convertToType(data['usc-tags'], 'String');
+            }
+            if (data.hasOwnProperty('use-tags-as-filter')) {
+                obj['use-tags-as-filter'] = ApiClient.convertToType(data['use-tags-as-filter'], 'String');
+            }
         }
         return obj;
     }
@@ -402,6 +408,14 @@ class UpdateItem {
         // ensure the json data is a string
         if (data['uid-token'] && !(typeof data['uid-token'] === 'string' || data['uid-token'] instanceof String)) {
             throw new Error("Expected the field `uid-token` to be a primitive type in the JSON string but got " + data['uid-token']);
+        }
+        // ensure the json data is a string
+        if (data['usc-tags'] && !(typeof data['usc-tags'] === 'string' || data['usc-tags'] instanceof String)) {
+            throw new Error("Expected the field `usc-tags` to be a primitive type in the JSON string but got " + data['usc-tags']);
+        }
+        // ensure the json data is a string
+        if (data['use-tags-as-filter'] && !(typeof data['use-tags-as-filter'] === 'string' || data['use-tags-as-filter'] instanceof String)) {
+            throw new Error("Expected the field `use-tags-as-filter` to be a primitive type in the JSON string but got " + data['use-tags-as-filter']);
         }
 
         return true;
@@ -726,6 +740,18 @@ UpdateItem.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateItem.prototype['uid-token'] = undefined;
+
+/**
+ * Comma-separated list of tags to apply to all secrets created/synced on the remote USC  USC items only.
+ * @member {String} usc-tags
+ */
+UpdateItem.prototype['usc-tags'] = undefined;
+
+/**
+ * Whether to filter the USC secret list using the specified usc-tags [true/false]  USC items only.
+ * @member {String} use-tags-as-filter
+ */
+UpdateItem.prototype['use-tags-as-filter'] = undefined;
 
 
 

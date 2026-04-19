@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateGemini model module.
  * @module model/TargetUpdateGemini
- * @version 5.0.23
+ * @version 5.0.24
  */
 class TargetUpdateGemini {
     /**
@@ -56,6 +56,9 @@ class TargetUpdateGemini {
 
             if (data.hasOwnProperty('api-key')) {
                 obj['api-key'] = ApiClient.convertToType(data['api-key'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -111,6 +114,10 @@ class TargetUpdateGemini {
             throw new Error("Expected the field `api-key` to be a primitive type in the JSON string but got " + data['api-key']);
         }
         // ensure the json data is a string
+        if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
+            throw new Error("Expected the field `delete_protection` to be a primitive type in the JSON string but got " + data['delete_protection']);
+        }
+        // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
@@ -164,6 +171,12 @@ TargetUpdateGemini.RequiredProperties = ["name"];
  * @member {String} api-key
  */
 TargetUpdateGemini.prototype['api-key'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+TargetUpdateGemini.prototype['delete_protection'] = undefined;
 
 /**
  * Description of the object

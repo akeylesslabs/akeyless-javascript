@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateSplunk model module.
  * @module model/TargetCreateSplunk
- * @version 5.0.23
+ * @version 5.0.24
  */
 class TargetCreateSplunk {
     /**
@@ -56,6 +56,9 @@ class TargetCreateSplunk {
 
             if (data.hasOwnProperty('audience')) {
                 obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
+            }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -117,6 +120,10 @@ class TargetCreateSplunk {
             throw new Error("Expected the field `audience` to be a primitive type in the JSON string but got " + data['audience']);
         }
         // ensure the json data is a string
+        if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
+            throw new Error("Expected the field `delete_protection` to be a primitive type in the JSON string but got " + data['delete_protection']);
+        }
+        // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
@@ -174,6 +181,12 @@ TargetCreateSplunk.RequiredProperties = ["name", "url"];
  * @member {String} audience
  */
 TargetCreateSplunk.prototype['audience'] = undefined;
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+TargetCreateSplunk.prototype['delete_protection'] = undefined;
 
 /**
  * Description of the object

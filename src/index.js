@@ -35,6 +35,8 @@ import ActiveDirectoryMigration from './model/ActiveDirectoryMigration';
 import ActiveDirectoryPayload from './model/ActiveDirectoryPayload';
 import AddGatewayAllowedAccessId from './model/AddGatewayAllowedAccessId';
 import AdminsConfigPart from './model/AdminsConfigPart';
+import AgenticRule from './model/AgenticRule';
+import AgenticRules from './model/AgenticRules';
 import AiInsightsConfigPart from './model/AiInsightsConfigPart';
 import AiInsightsSetting from './model/AiInsightsSetting';
 import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
@@ -912,6 +914,7 @@ import Rotator from './model/Rotator';
 import RotatorsConfigPart from './model/RotatorsConfigPart';
 import RuleAssigner from './model/RuleAssigner';
 import Rules from './model/Rules';
+import RuntimeAuthorityCommand from './model/RuntimeAuthorityCommand';
 import SAMLAccessRules from './model/SAMLAccessRules';
 import SAMLAttribute from './model/SAMLAttribute';
 import SSHCertificateIssueDetails from './model/SSHCertificateIssueDetails';
@@ -924,6 +927,8 @@ import SectigoTargetDetails from './model/SectigoTargetDetails';
 import SecureRemoteAccess from './model/SecureRemoteAccess';
 import ServerInventoryMigration from './model/ServerInventoryMigration';
 import ServerInventoryPayload from './model/ServerInventoryPayload';
+import SetDefaultProfile from './model/SetDefaultProfile';
+import SetDefaultProfileOutput from './model/SetDefaultProfileOutput';
 import SetItemState from './model/SetItemState';
 import SetRoleRule from './model/SetRoleRule';
 import ShareItem from './model/ShareItem';
@@ -1231,7 +1236,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.23
+* @version 5.0.24
 */
 export {
     /**
@@ -1371,6 +1376,18 @@ export {
      * @property {module:model/AdminsConfigPart}
      */
     AdminsConfigPart,
+
+    /**
+     * The AgenticRule model constructor.
+     * @property {module:model/AgenticRule}
+     */
+    AgenticRule,
+
+    /**
+     * The AgenticRules model constructor.
+     * @property {module:model/AgenticRules}
+     */
+    AgenticRules,
 
     /**
      * The AiInsightsConfigPart model constructor.
@@ -6635,6 +6652,12 @@ export {
     Rules,
 
     /**
+     * The RuntimeAuthorityCommand model constructor.
+     * @property {module:model/RuntimeAuthorityCommand}
+     */
+    RuntimeAuthorityCommand,
+
+    /**
      * The SAMLAccessRules model constructor.
      * @property {module:model/SAMLAccessRules}
      */
@@ -6705,6 +6728,18 @@ export {
      * @property {module:model/ServerInventoryPayload}
      */
     ServerInventoryPayload,
+
+    /**
+     * The SetDefaultProfile model constructor.
+     * @property {module:model/SetDefaultProfile}
+     */
+    SetDefaultProfile,
+
+    /**
+     * The SetDefaultProfileOutput model constructor.
+     * @property {module:model/SetDefaultProfileOutput}
+     */
+    SetDefaultProfileOutput,
 
     /**
      * The SetItemState model constructor.

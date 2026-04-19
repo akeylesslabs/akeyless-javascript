@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SystemAccessCredentialsReplyObj model module.
  * @module model/SystemAccessCredentialsReplyObj
- * @version 5.0.23
+ * @version 5.0.24
  */
 class SystemAccessCredentialsReplyObj {
     /**
@@ -52,6 +52,9 @@ class SystemAccessCredentialsReplyObj {
             }
             if (data.hasOwnProperty('auth_creds')) {
                 obj['auth_creds'] = ApiClient.convertToType(data['auth_creds'], 'String');
+            }
+            if (data.hasOwnProperty('csrf_token')) {
+                obj['csrf_token'] = ApiClient.convertToType(data['csrf_token'], 'String');
             }
             if (data.hasOwnProperty('expiry')) {
                 obj['expiry'] = ApiClient.convertToType(data['expiry'], 'Number');
@@ -90,6 +93,10 @@ class SystemAccessCredentialsReplyObj {
             throw new Error("Expected the field `auth_creds` to be a primitive type in the JSON string but got " + data['auth_creds']);
         }
         // ensure the json data is a string
+        if (data['csrf_token'] && !(typeof data['csrf_token'] === 'string' || data['csrf_token'] instanceof String)) {
+            throw new Error("Expected the field `csrf_token` to be a primitive type in the JSON string but got " + data['csrf_token']);
+        }
+        // ensure the json data is a string
         if (data['kfm_creds'] && !(typeof data['kfm_creds'] === 'string' || data['kfm_creds'] instanceof String)) {
             throw new Error("Expected the field `kfm_creds` to be a primitive type in the JSON string but got " + data['kfm_creds']);
         }
@@ -124,6 +131,12 @@ SystemAccessCredentialsReplyObj.prototype['access_id'] = undefined;
  * @member {String} auth_creds
  */
 SystemAccessCredentialsReplyObj.prototype['auth_creds'] = undefined;
+
+/**
+ * CSRF token for synchronizer-token pattern (only populated for WebUI clients)
+ * @member {String} csrf_token
+ */
+SystemAccessCredentialsReplyObj.prototype['csrf_token'] = undefined;
 
 /**
  * Credentials expiration date
