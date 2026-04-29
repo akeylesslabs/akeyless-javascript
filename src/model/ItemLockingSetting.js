@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ItemLockingSetting model module.
  * @module model/ItemLockingSetting
- * @version 5.0.24
+ * @version 5.0.25
  */
 class ItemLockingSetting {
     /**

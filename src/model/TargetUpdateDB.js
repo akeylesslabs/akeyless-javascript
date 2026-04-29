@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateDB model module.
  * @module model/TargetUpdateDB
- * @version 5.0.24
+ * @version 5.0.25
  */
 class TargetUpdateDB {
     /**
@@ -64,6 +64,15 @@ class TargetUpdateDB {
             if (data.hasOwnProperty('azure-tenant-id')) {
                 obj['azure-tenant-id'] = ApiClient.convertToType(data['azure-tenant-id'], 'String');
             }
+            if (data.hasOwnProperty('client-certificate')) {
+                obj['client-certificate'] = ApiClient.convertToType(data['client-certificate'], 'String');
+            }
+            if (data.hasOwnProperty('client-key-passphrase')) {
+                obj['client-key-passphrase'] = ApiClient.convertToType(data['client-key-passphrase'], 'String');
+            }
+            if (data.hasOwnProperty('client-private-key')) {
+                obj['client-private-key'] = ApiClient.convertToType(data['client-private-key'], 'String');
+            }
             if (data.hasOwnProperty('cloud-service-provider')) {
                 obj['cloud-service-provider'] = ApiClient.convertToType(data['cloud-service-provider'], 'String');
             }
@@ -93,6 +102,9 @@ class TargetUpdateDB {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('enable-mtls')) {
+                obj['enable-mtls'] = ApiClient.convertToType(data['enable-mtls'], 'Boolean');
             }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
@@ -205,6 +217,18 @@ class TargetUpdateDB {
         // ensure the json data is a string
         if (data['azure-tenant-id'] && !(typeof data['azure-tenant-id'] === 'string' || data['azure-tenant-id'] instanceof String)) {
             throw new Error("Expected the field `azure-tenant-id` to be a primitive type in the JSON string but got " + data['azure-tenant-id']);
+        }
+        // ensure the json data is a string
+        if (data['client-certificate'] && !(typeof data['client-certificate'] === 'string' || data['client-certificate'] instanceof String)) {
+            throw new Error("Expected the field `client-certificate` to be a primitive type in the JSON string but got " + data['client-certificate']);
+        }
+        // ensure the json data is a string
+        if (data['client-key-passphrase'] && !(typeof data['client-key-passphrase'] === 'string' || data['client-key-passphrase'] instanceof String)) {
+            throw new Error("Expected the field `client-key-passphrase` to be a primitive type in the JSON string but got " + data['client-key-passphrase']);
+        }
+        // ensure the json data is a string
+        if (data['client-private-key'] && !(typeof data['client-private-key'] === 'string' || data['client-private-key'] instanceof String)) {
+            throw new Error("Expected the field `client-private-key` to be a primitive type in the JSON string but got " + data['client-private-key']);
         }
         // ensure the json data is a string
         if (data['cloud-service-provider'] && !(typeof data['cloud-service-provider'] === 'string' || data['cloud-service-provider'] instanceof String)) {
@@ -370,6 +394,24 @@ TargetUpdateDB.prototype['azure-client-secret'] = undefined;
 TargetUpdateDB.prototype['azure-tenant-id'] = undefined;
 
 /**
+ * Client certificate for mutual TLS
+ * @member {String} client-certificate
+ */
+TargetUpdateDB.prototype['client-certificate'] = undefined;
+
+/**
+ * Client private key passphrase for mutual TLS
+ * @member {String} client-key-passphrase
+ */
+TargetUpdateDB.prototype['client-key-passphrase'] = undefined;
+
+/**
+ * Client private key for mutual TLS
+ * @member {String} client-private-key
+ */
+TargetUpdateDB.prototype['client-private-key'] = undefined;
+
+/**
  * (Optional) Cloud service provider (currently only supports Azure)
  * @member {String} cloud-service-provider
  */
@@ -427,6 +469,12 @@ TargetUpdateDB.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 TargetUpdateDB.prototype['description'] = undefined;
+
+/**
+ * Enable mutual TLS
+ * @member {Boolean} enable-mtls
+ */
+TargetUpdateDB.prototype['enable-mtls'] = undefined;
 
 /**
  * @member {String} host

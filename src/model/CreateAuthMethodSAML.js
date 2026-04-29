@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodSAML model module.
  * @module model/CreateAuthMethodSAML
- * @version 5.0.24
+ * @version 5.0.25
  */
 class CreateAuthMethodSAML {
     /**

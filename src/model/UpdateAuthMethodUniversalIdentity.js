@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodUniversalIdentity model module.
  * @module model/UpdateAuthMethodUniversalIdentity
- * @version 5.0.24
+ * @version 5.0.25
  */
 class UpdateAuthMethodUniversalIdentity {
     /**

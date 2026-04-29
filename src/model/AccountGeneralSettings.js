@@ -31,7 +31,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 5.0.24
+ * @version 5.0.25
  */
 class AccountGeneralSettings {
     /**
@@ -74,6 +74,9 @@ class AccountGeneralSettings {
             }
             if (data.hasOwnProperty('allow_auto_fill')) {
                 obj['allow_auto_fill'] = ApiClient.convertToType(data['allow_auto_fill'], 'Boolean');
+            }
+            if (data.hasOwnProperty('allow_passkeys')) {
+                obj['allow_passkeys'] = ApiClient.convertToType(data['allow_passkeys'], 'Boolean');
             }
             if (data.hasOwnProperty('allowed_client_types')) {
                 obj['allowed_client_types'] = AllowedClientType.constructFromObject(data['allowed_client_types']);
@@ -260,6 +263,11 @@ AccountGeneralSettings.prototype['ai_insights'] = undefined;
  * @member {Boolean} allow_auto_fill
  */
 AccountGeneralSettings.prototype['allow_auto_fill'] = undefined;
+
+/**
+ * @member {Boolean} allow_passkeys
+ */
+AccountGeneralSettings.prototype['allow_passkeys'] = undefined;
 
 /**
  * @member {module:model/AllowedClientType} allowed_client_types

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateGke model module.
  * @module model/DynamicSecretCreateGke
- * @version 5.0.24
+ * @version 5.0.25
  */
 class DynamicSecretCreateGke {
     /**

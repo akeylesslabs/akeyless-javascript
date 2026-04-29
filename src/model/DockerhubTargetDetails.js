@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DockerhubTargetDetails model module.
  * @module model/DockerhubTargetDetails
- * @version 5.0.24
+ * @version 5.0.25
  */
 class DockerhubTargetDetails {
     /**

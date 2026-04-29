@@ -929,7 +929,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.24
+* @version 5.0.25
 */
 export default class V2Api {
 
@@ -8850,7 +8850,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = DynamicSecretUpdateOutput;
       return this.apiClient.callApi(
-        '/dynamic-secret-update-oracle', 'POST',
+        '/dynamic-secret-update-oracledb', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );

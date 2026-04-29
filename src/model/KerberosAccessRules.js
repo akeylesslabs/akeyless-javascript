@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KerberosAccessRules model module.
  * @module model/KerberosAccessRules
- * @version 5.0.24
+ * @version 5.0.25
  */
 class KerberosAccessRules {
     /**

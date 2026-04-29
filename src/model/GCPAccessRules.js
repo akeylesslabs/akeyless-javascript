@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GCPAccessRules model module.
  * @module model/GCPAccessRules
- * @version 5.0.24
+ * @version 5.0.25
  */
 class GCPAccessRules {
     /**

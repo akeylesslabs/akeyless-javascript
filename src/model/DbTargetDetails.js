@@ -17,7 +17,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DbTargetDetails model module.
  * @module model/DbTargetDetails
- * @version 5.0.24
+ * @version 5.0.25
  */
 class DbTargetDetails {
     /**
@@ -49,6 +49,15 @@ class DbTargetDetails {
         if (data) {
             obj = obj || new DbTargetDetails();
 
+            if (data.hasOwnProperty('client_certificate')) {
+                obj['client_certificate'] = ApiClient.convertToType(data['client_certificate'], 'String');
+            }
+            if (data.hasOwnProperty('client_key_passphrase')) {
+                obj['client_key_passphrase'] = ApiClient.convertToType(data['client_key_passphrase'], 'String');
+            }
+            if (data.hasOwnProperty('client_private_key')) {
+                obj['client_private_key'] = ApiClient.convertToType(data['client_private_key'], 'String');
+            }
             if (data.hasOwnProperty('cloud_service_provider')) {
                 obj['cloud_service_provider'] = ApiClient.convertToType(data['cloud_service_provider'], 'String');
             }
@@ -94,6 +103,9 @@ class DbTargetDetails {
             if (data.hasOwnProperty('db_user_name')) {
                 obj['db_user_name'] = ApiClient.convertToType(data['db_user_name'], 'String');
             }
+            if (data.hasOwnProperty('enable_mtls')) {
+                obj['enable_mtls'] = ApiClient.convertToType(data['enable_mtls'], 'Boolean');
+            }
             if (data.hasOwnProperty('oracle_wallet_details')) {
                 obj['oracle_wallet_details'] = WalletDetails.constructFromObject(data['oracle_wallet_details']);
             }
@@ -116,6 +128,18 @@ class DbTargetDetails {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>DbTargetDetails</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['client_certificate'] && !(typeof data['client_certificate'] === 'string' || data['client_certificate'] instanceof String)) {
+            throw new Error("Expected the field `client_certificate` to be a primitive type in the JSON string but got " + data['client_certificate']);
+        }
+        // ensure the json data is a string
+        if (data['client_key_passphrase'] && !(typeof data['client_key_passphrase'] === 'string' || data['client_key_passphrase'] instanceof String)) {
+            throw new Error("Expected the field `client_key_passphrase` to be a primitive type in the JSON string but got " + data['client_key_passphrase']);
+        }
+        // ensure the json data is a string
+        if (data['client_private_key'] && !(typeof data['client_private_key'] === 'string' || data['client_private_key'] instanceof String)) {
+            throw new Error("Expected the field `client_private_key` to be a primitive type in the JSON string but got " + data['client_private_key']);
+        }
         // ensure the json data is a string
         if (data['cloud_service_provider'] && !(typeof data['cloud_service_provider'] === 'string' || data['cloud_service_provider'] instanceof String)) {
             throw new Error("Expected the field `cloud_service_provider` to be a primitive type in the JSON string but got " + data['cloud_service_provider']);
@@ -194,6 +218,24 @@ class DbTargetDetails {
 
 
 /**
+ * (Optional) ClientCertificate defines the client certificate for mutual TLS. Must be base64 certificate loaded by UI using file loader field
+ * @member {String} client_certificate
+ */
+DbTargetDetails.prototype['client_certificate'] = undefined;
+
+/**
+ * (Optional) ClientKeyPassphrase defines the passphrase for the client private key
+ * @member {String} client_key_passphrase
+ */
+DbTargetDetails.prototype['client_key_passphrase'] = undefined;
+
+/**
+ * (Optional) ClientPrivateKey defines the client private key for mutual TLS. Must be base64 private key loaded by UI using file loader field
+ * @member {String} client_private_key
+ */
+DbTargetDetails.prototype['client_private_key'] = undefined;
+
+/**
  * @member {String} cloud_service_provider
  */
 DbTargetDetails.prototype['cloud_service_provider'] = undefined;
@@ -270,6 +312,12 @@ DbTargetDetails.prototype['db_tenant_id'] = undefined;
  * @member {String} db_user_name
  */
 DbTargetDetails.prototype['db_user_name'] = undefined;
+
+/**
+ * (Optional) EnableMTLS defines if mutual TLS will be used to connect to DB
+ * @member {Boolean} enable_mtls
+ */
+DbTargetDetails.prototype['enable_mtls'] = undefined;
 
 /**
  * @member {module:model/WalletDetails} oracle_wallet_details

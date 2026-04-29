@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGodaddyTargetOutput model module.
  * @module model/UpdateGodaddyTargetOutput
- * @version 5.0.24
+ * @version 5.0.25
  */
 class UpdateGodaddyTargetOutput {
     /**

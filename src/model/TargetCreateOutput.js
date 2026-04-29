@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateOutput model module.
  * @module model/TargetCreateOutput
- * @version 5.0.24
+ * @version 5.0.25
  */
 class TargetCreateOutput {
     /**

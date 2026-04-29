@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PoliciesGet model module.
  * @module model/PoliciesGet
- * @version 5.0.24
+ * @version 5.0.25
  */
 class PoliciesGet {
     /**

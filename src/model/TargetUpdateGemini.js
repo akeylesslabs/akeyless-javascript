@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateGemini model module.
  * @module model/TargetUpdateGemini
- * @version 5.0.24
+ * @version 5.0.25
  */
 class TargetUpdateGemini {
     /**

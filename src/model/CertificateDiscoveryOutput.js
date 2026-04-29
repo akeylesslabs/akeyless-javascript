@@ -17,7 +17,7 @@ import ScanResults from './ScanResults';
 /**
  * The CertificateDiscoveryOutput model module.
  * @module model/CertificateDiscoveryOutput
- * @version 5.0.24
+ * @version 5.0.25
  */
 class CertificateDiscoveryOutput {
     /**

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **accountDefaultKeyName** | **String** | AccountDefaultKeyName is the name of the DFC key item configured as the default key This is here simply for the response to include the item name in addition to the display ID so the client can properly show this to the user. It will not be saved to the DB, only the AccountDefaultKeyItemID will. | [optional] 
 **aiInsights** | [**AiInsightsSetting**](AiInsightsSetting.md) |  | [optional] 
 **allowAutoFill** | **Boolean** |  | [optional] 
+**allowPasskeys** | **Boolean** |  | [optional] 
 **allowedClientTypes** | [**AllowedClientType**](AllowedClientType.md) |  | [optional] 
 **allowedClientsIps** | [**AllowedIpSettings**](AllowedIpSettings.md) |  | [optional] 
 **allowedGatewaysIps** | [**AllowedIpSettings**](AllowedIpSettings.md) |  | [optional] 

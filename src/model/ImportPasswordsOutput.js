@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ImportPasswordsOutput model module.
  * @module model/ImportPasswordsOutput
- * @version 5.0.24
+ * @version 5.0.25
  */
 class ImportPasswordsOutput {
     /**

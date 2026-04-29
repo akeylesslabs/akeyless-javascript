@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodLDAPOutput model module.
  * @module model/CreateAuthMethodLDAPOutput
- * @version 5.0.24
+ * @version 5.0.25
  */
 class CreateAuthMethodLDAPOutput {
     /**

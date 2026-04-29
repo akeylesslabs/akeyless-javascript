@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GoogleTrustTargetDetails model module.
  * @module model/GoogleTrustTargetDetails
- * @version 5.0.24
+ * @version 5.0.25
  */
 class GoogleTrustTargetDetails {
     /**

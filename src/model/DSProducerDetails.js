@@ -22,7 +22,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 5.0.24
+ * @version 5.0.25
  */
 class DSProducerDetails {
     /**
@@ -218,6 +218,15 @@ class DSProducerDetails {
             if (data.hasOwnProperty('client_authentication_type')) {
                 obj['client_authentication_type'] = ApiClient.convertToType(data['client_authentication_type'], 'String');
             }
+            if (data.hasOwnProperty('client_certificate')) {
+                obj['client_certificate'] = ApiClient.convertToType(data['client_certificate'], 'String');
+            }
+            if (data.hasOwnProperty('client_key_passphrase')) {
+                obj['client_key_passphrase'] = ApiClient.convertToType(data['client_key_passphrase'], 'String');
+            }
+            if (data.hasOwnProperty('client_private_key')) {
+                obj['client_private_key'] = ApiClient.convertToType(data['client_private_key'], 'String');
+            }
             if (data.hasOwnProperty('cloud_service_provider')) {
                 obj['cloud_service_provider'] = ApiClient.convertToType(data['cloud_service_provider'], 'String');
             }
@@ -313,6 +322,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('enable_admin_rotation')) {
                 obj['enable_admin_rotation'] = ApiClient.convertToType(data['enable_admin_rotation'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable_mtls')) {
+                obj['enable_mtls'] = ApiClient.convertToType(data['enable_mtls'], 'Boolean');
             }
             if (data.hasOwnProperty('enforce_replay_prevention')) {
                 obj['enforce_replay_prevention'] = ApiClient.convertToType(data['enforce_replay_prevention'], 'Boolean');
@@ -1048,6 +1060,18 @@ class DSProducerDetails {
         // ensure the json data is a string
         if (data['client_authentication_type'] && !(typeof data['client_authentication_type'] === 'string' || data['client_authentication_type'] instanceof String)) {
             throw new Error("Expected the field `client_authentication_type` to be a primitive type in the JSON string but got " + data['client_authentication_type']);
+        }
+        // ensure the json data is a string
+        if (data['client_certificate'] && !(typeof data['client_certificate'] === 'string' || data['client_certificate'] instanceof String)) {
+            throw new Error("Expected the field `client_certificate` to be a primitive type in the JSON string but got " + data['client_certificate']);
+        }
+        // ensure the json data is a string
+        if (data['client_key_passphrase'] && !(typeof data['client_key_passphrase'] === 'string' || data['client_key_passphrase'] instanceof String)) {
+            throw new Error("Expected the field `client_key_passphrase` to be a primitive type in the JSON string but got " + data['client_key_passphrase']);
+        }
+        // ensure the json data is a string
+        if (data['client_private_key'] && !(typeof data['client_private_key'] === 'string' || data['client_private_key'] instanceof String)) {
+            throw new Error("Expected the field `client_private_key` to be a primitive type in the JSON string but got " + data['client_private_key']);
         }
         // ensure the json data is a string
         if (data['cloud_service_provider'] && !(typeof data['cloud_service_provider'] === 'string' || data['cloud_service_provider'] instanceof String)) {
@@ -2086,6 +2110,24 @@ DSProducerDetails.prototype['chef_skip_ssl'] = undefined;
 DSProducerDetails.prototype['client_authentication_type'] = undefined;
 
 /**
+ * (Optional) ClientCertificate defines the client certificate for mutual TLS. Must be base64 certificate loaded by UI using file loader field
+ * @member {String} client_certificate
+ */
+DSProducerDetails.prototype['client_certificate'] = undefined;
+
+/**
+ * (Optional) ClientKeyPassphrase defines the passphrase for the client private key
+ * @member {String} client_key_passphrase
+ */
+DSProducerDetails.prototype['client_key_passphrase'] = undefined;
+
+/**
+ * (Optional) ClientPrivateKey defines the client private key for mutual TLS. Must be base64 private key loaded by UI using file loader field
+ * @member {String} client_private_key
+ */
+DSProducerDetails.prototype['client_private_key'] = undefined;
+
+/**
  * @member {String} cloud_service_provider
  */
 DSProducerDetails.prototype['cloud_service_provider'] = undefined;
@@ -2247,6 +2289,12 @@ DSProducerDetails.prototype['eks_secret_access_key'] = undefined;
  * @member {Boolean} enable_admin_rotation
  */
 DSProducerDetails.prototype['enable_admin_rotation'] = undefined;
+
+/**
+ * (Optional) EnableMTLS defines if mutual TLS will be used to connect to DB
+ * @member {Boolean} enable_mtls
+ */
+DSProducerDetails.prototype['enable_mtls'] = undefined;
 
 /**
  * relevant for PRIVATE_KEY_JWT client authentication type

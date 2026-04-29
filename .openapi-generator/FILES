@@ -2391,8 +2391,3 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/AgenticRule.spec.js
-test/model/AgenticRules.spec.js
-test/model/RuntimeAuthorityCommand.spec.js
-test/model/SetDefaultProfile.spec.js
-test/model/SetDefaultProfileOutput.spec.js
