@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PolicyUpdateKeys model module.
  * @module model/PolicyUpdateKeys
- * @version 5.0.25
+ * @version 5.0.26
  */
 class PolicyUpdateKeys {
     /**

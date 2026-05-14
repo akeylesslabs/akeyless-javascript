@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetTmpUsers model module.
  * @module model/GatewayGetTmpUsers
- * @version 5.0.25
+ * @version 5.0.26
  */
 class GatewayGetTmpUsers {
     /**
@@ -51,11 +51,17 @@ class GatewayGetTmpUsers {
         if (data) {
             obj = obj || new GatewayGetTmpUsers();
 
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -79,9 +85,17 @@ class GatewayGetTmpUsers {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -101,6 +115,12 @@ class GatewayGetTmpUsers {
 GatewayGetTmpUsers.RequiredProperties = ["name"];
 
 /**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).
+ * @member {Array.<String>} input-rule
+ */
+GatewayGetTmpUsers.prototype['input-rule'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  * @default false
@@ -112,6 +132,12 @@ GatewayGetTmpUsers.prototype['json'] = false;
  * @member {String} name
  */
 GatewayGetTmpUsers.prototype['name'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+GatewayGetTmpUsers.prototype['output-rule'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

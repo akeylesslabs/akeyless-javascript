@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 5.0.25
+ * @version 5.0.26
  */
 class GatewayUpdateMigration {
     /**
@@ -196,6 +196,9 @@ class GatewayUpdateMigration {
             }
             if (data.hasOwnProperty('hashi-json')) {
                 obj['hashi-json'] = ApiClient.convertToType(data['hashi-json'], 'String');
+            }
+            if (data.hasOwnProperty('hashi-metadata-mode')) {
+                obj['hashi-metadata-mode'] = ApiClient.convertToType(data['hashi-metadata-mode'], 'String');
             }
             if (data.hasOwnProperty('hashi-ns')) {
                 obj['hashi-ns'] = ApiClient.convertToType(data['hashi-ns'], ['String']);
@@ -468,6 +471,10 @@ class GatewayUpdateMigration {
         // ensure the json data is a string
         if (data['hashi-json'] && !(typeof data['hashi-json'] === 'string' || data['hashi-json'] instanceof String)) {
             throw new Error("Expected the field `hashi-json` to be a primitive type in the JSON string but got " + data['hashi-json']);
+        }
+        // ensure the json data is a string
+        if (data['hashi-metadata-mode'] && !(typeof data['hashi-metadata-mode'] === 'string' || data['hashi-metadata-mode'] instanceof String)) {
+            throw new Error("Expected the field `hashi-metadata-mode` to be a primitive type in the JSON string but got " + data['hashi-metadata-mode']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['hashi-ns'])) {
@@ -851,6 +858,12 @@ GatewayUpdateMigration.prototype['gcp-project-id'] = undefined;
  * @default 'true'
  */
 GatewayUpdateMigration.prototype['hashi-json'] = 'true';
+
+/**
+ * Controls the amount of HashiCorp Vault secret metadata migrated with each secret value. Options: none|minimal|full
+ * @member {String} hashi-metadata-mode
+ */
+GatewayUpdateMigration.prototype['hashi-metadata-mode'] = undefined;
 
 /**
  * HashiCorp Vault Namespaces is a comma-separated list of namespaces which need to be imported into Akeyless Vault. For every provided namespace, all its child namespaces are imported as well, e.g. nmsp/subnmsp1/subnmsp2,nmsp/anothernmsp. By default, import all namespaces (relevant only for HasiCorp Vault migration)

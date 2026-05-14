@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 5.0.25
+ * @version 5.0.26
  */
 class CreateSecret {
     /**
@@ -78,6 +78,9 @@ class CreateSecret {
             if (data.hasOwnProperty('inject-url')) {
                 obj['inject-url'] = ApiClient.convertToType(data['inject-url'], ['String']);
             }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
+            }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
@@ -98,6 +101,9 @@ class CreateSecret {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
@@ -196,6 +202,10 @@ class CreateSecret {
         if (!Array.isArray(data['inject-url'])) {
             throw new Error("Expected the field `inject-url` to be an array in the JSON data but got " + data['inject-url']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['lock-during-sra-session'] && !(typeof data['lock-during-sra-session'] === 'string' || data['lock-during-sra-session'] instanceof String)) {
             throw new Error("Expected the field `lock-during-sra-session` to be a primitive type in the JSON string but got " + data['lock-during-sra-session']);
@@ -211,6 +221,10 @@ class CreateSecret {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
         if (data['password'] && !(typeof data['password'] === 'string' || data['password'] instanceof String)) {
@@ -334,6 +348,12 @@ CreateSecret.prototype['format'] = 'text';
 CreateSecret.prototype['inject-url'] = undefined;
 
 /**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)
+ * @member {Array.<String>} input-rule
+ */
+CreateSecret.prototype['input-rule'] = undefined;
+
+/**
  * Additional custom fields to associate with the item
  * @member {Object.<String, String>} item-custom-fields
  */
@@ -375,6 +395,12 @@ CreateSecret.prototype['multiline_value'] = undefined;
  * @member {String} name
  */
 CreateSecret.prototype['name'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+CreateSecret.prototype['output-rule'] = undefined;
 
 /**
  * For Password Management use, additional fields

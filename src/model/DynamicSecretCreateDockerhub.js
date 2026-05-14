@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateDockerhub model module.
  * @module model/DynamicSecretCreateDockerhub
- * @version 5.0.25
+ * @version 5.0.26
  */
 class DynamicSecretCreateDockerhub {
     /**
@@ -67,6 +67,9 @@ class DynamicSecretCreateDockerhub {
             if (data.hasOwnProperty('dockerhub-username')) {
                 obj['dockerhub-username'] = ApiClient.convertToType(data['dockerhub-username'], 'String');
             }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
+            }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
@@ -75,6 +78,9 @@ class DynamicSecretCreateDockerhub {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -130,9 +136,17 @@ class DynamicSecretCreateDockerhub {
         if (data['dockerhub-username'] && !(typeof data['dockerhub-username'] === 'string' || data['dockerhub-username'] instanceof String)) {
             throw new Error("Expected the field `dockerhub-username` to be a primitive type in the JSON string but got " + data['dockerhub-username']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
         if (data['producer-encryption-key-name'] && !(typeof data['producer-encryption-key-name'] === 'string' || data['producer-encryption-key-name'] instanceof String)) {
@@ -198,6 +212,12 @@ DynamicSecretCreateDockerhub.prototype['dockerhub-token-scopes'] = undefined;
 DynamicSecretCreateDockerhub.prototype['dockerhub-username'] = undefined;
 
 /**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).
+ * @member {Array.<String>} input-rule
+ */
+DynamicSecretCreateDockerhub.prototype['input-rule'] = undefined;
+
+/**
  * Additional custom fields to associate with the item
  * @member {Object.<String, String>} item-custom-fields
  */
@@ -215,6 +235,12 @@ DynamicSecretCreateDockerhub.prototype['json'] = false;
  * @member {String} name
  */
 DynamicSecretCreateDockerhub.prototype['name'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+DynamicSecretCreateDockerhub.prototype['output-rule'] = undefined;
 
 /**
  * Dynamic producer encryption key

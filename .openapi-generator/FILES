@@ -10,6 +10,7 @@ docs/AWSSecretsMigration.md
 docs/AWSTargetDetails.md
 docs/AccessOrGroupPermissionAssignment.md
 docs/AccessPermissionAssignment.md
+docs/AccountCustomField.md
 docs/AccountCustomFieldCreate.md
 docs/AccountCustomFieldCreateOutput.md
 docs/AccountCustomFieldDelete.md
@@ -125,6 +126,7 @@ docs/ClassicKeyTargetInfo.md
 docs/ClientData.md
 docs/ClientUsageInfo.md
 docs/ClientsUsageReport.md
+docs/CloudflareTargetDetails.md
 docs/ConfigChange.md
 docs/ConfigHash.md
 docs/Configure.md
@@ -419,6 +421,7 @@ docs/FolderCreateOutput.md
 docs/FolderDelete.md
 docs/FolderGet.md
 docs/FolderGetOutput.md
+docs/FolderUSCSyncConfig.md
 docs/FolderUpdate.md
 docs/GCPAccessRules.md
 docs/GCPPayload.md
@@ -710,6 +713,8 @@ docs/KerberosAuthMethodInfo.md
 docs/KerberosConfigPart.md
 docs/KmipClientDeleteRule.md
 docs/KmipClientSetRule.md
+docs/KmipClientUpdate.md
+docs/KmipClientUpdateOutput.md
 docs/KmipCreateClient.md
 docs/KmipCreateClientOutput.md
 docs/KmipDeleteClient.md
@@ -725,6 +730,8 @@ docs/KmipRenewClientCertificateOutput.md
 docs/KmipRenewServerCertificate.md
 docs/KmipRenewServerCertificateOutput.md
 docs/KmipServerSetup.md
+docs/KmipServerUpdate.md
+docs/KmipServerUpdateOutput.md
 docs/KmipSetServerState.md
 docs/KmipSetServerStateOutput.md
 docs/KubeConfigValue.md
@@ -787,7 +794,6 @@ docs/NextAutoRotationEvent.md
 docs/NotiForwarder.md
 docs/NotiForwarderDetailsInput.md
 docs/NullString.md
-docs/NullTime.md
 docs/OAuth2AccessRules.md
 docs/OAuth2CustomClaim.md
 docs/OCIAccessRules.md
@@ -963,6 +969,7 @@ docs/Target.md
 docs/TargetCreateArtifactory.md
 docs/TargetCreateAws.md
 docs/TargetCreateAzure.md
+docs/TargetCreateCloudflare.md
 docs/TargetCreateDB.md
 docs/TargetCreateDigiCert.md
 docs/TargetCreateDockerhub.md
@@ -1004,6 +1011,7 @@ docs/TargetTypeDetailsInput.md
 docs/TargetUpdateArtifactory.md
 docs/TargetUpdateAws.md
 docs/TargetUpdateAzure.md
+docs/TargetUpdateCloudflare.md
 docs/TargetUpdateDB.md
 docs/TargetUpdateDigiCert.md
 docs/TargetUpdateDockerhub.md
@@ -1208,6 +1216,7 @@ src/model/AWSSecretsMigration.js
 src/model/AWSTargetDetails.js
 src/model/AccessOrGroupPermissionAssignment.js
 src/model/AccessPermissionAssignment.js
+src/model/AccountCustomField.js
 src/model/AccountCustomFieldCreate.js
 src/model/AccountCustomFieldCreateOutput.js
 src/model/AccountCustomFieldDelete.js
@@ -1323,6 +1332,7 @@ src/model/ClassicKeyTargetInfo.js
 src/model/ClientData.js
 src/model/ClientUsageInfo.js
 src/model/ClientsUsageReport.js
+src/model/CloudflareTargetDetails.js
 src/model/ConfigChange.js
 src/model/ConfigHash.js
 src/model/Configure.js
@@ -1617,6 +1627,7 @@ src/model/FolderCreateOutput.js
 src/model/FolderDelete.js
 src/model/FolderGet.js
 src/model/FolderGetOutput.js
+src/model/FolderUSCSyncConfig.js
 src/model/FolderUpdate.js
 src/model/GCPAccessRules.js
 src/model/GCPPayload.js
@@ -1908,6 +1919,8 @@ src/model/KerberosAuthMethodInfo.js
 src/model/KerberosConfigPart.js
 src/model/KmipClientDeleteRule.js
 src/model/KmipClientSetRule.js
+src/model/KmipClientUpdate.js
+src/model/KmipClientUpdateOutput.js
 src/model/KmipCreateClient.js
 src/model/KmipCreateClientOutput.js
 src/model/KmipDeleteClient.js
@@ -1923,6 +1936,8 @@ src/model/KmipRenewClientCertificateOutput.js
 src/model/KmipRenewServerCertificate.js
 src/model/KmipRenewServerCertificateOutput.js
 src/model/KmipServerSetup.js
+src/model/KmipServerUpdate.js
+src/model/KmipServerUpdateOutput.js
 src/model/KmipSetServerState.js
 src/model/KmipSetServerStateOutput.js
 src/model/KubeConfigValue.js
@@ -1985,7 +2000,6 @@ src/model/NextAutoRotationEvent.js
 src/model/NotiForwarder.js
 src/model/NotiForwarderDetailsInput.js
 src/model/NullString.js
-src/model/NullTime.js
 src/model/OAuth2AccessRules.js
 src/model/OAuth2CustomClaim.js
 src/model/OCIAccessRules.js
@@ -2161,6 +2175,7 @@ src/model/Target.js
 src/model/TargetCreateArtifactory.js
 src/model/TargetCreateAws.js
 src/model/TargetCreateAzure.js
+src/model/TargetCreateCloudflare.js
 src/model/TargetCreateDB.js
 src/model/TargetCreateDigiCert.js
 src/model/TargetCreateDockerhub.js
@@ -2202,6 +2217,7 @@ src/model/TargetTypeDetailsInput.js
 src/model/TargetUpdateArtifactory.js
 src/model/TargetUpdateAws.js
 src/model/TargetUpdateAzure.js
+src/model/TargetUpdateCloudflare.js
 src/model/TargetUpdateDB.js
 src/model/TargetUpdateDigiCert.js
 src/model/TargetUpdateDockerhub.js
@@ -2391,3 +2407,12 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
+test/model/AccountCustomField.spec.js
+test/model/CloudflareTargetDetails.spec.js
+test/model/FolderUSCSyncConfig.spec.js
+test/model/KmipClientUpdate.spec.js
+test/model/KmipClientUpdateOutput.spec.js
+test/model/KmipServerUpdate.spec.js
+test/model/KmipServerUpdateOutput.spec.js
+test/model/TargetCreateCloudflare.spec.js
+test/model/TargetUpdateCloudflare.spec.js

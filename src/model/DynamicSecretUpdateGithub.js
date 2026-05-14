@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGithub model module.
  * @module model/DynamicSecretUpdateGithub
- * @version 5.0.25
+ * @version 5.0.26
  */
 class DynamicSecretUpdateGithub {
     /**
@@ -68,6 +68,9 @@ class DynamicSecretUpdateGithub {
             if (data.hasOwnProperty('github-base-url')) {
                 obj['github-base-url'] = ApiClient.convertToType(data['github-base-url'], 'String');
             }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
+            }
             if (data.hasOwnProperty('installation-id')) {
                 obj['installation-id'] = ApiClient.convertToType(data['installation-id'], 'Number');
             }
@@ -88,6 +91,9 @@ class DynamicSecretUpdateGithub {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -142,6 +148,10 @@ class DynamicSecretUpdateGithub {
         if (data['github-base-url'] && !(typeof data['github-base-url'] === 'string' || data['github-base-url'] instanceof String)) {
             throw new Error("Expected the field `github-base-url` to be a primitive type in the JSON string but got " + data['github-base-url']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['installation-organization'] && !(typeof data['installation-organization'] === 'string' || data['installation-organization'] instanceof String)) {
             throw new Error("Expected the field `installation-organization` to be a primitive type in the JSON string but got " + data['installation-organization']);
@@ -157,6 +167,10 @@ class DynamicSecretUpdateGithub {
         // ensure the json data is a string
         if (data['new-name'] && !(typeof data['new-name'] === 'string' || data['new-name'] instanceof String)) {
             throw new Error("Expected the field `new-name` to be a primitive type in the JSON string but got " + data['new-name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
@@ -227,6 +241,12 @@ DynamicSecretUpdateGithub.prototype['github-app-private-key'] = undefined;
 DynamicSecretUpdateGithub.prototype['github-base-url'] = 'https://api.github.com/';
 
 /**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).
+ * @member {Array.<String>} input-rule
+ */
+DynamicSecretUpdateGithub.prototype['input-rule'] = undefined;
+
+/**
  * GitHub application installation id
  * @member {Number} installation-id
  */
@@ -268,6 +288,12 @@ DynamicSecretUpdateGithub.prototype['name'] = undefined;
  * @member {String} new-name
  */
 DynamicSecretUpdateGithub.prototype['new-name'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+DynamicSecretUpdateGithub.prototype['output-rule'] = undefined;
 
 /**
  * Add tags attached to this object

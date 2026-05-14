@@ -12,12 +12,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import NullTime from './NullTime';
 
 /**
  * The AccountCustomFieldGetOutput model module.
  * @module model/AccountCustomFieldGetOutput
- * @version 5.0.25
+ * @version 5.0.26
  */
 class AccountCustomFieldGetOutput {
     /**
@@ -55,7 +54,7 @@ class AccountCustomFieldGetOutput {
                 obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
             }
             if (data.hasOwnProperty('deletion_date')) {
-                obj['deletion_date'] = NullTime.constructFromObject(data['deletion_date']);
+                obj['deletion_date'] = ApiClient.convertToType(data['deletion_date'], 'Date');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
@@ -89,10 +88,6 @@ class AccountCustomFieldGetOutput {
         if (data['account_id'] && !(typeof data['account_id'] === 'string' || data['account_id'] instanceof String)) {
             throw new Error("Expected the field `account_id` to be a primitive type in the JSON string but got " + data['account_id']);
         }
-        // validate the optional field `deletion_date`
-        if (data['deletion_date']) { // data not null
-          NullTime.validateJSON(data['deletion_date']);
-        }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
@@ -125,7 +120,7 @@ AccountCustomFieldGetOutput.prototype['account_id'] = undefined;
 AccountCustomFieldGetOutput.prototype['creation_date'] = undefined;
 
 /**
- * @member {module:model/NullTime} deletion_date
+ * @member {Date} deletion_date
  */
 AccountCustomFieldGetOutput.prototype['deletion_date'] = undefined;
 

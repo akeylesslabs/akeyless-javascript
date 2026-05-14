@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGke model module.
  * @module model/DynamicSecretUpdateGke
- * @version 5.0.25
+ * @version 5.0.26
  */
 class DynamicSecretUpdateGke {
     /**
@@ -74,6 +74,9 @@ class DynamicSecretUpdateGke {
             if (data.hasOwnProperty('gke-service-account-email')) {
                 obj['gke-service-account-email'] = ApiClient.convertToType(data['gke-service-account-email'], 'String');
             }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
+            }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
@@ -85,6 +88,9 @@ class DynamicSecretUpdateGke {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -169,6 +175,10 @@ class DynamicSecretUpdateGke {
         if (data['gke-service-account-email'] && !(typeof data['gke-service-account-email'] === 'string' || data['gke-service-account-email'] instanceof String)) {
             throw new Error("Expected the field `gke-service-account-email` to be a primitive type in the JSON string but got " + data['gke-service-account-email']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
@@ -176,6 +186,10 @@ class DynamicSecretUpdateGke {
         // ensure the json data is a string
         if (data['new-name'] && !(typeof data['new-name'] === 'string' || data['new-name'] instanceof String)) {
             throw new Error("Expected the field `new-name` to be a primitive type in the JSON string but got " + data['new-name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
         if (data['producer-encryption-key-name'] && !(typeof data['producer-encryption-key-name'] === 'string' || data['producer-encryption-key-name'] instanceof String)) {
@@ -269,6 +283,12 @@ DynamicSecretUpdateGke.prototype['gke-cluster-name'] = undefined;
 DynamicSecretUpdateGke.prototype['gke-service-account-email'] = undefined;
 
 /**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).
+ * @member {Array.<String>} input-rule
+ */
+DynamicSecretUpdateGke.prototype['input-rule'] = undefined;
+
+/**
  * Additional custom fields to associate with the item
  * @member {Object.<String, String>} item-custom-fields
  */
@@ -292,6 +312,12 @@ DynamicSecretUpdateGke.prototype['name'] = undefined;
  * @member {String} new-name
  */
 DynamicSecretUpdateGke.prototype['new-name'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+DynamicSecretUpdateGke.prototype['output-rule'] = undefined;
 
 /**
  * Dynamic producer encryption key

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMSSQL model module.
  * @module model/GatewayUpdateProducerMSSQL
- * @version 5.0.25
+ * @version 5.0.26
  */
 class GatewayUpdateProducerMSSQL {
     /**
@@ -61,6 +61,9 @@ class GatewayUpdateProducerMSSQL {
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
+            }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
@@ -96,6 +99,9 @@ class GatewayUpdateProducerMSSQL {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('password-length')) {
                 obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
@@ -166,6 +172,10 @@ class GatewayUpdateProducerMSSQL {
         if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
             throw new Error("Expected the field `delete_protection` to be a primitive type in the JSON string but got " + data['delete_protection']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['mssql-allowed-db-names'] && !(typeof data['mssql-allowed-db-names'] === 'string' || data['mssql-allowed-db-names'] instanceof String)) {
             throw new Error("Expected the field `mssql-allowed-db-names` to be a primitive type in the JSON string but got " + data['mssql-allowed-db-names']);
@@ -205,6 +215,10 @@ class GatewayUpdateProducerMSSQL {
         // ensure the json data is a string
         if (data['new-name'] && !(typeof data['new-name'] === 'string' || data['new-name'] instanceof String)) {
             throw new Error("Expected the field `new-name` to be a primitive type in the JSON string but got " + data['new-name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
         if (data['password-length'] && !(typeof data['password-length'] === 'string' || data['password-length'] instanceof String)) {
@@ -280,6 +294,12 @@ GatewayUpdateProducerMSSQL.prototype['custom-username-template'] = undefined;
 GatewayUpdateProducerMSSQL.prototype['delete_protection'] = undefined;
 
 /**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).
+ * @member {Array.<String>} input-rule
+ */
+GatewayUpdateProducerMSSQL.prototype['input-rule'] = undefined;
+
+/**
  * Additional custom fields to associate with the item
  * @member {Object.<String, String>} item-custom-fields
  */
@@ -353,6 +373,12 @@ GatewayUpdateProducerMSSQL.prototype['name'] = undefined;
  * @member {String} new-name
  */
 GatewayUpdateProducerMSSQL.prototype['new-name'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+GatewayUpdateProducerMSSQL.prototype['output-rule'] = undefined;
 
 /**
  * The length of the password to be generated

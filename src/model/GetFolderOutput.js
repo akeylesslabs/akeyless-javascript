@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import FolderUSCSyncConfig from './FolderUSCSyncConfig';
 
 /**
  * The GetFolderOutput model module.
  * @module model/GetFolderOutput
- * @version 5.0.25
+ * @version 5.0.26
  */
 class GetFolderOutput {
     /**
@@ -78,6 +79,9 @@ class GetFolderOutput {
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
+            if (data.hasOwnProperty('usc_sync_configs')) {
+                obj['usc_sync_configs'] = ApiClient.convertToType(data['usc_sync_configs'], [FolderUSCSyncConfig]);
+            }
         }
         return obj;
     }
@@ -103,6 +107,16 @@ class GetFolderOutput {
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
+        }
+        if (data['usc_sync_configs']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['usc_sync_configs'])) {
+                throw new Error("Expected the field `usc_sync_configs` to be an array in the JSON data but got " + data['usc_sync_configs']);
+            }
+            // validate the optional field `usc_sync_configs` (array)
+            for (const item of data['usc_sync_configs']) {
+                FolderUSCSyncConfig.validateJSON(item);
+            };
         }
 
         return true;
@@ -162,6 +176,11 @@ GetFolderOutput.prototype['modification_date'] = undefined;
  * @member {Array.<String>} tags
  */
 GetFolderOutput.prototype['tags'] = undefined;
+
+/**
+ * @member {Array.<module:model/FolderUSCSyncConfig>} usc_sync_configs
+ */
+GetFolderOutput.prototype['usc_sync_configs'] = undefined;
 
 
 

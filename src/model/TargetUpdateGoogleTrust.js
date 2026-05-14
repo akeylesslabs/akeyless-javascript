@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateGoogleTrust model module.
  * @module model/TargetUpdateGoogleTrust
- * @version 5.0.25
+ * @version 5.0.26
  */
 class TargetUpdateGoogleTrust {
     /**
@@ -67,6 +67,9 @@ class TargetUpdateGoogleTrust {
             }
             if (data.hasOwnProperty('dns-target-creds')) {
                 obj['dns-target-creds'] = ApiClient.convertToType(data['dns-target-creds'], 'String');
+            }
+            if (data.hasOwnProperty('dns-zone')) {
+                obj['dns-zone'] = ApiClient.convertToType(data['dns-zone'], 'String');
             }
             if (data.hasOwnProperty('eab-hmac-key')) {
                 obj['eab-hmac-key'] = ApiClient.convertToType(data['eab-hmac-key'], 'String');
@@ -147,6 +150,10 @@ class TargetUpdateGoogleTrust {
         // ensure the json data is a string
         if (data['dns-target-creds'] && !(typeof data['dns-target-creds'] === 'string' || data['dns-target-creds'] instanceof String)) {
             throw new Error("Expected the field `dns-target-creds` to be a primitive type in the JSON string but got " + data['dns-target-creds']);
+        }
+        // ensure the json data is a string
+        if (data['dns-zone'] && !(typeof data['dns-zone'] === 'string' || data['dns-zone'] instanceof String)) {
+            throw new Error("Expected the field `dns-zone` to be a primitive type in the JSON string but got " + data['dns-zone']);
         }
         // ensure the json data is a string
         if (data['eab-hmac-key'] && !(typeof data['eab-hmac-key'] === 'string' || data['eab-hmac-key'] instanceof String)) {
@@ -237,10 +244,16 @@ TargetUpdateGoogleTrust.prototype['delete_protection'] = undefined;
 TargetUpdateGoogleTrust.prototype['description'] = undefined;
 
 /**
- * Name of existing cloud target for DNS credentials. Required when challenge type is dns. Supported providers: AWS, Azure, GCP
+ * Name of existing cloud target for DNS credentials. Required when challenge type is dns. Supported providers: AWS, Azure, GCP, Cloudflare
  * @member {String} dns-target-creds
  */
 TargetUpdateGoogleTrust.prototype['dns-target-creds'] = undefined;
+
+/**
+ * Cloudflare DNS zone identifier. Required when DNS credentials target is Cloudflare
+ * @member {String} dns-zone
+ */
+TargetUpdateGoogleTrust.prototype['dns-zone'] = undefined;
 
 /**
  * External Account Binding HMAC key (required for ACME account bootstrap on create)

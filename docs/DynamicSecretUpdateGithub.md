@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **githubAppId** | **Number** | Github app id | [optional] 
 **githubAppPrivateKey** | **String** | App private key | [optional] 
 **githubBaseUrl** | **String** | Base URL | [optional] [default to &#39;https://api.github.com/&#39;]
+**inputRule** | **[String]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout). | [optional] 
 **installationId** | **Number** | GitHub application installation id | [optional] 
 **installationOrganization** | **String** | Optional, mutually exclusive with installation id, GitHub organization name | [optional] 
 **installationRepository** | **String** | Optional, mutually exclusive with installation id, GitHub repository &#39;&lt;owner&gt;/&lt;repo-name&gt;&#39; | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Dynamic secret name | 
 **newName** | **String** | Dynamic secret name | [optional] 
+**outputRule** | **[String]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | Target name | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

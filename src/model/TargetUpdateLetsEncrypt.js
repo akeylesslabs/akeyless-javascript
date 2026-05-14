@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateLetsEncrypt model module.
  * @module model/TargetUpdateLetsEncrypt
- * @version 5.0.25
+ * @version 5.0.26
  */
 class TargetUpdateLetsEncrypt {
     /**
@@ -67,6 +67,9 @@ class TargetUpdateLetsEncrypt {
             }
             if (data.hasOwnProperty('dns-target-creds')) {
                 obj['dns-target-creds'] = ApiClient.convertToType(data['dns-target-creds'], 'String');
+            }
+            if (data.hasOwnProperty('dns-zone')) {
+                obj['dns-zone'] = ApiClient.convertToType(data['dns-zone'], 'String');
             }
             if (data.hasOwnProperty('email')) {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String');
@@ -141,6 +144,10 @@ class TargetUpdateLetsEncrypt {
         // ensure the json data is a string
         if (data['dns-target-creds'] && !(typeof data['dns-target-creds'] === 'string' || data['dns-target-creds'] instanceof String)) {
             throw new Error("Expected the field `dns-target-creds` to be a primitive type in the JSON string but got " + data['dns-target-creds']);
+        }
+        // ensure the json data is a string
+        if (data['dns-zone'] && !(typeof data['dns-zone'] === 'string' || data['dns-zone'] instanceof String)) {
+            throw new Error("Expected the field `dns-zone` to be a primitive type in the JSON string but got " + data['dns-zone']);
         }
         // ensure the json data is a string
         if (data['email'] && !(typeof data['email'] === 'string' || data['email'] instanceof String)) {
@@ -222,10 +229,16 @@ TargetUpdateLetsEncrypt.prototype['delete_protection'] = undefined;
 TargetUpdateLetsEncrypt.prototype['description'] = undefined;
 
 /**
- * Name of existing cloud target for DNS credentials. Required when acme-challenge=dns. Supported: AWS, Azure, GCP targets
+ * Name of existing cloud target for DNS credentials. Required when acme-challenge=dns. Supported: AWS, Azure, GCP, Cloudflare targets
  * @member {String} dns-target-creds
  */
 TargetUpdateLetsEncrypt.prototype['dns-target-creds'] = undefined;
+
+/**
+ * Cloudflare DNS zone identifier. Required when dns-target-creds points to Cloudflare target
+ * @member {String} dns-zone
+ */
+TargetUpdateLetsEncrypt.prototype['dns-zone'] = undefined;
 
 /**
  * Email address for ACME account registration

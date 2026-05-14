@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RabbitMQTargetDetails model module.
  * @module model/RabbitMQTargetDetails
- * @version 5.0.25
+ * @version 5.0.26
  */
 class RabbitMQTargetDetails {
     /**

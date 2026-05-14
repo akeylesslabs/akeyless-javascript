@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscCreate model module.
  * @module model/UscCreate
- * @version 5.0.25
+ * @version 5.0.26
  */
 class UscCreate {
     /**
@@ -75,6 +75,12 @@ class UscCreate {
             }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
+            }
+            if (data.hasOwnProperty('remote-secret-activation-date')) {
+                obj['remote-secret-activation-date'] = ApiClient.convertToType(data['remote-secret-activation-date'], 'String');
+            }
+            if (data.hasOwnProperty('remote-secret-expires')) {
+                obj['remote-secret-expires'] = ApiClient.convertToType(data['remote-secret-expires'], 'String');
             }
             if (data.hasOwnProperty('secret-name')) {
                 obj['secret-name'] = ApiClient.convertToType(data['secret-name'], 'String');
@@ -135,6 +141,14 @@ class UscCreate {
         // ensure the json data is a string
         if (data['region'] && !(typeof data['region'] === 'string' || data['region'] instanceof String)) {
             throw new Error("Expected the field `region` to be a primitive type in the JSON string but got " + data['region']);
+        }
+        // ensure the json data is a string
+        if (data['remote-secret-activation-date'] && !(typeof data['remote-secret-activation-date'] === 'string' || data['remote-secret-activation-date'] instanceof String)) {
+            throw new Error("Expected the field `remote-secret-activation-date` to be a primitive type in the JSON string but got " + data['remote-secret-activation-date']);
+        }
+        // ensure the json data is a string
+        if (data['remote-secret-expires'] && !(typeof data['remote-secret-expires'] === 'string' || data['remote-secret-expires'] instanceof String)) {
+            throw new Error("Expected the field `remote-secret-expires` to be a primitive type in the JSON string but got " + data['remote-secret-expires']);
         }
         // ensure the json data is a string
         if (data['secret-name'] && !(typeof data['secret-name'] === 'string' || data['secret-name'] instanceof String)) {
@@ -214,6 +228,18 @@ UscCreate.prototype['pfx-password'] = undefined;
  * @member {String} region
  */
 UscCreate.prototype['region'] = undefined;
+
+/**
+ * Activation date for the secret on the remote endpoint, in UTC format: YYYY-MM-DDTHH:MM:SSZ
+ * @member {String} remote-secret-activation-date
+ */
+UscCreate.prototype['remote-secret-activation-date'] = undefined;
+
+/**
+ * Expiration time for the secret on the remote endpoint, in UTC format: YYYY-MM-DDTHH:MM:SSZ
+ * @member {String} remote-secret-expires
+ */
+UscCreate.prototype['remote-secret-expires'] = undefined;
 
 /**
  * Name for the new universal secrets

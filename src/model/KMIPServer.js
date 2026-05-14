@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import CertificateExpirationEvent from './CertificateExpirationEvent';
 
 /**
  * The KMIPServer model module.
  * @module model/KMIPServer
- * @version 5.0.25
+ * @version 5.0.26
  */
 class KMIPServer {
     /**
@@ -62,6 +63,9 @@ class KMIPServer {
             if (data.hasOwnProperty('certificate_ttl_in_seconds')) {
                 obj['certificate_ttl_in_seconds'] = ApiClient.convertToType(data['certificate_ttl_in_seconds'], 'Number');
             }
+            if (data.hasOwnProperty('expiration_events')) {
+                obj['expiration_events'] = ApiClient.convertToType(data['expiration_events'], [CertificateExpirationEvent]);
+            }
             if (data.hasOwnProperty('hostname')) {
                 obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
             }
@@ -85,6 +89,16 @@ class KMIPServer {
         // ensure the json data is an array
         if (!Array.isArray(data['certificate'])) {
             throw new Error("Expected the field `certificate` to be an array in the JSON data but got " + data['certificate']);
+        }
+        if (data['expiration_events']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['expiration_events'])) {
+                throw new Error("Expected the field `expiration_events` to be an array in the JSON data but got " + data['expiration_events']);
+            }
+            // validate the optional field `expiration_events` (array)
+            for (const item of data['expiration_events']) {
+                CertificateExpirationEvent.validateJSON(item);
+            };
         }
         // ensure the json data is a string
         if (data['hostname'] && !(typeof data['hostname'] === 'string' || data['hostname'] instanceof String)) {
@@ -127,6 +141,11 @@ KMIPServer.prototype['certificate_issue_date'] = undefined;
  * @member {Number} certificate_ttl_in_seconds
  */
 KMIPServer.prototype['certificate_ttl_in_seconds'] = undefined;
+
+/**
+ * @member {Array.<module:model/CertificateExpirationEvent>} expiration_events
+ */
+KMIPServer.prototype['expiration_events'] = undefined;
 
 /**
  * @member {String} hostname

@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import CertificateExpirationEvent from './CertificateExpirationEvent';
 import PathRule from './PathRule';
 
 /**
  * The KMIPClient model module.
  * @module model/KMIPClient
- * @version 5.0.25
+ * @version 5.0.26
  */
 class KMIPClient {
     /**
@@ -57,6 +58,9 @@ class KMIPClient {
             if (data.hasOwnProperty('certificate_ttl_in_seconds')) {
                 obj['certificate_ttl_in_seconds'] = ApiClient.convertToType(data['certificate_ttl_in_seconds'], 'Number');
             }
+            if (data.hasOwnProperty('expiration_events')) {
+                obj['expiration_events'] = ApiClient.convertToType(data['expiration_events'], [CertificateExpirationEvent]);
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
@@ -76,6 +80,16 @@ class KMIPClient {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>KMIPClient</code>.
      */
     static validateJSON(data) {
+        if (data['expiration_events']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['expiration_events'])) {
+                throw new Error("Expected the field `expiration_events` to be an array in the JSON data but got " + data['expiration_events']);
+            }
+            // validate the optional field `expiration_events` (array)
+            for (const item of data['expiration_events']) {
+                CertificateExpirationEvent.validateJSON(item);
+            };
+        }
         // ensure the json data is a string
         if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
             throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
@@ -117,6 +131,11 @@ KMIPClient.prototype['certificate_issue_date'] = undefined;
  * @member {Number} certificate_ttl_in_seconds
  */
 KMIPClient.prototype['certificate_ttl_in_seconds'] = undefined;
+
+/**
+ * @member {Array.<module:model/CertificateExpirationEvent>} expiration_events
+ */
+KMIPClient.prototype['expiration_events'] = undefined;
 
 /**
  * @member {String} id

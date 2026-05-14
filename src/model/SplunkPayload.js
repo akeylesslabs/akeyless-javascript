@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SplunkPayload model module.
  * @module model/SplunkPayload
- * @version 5.0.25
+ * @version 5.0.26
  */
 class SplunkPayload {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateCustom model module.
  * @module model/RotatedSecretUpdateCustom
- * @version 5.0.25
+ * @version 5.0.26
  */
 class RotatedSecretUpdateCustom {
     /**
@@ -77,6 +77,9 @@ class RotatedSecretUpdateCustom {
             if (data.hasOwnProperty('enable-password-policy')) {
                 obj['enable-password-policy'] = ApiClient.convertToType(data['enable-password-policy'], 'String');
             }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
+            }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
@@ -100,6 +103,9 @@ class RotatedSecretUpdateCustom {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('password-length')) {
                 obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
@@ -220,6 +226,10 @@ class RotatedSecretUpdateCustom {
         if (data['enable-password-policy'] && !(typeof data['enable-password-policy'] === 'string' || data['enable-password-policy'] instanceof String)) {
             throw new Error("Expected the field `enable-password-policy` to be a primitive type in the JSON string but got " + data['enable-password-policy']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['keep-prev-version'] && !(typeof data['keep-prev-version'] === 'string' || data['keep-prev-version'] instanceof String)) {
             throw new Error("Expected the field `keep-prev-version` to be a primitive type in the JSON string but got " + data['keep-prev-version']);
@@ -243,6 +253,10 @@ class RotatedSecretUpdateCustom {
         // ensure the json data is a string
         if (data['new-name'] && !(typeof data['new-name'] === 'string' || data['new-name'] instanceof String)) {
             throw new Error("Expected the field `new-name` to be a primitive type in the JSON string but got " + data['new-name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
         if (data['password-length'] && !(typeof data['password-length'] === 'string' || data['password-length'] instanceof String)) {
@@ -374,6 +388,12 @@ RotatedSecretUpdateCustom.prototype['description'] = 'default_metadata';
 RotatedSecretUpdateCustom.prototype['enable-password-policy'] = undefined;
 
 /**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)
+ * @member {Array.<String>} input-rule
+ */
+RotatedSecretUpdateCustom.prototype['input-rule'] = undefined;
+
+/**
  * Additional custom fields to associate with the item
  * @member {Object.<String, String>} item-custom-fields
  */
@@ -421,6 +441,12 @@ RotatedSecretUpdateCustom.prototype['name'] = undefined;
  * @member {String} new-name
  */
 RotatedSecretUpdateCustom.prototype['new-name'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+RotatedSecretUpdateCustom.prototype['output-rule'] = undefined;
 
 /**
  * The length of the password to be generated

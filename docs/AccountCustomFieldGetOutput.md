@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountId** | **String** |  | [optional] 
 **creationDate** | **Date** |  | [optional] 
-**deletionDate** | [**NullTime**](NullTime.md) |  | [optional] 
+**deletionDate** | **Date** |  | [optional] 
 **id** | **Number** |  | [optional] 
 **modificationDate** | **Date** |  | [optional] 
 **name** | **String** |  | [optional] 

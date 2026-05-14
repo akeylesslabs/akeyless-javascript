@@ -13,10 +13,12 @@ Name | Type | Description | Notes
 **gitlabTokenScopes** | **String** | Comma-separated list of access token scopes to grant | 
 **gitlabUrl** | **String** | Gitlab base url | [optional] [default to &#39;https://gitlab.com/&#39;]
 **groupName** | **String** | Gitlab group name, required for access-type&#x3D;group | [optional] 
+**inputRule** | **[String]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout). | [optional] 
 **installationOrganization** | **String** | Gitlab project name, required for access-type&#x3D;project | [optional] 
 **itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Dynamic secret name | 
+**outputRule** | **[String]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | Target name | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

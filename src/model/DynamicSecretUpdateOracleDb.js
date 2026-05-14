@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateOracleDb model module.
  * @module model/DynamicSecretUpdateOracleDb
- * @version 5.0.25
+ * @version 5.0.26
  */
 class DynamicSecretUpdateOracleDb {
     /**
@@ -71,6 +71,9 @@ class DynamicSecretUpdateOracleDb {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
+            }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
@@ -103,6 +106,9 @@ class DynamicSecretUpdateOracleDb {
             }
             if (data.hasOwnProperty('oracle-username')) {
                 obj['oracle-username'] = ApiClient.convertToType(data['oracle-username'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('password-length')) {
                 obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
@@ -176,6 +182,10 @@ class DynamicSecretUpdateOracleDb {
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
@@ -211,6 +221,10 @@ class DynamicSecretUpdateOracleDb {
         // ensure the json data is a string
         if (data['oracle-username'] && !(typeof data['oracle-username'] === 'string' || data['oracle-username'] instanceof String)) {
             throw new Error("Expected the field `oracle-username` to be a primitive type in the JSON string but got " + data['oracle-username']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
         if (data['password-length'] && !(typeof data['password-length'] === 'string' || data['password-length'] instanceof String)) {
@@ -296,6 +310,12 @@ DynamicSecretUpdateOracleDb.prototype['delete_protection'] = undefined;
 DynamicSecretUpdateOracleDb.prototype['description'] = undefined;
 
 /**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).
+ * @member {Array.<String>} input-rule
+ */
+DynamicSecretUpdateOracleDb.prototype['input-rule'] = undefined;
+
+/**
  * Additional custom fields to associate with the item
  * @member {Object.<String, String>} item-custom-fields
  */
@@ -363,6 +383,12 @@ DynamicSecretUpdateOracleDb.prototype['oracle-service-name'] = undefined;
  * @member {String} oracle-username
  */
 DynamicSecretUpdateOracleDb.prototype['oracle-username'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+DynamicSecretUpdateOracleDb.prototype['output-rule'] = undefined;
 
 /**
  * The length of the password to be generated

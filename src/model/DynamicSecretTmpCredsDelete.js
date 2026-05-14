@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretTmpCredsDelete model module.
  * @module model/DynamicSecretTmpCredsDelete
- * @version 5.0.25
+ * @version 5.0.26
  */
 class DynamicSecretTmpCredsDelete {
     /**
@@ -54,11 +54,17 @@ class DynamicSecretTmpCredsDelete {
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
             }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('revoke-all')) {
                 obj['revoke-all'] = ApiClient.convertToType(data['revoke-all'], 'Boolean');
@@ -95,9 +101,17 @@ class DynamicSecretTmpCredsDelete {
         if (data['host'] && !(typeof data['host'] === 'string' || data['host'] instanceof String)) {
             throw new Error("Expected the field `host` to be a primitive type in the JSON string but got " + data['host']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
         if (data['tmp-creds-id'] && !(typeof data['tmp-creds-id'] === 'string' || data['tmp-creds-id'] instanceof String)) {
@@ -127,6 +141,12 @@ DynamicSecretTmpCredsDelete.RequiredProperties = ["name"];
 DynamicSecretTmpCredsDelete.prototype['host'] = undefined;
 
 /**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).
+ * @member {Array.<String>} input-rule
+ */
+DynamicSecretTmpCredsDelete.prototype['input-rule'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  * @default false
@@ -138,6 +158,12 @@ DynamicSecretTmpCredsDelete.prototype['json'] = false;
  * @member {String} name
  */
 DynamicSecretTmpCredsDelete.prototype['name'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+DynamicSecretTmpCredsDelete.prototype['output-rule'] = undefined;
 
 /**
  * Revoke All Temp Creds

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipServerSetup model module.
  * @module model/KmipServerSetup
- * @version 5.0.25
+ * @version 5.0.26
  */
 class KmipServerSetup {
     /**
@@ -56,6 +56,9 @@ class KmipServerSetup {
             if (data.hasOwnProperty('certificate-ttl')) {
                 obj['certificate-ttl'] = ApiClient.convertToType(data['certificate-ttl'], 'Number');
             }
+            if (data.hasOwnProperty('expiration-event-in')) {
+                obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
+            }
             if (data.hasOwnProperty('hostname')) {
                 obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
             }
@@ -86,6 +89,10 @@ class KmipServerSetup {
             if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['expiration-event-in'])) {
+            throw new Error("Expected the field `expiration-event-in` to be an array in the JSON data but got " + data['expiration-event-in']);
         }
         // ensure the json data is a string
         if (data['hostname'] && !(typeof data['hostname'] === 'string' || data['hostname'] instanceof String)) {
@@ -118,6 +125,12 @@ KmipServerSetup.RequiredProperties = ["hostname", "root"];
  * @default 90
  */
 KmipServerSetup.prototype['certificate-ttl'] = 90;
+
+/**
+ * How many days before the expiration of the certificate would you like to be notified.
+ * @member {Array.<String>} expiration-event-in
+ */
+KmipServerSetup.prototype['expiration-event-in'] = undefined;
 
 /**
  * Hostname

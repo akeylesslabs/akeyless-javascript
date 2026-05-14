@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipCreateClient model module.
  * @module model/KmipCreateClient
- * @version 5.0.25
+ * @version 5.0.26
  */
 class KmipCreateClient {
     /**
@@ -58,6 +58,9 @@ class KmipCreateClient {
             if (data.hasOwnProperty('certificate-ttl')) {
                 obj['certificate-ttl'] = ApiClient.convertToType(data['certificate-ttl'], 'Number');
             }
+            if (data.hasOwnProperty('expiration-event-in')) {
+                obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -89,6 +92,10 @@ class KmipCreateClient {
         // ensure the json data is a string
         if (data['activate-keys-on-creation'] && !(typeof data['activate-keys-on-creation'] === 'string' || data['activate-keys-on-creation'] instanceof String)) {
             throw new Error("Expected the field `activate-keys-on-creation` to be a primitive type in the JSON string but got " + data['activate-keys-on-creation']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['expiration-event-in'])) {
+            throw new Error("Expected the field `expiration-event-in` to be an array in the JSON data but got " + data['expiration-event-in']);
         }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
@@ -124,6 +131,12 @@ KmipCreateClient.prototype['activate-keys-on-creation'] = 'false';
  * @default 90
  */
 KmipCreateClient.prototype['certificate-ttl'] = 90;
+
+/**
+ * How many days before the expiration of the certificate would you like to be notified.
+ * @member {Array.<String>} expiration-event-in
+ */
+KmipCreateClient.prototype['expiration-event-in'] = undefined;
 
 /**
  * Set output format to JSON

@@ -21,6 +21,7 @@ import AWSSecretsMigration from './model/AWSSecretsMigration';
 import AWSTargetDetails from './model/AWSTargetDetails';
 import AccessOrGroupPermissionAssignment from './model/AccessOrGroupPermissionAssignment';
 import AccessPermissionAssignment from './model/AccessPermissionAssignment';
+import AccountCustomField from './model/AccountCustomField';
 import AccountCustomFieldCreate from './model/AccountCustomFieldCreate';
 import AccountCustomFieldCreateOutput from './model/AccountCustomFieldCreateOutput';
 import AccountCustomFieldDelete from './model/AccountCustomFieldDelete';
@@ -136,6 +137,7 @@ import ClassicKeyTargetInfo from './model/ClassicKeyTargetInfo';
 import ClientData from './model/ClientData';
 import ClientUsageInfo from './model/ClientUsageInfo';
 import ClientsUsageReport from './model/ClientsUsageReport';
+import CloudflareTargetDetails from './model/CloudflareTargetDetails';
 import ConfigChange from './model/ConfigChange';
 import ConfigHash from './model/ConfigHash';
 import Configure from './model/Configure';
@@ -430,6 +432,7 @@ import FolderCreateOutput from './model/FolderCreateOutput';
 import FolderDelete from './model/FolderDelete';
 import FolderGet from './model/FolderGet';
 import FolderGetOutput from './model/FolderGetOutput';
+import FolderUSCSyncConfig from './model/FolderUSCSyncConfig';
 import FolderUpdate from './model/FolderUpdate';
 import GCPAccessRules from './model/GCPAccessRules';
 import GCPPayload from './model/GCPPayload';
@@ -721,6 +724,8 @@ import KerberosAuthMethodInfo from './model/KerberosAuthMethodInfo';
 import KerberosConfigPart from './model/KerberosConfigPart';
 import KmipClientDeleteRule from './model/KmipClientDeleteRule';
 import KmipClientSetRule from './model/KmipClientSetRule';
+import KmipClientUpdate from './model/KmipClientUpdate';
+import KmipClientUpdateOutput from './model/KmipClientUpdateOutput';
 import KmipCreateClient from './model/KmipCreateClient';
 import KmipCreateClientOutput from './model/KmipCreateClientOutput';
 import KmipDeleteClient from './model/KmipDeleteClient';
@@ -736,6 +741,8 @@ import KmipRenewClientCertificateOutput from './model/KmipRenewClientCertificate
 import KmipRenewServerCertificate from './model/KmipRenewServerCertificate';
 import KmipRenewServerCertificateOutput from './model/KmipRenewServerCertificateOutput';
 import KmipServerSetup from './model/KmipServerSetup';
+import KmipServerUpdate from './model/KmipServerUpdate';
+import KmipServerUpdateOutput from './model/KmipServerUpdateOutput';
 import KmipSetServerState from './model/KmipSetServerState';
 import KmipSetServerStateOutput from './model/KmipSetServerStateOutput';
 import KubeConfigValue from './model/KubeConfigValue';
@@ -798,7 +805,6 @@ import NextAutoRotationEvent from './model/NextAutoRotationEvent';
 import NotiForwarder from './model/NotiForwarder';
 import NotiForwarderDetailsInput from './model/NotiForwarderDetailsInput';
 import NullString from './model/NullString';
-import NullTime from './model/NullTime';
 import OAuth2AccessRules from './model/OAuth2AccessRules';
 import OAuth2CustomClaim from './model/OAuth2CustomClaim';
 import OCIAccessRules from './model/OCIAccessRules';
@@ -974,6 +980,7 @@ import Target from './model/Target';
 import TargetCreateArtifactory from './model/TargetCreateArtifactory';
 import TargetCreateAws from './model/TargetCreateAws';
 import TargetCreateAzure from './model/TargetCreateAzure';
+import TargetCreateCloudflare from './model/TargetCreateCloudflare';
 import TargetCreateDB from './model/TargetCreateDB';
 import TargetCreateDigiCert from './model/TargetCreateDigiCert';
 import TargetCreateDockerhub from './model/TargetCreateDockerhub';
@@ -1015,6 +1022,7 @@ import TargetTypeDetailsInput from './model/TargetTypeDetailsInput';
 import TargetUpdateArtifactory from './model/TargetUpdateArtifactory';
 import TargetUpdateAws from './model/TargetUpdateAws';
 import TargetUpdateAzure from './model/TargetUpdateAzure';
+import TargetUpdateCloudflare from './model/TargetUpdateCloudflare';
 import TargetUpdateDB from './model/TargetUpdateDB';
 import TargetUpdateDigiCert from './model/TargetUpdateDigiCert';
 import TargetUpdateDockerhub from './model/TargetUpdateDockerhub';
@@ -1236,7 +1244,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.25
+* @version 5.0.26
 */
 export {
     /**
@@ -1292,6 +1300,12 @@ export {
      * @property {module:model/AccessPermissionAssignment}
      */
     AccessPermissionAssignment,
+
+    /**
+     * The AccountCustomField model constructor.
+     * @property {module:model/AccountCustomField}
+     */
+    AccountCustomField,
 
     /**
      * The AccountCustomFieldCreate model constructor.
@@ -1982,6 +1996,12 @@ export {
      * @property {module:model/ClientsUsageReport}
      */
     ClientsUsageReport,
+
+    /**
+     * The CloudflareTargetDetails model constructor.
+     * @property {module:model/CloudflareTargetDetails}
+     */
+    CloudflareTargetDetails,
 
     /**
      * The ConfigChange model constructor.
@@ -3748,6 +3768,12 @@ export {
     FolderGetOutput,
 
     /**
+     * The FolderUSCSyncConfig model constructor.
+     * @property {module:model/FolderUSCSyncConfig}
+     */
+    FolderUSCSyncConfig,
+
+    /**
      * The FolderUpdate model constructor.
      * @property {module:model/FolderUpdate}
      */
@@ -5494,6 +5520,18 @@ export {
     KmipClientSetRule,
 
     /**
+     * The KmipClientUpdate model constructor.
+     * @property {module:model/KmipClientUpdate}
+     */
+    KmipClientUpdate,
+
+    /**
+     * The KmipClientUpdateOutput model constructor.
+     * @property {module:model/KmipClientUpdateOutput}
+     */
+    KmipClientUpdateOutput,
+
+    /**
      * The KmipCreateClient model constructor.
      * @property {module:model/KmipCreateClient}
      */
@@ -5582,6 +5620,18 @@ export {
      * @property {module:model/KmipServerSetup}
      */
     KmipServerSetup,
+
+    /**
+     * The KmipServerUpdate model constructor.
+     * @property {module:model/KmipServerUpdate}
+     */
+    KmipServerUpdate,
+
+    /**
+     * The KmipServerUpdateOutput model constructor.
+     * @property {module:model/KmipServerUpdateOutput}
+     */
+    KmipServerUpdateOutput,
 
     /**
      * The KmipSetServerState model constructor.
@@ -5954,12 +6004,6 @@ export {
      * @property {module:model/NullString}
      */
     NullString,
-
-    /**
-     * The NullTime model constructor.
-     * @property {module:model/NullTime}
-     */
-    NullTime,
 
     /**
      * The OAuth2AccessRules model constructor.
@@ -7012,6 +7056,12 @@ export {
     TargetCreateAzure,
 
     /**
+     * The TargetCreateCloudflare model constructor.
+     * @property {module:model/TargetCreateCloudflare}
+     */
+    TargetCreateCloudflare,
+
+    /**
      * The TargetCreateDB model constructor.
      * @property {module:model/TargetCreateDB}
      */
@@ -7256,6 +7306,12 @@ export {
      * @property {module:model/TargetUpdateAzure}
      */
     TargetUpdateAzure,
+
+    /**
+     * The TargetUpdateCloudflare model constructor.
+     * @property {module:model/TargetUpdateCloudflare}
+     */
+    TargetUpdateCloudflare,
 
     /**
      * The TargetUpdateDB model constructor.

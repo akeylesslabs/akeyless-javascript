@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListTargets model module.
  * @module model/ListTargets
- * @version 5.0.25
+ * @version 5.0.26
  */
 class ListTargets {
     /**
@@ -132,7 +132,7 @@ ListTargets.prototype['pagination-token'] = undefined;
 ListTargets.prototype['token'] = undefined;
 
 /**
- * The target types list . In case it is empty, all types of targets will be returned. options: [hanadb cassandra aws ssh gke eks mysql mongodb snowflake mssql redshift artifactory azure rabbitmq k8s venafi gcp oracle dockerhub ldap github chef web salesforce postgres]
+ * The target types list . In case it is empty, all types of targets will be returned. options: [hanadb cassandra aws ssh gke eks mysql mongodb snowflake mssql redshift artifactory azure rabbitmq k8s venafi gcp oracle dockerhub cloudflare ldap github chef web salesforce postgres]
  * @member {Array.<String>} type
  */
 ListTargets.prototype['type'] = undefined;

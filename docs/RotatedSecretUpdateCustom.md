@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] [default to &#39;default_metadata&#39;]
 **enablePasswordPolicy** | **String** | Enable password policy | [optional] 
+**inputRule** | **[String]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) | [optional] 
 **itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **keepPrevVersion** | **String** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
@@ -19,6 +20,7 @@ Name | Type | Description | Notes
 **maxVersions** | **String** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **String** | Rotated secret name | 
 **newName** | **String** | New item name | [optional] 
+**outputRule** | **[String]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
 **passwordLength** | **String** | The length of the password to be generated | [optional] 
 **rmTag** | **[String]** | List of the existent tags that will be removed from this item | [optional] 
 **rotateAfterDisconnect** | **String** | StringOrBool accepts JSON strings, booleans, and numbers for backward compatibility with older SDK versions that send boolean values for rotate-after-disconnect. | [optional] 

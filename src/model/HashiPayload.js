@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HashiPayload model module.
  * @module model/HashiPayload
- * @version 5.0.25
+ * @version 5.0.26
  */
 class HashiPayload {
     /**
@@ -53,6 +53,9 @@ class HashiPayload {
             if (data.hasOwnProperty('import_as_json')) {
                 obj['import_as_json'] = ApiClient.convertToType(data['import_as_json'], 'Boolean');
             }
+            if (data.hasOwnProperty('metadata_mode')) {
+                obj['metadata_mode'] = ApiClient.convertToType(data['metadata_mode'], 'String');
+            }
             if (data.hasOwnProperty('namespaces')) {
                 obj['namespaces'] = ApiClient.convertToType(data['namespaces'], ['String']);
             }
@@ -75,6 +78,10 @@ class HashiPayload {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>HashiPayload</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['metadata_mode'] && !(typeof data['metadata_mode'] === 'string' || data['metadata_mode'] instanceof String)) {
+            throw new Error("Expected the field `metadata_mode` to be a primitive type in the JSON string but got " + data['metadata_mode']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['namespaces'])) {
             throw new Error("Expected the field `namespaces` to be an array in the JSON data but got " + data['namespaces']);
@@ -109,6 +116,11 @@ HashiPayload.prototype['delete_sync_on_deletion'] = undefined;
  * @member {Boolean} import_as_json
  */
 HashiPayload.prototype['import_as_json'] = undefined;
+
+/**
+ * @member {String} metadata_mode
+ */
+HashiPayload.prototype['metadata_mode'] = undefined;
 
 /**
  * @member {Array.<String>} namespaces

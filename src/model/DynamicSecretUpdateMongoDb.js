@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateMongoDb model module.
  * @module model/DynamicSecretUpdateMongoDb
- * @version 5.0.25
+ * @version 5.0.26
  */
 class DynamicSecretUpdateMongoDb {
     /**
@@ -62,6 +62,9 @@ class DynamicSecretUpdateMongoDb {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
             }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
@@ -113,6 +116,9 @@ class DynamicSecretUpdateMongoDb {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('password-length')) {
                 obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
@@ -184,6 +190,10 @@ class DynamicSecretUpdateMongoDb {
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['mongodb-atlas-api-private-key'] && !(typeof data['mongodb-atlas-api-private-key'] === 'string' || data['mongodb-atlas-api-private-key'] instanceof String)) {
             throw new Error("Expected the field `mongodb-atlas-api-private-key` to be a primitive type in the JSON string but got " + data['mongodb-atlas-api-private-key']);
@@ -243,6 +253,10 @@ class DynamicSecretUpdateMongoDb {
         // ensure the json data is a string
         if (data['new-name'] && !(typeof data['new-name'] === 'string' || data['new-name'] instanceof String)) {
             throw new Error("Expected the field `new-name` to be a primitive type in the JSON string but got " + data['new-name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
         if (data['password-length'] && !(typeof data['password-length'] === 'string' || data['password-length'] instanceof String)) {
@@ -318,6 +332,12 @@ DynamicSecretUpdateMongoDb.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 DynamicSecretUpdateMongoDb.prototype['description'] = undefined;
+
+/**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).
+ * @member {Array.<String>} input-rule
+ */
+DynamicSecretUpdateMongoDb.prototype['input-rule'] = undefined;
 
 /**
  * Additional custom fields to associate with the item
@@ -422,6 +442,12 @@ DynamicSecretUpdateMongoDb.prototype['name'] = undefined;
  * @member {String} new-name
  */
 DynamicSecretUpdateMongoDb.prototype['new-name'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+DynamicSecretUpdateMongoDb.prototype['output-rule'] = undefined;
 
 /**
  * The length of the password to be generated

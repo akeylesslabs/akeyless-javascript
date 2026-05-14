@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateGitlab model module.
  * @module model/DynamicSecretCreateGitlab
- * @version 5.0.25
+ * @version 5.0.26
  */
 class DynamicSecretCreateGitlab {
     /**
@@ -83,6 +83,9 @@ class DynamicSecretCreateGitlab {
             if (data.hasOwnProperty('group-name')) {
                 obj['group-name'] = ApiClient.convertToType(data['group-name'], 'String');
             }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
+            }
             if (data.hasOwnProperty('installation-organization')) {
                 obj['installation-organization'] = ApiClient.convertToType(data['installation-organization'], 'String');
             }
@@ -94,6 +97,9 @@ class DynamicSecretCreateGitlab {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -162,6 +168,10 @@ class DynamicSecretCreateGitlab {
         if (data['group-name'] && !(typeof data['group-name'] === 'string' || data['group-name'] instanceof String)) {
             throw new Error("Expected the field `group-name` to be a primitive type in the JSON string but got " + data['group-name']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['installation-organization'] && !(typeof data['installation-organization'] === 'string' || data['installation-organization'] instanceof String)) {
             throw new Error("Expected the field `installation-organization` to be a primitive type in the JSON string but got " + data['installation-organization']);
@@ -169,6 +179,10 @@ class DynamicSecretCreateGitlab {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
@@ -255,6 +269,12 @@ DynamicSecretCreateGitlab.prototype['gitlab-url'] = 'https://gitlab.com/';
 DynamicSecretCreateGitlab.prototype['group-name'] = undefined;
 
 /**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).
+ * @member {Array.<String>} input-rule
+ */
+DynamicSecretCreateGitlab.prototype['input-rule'] = undefined;
+
+/**
  * Gitlab project name, required for access-type=project
  * @member {String} installation-organization
  */
@@ -278,6 +298,12 @@ DynamicSecretCreateGitlab.prototype['json'] = false;
  * @member {String} name
  */
 DynamicSecretCreateGitlab.prototype['name'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+DynamicSecretCreateGitlab.prototype['output-rule'] = undefined;
 
 /**
  * Add tags attached to this object

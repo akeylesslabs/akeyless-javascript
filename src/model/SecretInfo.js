@@ -17,7 +17,7 @@ import GithubMetadata from './GithubMetadata';
 /**
  * The SecretInfo model module.
  * @module model/SecretInfo
- * @version 5.0.25
+ * @version 5.0.26
  */
 class SecretInfo {
     /**
@@ -48,6 +48,9 @@ class SecretInfo {
         if (data) {
             obj = obj || new SecretInfo();
 
+            if (data.hasOwnProperty('activation_date')) {
+                obj['activation_date'] = ApiClient.convertToType(data['activation_date'], 'Date');
+            }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'Date');
             }
@@ -150,6 +153,11 @@ class SecretInfo {
 }
 
 
+
+/**
+ * @member {Date} activation_date
+ */
+SecretInfo.prototype['activation_date'] = undefined;
 
 /**
  * @member {Date} created

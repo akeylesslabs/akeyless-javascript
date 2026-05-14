@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerMongo model module.
  * @module model/GatewayUpdateProducerMongo
- * @version 5.0.25
+ * @version 5.0.26
  */
 class GatewayUpdateProducerMongo {
     /**
@@ -59,6 +59,9 @@ class GatewayUpdateProducerMongo {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
             }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
@@ -110,6 +113,9 @@ class GatewayUpdateProducerMongo {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('password-length')) {
                 obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
@@ -177,6 +183,10 @@ class GatewayUpdateProducerMongo {
         if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
             throw new Error("Expected the field `delete_protection` to be a primitive type in the JSON string but got " + data['delete_protection']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['mongodb-atlas-api-private-key'] && !(typeof data['mongodb-atlas-api-private-key'] === 'string' || data['mongodb-atlas-api-private-key'] instanceof String)) {
             throw new Error("Expected the field `mongodb-atlas-api-private-key` to be a primitive type in the JSON string but got " + data['mongodb-atlas-api-private-key']);
@@ -236,6 +246,10 @@ class GatewayUpdateProducerMongo {
         // ensure the json data is a string
         if (data['new-name'] && !(typeof data['new-name'] === 'string' || data['new-name'] instanceof String)) {
             throw new Error("Expected the field `new-name` to be a primitive type in the JSON string but got " + data['new-name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
         if (data['password-length'] && !(typeof data['password-length'] === 'string' || data['password-length'] instanceof String)) {
@@ -305,6 +319,12 @@ GatewayUpdateProducerMongo.prototype['custom-username-template'] = undefined;
  * @member {String} delete_protection
  */
 GatewayUpdateProducerMongo.prototype['delete_protection'] = undefined;
+
+/**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).
+ * @member {Array.<String>} input-rule
+ */
+GatewayUpdateProducerMongo.prototype['input-rule'] = undefined;
 
 /**
  * Additional custom fields to associate with the item
@@ -409,6 +429,12 @@ GatewayUpdateProducerMongo.prototype['name'] = undefined;
  * @member {String} new-name
  */
 GatewayUpdateProducerMongo.prototype['new-name'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+GatewayUpdateProducerMongo.prototype['output-rule'] = undefined;
 
 /**
  * The length of the password to be generated

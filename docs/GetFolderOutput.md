@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **metadata** | **String** |  | [optional] 
 **modificationDate** | **Date** |  | [optional] 
 **tags** | **[String]** |  | [optional] 
+**uscSyncConfigs** | [**[FolderUSCSyncConfig]**](FolderUSCSyncConfig.md) |  | [optional] 
 
 

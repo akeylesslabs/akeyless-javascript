@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateSplunk model module.
  * @module model/RotatedSecretUpdateSplunk
- * @version 5.0.25
+ * @version 5.0.26
  */
 class RotatedSecretUpdateSplunk {
     /**
@@ -77,6 +77,9 @@ class RotatedSecretUpdateSplunk {
             if (data.hasOwnProperty('hec-token')) {
                 obj['hec-token'] = ApiClient.convertToType(data['hec-token'], 'String');
             }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
+            }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
@@ -97,6 +100,9 @@ class RotatedSecretUpdateSplunk {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('password-length')) {
                 obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
@@ -173,6 +179,10 @@ class RotatedSecretUpdateSplunk {
         if (data['hec-token'] && !(typeof data['hec-token'] === 'string' || data['hec-token'] instanceof String)) {
             throw new Error("Expected the field `hec-token` to be a primitive type in the JSON string but got " + data['hec-token']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['keep-prev-version'] && !(typeof data['keep-prev-version'] === 'string' || data['keep-prev-version'] instanceof String)) {
             throw new Error("Expected the field `keep-prev-version` to be a primitive type in the JSON string but got " + data['keep-prev-version']);
@@ -192,6 +202,10 @@ class RotatedSecretUpdateSplunk {
         // ensure the json data is a string
         if (data['new-name'] && !(typeof data['new-name'] === 'string' || data['new-name'] instanceof String)) {
             throw new Error("Expected the field `new-name` to be a primitive type in the JSON string but got " + data['new-name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
         if (data['password-length'] && !(typeof data['password-length'] === 'string' || data['password-length'] instanceof String)) {
@@ -285,6 +299,12 @@ RotatedSecretUpdateSplunk.prototype['expiration-date'] = undefined;
 RotatedSecretUpdateSplunk.prototype['hec-token'] = undefined;
 
 /**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)
+ * @member {Array.<String>} input-rule
+ */
+RotatedSecretUpdateSplunk.prototype['input-rule'] = undefined;
+
+/**
  * Additional custom fields to associate with the item
  * @member {Object.<String, String>} item-custom-fields
  */
@@ -326,6 +346,12 @@ RotatedSecretUpdateSplunk.prototype['name'] = undefined;
  * @member {String} new-name
  */
 RotatedSecretUpdateSplunk.prototype['new-name'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+RotatedSecretUpdateSplunk.prototype['output-rule'] = undefined;
 
 /**
  * The length of the password to be generated

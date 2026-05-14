@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 5.0.25
+ * @version 5.0.26
  */
 class UpdateRole {
     /**
@@ -75,6 +75,9 @@ class UpdateRole {
             }
             if (data.hasOwnProperty('gw-analytics-access')) {
                 obj['gw-analytics-access'] = ApiClient.convertToType(data['gw-analytics-access'], 'String');
+            }
+            if (data.hasOwnProperty('isi-access')) {
+                obj['isi-access'] = ApiClient.convertToType(data['isi-access'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -150,6 +153,10 @@ class UpdateRole {
         // ensure the json data is a string
         if (data['gw-analytics-access'] && !(typeof data['gw-analytics-access'] === 'string' || data['gw-analytics-access'] instanceof String)) {
             throw new Error("Expected the field `gw-analytics-access` to be a primitive type in the JSON string but got " + data['gw-analytics-access']);
+        }
+        // ensure the json data is a string
+        if (data['isi-access'] && !(typeof data['isi-access'] === 'string' || data['isi-access'] instanceof String)) {
+            throw new Error("Expected the field `isi-access` to be a primitive type in the JSON string but got " + data['isi-access']);
         }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
@@ -240,6 +247,12 @@ UpdateRole.prototype['event-forwarder-access'] = undefined;
  * @member {String} gw-analytics-access
  */
 UpdateRole.prototype['gw-analytics-access'] = undefined;
+
+/**
+ * Allow this role to access Identity & Secrets Intelligence. Currently only 'none', 'scoped' and 'all' values are supported.
+ * @member {String} isi-access
+ */
+UpdateRole.prototype['isi-access'] = undefined;
 
 /**
  * Set output format to JSON

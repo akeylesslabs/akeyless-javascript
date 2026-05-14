@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscUpdate model module.
  * @module model/UscUpdate
- * @version 5.0.25
+ * @version 5.0.26
  */
 class UscUpdate {
     /**
@@ -73,6 +73,12 @@ class UscUpdate {
             if (data.hasOwnProperty('pfx-password')) {
                 obj['pfx-password'] = ApiClient.convertToType(data['pfx-password'], 'String');
             }
+            if (data.hasOwnProperty('remote-secret-activation-date')) {
+                obj['remote-secret-activation-date'] = ApiClient.convertToType(data['remote-secret-activation-date'], 'String');
+            }
+            if (data.hasOwnProperty('remote-secret-expires')) {
+                obj['remote-secret-expires'] = ApiClient.convertToType(data['remote-secret-expires'], 'String');
+            }
             if (data.hasOwnProperty('secret-id')) {
                 obj['secret-id'] = ApiClient.convertToType(data['secret-id'], 'String');
             }
@@ -128,6 +134,14 @@ class UscUpdate {
         // ensure the json data is a string
         if (data['pfx-password'] && !(typeof data['pfx-password'] === 'string' || data['pfx-password'] instanceof String)) {
             throw new Error("Expected the field `pfx-password` to be a primitive type in the JSON string but got " + data['pfx-password']);
+        }
+        // ensure the json data is a string
+        if (data['remote-secret-activation-date'] && !(typeof data['remote-secret-activation-date'] === 'string' || data['remote-secret-activation-date'] instanceof String)) {
+            throw new Error("Expected the field `remote-secret-activation-date` to be a primitive type in the JSON string but got " + data['remote-secret-activation-date']);
+        }
+        // ensure the json data is a string
+        if (data['remote-secret-expires'] && !(typeof data['remote-secret-expires'] === 'string' || data['remote-secret-expires'] instanceof String)) {
+            throw new Error("Expected the field `remote-secret-expires` to be a primitive type in the JSON string but got " + data['remote-secret-expires']);
         }
         // ensure the json data is a string
         if (data['secret-id'] && !(typeof data['secret-id'] === 'string' || data['secret-id'] instanceof String)) {
@@ -201,6 +215,18 @@ UscUpdate.prototype['object-type'] = undefined;
  * @member {String} pfx-password
  */
 UscUpdate.prototype['pfx-password'] = undefined;
+
+/**
+ * Activation date for the secret on the remote endpoint, in UTC format: YYYY-MM-DDTHH:MM:SSZ
+ * @member {String} remote-secret-activation-date
+ */
+UscUpdate.prototype['remote-secret-activation-date'] = undefined;
+
+/**
+ * Expiration time for the secret on the remote endpoint, in UTC format: YYYY-MM-DDTHH:MM:SSZ
+ * @member {String} remote-secret-expires
+ */
+UscUpdate.prototype['remote-secret-expires'] = undefined;
 
 /**
  * The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to update

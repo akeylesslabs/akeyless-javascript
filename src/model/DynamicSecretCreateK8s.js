@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateK8s model module.
  * @module model/DynamicSecretCreateK8s
- * @version 5.0.25
+ * @version 5.0.26
  */
 class DynamicSecretCreateK8s {
     /**
@@ -64,6 +64,9 @@ class DynamicSecretCreateK8s {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
+            }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
@@ -108,6 +111,9 @@ class DynamicSecretCreateK8s {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
@@ -188,6 +194,10 @@ class DynamicSecretCreateK8s {
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['k8s-allowed-namespaces'] && !(typeof data['k8s-allowed-namespaces'] === 'string' || data['k8s-allowed-namespaces'] instanceof String)) {
             throw new Error("Expected the field `k8s-allowed-namespaces` to be a primitive type in the JSON string but got " + data['k8s-allowed-namespaces']);
@@ -239,6 +249,10 @@ class DynamicSecretCreateK8s {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
         if (data['producer-encryption-key-name'] && !(typeof data['producer-encryption-key-name'] === 'string' || data['producer-encryption-key-name'] instanceof String)) {
@@ -310,6 +324,12 @@ DynamicSecretCreateK8s.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 DynamicSecretCreateK8s.prototype['description'] = undefined;
+
+/**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).
+ * @member {Array.<String>} input-rule
+ */
+DynamicSecretCreateK8s.prototype['input-rule'] = undefined;
 
 /**
  * Additional custom fields to associate with the item
@@ -401,6 +421,12 @@ DynamicSecretCreateK8s.prototype['k8s-service-account-type'] = undefined;
  * @member {String} name
  */
 DynamicSecretCreateK8s.prototype['name'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+DynamicSecretCreateK8s.prototype['output-rule'] = undefined;
 
 /**
  * Dynamic producer encryption key

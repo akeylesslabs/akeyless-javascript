@@ -16,6 +16,7 @@ import AWSTargetDetails from './AWSTargetDetails';
 import ArtifactoryTargetDetails from './ArtifactoryTargetDetails';
 import AzureTargetDetails from './AzureTargetDetails';
 import ChefTargetDetails from './ChefTargetDetails';
+import CloudflareTargetDetails from './CloudflareTargetDetails';
 import CustomTargetDetails from './CustomTargetDetails';
 import DbTargetDetails from './DbTargetDetails';
 import DigiCertTargetDetails from './DigiCertTargetDetails';
@@ -51,7 +52,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 5.0.25
+ * @version 5.0.26
  */
 class TargetTypeDetailsInput {
     /**
@@ -93,6 +94,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('chef_target_details')) {
                 obj['chef_target_details'] = ChefTargetDetails.constructFromObject(data['chef_target_details']);
+            }
+            if (data.hasOwnProperty('cloudflare_target_details')) {
+                obj['cloudflare_target_details'] = CloudflareTargetDetails.constructFromObject(data['cloudflare_target_details']);
             }
             if (data.hasOwnProperty('custom_target_details')) {
                 obj['custom_target_details'] = CustomTargetDetails.constructFromObject(data['custom_target_details']);
@@ -212,6 +216,10 @@ class TargetTypeDetailsInput {
         // validate the optional field `chef_target_details`
         if (data['chef_target_details']) { // data not null
           ChefTargetDetails.validateJSON(data['chef_target_details']);
+        }
+        // validate the optional field `cloudflare_target_details`
+        if (data['cloudflare_target_details']) { // data not null
+          CloudflareTargetDetails.validateJSON(data['cloudflare_target_details']);
         }
         // validate the optional field `custom_target_details`
         if (data['custom_target_details']) { // data not null
@@ -365,6 +373,11 @@ TargetTypeDetailsInput.prototype['azure_target_details'] = undefined;
  * @member {module:model/ChefTargetDetails} chef_target_details
  */
 TargetTypeDetailsInput.prototype['chef_target_details'] = undefined;
+
+/**
+ * @member {module:model/CloudflareTargetDetails} cloudflare_target_details
+ */
+TargetTypeDetailsInput.prototype['cloudflare_target_details'] = undefined;
 
 /**
  * @member {module:model/CustomTargetDetails} custom_target_details

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DigiCertTargetDetails model module.
  * @module model/DigiCertTargetDetails
- * @version 5.0.25
+ * @version 5.0.26
  */
 class DigiCertTargetDetails {
     /**
@@ -64,6 +64,9 @@ class DigiCertTargetDetails {
             }
             if (data.hasOwnProperty('dns_target_type')) {
                 obj['dns_target_type'] = ApiClient.convertToType(data['dns_target_type'], 'String');
+            }
+            if (data.hasOwnProperty('dns_zone')) {
+                obj['dns_zone'] = ApiClient.convertToType(data['dns_zone'], 'String');
             }
             if (data.hasOwnProperty('eab_hmac_key')) {
                 obj['eab_hmac_key'] = ApiClient.convertToType(data['eab_hmac_key'], 'String');
@@ -119,6 +122,10 @@ class DigiCertTargetDetails {
         // ensure the json data is a string
         if (data['dns_target_type'] && !(typeof data['dns_target_type'] === 'string' || data['dns_target_type'] instanceof String)) {
             throw new Error("Expected the field `dns_target_type` to be a primitive type in the JSON string but got " + data['dns_target_type']);
+        }
+        // ensure the json data is a string
+        if (data['dns_zone'] && !(typeof data['dns_zone'] === 'string' || data['dns_zone'] instanceof String)) {
+            throw new Error("Expected the field `dns_zone` to be a primitive type in the JSON string but got " + data['dns_zone']);
         }
         // ensure the json data is a string
         if (data['eab_hmac_key'] && !(typeof data['eab_hmac_key'] === 'string' || data['eab_hmac_key'] instanceof String)) {
@@ -186,6 +193,12 @@ DigiCertTargetDetails.prototype['dns_target_name'] = undefined;
  * @member {String} dns_target_type
  */
 DigiCertTargetDetails.prototype['dns_target_type'] = undefined;
+
+/**
+ * Cloudflare zone identifier. Required when DNSTargetType is Cloudflare.
+ * @member {String} dns_zone
+ */
+DigiCertTargetDetails.prototype['dns_zone'] = undefined;
 
 /**
  * External Account Binding HMAC key. Required until ACME account is bootstrapped on first issuance.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerLdap model module.
  * @module model/GatewayCreateProducerLdap
- * @version 5.0.25
+ * @version 5.0.26
  */
 class GatewayCreateProducerLdap {
     /**
@@ -81,6 +81,9 @@ class GatewayCreateProducerLdap {
             if (data.hasOwnProperty('host-provider')) {
                 obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
             }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
+            }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
@@ -95,6 +98,9 @@ class GatewayCreateProducerLdap {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
             }
             if (data.hasOwnProperty('password-length')) {
                 obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
@@ -202,6 +208,10 @@ class GatewayCreateProducerLdap {
         if (data['host-provider'] && !(typeof data['host-provider'] === 'string' || data['host-provider'] instanceof String)) {
             throw new Error("Expected the field `host-provider` to be a primitive type in the JSON string but got " + data['host-provider']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['ldap-ca-cert'] && !(typeof data['ldap-ca-cert'] === 'string' || data['ldap-ca-cert'] instanceof String)) {
             throw new Error("Expected the field `ldap-ca-cert` to be a primitive type in the JSON string but got " + data['ldap-ca-cert']);
@@ -213,6 +223,10 @@ class GatewayCreateProducerLdap {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
         if (data['password-length'] && !(typeof data['password-length'] === 'string' || data['password-length'] instanceof String)) {
@@ -347,6 +361,12 @@ GatewayCreateProducerLdap.prototype['group-dn'] = undefined;
 GatewayCreateProducerLdap.prototype['host-provider'] = undefined;
 
 /**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).
+ * @member {Array.<String>} input-rule
+ */
+GatewayCreateProducerLdap.prototype['input-rule'] = undefined;
+
+/**
  * Additional custom fields to associate with the item
  * @member {Object.<String, String>} item-custom-fields
  */
@@ -376,6 +396,12 @@ GatewayCreateProducerLdap.prototype['ldap-url'] = undefined;
  * @member {String} name
  */
 GatewayCreateProducerLdap.prototype['name'] = undefined;
+
+/**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+GatewayCreateProducerLdap.prototype['output-rule'] = undefined;
 
 /**
  * The length of the password to be generated

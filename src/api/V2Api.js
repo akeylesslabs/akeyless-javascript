@@ -13,6 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
+import AccountCustomField from '../model/AccountCustomField';
 import AccountCustomFieldCreate from '../model/AccountCustomFieldCreate';
 import AccountCustomFieldCreateOutput from '../model/AccountCustomFieldCreateOutput';
 import AccountCustomFieldDelete from '../model/AccountCustomFieldDelete';
@@ -573,6 +574,8 @@ import KMIPClientUpdateResponse from '../model/KMIPClientUpdateResponse';
 import KMIPEnvironmentCreateResponse from '../model/KMIPEnvironmentCreateResponse';
 import KmipClientDeleteRule from '../model/KmipClientDeleteRule';
 import KmipClientSetRule from '../model/KmipClientSetRule';
+import KmipClientUpdate from '../model/KmipClientUpdate';
+import KmipClientUpdateOutput from '../model/KmipClientUpdateOutput';
 import KmipCreateClient from '../model/KmipCreateClient';
 import KmipCreateClientOutput from '../model/KmipCreateClientOutput';
 import KmipDeleteClient from '../model/KmipDeleteClient';
@@ -588,6 +591,8 @@ import KmipRenewClientCertificateOutput from '../model/KmipRenewClientCertificat
 import KmipRenewServerCertificate from '../model/KmipRenewServerCertificate';
 import KmipRenewServerCertificateOutput from '../model/KmipRenewServerCertificateOutput';
 import KmipServerSetup from '../model/KmipServerSetup';
+import KmipServerUpdate from '../model/KmipServerUpdate';
+import KmipServerUpdateOutput from '../model/KmipServerUpdateOutput';
 import KmipSetServerState from '../model/KmipSetServerState';
 import KmipSetServerStateOutput from '../model/KmipSetServerStateOutput';
 import KubeconfigGenerateOutput from '../model/KubeconfigGenerateOutput';
@@ -725,6 +730,7 @@ import Target from '../model/Target';
 import TargetCreateArtifactory from '../model/TargetCreateArtifactory';
 import TargetCreateAws from '../model/TargetCreateAws';
 import TargetCreateAzure from '../model/TargetCreateAzure';
+import TargetCreateCloudflare from '../model/TargetCreateCloudflare';
 import TargetCreateDB from '../model/TargetCreateDB';
 import TargetCreateDigiCert from '../model/TargetCreateDigiCert';
 import TargetCreateDockerhub from '../model/TargetCreateDockerhub';
@@ -761,6 +767,7 @@ import TargetList from '../model/TargetList';
 import TargetUpdateArtifactory from '../model/TargetUpdateArtifactory';
 import TargetUpdateAws from '../model/TargetUpdateAws';
 import TargetUpdateAzure from '../model/TargetUpdateAzure';
+import TargetUpdateCloudflare from '../model/TargetUpdateCloudflare';
 import TargetUpdateDB from '../model/TargetUpdateDB';
 import TargetUpdateDigiCert from '../model/TargetUpdateDigiCert';
 import TargetUpdateDockerhub from '../model/TargetUpdateDockerhub';
@@ -929,7 +936,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.25
+* @version 5.0.26
 */
 export default class V2Api {
 
@@ -1085,7 +1092,7 @@ export default class V2Api {
      * List all account custom fields.
      * Returns a list of all custom fields configured for the account, optionally filtered by object and object type.
      * @param {module:model/AccountCustomFieldList} accountCustomFieldList 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AccountCustomField>} and HTTP response
      */
     accountCustomFieldListWithHttpInfo(accountCustomFieldList) {
       let postBody = accountCustomFieldList;
@@ -1106,7 +1113,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = [AccountCustomField];
       return this.apiClient.callApi(
         '/account-custom-field-list', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1118,7 +1125,7 @@ export default class V2Api {
      * List all account custom fields.
      * Returns a list of all custom fields configured for the account, optionally filtered by object and object type.
      * @param {module:model/AccountCustomFieldList} accountCustomFieldList 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AccountCustomField>}
      */
     accountCustomFieldList(accountCustomFieldList) {
       return this.accountCustomFieldListWithHttpInfo(accountCustomFieldList)
@@ -16470,6 +16477,48 @@ export default class V2Api {
 
     /**
      * @param {Object} opts Optional parameters
+     * @param {module:model/KmipClientUpdate} [kmipClientUpdate] 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KmipClientUpdateOutput} and HTTP response
+     */
+    kmipClientUpdateWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['kmipClientUpdate'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KmipClientUpdateOutput;
+      return this.apiClient.callApi(
+        '/kmip-client-update', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipClientUpdate} opts.kmipClientUpdate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KmipClientUpdateOutput}
+     */
+    kmipClientUpdate(opts) {
+      return this.kmipClientUpdateWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
      * @param {module:model/KmipCreateClient} [kmipCreateClient] 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KmipCreateClientOutput} and HTTP response
      */
@@ -16882,6 +16931,48 @@ export default class V2Api {
      */
     kmipServerSetup(opts) {
       return this.kmipServerSetupWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipServerUpdate} [kmipServerUpdate] 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KmipServerUpdateOutput} and HTTP response
+     */
+    kmipServerUpdateWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['kmipServerUpdate'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KmipServerUpdateOutput;
+      return this.apiClient.callApi(
+        '/kmip-server-update', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipServerUpdate} opts.kmipServerUpdate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KmipServerUpdateOutput}
+     */
+    kmipServerUpdate(opts) {
+      return this.kmipServerUpdateWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -20960,6 +21051,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetCreateCloudflare} targetCreateCloudflare 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateCloudflareWithHttpInfo(targetCreateCloudflare) {
+      let postBody = targetCreateCloudflare;
+      // verify the required parameter 'targetCreateCloudflare' is set
+      if (targetCreateCloudflare === undefined || targetCreateCloudflare === null) {
+        throw new Error("Missing the required parameter 'targetCreateCloudflare' when calling targetCreateCloudflare");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-cloudflare', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateCloudflare} targetCreateCloudflare 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateCloudflare(targetCreateCloudflare) {
+      return this.targetCreateCloudflareWithHttpInfo(targetCreateCloudflare)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetCreateDB} targetCreateDB 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
      */
@@ -22458,6 +22592,49 @@ export default class V2Api {
      */
     targetUpdateAzure(targetUpdateAzure) {
       return this.targetUpdateAzureWithHttpInfo(targetUpdateAzure)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateCloudflare} targetUpdateCloudflare 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateCloudflareWithHttpInfo(targetUpdateCloudflare) {
+      let postBody = targetUpdateCloudflare;
+      // verify the required parameter 'targetUpdateCloudflare' is set
+      if (targetUpdateCloudflare === undefined || targetUpdateCloudflare === null) {
+        throw new Error("Missing the required parameter 'targetUpdateCloudflare' when calling targetUpdateCloudflare");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-cloudflare', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateCloudflare} targetUpdateCloudflare 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateCloudflare(targetUpdateCloudflare) {
+      return this.targetUpdateCloudflareWithHttpInfo(targetUpdateCloudflare)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
