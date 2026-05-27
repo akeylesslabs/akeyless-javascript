@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 5.0.26
+ * @version 5.0.27
  */
 class UpdatePKICertIssuer {
     /**
@@ -81,6 +81,9 @@ class UpdatePKICertIssuer {
             }
             if (data.hasOwnProperty('auto-renew')) {
                 obj['auto-renew'] = ApiClient.convertToType(data['auto-renew'], 'Boolean');
+            }
+            if (data.hasOwnProperty('basic-constraints')) {
+                obj['basic-constraints'] = ApiClient.convertToType(data['basic-constraints'], 'String');
             }
             if (data.hasOwnProperty('client-flag')) {
                 obj['client-flag'] = ApiClient.convertToType(data['client-flag'], 'Boolean');
@@ -239,6 +242,10 @@ class UpdatePKICertIssuer {
             throw new Error("Expected the field `allowed-uri-sans` to be a primitive type in the JSON string but got " + data['allowed-uri-sans']);
         }
         // ensure the json data is a string
+        if (data['basic-constraints'] && !(typeof data['basic-constraints'] === 'string' || data['basic-constraints'] instanceof String)) {
+            throw new Error("Expected the field `basic-constraints` to be a primitive type in the JSON string but got " + data['basic-constraints']);
+        }
+        // ensure the json data is a string
         if (data['country'] && !(typeof data['country'] === 'string' || data['country'] instanceof String)) {
             throw new Error("Expected the field `country` to be a primitive type in the JSON string but got " + data['country']);
         }
@@ -392,6 +399,12 @@ UpdatePKICertIssuer.prototype['allowed-uri-sans'] = undefined;
  * @member {Boolean} auto-renew
  */
 UpdatePKICertIssuer.prototype['auto-renew'] = undefined;
+
+/**
+ * Defines the X.509 Basic Constraints extension for certificates issued by this PKI issuer template
+ * @member {String} basic-constraints
+ */
+UpdatePKICertIssuer.prototype['basic-constraints'] = undefined;
 
 /**
  * If set, certificates will be flagged for client auth use

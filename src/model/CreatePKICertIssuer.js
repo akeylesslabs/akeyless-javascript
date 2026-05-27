@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 5.0.26
+ * @version 5.0.27
  */
 class CreatePKICertIssuer {
     /**
@@ -78,6 +78,9 @@ class CreatePKICertIssuer {
             }
             if (data.hasOwnProperty('auto-renew')) {
                 obj['auto-renew'] = ApiClient.convertToType(data['auto-renew'], 'Boolean');
+            }
+            if (data.hasOwnProperty('basic-constraints')) {
+                obj['basic-constraints'] = ApiClient.convertToType(data['basic-constraints'], 'String');
             }
             if (data.hasOwnProperty('ca-target')) {
                 obj['ca-target'] = ApiClient.convertToType(data['ca-target'], 'String');
@@ -232,6 +235,10 @@ class CreatePKICertIssuer {
             throw new Error("Expected the field `allowed-uri-sans` to be a primitive type in the JSON string but got " + data['allowed-uri-sans']);
         }
         // ensure the json data is a string
+        if (data['basic-constraints'] && !(typeof data['basic-constraints'] === 'string' || data['basic-constraints'] instanceof String)) {
+            throw new Error("Expected the field `basic-constraints` to be a primitive type in the JSON string but got " + data['basic-constraints']);
+        }
+        // ensure the json data is a string
         if (data['ca-target'] && !(typeof data['ca-target'] === 'string' || data['ca-target'] instanceof String)) {
             throw new Error("Expected the field `ca-target` to be a primitive type in the JSON string but got " + data['ca-target']);
         }
@@ -379,6 +386,12 @@ CreatePKICertIssuer.prototype['allowed-uri-sans'] = undefined;
  * @member {Boolean} auto-renew
  */
 CreatePKICertIssuer.prototype['auto-renew'] = undefined;
+
+/**
+ * Defines the X.509 Basic Constraints extension for certificates issued by this PKI issuer template
+ * @member {String} basic-constraints
+ */
+CreatePKICertIssuer.prototype['basic-constraints'] = undefined;
 
 /**
  * The name of an existing CA target to attach this PKI Certificate Issuer to, required in Public CA mode

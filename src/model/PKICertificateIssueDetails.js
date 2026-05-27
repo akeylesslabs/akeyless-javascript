@@ -17,7 +17,7 @@ import CertificateExpirationEvent from './CertificateExpirationEvent';
 /**
  * The PKICertificateIssueDetails model module.
  * @module model/PKICertificateIssueDetails
- * @version 5.0.26
+ * @version 5.0.27
  */
 class PKICertificateIssueDetails {
     /**
@@ -74,6 +74,12 @@ class PKICertificateIssueDetails {
             }
             if (data.hasOwnProperty('auto_renew_certificate')) {
                 obj['auto_renew_certificate'] = ApiClient.convertToType(data['auto_renew_certificate'], 'Boolean');
+            }
+            if (data.hasOwnProperty('basic_constraints')) {
+                obj['basic_constraints'] = ApiClient.convertToType(data['basic_constraints'], 'String');
+            }
+            if (data.hasOwnProperty('basic_constraints_critical')) {
+                obj['basic_constraints_critical'] = ApiClient.convertToType(data['basic_constraints_critical'], 'Boolean');
             }
             if (data.hasOwnProperty('basic_constraints_valid_for_non_ca')) {
                 obj['basic_constraints_valid_for_non_ca'] = ApiClient.convertToType(data['basic_constraints_valid_for_non_ca'], 'Boolean');
@@ -200,6 +206,10 @@ class PKICertificateIssueDetails {
             throw new Error("Expected the field `allowed_uri_sans` to be an array in the JSON data but got " + data['allowed_uri_sans']);
         }
         // ensure the json data is a string
+        if (data['basic_constraints'] && !(typeof data['basic_constraints'] === 'string' || data['basic_constraints'] instanceof String)) {
+            throw new Error("Expected the field `basic_constraints` to be a primitive type in the JSON string but got " + data['basic_constraints']);
+        }
+        // ensure the json data is a string
         if (data['certificate_authority_mode'] && !(typeof data['certificate_authority_mode'] === 'string' || data['certificate_authority_mode'] instanceof String)) {
             throw new Error("Expected the field `certificate_authority_mode` to be a primitive type in the JSON string but got " + data['certificate_authority_mode']);
         }
@@ -314,6 +324,16 @@ PKICertificateIssueDetails.prototype['allowed_uri_sans'] = undefined;
  * @member {Boolean} auto_renew_certificate
  */
 PKICertificateIssueDetails.prototype['auto_renew_certificate'] = undefined;
+
+/**
+ * @member {String} basic_constraints
+ */
+PKICertificateIssueDetails.prototype['basic_constraints'] = undefined;
+
+/**
+ * @member {Boolean} basic_constraints_critical
+ */
+PKICertificateIssueDetails.prototype['basic_constraints_critical'] = undefined;
 
 /**
  * @member {Boolean} basic_constraints_valid_for_non_ca

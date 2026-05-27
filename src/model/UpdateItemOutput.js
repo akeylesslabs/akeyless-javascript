@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItemOutput model module.
  * @module model/UpdateItemOutput
- * @version 5.0.26
+ * @version 5.0.27
  */
 class UpdateItemOutput {
     /**

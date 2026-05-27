@@ -28,7 +28,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 5.0.26
+ * @version 5.0.27
  */
 class Item {
     /**

@@ -16,13 +16,14 @@ import AWSGatewayCloudIdentityExternalIdOpt from './AWSGatewayCloudIdentityExter
 import AgenticRules from './AgenticRules';
 import ItemCustomFieldsDetails from './ItemCustomFieldsDetails';
 import ItemTargetAssociation from './ItemTargetAssociation';
+import PasswordPolicyInfo from './PasswordPolicyInfo';
 import SecureRemoteAccess from './SecureRemoteAccess';
 import WalletDetails from './WalletDetails';
 
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 5.0.26
+ * @version 5.0.27
  */
 class DSProducerDetails {
     /**
@@ -680,6 +681,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('password_policy')) {
                 obj['password_policy'] = ApiClient.convertToType(data['password_policy'], 'String');
             }
+            if (data.hasOwnProperty('password_policy_info')) {
+                obj['password_policy_info'] = PasswordPolicyInfo.constructFromObject(data['password_policy_info']);
+            }
             if (data.hasOwnProperty('payload')) {
                 obj['payload'] = ApiClient.convertToType(data['payload'], 'String');
             }
@@ -691,6 +695,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('postgres_revocation_statements')) {
                 obj['postgres_revocation_statements'] = ApiClient.convertToType(data['postgres_revocation_statements'], 'String');
+            }
+            if (data.hasOwnProperty('preserve_existing_password_settings')) {
+                obj['preserve_existing_password_settings'] = ApiClient.convertToType(data['preserve_existing_password_settings'], 'Boolean');
             }
             if (data.hasOwnProperty('privileged_user')) {
                 obj['privileged_user'] = ApiClient.convertToType(data['privileged_user'], 'String');
@@ -1628,6 +1635,10 @@ class DSProducerDetails {
         // ensure the json data is a string
         if (data['password_policy'] && !(typeof data['password_policy'] === 'string' || data['password_policy'] instanceof String)) {
             throw new Error("Expected the field `password_policy` to be a primitive type in the JSON string but got " + data['password_policy']);
+        }
+        // validate the optional field `password_policy_info`
+        if (data['password_policy_info']) { // data not null
+          PasswordPolicyInfo.validateJSON(data['password_policy_info']);
         }
         // ensure the json data is a string
         if (data['payload'] && !(typeof data['payload'] === 'string' || data['payload'] instanceof String)) {
@@ -2900,6 +2911,11 @@ DSProducerDetails.prototype['password_length'] = undefined;
 DSProducerDetails.prototype['password_policy'] = undefined;
 
 /**
+ * @member {module:model/PasswordPolicyInfo} password_policy_info
+ */
+DSProducerDetails.prototype['password_policy_info'] = undefined;
+
+/**
  * @member {String} payload
  */
 DSProducerDetails.prototype['payload'] = undefined;
@@ -2918,6 +2934,12 @@ DSProducerDetails.prototype['postgres_creation_statements'] = undefined;
  * @member {String} postgres_revocation_statements
  */
 DSProducerDetails.prototype['postgres_revocation_statements'] = undefined;
+
+/**
+ * Internal marker for DS update flows: when true, keep the persisted password settings and merge explicit rule updates on top.
+ * @member {Boolean} preserve_existing_password_settings
+ */
+DSProducerDetails.prototype['preserve_existing_password_settings'] = undefined;
 
 /**
  * @member {String} privileged_user

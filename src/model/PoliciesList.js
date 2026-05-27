@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PoliciesList model module.
  * @module model/PoliciesList
- * @version 5.0.26
+ * @version 5.0.27
  */
 class PoliciesList {
     /**

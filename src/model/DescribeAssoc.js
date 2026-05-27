@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeAssoc model module.
  * @module model/DescribeAssoc
- * @version 5.0.26
+ * @version 5.0.27
  */
 class DescribeAssoc {
     /**

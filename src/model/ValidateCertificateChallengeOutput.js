@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidateCertificateChallengeOutput model module.
  * @module model/ValidateCertificateChallengeOutput
- * @version 5.0.26
+ * @version 5.0.27
  */
 class ValidateCertificateChallengeOutput {
     /**

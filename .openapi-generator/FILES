@@ -2407,12 +2407,3 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/AccountCustomField.spec.js
-test/model/CloudflareTargetDetails.spec.js
-test/model/FolderUSCSyncConfig.spec.js
-test/model/KmipClientUpdate.spec.js
-test/model/KmipClientUpdateOutput.spec.js
-test/model/KmipServerUpdate.spec.js
-test/model/KmipServerUpdateOutput.spec.js
-test/model/TargetCreateCloudflare.spec.js
-test/model/TargetUpdateCloudflare.spec.js

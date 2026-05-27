@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerAzure model module.
  * @module model/GatewayCreateProducerAzure
- * @version 5.0.26
+ * @version 5.0.27
  */
 class GatewayCreateProducerAzure {
     /**
@@ -134,6 +134,18 @@ class GatewayCreateProducerAzure {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
+            if (data.hasOwnProperty('use-capital-letters')) {
+                obj['use-capital-letters'] = ApiClient.convertToType(data['use-capital-letters'], 'String');
+            }
+            if (data.hasOwnProperty('use-lower-letters')) {
+                obj['use-lower-letters'] = ApiClient.convertToType(data['use-lower-letters'], 'String');
+            }
+            if (data.hasOwnProperty('use-numbers')) {
+                obj['use-numbers'] = ApiClient.convertToType(data['use-numbers'], 'String');
+            }
+            if (data.hasOwnProperty('use-special-characters')) {
+                obj['use-special-characters'] = ApiClient.convertToType(data['use-special-characters'], 'String');
+            }
             if (data.hasOwnProperty('user-group-obj-id')) {
                 obj['user-group-obj-id'] = ApiClient.convertToType(data['user-group-obj-id'], 'String');
             }
@@ -243,6 +255,22 @@ class GatewayCreateProducerAzure {
         // ensure the json data is a string
         if (data['uid-token'] && !(typeof data['uid-token'] === 'string' || data['uid-token'] instanceof String)) {
             throw new Error("Expected the field `uid-token` to be a primitive type in the JSON string but got " + data['uid-token']);
+        }
+        // ensure the json data is a string
+        if (data['use-capital-letters'] && !(typeof data['use-capital-letters'] === 'string' || data['use-capital-letters'] instanceof String)) {
+            throw new Error("Expected the field `use-capital-letters` to be a primitive type in the JSON string but got " + data['use-capital-letters']);
+        }
+        // ensure the json data is a string
+        if (data['use-lower-letters'] && !(typeof data['use-lower-letters'] === 'string' || data['use-lower-letters'] instanceof String)) {
+            throw new Error("Expected the field `use-lower-letters` to be a primitive type in the JSON string but got " + data['use-lower-letters']);
+        }
+        // ensure the json data is a string
+        if (data['use-numbers'] && !(typeof data['use-numbers'] === 'string' || data['use-numbers'] instanceof String)) {
+            throw new Error("Expected the field `use-numbers` to be a primitive type in the JSON string but got " + data['use-numbers']);
+        }
+        // ensure the json data is a string
+        if (data['use-special-characters'] && !(typeof data['use-special-characters'] === 'string' || data['use-special-characters'] instanceof String)) {
+            throw new Error("Expected the field `use-special-characters` to be a primitive type in the JSON string but got " + data['use-special-characters']);
         }
         // ensure the json data is a string
         if (data['user-group-obj-id'] && !(typeof data['user-group-obj-id'] === 'string' || data['user-group-obj-id'] instanceof String)) {
@@ -424,6 +452,29 @@ GatewayCreateProducerAzure.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 GatewayCreateProducerAzure.prototype['uid-token'] = undefined;
+
+/**
+ * Specifies whether the generated temporary password must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z). [true/false]
+ * @member {String} use-capital-letters
+ */
+GatewayCreateProducerAzure.prototype['use-capital-letters'] = undefined;
+
+/**
+ * Specifies whether the generated temporary password must contain at least one lowercase character from the ISO basic Latin alphabet (a to z). [true/false]
+ * @member {String} use-lower-letters
+ */
+GatewayCreateProducerAzure.prototype['use-lower-letters'] = undefined;
+
+/**
+ * Specifies whether the generated temporary password must contain at least one numeric character (0 to 9). [true/false]
+ * @member {String} use-numbers
+ */
+GatewayCreateProducerAzure.prototype['use-numbers'] = undefined;
+
+/**
+ * @member {String} use-special-characters
+ */
+GatewayCreateProducerAzure.prototype['use-special-characters'] = undefined;
 
 /**
  * User Group Object Id

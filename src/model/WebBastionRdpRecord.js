@@ -19,7 +19,7 @@ import NetappStorage from './NetappStorage';
 /**
  * The WebBastionRdpRecord model module.
  * @module model/WebBastionRdpRecord
- * @version 5.0.26
+ * @version 5.0.27
  */
 class WebBastionRdpRecord {
     /**

@@ -1244,7 +1244,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.26
+* @version 5.0.27
 */
 export {
     /**

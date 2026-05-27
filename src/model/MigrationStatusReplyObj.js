@@ -18,7 +18,7 @@ import SyncCounters from './SyncCounters';
 /**
  * The MigrationStatusReplyObj model module.
  * @module model/MigrationStatusReplyObj
- * @version 5.0.26
+ * @version 5.0.27
  */
 class MigrationStatusReplyObj {
     /**

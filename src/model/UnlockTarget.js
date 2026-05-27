@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UnlockTarget model module.
  * @module model/UnlockTarget
- * @version 5.0.26
+ * @version 5.0.27
  */
 class UnlockTarget {
     /**

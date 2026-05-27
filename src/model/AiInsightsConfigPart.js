@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AiInsightsConfigPart model module.
  * @module model/AiInsightsConfigPart
- * @version 5.0.26
+ * @version 5.0.27
  */
 class AiInsightsConfigPart {
     /**

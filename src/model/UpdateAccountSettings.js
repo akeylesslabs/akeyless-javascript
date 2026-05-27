@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 5.0.26
+ * @version 5.0.27
  */
 class UpdateAccountSettings {
     /**
@@ -687,25 +687,24 @@ UpdateAccountSettings.prototype['usage-event-interval'] = undefined;
 UpdateAccountSettings.prototype['usage-event-object-type'] = undefined;
 
 /**
- * Password must contain capital letters [true/false]
+ * Specifies whether the generated temporary password must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z). [true/false]
  * @member {String} use-capital-letters
  */
 UpdateAccountSettings.prototype['use-capital-letters'] = undefined;
 
 /**
- * Password must contain lower case letters [true/false]
+ * Specifies whether the generated temporary password must contain at least one lowercase character from the ISO basic Latin alphabet (a to z). [true/false]
  * @member {String} use-lower-letters
  */
 UpdateAccountSettings.prototype['use-lower-letters'] = undefined;
 
 /**
- * Password must contain numbers [true/false]
+ * Specifies whether the generated temporary password must contain at least one numeric character (0 to 9). [true/false]
  * @member {String} use-numbers
  */
 UpdateAccountSettings.prototype['use-numbers'] = undefined;
 
 /**
- * Password must contain special characters [true/false]
  * @member {String} use-special-characters
  */
 UpdateAccountSettings.prototype['use-special-characters'] = undefined;

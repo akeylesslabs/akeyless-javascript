@@ -17,7 +17,7 @@ import TargetError from './TargetError';
 /**
  * The ScanResults model module.
  * @module model/ScanResults
- * @version 5.0.26
+ * @version 5.0.27
  */
 class ScanResults {
     /**

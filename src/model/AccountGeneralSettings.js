@@ -31,7 +31,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 5.0.26
+ * @version 5.0.27
  */
 class AccountGeneralSettings {
     /**
@@ -107,6 +107,9 @@ class AccountGeneralSettings {
             }
             if (data.hasOwnProperty('enable_request_for_access')) {
                 obj['enable_request_for_access'] = ApiClient.convertToType(data['enable_request_for_access'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable_search_history')) {
+                obj['enable_search_history'] = ApiClient.convertToType(data['enable_search_history'], 'Boolean');
             }
             if (data.hasOwnProperty('hide_personal_folder')) {
                 obj['hide_personal_folder'] = ApiClient.convertToType(data['hide_personal_folder'], 'Boolean');
@@ -318,6 +321,11 @@ AccountGeneralSettings.prototype['dynamic_secret_max_ttl'] = undefined;
  * @member {Boolean} enable_request_for_access
  */
 AccountGeneralSettings.prototype['enable_request_for_access'] = undefined;
+
+/**
+ * @member {Boolean} enable_search_history
+ */
+AccountGeneralSettings.prototype['enable_search_history'] = undefined;
 
 /**
  * @member {Boolean} hide_personal_folder

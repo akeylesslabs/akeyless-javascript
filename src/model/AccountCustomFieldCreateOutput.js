@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountCustomFieldCreateOutput model module.
  * @module model/AccountCustomFieldCreateOutput
- * @version 5.0.26
+ * @version 5.0.27
  */
 class AccountCustomFieldCreateOutput {
     /**
