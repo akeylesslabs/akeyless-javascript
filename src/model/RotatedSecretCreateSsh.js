@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateSsh model module.
  * @module model/RotatedSecretCreateSsh
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretCreateSsh {
     /**
@@ -361,7 +361,6 @@ RotatedSecretCreateSsh.RequiredProperties = ["name", "rotator-type", "target-nam
 RotatedSecretCreateSsh.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretCreateSsh.prototype['auto-rotate'] = undefined;
@@ -398,7 +397,6 @@ RotatedSecretCreateSsh.prototype['item-custom-fields'] = undefined;
 RotatedSecretCreateSsh.prototype['json'] = false;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretCreateSsh.prototype['key'] = undefined;
@@ -470,13 +468,11 @@ RotatedSecretCreateSsh.prototype['rotated-username'] = undefined;
 RotatedSecretCreateSsh.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretCreateSsh.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretCreateSsh.prototype['rotation-interval'] = undefined;

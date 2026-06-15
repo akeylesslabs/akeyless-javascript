@@ -17,7 +17,7 @@ import CertificateExpirationEvent from './CertificateExpirationEvent';
 /**
  * The KMIPServer model module.
  * @module model/KMIPServer
- * @version 5.0.27
+ * @version 5.0.28
  */
 class KMIPServer {
     /**

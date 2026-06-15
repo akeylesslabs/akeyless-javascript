@@ -24,6 +24,7 @@ import ItemLockingSetting from './ItemLockingSetting';
 import PasswordExpirationInfo from './PasswordExpirationInfo';
 import PasswordPolicyInfo from './PasswordPolicyInfo';
 import PasswordScoreSetting from './PasswordScoreSetting';
+import PersonalFolderGlobalMappingSettings from './PersonalFolderGlobalMappingSettings';
 import RotationSecretMaxInterval from './RotationSecretMaxInterval';
 import SharingPolicyInfo from './SharingPolicyInfo';
 import UsageEventSetting from './UsageEventSetting';
@@ -31,7 +32,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 5.0.27
+ * @version 5.0.28
  */
 class AccountGeneralSettings {
     /**
@@ -141,6 +142,9 @@ class AccountGeneralSettings {
             if (data.hasOwnProperty('password_score')) {
                 obj['password_score'] = PasswordScoreSetting.constructFromObject(data['password_score']);
             }
+            if (data.hasOwnProperty('personal_folder_global_mapping')) {
+                obj['personal_folder_global_mapping'] = PersonalFolderGlobalMappingSettings.constructFromObject(data['personal_folder_global_mapping']);
+            }
             if (data.hasOwnProperty('protect_items_by_default')) {
                 obj['protect_items_by_default'] = ApiClient.convertToType(data['protect_items_by_default'], 'Boolean');
             }
@@ -227,6 +231,10 @@ class AccountGeneralSettings {
         // validate the optional field `password_score`
         if (data['password_score']) { // data not null
           PasswordScoreSetting.validateJSON(data['password_score']);
+        }
+        // validate the optional field `personal_folder_global_mapping`
+        if (data['personal_folder_global_mapping']) { // data not null
+          PersonalFolderGlobalMappingSettings.validateJSON(data['personal_folder_global_mapping']);
         }
         // validate the optional field `rotation_secret_max_interval`
         if (data['rotation_secret_max_interval']) { // data not null
@@ -378,6 +386,11 @@ AccountGeneralSettings.prototype['password_policy'] = undefined;
  * @member {module:model/PasswordScoreSetting} password_score
  */
 AccountGeneralSettings.prototype['password_score'] = undefined;
+
+/**
+ * @member {module:model/PersonalFolderGlobalMappingSettings} personal_folder_global_mapping
+ */
+AccountGeneralSettings.prototype['personal_folder_global_mapping'] = undefined;
 
 /**
  * @member {Boolean} protect_items_by_default

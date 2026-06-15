@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdatePostgresql model module.
  * @module model/RotatedSecretUpdatePostgresql
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretUpdatePostgresql {
     /**
@@ -328,7 +328,6 @@ RotatedSecretUpdatePostgresql.prototype['add-tag'] = undefined;
 RotatedSecretUpdatePostgresql.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretUpdatePostgresql.prototype['auto-rotate'] = undefined;
@@ -372,7 +371,6 @@ RotatedSecretUpdatePostgresql.prototype['json'] = false;
 RotatedSecretUpdatePostgresql.prototype['keep-prev-version'] = undefined;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretUpdatePostgresql.prototype['key'] = undefined;
@@ -444,13 +442,11 @@ RotatedSecretUpdatePostgresql.prototype['rotated-username'] = undefined;
 RotatedSecretUpdatePostgresql.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretUpdatePostgresql.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretUpdatePostgresql.prototype['rotation-interval'] = undefined;

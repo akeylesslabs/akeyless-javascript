@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateMssql model module.
  * @module model/RotatedSecretCreateMssql
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretCreateMssql {
     /**
@@ -318,7 +318,6 @@ RotatedSecretCreateMssql.RequiredProperties = ["name", "rotator-type", "target-n
 RotatedSecretCreateMssql.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretCreateMssql.prototype['auto-rotate'] = undefined;
@@ -355,7 +354,6 @@ RotatedSecretCreateMssql.prototype['item-custom-fields'] = undefined;
 RotatedSecretCreateMssql.prototype['json'] = false;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretCreateMssql.prototype['key'] = undefined;
@@ -415,13 +413,11 @@ RotatedSecretCreateMssql.prototype['rotated-username'] = undefined;
 RotatedSecretCreateMssql.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretCreateMssql.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretCreateMssql.prototype['rotation-interval'] = undefined;

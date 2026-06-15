@@ -5,20 +5,20 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **authenticationCredentials** | **String** | The credentials to connect with use-user-creds/use-target-creds | [optional] [default to &#39;use-user-creds&#39;]
-**autoRotate** | **String** | Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false] | [optional] 
+**autoRotate** | **String** |  | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **inputRule** | **[String]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) | [optional] 
 **itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
-**key** | **String** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
+**key** | **String** |  | [optional] 
 **maxVersions** | **String** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **String** | Rotated secret name | 
 **outputRule** | **[String]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
 **passwordLength** | **String** | The length of the password to be generated | [optional] 
 **rotationEventIn** | **[String]** | How many days before the rotation of the item would you like to be notified | [optional] 
-**rotationHour** | **Number** | The Hour of the rotation in UTC | [optional] 
-**rotationInterval** | **String** | The number of days to wait between every automatic key rotation (1-365) | [optional] 
+**rotationHour** | **Number** |  | [optional] 
+**rotationInterval** | **String** |  | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | The target name to associate | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

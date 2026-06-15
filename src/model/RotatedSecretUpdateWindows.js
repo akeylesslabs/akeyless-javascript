@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateWindows model module.
  * @module model/RotatedSecretUpdateWindows
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretUpdateWindows {
     /**
@@ -344,7 +344,6 @@ RotatedSecretUpdateWindows.prototype['add-tag'] = undefined;
 RotatedSecretUpdateWindows.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretUpdateWindows.prototype['auto-rotate'] = undefined;
@@ -388,7 +387,6 @@ RotatedSecretUpdateWindows.prototype['json'] = false;
 RotatedSecretUpdateWindows.prototype['keep-prev-version'] = undefined;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretUpdateWindows.prototype['key'] = undefined;
@@ -460,13 +458,11 @@ RotatedSecretUpdateWindows.prototype['rotated-username'] = undefined;
 RotatedSecretUpdateWindows.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretUpdateWindows.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretUpdateWindows.prototype['rotation-interval'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EsmGetSecretOutput model module.
  * @module model/EsmGetSecretOutput
- * @version 5.0.27
+ * @version 5.0.28
  */
 class EsmGetSecretOutput {
     /**
@@ -65,6 +65,15 @@ class EsmGetSecretOutput {
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'String');
             }
+            if (data.hasOwnProperty('version_id')) {
+                obj['version_id'] = ApiClient.convertToType(data['version_id'], 'String');
+            }
+            if (data.hasOwnProperty('version_ids')) {
+                obj['version_ids'] = ApiClient.convertToType(data['version_ids'], ['String']);
+            }
+            if (data.hasOwnProperty('warnings')) {
+                obj['warnings'] = ApiClient.convertToType(data['warnings'], ['String']);
+            }
         }
         return obj;
     }
@@ -90,6 +99,18 @@ class EsmGetSecretOutput {
         // ensure the json data is a string
         if (data['value'] && !(typeof data['value'] === 'string' || data['value'] instanceof String)) {
             throw new Error("Expected the field `value` to be a primitive type in the JSON string but got " + data['value']);
+        }
+        // ensure the json data is a string
+        if (data['version_id'] && !(typeof data['version_id'] === 'string' || data['version_id'] instanceof String)) {
+            throw new Error("Expected the field `version_id` to be a primitive type in the JSON string but got " + data['version_id']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['version_ids'])) {
+            throw new Error("Expected the field `version_ids` to be an array in the JSON data but got " + data['version_ids']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['warnings'])) {
+            throw new Error("Expected the field `warnings` to be an array in the JSON data but got " + data['warnings']);
         }
 
         return true;
@@ -129,6 +150,21 @@ EsmGetSecretOutput.prototype['name'] = undefined;
  * @member {String} value
  */
 EsmGetSecretOutput.prototype['value'] = undefined;
+
+/**
+ * @member {String} version_id
+ */
+EsmGetSecretOutput.prototype['version_id'] = undefined;
+
+/**
+ * @member {Array.<String>} version_ids
+ */
+EsmGetSecretOutput.prototype['version_ids'] = undefined;
+
+/**
+ * @member {Array.<String>} warnings
+ */
+EsmGetSecretOutput.prototype['warnings'] = undefined;
 
 
 

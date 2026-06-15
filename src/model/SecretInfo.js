@@ -17,7 +17,7 @@ import GithubMetadata from './GithubMetadata';
 /**
  * The SecretInfo model module.
  * @module model/SecretInfo
- * @version 5.0.27
+ * @version 5.0.28
  */
 class SecretInfo {
     /**
@@ -99,6 +99,12 @@ class SecretInfo {
             if (data.hasOwnProperty('version')) {
                 obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
+            if (data.hasOwnProperty('version_id')) {
+                obj['version_id'] = ApiClient.convertToType(data['version_id'], 'String');
+            }
+            if (data.hasOwnProperty('version_ids')) {
+                obj['version_ids'] = ApiClient.convertToType(data['version_ids'], ['String']);
+            }
         }
         return obj;
     }
@@ -144,6 +150,14 @@ class SecretInfo {
         // ensure the json data is a string
         if (data['type'] && !(typeof data['type'] === 'string' || data['type'] instanceof String)) {
             throw new Error("Expected the field `type` to be a primitive type in the JSON string but got " + data['type']);
+        }
+        // ensure the json data is a string
+        if (data['version_id'] && !(typeof data['version_id'] === 'string' || data['version_id'] instanceof String)) {
+            throw new Error("Expected the field `version_id` to be a primitive type in the JSON string but got " + data['version_id']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['version_ids'])) {
+            throw new Error("Expected the field `version_ids` to be an array in the JSON data but got " + data['version_ids']);
         }
 
         return true;
@@ -238,6 +252,16 @@ SecretInfo.prototype['type'] = undefined;
  * @member {Number} version
  */
 SecretInfo.prototype['version'] = undefined;
+
+/**
+ * @member {String} version_id
+ */
+SecretInfo.prototype['version_id'] = undefined;
+
+/**
+ * @member {Array.<String>} version_ids
+ */
+SecretInfo.prototype['version_ids'] = undefined;
 
 
 

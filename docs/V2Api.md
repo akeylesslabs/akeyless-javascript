@@ -221,7 +221,10 @@ Method | HTTP request | Description
 [**exportClassicKey**](V2Api.md#exportClassicKey) | **POST** /export-classic-key | 
 [**folderCreate**](V2Api.md#folderCreate) | **POST** /folder-create | 
 [**folderDelete**](V2Api.md#folderDelete) | **POST** /folder-delete | 
+[**folderDeleteSync**](V2Api.md#folderDeleteSync) | **POST** /folder-delete-sync | 
 [**folderGet**](V2Api.md#folderGet) | **POST** /folder-get | 
+[**folderSync**](V2Api.md#folderSync) | **POST** /folder-sync | 
+[**folderSyncAll**](V2Api.md#folderSyncAll) | **POST** /folder-sync-all | 
 [**folderUpdate**](V2Api.md#folderUpdate) | **POST** /folder-update | 
 [**gatewayCreateAllowedAccess**](V2Api.md#gatewayCreateAllowedAccess) | **POST** /gateway-create-allowed-access | 
 [**gatewayCreateK8SAuthConfig**](V2Api.md#gatewayCreateK8SAuthConfig) | **POST** /gateway-create-k8s-auth-config | 
@@ -417,6 +420,7 @@ Method | HTTP request | Description
 [**rotatedSecretCreateDockerhub**](V2Api.md#rotatedSecretCreateDockerhub) | **POST** /rotated-secret-create-dockerhub | 
 [**rotatedSecretCreateGcp**](V2Api.md#rotatedSecretCreateGcp) | **POST** /rotated-secret-create-gcp | 
 [**rotatedSecretCreateHanadb**](V2Api.md#rotatedSecretCreateHanadb) | **POST** /rotated-secret-create-hanadb | 
+[**rotatedSecretCreateHashiVault**](V2Api.md#rotatedSecretCreateHashiVault) | **POST** /rotated-secret-create-hashi-vault | 
 [**rotatedSecretCreateLdap**](V2Api.md#rotatedSecretCreateLdap) | **POST** /rotated-secret-create-ldap | 
 [**rotatedSecretCreateMongodb**](V2Api.md#rotatedSecretCreateMongodb) | **POST** /rotated-secret-create-mongodb | 
 [**rotatedSecretCreateMssql**](V2Api.md#rotatedSecretCreateMssql) | **POST** /rotated-secret-create-mssql | 
@@ -442,6 +446,7 @@ Method | HTTP request | Description
 [**rotatedSecretUpdateDockerhub**](V2Api.md#rotatedSecretUpdateDockerhub) | **POST** /rotated-secret-update-dockerhub | 
 [**rotatedSecretUpdateGcp**](V2Api.md#rotatedSecretUpdateGcp) | **POST** /rotated-secret-update-gcp | 
 [**rotatedSecretUpdateHanadb**](V2Api.md#rotatedSecretUpdateHanadb) | **POST** /rotated-secret-update-hanadb | 
+[**rotatedSecretUpdateHashiVault**](V2Api.md#rotatedSecretUpdateHashiVault) | **POST** /rotated-secret-update-hashi-vault | 
 [**rotatedSecretUpdateLdap**](V2Api.md#rotatedSecretUpdateLdap) | **POST** /rotated-secret-update-ldap | 
 [**rotatedSecretUpdateMongodb**](V2Api.md#rotatedSecretUpdateMongodb) | **POST** /rotated-secret-update-mongodb | 
 [**rotatedSecretUpdateMssql**](V2Api.md#rotatedSecretUpdateMssql) | **POST** /rotated-secret-update-mssql | 
@@ -9744,6 +9749,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## folderDeleteSync
+
+> FolderDeleteSyncOutput folderDeleteSync(folderDeleteSync)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let folderDeleteSync = new akeyless.FolderDeleteSync(); // FolderDeleteSync | 
+apiInstance.folderDeleteSync(folderDeleteSync).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folderDeleteSync** | [**FolderDeleteSync**](FolderDeleteSync.md)|  | 
+
+### Return type
+
+[**FolderDeleteSyncOutput**](FolderDeleteSyncOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## folderGet
 
 > FolderGetOutput folderGet(folderGet)
@@ -9775,6 +9822,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FolderGetOutput**](FolderGetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## folderSync
+
+> FolderSyncOutput folderSync(folderSync)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let folderSync = new akeyless.FolderSync(); // FolderSync | 
+apiInstance.folderSync(folderSync).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folderSync** | [**FolderSync**](FolderSync.md)|  | 
+
+### Return type
+
+[**FolderSyncOutput**](FolderSyncOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## folderSyncAll
+
+> FolderSyncAllOutput folderSyncAll(folderSyncAll)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let folderSyncAll = new akeyless.FolderSyncAll(); // FolderSyncAll | 
+apiInstance.folderSyncAll(folderSyncAll).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folderSyncAll** | [**FolderSyncAll**](FolderSyncAll.md)|  | 
+
+### Return type
+
+[**FolderSyncAllOutput**](FolderSyncAllOutput.md)
 
 ### Authorization
 
@@ -18002,6 +18133,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## rotatedSecretCreateHashiVault
+
+> RotatedSecretCreateOutput rotatedSecretCreateHashiVault(rotatedSecretCreateHashiVault)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretCreateHashiVault = new akeyless.RotatedSecretCreateHashiVault(); // RotatedSecretCreateHashiVault | 
+apiInstance.rotatedSecretCreateHashiVault(rotatedSecretCreateHashiVault).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretCreateHashiVault** | [**RotatedSecretCreateHashiVault**](RotatedSecretCreateHashiVault.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## rotatedSecretCreateLdap
 
 > RotatedSecretCreateOutput rotatedSecretCreateLdap(rotatedSecretCreateLdap)
@@ -19037,6 +19210,48 @@ apiInstance.rotatedSecretUpdateHanadb(rotatedSecretUpdateHanadb).then((data) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rotatedSecretUpdateHanadb** | [**RotatedSecretUpdateHanadb**](RotatedSecretUpdateHanadb.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateHashiVault
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateHashiVault(rotatedSecretUpdateHashiVault)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretUpdateHashiVault = new akeyless.RotatedSecretUpdateHashiVault(); // RotatedSecretUpdateHashiVault | 
+apiInstance.rotatedSecretUpdateHashiVault(rotatedSecretUpdateHashiVault).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretUpdateHashiVault** | [**RotatedSecretUpdateHashiVault**](RotatedSecretUpdateHashiVault.md)|  | 
 
 ### Return type
 

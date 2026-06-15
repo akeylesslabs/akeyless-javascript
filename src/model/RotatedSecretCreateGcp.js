@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateGcp model module.
  * @module model/RotatedSecretCreateGcp
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretCreateGcp {
     /**
@@ -289,7 +289,6 @@ RotatedSecretCreateGcp.RequiredProperties = ["name", "rotator-type", "target-nam
 RotatedSecretCreateGcp.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretCreateGcp.prototype['auto-rotate'] = undefined;
@@ -368,7 +367,6 @@ RotatedSecretCreateGcp.prototype['item-custom-fields'] = undefined;
 RotatedSecretCreateGcp.prototype['json'] = false;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretCreateGcp.prototype['key'] = undefined;
@@ -404,13 +402,11 @@ RotatedSecretCreateGcp.prototype['password-length'] = undefined;
 RotatedSecretCreateGcp.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretCreateGcp.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretCreateGcp.prototype['rotation-interval'] = undefined;

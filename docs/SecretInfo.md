@@ -21,5 +21,7 @@ Name | Type | Description | Notes
 **thumbprint** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
 **version** | **Number** |  | [optional] 
+**versionId** | **String** |  | [optional] 
+**versionIds** | **[String]** |  | [optional] 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateHanadb model module.
  * @module model/RotatedSecretUpdateHanadb
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretUpdateHanadb {
     /**
@@ -268,7 +268,6 @@ RotatedSecretUpdateHanadb.prototype['add-tag'] = undefined;
 RotatedSecretUpdateHanadb.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretUpdateHanadb.prototype['auto-rotate'] = undefined;
@@ -312,7 +311,6 @@ RotatedSecretUpdateHanadb.prototype['json'] = false;
 RotatedSecretUpdateHanadb.prototype['keep-prev-version'] = undefined;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretUpdateHanadb.prototype['key'] = undefined;
@@ -372,13 +370,11 @@ RotatedSecretUpdateHanadb.prototype['rotated-username'] = undefined;
 RotatedSecretUpdateHanadb.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretUpdateHanadb.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretUpdateHanadb.prototype['rotation-interval'] = undefined;

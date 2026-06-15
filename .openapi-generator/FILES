@@ -419,8 +419,14 @@ docs/ExternalKMSKeyId.md
 docs/FolderCreate.md
 docs/FolderCreateOutput.md
 docs/FolderDelete.md
+docs/FolderDeleteSync.md
+docs/FolderDeleteSyncOutput.md
 docs/FolderGet.md
 docs/FolderGetOutput.md
+docs/FolderSync.md
+docs/FolderSyncAll.md
+docs/FolderSyncAllOutput.md
+docs/FolderSyncOutput.md
 docs/FolderUSCSyncConfig.md
 docs/FolderUpdate.md
 docs/GCPAccessRules.md
@@ -812,6 +818,7 @@ docs/PasswordScoreInfo.md
 docs/PasswordScoreSetting.md
 docs/PasswordSecurityInfo.md
 docs/PathRule.md
+docs/PersonalFolderGlobalMappingSettings.md
 docs/PingTargetDetails.md
 docs/PoliciesCreateOutput.md
 docs/PoliciesDelete.md
@@ -861,6 +868,7 @@ docs/RotatedSecretCreateCustom.md
 docs/RotatedSecretCreateDockerhub.md
 docs/RotatedSecretCreateGcp.md
 docs/RotatedSecretCreateHanadb.md
+docs/RotatedSecretCreateHashiVault.md
 docs/RotatedSecretCreateLdap.md
 docs/RotatedSecretCreateMongodb.md
 docs/RotatedSecretCreateMssql.md
@@ -890,6 +898,7 @@ docs/RotatedSecretUpdateCustom.md
 docs/RotatedSecretUpdateDockerhub.md
 docs/RotatedSecretUpdateGcp.md
 docs/RotatedSecretUpdateHanadb.md
+docs/RotatedSecretUpdateHashiVault.md
 docs/RotatedSecretUpdateLdap.md
 docs/RotatedSecretUpdateMongodb.md
 docs/RotatedSecretUpdateMssql.md
@@ -1625,8 +1634,14 @@ src/model/ExternalKMSKeyId.js
 src/model/FolderCreate.js
 src/model/FolderCreateOutput.js
 src/model/FolderDelete.js
+src/model/FolderDeleteSync.js
+src/model/FolderDeleteSyncOutput.js
 src/model/FolderGet.js
 src/model/FolderGetOutput.js
+src/model/FolderSync.js
+src/model/FolderSyncAll.js
+src/model/FolderSyncAllOutput.js
+src/model/FolderSyncOutput.js
 src/model/FolderUSCSyncConfig.js
 src/model/FolderUpdate.js
 src/model/GCPAccessRules.js
@@ -2018,6 +2033,7 @@ src/model/PasswordScoreInfo.js
 src/model/PasswordScoreSetting.js
 src/model/PasswordSecurityInfo.js
 src/model/PathRule.js
+src/model/PersonalFolderGlobalMappingSettings.js
 src/model/PingTargetDetails.js
 src/model/PoliciesCreateOutput.js
 src/model/PoliciesDelete.js
@@ -2067,6 +2083,7 @@ src/model/RotatedSecretCreateCustom.js
 src/model/RotatedSecretCreateDockerhub.js
 src/model/RotatedSecretCreateGcp.js
 src/model/RotatedSecretCreateHanadb.js
+src/model/RotatedSecretCreateHashiVault.js
 src/model/RotatedSecretCreateLdap.js
 src/model/RotatedSecretCreateMongodb.js
 src/model/RotatedSecretCreateMssql.js
@@ -2096,6 +2113,7 @@ src/model/RotatedSecretUpdateCustom.js
 src/model/RotatedSecretUpdateDockerhub.js
 src/model/RotatedSecretUpdateGcp.js
 src/model/RotatedSecretUpdateHanadb.js
+src/model/RotatedSecretUpdateHashiVault.js
 src/model/RotatedSecretUpdateLdap.js
 src/model/RotatedSecretUpdateMongodb.js
 src/model/RotatedSecretUpdateMssql.js
@@ -2407,3 +2425,12 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
+test/model/FolderDeleteSync.spec.js
+test/model/FolderDeleteSyncOutput.spec.js
+test/model/FolderSync.spec.js
+test/model/FolderSyncAll.spec.js
+test/model/FolderSyncAllOutput.spec.js
+test/model/FolderSyncOutput.spec.js
+test/model/PersonalFolderGlobalMappingSettings.spec.js
+test/model/RotatedSecretCreateHashiVault.spec.js
+test/model/RotatedSecretUpdateHashiVault.spec.js

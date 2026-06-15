@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FolderUSCSyncConfig model module.
  * @module model/FolderUSCSyncConfig
- * @version 5.0.27
+ * @version 5.0.28
  */
 class FolderUSCSyncConfig {
     /**
@@ -50,6 +50,9 @@ class FolderUSCSyncConfig {
             if (data.hasOwnProperty('delete_remote')) {
                 obj['delete_remote'] = ApiClient.convertToType(data['delete_remote'], 'Boolean');
             }
+            if (data.hasOwnProperty('engine_name')) {
+                obj['engine_name'] = ApiClient.convertToType(data['engine_name'], 'String');
+            }
             if (data.hasOwnProperty('namespace')) {
                 obj['namespace'] = ApiClient.convertToType(data['namespace'], 'String');
             }
@@ -69,6 +72,10 @@ class FolderUSCSyncConfig {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>FolderUSCSyncConfig</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['engine_name'] && !(typeof data['engine_name'] === 'string' || data['engine_name'] instanceof String)) {
+            throw new Error("Expected the field `engine_name` to be a primitive type in the JSON string but got " + data['engine_name']);
+        }
         // ensure the json data is a string
         if (data['namespace'] && !(typeof data['namespace'] === 'string' || data['namespace'] instanceof String)) {
             throw new Error("Expected the field `namespace` to be a primitive type in the JSON string but got " + data['namespace']);
@@ -90,6 +97,11 @@ class FolderUSCSyncConfig {
  * @member {Boolean} delete_remote
  */
 FolderUSCSyncConfig.prototype['delete_remote'] = undefined;
+
+/**
+ * @member {String} engine_name
+ */
+FolderUSCSyncConfig.prototype['engine_name'] = undefined;
 
 /**
  * @member {String} namespace

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GwUpdateRemoteAccessSessionLogsSyslog model module.
  * @module model/GwUpdateRemoteAccessSessionLogsSyslog
- * @version 5.0.27
+ * @version 5.0.28
  */
 class GwUpdateRemoteAccessSessionLogsSyslog {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateMongodb model module.
  * @module model/RotatedSecretUpdateMongodb
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretUpdateMongodb {
     /**
@@ -321,7 +321,6 @@ RotatedSecretUpdateMongodb.prototype['add-tag'] = undefined;
 RotatedSecretUpdateMongodb.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretUpdateMongodb.prototype['auto-rotate'] = undefined;
@@ -365,7 +364,6 @@ RotatedSecretUpdateMongodb.prototype['json'] = false;
 RotatedSecretUpdateMongodb.prototype['keep-prev-version'] = undefined;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretUpdateMongodb.prototype['key'] = undefined;
@@ -437,13 +435,11 @@ RotatedSecretUpdateMongodb.prototype['rotated-username'] = undefined;
 RotatedSecretUpdateMongodb.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretUpdateMongodb.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretUpdateMongodb.prototype['rotation-interval'] = undefined;

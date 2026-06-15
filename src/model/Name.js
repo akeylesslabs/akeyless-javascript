@@ -17,7 +17,7 @@ import AttributeTypeAndValue from './AttributeTypeAndValue';
 /**
  * The Name model module.
  * @module model/Name
- * @version 5.0.27
+ * @version 5.0.28
  */
 class Name {
     /**

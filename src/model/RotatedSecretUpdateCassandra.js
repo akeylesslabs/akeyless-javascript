@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateCassandra model module.
  * @module model/RotatedSecretUpdateCassandra
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretUpdateCassandra {
     /**
@@ -268,7 +268,6 @@ RotatedSecretUpdateCassandra.prototype['add-tag'] = undefined;
 RotatedSecretUpdateCassandra.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretUpdateCassandra.prototype['auto-rotate'] = undefined;
@@ -312,7 +311,6 @@ RotatedSecretUpdateCassandra.prototype['json'] = false;
 RotatedSecretUpdateCassandra.prototype['keep-prev-version'] = undefined;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretUpdateCassandra.prototype['key'] = undefined;
@@ -372,13 +370,11 @@ RotatedSecretUpdateCassandra.prototype['rotated-username'] = undefined;
 RotatedSecretUpdateCassandra.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretUpdateCassandra.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretUpdateCassandra.prototype['rotation-interval'] = undefined;

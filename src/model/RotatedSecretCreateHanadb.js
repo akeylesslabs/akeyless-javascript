@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateHanadb model module.
  * @module model/RotatedSecretCreateHanadb
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretCreateHanadb {
     /**
@@ -258,7 +258,6 @@ RotatedSecretCreateHanadb.RequiredProperties = ["name", "rotator-type", "target-
 RotatedSecretCreateHanadb.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretCreateHanadb.prototype['auto-rotate'] = undefined;
@@ -295,7 +294,6 @@ RotatedSecretCreateHanadb.prototype['item-custom-fields'] = undefined;
 RotatedSecretCreateHanadb.prototype['json'] = false;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretCreateHanadb.prototype['key'] = undefined;
@@ -343,13 +341,11 @@ RotatedSecretCreateHanadb.prototype['rotated-username'] = undefined;
 RotatedSecretCreateHanadb.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretCreateHanadb.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretCreateHanadb.prototype['rotation-interval'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateOpenAI model module.
  * @module model/RotatedSecretCreateOpenAI
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretCreateOpenAI {
     /**
@@ -271,7 +271,6 @@ RotatedSecretCreateOpenAI.prototype['api-key-id'] = undefined;
 RotatedSecretCreateOpenAI.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretCreateOpenAI.prototype['auto-rotate'] = undefined;
@@ -308,7 +307,6 @@ RotatedSecretCreateOpenAI.prototype['item-custom-fields'] = undefined;
 RotatedSecretCreateOpenAI.prototype['json'] = false;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretCreateOpenAI.prototype['key'] = undefined;
@@ -344,13 +342,11 @@ RotatedSecretCreateOpenAI.prototype['password-length'] = undefined;
 RotatedSecretCreateOpenAI.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretCreateOpenAI.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretCreateOpenAI.prototype['rotation-interval'] = undefined;

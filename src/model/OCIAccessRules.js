@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OCIAccessRules model module.
  * @module model/OCIAccessRules
- * @version 5.0.27
+ * @version 5.0.28
  */
 class OCIAccessRules {
     /**

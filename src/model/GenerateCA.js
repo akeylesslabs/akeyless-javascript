@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateCA model module.
  * @module model/GenerateCA
- * @version 5.0.27
+ * @version 5.0.28
  */
 class GenerateCA {
     /**

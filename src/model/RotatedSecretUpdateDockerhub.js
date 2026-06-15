@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateDockerhub model module.
  * @module model/RotatedSecretUpdateDockerhub
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretUpdateDockerhub {
     /**
@@ -254,7 +254,6 @@ RotatedSecretUpdateDockerhub.prototype['add-tag'] = undefined;
 RotatedSecretUpdateDockerhub.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretUpdateDockerhub.prototype['auto-rotate'] = undefined;
@@ -298,7 +297,6 @@ RotatedSecretUpdateDockerhub.prototype['json'] = false;
 RotatedSecretUpdateDockerhub.prototype['keep-prev-version'] = undefined;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretUpdateDockerhub.prototype['key'] = undefined;
@@ -346,13 +344,11 @@ RotatedSecretUpdateDockerhub.prototype['rm-tag'] = undefined;
 RotatedSecretUpdateDockerhub.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretUpdateDockerhub.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretUpdateDockerhub.prototype['rotation-interval'] = undefined;

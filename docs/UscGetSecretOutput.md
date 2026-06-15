@@ -10,5 +10,8 @@ Name | Type | Description | Notes
 **metadata** | **Object** |  | [optional] 
 **name** | **String** |  | [optional] 
 **value** | **String** |  | [optional] 
+**versionId** | **String** |  | [optional] 
+**versionIds** | **[String]** |  | [optional] 
+**warnings** | **[String]** |  | [optional] 
 
 

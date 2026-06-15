@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateWindows model module.
  * @module model/RotatedSecretCreateWindows
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretCreateWindows {
     /**
@@ -325,7 +325,6 @@ RotatedSecretCreateWindows.RequiredProperties = ["name", "rotator-type", "target
 RotatedSecretCreateWindows.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretCreateWindows.prototype['auto-rotate'] = undefined;
@@ -362,7 +361,6 @@ RotatedSecretCreateWindows.prototype['item-custom-fields'] = undefined;
 RotatedSecretCreateWindows.prototype['json'] = false;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretCreateWindows.prototype['key'] = undefined;
@@ -422,13 +420,11 @@ RotatedSecretCreateWindows.prototype['rotated-username'] = undefined;
 RotatedSecretCreateWindows.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretCreateWindows.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretCreateWindows.prototype['rotation-interval'] = undefined;

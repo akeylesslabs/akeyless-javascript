@@ -17,7 +17,7 @@ import OIDCCustomClaim from './OIDCCustomClaim';
 /**
  * The OIDCAccessRules model module.
  * @module model/OIDCAccessRules
- * @version 5.0.27
+ * @version 5.0.28
  */
 class OIDCAccessRules {
     /**
@@ -54,6 +54,9 @@ class OIDCAccessRules {
             }
             if (data.hasOwnProperty('audience')) {
                 obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
+            }
+            if (data.hasOwnProperty('authorized_gw_cluster_name')) {
+                obj['authorized_gw_cluster_name'] = ApiClient.convertToType(data['authorized_gw_cluster_name'], 'String');
             }
             if (data.hasOwnProperty('bound_claims')) {
                 obj['bound_claims'] = ApiClient.convertToType(data['bound_claims'], [OIDCCustomClaim]);
@@ -96,6 +99,10 @@ class OIDCAccessRules {
         // ensure the json data is a string
         if (data['audience'] && !(typeof data['audience'] === 'string' || data['audience'] instanceof String)) {
             throw new Error("Expected the field `audience` to be a primitive type in the JSON string but got " + data['audience']);
+        }
+        // ensure the json data is a string
+        if (data['authorized_gw_cluster_name'] && !(typeof data['authorized_gw_cluster_name'] === 'string' || data['authorized_gw_cluster_name'] instanceof String)) {
+            throw new Error("Expected the field `authorized_gw_cluster_name` to be a primitive type in the JSON string but got " + data['authorized_gw_cluster_name']);
         }
         if (data['bound_claims']) { // data not null
             // ensure the json data is an array
@@ -151,6 +158,12 @@ OIDCAccessRules.prototype['allowed_redirect_URIs'] = undefined;
  * @member {String} audience
  */
 OIDCAccessRules.prototype['audience'] = undefined;
+
+/**
+ * AuthorizedGwClusterName binds the access method to a single GW cluster. When empty (or whitespace-only), GW-driven auth is disabled.
+ * @member {String} authorized_gw_cluster_name
+ */
+OIDCAccessRules.prototype['authorized_gw_cluster_name'] = undefined;
 
 /**
  * The claims that login is restricted to.

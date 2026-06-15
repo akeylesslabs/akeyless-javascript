@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateSplunk model module.
  * @module model/RotatedSecretUpdateSplunk
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretUpdateSplunk {
     /**
@@ -296,7 +296,6 @@ RotatedSecretUpdateSplunk.prototype['audience'] = undefined;
 RotatedSecretUpdateSplunk.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretUpdateSplunk.prototype['auto-rotate'] = undefined;
@@ -352,7 +351,6 @@ RotatedSecretUpdateSplunk.prototype['json'] = false;
 RotatedSecretUpdateSplunk.prototype['keep-prev-version'] = undefined;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretUpdateSplunk.prototype['key'] = undefined;
@@ -400,13 +398,11 @@ RotatedSecretUpdateSplunk.prototype['rm-tag'] = undefined;
 RotatedSecretUpdateSplunk.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretUpdateSplunk.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretUpdateSplunk.prototype['rotation-interval'] = undefined;

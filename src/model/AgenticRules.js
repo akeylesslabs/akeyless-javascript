@@ -17,7 +17,7 @@ import AgenticRule from './AgenticRule';
 /**
  * The AgenticRules model module.
  * @module model/AgenticRules
- * @version 5.0.27
+ * @version 5.0.28
  */
 class AgenticRules {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StaticSecretSync model module.
  * @module model/StaticSecretSync
- * @version 5.0.27
+ * @version 5.0.28
  */
 class StaticSecretSync {
     /**
@@ -50,8 +50,8 @@ class StaticSecretSync {
         if (data) {
             obj = obj || new StaticSecretSync();
 
-            if (data.hasOwnProperty('DeleteRemote')) {
-                obj['DeleteRemote'] = ApiClient.convertToType(data['DeleteRemote'], 'Boolean');
+            if (data.hasOwnProperty('delete-remote')) {
+                obj['delete-remote'] = ApiClient.convertToType(data['delete-remote'], 'Boolean');
             }
             if (data.hasOwnProperty('filter-secret-value')) {
                 obj['filter-secret-value'] = ApiClient.convertToType(data['filter-secret-value'], 'String');
@@ -132,9 +132,9 @@ StaticSecretSync.RequiredProperties = ["name"];
 
 /**
  * Delete the secret from remote secret manager (for association create/update)
- * @member {Boolean} DeleteRemote
+ * @member {Boolean} delete-remote
  */
-StaticSecretSync.prototype['DeleteRemote'] = undefined;
+StaticSecretSync.prototype['delete-remote'] = undefined;
 
 /**
  * JQ expression to filter or transform the secret value

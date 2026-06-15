@@ -430,8 +430,14 @@ import ExternalKMSKeyId from './model/ExternalKMSKeyId';
 import FolderCreate from './model/FolderCreate';
 import FolderCreateOutput from './model/FolderCreateOutput';
 import FolderDelete from './model/FolderDelete';
+import FolderDeleteSync from './model/FolderDeleteSync';
+import FolderDeleteSyncOutput from './model/FolderDeleteSyncOutput';
 import FolderGet from './model/FolderGet';
 import FolderGetOutput from './model/FolderGetOutput';
+import FolderSync from './model/FolderSync';
+import FolderSyncAll from './model/FolderSyncAll';
+import FolderSyncAllOutput from './model/FolderSyncAllOutput';
+import FolderSyncOutput from './model/FolderSyncOutput';
 import FolderUSCSyncConfig from './model/FolderUSCSyncConfig';
 import FolderUpdate from './model/FolderUpdate';
 import GCPAccessRules from './model/GCPAccessRules';
@@ -823,6 +829,7 @@ import PasswordScoreInfo from './model/PasswordScoreInfo';
 import PasswordScoreSetting from './model/PasswordScoreSetting';
 import PasswordSecurityInfo from './model/PasswordSecurityInfo';
 import PathRule from './model/PathRule';
+import PersonalFolderGlobalMappingSettings from './model/PersonalFolderGlobalMappingSettings';
 import PingTargetDetails from './model/PingTargetDetails';
 import PoliciesCreateOutput from './model/PoliciesCreateOutput';
 import PoliciesDelete from './model/PoliciesDelete';
@@ -872,6 +879,7 @@ import RotatedSecretCreateCustom from './model/RotatedSecretCreateCustom';
 import RotatedSecretCreateDockerhub from './model/RotatedSecretCreateDockerhub';
 import RotatedSecretCreateGcp from './model/RotatedSecretCreateGcp';
 import RotatedSecretCreateHanadb from './model/RotatedSecretCreateHanadb';
+import RotatedSecretCreateHashiVault from './model/RotatedSecretCreateHashiVault';
 import RotatedSecretCreateLdap from './model/RotatedSecretCreateLdap';
 import RotatedSecretCreateMongodb from './model/RotatedSecretCreateMongodb';
 import RotatedSecretCreateMssql from './model/RotatedSecretCreateMssql';
@@ -901,6 +909,7 @@ import RotatedSecretUpdateCustom from './model/RotatedSecretUpdateCustom';
 import RotatedSecretUpdateDockerhub from './model/RotatedSecretUpdateDockerhub';
 import RotatedSecretUpdateGcp from './model/RotatedSecretUpdateGcp';
 import RotatedSecretUpdateHanadb from './model/RotatedSecretUpdateHanadb';
+import RotatedSecretUpdateHashiVault from './model/RotatedSecretUpdateHashiVault';
 import RotatedSecretUpdateLdap from './model/RotatedSecretUpdateLdap';
 import RotatedSecretUpdateMongodb from './model/RotatedSecretUpdateMongodb';
 import RotatedSecretUpdateMssql from './model/RotatedSecretUpdateMssql';
@@ -1244,7 +1253,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.27
+* @version 5.0.28
 */
 export {
     /**
@@ -3756,6 +3765,18 @@ export {
     FolderDelete,
 
     /**
+     * The FolderDeleteSync model constructor.
+     * @property {module:model/FolderDeleteSync}
+     */
+    FolderDeleteSync,
+
+    /**
+     * The FolderDeleteSyncOutput model constructor.
+     * @property {module:model/FolderDeleteSyncOutput}
+     */
+    FolderDeleteSyncOutput,
+
+    /**
      * The FolderGet model constructor.
      * @property {module:model/FolderGet}
      */
@@ -3766,6 +3787,30 @@ export {
      * @property {module:model/FolderGetOutput}
      */
     FolderGetOutput,
+
+    /**
+     * The FolderSync model constructor.
+     * @property {module:model/FolderSync}
+     */
+    FolderSync,
+
+    /**
+     * The FolderSyncAll model constructor.
+     * @property {module:model/FolderSyncAll}
+     */
+    FolderSyncAll,
+
+    /**
+     * The FolderSyncAllOutput model constructor.
+     * @property {module:model/FolderSyncAllOutput}
+     */
+    FolderSyncAllOutput,
+
+    /**
+     * The FolderSyncOutput model constructor.
+     * @property {module:model/FolderSyncOutput}
+     */
+    FolderSyncOutput,
 
     /**
      * The FolderUSCSyncConfig model constructor.
@@ -6114,6 +6159,12 @@ export {
     PathRule,
 
     /**
+     * The PersonalFolderGlobalMappingSettings model constructor.
+     * @property {module:model/PersonalFolderGlobalMappingSettings}
+     */
+    PersonalFolderGlobalMappingSettings,
+
+    /**
      * The PingTargetDetails model constructor.
      * @property {module:model/PingTargetDetails}
      */
@@ -6408,6 +6459,12 @@ export {
     RotatedSecretCreateHanadb,
 
     /**
+     * The RotatedSecretCreateHashiVault model constructor.
+     * @property {module:model/RotatedSecretCreateHashiVault}
+     */
+    RotatedSecretCreateHashiVault,
+
+    /**
      * The RotatedSecretCreateLdap model constructor.
      * @property {module:model/RotatedSecretCreateLdap}
      */
@@ -6580,6 +6637,12 @@ export {
      * @property {module:model/RotatedSecretUpdateHanadb}
      */
     RotatedSecretUpdateHanadb,
+
+    /**
+     * The RotatedSecretUpdateHashiVault model constructor.
+     * @property {module:model/RotatedSecretUpdateHashiVault}
+     */
+    RotatedSecretUpdateHashiVault,
 
     /**
      * The RotatedSecretUpdateLdap model constructor.

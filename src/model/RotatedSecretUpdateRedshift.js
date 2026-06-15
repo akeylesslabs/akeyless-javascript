@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateRedshift model module.
  * @module model/RotatedSecretUpdateRedshift
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretUpdateRedshift {
     /**
@@ -303,7 +303,6 @@ RotatedSecretUpdateRedshift.prototype['add-tag'] = undefined;
 RotatedSecretUpdateRedshift.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretUpdateRedshift.prototype['auto-rotate'] = undefined;
@@ -347,7 +346,6 @@ RotatedSecretUpdateRedshift.prototype['json'] = false;
 RotatedSecretUpdateRedshift.prototype['keep-prev-version'] = undefined;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretUpdateRedshift.prototype['key'] = undefined;
@@ -419,13 +417,11 @@ RotatedSecretUpdateRedshift.prototype['rotated-username'] = undefined;
 RotatedSecretUpdateRedshift.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretUpdateRedshift.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretUpdateRedshift.prototype['rotation-interval'] = undefined;

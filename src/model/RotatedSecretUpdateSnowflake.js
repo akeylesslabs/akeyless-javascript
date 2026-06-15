@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateSnowflake model module.
  * @module model/RotatedSecretUpdateSnowflake
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretUpdateSnowflake {
     /**
@@ -282,7 +282,6 @@ RotatedSecretUpdateSnowflake.prototype['add-tag'] = undefined;
 RotatedSecretUpdateSnowflake.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretUpdateSnowflake.prototype['auto-rotate'] = undefined;
@@ -326,7 +325,6 @@ RotatedSecretUpdateSnowflake.prototype['json'] = false;
 RotatedSecretUpdateSnowflake.prototype['keep-prev-version'] = undefined;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretUpdateSnowflake.prototype['key'] = undefined;
@@ -398,13 +396,11 @@ RotatedSecretUpdateSnowflake.prototype['rotated-username'] = undefined;
 RotatedSecretUpdateSnowflake.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretUpdateSnowflake.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretUpdateSnowflake.prototype['rotation-interval'] = undefined;

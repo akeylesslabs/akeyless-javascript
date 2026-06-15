@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateOracledb model module.
  * @module model/RotatedSecretUpdateOracledb
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretUpdateOracledb {
     /**
@@ -307,7 +307,6 @@ RotatedSecretUpdateOracledb.prototype['add-tag'] = undefined;
 RotatedSecretUpdateOracledb.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretUpdateOracledb.prototype['auto-rotate'] = undefined;
@@ -351,7 +350,6 @@ RotatedSecretUpdateOracledb.prototype['json'] = false;
 RotatedSecretUpdateOracledb.prototype['keep-prev-version'] = undefined;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretUpdateOracledb.prototype['key'] = undefined;
@@ -423,13 +421,11 @@ RotatedSecretUpdateOracledb.prototype['rotated-username'] = undefined;
 RotatedSecretUpdateOracledb.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretUpdateOracledb.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretUpdateOracledb.prototype['rotation-interval'] = undefined;

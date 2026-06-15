@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateAzure model module.
  * @module model/RotatedSecretUpdateAzure
- * @version 5.0.27
+ * @version 5.0.28
  */
 class RotatedSecretUpdateAzure {
     /**
@@ -124,6 +124,9 @@ class RotatedSecretUpdateAzure {
             }
             if (data.hasOwnProperty('output-rule')) {
                 obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
+            }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('password-length')) {
                 obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
@@ -288,6 +291,10 @@ class RotatedSecretUpdateAzure {
             throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
+        if (data['password'] && !(typeof data['password'] === 'string' || data['password'] instanceof String)) {
+            throw new Error("Expected the field `password` to be a primitive type in the JSON string but got " + data['password']);
+        }
+        // ensure the json data is a string
         if (data['password-length'] && !(typeof data['password-length'] === 'string' || data['password-length'] instanceof String)) {
             throw new Error("Expected the field `password-length` to be a primitive type in the JSON string but got " + data['password-length']);
         }
@@ -396,7 +403,6 @@ RotatedSecretUpdateAzure.prototype['application-id'] = undefined;
 RotatedSecretUpdateAzure.prototype['authentication-credentials'] = 'use-user-creds';
 
 /**
- * Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]
  * @member {String} auto-rotate
  */
 RotatedSecretUpdateAzure.prototype['auto-rotate'] = undefined;
@@ -471,7 +477,6 @@ RotatedSecretUpdateAzure.prototype['json'] = false;
 RotatedSecretUpdateAzure.prototype['keep-prev-version'] = undefined;
 
 /**
- * The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)
  * @member {String} key
  */
 RotatedSecretUpdateAzure.prototype['key'] = undefined;
@@ -505,6 +510,12 @@ RotatedSecretUpdateAzure.prototype['new-name'] = undefined;
  * @member {Array.<String>} output-rule
  */
 RotatedSecretUpdateAzure.prototype['output-rule'] = undefined;
+
+/**
+ * The password for the user principal name to rotate (relevant only for rotator-type=password)
+ * @member {String} password
+ */
+RotatedSecretUpdateAzure.prototype['password'] = undefined;
 
 /**
  * The length of the password to be generated
@@ -543,13 +554,11 @@ RotatedSecretUpdateAzure.prototype['rotate-after-disconnect'] = undefined;
 RotatedSecretUpdateAzure.prototype['rotation-event-in'] = undefined;
 
 /**
- * The Hour of the rotation in UTC
  * @member {Number} rotation-hour
  */
 RotatedSecretUpdateAzure.prototype['rotation-hour'] = undefined;
 
 /**
- * The number of days to wait between every automatic key rotation (1-365)
  * @member {String} rotation-interval
  */
 RotatedSecretUpdateAzure.prototype['rotation-interval'] = undefined;

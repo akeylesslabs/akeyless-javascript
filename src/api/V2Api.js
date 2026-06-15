@@ -331,8 +331,14 @@ import ExportClassicKeyOutput from '../model/ExportClassicKeyOutput';
 import FolderCreate from '../model/FolderCreate';
 import FolderCreateOutput from '../model/FolderCreateOutput';
 import FolderDelete from '../model/FolderDelete';
+import FolderDeleteSync from '../model/FolderDeleteSync';
+import FolderDeleteSyncOutput from '../model/FolderDeleteSyncOutput';
 import FolderGet from '../model/FolderGet';
 import FolderGetOutput from '../model/FolderGetOutput';
+import FolderSync from '../model/FolderSync';
+import FolderSyncAll from '../model/FolderSyncAll';
+import FolderSyncAllOutput from '../model/FolderSyncAllOutput';
+import FolderSyncOutput from '../model/FolderSyncOutput';
 import FolderUpdate from '../model/FolderUpdate';
 import GatewayCreateAllowedAccess from '../model/GatewayCreateAllowedAccess';
 import GatewayCreateK8SAuthConfig from '../model/GatewayCreateK8SAuthConfig';
@@ -658,6 +664,7 @@ import RotatedSecretCreateCustom from '../model/RotatedSecretCreateCustom';
 import RotatedSecretCreateDockerhub from '../model/RotatedSecretCreateDockerhub';
 import RotatedSecretCreateGcp from '../model/RotatedSecretCreateGcp';
 import RotatedSecretCreateHanadb from '../model/RotatedSecretCreateHanadb';
+import RotatedSecretCreateHashiVault from '../model/RotatedSecretCreateHashiVault';
 import RotatedSecretCreateLdap from '../model/RotatedSecretCreateLdap';
 import RotatedSecretCreateMongodb from '../model/RotatedSecretCreateMongodb';
 import RotatedSecretCreateMssql from '../model/RotatedSecretCreateMssql';
@@ -686,6 +693,7 @@ import RotatedSecretUpdateCustom from '../model/RotatedSecretUpdateCustom';
 import RotatedSecretUpdateDockerhub from '../model/RotatedSecretUpdateDockerhub';
 import RotatedSecretUpdateGcp from '../model/RotatedSecretUpdateGcp';
 import RotatedSecretUpdateHanadb from '../model/RotatedSecretUpdateHanadb';
+import RotatedSecretUpdateHashiVault from '../model/RotatedSecretUpdateHashiVault';
 import RotatedSecretUpdateLdap from '../model/RotatedSecretUpdateLdap';
 import RotatedSecretUpdateMongodb from '../model/RotatedSecretUpdateMongodb';
 import RotatedSecretUpdateMssql from '../model/RotatedSecretUpdateMssql';
@@ -936,7 +944,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.27
+* @version 5.0.28
 */
 export default class V2Api {
 
@@ -10295,6 +10303,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/FolderDeleteSync} folderDeleteSync 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FolderDeleteSyncOutput} and HTTP response
+     */
+    folderDeleteSyncWithHttpInfo(folderDeleteSync) {
+      let postBody = folderDeleteSync;
+      // verify the required parameter 'folderDeleteSync' is set
+      if (folderDeleteSync === undefined || folderDeleteSync === null) {
+        throw new Error("Missing the required parameter 'folderDeleteSync' when calling folderDeleteSync");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = FolderDeleteSyncOutput;
+      return this.apiClient.callApi(
+        '/folder-delete-sync', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/FolderDeleteSync} folderDeleteSync 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FolderDeleteSyncOutput}
+     */
+    folderDeleteSync(folderDeleteSync) {
+      return this.folderDeleteSyncWithHttpInfo(folderDeleteSync)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/FolderGet} folderGet 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FolderGetOutput} and HTTP response
      */
@@ -10331,6 +10382,92 @@ export default class V2Api {
      */
     folderGet(folderGet) {
       return this.folderGetWithHttpInfo(folderGet)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/FolderSync} folderSync 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FolderSyncOutput} and HTTP response
+     */
+    folderSyncWithHttpInfo(folderSync) {
+      let postBody = folderSync;
+      // verify the required parameter 'folderSync' is set
+      if (folderSync === undefined || folderSync === null) {
+        throw new Error("Missing the required parameter 'folderSync' when calling folderSync");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = FolderSyncOutput;
+      return this.apiClient.callApi(
+        '/folder-sync', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/FolderSync} folderSync 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FolderSyncOutput}
+     */
+    folderSync(folderSync) {
+      return this.folderSyncWithHttpInfo(folderSync)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/FolderSyncAll} folderSyncAll 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FolderSyncAllOutput} and HTTP response
+     */
+    folderSyncAllWithHttpInfo(folderSyncAll) {
+      let postBody = folderSyncAll;
+      // verify the required parameter 'folderSyncAll' is set
+      if (folderSyncAll === undefined || folderSyncAll === null) {
+        throw new Error("Missing the required parameter 'folderSyncAll' when calling folderSyncAll");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = FolderSyncAllOutput;
+      return this.apiClient.callApi(
+        '/folder-sync-all', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/FolderSyncAll} folderSyncAll 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FolderSyncAllOutput}
+     */
+    folderSyncAll(folderSyncAll) {
+      return this.folderSyncAllWithHttpInfo(folderSyncAll)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -18686,6 +18823,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/RotatedSecretCreateHashiVault} rotatedSecretCreateHashiVault 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateHashiVaultWithHttpInfo(rotatedSecretCreateHashiVault) {
+      let postBody = rotatedSecretCreateHashiVault;
+      // verify the required parameter 'rotatedSecretCreateHashiVault' is set
+      if (rotatedSecretCreateHashiVault === undefined || rotatedSecretCreateHashiVault === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretCreateHashiVault' when calling rotatedSecretCreateHashiVault");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-hashi-vault', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateHashiVault} rotatedSecretCreateHashiVault 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateHashiVault(rotatedSecretCreateHashiVault) {
+      return this.rotatedSecretCreateHashiVaultWithHttpInfo(rotatedSecretCreateHashiVault)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/RotatedSecretCreateLdap} rotatedSecretCreateLdap 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
      */
@@ -19754,6 +19934,49 @@ export default class V2Api {
      */
     rotatedSecretUpdateHanadb(rotatedSecretUpdateHanadb) {
       return this.rotatedSecretUpdateHanadbWithHttpInfo(rotatedSecretUpdateHanadb)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateHashiVault} rotatedSecretUpdateHashiVault 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateHashiVaultWithHttpInfo(rotatedSecretUpdateHashiVault) {
+      let postBody = rotatedSecretUpdateHashiVault;
+      // verify the required parameter 'rotatedSecretUpdateHashiVault' is set
+      if (rotatedSecretUpdateHashiVault === undefined || rotatedSecretUpdateHashiVault === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretUpdateHashiVault' when calling rotatedSecretUpdateHashiVault");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-hashi-vault', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateHashiVault} rotatedSecretUpdateHashiVault 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateHashiVault(rotatedSecretUpdateHashiVault) {
+      return this.rotatedSecretUpdateHashiVaultWithHttpInfo(rotatedSecretUpdateHashiVault)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
