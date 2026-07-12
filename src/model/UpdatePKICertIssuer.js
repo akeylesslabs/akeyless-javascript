@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 5.0.28
+ * @version 5.0.30
  */
 class UpdatePKICertIssuer {
     /**
      * Constructs a new <code>UpdatePKICertIssuer</code>.
      * @alias module:model/UpdatePKICertIssuer
      * @param name {String} PKI certificate issuer name
-     * @param ttl {String} The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs
+     * @param ttl {String} The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs. Not supported for Let's Encrypt, which always uses the CA default lifetime (about 90 days).
      */
     constructor(name, ttl) { 
         
@@ -639,7 +639,7 @@ UpdatePKICertIssuer.prototype['street-address'] = undefined;
 UpdatePKICertIssuer.prototype['token'] = undefined;
 
 /**
- * The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs
+ * The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs. Not supported for Let's Encrypt, which always uses the CA default lifetime (about 90 days).
  * @member {String} ttl
  */
 UpdatePKICertIssuer.prototype['ttl'] = undefined;

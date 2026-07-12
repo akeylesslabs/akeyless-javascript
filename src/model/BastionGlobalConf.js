@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BastionGlobalConf model module.
  * @module model/BastionGlobalConf
- * @version 5.0.28
+ * @version 5.0.30
  */
 class BastionGlobalConf {
     /**

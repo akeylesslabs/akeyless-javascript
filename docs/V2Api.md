@@ -86,6 +86,9 @@ Method | HTTP request | Description
 [**createHashiVaultTarget**](V2Api.md#createHashiVaultTarget) | **POST** /create-hashi-vault-target | 
 [**createKey**](V2Api.md#createKey) | **POST** /create-key | 
 [**createLinkedTarget**](V2Api.md#createLinkedTarget) | **POST** /create-linked-target | 
+[**createMcpSecretBearerToken**](V2Api.md#createMcpSecretBearerToken) | **POST** /create-mcp-secret-bearer-token | 
+[**createMcpSecretOAuthAuthCode**](V2Api.md#createMcpSecretOAuthAuthCode) | **POST** /create-mcp-secret-oauth-authorization-code | 
+[**createMcpSecretOAuthClientCreds**](V2Api.md#createMcpSecretOAuthClientCreds) | **POST** /create-mcp-secret-oauth-client-credentials | 
 [**createNativeK8STarget**](V2Api.md#createNativeK8STarget) | **POST** /create-k8s-target | 
 [**createOidcApp**](V2Api.md#createOidcApp) | **POST** /create-oidc-app | 
 [**createPKICertIssuer**](V2Api.md#createPKICertIssuer) | **POST** /create-pki-cert-issuer | 
@@ -474,10 +477,13 @@ Method | HTTP request | Description
 [**staticCredsAuth**](V2Api.md#staticCredsAuth) | **POST** /static-creds-auth | 
 [**staticSecretDeleteSync**](V2Api.md#staticSecretDeleteSync) | **POST** /static-secret-delete-sync | 
 [**staticSecretSync**](V2Api.md#staticSecretSync) | **POST** /static-secret-sync | 
+[**targetCreateAnthropic**](V2Api.md#targetCreateAnthropic) | **POST** /target-create-anthropic | 
 [**targetCreateArtifactory**](V2Api.md#targetCreateArtifactory) | **POST** /target-create-artifactory | 
 [**targetCreateAws**](V2Api.md#targetCreateAws) | **POST** /target-create-aws | 
 [**targetCreateAzure**](V2Api.md#targetCreateAzure) | **POST** /target-create-azure | 
+[**targetCreateBedrock**](V2Api.md#targetCreateBedrock) | **POST** /target-create-bedrock | 
 [**targetCreateCloudflare**](V2Api.md#targetCreateCloudflare) | **POST** /target-create-cloudflare | 
+[**targetCreateCustomDns**](V2Api.md#targetCreateCustomDns) | **POST** /target-create-custom-dns | 
 [**targetCreateDB**](V2Api.md#targetCreateDB) | **POST** /target-create-db | 
 [**targetCreateDigiCert**](V2Api.md#targetCreateDigiCert) | **POST** /target-create-digicert | 
 [**targetCreateDockerhub**](V2Api.md#targetCreateDockerhub) | **POST** /target-create-dockerhub | 
@@ -491,11 +497,14 @@ Method | HTTP request | Description
 [**targetCreateGlobalSignAtlas**](V2Api.md#targetCreateGlobalSignAtlas) | **POST** /target-create-globalsign-atlas | 
 [**targetCreateGodaddy**](V2Api.md#targetCreateGodaddy) | **POST** /target-create-godaddy | 
 [**targetCreateGoogleTrust**](V2Api.md#targetCreateGoogleTrust) | **POST** /target-create-google-trust | 
+[**targetCreateGrok**](V2Api.md#targetCreateGrok) | **POST** /target-create-grok | 
 [**targetCreateHashiVault**](V2Api.md#targetCreateHashiVault) | **POST** /target-create-hashi-vault | 
 [**targetCreateK8s**](V2Api.md#targetCreateK8s) | **POST** /target-create-k8s | 
+[**targetCreateKeycloak**](V2Api.md#targetCreateKeycloak) | **POST** /target-create-keycloak | 
 [**targetCreateLdap**](V2Api.md#targetCreateLdap) | **POST** /target-create-ldap | 
 [**targetCreateLetsEncrypt**](V2Api.md#targetCreateLetsEncrypt) | **POST** /target-create-lets-encrypt | 
 [**targetCreateLinked**](V2Api.md#targetCreateLinked) | **POST** /target-create-linked | 
+[**targetCreateOkta**](V2Api.md#targetCreateOkta) | **POST** /target-create-okta | 
 [**targetCreateOpenAI**](V2Api.md#targetCreateOpenAI) | **POST** /target-create-openai | 
 [**targetCreatePing**](V2Api.md#targetCreatePing) | **POST** /target-create-ping | 
 [**targetCreateRabbitMq**](V2Api.md#targetCreateRabbitMq) | **POST** /target-create-rabbitmq | 
@@ -510,10 +519,13 @@ Method | HTTP request | Description
 [**targetGet**](V2Api.md#targetGet) | **POST** /target-get | 
 [**targetGetDetails**](V2Api.md#targetGetDetails) | **POST** /target-get-details | 
 [**targetList**](V2Api.md#targetList) | **POST** /target-list | 
+[**targetUpdateAnthropic**](V2Api.md#targetUpdateAnthropic) | **POST** /target-update-anthropic | 
 [**targetUpdateArtifactory**](V2Api.md#targetUpdateArtifactory) | **POST** /target-update-artifactory | 
 [**targetUpdateAws**](V2Api.md#targetUpdateAws) | **POST** /target-update-aws | 
 [**targetUpdateAzure**](V2Api.md#targetUpdateAzure) | **POST** /target-update-azure | 
+[**targetUpdateBedrock**](V2Api.md#targetUpdateBedrock) | **POST** /target-update-bedrock | 
 [**targetUpdateCloudflare**](V2Api.md#targetUpdateCloudflare) | **POST** /target-update-cloudflare | 
+[**targetUpdateCustomDns**](V2Api.md#targetUpdateCustomDns) | **POST** /target-update-custom-dns | 
 [**targetUpdateDB**](V2Api.md#targetUpdateDB) | **POST** /target-update-db | 
 [**targetUpdateDigiCert**](V2Api.md#targetUpdateDigiCert) | **POST** /target-update-digicert | 
 [**targetUpdateDockerhub**](V2Api.md#targetUpdateDockerhub) | **POST** /target-update-dockerhub | 
@@ -527,11 +539,14 @@ Method | HTTP request | Description
 [**targetUpdateGlobalSignAtlas**](V2Api.md#targetUpdateGlobalSignAtlas) | **POST** /target-update-globalsign-atlas | 
 [**targetUpdateGodaddy**](V2Api.md#targetUpdateGodaddy) | **POST** /target-update-godaddy | 
 [**targetUpdateGoogleTrust**](V2Api.md#targetUpdateGoogleTrust) | **POST** /target-update-google-trust | 
+[**targetUpdateGrok**](V2Api.md#targetUpdateGrok) | **POST** /target-update-grok | 
 [**targetUpdateHashiVault**](V2Api.md#targetUpdateHashiVault) | **POST** /target-update-hashi-vault | 
 [**targetUpdateK8s**](V2Api.md#targetUpdateK8s) | **POST** /target-update-k8s | 
+[**targetUpdateKeycloak**](V2Api.md#targetUpdateKeycloak) | **POST** /target-update-keycloak | 
 [**targetUpdateLdap**](V2Api.md#targetUpdateLdap) | **POST** /target-update-ldap | 
 [**targetUpdateLetsEncrypt**](V2Api.md#targetUpdateLetsEncrypt) | **POST** /target-update-lets-encrypt | 
 [**targetUpdateLinked**](V2Api.md#targetUpdateLinked) | **POST** /target-update-linked | 
+[**targetUpdateOkta**](V2Api.md#targetUpdateOkta) | **POST** /target-update-okta | 
 [**targetUpdateOpenAI**](V2Api.md#targetUpdateOpenAI) | **POST** /target-update-openai | 
 [**targetUpdatePing**](V2Api.md#targetUpdatePing) | **POST** /target-update-ping | 
 [**targetUpdateRabbitMq**](V2Api.md#targetUpdateRabbitMq) | **POST** /target-update-rabbitmq | 
@@ -589,6 +604,9 @@ Method | HTTP request | Description
 [**updateLdapTarget**](V2Api.md#updateLdapTarget) | **POST** /update-ldap-target | 
 [**updateLdapTargetDetails**](V2Api.md#updateLdapTargetDetails) | **POST** /update-ldap-target-details | 
 [**updateLinkedTarget**](V2Api.md#updateLinkedTarget) | **POST** /update-linked-target | 
+[**updateMcpSecretBearerToken**](V2Api.md#updateMcpSecretBearerToken) | **POST** /update-mcp-secret-bearer-token | 
+[**updateMcpSecretOAuthAuthCode**](V2Api.md#updateMcpSecretOAuthAuthCode) | **POST** /update-mcp-secret-oauth-authorization-code | 
+[**updateMcpSecretOAuthClientCreds**](V2Api.md#updateMcpSecretOAuthClientCreds) | **POST** /update-mcp-secret-oauth-client-credentials | 
 [**updateNativeK8STarget**](V2Api.md#updateNativeK8STarget) | **POST** /update-k8s-target | 
 [**updateOidcApp**](V2Api.md#updateOidcApp) | **POST** /update-oidc-app | 
 [**updatePKICertIssuer**](V2Api.md#updatePKICertIssuer) | **POST** /update-pki-cert-issuer | 
@@ -4064,6 +4082,132 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateLinkedTargetOutput**](CreateLinkedTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createMcpSecretBearerToken
+
+> CreateSecretOutput createMcpSecretBearerToken(createMcpSecretBearerToken)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let createMcpSecretBearerToken = new akeyless.CreateMcpSecretBearerToken(); // CreateMcpSecretBearerToken | 
+apiInstance.createMcpSecretBearerToken(createMcpSecretBearerToken).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createMcpSecretBearerToken** | [**CreateMcpSecretBearerToken**](CreateMcpSecretBearerToken.md)|  | 
+
+### Return type
+
+[**CreateSecretOutput**](CreateSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createMcpSecretOAuthAuthCode
+
+> CreateSecretOutput createMcpSecretOAuthAuthCode(createMcpSecretOAuthAuthCode)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let createMcpSecretOAuthAuthCode = new akeyless.CreateMcpSecretOAuthAuthCode(); // CreateMcpSecretOAuthAuthCode | 
+apiInstance.createMcpSecretOAuthAuthCode(createMcpSecretOAuthAuthCode).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createMcpSecretOAuthAuthCode** | [**CreateMcpSecretOAuthAuthCode**](CreateMcpSecretOAuthAuthCode.md)|  | 
+
+### Return type
+
+[**CreateSecretOutput**](CreateSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## createMcpSecretOAuthClientCreds
+
+> CreateSecretOutput createMcpSecretOAuthClientCreds(createMcpSecretOAuthClientCreds)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let createMcpSecretOAuthClientCreds = new akeyless.CreateMcpSecretOAuthClientCreds(); // CreateMcpSecretOAuthClientCreds | 
+apiInstance.createMcpSecretOAuthClientCreds(createMcpSecretOAuthClientCreds).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createMcpSecretOAuthClientCreds** | [**CreateMcpSecretOAuthClientCreds**](CreateMcpSecretOAuthClientCreds.md)|  | 
+
+### Return type
+
+[**CreateSecretOutput**](CreateSecretOutput.md)
 
 ### Authorization
 
@@ -20401,6 +20545,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetCreateAnthropic
+
+> TargetCreateOutput targetCreateAnthropic(targetCreateAnthropic)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateAnthropic = new akeyless.TargetCreateAnthropic(); // TargetCreateAnthropic | 
+apiInstance.targetCreateAnthropic(targetCreateAnthropic).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateAnthropic** | [**TargetCreateAnthropic**](TargetCreateAnthropic.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetCreateArtifactory
 
 > TargetCreateOutput targetCreateArtifactory(targetCreateArtifactory)
@@ -20527,6 +20713,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetCreateBedrock
+
+> TargetCreateOutput targetCreateBedrock(targetCreateBedrock)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateBedrock = new akeyless.TargetCreateBedrock(); // TargetCreateBedrock | 
+apiInstance.targetCreateBedrock(targetCreateBedrock).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateBedrock** | [**TargetCreateBedrock**](TargetCreateBedrock.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetCreateCloudflare
 
 > TargetCreateOutput targetCreateCloudflare(targetCreateCloudflare)
@@ -20554,6 +20782,48 @@ apiInstance.targetCreateCloudflare(targetCreateCloudflare).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetCreateCloudflare** | [**TargetCreateCloudflare**](TargetCreateCloudflare.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetCreateCustomDns
+
+> TargetCreateOutput targetCreateCustomDns(targetCreateCustomDns)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateCustomDns = new akeyless.TargetCreateCustomDns(); // TargetCreateCustomDns | 
+apiInstance.targetCreateCustomDns(targetCreateCustomDns).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateCustomDns** | [**TargetCreateCustomDns**](TargetCreateCustomDns.md)|  | 
 
 ### Return type
 
@@ -21115,6 +21385,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetCreateGrok
+
+> TargetCreateOutput targetCreateGrok(targetCreateGrok)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateGrok = new akeyless.TargetCreateGrok(); // TargetCreateGrok | 
+apiInstance.targetCreateGrok(targetCreateGrok).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateGrok** | [**TargetCreateGrok**](TargetCreateGrok.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetCreateHashiVault
 
 > TargetCreateOutput targetCreateHashiVault(targetCreateHashiVault)
@@ -21184,6 +21496,48 @@ apiInstance.targetCreateK8s(targetCreateK8s).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetCreateK8s** | [**TargetCreateK8s**](TargetCreateK8s.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetCreateKeycloak
+
+> TargetCreateOutput targetCreateKeycloak(targetCreateKeycloak)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateKeycloak = new akeyless.TargetCreateKeycloak(); // TargetCreateKeycloak | 
+apiInstance.targetCreateKeycloak(targetCreateKeycloak).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateKeycloak** | [**TargetCreateKeycloak**](TargetCreateKeycloak.md)|  | 
 
 ### Return type
 
@@ -21310,6 +21664,48 @@ apiInstance.targetCreateLinked(targetCreateLinked).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetCreateLinked** | [**TargetCreateLinked**](TargetCreateLinked.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetCreateOkta
+
+> TargetCreateOutput targetCreateOkta(targetCreateOkta)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateOkta = new akeyless.TargetCreateOkta(); // TargetCreateOkta | 
+apiInstance.targetCreateOkta(targetCreateOkta).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateOkta** | [**TargetCreateOkta**](TargetCreateOkta.md)|  | 
 
 ### Return type
 
@@ -21913,6 +22309,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetUpdateAnthropic
+
+> TargetUpdateOutput targetUpdateAnthropic(targetUpdateAnthropic)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateAnthropic = new akeyless.TargetUpdateAnthropic(); // TargetUpdateAnthropic | 
+apiInstance.targetUpdateAnthropic(targetUpdateAnthropic).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateAnthropic** | [**TargetUpdateAnthropic**](TargetUpdateAnthropic.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetUpdateArtifactory
 
 > TargetUpdateOutput targetUpdateArtifactory(targetUpdateArtifactory)
@@ -22039,6 +22477,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetUpdateBedrock
+
+> TargetUpdateOutput targetUpdateBedrock(targetUpdateBedrock)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateBedrock = new akeyless.TargetUpdateBedrock(); // TargetUpdateBedrock | 
+apiInstance.targetUpdateBedrock(targetUpdateBedrock).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateBedrock** | [**TargetUpdateBedrock**](TargetUpdateBedrock.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetUpdateCloudflare
 
 > TargetUpdateOutput targetUpdateCloudflare(targetUpdateCloudflare)
@@ -22066,6 +22546,48 @@ apiInstance.targetUpdateCloudflare(targetUpdateCloudflare).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetUpdateCloudflare** | [**TargetUpdateCloudflare**](TargetUpdateCloudflare.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetUpdateCustomDns
+
+> TargetUpdateOutput targetUpdateCustomDns(targetUpdateCustomDns)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateCustomDns = new akeyless.TargetUpdateCustomDns(); // TargetUpdateCustomDns | 
+apiInstance.targetUpdateCustomDns(targetUpdateCustomDns).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateCustomDns** | [**TargetUpdateCustomDns**](TargetUpdateCustomDns.md)|  | 
 
 ### Return type
 
@@ -22627,6 +23149,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetUpdateGrok
+
+> TargetUpdateOutput targetUpdateGrok(targetUpdateGrok)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateGrok = new akeyless.TargetUpdateGrok(); // TargetUpdateGrok | 
+apiInstance.targetUpdateGrok(targetUpdateGrok).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateGrok** | [**TargetUpdateGrok**](TargetUpdateGrok.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetUpdateHashiVault
 
 > TargetUpdateOutput targetUpdateHashiVault(targetUpdateHashiVault)
@@ -22696,6 +23260,48 @@ apiInstance.targetUpdateK8s(targetUpdateK8s).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetUpdateK8s** | [**TargetUpdateK8s**](TargetUpdateK8s.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetUpdateKeycloak
+
+> TargetUpdateOutput targetUpdateKeycloak(targetUpdateKeycloak)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateKeycloak = new akeyless.TargetUpdateKeycloak(); // TargetUpdateKeycloak | 
+apiInstance.targetUpdateKeycloak(targetUpdateKeycloak).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateKeycloak** | [**TargetUpdateKeycloak**](TargetUpdateKeycloak.md)|  | 
 
 ### Return type
 
@@ -22822,6 +23428,48 @@ apiInstance.targetUpdateLinked(targetUpdateLinked).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetUpdateLinked** | [**TargetUpdateLinked**](TargetUpdateLinked.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetUpdateOkta
+
+> TargetUpdateOutput targetUpdateOkta(targetUpdateOkta)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateOkta = new akeyless.TargetUpdateOkta(); // TargetUpdateOkta | 
+apiInstance.targetUpdateOkta(targetUpdateOkta).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateOkta** | [**TargetUpdateOkta**](TargetUpdateOkta.md)|  | 
 
 ### Return type
 
@@ -25220,6 +25868,132 @@ Name | Type | Description  | Notes
 ### Return type
 
 **Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateMcpSecretBearerToken
+
+> UpdateSecretValOutput updateMcpSecretBearerToken(updateMcpSecretBearerToken)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let updateMcpSecretBearerToken = new akeyless.UpdateMcpSecretBearerToken(); // UpdateMcpSecretBearerToken | 
+apiInstance.updateMcpSecretBearerToken(updateMcpSecretBearerToken).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **updateMcpSecretBearerToken** | [**UpdateMcpSecretBearerToken**](UpdateMcpSecretBearerToken.md)|  | 
+
+### Return type
+
+[**UpdateSecretValOutput**](UpdateSecretValOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateMcpSecretOAuthAuthCode
+
+> UpdateSecretValOutput updateMcpSecretOAuthAuthCode(updateMcpSecretOAuthAuthCode)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let updateMcpSecretOAuthAuthCode = new akeyless.UpdateMcpSecretOAuthAuthCode(); // UpdateMcpSecretOAuthAuthCode | 
+apiInstance.updateMcpSecretOAuthAuthCode(updateMcpSecretOAuthAuthCode).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **updateMcpSecretOAuthAuthCode** | [**UpdateMcpSecretOAuthAuthCode**](UpdateMcpSecretOAuthAuthCode.md)|  | 
+
+### Return type
+
+[**UpdateSecretValOutput**](UpdateSecretValOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateMcpSecretOAuthClientCreds
+
+> UpdateSecretValOutput updateMcpSecretOAuthClientCreds(updateMcpSecretOAuthClientCreds)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let updateMcpSecretOAuthClientCreds = new akeyless.UpdateMcpSecretOAuthClientCreds(); // UpdateMcpSecretOAuthClientCreds | 
+apiInstance.updateMcpSecretOAuthClientCreds(updateMcpSecretOAuthClientCreds).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **updateMcpSecretOAuthClientCreds** | [**UpdateMcpSecretOAuthClientCreds**](UpdateMcpSecretOAuthClientCreds.md)|  | 
+
+### Return type
+
+[**UpdateSecretValOutput**](UpdateSecretValOutput.md)
 
 ### Authorization
 

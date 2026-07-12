@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateDB model module.
  * @module model/TargetUpdateDB
- * @version 5.0.28
+ * @version 5.0.30
  */
 class TargetUpdateDB {
     /**
@@ -165,6 +165,9 @@ class TargetUpdateDB {
             }
             if (data.hasOwnProperty('pwd')) {
                 obj['pwd'] = ApiClient.convertToType(data['pwd'], 'String');
+            }
+            if (data.hasOwnProperty('skip-server-name-validation')) {
+                obj['skip-server-name-validation'] = ApiClient.convertToType(data['skip-server-name-validation'], 'String');
             }
             if (data.hasOwnProperty('snowflake-account')) {
                 obj['snowflake-account'] = ApiClient.convertToType(data['snowflake-account'], 'String');
@@ -337,6 +340,10 @@ class TargetUpdateDB {
         // ensure the json data is a string
         if (data['pwd'] && !(typeof data['pwd'] === 'string' || data['pwd'] instanceof String)) {
             throw new Error("Expected the field `pwd` to be a primitive type in the JSON string but got " + data['pwd']);
+        }
+        // ensure the json data is a string
+        if (data['skip-server-name-validation'] && !(typeof data['skip-server-name-validation'] === 'string' || data['skip-server-name-validation'] instanceof String)) {
+            throw new Error("Expected the field `skip-server-name-validation` to be a primitive type in the JSON string but got " + data['skip-server-name-validation']);
         }
         // ensure the json data is a string
         if (data['snowflake-account'] && !(typeof data['snowflake-account'] === 'string' || data['snowflake-account'] instanceof String)) {
@@ -592,6 +599,12 @@ TargetUpdateDB.prototype['port'] = undefined;
  * @member {String} pwd
  */
 TargetUpdateDB.prototype['pwd'] = undefined;
+
+/**
+ * (Optional) Skip server name verification
+ * @member {String} skip-server-name-validation
+ */
+TargetUpdateDB.prototype['skip-server-name-validation'] = undefined;
 
 /**
  * @member {String} snowflake-account

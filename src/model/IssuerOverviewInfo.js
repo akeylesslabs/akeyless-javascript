@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IssuerOverviewInfo model module.
  * @module model/IssuerOverviewInfo
- * @version 5.0.28
+ * @version 5.0.30
  */
 class IssuerOverviewInfo {
     /**

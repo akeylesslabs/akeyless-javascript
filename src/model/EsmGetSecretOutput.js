@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EsmGetSecretOutput model module.
  * @module model/EsmGetSecretOutput
- * @version 5.0.28
+ * @version 5.0.30
  */
 class EsmGetSecretOutput {
     /**
@@ -47,11 +47,17 @@ class EsmGetSecretOutput {
         if (data) {
             obj = obj || new EsmGetSecretOutput();
 
+            if (data.hasOwnProperty('activation_date')) {
+                obj['activation_date'] = ApiClient.convertToType(data['activation_date'], 'Date');
+            }
             if (data.hasOwnProperty('binary_value')) {
                 obj['binary_value'] = ApiClient.convertToType(data['binary_value'], 'Boolean');
             }
             if (data.hasOwnProperty('encryption_key')) {
                 obj['encryption_key'] = ApiClient.convertToType(data['encryption_key'], 'String');
+            }
+            if (data.hasOwnProperty('expiration')) {
+                obj['expiration'] = ApiClient.convertToType(data['expiration'], 'Date');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -122,6 +128,11 @@ class EsmGetSecretOutput {
 
 
 /**
+ * @member {Date} activation_date
+ */
+EsmGetSecretOutput.prototype['activation_date'] = undefined;
+
+/**
  * @member {Boolean} binary_value
  */
 EsmGetSecretOutput.prototype['binary_value'] = undefined;
@@ -130,6 +141,11 @@ EsmGetSecretOutput.prototype['binary_value'] = undefined;
  * @member {String} encryption_key
  */
 EsmGetSecretOutput.prototype['encryption_key'] = undefined;
+
+/**
+ * @member {Date} expiration
+ */
+EsmGetSecretOutput.prototype['expiration'] = undefined;
 
 /**
  * @member {String} id

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateSAML model module.
  * @module model/AuthMethodUpdateSAML
- * @version 5.0.28
+ * @version 5.0.30
  */
 class AuthMethodUpdateSAML {
     /**
@@ -117,6 +117,9 @@ class AuthMethodUpdateSAML {
             }
             if (data.hasOwnProperty('unique-identifier')) {
                 obj['unique-identifier'] = ApiClient.convertToType(data['unique-identifier'], 'String');
+            }
+            if (data.hasOwnProperty('use-dedicated-saml-urls')) {
+                obj['use-dedicated-saml-urls'] = ApiClient.convertToType(data['use-dedicated-saml-urls'], 'Boolean');
             }
         }
         return obj;
@@ -339,6 +342,12 @@ AuthMethodUpdateSAML.prototype['uid-token'] = undefined;
  * @member {String} unique-identifier
  */
 AuthMethodUpdateSAML.prototype['unique-identifier'] = undefined;
+
+/**
+ * Use dedicated per-access-id SP URLs for login
+ * @member {Boolean} use-dedicated-saml-urls
+ */
+AuthMethodUpdateSAML.prototype['use-dedicated-saml-urls'] = undefined;
 
 
 

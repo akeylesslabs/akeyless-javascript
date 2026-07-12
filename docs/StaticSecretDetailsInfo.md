@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**fileInfo** | [**FileInfo**](FileInfo.md) |  | [optional] 
 **format** | **String** | StaticSecretFormat defines the format of static secret (e.g. Text) | [optional] 
 **maxVersions** | **Number** |  | [optional] 
 **notifyOnChangeEvent** | **Boolean** |  | [optional] 

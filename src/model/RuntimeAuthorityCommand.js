@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RuntimeAuthorityCommand model module.
  * @module model/RuntimeAuthorityCommand
- * @version 5.0.28
+ * @version 5.0.30
  */
 class RuntimeAuthorityCommand {
     /**
@@ -63,6 +63,12 @@ class RuntimeAuthorityCommand {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('original-prompt')) {
+                obj['original-prompt'] = ApiClient.convertToType(data['original-prompt'], 'String');
+            }
+            if (data.hasOwnProperty('original-user')) {
+                obj['original-user'] = ApiClient.convertToType(data['original-user'], 'String');
+            }
             if (data.hasOwnProperty('payload')) {
                 obj['payload'] = ApiClient.convertToType(data['payload'], 'String');
             }
@@ -95,6 +101,14 @@ class RuntimeAuthorityCommand {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['original-prompt'] && !(typeof data['original-prompt'] === 'string' || data['original-prompt'] instanceof String)) {
+            throw new Error("Expected the field `original-prompt` to be a primitive type in the JSON string but got " + data['original-prompt']);
+        }
+        // ensure the json data is a string
+        if (data['original-user'] && !(typeof data['original-user'] === 'string' || data['original-user'] instanceof String)) {
+            throw new Error("Expected the field `original-user` to be a primitive type in the JSON string but got " + data['original-user']);
         }
         // ensure the json data is a string
         if (data['payload'] && !(typeof data['payload'] === 'string' || data['payload'] instanceof String)) {
@@ -135,6 +149,18 @@ RuntimeAuthorityCommand.prototype['json'] = false;
  * @member {String} name
  */
 RuntimeAuthorityCommand.prototype['name'] = undefined;
+
+/**
+ * Original natural-language prompt from the user (optional, for auditing)
+ * @member {String} original-prompt
+ */
+RuntimeAuthorityCommand.prototype['original-prompt'] = undefined;
+
+/**
+ * Human end-user behind the agent (optional, for auditing)
+ * @member {String} original-user
+ */
+RuntimeAuthorityCommand.prototype['original-user'] = undefined;
 
 /**
  * Query or action payload (SQL, natural language, or CLI-style)

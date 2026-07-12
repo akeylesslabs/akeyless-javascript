@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetKubeExecCreds model module.
  * @module model/GetKubeExecCreds
- * @version 5.0.28
+ * @version 5.0.30
  */
 class GetKubeExecCreds {
     /**
@@ -238,7 +238,7 @@ GetKubeExecCreds.prototype['max-path-len'] = -1;
 GetKubeExecCreds.prototype['token'] = undefined;
 
 /**
- * Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL)
+ * Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL). Ignored for Let's Encrypt public CA issuers, which always use the CA default lifetime (about 90 days).
  * @member {String} ttl
  */
 GetKubeExecCreds.prototype['ttl'] = undefined;

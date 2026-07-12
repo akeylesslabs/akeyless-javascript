@@ -17,7 +17,7 @@ import FolderUSCSyncConfig from './FolderUSCSyncConfig';
 /**
  * The GetFolderOutput model module.
  * @module model/GetFolderOutput
- * @version 5.0.28
+ * @version 5.0.30
  */
 class GetFolderOutput {
     /**

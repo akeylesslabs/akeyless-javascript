@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import FileInfo from './FileInfo';
 import PasswordSecurityInfo from './PasswordSecurityInfo';
 
 /**
  * The StaticSecretDetailsInfo model module.
  * @module model/StaticSecretDetailsInfo
- * @version 5.0.28
+ * @version 5.0.30
  */
 class StaticSecretDetailsInfo {
     /**
@@ -48,6 +49,9 @@ class StaticSecretDetailsInfo {
         if (data) {
             obj = obj || new StaticSecretDetailsInfo();
 
+            if (data.hasOwnProperty('file_info')) {
+                obj['file_info'] = FileInfo.constructFromObject(data['file_info']);
+            }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
@@ -79,6 +83,10 @@ class StaticSecretDetailsInfo {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>StaticSecretDetailsInfo</code>.
      */
     static validateJSON(data) {
+        // validate the optional field `file_info`
+        if (data['file_info']) { // data not null
+          FileInfo.validateJSON(data['file_info']);
+        }
         // ensure the json data is a string
         if (data['format'] && !(typeof data['format'] === 'string' || data['format'] instanceof String)) {
             throw new Error("Expected the field `format` to be a primitive type in the JSON string but got " + data['format']);
@@ -107,6 +115,11 @@ class StaticSecretDetailsInfo {
 }
 
 
+
+/**
+ * @member {module:model/FileInfo} file_info
+ */
+StaticSecretDetailsInfo.prototype['file_info'] = undefined;
 
 /**
  * StaticSecretFormat defines the format of static secret (e.g. Text)

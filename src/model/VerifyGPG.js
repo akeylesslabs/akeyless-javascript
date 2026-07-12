@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyGPG model module.
  * @module model/VerifyGPG
- * @version 5.0.28
+ * @version 5.0.30
  */
 class VerifyGPG {
     /**

@@ -16,11 +16,12 @@ import AuthExpirationEvent from './AuthExpirationEvent';
 import AuthMethodAccessInfo from './AuthMethodAccessInfo';
 import AuthMethodAdditionalData from './AuthMethodAdditionalData';
 import AuthMethodRoleAssociation from './AuthMethodRoleAssociation';
+import UidExpirationEvent from './UidExpirationEvent';
 
 /**
  * The AuthMethod model module.
  * @module model/AuthMethod
- * @version 5.0.28
+ * @version 5.0.30
  */
 class AuthMethod {
     /**
@@ -102,6 +103,9 @@ class AuthMethod {
             if (data.hasOwnProperty('modification_date')) {
                 obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
             }
+            if (data.hasOwnProperty('uid_expiration_events')) {
+                obj['uid_expiration_events'] = ApiClient.convertToType(data['uid_expiration_events'], [UidExpirationEvent]);
+            }
         }
         return obj;
     }
@@ -166,6 +170,16 @@ class AuthMethod {
             // validate the optional field `expiration_events` (array)
             for (const item of data['expiration_events']) {
                 AuthExpirationEvent.validateJSON(item);
+            };
+        }
+        if (data['uid_expiration_events']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['uid_expiration_events'])) {
+                throw new Error("Expected the field `uid_expiration_events` to be an array in the JSON data but got " + data['uid_expiration_events']);
+            }
+            // validate the optional field `uid_expiration_events` (array)
+            for (const item of data['uid_expiration_events']) {
+                UidExpirationEvent.validateJSON(item);
             };
         }
 
@@ -261,6 +275,11 @@ AuthMethod.prototype['is_approved'] = undefined;
  * @member {Date} modification_date
  */
 AuthMethod.prototype['modification_date'] = undefined;
+
+/**
+ * @member {Array.<module:model/UidExpirationEvent>} uid_expiration_events
+ */
+AuthMethod.prototype['uid_expiration_events'] = undefined;
 
 
 

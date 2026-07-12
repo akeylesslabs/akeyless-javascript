@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PoliciesDelete model module.
  * @module model/PoliciesDelete
- * @version 5.0.28
+ * @version 5.0.30
  */
 class PoliciesDelete {
     /**

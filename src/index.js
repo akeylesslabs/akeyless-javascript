@@ -48,6 +48,7 @@ import AllowedAccess from './model/AllowedAccess';
 import AllowedAccessOld from './model/AllowedAccessOld';
 import AllowedClientType from './model/AllowedClientType';
 import AllowedIpSettings from './model/AllowedIpSettings';
+import AnthropicTargetDetails from './model/AnthropicTargetDetails';
 import ArtifactoryTargetDetails from './model/ArtifactoryTargetDetails';
 import AssocRoleAuthMethod from './model/AssocRoleAuthMethod';
 import AssocTargetItem from './model/AssocTargetItem';
@@ -109,6 +110,7 @@ import BatchEncryptionRequestLine from './model/BatchEncryptionRequestLine';
 import BatchEncryptionResponseLine from './model/BatchEncryptionResponseLine';
 import BatchTokenizationRequestLine from './model/BatchTokenizationRequestLine';
 import BatchTokenizationResponseLine from './model/BatchTokenizationResponseLine';
+import BedrockTargetDetails from './model/BedrockTargetDetails';
 import CFConfigPart from './model/CFConfigPart';
 import CaCertificatesConfigPart from './model/CaCertificatesConfigPart';
 import CacheConfigPart from './model/CacheConfigPart';
@@ -220,6 +222,9 @@ import CreateLdapTarget from './model/CreateLdapTarget';
 import CreateLdapTargetOutput from './model/CreateLdapTargetOutput';
 import CreateLinkedTarget from './model/CreateLinkedTarget';
 import CreateLinkedTargetOutput from './model/CreateLinkedTargetOutput';
+import CreateMcpSecretBearerToken from './model/CreateMcpSecretBearerToken';
+import CreateMcpSecretOAuthAuthCode from './model/CreateMcpSecretOAuthAuthCode';
+import CreateMcpSecretOAuthClientCreds from './model/CreateMcpSecretOAuthClientCreds';
 import CreateNativeK8STarget from './model/CreateNativeK8STarget';
 import CreateNativeK8STargetOutput from './model/CreateNativeK8STargetOutput';
 import CreateOidcApp from './model/CreateOidcApp';
@@ -257,6 +262,7 @@ import CreateWindowsTarget from './model/CreateWindowsTarget';
 import CreateWindowsTargetOutput from './model/CreateWindowsTargetOutput';
 import CreateZeroSSLTarget from './model/CreateZeroSSLTarget';
 import CreateZeroSSLTargetOutput from './model/CreateZeroSSLTargetOutput';
+import CustomDnsTargetDetails from './model/CustomDnsTargetDetails';
 import CustomTargetDetails from './model/CustomTargetDetails';
 import CustomerFragmentConfig from './model/CustomerFragmentConfig';
 import CustomerFragmentsConfigJson from './model/CustomerFragmentsConfigJson';
@@ -385,6 +391,9 @@ import DynamicSecretUpdateSnowflake from './model/DynamicSecretUpdateSnowflake';
 import DynamicSecretUpdateVenafi from './model/DynamicSecretUpdateVenafi';
 import EKSTargetDetails from './model/EKSTargetDetails';
 import ElasticsearchLogForwardingConfig from './model/ElasticsearchLogForwardingConfig';
+import EmailCustomization from './model/EmailCustomization';
+import EmailCustomizationAccountInformation from './model/EmailCustomizationAccountInformation';
+import EmailCustomizationAccountInformationValues from './model/EmailCustomizationAccountInformationValues';
 import EmailEntry from './model/EmailEntry';
 import EmailError from './model/EmailError';
 import EmailPassAccessRules from './model/EmailPassAccessRules';
@@ -427,6 +436,8 @@ import ExportClassicKey from './model/ExportClassicKey';
 import ExportClassicKeyOutput from './model/ExportClassicKeyOutput';
 import Extension from './model/Extension';
 import ExternalKMSKeyId from './model/ExternalKMSKeyId';
+import FileDownloadInstructions from './model/FileDownloadInstructions';
+import FileInfo from './model/FileInfo';
 import FolderCreate from './model/FolderCreate';
 import FolderCreateOutput from './model/FolderCreateOutput';
 import FolderDelete from './model/FolderDelete';
@@ -680,6 +691,7 @@ import GlobalSignGCCTargetDetails from './model/GlobalSignGCCTargetDetails';
 import GodaddyTargetDetails from './model/GodaddyTargetDetails';
 import GoogleChronicleForwardingConfig from './model/GoogleChronicleForwardingConfig';
 import GoogleTrustTargetDetails from './model/GoogleTrustTargetDetails';
+import GrokTargetDetails from './model/GrokTargetDetails';
 import Group from './model/Group';
 import GwClusterIdentity from './model/GwClusterIdentity';
 import GwUpdateRemoteAccessSessionLogsAwsS3 from './model/GwUpdateRemoteAccessSessionLogsAwsS3';
@@ -728,6 +740,7 @@ import KMIPServer from './model/KMIPServer';
 import KerberosAccessRules from './model/KerberosAccessRules';
 import KerberosAuthMethodInfo from './model/KerberosAuthMethodInfo';
 import KerberosConfigPart from './model/KerberosConfigPart';
+import KeycloakTargetDetails from './model/KeycloakTargetDetails';
 import KmipClientDeleteRule from './model/KmipClientDeleteRule';
 import KmipClientSetRule from './model/KmipClientSetRule';
 import KmipClientUpdate from './model/KmipClientUpdate';
@@ -818,6 +831,7 @@ import OIDCAccessRules from './model/OIDCAccessRules';
 import OIDCCustomClaim from './model/OIDCCustomClaim';
 import ObjectVersionSettingsOutput from './model/ObjectVersionSettingsOutput';
 import OidcClientInfo from './model/OidcClientInfo';
+import OktaTargetDetails from './model/OktaTargetDetails';
 import OnePasswordMigration from './model/OnePasswordMigration';
 import OnePasswordPayload from './model/OnePasswordPayload';
 import OpenAITargetDetails from './model/OpenAITargetDetails';
@@ -986,10 +1000,13 @@ import SyslogLogForwardingConfig from './model/SyslogLogForwardingConfig';
 import SystemAccessCredentialsReplyObj from './model/SystemAccessCredentialsReplyObj';
 import SystemAccessCredsSettings from './model/SystemAccessCredsSettings';
 import Target from './model/Target';
+import TargetCreateAnthropic from './model/TargetCreateAnthropic';
 import TargetCreateArtifactory from './model/TargetCreateArtifactory';
 import TargetCreateAws from './model/TargetCreateAws';
 import TargetCreateAzure from './model/TargetCreateAzure';
+import TargetCreateBedrock from './model/TargetCreateBedrock';
 import TargetCreateCloudflare from './model/TargetCreateCloudflare';
+import TargetCreateCustomDns from './model/TargetCreateCustomDns';
 import TargetCreateDB from './model/TargetCreateDB';
 import TargetCreateDigiCert from './model/TargetCreateDigiCert';
 import TargetCreateDockerhub from './model/TargetCreateDockerhub';
@@ -1003,11 +1020,14 @@ import TargetCreateGlobalSign from './model/TargetCreateGlobalSign';
 import TargetCreateGlobalSignAtlas from './model/TargetCreateGlobalSignAtlas';
 import TargetCreateGodaddy from './model/TargetCreateGodaddy';
 import TargetCreateGoogleTrust from './model/TargetCreateGoogleTrust';
+import TargetCreateGrok from './model/TargetCreateGrok';
 import TargetCreateHashiVault from './model/TargetCreateHashiVault';
 import TargetCreateK8s from './model/TargetCreateK8s';
+import TargetCreateKeycloak from './model/TargetCreateKeycloak';
 import TargetCreateLdap from './model/TargetCreateLdap';
 import TargetCreateLetsEncrypt from './model/TargetCreateLetsEncrypt';
 import TargetCreateLinked from './model/TargetCreateLinked';
+import TargetCreateOkta from './model/TargetCreateOkta';
 import TargetCreateOpenAI from './model/TargetCreateOpenAI';
 import TargetCreateOutput from './model/TargetCreateOutput';
 import TargetCreatePing from './model/TargetCreatePing';
@@ -1028,10 +1048,13 @@ import TargetItemVersion from './model/TargetItemVersion';
 import TargetList from './model/TargetList';
 import TargetNameWithHosts from './model/TargetNameWithHosts';
 import TargetTypeDetailsInput from './model/TargetTypeDetailsInput';
+import TargetUpdateAnthropic from './model/TargetUpdateAnthropic';
 import TargetUpdateArtifactory from './model/TargetUpdateArtifactory';
 import TargetUpdateAws from './model/TargetUpdateAws';
 import TargetUpdateAzure from './model/TargetUpdateAzure';
+import TargetUpdateBedrock from './model/TargetUpdateBedrock';
 import TargetUpdateCloudflare from './model/TargetUpdateCloudflare';
+import TargetUpdateCustomDns from './model/TargetUpdateCustomDns';
 import TargetUpdateDB from './model/TargetUpdateDB';
 import TargetUpdateDigiCert from './model/TargetUpdateDigiCert';
 import TargetUpdateDockerhub from './model/TargetUpdateDockerhub';
@@ -1045,11 +1068,14 @@ import TargetUpdateGlobalSign from './model/TargetUpdateGlobalSign';
 import TargetUpdateGlobalSignAtlas from './model/TargetUpdateGlobalSignAtlas';
 import TargetUpdateGodaddy from './model/TargetUpdateGodaddy';
 import TargetUpdateGoogleTrust from './model/TargetUpdateGoogleTrust';
+import TargetUpdateGrok from './model/TargetUpdateGrok';
 import TargetUpdateHashiVault from './model/TargetUpdateHashiVault';
 import TargetUpdateK8s from './model/TargetUpdateK8s';
+import TargetUpdateKeycloak from './model/TargetUpdateKeycloak';
 import TargetUpdateLdap from './model/TargetUpdateLdap';
 import TargetUpdateLetsEncrypt from './model/TargetUpdateLetsEncrypt';
 import TargetUpdateLinked from './model/TargetUpdateLinked';
+import TargetUpdateOkta from './model/TargetUpdateOkta';
 import TargetUpdateOpenAI from './model/TargetUpdateOpenAI';
 import TargetUpdateOutput from './model/TargetUpdateOutput';
 import TargetUpdatePing from './model/TargetUpdatePing';
@@ -1068,6 +1094,7 @@ import TokenizerInfo from './model/TokenizerInfo';
 import UIDTokenDetails from './model/UIDTokenDetails';
 import UidCreateChildToken from './model/UidCreateChildToken';
 import UidCreateChildTokenOutput from './model/UidCreateChildTokenOutput';
+import UidExpirationEvent from './model/UidExpirationEvent';
 import UidGenerateToken from './model/UidGenerateToken';
 import UidGenerateTokenOutput from './model/UidGenerateTokenOutput';
 import UidListChildren from './model/UidListChildren';
@@ -1143,6 +1170,9 @@ import UpdateLdapTarget from './model/UpdateLdapTarget';
 import UpdateLdapTargetDetails from './model/UpdateLdapTargetDetails';
 import UpdateLdapTargetOutput from './model/UpdateLdapTargetOutput';
 import UpdateLinkedTarget from './model/UpdateLinkedTarget';
+import UpdateMcpSecretBearerToken from './model/UpdateMcpSecretBearerToken';
+import UpdateMcpSecretOAuthAuthCode from './model/UpdateMcpSecretOAuthAuthCode';
+import UpdateMcpSecretOAuthClientCreds from './model/UpdateMcpSecretOAuthClientCreds';
 import UpdateNativeK8STarget from './model/UpdateNativeK8STarget';
 import UpdateNativeK8STargetOutput from './model/UpdateNativeK8STargetOutput';
 import UpdateOidcApp from './model/UpdateOidcApp';
@@ -1253,7 +1283,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.28
+* @version 5.0.30
 */
 export {
     /**
@@ -1471,6 +1501,12 @@ export {
      * @property {module:model/AllowedIpSettings}
      */
     AllowedIpSettings,
+
+    /**
+     * The AnthropicTargetDetails model constructor.
+     * @property {module:model/AnthropicTargetDetails}
+     */
+    AnthropicTargetDetails,
 
     /**
      * The ArtifactoryTargetDetails model constructor.
@@ -1837,6 +1873,12 @@ export {
      * @property {module:model/BatchTokenizationResponseLine}
      */
     BatchTokenizationResponseLine,
+
+    /**
+     * The BedrockTargetDetails model constructor.
+     * @property {module:model/BedrockTargetDetails}
+     */
+    BedrockTargetDetails,
 
     /**
      * The CFConfigPart model constructor.
@@ -2505,6 +2547,24 @@ export {
     CreateLinkedTargetOutput,
 
     /**
+     * The CreateMcpSecretBearerToken model constructor.
+     * @property {module:model/CreateMcpSecretBearerToken}
+     */
+    CreateMcpSecretBearerToken,
+
+    /**
+     * The CreateMcpSecretOAuthAuthCode model constructor.
+     * @property {module:model/CreateMcpSecretOAuthAuthCode}
+     */
+    CreateMcpSecretOAuthAuthCode,
+
+    /**
+     * The CreateMcpSecretOAuthClientCreds model constructor.
+     * @property {module:model/CreateMcpSecretOAuthClientCreds}
+     */
+    CreateMcpSecretOAuthClientCreds,
+
+    /**
      * The CreateNativeK8STarget model constructor.
      * @property {module:model/CreateNativeK8STarget}
      */
@@ -2725,6 +2785,12 @@ export {
      * @property {module:model/CreateZeroSSLTargetOutput}
      */
     CreateZeroSSLTargetOutput,
+
+    /**
+     * The CustomDnsTargetDetails model constructor.
+     * @property {module:model/CustomDnsTargetDetails}
+     */
+    CustomDnsTargetDetails,
 
     /**
      * The CustomTargetDetails model constructor.
@@ -3495,6 +3561,24 @@ export {
     ElasticsearchLogForwardingConfig,
 
     /**
+     * The EmailCustomization model constructor.
+     * @property {module:model/EmailCustomization}
+     */
+    EmailCustomization,
+
+    /**
+     * The EmailCustomizationAccountInformation model constructor.
+     * @property {module:model/EmailCustomizationAccountInformation}
+     */
+    EmailCustomizationAccountInformation,
+
+    /**
+     * The EmailCustomizationAccountInformationValues model constructor.
+     * @property {module:model/EmailCustomizationAccountInformationValues}
+     */
+    EmailCustomizationAccountInformationValues,
+
+    /**
      * The EmailEntry model constructor.
      * @property {module:model/EmailEntry}
      */
@@ -3745,6 +3829,18 @@ export {
      * @property {module:model/ExternalKMSKeyId}
      */
     ExternalKMSKeyId,
+
+    /**
+     * The FileDownloadInstructions model constructor.
+     * @property {module:model/FileDownloadInstructions}
+     */
+    FileDownloadInstructions,
+
+    /**
+     * The FileInfo model constructor.
+     * @property {module:model/FileInfo}
+     */
+    FileInfo,
 
     /**
      * The FolderCreate model constructor.
@@ -5265,6 +5361,12 @@ export {
     GoogleTrustTargetDetails,
 
     /**
+     * The GrokTargetDetails model constructor.
+     * @property {module:model/GrokTargetDetails}
+     */
+    GrokTargetDetails,
+
+    /**
      * The Group model constructor.
      * @property {module:model/Group}
      */
@@ -5551,6 +5653,12 @@ export {
      * @property {module:model/KerberosConfigPart}
      */
     KerberosConfigPart,
+
+    /**
+     * The KeycloakTargetDetails model constructor.
+     * @property {module:model/KeycloakTargetDetails}
+     */
+    KeycloakTargetDetails,
 
     /**
      * The KmipClientDeleteRule model constructor.
@@ -6091,6 +6199,12 @@ export {
      * @property {module:model/OidcClientInfo}
      */
     OidcClientInfo,
+
+    /**
+     * The OktaTargetDetails model constructor.
+     * @property {module:model/OktaTargetDetails}
+     */
+    OktaTargetDetails,
 
     /**
      * The OnePasswordMigration model constructor.
@@ -7101,6 +7215,12 @@ export {
     Target,
 
     /**
+     * The TargetCreateAnthropic model constructor.
+     * @property {module:model/TargetCreateAnthropic}
+     */
+    TargetCreateAnthropic,
+
+    /**
      * The TargetCreateArtifactory model constructor.
      * @property {module:model/TargetCreateArtifactory}
      */
@@ -7119,10 +7239,22 @@ export {
     TargetCreateAzure,
 
     /**
+     * The TargetCreateBedrock model constructor.
+     * @property {module:model/TargetCreateBedrock}
+     */
+    TargetCreateBedrock,
+
+    /**
      * The TargetCreateCloudflare model constructor.
      * @property {module:model/TargetCreateCloudflare}
      */
     TargetCreateCloudflare,
+
+    /**
+     * The TargetCreateCustomDns model constructor.
+     * @property {module:model/TargetCreateCustomDns}
+     */
+    TargetCreateCustomDns,
 
     /**
      * The TargetCreateDB model constructor.
@@ -7203,6 +7335,12 @@ export {
     TargetCreateGoogleTrust,
 
     /**
+     * The TargetCreateGrok model constructor.
+     * @property {module:model/TargetCreateGrok}
+     */
+    TargetCreateGrok,
+
+    /**
      * The TargetCreateHashiVault model constructor.
      * @property {module:model/TargetCreateHashiVault}
      */
@@ -7213,6 +7351,12 @@ export {
      * @property {module:model/TargetCreateK8s}
      */
     TargetCreateK8s,
+
+    /**
+     * The TargetCreateKeycloak model constructor.
+     * @property {module:model/TargetCreateKeycloak}
+     */
+    TargetCreateKeycloak,
 
     /**
      * The TargetCreateLdap model constructor.
@@ -7231,6 +7375,12 @@ export {
      * @property {module:model/TargetCreateLinked}
      */
     TargetCreateLinked,
+
+    /**
+     * The TargetCreateOkta model constructor.
+     * @property {module:model/TargetCreateOkta}
+     */
+    TargetCreateOkta,
 
     /**
      * The TargetCreateOpenAI model constructor.
@@ -7353,6 +7503,12 @@ export {
     TargetTypeDetailsInput,
 
     /**
+     * The TargetUpdateAnthropic model constructor.
+     * @property {module:model/TargetUpdateAnthropic}
+     */
+    TargetUpdateAnthropic,
+
+    /**
      * The TargetUpdateArtifactory model constructor.
      * @property {module:model/TargetUpdateArtifactory}
      */
@@ -7371,10 +7527,22 @@ export {
     TargetUpdateAzure,
 
     /**
+     * The TargetUpdateBedrock model constructor.
+     * @property {module:model/TargetUpdateBedrock}
+     */
+    TargetUpdateBedrock,
+
+    /**
      * The TargetUpdateCloudflare model constructor.
      * @property {module:model/TargetUpdateCloudflare}
      */
     TargetUpdateCloudflare,
+
+    /**
+     * The TargetUpdateCustomDns model constructor.
+     * @property {module:model/TargetUpdateCustomDns}
+     */
+    TargetUpdateCustomDns,
 
     /**
      * The TargetUpdateDB model constructor.
@@ -7455,6 +7623,12 @@ export {
     TargetUpdateGoogleTrust,
 
     /**
+     * The TargetUpdateGrok model constructor.
+     * @property {module:model/TargetUpdateGrok}
+     */
+    TargetUpdateGrok,
+
+    /**
      * The TargetUpdateHashiVault model constructor.
      * @property {module:model/TargetUpdateHashiVault}
      */
@@ -7465,6 +7639,12 @@ export {
      * @property {module:model/TargetUpdateK8s}
      */
     TargetUpdateK8s,
+
+    /**
+     * The TargetUpdateKeycloak model constructor.
+     * @property {module:model/TargetUpdateKeycloak}
+     */
+    TargetUpdateKeycloak,
 
     /**
      * The TargetUpdateLdap model constructor.
@@ -7483,6 +7663,12 @@ export {
      * @property {module:model/TargetUpdateLinked}
      */
     TargetUpdateLinked,
+
+    /**
+     * The TargetUpdateOkta model constructor.
+     * @property {module:model/TargetUpdateOkta}
+     */
+    TargetUpdateOkta,
 
     /**
      * The TargetUpdateOpenAI model constructor.
@@ -7591,6 +7777,12 @@ export {
      * @property {module:model/UidCreateChildTokenOutput}
      */
     UidCreateChildTokenOutput,
+
+    /**
+     * The UidExpirationEvent model constructor.
+     * @property {module:model/UidExpirationEvent}
+     */
+    UidExpirationEvent,
 
     /**
      * The UidGenerateToken model constructor.
@@ -8041,6 +8233,24 @@ export {
      * @property {module:model/UpdateLinkedTarget}
      */
     UpdateLinkedTarget,
+
+    /**
+     * The UpdateMcpSecretBearerToken model constructor.
+     * @property {module:model/UpdateMcpSecretBearerToken}
+     */
+    UpdateMcpSecretBearerToken,
+
+    /**
+     * The UpdateMcpSecretOAuthAuthCode model constructor.
+     * @property {module:model/UpdateMcpSecretOAuthAuthCode}
+     */
+    UpdateMcpSecretOAuthAuthCode,
+
+    /**
+     * The UpdateMcpSecretOAuthClientCreds model constructor.
+     * @property {module:model/UpdateMcpSecretOAuthClientCreds}
+     */
+    UpdateMcpSecretOAuthClientCreds,
 
     /**
      * The UpdateNativeK8STarget model constructor.

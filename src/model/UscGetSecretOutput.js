@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscGetSecretOutput model module.
  * @module model/UscGetSecretOutput
- * @version 5.0.28
+ * @version 5.0.30
  */
 class UscGetSecretOutput {
     /**
@@ -47,11 +47,17 @@ class UscGetSecretOutput {
         if (data) {
             obj = obj || new UscGetSecretOutput();
 
+            if (data.hasOwnProperty('activation_date')) {
+                obj['activation_date'] = ApiClient.convertToType(data['activation_date'], 'Date');
+            }
             if (data.hasOwnProperty('binary_value')) {
                 obj['binary_value'] = ApiClient.convertToType(data['binary_value'], 'Boolean');
             }
             if (data.hasOwnProperty('encryption_key')) {
                 obj['encryption_key'] = ApiClient.convertToType(data['encryption_key'], 'String');
+            }
+            if (data.hasOwnProperty('expiration')) {
+                obj['expiration'] = ApiClient.convertToType(data['expiration'], 'Date');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -122,6 +128,11 @@ class UscGetSecretOutput {
 
 
 /**
+ * @member {Date} activation_date
+ */
+UscGetSecretOutput.prototype['activation_date'] = undefined;
+
+/**
  * @member {Boolean} binary_value
  */
 UscGetSecretOutput.prototype['binary_value'] = undefined;
@@ -130,6 +141,11 @@ UscGetSecretOutput.prototype['binary_value'] = undefined;
  * @member {String} encryption_key
  */
 UscGetSecretOutput.prototype['encryption_key'] = undefined;
+
+/**
+ * @member {Date} expiration
+ */
+UscGetSecretOutput.prototype['expiration'] = undefined;
 
 /**
  * @member {String} id

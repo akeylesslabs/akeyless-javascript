@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretDelete model module.
  * @module model/RotatedSecretDelete
- * @version 5.0.28
+ * @version 5.0.30
  */
 class RotatedSecretDelete {
     /**

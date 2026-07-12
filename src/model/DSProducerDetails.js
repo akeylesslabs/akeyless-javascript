@@ -23,7 +23,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 5.0.28
+ * @version 5.0.30
  */
 class DSProducerDetails {
     /**
@@ -776,6 +776,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('signing_algorithm')) {
                 obj['signing_algorithm'] = ApiClient.convertToType(data['signing_algorithm'], 'String');
+            }
+            if (data.hasOwnProperty('skip_server_name_validation')) {
+                obj['skip_server_name_validation'] = ApiClient.convertToType(data['skip_server_name_validation'], 'String');
             }
             if (data.hasOwnProperty('ssl_connection_certificate')) {
                 obj['ssl_connection_certificate'] = ApiClient.convertToType(data['ssl_connection_certificate'], 'String');
@@ -1755,6 +1758,10 @@ class DSProducerDetails {
         // ensure the json data is a string
         if (data['signing_algorithm'] && !(typeof data['signing_algorithm'] === 'string' || data['signing_algorithm'] instanceof String)) {
             throw new Error("Expected the field `signing_algorithm` to be a primitive type in the JSON string but got " + data['signing_algorithm']);
+        }
+        // ensure the json data is a string
+        if (data['skip_server_name_validation'] && !(typeof data['skip_server_name_validation'] === 'string' || data['skip_server_name_validation'] instanceof String)) {
+            throw new Error("Expected the field `skip_server_name_validation` to be a primitive type in the JSON string but got " + data['skip_server_name_validation']);
         }
         // ensure the json data is a string
         if (data['ssl_connection_certificate'] && !(typeof data['ssl_connection_certificate'] === 'string' || data['ssl_connection_certificate'] instanceof String)) {
@@ -3072,6 +3079,12 @@ DSProducerDetails.prototype['should_stop'] = undefined;
  * @member {String} signing_algorithm
  */
 DSProducerDetails.prototype['signing_algorithm'] = undefined;
+
+/**
+ * (Optional) SkipServerNameValidation disables server name verification while still validating the certificate chain. Postgres treats empty as legacy \"skip hostname validation\"; MySQL treats empty as false.
+ * @member {String} skip_server_name_validation
+ */
+DSProducerDetails.prototype['skip_server_name_validation'] = undefined;
 
 /**
  * (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field

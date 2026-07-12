@@ -17,7 +17,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DbTargetDetails model module.
  * @module model/DbTargetDetails
- * @version 5.0.28
+ * @version 5.0.30
  */
 class DbTargetDetails {
     /**
@@ -112,6 +112,9 @@ class DbTargetDetails {
             if (data.hasOwnProperty('sf_account')) {
                 obj['sf_account'] = ApiClient.convertToType(data['sf_account'], 'String');
             }
+            if (data.hasOwnProperty('skip_server_name_validation')) {
+                obj['skip_server_name_validation'] = ApiClient.convertToType(data['skip_server_name_validation'], 'String');
+            }
             if (data.hasOwnProperty('ssl_connection_certificate')) {
                 obj['ssl_connection_certificate'] = ApiClient.convertToType(data['ssl_connection_certificate'], 'String');
             }
@@ -203,6 +206,10 @@ class DbTargetDetails {
         // ensure the json data is a string
         if (data['sf_account'] && !(typeof data['sf_account'] === 'string' || data['sf_account'] instanceof String)) {
             throw new Error("Expected the field `sf_account` to be a primitive type in the JSON string but got " + data['sf_account']);
+        }
+        // ensure the json data is a string
+        if (data['skip_server_name_validation'] && !(typeof data['skip_server_name_validation'] === 'string' || data['skip_server_name_validation'] instanceof String)) {
+            throw new Error("Expected the field `skip_server_name_validation` to be a primitive type in the JSON string but got " + data['skip_server_name_validation']);
         }
         // ensure the json data is a string
         if (data['ssl_connection_certificate'] && !(typeof data['ssl_connection_certificate'] === 'string' || data['ssl_connection_certificate'] instanceof String)) {
@@ -328,6 +335,12 @@ DbTargetDetails.prototype['oracle_wallet_details'] = undefined;
  * @member {String} sf_account
  */
 DbTargetDetails.prototype['sf_account'] = undefined;
+
+/**
+ * (Optional) SkipServerNameValidation disables server name verification while still validating the certificate chain. Postgres treats empty as legacy \"skip hostname validation\"; MySQL treats empty as false.
+ * @member {String} skip_server_name_validation
+ */
+DbTargetDetails.prototype['skip_server_name_validation'] = undefined;
 
 /**
  * (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field

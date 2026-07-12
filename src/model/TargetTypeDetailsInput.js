@@ -13,10 +13,13 @@
 
 import ApiClient from '../ApiClient';
 import AWSTargetDetails from './AWSTargetDetails';
+import AnthropicTargetDetails from './AnthropicTargetDetails';
 import ArtifactoryTargetDetails from './ArtifactoryTargetDetails';
 import AzureTargetDetails from './AzureTargetDetails';
+import BedrockTargetDetails from './BedrockTargetDetails';
 import ChefTargetDetails from './ChefTargetDetails';
 import CloudflareTargetDetails from './CloudflareTargetDetails';
+import CustomDnsTargetDetails from './CustomDnsTargetDetails';
 import CustomTargetDetails from './CustomTargetDetails';
 import DbTargetDetails from './DbTargetDetails';
 import DigiCertTargetDetails from './DigiCertTargetDetails';
@@ -31,12 +34,15 @@ import GlobalSignAtlasTargetDetails from './GlobalSignAtlasTargetDetails';
 import GlobalSignGCCTargetDetails from './GlobalSignGCCTargetDetails';
 import GodaddyTargetDetails from './GodaddyTargetDetails';
 import GoogleTrustTargetDetails from './GoogleTrustTargetDetails';
+import GrokTargetDetails from './GrokTargetDetails';
 import HashiVaultTargetDetails from './HashiVaultTargetDetails';
+import KeycloakTargetDetails from './KeycloakTargetDetails';
 import LdapTargetDetails from './LdapTargetDetails';
 import LetsEncryptTargetDetails from './LetsEncryptTargetDetails';
 import LinkedTargetDetails from './LinkedTargetDetails';
 import MongoDBTargetDetails from './MongoDBTargetDetails';
 import NativeK8sTargetDetails from './NativeK8sTargetDetails';
+import OktaTargetDetails from './OktaTargetDetails';
 import OpenAITargetDetails from './OpenAITargetDetails';
 import PingTargetDetails from './PingTargetDetails';
 import RabbitMQTargetDetails from './RabbitMQTargetDetails';
@@ -52,7 +58,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 5.0.28
+ * @version 5.0.30
  */
 class TargetTypeDetailsInput {
     /**
@@ -83,6 +89,9 @@ class TargetTypeDetailsInput {
         if (data) {
             obj = obj || new TargetTypeDetailsInput();
 
+            if (data.hasOwnProperty('anthropic_target_details')) {
+                obj['anthropic_target_details'] = AnthropicTargetDetails.constructFromObject(data['anthropic_target_details']);
+            }
             if (data.hasOwnProperty('artifactory_target_details')) {
                 obj['artifactory_target_details'] = ArtifactoryTargetDetails.constructFromObject(data['artifactory_target_details']);
             }
@@ -92,11 +101,17 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('azure_target_details')) {
                 obj['azure_target_details'] = AzureTargetDetails.constructFromObject(data['azure_target_details']);
             }
+            if (data.hasOwnProperty('bedrock_target_details')) {
+                obj['bedrock_target_details'] = BedrockTargetDetails.constructFromObject(data['bedrock_target_details']);
+            }
             if (data.hasOwnProperty('chef_target_details')) {
                 obj['chef_target_details'] = ChefTargetDetails.constructFromObject(data['chef_target_details']);
             }
             if (data.hasOwnProperty('cloudflare_target_details')) {
                 obj['cloudflare_target_details'] = CloudflareTargetDetails.constructFromObject(data['cloudflare_target_details']);
+            }
+            if (data.hasOwnProperty('custom_dns_target_details')) {
+                obj['custom_dns_target_details'] = CustomDnsTargetDetails.constructFromObject(data['custom_dns_target_details']);
             }
             if (data.hasOwnProperty('custom_target_details')) {
                 obj['custom_target_details'] = CustomTargetDetails.constructFromObject(data['custom_target_details']);
@@ -140,8 +155,14 @@ class TargetTypeDetailsInput {
             if (data.hasOwnProperty('google_trust_target_details')) {
                 obj['google_trust_target_details'] = GoogleTrustTargetDetails.constructFromObject(data['google_trust_target_details']);
             }
+            if (data.hasOwnProperty('grok_target_details')) {
+                obj['grok_target_details'] = GrokTargetDetails.constructFromObject(data['grok_target_details']);
+            }
             if (data.hasOwnProperty('hashi_vault_target_details')) {
                 obj['hashi_vault_target_details'] = HashiVaultTargetDetails.constructFromObject(data['hashi_vault_target_details']);
+            }
+            if (data.hasOwnProperty('keycloak_target_details')) {
+                obj['keycloak_target_details'] = KeycloakTargetDetails.constructFromObject(data['keycloak_target_details']);
             }
             if (data.hasOwnProperty('ldap_target_details')) {
                 obj['ldap_target_details'] = LdapTargetDetails.constructFromObject(data['ldap_target_details']);
@@ -157,6 +178,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('native_k8s_target_details')) {
                 obj['native_k8s_target_details'] = NativeK8sTargetDetails.constructFromObject(data['native_k8s_target_details']);
+            }
+            if (data.hasOwnProperty('okta_target_details')) {
+                obj['okta_target_details'] = OktaTargetDetails.constructFromObject(data['okta_target_details']);
             }
             if (data.hasOwnProperty('openai_target_details')) {
                 obj['openai_target_details'] = OpenAITargetDetails.constructFromObject(data['openai_target_details']);
@@ -201,6 +225,10 @@ class TargetTypeDetailsInput {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>TargetTypeDetailsInput</code>.
      */
     static validateJSON(data) {
+        // validate the optional field `anthropic_target_details`
+        if (data['anthropic_target_details']) { // data not null
+          AnthropicTargetDetails.validateJSON(data['anthropic_target_details']);
+        }
         // validate the optional field `artifactory_target_details`
         if (data['artifactory_target_details']) { // data not null
           ArtifactoryTargetDetails.validateJSON(data['artifactory_target_details']);
@@ -213,6 +241,10 @@ class TargetTypeDetailsInput {
         if (data['azure_target_details']) { // data not null
           AzureTargetDetails.validateJSON(data['azure_target_details']);
         }
+        // validate the optional field `bedrock_target_details`
+        if (data['bedrock_target_details']) { // data not null
+          BedrockTargetDetails.validateJSON(data['bedrock_target_details']);
+        }
         // validate the optional field `chef_target_details`
         if (data['chef_target_details']) { // data not null
           ChefTargetDetails.validateJSON(data['chef_target_details']);
@@ -220,6 +252,10 @@ class TargetTypeDetailsInput {
         // validate the optional field `cloudflare_target_details`
         if (data['cloudflare_target_details']) { // data not null
           CloudflareTargetDetails.validateJSON(data['cloudflare_target_details']);
+        }
+        // validate the optional field `custom_dns_target_details`
+        if (data['custom_dns_target_details']) { // data not null
+          CustomDnsTargetDetails.validateJSON(data['custom_dns_target_details']);
         }
         // validate the optional field `custom_target_details`
         if (data['custom_target_details']) { // data not null
@@ -277,9 +313,17 @@ class TargetTypeDetailsInput {
         if (data['google_trust_target_details']) { // data not null
           GoogleTrustTargetDetails.validateJSON(data['google_trust_target_details']);
         }
+        // validate the optional field `grok_target_details`
+        if (data['grok_target_details']) { // data not null
+          GrokTargetDetails.validateJSON(data['grok_target_details']);
+        }
         // validate the optional field `hashi_vault_target_details`
         if (data['hashi_vault_target_details']) { // data not null
           HashiVaultTargetDetails.validateJSON(data['hashi_vault_target_details']);
+        }
+        // validate the optional field `keycloak_target_details`
+        if (data['keycloak_target_details']) { // data not null
+          KeycloakTargetDetails.validateJSON(data['keycloak_target_details']);
         }
         // validate the optional field `ldap_target_details`
         if (data['ldap_target_details']) { // data not null
@@ -300,6 +344,10 @@ class TargetTypeDetailsInput {
         // validate the optional field `native_k8s_target_details`
         if (data['native_k8s_target_details']) { // data not null
           NativeK8sTargetDetails.validateJSON(data['native_k8s_target_details']);
+        }
+        // validate the optional field `okta_target_details`
+        if (data['okta_target_details']) { // data not null
+          OktaTargetDetails.validateJSON(data['okta_target_details']);
         }
         // validate the optional field `openai_target_details`
         if (data['openai_target_details']) { // data not null
@@ -355,6 +403,11 @@ class TargetTypeDetailsInput {
 
 
 /**
+ * @member {module:model/AnthropicTargetDetails} anthropic_target_details
+ */
+TargetTypeDetailsInput.prototype['anthropic_target_details'] = undefined;
+
+/**
  * @member {module:model/ArtifactoryTargetDetails} artifactory_target_details
  */
 TargetTypeDetailsInput.prototype['artifactory_target_details'] = undefined;
@@ -370,6 +423,11 @@ TargetTypeDetailsInput.prototype['aws_target_details'] = undefined;
 TargetTypeDetailsInput.prototype['azure_target_details'] = undefined;
 
 /**
+ * @member {module:model/BedrockTargetDetails} bedrock_target_details
+ */
+TargetTypeDetailsInput.prototype['bedrock_target_details'] = undefined;
+
+/**
  * @member {module:model/ChefTargetDetails} chef_target_details
  */
 TargetTypeDetailsInput.prototype['chef_target_details'] = undefined;
@@ -378,6 +436,11 @@ TargetTypeDetailsInput.prototype['chef_target_details'] = undefined;
  * @member {module:model/CloudflareTargetDetails} cloudflare_target_details
  */
 TargetTypeDetailsInput.prototype['cloudflare_target_details'] = undefined;
+
+/**
+ * @member {module:model/CustomDnsTargetDetails} custom_dns_target_details
+ */
+TargetTypeDetailsInput.prototype['custom_dns_target_details'] = undefined;
 
 /**
  * @member {module:model/CustomTargetDetails} custom_target_details
@@ -450,9 +513,19 @@ TargetTypeDetailsInput.prototype['godaddy_target_details'] = undefined;
 TargetTypeDetailsInput.prototype['google_trust_target_details'] = undefined;
 
 /**
+ * @member {module:model/GrokTargetDetails} grok_target_details
+ */
+TargetTypeDetailsInput.prototype['grok_target_details'] = undefined;
+
+/**
  * @member {module:model/HashiVaultTargetDetails} hashi_vault_target_details
  */
 TargetTypeDetailsInput.prototype['hashi_vault_target_details'] = undefined;
+
+/**
+ * @member {module:model/KeycloakTargetDetails} keycloak_target_details
+ */
+TargetTypeDetailsInput.prototype['keycloak_target_details'] = undefined;
 
 /**
  * @member {module:model/LdapTargetDetails} ldap_target_details
@@ -478,6 +551,11 @@ TargetTypeDetailsInput.prototype['mongo_db_target_details'] = undefined;
  * @member {module:model/NativeK8sTargetDetails} native_k8s_target_details
  */
 TargetTypeDetailsInput.prototype['native_k8s_target_details'] = undefined;
+
+/**
+ * @member {module:model/OktaTargetDetails} okta_target_details
+ */
+TargetTypeDetailsInput.prototype['okta_target_details'] = undefined;
 
 /**
  * @member {module:model/OpenAITargetDetails} openai_target_details

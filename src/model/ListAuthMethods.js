@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListAuthMethods model module.
  * @module model/ListAuthMethods
- * @version 5.0.28
+ * @version 5.0.30
  */
 class ListAuthMethods {
     /**

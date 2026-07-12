@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FolderCreate model module.
  * @module model/FolderCreate
- * @version 5.0.28
+ * @version 5.0.30
  */
 class FolderCreate {
     /**

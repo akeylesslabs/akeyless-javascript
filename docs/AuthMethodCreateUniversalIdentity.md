@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **treeLength** | **Number** | Maximum UID tree depth allowed (child of child of ...) | [optional] [default to 200]
 **ttl** | **Number** | Token ttl | [optional] [default to 60]
+**uidExpirationEventAt** | **[String]** | Notify when this percent of the token TTL has elapsed (1-99). | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
 
 

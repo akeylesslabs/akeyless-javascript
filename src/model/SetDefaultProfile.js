@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetDefaultProfile model module.
  * @module model/SetDefaultProfile
- * @version 5.0.28
+ * @version 5.0.30
  */
 class SetDefaultProfile {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretDeleteSyncOutput model module.
  * @module model/RotatedSecretDeleteSyncOutput
- * @version 5.0.28
+ * @version 5.0.30
  */
 class RotatedSecretDeleteSyncOutput {
     /**

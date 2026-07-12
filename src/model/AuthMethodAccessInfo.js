@@ -26,12 +26,13 @@ import OAuth2AccessRules from './OAuth2AccessRules';
 import OCIAccessRules from './OCIAccessRules';
 import OIDCAccessRules from './OIDCAccessRules';
 import SAMLAccessRules from './SAMLAccessRules';
+import UidExpirationEvent from './UidExpirationEvent';
 import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 5.0.28
+ * @version 5.0.30
  */
 class AuthMethodAccessInfo {
     /**
@@ -137,6 +138,9 @@ class AuthMethodAccessInfo {
             if (data.hasOwnProperty('sub_claims_delimiters')) {
                 obj['sub_claims_delimiters'] = ApiClient.convertToType(data['sub_claims_delimiters'], ['String']);
             }
+            if (data.hasOwnProperty('uid_expiration_events')) {
+                obj['uid_expiration_events'] = ApiClient.convertToType(data['uid_expiration_events'], [UidExpirationEvent]);
+            }
             if (data.hasOwnProperty('universal_identity_access_rules')) {
                 obj['universal_identity_access_rules'] = UniversalIdentityAccessRules.constructFromObject(data['universal_identity_access_rules']);
             }
@@ -237,6 +241,16 @@ class AuthMethodAccessInfo {
         // ensure the json data is an array
         if (!Array.isArray(data['sub_claims_delimiters'])) {
             throw new Error("Expected the field `sub_claims_delimiters` to be an array in the JSON data but got " + data['sub_claims_delimiters']);
+        }
+        if (data['uid_expiration_events']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['uid_expiration_events'])) {
+                throw new Error("Expected the field `uid_expiration_events` to be an array in the JSON data but got " + data['uid_expiration_events']);
+            }
+            // validate the optional field `uid_expiration_events` (array)
+            for (const item of data['uid_expiration_events']) {
+                UidExpirationEvent.validateJSON(item);
+            };
         }
         // validate the optional field `universal_identity_access_rules`
         if (data['universal_identity_access_rules']) { // data not null
@@ -378,6 +392,12 @@ AuthMethodAccessInfo.prototype['saml_access_rules'] = undefined;
  * @member {Array.<String>} sub_claims_delimiters
  */
 AuthMethodAccessInfo.prototype['sub_claims_delimiters'] = undefined;
+
+/**
+ * Relevant only for Universal Identity auth methods: token about-to-expire notification thresholds.
+ * @member {Array.<module:model/UidExpirationEvent>} uid_expiration_events
+ */
+AuthMethodAccessInfo.prototype['uid_expiration_events'] = undefined;
 
 /**
  * @member {module:model/UniversalIdentityAccessRules} universal_identity_access_rules

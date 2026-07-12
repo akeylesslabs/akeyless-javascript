@@ -20,6 +20,7 @@ import DataProtectionSection from './DataProtectionSection';
 import DefaultAuthMethodSettings from './DefaultAuthMethodSettings';
 import DefaultHomePage from './DefaultHomePage';
 import DynamicSecretMaxTtl from './DynamicSecretMaxTtl';
+import EmailCustomization from './EmailCustomization';
 import ItemLockingSetting from './ItemLockingSetting';
 import PasswordExpirationInfo from './PasswordExpirationInfo';
 import PasswordPolicyInfo from './PasswordPolicyInfo';
@@ -32,7 +33,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 5.0.28
+ * @version 5.0.30
  */
 class AccountGeneralSettings {
     /**
@@ -70,6 +71,9 @@ class AccountGeneralSettings {
             if (data.hasOwnProperty('account_default_key_name')) {
                 obj['account_default_key_name'] = ApiClient.convertToType(data['account_default_key_name'], 'String');
             }
+            if (data.hasOwnProperty('account_file_bytes_used')) {
+                obj['account_file_bytes_used'] = ApiClient.convertToType(data['account_file_bytes_used'], 'Number');
+            }
             if (data.hasOwnProperty('ai_insights')) {
                 obj['ai_insights'] = AiInsightsSetting.constructFromObject(data['ai_insights']);
             }
@@ -105,6 +109,9 @@ class AccountGeneralSettings {
             }
             if (data.hasOwnProperty('dynamic_secret_max_ttl')) {
                 obj['dynamic_secret_max_ttl'] = DynamicSecretMaxTtl.constructFromObject(data['dynamic_secret_max_ttl']);
+            }
+            if (data.hasOwnProperty('email_customization')) {
+                obj['email_customization'] = EmailCustomization.constructFromObject(data['email_customization']);
             }
             if (data.hasOwnProperty('enable_request_for_access')) {
                 obj['enable_request_for_access'] = ApiClient.convertToType(data['enable_request_for_access'], 'Boolean');
@@ -208,6 +215,10 @@ class AccountGeneralSettings {
         if (data['dynamic_secret_max_ttl']) { // data not null
           DynamicSecretMaxTtl.validateJSON(data['dynamic_secret_max_ttl']);
         }
+        // validate the optional field `email_customization`
+        if (data['email_customization']) { // data not null
+          EmailCustomization.validateJSON(data['email_customization']);
+        }
         // ensure the json data is a string
         if (data['invalid_characters'] && !(typeof data['invalid_characters'] === 'string' || data['invalid_characters'] instanceof String)) {
             throw new Error("Expected the field `invalid_characters` to be a primitive type in the JSON string but got " + data['invalid_characters']);
@@ -264,6 +275,12 @@ AccountGeneralSettings.prototype['account_default_key_item_id'] = undefined;
  * @member {String} account_default_key_name
  */
 AccountGeneralSettings.prototype['account_default_key_name'] = undefined;
+
+/**
+ * AccountFileBytesUsed tracks active + pending file-item plain bytes for quota enforcement.
+ * @member {Number} account_file_bytes_used
+ */
+AccountGeneralSettings.prototype['account_file_bytes_used'] = undefined;
 
 /**
  * @member {module:model/AiInsightsSetting} ai_insights
@@ -324,6 +341,11 @@ AccountGeneralSettings.prototype['default_home_page'] = undefined;
  * @member {module:model/DynamicSecretMaxTtl} dynamic_secret_max_ttl
  */
 AccountGeneralSettings.prototype['dynamic_secret_max_ttl'] = undefined;
+
+/**
+ * @member {module:model/EmailCustomization} email_customization
+ */
+AccountGeneralSettings.prototype['email_customization'] = undefined;
 
 /**
  * @member {Boolean} enable_request_for_access

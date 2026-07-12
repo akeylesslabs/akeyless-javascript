@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **deleteProtection** | **Boolean** |  | [optional] 
 **deletionDate** | **Date** |  | [optional] 
 **displayId** | **String** |  | [optional] 
+**fileDownload** | [**FileDownloadInstructions**](FileDownloadInstructions.md) |  | [optional] 
 **gatewayDetails** | [**[GatewayDetailsForItemReplyObj]**](GatewayDetailsForItemReplyObj.md) |  | [optional] 
 **isAccessRequestEnabled** | **Boolean** |  | [optional] 
 **isEnabled** | **Boolean** |  | [optional] 

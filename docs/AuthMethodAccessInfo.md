@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **rulesType** | **String** |  | [optional] 
 **samlAccessRules** | [**SAMLAccessRules**](SAMLAccessRules.md) |  | [optional] 
 **subClaimsDelimiters** | **[String]** |  | [optional] 
+**uidExpirationEvents** | [**[UidExpirationEvent]**](UidExpirationEvent.md) | Relevant only for Universal Identity auth methods: token about-to-expire notification thresholds. | [optional] 
 **universalIdentityAccessRules** | [**UniversalIdentityAccessRules**](UniversalIdentityAccessRules.md) |  | [optional] 
 
 

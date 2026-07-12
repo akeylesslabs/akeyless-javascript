@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 5.0.28
+ * @version 5.0.30
  */
 class CreatePKICertIssuer {
     /**
      * Constructs a new <code>CreatePKICertIssuer</code>.
      * @alias module:model/CreatePKICertIssuer
      * @param name {String} PKI certificate issuer name
-     * @param ttl {String} The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs
+     * @param ttl {String} The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs. Not supported for Let's Encrypt, which always uses the CA default lifetime (about 90 days).
      */
     constructor(name, ttl) { 
         
@@ -626,7 +626,7 @@ CreatePKICertIssuer.prototype['tag'] = undefined;
 CreatePKICertIssuer.prototype['token'] = undefined;
 
 /**
- * The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs
+ * The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs. Not supported for Let's Encrypt, which always uses the CA default lifetime (about 90 days).
  * @member {String} ttl
  */
 CreatePKICertIssuer.prototype['ttl'] = undefined;

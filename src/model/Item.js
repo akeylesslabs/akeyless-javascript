@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import BastionsList from './BastionsList';
 import CertificateIssueInfo from './CertificateIssueInfo';
+import FileDownloadInstructions from './FileDownloadInstructions';
 import GatewayDetailsForItemReplyObj from './GatewayDetailsForItemReplyObj';
 import ItemCustomFieldsDetails from './ItemCustomFieldsDetails';
 import ItemGeneralInfo from './ItemGeneralInfo';
@@ -28,7 +29,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 5.0.28
+ * @version 5.0.30
  */
 class Item {
     /**
@@ -100,6 +101,9 @@ class Item {
             }
             if (data.hasOwnProperty('display_id')) {
                 obj['display_id'] = ApiClient.convertToType(data['display_id'], 'String');
+            }
+            if (data.hasOwnProperty('file_download')) {
+                obj['file_download'] = FileDownloadInstructions.constructFromObject(data['file_download']);
             }
             if (data.hasOwnProperty('gateway_details')) {
                 obj['gateway_details'] = ApiClient.convertToType(data['gateway_details'], [GatewayDetailsForItemReplyObj]);
@@ -236,6 +240,10 @@ class Item {
         // ensure the json data is a string
         if (data['display_id'] && !(typeof data['display_id'] === 'string' || data['display_id'] instanceof String)) {
             throw new Error("Expected the field `display_id` to be a primitive type in the JSON string but got " + data['display_id']);
+        }
+        // validate the optional field `file_download`
+        if (data['file_download']) { // data not null
+          FileDownloadInstructions.validateJSON(data['file_download']);
         }
         if (data['gateway_details']) { // data not null
             // ensure the json data is an array
@@ -427,6 +435,11 @@ Item.prototype['deletion_date'] = undefined;
  * @member {String} display_id
  */
 Item.prototype['display_id'] = undefined;
+
+/**
+ * @member {module:model/FileDownloadInstructions} file_download
+ */
+Item.prototype['file_download'] = undefined;
 
 /**
  * @member {Array.<module:model/GatewayDetailsForItemReplyObj>} gateway_details

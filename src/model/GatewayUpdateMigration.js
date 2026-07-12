@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 5.0.28
+ * @version 5.0.30
  */
 class GatewayUpdateMigration {
     /**
@@ -283,6 +283,9 @@ class GatewayUpdateMigration {
             }
             if (data.hasOwnProperty('target-location')) {
                 obj['target-location'] = ApiClient.convertToType(data['target-location'], 'String');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -571,6 +574,10 @@ class GatewayUpdateMigration {
         // ensure the json data is a string
         if (data['target-location'] && !(typeof data['target-location'] === 'string' || data['target-location'] instanceof String)) {
             throw new Error("Expected the field `target-location` to be a primitive type in the JSON string but got " + data['target-location']);
+        }
+        // ensure the json data is a string
+        if (data['target-name'] && !(typeof data['target-name'] === 'string' || data['target-name'] instanceof String)) {
+            throw new Error("Expected the field `target-name` to be a primitive type in the JSON string but got " + data['target-name']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -1035,6 +1042,12 @@ GatewayUpdateMigration.prototype['si-users-path-template'] = undefined;
  * @member {String} target-location
  */
 GatewayUpdateMigration.prototype['target-location'] = undefined;
+
+/**
+ * Name of existing target to use to create the migration
+ * @member {String} target-name
+ */
+GatewayUpdateMigration.prototype['target-name'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

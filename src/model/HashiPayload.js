@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HashiPayload model module.
  * @module model/HashiPayload
- * @version 5.0.28
+ * @version 5.0.30
  */
 class HashiPayload {
     /**
@@ -49,6 +49,9 @@ class HashiPayload {
 
             if (data.hasOwnProperty('delete_sync_on_deletion')) {
                 obj['delete_sync_on_deletion'] = ApiClient.convertToType(data['delete_sync_on_deletion'], 'Boolean');
+            }
+            if (data.hasOwnProperty('hashi_target_id')) {
+                obj['hashi_target_id'] = ApiClient.convertToType(data['hashi_target_id'], 'Number');
             }
             if (data.hasOwnProperty('import_as_json')) {
                 obj['import_as_json'] = ApiClient.convertToType(data['import_as_json'], 'Boolean');
@@ -111,6 +114,11 @@ class HashiPayload {
  * @member {Boolean} delete_sync_on_deletion
  */
 HashiPayload.prototype['delete_sync_on_deletion'] = undefined;
+
+/**
+ * @member {Number} hashi_target_id
+ */
+HashiPayload.prototype['hashi_target_id'] = undefined;
 
 /**
  * @member {Boolean} import_as_json

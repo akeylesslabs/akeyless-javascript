@@ -17,7 +17,7 @@ import SAMLAttribute from './SAMLAttribute';
 /**
  * The SAMLAccessRules model module.
  * @module model/SAMLAccessRules
- * @version 5.0.28
+ * @version 5.0.30
  */
 class SAMLAccessRules {
     /**
@@ -62,6 +62,9 @@ class SAMLAccessRules {
             }
             if (data.hasOwnProperty('unique_identifier')) {
                 obj['unique_identifier'] = ApiClient.convertToType(data['unique_identifier'], 'String');
+            }
+            if (data.hasOwnProperty('use_dedicated_saml_urls')) {
+                obj['use_dedicated_saml_urls'] = ApiClient.convertToType(data['use_dedicated_saml_urls'], 'Boolean');
             }
         }
         return obj;
@@ -137,6 +140,12 @@ SAMLAccessRules.prototype['idp_metadata_xml'] = undefined;
  * @member {String} unique_identifier
  */
 SAMLAccessRules.prototype['unique_identifier'] = undefined;
+
+/**
+ * When true, the login AuthnRequest is signed with this access method's dedicated SP identity (Entity ID https://<sp>/saml/sp/{access_id} and ACS https://<sp>/saml/acs/{access_id}) instead of the shared global identity. Default false keeps the legacy global identity for backward compatibility.
+ * @member {Boolean} use_dedicated_saml_urls
+ */
+SAMLAccessRules.prototype['use_dedicated_saml_urls'] = undefined;
 
 
 

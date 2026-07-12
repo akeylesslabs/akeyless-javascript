@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodUniversalIdentity model module.
  * @module model/CreateAuthMethodUniversalIdentity
- * @version 5.0.28
+ * @version 5.0.30
  */
 class CreateAuthMethodUniversalIdentity {
     /**
@@ -113,6 +113,9 @@ class CreateAuthMethodUniversalIdentity {
             if (data.hasOwnProperty('ttl')) {
                 obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
             }
+            if (data.hasOwnProperty('uid-expiration-event-at')) {
+                obj['uid-expiration-event-at'] = ApiClient.convertToType(data['uid-expiration-event-at'], ['String']);
+            }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
@@ -171,6 +174,10 @@ class CreateAuthMethodUniversalIdentity {
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
             throw new Error("Expected the field `token` to be a primitive type in the JSON string but got " + data['token']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['uid-expiration-event-at'])) {
+            throw new Error("Expected the field `uid-expiration-event-at` to be an array in the JSON data but got " + data['uid-expiration-event-at']);
         }
         // ensure the json data is a string
         if (data['uid-token'] && !(typeof data['uid-token'] === 'string' || data['uid-token'] instanceof String)) {
@@ -304,6 +311,12 @@ CreateAuthMethodUniversalIdentity.prototype['tree-length'] = 200;
  * @default 60
  */
 CreateAuthMethodUniversalIdentity.prototype['ttl'] = 60;
+
+/**
+ * Notify when this percent of the token TTL has elapsed (1-99).
+ * @member {Array.<String>} uid-expiration-event-at
+ */
+CreateAuthMethodUniversalIdentity.prototype['uid-expiration-event-at'] = undefined;
 
 /**
  * The universal identity token, Required only for universal_identity authentication

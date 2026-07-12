@@ -4,8 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**activationDate** | **Date** |  | [optional] 
 **binaryValue** | **Boolean** |  | [optional] 
 **encryptionKey** | **String** |  | [optional] 
+**expiration** | **Date** |  | [optional] 
 **id** | **String** |  | [optional] 
 **metadata** | **Object** |  | [optional] 
 **name** | **String** |  | [optional] 

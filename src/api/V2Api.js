@@ -151,6 +151,9 @@ import CreateLdapTarget from '../model/CreateLdapTarget';
 import CreateLdapTargetOutput from '../model/CreateLdapTargetOutput';
 import CreateLinkedTarget from '../model/CreateLinkedTarget';
 import CreateLinkedTargetOutput from '../model/CreateLinkedTargetOutput';
+import CreateMcpSecretBearerToken from '../model/CreateMcpSecretBearerToken';
+import CreateMcpSecretOAuthAuthCode from '../model/CreateMcpSecretOAuthAuthCode';
+import CreateMcpSecretOAuthClientCreds from '../model/CreateMcpSecretOAuthClientCreds';
 import CreateNativeK8STarget from '../model/CreateNativeK8STarget';
 import CreateNativeK8STargetOutput from '../model/CreateNativeK8STargetOutput';
 import CreateOidcApp from '../model/CreateOidcApp';
@@ -735,10 +738,13 @@ import StaticSecretDeleteSyncOutput from '../model/StaticSecretDeleteSyncOutput'
 import StaticSecretSync from '../model/StaticSecretSync';
 import SystemAccessCredentialsReplyObj from '../model/SystemAccessCredentialsReplyObj';
 import Target from '../model/Target';
+import TargetCreateAnthropic from '../model/TargetCreateAnthropic';
 import TargetCreateArtifactory from '../model/TargetCreateArtifactory';
 import TargetCreateAws from '../model/TargetCreateAws';
 import TargetCreateAzure from '../model/TargetCreateAzure';
+import TargetCreateBedrock from '../model/TargetCreateBedrock';
 import TargetCreateCloudflare from '../model/TargetCreateCloudflare';
+import TargetCreateCustomDns from '../model/TargetCreateCustomDns';
 import TargetCreateDB from '../model/TargetCreateDB';
 import TargetCreateDigiCert from '../model/TargetCreateDigiCert';
 import TargetCreateDockerhub from '../model/TargetCreateDockerhub';
@@ -752,11 +758,14 @@ import TargetCreateGlobalSign from '../model/TargetCreateGlobalSign';
 import TargetCreateGlobalSignAtlas from '../model/TargetCreateGlobalSignAtlas';
 import TargetCreateGodaddy from '../model/TargetCreateGodaddy';
 import TargetCreateGoogleTrust from '../model/TargetCreateGoogleTrust';
+import TargetCreateGrok from '../model/TargetCreateGrok';
 import TargetCreateHashiVault from '../model/TargetCreateHashiVault';
 import TargetCreateK8s from '../model/TargetCreateK8s';
+import TargetCreateKeycloak from '../model/TargetCreateKeycloak';
 import TargetCreateLdap from '../model/TargetCreateLdap';
 import TargetCreateLetsEncrypt from '../model/TargetCreateLetsEncrypt';
 import TargetCreateLinked from '../model/TargetCreateLinked';
+import TargetCreateOkta from '../model/TargetCreateOkta';
 import TargetCreateOpenAI from '../model/TargetCreateOpenAI';
 import TargetCreateOutput from '../model/TargetCreateOutput';
 import TargetCreatePing from '../model/TargetCreatePing';
@@ -772,10 +781,13 @@ import TargetDelete from '../model/TargetDelete';
 import TargetGet from '../model/TargetGet';
 import TargetGetDetails from '../model/TargetGetDetails';
 import TargetList from '../model/TargetList';
+import TargetUpdateAnthropic from '../model/TargetUpdateAnthropic';
 import TargetUpdateArtifactory from '../model/TargetUpdateArtifactory';
 import TargetUpdateAws from '../model/TargetUpdateAws';
 import TargetUpdateAzure from '../model/TargetUpdateAzure';
+import TargetUpdateBedrock from '../model/TargetUpdateBedrock';
 import TargetUpdateCloudflare from '../model/TargetUpdateCloudflare';
+import TargetUpdateCustomDns from '../model/TargetUpdateCustomDns';
 import TargetUpdateDB from '../model/TargetUpdateDB';
 import TargetUpdateDigiCert from '../model/TargetUpdateDigiCert';
 import TargetUpdateDockerhub from '../model/TargetUpdateDockerhub';
@@ -789,11 +801,14 @@ import TargetUpdateGlobalSign from '../model/TargetUpdateGlobalSign';
 import TargetUpdateGlobalSignAtlas from '../model/TargetUpdateGlobalSignAtlas';
 import TargetUpdateGodaddy from '../model/TargetUpdateGodaddy';
 import TargetUpdateGoogleTrust from '../model/TargetUpdateGoogleTrust';
+import TargetUpdateGrok from '../model/TargetUpdateGrok';
 import TargetUpdateHashiVault from '../model/TargetUpdateHashiVault';
 import TargetUpdateK8s from '../model/TargetUpdateK8s';
+import TargetUpdateKeycloak from '../model/TargetUpdateKeycloak';
 import TargetUpdateLdap from '../model/TargetUpdateLdap';
 import TargetUpdateLetsEncrypt from '../model/TargetUpdateLetsEncrypt';
 import TargetUpdateLinked from '../model/TargetUpdateLinked';
+import TargetUpdateOkta from '../model/TargetUpdateOkta';
 import TargetUpdateOpenAI from '../model/TargetUpdateOpenAI';
 import TargetUpdateOutput from '../model/TargetUpdateOutput';
 import TargetUpdatePing from '../model/TargetUpdatePing';
@@ -881,6 +896,9 @@ import UpdateLdapTarget from '../model/UpdateLdapTarget';
 import UpdateLdapTargetDetails from '../model/UpdateLdapTargetDetails';
 import UpdateLdapTargetOutput from '../model/UpdateLdapTargetOutput';
 import UpdateLinkedTarget from '../model/UpdateLinkedTarget';
+import UpdateMcpSecretBearerToken from '../model/UpdateMcpSecretBearerToken';
+import UpdateMcpSecretOAuthAuthCode from '../model/UpdateMcpSecretOAuthAuthCode';
+import UpdateMcpSecretOAuthClientCreds from '../model/UpdateMcpSecretOAuthClientCreds';
 import UpdateNativeK8STarget from '../model/UpdateNativeK8STarget';
 import UpdateNativeK8STargetOutput from '../model/UpdateNativeK8STargetOutput';
 import UpdateOidcApp from '../model/UpdateOidcApp';
@@ -944,7 +962,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.28
+* @version 5.0.30
 */
 export default class V2Api {
 
@@ -4493,6 +4511,135 @@ export default class V2Api {
      */
     createLinkedTarget(createLinkedTarget) {
       return this.createLinkedTargetWithHttpInfo(createLinkedTarget)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateMcpSecretBearerToken} createMcpSecretBearerToken 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateSecretOutput} and HTTP response
+     */
+    createMcpSecretBearerTokenWithHttpInfo(createMcpSecretBearerToken) {
+      let postBody = createMcpSecretBearerToken;
+      // verify the required parameter 'createMcpSecretBearerToken' is set
+      if (createMcpSecretBearerToken === undefined || createMcpSecretBearerToken === null) {
+        throw new Error("Missing the required parameter 'createMcpSecretBearerToken' when calling createMcpSecretBearerToken");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateSecretOutput;
+      return this.apiClient.callApi(
+        '/create-mcp-secret-bearer-token', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateMcpSecretBearerToken} createMcpSecretBearerToken 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateSecretOutput}
+     */
+    createMcpSecretBearerToken(createMcpSecretBearerToken) {
+      return this.createMcpSecretBearerTokenWithHttpInfo(createMcpSecretBearerToken)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateMcpSecretOAuthAuthCode} createMcpSecretOAuthAuthCode 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateSecretOutput} and HTTP response
+     */
+    createMcpSecretOAuthAuthCodeWithHttpInfo(createMcpSecretOAuthAuthCode) {
+      let postBody = createMcpSecretOAuthAuthCode;
+      // verify the required parameter 'createMcpSecretOAuthAuthCode' is set
+      if (createMcpSecretOAuthAuthCode === undefined || createMcpSecretOAuthAuthCode === null) {
+        throw new Error("Missing the required parameter 'createMcpSecretOAuthAuthCode' when calling createMcpSecretOAuthAuthCode");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateSecretOutput;
+      return this.apiClient.callApi(
+        '/create-mcp-secret-oauth-authorization-code', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateMcpSecretOAuthAuthCode} createMcpSecretOAuthAuthCode 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateSecretOutput}
+     */
+    createMcpSecretOAuthAuthCode(createMcpSecretOAuthAuthCode) {
+      return this.createMcpSecretOAuthAuthCodeWithHttpInfo(createMcpSecretOAuthAuthCode)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/CreateMcpSecretOAuthClientCreds} createMcpSecretOAuthClientCreds 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateSecretOutput} and HTTP response
+     */
+    createMcpSecretOAuthClientCredsWithHttpInfo(createMcpSecretOAuthClientCreds) {
+      let postBody = createMcpSecretOAuthClientCreds;
+      // verify the required parameter 'createMcpSecretOAuthClientCreds' is set
+      if (createMcpSecretOAuthClientCreds === undefined || createMcpSecretOAuthClientCreds === null) {
+        throw new Error("Missing the required parameter 'createMcpSecretOAuthClientCreds' when calling createMcpSecretOAuthClientCreds");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateSecretOutput;
+      return this.apiClient.callApi(
+        '/create-mcp-secret-oauth-client-credentials', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateMcpSecretOAuthClientCreds} createMcpSecretOAuthClientCreds 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateSecretOutput}
+     */
+    createMcpSecretOAuthClientCreds(createMcpSecretOAuthClientCreds) {
+      return this.createMcpSecretOAuthClientCredsWithHttpInfo(createMcpSecretOAuthClientCreds)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -21145,6 +21292,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetCreateAnthropic} targetCreateAnthropic 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateAnthropicWithHttpInfo(targetCreateAnthropic) {
+      let postBody = targetCreateAnthropic;
+      // verify the required parameter 'targetCreateAnthropic' is set
+      if (targetCreateAnthropic === undefined || targetCreateAnthropic === null) {
+        throw new Error("Missing the required parameter 'targetCreateAnthropic' when calling targetCreateAnthropic");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-anthropic', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateAnthropic} targetCreateAnthropic 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateAnthropic(targetCreateAnthropic) {
+      return this.targetCreateAnthropicWithHttpInfo(targetCreateAnthropic)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetCreateArtifactory} targetCreateArtifactory 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
      */
@@ -21274,6 +21464,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetCreateBedrock} targetCreateBedrock 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateBedrockWithHttpInfo(targetCreateBedrock) {
+      let postBody = targetCreateBedrock;
+      // verify the required parameter 'targetCreateBedrock' is set
+      if (targetCreateBedrock === undefined || targetCreateBedrock === null) {
+        throw new Error("Missing the required parameter 'targetCreateBedrock' when calling targetCreateBedrock");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-bedrock', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateBedrock} targetCreateBedrock 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateBedrock(targetCreateBedrock) {
+      return this.targetCreateBedrockWithHttpInfo(targetCreateBedrock)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetCreateCloudflare} targetCreateCloudflare 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
      */
@@ -21310,6 +21543,49 @@ export default class V2Api {
      */
     targetCreateCloudflare(targetCreateCloudflare) {
       return this.targetCreateCloudflareWithHttpInfo(targetCreateCloudflare)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateCustomDns} targetCreateCustomDns 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateCustomDnsWithHttpInfo(targetCreateCustomDns) {
+      let postBody = targetCreateCustomDns;
+      // verify the required parameter 'targetCreateCustomDns' is set
+      if (targetCreateCustomDns === undefined || targetCreateCustomDns === null) {
+        throw new Error("Missing the required parameter 'targetCreateCustomDns' when calling targetCreateCustomDns");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-custom-dns', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateCustomDns} targetCreateCustomDns 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateCustomDns(targetCreateCustomDns) {
+      return this.targetCreateCustomDnsWithHttpInfo(targetCreateCustomDns)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -21876,6 +22152,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetCreateGrok} targetCreateGrok 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateGrokWithHttpInfo(targetCreateGrok) {
+      let postBody = targetCreateGrok;
+      // verify the required parameter 'targetCreateGrok' is set
+      if (targetCreateGrok === undefined || targetCreateGrok === null) {
+        throw new Error("Missing the required parameter 'targetCreateGrok' when calling targetCreateGrok");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-grok', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateGrok} targetCreateGrok 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateGrok(targetCreateGrok) {
+      return this.targetCreateGrokWithHttpInfo(targetCreateGrok)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetCreateHashiVault} targetCreateHashiVault 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
      */
@@ -21955,6 +22274,49 @@ export default class V2Api {
      */
     targetCreateK8s(targetCreateK8s) {
       return this.targetCreateK8sWithHttpInfo(targetCreateK8s)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateKeycloak} targetCreateKeycloak 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateKeycloakWithHttpInfo(targetCreateKeycloak) {
+      let postBody = targetCreateKeycloak;
+      // verify the required parameter 'targetCreateKeycloak' is set
+      if (targetCreateKeycloak === undefined || targetCreateKeycloak === null) {
+        throw new Error("Missing the required parameter 'targetCreateKeycloak' when calling targetCreateKeycloak");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-keycloak', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateKeycloak} targetCreateKeycloak 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateKeycloak(targetCreateKeycloak) {
+      return this.targetCreateKeycloakWithHttpInfo(targetCreateKeycloak)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -22084,6 +22446,49 @@ export default class V2Api {
      */
     targetCreateLinked(targetCreateLinked) {
       return this.targetCreateLinkedWithHttpInfo(targetCreateLinked)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateOkta} targetCreateOkta 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateOktaWithHttpInfo(targetCreateOkta) {
+      let postBody = targetCreateOkta;
+      // verify the required parameter 'targetCreateOkta' is set
+      if (targetCreateOkta === undefined || targetCreateOkta === null) {
+        throw new Error("Missing the required parameter 'targetCreateOkta' when calling targetCreateOkta");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-okta', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateOkta} targetCreateOkta 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateOkta(targetCreateOkta) {
+      return this.targetCreateOktaWithHttpInfo(targetCreateOkta)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -22693,6 +23098,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetUpdateAnthropic} targetUpdateAnthropic 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateAnthropicWithHttpInfo(targetUpdateAnthropic) {
+      let postBody = targetUpdateAnthropic;
+      // verify the required parameter 'targetUpdateAnthropic' is set
+      if (targetUpdateAnthropic === undefined || targetUpdateAnthropic === null) {
+        throw new Error("Missing the required parameter 'targetUpdateAnthropic' when calling targetUpdateAnthropic");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-anthropic', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateAnthropic} targetUpdateAnthropic 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateAnthropic(targetUpdateAnthropic) {
+      return this.targetUpdateAnthropicWithHttpInfo(targetUpdateAnthropic)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetUpdateArtifactory} targetUpdateArtifactory 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
      */
@@ -22822,6 +23270,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetUpdateBedrock} targetUpdateBedrock 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateBedrockWithHttpInfo(targetUpdateBedrock) {
+      let postBody = targetUpdateBedrock;
+      // verify the required parameter 'targetUpdateBedrock' is set
+      if (targetUpdateBedrock === undefined || targetUpdateBedrock === null) {
+        throw new Error("Missing the required parameter 'targetUpdateBedrock' when calling targetUpdateBedrock");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-bedrock', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateBedrock} targetUpdateBedrock 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateBedrock(targetUpdateBedrock) {
+      return this.targetUpdateBedrockWithHttpInfo(targetUpdateBedrock)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetUpdateCloudflare} targetUpdateCloudflare 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
      */
@@ -22858,6 +23349,49 @@ export default class V2Api {
      */
     targetUpdateCloudflare(targetUpdateCloudflare) {
       return this.targetUpdateCloudflareWithHttpInfo(targetUpdateCloudflare)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateCustomDns} targetUpdateCustomDns 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateCustomDnsWithHttpInfo(targetUpdateCustomDns) {
+      let postBody = targetUpdateCustomDns;
+      // verify the required parameter 'targetUpdateCustomDns' is set
+      if (targetUpdateCustomDns === undefined || targetUpdateCustomDns === null) {
+        throw new Error("Missing the required parameter 'targetUpdateCustomDns' when calling targetUpdateCustomDns");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-custom-dns', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateCustomDns} targetUpdateCustomDns 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateCustomDns(targetUpdateCustomDns) {
+      return this.targetUpdateCustomDnsWithHttpInfo(targetUpdateCustomDns)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -23424,6 +23958,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetUpdateGrok} targetUpdateGrok 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateGrokWithHttpInfo(targetUpdateGrok) {
+      let postBody = targetUpdateGrok;
+      // verify the required parameter 'targetUpdateGrok' is set
+      if (targetUpdateGrok === undefined || targetUpdateGrok === null) {
+        throw new Error("Missing the required parameter 'targetUpdateGrok' when calling targetUpdateGrok");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-grok', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateGrok} targetUpdateGrok 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateGrok(targetUpdateGrok) {
+      return this.targetUpdateGrokWithHttpInfo(targetUpdateGrok)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetUpdateHashiVault} targetUpdateHashiVault 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
      */
@@ -23503,6 +24080,49 @@ export default class V2Api {
      */
     targetUpdateK8s(targetUpdateK8s) {
       return this.targetUpdateK8sWithHttpInfo(targetUpdateK8s)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateKeycloak} targetUpdateKeycloak 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateKeycloakWithHttpInfo(targetUpdateKeycloak) {
+      let postBody = targetUpdateKeycloak;
+      // verify the required parameter 'targetUpdateKeycloak' is set
+      if (targetUpdateKeycloak === undefined || targetUpdateKeycloak === null) {
+        throw new Error("Missing the required parameter 'targetUpdateKeycloak' when calling targetUpdateKeycloak");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-keycloak', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateKeycloak} targetUpdateKeycloak 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateKeycloak(targetUpdateKeycloak) {
+      return this.targetUpdateKeycloakWithHttpInfo(targetUpdateKeycloak)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -23632,6 +24252,49 @@ export default class V2Api {
      */
     targetUpdateLinked(targetUpdateLinked) {
       return this.targetUpdateLinkedWithHttpInfo(targetUpdateLinked)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateOkta} targetUpdateOkta 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateOktaWithHttpInfo(targetUpdateOkta) {
+      let postBody = targetUpdateOkta;
+      // verify the required parameter 'targetUpdateOkta' is set
+      if (targetUpdateOkta === undefined || targetUpdateOkta === null) {
+        throw new Error("Missing the required parameter 'targetUpdateOkta' when calling targetUpdateOkta");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-okta', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateOkta} targetUpdateOkta 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateOkta(targetUpdateOkta) {
+      return this.targetUpdateOktaWithHttpInfo(targetUpdateOkta)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -26083,6 +26746,135 @@ export default class V2Api {
      */
     updateLinkedTarget(updateLinkedTarget) {
       return this.updateLinkedTargetWithHttpInfo(updateLinkedTarget)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateMcpSecretBearerToken} updateMcpSecretBearerToken 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateSecretValOutput} and HTTP response
+     */
+    updateMcpSecretBearerTokenWithHttpInfo(updateMcpSecretBearerToken) {
+      let postBody = updateMcpSecretBearerToken;
+      // verify the required parameter 'updateMcpSecretBearerToken' is set
+      if (updateMcpSecretBearerToken === undefined || updateMcpSecretBearerToken === null) {
+        throw new Error("Missing the required parameter 'updateMcpSecretBearerToken' when calling updateMcpSecretBearerToken");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateSecretValOutput;
+      return this.apiClient.callApi(
+        '/update-mcp-secret-bearer-token', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateMcpSecretBearerToken} updateMcpSecretBearerToken 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateSecretValOutput}
+     */
+    updateMcpSecretBearerToken(updateMcpSecretBearerToken) {
+      return this.updateMcpSecretBearerTokenWithHttpInfo(updateMcpSecretBearerToken)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateMcpSecretOAuthAuthCode} updateMcpSecretOAuthAuthCode 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateSecretValOutput} and HTTP response
+     */
+    updateMcpSecretOAuthAuthCodeWithHttpInfo(updateMcpSecretOAuthAuthCode) {
+      let postBody = updateMcpSecretOAuthAuthCode;
+      // verify the required parameter 'updateMcpSecretOAuthAuthCode' is set
+      if (updateMcpSecretOAuthAuthCode === undefined || updateMcpSecretOAuthAuthCode === null) {
+        throw new Error("Missing the required parameter 'updateMcpSecretOAuthAuthCode' when calling updateMcpSecretOAuthAuthCode");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateSecretValOutput;
+      return this.apiClient.callApi(
+        '/update-mcp-secret-oauth-authorization-code', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateMcpSecretOAuthAuthCode} updateMcpSecretOAuthAuthCode 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateSecretValOutput}
+     */
+    updateMcpSecretOAuthAuthCode(updateMcpSecretOAuthAuthCode) {
+      return this.updateMcpSecretOAuthAuthCodeWithHttpInfo(updateMcpSecretOAuthAuthCode)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateMcpSecretOAuthClientCreds} updateMcpSecretOAuthClientCreds 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateSecretValOutput} and HTTP response
+     */
+    updateMcpSecretOAuthClientCredsWithHttpInfo(updateMcpSecretOAuthClientCreds) {
+      let postBody = updateMcpSecretOAuthClientCreds;
+      // verify the required parameter 'updateMcpSecretOAuthClientCreds' is set
+      if (updateMcpSecretOAuthClientCreds === undefined || updateMcpSecretOAuthClientCreds === null) {
+        throw new Error("Missing the required parameter 'updateMcpSecretOAuthClientCreds' when calling updateMcpSecretOAuthClientCreds");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateSecretValOutput;
+      return this.apiClient.callApi(
+        '/update-mcp-secret-oauth-client-credentials', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateMcpSecretOAuthClientCreds} updateMcpSecretOAuthClientCreds 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateSecretValOutput}
+     */
+    updateMcpSecretOAuthClientCreds(updateMcpSecretOAuthClientCreds) {
+      return this.updateMcpSecretOAuthClientCredsWithHttpInfo(updateMcpSecretOAuthClientCreds)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
