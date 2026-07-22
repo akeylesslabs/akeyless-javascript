@@ -18,7 +18,7 @@ import CertificateScanTarget from './CertificateScanTarget';
 /**
  * The CertificatePayload model module.
  * @module model/CertificatePayload
- * @version 5.0.30
+ * @version 5.0.31
  */
 class CertificatePayload {
     /**
@@ -49,6 +49,9 @@ class CertificatePayload {
         if (data) {
             obj = obj || new CertificatePayload();
 
+            if (data.hasOwnProperty('exclude_hosts')) {
+                obj['exclude_hosts'] = ApiClient.convertToType(data['exclude_hosts'], ['String']);
+            }
             if (data.hasOwnProperty('expiration_events')) {
                 obj['expiration_events'] = ApiClient.convertToType(data['expiration_events'], [CertificateExpirationEvent]);
             }
@@ -80,6 +83,10 @@ class CertificatePayload {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>CertificatePayload</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is an array
+        if (!Array.isArray(data['exclude_hosts'])) {
+            throw new Error("Expected the field `exclude_hosts` to be an array in the JSON data but got " + data['exclude_hosts']);
+        }
         if (data['expiration_events']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['expiration_events'])) {
@@ -116,6 +123,11 @@ class CertificatePayload {
 }
 
 
+
+/**
+ * @member {Array.<String>} exclude_hosts
+ */
+CertificatePayload.prototype['exclude_hosts'] = undefined;
 
 /**
  * @member {Array.<module:model/CertificateExpirationEvent>} expiration_events

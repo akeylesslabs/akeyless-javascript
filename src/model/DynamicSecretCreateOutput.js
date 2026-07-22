@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The DynamicSecretCreateOutput model module.
  * @module model/DynamicSecretCreateOutput
- * @version 5.0.30
+ * @version 5.0.31
  */
 class DynamicSecretCreateOutput {
     /**

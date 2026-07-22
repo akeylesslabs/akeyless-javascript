@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**excludeHosts** | **[String]** |  | [optional] 
 **expirationEvents** | [**[CertificateExpirationEvent]**](CertificateExpirationEvent.md) |  | [optional] 
 **folder** | **String** |  | [optional] 
 **maxDialTimeout** | **Number** |  | [optional] 

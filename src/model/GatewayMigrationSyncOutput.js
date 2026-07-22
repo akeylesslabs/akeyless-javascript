@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayMigrationSyncOutput model module.
  * @module model/GatewayMigrationSyncOutput
- * @version 5.0.30
+ * @version 5.0.31
  */
 class GatewayMigrationSyncOutput {
     /**

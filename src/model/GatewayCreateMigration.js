@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateMigration model module.
  * @module model/GatewayCreateMigration
- * @version 5.0.30
+ * @version 5.0.31
  */
 class GatewayCreateMigration {
     /**
@@ -186,6 +186,9 @@ class GatewayCreateMigration {
             }
             if (data.hasOwnProperty('delete-remote')) {
                 obj['delete-remote'] = ApiClient.convertToType(data['delete-remote'], 'Boolean');
+            }
+            if (data.hasOwnProperty('exclude-hosts')) {
+                obj['exclude-hosts'] = ApiClient.convertToType(data['exclude-hosts'], 'String');
             }
             if (data.hasOwnProperty('expiration-event-in')) {
                 obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
@@ -457,6 +460,10 @@ class GatewayCreateMigration {
         // ensure the json data is a string
         if (data['conjur-username'] && !(typeof data['conjur-username'] === 'string' || data['conjur-username'] instanceof String)) {
             throw new Error("Expected the field `conjur-username` to be a primitive type in the JSON string but got " + data['conjur-username']);
+        }
+        // ensure the json data is a string
+        if (data['exclude-hosts'] && !(typeof data['exclude-hosts'] === 'string' || data['exclude-hosts'] instanceof String)) {
+            throw new Error("Expected the field `exclude-hosts` to be a primitive type in the JSON string but got " + data['exclude-hosts']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['expiration-event-in'])) {
@@ -835,6 +842,12 @@ GatewayCreateMigration.prototype['conjur-username'] = undefined;
  * @member {Boolean} delete-remote
  */
 GatewayCreateMigration.prototype['delete-remote'] = undefined;
+
+/**
+ * A comma separated list of IPs, CIDR ranges, or DNS names to exclude from the scan
+ * @member {String} exclude-hosts
+ */
+GatewayCreateMigration.prototype['exclude-hosts'] = undefined;
 
 /**
  * How many days before the expiration of the certificate would you like to be notified.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SraDesktopAppConf model module.
  * @module model/SraDesktopAppConf
- * @version 5.0.30
+ * @version 5.0.31
  */
 class SraDesktopAppConf {
     /**

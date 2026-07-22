@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailPassAccessRules model module.
  * @module model/EmailPassAccessRules
- * @version 5.0.30
+ * @version 5.0.31
  */
 class EmailPassAccessRules {
     /**

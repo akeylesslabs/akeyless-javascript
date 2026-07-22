@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateDigiCert model module.
  * @module model/TargetCreateDigiCert
- * @version 5.0.30
+ * @version 5.0.31
  */
 class TargetCreateDigiCert {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AnthropicTargetDetails model module.
  * @module model/AnthropicTargetDetails
- * @version 5.0.30
+ * @version 5.0.31
  */
 class AnthropicTargetDetails {
     /**

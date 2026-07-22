@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CertificateDiscovery model module.
  * @module model/CertificateDiscovery
- * @version 5.0.30
+ * @version 5.0.31
  */
 class CertificateDiscovery {
     /**
@@ -58,6 +58,9 @@ class CertificateDiscovery {
             if (data.hasOwnProperty('debug')) {
                 obj['debug'] = ApiClient.convertToType(data['debug'], 'Boolean');
             }
+            if (data.hasOwnProperty('exclude-hosts')) {
+                obj['exclude-hosts'] = ApiClient.convertToType(data['exclude-hosts'], 'String');
+            }
             if (data.hasOwnProperty('expiration-event-in')) {
                 obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
             }
@@ -97,6 +100,10 @@ class CertificateDiscovery {
             if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
+        }
+        // ensure the json data is a string
+        if (data['exclude-hosts'] && !(typeof data['exclude-hosts'] === 'string' || data['exclude-hosts'] instanceof String)) {
+            throw new Error("Expected the field `exclude-hosts` to be a primitive type in the JSON string but got " + data['exclude-hosts']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['expiration-event-in'])) {
@@ -141,6 +148,12 @@ CertificateDiscovery.RequiredProperties = ["hosts", "target-location"];
  * @default false
  */
 CertificateDiscovery.prototype['debug'] = false;
+
+/**
+ * A comma separated list of IP addresses, CIDR ranges, or DNS names to exclude from the scan
+ * @member {String} exclude-hosts
+ */
+CertificateDiscovery.prototype['exclude-hosts'] = undefined;
 
 /**
  * How many days before the expiration of the certificate would you like to be notified.

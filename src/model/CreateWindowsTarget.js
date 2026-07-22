@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateWindowsTarget model module.
  * @module model/CreateWindowsTarget
- * @version 5.0.30
+ * @version 5.0.31
  */
 class CreateWindowsTarget {
     /**

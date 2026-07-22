@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import AWSTargetDetails from './AWSTargetDetails';
+import AerospikeTargetDetails from './AerospikeTargetDetails';
 import AnthropicTargetDetails from './AnthropicTargetDetails';
 import ArtifactoryTargetDetails from './ArtifactoryTargetDetails';
 import AzureTargetDetails from './AzureTargetDetails';
@@ -58,7 +59,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 5.0.30
+ * @version 5.0.31
  */
 class TargetTypeDetailsInput {
     /**
@@ -89,6 +90,9 @@ class TargetTypeDetailsInput {
         if (data) {
             obj = obj || new TargetTypeDetailsInput();
 
+            if (data.hasOwnProperty('aerospike_target_details')) {
+                obj['aerospike_target_details'] = AerospikeTargetDetails.constructFromObject(data['aerospike_target_details']);
+            }
             if (data.hasOwnProperty('anthropic_target_details')) {
                 obj['anthropic_target_details'] = AnthropicTargetDetails.constructFromObject(data['anthropic_target_details']);
             }
@@ -225,6 +229,10 @@ class TargetTypeDetailsInput {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>TargetTypeDetailsInput</code>.
      */
     static validateJSON(data) {
+        // validate the optional field `aerospike_target_details`
+        if (data['aerospike_target_details']) { // data not null
+          AerospikeTargetDetails.validateJSON(data['aerospike_target_details']);
+        }
         // validate the optional field `anthropic_target_details`
         if (data['anthropic_target_details']) { // data not null
           AnthropicTargetDetails.validateJSON(data['anthropic_target_details']);
@@ -401,6 +409,11 @@ class TargetTypeDetailsInput {
 }
 
 
+
+/**
+ * @member {module:model/AerospikeTargetDetails} aerospike_target_details
+ */
+TargetTypeDetailsInput.prototype['aerospike_target_details'] = undefined;
 
 /**
  * @member {module:model/AnthropicTargetDetails} anthropic_target_details

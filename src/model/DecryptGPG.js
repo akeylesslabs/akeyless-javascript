@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DecryptGPG model module.
  * @module model/DecryptGPG
- * @version 5.0.30
+ * @version 5.0.31
  */
 class DecryptGPG {
     /**
@@ -82,6 +82,9 @@ class DecryptGPG {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
         }
         return obj;
@@ -201,6 +204,12 @@ DecryptGPG.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 DecryptGPG.prototype['uid-token'] = undefined;
+
+/**
+ * key version (relevant only for classic key)
+ * @member {Number} version
+ */
+DecryptGPG.prototype['version'] = undefined;
 
 
 

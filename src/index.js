@@ -36,6 +36,7 @@ import ActiveDirectoryMigration from './model/ActiveDirectoryMigration';
 import ActiveDirectoryPayload from './model/ActiveDirectoryPayload';
 import AddGatewayAllowedAccessId from './model/AddGatewayAllowedAccessId';
 import AdminsConfigPart from './model/AdminsConfigPart';
+import AerospikeTargetDetails from './model/AerospikeTargetDetails';
 import AgenticRule from './model/AgenticRule';
 import AgenticRules from './model/AgenticRules';
 import AiInsightsConfigPart from './model/AiInsightsConfigPart';
@@ -1000,6 +1001,7 @@ import SyslogLogForwardingConfig from './model/SyslogLogForwardingConfig';
 import SystemAccessCredentialsReplyObj from './model/SystemAccessCredentialsReplyObj';
 import SystemAccessCredsSettings from './model/SystemAccessCredsSettings';
 import Target from './model/Target';
+import TargetCreateAerospike from './model/TargetCreateAerospike';
 import TargetCreateAnthropic from './model/TargetCreateAnthropic';
 import TargetCreateArtifactory from './model/TargetCreateArtifactory';
 import TargetCreateAws from './model/TargetCreateAws';
@@ -1048,6 +1050,7 @@ import TargetItemVersion from './model/TargetItemVersion';
 import TargetList from './model/TargetList';
 import TargetNameWithHosts from './model/TargetNameWithHosts';
 import TargetTypeDetailsInput from './model/TargetTypeDetailsInput';
+import TargetUpdateAerospike from './model/TargetUpdateAerospike';
 import TargetUpdateAnthropic from './model/TargetUpdateAnthropic';
 import TargetUpdateArtifactory from './model/TargetUpdateArtifactory';
 import TargetUpdateAws from './model/TargetUpdateAws';
@@ -1283,7 +1286,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.30
+* @version 5.0.31
 */
 export {
     /**
@@ -1429,6 +1432,12 @@ export {
      * @property {module:model/AdminsConfigPart}
      */
     AdminsConfigPart,
+
+    /**
+     * The AerospikeTargetDetails model constructor.
+     * @property {module:model/AerospikeTargetDetails}
+     */
+    AerospikeTargetDetails,
 
     /**
      * The AgenticRule model constructor.
@@ -7215,6 +7224,12 @@ export {
     Target,
 
     /**
+     * The TargetCreateAerospike model constructor.
+     * @property {module:model/TargetCreateAerospike}
+     */
+    TargetCreateAerospike,
+
+    /**
      * The TargetCreateAnthropic model constructor.
      * @property {module:model/TargetCreateAnthropic}
      */
@@ -7501,6 +7516,12 @@ export {
      * @property {module:model/TargetTypeDetailsInput}
      */
     TargetTypeDetailsInput,
+
+    /**
+     * The TargetUpdateAerospike model constructor.
+     * @property {module:model/TargetUpdateAerospike}
+     */
+    TargetUpdateAerospike,
 
     /**
      * The TargetUpdateAnthropic model constructor.

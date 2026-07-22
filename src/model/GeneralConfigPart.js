@@ -17,7 +17,7 @@ import CertificateExpirationEvent from './CertificateExpirationEvent';
 /**
  * The GeneralConfigPart model module.
  * @module model/GeneralConfigPart
- * @version 5.0.30
+ * @version 5.0.31
  */
 class GeneralConfigPart {
     /**

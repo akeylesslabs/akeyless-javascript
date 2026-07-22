@@ -25,6 +25,7 @@ docs/ActiveDirectoryMigration.md
 docs/ActiveDirectoryPayload.md
 docs/AddGatewayAllowedAccessId.md
 docs/AdminsConfigPart.md
+docs/AerospikeTargetDetails.md
 docs/AgenticRule.md
 docs/AgenticRules.md
 docs/AiInsightsConfigPart.md
@@ -989,6 +990,7 @@ docs/SyslogLogForwardingConfig.md
 docs/SystemAccessCredentialsReplyObj.md
 docs/SystemAccessCredsSettings.md
 docs/Target.md
+docs/TargetCreateAerospike.md
 docs/TargetCreateAnthropic.md
 docs/TargetCreateArtifactory.md
 docs/TargetCreateAws.md
@@ -1037,6 +1039,7 @@ docs/TargetItemVersion.md
 docs/TargetList.md
 docs/TargetNameWithHosts.md
 docs/TargetTypeDetailsInput.md
+docs/TargetUpdateAerospike.md
 docs/TargetUpdateAnthropic.md
 docs/TargetUpdateArtifactory.md
 docs/TargetUpdateAws.md
@@ -1270,6 +1273,7 @@ src/model/ActiveDirectoryMigration.js
 src/model/ActiveDirectoryPayload.js
 src/model/AddGatewayAllowedAccessId.js
 src/model/AdminsConfigPart.js
+src/model/AerospikeTargetDetails.js
 src/model/AgenticRule.js
 src/model/AgenticRules.js
 src/model/AiInsightsConfigPart.js
@@ -2234,6 +2238,7 @@ src/model/SyslogLogForwardingConfig.js
 src/model/SystemAccessCredentialsReplyObj.js
 src/model/SystemAccessCredsSettings.js
 src/model/Target.js
+src/model/TargetCreateAerospike.js
 src/model/TargetCreateAnthropic.js
 src/model/TargetCreateArtifactory.js
 src/model/TargetCreateAws.js
@@ -2282,6 +2287,7 @@ src/model/TargetItemVersion.js
 src/model/TargetList.js
 src/model/TargetNameWithHosts.js
 src/model/TargetTypeDetailsInput.js
+src/model/TargetUpdateAerospike.js
 src/model/TargetUpdateAnthropic.js
 src/model/TargetUpdateArtifactory.js
 src/model/TargetUpdateAws.js
@@ -2485,3 +2491,6 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
+test/model/AerospikeTargetDetails.spec.js
+test/model/TargetCreateAerospike.spec.js
+test/model/TargetUpdateAerospike.spec.js

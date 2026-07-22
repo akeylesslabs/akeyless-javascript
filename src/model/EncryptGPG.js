@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptGPG model module.
  * @module model/EncryptGPG
- * @version 5.0.30
+ * @version 5.0.31
  */
 class EncryptGPG {
     /**
@@ -75,6 +75,9 @@ class EncryptGPG {
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
         }
         return obj;
@@ -173,6 +176,12 @@ EncryptGPG.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 EncryptGPG.prototype['uid-token'] = undefined;
+
+/**
+ * key version (relevant only for classic key)
+ * @member {Number} version
+ */
+EncryptGPG.prototype['version'] = undefined;
 
 
 

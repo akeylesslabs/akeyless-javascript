@@ -477,6 +477,7 @@ Method | HTTP request | Description
 [**staticCredsAuth**](V2Api.md#staticCredsAuth) | **POST** /static-creds-auth | 
 [**staticSecretDeleteSync**](V2Api.md#staticSecretDeleteSync) | **POST** /static-secret-delete-sync | 
 [**staticSecretSync**](V2Api.md#staticSecretSync) | **POST** /static-secret-sync | 
+[**targetCreateAerospike**](V2Api.md#targetCreateAerospike) | **POST** /target-create-aerospike | 
 [**targetCreateAnthropic**](V2Api.md#targetCreateAnthropic) | **POST** /target-create-anthropic | 
 [**targetCreateArtifactory**](V2Api.md#targetCreateArtifactory) | **POST** /target-create-artifactory | 
 [**targetCreateAws**](V2Api.md#targetCreateAws) | **POST** /target-create-aws | 
@@ -519,6 +520,7 @@ Method | HTTP request | Description
 [**targetGet**](V2Api.md#targetGet) | **POST** /target-get | 
 [**targetGetDetails**](V2Api.md#targetGetDetails) | **POST** /target-get-details | 
 [**targetList**](V2Api.md#targetList) | **POST** /target-list | 
+[**targetUpdateAerospike**](V2Api.md#targetUpdateAerospike) | **POST** /target-update-aerospike | 
 [**targetUpdateAnthropic**](V2Api.md#targetUpdateAnthropic) | **POST** /target-update-anthropic | 
 [**targetUpdateArtifactory**](V2Api.md#targetUpdateArtifactory) | **POST** /target-update-artifactory | 
 [**targetUpdateAws**](V2Api.md#targetUpdateAws) | **POST** /target-update-aws | 
@@ -20545,6 +20547,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetCreateAerospike
+
+> TargetCreateOutput targetCreateAerospike(targetCreateAerospike)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateAerospike = new akeyless.TargetCreateAerospike(); // TargetCreateAerospike | 
+apiInstance.targetCreateAerospike(targetCreateAerospike).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateAerospike** | [**TargetCreateAerospike**](TargetCreateAerospike.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetCreateAnthropic
 
 > TargetCreateOutput targetCreateAnthropic(targetCreateAnthropic)
@@ -22298,6 +22342,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListTargetsOutput**](ListTargetsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetUpdateAerospike
+
+> TargetUpdateOutput targetUpdateAerospike(targetUpdateAerospike)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateAerospike = new akeyless.TargetUpdateAerospike(); // TargetUpdateAerospike | 
+apiInstance.targetUpdateAerospike(targetUpdateAerospike).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateAerospike** | [**TargetUpdateAerospike**](TargetUpdateAerospike.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
 
 ### Authorization
 

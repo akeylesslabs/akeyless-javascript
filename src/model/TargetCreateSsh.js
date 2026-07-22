@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateSsh model module.
  * @module model/TargetCreateSsh
- * @version 5.0.30
+ * @version 5.0.31
  */
 class TargetCreateSsh {
     /**

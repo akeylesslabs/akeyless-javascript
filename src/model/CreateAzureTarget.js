@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAzureTarget model module.
  * @module model/CreateAzureTarget
- * @version 5.0.30
+ * @version 5.0.31
  */
 class CreateAzureTarget {
     /**

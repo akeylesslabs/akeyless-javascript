@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **debug** | **Boolean** | Debug mode | [optional] [default to false]
+**excludeHosts** | **String** | A comma separated list of IP addresses, CIDR ranges, or DNS names to exclude from the scan | [optional] 
 **expirationEventIn** | **[String]** | How many days before the expiration of the certificate would you like to be notified. | [optional] 
 **hosts** | **String** | A comma separated list of IPs, CIDR ranges, or DNS names to discovery | 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]

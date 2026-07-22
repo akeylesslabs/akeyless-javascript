@@ -738,6 +738,7 @@ import StaticSecretDeleteSyncOutput from '../model/StaticSecretDeleteSyncOutput'
 import StaticSecretSync from '../model/StaticSecretSync';
 import SystemAccessCredentialsReplyObj from '../model/SystemAccessCredentialsReplyObj';
 import Target from '../model/Target';
+import TargetCreateAerospike from '../model/TargetCreateAerospike';
 import TargetCreateAnthropic from '../model/TargetCreateAnthropic';
 import TargetCreateArtifactory from '../model/TargetCreateArtifactory';
 import TargetCreateAws from '../model/TargetCreateAws';
@@ -781,6 +782,7 @@ import TargetDelete from '../model/TargetDelete';
 import TargetGet from '../model/TargetGet';
 import TargetGetDetails from '../model/TargetGetDetails';
 import TargetList from '../model/TargetList';
+import TargetUpdateAerospike from '../model/TargetUpdateAerospike';
 import TargetUpdateAnthropic from '../model/TargetUpdateAnthropic';
 import TargetUpdateArtifactory from '../model/TargetUpdateArtifactory';
 import TargetUpdateAws from '../model/TargetUpdateAws';
@@ -962,7 +964,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.30
+* @version 5.0.31
 */
 export default class V2Api {
 
@@ -21292,6 +21294,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetCreateAerospike} targetCreateAerospike 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateAerospikeWithHttpInfo(targetCreateAerospike) {
+      let postBody = targetCreateAerospike;
+      // verify the required parameter 'targetCreateAerospike' is set
+      if (targetCreateAerospike === undefined || targetCreateAerospike === null) {
+        throw new Error("Missing the required parameter 'targetCreateAerospike' when calling targetCreateAerospike");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-aerospike', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateAerospike} targetCreateAerospike 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateAerospike(targetCreateAerospike) {
+      return this.targetCreateAerospikeWithHttpInfo(targetCreateAerospike)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetCreateAnthropic} targetCreateAnthropic 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
      */
@@ -23091,6 +23136,49 @@ export default class V2Api {
      */
     targetList(targetList) {
       return this.targetListWithHttpInfo(targetList)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateAerospike} targetUpdateAerospike 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateAerospikeWithHttpInfo(targetUpdateAerospike) {
+      let postBody = targetUpdateAerospike;
+      // verify the required parameter 'targetUpdateAerospike' is set
+      if (targetUpdateAerospike === undefined || targetUpdateAerospike === null) {
+        throw new Error("Missing the required parameter 'targetUpdateAerospike' when calling targetUpdateAerospike");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-aerospike', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateAerospike} targetUpdateAerospike 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateAerospike(targetUpdateAerospike) {
+      return this.targetUpdateAerospikeWithHttpInfo(targetUpdateAerospike)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateHashiVault model module.
  * @module model/RotatedSecretCreateHashiVault
- * @version 5.0.30
+ * @version 5.0.31
  */
 class RotatedSecretCreateHashiVault {
     /**

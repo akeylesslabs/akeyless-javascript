@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateMongodb model module.
  * @module model/RotatedSecretCreateMongodb
- * @version 5.0.30
+ * @version 5.0.31
  */
 class RotatedSecretCreateMongodb {
     /**

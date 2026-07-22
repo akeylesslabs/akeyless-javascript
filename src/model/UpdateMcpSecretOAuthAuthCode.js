@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateMcpSecretOAuthAuthCode model module.
  * @module model/UpdateMcpSecretOAuthAuthCode
- * @version 5.0.30
+ * @version 5.0.31
  */
 class UpdateMcpSecretOAuthAuthCode {
     /**

@@ -17,7 +17,7 @@ import CertificateExpirationEvent from './CertificateExpirationEvent';
 /**
  * The CertificateExpirationEventsSettings model module.
  * @module model/CertificateExpirationEventsSettings
- * @version 5.0.30
+ * @version 5.0.31
  */
 class CertificateExpirationEventsSettings {
     /**

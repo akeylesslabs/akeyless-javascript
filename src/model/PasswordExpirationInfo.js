@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PasswordExpirationInfo model module.
  * @module model/PasswordExpirationInfo
- * @version 5.0.30
+ * @version 5.0.31
  */
 class PasswordExpirationInfo {
     /**
