@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateMcpSecretOAuthAuthCode model module.
  * @module model/UpdateMcpSecretOAuthAuthCode
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UpdateMcpSecretOAuthAuthCode {
     /**
@@ -53,6 +53,9 @@ class UpdateMcpSecretOAuthAuthCode {
 
             if (data.hasOwnProperty('accessibility')) {
                 obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
+            }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
             }
             if (data.hasOwnProperty('input-rule')) {
                 obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
@@ -193,6 +196,12 @@ UpdateMcpSecretOAuthAuthCode.RequiredProperties = ["name"];
  * @default 'regular'
  */
 UpdateMcpSecretOAuthAuthCode.prototype['accessibility'] = 'regular';
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.
+ * @member {Boolean} ara-enabled
+ */
+UpdateMcpSecretOAuthAuthCode.prototype['ara-enabled'] = undefined;
 
 /**
  * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)

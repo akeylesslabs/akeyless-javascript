@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateAzureAD model module.
  * @module model/AuthMethodCreateAzureAD
- * @version 5.0.31
+ * @version 5.0.32
  */
 class AuthMethodCreateAzureAD {
     /**
@@ -414,7 +414,7 @@ AuthMethodCreateAzureAD.prototype['jwt-ttl'] = 0;
 AuthMethodCreateAzureAD.prototype['name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 AuthMethodCreateAzureAD.prototype['product-type'] = undefined;

@@ -17,7 +17,7 @@ import GithubMetadata from './GithubMetadata';
 /**
  * The SecretInfo model module.
  * @module model/SecretInfo
- * @version 5.0.31
+ * @version 5.0.32
  */
 class SecretInfo {
     /**

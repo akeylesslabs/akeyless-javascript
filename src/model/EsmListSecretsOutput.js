@@ -17,7 +17,7 @@ import SecretInfo from './SecretInfo';
 /**
  * The EsmListSecretsOutput model module.
  * @module model/EsmListSecretsOutput
- * @version 5.0.31
+ * @version 5.0.32
  */
 class EsmListSecretsOutput {
     /**

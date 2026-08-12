@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretSync model module.
  * @module model/RotatedSecretSync
- * @version 5.0.31
+ * @version 5.0.32
  */
 class RotatedSecretSync {
     /**
@@ -53,6 +53,9 @@ class RotatedSecretSync {
             if (data.hasOwnProperty('delete-remote')) {
                 obj['delete-remote'] = ApiClient.convertToType(data['delete-remote'], 'Boolean');
             }
+            if (data.hasOwnProperty('environments')) {
+                obj['environments'] = ApiClient.convertToType(data['environments'], 'String');
+            }
             if (data.hasOwnProperty('filter-secret-value')) {
                 obj['filter-secret-value'] = ApiClient.convertToType(data['filter-secret-value'], 'String');
             }
@@ -67,6 +70,9 @@ class RotatedSecretSync {
             }
             if (data.hasOwnProperty('remote-secret-name')) {
                 obj['remote-secret-name'] = ApiClient.convertToType(data['remote-secret-name'], 'String');
+            }
+            if (data.hasOwnProperty('repositories')) {
+                obj['repositories'] = ApiClient.convertToType(data['repositories'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -94,6 +100,10 @@ class RotatedSecretSync {
             }
         }
         // ensure the json data is a string
+        if (data['environments'] && !(typeof data['environments'] === 'string' || data['environments'] instanceof String)) {
+            throw new Error("Expected the field `environments` to be a primitive type in the JSON string but got " + data['environments']);
+        }
+        // ensure the json data is a string
         if (data['filter-secret-value'] && !(typeof data['filter-secret-value'] === 'string' || data['filter-secret-value'] instanceof String)) {
             throw new Error("Expected the field `filter-secret-value` to be a primitive type in the JSON string but got " + data['filter-secret-value']);
         }
@@ -108,6 +118,10 @@ class RotatedSecretSync {
         // ensure the json data is a string
         if (data['remote-secret-name'] && !(typeof data['remote-secret-name'] === 'string' || data['remote-secret-name'] instanceof String)) {
             throw new Error("Expected the field `remote-secret-name` to be a primitive type in the JSON string but got " + data['remote-secret-name']);
+        }
+        // ensure the json data is a string
+        if (data['repositories'] && !(typeof data['repositories'] === 'string' || data['repositories'] instanceof String)) {
+            throw new Error("Expected the field `repositories` to be a primitive type in the JSON string but got " + data['repositories']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -135,6 +149,12 @@ RotatedSecretSync.RequiredProperties = ["name"];
  * @member {Boolean} delete-remote
  */
 RotatedSecretSync.prototype['delete-remote'] = undefined;
+
+/**
+ * GitHub environments to sync to. Relevant only for GitHub targets. Syncs to all environments defined on the selected USC by default, or to one or more specific repositories associated with that USC item when specified (e.g. --environments repo1/env1,repo2/env2).
+ * @member {String} environments
+ */
+RotatedSecretSync.prototype['environments'] = undefined;
 
 /**
  * JQ expression to filter or transform the secret value
@@ -166,6 +186,12 @@ RotatedSecretSync.prototype['namespace'] = undefined;
  * @member {String} remote-secret-name
  */
 RotatedSecretSync.prototype['remote-secret-name'] = undefined;
+
+/**
+ * GitHub repositories to sync to. Relevant only for GitHub targets. Syncs to all repositories defined on the selected USC by default, or to one or more specific repositories associated with that USC item when specified (e.g. --repositories repo1,repo2).
+ * @member {String} repositories
+ */
+RotatedSecretSync.prototype['repositories'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessMode** | **String** |  | 
 **adminEmail** | **String** | Admin user email | 
+**araEnabled** | **Boolean** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
 **fixedUserClaimKeyname** | **String** | For externally provided users, denotes the key-name of IdP claim to extract the username from | [optional] [default to &#39;ext_email&#39;]
@@ -26,6 +27,7 @@ Name | Type | Description | Notes
 **secureAccessWeb** | **Boolean** | Enable Web Secure Remote Access | [optional] [default to true]
 **secureAccessWebBrowsing** | **Boolean** | Secure browser via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to false]
 **secureAccessWebProxy** | **Boolean** | Web-Proxy via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to false]
+**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | Name of existing target to use in dynamic secret creation | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

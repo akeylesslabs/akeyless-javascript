@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateOauth2 model module.
  * @module model/AuthMethodCreateOauth2
- * @version 5.0.31
+ * @version 5.0.32
  */
 class AuthMethodCreateOauth2 {
     /**
@@ -363,7 +363,7 @@ AuthMethodCreateOauth2.prototype['jwt-ttl'] = 0;
 AuthMethodCreateOauth2.prototype['name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 AuthMethodCreateOauth2.prototype['product-type'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodLDAP model module.
  * @module model/CreateAuthMethodLDAP
- * @version 5.0.31
+ * @version 5.0.32
  */
 class CreateAuthMethodLDAP {
     /**
@@ -273,7 +273,7 @@ CreateAuthMethodLDAP.prototype['jwt-ttl'] = 0;
 CreateAuthMethodLDAP.prototype['name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 CreateAuthMethodLDAP.prototype['product-type'] = undefined;

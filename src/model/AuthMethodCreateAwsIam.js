@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateAwsIam model module.
  * @module model/AuthMethodCreateAwsIam
- * @version 5.0.31
+ * @version 5.0.32
  */
 class AuthMethodCreateAwsIam {
     /**
@@ -351,7 +351,7 @@ AuthMethodCreateAwsIam.prototype['jwt-ttl'] = 0;
 AuthMethodCreateAwsIam.prototype['name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 AuthMethodCreateAwsIam.prototype['product-type'] = undefined;

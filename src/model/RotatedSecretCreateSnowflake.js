@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateSnowflake model module.
  * @module model/RotatedSecretCreateSnowflake
- * @version 5.0.31
+ * @version 5.0.32
  */
 class RotatedSecretCreateSnowflake {
     /**
@@ -55,6 +55,9 @@ class RotatedSecretCreateSnowflake {
         if (data) {
             obj = obj || new RotatedSecretCreateSnowflake();
 
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('authentication-credentials')) {
                 obj['authentication-credentials'] = ApiClient.convertToType(data['authentication-credentials'], 'String');
             }
@@ -112,8 +115,14 @@ class RotatedSecretCreateSnowflake {
             if (data.hasOwnProperty('rotation-interval')) {
                 obj['rotation-interval'] = ApiClient.convertToType(data['rotation-interval'], 'String');
             }
+            if (data.hasOwnProperty('rotation-statement')) {
+                obj['rotation-statement'] = ApiClient.convertToType(data['rotation-statement'], 'String');
+            }
             if (data.hasOwnProperty('rotator-type')) {
                 obj['rotator-type'] = ApiClient.convertToType(data['rotator-type'], 'String');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -220,8 +229,16 @@ class RotatedSecretCreateSnowflake {
             throw new Error("Expected the field `rotation-interval` to be a primitive type in the JSON string but got " + data['rotation-interval']);
         }
         // ensure the json data is a string
+        if (data['rotation-statement'] && !(typeof data['rotation-statement'] === 'string' || data['rotation-statement'] instanceof String)) {
+            throw new Error("Expected the field `rotation-statement` to be a primitive type in the JSON string but got " + data['rotation-statement']);
+        }
+        // ensure the json data is a string
         if (data['rotator-type'] && !(typeof data['rotator-type'] === 'string' || data['rotator-type'] instanceof String)) {
             throw new Error("Expected the field `rotator-type` to be a primitive type in the JSON string but got " + data['rotator-type']);
+        }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
@@ -263,6 +280,12 @@ class RotatedSecretCreateSnowflake {
 }
 
 RotatedSecretCreateSnowflake.RequiredProperties = ["name", "rotator-type", "target-name"];
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.
+ * @member {Boolean} ara-enabled
+ */
+RotatedSecretCreateSnowflake.prototype['ara-enabled'] = undefined;
 
 /**
  * The credentials to connect with use-user-creds/use-target-creds
@@ -377,10 +400,22 @@ RotatedSecretCreateSnowflake.prototype['rotation-hour'] = undefined;
 RotatedSecretCreateSnowflake.prototype['rotation-interval'] = undefined;
 
 /**
+ * Snowflake rotation statement
+ * @member {String} rotation-statement
+ */
+RotatedSecretCreateSnowflake.prototype['rotation-statement'] = undefined;
+
+/**
  * The rotator type. options: [target/password/key]
  * @member {String} rotator-type
  */
 RotatedSecretCreateSnowflake.prototype['rotator-type'] = undefined;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+RotatedSecretCreateSnowflake.prototype['skip_dry_run'] = undefined;
 
 /**
  * Add tags attached to this object

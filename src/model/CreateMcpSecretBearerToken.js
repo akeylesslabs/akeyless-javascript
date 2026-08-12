@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateMcpSecretBearerToken model module.
  * @module model/CreateMcpSecretBearerToken
- * @version 5.0.31
+ * @version 5.0.32
  */
 class CreateMcpSecretBearerToken {
     /**
@@ -53,6 +53,9 @@ class CreateMcpSecretBearerToken {
 
             if (data.hasOwnProperty('accessibility')) {
                 obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
+            }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
             }
             if (data.hasOwnProperty('bearer-token')) {
                 obj['bearer-token'] = ApiClient.convertToType(data['bearer-token'], 'String');
@@ -183,6 +186,12 @@ CreateMcpSecretBearerToken.RequiredProperties = ["name"];
  * @default 'regular'
  */
 CreateMcpSecretBearerToken.prototype['accessibility'] = 'regular';
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.
+ * @member {Boolean} ara-enabled
+ */
+CreateMcpSecretBearerToken.prototype['ara-enabled'] = undefined;
 
 /**
  * Bearer token value

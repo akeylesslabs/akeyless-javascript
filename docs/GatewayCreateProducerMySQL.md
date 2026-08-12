@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**araEnabled** | **Boolean** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **customUsernameTemplate** | **String** | Customize how temporary usernames are generated using go template | [optional] 
 **dbServerCertificates** | **String** | (Optional) DB server certificates | [optional] 
 **dbServerName** | **String** | (Optional) Server name for certificate verification | [optional] 
@@ -29,6 +30,7 @@ Name | Type | Description | Notes
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
 **secureAccessHost** | **[String]** | Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts) | [optional] 
 **secureAccessWeb** | **Boolean** | Enable Web Secure Remote Access | [optional] [default to false]
+**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
 **ssl** | **Boolean** | Enable/Disable SSL [true/false] | [optional] [default to false]
 **sslCertificate** | **String** | SSL connection certificate | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 

@@ -127,6 +127,8 @@ import CreateESM from '../model/CreateESM';
 import CreateESMOutput from '../model/CreateESMOutput';
 import CreateEventForwarder from '../model/CreateEventForwarder';
 import CreateEventForwarderOutput from '../model/CreateEventForwarderOutput';
+import CreateF5BigIpTarget from '../model/CreateF5BigIpTarget';
+import CreateF5BigIpTargetOutput from '../model/CreateF5BigIpTargetOutput';
 import CreateGKETarget from '../model/CreateGKETarget';
 import CreateGKETargetOutput from '../model/CreateGKETargetOutput';
 import CreateGcpTarget from '../model/CreateGcpTarget';
@@ -232,6 +234,7 @@ import DescribeSubClaims from '../model/DescribeSubClaims';
 import DescribeSubClaimsOutput from '../model/DescribeSubClaimsOutput';
 import Detokenize from '../model/Detokenize';
 import DetokenizeOutput from '../model/DetokenizeOutput';
+import DynamicSecretCreateAerospike from '../model/DynamicSecretCreateAerospike';
 import DynamicSecretCreateArtifactory from '../model/DynamicSecretCreateArtifactory';
 import DynamicSecretCreateAws from '../model/DynamicSecretCreateAws';
 import DynamicSecretCreateAzure from '../model/DynamicSecretCreateAzure';
@@ -269,6 +272,7 @@ import DynamicSecretList from '../model/DynamicSecretList';
 import DynamicSecretTmpCredsDelete from '../model/DynamicSecretTmpCredsDelete';
 import DynamicSecretTmpCredsGet from '../model/DynamicSecretTmpCredsGet';
 import DynamicSecretTmpCredsUpdate from '../model/DynamicSecretTmpCredsUpdate';
+import DynamicSecretUpdateAerospike from '../model/DynamicSecretUpdateAerospike';
 import DynamicSecretUpdateArtifactory from '../model/DynamicSecretUpdateArtifactory';
 import DynamicSecretUpdateAws from '../model/DynamicSecretUpdateAws';
 import DynamicSecretUpdateAzure from '../model/DynamicSecretUpdateAzure';
@@ -660,11 +664,13 @@ import RotateKeyOutput from '../model/RotateKeyOutput';
 import RotateOidcClientOutput from '../model/RotateOidcClientOutput';
 import RotateOidcClientSecret from '../model/RotateOidcClientSecret';
 import RotateSecret from '../model/RotateSecret';
+import RotatedSecretCreateAerospike from '../model/RotatedSecretCreateAerospike';
 import RotatedSecretCreateAws from '../model/RotatedSecretCreateAws';
 import RotatedSecretCreateAzure from '../model/RotatedSecretCreateAzure';
 import RotatedSecretCreateCassandra from '../model/RotatedSecretCreateCassandra';
 import RotatedSecretCreateCustom from '../model/RotatedSecretCreateCustom';
 import RotatedSecretCreateDockerhub from '../model/RotatedSecretCreateDockerhub';
+import RotatedSecretCreateF5BigIp from '../model/RotatedSecretCreateF5BigIp';
 import RotatedSecretCreateGcp from '../model/RotatedSecretCreateGcp';
 import RotatedSecretCreateHanadb from '../model/RotatedSecretCreateHanadb';
 import RotatedSecretCreateHashiVault from '../model/RotatedSecretCreateHashiVault';
@@ -689,6 +695,7 @@ import RotatedSecretGetValue from '../model/RotatedSecretGetValue';
 import RotatedSecretList from '../model/RotatedSecretList';
 import RotatedSecretOutput from '../model/RotatedSecretOutput';
 import RotatedSecretSync from '../model/RotatedSecretSync';
+import RotatedSecretUpdateAerospike from '../model/RotatedSecretUpdateAerospike';
 import RotatedSecretUpdateAws from '../model/RotatedSecretUpdateAws';
 import RotatedSecretUpdateAzure from '../model/RotatedSecretUpdateAzure';
 import RotatedSecretUpdateCassandra from '../model/RotatedSecretUpdateCassandra';
@@ -750,6 +757,7 @@ import TargetCreateDB from '../model/TargetCreateDB';
 import TargetCreateDigiCert from '../model/TargetCreateDigiCert';
 import TargetCreateDockerhub from '../model/TargetCreateDockerhub';
 import TargetCreateEks from '../model/TargetCreateEks';
+import TargetCreateF5BigIp from '../model/TargetCreateF5BigIp';
 import TargetCreateGcp from '../model/TargetCreateGcp';
 import TargetCreateGemini from '../model/TargetCreateGemini';
 import TargetCreateGithub from '../model/TargetCreateGithub';
@@ -794,6 +802,7 @@ import TargetUpdateDB from '../model/TargetUpdateDB';
 import TargetUpdateDigiCert from '../model/TargetUpdateDigiCert';
 import TargetUpdateDockerhub from '../model/TargetUpdateDockerhub';
 import TargetUpdateEks from '../model/TargetUpdateEks';
+import TargetUpdateF5BigIp from '../model/TargetUpdateF5BigIp';
 import TargetUpdateGcp from '../model/TargetUpdateGcp';
 import TargetUpdateGemini from '../model/TargetUpdateGemini';
 import TargetUpdateGithub from '../model/TargetUpdateGithub';
@@ -874,6 +883,8 @@ import UpdateDockerhubTargetOutput from '../model/UpdateDockerhubTargetOutput';
 import UpdateEKSTarget from '../model/UpdateEKSTarget';
 import UpdateEKSTargetOutput from '../model/UpdateEKSTargetOutput';
 import UpdateEventForwarder from '../model/UpdateEventForwarder';
+import UpdateF5BigIpTarget from '../model/UpdateF5BigIpTarget';
+import UpdateF5BigIpTargetOutput from '../model/UpdateF5BigIpTargetOutput';
 import UpdateGKETarget from '../model/UpdateGKETarget';
 import UpdateGKETargetOutput from '../model/UpdateGKETargetOutput';
 import UpdateGcpTarget from '../model/UpdateGcpTarget';
@@ -964,7 +975,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.31
+* @version 5.0.32
 */
 export default class V2Api {
 
@@ -4047,6 +4058,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/CreateF5BigIpTarget} createF5BigIpTarget 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateF5BigIpTargetOutput} and HTTP response
+     */
+    createF5BigIpTargetWithHttpInfo(createF5BigIpTarget) {
+      let postBody = createF5BigIpTarget;
+      // verify the required parameter 'createF5BigIpTarget' is set
+      if (createF5BigIpTarget === undefined || createF5BigIpTarget === null) {
+        throw new Error("Missing the required parameter 'createF5BigIpTarget' when calling createF5BigIpTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = CreateF5BigIpTargetOutput;
+      return this.apiClient.callApi(
+        '/create-f5-big-ip-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/CreateF5BigIpTarget} createF5BigIpTarget 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CreateF5BigIpTargetOutput}
+     */
+    createF5BigIpTarget(createF5BigIpTarget) {
+      return this.createF5BigIpTargetWithHttpInfo(createF5BigIpTarget)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/CreateGKETarget} createGKETarget 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CreateGKETargetOutput} and HTTP response
      */
@@ -6670,6 +6724,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/DynamicSecretCreateAerospike} dynamicSecretCreateAerospike 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateAerospikeWithHttpInfo(dynamicSecretCreateAerospike) {
+      let postBody = dynamicSecretCreateAerospike;
+      // verify the required parameter 'dynamicSecretCreateAerospike' is set
+      if (dynamicSecretCreateAerospike === undefined || dynamicSecretCreateAerospike === null) {
+        throw new Error("Missing the required parameter 'dynamicSecretCreateAerospike' when calling dynamicSecretCreateAerospike");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-aerospike', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateAerospike} dynamicSecretCreateAerospike 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateAerospike(dynamicSecretCreateAerospike) {
+      return this.dynamicSecretCreateAerospikeWithHttpInfo(dynamicSecretCreateAerospike)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/DynamicSecretCreateArtifactory} dynamicSecretCreateArtifactory 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
      */
@@ -8167,6 +8264,49 @@ export default class V2Api {
      */
     dynamicSecretTmpCredsUpdate(dynamicSecretTmpCredsUpdate) {
       return this.dynamicSecretTmpCredsUpdateWithHttpInfo(dynamicSecretTmpCredsUpdate)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateAerospike} dynamicSecretUpdateAerospike 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateAerospikeWithHttpInfo(dynamicSecretUpdateAerospike) {
+      let postBody = dynamicSecretUpdateAerospike;
+      // verify the required parameter 'dynamicSecretUpdateAerospike' is set
+      if (dynamicSecretUpdateAerospike === undefined || dynamicSecretUpdateAerospike === null) {
+        throw new Error("Missing the required parameter 'dynamicSecretUpdateAerospike' when calling dynamicSecretUpdateAerospike");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-aerospike', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateAerospike} dynamicSecretUpdateAerospike 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateAerospike(dynamicSecretUpdateAerospike) {
+      return this.dynamicSecretUpdateAerospikeWithHttpInfo(dynamicSecretUpdateAerospike)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -18671,6 +18811,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/RotatedSecretCreateAerospike} rotatedSecretCreateAerospike 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateAerospikeWithHttpInfo(rotatedSecretCreateAerospike) {
+      let postBody = rotatedSecretCreateAerospike;
+      // verify the required parameter 'rotatedSecretCreateAerospike' is set
+      if (rotatedSecretCreateAerospike === undefined || rotatedSecretCreateAerospike === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretCreateAerospike' when calling rotatedSecretCreateAerospike");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-aerospike', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateAerospike} rotatedSecretCreateAerospike 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateAerospike(rotatedSecretCreateAerospike) {
+      return this.rotatedSecretCreateAerospikeWithHttpInfo(rotatedSecretCreateAerospike)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/RotatedSecretCreateAws} rotatedSecretCreateAws 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
      */
@@ -18879,6 +19062,49 @@ export default class V2Api {
      */
     rotatedSecretCreateDockerhub(rotatedSecretCreateDockerhub) {
       return this.rotatedSecretCreateDockerhubWithHttpInfo(rotatedSecretCreateDockerhub)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretCreateF5BigIp} rotatedSecretCreateF5BigIp 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateF5BigIpWithHttpInfo(rotatedSecretCreateF5BigIp) {
+      let postBody = rotatedSecretCreateF5BigIp;
+      // verify the required parameter 'rotatedSecretCreateF5BigIp' is set
+      if (rotatedSecretCreateF5BigIp === undefined || rotatedSecretCreateF5BigIp === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretCreateF5BigIp' when calling rotatedSecretCreateF5BigIp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-f5-big-ip', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateF5BigIp} rotatedSecretCreateF5BigIp 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateF5BigIp(rotatedSecretCreateF5BigIp) {
+      return this.rotatedSecretCreateF5BigIpWithHttpInfo(rotatedSecretCreateF5BigIp)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -19782,6 +20008,49 @@ export default class V2Api {
      */
     rotatedSecretSync(rotatedSecretSync) {
       return this.rotatedSecretSyncWithHttpInfo(rotatedSecretSync)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateAerospike} rotatedSecretUpdateAerospike 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateAerospikeWithHttpInfo(rotatedSecretUpdateAerospike) {
+      let postBody = rotatedSecretUpdateAerospike;
+      // verify the required parameter 'rotatedSecretUpdateAerospike' is set
+      if (rotatedSecretUpdateAerospike === undefined || rotatedSecretUpdateAerospike === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretUpdateAerospike' when calling rotatedSecretUpdateAerospike");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-aerospike', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateAerospike} rotatedSecretUpdateAerospike 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateAerospike(rotatedSecretUpdateAerospike) {
+      return this.rotatedSecretUpdateAerospikeWithHttpInfo(rotatedSecretUpdateAerospike)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -21810,6 +22079,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetCreateF5BigIp} targetCreateF5BigIp 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateF5BigIpWithHttpInfo(targetCreateF5BigIp) {
+      let postBody = targetCreateF5BigIp;
+      // verify the required parameter 'targetCreateF5BigIp' is set
+      if (targetCreateF5BigIp === undefined || targetCreateF5BigIp === null) {
+        throw new Error("Missing the required parameter 'targetCreateF5BigIp' when calling targetCreateF5BigIp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-f5-big-ip', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateF5BigIp} targetCreateF5BigIp 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateF5BigIp(targetCreateF5BigIp) {
+      return this.targetCreateF5BigIpWithHttpInfo(targetCreateF5BigIp)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetCreateGcp} targetCreateGcp 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
      */
@@ -23652,6 +23964,49 @@ export default class V2Api {
      */
     targetUpdateEks(targetUpdateEks) {
       return this.targetUpdateEksWithHttpInfo(targetUpdateEks)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateF5BigIp} targetUpdateF5BigIp 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateF5BigIpWithHttpInfo(targetUpdateF5BigIp) {
+      let postBody = targetUpdateF5BigIp;
+      // verify the required parameter 'targetUpdateF5BigIp' is set
+      if (targetUpdateF5BigIp === undefined || targetUpdateF5BigIp === null) {
+        throw new Error("Missing the required parameter 'targetUpdateF5BigIp' when calling targetUpdateF5BigIp");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-f5-big-ip', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateF5BigIp} targetUpdateF5BigIp 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateF5BigIp(targetUpdateF5BigIp) {
+      return this.targetUpdateF5BigIpWithHttpInfo(targetUpdateF5BigIp)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -26275,6 +26630,49 @@ export default class V2Api {
      */
     updateEventForwarder(updateEventForwarder) {
       return this.updateEventForwarderWithHttpInfo(updateEventForwarder)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/UpdateF5BigIpTarget} updateF5BigIpTarget 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UpdateF5BigIpTargetOutput} and HTTP response
+     */
+    updateF5BigIpTargetWithHttpInfo(updateF5BigIpTarget) {
+      let postBody = updateF5BigIpTarget;
+      // verify the required parameter 'updateF5BigIpTarget' is set
+      if (updateF5BigIpTarget === undefined || updateF5BigIpTarget === null) {
+        throw new Error("Missing the required parameter 'updateF5BigIpTarget' when calling updateF5BigIpTarget");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UpdateF5BigIpTargetOutput;
+      return this.apiClient.callApi(
+        '/update-f5-big-ip-target', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/UpdateF5BigIpTarget} updateF5BigIpTarget 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UpdateF5BigIpTargetOutput}
+     */
+    updateF5BigIpTarget(updateF5BigIpTarget) {
+      return this.updateF5BigIpTargetWithHttpInfo(updateF5BigIpTarget)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

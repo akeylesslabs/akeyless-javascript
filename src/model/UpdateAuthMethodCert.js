@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodCert model module.
  * @module model/UpdateAuthMethodCert
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UpdateAuthMethodCert {
     /**
@@ -379,7 +379,7 @@ UpdateAuthMethodCert.prototype['name'] = undefined;
 UpdateAuthMethodCert.prototype['new-name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 UpdateAuthMethodCert.prototype['product-type'] = undefined;

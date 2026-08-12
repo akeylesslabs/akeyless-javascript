@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateOpenAI model module.
  * @module model/TargetCreateOpenAI
- * @version 5.0.31
+ * @version 5.0.32
  */
 class TargetCreateOpenAI {
     /**
@@ -57,6 +57,18 @@ class TargetCreateOpenAI {
             }
             if (data.hasOwnProperty('api-key-id')) {
                 obj['api-key-id'] = ApiClient.convertToType(data['api-key-id'], 'String');
+            }
+            if (data.hasOwnProperty('codex-oauth-access-token')) {
+                obj['codex-oauth-access-token'] = ApiClient.convertToType(data['codex-oauth-access-token'], 'String');
+            }
+            if (data.hasOwnProperty('codex-oauth-account-id')) {
+                obj['codex-oauth-account-id'] = ApiClient.convertToType(data['codex-oauth-account-id'], 'String');
+            }
+            if (data.hasOwnProperty('codex-oauth-mode')) {
+                obj['codex-oauth-mode'] = ApiClient.convertToType(data['codex-oauth-mode'], 'String');
+            }
+            if (data.hasOwnProperty('codex-oauth-refresh-token')) {
+                obj['codex-oauth-refresh-token'] = ApiClient.convertToType(data['codex-oauth-refresh-token'], 'String');
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
@@ -114,6 +126,22 @@ class TargetCreateOpenAI {
         // ensure the json data is a string
         if (data['api-key-id'] && !(typeof data['api-key-id'] === 'string' || data['api-key-id'] instanceof String)) {
             throw new Error("Expected the field `api-key-id` to be a primitive type in the JSON string but got " + data['api-key-id']);
+        }
+        // ensure the json data is a string
+        if (data['codex-oauth-access-token'] && !(typeof data['codex-oauth-access-token'] === 'string' || data['codex-oauth-access-token'] instanceof String)) {
+            throw new Error("Expected the field `codex-oauth-access-token` to be a primitive type in the JSON string but got " + data['codex-oauth-access-token']);
+        }
+        // ensure the json data is a string
+        if (data['codex-oauth-account-id'] && !(typeof data['codex-oauth-account-id'] === 'string' || data['codex-oauth-account-id'] instanceof String)) {
+            throw new Error("Expected the field `codex-oauth-account-id` to be a primitive type in the JSON string but got " + data['codex-oauth-account-id']);
+        }
+        // ensure the json data is a string
+        if (data['codex-oauth-mode'] && !(typeof data['codex-oauth-mode'] === 'string' || data['codex-oauth-mode'] instanceof String)) {
+            throw new Error("Expected the field `codex-oauth-mode` to be a primitive type in the JSON string but got " + data['codex-oauth-mode']);
+        }
+        // ensure the json data is a string
+        if (data['codex-oauth-refresh-token'] && !(typeof data['codex-oauth-refresh-token'] === 'string' || data['codex-oauth-refresh-token'] instanceof String)) {
+            throw new Error("Expected the field `codex-oauth-refresh-token` to be a primitive type in the JSON string but got " + data['codex-oauth-refresh-token']);
         }
         // ensure the json data is a string
         if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
@@ -175,6 +203,30 @@ TargetCreateOpenAI.prototype['api-key'] = undefined;
  * @member {String} api-key-id
  */
 TargetCreateOpenAI.prototype['api-key-id'] = undefined;
+
+/**
+ * Codex OAuth access token (auth.json tokens.access_token), used when codex-oauth-mode=chatgpt_oauth
+ * @member {String} codex-oauth-access-token
+ */
+TargetCreateOpenAI.prototype['codex-oauth-access-token'] = undefined;
+
+/**
+ * Codex OAuth account id (auth.json tokens.account_id), used when codex-oauth-mode=chatgpt_oauth
+ * @member {String} codex-oauth-account-id
+ */
+TargetCreateOpenAI.prototype['codex-oauth-account-id'] = undefined;
+
+/**
+ * Auth mode: empty (default, static api-key) or chatgpt_oauth
+ * @member {String} codex-oauth-mode
+ */
+TargetCreateOpenAI.prototype['codex-oauth-mode'] = undefined;
+
+/**
+ * Codex OAuth refresh token (auth.json tokens.refresh_token), used when codex-oauth-mode=chatgpt_oauth
+ * @member {String} codex-oauth-refresh-token
+ */
+TargetCreateOpenAI.prototype['codex-oauth-refresh-token'] = undefined;
 
 /**
  * Protection from accidental deletion of this object [true/false]

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateCsr model module.
  * @module model/GenerateCsr
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GenerateCsr {
     /**
@@ -78,6 +78,9 @@ class GenerateCsr {
             if (data.hasOwnProperty('critical')) {
                 obj['critical'] = ApiClient.convertToType(data['critical'], 'Boolean');
             }
+            if (data.hasOwnProperty('customer-frg-id')) {
+                obj['customer-frg-id'] = ApiClient.convertToType(data['customer-frg-id'], 'String');
+            }
             if (data.hasOwnProperty('dep')) {
                 obj['dep'] = ApiClient.convertToType(data['dep'], 'String');
             }
@@ -86,6 +89,9 @@ class GenerateCsr {
             }
             if (data.hasOwnProperty('export-private-key')) {
                 obj['export-private-key'] = ApiClient.convertToType(data['export-private-key'], 'Boolean');
+            }
+            if (data.hasOwnProperty('ext-key-usage')) {
+                obj['ext-key-usage'] = ApiClient.convertToType(data['ext-key-usage'], 'String');
             }
             if (data.hasOwnProperty('generate-key')) {
                 obj['generate-key'] = ApiClient.convertToType(data['generate-key'], 'Boolean');
@@ -101,6 +107,9 @@ class GenerateCsr {
             }
             if (data.hasOwnProperty('key-type')) {
                 obj['key-type'] = ApiClient.convertToType(data['key-type'], 'String');
+            }
+            if (data.hasOwnProperty('key-usage')) {
+                obj['key-usage'] = ApiClient.convertToType(data['key-usage'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -164,12 +173,20 @@ class GenerateCsr {
             throw new Error("Expected the field `country` to be a primitive type in the JSON string but got " + data['country']);
         }
         // ensure the json data is a string
+        if (data['customer-frg-id'] && !(typeof data['customer-frg-id'] === 'string' || data['customer-frg-id'] instanceof String)) {
+            throw new Error("Expected the field `customer-frg-id` to be a primitive type in the JSON string but got " + data['customer-frg-id']);
+        }
+        // ensure the json data is a string
         if (data['dep'] && !(typeof data['dep'] === 'string' || data['dep'] instanceof String)) {
             throw new Error("Expected the field `dep` to be a primitive type in the JSON string but got " + data['dep']);
         }
         // ensure the json data is a string
         if (data['email-addresses'] && !(typeof data['email-addresses'] === 'string' || data['email-addresses'] instanceof String)) {
             throw new Error("Expected the field `email-addresses` to be a primitive type in the JSON string but got " + data['email-addresses']);
+        }
+        // ensure the json data is a string
+        if (data['ext-key-usage'] && !(typeof data['ext-key-usage'] === 'string' || data['ext-key-usage'] instanceof String)) {
+            throw new Error("Expected the field `ext-key-usage` to be a primitive type in the JSON string but got " + data['ext-key-usage']);
         }
         // ensure the json data is a string
         if (data['hash-algorithm'] && !(typeof data['hash-algorithm'] === 'string' || data['hash-algorithm'] instanceof String)) {
@@ -182,6 +199,10 @@ class GenerateCsr {
         // ensure the json data is a string
         if (data['key-type'] && !(typeof data['key-type'] === 'string' || data['key-type'] instanceof String)) {
             throw new Error("Expected the field `key-type` to be a primitive type in the JSON string but got " + data['key-type']);
+        }
+        // ensure the json data is a string
+        if (data['key-usage'] && !(typeof data['key-usage'] === 'string' || data['key-usage'] instanceof String)) {
+            throw new Error("Expected the field `key-usage` to be a primitive type in the JSON string but got " + data['key-usage']);
         }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
@@ -228,7 +249,7 @@ GenerateCsr.prototype['alg'] = undefined;
 GenerateCsr.prototype['alt-names'] = undefined;
 
 /**
- * The certificate type to be included in the CSR certificate (ssl-client/ssl-server/certificate-signing)
+ * A comma-separated list of certificate types to include in the CSR certificate (ssl-client/ssl-server/certificate-signing)
  * @member {String} certificate-type
  */
 GenerateCsr.prototype['certificate-type'] = undefined;
@@ -258,6 +279,12 @@ GenerateCsr.prototype['country'] = undefined;
 GenerateCsr.prototype['critical'] = undefined;
 
 /**
+ * The customer fragment ID that will be used to create the key (if empty, the key will be created independently of a customer fragment)
+ * @member {String} customer-frg-id
+ */
+GenerateCsr.prototype['customer-frg-id'] = undefined;
+
+/**
  * The department to be included in the CSR certificate
  * @member {String} dep
  */
@@ -275,6 +302,12 @@ GenerateCsr.prototype['email-addresses'] = undefined;
  * @default false
  */
 GenerateCsr.prototype['export-private-key'] = false;
+
+/**
+ * A comma-separated list of extended key usages to include in the CSR certificate
+ * @member {String} ext-key-usage
+ */
+GenerateCsr.prototype['ext-key-usage'] = undefined;
 
 /**
  * Generate a new classic key for the csr
@@ -308,6 +341,12 @@ GenerateCsr.prototype['json'] = false;
  * @default 'classic-key'
  */
 GenerateCsr.prototype['key-type'] = 'classic-key';
+
+/**
+ * A comma-separated list of key usages to include in the CSR certificate
+ * @member {String} key-usage
+ */
+GenerateCsr.prototype['key-usage'] = undefined;
 
 /**
  * The key name

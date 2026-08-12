@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**araEnabled** | **Boolean** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **githubAppId** | **Number** | Github app id | [optional] 
 **githubAppPrivateKey** | **String** | App private key | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **name** | **String** | Dynamic secret name | 
 **outputRule** | **[String]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
+**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | Target name | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateUSC model module.
  * @module model/CreateUSC
- * @version 5.0.31
+ * @version 5.0.32
  */
 class CreateUSC {
     /**
@@ -37,6 +37,7 @@ class CreateUSC {
      * Only for internal use.
      */
     static initialize(obj, name, targetToAssociate) { 
+        obj['gcp-scope'] = 'project';
         obj['github-scope'] = 'repository';
         obj['json'] = false;
         obj['name'] = name;
@@ -68,8 +69,17 @@ class CreateUSC {
             if (data.hasOwnProperty('environment-names')) {
                 obj['environment-names'] = ApiClient.convertToType(data['environment-names'], 'String');
             }
+            if (data.hasOwnProperty('gcp-folder-id')) {
+                obj['gcp-folder-id'] = ApiClient.convertToType(data['gcp-folder-id'], 'String');
+            }
+            if (data.hasOwnProperty('gcp-organization-id')) {
+                obj['gcp-organization-id'] = ApiClient.convertToType(data['gcp-organization-id'], 'String');
+            }
             if (data.hasOwnProperty('gcp-project-id')) {
                 obj['gcp-project-id'] = ApiClient.convertToType(data['gcp-project-id'], 'String');
+            }
+            if (data.hasOwnProperty('gcp-scope')) {
+                obj['gcp-scope'] = ApiClient.convertToType(data['gcp-scope'], 'String');
             }
             if (data.hasOwnProperty('gcp-sm-regions')) {
                 obj['gcp-sm-regions'] = ApiClient.convertToType(data['gcp-sm-regions'], 'String');
@@ -155,8 +165,20 @@ class CreateUSC {
             throw new Error("Expected the field `environment-names` to be a primitive type in the JSON string but got " + data['environment-names']);
         }
         // ensure the json data is a string
+        if (data['gcp-folder-id'] && !(typeof data['gcp-folder-id'] === 'string' || data['gcp-folder-id'] instanceof String)) {
+            throw new Error("Expected the field `gcp-folder-id` to be a primitive type in the JSON string but got " + data['gcp-folder-id']);
+        }
+        // ensure the json data is a string
+        if (data['gcp-organization-id'] && !(typeof data['gcp-organization-id'] === 'string' || data['gcp-organization-id'] instanceof String)) {
+            throw new Error("Expected the field `gcp-organization-id` to be a primitive type in the JSON string but got " + data['gcp-organization-id']);
+        }
+        // ensure the json data is a string
         if (data['gcp-project-id'] && !(typeof data['gcp-project-id'] === 'string' || data['gcp-project-id'] instanceof String)) {
             throw new Error("Expected the field `gcp-project-id` to be a primitive type in the JSON string but got " + data['gcp-project-id']);
+        }
+        // ensure the json data is a string
+        if (data['gcp-scope'] && !(typeof data['gcp-scope'] === 'string' || data['gcp-scope'] instanceof String)) {
+            throw new Error("Expected the field `gcp-scope` to be a primitive type in the JSON string but got " + data['gcp-scope']);
         }
         // ensure the json data is a string
         if (data['gcp-sm-regions'] && !(typeof data['gcp-sm-regions'] === 'string' || data['gcp-sm-regions'] instanceof String)) {
@@ -248,10 +270,29 @@ CreateUSC.prototype['description'] = undefined;
 CreateUSC.prototype['environment-names'] = undefined;
 
 /**
+ * GCP Folder ID (Relevant only for GCP targets with folder scope)
+ * @member {String} gcp-folder-id
+ */
+CreateUSC.prototype['gcp-folder-id'] = undefined;
+
+/**
+ * GCP Organization ID (Relevant only for GCP targets)
+ * @member {String} gcp-organization-id
+ */
+CreateUSC.prototype['gcp-organization-id'] = undefined;
+
+/**
  * GCP Project ID (Relevant only for GCP targets)
  * @member {String} gcp-project-id
  */
 CreateUSC.prototype['gcp-project-id'] = undefined;
+
+/**
+ * The gcp usc scope [ project / organization / folder]
+ * @member {String} gcp-scope
+ * @default 'project'
+ */
+CreateUSC.prototype['gcp-scope'] = 'project';
 
 /**
  * GCP Secret Manager regions to query for regional secrets (comma-separated, e.g., us-east1,us-west1). Max 12 regions. Required when listing with object-type=regional-secrets.

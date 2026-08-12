@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscList model module.
  * @module model/UscList
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UscList {
     /**
@@ -51,6 +51,9 @@ class UscList {
         if (data) {
             obj = obj || new UscList();
 
+            if (data.hasOwnProperty('gcp-project-id')) {
+                obj['gcp-project-id'] = ApiClient.convertToType(data['gcp-project-id'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -89,6 +92,10 @@ class UscList {
             }
         }
         // ensure the json data is a string
+        if (data['gcp-project-id'] && !(typeof data['gcp-project-id'] === 'string' || data['gcp-project-id'] instanceof String)) {
+            throw new Error("Expected the field `gcp-project-id` to be a primitive type in the JSON string but got " + data['gcp-project-id']);
+        }
+        // ensure the json data is a string
         if (data['object-type'] && !(typeof data['object-type'] === 'string' || data['object-type'] instanceof String)) {
             throw new Error("Expected the field `object-type` to be a primitive type in the JSON string but got " + data['object-type']);
         }
@@ -116,6 +123,12 @@ class UscList {
 }
 
 UscList.RequiredProperties = ["usc-name"];
+
+/**
+ * The GCP project to list secrets from (GCP only). Required when the connector spans multiple projects or uses folder/organization scope.
+ * @member {String} gcp-project-id
+ */
+UscList.prototype['gcp-project-id'] = undefined;
 
 /**
  * Set output format to JSON

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListRoles model module.
  * @module model/ListRoles
- * @version 5.0.31
+ * @version 5.0.32
  */
 class ListRoles {
     /**

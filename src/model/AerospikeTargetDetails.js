@@ -12,12 +12,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import WalletDetails from './WalletDetails';
 
 /**
  * The AerospikeTargetDetails model module.
  * @module model/AerospikeTargetDetails
- * @version 5.0.31
+ * @version 5.0.32
  */
 class AerospikeTargetDetails {
     /**
@@ -51,8 +50,14 @@ class AerospikeTargetDetails {
             if (data.hasOwnProperty('aerospike_admin_username')) {
                 obj['aerospike_admin_username'] = ApiClient.convertToType(data['aerospike_admin_username'], 'String');
             }
+            if (data.hasOwnProperty('aerospike_client_certificate')) {
+                obj['aerospike_client_certificate'] = ApiClient.convertToType(data['aerospike_client_certificate'], 'String');
+            }
             if (data.hasOwnProperty('aerospike_client_id')) {
                 obj['aerospike_client_id'] = ApiClient.convertToType(data['aerospike_client_id'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_client_private_key')) {
+                obj['aerospike_client_private_key'] = ApiClient.convertToType(data['aerospike_client_private_key'], 'String');
             }
             if (data.hasOwnProperty('aerospike_client_secret')) {
                 obj['aerospike_client_secret'] = ApiClient.convertToType(data['aerospike_client_secret'], 'String');
@@ -62,6 +67,12 @@ class AerospikeTargetDetails {
             }
             if (data.hasOwnProperty('aerospike_cluster_id')) {
                 obj['aerospike_cluster_id'] = ApiClient.convertToType(data['aerospike_cluster_id'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_db_server_name')) {
+                obj['aerospike_db_server_name'] = ApiClient.convertToType(data['aerospike_db_server_name'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_enable_mtls')) {
+                obj['aerospike_enable_mtls'] = ApiClient.convertToType(data['aerospike_enable_mtls'], 'Boolean');
             }
             if (data.hasOwnProperty('aerospike_hostname')) {
                 obj['aerospike_hostname'] = ApiClient.convertToType(data['aerospike_hostname'], 'String');
@@ -75,77 +86,14 @@ class AerospikeTargetDetails {
             if (data.hasOwnProperty('aerospike_port')) {
                 obj['aerospike_port'] = ApiClient.convertToType(data['aerospike_port'], 'String');
             }
-            if (data.hasOwnProperty('client_certificate')) {
-                obj['client_certificate'] = ApiClient.convertToType(data['client_certificate'], 'String');
+            if (data.hasOwnProperty('aerospike_skip_server_name_validation')) {
+                obj['aerospike_skip_server_name_validation'] = ApiClient.convertToType(data['aerospike_skip_server_name_validation'], 'String');
             }
-            if (data.hasOwnProperty('client_key_passphrase')) {
-                obj['client_key_passphrase'] = ApiClient.convertToType(data['client_key_passphrase'], 'String');
+            if (data.hasOwnProperty('aerospike_ssl_connection_certificate')) {
+                obj['aerospike_ssl_connection_certificate'] = ApiClient.convertToType(data['aerospike_ssl_connection_certificate'], 'String');
             }
-            if (data.hasOwnProperty('client_private_key')) {
-                obj['client_private_key'] = ApiClient.convertToType(data['client_private_key'], 'String');
-            }
-            if (data.hasOwnProperty('cloud_service_provider')) {
-                obj['cloud_service_provider'] = ApiClient.convertToType(data['cloud_service_provider'], 'String');
-            }
-            if (data.hasOwnProperty('cluster_mode')) {
-                obj['cluster_mode'] = ApiClient.convertToType(data['cluster_mode'], 'Boolean');
-            }
-            if (data.hasOwnProperty('connection_type')) {
-                obj['connection_type'] = ApiClient.convertToType(data['connection_type'], 'String');
-            }
-            if (data.hasOwnProperty('db_client_id')) {
-                obj['db_client_id'] = ApiClient.convertToType(data['db_client_id'], 'String');
-            }
-            if (data.hasOwnProperty('db_client_secret')) {
-                obj['db_client_secret'] = ApiClient.convertToType(data['db_client_secret'], 'String');
-            }
-            if (data.hasOwnProperty('db_host_name')) {
-                obj['db_host_name'] = ApiClient.convertToType(data['db_host_name'], 'String');
-            }
-            if (data.hasOwnProperty('db_name')) {
-                obj['db_name'] = ApiClient.convertToType(data['db_name'], 'String');
-            }
-            if (data.hasOwnProperty('db_port')) {
-                obj['db_port'] = ApiClient.convertToType(data['db_port'], 'String');
-            }
-            if (data.hasOwnProperty('db_private_key')) {
-                obj['db_private_key'] = ApiClient.convertToType(data['db_private_key'], 'String');
-            }
-            if (data.hasOwnProperty('db_private_key_passphrase')) {
-                obj['db_private_key_passphrase'] = ApiClient.convertToType(data['db_private_key_passphrase'], 'String');
-            }
-            if (data.hasOwnProperty('db_pwd')) {
-                obj['db_pwd'] = ApiClient.convertToType(data['db_pwd'], 'String');
-            }
-            if (data.hasOwnProperty('db_server_certificates')) {
-                obj['db_server_certificates'] = ApiClient.convertToType(data['db_server_certificates'], 'String');
-            }
-            if (data.hasOwnProperty('db_server_name')) {
-                obj['db_server_name'] = ApiClient.convertToType(data['db_server_name'], 'String');
-            }
-            if (data.hasOwnProperty('db_tenant_id')) {
-                obj['db_tenant_id'] = ApiClient.convertToType(data['db_tenant_id'], 'String');
-            }
-            if (data.hasOwnProperty('db_user_name')) {
-                obj['db_user_name'] = ApiClient.convertToType(data['db_user_name'], 'String');
-            }
-            if (data.hasOwnProperty('enable_mtls')) {
-                obj['enable_mtls'] = ApiClient.convertToType(data['enable_mtls'], 'Boolean');
-            }
-            if (data.hasOwnProperty('oracle_wallet_details')) {
-                obj['oracle_wallet_details'] = WalletDetails.constructFromObject(data['oracle_wallet_details']);
-            }
-            if (data.hasOwnProperty('sf_account')) {
-                obj['sf_account'] = ApiClient.convertToType(data['sf_account'], 'String');
-            }
-            if (data.hasOwnProperty('skip_server_name_validation')) {
-                obj['skip_server_name_validation'] = ApiClient.convertToType(data['skip_server_name_validation'], 'String');
-            }
-            if (data.hasOwnProperty('ssl_connection_certificate')) {
-                obj['ssl_connection_certificate'] = ApiClient.convertToType(data['ssl_connection_certificate'], 'String');
-            }
-            if (data.hasOwnProperty('ssl_connection_mode')) {
-                obj['ssl_connection_mode'] = ApiClient.convertToType(data['ssl_connection_mode'], 'Boolean');
+            if (data.hasOwnProperty('aerospike_ssl_connection_mode')) {
+                obj['aerospike_ssl_connection_mode'] = ApiClient.convertToType(data['aerospike_ssl_connection_mode'], 'Boolean');
             }
         }
         return obj;
@@ -162,8 +110,16 @@ class AerospikeTargetDetails {
             throw new Error("Expected the field `aerospike_admin_username` to be a primitive type in the JSON string but got " + data['aerospike_admin_username']);
         }
         // ensure the json data is a string
+        if (data['aerospike_client_certificate'] && !(typeof data['aerospike_client_certificate'] === 'string' || data['aerospike_client_certificate'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_client_certificate` to be a primitive type in the JSON string but got " + data['aerospike_client_certificate']);
+        }
+        // ensure the json data is a string
         if (data['aerospike_client_id'] && !(typeof data['aerospike_client_id'] === 'string' || data['aerospike_client_id'] instanceof String)) {
             throw new Error("Expected the field `aerospike_client_id` to be a primitive type in the JSON string but got " + data['aerospike_client_id']);
+        }
+        // ensure the json data is a string
+        if (data['aerospike_client_private_key'] && !(typeof data['aerospike_client_private_key'] === 'string' || data['aerospike_client_private_key'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_client_private_key` to be a primitive type in the JSON string but got " + data['aerospike_client_private_key']);
         }
         // ensure the json data is a string
         if (data['aerospike_client_secret'] && !(typeof data['aerospike_client_secret'] === 'string' || data['aerospike_client_secret'] instanceof String)) {
@@ -172,6 +128,10 @@ class AerospikeTargetDetails {
         // ensure the json data is a string
         if (data['aerospike_cluster_id'] && !(typeof data['aerospike_cluster_id'] === 'string' || data['aerospike_cluster_id'] instanceof String)) {
             throw new Error("Expected the field `aerospike_cluster_id` to be a primitive type in the JSON string but got " + data['aerospike_cluster_id']);
+        }
+        // ensure the json data is a string
+        if (data['aerospike_db_server_name'] && !(typeof data['aerospike_db_server_name'] === 'string' || data['aerospike_db_server_name'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_db_server_name` to be a primitive type in the JSON string but got " + data['aerospike_db_server_name']);
         }
         // ensure the json data is a string
         if (data['aerospike_hostname'] && !(typeof data['aerospike_hostname'] === 'string' || data['aerospike_hostname'] instanceof String)) {
@@ -190,88 +150,12 @@ class AerospikeTargetDetails {
             throw new Error("Expected the field `aerospike_port` to be a primitive type in the JSON string but got " + data['aerospike_port']);
         }
         // ensure the json data is a string
-        if (data['client_certificate'] && !(typeof data['client_certificate'] === 'string' || data['client_certificate'] instanceof String)) {
-            throw new Error("Expected the field `client_certificate` to be a primitive type in the JSON string but got " + data['client_certificate']);
+        if (data['aerospike_skip_server_name_validation'] && !(typeof data['aerospike_skip_server_name_validation'] === 'string' || data['aerospike_skip_server_name_validation'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_skip_server_name_validation` to be a primitive type in the JSON string but got " + data['aerospike_skip_server_name_validation']);
         }
         // ensure the json data is a string
-        if (data['client_key_passphrase'] && !(typeof data['client_key_passphrase'] === 'string' || data['client_key_passphrase'] instanceof String)) {
-            throw new Error("Expected the field `client_key_passphrase` to be a primitive type in the JSON string but got " + data['client_key_passphrase']);
-        }
-        // ensure the json data is a string
-        if (data['client_private_key'] && !(typeof data['client_private_key'] === 'string' || data['client_private_key'] instanceof String)) {
-            throw new Error("Expected the field `client_private_key` to be a primitive type in the JSON string but got " + data['client_private_key']);
-        }
-        // ensure the json data is a string
-        if (data['cloud_service_provider'] && !(typeof data['cloud_service_provider'] === 'string' || data['cloud_service_provider'] instanceof String)) {
-            throw new Error("Expected the field `cloud_service_provider` to be a primitive type in the JSON string but got " + data['cloud_service_provider']);
-        }
-        // ensure the json data is a string
-        if (data['connection_type'] && !(typeof data['connection_type'] === 'string' || data['connection_type'] instanceof String)) {
-            throw new Error("Expected the field `connection_type` to be a primitive type in the JSON string but got " + data['connection_type']);
-        }
-        // ensure the json data is a string
-        if (data['db_client_id'] && !(typeof data['db_client_id'] === 'string' || data['db_client_id'] instanceof String)) {
-            throw new Error("Expected the field `db_client_id` to be a primitive type in the JSON string but got " + data['db_client_id']);
-        }
-        // ensure the json data is a string
-        if (data['db_client_secret'] && !(typeof data['db_client_secret'] === 'string' || data['db_client_secret'] instanceof String)) {
-            throw new Error("Expected the field `db_client_secret` to be a primitive type in the JSON string but got " + data['db_client_secret']);
-        }
-        // ensure the json data is a string
-        if (data['db_host_name'] && !(typeof data['db_host_name'] === 'string' || data['db_host_name'] instanceof String)) {
-            throw new Error("Expected the field `db_host_name` to be a primitive type in the JSON string but got " + data['db_host_name']);
-        }
-        // ensure the json data is a string
-        if (data['db_name'] && !(typeof data['db_name'] === 'string' || data['db_name'] instanceof String)) {
-            throw new Error("Expected the field `db_name` to be a primitive type in the JSON string but got " + data['db_name']);
-        }
-        // ensure the json data is a string
-        if (data['db_port'] && !(typeof data['db_port'] === 'string' || data['db_port'] instanceof String)) {
-            throw new Error("Expected the field `db_port` to be a primitive type in the JSON string but got " + data['db_port']);
-        }
-        // ensure the json data is a string
-        if (data['db_private_key'] && !(typeof data['db_private_key'] === 'string' || data['db_private_key'] instanceof String)) {
-            throw new Error("Expected the field `db_private_key` to be a primitive type in the JSON string but got " + data['db_private_key']);
-        }
-        // ensure the json data is a string
-        if (data['db_private_key_passphrase'] && !(typeof data['db_private_key_passphrase'] === 'string' || data['db_private_key_passphrase'] instanceof String)) {
-            throw new Error("Expected the field `db_private_key_passphrase` to be a primitive type in the JSON string but got " + data['db_private_key_passphrase']);
-        }
-        // ensure the json data is a string
-        if (data['db_pwd'] && !(typeof data['db_pwd'] === 'string' || data['db_pwd'] instanceof String)) {
-            throw new Error("Expected the field `db_pwd` to be a primitive type in the JSON string but got " + data['db_pwd']);
-        }
-        // ensure the json data is a string
-        if (data['db_server_certificates'] && !(typeof data['db_server_certificates'] === 'string' || data['db_server_certificates'] instanceof String)) {
-            throw new Error("Expected the field `db_server_certificates` to be a primitive type in the JSON string but got " + data['db_server_certificates']);
-        }
-        // ensure the json data is a string
-        if (data['db_server_name'] && !(typeof data['db_server_name'] === 'string' || data['db_server_name'] instanceof String)) {
-            throw new Error("Expected the field `db_server_name` to be a primitive type in the JSON string but got " + data['db_server_name']);
-        }
-        // ensure the json data is a string
-        if (data['db_tenant_id'] && !(typeof data['db_tenant_id'] === 'string' || data['db_tenant_id'] instanceof String)) {
-            throw new Error("Expected the field `db_tenant_id` to be a primitive type in the JSON string but got " + data['db_tenant_id']);
-        }
-        // ensure the json data is a string
-        if (data['db_user_name'] && !(typeof data['db_user_name'] === 'string' || data['db_user_name'] instanceof String)) {
-            throw new Error("Expected the field `db_user_name` to be a primitive type in the JSON string but got " + data['db_user_name']);
-        }
-        // validate the optional field `oracle_wallet_details`
-        if (data['oracle_wallet_details']) { // data not null
-          WalletDetails.validateJSON(data['oracle_wallet_details']);
-        }
-        // ensure the json data is a string
-        if (data['sf_account'] && !(typeof data['sf_account'] === 'string' || data['sf_account'] instanceof String)) {
-            throw new Error("Expected the field `sf_account` to be a primitive type in the JSON string but got " + data['sf_account']);
-        }
-        // ensure the json data is a string
-        if (data['skip_server_name_validation'] && !(typeof data['skip_server_name_validation'] === 'string' || data['skip_server_name_validation'] instanceof String)) {
-            throw new Error("Expected the field `skip_server_name_validation` to be a primitive type in the JSON string but got " + data['skip_server_name_validation']);
-        }
-        // ensure the json data is a string
-        if (data['ssl_connection_certificate'] && !(typeof data['ssl_connection_certificate'] === 'string' || data['ssl_connection_certificate'] instanceof String)) {
-            throw new Error("Expected the field `ssl_connection_certificate` to be a primitive type in the JSON string but got " + data['ssl_connection_certificate']);
+        if (data['aerospike_ssl_connection_certificate'] && !(typeof data['aerospike_ssl_connection_certificate'] === 'string' || data['aerospike_ssl_connection_certificate'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_ssl_connection_certificate` to be a primitive type in the JSON string but got " + data['aerospike_ssl_connection_certificate']);
         }
 
         return true;
@@ -288,9 +172,19 @@ class AerospikeTargetDetails {
 AerospikeTargetDetails.prototype['aerospike_admin_username'] = undefined;
 
 /**
+ * @member {String} aerospike_client_certificate
+ */
+AerospikeTargetDetails.prototype['aerospike_client_certificate'] = undefined;
+
+/**
  * @member {String} aerospike_client_id
  */
 AerospikeTargetDetails.prototype['aerospike_client_id'] = undefined;
+
+/**
+ * @member {String} aerospike_client_private_key
+ */
+AerospikeTargetDetails.prototype['aerospike_client_private_key'] = undefined;
 
 /**
  * @member {String} aerospike_client_secret
@@ -306,6 +200,16 @@ AerospikeTargetDetails.prototype['aerospike_cloud'] = undefined;
  * @member {String} aerospike_cluster_id
  */
 AerospikeTargetDetails.prototype['aerospike_cluster_id'] = undefined;
+
+/**
+ * @member {String} aerospike_db_server_name
+ */
+AerospikeTargetDetails.prototype['aerospike_db_server_name'] = undefined;
+
+/**
+ * @member {Boolean} aerospike_enable_mtls
+ */
+AerospikeTargetDetails.prototype['aerospike_enable_mtls'] = undefined;
 
 /**
  * @member {String} aerospike_hostname
@@ -328,134 +232,19 @@ AerospikeTargetDetails.prototype['aerospike_password'] = undefined;
 AerospikeTargetDetails.prototype['aerospike_port'] = undefined;
 
 /**
- * (Optional) ClientCertificate defines the client certificate for mutual TLS. Must be base64 certificate loaded by UI using file loader field
- * @member {String} client_certificate
+ * @member {String} aerospike_skip_server_name_validation
  */
-AerospikeTargetDetails.prototype['client_certificate'] = undefined;
+AerospikeTargetDetails.prototype['aerospike_skip_server_name_validation'] = undefined;
 
 /**
- * (Optional) ClientKeyPassphrase defines the passphrase for the client private key
- * @member {String} client_key_passphrase
+ * @member {String} aerospike_ssl_connection_certificate
  */
-AerospikeTargetDetails.prototype['client_key_passphrase'] = undefined;
+AerospikeTargetDetails.prototype['aerospike_ssl_connection_certificate'] = undefined;
 
 /**
- * (Optional) ClientPrivateKey defines the client private key for mutual TLS. Must be base64 private key loaded by UI using file loader field
- * @member {String} client_private_key
+ * @member {Boolean} aerospike_ssl_connection_mode
  */
-AerospikeTargetDetails.prototype['client_private_key'] = undefined;
-
-/**
- * @member {String} cloud_service_provider
- */
-AerospikeTargetDetails.prototype['cloud_service_provider'] = undefined;
-
-/**
- * @member {Boolean} cluster_mode
- */
-AerospikeTargetDetails.prototype['cluster_mode'] = undefined;
-
-/**
- * @member {String} connection_type
- */
-AerospikeTargetDetails.prototype['connection_type'] = undefined;
-
-/**
- * @member {String} db_client_id
- */
-AerospikeTargetDetails.prototype['db_client_id'] = undefined;
-
-/**
- * @member {String} db_client_secret
- */
-AerospikeTargetDetails.prototype['db_client_secret'] = undefined;
-
-/**
- * @member {String} db_host_name
- */
-AerospikeTargetDetails.prototype['db_host_name'] = undefined;
-
-/**
- * @member {String} db_name
- */
-AerospikeTargetDetails.prototype['db_name'] = undefined;
-
-/**
- * @member {String} db_port
- */
-AerospikeTargetDetails.prototype['db_port'] = undefined;
-
-/**
- * (Optional) Private Key in PEM format
- * @member {String} db_private_key
- */
-AerospikeTargetDetails.prototype['db_private_key'] = undefined;
-
-/**
- * @member {String} db_private_key_passphrase
- */
-AerospikeTargetDetails.prototype['db_private_key_passphrase'] = undefined;
-
-/**
- * @member {String} db_pwd
- */
-AerospikeTargetDetails.prototype['db_pwd'] = undefined;
-
-/**
- * (Optional) DBServerCertificates defines the set of root certificate authorities that clients use when verifying server certificates. If DBServerCertificates is empty, TLS uses the host's root CA set.
- * @member {String} db_server_certificates
- */
-AerospikeTargetDetails.prototype['db_server_certificates'] = undefined;
-
-/**
- * (Optional) ServerName is used to verify the hostname on the returned certificates unless InsecureSkipVerify is given. It is also included in the client's handshake to support virtual hosting unless it is an IP address.
- * @member {String} db_server_name
- */
-AerospikeTargetDetails.prototype['db_server_name'] = undefined;
-
-/**
- * @member {String} db_tenant_id
- */
-AerospikeTargetDetails.prototype['db_tenant_id'] = undefined;
-
-/**
- * @member {String} db_user_name
- */
-AerospikeTargetDetails.prototype['db_user_name'] = undefined;
-
-/**
- * (Optional) EnableMTLS defines if mutual TLS will be used to connect to DB
- * @member {Boolean} enable_mtls
- */
-AerospikeTargetDetails.prototype['enable_mtls'] = undefined;
-
-/**
- * @member {module:model/WalletDetails} oracle_wallet_details
- */
-AerospikeTargetDetails.prototype['oracle_wallet_details'] = undefined;
-
-/**
- * @member {String} sf_account
- */
-AerospikeTargetDetails.prototype['sf_account'] = undefined;
-
-/**
- * (Optional) SkipServerNameValidation disables server name verification while still validating the certificate chain. Postgres treats empty as legacy \"skip hostname validation\"; MySQL treats empty as false.
- * @member {String} skip_server_name_validation
- */
-AerospikeTargetDetails.prototype['skip_server_name_validation'] = undefined;
-
-/**
- * (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field
- * @member {String} ssl_connection_certificate
- */
-AerospikeTargetDetails.prototype['ssl_connection_certificate'] = undefined;
-
-/**
- * (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB
- * @member {Boolean} ssl_connection_mode
- */
-AerospikeTargetDetails.prototype['ssl_connection_mode'] = undefined;
+AerospikeTargetDetails.prototype['aerospike_ssl_connection_mode'] = undefined;
 
 
 

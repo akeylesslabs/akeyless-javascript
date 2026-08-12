@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLogForwardingLogstash model module.
  * @module model/GatewayUpdateLogForwardingLogstash
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GatewayUpdateLogForwardingLogstash {
     /**

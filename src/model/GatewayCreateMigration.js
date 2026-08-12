@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateMigration model module.
  * @module model/GatewayCreateMigration
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GatewayCreateMigration {
     /**
@@ -48,6 +48,7 @@ class GatewayCreateMigration {
         obj['ad-winrm-over-http'] = 'false';
         obj['ad-winrm-port'] = '5986';
         obj['aws-region'] = 'us-east-2';
+        obj['enable-password-policy'] = 'false';
         obj['hashi-json'] = 'true';
         obj['hosts'] = hosts;
         obj['json'] = false;
@@ -56,6 +57,7 @@ class GatewayCreateMigration {
         obj['si-sra-enable-rdp'] = 'false';
         obj['si-target-name'] = siTargetName;
         obj['si-users-path-template'] = siUsersPathTemplate;
+        obj['skip-dry-run'] = 'false';
         obj['target-location'] = targetLocation;
     }
 
@@ -187,6 +189,9 @@ class GatewayCreateMigration {
             if (data.hasOwnProperty('delete-remote')) {
                 obj['delete-remote'] = ApiClient.convertToType(data['delete-remote'], 'Boolean');
             }
+            if (data.hasOwnProperty('enable-password-policy')) {
+                obj['enable-password-policy'] = ApiClient.convertToType(data['enable-password-policy'], 'String');
+            }
             if (data.hasOwnProperty('exclude-hosts')) {
                 obj['exclude-hosts'] = ApiClient.convertToType(data['exclude-hosts'], 'String');
             }
@@ -250,6 +255,9 @@ class GatewayCreateMigration {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('password-length')) {
+                obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
+            }
             if (data.hasOwnProperty('port-ranges')) {
                 obj['port-ranges'] = ApiClient.convertToType(data['port-ranges'], 'String');
             }
@@ -279,6 +287,9 @@ class GatewayCreateMigration {
             }
             if (data.hasOwnProperty('si-users-path-template')) {
                 obj['si-users-path-template'] = ApiClient.convertToType(data['si-users-path-template'], 'String');
+            }
+            if (data.hasOwnProperty('skip-dry-run')) {
+                obj['skip-dry-run'] = ApiClient.convertToType(data['skip-dry-run'], 'String');
             }
             if (data.hasOwnProperty('target-location')) {
                 obj['target-location'] = ApiClient.convertToType(data['target-location'], 'String');
@@ -462,6 +473,10 @@ class GatewayCreateMigration {
             throw new Error("Expected the field `conjur-username` to be a primitive type in the JSON string but got " + data['conjur-username']);
         }
         // ensure the json data is a string
+        if (data['enable-password-policy'] && !(typeof data['enable-password-policy'] === 'string' || data['enable-password-policy'] instanceof String)) {
+            throw new Error("Expected the field `enable-password-policy` to be a primitive type in the JSON string but got " + data['enable-password-policy']);
+        }
+        // ensure the json data is a string
         if (data['exclude-hosts'] && !(typeof data['exclude-hosts'] === 'string' || data['exclude-hosts'] instanceof String)) {
             throw new Error("Expected the field `exclude-hosts` to be a primitive type in the JSON string but got " + data['exclude-hosts']);
         }
@@ -538,6 +553,10 @@ class GatewayCreateMigration {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
         }
         // ensure the json data is a string
+        if (data['password-length'] && !(typeof data['password-length'] === 'string' || data['password-length'] instanceof String)) {
+            throw new Error("Expected the field `password-length` to be a primitive type in the JSON string but got " + data['password-length']);
+        }
+        // ensure the json data is a string
         if (data['port-ranges'] && !(typeof data['port-ranges'] === 'string' || data['port-ranges'] instanceof String)) {
             throw new Error("Expected the field `port-ranges` to be a primitive type in the JSON string but got " + data['port-ranges']);
         }
@@ -568,6 +587,10 @@ class GatewayCreateMigration {
         // ensure the json data is a string
         if (data['si-users-path-template'] && !(typeof data['si-users-path-template'] === 'string' || data['si-users-path-template'] instanceof String)) {
             throw new Error("Expected the field `si-users-path-template` to be a primitive type in the JSON string but got " + data['si-users-path-template']);
+        }
+        // ensure the json data is a string
+        if (data['skip-dry-run'] && !(typeof data['skip-dry-run'] === 'string' || data['skip-dry-run'] instanceof String)) {
+            throw new Error("Expected the field `skip-dry-run` to be a primitive type in the JSON string but got " + data['skip-dry-run']);
         }
         // ensure the json data is a string
         if (data['target-location'] && !(typeof data['target-location'] === 'string' || data['target-location'] instanceof String)) {
@@ -844,6 +867,13 @@ GatewayCreateMigration.prototype['conjur-username'] = undefined;
 GatewayCreateMigration.prototype['delete-remote'] = undefined;
 
 /**
+ * Enable password policy for rotated secrets created for Local and Domain users (Relevant only for Active Directory migration)
+ * @member {String} enable-password-policy
+ * @default 'false'
+ */
+GatewayCreateMigration.prototype['enable-password-policy'] = 'false';
+
+/**
  * A comma separated list of IPs, CIDR ranges, or DNS names to exclude from the scan
  * @member {String} exclude-hosts
  */
@@ -972,6 +1002,12 @@ GatewayCreateMigration.prototype['k8s-username'] = undefined;
 GatewayCreateMigration.prototype['name'] = undefined;
 
 /**
+ * The length of the password to be generated (between 8 and 50). Relevant only for Active Directory migration when enable-password-policy is true.
+ * @member {String} password-length
+ */
+GatewayCreateMigration.prototype['password-length'] = undefined;
+
+/**
  * A comma separated list of port ranges Examples: \"80,443\" or \"80,443,8080-8090\" or \"443\"
  * @member {String} port-ranges
  * @default '443'
@@ -1032,6 +1068,13 @@ GatewayCreateMigration.prototype['si-users-ignore'] = undefined;
  * @member {String} si-users-path-template
  */
 GatewayCreateMigration.prototype['si-users-path-template'] = undefined;
+
+/**
+ * Skip dry-run validation for rotated secrets created for Local and Domain users (Relevant only for Active Directory migration)
+ * @member {String} skip-dry-run
+ * @default 'false'
+ */
+GatewayCreateMigration.prototype['skip-dry-run'] = 'false';
 
 /**
  * Target location in Akeyless for imported secrets

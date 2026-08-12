@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateRedis model module.
  * @module model/DynamicSecretUpdateRedis
- * @version 5.0.31
+ * @version 5.0.32
  */
 class DynamicSecretUpdateRedis {
     /**
@@ -57,6 +57,9 @@ class DynamicSecretUpdateRedis {
 
             if (data.hasOwnProperty('acl-rules')) {
                 obj['acl-rules'] = ApiClient.convertToType(data['acl-rules'], 'String');
+            }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
             }
             if (data.hasOwnProperty('custom-username-template')) {
                 obj['custom-username-template'] = ApiClient.convertToType(data['custom-username-template'], 'String');
@@ -99,6 +102,9 @@ class DynamicSecretUpdateRedis {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('ssl')) {
                 obj['ssl'] = ApiClient.convertToType(data['ssl'], 'Boolean');
@@ -205,6 +211,10 @@ class DynamicSecretUpdateRedis {
             throw new Error("Expected the field `producer-encryption-key-name` to be a primitive type in the JSON string but got " + data['producer-encryption-key-name']);
         }
         // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
+        // ensure the json data is a string
         if (data['ssl-certificate'] && !(typeof data['ssl-certificate'] === 'string' || data['ssl-certificate'] instanceof String)) {
             throw new Error("Expected the field `ssl-certificate` to be a primitive type in the JSON string but got " + data['ssl-certificate']);
         }
@@ -262,6 +272,12 @@ DynamicSecretUpdateRedis.RequiredProperties = ["name"];
  * @member {String} acl-rules
  */
 DynamicSecretUpdateRedis.prototype['acl-rules'] = undefined;
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+DynamicSecretUpdateRedis.prototype['ara-enabled'] = undefined;
 
 /**
  * Customize how temporary usernames are generated using go template
@@ -349,6 +365,12 @@ DynamicSecretUpdateRedis.prototype['port'] = '6379';
  * @member {String} producer-encryption-key-name
  */
 DynamicSecretUpdateRedis.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+DynamicSecretUpdateRedis.prototype['skip_dry_run'] = undefined;
 
 /**
  * Enable/Disable SSL [true/false]

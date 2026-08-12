@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAWSIAM model module.
  * @module model/UpdateAuthMethodAWSIAM
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UpdateAuthMethodAWSIAM {
     /**
@@ -364,7 +364,7 @@ UpdateAuthMethodAWSIAM.prototype['name'] = undefined;
 UpdateAuthMethodAWSIAM.prototype['new-name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 UpdateAuthMethodAWSIAM.prototype['product-type'] = undefined;

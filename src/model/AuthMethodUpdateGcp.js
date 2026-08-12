@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateGcp model module.
  * @module model/AuthMethodUpdateGcp
- * @version 5.0.31
+ * @version 5.0.32
  */
 class AuthMethodUpdateGcp {
     /**
@@ -360,7 +360,7 @@ AuthMethodUpdateGcp.prototype['name'] = undefined;
 AuthMethodUpdateGcp.prototype['new-name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 AuthMethodUpdateGcp.prototype['product-type'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EsmGet model module.
  * @module model/EsmGet
- * @version 5.0.31
+ * @version 5.0.32
  */
 class EsmGet {
     /**

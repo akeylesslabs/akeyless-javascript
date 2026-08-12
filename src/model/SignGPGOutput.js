@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignGPGOutput model module.
  * @module model/SignGPGOutput
- * @version 5.0.31
+ * @version 5.0.32
  */
 class SignGPGOutput {
     /**

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**araEnabled** | **Boolean** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **creationStatements** | **String** | Redshift Creation statements | [optional] 
 **customUsernameTemplate** | **String** | Customize how temporary usernames are generated using go template | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
@@ -21,6 +22,7 @@ Name | Type | Description | Notes
 **redshiftUsername** | **String** | Redshift Username | [optional] 
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
 **secureAccessHost** | **[String]** | Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts) | [optional] 
+**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
 **ssl** | **Boolean** | Enable/Disable SSL [true/false] | [optional] [default to false]
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | Target name | [optional] 

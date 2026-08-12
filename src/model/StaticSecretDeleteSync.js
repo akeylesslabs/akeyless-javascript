@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StaticSecretDeleteSync model module.
  * @module model/StaticSecretDeleteSync
- * @version 5.0.31
+ * @version 5.0.32
  */
 class StaticSecretDeleteSync {
     /**
@@ -56,6 +56,9 @@ class StaticSecretDeleteSync {
             if (data.hasOwnProperty('delete-from-usc')) {
                 obj['delete-from-usc'] = ApiClient.convertToType(data['delete-from-usc'], 'Boolean');
             }
+            if (data.hasOwnProperty('environments')) {
+                obj['environments'] = ApiClient.convertToType(data['environments'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -64,6 +67,9 @@ class StaticSecretDeleteSync {
             }
             if (data.hasOwnProperty('remote-secret-name')) {
                 obj['remote-secret-name'] = ApiClient.convertToType(data['remote-secret-name'], 'String');
+            }
+            if (data.hasOwnProperty('repositories')) {
+                obj['repositories'] = ApiClient.convertToType(data['repositories'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -91,12 +97,20 @@ class StaticSecretDeleteSync {
             }
         }
         // ensure the json data is a string
+        if (data['environments'] && !(typeof data['environments'] === 'string' || data['environments'] instanceof String)) {
+            throw new Error("Expected the field `environments` to be a primitive type in the JSON string but got " + data['environments']);
+        }
+        // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
         }
         // ensure the json data is a string
         if (data['remote-secret-name'] && !(typeof data['remote-secret-name'] === 'string' || data['remote-secret-name'] instanceof String)) {
             throw new Error("Expected the field `remote-secret-name` to be a primitive type in the JSON string but got " + data['remote-secret-name']);
+        }
+        // ensure the json data is a string
+        if (data['repositories'] && !(typeof data['repositories'] === 'string' || data['repositories'] instanceof String)) {
+            throw new Error("Expected the field `repositories` to be a primitive type in the JSON string but got " + data['repositories']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -127,6 +141,12 @@ StaticSecretDeleteSync.RequiredProperties = ["name", "usc-name"];
 StaticSecretDeleteSync.prototype['delete-from-usc'] = false;
 
 /**
+ * GitHub environments to sync to. Relevant only for GitHub targets. Syncs to all environments defined on the selected USC by default, or to one or more specific repositories associated with that USC item when specified (e.g. --environments repo1/env1,repo2/env2).
+ * @member {String} environments
+ */
+StaticSecretDeleteSync.prototype['environments'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  * @default false
@@ -144,6 +164,12 @@ StaticSecretDeleteSync.prototype['name'] = undefined;
  * @member {String} remote-secret-name
  */
 StaticSecretDeleteSync.prototype['remote-secret-name'] = undefined;
+
+/**
+ * GitHub repositories to delete from. Defaults to all repositories available on the selected USC. GitHub repositories to sync to. Relevant only for GitHub targets. Syncs to all repositories defined on the selected USC by default, or to one or more specific repositories associated with that USC item when specified (e.g. --repositories repo1,repo2).
+ * @member {String} repositories
+ */
+StaticSecretDeleteSync.prototype['repositories'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -17,7 +17,7 @@ import WindowsServiceAttributes from './WindowsServiceAttributes';
 /**
  * The WindowsService model module.
  * @module model/WindowsService
- * @version 5.0.31
+ * @version 5.0.32
  */
 class WindowsService {
     /**

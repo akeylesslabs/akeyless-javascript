@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OpenAITargetDetails model module.
  * @module model/OpenAITargetDetails
- * @version 5.0.31
+ * @version 5.0.32
  */
 class OpenAITargetDetails {
     /**
@@ -54,6 +54,21 @@ class OpenAITargetDetails {
             if (data.hasOwnProperty('api_key_id')) {
                 obj['api_key_id'] = ApiClient.convertToType(data['api_key_id'], 'String');
             }
+            if (data.hasOwnProperty('auth_mode')) {
+                obj['auth_mode'] = ApiClient.convertToType(data['auth_mode'], 'String');
+            }
+            if (data.hasOwnProperty('oauth_access_token')) {
+                obj['oauth_access_token'] = ApiClient.convertToType(data['oauth_access_token'], 'String');
+            }
+            if (data.hasOwnProperty('oauth_account_id')) {
+                obj['oauth_account_id'] = ApiClient.convertToType(data['oauth_account_id'], 'String');
+            }
+            if (data.hasOwnProperty('oauth_last_refresh')) {
+                obj['oauth_last_refresh'] = ApiClient.convertToType(data['oauth_last_refresh'], 'String');
+            }
+            if (data.hasOwnProperty('oauth_refresh_token')) {
+                obj['oauth_refresh_token'] = ApiClient.convertToType(data['oauth_refresh_token'], 'String');
+            }
             if (data.hasOwnProperty('openai_url')) {
                 obj['openai_url'] = ApiClient.convertToType(data['openai_url'], 'String');
             }
@@ -80,6 +95,26 @@ class OpenAITargetDetails {
         // ensure the json data is a string
         if (data['api_key_id'] && !(typeof data['api_key_id'] === 'string' || data['api_key_id'] instanceof String)) {
             throw new Error("Expected the field `api_key_id` to be a primitive type in the JSON string but got " + data['api_key_id']);
+        }
+        // ensure the json data is a string
+        if (data['auth_mode'] && !(typeof data['auth_mode'] === 'string' || data['auth_mode'] instanceof String)) {
+            throw new Error("Expected the field `auth_mode` to be a primitive type in the JSON string but got " + data['auth_mode']);
+        }
+        // ensure the json data is a string
+        if (data['oauth_access_token'] && !(typeof data['oauth_access_token'] === 'string' || data['oauth_access_token'] instanceof String)) {
+            throw new Error("Expected the field `oauth_access_token` to be a primitive type in the JSON string but got " + data['oauth_access_token']);
+        }
+        // ensure the json data is a string
+        if (data['oauth_account_id'] && !(typeof data['oauth_account_id'] === 'string' || data['oauth_account_id'] instanceof String)) {
+            throw new Error("Expected the field `oauth_account_id` to be a primitive type in the JSON string but got " + data['oauth_account_id']);
+        }
+        // ensure the json data is a string
+        if (data['oauth_last_refresh'] && !(typeof data['oauth_last_refresh'] === 'string' || data['oauth_last_refresh'] instanceof String)) {
+            throw new Error("Expected the field `oauth_last_refresh` to be a primitive type in the JSON string but got " + data['oauth_last_refresh']);
+        }
+        // ensure the json data is a string
+        if (data['oauth_refresh_token'] && !(typeof data['oauth_refresh_token'] === 'string' || data['oauth_refresh_token'] instanceof String)) {
+            throw new Error("Expected the field `oauth_refresh_token` to be a primitive type in the JSON string but got " + data['oauth_refresh_token']);
         }
         // ensure the json data is a string
         if (data['openai_url'] && !(typeof data['openai_url'] === 'string' || data['openai_url'] instanceof String)) {
@@ -111,6 +146,36 @@ OpenAITargetDetails.prototype['api_key'] = undefined;
  * @member {String} api_key_id
  */
 OpenAITargetDetails.prototype['api_key_id'] = undefined;
+
+/**
+ * AuthMode selects how this target authenticates. Empty (default) uses ApiKey as a static bearer token against BaseURL, matching all pre-existing behavior. OpenAIAuthModeChatGPTOAuth instead uses the OAuth* fields below.
+ * @member {String} auth_mode
+ */
+OpenAITargetDetails.prototype['auth_mode'] = undefined;
+
+/**
+ * OAuthAccessToken is the current ChatGPT-issued access token (the `tokens.access_token` field of the customer's local auth.json). Akeyless refreshes this automatically; do not treat it as long-lived.
+ * @member {String} oauth_access_token
+ */
+OpenAITargetDetails.prototype['oauth_access_token'] = undefined;
+
+/**
+ * OAuthAccountID is the ChatGPT workspace/account id (`tokens.account_id` in auth.json), required on every request to the ChatGPT backend.
+ * @member {String} oauth_account_id
+ */
+OpenAITargetDetails.prototype['oauth_account_id'] = undefined;
+
+/**
+ * OAuthLastRefresh is the RFC3339 timestamp of the last successful Akeyless-performed refresh; used as a fallback expiry heuristic when the access token's JWT exp claim can't be parsed.
+ * @member {String} oauth_last_refresh
+ */
+OpenAITargetDetails.prototype['oauth_last_refresh'] = undefined;
+
+/**
+ * OAuthRefreshToken mints new access tokens. It rotates on every refresh - Akeyless persists the new value after each successful refresh, so the previous value becomes invalid.
+ * @member {String} oauth_refresh_token
+ */
+OpenAITargetDetails.prototype['oauth_refresh_token'] = undefined;
 
 /**
  * @member {String} openai_url

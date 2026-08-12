@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**awsUserName** | **String** |  | [optional] 
 **deletePreviousVersionInDays** | **Number** |  | [optional] 
 **enableCustomPasswordPolicy** | **Boolean** |  | [optional] 
 **graceRotation** | **Boolean** |  | [optional] 
@@ -26,6 +27,7 @@ Name | Type | Description | Notes
 **rotatorType** | **String** |  | [optional] 
 **samePassword** | **Boolean** |  | [optional] 
 **servicesDetails** | [**[WindowsService]**](WindowsService.md) |  | [optional] 
+**skipDryRun** | **Boolean** |  | [optional] 
 **timeoutSeconds** | **Number** |  | [optional] 
 
 

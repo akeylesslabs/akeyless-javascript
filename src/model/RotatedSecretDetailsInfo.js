@@ -17,7 +17,7 @@ import WindowsService from './WindowsService';
 /**
  * The RotatedSecretDetailsInfo model module.
  * @module model/RotatedSecretDetailsInfo
- * @version 5.0.31
+ * @version 5.0.32
  */
 class RotatedSecretDetailsInfo {
     /**
@@ -49,6 +49,9 @@ class RotatedSecretDetailsInfo {
         if (data) {
             obj = obj || new RotatedSecretDetailsInfo();
 
+            if (data.hasOwnProperty('aws_user_name')) {
+                obj['aws_user_name'] = ApiClient.convertToType(data['aws_user_name'], 'String');
+            }
             if (data.hasOwnProperty('delete_previous_version_in_days')) {
                 obj['delete_previous_version_in_days'] = ApiClient.convertToType(data['delete_previous_version_in_days'], 'Number');
             }
@@ -115,6 +118,9 @@ class RotatedSecretDetailsInfo {
             if (data.hasOwnProperty('services_details')) {
                 obj['services_details'] = ApiClient.convertToType(data['services_details'], [WindowsService]);
             }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'Boolean');
+            }
             if (data.hasOwnProperty('timeout_seconds')) {
                 obj['timeout_seconds'] = ApiClient.convertToType(data['timeout_seconds'], 'Number');
             }
@@ -128,6 +134,10 @@ class RotatedSecretDetailsInfo {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>RotatedSecretDetailsInfo</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['aws_user_name'] && !(typeof data['aws_user_name'] === 'string' || data['aws_user_name'] instanceof String)) {
+            throw new Error("Expected the field `aws_user_name` to be a primitive type in the JSON string but got " + data['aws_user_name']);
+        }
         // ensure the json data is a string
         if (data['grace_rotation_timing'] && !(typeof data['grace_rotation_timing'] === 'string' || data['grace_rotation_timing'] instanceof String)) {
             throw new Error("Expected the field `grace_rotation_timing` to be a primitive type in the JSON string but got " + data['grace_rotation_timing']);
@@ -188,6 +198,11 @@ class RotatedSecretDetailsInfo {
 }
 
 
+
+/**
+ * @member {String} aws_user_name
+ */
+RotatedSecretDetailsInfo.prototype['aws_user_name'] = undefined;
 
 /**
  * @member {Number} delete_previous_version_in_days
@@ -299,6 +314,11 @@ RotatedSecretDetailsInfo.prototype['same_password'] = undefined;
  * @member {Array.<module:model/WindowsService>} services_details
  */
 RotatedSecretDetailsInfo.prototype['services_details'] = undefined;
+
+/**
+ * @member {Boolean} skip_dry_run
+ */
+RotatedSecretDetailsInfo.prototype['skip_dry_run'] = undefined;
 
 /**
  * @member {Number} timeout_seconds

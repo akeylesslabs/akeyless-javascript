@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRabbitMQ model module.
  * @module model/GatewayCreateProducerRabbitMQ
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GatewayCreateProducerRabbitMQ {
     /**
@@ -55,6 +55,9 @@ class GatewayCreateProducerRabbitMQ {
         if (data) {
             obj = obj || new GatewayCreateProducerRabbitMQ();
 
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
@@ -117,6 +120,9 @@ class GatewayCreateProducerRabbitMQ {
             }
             if (data.hasOwnProperty('secure-access-web-proxy')) {
                 obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -225,6 +231,10 @@ class GatewayCreateProducerRabbitMQ {
         if (data['secure-access-url'] && !(typeof data['secure-access-url'] === 'string' || data['secure-access-url'] instanceof String)) {
             throw new Error("Expected the field `secure-access-url` to be a primitive type in the JSON string but got " + data['secure-access-url']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
@@ -269,6 +279,12 @@ class GatewayCreateProducerRabbitMQ {
 }
 
 GatewayCreateProducerRabbitMQ.RequiredProperties = ["name"];
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+GatewayCreateProducerRabbitMQ.prototype['ara-enabled'] = undefined;
 
 /**
  * Protection from accidental deletion of this object [true/false]
@@ -399,6 +415,12 @@ GatewayCreateProducerRabbitMQ.prototype['secure-access-web-browsing'] = false;
  * @default false
  */
 GatewayCreateProducerRabbitMQ.prototype['secure-access-web-proxy'] = false;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+GatewayCreateProducerRabbitMQ.prototype['skip_dry_run'] = undefined;
 
 /**
  * Add tags attached to this object

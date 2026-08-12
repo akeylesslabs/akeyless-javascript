@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **certificateTtlInSeconds** | **Number** |  | [optional] 
 **expirationEvents** | [**[CertificateExpirationEvent]**](CertificateExpirationEvent.md) |  | [optional] 
 **id** | **String** |  | [optional] 
+**issuingCaId** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **rules** | [**[PathRule]**](PathRule.md) |  | [optional] 
 

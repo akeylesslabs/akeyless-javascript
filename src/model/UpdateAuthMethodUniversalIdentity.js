@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodUniversalIdentity model module.
  * @module model/UpdateAuthMethodUniversalIdentity
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UpdateAuthMethodUniversalIdentity {
     /**
@@ -300,7 +300,7 @@ UpdateAuthMethodUniversalIdentity.prototype['name'] = undefined;
 UpdateAuthMethodUniversalIdentity.prototype['new-name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 UpdateAuthMethodUniversalIdentity.prototype['product-type'] = undefined;

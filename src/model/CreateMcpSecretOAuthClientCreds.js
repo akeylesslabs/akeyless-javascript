@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateMcpSecretOAuthClientCreds model module.
  * @module model/CreateMcpSecretOAuthClientCreds
- * @version 5.0.31
+ * @version 5.0.32
  */
 class CreateMcpSecretOAuthClientCreds {
     /**
@@ -53,6 +53,9 @@ class CreateMcpSecretOAuthClientCreds {
 
             if (data.hasOwnProperty('accessibility')) {
                 obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
+            }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
@@ -204,6 +207,12 @@ CreateMcpSecretOAuthClientCreds.RequiredProperties = ["name"];
  * @default 'regular'
  */
 CreateMcpSecretOAuthClientCreds.prototype['accessibility'] = 'regular';
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.
+ * @member {Boolean} ara-enabled
+ */
+CreateMcpSecretOAuthClientCreds.prototype['ara-enabled'] = undefined;
 
 /**
  * Protection from accidental deletion of this object [true/false]

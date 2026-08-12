@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscGet model module.
  * @module model/UscGet
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UscGet {
     /**
@@ -53,6 +53,9 @@ class UscGet {
         if (data) {
             obj = obj || new UscGet();
 
+            if (data.hasOwnProperty('gcp-project-id')) {
+                obj['gcp-project-id'] = ApiClient.convertToType(data['gcp-project-id'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -97,6 +100,10 @@ class UscGet {
             }
         }
         // ensure the json data is a string
+        if (data['gcp-project-id'] && !(typeof data['gcp-project-id'] === 'string' || data['gcp-project-id'] instanceof String)) {
+            throw new Error("Expected the field `gcp-project-id` to be a primitive type in the JSON string but got " + data['gcp-project-id']);
+        }
+        // ensure the json data is a string
         if (data['namespace'] && !(typeof data['namespace'] === 'string' || data['namespace'] instanceof String)) {
             throw new Error("Expected the field `namespace` to be a primitive type in the JSON string but got " + data['namespace']);
         }
@@ -136,6 +143,12 @@ class UscGet {
 }
 
 UscGet.RequiredProperties = ["secret-id", "usc-name"];
+
+/**
+ * GCP Project ID (Relevant only for GCP targets)
+ * @member {String} gcp-project-id
+ */
+UscGet.prototype['gcp-project-id'] = undefined;
 
 /**
  * Set output format to JSON

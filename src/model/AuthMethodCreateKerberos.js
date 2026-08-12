@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateKerberos model module.
  * @module model/AuthMethodCreateKerberos
- * @version 5.0.31
+ * @version 5.0.32
  */
 class AuthMethodCreateKerberos {
     /**
@@ -411,7 +411,7 @@ AuthMethodCreateKerberos.prototype['ldap-url'] = undefined;
 AuthMethodCreateKerberos.prototype['name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 AuthMethodCreateKerberos.prototype['product-type'] = undefined;

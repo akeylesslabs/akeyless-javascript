@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretMaxTtl model module.
  * @module model/DynamicSecretMaxTtl
- * @version 5.0.31
+ * @version 5.0.32
  */
 class DynamicSecretMaxTtl {
     /**

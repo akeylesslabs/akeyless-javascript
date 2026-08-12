@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerSnowflake model module.
  * @module model/GatewayUpdateProducerSnowflake
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GatewayUpdateProducerSnowflake {
     /**
@@ -62,6 +62,9 @@ class GatewayUpdateProducerSnowflake {
             if (data.hasOwnProperty('account-username')) {
                 obj['account-username'] = ApiClient.convertToType(data['account-username'], 'String');
             }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('auth-mode')) {
                 obj['auth-mode'] = ApiClient.convertToType(data['auth-mode'], 'String');
             }
@@ -106,6 +109,9 @@ class GatewayUpdateProducerSnowflake {
             }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'String');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -217,6 +223,10 @@ class GatewayUpdateProducerSnowflake {
         if (data['role'] && !(typeof data['role'] === 'string' || data['role'] instanceof String)) {
             throw new Error("Expected the field `role` to be a primitive type in the JSON string but got " + data['role']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
@@ -283,6 +293,12 @@ GatewayUpdateProducerSnowflake.prototype['account-password'] = undefined;
  * @member {String} account-username
  */
 GatewayUpdateProducerSnowflake.prototype['account-username'] = undefined;
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+GatewayUpdateProducerSnowflake.prototype['ara-enabled'] = undefined;
 
 /**
  * The authentication mode for the temporary user [password/key]
@@ -374,6 +390,12 @@ GatewayUpdateProducerSnowflake.prototype['private-key-passphrase'] = undefined;
  * @member {String} role
  */
 GatewayUpdateProducerSnowflake.prototype['role'] = undefined;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+GatewayUpdateProducerSnowflake.prototype['skip_dry_run'] = undefined;
 
 /**
  * Add tags attached to this object

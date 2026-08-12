@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateAws model module.
  * @module model/RotatedSecretCreateAws
- * @version 5.0.31
+ * @version 5.0.32
  */
 class RotatedSecretCreateAws {
     /**
@@ -61,6 +61,9 @@ class RotatedSecretCreateAws {
             }
             if (data.hasOwnProperty('api-key')) {
                 obj['api-key'] = ApiClient.convertToType(data['api-key'], 'String');
+            }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
             }
             if (data.hasOwnProperty('authentication-credentials')) {
                 obj['authentication-credentials'] = ApiClient.convertToType(data['authentication-credentials'], 'String');
@@ -145,6 +148,9 @@ class RotatedSecretCreateAws {
             }
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -286,6 +292,10 @@ class RotatedSecretCreateAws {
         if (data['secure-access-enable'] && !(typeof data['secure-access-enable'] === 'string' || data['secure-access-enable'] instanceof String)) {
             throw new Error("Expected the field `secure-access-enable` to be a primitive type in the JSON string but got " + data['secure-access-enable']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
@@ -338,6 +348,12 @@ RotatedSecretCreateAws.prototype['api-id'] = undefined;
  * @member {String} api-key
  */
 RotatedSecretCreateAws.prototype['api-key'] = undefined;
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.
+ * @member {Boolean} ara-enabled
+ */
+RotatedSecretCreateAws.prototype['ara-enabled'] = undefined;
 
 /**
  * The credentials to connect with use-user-creds/use-target-creds
@@ -505,6 +521,12 @@ RotatedSecretCreateAws.prototype['secure-access-certificate-issuer'] = undefined
  * @member {String} secure-access-enable
  */
 RotatedSecretCreateAws.prototype['secure-access-enable'] = undefined;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+RotatedSecretCreateAws.prototype['skip_dry_run'] = undefined;
 
 /**
  * Add tags attached to this object

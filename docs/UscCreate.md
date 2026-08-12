@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **binaryValue** | **Boolean** | Use this option if the universal secrets value is a base64 encoded binary | [optional] 
 **description** | **String** | Description of the universal secrets | [optional] 
+**gcpProjectId** | **String** | The GCP project to create the secret in (GCP only). Required when the connector spans multiple projects or uses folder/organization scope. | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **namespace** | **String** | The namespace (relevant for Hashi vault target) | [optional] 
 **objectType** | **String** |  | [optional] 

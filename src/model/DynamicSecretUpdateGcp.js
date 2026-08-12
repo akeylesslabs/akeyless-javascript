@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGcp model module.
  * @module model/DynamicSecretUpdateGcp
- * @version 5.0.31
+ * @version 5.0.32
  */
 class DynamicSecretUpdateGcp {
     /**
@@ -58,6 +58,9 @@ class DynamicSecretUpdateGcp {
 
             if (data.hasOwnProperty('access-type')) {
                 obj['access-type'] = ApiClient.convertToType(data['access-type'], 'String');
+            }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
             }
             if (data.hasOwnProperty('custom-username-template')) {
                 obj['custom-username-template'] = ApiClient.convertToType(data['custom-username-template'], 'String');
@@ -133,6 +136,9 @@ class DynamicSecretUpdateGcp {
             }
             if (data.hasOwnProperty('service-account-type')) {
                 obj['service-account-type'] = ApiClient.convertToType(data['service-account-type'], 'String');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -249,6 +255,10 @@ class DynamicSecretUpdateGcp {
         if (data['service-account-type'] && !(typeof data['service-account-type'] === 'string' || data['service-account-type'] instanceof String)) {
             throw new Error("Expected the field `service-account-type` to be a primitive type in the JSON string but got " + data['service-account-type']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
@@ -282,6 +292,12 @@ DynamicSecretUpdateGcp.RequiredProperties = ["name"];
  * @member {String} access-type
  */
 DynamicSecretUpdateGcp.prototype['access-type'] = undefined;
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+DynamicSecretUpdateGcp.prototype['ara-enabled'] = undefined;
 
 /**
  * Customize how temporary usernames are generated using go template
@@ -436,6 +452,12 @@ DynamicSecretUpdateGcp.prototype['secure-access-web-proxy'] = false;
  * @default 'fixed'
  */
 DynamicSecretUpdateGcp.prototype['service-account-type'] = 'fixed';
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+DynamicSecretUpdateGcp.prototype['skip_dry_run'] = undefined;
 
 /**
  * Add tags attached to this object

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscCreate model module.
  * @module model/UscCreate
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UscCreate {
     /**
@@ -60,6 +60,9 @@ class UscCreate {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('gcp-project-id')) {
+                obj['gcp-project-id'] = ApiClient.convertToType(data['gcp-project-id'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -125,6 +128,10 @@ class UscCreate {
         // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
+        }
+        // ensure the json data is a string
+        if (data['gcp-project-id'] && !(typeof data['gcp-project-id'] === 'string' || data['gcp-project-id'] instanceof String)) {
+            throw new Error("Expected the field `gcp-project-id` to be a primitive type in the JSON string but got " + data['gcp-project-id']);
         }
         // ensure the json data is a string
         if (data['namespace'] && !(typeof data['namespace'] === 'string' || data['namespace'] instanceof String)) {
@@ -198,6 +205,12 @@ UscCreate.prototype['binary-value'] = undefined;
  * @member {String} description
  */
 UscCreate.prototype['description'] = undefined;
+
+/**
+ * The GCP project to create the secret in (GCP only). Required when the connector spans multiple projects or uses folder/organization scope.
+ * @member {String} gcp-project-id
+ */
+UscCreate.prototype['gcp-project-id'] = undefined;
 
 /**
  * Set output format to JSON

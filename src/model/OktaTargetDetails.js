@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OktaTargetDetails model module.
  * @module model/OktaTargetDetails
- * @version 5.0.31
+ * @version 5.0.32
  */
 class OktaTargetDetails {
     /**

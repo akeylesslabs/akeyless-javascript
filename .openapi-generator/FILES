@@ -188,6 +188,8 @@ docs/CreateESM.md
 docs/CreateESMOutput.md
 docs/CreateEventForwarder.md
 docs/CreateEventForwarderOutput.md
+docs/CreateF5BigIpTarget.md
+docs/CreateF5BigIpTargetOutput.md
 docs/CreateGKETarget.md
 docs/CreateGKETargetOutput.md
 docs/CreateGcpTarget.md
@@ -309,6 +311,7 @@ docs/Detokenize.md
 docs/DetokenizeOutput.md
 docs/DigiCertTargetDetails.md
 docs/DockerhubTargetDetails.md
+docs/DynamicSecretCreateAerospike.md
 docs/DynamicSecretCreateArtifactory.md
 docs/DynamicSecretCreateAws.md
 docs/DynamicSecretCreateAzure.md
@@ -349,6 +352,7 @@ docs/DynamicSecretProducerInfo.md
 docs/DynamicSecretTmpCredsDelete.md
 docs/DynamicSecretTmpCredsGet.md
 docs/DynamicSecretTmpCredsUpdate.md
+docs/DynamicSecretUpdateAerospike.md
 docs/DynamicSecretUpdateArtifactory.md
 docs/DynamicSecretUpdateAws.md
 docs/DynamicSecretUpdateAzure.md
@@ -426,6 +430,7 @@ docs/ExportClassicKey.md
 docs/ExportClassicKeyOutput.md
 docs/Extension.md
 docs/ExternalKMSKeyId.md
+docs/F5BigIpTargetDetails.md
 docs/FileDownloadInstructions.md
 docs/FileInfo.md
 docs/FolderCreate.md
@@ -720,6 +725,7 @@ docs/K8SAuthsConfigLastChange.md
 docs/K8SAuthsConfigPart.md
 docs/K8SMigration.md
 docs/K8SPayload.md
+docs/KMIPCA.md
 docs/KMIPClient.md
 docs/KMIPClientGetResponse.md
 docs/KMIPClientListResponse.md
@@ -876,11 +882,13 @@ docs/RotateKeyOutput.md
 docs/RotateOidcClientOutput.md
 docs/RotateOidcClientSecret.md
 docs/RotateSecret.md
+docs/RotatedSecretCreateAerospike.md
 docs/RotatedSecretCreateAws.md
 docs/RotatedSecretCreateAzure.md
 docs/RotatedSecretCreateCassandra.md
 docs/RotatedSecretCreateCustom.md
 docs/RotatedSecretCreateDockerhub.md
+docs/RotatedSecretCreateF5BigIp.md
 docs/RotatedSecretCreateGcp.md
 docs/RotatedSecretCreateHanadb.md
 docs/RotatedSecretCreateHashiVault.md
@@ -906,6 +914,7 @@ docs/RotatedSecretGetValue.md
 docs/RotatedSecretList.md
 docs/RotatedSecretOutput.md
 docs/RotatedSecretSync.md
+docs/RotatedSecretUpdateAerospike.md
 docs/RotatedSecretUpdateAws.md
 docs/RotatedSecretUpdateAzure.md
 docs/RotatedSecretUpdateCassandra.md
@@ -1002,6 +1011,7 @@ docs/TargetCreateDB.md
 docs/TargetCreateDigiCert.md
 docs/TargetCreateDockerhub.md
 docs/TargetCreateEks.md
+docs/TargetCreateF5BigIp.md
 docs/TargetCreateGcp.md
 docs/TargetCreateGemini.md
 docs/TargetCreateGithub.md
@@ -1051,6 +1061,7 @@ docs/TargetUpdateDB.md
 docs/TargetUpdateDigiCert.md
 docs/TargetUpdateDockerhub.md
 docs/TargetUpdateEks.md
+docs/TargetUpdateF5BigIp.md
 docs/TargetUpdateGcp.md
 docs/TargetUpdateGemini.md
 docs/TargetUpdateGithub.md
@@ -1138,6 +1149,8 @@ docs/UpdateDockerhubTargetOutput.md
 docs/UpdateEKSTarget.md
 docs/UpdateEKSTargetOutput.md
 docs/UpdateEventForwarder.md
+docs/UpdateF5BigIpTarget.md
+docs/UpdateF5BigIpTargetOutput.md
 docs/UpdateGKETarget.md
 docs/UpdateGKETargetOutput.md
 docs/UpdateGcpTarget.md
@@ -1436,6 +1449,8 @@ src/model/CreateESM.js
 src/model/CreateESMOutput.js
 src/model/CreateEventForwarder.js
 src/model/CreateEventForwarderOutput.js
+src/model/CreateF5BigIpTarget.js
+src/model/CreateF5BigIpTargetOutput.js
 src/model/CreateGKETarget.js
 src/model/CreateGKETargetOutput.js
 src/model/CreateGcpTarget.js
@@ -1557,6 +1572,7 @@ src/model/Detokenize.js
 src/model/DetokenizeOutput.js
 src/model/DigiCertTargetDetails.js
 src/model/DockerhubTargetDetails.js
+src/model/DynamicSecretCreateAerospike.js
 src/model/DynamicSecretCreateArtifactory.js
 src/model/DynamicSecretCreateAws.js
 src/model/DynamicSecretCreateAzure.js
@@ -1597,6 +1613,7 @@ src/model/DynamicSecretProducerInfo.js
 src/model/DynamicSecretTmpCredsDelete.js
 src/model/DynamicSecretTmpCredsGet.js
 src/model/DynamicSecretTmpCredsUpdate.js
+src/model/DynamicSecretUpdateAerospike.js
 src/model/DynamicSecretUpdateArtifactory.js
 src/model/DynamicSecretUpdateAws.js
 src/model/DynamicSecretUpdateAzure.js
@@ -1674,6 +1691,7 @@ src/model/ExportClassicKey.js
 src/model/ExportClassicKeyOutput.js
 src/model/Extension.js
 src/model/ExternalKMSKeyId.js
+src/model/F5BigIpTargetDetails.js
 src/model/FileDownloadInstructions.js
 src/model/FileInfo.js
 src/model/FolderCreate.js
@@ -1968,6 +1986,7 @@ src/model/K8SAuthsConfigLastChange.js
 src/model/K8SAuthsConfigPart.js
 src/model/K8SMigration.js
 src/model/K8SPayload.js
+src/model/KMIPCA.js
 src/model/KMIPClient.js
 src/model/KMIPClientGetResponse.js
 src/model/KMIPClientListResponse.js
@@ -2124,11 +2143,13 @@ src/model/RotateKeyOutput.js
 src/model/RotateOidcClientOutput.js
 src/model/RotateOidcClientSecret.js
 src/model/RotateSecret.js
+src/model/RotatedSecretCreateAerospike.js
 src/model/RotatedSecretCreateAws.js
 src/model/RotatedSecretCreateAzure.js
 src/model/RotatedSecretCreateCassandra.js
 src/model/RotatedSecretCreateCustom.js
 src/model/RotatedSecretCreateDockerhub.js
+src/model/RotatedSecretCreateF5BigIp.js
 src/model/RotatedSecretCreateGcp.js
 src/model/RotatedSecretCreateHanadb.js
 src/model/RotatedSecretCreateHashiVault.js
@@ -2154,6 +2175,7 @@ src/model/RotatedSecretGetValue.js
 src/model/RotatedSecretList.js
 src/model/RotatedSecretOutput.js
 src/model/RotatedSecretSync.js
+src/model/RotatedSecretUpdateAerospike.js
 src/model/RotatedSecretUpdateAws.js
 src/model/RotatedSecretUpdateAzure.js
 src/model/RotatedSecretUpdateCassandra.js
@@ -2250,6 +2272,7 @@ src/model/TargetCreateDB.js
 src/model/TargetCreateDigiCert.js
 src/model/TargetCreateDockerhub.js
 src/model/TargetCreateEks.js
+src/model/TargetCreateF5BigIp.js
 src/model/TargetCreateGcp.js
 src/model/TargetCreateGemini.js
 src/model/TargetCreateGithub.js
@@ -2299,6 +2322,7 @@ src/model/TargetUpdateDB.js
 src/model/TargetUpdateDigiCert.js
 src/model/TargetUpdateDockerhub.js
 src/model/TargetUpdateEks.js
+src/model/TargetUpdateF5BigIp.js
 src/model/TargetUpdateGcp.js
 src/model/TargetUpdateGemini.js
 src/model/TargetUpdateGithub.js
@@ -2386,6 +2410,8 @@ src/model/UpdateDockerhubTargetOutput.js
 src/model/UpdateEKSTarget.js
 src/model/UpdateEKSTargetOutput.js
 src/model/UpdateEventForwarder.js
+src/model/UpdateF5BigIpTarget.js
+src/model/UpdateF5BigIpTargetOutput.js
 src/model/UpdateGKETarget.js
 src/model/UpdateGKETargetOutput.js
 src/model/UpdateGcpTarget.js
@@ -2491,6 +2517,16 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/AerospikeTargetDetails.spec.js
-test/model/TargetCreateAerospike.spec.js
-test/model/TargetUpdateAerospike.spec.js
+test/model/CreateF5BigIpTarget.spec.js
+test/model/CreateF5BigIpTargetOutput.spec.js
+test/model/DynamicSecretCreateAerospike.spec.js
+test/model/DynamicSecretUpdateAerospike.spec.js
+test/model/F5BigIpTargetDetails.spec.js
+test/model/KMIPCA.spec.js
+test/model/RotatedSecretCreateAerospike.spec.js
+test/model/RotatedSecretCreateF5BigIp.spec.js
+test/model/RotatedSecretUpdateAerospike.spec.js
+test/model/TargetCreateF5BigIp.spec.js
+test/model/TargetUpdateF5BigIp.spec.js
+test/model/UpdateF5BigIpTarget.spec.js
+test/model/UpdateF5BigIpTargetOutput.spec.js

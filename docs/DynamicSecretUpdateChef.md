@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**araEnabled** | **Boolean** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **chefOrgs** | **String** | Organizations | [optional] 
 **chefServerKey** | **String** | Server key | [optional] 
 **chefServerUrl** | **String** | Server URL | [optional] 
@@ -20,6 +21,7 @@ Name | Type | Description | Notes
 **passwordLength** | **String** | The length of the password to be generated | [optional] 
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **skipSsl** | **Boolean** | Skip SSL | [optional] [default to true]
+**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | Target name | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

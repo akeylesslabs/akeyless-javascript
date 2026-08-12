@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateSplunk model module.
  * @module model/RotatedSecretUpdateSplunk
- * @version 5.0.31
+ * @version 5.0.32
  */
 class RotatedSecretUpdateSplunk {
     /**
@@ -55,6 +55,9 @@ class RotatedSecretUpdateSplunk {
 
             if (data.hasOwnProperty('add-tag')) {
                 obj['add-tag'] = ApiClient.convertToType(data['add-tag'], ['String']);
+            }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
             }
             if (data.hasOwnProperty('audience')) {
                 obj['audience'] = ApiClient.convertToType(data['audience'], 'String');
@@ -118,6 +121,9 @@ class RotatedSecretUpdateSplunk {
             }
             if (data.hasOwnProperty('rotation-interval')) {
                 obj['rotation-interval'] = ApiClient.convertToType(data['rotation-interval'], 'String');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('splunk-token')) {
                 obj['splunk-token'] = ApiClient.convertToType(data['splunk-token'], 'String');
@@ -236,6 +242,10 @@ class RotatedSecretUpdateSplunk {
             throw new Error("Expected the field `rotation-interval` to be a primitive type in the JSON string but got " + data['rotation-interval']);
         }
         // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
+        // ensure the json data is a string
         if (data['splunk-token'] && !(typeof data['splunk-token'] === 'string' || data['splunk-token'] instanceof String)) {
             throw new Error("Expected the field `splunk-token` to be a primitive type in the JSON string but got " + data['splunk-token']);
         }
@@ -281,6 +291,12 @@ RotatedSecretUpdateSplunk.RequiredProperties = ["name"];
  * @member {Array.<String>} add-tag
  */
 RotatedSecretUpdateSplunk.prototype['add-tag'] = undefined;
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.
+ * @member {Boolean} ara-enabled
+ */
+RotatedSecretUpdateSplunk.prototype['ara-enabled'] = undefined;
 
 /**
  * Token audience for Splunk token creation (relevant only for rotator-type=token)
@@ -406,6 +422,12 @@ RotatedSecretUpdateSplunk.prototype['rotation-hour'] = undefined;
  * @member {String} rotation-interval
  */
 RotatedSecretUpdateSplunk.prototype['rotation-interval'] = undefined;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+RotatedSecretUpdateSplunk.prototype['skip_dry_run'] = undefined;
 
 /**
  * For rotator-type=token, optionally set/replace the stored Splunk authentication token value.

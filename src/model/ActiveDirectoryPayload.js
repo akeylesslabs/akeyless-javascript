@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import CertificateExpirationEvent from './CertificateExpirationEvent';
+import PasswordPolicyInfo from './PasswordPolicyInfo';
 
 /**
  * The ActiveDirectoryPayload model module.
  * @module model/ActiveDirectoryPayload
- * @version 5.0.31
+ * @version 5.0.32
  */
 class ActiveDirectoryPayload {
     /**
@@ -93,6 +94,9 @@ class ActiveDirectoryPayload {
             if (data.hasOwnProperty('domain_users_rotated_secrets_path_template')) {
                 obj['domain_users_rotated_secrets_path_template'] = ApiClient.convertToType(data['domain_users_rotated_secrets_path_template'], 'String');
             }
+            if (data.hasOwnProperty('enable_password_policy')) {
+                obj['enable_password_policy'] = ApiClient.convertToType(data['enable_password_policy'], 'Boolean');
+            }
             if (data.hasOwnProperty('enable_rdp_sra')) {
                 obj['enable_rdp_sra'] = ApiClient.convertToType(data['enable_rdp_sra'], 'Boolean');
             }
@@ -104,6 +108,12 @@ class ActiveDirectoryPayload {
             }
             if (data.hasOwnProperty('os_filter')) {
                 obj['os_filter'] = ApiClient.convertToType(data['os_filter'], 'String');
+            }
+            if (data.hasOwnProperty('password_policy')) {
+                obj['password_policy'] = PasswordPolicyInfo.constructFromObject(data['password_policy']);
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'Boolean');
             }
             if (data.hasOwnProperty('ssh_port')) {
                 obj['ssh_port'] = ApiClient.convertToType(data['ssh_port'], 'String');
@@ -177,6 +187,10 @@ class ActiveDirectoryPayload {
         // ensure the json data is a string
         if (data['os_filter'] && !(typeof data['os_filter'] === 'string' || data['os_filter'] instanceof String)) {
             throw new Error("Expected the field `os_filter` to be a primitive type in the JSON string but got " + data['os_filter']);
+        }
+        // validate the optional field `password_policy`
+        if (data['password_policy']) { // data not null
+          PasswordPolicyInfo.validateJSON(data['password_policy']);
         }
         // ensure the json data is a string
         if (data['ssh_port'] && !(typeof data['ssh_port'] === 'string' || data['ssh_port'] instanceof String)) {
@@ -288,6 +302,12 @@ ActiveDirectoryPayload.prototype['domain_server_targets_path_template'] = undefi
 ActiveDirectoryPayload.prototype['domain_users_rotated_secrets_path_template'] = undefined;
 
 /**
+ * EnablePasswordPolicy enables applying PasswordPolicy to newly created domain/local user rotated secrets. Pointer so omitted values are preserved on partial update (nil = not provided).
+ * @member {Boolean} enable_password_policy
+ */
+ActiveDirectoryPayload.prototype['enable_password_policy'] = undefined;
+
+/**
  * @member {Boolean} enable_rdp_sra
  */
 ActiveDirectoryPayload.prototype['enable_rdp_sra'] = undefined;
@@ -306,6 +326,17 @@ ActiveDirectoryPayload.prototype['local_users_rotated_secrets_path_template'] = 
  * @member {String} os_filter
  */
 ActiveDirectoryPayload.prototype['os_filter'] = undefined;
+
+/**
+ * @member {module:model/PasswordPolicyInfo} password_policy
+ */
+ActiveDirectoryPayload.prototype['password_policy'] = undefined;
+
+/**
+ * SkipDryRun enables skip_dry_run on newly created domain/local user rotated secrets. Pointer so omitted values are preserved on partial update (nil = not provided). When false/unset, existing rotated-secret SkipDryRun values are left unchanged on sync.
+ * @member {Boolean} skip_dry_run
+ */
+ActiveDirectoryPayload.prototype['skip_dry_run'] = undefined;
 
 /**
  * @member {String} ssh_port

@@ -26,6 +26,7 @@ import DbTargetDetails from './DbTargetDetails';
 import DigiCertTargetDetails from './DigiCertTargetDetails';
 import DockerhubTargetDetails from './DockerhubTargetDetails';
 import EKSTargetDetails from './EKSTargetDetails';
+import F5BigIpTargetDetails from './F5BigIpTargetDetails';
 import GKETargetDetails from './GKETargetDetails';
 import GcpTargetDetails from './GcpTargetDetails';
 import GeminiTargetDetails from './GeminiTargetDetails';
@@ -59,7 +60,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 5.0.31
+ * @version 5.0.32
  */
 class TargetTypeDetailsInput {
     /**
@@ -131,6 +132,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('eks_target_details')) {
                 obj['eks_target_details'] = EKSTargetDetails.constructFromObject(data['eks_target_details']);
+            }
+            if (data.hasOwnProperty('f5_big_ip_target_details')) {
+                obj['f5_big_ip_target_details'] = F5BigIpTargetDetails.constructFromObject(data['f5_big_ip_target_details']);
             }
             if (data.hasOwnProperty('gcp_target_details')) {
                 obj['gcp_target_details'] = GcpTargetDetails.constructFromObject(data['gcp_target_details']);
@@ -284,6 +288,10 @@ class TargetTypeDetailsInput {
         // validate the optional field `eks_target_details`
         if (data['eks_target_details']) { // data not null
           EKSTargetDetails.validateJSON(data['eks_target_details']);
+        }
+        // validate the optional field `f5_big_ip_target_details`
+        if (data['f5_big_ip_target_details']) { // data not null
+          F5BigIpTargetDetails.validateJSON(data['f5_big_ip_target_details']);
         }
         // validate the optional field `gcp_target_details`
         if (data['gcp_target_details']) { // data not null
@@ -479,6 +487,11 @@ TargetTypeDetailsInput.prototype['dockerhub_target_details'] = undefined;
  * @member {module:model/EKSTargetDetails} eks_target_details
  */
 TargetTypeDetailsInput.prototype['eks_target_details'] = undefined;
+
+/**
+ * @member {module:model/F5BigIpTargetDetails} f5_big_ip_target_details
+ */
+TargetTypeDetailsInput.prototype['f5_big_ip_target_details'] = undefined;
 
 /**
  * @member {module:model/GcpTargetDetails} gcp_target_details

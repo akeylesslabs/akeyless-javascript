@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **jwtTtl** | **Number** | Jwt TTL | [optional] [default to 0]
 **name** | **String** | Auth Method name | 
-**productType** | **[String]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca] | [optional] 
+**productType** | **[String]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara] | [optional] 
 **requireCrlDp** | **Boolean** | Require certificate CRL distribution points (CDP) and enforce CRL validation during authentication. | [optional] 
 **revokedCertIds** | **[String]** | A list of revoked cert ids | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

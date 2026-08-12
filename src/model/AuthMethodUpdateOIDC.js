@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateOIDC model module.
  * @module model/AuthMethodUpdateOIDC
- * @version 5.0.31
+ * @version 5.0.32
  */
 class AuthMethodUpdateOIDC {
     /**
@@ -351,7 +351,7 @@ AuthMethodUpdateOIDC.prototype['name'] = undefined;
 AuthMethodUpdateOIDC.prototype['new-name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 AuthMethodUpdateOIDC.prototype['product-type'] = undefined;

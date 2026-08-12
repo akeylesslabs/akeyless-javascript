@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GwUpdateRemoteAccessSessionLogsGoogleChronicle model module.
  * @module model/GwUpdateRemoteAccessSessionLogsGoogleChronicle
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GwUpdateRemoteAccessSessionLogsGoogleChronicle {
     /**
@@ -184,7 +184,7 @@ GwUpdateRemoteAccessSessionLogsGoogleChronicle.prototype['output-format'] = 'tex
 GwUpdateRemoteAccessSessionLogsGoogleChronicle.prototype['pull-interval'] = '10';
 
 /**
- * Google chronicle region [eu_multi_region/london/us_multi_region/singapore/tel_aviv]
+ * Google chronicle region [eu_multi_region/london/us_multi_region/singapore/tel_aviv/toronto/sydney/frankfurt/zurich/dammam/mumbai/tokyo]
  * @member {String} region
  */
 GwUpdateRemoteAccessSessionLogsGoogleChronicle.prototype['region'] = undefined;

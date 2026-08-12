@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodEmail model module.
  * @module model/CreateAuthMethodEmail
- * @version 5.0.31
+ * @version 5.0.32
  */
 class CreateAuthMethodEmail {
     /**
@@ -286,7 +286,7 @@ CreateAuthMethodEmail.prototype['mfa-type'] = 'email';
 CreateAuthMethodEmail.prototype['name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 CreateAuthMethodEmail.prototype['product-type'] = undefined;

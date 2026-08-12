@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateOracledb model module.
  * @module model/RotatedSecretUpdateOracledb
- * @version 5.0.31
+ * @version 5.0.32
  */
 class RotatedSecretUpdateOracledb {
     /**
@@ -55,6 +55,9 @@ class RotatedSecretUpdateOracledb {
 
             if (data.hasOwnProperty('add-tag')) {
                 obj['add-tag'] = ApiClient.convertToType(data['add-tag'], ['String']);
+            }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
             }
             if (data.hasOwnProperty('authentication-credentials')) {
                 obj['authentication-credentials'] = ApiClient.convertToType(data['authentication-credentials'], 'String');
@@ -133,6 +136,9 @@ class RotatedSecretUpdateOracledb {
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -261,6 +267,10 @@ class RotatedSecretUpdateOracledb {
             throw new Error("Expected the field `secure-access-host` to be an array in the JSON data but got " + data['secure-access-host']);
         }
         // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
+        // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
             throw new Error("Expected the field `token` to be a primitive type in the JSON string but got " + data['token']);
         }
@@ -298,6 +308,12 @@ RotatedSecretUpdateOracledb.RequiredProperties = ["name"];
  * @member {Array.<String>} add-tag
  */
 RotatedSecretUpdateOracledb.prototype['add-tag'] = undefined;
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.
+ * @member {Boolean} ara-enabled
+ */
+RotatedSecretUpdateOracledb.prototype['ara-enabled'] = undefined;
 
 /**
  * The credentials to connect with use-user-creds/use-target-creds
@@ -454,6 +470,12 @@ RotatedSecretUpdateOracledb.prototype['secure-access-host'] = undefined;
  * @default false
  */
 RotatedSecretUpdateOracledb.prototype['secure-access-web'] = false;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+RotatedSecretUpdateOracledb.prototype['skip_dry_run'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

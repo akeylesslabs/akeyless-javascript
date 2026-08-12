@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRotatedSecret model module.
  * @module model/CreateRotatedSecret
- * @version 5.0.31
+ * @version 5.0.32
  */
 class CreateRotatedSecret {
     /**
@@ -178,6 +178,9 @@ class CreateRotatedSecret {
             }
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-enforce-hosts-restriction')) {
+                obj['secure-access-enforce-hosts-restriction'] = ApiClient.convertToType(data['secure-access-enforce-hosts-restriction'], 'Boolean');
             }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
@@ -533,7 +536,7 @@ CreateRotatedSecret.prototype['gcp-service-account-key-id'] = undefined;
 CreateRotatedSecret.prototype['grace-rotation'] = undefined;
 
 /**
- * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.
  * @member {String} host-provider
  */
 CreateRotatedSecret.prototype['host-provider'] = undefined;
@@ -684,6 +687,12 @@ CreateRotatedSecret.prototype['secure-access-disable-concurrent-connections'] = 
 CreateRotatedSecret.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Enforce connections only to allowed SRA hosts
+ * @member {Boolean} secure-access-enforce-hosts-restriction
+ */
+CreateRotatedSecret.prototype['secure-access-enforce-hosts-restriction'] = undefined;
+
+/**
  * Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers)
  * @member {Array.<String>} secure-access-host
  */
@@ -753,7 +762,7 @@ CreateRotatedSecret.prototype['storage-account-key-name'] = undefined;
 CreateRotatedSecret.prototype['tags'] = undefined;
 
 /**
- * A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times
+ * A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times
  * @member {Array.<String>} target
  */
 CreateRotatedSecret.prototype['target'] = undefined;

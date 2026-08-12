@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRdp model module.
  * @module model/GatewayUpdateProducerRdp
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GatewayUpdateProducerRdp {
     /**
@@ -56,8 +56,14 @@ class GatewayUpdateProducerRdp {
         if (data) {
             obj = obj || new GatewayUpdateProducerRdp();
 
+            if (data.hasOwnProperty('ProviderType')) {
+                obj['ProviderType'] = ApiClient.convertToType(data['ProviderType'], 'String');
+            }
             if (data.hasOwnProperty('allow-user-extend-session')) {
                 obj['allow-user-extend-session'] = ApiClient.convertToType(data['allow-user-extend-session'], 'Number');
+            }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
             }
             if (data.hasOwnProperty('custom-username-template')) {
                 obj['custom-username-template'] = ApiClient.convertToType(data['custom-username-template'], 'String');
@@ -70,6 +76,9 @@ class GatewayUpdateProducerRdp {
             }
             if (data.hasOwnProperty('fixed-user-only')) {
                 obj['fixed-user-only'] = ApiClient.convertToType(data['fixed-user-only'], 'String');
+            }
+            if (data.hasOwnProperty('host-provider')) {
+                obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
             }
             if (data.hasOwnProperty('input-rule')) {
                 obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
@@ -125,6 +134,9 @@ class GatewayUpdateProducerRdp {
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
             }
+            if (data.hasOwnProperty('secure-access-enforce-hosts-restriction')) {
+                obj['secure-access-enforce-hosts-restriction'] = ApiClient.convertToType(data['secure-access-enforce-hosts-restriction'], 'Boolean');
+            }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
             }
@@ -137,8 +149,14 @@ class GatewayUpdateProducerRdp {
             if (data.hasOwnProperty('secure-access-rdp-user')) {
                 obj['secure-access-rdp-user'] = ApiClient.convertToType(data['secure-access-rdp-user'], 'String');
             }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('target')) {
+                obj['target'] = ApiClient.convertToType(data['target'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -184,6 +202,10 @@ class GatewayUpdateProducerRdp {
             }
         }
         // ensure the json data is a string
+        if (data['ProviderType'] && !(typeof data['ProviderType'] === 'string' || data['ProviderType'] instanceof String)) {
+            throw new Error("Expected the field `ProviderType` to be a primitive type in the JSON string but got " + data['ProviderType']);
+        }
+        // ensure the json data is a string
         if (data['custom-username-template'] && !(typeof data['custom-username-template'] === 'string' || data['custom-username-template'] instanceof String)) {
             throw new Error("Expected the field `custom-username-template` to be a primitive type in the JSON string but got " + data['custom-username-template']);
         }
@@ -198,6 +220,10 @@ class GatewayUpdateProducerRdp {
         // ensure the json data is a string
         if (data['fixed-user-only'] && !(typeof data['fixed-user-only'] === 'string' || data['fixed-user-only'] instanceof String)) {
             throw new Error("Expected the field `fixed-user-only` to be a primitive type in the JSON string but got " + data['fixed-user-only']);
+        }
+        // ensure the json data is a string
+        if (data['host-provider'] && !(typeof data['host-provider'] === 'string' || data['host-provider'] instanceof String)) {
+            throw new Error("Expected the field `host-provider` to be a primitive type in the JSON string but got " + data['host-provider']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['input-rule'])) {
@@ -271,9 +297,17 @@ class GatewayUpdateProducerRdp {
         if (data['secure-access-rdp-user'] && !(typeof data['secure-access-rdp-user'] === 'string' || data['secure-access-rdp-user'] instanceof String)) {
             throw new Error("Expected the field `secure-access-rdp-user` to be a primitive type in the JSON string but got " + data['secure-access-rdp-user']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['target'])) {
+            throw new Error("Expected the field `target` to be an array in the JSON data but got " + data['target']);
         }
         // ensure the json data is a string
         if (data['target-name'] && !(typeof data['target-name'] === 'string' || data['target-name'] instanceof String)) {
@@ -317,10 +351,21 @@ class GatewayUpdateProducerRdp {
 GatewayUpdateProducerRdp.RequiredProperties = ["name"];
 
 /**
+ * @member {String} ProviderType
+ */
+GatewayUpdateProducerRdp.prototype['ProviderType'] = undefined;
+
+/**
  * AllowUserExtendSession
  * @member {Number} allow-user-extend-session
  */
 GatewayUpdateProducerRdp.prototype['allow-user-extend-session'] = undefined;
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+GatewayUpdateProducerRdp.prototype['ara-enabled'] = undefined;
 
 /**
  * Customize how temporary usernames are generated using go template
@@ -347,6 +392,12 @@ GatewayUpdateProducerRdp.prototype['fixed-user-claim-keyname'] = 'ext_username';
  * @default 'false'
  */
 GatewayUpdateProducerRdp.prototype['fixed-user-only'] = 'false';
+
+/**
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.
+ * @member {String} host-provider
+ */
+GatewayUpdateProducerRdp.prototype['host-provider'] = undefined;
 
 /**
  * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).
@@ -460,6 +511,12 @@ GatewayUpdateProducerRdp.prototype['secure-access-delay'] = undefined;
 GatewayUpdateProducerRdp.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Enforce connections only to allowed SRA hosts
+ * @member {Boolean} secure-access-enforce-hosts-restriction
+ */
+GatewayUpdateProducerRdp.prototype['secure-access-enforce-hosts-restriction'] = undefined;
+
+/**
  * Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers)
  * @member {Array.<String>} secure-access-host
  */
@@ -484,10 +541,22 @@ GatewayUpdateProducerRdp.prototype['secure-access-rdp-domain'] = undefined;
 GatewayUpdateProducerRdp.prototype['secure-access-rdp-user'] = undefined;
 
 /**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+GatewayUpdateProducerRdp.prototype['skip_dry_run'] = undefined;
+
+/**
  * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayUpdateProducerRdp.prototype['tags'] = undefined;
+
+/**
+ * A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times
+ * @member {Array.<String>} target
+ */
+GatewayUpdateProducerRdp.prototype['target'] = undefined;
 
 /**
  * Target name

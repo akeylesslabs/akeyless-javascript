@@ -17,7 +17,7 @@ import SAMLAttribute from './SAMLAttribute';
 /**
  * The SAMLAccessRules model module.
  * @module model/SAMLAccessRules
- * @version 5.0.31
+ * @version 5.0.32
  */
 class SAMLAccessRules {
     /**

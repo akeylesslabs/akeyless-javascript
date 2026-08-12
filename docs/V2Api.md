@@ -75,6 +75,7 @@ Method | HTTP request | Description
 [**createEKSTarget**](V2Api.md#createEKSTarget) | **POST** /create-eks-target | 
 [**createESM**](V2Api.md#createESM) | **POST** /create-esm | 
 [**createEventForwarder**](V2Api.md#createEventForwarder) | **POST** /create-event-forwarder | 
+[**createF5BigIpTarget**](V2Api.md#createF5BigIpTarget) | **POST** /create-f5-big-ip-target | 
 [**createGKETarget**](V2Api.md#createGKETarget) | **POST** /create-gke-target | 
 [**createGcpTarget**](V2Api.md#createGcpTarget) | **POST** /create-gcp-target | 
 [**createGithubTarget**](V2Api.md#createGithubTarget) | **POST** /create-github-target | 
@@ -136,6 +137,7 @@ Method | HTTP request | Description
 [**describeSubClaims**](V2Api.md#describeSubClaims) | **POST** /describe-sub-claims | 
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
 [**detokenizeBatch**](V2Api.md#detokenizeBatch) | **POST** /detokenize-batch | 
+[**dynamicSecretCreateAerospike**](V2Api.md#dynamicSecretCreateAerospike) | **POST** /dynamic-secret-create-aerospike | 
 [**dynamicSecretCreateArtifactory**](V2Api.md#dynamicSecretCreateArtifactory) | **POST** /dynamic-secret-create-artifactory | 
 [**dynamicSecretCreateAws**](V2Api.md#dynamicSecretCreateAws) | **POST** /dynamic-secret-create-aws | 
 [**dynamicSecretCreateAzure**](V2Api.md#dynamicSecretCreateAzure) | **POST** /dynamic-secret-create-azure | 
@@ -171,6 +173,7 @@ Method | HTTP request | Description
 [**dynamicSecretTmpCredsDelete**](V2Api.md#dynamicSecretTmpCredsDelete) | **POST** /dynamic-secret-tmp-creds-delete | 
 [**dynamicSecretTmpCredsGet**](V2Api.md#dynamicSecretTmpCredsGet) | **POST** /dynamic-secret-tmp-creds-get | 
 [**dynamicSecretTmpCredsUpdate**](V2Api.md#dynamicSecretTmpCredsUpdate) | **POST** /dynamic-secret-tmp-creds-update | 
+[**dynamicSecretUpdateAerospike**](V2Api.md#dynamicSecretUpdateAerospike) | **POST** /dynamic-secret-update-aerospike | 
 [**dynamicSecretUpdateArtifactory**](V2Api.md#dynamicSecretUpdateArtifactory) | **POST** /dynamic-secret-update-artifactory | 
 [**dynamicSecretUpdateAws**](V2Api.md#dynamicSecretUpdateAws) | **POST** /dynamic-secret-update-aws | 
 [**dynamicSecretUpdateAzure**](V2Api.md#dynamicSecretUpdateAzure) | **POST** /dynamic-secret-update-azure | 
@@ -416,11 +419,13 @@ Method | HTTP request | Description
 [**rotateKey**](V2Api.md#rotateKey) | **POST** /rotate-key | 
 [**rotateOidcClientSecret**](V2Api.md#rotateOidcClientSecret) | **POST** /rotate-oidc-client-secret | 
 [**rotateSecret**](V2Api.md#rotateSecret) | **POST** /gateway-rotate-secret | 
+[**rotatedSecretCreateAerospike**](V2Api.md#rotatedSecretCreateAerospike) | **POST** /rotated-secret-create-aerospike | 
 [**rotatedSecretCreateAws**](V2Api.md#rotatedSecretCreateAws) | **POST** /rotated-secret-create-aws | 
 [**rotatedSecretCreateAzure**](V2Api.md#rotatedSecretCreateAzure) | **POST** /rotated-secret-create-azure | 
 [**rotatedSecretCreateCassandra**](V2Api.md#rotatedSecretCreateCassandra) | **POST** /rotated-secret-create-cassandra | 
 [**rotatedSecretCreateCustom**](V2Api.md#rotatedSecretCreateCustom) | **POST** /rotated-secret-create-custom | 
 [**rotatedSecretCreateDockerhub**](V2Api.md#rotatedSecretCreateDockerhub) | **POST** /rotated-secret-create-dockerhub | 
+[**rotatedSecretCreateF5BigIp**](V2Api.md#rotatedSecretCreateF5BigIp) | **POST** /rotated-secret-create-f5-big-ip | 
 [**rotatedSecretCreateGcp**](V2Api.md#rotatedSecretCreateGcp) | **POST** /rotated-secret-create-gcp | 
 [**rotatedSecretCreateHanadb**](V2Api.md#rotatedSecretCreateHanadb) | **POST** /rotated-secret-create-hanadb | 
 [**rotatedSecretCreateHashiVault**](V2Api.md#rotatedSecretCreateHashiVault) | **POST** /rotated-secret-create-hashi-vault | 
@@ -442,6 +447,7 @@ Method | HTTP request | Description
 [**rotatedSecretGetValue**](V2Api.md#rotatedSecretGetValue) | **POST** /rotated-secret-get-value | 
 [**rotatedSecretList**](V2Api.md#rotatedSecretList) | **POST** /rotated-secret-list | 
 [**rotatedSecretSync**](V2Api.md#rotatedSecretSync) | **POST** /rotated-secret-sync | 
+[**rotatedSecretUpdateAerospike**](V2Api.md#rotatedSecretUpdateAerospike) | **POST** /rotated-secret-update-aerospike | 
 [**rotatedSecretUpdateAws**](V2Api.md#rotatedSecretUpdateAws) | **POST** /rotated-secret-update-aws | 
 [**rotatedSecretUpdateAzure**](V2Api.md#rotatedSecretUpdateAzure) | **POST** /rotated-secret-update-azure | 
 [**rotatedSecretUpdateCassandra**](V2Api.md#rotatedSecretUpdateCassandra) | **POST** /rotated-secret-update-cassandra | 
@@ -489,6 +495,7 @@ Method | HTTP request | Description
 [**targetCreateDigiCert**](V2Api.md#targetCreateDigiCert) | **POST** /target-create-digicert | 
 [**targetCreateDockerhub**](V2Api.md#targetCreateDockerhub) | **POST** /target-create-dockerhub | 
 [**targetCreateEks**](V2Api.md#targetCreateEks) | **POST** /target-create-eks | 
+[**targetCreateF5BigIp**](V2Api.md#targetCreateF5BigIp) | **POST** /target-create-f5-big-ip | 
 [**targetCreateGcp**](V2Api.md#targetCreateGcp) | **POST** /target-create-gcp | 
 [**targetCreateGemini**](V2Api.md#targetCreateGemini) | **POST** /target-create-gemini | 
 [**targetCreateGithub**](V2Api.md#targetCreateGithub) | **POST** /target-create-github | 
@@ -532,6 +539,7 @@ Method | HTTP request | Description
 [**targetUpdateDigiCert**](V2Api.md#targetUpdateDigiCert) | **POST** /target-update-digicert | 
 [**targetUpdateDockerhub**](V2Api.md#targetUpdateDockerhub) | **POST** /target-update-dockerhub | 
 [**targetUpdateEks**](V2Api.md#targetUpdateEks) | **POST** /target-update-eks | 
+[**targetUpdateF5BigIp**](V2Api.md#targetUpdateF5BigIp) | **POST** /target-update-f5-big-ip | 
 [**targetUpdateGcp**](V2Api.md#targetUpdateGcp) | **POST** /target-update-gcp | 
 [**targetUpdateGemini**](V2Api.md#targetUpdateGemini) | **POST** /target-update-gemini | 
 [**targetUpdateGithub**](V2Api.md#targetUpdateGithub) | **POST** /target-update-github | 
@@ -593,6 +601,7 @@ Method | HTTP request | Description
 [**updateDockerhubTarget**](V2Api.md#updateDockerhubTarget) | **POST** /update-dockerhub-target | 
 [**updateEKSTarget**](V2Api.md#updateEKSTarget) | **POST** /update-eks-target | 
 [**updateEventForwarder**](V2Api.md#updateEventForwarder) | **POST** /update-event-forwarder | 
+[**updateF5BigIpTarget**](V2Api.md#updateF5BigIpTarget) | **POST** /update-f5-big-ip-target | 
 [**updateGKETarget**](V2Api.md#updateGKETarget) | **POST** /update-gke-target | 
 [**updateGcpTarget**](V2Api.md#updateGcpTarget) | **POST** /update-gcp-target | 
 [**updateGithubTarget**](V2Api.md#updateGithubTarget) | **POST** /update-github-target | 
@@ -3633,6 +3642,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## createF5BigIpTarget
+
+> CreateF5BigIpTargetOutput createF5BigIpTarget(createF5BigIpTarget)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let createF5BigIpTarget = new akeyless.CreateF5BigIpTarget(); // CreateF5BigIpTarget | 
+apiInstance.createF5BigIpTarget(createF5BigIpTarget).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createF5BigIpTarget** | [**CreateF5BigIpTarget**](CreateF5BigIpTarget.md)|  | 
+
+### Return type
+
+[**CreateF5BigIpTargetOutput**](CreateF5BigIpTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## createGKETarget
 
 > CreateGKETargetOutput createGKETarget(createGKETarget)
@@ -6195,6 +6246,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## dynamicSecretCreateAerospike
+
+> DynamicSecretCreateOutput dynamicSecretCreateAerospike(dynamicSecretCreateAerospike)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let dynamicSecretCreateAerospike = new akeyless.DynamicSecretCreateAerospike(); // DynamicSecretCreateAerospike | 
+apiInstance.dynamicSecretCreateAerospike(dynamicSecretCreateAerospike).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dynamicSecretCreateAerospike** | [**DynamicSecretCreateAerospike**](DynamicSecretCreateAerospike.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## dynamicSecretCreateArtifactory
 
 > DynamicSecretCreateOutput dynamicSecretCreateArtifactory(dynamicSecretCreateArtifactory)
@@ -7656,6 +7749,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateAerospike
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateAerospike(dynamicSecretUpdateAerospike)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let dynamicSecretUpdateAerospike = new akeyless.DynamicSecretUpdateAerospike(); // DynamicSecretUpdateAerospike | 
+apiInstance.dynamicSecretUpdateAerospike(dynamicSecretUpdateAerospike).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dynamicSecretUpdateAerospike** | [**DynamicSecretUpdateAerospike**](DynamicSecretUpdateAerospike.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
 
 ### Authorization
 
@@ -17985,6 +18120,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## rotatedSecretCreateAerospike
+
+> RotatedSecretCreateOutput rotatedSecretCreateAerospike(rotatedSecretCreateAerospike)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretCreateAerospike = new akeyless.RotatedSecretCreateAerospike(); // RotatedSecretCreateAerospike | 
+apiInstance.rotatedSecretCreateAerospike(rotatedSecretCreateAerospike).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretCreateAerospike** | [**RotatedSecretCreateAerospike**](RotatedSecretCreateAerospike.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## rotatedSecretCreateAws
 
 > RotatedSecretCreateOutput rotatedSecretCreateAws(rotatedSecretCreateAws)
@@ -18180,6 +18357,48 @@ apiInstance.rotatedSecretCreateDockerhub(rotatedSecretCreateDockerhub).then((dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rotatedSecretCreateDockerhub** | [**RotatedSecretCreateDockerhub**](RotatedSecretCreateDockerhub.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretCreateF5BigIp
+
+> RotatedSecretCreateOutput rotatedSecretCreateF5BigIp(rotatedSecretCreateF5BigIp)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretCreateF5BigIp = new akeyless.RotatedSecretCreateF5BigIp(); // RotatedSecretCreateF5BigIp | 
+apiInstance.rotatedSecretCreateF5BigIp(rotatedSecretCreateF5BigIp).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretCreateF5BigIp** | [**RotatedSecretCreateF5BigIp**](RotatedSecretCreateF5BigIp.md)|  | 
 
 ### Return type
 
@@ -19066,6 +19285,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 **Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretUpdateAerospike
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateAerospike(rotatedSecretUpdateAerospike)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretUpdateAerospike = new akeyless.RotatedSecretUpdateAerospike(); // RotatedSecretUpdateAerospike | 
+apiInstance.rotatedSecretUpdateAerospike(rotatedSecretUpdateAerospike).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretUpdateAerospike** | [**RotatedSecretUpdateAerospike**](RotatedSecretUpdateAerospike.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
 
 ### Authorization
 
@@ -21051,6 +21312,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetCreateF5BigIp
+
+> TargetCreateOutput targetCreateF5BigIp(targetCreateF5BigIp)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateF5BigIp = new akeyless.TargetCreateF5BigIp(); // TargetCreateF5BigIp | 
+apiInstance.targetCreateF5BigIp(targetCreateF5BigIp).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateF5BigIp** | [**TargetCreateF5BigIp**](TargetCreateF5BigIp.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetCreateGcp
 
 > TargetCreateOutput targetCreateGcp(targetCreateGcp)
@@ -22842,6 +23145,48 @@ apiInstance.targetUpdateEks(targetUpdateEks).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetUpdateEks** | [**TargetUpdateEks**](TargetUpdateEks.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetUpdateF5BigIp
+
+> TargetUpdateOutput targetUpdateF5BigIp(targetUpdateF5BigIp)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateF5BigIp = new akeyless.TargetUpdateF5BigIp(); // TargetUpdateF5BigIp | 
+apiInstance.targetUpdateF5BigIp(targetUpdateF5BigIp).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateF5BigIp** | [**TargetUpdateF5BigIp**](TargetUpdateF5BigIp.md)|  | 
 
 ### Return type
 
@@ -25408,6 +25753,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 **Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateF5BigIpTarget
+
+> UpdateF5BigIpTargetOutput updateF5BigIpTarget(updateF5BigIpTarget)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let updateF5BigIpTarget = new akeyless.UpdateF5BigIpTarget(); // UpdateF5BigIpTarget | 
+apiInstance.updateF5BigIpTarget(updateF5BigIpTarget).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **updateF5BigIpTarget** | [**UpdateF5BigIpTarget**](UpdateF5BigIpTarget.md)|  | 
+
+### Return type
+
+[**UpdateF5BigIpTargetOutput**](UpdateF5BigIpTargetOutput.md)
 
 ### Authorization
 

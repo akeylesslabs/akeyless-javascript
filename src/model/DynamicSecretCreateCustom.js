@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateCustom model module.
  * @module model/DynamicSecretCreateCustom
- * @version 5.0.31
+ * @version 5.0.32
  */
 class DynamicSecretCreateCustom {
     /**
@@ -60,6 +60,9 @@ class DynamicSecretCreateCustom {
             if (data.hasOwnProperty('admin-rotation-interval-days')) {
                 obj['admin-rotation-interval-days'] = ApiClient.convertToType(data['admin-rotation-interval-days'], 'Number');
             }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('create-sync-url')) {
                 obj['create-sync-url'] = ApiClient.convertToType(data['create-sync-url'], 'String');
             }
@@ -98,6 +101,9 @@ class DynamicSecretCreateCustom {
             }
             if (data.hasOwnProperty('rotate-sync-url')) {
                 obj['rotate-sync-url'] = ApiClient.convertToType(data['rotate-sync-url'], 'String');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -170,6 +176,10 @@ class DynamicSecretCreateCustom {
         if (data['rotate-sync-url'] && !(typeof data['rotate-sync-url'] === 'string' || data['rotate-sync-url'] instanceof String)) {
             throw new Error("Expected the field `rotate-sync-url` to be a primitive type in the JSON string but got " + data['rotate-sync-url']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
@@ -200,6 +210,12 @@ DynamicSecretCreateCustom.RequiredProperties = ["create-sync-url", "name", "revo
  * @member {Number} admin-rotation-interval-days
  */
 DynamicSecretCreateCustom.prototype['admin-rotation-interval-days'] = undefined;
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+DynamicSecretCreateCustom.prototype['ara-enabled'] = undefined;
 
 /**
  * URL of an endpoint that implements /sync/create method, for example https://webhook.example.com/sync/create
@@ -280,6 +296,12 @@ DynamicSecretCreateCustom.prototype['revoke-sync-url'] = undefined;
  * @member {String} rotate-sync-url
  */
 DynamicSecretCreateCustom.prototype['rotate-sync-url'] = undefined;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+DynamicSecretCreateCustom.prototype['skip_dry_run'] = undefined;
 
 /**
  * Add tags attached to this object

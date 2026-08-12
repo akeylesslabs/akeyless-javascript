@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyPKICertOutput model module.
  * @module model/VerifyPKICertOutput
- * @version 5.0.31
+ * @version 5.0.32
  */
 class VerifyPKICertOutput {
     /**

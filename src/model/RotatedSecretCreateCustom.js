@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateCustom model module.
  * @module model/RotatedSecretCreateCustom
- * @version 5.0.31
+ * @version 5.0.32
  */
 class RotatedSecretCreateCustom {
     /**
@@ -58,6 +58,12 @@ class RotatedSecretCreateCustom {
         if (data) {
             obj = obj || new RotatedSecretCreateCustom();
 
+            if (data.hasOwnProperty('ProviderType')) {
+                obj['ProviderType'] = ApiClient.convertToType(data['ProviderType'], 'String');
+            }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('authentication-credentials')) {
                 obj['authentication-credentials'] = ApiClient.convertToType(data['authentication-credentials'], 'String');
             }
@@ -75,6 +81,9 @@ class RotatedSecretCreateCustom {
             }
             if (data.hasOwnProperty('enable-password-policy')) {
                 obj['enable-password-policy'] = ApiClient.convertToType(data['enable-password-policy'], 'String');
+            }
+            if (data.hasOwnProperty('host-provider')) {
+                obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
             }
             if (data.hasOwnProperty('input-rule')) {
                 obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
@@ -127,6 +136,9 @@ class RotatedSecretCreateCustom {
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
             }
+            if (data.hasOwnProperty('secure-access-enforce-hosts-restriction')) {
+                obj['secure-access-enforce-hosts-restriction'] = ApiClient.convertToType(data['secure-access-enforce-hosts-restriction'], 'Boolean');
+            }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
             }
@@ -151,8 +163,14 @@ class RotatedSecretCreateCustom {
             if (data.hasOwnProperty('secure-access-web-proxy')) {
                 obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('target')) {
+                obj['target'] = ApiClient.convertToType(data['target'], ['String']);
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -195,6 +213,10 @@ class RotatedSecretCreateCustom {
             }
         }
         // ensure the json data is a string
+        if (data['ProviderType'] && !(typeof data['ProviderType'] === 'string' || data['ProviderType'] instanceof String)) {
+            throw new Error("Expected the field `ProviderType` to be a primitive type in the JSON string but got " + data['ProviderType']);
+        }
+        // ensure the json data is a string
         if (data['authentication-credentials'] && !(typeof data['authentication-credentials'] === 'string' || data['authentication-credentials'] instanceof String)) {
             throw new Error("Expected the field `authentication-credentials` to be a primitive type in the JSON string but got " + data['authentication-credentials']);
         }
@@ -217,6 +239,10 @@ class RotatedSecretCreateCustom {
         // ensure the json data is a string
         if (data['enable-password-policy'] && !(typeof data['enable-password-policy'] === 'string' || data['enable-password-policy'] instanceof String)) {
             throw new Error("Expected the field `enable-password-policy` to be a primitive type in the JSON string but got " + data['enable-password-policy']);
+        }
+        // ensure the json data is a string
+        if (data['host-provider'] && !(typeof data['host-provider'] === 'string' || data['host-provider'] instanceof String)) {
+            throw new Error("Expected the field `host-provider` to be a primitive type in the JSON string but got " + data['host-provider']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['input-rule'])) {
@@ -290,9 +316,17 @@ class RotatedSecretCreateCustom {
         if (data['secure-access-url'] && !(typeof data['secure-access-url'] === 'string' || data['secure-access-url'] instanceof String)) {
             throw new Error("Expected the field `secure-access-url` to be a primitive type in the JSON string but got " + data['secure-access-url']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['target'])) {
+            throw new Error("Expected the field `target` to be an array in the JSON data but got " + data['target']);
         }
         // ensure the json data is a string
         if (data['target-name'] && !(typeof data['target-name'] === 'string' || data['target-name'] instanceof String)) {
@@ -332,6 +366,17 @@ class RotatedSecretCreateCustom {
 RotatedSecretCreateCustom.RequiredProperties = ["name", "target-name"];
 
 /**
+ * @member {String} ProviderType
+ */
+RotatedSecretCreateCustom.prototype['ProviderType'] = undefined;
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.
+ * @member {Boolean} ara-enabled
+ */
+RotatedSecretCreateCustom.prototype['ara-enabled'] = undefined;
+
+/**
  * The credentials to connect with use-user-creds/use-target-creds
  * @member {String} authentication-credentials
  * @default 'use-user-creds'
@@ -366,6 +411,12 @@ RotatedSecretCreateCustom.prototype['description'] = undefined;
  * @member {String} enable-password-policy
  */
 RotatedSecretCreateCustom.prototype['enable-password-policy'] = undefined;
+
+/**
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.
+ * @member {String} host-provider
+ */
+RotatedSecretCreateCustom.prototype['host-provider'] = undefined;
 
 /**
  * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)
@@ -469,6 +520,12 @@ RotatedSecretCreateCustom.prototype['secure-access-certificate-issuer'] = undefi
 RotatedSecretCreateCustom.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Enforce connections only to allowed SRA hosts
+ * @member {Boolean} secure-access-enforce-hosts-restriction
+ */
+RotatedSecretCreateCustom.prototype['secure-access-enforce-hosts-restriction'] = undefined;
+
+/**
  * Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers)
  * @member {Array.<String>} secure-access-host
  */
@@ -520,10 +577,22 @@ RotatedSecretCreateCustom.prototype['secure-access-web-browsing'] = false;
 RotatedSecretCreateCustom.prototype['secure-access-web-proxy'] = false;
 
 /**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+RotatedSecretCreateCustom.prototype['skip_dry_run'] = undefined;
+
+/**
  * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 RotatedSecretCreateCustom.prototype['tags'] = undefined;
+
+/**
+ * A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times
+ * @member {Array.<String>} target
+ */
+RotatedSecretCreateCustom.prototype['target'] = undefined;
 
 /**
  * The target name to associate

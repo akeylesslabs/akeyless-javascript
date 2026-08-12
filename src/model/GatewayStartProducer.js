@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayStartProducer model module.
  * @module model/GatewayStartProducer
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GatewayStartProducer {
     /**
@@ -51,6 +51,9 @@ class GatewayStartProducer {
         if (data) {
             obj = obj || new GatewayStartProducer();
 
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('input-rule')) {
                 obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
             }
@@ -62,6 +65,9 @@ class GatewayStartProducer {
             }
             if (data.hasOwnProperty('output-rule')) {
                 obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -98,6 +104,10 @@ class GatewayStartProducer {
             throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
+        // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
             throw new Error("Expected the field `token` to be a primitive type in the JSON string but got " + data['token']);
         }
@@ -113,6 +123,12 @@ class GatewayStartProducer {
 }
 
 GatewayStartProducer.RequiredProperties = ["name"];
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+GatewayStartProducer.prototype['ara-enabled'] = undefined;
 
 /**
  * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).
@@ -138,6 +154,12 @@ GatewayStartProducer.prototype['name'] = undefined;
  * @member {Array.<String>} output-rule
  */
 GatewayStartProducer.prototype['output-rule'] = undefined;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+GatewayStartProducer.prototype['skip_dry_run'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

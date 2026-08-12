@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UpdateItem {
     /**
@@ -40,8 +40,6 @@ class UpdateItem {
         obj['json'] = false;
         obj['name'] = name;
         obj['new-metadata'] = 'default_metadata';
-        obj['secure-access-web-browsing'] = false;
-        obj['secure-access-web-proxy'] = false;
     }
 
     /**
@@ -163,6 +161,9 @@ class UpdateItem {
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
             }
+            if (data.hasOwnProperty('secure-access-enforce-hosts-restriction')) {
+                obj['secure-access-enforce-hosts-restriction'] = ApiClient.convertToType(data['secure-access-enforce-hosts-restriction'], 'Boolean');
+            }
             if (data.hasOwnProperty('secure-access-gateway')) {
                 obj['secure-access-gateway'] = ApiClient.convertToType(data['secure-access-gateway'], 'String');
             }
@@ -204,6 +205,9 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('secure-access-web-proxy')) {
                 obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
+            }
+            if (data.hasOwnProperty('target')) {
+                obj['target'] = ApiClient.convertToType(data['target'], ['String']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -401,6 +405,10 @@ class UpdateItem {
         if (data['secure-access-url'] && !(typeof data['secure-access-url'] === 'string' || data['secure-access-url'] instanceof String)) {
             throw new Error("Expected the field `secure-access-url` to be a primitive type in the JSON string but got " + data['secure-access-url']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['target'])) {
+            throw new Error("Expected the field `target` to be an array in the JSON data but got " + data['target']);
+        }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
             throw new Error("Expected the field `token` to be a primitive type in the JSON string but got " + data['token']);
@@ -487,7 +495,7 @@ UpdateItem.prototype['expiration-event-in'] = undefined;
 UpdateItem.prototype['gcp-sm-regions'] = undefined;
 
 /**
- * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.
  * @member {String} host-provider
  */
 UpdateItem.prototype['host-provider'] = undefined;
@@ -645,6 +653,12 @@ UpdateItem.prototype['secure-access-db-schema'] = undefined;
 UpdateItem.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Enforce connections only to allowed SRA hosts
+ * @member {Boolean} secure-access-enforce-hosts-restriction
+ */
+UpdateItem.prototype['secure-access-enforce-hosts-restriction'] = undefined;
+
+/**
  * @member {String} secure-access-gateway
  */
 UpdateItem.prototype['secure-access-gateway'] = undefined;
@@ -718,16 +732,20 @@ UpdateItem.prototype['secure-access-use-internal-ssh-access'] = undefined;
 /**
  * Secure browser via Akeyless's Secure Remote Access (SRA)
  * @member {Boolean} secure-access-web-browsing
- * @default false
  */
-UpdateItem.prototype['secure-access-web-browsing'] = false;
+UpdateItem.prototype['secure-access-web-browsing'] = undefined;
 
 /**
  * Web-Proxy via Akeyless's Secure Remote Access (SRA)
  * @member {Boolean} secure-access-web-proxy
- * @default false
  */
-UpdateItem.prototype['secure-access-web-proxy'] = false;
+UpdateItem.prototype['secure-access-web-proxy'] = undefined;
+
+/**
+ * A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times
+ * @member {Array.<String>} target
+ */
+UpdateItem.prototype['target'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

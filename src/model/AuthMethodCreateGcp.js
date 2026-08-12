@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateGcp model module.
  * @module model/AuthMethodCreateGcp
- * @version 5.0.31
+ * @version 5.0.32
  */
 class AuthMethodCreateGcp {
     /**
@@ -347,7 +347,7 @@ AuthMethodCreateGcp.prototype['jwt-ttl'] = 0;
 AuthMethodCreateGcp.prototype['name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 AuthMethodCreateGcp.prototype['product-type'] = undefined;

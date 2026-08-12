@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscSyncInfo model module.
  * @module model/UscSyncInfo
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UscSyncInfo {
     /**
@@ -65,6 +65,12 @@ class UscSyncInfo {
             if (data.hasOwnProperty('secret_name')) {
                 obj['secret_name'] = ApiClient.convertToType(data['secret_name'], 'String');
             }
+            if (data.hasOwnProperty('selected_environments')) {
+                obj['selected_environments'] = ApiClient.convertToType(data['selected_environments'], 'String');
+            }
+            if (data.hasOwnProperty('selected_repositories')) {
+                obj['selected_repositories'] = ApiClient.convertToType(data['selected_repositories'], 'String');
+            }
         }
         return obj;
     }
@@ -94,6 +100,14 @@ class UscSyncInfo {
         // ensure the json data is a string
         if (data['secret_name'] && !(typeof data['secret_name'] === 'string' || data['secret_name'] instanceof String)) {
             throw new Error("Expected the field `secret_name` to be a primitive type in the JSON string but got " + data['secret_name']);
+        }
+        // ensure the json data is a string
+        if (data['selected_environments'] && !(typeof data['selected_environments'] === 'string' || data['selected_environments'] instanceof String)) {
+            throw new Error("Expected the field `selected_environments` to be a primitive type in the JSON string but got " + data['selected_environments']);
+        }
+        // ensure the json data is a string
+        if (data['selected_repositories'] && !(typeof data['selected_repositories'] === 'string' || data['selected_repositories'] instanceof String)) {
+            throw new Error("Expected the field `selected_repositories` to be a primitive type in the JSON string but got " + data['selected_repositories']);
         }
 
         return true;
@@ -133,6 +147,16 @@ UscSyncInfo.prototype['secret_id'] = undefined;
  * @member {String} secret_name
  */
 UscSyncInfo.prototype['secret_name'] = undefined;
+
+/**
+ * @member {String} selected_environments
+ */
+UscSyncInfo.prototype['selected_environments'] = undefined;
+
+/**
+ * @member {String} selected_repositories
+ */
+UscSyncInfo.prototype['selected_repositories'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UpdateRotatedSecret {
     /**
@@ -36,16 +36,12 @@ class UpdateRotatedSecret {
      * Only for internal use.
      */
     static initialize(obj, name) { 
-        obj['aws-region'] = 'us-east-2';
         obj['description'] = 'default_metadata';
         obj['json'] = false;
         obj['name'] = name;
         obj['new-metadata'] = 'default_metadata';
         obj['rotator-creds-type'] = 'use-self-creds';
-        obj['secure-access-allow-external-user'] = false;
         obj['secure-access-web'] = false;
-        obj['secure-access-web-browsing'] = false;
-        obj['secure-access-web-proxy'] = false;
         obj['user-attribute'] = 'cn';
     }
 
@@ -145,7 +141,10 @@ class UpdateRotatedSecret {
                 obj['same-password'] = ApiClient.convertToType(data['same-password'], 'String');
             }
             if (data.hasOwnProperty('secure-access-allow-external-user')) {
-                obj['secure-access-allow-external-user'] = ApiClient.convertToType(data['secure-access-allow-external-user'], 'Boolean');
+                obj['secure-access-allow-external-user'] = ApiClient.convertToType(data['secure-access-allow-external-user'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-allow-port-forwading')) {
+                obj['secure-access-allow-port-forwading'] = ApiClient.convertToType(data['secure-access-allow-port-forwading'], 'Boolean');
             }
             if (data.hasOwnProperty('secure-access-aws-account-id')) {
                 obj['secure-access-aws-account-id'] = ApiClient.convertToType(data['secure-access-aws-account-id'], 'String');
@@ -171,6 +170,9 @@ class UpdateRotatedSecret {
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
             }
+            if (data.hasOwnProperty('secure-access-enforce-hosts-restriction')) {
+                obj['secure-access-enforce-hosts-restriction'] = ApiClient.convertToType(data['secure-access-enforce-hosts-restriction'], 'Boolean');
+            }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
             }
@@ -182,6 +184,12 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('secure-access-url')) {
                 obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-use-internal-bastion')) {
+                obj['secure-access-use-internal-bastion'] = ApiClient.convertToType(data['secure-access-use-internal-bastion'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-use-internal-ssh-access')) {
+                obj['secure-access-use-internal-ssh-access'] = ApiClient.convertToType(data['secure-access-use-internal-ssh-access'], 'Boolean');
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
@@ -200,6 +208,9 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('storage-account-key-name')) {
                 obj['storage-account-key-name'] = ApiClient.convertToType(data['storage-account-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('target')) {
+                obj['target'] = ApiClient.convertToType(data['target'], ['String']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -330,6 +341,10 @@ class UpdateRotatedSecret {
             throw new Error("Expected the field `same-password` to be a primitive type in the JSON string but got " + data['same-password']);
         }
         // ensure the json data is a string
+        if (data['secure-access-allow-external-user'] && !(typeof data['secure-access-allow-external-user'] === 'string' || data['secure-access-allow-external-user'] instanceof String)) {
+            throw new Error("Expected the field `secure-access-allow-external-user` to be a primitive type in the JSON string but got " + data['secure-access-allow-external-user']);
+        }
+        // ensure the json data is a string
         if (data['secure-access-aws-account-id'] && !(typeof data['secure-access-aws-account-id'] === 'string' || data['secure-access-aws-account-id'] instanceof String)) {
             throw new Error("Expected the field `secure-access-aws-account-id` to be a primitive type in the JSON string but got " + data['secure-access-aws-account-id']);
         }
@@ -380,6 +395,10 @@ class UpdateRotatedSecret {
         // ensure the json data is a string
         if (data['storage-account-key-name'] && !(typeof data['storage-account-key-name'] === 'string' || data['storage-account-key-name'] instanceof String)) {
             throw new Error("Expected the field `storage-account-key-name` to be a primitive type in the JSON string but got " + data['storage-account-key-name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['target'])) {
+            throw new Error("Expected the field `target` to be an array in the JSON data but got " + data['target']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -438,9 +457,8 @@ UpdateRotatedSecret.prototype['auto-rotate'] = undefined;
 /**
  * Aws Region (relevant only for aws)
  * @member {String} aws-region
- * @default 'us-east-2'
  */
-UpdateRotatedSecret.prototype['aws-region'] = 'us-east-2';
+UpdateRotatedSecret.prototype['aws-region'] = undefined;
 
 /**
  * Secret payload to be sent with rotation request (relevant only for rotator-type=custom)
@@ -468,7 +486,7 @@ UpdateRotatedSecret.prototype['gcp-key'] = undefined;
 UpdateRotatedSecret.prototype['grace-rotation'] = undefined;
 
 /**
- * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.
  * @member {String} host-provider
  */
 UpdateRotatedSecret.prototype['host-provider'] = undefined;
@@ -579,11 +597,16 @@ UpdateRotatedSecret.prototype['rotator-custom-cmd'] = undefined;
 UpdateRotatedSecret.prototype['same-password'] = undefined;
 
 /**
- * Allow providing external user for a domain users (relevant only for rdp)
- * @member {Boolean} secure-access-allow-external-user
- * @default false
+ * Allow providing external user for a domain users [true/false]
+ * @member {String} secure-access-allow-external-user
  */
-UpdateRotatedSecret.prototype['secure-access-allow-external-user'] = false;
+UpdateRotatedSecret.prototype['secure-access-allow-external-user'] = undefined;
+
+/**
+ * Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)
+ * @member {Boolean} secure-access-allow-port-forwading
+ */
+UpdateRotatedSecret.prototype['secure-access-allow-port-forwading'] = undefined;
 
 /**
  * The AWS account id (relevant only for aws)
@@ -592,7 +615,7 @@ UpdateRotatedSecret.prototype['secure-access-allow-external-user'] = false;
 UpdateRotatedSecret.prototype['secure-access-aws-account-id'] = undefined;
 
 /**
- * The AWS native cli
+ * The AWS native cli (relevant only for aws)
  * @member {Boolean} secure-access-aws-native-cli
  */
 UpdateRotatedSecret.prototype['secure-access-aws-native-cli'] = undefined;
@@ -634,6 +657,12 @@ UpdateRotatedSecret.prototype['secure-access-disable-concurrent-connections'] = 
 UpdateRotatedSecret.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Enforce connections only to allowed SRA hosts
+ * @member {Boolean} secure-access-enforce-hosts-restriction
+ */
+UpdateRotatedSecret.prototype['secure-access-enforce-hosts-restriction'] = undefined;
+
+/**
  * Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers)
  * @member {Array.<String>} secure-access-host
  */
@@ -658,6 +687,18 @@ UpdateRotatedSecret.prototype['secure-access-rdp-user'] = undefined;
 UpdateRotatedSecret.prototype['secure-access-url'] = undefined;
 
 /**
+ * Deprecated. Use secure-access-use-internal-ssh-access
+ * @member {Boolean} secure-access-use-internal-bastion
+ */
+UpdateRotatedSecret.prototype['secure-access-use-internal-bastion'] = undefined;
+
+/**
+ * Use internal SSH Access
+ * @member {Boolean} secure-access-use-internal-ssh-access
+ */
+UpdateRotatedSecret.prototype['secure-access-use-internal-ssh-access'] = undefined;
+
+/**
  * Enable Web Secure Remote Access
  * @member {Boolean} secure-access-web
  * @default false
@@ -665,18 +706,16 @@ UpdateRotatedSecret.prototype['secure-access-url'] = undefined;
 UpdateRotatedSecret.prototype['secure-access-web'] = false;
 
 /**
- * Secure browser viaAkeyless's Secure Remote Access (SRA) (relevant only for aws or azure)
+ * Secure browser via Akeyless's Secure Remote Access (SRA)
  * @member {Boolean} secure-access-web-browsing
- * @default false
  */
-UpdateRotatedSecret.prototype['secure-access-web-browsing'] = false;
+UpdateRotatedSecret.prototype['secure-access-web-browsing'] = undefined;
 
 /**
- * Web-Proxy via Akeyless's Secure Remote Access (SRA) (relevant only for aws or azure)
+ * Web-Proxy via Akeyless's Secure Remote Access (SRA)
  * @member {Boolean} secure-access-web-proxy
- * @default false
  */
-UpdateRotatedSecret.prototype['secure-access-web-proxy'] = false;
+UpdateRotatedSecret.prototype['secure-access-web-proxy'] = undefined;
 
 /**
  * Deprecated: use RotatedPassword
@@ -695,6 +734,12 @@ UpdateRotatedSecret.prototype['ssh-username'] = undefined;
  * @member {String} storage-account-key-name
  */
 UpdateRotatedSecret.prototype['storage-account-key-name'] = undefined;
+
+/**
+ * A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times
+ * @member {Array.<String>} target
+ */
+UpdateRotatedSecret.prototype['target'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

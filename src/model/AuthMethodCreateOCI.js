@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateOCI model module.
  * @module model/AuthMethodCreateOCI
- * @version 5.0.31
+ * @version 5.0.32
  */
 class AuthMethodCreateOCI {
     /**
@@ -267,7 +267,7 @@ AuthMethodCreateOCI.prototype['jwt-ttl'] = 0;
 AuthMethodCreateOCI.prototype['name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 AuthMethodCreateOCI.prototype['product-type'] = undefined;

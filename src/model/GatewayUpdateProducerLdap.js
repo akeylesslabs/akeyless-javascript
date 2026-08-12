@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerLdap model module.
  * @module model/GatewayUpdateProducerLdap
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GatewayUpdateProducerLdap {
     /**
@@ -56,6 +56,9 @@ class GatewayUpdateProducerLdap {
 
             if (data.hasOwnProperty('ProviderType')) {
                 obj['ProviderType'] = ApiClient.convertToType(data['ProviderType'], 'String');
+            }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
             }
             if (data.hasOwnProperty('bind-dn')) {
                 obj['bind-dn'] = ApiClient.convertToType(data['bind-dn'], 'String');
@@ -123,6 +126,9 @@ class GatewayUpdateProducerLdap {
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
             }
+            if (data.hasOwnProperty('secure-access-enforce-hosts-restriction')) {
+                obj['secure-access-enforce-hosts-restriction'] = ApiClient.convertToType(data['secure-access-enforce-hosts-restriction'], 'Boolean');
+            }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
             }
@@ -131,6 +137,9 @@ class GatewayUpdateProducerLdap {
             }
             if (data.hasOwnProperty('secure-access-rdp-domain')) {
                 obj['secure-access-rdp-domain'] = ApiClient.convertToType(data['secure-access-rdp-domain'], 'String');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -279,6 +288,10 @@ class GatewayUpdateProducerLdap {
         if (data['secure-access-rdp-domain'] && !(typeof data['secure-access-rdp-domain'] === 'string' || data['secure-access-rdp-domain'] instanceof String)) {
             throw new Error("Expected the field `secure-access-rdp-domain` to be a primitive type in the JSON string but got " + data['secure-access-rdp-domain']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
@@ -346,6 +359,12 @@ GatewayUpdateProducerLdap.RequiredProperties = ["name"];
 GatewayUpdateProducerLdap.prototype['ProviderType'] = undefined;
 
 /**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+GatewayUpdateProducerLdap.prototype['ara-enabled'] = undefined;
+
+/**
  * Bind DN
  * @member {String} bind-dn
  */
@@ -390,7 +409,7 @@ GatewayUpdateProducerLdap.prototype['fixed-user-claim-keyname'] = 'ext_username'
 GatewayUpdateProducerLdap.prototype['group-dn'] = undefined;
 
 /**
- * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.
  * @member {String} host-provider
  */
 GatewayUpdateProducerLdap.prototype['host-provider'] = undefined;
@@ -481,6 +500,12 @@ GatewayUpdateProducerLdap.prototype['secure-access-delay'] = undefined;
 GatewayUpdateProducerLdap.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Enforce connections only to allowed SRA hosts
+ * @member {Boolean} secure-access-enforce-hosts-restriction
+ */
+GatewayUpdateProducerLdap.prototype['secure-access-enforce-hosts-restriction'] = undefined;
+
+/**
  * Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers)
  * @member {Array.<String>} secure-access-host
  */
@@ -499,13 +524,19 @@ GatewayUpdateProducerLdap.prototype['secure-access-rd-gateway-server'] = undefin
 GatewayUpdateProducerLdap.prototype['secure-access-rdp-domain'] = undefined;
 
 /**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+GatewayUpdateProducerLdap.prototype['skip_dry_run'] = undefined;
+
+/**
  * Add tags attached to this object
  * @member {Array.<String>} tags
  */
 GatewayUpdateProducerLdap.prototype['tags'] = undefined;
 
 /**
- * A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times
+ * A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times
  * @member {Array.<String>} target
  */
 GatewayUpdateProducerLdap.prototype['target'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateChef model module.
  * @module model/DynamicSecretCreateChef
- * @version 5.0.31
+ * @version 5.0.32
  */
 class DynamicSecretCreateChef {
     /**
@@ -53,6 +53,9 @@ class DynamicSecretCreateChef {
         if (data) {
             obj = obj || new DynamicSecretCreateChef();
 
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('chef-orgs')) {
                 obj['chef-orgs'] = ApiClient.convertToType(data['chef-orgs'], 'String');
             }
@@ -97,6 +100,9 @@ class DynamicSecretCreateChef {
             }
             if (data.hasOwnProperty('skip-ssl')) {
                 obj['skip-ssl'] = ApiClient.convertToType(data['skip-ssl'], 'Boolean');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -189,6 +195,10 @@ class DynamicSecretCreateChef {
         if (data['producer-encryption-key-name'] && !(typeof data['producer-encryption-key-name'] === 'string' || data['producer-encryption-key-name'] instanceof String)) {
             throw new Error("Expected the field `producer-encryption-key-name` to be a primitive type in the JSON string but got " + data['producer-encryption-key-name']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
@@ -233,6 +243,12 @@ class DynamicSecretCreateChef {
 }
 
 DynamicSecretCreateChef.RequiredProperties = ["name"];
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+DynamicSecretCreateChef.prototype['ara-enabled'] = undefined;
 
 /**
  * Organizations
@@ -325,6 +341,12 @@ DynamicSecretCreateChef.prototype['producer-encryption-key-name'] = undefined;
  * @default true
  */
 DynamicSecretCreateChef.prototype['skip-ssl'] = true;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+DynamicSecretCreateChef.prototype['skip_dry_run'] = undefined;
 
 /**
  * Add tags attached to this object

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGke model module.
  * @module model/DynamicSecretUpdateGke
- * @version 5.0.31
+ * @version 5.0.32
  */
 class DynamicSecretUpdateGke {
     /**
@@ -53,6 +53,9 @@ class DynamicSecretUpdateGke {
         if (data) {
             obj = obj || new DynamicSecretUpdateGke();
 
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
             }
@@ -115,6 +118,9 @@ class DynamicSecretUpdateGke {
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -211,6 +217,10 @@ class DynamicSecretUpdateGke {
         if (data['secure-access-enable'] && !(typeof data['secure-access-enable'] === 'string' || data['secure-access-enable'] instanceof String)) {
             throw new Error("Expected the field `secure-access-enable` to be a primitive type in the JSON string but got " + data['secure-access-enable']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
@@ -239,6 +249,12 @@ class DynamicSecretUpdateGke {
 }
 
 DynamicSecretUpdateGke.RequiredProperties = ["name"];
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+DynamicSecretUpdateGke.prototype['ara-enabled'] = undefined;
 
 /**
  * Protection from accidental deletion of this object [true/false]
@@ -367,6 +383,12 @@ DynamicSecretUpdateGke.prototype['secure-access-enable'] = undefined;
  * @default false
  */
 DynamicSecretUpdateGke.prototype['secure-access-web'] = false;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+DynamicSecretUpdateGke.prototype['skip_dry_run'] = undefined;
 
 /**
  * Add tags attached to this object

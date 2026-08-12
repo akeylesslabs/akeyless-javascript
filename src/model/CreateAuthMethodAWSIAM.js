@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodAWSIAM model module.
  * @module model/CreateAuthMethodAWSIAM
- * @version 5.0.31
+ * @version 5.0.32
  */
 class CreateAuthMethodAWSIAM {
     /**
@@ -351,7 +351,7 @@ CreateAuthMethodAWSIAM.prototype['jwt-ttl'] = 0;
 CreateAuthMethodAWSIAM.prototype['name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 CreateAuthMethodAWSIAM.prototype['product-type'] = undefined;

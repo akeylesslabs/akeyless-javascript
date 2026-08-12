@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerHanaDb model module.
  * @module model/GatewayCreateProducerHanaDb
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GatewayCreateProducerHanaDb {
     /**
@@ -55,6 +55,9 @@ class GatewayCreateProducerHanaDb {
         if (data) {
             obj = obj || new GatewayCreateProducerHanaDb();
 
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('custom-username-template')) {
                 obj['custom-username-template'] = ApiClient.convertToType(data['custom-username-template'], 'String');
             }
@@ -123,6 +126,9 @@ class GatewayCreateProducerHanaDb {
             }
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -247,6 +253,10 @@ class GatewayCreateProducerHanaDb {
         if (!Array.isArray(data['secure-access-host'])) {
             throw new Error("Expected the field `secure-access-host` to be an array in the JSON data but got " + data['secure-access-host']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
@@ -291,6 +301,12 @@ class GatewayCreateProducerHanaDb {
 }
 
 GatewayCreateProducerHanaDb.RequiredProperties = ["name"];
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+GatewayCreateProducerHanaDb.prototype['ara-enabled'] = undefined;
 
 /**
  * Customize how temporary usernames are generated using go template
@@ -433,6 +449,12 @@ GatewayCreateProducerHanaDb.prototype['secure-access-host'] = undefined;
  * @default false
  */
 GatewayCreateProducerHanaDb.prototype['secure-access-web'] = false;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+GatewayCreateProducerHanaDb.prototype['skip_dry_run'] = undefined;
 
 /**
  * Add tags attached to this object

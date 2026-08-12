@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretTmpCredsDelete model module.
  * @module model/DynamicSecretTmpCredsDelete
- * @version 5.0.31
+ * @version 5.0.32
  */
 class DynamicSecretTmpCredsDelete {
     /**
@@ -51,6 +51,9 @@ class DynamicSecretTmpCredsDelete {
         if (data) {
             obj = obj || new DynamicSecretTmpCredsDelete();
 
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
             }
@@ -68,6 +71,9 @@ class DynamicSecretTmpCredsDelete {
             }
             if (data.hasOwnProperty('revoke-all')) {
                 obj['revoke-all'] = ApiClient.convertToType(data['revoke-all'], 'Boolean');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('soft-delete')) {
                 obj['soft-delete'] = ApiClient.convertToType(data['soft-delete'], 'Boolean');
@@ -114,6 +120,10 @@ class DynamicSecretTmpCredsDelete {
             throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
+        // ensure the json data is a string
         if (data['tmp-creds-id'] && !(typeof data['tmp-creds-id'] === 'string' || data['tmp-creds-id'] instanceof String)) {
             throw new Error("Expected the field `tmp-creds-id` to be a primitive type in the JSON string but got " + data['tmp-creds-id']);
         }
@@ -133,6 +143,12 @@ class DynamicSecretTmpCredsDelete {
 }
 
 DynamicSecretTmpCredsDelete.RequiredProperties = ["name"];
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+DynamicSecretTmpCredsDelete.prototype['ara-enabled'] = undefined;
 
 /**
  * Host
@@ -170,6 +186,12 @@ DynamicSecretTmpCredsDelete.prototype['output-rule'] = undefined;
  * @member {Boolean} revoke-all
  */
 DynamicSecretTmpCredsDelete.prototype['revoke-all'] = undefined;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+DynamicSecretTmpCredsDelete.prototype['skip_dry_run'] = undefined;
 
 /**
  * Soft Delete

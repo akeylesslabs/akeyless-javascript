@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretTmpCredsUpdate model module.
  * @module model/DynamicSecretTmpCredsUpdate
- * @version 5.0.31
+ * @version 5.0.32
  */
 class DynamicSecretTmpCredsUpdate {
     /**
@@ -57,6 +57,9 @@ class DynamicSecretTmpCredsUpdate {
         if (data) {
             obj = obj || new DynamicSecretTmpCredsUpdate();
 
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
             }
@@ -74,6 +77,9 @@ class DynamicSecretTmpCredsUpdate {
             }
             if (data.hasOwnProperty('output-rule')) {
                 obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('tmp-creds-id')) {
                 obj['tmp-creds-id'] = ApiClient.convertToType(data['tmp-creds-id'], 'String');
@@ -117,6 +123,10 @@ class DynamicSecretTmpCredsUpdate {
             throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
         }
         // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
+        // ensure the json data is a string
         if (data['tmp-creds-id'] && !(typeof data['tmp-creds-id'] === 'string' || data['tmp-creds-id'] instanceof String)) {
             throw new Error("Expected the field `tmp-creds-id` to be a primitive type in the JSON string but got " + data['tmp-creds-id']);
         }
@@ -136,6 +146,12 @@ class DynamicSecretTmpCredsUpdate {
 }
 
 DynamicSecretTmpCredsUpdate.RequiredProperties = ["host", "name", "new-ttl-min", "tmp-creds-id"];
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+DynamicSecretTmpCredsUpdate.prototype['ara-enabled'] = undefined;
 
 /**
  * Host
@@ -173,6 +189,12 @@ DynamicSecretTmpCredsUpdate.prototype['new-ttl-min'] = undefined;
  * @member {Array.<String>} output-rule
  */
 DynamicSecretTmpCredsUpdate.prototype['output-rule'] = undefined;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+DynamicSecretTmpCredsUpdate.prototype['skip_dry_run'] = undefined;
 
 /**
  * Tmp Creds ID

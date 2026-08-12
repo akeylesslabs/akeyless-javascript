@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EsmCreateSecretOutput model module.
  * @module model/EsmCreateSecretOutput
- * @version 5.0.31
+ * @version 5.0.32
  */
 class EsmCreateSecretOutput {
     /**
@@ -47,8 +47,17 @@ class EsmCreateSecretOutput {
         if (data) {
             obj = obj || new EsmCreateSecretOutput();
 
+            if (data.hasOwnProperty('partial_failure')) {
+                obj['partial_failure'] = ApiClient.convertToType(data['partial_failure'], 'String');
+            }
             if (data.hasOwnProperty('secret_id')) {
                 obj['secret_id'] = ApiClient.convertToType(data['secret_id'], 'String');
+            }
+            if (data.hasOwnProperty('selected_environments')) {
+                obj['selected_environments'] = ApiClient.convertToType(data['selected_environments'], 'String');
+            }
+            if (data.hasOwnProperty('selected_repositories')) {
+                obj['selected_repositories'] = ApiClient.convertToType(data['selected_repositories'], 'String');
             }
             if (data.hasOwnProperty('version_id')) {
                 obj['version_id'] = ApiClient.convertToType(data['version_id'], 'String');
@@ -64,8 +73,20 @@ class EsmCreateSecretOutput {
      */
     static validateJSON(data) {
         // ensure the json data is a string
+        if (data['partial_failure'] && !(typeof data['partial_failure'] === 'string' || data['partial_failure'] instanceof String)) {
+            throw new Error("Expected the field `partial_failure` to be a primitive type in the JSON string but got " + data['partial_failure']);
+        }
+        // ensure the json data is a string
         if (data['secret_id'] && !(typeof data['secret_id'] === 'string' || data['secret_id'] instanceof String)) {
             throw new Error("Expected the field `secret_id` to be a primitive type in the JSON string but got " + data['secret_id']);
+        }
+        // ensure the json data is a string
+        if (data['selected_environments'] && !(typeof data['selected_environments'] === 'string' || data['selected_environments'] instanceof String)) {
+            throw new Error("Expected the field `selected_environments` to be a primitive type in the JSON string but got " + data['selected_environments']);
+        }
+        // ensure the json data is a string
+        if (data['selected_repositories'] && !(typeof data['selected_repositories'] === 'string' || data['selected_repositories'] instanceof String)) {
+            throw new Error("Expected the field `selected_repositories` to be a primitive type in the JSON string but got " + data['selected_repositories']);
         }
         // ensure the json data is a string
         if (data['version_id'] && !(typeof data['version_id'] === 'string' || data['version_id'] instanceof String)) {
@@ -81,9 +102,27 @@ class EsmCreateSecretOutput {
 
 
 /**
+ * PartialFailure aggregates per-target create failures when some targets still succeeded.
+ * @member {String} partial_failure
+ */
+EsmCreateSecretOutput.prototype['partial_failure'] = undefined;
+
+/**
  * @member {String} secret_id
  */
 EsmCreateSecretOutput.prototype['secret_id'] = undefined;
+
+/**
+ * SelectedEnvironments is the subset of GitHub environments where create succeeded (comma-separated).
+ * @member {String} selected_environments
+ */
+EsmCreateSecretOutput.prototype['selected_environments'] = undefined;
+
+/**
+ * SelectedRepositories is the subset of GitHub repositories where create succeeded (comma-separated).
+ * @member {String} selected_repositories
+ */
+EsmCreateSecretOutput.prototype['selected_repositories'] = undefined;
 
 /**
  * @member {String} version_id

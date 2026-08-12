@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerArtifactory model module.
  * @module model/GatewayCreateProducerArtifactory
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GatewayCreateProducerArtifactory {
     /**
@@ -56,6 +56,9 @@ class GatewayCreateProducerArtifactory {
         if (data) {
             obj = obj || new GatewayCreateProducerArtifactory();
 
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('artifactory-admin-name')) {
                 obj['artifactory-admin-name'] = ApiClient.convertToType(data['artifactory-admin-name'], 'String');
             }
@@ -94,6 +97,9 @@ class GatewayCreateProducerArtifactory {
             }
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -170,6 +176,10 @@ class GatewayCreateProducerArtifactory {
         if (data['producer-encryption-key-name'] && !(typeof data['producer-encryption-key-name'] === 'string' || data['producer-encryption-key-name'] instanceof String)) {
             throw new Error("Expected the field `producer-encryption-key-name` to be a primitive type in the JSON string but got " + data['producer-encryption-key-name']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
@@ -198,6 +208,12 @@ class GatewayCreateProducerArtifactory {
 }
 
 GatewayCreateProducerArtifactory.RequiredProperties = ["artifactory-token-audience", "artifactory-token-scope", "name"];
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+GatewayCreateProducerArtifactory.prototype['ara-enabled'] = undefined;
 
 /**
  * Artifactory Admin Name
@@ -277,6 +293,12 @@ GatewayCreateProducerArtifactory.prototype['output-rule'] = undefined;
  * @member {String} producer-encryption-key-name
  */
 GatewayCreateProducerArtifactory.prototype['producer-encryption-key-name'] = undefined;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+GatewayCreateProducerArtifactory.prototype['skip_dry_run'] = undefined;
 
 /**
  * Add tags attached to this object

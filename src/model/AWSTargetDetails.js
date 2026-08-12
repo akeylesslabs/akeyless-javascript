@@ -17,7 +17,7 @@ import AWSGatewayCloudIdentityExternalIdOpt from './AWSGatewayCloudIdentityExter
 /**
  * The AWSTargetDetails model module.
  * @module model/AWSTargetDetails
- * @version 5.0.31
+ * @version 5.0.32
  */
 class AWSTargetDetails {
     /**
@@ -60,6 +60,9 @@ class AWSTargetDetails {
             if (data.hasOwnProperty('aws_session_token')) {
                 obj['aws_session_token'] = ApiClient.convertToType(data['aws_session_token'], 'String');
             }
+            if (data.hasOwnProperty('aws_user_name')) {
+                obj['aws_user_name'] = ApiClient.convertToType(data['aws_user_name'], 'String');
+            }
             if (data.hasOwnProperty('gw_cloud_identity_external_id_opt')) {
                 obj['gw_cloud_identity_external_id_opt'] = AWSGatewayCloudIdentityExternalIdOpt.constructFromObject(data['gw_cloud_identity_external_id_opt']);
             }
@@ -91,6 +94,10 @@ class AWSTargetDetails {
         // ensure the json data is a string
         if (data['aws_session_token'] && !(typeof data['aws_session_token'] === 'string' || data['aws_session_token'] instanceof String)) {
             throw new Error("Expected the field `aws_session_token` to be a primitive type in the JSON string but got " + data['aws_session_token']);
+        }
+        // ensure the json data is a string
+        if (data['aws_user_name'] && !(typeof data['aws_user_name'] === 'string' || data['aws_user_name'] instanceof String)) {
+            throw new Error("Expected the field `aws_user_name` to be a primitive type in the JSON string but got " + data['aws_user_name']);
         }
         // validate the optional field `gw_cloud_identity_external_id_opt`
         if (data['gw_cloud_identity_external_id_opt']) { // data not null
@@ -124,6 +131,11 @@ AWSTargetDetails.prototype['aws_secret_access_key'] = undefined;
  * @member {String} aws_session_token
  */
 AWSTargetDetails.prototype['aws_session_token'] = undefined;
+
+/**
+ * @member {String} aws_user_name
+ */
+AWSTargetDetails.prototype['aws_user_name'] = undefined;
 
 /**
  * @member {module:model/AWSGatewayCloudIdentityExternalIdOpt} gw_cloud_identity_external_id_opt

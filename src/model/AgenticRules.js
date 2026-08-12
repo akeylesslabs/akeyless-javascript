@@ -17,7 +17,7 @@ import AgenticRule from './AgenticRule';
 /**
  * The AgenticRules model module.
  * @module model/AgenticRules
- * @version 5.0.31
+ * @version 5.0.32
  */
 class AgenticRules {
     /**
@@ -48,6 +48,9 @@ class AgenticRules {
         if (data) {
             obj = obj || new AgenticRules();
 
+            if (data.hasOwnProperty('enabled')) {
+                obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('input_rules')) {
                 obj['input_rules'] = ApiClient.convertToType(data['input_rules'], [AgenticRule]);
             }
@@ -92,6 +95,12 @@ class AgenticRules {
 }
 
 
+
+/**
+ * Enabled is a pointer so rules persisted before this field existed (nil) keep enforcing, rather than silently switching off.
+ * @member {Boolean} enabled
+ */
+AgenticRules.prototype['enabled'] = undefined;
 
 /**
  * @member {Array.<module:model/AgenticRule>} input_rules

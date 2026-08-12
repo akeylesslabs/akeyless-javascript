@@ -18,7 +18,7 @@ import TargetTypeDetailsInput from './TargetTypeDetailsInput';
 /**
  * The GetTargetDetailsOutput model module.
  * @module model/GetTargetDetailsOutput
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GetTargetDetailsOutput {
     /**

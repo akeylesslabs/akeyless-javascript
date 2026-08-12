@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodSAML model module.
  * @module model/CreateAuthMethodSAML
- * @version 5.0.31
+ * @version 5.0.32
  */
 class CreateAuthMethodSAML {
     /**
@@ -301,7 +301,7 @@ CreateAuthMethodSAML.prototype['jwt-ttl'] = 0;
 CreateAuthMethodSAML.prototype['name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 CreateAuthMethodSAML.prototype['product-type'] = undefined;

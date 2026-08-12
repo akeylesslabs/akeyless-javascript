@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodSAML model module.
  * @module model/UpdateAuthMethodSAML
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UpdateAuthMethodSAML {
     /**
@@ -314,7 +314,7 @@ UpdateAuthMethodSAML.prototype['name'] = undefined;
 UpdateAuthMethodSAML.prototype['new-name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 UpdateAuthMethodSAML.prototype['product-type'] = undefined;

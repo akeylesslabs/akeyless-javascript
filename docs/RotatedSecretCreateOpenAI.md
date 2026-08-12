@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **apiKey** | **String** | Admin API key value to rotate (relevant only for rotator-type&#x3D;api-key) | [optional] 
 **apiKeyId** | **String** | Admin API key ID to rotate (relevant only for rotator-type&#x3D;api-key) | [optional] 
+**araEnabled** | **Boolean** | Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag. | [optional] 
 **authenticationCredentials** | **String** | The credentials to connect with use-user-creds/use-target-creds | [optional] [default to &#39;use-user-creds&#39;]
 **autoRotate** | **String** |  | [optional] 
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
@@ -22,6 +23,7 @@ Name | Type | Description | Notes
 **rotationHour** | **Number** |  | [optional] 
 **rotationInterval** | **String** |  | [optional] 
 **rotatorType** | **String** | The rotator type. options: [target/api-key] | 
+**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | The target name to associate | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

@@ -18,7 +18,7 @@ import MigrationGeneral from './MigrationGeneral';
 /**
  * The CertificateMigration model module.
  * @module model/CertificateMigration
- * @version 5.0.31
+ * @version 5.0.32
  */
 class CertificateMigration {
     /**

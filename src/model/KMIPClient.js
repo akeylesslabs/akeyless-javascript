@@ -18,7 +18,7 @@ import PathRule from './PathRule';
 /**
  * The KMIPClient model module.
  * @module model/KMIPClient
- * @version 5.0.31
+ * @version 5.0.32
  */
 class KMIPClient {
     /**
@@ -64,6 +64,9 @@ class KMIPClient {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
+            if (data.hasOwnProperty('issuing_ca_id')) {
+                obj['issuing_ca_id'] = ApiClient.convertToType(data['issuing_ca_id'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -93,6 +96,10 @@ class KMIPClient {
         // ensure the json data is a string
         if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
             throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+        // ensure the json data is a string
+        if (data['issuing_ca_id'] && !(typeof data['issuing_ca_id'] === 'string' || data['issuing_ca_id'] instanceof String)) {
+            throw new Error("Expected the field `issuing_ca_id` to be a primitive type in the JSON string but got " + data['issuing_ca_id']);
         }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
@@ -141,6 +148,11 @@ KMIPClient.prototype['expiration_events'] = undefined;
  * @member {String} id
  */
 KMIPClient.prototype['id'] = undefined;
+
+/**
+ * @member {String} issuing_ca_id
+ */
+KMIPClient.prototype['issuing_ca_id'] = undefined;
 
 /**
  * @member {String} name

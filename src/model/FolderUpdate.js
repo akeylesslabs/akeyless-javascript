@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FolderUpdate model module.
  * @module model/FolderUpdate
- * @version 5.0.31
+ * @version 5.0.32
  */
 class FolderUpdate {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventForwarderCreateTeams model module.
  * @module model/EventForwarderCreateTeams
- * @version 5.0.31
+ * @version 5.0.32
  */
 class EventForwarderCreateTeams {
     /**
@@ -189,7 +189,7 @@ EventForwarderCreateTeams.prototype['auth-methods-event-source-locations'] = und
 EventForwarderCreateTeams.prototype['description'] = undefined;
 
 /**
- * List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated, rate-limiting, usage-report, secret-sync]
+ * List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated, rate-limiting, usage-report, secret-sync, locked-user, unlocked-user, password-reset]
  * @member {Array.<String>} event-types
  */
 EventForwarderCreateTeams.prototype['event-types'] = undefined;

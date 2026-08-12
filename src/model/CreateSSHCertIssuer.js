@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSSHCertIssuer model module.
  * @module model/CreateSSHCertIssuer
- * @version 5.0.31
+ * @version 5.0.32
  */
 class CreateSSHCertIssuer {
     /**
@@ -308,7 +308,7 @@ CreateSSHCertIssuer.prototype['external-username'] = 'false';
 CreateSSHCertIssuer.prototype['fixed-user-claim-keyname'] = undefined;
 
 /**
- * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.
  * @member {String} host-provider
  */
 CreateSSHCertIssuer.prototype['host-provider'] = undefined;
@@ -369,7 +369,7 @@ CreateSSHCertIssuer.prototype['secure-access-bastion-ssh'] = undefined;
 CreateSSHCertIssuer.prototype['secure-access-enable'] = undefined;
 
 /**
- * Enable this flag to enforce connections only to the hosts listed in --secure-access-host
+ * Enforce connections only to allowed SRA hosts
  * @member {Boolean} secure-access-enforce-hosts-restriction
  */
 CreateSSHCertIssuer.prototype['secure-access-enforce-hosts-restriction'] = undefined;
@@ -422,7 +422,7 @@ CreateSSHCertIssuer.prototype['signer-key-name'] = undefined;
 CreateSSHCertIssuer.prototype['tag'] = undefined;
 
 /**
- * A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times
+ * A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times
  * @member {Array.<String>} target
  */
 CreateSSHCertIssuer.prototype['target'] = undefined;

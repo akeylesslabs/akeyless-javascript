@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FolderSyncOutput model module.
  * @module model/FolderSyncOutput
- * @version 5.0.31
+ * @version 5.0.32
  */
 class FolderSyncOutput {
     /**
@@ -47,17 +47,8 @@ class FolderSyncOutput {
         if (data) {
             obj = obj || new FolderSyncOutput();
 
-            if (data.hasOwnProperty('failed_items')) {
-                obj['failed_items'] = ApiClient.convertToType(data['failed_items'], {'String': 'String'});
-            }
             if (data.hasOwnProperty('folder_name')) {
                 obj['folder_name'] = ApiClient.convertToType(data['folder_name'], 'String');
-            }
-            if (data.hasOwnProperty('skipped_items')) {
-                obj['skipped_items'] = ApiClient.convertToType(data['skipped_items'], ['String']);
-            }
-            if (data.hasOwnProperty('synced_items')) {
-                obj['synced_items'] = ApiClient.convertToType(data['synced_items'], ['String']);
             }
         }
         return obj;
@@ -73,14 +64,6 @@ class FolderSyncOutput {
         if (data['folder_name'] && !(typeof data['folder_name'] === 'string' || data['folder_name'] instanceof String)) {
             throw new Error("Expected the field `folder_name` to be a primitive type in the JSON string but got " + data['folder_name']);
         }
-        // ensure the json data is an array
-        if (!Array.isArray(data['skipped_items'])) {
-            throw new Error("Expected the field `skipped_items` to be an array in the JSON data but got " + data['skipped_items']);
-        }
-        // ensure the json data is an array
-        if (!Array.isArray(data['synced_items'])) {
-            throw new Error("Expected the field `synced_items` to be an array in the JSON data but got " + data['synced_items']);
-        }
 
         return true;
     }
@@ -91,24 +74,9 @@ class FolderSyncOutput {
 
 
 /**
- * @member {Object.<String, String>} failed_items
- */
-FolderSyncOutput.prototype['failed_items'] = undefined;
-
-/**
  * @member {String} folder_name
  */
 FolderSyncOutput.prototype['folder_name'] = undefined;
-
-/**
- * @member {Array.<String>} skipped_items
- */
-FolderSyncOutput.prototype['skipped_items'] = undefined;
-
-/**
- * @member {Array.<String>} synced_items
- */
-FolderSyncOutput.prototype['synced_items'] = undefined;
 
 
 

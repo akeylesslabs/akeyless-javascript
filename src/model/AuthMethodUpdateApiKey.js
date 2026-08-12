@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateApiKey model module.
  * @module model/AuthMethodUpdateApiKey
- * @version 5.0.31
+ * @version 5.0.32
  */
 class AuthMethodUpdateApiKey {
     /**
@@ -255,7 +255,7 @@ AuthMethodUpdateApiKey.prototype['name'] = undefined;
 AuthMethodUpdateApiKey.prototype['new-name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 AuthMethodUpdateApiKey.prototype['product-type'] = undefined;

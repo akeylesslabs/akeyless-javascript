@@ -18,7 +18,7 @@ import SharingItemFullInfo from './SharingItemFullInfo';
 /**
  * The ShareItemOutput model module.
  * @module model/ShareItemOutput
- * @version 5.0.31
+ * @version 5.0.32
  */
 class ShareItemOutput {
     /**
@@ -58,6 +58,9 @@ class ShareItemOutput {
             if (data.hasOwnProperty('s_token')) {
                 obj['s_token'] = ApiClient.convertToType(data['s_token'], 'String');
             }
+            if (data.hasOwnProperty('shared_token_id')) {
+                obj['shared_token_id'] = ApiClient.convertToType(data['shared_token_id'], 'String');
+            }
             if (data.hasOwnProperty('shared_users')) {
                 obj['shared_users'] = ApiClient.convertToType(data['shared_users'], ['String']);
             }
@@ -90,6 +93,10 @@ class ShareItemOutput {
         // ensure the json data is a string
         if (data['s_token'] && !(typeof data['s_token'] === 'string' || data['s_token'] instanceof String)) {
             throw new Error("Expected the field `s_token` to be a primitive type in the JSON string but got " + data['s_token']);
+        }
+        // ensure the json data is a string
+        if (data['shared_token_id'] && !(typeof data['shared_token_id'] === 'string' || data['shared_token_id'] instanceof String)) {
+            throw new Error("Expected the field `shared_token_id` to be a primitive type in the JSON string but got " + data['shared_token_id']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['shared_users'])) {
@@ -132,6 +139,11 @@ ShareItemOutput.prototype['items_error'] = undefined;
  * @member {String} s_token
  */
 ShareItemOutput.prototype['s_token'] = undefined;
+
+/**
+ * @member {String} shared_token_id
+ */
+ShareItemOutput.prototype['shared_token_id'] = undefined;
 
 /**
  * @member {Array.<String>} shared_users

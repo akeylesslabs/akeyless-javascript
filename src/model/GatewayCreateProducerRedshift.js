@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRedshift model module.
  * @module model/GatewayCreateProducerRedshift
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GatewayCreateProducerRedshift {
     /**
@@ -55,6 +55,9 @@ class GatewayCreateProducerRedshift {
         if (data) {
             obj = obj || new GatewayCreateProducerRedshift();
 
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('creation-statements')) {
                 obj['creation-statements'] = ApiClient.convertToType(data['creation-statements'], 'String');
             }
@@ -105,6 +108,9 @@ class GatewayCreateProducerRedshift {
             }
             if (data.hasOwnProperty('secure-access-host')) {
                 obj['secure-access-host'] = ApiClient.convertToType(data['secure-access-host'], ['String']);
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('ssl')) {
                 obj['ssl'] = ApiClient.convertToType(data['ssl'], 'Boolean');
@@ -212,6 +218,10 @@ class GatewayCreateProducerRedshift {
         if (!Array.isArray(data['secure-access-host'])) {
             throw new Error("Expected the field `secure-access-host` to be an array in the JSON data but got " + data['secure-access-host']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
@@ -256,6 +266,12 @@ class GatewayCreateProducerRedshift {
 }
 
 GatewayCreateProducerRedshift.RequiredProperties = ["name"];
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+GatewayCreateProducerRedshift.prototype['ara-enabled'] = undefined;
 
 /**
  * Redshift Creation statements
@@ -361,6 +377,12 @@ GatewayCreateProducerRedshift.prototype['secure-access-enable'] = undefined;
  * @member {Array.<String>} secure-access-host
  */
 GatewayCreateProducerRedshift.prototype['secure-access-host'] = undefined;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+GatewayCreateProducerRedshift.prototype['skip_dry_run'] = undefined;
 
 /**
  * Enable/Disable SSL [true/false]

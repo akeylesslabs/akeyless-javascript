@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SystemAccessCredentialsReplyObj model module.
  * @module model/SystemAccessCredentialsReplyObj
- * @version 5.0.31
+ * @version 5.0.32
  */
 class SystemAccessCredentialsReplyObj {
     /**
@@ -65,6 +65,9 @@ class SystemAccessCredentialsReplyObj {
             if (data.hasOwnProperty('need_mfa_app_first_config')) {
                 obj['need_mfa_app_first_config'] = ApiClient.convertToType(data['need_mfa_app_first_config'], 'Boolean');
             }
+            if (data.hasOwnProperty('recovery_key_id')) {
+                obj['recovery_key_id'] = ApiClient.convertToType(data['recovery_key_id'], 'String');
+            }
             if (data.hasOwnProperty('required_mfa')) {
                 obj['required_mfa'] = ApiClient.convertToType(data['required_mfa'], 'String');
             }
@@ -99,6 +102,10 @@ class SystemAccessCredentialsReplyObj {
         // ensure the json data is a string
         if (data['kfm_creds'] && !(typeof data['kfm_creds'] === 'string' || data['kfm_creds'] instanceof String)) {
             throw new Error("Expected the field `kfm_creds` to be a primitive type in the JSON string but got " + data['kfm_creds']);
+        }
+        // ensure the json data is a string
+        if (data['recovery_key_id'] && !(typeof data['recovery_key_id'] === 'string' || data['recovery_key_id'] instanceof String)) {
+            throw new Error("Expected the field `recovery_key_id` to be a primitive type in the JSON string but got " + data['recovery_key_id']);
         }
         // ensure the json data is a string
         if (data['required_mfa'] && !(typeof data['required_mfa'] === 'string' || data['required_mfa'] instanceof String)) {
@@ -155,6 +162,12 @@ SystemAccessCredentialsReplyObj.prototype['kfm_creds'] = undefined;
  * @member {Boolean} need_mfa_app_first_config
  */
 SystemAccessCredentialsReplyObj.prototype['need_mfa_app_first_config'] = undefined;
+
+/**
+ * RecoveryKeyID identifies the DPoP-bound recovery key for WebUI session recovery.
+ * @member {String} recovery_key_id
+ */
+SystemAccessCredentialsReplyObj.prototype['recovery_key_id'] = undefined;
 
 /**
  * @member {String} required_mfa

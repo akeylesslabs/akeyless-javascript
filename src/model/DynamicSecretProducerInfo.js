@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretProducerInfo model module.
  * @module model/DynamicSecretProducerInfo
- * @version 5.0.31
+ * @version 5.0.32
  */
 class DynamicSecretProducerInfo {
     /**
@@ -71,6 +71,9 @@ class DynamicSecretProducerInfo {
             }
             if (data.hasOwnProperty('producer_type')) {
                 obj['producer_type'] = ApiClient.convertToType(data['producer_type'], 'String');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'Boolean');
             }
             if (data.hasOwnProperty('user_ttl')) {
                 obj['user_ttl'] = ApiClient.convertToType(data['user_ttl'], 'String');
@@ -164,6 +167,11 @@ DynamicSecretProducerInfo.prototype['producer_status'] = undefined;
  * @member {String} producer_type
  */
 DynamicSecretProducerInfo.prototype['producer_type'] = undefined;
+
+/**
+ * @member {Boolean} skip_dry_run
+ */
+DynamicSecretProducerInfo.prototype['skip_dry_run'] = undefined;
 
 /**
  * @member {String} user_ttl

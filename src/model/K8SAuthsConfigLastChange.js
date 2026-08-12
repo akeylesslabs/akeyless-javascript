@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The K8SAuthsConfigLastChange model module.
  * @module model/K8SAuthsConfigLastChange
- * @version 5.0.31
+ * @version 5.0.32
  */
 class K8SAuthsConfigLastChange {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecret model module.
  * @module model/CreateSecret
- * @version 5.0.31
+ * @version 5.0.32
  */
 class CreateSecret {
     /**
@@ -57,8 +57,14 @@ class CreateSecret {
         if (data) {
             obj = obj || new CreateSecret();
 
+            if (data.hasOwnProperty('ProviderType')) {
+                obj['ProviderType'] = ApiClient.convertToType(data['ProviderType'], 'String');
+            }
             if (data.hasOwnProperty('accessibility')) {
                 obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
+            }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
             }
             if (data.hasOwnProperty('change-event')) {
                 obj['change-event'] = ApiClient.convertToType(data['change-event'], 'String');
@@ -74,6 +80,9 @@ class CreateSecret {
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('host-provider')) {
+                obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
             }
             if (data.hasOwnProperty('inject-url')) {
                 obj['inject-url'] = ApiClient.convertToType(data['inject-url'], ['String']);
@@ -120,6 +129,9 @@ class CreateSecret {
             if (data.hasOwnProperty('secure-access-enable')) {
                 obj['secure-access-enable'] = ApiClient.convertToType(data['secure-access-enable'], 'String');
             }
+            if (data.hasOwnProperty('secure-access-enforce-hosts-restriction')) {
+                obj['secure-access-enforce-hosts-restriction'] = ApiClient.convertToType(data['secure-access-enforce-hosts-restriction'], 'Boolean');
+            }
             if (data.hasOwnProperty('secure-access-gateway')) {
                 obj['secure-access-gateway'] = ApiClient.convertToType(data['secure-access-gateway'], 'String');
             }
@@ -146,6 +158,9 @@ class CreateSecret {
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
+            }
+            if (data.hasOwnProperty('target')) {
+                obj['target'] = ApiClient.convertToType(data['target'], ['String']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -179,6 +194,10 @@ class CreateSecret {
             }
         }
         // ensure the json data is a string
+        if (data['ProviderType'] && !(typeof data['ProviderType'] === 'string' || data['ProviderType'] instanceof String)) {
+            throw new Error("Expected the field `ProviderType` to be a primitive type in the JSON string but got " + data['ProviderType']);
+        }
+        // ensure the json data is a string
         if (data['accessibility'] && !(typeof data['accessibility'] === 'string' || data['accessibility'] instanceof String)) {
             throw new Error("Expected the field `accessibility` to be a primitive type in the JSON string but got " + data['accessibility']);
         }
@@ -197,6 +216,10 @@ class CreateSecret {
         // ensure the json data is a string
         if (data['format'] && !(typeof data['format'] === 'string' || data['format'] instanceof String)) {
             throw new Error("Expected the field `format` to be a primitive type in the JSON string but got " + data['format']);
+        }
+        // ensure the json data is a string
+        if (data['host-provider'] && !(typeof data['host-provider'] === 'string' || data['host-provider'] instanceof String)) {
+            throw new Error("Expected the field `host-provider` to be a primitive type in the JSON string but got " + data['host-provider']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['inject-url'])) {
@@ -274,6 +297,10 @@ class CreateSecret {
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['target'])) {
+            throw new Error("Expected the field `target` to be an array in the JSON data but got " + data['target']);
+        }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
             throw new Error("Expected the field `token` to be a primitive type in the JSON string but got " + data['token']);
@@ -304,11 +331,22 @@ class CreateSecret {
 CreateSecret.RequiredProperties = ["name", "value"];
 
 /**
+ * @member {String} ProviderType
+ */
+CreateSecret.prototype['ProviderType'] = undefined;
+
+/**
  * for personal password manager
  * @member {String} accessibility
  * @default 'regular'
  */
 CreateSecret.prototype['accessibility'] = 'regular';
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.
+ * @member {Boolean} ara-enabled
+ */
+CreateSecret.prototype['ara-enabled'] = undefined;
 
 /**
  * Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret)
@@ -340,6 +378,12 @@ CreateSecret.prototype['description'] = undefined;
  * @default 'text'
  */
 CreateSecret.prototype['format'] = 'text';
+
+/**
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.
+ * @member {String} host-provider
+ */
+CreateSecret.prototype['host-provider'] = undefined;
 
 /**
  * For Password Management use, reflect the website context
@@ -433,6 +477,12 @@ CreateSecret.prototype['secure-access-certificate-issuer'] = undefined;
 CreateSecret.prototype['secure-access-enable'] = undefined;
 
 /**
+ * Enforce connections only to allowed SRA hosts
+ * @member {Boolean} secure-access-enforce-hosts-restriction
+ */
+CreateSecret.prototype['secure-access-enforce-hosts-restriction'] = undefined;
+
+/**
  * @member {String} secure-access-gateway
  */
 CreateSecret.prototype['secure-access-gateway'] = undefined;
@@ -486,6 +536,12 @@ CreateSecret.prototype['secure-access-web-proxy'] = false;
  * @member {Array.<String>} tags
  */
 CreateSecret.prototype['tags'] = undefined;
+
+/**
+ * A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times
+ * @member {Array.<String>} target
+ */
+CreateSecret.prototype['target'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

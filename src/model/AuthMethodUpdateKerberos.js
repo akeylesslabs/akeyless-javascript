@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateKerberos model module.
  * @module model/AuthMethodUpdateKerberos
- * @version 5.0.31
+ * @version 5.0.32
  */
 class AuthMethodUpdateKerberos {
     /**
@@ -423,7 +423,7 @@ AuthMethodUpdateKerberos.prototype['name'] = undefined;
 AuthMethodUpdateKerberos.prototype['new-name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 AuthMethodUpdateKerberos.prototype['product-type'] = undefined;

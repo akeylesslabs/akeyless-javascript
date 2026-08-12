@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodCert model module.
  * @module model/CreateAuthMethodCert
- * @version 5.0.31
+ * @version 5.0.32
  */
 class CreateAuthMethodCert {
     /**
@@ -366,7 +366,7 @@ CreateAuthMethodCert.prototype['jwt-ttl'] = 0;
 CreateAuthMethodCert.prototype['name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 CreateAuthMethodCert.prototype['product-type'] = undefined;

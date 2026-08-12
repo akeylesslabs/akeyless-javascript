@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **adminRotationIntervalDays** | **Number** | Define rotation interval in days | [optional] 
+**araEnabled** | **Boolean** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **createSyncUrl** | **String** | URL of an endpoint that implements /sync/create method, for example https://webhook.example.com/sync/create | 
 **deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **String** | Description of the object | [optional] 
@@ -18,6 +19,7 @@ Name | Type | Description | Notes
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
 **revokeSyncUrl** | **String** | URL of an endpoint that implements /sync/revoke method, for example https://webhook.example.com/sync/revoke | 
 **rotateSyncUrl** | **String** | URL of an endpoint that implements /sync/rotate method, for example https://webhook.example.com/sync/rotate | [optional] 
+**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **timeoutSec** | **Number** | Maximum allowed time in seconds for the webhook to return the results | [optional] [default to 60]
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

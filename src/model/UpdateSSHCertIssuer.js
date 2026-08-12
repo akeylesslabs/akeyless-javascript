@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSSHCertIssuer model module.
  * @module model/UpdateSSHCertIssuer
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UpdateSSHCertIssuer {
     /**
@@ -321,7 +321,7 @@ UpdateSSHCertIssuer.prototype['external-username'] = 'false';
 UpdateSSHCertIssuer.prototype['fixed-user-claim-keyname'] = undefined;
 
 /**
- * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret
+ * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.
  * @member {String} host-provider
  */
 UpdateSSHCertIssuer.prototype['host-provider'] = undefined;
@@ -394,7 +394,7 @@ UpdateSSHCertIssuer.prototype['secure-access-bastion-ssh'] = undefined;
 UpdateSSHCertIssuer.prototype['secure-access-enable'] = undefined;
 
 /**
- * Enable this flag to enforce connections only to the hosts listed in --secure-access-host
+ * Enforce connections only to allowed SRA hosts
  * @member {Boolean} secure-access-enforce-hosts-restriction
  */
 UpdateSSHCertIssuer.prototype['secure-access-enforce-hosts-restriction'] = undefined;

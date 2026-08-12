@@ -199,6 +199,8 @@ import CreateESM from './model/CreateESM';
 import CreateESMOutput from './model/CreateESMOutput';
 import CreateEventForwarder from './model/CreateEventForwarder';
 import CreateEventForwarderOutput from './model/CreateEventForwarderOutput';
+import CreateF5BigIpTarget from './model/CreateF5BigIpTarget';
+import CreateF5BigIpTargetOutput from './model/CreateF5BigIpTargetOutput';
 import CreateGKETarget from './model/CreateGKETarget';
 import CreateGKETargetOutput from './model/CreateGKETargetOutput';
 import CreateGcpTarget from './model/CreateGcpTarget';
@@ -320,6 +322,7 @@ import Detokenize from './model/Detokenize';
 import DetokenizeOutput from './model/DetokenizeOutput';
 import DigiCertTargetDetails from './model/DigiCertTargetDetails';
 import DockerhubTargetDetails from './model/DockerhubTargetDetails';
+import DynamicSecretCreateAerospike from './model/DynamicSecretCreateAerospike';
 import DynamicSecretCreateArtifactory from './model/DynamicSecretCreateArtifactory';
 import DynamicSecretCreateAws from './model/DynamicSecretCreateAws';
 import DynamicSecretCreateAzure from './model/DynamicSecretCreateAzure';
@@ -360,6 +363,7 @@ import DynamicSecretProducerInfo from './model/DynamicSecretProducerInfo';
 import DynamicSecretTmpCredsDelete from './model/DynamicSecretTmpCredsDelete';
 import DynamicSecretTmpCredsGet from './model/DynamicSecretTmpCredsGet';
 import DynamicSecretTmpCredsUpdate from './model/DynamicSecretTmpCredsUpdate';
+import DynamicSecretUpdateAerospike from './model/DynamicSecretUpdateAerospike';
 import DynamicSecretUpdateArtifactory from './model/DynamicSecretUpdateArtifactory';
 import DynamicSecretUpdateAws from './model/DynamicSecretUpdateAws';
 import DynamicSecretUpdateAzure from './model/DynamicSecretUpdateAzure';
@@ -437,6 +441,7 @@ import ExportClassicKey from './model/ExportClassicKey';
 import ExportClassicKeyOutput from './model/ExportClassicKeyOutput';
 import Extension from './model/Extension';
 import ExternalKMSKeyId from './model/ExternalKMSKeyId';
+import F5BigIpTargetDetails from './model/F5BigIpTargetDetails';
 import FileDownloadInstructions from './model/FileDownloadInstructions';
 import FileInfo from './model/FileInfo';
 import FolderCreate from './model/FolderCreate';
@@ -731,6 +736,7 @@ import K8SAuthsConfigLastChange from './model/K8SAuthsConfigLastChange';
 import K8SAuthsConfigPart from './model/K8SAuthsConfigPart';
 import K8SMigration from './model/K8SMigration';
 import K8SPayload from './model/K8SPayload';
+import KMIPCA from './model/KMIPCA';
 import KMIPClient from './model/KMIPClient';
 import KMIPClientGetResponse from './model/KMIPClientGetResponse';
 import KMIPClientListResponse from './model/KMIPClientListResponse';
@@ -887,11 +893,13 @@ import RotateKeyOutput from './model/RotateKeyOutput';
 import RotateOidcClientOutput from './model/RotateOidcClientOutput';
 import RotateOidcClientSecret from './model/RotateOidcClientSecret';
 import RotateSecret from './model/RotateSecret';
+import RotatedSecretCreateAerospike from './model/RotatedSecretCreateAerospike';
 import RotatedSecretCreateAws from './model/RotatedSecretCreateAws';
 import RotatedSecretCreateAzure from './model/RotatedSecretCreateAzure';
 import RotatedSecretCreateCassandra from './model/RotatedSecretCreateCassandra';
 import RotatedSecretCreateCustom from './model/RotatedSecretCreateCustom';
 import RotatedSecretCreateDockerhub from './model/RotatedSecretCreateDockerhub';
+import RotatedSecretCreateF5BigIp from './model/RotatedSecretCreateF5BigIp';
 import RotatedSecretCreateGcp from './model/RotatedSecretCreateGcp';
 import RotatedSecretCreateHanadb from './model/RotatedSecretCreateHanadb';
 import RotatedSecretCreateHashiVault from './model/RotatedSecretCreateHashiVault';
@@ -917,6 +925,7 @@ import RotatedSecretGetValue from './model/RotatedSecretGetValue';
 import RotatedSecretList from './model/RotatedSecretList';
 import RotatedSecretOutput from './model/RotatedSecretOutput';
 import RotatedSecretSync from './model/RotatedSecretSync';
+import RotatedSecretUpdateAerospike from './model/RotatedSecretUpdateAerospike';
 import RotatedSecretUpdateAws from './model/RotatedSecretUpdateAws';
 import RotatedSecretUpdateAzure from './model/RotatedSecretUpdateAzure';
 import RotatedSecretUpdateCassandra from './model/RotatedSecretUpdateCassandra';
@@ -1013,6 +1022,7 @@ import TargetCreateDB from './model/TargetCreateDB';
 import TargetCreateDigiCert from './model/TargetCreateDigiCert';
 import TargetCreateDockerhub from './model/TargetCreateDockerhub';
 import TargetCreateEks from './model/TargetCreateEks';
+import TargetCreateF5BigIp from './model/TargetCreateF5BigIp';
 import TargetCreateGcp from './model/TargetCreateGcp';
 import TargetCreateGemini from './model/TargetCreateGemini';
 import TargetCreateGithub from './model/TargetCreateGithub';
@@ -1062,6 +1072,7 @@ import TargetUpdateDB from './model/TargetUpdateDB';
 import TargetUpdateDigiCert from './model/TargetUpdateDigiCert';
 import TargetUpdateDockerhub from './model/TargetUpdateDockerhub';
 import TargetUpdateEks from './model/TargetUpdateEks';
+import TargetUpdateF5BigIp from './model/TargetUpdateF5BigIp';
 import TargetUpdateGcp from './model/TargetUpdateGcp';
 import TargetUpdateGemini from './model/TargetUpdateGemini';
 import TargetUpdateGithub from './model/TargetUpdateGithub';
@@ -1149,6 +1160,8 @@ import UpdateDockerhubTargetOutput from './model/UpdateDockerhubTargetOutput';
 import UpdateEKSTarget from './model/UpdateEKSTarget';
 import UpdateEKSTargetOutput from './model/UpdateEKSTargetOutput';
 import UpdateEventForwarder from './model/UpdateEventForwarder';
+import UpdateF5BigIpTarget from './model/UpdateF5BigIpTarget';
+import UpdateF5BigIpTargetOutput from './model/UpdateF5BigIpTargetOutput';
 import UpdateGKETarget from './model/UpdateGKETarget';
 import UpdateGKETargetOutput from './model/UpdateGKETargetOutput';
 import UpdateGcpTarget from './model/UpdateGcpTarget';
@@ -1286,7 +1299,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.31
+* @version 5.0.32
 */
 export {
     /**
@@ -2412,6 +2425,18 @@ export {
     CreateEventForwarderOutput,
 
     /**
+     * The CreateF5BigIpTarget model constructor.
+     * @property {module:model/CreateF5BigIpTarget}
+     */
+    CreateF5BigIpTarget,
+
+    /**
+     * The CreateF5BigIpTargetOutput model constructor.
+     * @property {module:model/CreateF5BigIpTargetOutput}
+     */
+    CreateF5BigIpTargetOutput,
+
+    /**
      * The CreateGKETarget model constructor.
      * @property {module:model/CreateGKETarget}
      */
@@ -3138,6 +3163,12 @@ export {
     DockerhubTargetDetails,
 
     /**
+     * The DynamicSecretCreateAerospike model constructor.
+     * @property {module:model/DynamicSecretCreateAerospike}
+     */
+    DynamicSecretCreateAerospike,
+
+    /**
      * The DynamicSecretCreateArtifactory model constructor.
      * @property {module:model/DynamicSecretCreateArtifactory}
      */
@@ -3376,6 +3407,12 @@ export {
      * @property {module:model/DynamicSecretTmpCredsUpdate}
      */
     DynamicSecretTmpCredsUpdate,
+
+    /**
+     * The DynamicSecretUpdateAerospike model constructor.
+     * @property {module:model/DynamicSecretUpdateAerospike}
+     */
+    DynamicSecretUpdateAerospike,
 
     /**
      * The DynamicSecretUpdateArtifactory model constructor.
@@ -3838,6 +3875,12 @@ export {
      * @property {module:model/ExternalKMSKeyId}
      */
     ExternalKMSKeyId,
+
+    /**
+     * The F5BigIpTargetDetails model constructor.
+     * @property {module:model/F5BigIpTargetDetails}
+     */
+    F5BigIpTargetDetails,
 
     /**
      * The FileDownloadInstructions model constructor.
@@ -5604,6 +5647,12 @@ export {
     K8SPayload,
 
     /**
+     * The KMIPCA model constructor.
+     * @property {module:model/KMIPCA}
+     */
+    KMIPCA,
+
+    /**
      * The KMIPClient model constructor.
      * @property {module:model/KMIPClient}
      */
@@ -6540,6 +6589,12 @@ export {
     RotateSecret,
 
     /**
+     * The RotatedSecretCreateAerospike model constructor.
+     * @property {module:model/RotatedSecretCreateAerospike}
+     */
+    RotatedSecretCreateAerospike,
+
+    /**
      * The RotatedSecretCreateAws model constructor.
      * @property {module:model/RotatedSecretCreateAws}
      */
@@ -6568,6 +6623,12 @@ export {
      * @property {module:model/RotatedSecretCreateDockerhub}
      */
     RotatedSecretCreateDockerhub,
+
+    /**
+     * The RotatedSecretCreateF5BigIp model constructor.
+     * @property {module:model/RotatedSecretCreateF5BigIp}
+     */
+    RotatedSecretCreateF5BigIp,
 
     /**
      * The RotatedSecretCreateGcp model constructor.
@@ -6718,6 +6779,12 @@ export {
      * @property {module:model/RotatedSecretSync}
      */
     RotatedSecretSync,
+
+    /**
+     * The RotatedSecretUpdateAerospike model constructor.
+     * @property {module:model/RotatedSecretUpdateAerospike}
+     */
+    RotatedSecretUpdateAerospike,
 
     /**
      * The RotatedSecretUpdateAws model constructor.
@@ -7296,6 +7363,12 @@ export {
     TargetCreateEks,
 
     /**
+     * The TargetCreateF5BigIp model constructor.
+     * @property {module:model/TargetCreateF5BigIp}
+     */
+    TargetCreateF5BigIp,
+
+    /**
      * The TargetCreateGcp model constructor.
      * @property {module:model/TargetCreateGcp}
      */
@@ -7588,6 +7661,12 @@ export {
      * @property {module:model/TargetUpdateEks}
      */
     TargetUpdateEks,
+
+    /**
+     * The TargetUpdateF5BigIp model constructor.
+     * @property {module:model/TargetUpdateF5BigIp}
+     */
+    TargetUpdateF5BigIp,
 
     /**
      * The TargetUpdateGcp model constructor.
@@ -8110,6 +8189,18 @@ export {
      * @property {module:model/UpdateEventForwarder}
      */
     UpdateEventForwarder,
+
+    /**
+     * The UpdateF5BigIpTarget model constructor.
+     * @property {module:model/UpdateF5BigIpTarget}
+     */
+    UpdateF5BigIpTarget,
+
+    /**
+     * The UpdateF5BigIpTargetOutput model constructor.
+     * @property {module:model/UpdateF5BigIpTargetOutput}
+     */
+    UpdateF5BigIpTargetOutput,
 
     /**
      * The UpdateGKETarget model constructor.

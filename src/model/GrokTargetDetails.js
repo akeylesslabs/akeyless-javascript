@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GrokTargetDetails model module.
  * @module model/GrokTargetDetails
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GrokTargetDetails {
     /**

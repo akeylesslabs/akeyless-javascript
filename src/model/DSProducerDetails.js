@@ -23,7 +23,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 5.0.31
+ * @version 5.0.32
  */
 class DSProducerDetails {
     /**
@@ -75,6 +75,57 @@ class DSProducerDetails {
             if (data.hasOwnProperty('administrative_port')) {
                 obj['administrative_port'] = ApiClient.convertToType(data['administrative_port'], 'String');
             }
+            if (data.hasOwnProperty('aerospike_admin_username')) {
+                obj['aerospike_admin_username'] = ApiClient.convertToType(data['aerospike_admin_username'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_client_certificate')) {
+                obj['aerospike_client_certificate'] = ApiClient.convertToType(data['aerospike_client_certificate'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_client_id')) {
+                obj['aerospike_client_id'] = ApiClient.convertToType(data['aerospike_client_id'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_client_private_key')) {
+                obj['aerospike_client_private_key'] = ApiClient.convertToType(data['aerospike_client_private_key'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_client_secret')) {
+                obj['aerospike_client_secret'] = ApiClient.convertToType(data['aerospike_client_secret'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_cloud')) {
+                obj['aerospike_cloud'] = ApiClient.convertToType(data['aerospike_cloud'], 'Boolean');
+            }
+            if (data.hasOwnProperty('aerospike_cluster_id')) {
+                obj['aerospike_cluster_id'] = ApiClient.convertToType(data['aerospike_cluster_id'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_db_server_name')) {
+                obj['aerospike_db_server_name'] = ApiClient.convertToType(data['aerospike_db_server_name'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_enable_mtls')) {
+                obj['aerospike_enable_mtls'] = ApiClient.convertToType(data['aerospike_enable_mtls'], 'Boolean');
+            }
+            if (data.hasOwnProperty('aerospike_hostname')) {
+                obj['aerospike_hostname'] = ApiClient.convertToType(data['aerospike_hostname'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_namespace')) {
+                obj['aerospike_namespace'] = ApiClient.convertToType(data['aerospike_namespace'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_password')) {
+                obj['aerospike_password'] = ApiClient.convertToType(data['aerospike_password'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_port')) {
+                obj['aerospike_port'] = ApiClient.convertToType(data['aerospike_port'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_roles')) {
+                obj['aerospike_roles'] = ApiClient.convertToType(data['aerospike_roles'], ['String']);
+            }
+            if (data.hasOwnProperty('aerospike_skip_server_name_validation')) {
+                obj['aerospike_skip_server_name_validation'] = ApiClient.convertToType(data['aerospike_skip_server_name_validation'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_ssl_connection_certificate')) {
+                obj['aerospike_ssl_connection_certificate'] = ApiClient.convertToType(data['aerospike_ssl_connection_certificate'], 'String');
+            }
+            if (data.hasOwnProperty('aerospike_ssl_connection_mode')) {
+                obj['aerospike_ssl_connection_mode'] = ApiClient.convertToType(data['aerospike_ssl_connection_mode'], 'Boolean');
+            }
             if (data.hasOwnProperty('agentic_rules')) {
                 obj['agentic_rules'] = AgenticRules.constructFromObject(data['agentic_rules']);
             }
@@ -98,6 +149,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('artifactory_token_scope')) {
                 obj['artifactory_token_scope'] = ApiClient.convertToType(data['artifactory_token_scope'], 'String');
+            }
+            if (data.hasOwnProperty('auth_mode')) {
+                obj['auth_mode'] = ApiClient.convertToType(data['auth_mode'], 'String');
             }
             if (data.hasOwnProperty('authorization_port')) {
                 obj['authorization_port'] = ApiClient.convertToType(data['authorization_port'], 'String');
@@ -134,6 +188,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('aws_user_groups')) {
                 obj['aws_user_groups'] = ApiClient.convertToType(data['aws_user_groups'], 'String');
+            }
+            if (data.hasOwnProperty('aws_user_name')) {
+                obj['aws_user_name'] = ApiClient.convertToType(data['aws_user_name'], 'String');
             }
             if (data.hasOwnProperty('aws_user_policies')) {
                 obj['aws_user_policies'] = ApiClient.convertToType(data['aws_user_policies'], 'String');
@@ -657,6 +714,18 @@ class DSProducerDetails {
             if (data.hasOwnProperty('mysql_revocation_statements')) {
                 obj['mysql_revocation_statements'] = ApiClient.convertToType(data['mysql_revocation_statements'], 'String');
             }
+            if (data.hasOwnProperty('oauth_access_token')) {
+                obj['oauth_access_token'] = ApiClient.convertToType(data['oauth_access_token'], 'String');
+            }
+            if (data.hasOwnProperty('oauth_account_id')) {
+                obj['oauth_account_id'] = ApiClient.convertToType(data['oauth_account_id'], 'String');
+            }
+            if (data.hasOwnProperty('oauth_last_refresh')) {
+                obj['oauth_last_refresh'] = ApiClient.convertToType(data['oauth_last_refresh'], 'String');
+            }
+            if (data.hasOwnProperty('oauth_refresh_token')) {
+                obj['oauth_refresh_token'] = ApiClient.convertToType(data['oauth_refresh_token'], 'String');
+            }
             if (data.hasOwnProperty('openai_url')) {
                 obj['openai_url'] = ApiClient.convertToType(data['openai_url'], 'String');
             }
@@ -776,6 +845,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('signing_algorithm')) {
                 obj['signing_algorithm'] = ApiClient.convertToType(data['signing_algorithm'], 'String');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'Boolean');
             }
             if (data.hasOwnProperty('skip_server_name_validation')) {
                 obj['skip_server_name_validation'] = ApiClient.convertToType(data['skip_server_name_validation'], 'String');
@@ -903,6 +975,62 @@ class DSProducerDetails {
         if (data['administrative_port'] && !(typeof data['administrative_port'] === 'string' || data['administrative_port'] instanceof String)) {
             throw new Error("Expected the field `administrative_port` to be a primitive type in the JSON string but got " + data['administrative_port']);
         }
+        // ensure the json data is a string
+        if (data['aerospike_admin_username'] && !(typeof data['aerospike_admin_username'] === 'string' || data['aerospike_admin_username'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_admin_username` to be a primitive type in the JSON string but got " + data['aerospike_admin_username']);
+        }
+        // ensure the json data is a string
+        if (data['aerospike_client_certificate'] && !(typeof data['aerospike_client_certificate'] === 'string' || data['aerospike_client_certificate'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_client_certificate` to be a primitive type in the JSON string but got " + data['aerospike_client_certificate']);
+        }
+        // ensure the json data is a string
+        if (data['aerospike_client_id'] && !(typeof data['aerospike_client_id'] === 'string' || data['aerospike_client_id'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_client_id` to be a primitive type in the JSON string but got " + data['aerospike_client_id']);
+        }
+        // ensure the json data is a string
+        if (data['aerospike_client_private_key'] && !(typeof data['aerospike_client_private_key'] === 'string' || data['aerospike_client_private_key'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_client_private_key` to be a primitive type in the JSON string but got " + data['aerospike_client_private_key']);
+        }
+        // ensure the json data is a string
+        if (data['aerospike_client_secret'] && !(typeof data['aerospike_client_secret'] === 'string' || data['aerospike_client_secret'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_client_secret` to be a primitive type in the JSON string but got " + data['aerospike_client_secret']);
+        }
+        // ensure the json data is a string
+        if (data['aerospike_cluster_id'] && !(typeof data['aerospike_cluster_id'] === 'string' || data['aerospike_cluster_id'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_cluster_id` to be a primitive type in the JSON string but got " + data['aerospike_cluster_id']);
+        }
+        // ensure the json data is a string
+        if (data['aerospike_db_server_name'] && !(typeof data['aerospike_db_server_name'] === 'string' || data['aerospike_db_server_name'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_db_server_name` to be a primitive type in the JSON string but got " + data['aerospike_db_server_name']);
+        }
+        // ensure the json data is a string
+        if (data['aerospike_hostname'] && !(typeof data['aerospike_hostname'] === 'string' || data['aerospike_hostname'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_hostname` to be a primitive type in the JSON string but got " + data['aerospike_hostname']);
+        }
+        // ensure the json data is a string
+        if (data['aerospike_namespace'] && !(typeof data['aerospike_namespace'] === 'string' || data['aerospike_namespace'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_namespace` to be a primitive type in the JSON string but got " + data['aerospike_namespace']);
+        }
+        // ensure the json data is a string
+        if (data['aerospike_password'] && !(typeof data['aerospike_password'] === 'string' || data['aerospike_password'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_password` to be a primitive type in the JSON string but got " + data['aerospike_password']);
+        }
+        // ensure the json data is a string
+        if (data['aerospike_port'] && !(typeof data['aerospike_port'] === 'string' || data['aerospike_port'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_port` to be a primitive type in the JSON string but got " + data['aerospike_port']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['aerospike_roles'])) {
+            throw new Error("Expected the field `aerospike_roles` to be an array in the JSON data but got " + data['aerospike_roles']);
+        }
+        // ensure the json data is a string
+        if (data['aerospike_skip_server_name_validation'] && !(typeof data['aerospike_skip_server_name_validation'] === 'string' || data['aerospike_skip_server_name_validation'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_skip_server_name_validation` to be a primitive type in the JSON string but got " + data['aerospike_skip_server_name_validation']);
+        }
+        // ensure the json data is a string
+        if (data['aerospike_ssl_connection_certificate'] && !(typeof data['aerospike_ssl_connection_certificate'] === 'string' || data['aerospike_ssl_connection_certificate'] instanceof String)) {
+            throw new Error("Expected the field `aerospike_ssl_connection_certificate` to be a primitive type in the JSON string but got " + data['aerospike_ssl_connection_certificate']);
+        }
         // validate the optional field `agentic_rules`
         if (data['agentic_rules']) { // data not null
           AgenticRules.validateJSON(data['agentic_rules']);
@@ -934,6 +1062,10 @@ class DSProducerDetails {
         // ensure the json data is a string
         if (data['artifactory_token_scope'] && !(typeof data['artifactory_token_scope'] === 'string' || data['artifactory_token_scope'] instanceof String)) {
             throw new Error("Expected the field `artifactory_token_scope` to be a primitive type in the JSON string but got " + data['artifactory_token_scope']);
+        }
+        // ensure the json data is a string
+        if (data['auth_mode'] && !(typeof data['auth_mode'] === 'string' || data['auth_mode'] instanceof String)) {
+            throw new Error("Expected the field `auth_mode` to be a primitive type in the JSON string but got " + data['auth_mode']);
         }
         // ensure the json data is a string
         if (data['authorization_port'] && !(typeof data['authorization_port'] === 'string' || data['authorization_port'] instanceof String)) {
@@ -978,6 +1110,10 @@ class DSProducerDetails {
         // ensure the json data is a string
         if (data['aws_user_groups'] && !(typeof data['aws_user_groups'] === 'string' || data['aws_user_groups'] instanceof String)) {
             throw new Error("Expected the field `aws_user_groups` to be a primitive type in the JSON string but got " + data['aws_user_groups']);
+        }
+        // ensure the json data is a string
+        if (data['aws_user_name'] && !(typeof data['aws_user_name'] === 'string' || data['aws_user_name'] instanceof String)) {
+            throw new Error("Expected the field `aws_user_name` to be a primitive type in the JSON string but got " + data['aws_user_name']);
         }
         // ensure the json data is a string
         if (data['aws_user_policies'] && !(typeof data['aws_user_policies'] === 'string' || data['aws_user_policies'] instanceof String)) {
@@ -1612,6 +1748,22 @@ class DSProducerDetails {
             throw new Error("Expected the field `mysql_revocation_statements` to be a primitive type in the JSON string but got " + data['mysql_revocation_statements']);
         }
         // ensure the json data is a string
+        if (data['oauth_access_token'] && !(typeof data['oauth_access_token'] === 'string' || data['oauth_access_token'] instanceof String)) {
+            throw new Error("Expected the field `oauth_access_token` to be a primitive type in the JSON string but got " + data['oauth_access_token']);
+        }
+        // ensure the json data is a string
+        if (data['oauth_account_id'] && !(typeof data['oauth_account_id'] === 'string' || data['oauth_account_id'] instanceof String)) {
+            throw new Error("Expected the field `oauth_account_id` to be a primitive type in the JSON string but got " + data['oauth_account_id']);
+        }
+        // ensure the json data is a string
+        if (data['oauth_last_refresh'] && !(typeof data['oauth_last_refresh'] === 'string' || data['oauth_last_refresh'] instanceof String)) {
+            throw new Error("Expected the field `oauth_last_refresh` to be a primitive type in the JSON string but got " + data['oauth_last_refresh']);
+        }
+        // ensure the json data is a string
+        if (data['oauth_refresh_token'] && !(typeof data['oauth_refresh_token'] === 'string' || data['oauth_refresh_token'] instanceof String)) {
+            throw new Error("Expected the field `oauth_refresh_token` to be a primitive type in the JSON string but got " + data['oauth_refresh_token']);
+        }
+        // ensure the json data is a string
         if (data['openai_url'] && !(typeof data['openai_url'] === 'string' || data['openai_url'] instanceof String)) {
             throw new Error("Expected the field `openai_url` to be a primitive type in the JSON string but got " + data['openai_url']);
         }
@@ -1888,6 +2040,91 @@ DSProducerDetails.prototype['admin_rotation_interval_days'] = undefined;
 DSProducerDetails.prototype['administrative_port'] = undefined;
 
 /**
+ * @member {String} aerospike_admin_username
+ */
+DSProducerDetails.prototype['aerospike_admin_username'] = undefined;
+
+/**
+ * @member {String} aerospike_client_certificate
+ */
+DSProducerDetails.prototype['aerospike_client_certificate'] = undefined;
+
+/**
+ * @member {String} aerospike_client_id
+ */
+DSProducerDetails.prototype['aerospike_client_id'] = undefined;
+
+/**
+ * @member {String} aerospike_client_private_key
+ */
+DSProducerDetails.prototype['aerospike_client_private_key'] = undefined;
+
+/**
+ * @member {String} aerospike_client_secret
+ */
+DSProducerDetails.prototype['aerospike_client_secret'] = undefined;
+
+/**
+ * @member {Boolean} aerospike_cloud
+ */
+DSProducerDetails.prototype['aerospike_cloud'] = undefined;
+
+/**
+ * @member {String} aerospike_cluster_id
+ */
+DSProducerDetails.prototype['aerospike_cluster_id'] = undefined;
+
+/**
+ * @member {String} aerospike_db_server_name
+ */
+DSProducerDetails.prototype['aerospike_db_server_name'] = undefined;
+
+/**
+ * @member {Boolean} aerospike_enable_mtls
+ */
+DSProducerDetails.prototype['aerospike_enable_mtls'] = undefined;
+
+/**
+ * @member {String} aerospike_hostname
+ */
+DSProducerDetails.prototype['aerospike_hostname'] = undefined;
+
+/**
+ * @member {String} aerospike_namespace
+ */
+DSProducerDetails.prototype['aerospike_namespace'] = undefined;
+
+/**
+ * @member {String} aerospike_password
+ */
+DSProducerDetails.prototype['aerospike_password'] = undefined;
+
+/**
+ * @member {String} aerospike_port
+ */
+DSProducerDetails.prototype['aerospike_port'] = undefined;
+
+/**
+ * @member {Array.<String>} aerospike_roles
+ */
+DSProducerDetails.prototype['aerospike_roles'] = undefined;
+
+/**
+ * @member {String} aerospike_skip_server_name_validation
+ */
+DSProducerDetails.prototype['aerospike_skip_server_name_validation'] = undefined;
+
+/**
+ * @member {String} aerospike_ssl_connection_certificate
+ */
+DSProducerDetails.prototype['aerospike_ssl_connection_certificate'] = undefined;
+
+/**
+ * @member {Boolean} aerospike_ssl_connection_mode
+ */
+DSProducerDetails.prototype['aerospike_ssl_connection_mode'] = undefined;
+
+/**
  * @member {module:model/AgenticRules} agentic_rules
  */
 DSProducerDetails.prototype['agentic_rules'] = undefined;
@@ -1926,6 +2163,12 @@ DSProducerDetails.prototype['artifactory_token_audience'] = undefined;
  * @member {String} artifactory_token_scope
  */
 DSProducerDetails.prototype['artifactory_token_scope'] = undefined;
+
+/**
+ * AuthMode selects how this target authenticates. Empty (default) uses ApiKey as a static bearer token against BaseURL, matching all pre-existing behavior. OpenAIAuthModeChatGPTOAuth instead uses the OAuth* fields below.
+ * @member {String} auth_mode
+ */
+DSProducerDetails.prototype['auth_mode'] = undefined;
 
 /**
  * @member {String} authorization_port
@@ -1986,6 +2229,11 @@ DSProducerDetails.prototype['aws_user_console_access'] = undefined;
  * @member {String} aws_user_groups
  */
 DSProducerDetails.prototype['aws_user_groups'] = undefined;
+
+/**
+ * @member {String} aws_user_name
+ */
+DSProducerDetails.prototype['aws_user_name'] = undefined;
 
 /**
  * @member {String} aws_user_policies
@@ -2878,6 +3126,30 @@ DSProducerDetails.prototype['mysql_creation_statements'] = undefined;
 DSProducerDetails.prototype['mysql_revocation_statements'] = undefined;
 
 /**
+ * OAuthAccessToken is the current ChatGPT-issued access token (the `tokens.access_token` field of the customer's local auth.json). Akeyless refreshes this automatically; do not treat it as long-lived.
+ * @member {String} oauth_access_token
+ */
+DSProducerDetails.prototype['oauth_access_token'] = undefined;
+
+/**
+ * OAuthAccountID is the ChatGPT workspace/account id (`tokens.account_id` in auth.json), required on every request to the ChatGPT backend.
+ * @member {String} oauth_account_id
+ */
+DSProducerDetails.prototype['oauth_account_id'] = undefined;
+
+/**
+ * OAuthLastRefresh is the RFC3339 timestamp of the last successful Akeyless-performed refresh; used as a fallback expiry heuristic when the access token's JWT exp claim can't be parsed.
+ * @member {String} oauth_last_refresh
+ */
+DSProducerDetails.prototype['oauth_last_refresh'] = undefined;
+
+/**
+ * OAuthRefreshToken mints new access tokens. It rotates on every refresh - Akeyless persists the new value after each successful refresh, so the previous value becomes invalid.
+ * @member {String} oauth_refresh_token
+ */
+DSProducerDetails.prototype['oauth_refresh_token'] = undefined;
+
+/**
  * @member {String} openai_url
  */
 DSProducerDetails.prototype['openai_url'] = undefined;
@@ -3079,6 +3351,11 @@ DSProducerDetails.prototype['should_stop'] = undefined;
  * @member {String} signing_algorithm
  */
 DSProducerDetails.prototype['signing_algorithm'] = undefined;
+
+/**
+ * @member {Boolean} skip_dry_run
+ */
+DSProducerDetails.prototype['skip_dry_run'] = undefined;
 
 /**
  * (Optional) SkipServerNameValidation disables server name verification while still validating the certificate chain. Postgres treats empty as legacy \"skip hostname validation\"; MySQL treats empty as false.

@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import CertificateExpirationEvent from './CertificateExpirationEvent';
+import KMIPCA from './KMIPCA';
 
 /**
  * The KMIPServer model module.
  * @module model/KMIPServer
- * @version 5.0.31
+ * @version 5.0.32
  */
 class KMIPServer {
     /**
@@ -54,6 +55,9 @@ class KMIPServer {
             if (data.hasOwnProperty('ca')) {
                 obj['ca'] = ApiClient.convertToType(data['ca'], ['Number']);
             }
+            if (data.hasOwnProperty('cas')) {
+                obj['cas'] = ApiClient.convertToType(data['cas'], [KMIPCA]);
+            }
             if (data.hasOwnProperty('certificate')) {
                 obj['certificate'] = ApiClient.convertToType(data['certificate'], ['Number']);
             }
@@ -85,6 +89,16 @@ class KMIPServer {
         // ensure the json data is an array
         if (!Array.isArray(data['ca'])) {
             throw new Error("Expected the field `ca` to be an array in the JSON data but got " + data['ca']);
+        }
+        if (data['cas']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['cas'])) {
+                throw new Error("Expected the field `cas` to be an array in the JSON data but got " + data['cas']);
+            }
+            // validate the optional field `cas` (array)
+            for (const item of data['cas']) {
+                KMIPCA.validateJSON(item);
+            };
         }
         // ensure the json data is an array
         if (!Array.isArray(data['certificate'])) {
@@ -126,6 +140,11 @@ KMIPServer.prototype['active'] = undefined;
  * @member {Array.<Number>} ca
  */
 KMIPServer.prototype['ca'] = undefined;
+
+/**
+ * @member {Array.<module:model/KMIPCA>} cas
+ */
+KMIPServer.prototype['cas'] = undefined;
 
 /**
  * @member {Array.<Number>} certificate

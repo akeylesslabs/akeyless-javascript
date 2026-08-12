@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResetAuthMethodAccessKeyOutput model module.
  * @module model/ResetAuthMethodAccessKeyOutput
- * @version 5.0.31
+ * @version 5.0.32
  */
 class ResetAuthMethodAccessKeyOutput {
     /**

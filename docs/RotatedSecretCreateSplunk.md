@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**araEnabled** | **Boolean** | Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag. | [optional] 
 **audience** | **String** | Token audience for Splunk token creation (required for rotator-type&#x3D;token) | [optional] 
 **authenticationCredentials** | **String** | The credentials to connect with use-user-creds/use-target-creds | [optional] [default to &#39;use-user-creds&#39;]
 **autoRotate** | **String** |  | [optional] 
@@ -26,6 +27,7 @@ Name | Type | Description | Notes
 **rotationHour** | **Number** |  | [optional] 
 **rotationInterval** | **String** |  | [optional] 
 **rotatorType** | **String** | The rotator type. options: [target/password/token/hec-token] | 
+**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
 **splunkToken** | **String** | Current Splunk authentication token to store (relevant only for rotator-type&#x3D;token). If not provided, a new token will be created in Splunk. | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | The target name to associate | 

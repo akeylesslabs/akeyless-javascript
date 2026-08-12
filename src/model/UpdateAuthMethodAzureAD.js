@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodAzureAD model module.
  * @module model/UpdateAuthMethodAzureAD
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UpdateAuthMethodAzureAD {
     /**
@@ -427,7 +427,7 @@ UpdateAuthMethodAzureAD.prototype['name'] = undefined;
 UpdateAuthMethodAzureAD.prototype['new-name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 UpdateAuthMethodAzureAD.prototype['product-type'] = undefined;

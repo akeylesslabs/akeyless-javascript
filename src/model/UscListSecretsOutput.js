@@ -17,7 +17,7 @@ import SecretInfo from './SecretInfo';
 /**
  * The UscListSecretsOutput model module.
  * @module model/UscListSecretsOutput
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UscListSecretsOutput {
     /**

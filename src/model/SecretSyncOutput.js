@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecretSyncOutput model module.
  * @module model/SecretSyncOutput
- * @version 5.0.31
+ * @version 5.0.32
  */
 class SecretSyncOutput {
     /**

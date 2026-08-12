@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAuthMethodK8S model module.
  * @module model/UpdateAuthMethodK8S
- * @version 5.0.31
+ * @version 5.0.32
  */
 class UpdateAuthMethodK8S {
     /**
@@ -328,7 +328,7 @@ UpdateAuthMethodK8S.prototype['name'] = undefined;
 UpdateAuthMethodK8S.prototype['new-name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 UpdateAuthMethodK8S.prototype['product-type'] = undefined;

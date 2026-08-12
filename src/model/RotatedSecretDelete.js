@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretDelete model module.
  * @module model/RotatedSecretDelete
- * @version 5.0.31
+ * @version 5.0.32
  */
 class RotatedSecretDelete {
     /**
@@ -52,6 +52,9 @@ class RotatedSecretDelete {
         if (data) {
             obj = obj || new RotatedSecretDelete();
 
+            if (data.hasOwnProperty('force-delete')) {
+                obj['force-delete'] = ApiClient.convertToType(data['force-delete'], 'Boolean');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
@@ -103,6 +106,12 @@ class RotatedSecretDelete {
 }
 
 RotatedSecretDelete.RequiredProperties = ["name"];
+
+/**
+ * Delete the rotated secret only from Akeyless if failed to delete it from the third-party provider
+ * @member {Boolean} force-delete
+ */
+RotatedSecretDelete.prototype['force-delete'] = undefined;
 
 /**
  * Set output format to JSON

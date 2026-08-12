@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateDockerhub model module.
  * @module model/RotatedSecretCreateDockerhub
- * @version 5.0.31
+ * @version 5.0.32
  */
 class RotatedSecretCreateDockerhub {
     /**
@@ -53,6 +53,9 @@ class RotatedSecretCreateDockerhub {
         if (data) {
             obj = obj || new RotatedSecretCreateDockerhub();
 
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('authentication-credentials')) {
                 obj['authentication-credentials'] = ApiClient.convertToType(data['authentication-credentials'], 'String');
             }
@@ -97,6 +100,9 @@ class RotatedSecretCreateDockerhub {
             }
             if (data.hasOwnProperty('rotation-interval')) {
                 obj['rotation-interval'] = ApiClient.convertToType(data['rotation-interval'], 'String');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -186,6 +192,10 @@ class RotatedSecretCreateDockerhub {
         if (data['rotation-interval'] && !(typeof data['rotation-interval'] === 'string' || data['rotation-interval'] instanceof String)) {
             throw new Error("Expected the field `rotation-interval` to be a primitive type in the JSON string but got " + data['rotation-interval']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
@@ -226,6 +236,12 @@ class RotatedSecretCreateDockerhub {
 }
 
 RotatedSecretCreateDockerhub.RequiredProperties = ["name", "target-name"];
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.
+ * @member {Boolean} ara-enabled
+ */
+RotatedSecretCreateDockerhub.prototype['ara-enabled'] = undefined;
 
 /**
  * The credentials to connect with use-user-creds/use-target-creds
@@ -314,6 +330,12 @@ RotatedSecretCreateDockerhub.prototype['rotation-hour'] = undefined;
  * @member {String} rotation-interval
  */
 RotatedSecretCreateDockerhub.prototype['rotation-interval'] = undefined;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+RotatedSecretCreateDockerhub.prototype['skip_dry_run'] = undefined;
 
 /**
  * Add tags attached to this object

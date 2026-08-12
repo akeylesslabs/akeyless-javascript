@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethodHuawei model module.
  * @module model/CreateAuthMethodHuawei
- * @version 5.0.31
+ * @version 5.0.32
  */
 class CreateAuthMethodHuawei {
     /**
@@ -336,7 +336,7 @@ CreateAuthMethodHuawei.prototype['jwt-ttl'] = 0;
 CreateAuthMethodHuawei.prototype['name'] = undefined;
 
 /**
- * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]
+ * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]
  * @member {Array.<String>} product-type
  */
 CreateAuthMethodHuawei.prototype['product-type'] = undefined;

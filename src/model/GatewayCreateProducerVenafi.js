@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerVenafi model module.
  * @module model/GatewayCreateProducerVenafi
- * @version 5.0.31
+ * @version 5.0.32
  */
 class GatewayCreateProducerVenafi {
     /**
@@ -64,6 +64,9 @@ class GatewayCreateProducerVenafi {
             if (data.hasOwnProperty('allowed-domains')) {
                 obj['allowed-domains'] = ApiClient.convertToType(data['allowed-domains'], ['String']);
             }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('auto-generated-folder')) {
                 obj['auto-generated-folder'] = ApiClient.convertToType(data['auto-generated-folder'], 'String');
             }
@@ -99,6 +102,9 @@ class GatewayCreateProducerVenafi {
             }
             if (data.hasOwnProperty('signer-key-name')) {
                 obj['signer-key-name'] = ApiClient.convertToType(data['signer-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('skip_dry_run')) {
+                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
             }
             if (data.hasOwnProperty('store-private-key')) {
                 obj['store-private-key'] = ApiClient.convertToType(data['store-private-key'], 'Boolean');
@@ -187,6 +193,10 @@ class GatewayCreateProducerVenafi {
         if (data['signer-key-name'] && !(typeof data['signer-key-name'] === 'string' || data['signer-key-name'] instanceof String)) {
             throw new Error("Expected the field `signer-key-name` to be a primitive type in the JSON string but got " + data['signer-key-name']);
         }
+        // ensure the json data is a string
+        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
+            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
@@ -258,6 +268,12 @@ GatewayCreateProducerVenafi.prototype['allow-subdomains'] = undefined;
  * @member {Array.<String>} allowed-domains
  */
 GatewayCreateProducerVenafi.prototype['allowed-domains'] = undefined;
+
+/**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
+ * @member {Boolean} ara-enabled
+ */
+GatewayCreateProducerVenafi.prototype['ara-enabled'] = undefined;
 
 /**
  * Auto generated folder
@@ -332,6 +348,12 @@ GatewayCreateProducerVenafi.prototype['sign-using-akeyless-pki'] = undefined;
  * @member {String} signer-key-name
  */
 GatewayCreateProducerVenafi.prototype['signer-key-name'] = undefined;
+
+/**
+ * If set, dry-run will be skipped
+ * @member {String} skip_dry_run
+ */
+GatewayCreateProducerVenafi.prototype['skip_dry_run'] = undefined;
 
 /**
  * Store private key
