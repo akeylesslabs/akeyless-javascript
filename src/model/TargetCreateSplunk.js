@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateSplunk model module.
  * @module model/TargetCreateSplunk
- * @version 5.0.32
+ * @version 5.0.33
  */
 class TargetCreateSplunk {
     /**

@@ -17,7 +17,7 @@ import VaultlessTokenizerInfo from './VaultlessTokenizerInfo';
 /**
  * The TokenizerInfo model module.
  * @module model/TokenizerInfo
- * @version 5.0.32
+ * @version 5.0.33
  */
 class TokenizerInfo {
     /**

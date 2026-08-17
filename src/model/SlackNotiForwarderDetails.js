@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SlackNotiForwarderDetails model module.
  * @module model/SlackNotiForwarderDetails
- * @version 5.0.32
+ * @version 5.0.33
  */
 class SlackNotiForwarderDetails {
     /**

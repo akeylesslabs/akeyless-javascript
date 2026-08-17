@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRedshift model module.
  * @module model/GatewayCreateProducerRedshift
- * @version 5.0.32
+ * @version 5.0.33
  */
 class GatewayCreateProducerRedshift {
     /**

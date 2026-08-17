@@ -380,13 +380,17 @@ Method | HTTP request | Description
 [**kmipDeleteServer**](V2Api.md#kmipDeleteServer) | **DELETE** /kmip-delete-environment | 
 [**kmipDescribeClient**](V2Api.md#kmipDescribeClient) | **POST** /kmip-get-client | 
 [**kmipDescribeServer**](V2Api.md#kmipDescribeServer) | **POST** /kmip-get-environment | 
+[**kmipGetCABundle**](V2Api.md#kmipGetCABundle) | **POST** /kmip-get-ca-bundle | 
+[**kmipListCAs**](V2Api.md#kmipListCAs) | **POST** /kmip-list-cas | 
 [**kmipListClients**](V2Api.md#kmipListClients) | **POST** /kmip-list-clients | 
 [**kmipMoveServer**](V2Api.md#kmipMoveServer) | **POST** /kmip-move-environment | 
-[**kmipRenewClientCertificate**](V2Api.md#kmipRenewClientCertificate) | **POST** /kmip-renew-client | 
+[**kmipRenewClientCertificate**](V2Api.md#kmipRenewClientCertificate) | **POST** /kmip-renew-client-certificate | 
 [**kmipRenewServerCertificate**](V2Api.md#kmipRenewServerCertificate) | **POST** /kmip-renew-environment | 
+[**kmipRotateCA**](V2Api.md#kmipRotateCA) | **POST** /kmip-rotate-ca | 
 [**kmipServerSetup**](V2Api.md#kmipServerSetup) | **POST** /kmip-create-environment | 
 [**kmipServerUpdate**](V2Api.md#kmipServerUpdate) | **POST** /kmip-server-update | 
 [**kmipSetServerState**](V2Api.md#kmipSetServerState) | **POST** /kmip-set-environment-state | 
+[**kmipSunsetCA**](V2Api.md#kmipSunsetCA) | **POST** /kmip-sunset-ca | 
 [**kubeconfigGenerate**](V2Api.md#kubeconfigGenerate) | **POST** /kubeconfig-generate | 
 [**listAcmeAccounts**](V2Api.md#listAcmeAccounts) | **POST** /list-acme-accounts | 
 [**listAuthMethods**](V2Api.md#listAuthMethods) | **POST** /list-auth-methods | 
@@ -16474,6 +16478,94 @@ No authorization required
 - **Accept**: application/json
 
 
+## kmipGetCABundle
+
+> KmipGetCABundleOutput kmipGetCABundle(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'kmipGetCABundle': new akeyless.KmipGetCABundle() // KmipGetCABundle | 
+};
+apiInstance.kmipGetCABundle(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kmipGetCABundle** | [**KmipGetCABundle**](KmipGetCABundle.md)|  | [optional] 
+
+### Return type
+
+[**KmipGetCABundleOutput**](KmipGetCABundleOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## kmipListCAs
+
+> KmipListCAsOutput kmipListCAs(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'kmipListCAs': new akeyless.KmipListCAs() // KmipListCAs | 
+};
+apiInstance.kmipListCAs(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kmipListCAs** | [**KmipListCAs**](KmipListCAs.md)|  | [optional] 
+
+### Return type
+
+[**KmipListCAsOutput**](KmipListCAsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## kmipListClients
 
 > KMIPClientListResponse kmipListClients(opts)
@@ -16650,6 +16742,50 @@ No authorization required
 - **Accept**: application/json
 
 
+## kmipRotateCA
+
+> KmipRotateCAOutput kmipRotateCA(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'kmipRotateCA': new akeyless.KmipRotateCA() // KmipRotateCA | 
+};
+apiInstance.kmipRotateCA(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kmipRotateCA** | [**KmipRotateCA**](KmipRotateCA.md)|  | [optional] 
+
+### Return type
+
+[**KmipRotateCAOutput**](KmipRotateCAOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## kmipServerSetup
 
 > KMIPEnvironmentCreateResponse kmipServerSetup(opts)
@@ -16771,6 +16907,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**KmipSetServerStateOutput**](KmipSetServerStateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## kmipSunsetCA
+
+> KmipSunsetCAOutput kmipSunsetCA(opts)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let opts = {
+  'kmipSunsetCA': new akeyless.KmipSunsetCA() // KmipSunsetCA | 
+};
+apiInstance.kmipSunsetCA(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kmipSunsetCA** | [**KmipSunsetCA**](KmipSunsetCA.md)|  | [optional] 
+
+### Return type
+
+[**KmipSunsetCAOutput**](KmipSunsetCAOutput.md)
 
 ### Authorization
 

@@ -17,7 +17,7 @@ import DesktopAppConf from './DesktopAppConf';
 /**
  * The GatewayDetailsForItemReplyObj model module.
  * @module model/GatewayDetailsForItemReplyObj
- * @version 5.0.32
+ * @version 5.0.33
  */
 class GatewayDetailsForItemReplyObj {
     /**

@@ -17,7 +17,7 @@ import AuthMethod from './AuthMethod';
 /**
  * The ListAuthMethodsOutput model module.
  * @module model/ListAuthMethodsOutput
- * @version 5.0.32
+ * @version 5.0.33
  */
 class ListAuthMethodsOutput {
     /**

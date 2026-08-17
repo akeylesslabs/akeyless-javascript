@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AiInsightsSetting model module.
  * @module model/AiInsightsSetting
- * @version 5.0.32
+ * @version 5.0.33
  */
 class AiInsightsSetting {
     /**

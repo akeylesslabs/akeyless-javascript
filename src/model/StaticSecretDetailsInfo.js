@@ -18,7 +18,7 @@ import PasswordSecurityInfo from './PasswordSecurityInfo';
 /**
  * The StaticSecretDetailsInfo model module.
  * @module model/StaticSecretDetailsInfo
- * @version 5.0.32
+ * @version 5.0.33
  */
 class StaticSecretDetailsInfo {
     /**

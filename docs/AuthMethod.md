@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **authMethodId** | **Number** |  | [optional] 
 **authMethodName** | **String** |  | [optional] 
 **authMethodRolesAssoc** | [**[AuthMethodRoleAssociation]**](AuthMethodRoleAssociation.md) |  | [optional] 
+**bookmarkLoginUrlTemplate** | **String** | BookmarkLoginURLTemplate is an OIDC login URL template for console bookmarks. SaaS-owned methods use {redirect_uri} for client substitution; AuthViaGw embeds the GW console callback. | [optional] 
 **clientPermissions** | **[String]** |  | [optional] 
 **creationDate** | **Date** |  | [optional] 
 **deleteProtection** | **Boolean** |  | [optional] 

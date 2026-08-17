@@ -737,6 +737,7 @@ import K8SAuthsConfigPart from './model/K8SAuthsConfigPart';
 import K8SMigration from './model/K8SMigration';
 import K8SPayload from './model/K8SPayload';
 import KMIPCA from './model/KMIPCA';
+import KMIPCAListEntry from './model/KMIPCAListEntry';
 import KMIPClient from './model/KMIPClient';
 import KMIPClientGetResponse from './model/KMIPClientGetResponse';
 import KMIPClientListResponse from './model/KMIPClientListResponse';
@@ -759,6 +760,10 @@ import KmipDeleteServer from './model/KmipDeleteServer';
 import KmipDescribeClient from './model/KmipDescribeClient';
 import KmipDescribeServer from './model/KmipDescribeServer';
 import KmipDescribeServerOutput from './model/KmipDescribeServerOutput';
+import KmipGetCABundle from './model/KmipGetCABundle';
+import KmipGetCABundleOutput from './model/KmipGetCABundleOutput';
+import KmipListCAs from './model/KmipListCAs';
+import KmipListCAsOutput from './model/KmipListCAsOutput';
 import KmipListClients from './model/KmipListClients';
 import KmipMoveServer from './model/KmipMoveServer';
 import KmipMoveServerOutput from './model/KmipMoveServerOutput';
@@ -766,11 +771,15 @@ import KmipRenewClientCertificate from './model/KmipRenewClientCertificate';
 import KmipRenewClientCertificateOutput from './model/KmipRenewClientCertificateOutput';
 import KmipRenewServerCertificate from './model/KmipRenewServerCertificate';
 import KmipRenewServerCertificateOutput from './model/KmipRenewServerCertificateOutput';
+import KmipRotateCA from './model/KmipRotateCA';
+import KmipRotateCAOutput from './model/KmipRotateCAOutput';
 import KmipServerSetup from './model/KmipServerSetup';
 import KmipServerUpdate from './model/KmipServerUpdate';
 import KmipServerUpdateOutput from './model/KmipServerUpdateOutput';
 import KmipSetServerState from './model/KmipSetServerState';
 import KmipSetServerStateOutput from './model/KmipSetServerStateOutput';
+import KmipSunsetCA from './model/KmipSunsetCA';
+import KmipSunsetCAOutput from './model/KmipSunsetCAOutput';
 import KubeConfigValue from './model/KubeConfigValue';
 import KubeconfigCluster from './model/KubeconfigCluster';
 import KubeconfigContext from './model/KubeconfigContext';
@@ -1299,7 +1308,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.32
+* @version 5.0.33
 */
 export {
     /**
@@ -5653,6 +5662,12 @@ export {
     KMIPCA,
 
     /**
+     * The KMIPCAListEntry model constructor.
+     * @property {module:model/KMIPCAListEntry}
+     */
+    KMIPCAListEntry,
+
+    /**
      * The KMIPClient model constructor.
      * @property {module:model/KMIPClient}
      */
@@ -5785,6 +5800,30 @@ export {
     KmipDescribeServerOutput,
 
     /**
+     * The KmipGetCABundle model constructor.
+     * @property {module:model/KmipGetCABundle}
+     */
+    KmipGetCABundle,
+
+    /**
+     * The KmipGetCABundleOutput model constructor.
+     * @property {module:model/KmipGetCABundleOutput}
+     */
+    KmipGetCABundleOutput,
+
+    /**
+     * The KmipListCAs model constructor.
+     * @property {module:model/KmipListCAs}
+     */
+    KmipListCAs,
+
+    /**
+     * The KmipListCAsOutput model constructor.
+     * @property {module:model/KmipListCAsOutput}
+     */
+    KmipListCAsOutput,
+
+    /**
      * The KmipListClients model constructor.
      * @property {module:model/KmipListClients}
      */
@@ -5827,6 +5866,18 @@ export {
     KmipRenewServerCertificateOutput,
 
     /**
+     * The KmipRotateCA model constructor.
+     * @property {module:model/KmipRotateCA}
+     */
+    KmipRotateCA,
+
+    /**
+     * The KmipRotateCAOutput model constructor.
+     * @property {module:model/KmipRotateCAOutput}
+     */
+    KmipRotateCAOutput,
+
+    /**
      * The KmipServerSetup model constructor.
      * @property {module:model/KmipServerSetup}
      */
@@ -5855,6 +5906,18 @@ export {
      * @property {module:model/KmipSetServerStateOutput}
      */
     KmipSetServerStateOutput,
+
+    /**
+     * The KmipSunsetCA model constructor.
+     * @property {module:model/KmipSunsetCA}
+     */
+    KmipSunsetCA,
+
+    /**
+     * The KmipSunsetCAOutput model constructor.
+     * @property {module:model/KmipSunsetCAOutput}
+     */
+    KmipSunsetCAOutput,
 
     /**
      * The KubeConfigValue model constructor.

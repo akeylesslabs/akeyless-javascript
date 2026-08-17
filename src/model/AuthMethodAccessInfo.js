@@ -32,7 +32,7 @@ import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 5.0.32
+ * @version 5.0.33
  */
 class AuthMethodAccessInfo {
     /**

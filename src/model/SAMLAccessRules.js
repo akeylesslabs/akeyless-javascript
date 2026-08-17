@@ -17,7 +17,7 @@ import SAMLAttribute from './SAMLAttribute';
 /**
  * The SAMLAccessRules model module.
  * @module model/SAMLAccessRules
- * @version 5.0.32
+ * @version 5.0.33
  */
 class SAMLAccessRules {
     /**
@@ -51,6 +51,9 @@ class SAMLAccessRules {
             if (data.hasOwnProperty('allowed_redirect_URIs')) {
                 obj['allowed_redirect_URIs'] = ApiClient.convertToType(data['allowed_redirect_URIs'], ['String']);
             }
+            if (data.hasOwnProperty('authorized_gw_cluster_name')) {
+                obj['authorized_gw_cluster_name'] = ApiClient.convertToType(data['authorized_gw_cluster_name'], 'String');
+            }
             if (data.hasOwnProperty('bound_attributes')) {
                 obj['bound_attributes'] = ApiClient.convertToType(data['bound_attributes'], [SAMLAttribute]);
             }
@@ -79,6 +82,10 @@ class SAMLAccessRules {
         // ensure the json data is an array
         if (!Array.isArray(data['allowed_redirect_URIs'])) {
             throw new Error("Expected the field `allowed_redirect_URIs` to be an array in the JSON data but got " + data['allowed_redirect_URIs']);
+        }
+        // ensure the json data is a string
+        if (data['authorized_gw_cluster_name'] && !(typeof data['authorized_gw_cluster_name'] === 'string' || data['authorized_gw_cluster_name'] instanceof String)) {
+            throw new Error("Expected the field `authorized_gw_cluster_name` to be a primitive type in the JSON string but got " + data['authorized_gw_cluster_name']);
         }
         if (data['bound_attributes']) { // data not null
             // ensure the json data is an array
@@ -116,6 +123,12 @@ class SAMLAccessRules {
  * @member {Array.<String>} allowed_redirect_URIs
  */
 SAMLAccessRules.prototype['allowed_redirect_URIs'] = undefined;
+
+/**
+ * AuthorizedGwClusterName binds the access method to a single GW cluster. When empty (or whitespace-only), GW-driven auth is disabled.
+ * @member {String} authorized_gw_cluster_name
+ */
+SAMLAccessRules.prototype['authorized_gw_cluster_name'] = undefined;
 
 /**
  * The attributes that login is restricted to.

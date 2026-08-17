@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateF5BigIpTargetOutput model module.
  * @module model/CreateF5BigIpTargetOutput
- * @version 5.0.32
+ * @version 5.0.33
  */
 class CreateF5BigIpTargetOutput {
     /**

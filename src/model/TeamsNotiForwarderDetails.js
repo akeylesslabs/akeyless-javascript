@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TeamsNotiForwarderDetails model module.
  * @module model/TeamsNotiForwarderDetails
- * @version 5.0.32
+ * @version 5.0.33
  */
 class TeamsNotiForwarderDetails {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateK8s model module.
  * @module model/TargetCreateK8s
- * @version 5.0.32
+ * @version 5.0.33
  */
 class TargetCreateK8s {
     /**

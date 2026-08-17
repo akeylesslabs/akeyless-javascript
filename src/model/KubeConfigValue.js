@@ -19,7 +19,7 @@ import KubeconfigUser from './KubeconfigUser';
 /**
  * The KubeConfigValue model module.
  * @module model/KubeConfigValue
- * @version 5.0.32
+ * @version 5.0.33
  */
 class KubeConfigValue {
     /**

@@ -21,7 +21,7 @@ import UidExpirationEvent from './UidExpirationEvent';
 /**
  * The AuthMethod model module.
  * @module model/AuthMethod
- * @version 5.0.32
+ * @version 5.0.33
  */
 class AuthMethod {
     /**
@@ -81,6 +81,9 @@ class AuthMethod {
             }
             if (data.hasOwnProperty('auth_method_roles_assoc')) {
                 obj['auth_method_roles_assoc'] = ApiClient.convertToType(data['auth_method_roles_assoc'], [AuthMethodRoleAssociation]);
+            }
+            if (data.hasOwnProperty('bookmark_login_url_template')) {
+                obj['bookmark_login_url_template'] = ApiClient.convertToType(data['bookmark_login_url_template'], 'String');
             }
             if (data.hasOwnProperty('client_permissions')) {
                 obj['client_permissions'] = ApiClient.convertToType(data['client_permissions'], ['String']);
@@ -153,6 +156,10 @@ class AuthMethod {
             for (const item of data['auth_method_roles_assoc']) {
                 AuthMethodRoleAssociation.validateJSON(item);
             };
+        }
+        // ensure the json data is a string
+        if (data['bookmark_login_url_template'] && !(typeof data['bookmark_login_url_template'] === 'string' || data['bookmark_login_url_template'] instanceof String)) {
+            throw new Error("Expected the field `bookmark_login_url_template` to be a primitive type in the JSON string but got " + data['bookmark_login_url_template']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['client_permissions'])) {
@@ -240,6 +247,12 @@ AuthMethod.prototype['auth_method_name'] = undefined;
  * @member {Array.<module:model/AuthMethodRoleAssociation>} auth_method_roles_assoc
  */
 AuthMethod.prototype['auth_method_roles_assoc'] = undefined;
+
+/**
+ * BookmarkLoginURLTemplate is an OIDC login URL template for console bookmarks. SaaS-owned methods use {redirect_uri} for client substitution; AuthViaGw embeds the GW console callback.
+ * @member {String} bookmark_login_url_template
+ */
+AuthMethod.prototype['bookmark_login_url_template'] = undefined;
 
 /**
  * @member {Array.<String>} client_permissions

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipRenewClientCertificate model module.
  * @module model/KmipRenewClientCertificate
- * @version 5.0.32
+ * @version 5.0.33
  */
 class KmipRenewClientCertificate {
     /**
@@ -48,6 +48,9 @@ class KmipRenewClientCertificate {
         if (data) {
             obj = obj || new KmipRenewClientCertificate();
 
+            if (data.hasOwnProperty('certificate-ttl')) {
+                obj['certificate-ttl'] = ApiClient.convertToType(data['certificate-ttl'], 'Number');
+            }
             if (data.hasOwnProperty('client-id')) {
                 obj['client-id'] = ApiClient.convertToType(data['client-id'], 'String');
             }
@@ -97,6 +100,12 @@ class KmipRenewClientCertificate {
 }
 
 
+
+/**
+ * Client certificate TTL in days. If unset, the existing client TTL is kept.
+ * @member {Number} certificate-ttl
+ */
+KmipRenewClientCertificate.prototype['certificate-ttl'] = undefined;
 
 /**
  * @member {String} client-id

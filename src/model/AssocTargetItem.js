@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocTargetItem model module.
  * @module model/AssocTargetItem
- * @version 5.0.32
+ * @version 5.0.33
  */
 class AssocTargetItem {
     /**
@@ -57,6 +57,9 @@ class AssocTargetItem {
         if (data) {
             obj = obj || new AssocTargetItem();
 
+            if (data.hasOwnProperty('bind-ssl-profiles')) {
+                obj['bind-ssl-profiles'] = ApiClient.convertToType(data['bind-ssl-profiles'], ['String']);
+            }
             if (data.hasOwnProperty('certificate-path')) {
                 obj['certificate-path'] = ApiClient.convertToType(data['certificate-path'], 'String');
             }
@@ -141,6 +144,10 @@ class AssocTargetItem {
             if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['bind-ssl-profiles'])) {
+            throw new Error("Expected the field `bind-ssl-profiles` to be an array in the JSON data but got " + data['bind-ssl-profiles']);
         }
         // ensure the json data is a string
         if (data['certificate-path'] && !(typeof data['certificate-path'] === 'string' || data['certificate-path'] instanceof String)) {
@@ -232,6 +239,12 @@ class AssocTargetItem {
 AssocTargetItem.RequiredProperties = ["name", "target-name"];
 
 /**
+ * Bind the provisioned certificate to an existing client-ssl/server-ssl profile, in the format <type>:<partition>:<name> (relevant only for F5 BIG-IP certificate provisioning). Leave the partition empty to use the certificate's partition. Repeat the parameter to bind several profiles.
+ * @member {Array.<String>} bind-ssl-profiles
+ */
+AssocTargetItem.prototype['bind-ssl-profiles'] = undefined;
+
+/**
  * A path on the target to store the certificate pem file (relevant only for certificate provisioning)
  * @member {String} certificate-path
  */
@@ -301,7 +314,7 @@ AssocTargetItem.prototype['multi-region'] = 'false';
 AssocTargetItem.prototype['name'] = undefined;
 
 /**
- * A custom command to run on the remote target after successful provisioning (relevant only for certificate provisioning)
+ * A custom command to run on the remote target after successful provisioning (relevant only for SSH and Windows certificate provisioning, not supported for F5 BIG-IP)
  * @member {String} post-provision-command
  */
 AssocTargetItem.prototype['post-provision-command'] = undefined;

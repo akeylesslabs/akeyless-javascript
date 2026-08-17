@@ -17,7 +17,7 @@ import WindowsService from './WindowsService';
 /**
  * The RotatedSecretDetailsInfo model module.
  * @module model/RotatedSecretDetailsInfo
- * @version 5.0.32
+ * @version 5.0.33
  */
 class RotatedSecretDetailsInfo {
     /**
@@ -75,6 +75,9 @@ class RotatedSecretDetailsInfo {
             }
             if (data.hasOwnProperty('iis_apps_details')) {
                 obj['iis_apps_details'] = ApiClient.convertToType(data['iis_apps_details'], [WindowsService]);
+            }
+            if (data.hasOwnProperty('key_algorithm')) {
+                obj['key_algorithm'] = ApiClient.convertToType(data['key_algorithm'], 'String');
             }
             if (data.hasOwnProperty('last_rotation_error')) {
                 obj['last_rotation_error'] = ApiClient.convertToType(data['last_rotation_error'], 'String');
@@ -151,6 +154,10 @@ class RotatedSecretDetailsInfo {
             for (const item of data['iis_apps_details']) {
                 WindowsService.validateJSON(item);
             };
+        }
+        // ensure the json data is a string
+        if (data['key_algorithm'] && !(typeof data['key_algorithm'] === 'string' || data['key_algorithm'] instanceof String)) {
+            throw new Error("Expected the field `key_algorithm` to be a primitive type in the JSON string but got " + data['key_algorithm']);
         }
         // ensure the json data is a string
         if (data['last_rotation_error'] && !(typeof data['last_rotation_error'] === 'string' || data['last_rotation_error'] instanceof String)) {
@@ -243,6 +250,12 @@ RotatedSecretDetailsInfo.prototype['gw_cluster_id'] = undefined;
  * @member {Array.<module:model/WindowsService>} iis_apps_details
  */
 RotatedSecretDetailsInfo.prototype['iis_apps_details'] = undefined;
+
+/**
+ * SSHKeyAlgorithm identifies the key algorithm an SSH rotated secret uses. Kept apart from Algorithm, which is an encryption-key enum and has no ECDSA-384 or ECDSA-521.
+ * @member {String} key_algorithm
+ */
+RotatedSecretDetailsInfo.prototype['key_algorithm'] = undefined;
 
 /**
  * @member {String} last_rotation_error

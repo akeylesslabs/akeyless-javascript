@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateRemoteAccessDesktopApp model module.
  * @module model/GatewayUpdateRemoteAccessDesktopApp
- * @version 5.0.32
+ * @version 5.0.33
  */
 class GatewayUpdateRemoteAccessDesktopApp {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateSsh model module.
  * @module model/RotatedSecretUpdateSsh
- * @version 5.0.32
+ * @version 5.0.33
  */
 class RotatedSecretUpdateSsh {
     /**
@@ -43,6 +43,9 @@ class RotatedSecretUpdateSsh {
         obj['rotator-type'] = rotatorType;
         obj['secure-access-allow-external-user'] = false;
         obj['secure-access-target-type'] = 'false';
+        obj['secure-access-web'] = true;
+        obj['secure-access-web-browsing'] = false;
+        obj['secure-access-web-proxy'] = false;
     }
 
     /**
@@ -94,6 +97,9 @@ class RotatedSecretUpdateSsh {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('key-algorithm')) {
+                obj['key-algorithm'] = ApiClient.convertToType(data['key-algorithm'], 'String');
             }
             if (data.hasOwnProperty('key-data-base64')) {
                 obj['key-data-base64'] = ApiClient.convertToType(data['key-data-base64'], 'String');
@@ -173,11 +179,26 @@ class RotatedSecretUpdateSsh {
             if (data.hasOwnProperty('secure-access-rdp-user')) {
                 obj['secure-access-rdp-user'] = ApiClient.convertToType(data['secure-access-rdp-user'], 'String');
             }
+            if (data.hasOwnProperty('secure-access-ssh-creds')) {
+                obj['secure-access-ssh-creds'] = ApiClient.convertToType(data['secure-access-ssh-creds'], 'String');
+            }
             if (data.hasOwnProperty('secure-access-ssh-user')) {
                 obj['secure-access-ssh-user'] = ApiClient.convertToType(data['secure-access-ssh-user'], 'String');
             }
             if (data.hasOwnProperty('secure-access-target-type')) {
                 obj['secure-access-target-type'] = ApiClient.convertToType(data['secure-access-target-type'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-url')) {
+                obj['secure-access-url'] = ApiClient.convertToType(data['secure-access-url'], 'String');
+            }
+            if (data.hasOwnProperty('secure-access-web')) {
+                obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-browsing')) {
+                obj['secure-access-web-browsing'] = ApiClient.convertToType(data['secure-access-web-browsing'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-web-proxy')) {
+                obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
             if (data.hasOwnProperty('skip_dry_run')) {
                 obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
@@ -258,6 +279,10 @@ class RotatedSecretUpdateSsh {
         // ensure the json data is a string
         if (data['key'] && !(typeof data['key'] === 'string' || data['key'] instanceof String)) {
             throw new Error("Expected the field `key` to be a primitive type in the JSON string but got " + data['key']);
+        }
+        // ensure the json data is a string
+        if (data['key-algorithm'] && !(typeof data['key-algorithm'] === 'string' || data['key-algorithm'] instanceof String)) {
+            throw new Error("Expected the field `key-algorithm` to be a primitive type in the JSON string but got " + data['key-algorithm']);
         }
         // ensure the json data is a string
         if (data['key-data-base64'] && !(typeof data['key-data-base64'] === 'string' || data['key-data-base64'] instanceof String)) {
@@ -352,12 +377,20 @@ class RotatedSecretUpdateSsh {
             throw new Error("Expected the field `secure-access-rdp-user` to be a primitive type in the JSON string but got " + data['secure-access-rdp-user']);
         }
         // ensure the json data is a string
+        if (data['secure-access-ssh-creds'] && !(typeof data['secure-access-ssh-creds'] === 'string' || data['secure-access-ssh-creds'] instanceof String)) {
+            throw new Error("Expected the field `secure-access-ssh-creds` to be a primitive type in the JSON string but got " + data['secure-access-ssh-creds']);
+        }
+        // ensure the json data is a string
         if (data['secure-access-ssh-user'] && !(typeof data['secure-access-ssh-user'] === 'string' || data['secure-access-ssh-user'] instanceof String)) {
             throw new Error("Expected the field `secure-access-ssh-user` to be a primitive type in the JSON string but got " + data['secure-access-ssh-user']);
         }
         // ensure the json data is a string
         if (data['secure-access-target-type'] && !(typeof data['secure-access-target-type'] === 'string' || data['secure-access-target-type'] instanceof String)) {
             throw new Error("Expected the field `secure-access-target-type` to be a primitive type in the JSON string but got " + data['secure-access-target-type']);
+        }
+        // ensure the json data is a string
+        if (data['secure-access-url'] && !(typeof data['secure-access-url'] === 'string' || data['secure-access-url'] instanceof String)) {
+            throw new Error("Expected the field `secure-access-url` to be a primitive type in the JSON string but got " + data['secure-access-url']);
         }
         // ensure the json data is a string
         if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
@@ -477,6 +510,12 @@ RotatedSecretUpdateSsh.prototype['keep-prev-version'] = undefined;
  * @member {String} key
  */
 RotatedSecretUpdateSsh.prototype['key'] = undefined;
+
+/**
+ * The key algorithm to generate with when no private key is supplied, leave empty to keep the current algorithm. options: [ED25519/RSA2048/RSA3072/RSA4096/ECDSA256/ECDSA384/ECDSA521]
+ * @member {String} key-algorithm
+ */
+RotatedSecretUpdateSsh.prototype['key-algorithm'] = undefined;
 
 /**
  * Private key file contents encoded using base64
@@ -634,6 +673,12 @@ RotatedSecretUpdateSsh.prototype['secure-access-rdp-domain'] = undefined;
 RotatedSecretUpdateSsh.prototype['secure-access-rdp-user'] = undefined;
 
 /**
+ * Secret values contains SSH Credentials, either Private Key or Password [password/private-key] (relevant only for Static-Secret or Rotated-secret)
+ * @member {String} secure-access-ssh-creds
+ */
+RotatedSecretUpdateSsh.prototype['secure-access-ssh-creds'] = undefined;
+
+/**
  * Override the SSH username as indicated in SSH Certificate Issuer
  * @member {String} secure-access-ssh-user
  */
@@ -645,6 +690,33 @@ RotatedSecretUpdateSsh.prototype['secure-access-ssh-user'] = undefined;
  * @default 'false'
  */
 RotatedSecretUpdateSsh.prototype['secure-access-target-type'] = 'false';
+
+/**
+ * Destination URL to inject secrets
+ * @member {String} secure-access-url
+ */
+RotatedSecretUpdateSsh.prototype['secure-access-url'] = undefined;
+
+/**
+ * Enable Web Secure Remote Access
+ * @member {Boolean} secure-access-web
+ * @default true
+ */
+RotatedSecretUpdateSsh.prototype['secure-access-web'] = true;
+
+/**
+ * Secure browser via Akeyless's Secure Remote Access (SRA)
+ * @member {Boolean} secure-access-web-browsing
+ * @default false
+ */
+RotatedSecretUpdateSsh.prototype['secure-access-web-browsing'] = false;
+
+/**
+ * Web-Proxy via Akeyless's Secure Remote Access (SRA)
+ * @member {Boolean} secure-access-web-proxy
+ * @default false
+ */
+RotatedSecretUpdateSsh.prototype['secure-access-web-proxy'] = false;
 
 /**
  * If set, dry-run will be skipped

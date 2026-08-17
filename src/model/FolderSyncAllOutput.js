@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FolderSyncAllOutput model module.
  * @module model/FolderSyncAllOutput
- * @version 5.0.32
+ * @version 5.0.33
  */
 class FolderSyncAllOutput {
     /**

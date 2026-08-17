@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAzureTarget model module.
  * @module model/UpdateAzureTarget
- * @version 5.0.32
+ * @version 5.0.33
  */
 class UpdateAzureTarget {
     /**

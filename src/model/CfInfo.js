@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CfInfo model module.
  * @module model/CfInfo
- * @version 5.0.32
+ * @version 5.0.33
  */
 class CfInfo {
     /**

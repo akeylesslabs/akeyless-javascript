@@ -17,7 +17,7 @@ import CertificateVersionInfo from './CertificateVersionInfo';
 /**
  * The ItemVersion model module.
  * @module model/ItemVersion
- * @version 5.0.32
+ * @version 5.0.33
  */
 class ItemVersion {
     /**

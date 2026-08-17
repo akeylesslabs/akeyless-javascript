@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCertChallengeOutput model module.
  * @module model/GetCertChallengeOutput
- * @version 5.0.32
+ * @version 5.0.33
  */
 class GetCertChallengeOutput {
     /**

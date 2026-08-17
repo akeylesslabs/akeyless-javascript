@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetList model module.
  * @module model/TargetList
- * @version 5.0.32
+ * @version 5.0.33
  */
 class TargetList {
     /**

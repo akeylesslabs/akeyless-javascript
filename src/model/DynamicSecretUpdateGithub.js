@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGithub model module.
  * @module model/DynamicSecretUpdateGithub
- * @version 5.0.32
+ * @version 5.0.33
  */
 class DynamicSecretUpdateGithub {
     /**

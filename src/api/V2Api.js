@@ -596,6 +596,10 @@ import KmipDeleteServer from '../model/KmipDeleteServer';
 import KmipDescribeClient from '../model/KmipDescribeClient';
 import KmipDescribeServer from '../model/KmipDescribeServer';
 import KmipDescribeServerOutput from '../model/KmipDescribeServerOutput';
+import KmipGetCABundle from '../model/KmipGetCABundle';
+import KmipGetCABundleOutput from '../model/KmipGetCABundleOutput';
+import KmipListCAs from '../model/KmipListCAs';
+import KmipListCAsOutput from '../model/KmipListCAsOutput';
 import KmipListClients from '../model/KmipListClients';
 import KmipMoveServer from '../model/KmipMoveServer';
 import KmipMoveServerOutput from '../model/KmipMoveServerOutput';
@@ -603,11 +607,15 @@ import KmipRenewClientCertificate from '../model/KmipRenewClientCertificate';
 import KmipRenewClientCertificateOutput from '../model/KmipRenewClientCertificateOutput';
 import KmipRenewServerCertificate from '../model/KmipRenewServerCertificate';
 import KmipRenewServerCertificateOutput from '../model/KmipRenewServerCertificateOutput';
+import KmipRotateCA from '../model/KmipRotateCA';
+import KmipRotateCAOutput from '../model/KmipRotateCAOutput';
 import KmipServerSetup from '../model/KmipServerSetup';
 import KmipServerUpdate from '../model/KmipServerUpdate';
 import KmipServerUpdateOutput from '../model/KmipServerUpdateOutput';
 import KmipSetServerState from '../model/KmipSetServerState';
 import KmipSetServerStateOutput from '../model/KmipSetServerStateOutput';
+import KmipSunsetCA from '../model/KmipSunsetCA';
+import KmipSunsetCAOutput from '../model/KmipSunsetCAOutput';
 import KubeconfigGenerateOutput from '../model/KubeconfigGenerateOutput';
 import ListAcmeAccounts from '../model/ListAcmeAccounts';
 import ListAcmeAccountsOutput from '../model/ListAcmeAccountsOutput';
@@ -975,7 +983,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.32
+* @version 5.0.33
 */
 export default class V2Api {
 
@@ -17155,6 +17163,90 @@ export default class V2Api {
 
     /**
      * @param {Object} opts Optional parameters
+     * @param {module:model/KmipGetCABundle} [kmipGetCABundle] 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KmipGetCABundleOutput} and HTTP response
+     */
+    kmipGetCABundleWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['kmipGetCABundle'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KmipGetCABundleOutput;
+      return this.apiClient.callApi(
+        '/kmip-get-ca-bundle', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipGetCABundle} opts.kmipGetCABundle 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KmipGetCABundleOutput}
+     */
+    kmipGetCABundle(opts) {
+      return this.kmipGetCABundleWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipListCAs} [kmipListCAs] 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KmipListCAsOutput} and HTTP response
+     */
+    kmipListCAsWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['kmipListCAs'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KmipListCAsOutput;
+      return this.apiClient.callApi(
+        '/kmip-list-cas', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipListCAs} opts.kmipListCAs 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KmipListCAsOutput}
+     */
+    kmipListCAs(opts) {
+      return this.kmipListCAsWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
      * @param {module:model/KmipListClients} [kmipListClients] 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KMIPClientListResponse} and HTTP response
      */
@@ -17260,7 +17352,7 @@ export default class V2Api {
       let accepts = ['application/json'];
       let returnType = KmipRenewClientCertificateOutput;
       return this.apiClient.callApi(
-        '/kmip-renew-client', 'POST',
+        '/kmip-renew-client-certificate', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -17315,6 +17407,48 @@ export default class V2Api {
      */
     kmipRenewServerCertificate(opts) {
       return this.kmipRenewServerCertificateWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipRotateCA} [kmipRotateCA] 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KmipRotateCAOutput} and HTTP response
+     */
+    kmipRotateCAWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['kmipRotateCA'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KmipRotateCAOutput;
+      return this.apiClient.callApi(
+        '/kmip-rotate-ca', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipRotateCA} opts.kmipRotateCA 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KmipRotateCAOutput}
+     */
+    kmipRotateCA(opts) {
+      return this.kmipRotateCAWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -17441,6 +17575,48 @@ export default class V2Api {
      */
     kmipSetServerState(opts) {
       return this.kmipSetServerStateWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipSunsetCA} [kmipSunsetCA] 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KmipSunsetCAOutput} and HTTP response
+     */
+    kmipSunsetCAWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = opts['kmipSunsetCA'];
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = KmipSunsetCAOutput;
+      return this.apiClient.callApi(
+        '/kmip-sunset-ca', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {module:model/KmipSunsetCA} opts.kmipSunsetCA 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KmipSunsetCAOutput}
+     */
+    kmipSunsetCA(opts) {
+      return this.kmipSunsetCAWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
