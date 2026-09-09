@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateWindows model module.
  * @module model/RotatedSecretCreateWindows
- * @version 5.0.33
+ * @version 5.0.34
  */
 class RotatedSecretCreateWindows {
     /**
@@ -74,6 +74,12 @@ class RotatedSecretCreateWindows {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
+                obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable-ai-quorum')) {
+                obj['enable-ai-quorum'] = ApiClient.convertToType(data['enable-ai-quorum'], 'Boolean');
+            }
             if (data.hasOwnProperty('host-provider')) {
                 obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
             }
@@ -92,6 +98,12 @@ class RotatedSecretCreateWindows {
             if (data.hasOwnProperty('lock-during-sra-session')) {
                 obj['lock-during-sra-session'] = ApiClient.convertToType(data['lock-during-sra-session'], 'String');
             }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
+            }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
@@ -106,6 +118,9 @@ class RotatedSecretCreateWindows {
             }
             if (data.hasOwnProperty('rotate-after-disconnect')) {
                 obj['rotate-after-disconnect'] = ApiClient.convertToType(data['rotate-after-disconnect'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('rotated-password')) {
                 obj['rotated-password'] = ApiClient.convertToType(data['rotated-password'], 'String');
@@ -235,6 +250,14 @@ class RotatedSecretCreateWindows {
             throw new Error("Expected the field `lock-during-sra-session` to be a primitive type in the JSON string but got " + data['lock-during-sra-session']);
         }
         // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
             throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
         }
@@ -253,6 +276,10 @@ class RotatedSecretCreateWindows {
         // ensure the json data is a string
         if (data['rotate-after-disconnect'] && !(typeof data['rotate-after-disconnect'] === 'string' || data['rotate-after-disconnect'] instanceof String)) {
             throw new Error("Expected the field `rotate-after-disconnect` to be a primitive type in the JSON string but got " + data['rotate-after-disconnect']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is a string
         if (data['rotated-password'] && !(typeof data['rotated-password'] === 'string' || data['rotated-password'] instanceof String)) {
@@ -387,6 +414,18 @@ RotatedSecretCreateWindows.prototype['delete_protection'] = undefined;
 RotatedSecretCreateWindows.prototype['description'] = undefined;
 
 /**
+ * EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.
+ * @member {Boolean} enable-agentic-runtime-authority
+ */
+RotatedSecretCreateWindows.prototype['enable-agentic-runtime-authority'] = undefined;
+
+/**
+ * Turns on AI Quorum checks for this item.
+ * @member {Boolean} enable-ai-quorum
+ */
+RotatedSecretCreateWindows.prototype['enable-ai-quorum'] = undefined;
+
+/**
  * Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.
  * @member {String} host-provider
  */
@@ -423,6 +462,18 @@ RotatedSecretCreateWindows.prototype['key'] = undefined;
 RotatedSecretCreateWindows.prototype['lock-during-sra-session'] = undefined;
 
 /**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+RotatedSecretCreateWindows.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+RotatedSecretCreateWindows.prototype['lock-ttl'] = undefined;
+
+/**
  * Set the maximum number of versions, limited by the account settings defaults.
  * @member {String} max-versions
  */
@@ -451,6 +502,12 @@ RotatedSecretCreateWindows.prototype['password-length'] = undefined;
  * @member {String} rotate-after-disconnect
  */
 RotatedSecretCreateWindows.prototype['rotate-after-disconnect'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+RotatedSecretCreateWindows.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * rotated-username password (relevant only for rotator-type=password)

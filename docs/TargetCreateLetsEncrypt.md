@@ -15,9 +15,12 @@ Name | Type | Description | Notes
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **key** | **String** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **letsEncryptUrl** | **String** |  | [optional] [default to &#39;production&#39;]
+**lockOnRead** | **String** | Lock this secret after each successful value read | [optional] 
+**lockTtl** | **String** | Lock TTL in minutes | [optional] 
 **maxVersions** | **String** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **String** | Target name | 
 **resourceGroup** | **String** | Azure resource group name. Required when dns-target-creds points to Azure target | [optional] 
+**rotateOnUnlock** | **String** | Rotate this secret after it is unlocked | [optional] 
 **timeout** | **String** |  | [optional] [default to &#39;5m&#39;]
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 

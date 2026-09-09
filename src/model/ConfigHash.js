@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConfigHash model module.
  * @module model/ConfigHash
- * @version 5.0.33
+ * @version 5.0.34
  */
 class ConfigHash {
     /**
@@ -98,6 +98,9 @@ class ConfigHash {
             if (data.hasOwnProperty('saml')) {
                 obj['saml'] = ApiClient.convertToType(data['saml'], 'String');
             }
+            if (data.hasOwnProperty('saml_sp')) {
+                obj['saml_sp'] = ApiClient.convertToType(data['saml_sp'], 'String');
+            }
             if (data.hasOwnProperty('universal_identity')) {
                 obj['universal_identity'] = ApiClient.convertToType(data['universal_identity'], 'String');
             }
@@ -170,6 +173,10 @@ class ConfigHash {
         // ensure the json data is a string
         if (data['saml'] && !(typeof data['saml'] === 'string' || data['saml'] instanceof String)) {
             throw new Error("Expected the field `saml` to be a primitive type in the JSON string but got " + data['saml']);
+        }
+        // ensure the json data is a string
+        if (data['saml_sp'] && !(typeof data['saml_sp'] === 'string' || data['saml_sp'] instanceof String)) {
+            throw new Error("Expected the field `saml_sp` to be a primitive type in the JSON string but got " + data['saml_sp']);
         }
         // ensure the json data is a string
         if (data['universal_identity'] && !(typeof data['universal_identity'] === 'string' || data['universal_identity'] instanceof String)) {
@@ -268,6 +275,11 @@ ConfigHash.prototype['rotators'] = undefined;
  * @member {String} saml
  */
 ConfigHash.prototype['saml'] = undefined;
+
+/**
+ * @member {String} saml_sp
+ */
+ConfigHash.prototype['saml_sp'] = undefined;
 
 /**
  * @member {String} universal_identity

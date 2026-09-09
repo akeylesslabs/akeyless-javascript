@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateWindowsTarget model module.
  * @module model/CreateWindowsTarget
- * @version 5.0.33
+ * @version 5.0.34
  */
 class CreateWindowsTarget {
     /**
@@ -81,6 +81,12 @@ class CreateWindowsTarget {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
+            }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
@@ -95,6 +101,9 @@ class CreateWindowsTarget {
             }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -149,6 +158,14 @@ class CreateWindowsTarget {
             throw new Error("Expected the field `key` to be a primitive type in the JSON string but got " + data['key']);
         }
         // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
             throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
         }
@@ -167,6 +184,10 @@ class CreateWindowsTarget {
         // ensure the json data is a string
         if (data['port'] && !(typeof data['port'] === 'string' || data['port'] instanceof String)) {
             throw new Error("Expected the field `port` to be a primitive type in the JSON string but got " + data['port']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -238,6 +259,18 @@ CreateWindowsTarget.prototype['json'] = false;
 CreateWindowsTarget.prototype['key'] = undefined;
 
 /**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+CreateWindowsTarget.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+CreateWindowsTarget.prototype['lock-ttl'] = undefined;
+
+/**
  * Set the maximum number of versions, limited by the account settings defaults.
  * @member {String} max-versions
  */
@@ -268,6 +301,12 @@ CreateWindowsTarget.prototype['password'] = 'dummy_value';
  * @default '5986'
  */
 CreateWindowsTarget.prototype['port'] = '5986';
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+CreateWindowsTarget.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

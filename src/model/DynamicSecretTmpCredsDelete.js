@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretTmpCredsDelete model module.
  * @module model/DynamicSecretTmpCredsDelete
- * @version 5.0.33
+ * @version 5.0.34
  */
 class DynamicSecretTmpCredsDelete {
     /**
@@ -53,6 +53,12 @@ class DynamicSecretTmpCredsDelete {
 
             if (data.hasOwnProperty('ara-enabled')) {
                 obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
+                obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable-ai-quorum')) {
+                obj['enable-ai-quorum'] = ApiClient.convertToType(data['enable-ai-quorum'], 'Boolean');
             }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
@@ -149,6 +155,18 @@ DynamicSecretTmpCredsDelete.RequiredProperties = ["name"];
  * @member {Boolean} ara-enabled
  */
 DynamicSecretTmpCredsDelete.prototype['ara-enabled'] = undefined;
+
+/**
+ * EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.
+ * @member {Boolean} enable-agentic-runtime-authority
+ */
+DynamicSecretTmpCredsDelete.prototype['enable-agentic-runtime-authority'] = undefined;
+
+/**
+ * Turns on AI Quorum checks for this item.
+ * @member {Boolean} enable-ai-quorum
+ */
+DynamicSecretTmpCredsDelete.prototype['enable-ai-quorum'] = undefined;
 
 /**
  * Host

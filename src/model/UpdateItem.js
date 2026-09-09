@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 5.0.33
+ * @version 5.0.34
  */
 class UpdateItem {
     /**
@@ -62,6 +62,9 @@ class UpdateItem {
             if (data.hasOwnProperty('add-tag')) {
                 obj['add-tag'] = ApiClient.convertToType(data['add-tag'], ['String']);
             }
+            if (data.hasOwnProperty('ara-enabled')) {
+                obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('cert-file-data')) {
                 obj['cert-file-data'] = ApiClient.convertToType(data['cert-file-data'], 'String');
             }
@@ -77,6 +80,12 @@ class UpdateItem {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
+                obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable-ai-quorum')) {
+                obj['enable-ai-quorum'] = ApiClient.convertToType(data['enable-ai-quorum'], 'Boolean');
+            }
             if (data.hasOwnProperty('expiration-event-in')) {
                 obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
             }
@@ -86,6 +95,9 @@ class UpdateItem {
             if (data.hasOwnProperty('host-provider')) {
                 obj['host-provider'] = ApiClient.convertToType(data['host-provider'], 'String');
             }
+            if (data.hasOwnProperty('input-rule')) {
+                obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
+            }
             if (data.hasOwnProperty('item-custom-fields')) {
                 obj['item-custom-fields'] = ApiClient.convertToType(data['item-custom-fields'], {'String': 'String'});
             }
@@ -94,6 +106,12 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('lock-during-sra-session')) {
                 obj['lock-during-sra-session'] = ApiClient.convertToType(data['lock-during-sra-session'], 'String');
+            }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
             }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
@@ -107,11 +125,17 @@ class UpdateItem {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
+            if (data.hasOwnProperty('output-rule')) {
+                obj['output-rule'] = ApiClient.convertToType(data['output-rule'], ['String']);
+            }
             if (data.hasOwnProperty('rm-tag')) {
                 obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
             }
             if (data.hasOwnProperty('rotate-after-disconnect')) {
                 obj['rotate-after-disconnect'] = ApiClient.convertToType(data['rotate-after-disconnect'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('secure-access-add-host')) {
                 obj['secure-access-add-host'] = ApiClient.convertToType(data['secure-access-add-host'], ['String']);
@@ -281,9 +305,21 @@ class UpdateItem {
         if (data['host-provider'] && !(typeof data['host-provider'] === 'string' || data['host-provider'] instanceof String)) {
             throw new Error("Expected the field `host-provider` to be a primitive type in the JSON string but got " + data['host-provider']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['input-rule'])) {
+            throw new Error("Expected the field `input-rule` to be an array in the JSON data but got " + data['input-rule']);
+        }
         // ensure the json data is a string
         if (data['lock-during-sra-session'] && !(typeof data['lock-during-sra-session'] === 'string' || data['lock-during-sra-session'] instanceof String)) {
             throw new Error("Expected the field `lock-during-sra-session` to be a primitive type in the JSON string but got " + data['lock-during-sra-session']);
+        }
+        // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
         }
         // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
@@ -302,12 +338,20 @@ class UpdateItem {
             throw new Error("Expected the field `new-name` to be a primitive type in the JSON string but got " + data['new-name']);
         }
         // ensure the json data is an array
+        if (!Array.isArray(data['output-rule'])) {
+            throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
+        }
+        // ensure the json data is an array
         if (!Array.isArray(data['rm-tag'])) {
             throw new Error("Expected the field `rm-tag` to be an array in the JSON data but got " + data['rm-tag']);
         }
         // ensure the json data is a string
         if (data['rotate-after-disconnect'] && !(typeof data['rotate-after-disconnect'] === 'string' || data['rotate-after-disconnect'] instanceof String)) {
             throw new Error("Expected the field `rotate-after-disconnect` to be a primitive type in the JSON string but got " + data['rotate-after-disconnect']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['secure-access-add-host'])) {
@@ -453,6 +497,12 @@ UpdateItem.prototype['accessibility'] = 'regular';
 UpdateItem.prototype['add-tag'] = undefined;
 
 /**
+ * Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.
+ * @member {Boolean} ara-enabled
+ */
+UpdateItem.prototype['ara-enabled'] = undefined;
+
+/**
  * PEM Certificate in a Base64 format. Used for updating RSA keys' certificates.
  * @member {String} cert-file-data
  */
@@ -483,6 +533,18 @@ UpdateItem.prototype['delete_protection'] = undefined;
 UpdateItem.prototype['description'] = 'default_metadata';
 
 /**
+ * EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.
+ * @member {Boolean} enable-agentic-runtime-authority
+ */
+UpdateItem.prototype['enable-agentic-runtime-authority'] = undefined;
+
+/**
+ * Turns on AI Quorum checks for this item.
+ * @member {Boolean} enable-ai-quorum
+ */
+UpdateItem.prototype['enable-ai-quorum'] = undefined;
+
+/**
  * How many days before the expiration of the certificate would you like to be notified.
  * @member {Array.<String>} expiration-event-in
  */
@@ -499,6 +561,12 @@ UpdateItem.prototype['gcp-sm-regions'] = undefined;
  * @member {String} host-provider
  */
 UpdateItem.prototype['host-provider'] = undefined;
+
+/**
+ * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)
+ * @member {Array.<String>} input-rule
+ */
+UpdateItem.prototype['input-rule'] = undefined;
 
 /**
  * Additional custom fields to associate with the item
@@ -518,6 +586,18 @@ UpdateItem.prototype['json'] = false;
  * @member {String} lock-during-sra-session
  */
 UpdateItem.prototype['lock-during-sra-session'] = undefined;
+
+/**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+UpdateItem.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+UpdateItem.prototype['lock-ttl'] = undefined;
 
 /**
  * Set the maximum number of versions, limited by the account settings defaults.
@@ -545,6 +625,12 @@ UpdateItem.prototype['new-metadata'] = 'default_metadata';
 UpdateItem.prototype['new-name'] = undefined;
 
 /**
+ * Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)
+ * @member {Array.<String>} output-rule
+ */
+UpdateItem.prototype['output-rule'] = undefined;
+
+/**
  * List of the existent tags that will be removed from this item
  * @member {Array.<String>} rm-tag
  */
@@ -555,6 +641,12 @@ UpdateItem.prototype['rm-tag'] = undefined;
  * @member {String} rotate-after-disconnect
  */
 UpdateItem.prototype['rotate-after-disconnect'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+UpdateItem.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * List of the new hosts that will be attached to SRA servers host

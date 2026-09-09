@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRole model module.
  * @module model/UpdateRole
- * @version 5.0.33
+ * @version 5.0.34
  */
 class UpdateRole {
     /**
@@ -54,6 +54,9 @@ class UpdateRole {
 
             if (data.hasOwnProperty('analytics-access')) {
                 obj['analytics-access'] = ApiClient.convertToType(data['analytics-access'], 'String');
+            }
+            if (data.hasOwnProperty('approve-access-request')) {
+                obj['approve-access-request'] = ApiClient.convertToType(data['approve-access-request'], 'String');
             }
             if (data.hasOwnProperty('ara-reports-access')) {
                 obj['ara-reports-access'] = ApiClient.convertToType(data['ara-reports-access'], 'String');
@@ -103,6 +106,9 @@ class UpdateRole {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
+            if (data.hasOwnProperty('unlock-secrets')) {
+                obj['unlock-secrets'] = ApiClient.convertToType(data['unlock-secrets'], 'String');
+            }
             if (data.hasOwnProperty('usage-reports-access')) {
                 obj['usage-reports-access'] = ApiClient.convertToType(data['usage-reports-access'], 'String');
             }
@@ -125,6 +131,10 @@ class UpdateRole {
         // ensure the json data is a string
         if (data['analytics-access'] && !(typeof data['analytics-access'] === 'string' || data['analytics-access'] instanceof String)) {
             throw new Error("Expected the field `analytics-access` to be a primitive type in the JSON string but got " + data['analytics-access']);
+        }
+        // ensure the json data is a string
+        if (data['approve-access-request'] && !(typeof data['approve-access-request'] === 'string' || data['approve-access-request'] instanceof String)) {
+            throw new Error("Expected the field `approve-access-request` to be a primitive type in the JSON string but got " + data['approve-access-request']);
         }
         // ensure the json data is a string
         if (data['ara-reports-access'] && !(typeof data['ara-reports-access'] === 'string' || data['ara-reports-access'] instanceof String)) {
@@ -187,6 +197,10 @@ class UpdateRole {
             throw new Error("Expected the field `uid-token` to be a primitive type in the JSON string but got " + data['uid-token']);
         }
         // ensure the json data is a string
+        if (data['unlock-secrets'] && !(typeof data['unlock-secrets'] === 'string' || data['unlock-secrets'] instanceof String)) {
+            throw new Error("Expected the field `unlock-secrets` to be a primitive type in the JSON string but got " + data['unlock-secrets']);
+        }
+        // ensure the json data is a string
         if (data['usage-reports-access'] && !(typeof data['usage-reports-access'] === 'string' || data['usage-reports-access'] instanceof String)) {
             throw new Error("Expected the field `usage-reports-access` to be a primitive type in the JSON string but got " + data['usage-reports-access']);
         }
@@ -204,6 +218,12 @@ UpdateRole.RequiredProperties = ["name"];
  * @member {String} analytics-access
  */
 UpdateRole.prototype['analytics-access'] = undefined;
+
+/**
+ * Allow this role to approve Access Requests for items. Currently only 'none', 'scoped' and 'all' values are supported. The tier controls how broadly the approver may list Auth Methods; neither tier lets them grant permissions they do not already hold on the requested item or target.
+ * @member {String} approve-access-request
+ */
+UpdateRole.prototype['approve-access-request'] = undefined;
 
 /**
  * Allow this role to view Agentic Runtime Authority Dashboard. Currently only 'none', 'scoped', 'all' values are supported.
@@ -303,6 +323,12 @@ UpdateRole.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 UpdateRole.prototype['uid-token'] = undefined;
+
+/**
+ * Allow this role to force-unlock locked secrets. Currently only 'none', 'scoped' and 'all' values are supported.
+ * @member {String} unlock-secrets
+ */
+UpdateRole.prototype['unlock-secrets'] = undefined;
 
 /**
  * Allow this role to view Usage Report. Currently only 'none' and 'all' values are supported.

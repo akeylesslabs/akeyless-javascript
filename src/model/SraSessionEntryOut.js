@@ -17,7 +17,7 @@ import GatewayNameInfo from './GatewayNameInfo';
 /**
  * The SraSessionEntryOut model module.
  * @module model/SraSessionEntryOut
- * @version 5.0.33
+ * @version 5.0.34
  */
 class SraSessionEntryOut {
     /**
@@ -87,6 +87,15 @@ class SraSessionEntryOut {
             if (data.hasOwnProperty('target_host')) {
                 obj['target_host'] = ApiClient.convertToType(data['target_host'], 'String');
             }
+            if (data.hasOwnProperty('target_id')) {
+                obj['target_id'] = ApiClient.convertToType(data['target_id'], 'Number');
+            }
+            if (data.hasOwnProperty('target_name')) {
+                obj['target_name'] = ApiClient.convertToType(data['target_name'], 'String');
+            }
+            if (data.hasOwnProperty('target_type')) {
+                obj['target_type'] = ApiClient.convertToType(data['target_type'], 'String');
+            }
             if (data.hasOwnProperty('ttl')) {
                 obj['ttl'] = ApiClient.convertToType(data['ttl'], 'String');
             }
@@ -142,6 +151,14 @@ class SraSessionEntryOut {
         // ensure the json data is a string
         if (data['target_host'] && !(typeof data['target_host'] === 'string' || data['target_host'] instanceof String)) {
             throw new Error("Expected the field `target_host` to be a primitive type in the JSON string but got " + data['target_host']);
+        }
+        // ensure the json data is a string
+        if (data['target_name'] && !(typeof data['target_name'] === 'string' || data['target_name'] instanceof String)) {
+            throw new Error("Expected the field `target_name` to be a primitive type in the JSON string but got " + data['target_name']);
+        }
+        // ensure the json data is a string
+        if (data['target_type'] && !(typeof data['target_type'] === 'string' || data['target_type'] instanceof String)) {
+            throw new Error("Expected the field `target_type` to be a primitive type in the JSON string but got " + data['target_type']);
         }
         // ensure the json data is a string
         if (data['ttl'] && !(typeof data['ttl'] === 'string' || data['ttl'] instanceof String)) {
@@ -224,6 +241,21 @@ SraSessionEntryOut.prototype['status'] = undefined;
  * @member {String} target_host
  */
 SraSessionEntryOut.prototype['target_host'] = undefined;
+
+/**
+ * @member {Number} target_id
+ */
+SraSessionEntryOut.prototype['target_id'] = undefined;
+
+/**
+ * @member {String} target_name
+ */
+SraSessionEntryOut.prototype['target_name'] = undefined;
+
+/**
+ * @member {String} target_type
+ */
+SraSessionEntryOut.prototype['target_type'] = undefined;
 
 /**
  * @member {String} ttl

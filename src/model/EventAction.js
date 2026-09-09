@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventAction model module.
  * @module model/EventAction
- * @version 5.0.33
+ * @version 5.0.34
  */
 class EventAction {
     /**
@@ -63,6 +63,9 @@ class EventAction {
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
+            }
+            if (data.hasOwnProperty('ttl-in-min')) {
+                obj['ttl-in-min'] = ApiClient.convertToType(data['ttl-in-min'], 'Number');
             }
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
@@ -128,6 +131,12 @@ EventAction.prototype['json'] = false;
  * @member {String} token
  */
 EventAction.prototype['token'] = undefined;
+
+/**
+ * The access TTL in minutes granted by the approver, overriding the requested one
+ * @member {Number} ttl-in-min
+ */
+EventAction.prototype['ttl-in-min'] = undefined;
 
 /**
  * The universal identity token, Required only for universal_identity authentication

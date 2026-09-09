@@ -32,7 +32,7 @@ import TokenizerInfo from './TokenizerInfo';
 /**
  * The ItemGeneralInfo model module.
  * @module model/ItemGeneralInfo
- * @version 5.0.33
+ * @version 5.0.34
  */
 class ItemGeneralInfo {
     /**
@@ -99,6 +99,12 @@ class ItemGeneralInfo {
             if (data.hasOwnProperty('issuer_overview_info')) {
                 obj['issuer_overview_info'] = IssuerOverviewInfo.constructFromObject(data['issuer_overview_info']);
             }
+            if (data.hasOwnProperty('lock_on_read')) {
+                obj['lock_on_read'] = ApiClient.convertToType(data['lock_on_read'], 'Boolean');
+            }
+            if (data.hasOwnProperty('lock_ttl')) {
+                obj['lock_ttl'] = ApiClient.convertToType(data['lock_ttl'], 'Number');
+            }
             if (data.hasOwnProperty('next_rotation_events')) {
                 obj['next_rotation_events'] = ApiClient.convertToType(data['next_rotation_events'], [NextAutoRotationEvent]);
             }
@@ -107,6 +113,12 @@ class ItemGeneralInfo {
             }
             if (data.hasOwnProperty('password_policy')) {
                 obj['password_policy'] = PasswordPolicyInfo.constructFromObject(data['password_policy']);
+            }
+            if (data.hasOwnProperty('pending_rotate_on_unlock')) {
+                obj['pending_rotate_on_unlock'] = ApiClient.convertToType(data['pending_rotate_on_unlock'], 'Boolean');
+            }
+            if (data.hasOwnProperty('rotate_on_unlock')) {
+                obj['rotate_on_unlock'] = ApiClient.convertToType(data['rotate_on_unlock'], 'Boolean');
             }
             if (data.hasOwnProperty('rotated_secret_details')) {
                 obj['rotated_secret_details'] = RotatedSecretDetailsInfo.constructFromObject(data['rotated_secret_details']);
@@ -288,6 +300,16 @@ ItemGeneralInfo.prototype['importer_info'] = undefined;
 ItemGeneralInfo.prototype['issuer_overview_info'] = undefined;
 
 /**
+ * @member {Boolean} lock_on_read
+ */
+ItemGeneralInfo.prototype['lock_on_read'] = undefined;
+
+/**
+ * @member {Number} lock_ttl
+ */
+ItemGeneralInfo.prototype['lock_ttl'] = undefined;
+
+/**
  * @member {Array.<module:model/NextAutoRotationEvent>} next_rotation_events
  */
 ItemGeneralInfo.prototype['next_rotation_events'] = undefined;
@@ -301,6 +323,16 @@ ItemGeneralInfo.prototype['oidc_client_info'] = undefined;
  * @member {module:model/PasswordPolicyInfo} password_policy
  */
 ItemGeneralInfo.prototype['password_policy'] = undefined;
+
+/**
+ * @member {Boolean} pending_rotate_on_unlock
+ */
+ItemGeneralInfo.prototype['pending_rotate_on_unlock'] = undefined;
+
+/**
+ * @member {Boolean} rotate_on_unlock
+ */
+ItemGeneralInfo.prototype['rotate_on_unlock'] = undefined;
 
 /**
  * @member {module:model/RotatedSecretDetailsInfo} rotated_secret_details

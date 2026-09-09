@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGithub model module.
  * @module model/DynamicSecretUpdateGithub
- * @version 5.0.33
+ * @version 5.0.34
  */
 class DynamicSecretUpdateGithub {
     /**
@@ -61,6 +61,12 @@ class DynamicSecretUpdateGithub {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
+                obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable-ai-quorum')) {
+                obj['enable-ai-quorum'] = ApiClient.convertToType(data['enable-ai-quorum'], 'Boolean');
             }
             if (data.hasOwnProperty('github-app-id')) {
                 obj['github-app-id'] = ApiClient.convertToType(data['github-app-id'], 'Number');
@@ -236,6 +242,18 @@ DynamicSecretUpdateGithub.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 DynamicSecretUpdateGithub.prototype['description'] = undefined;
+
+/**
+ * EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.
+ * @member {Boolean} enable-agentic-runtime-authority
+ */
+DynamicSecretUpdateGithub.prototype['enable-agentic-runtime-authority'] = undefined;
+
+/**
+ * Turns on AI Quorum checks for this item.
+ * @member {Boolean} enable-ai-quorum
+ */
+DynamicSecretUpdateGithub.prototype['enable-ai-quorum'] = undefined;
 
 /**
  * Github app id

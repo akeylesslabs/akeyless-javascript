@@ -17,7 +17,7 @@ import AgenticRule from './AgenticRule';
 /**
  * The AgenticRules model module.
  * @module model/AgenticRules
- * @version 5.0.33
+ * @version 5.0.34
  */
 class AgenticRules {
     /**
@@ -56,6 +56,9 @@ class AgenticRules {
             }
             if (data.hasOwnProperty('output_rules')) {
                 obj['output_rules'] = ApiClient.convertToType(data['output_rules'], [AgenticRule]);
+            }
+            if (data.hasOwnProperty('quorum_enabled')) {
+                obj['quorum_enabled'] = ApiClient.convertToType(data['quorum_enabled'], 'Boolean');
             }
         }
         return obj;
@@ -111,6 +114,12 @@ AgenticRules.prototype['input_rules'] = undefined;
  * @member {Array.<module:model/AgenticRule>} output_rules
  */
 AgenticRules.prototype['output_rules'] = undefined;
+
+/**
+ * QuorumEnabled asks for this item's policy decisions to be evaluated by every model configured on the gateway rather than the Default alone.  Also a pointer, but with the opposite nil meaning to Enabled above: nil is OFF. Enabled defaults on because it governs rules that were already being enforced before the field existed, whereas quorum is new behavior that multiplies latency and denies fail-closed - an item that never asked for it must not acquire it by upgrade.
+ * @member {Boolean} quorum_enabled
+ */
+AgenticRules.prototype['quorum_enabled'] = undefined;
 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateLinked model module.
  * @module model/TargetUpdateLinked
- * @version 5.0.33
+ * @version 5.0.34
  */
 class TargetUpdateLinked {
     /**
@@ -53,6 +53,9 @@ class TargetUpdateLinked {
             if (data.hasOwnProperty('add-hosts')) {
                 obj['add-hosts'] = ApiClient.convertToType(data['add-hosts'], 'String');
             }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -65,6 +68,15 @@ class TargetUpdateLinked {
             if (data.hasOwnProperty('keep-prev-version')) {
                 obj['keep-prev-version'] = ApiClient.convertToType(data['keep-prev-version'], 'String');
             }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -76,6 +88,9 @@ class TargetUpdateLinked {
             }
             if (data.hasOwnProperty('rm-hosts')) {
                 obj['rm-hosts'] = ApiClient.convertToType(data['rm-hosts'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -107,6 +122,10 @@ class TargetUpdateLinked {
             throw new Error("Expected the field `add-hosts` to be a primitive type in the JSON string but got " + data['add-hosts']);
         }
         // ensure the json data is a string
+        if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
+            throw new Error("Expected the field `delete_protection` to be a primitive type in the JSON string but got " + data['delete_protection']);
+        }
+        // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
@@ -117,6 +136,18 @@ class TargetUpdateLinked {
         // ensure the json data is a string
         if (data['keep-prev-version'] && !(typeof data['keep-prev-version'] === 'string' || data['keep-prev-version'] instanceof String)) {
             throw new Error("Expected the field `keep-prev-version` to be a primitive type in the JSON string but got " + data['keep-prev-version']);
+        }
+        // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
+        if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
+            throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
         }
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
@@ -133,6 +164,10 @@ class TargetUpdateLinked {
         // ensure the json data is a string
         if (data['rm-hosts'] && !(typeof data['rm-hosts'] === 'string' || data['rm-hosts'] instanceof String)) {
             throw new Error("Expected the field `rm-hosts` to be a primitive type in the JSON string but got " + data['rm-hosts']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -162,6 +197,12 @@ TargetUpdateLinked.RequiredProperties = ["name"];
 TargetUpdateLinked.prototype['add-hosts'] = undefined;
 
 /**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+TargetUpdateLinked.prototype['delete_protection'] = undefined;
+
+/**
  * Description of the object
  * @member {String} description
  */
@@ -187,6 +228,24 @@ TargetUpdateLinked.prototype['json'] = false;
 TargetUpdateLinked.prototype['keep-prev-version'] = undefined;
 
 /**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+TargetUpdateLinked.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+TargetUpdateLinked.prototype['lock-ttl'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+TargetUpdateLinked.prototype['max-versions'] = undefined;
+
+/**
  * Linked Target name
  * @member {String} name
  */
@@ -209,6 +268,12 @@ TargetUpdateLinked.prototype['parent-target-name'] = undefined;
  * @member {String} rm-hosts
  */
 TargetUpdateLinked.prototype['rm-hosts'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+TargetUpdateLinked.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

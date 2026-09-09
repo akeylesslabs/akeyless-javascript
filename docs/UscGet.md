@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gcpProjectId** | **String** | GCP Project ID (Relevant only for GCP targets) | [optional] 
+**gcpProjectId** | **String** | The GCP project the secret resides in (GCP only). Used when getting a secret by name in a connector that spans multiple projects or uses folder/organization scope. | [optional] 
 **json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **namespace** | **String** | The namespace (relevant for Hashi vault target) | [optional] 
 **objectType** | **String** |  | [optional] 

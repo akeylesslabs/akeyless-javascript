@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **location** | **Object** |  | [optional] 
 **name** | **String** |  | [optional] 
 **namespace** | **String** |  | [optional] 
+**project** | **String** |  | [optional] 
 **region** | **String** |  | [optional] 
 **secretId** | **String** |  | [optional] 
 **status** | **Boolean** |  | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateGroup model module.
  * @module model/UpdateGroup
- * @version 5.0.33
+ * @version 5.0.34
  */
 class UpdateGroup {
     /**

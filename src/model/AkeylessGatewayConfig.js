@@ -29,11 +29,12 @@ import LogForwardingConfigPart from './LogForwardingConfigPart';
 import MigrationsConfigPart from './MigrationsConfigPart';
 import ProducersConfigPart from './ProducersConfigPart';
 import RotatorsConfigPart from './RotatorsConfigPart';
+import SamlSpConfigPart from './SamlSpConfigPart';
 
 /**
  * The AkeylessGatewayConfig model module.
  * @module model/AkeylessGatewayConfig
- * @version 5.0.33
+ * @version 5.0.34
  */
 class AkeylessGatewayConfig {
     /**
@@ -117,6 +118,9 @@ class AkeylessGatewayConfig {
             }
             if (data.hasOwnProperty('saml')) {
                 obj['saml'] = DefaultConfigPart.constructFromObject(data['saml']);
+            }
+            if (data.hasOwnProperty('saml_sp')) {
+                obj['saml_sp'] = SamlSpConfigPart.constructFromObject(data['saml_sp']);
             }
             if (data.hasOwnProperty('version')) {
                 obj['version'] = ApiClient.convertToType(data['version'], 'Number');
@@ -202,6 +206,10 @@ class AkeylessGatewayConfig {
         // validate the optional field `saml`
         if (data['saml']) { // data not null
           DefaultConfigPart.validateJSON(data['saml']);
+        }
+        // validate the optional field `saml_sp`
+        if (data['saml_sp']) { // data not null
+          SamlSpConfigPart.validateJSON(data['saml_sp']);
         }
 
         return true;
@@ -301,6 +309,11 @@ AkeylessGatewayConfig.prototype['rotators'] = undefined;
  * @member {module:model/DefaultConfigPart} saml
  */
 AkeylessGatewayConfig.prototype['saml'] = undefined;
+
+/**
+ * @member {module:model/SamlSpConfigPart} saml_sp
+ */
+AkeylessGatewayConfig.prototype['saml_sp'] = undefined;
 
 /**
  * @member {Number} version

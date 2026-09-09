@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 5.0.33
+ * @version 5.0.34
  */
 class UpdateRotatedSecret {
     /**
@@ -101,6 +101,12 @@ class UpdateRotatedSecret {
             if (data.hasOwnProperty('lock-during-sra-session')) {
                 obj['lock-during-sra-session'] = ApiClient.convertToType(data['lock-during-sra-session'], 'String');
             }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -118,6 +124,9 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('rotate-after-disconnect')) {
                 obj['rotate-after-disconnect'] = ApiClient.convertToType(data['rotate-after-disconnect'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('rotated-password')) {
                 obj['rotated-password'] = ApiClient.convertToType(data['rotated-password'], 'String');
@@ -297,6 +306,14 @@ class UpdateRotatedSecret {
             throw new Error("Expected the field `lock-during-sra-session` to be a primitive type in the JSON string but got " + data['lock-during-sra-session']);
         }
         // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
         }
@@ -315,6 +332,10 @@ class UpdateRotatedSecret {
         // ensure the json data is a string
         if (data['rotate-after-disconnect'] && !(typeof data['rotate-after-disconnect'] === 'string' || data['rotate-after-disconnect'] instanceof String)) {
             throw new Error("Expected the field `rotate-after-disconnect` to be a primitive type in the JSON string but got " + data['rotate-after-disconnect']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is a string
         if (data['rotated-password'] && !(typeof data['rotated-password'] === 'string' || data['rotated-password'] instanceof String)) {
@@ -517,6 +538,18 @@ UpdateRotatedSecret.prototype['key'] = undefined;
 UpdateRotatedSecret.prototype['lock-during-sra-session'] = undefined;
 
 /**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+UpdateRotatedSecret.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+UpdateRotatedSecret.prototype['lock-ttl'] = undefined;
+
+/**
  * Secret name
  * @member {String} name
  */
@@ -552,6 +585,12 @@ UpdateRotatedSecret.prototype['rm-tag'] = undefined;
  * @member {String} rotate-after-disconnect
  */
 UpdateRotatedSecret.prototype['rotate-after-disconnect'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+UpdateRotatedSecret.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * rotated-username password

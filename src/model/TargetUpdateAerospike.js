@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateAerospike model module.
  * @module model/TargetUpdateAerospike
- * @version 5.0.33
+ * @version 5.0.34
  */
 class TargetUpdateAerospike {
     /**
@@ -97,6 +97,12 @@ class TargetUpdateAerospike {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
+            }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
@@ -117,6 +123,9 @@ class TargetUpdateAerospike {
             }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('skip-server-name-validation')) {
                 obj['skip-server-name-validation'] = ApiClient.convertToType(data['skip-server-name-validation'], 'String');
@@ -198,6 +207,14 @@ class TargetUpdateAerospike {
             throw new Error("Expected the field `key` to be a primitive type in the JSON string but got " + data['key']);
         }
         // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
             throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
         }
@@ -224,6 +241,10 @@ class TargetUpdateAerospike {
         // ensure the json data is a string
         if (data['port'] && !(typeof data['port'] === 'string' || data['port'] instanceof String)) {
             throw new Error("Expected the field `port` to be a primitive type in the JSON string but got " + data['port']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is a string
         if (data['skip-server-name-validation'] && !(typeof data['skip-server-name-validation'] === 'string' || data['skip-server-name-validation'] instanceof String)) {
@@ -343,6 +364,18 @@ TargetUpdateAerospike.prototype['keep-prev-version'] = undefined;
 TargetUpdateAerospike.prototype['key'] = undefined;
 
 /**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+TargetUpdateAerospike.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+TargetUpdateAerospike.prototype['lock-ttl'] = undefined;
+
+/**
  * Set the maximum number of versions, limited by the account settings defaults.
  * @member {String} max-versions
  */
@@ -384,6 +417,12 @@ TargetUpdateAerospike.prototype['password'] = undefined;
  * @member {String} port
  */
 TargetUpdateAerospike.prototype['port'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+TargetUpdateAerospike.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * Skip server name verification while still validating the certificate chain (true/false). Empty means do not skip.

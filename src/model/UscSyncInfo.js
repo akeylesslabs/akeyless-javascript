@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscSyncInfo model module.
  * @module model/UscSyncInfo
- * @version 5.0.33
+ * @version 5.0.34
  */
 class UscSyncInfo {
     /**
@@ -59,6 +59,9 @@ class UscSyncInfo {
             if (data.hasOwnProperty('namespace')) {
                 obj['namespace'] = ApiClient.convertToType(data['namespace'], 'String');
             }
+            if (data.hasOwnProperty('project')) {
+                obj['project'] = ApiClient.convertToType(data['project'], 'String');
+            }
             if (data.hasOwnProperty('secret_id')) {
                 obj['secret_id'] = ApiClient.convertToType(data['secret_id'], 'String');
             }
@@ -92,6 +95,10 @@ class UscSyncInfo {
         // ensure the json data is a string
         if (data['namespace'] && !(typeof data['namespace'] === 'string' || data['namespace'] instanceof String)) {
             throw new Error("Expected the field `namespace` to be a primitive type in the JSON string but got " + data['namespace']);
+        }
+        // ensure the json data is a string
+        if (data['project'] && !(typeof data['project'] === 'string' || data['project'] instanceof String)) {
+            throw new Error("Expected the field `project` to be a primitive type in the JSON string but got " + data['project']);
         }
         // ensure the json data is a string
         if (data['secret_id'] && !(typeof data['secret_id'] === 'string' || data['secret_id'] instanceof String)) {
@@ -137,6 +144,11 @@ UscSyncInfo.prototype['last_error'] = undefined;
  * @member {String} namespace
  */
 UscSyncInfo.prototype['namespace'] = undefined;
+
+/**
+ * @member {String} project
+ */
+UscSyncInfo.prototype['project'] = undefined;
 
 /**
  * @member {String} secret_id

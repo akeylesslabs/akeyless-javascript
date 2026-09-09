@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateLinked model module.
  * @module model/TargetCreateLinked
- * @version 5.0.33
+ * @version 5.0.34
  */
 class TargetCreateLinked {
     /**
@@ -62,11 +62,23 @@ class TargetCreateLinked {
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
+            }
+            if (data.hasOwnProperty('max-versions')) {
+                obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('parent-target-name')) {
                 obj['parent-target-name'] = ApiClient.convertToType(data['parent-target-name'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -106,12 +118,28 @@ class TargetCreateLinked {
             throw new Error("Expected the field `hosts` to be a primitive type in the JSON string but got " + data['hosts']);
         }
         // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
+        if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
+            throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
+        }
+        // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
         }
         // ensure the json data is a string
         if (data['parent-target-name'] && !(typeof data['parent-target-name'] === 'string' || data['parent-target-name'] instanceof String)) {
             throw new Error("Expected the field `parent-target-name` to be a primitive type in the JSON string but got " + data['parent-target-name']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -160,6 +188,24 @@ TargetCreateLinked.prototype['hosts'] = undefined;
 TargetCreateLinked.prototype['json'] = false;
 
 /**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+TargetCreateLinked.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+TargetCreateLinked.prototype['lock-ttl'] = undefined;
+
+/**
+ * Set the maximum number of versions, limited by the account settings defaults.
+ * @member {String} max-versions
+ */
+TargetCreateLinked.prototype['max-versions'] = undefined;
+
+/**
  * Target name
  * @member {String} name
  */
@@ -170,6 +216,12 @@ TargetCreateLinked.prototype['name'] = undefined;
  * @member {String} parent-target-name
  */
 TargetCreateLinked.prototype['parent-target-name'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+TargetCreateLinked.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

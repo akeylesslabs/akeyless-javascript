@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateUSCOutput model module.
  * @module model/CreateUSCOutput
- * @version 5.0.33
+ * @version 5.0.34
  */
 class CreateUSCOutput {
     /**

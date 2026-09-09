@@ -29,6 +29,7 @@ import AssocRoleAuthMethod from '../model/AssocRoleAuthMethod';
 import AssocTargetItem from '../model/AssocTargetItem';
 import Auth from '../model/Auth';
 import AuthMethod from '../model/AuthMethod';
+import AuthMethodCreateAliCloud from '../model/AuthMethodCreateAliCloud';
 import AuthMethodCreateApiKey from '../model/AuthMethodCreateApiKey';
 import AuthMethodCreateAwsIam from '../model/AuthMethodCreateAwsIam';
 import AuthMethodCreateAzureAD from '../model/AuthMethodCreateAzureAD';
@@ -48,6 +49,7 @@ import AuthMethodDelete from '../model/AuthMethodDelete';
 import AuthMethodDeleteOutput from '../model/AuthMethodDeleteOutput';
 import AuthMethodGet from '../model/AuthMethodGet';
 import AuthMethodList from '../model/AuthMethodList';
+import AuthMethodUpdateAliCloud from '../model/AuthMethodUpdateAliCloud';
 import AuthMethodUpdateApiKey from '../model/AuthMethodUpdateApiKey';
 import AuthMethodUpdateAwsIam from '../model/AuthMethodUpdateAwsIam';
 import AuthMethodUpdateAzureAD from '../model/AuthMethodUpdateAzureAD';
@@ -983,7 +985,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.33
+* @version 5.0.34
 */
 export default class V2Api {
 
@@ -1393,6 +1395,49 @@ export default class V2Api {
      */
     auth(auth) {
       return this.authWithHttpInfo(auth)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodCreateAliCloud} authMethodCreateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodCreateOutput} and HTTP response
+     */
+    authMethodCreateAliCloudWithHttpInfo(authMethodCreateAliCloud) {
+      let postBody = authMethodCreateAliCloud;
+      // verify the required parameter 'authMethodCreateAliCloud' is set
+      if (authMethodCreateAliCloud === undefined || authMethodCreateAliCloud === null) {
+        throw new Error("Missing the required parameter 'authMethodCreateAliCloud' when calling authMethodCreateAliCloud");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodCreateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-create-alicloud', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodCreateAliCloud} authMethodCreateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodCreateOutput}
+     */
+    authMethodCreateAliCloud(authMethodCreateAliCloud) {
+      return this.authMethodCreateAliCloudWithHttpInfo(authMethodCreateAliCloud)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -2124,6 +2169,49 @@ export default class V2Api {
      */
     authMethodList(authMethodList) {
       return this.authMethodListWithHttpInfo(authMethodList)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/AuthMethodUpdateAliCloud} authMethodUpdateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthMethodUpdateOutput} and HTTP response
+     */
+    authMethodUpdateAliCloudWithHttpInfo(authMethodUpdateAliCloud) {
+      let postBody = authMethodUpdateAliCloud;
+      // verify the required parameter 'authMethodUpdateAliCloud' is set
+      if (authMethodUpdateAliCloud === undefined || authMethodUpdateAliCloud === null) {
+        throw new Error("Missing the required parameter 'authMethodUpdateAliCloud' when calling authMethodUpdateAliCloud");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthMethodUpdateOutput;
+      return this.apiClient.callApi(
+        '/auth-method-update-alicloud', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/AuthMethodUpdateAliCloud} authMethodUpdateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthMethodUpdateOutput}
+     */
+    authMethodUpdateAliCloud(authMethodUpdateAliCloud) {
+      return this.authMethodUpdateAliCloudWithHttpInfo(authMethodUpdateAliCloud)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

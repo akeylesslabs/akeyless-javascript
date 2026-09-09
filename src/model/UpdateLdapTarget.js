@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLdapTarget model module.
  * @module model/UpdateLdapTarget
- * @version 5.0.33
+ * @version 5.0.34
  */
 class UpdateLdapTarget {
     /**
@@ -84,6 +84,12 @@ class UpdateLdapTarget {
             if (data.hasOwnProperty('ldap-url')) {
                 obj['ldap-url'] = ApiClient.convertToType(data['ldap-url'], 'String');
             }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
+            }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
@@ -92,6 +98,9 @@ class UpdateLdapTarget {
             }
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('server-type')) {
                 obj['server-type'] = ApiClient.convertToType(data['server-type'], 'String');
@@ -157,6 +166,14 @@ class UpdateLdapTarget {
             throw new Error("Expected the field `ldap-url` to be a primitive type in the JSON string but got " + data['ldap-url']);
         }
         // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
             throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
         }
@@ -167,6 +184,10 @@ class UpdateLdapTarget {
         // ensure the json data is a string
         if (data['new-name'] && !(typeof data['new-name'] === 'string' || data['new-name'] instanceof String)) {
             throw new Error("Expected the field `new-name` to be a primitive type in the JSON string but got " + data['new-name']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is a string
         if (data['server-type'] && !(typeof data['server-type'] === 'string' || data['server-type'] instanceof String)) {
@@ -249,6 +270,18 @@ UpdateLdapTarget.prototype['ldap-ca-cert'] = undefined;
 UpdateLdapTarget.prototype['ldap-url'] = undefined;
 
 /**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+UpdateLdapTarget.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+UpdateLdapTarget.prototype['lock-ttl'] = undefined;
+
+/**
  * Set the maximum number of versions, limited by the account settings defaults.
  * @member {String} max-versions
  */
@@ -265,6 +298,12 @@ UpdateLdapTarget.prototype['name'] = undefined;
  * @member {String} new-name
  */
 UpdateLdapTarget.prototype['new-name'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+UpdateLdapTarget.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * Set Ldap server type, Options:[OpenLDAP, ActiveDirectory]

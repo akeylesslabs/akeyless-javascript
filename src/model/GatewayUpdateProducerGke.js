@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerGke model module.
  * @module model/GatewayUpdateProducerGke
- * @version 5.0.33
+ * @version 5.0.34
  */
 class GatewayUpdateProducerGke {
     /**
@@ -58,6 +58,12 @@ class GatewayUpdateProducerGke {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
+                obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable-ai-quorum')) {
+                obj['enable-ai-quorum'] = ApiClient.convertToType(data['enable-ai-quorum'], 'Boolean');
             }
             if (data.hasOwnProperty('gke-account-key')) {
                 obj['gke-account-key'] = ApiClient.convertToType(data['gke-account-key'], 'String');
@@ -254,6 +260,18 @@ GatewayUpdateProducerGke.prototype['ara-enabled'] = undefined;
  * @member {String} delete_protection
  */
 GatewayUpdateProducerGke.prototype['delete_protection'] = undefined;
+
+/**
+ * EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.
+ * @member {Boolean} enable-agentic-runtime-authority
+ */
+GatewayUpdateProducerGke.prototype['enable-agentic-runtime-authority'] = undefined;
+
+/**
+ * Turns on AI Quorum checks for this item.
+ * @member {Boolean} enable-ai-quorum
+ */
+GatewayUpdateProducerGke.prototype['enable-ai-quorum'] = undefined;
 
 /**
  * GKE Service Account key file path

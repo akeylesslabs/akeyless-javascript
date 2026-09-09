@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDBTarget model module.
  * @module model/CreateDBTarget
- * @version 5.0.33
+ * @version 5.0.34
  */
 class CreateDBTarget {
     /**
@@ -113,6 +113,12 @@ class CreateDBTarget {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
+            }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
@@ -157,6 +163,9 @@ class CreateDBTarget {
             }
             if (data.hasOwnProperty('pwd')) {
                 obj['pwd'] = ApiClient.convertToType(data['pwd'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('skip-server-name-validation')) {
                 obj['skip-server-name-validation'] = ApiClient.convertToType(data['skip-server-name-validation'], 'String');
@@ -266,6 +275,14 @@ class CreateDBTarget {
             throw new Error("Expected the field `key` to be a primitive type in the JSON string but got " + data['key']);
         }
         // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
             throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
         }
@@ -320,6 +337,10 @@ class CreateDBTarget {
         // ensure the json data is a string
         if (data['pwd'] && !(typeof data['pwd'] === 'string' || data['pwd'] instanceof String)) {
             throw new Error("Expected the field `pwd` to be a primitive type in the JSON string but got " + data['pwd']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is a string
         if (data['skip-server-name-validation'] && !(typeof data['skip-server-name-validation'] === 'string' || data['skip-server-name-validation'] instanceof String)) {
@@ -476,6 +497,18 @@ CreateDBTarget.prototype['json'] = false;
 CreateDBTarget.prototype['key'] = undefined;
 
 /**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+CreateDBTarget.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+CreateDBTarget.prototype['lock-ttl'] = undefined;
+
+/**
  * Set the maximum number of versions, limited by the account settings defaults.
  * @member {String} max-versions
  */
@@ -561,6 +594,12 @@ CreateDBTarget.prototype['port'] = undefined;
  * @member {String} pwd
  */
 CreateDBTarget.prototype['pwd'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+CreateDBTarget.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * (Optional) Skip server name verification

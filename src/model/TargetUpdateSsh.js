@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateSsh model module.
  * @module model/TargetUpdateSsh
- * @version 5.0.33
+ * @version 5.0.34
  */
 class TargetUpdateSsh {
     /**
@@ -70,6 +70,12 @@ class TargetUpdateSsh {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
+            }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
@@ -87,6 +93,9 @@ class TargetUpdateSsh {
             }
             if (data.hasOwnProperty('private-key-password')) {
                 obj['private-key-password'] = ApiClient.convertToType(data['private-key-password'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('ssh-password')) {
                 obj['ssh-password'] = ApiClient.convertToType(data['ssh-password'], 'String');
@@ -137,6 +146,14 @@ class TargetUpdateSsh {
             throw new Error("Expected the field `key` to be a primitive type in the JSON string but got " + data['key']);
         }
         // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
             throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
         }
@@ -159,6 +176,10 @@ class TargetUpdateSsh {
         // ensure the json data is a string
         if (data['private-key-password'] && !(typeof data['private-key-password'] === 'string' || data['private-key-password'] instanceof String)) {
             throw new Error("Expected the field `private-key-password` to be a primitive type in the JSON string but got " + data['private-key-password']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is a string
         if (data['ssh-password'] && !(typeof data['ssh-password'] === 'string' || data['ssh-password'] instanceof String)) {
@@ -223,6 +244,18 @@ TargetUpdateSsh.prototype['keep-prev-version'] = undefined;
 TargetUpdateSsh.prototype['key'] = undefined;
 
 /**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+TargetUpdateSsh.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+TargetUpdateSsh.prototype['lock-ttl'] = undefined;
+
+/**
  * Set the maximum number of versions, limited by the account settings defaults.
  * @member {String} max-versions
  */
@@ -258,6 +291,12 @@ TargetUpdateSsh.prototype['private-key'] = undefined;
  * @member {String} private-key-password
  */
 TargetUpdateSsh.prototype['private-key-password'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+TargetUpdateSsh.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * SSH password to rotate

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCertificateValueOutput model module.
  * @module model/GetCertificateValueOutput
- * @version 5.0.33
+ * @version 5.0.34
  */
 class GetCertificateValueOutput {
     /**
@@ -50,6 +50,9 @@ class GetCertificateValueOutput {
             if (data.hasOwnProperty('certificate_pem')) {
                 obj['certificate_pem'] = ApiClient.convertToType(data['certificate_pem'], 'String');
             }
+            if (data.hasOwnProperty('encoded_certificate')) {
+                obj['encoded_certificate'] = ApiClient.convertToType(data['encoded_certificate'], 'String');
+            }
             if (data.hasOwnProperty('private_key_pem')) {
                 obj['private_key_pem'] = ApiClient.convertToType(data['private_key_pem'], 'String');
             }
@@ -68,6 +71,10 @@ class GetCertificateValueOutput {
             throw new Error("Expected the field `certificate_pem` to be a primitive type in the JSON string but got " + data['certificate_pem']);
         }
         // ensure the json data is a string
+        if (data['encoded_certificate'] && !(typeof data['encoded_certificate'] === 'string' || data['encoded_certificate'] instanceof String)) {
+            throw new Error("Expected the field `encoded_certificate` to be a primitive type in the JSON string but got " + data['encoded_certificate']);
+        }
+        // ensure the json data is a string
         if (data['private_key_pem'] && !(typeof data['private_key_pem'] === 'string' || data['private_key_pem'] instanceof String)) {
             throw new Error("Expected the field `private_key_pem` to be a primitive type in the JSON string but got " + data['private_key_pem']);
         }
@@ -84,6 +91,11 @@ class GetCertificateValueOutput {
  * @member {String} certificate_pem
  */
 GetCertificateValueOutput.prototype['certificate_pem'] = undefined;
+
+/**
+ * @member {String} encoded_certificate
+ */
+GetCertificateValueOutput.prototype['encoded_certificate'] = undefined;
 
 /**
  * @member {String} private_key_pem

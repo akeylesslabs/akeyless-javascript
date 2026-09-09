@@ -17,6 +17,9 @@ Name | Type | Description | Notes
 **startTime** | **Date** |  | [optional] 
 **status** | **String** |  | [optional] 
 **targetHost** | **String** |  | [optional] 
+**targetId** | **Number** |  | [optional] 
+**targetName** | **String** |  | [optional] 
+**targetType** | **String** |  | [optional] 
 **ttl** | **String** |  | [optional] 
 **userIdentifier** | **String** |  | [optional] 
 

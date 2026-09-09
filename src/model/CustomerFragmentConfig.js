@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerFragmentConfig model module.
  * @module model/CustomerFragmentConfig
- * @version 5.0.33
+ * @version 5.0.34
  */
 class CustomerFragmentConfig {
     /**
@@ -65,6 +65,15 @@ class CustomerFragmentConfig {
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'String');
             }
+            if (data.hasOwnProperty('wrap_alg')) {
+                obj['wrap_alg'] = ApiClient.convertToType(data['wrap_alg'], 'String');
+            }
+            if (data.hasOwnProperty('wrap_iv')) {
+                obj['wrap_iv'] = ApiClient.convertToType(data['wrap_iv'], 'String');
+            }
+            if (data.hasOwnProperty('wrap_tag')) {
+                obj['wrap_tag'] = ApiClient.convertToType(data['wrap_tag'], 'String');
+            }
         }
         return obj;
     }
@@ -98,6 +107,18 @@ class CustomerFragmentConfig {
         // ensure the json data is a string
         if (data['value'] && !(typeof data['value'] === 'string' || data['value'] instanceof String)) {
             throw new Error("Expected the field `value` to be a primitive type in the JSON string but got " + data['value']);
+        }
+        // ensure the json data is a string
+        if (data['wrap_alg'] && !(typeof data['wrap_alg'] === 'string' || data['wrap_alg'] instanceof String)) {
+            throw new Error("Expected the field `wrap_alg` to be a primitive type in the JSON string but got " + data['wrap_alg']);
+        }
+        // ensure the json data is a string
+        if (data['wrap_iv'] && !(typeof data['wrap_iv'] === 'string' || data['wrap_iv'] instanceof String)) {
+            throw new Error("Expected the field `wrap_iv` to be a primitive type in the JSON string but got " + data['wrap_iv']);
+        }
+        // ensure the json data is a string
+        if (data['wrap_tag'] && !(typeof data['wrap_tag'] === 'string' || data['wrap_tag'] instanceof String)) {
+            throw new Error("Expected the field `wrap_tag` to be a primitive type in the JSON string but got " + data['wrap_tag']);
         }
 
         return true;
@@ -137,6 +158,24 @@ CustomerFragmentConfig.prototype['name'] = undefined;
  * @member {String} value
  */
 CustomerFragmentConfig.prototype['value'] = undefined;
+
+/**
+ * WrapAlg selects the HSM wrap algorithm for hsm_wrap_encrypt (e.g. rsa-oaep-sha256, aes-gcm, aes-cbc, aes-cbc-pad). RSA uses only WrapAlg; AES modes may require WrapIV and/or WrapTag.
+ * @member {String} wrap_alg
+ */
+CustomerFragmentConfig.prototype['wrap_alg'] = undefined;
+
+/**
+ * WrapIV is the base64 IV for AES modes that require it (GCM/CBC). Empty for RSA and modes without IV metadata.
+ * @member {String} wrap_iv
+ */
+CustomerFragmentConfig.prototype['wrap_iv'] = undefined;
+
+/**
+ * WrapTag is the base64 auth tag for AES-GCM only. Empty for RSA and other modes.
+ * @member {String} wrap_tag
+ */
+CustomerFragmentConfig.prototype['wrap_tag'] = undefined;
 
 
 

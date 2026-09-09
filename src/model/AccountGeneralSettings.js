@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import AiInsightsSetting from './AiInsightsSetting';
+import AiQuorumSetting from './AiQuorumSetting';
 import AllowedClientType from './AllowedClientType';
 import AllowedIpSettings from './AllowedIpSettings';
 import CertificateExpirationEventsSettings from './CertificateExpirationEventsSettings';
@@ -33,7 +34,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 5.0.33
+ * @version 5.0.34
  */
 class AccountGeneralSettings {
     /**
@@ -76,6 +77,9 @@ class AccountGeneralSettings {
             }
             if (data.hasOwnProperty('ai_insights')) {
                 obj['ai_insights'] = AiInsightsSetting.constructFromObject(data['ai_insights']);
+            }
+            if (data.hasOwnProperty('ai_quorum')) {
+                obj['ai_quorum'] = AiQuorumSetting.constructFromObject(data['ai_quorum']);
             }
             if (data.hasOwnProperty('allow_auto_fill')) {
                 obj['allow_auto_fill'] = ApiClient.convertToType(data['allow_auto_fill'], 'Boolean');
@@ -178,6 +182,10 @@ class AccountGeneralSettings {
         // validate the optional field `ai_insights`
         if (data['ai_insights']) { // data not null
           AiInsightsSetting.validateJSON(data['ai_insights']);
+        }
+        // validate the optional field `ai_quorum`
+        if (data['ai_quorum']) { // data not null
+          AiQuorumSetting.validateJSON(data['ai_quorum']);
         }
         // validate the optional field `allowed_client_types`
         if (data['allowed_client_types']) { // data not null
@@ -286,6 +294,11 @@ AccountGeneralSettings.prototype['account_file_bytes_used'] = undefined;
  * @member {module:model/AiInsightsSetting} ai_insights
  */
 AccountGeneralSettings.prototype['ai_insights'] = undefined;
+
+/**
+ * @member {module:model/AiQuorumSetting} ai_quorum
+ */
+AccountGeneralSettings.prototype['ai_quorum'] = undefined;
 
 /**
  * @member {Boolean} allow_auto_fill

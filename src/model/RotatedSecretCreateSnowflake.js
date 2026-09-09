@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateSnowflake model module.
  * @module model/RotatedSecretCreateSnowflake
- * @version 5.0.33
+ * @version 5.0.34
  */
 class RotatedSecretCreateSnowflake {
     /**
@@ -70,6 +70,12 @@ class RotatedSecretCreateSnowflake {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
+                obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable-ai-quorum')) {
+                obj['enable-ai-quorum'] = ApiClient.convertToType(data['enable-ai-quorum'], 'Boolean');
+            }
             if (data.hasOwnProperty('input-rule')) {
                 obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
             }
@@ -81,6 +87,12 @@ class RotatedSecretCreateSnowflake {
             }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
             }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
@@ -99,6 +111,9 @@ class RotatedSecretCreateSnowflake {
             }
             if (data.hasOwnProperty('private-key-file-name')) {
                 obj['private-key-file-name'] = ApiClient.convertToType(data['private-key-file-name'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('rotated-password')) {
                 obj['rotated-password'] = ApiClient.convertToType(data['rotated-password'], 'String');
@@ -189,6 +204,14 @@ class RotatedSecretCreateSnowflake {
             throw new Error("Expected the field `key` to be a primitive type in the JSON string but got " + data['key']);
         }
         // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
             throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
         }
@@ -211,6 +234,10 @@ class RotatedSecretCreateSnowflake {
         // ensure the json data is a string
         if (data['private-key-file-name'] && !(typeof data['private-key-file-name'] === 'string' || data['private-key-file-name'] instanceof String)) {
             throw new Error("Expected the field `private-key-file-name` to be a primitive type in the JSON string but got " + data['private-key-file-name']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is a string
         if (data['rotated-password'] && !(typeof data['rotated-password'] === 'string' || data['rotated-password'] instanceof String)) {
@@ -312,6 +339,18 @@ RotatedSecretCreateSnowflake.prototype['delete_protection'] = undefined;
 RotatedSecretCreateSnowflake.prototype['description'] = undefined;
 
 /**
+ * EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.
+ * @member {Boolean} enable-agentic-runtime-authority
+ */
+RotatedSecretCreateSnowflake.prototype['enable-agentic-runtime-authority'] = undefined;
+
+/**
+ * Turns on AI Quorum checks for this item.
+ * @member {Boolean} enable-ai-quorum
+ */
+RotatedSecretCreateSnowflake.prototype['enable-ai-quorum'] = undefined;
+
+/**
  * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)
  * @member {Array.<String>} input-rule
  */
@@ -334,6 +373,18 @@ RotatedSecretCreateSnowflake.prototype['json'] = false;
  * @member {String} key
  */
 RotatedSecretCreateSnowflake.prototype['key'] = undefined;
+
+/**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+RotatedSecretCreateSnowflake.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+RotatedSecretCreateSnowflake.prototype['lock-ttl'] = undefined;
 
 /**
  * Set the maximum number of versions, limited by the account settings defaults.
@@ -370,6 +421,12 @@ RotatedSecretCreateSnowflake.prototype['private-key'] = undefined;
  * @member {String} private-key-file-name
  */
 RotatedSecretCreateSnowflake.prototype['private-key-file-name'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+RotatedSecretCreateSnowflake.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * rotated-username password (relevant only for rotator-type=password)

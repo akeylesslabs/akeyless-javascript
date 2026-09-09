@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerHanaDb model module.
  * @module model/GatewayUpdateProducerHanaDb
- * @version 5.0.33
+ * @version 5.0.34
  */
 class GatewayUpdateProducerHanaDb {
     /**
@@ -63,6 +63,12 @@ class GatewayUpdateProducerHanaDb {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
+                obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable-ai-quorum')) {
+                obj['enable-ai-quorum'] = ApiClient.convertToType(data['enable-ai-quorum'], 'Boolean');
             }
             if (data.hasOwnProperty('hana-dbname')) {
                 obj['hana-dbname'] = ApiClient.convertToType(data['hana-dbname'], 'String');
@@ -326,6 +332,18 @@ GatewayUpdateProducerHanaDb.prototype['custom-username-template'] = undefined;
  * @member {String} delete_protection
  */
 GatewayUpdateProducerHanaDb.prototype['delete_protection'] = undefined;
+
+/**
+ * EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.
+ * @member {Boolean} enable-agentic-runtime-authority
+ */
+GatewayUpdateProducerHanaDb.prototype['enable-agentic-runtime-authority'] = undefined;
+
+/**
+ * Turns on AI Quorum checks for this item.
+ * @member {Boolean} enable-ai-quorum
+ */
+GatewayUpdateProducerHanaDb.prototype['enable-ai-quorum'] = undefined;
 
 /**
  * HanaDb Name

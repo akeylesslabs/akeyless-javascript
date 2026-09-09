@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 5.0.33
+ * @version 5.0.34
  */
 class CreatePKICertIssuer {
     /**
@@ -186,6 +186,9 @@ class CreatePKICertIssuer {
             }
             if (data.hasOwnProperty('signer-key-name')) {
                 obj['signer-key-name'] = ApiClient.convertToType(data['signer-key-name'], 'String');
+            }
+            if (data.hasOwnProperty('split-certificate-chain')) {
+                obj['split-certificate-chain'] = ApiClient.convertToType(data['split-certificate-chain'], 'Boolean');
             }
             if (data.hasOwnProperty('street-address')) {
                 obj['street-address'] = ApiClient.convertToType(data['street-address'], 'String');
@@ -606,6 +609,12 @@ CreatePKICertIssuer.prototype['server-flag'] = undefined;
  * @member {String} signer-key-name
  */
 CreatePKICertIssuer.prototype['signer-key-name'] = undefined;
+
+/**
+ * If set, separates the leaf certificate from the certificate chain.
+ * @member {Boolean} split-certificate-chain
+ */
+CreatePKICertIssuer.prototype['split-certificate-chain'] = undefined;
 
 /**
  * A comma-separated list of street addresses that will be set in the issued certificate

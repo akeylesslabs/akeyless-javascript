@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateUSC model module.
  * @module model/CreateUSC
- * @version 5.0.33
+ * @version 5.0.34
  */
 class CreateUSC {
     /**
@@ -276,19 +276,19 @@ CreateUSC.prototype['environment-names'] = undefined;
 CreateUSC.prototype['gcp-folder-id'] = undefined;
 
 /**
- * GCP Organization ID (Relevant only for GCP targets)
+ * GCP Organization ID (Relevant only for GCP targets with folder or organization scope)
  * @member {String} gcp-organization-id
  */
 CreateUSC.prototype['gcp-organization-id'] = undefined;
 
 /**
- * GCP Project ID (Relevant only for GCP targets)
+ * GCP Project ID to manage secrets in (Relevant only for GCP targets with project scope). If empty, the project is taken from the target.
  * @member {String} gcp-project-id
  */
 CreateUSC.prototype['gcp-project-id'] = undefined;
 
 /**
- * The gcp usc scope [ project / organization / folder]
+ * The GCP USC scope [project/folder/organization]. With folder/organization, all projects under the folder/org are manageable. Relevant only for GCP targets. Defaults to project when empty.
  * @member {String} gcp-scope
  * @default 'project'
  */

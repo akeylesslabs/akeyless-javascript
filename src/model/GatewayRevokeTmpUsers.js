@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayRevokeTmpUsers model module.
  * @module model/GatewayRevokeTmpUsers
- * @version 5.0.33
+ * @version 5.0.34
  */
 class GatewayRevokeTmpUsers {
     /**
@@ -53,6 +53,12 @@ class GatewayRevokeTmpUsers {
 
             if (data.hasOwnProperty('ara-enabled')) {
                 obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
+                obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable-ai-quorum')) {
+                obj['enable-ai-quorum'] = ApiClient.convertToType(data['enable-ai-quorum'], 'Boolean');
             }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
@@ -149,6 +155,18 @@ GatewayRevokeTmpUsers.RequiredProperties = ["name"];
  * @member {Boolean} ara-enabled
  */
 GatewayRevokeTmpUsers.prototype['ara-enabled'] = undefined;
+
+/**
+ * EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.
+ * @member {Boolean} enable-agentic-runtime-authority
+ */
+GatewayRevokeTmpUsers.prototype['enable-agentic-runtime-authority'] = undefined;
+
+/**
+ * Turns on AI Quorum checks for this item.
+ * @member {Boolean} enable-ai-quorum
+ */
+GatewayRevokeTmpUsers.prototype['enable-ai-quorum'] = undefined;
 
 /**
  * Host

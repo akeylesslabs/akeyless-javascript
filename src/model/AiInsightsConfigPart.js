@@ -12,15 +12,17 @@
  */
 
 import ApiClient from '../ApiClient';
+import AiModelEntry from './AiModelEntry';
 
 /**
  * The AiInsightsConfigPart model module.
  * @module model/AiInsightsConfigPart
- * @version 5.0.33
+ * @version 5.0.34
  */
 class AiInsightsConfigPart {
     /**
      * Constructs a new <code>AiInsightsConfigPart</code>.
+     * TargetId/TargetName/Model predate multi-model support and are retained for backward compatibility in both directions - they mirror the Default entry on write, and are adopted as a synthesized Default entry on read when Models is empty. See EffectiveModels and syncLegacyFields in types_ai_insights_config.go, where all the model-list behavior lives.
      * @alias module:model/AiInsightsConfigPart
      */
     constructor() { 
@@ -53,11 +55,17 @@ class AiInsightsConfigPart {
             if (data.hasOwnProperty('model')) {
                 obj['model'] = ApiClient.convertToType(data['model'], 'String');
             }
+            if (data.hasOwnProperty('models')) {
+                obj['models'] = ApiClient.convertToType(data['models'], [AiModelEntry]);
+            }
             if (data.hasOwnProperty('target_id')) {
                 obj['target_id'] = ApiClient.convertToType(data['target_id'], 'Number');
             }
             if (data.hasOwnProperty('target_name')) {
                 obj['target_name'] = ApiClient.convertToType(data['target_name'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
         }
         return obj;
@@ -72,6 +80,16 @@ class AiInsightsConfigPart {
         // ensure the json data is a string
         if (data['model'] && !(typeof data['model'] === 'string' || data['model'] instanceof String)) {
             throw new Error("Expected the field `model` to be a primitive type in the JSON string but got " + data['model']);
+        }
+        if (data['models']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['models'])) {
+                throw new Error("Expected the field `models` to be an array in the JSON data but got " + data['models']);
+            }
+            // validate the optional field `models` (array)
+            for (const item of data['models']) {
+                AiModelEntry.validateJSON(item);
+            };
         }
         // ensure the json data is a string
         if (data['target_name'] && !(typeof data['target_name'] === 'string' || data['target_name'] instanceof String)) {
@@ -97,6 +115,12 @@ AiInsightsConfigPart.prototype['enable'] = undefined;
 AiInsightsConfigPart.prototype['model'] = undefined;
 
 /**
+ * Models holds every configured model, in whatever order and with whatever Default flag was stored - it is NOT canonicalized on write, so nothing may assume the Default sits at index 0. Empty on configs written before multi-model support. Never read it directly: use EffectiveModels for the list as stored (which also handles the legacy case), or PolicyModels for exactly one Default in row 1 followed by the Quorum models.
+ * @member {Array.<module:model/AiModelEntry>} models
+ */
+AiInsightsConfigPart.prototype['models'] = undefined;
+
+/**
  * @member {Number} target_id
  */
 AiInsightsConfigPart.prototype['target_id'] = undefined;
@@ -105,6 +129,12 @@ AiInsightsConfigPart.prototype['target_id'] = undefined;
  * @member {String} target_name
  */
 AiInsightsConfigPart.prototype['target_name'] = undefined;
+
+/**
+ * Version is an optimistic-concurrency token, bumped by gator on every accepted write.  Every mutation of this part is a read-modify-write across the network (the gateway reads the whole part, edits one entry, writes it back), and the write replaces the part wholesale. Without a token, two admins adding a quorum model at the same time silently lose one of the two - which, since the list must always carry exactly one Default, can also change which model serves every other AI feature.  Zero means \"unversioned\": a client that predates this field, whose write gator accepts rather than rejecting outright. See updateGatewayAiInsightsConfig.
+ * @member {Number} version
+ */
+AiInsightsConfigPart.prototype['version'] = undefined;
 
 
 

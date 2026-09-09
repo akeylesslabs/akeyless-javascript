@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 5.0.33
+ * @version 5.0.34
  */
 class UpdateAccountSettings {
     /**
@@ -93,6 +93,9 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('enable-ai-insights')) {
                 obj['enable-ai-insights'] = ApiClient.convertToType(data['enable-ai-insights'], 'String');
+            }
+            if (data.hasOwnProperty('enable-ai-quorum')) {
+                obj['enable-ai-quorum'] = ApiClient.convertToType(data['enable-ai-quorum'], 'String');
             }
             if (data.hasOwnProperty('enable-default-certificate-expiration-event')) {
                 obj['enable-default-certificate-expiration-event'] = ApiClient.convertToType(data['enable-default-certificate-expiration-event'], 'String');
@@ -270,6 +273,10 @@ class UpdateAccountSettings {
         // ensure the json data is a string
         if (data['enable-ai-insights'] && !(typeof data['enable-ai-insights'] === 'string' || data['enable-ai-insights'] instanceof String)) {
             throw new Error("Expected the field `enable-ai-insights` to be a primitive type in the JSON string but got " + data['enable-ai-insights']);
+        }
+        // ensure the json data is a string
+        if (data['enable-ai-quorum'] && !(typeof data['enable-ai-quorum'] === 'string' || data['enable-ai-quorum'] instanceof String)) {
+            throw new Error("Expected the field `enable-ai-quorum` to be a primitive type in the JSON string but got " + data['enable-ai-quorum']);
         }
         // ensure the json data is a string
         if (data['enable-default-certificate-expiration-event'] && !(typeof data['enable-default-certificate-expiration-event'] === 'string' || data['enable-default-certificate-expiration-event'] instanceof String)) {
@@ -485,6 +492,12 @@ UpdateAccountSettings.prototype['dynamic-secret-max-ttl-enable'] = undefined;
  * @member {String} enable-ai-insights
  */
 UpdateAccountSettings.prototype['enable-ai-insights'] = undefined;
+
+/**
+ * Enable AI Quorum checks account-wide [true/false]
+ * @member {String} enable-ai-quorum
+ */
+UpdateAccountSettings.prototype['enable-ai-quorum'] = undefined;
 
 /**
  * How many days before the expiration of the certificate would you like to be notified. [true/false]

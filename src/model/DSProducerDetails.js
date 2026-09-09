@@ -23,7 +23,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 5.0.33
+ * @version 5.0.34
  */
 class DSProducerDetails {
     /**
@@ -245,6 +245,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('azure_username')) {
                 obj['azure_username'] = ApiClient.convertToType(data['azure_username'], 'String');
+            }
+            if (data.hasOwnProperty('block_parent_target_access')) {
+                obj['block_parent_target_access'] = ApiClient.convertToType(data['block_parent_target_access'], 'Boolean');
             }
             if (data.hasOwnProperty('cassandra_creation_statements')) {
                 obj['cassandra_creation_statements'] = ApiClient.convertToType(data['cassandra_creation_statements'], 'String');
@@ -2324,6 +2327,11 @@ DSProducerDetails.prototype['azure_user_roles_template_id'] = undefined;
  * @member {String} azure_username
  */
 DSProducerDetails.prototype['azure_username'] = undefined;
+
+/**
+ * @member {Boolean} block_parent_target_access
+ */
+DSProducerDetails.prototype['block_parent_target_access'] = undefined;
 
 /**
  * @member {String} cassandra_creation_statements

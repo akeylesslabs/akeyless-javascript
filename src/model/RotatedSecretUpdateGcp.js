@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateGcp model module.
  * @module model/RotatedSecretUpdateGcp
- * @version 5.0.33
+ * @version 5.0.34
  */
 class RotatedSecretUpdateGcp {
     /**
@@ -72,6 +72,12 @@ class RotatedSecretUpdateGcp {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
+                obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable-ai-quorum')) {
+                obj['enable-ai-quorum'] = ApiClient.convertToType(data['enable-ai-quorum'], 'Boolean');
+            }
             if (data.hasOwnProperty('gcp-key')) {
                 obj['gcp-key'] = ApiClient.convertToType(data['gcp-key'], 'String');
             }
@@ -108,6 +114,12 @@ class RotatedSecretUpdateGcp {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
+            }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
@@ -125,6 +137,9 @@ class RotatedSecretUpdateGcp {
             }
             if (data.hasOwnProperty('rm-tag')) {
                 obj['rm-tag'] = ApiClient.convertToType(data['rm-tag'], ['String']);
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('rotation-event-in')) {
                 obj['rotation-event-in'] = ApiClient.convertToType(data['rotation-event-in'], ['String']);
@@ -232,6 +247,14 @@ class RotatedSecretUpdateGcp {
             throw new Error("Expected the field `key` to be a primitive type in the JSON string but got " + data['key']);
         }
         // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
             throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
         }
@@ -254,6 +277,10 @@ class RotatedSecretUpdateGcp {
         // ensure the json data is an array
         if (!Array.isArray(data['rm-tag'])) {
             throw new Error("Expected the field `rm-tag` to be an array in the JSON data but got " + data['rm-tag']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['rotation-event-in'])) {
@@ -342,6 +369,18 @@ RotatedSecretUpdateGcp.prototype['delete_protection'] = undefined;
 RotatedSecretUpdateGcp.prototype['description'] = 'default_metadata';
 
 /**
+ * EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.
+ * @member {Boolean} enable-agentic-runtime-authority
+ */
+RotatedSecretUpdateGcp.prototype['enable-agentic-runtime-authority'] = undefined;
+
+/**
+ * Turns on AI Quorum checks for this item.
+ * @member {Boolean} enable-ai-quorum
+ */
+RotatedSecretUpdateGcp.prototype['enable-ai-quorum'] = undefined;
+
+/**
  * Base64-encoded service account private key text
  * @member {String} gcp-key
  */
@@ -414,6 +453,18 @@ RotatedSecretUpdateGcp.prototype['keep-prev-version'] = undefined;
 RotatedSecretUpdateGcp.prototype['key'] = undefined;
 
 /**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+RotatedSecretUpdateGcp.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+RotatedSecretUpdateGcp.prototype['lock-ttl'] = undefined;
+
+/**
  * Set the maximum number of versions, limited by the account settings defaults.
  * @member {String} max-versions
  */
@@ -448,6 +499,12 @@ RotatedSecretUpdateGcp.prototype['password-length'] = undefined;
  * @member {Array.<String>} rm-tag
  */
 RotatedSecretUpdateGcp.prototype['rm-tag'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+RotatedSecretUpdateGcp.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * How many days before the rotation of the item would you like to be notified

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerRdp model module.
  * @module model/GatewayUpdateProducerRdp
- * @version 5.0.33
+ * @version 5.0.34
  */
 class GatewayUpdateProducerRdp {
     /**
@@ -65,11 +65,20 @@ class GatewayUpdateProducerRdp {
             if (data.hasOwnProperty('ara-enabled')) {
                 obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
             }
+            if (data.hasOwnProperty('block-parent-target-access')) {
+                obj['block-parent-target-access'] = ApiClient.convertToType(data['block-parent-target-access'], 'String');
+            }
             if (data.hasOwnProperty('custom-username-template')) {
                 obj['custom-username-template'] = ApiClient.convertToType(data['custom-username-template'], 'String');
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
+            if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
+                obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable-ai-quorum')) {
+                obj['enable-ai-quorum'] = ApiClient.convertToType(data['enable-ai-quorum'], 'Boolean');
             }
             if (data.hasOwnProperty('fixed-user-claim-keyname')) {
                 obj['fixed-user-claim-keyname'] = ApiClient.convertToType(data['fixed-user-claim-keyname'], 'String');
@@ -204,6 +213,10 @@ class GatewayUpdateProducerRdp {
         // ensure the json data is a string
         if (data['ProviderType'] && !(typeof data['ProviderType'] === 'string' || data['ProviderType'] instanceof String)) {
             throw new Error("Expected the field `ProviderType` to be a primitive type in the JSON string but got " + data['ProviderType']);
+        }
+        // ensure the json data is a string
+        if (data['block-parent-target-access'] && !(typeof data['block-parent-target-access'] === 'string' || data['block-parent-target-access'] instanceof String)) {
+            throw new Error("Expected the field `block-parent-target-access` to be a primitive type in the JSON string but got " + data['block-parent-target-access']);
         }
         // ensure the json data is a string
         if (data['custom-username-template'] && !(typeof data['custom-username-template'] === 'string' || data['custom-username-template'] instanceof String)) {
@@ -368,6 +381,12 @@ GatewayUpdateProducerRdp.prototype['allow-user-extend-session'] = undefined;
 GatewayUpdateProducerRdp.prototype['ara-enabled'] = undefined;
 
 /**
+ * Block access to the parent target when using a linked target [true/false]. Empty keeps the existing value on update
+ * @member {String} block-parent-target-access
+ */
+GatewayUpdateProducerRdp.prototype['block-parent-target-access'] = undefined;
+
+/**
  * Customize how temporary usernames are generated using go template
  * @member {String} custom-username-template
  */
@@ -378,6 +397,18 @@ GatewayUpdateProducerRdp.prototype['custom-username-template'] = undefined;
  * @member {String} delete_protection
  */
 GatewayUpdateProducerRdp.prototype['delete_protection'] = undefined;
+
+/**
+ * EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.
+ * @member {Boolean} enable-agentic-runtime-authority
+ */
+GatewayUpdateProducerRdp.prototype['enable-agentic-runtime-authority'] = undefined;
+
+/**
+ * Turns on AI Quorum checks for this item.
+ * @member {Boolean} enable-ai-quorum
+ */
+GatewayUpdateProducerRdp.prototype['enable-ai-quorum'] = undefined;
 
 /**
  * For externally provided users, denotes the key-name of IdP claim to extract the username from (relevant only for fixed-user-only=true)

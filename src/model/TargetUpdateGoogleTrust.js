@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateGoogleTrust model module.
  * @module model/TargetUpdateGoogleTrust
- * @version 5.0.33
+ * @version 5.0.34
  */
 class TargetUpdateGoogleTrust {
     /**
@@ -98,6 +98,12 @@ class TargetUpdateGoogleTrust {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
+            }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
@@ -109,6 +115,9 @@ class TargetUpdateGoogleTrust {
             }
             if (data.hasOwnProperty('resource-group')) {
                 obj['resource-group'] = ApiClient.convertToType(data['resource-group'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('timeout')) {
                 obj['timeout'] = ApiClient.convertToType(data['timeout'], 'String');
@@ -188,6 +197,14 @@ class TargetUpdateGoogleTrust {
             throw new Error("Expected the field `key` to be a primitive type in the JSON string but got " + data['key']);
         }
         // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
             throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
         }
@@ -202,6 +219,10 @@ class TargetUpdateGoogleTrust {
         // ensure the json data is a string
         if (data['resource-group'] && !(typeof data['resource-group'] === 'string' || data['resource-group'] instanceof String)) {
             throw new Error("Expected the field `resource-group` to be a primitive type in the JSON string but got " + data['resource-group']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is a string
         if (data['timeout'] && !(typeof data['timeout'] === 'string' || data['timeout'] instanceof String)) {
@@ -312,6 +333,18 @@ TargetUpdateGoogleTrust.prototype['keep-prev-version'] = undefined;
 TargetUpdateGoogleTrust.prototype['key'] = undefined;
 
 /**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+TargetUpdateGoogleTrust.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+TargetUpdateGoogleTrust.prototype['lock-ttl'] = undefined;
+
+/**
  * Set the maximum number of versions, limited by the account settings defaults.
  * @member {String} max-versions
  */
@@ -334,6 +367,12 @@ TargetUpdateGoogleTrust.prototype['new-name'] = undefined;
  * @member {String} resource-group
  */
 TargetUpdateGoogleTrust.prototype['resource-group'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+TargetUpdateGoogleTrust.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * Timeout for challenge validation

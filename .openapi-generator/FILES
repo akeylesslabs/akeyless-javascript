@@ -30,7 +30,10 @@ docs/AgenticRule.md
 docs/AgenticRules.md
 docs/AiInsightsConfigPart.md
 docs/AiInsightsSetting.md
+docs/AiModelEntry.md
+docs/AiQuorumSetting.md
 docs/AkeylessGatewayConfig.md
+docs/AliCloudAccessRules.md
 docs/AliasDetails.md
 docs/AliasDetailsOutput.md
 docs/AllAnalyticsData.md
@@ -48,6 +51,7 @@ docs/AuthExpirationEvent.md
 docs/AuthMethod.md
 docs/AuthMethodAccessInfo.md
 docs/AuthMethodAdditionalData.md
+docs/AuthMethodCreateAliCloud.md
 docs/AuthMethodCreateApiKey.md
 docs/AuthMethodCreateAwsIam.md
 docs/AuthMethodCreateAzureAD.md
@@ -68,6 +72,7 @@ docs/AuthMethodDeleteOutput.md
 docs/AuthMethodGet.md
 docs/AuthMethodList.md
 docs/AuthMethodRoleAssociation.md
+docs/AuthMethodUpdateAliCloud.md
 docs/AuthMethodUpdateApiKey.md
 docs/AuthMethodUpdateAwsIam.md
 docs/AuthMethodUpdateAzureAD.md
@@ -812,6 +817,10 @@ docs/LockingInfo.md
 docs/LogForwardingConfigPart.md
 docs/LogstashLogForwardingConfig.md
 docs/LogzIoLogForwardingConfig.md
+docs/MigrationDownloadJob.md
+docs/MigrationDownloadReport.md
+docs/MigrationDownloadSecret.md
+docs/MigrationDownloadSummary.md
 docs/MigrationGeneral.md
 docs/MigrationItems.md
 docs/MigrationStatus.md
@@ -957,6 +966,7 @@ docs/SAMLAttribute.md
 docs/SSHCertificateIssueDetails.md
 docs/SSHTargetDetails.md
 docs/SalesforceTargetDetails.md
+docs/SamlSpConfigPart.md
 docs/ScanResults.md
 docs/SecretInfo.md
 docs/SecretSyncOutput.md
@@ -1300,7 +1310,10 @@ src/model/AgenticRule.js
 src/model/AgenticRules.js
 src/model/AiInsightsConfigPart.js
 src/model/AiInsightsSetting.js
+src/model/AiModelEntry.js
+src/model/AiQuorumSetting.js
 src/model/AkeylessGatewayConfig.js
+src/model/AliCloudAccessRules.js
 src/model/AliasDetails.js
 src/model/AliasDetailsOutput.js
 src/model/AllAnalyticsData.js
@@ -1318,6 +1331,7 @@ src/model/AuthExpirationEvent.js
 src/model/AuthMethod.js
 src/model/AuthMethodAccessInfo.js
 src/model/AuthMethodAdditionalData.js
+src/model/AuthMethodCreateAliCloud.js
 src/model/AuthMethodCreateApiKey.js
 src/model/AuthMethodCreateAwsIam.js
 src/model/AuthMethodCreateAzureAD.js
@@ -1338,6 +1352,7 @@ src/model/AuthMethodDeleteOutput.js
 src/model/AuthMethodGet.js
 src/model/AuthMethodList.js
 src/model/AuthMethodRoleAssociation.js
+src/model/AuthMethodUpdateAliCloud.js
 src/model/AuthMethodUpdateApiKey.js
 src/model/AuthMethodUpdateAwsIam.js
 src/model/AuthMethodUpdateAzureAD.js
@@ -2082,6 +2097,10 @@ src/model/LockingInfo.js
 src/model/LogForwardingConfigPart.js
 src/model/LogstashLogForwardingConfig.js
 src/model/LogzIoLogForwardingConfig.js
+src/model/MigrationDownloadJob.js
+src/model/MigrationDownloadReport.js
+src/model/MigrationDownloadSecret.js
+src/model/MigrationDownloadSummary.js
 src/model/MigrationGeneral.js
 src/model/MigrationItems.js
 src/model/MigrationStatus.js
@@ -2227,6 +2246,7 @@ src/model/SAMLAttribute.js
 src/model/SSHCertificateIssueDetails.js
 src/model/SSHTargetDetails.js
 src/model/SalesforceTargetDetails.js
+src/model/SamlSpConfigPart.js
 src/model/ScanResults.js
 src/model/SecretInfo.js
 src/model/SecretSyncOutput.js
@@ -2535,12 +2555,13 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/KMIPCAListEntry.spec.js
-test/model/KmipGetCABundle.spec.js
-test/model/KmipGetCABundleOutput.spec.js
-test/model/KmipListCAs.spec.js
-test/model/KmipListCAsOutput.spec.js
-test/model/KmipRotateCA.spec.js
-test/model/KmipRotateCAOutput.spec.js
-test/model/KmipSunsetCA.spec.js
-test/model/KmipSunsetCAOutput.spec.js
+test/model/AiModelEntry.spec.js
+test/model/AiQuorumSetting.spec.js
+test/model/AliCloudAccessRules.spec.js
+test/model/AuthMethodCreateAliCloud.spec.js
+test/model/AuthMethodUpdateAliCloud.spec.js
+test/model/MigrationDownloadJob.spec.js
+test/model/MigrationDownloadReport.spec.js
+test/model/MigrationDownloadSecret.spec.js
+test/model/MigrationDownloadSummary.spec.js
+test/model/SamlSpConfigPart.spec.js

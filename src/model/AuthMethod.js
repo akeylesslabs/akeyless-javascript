@@ -21,7 +21,7 @@ import UidExpirationEvent from './UidExpirationEvent';
 /**
  * The AuthMethod model module.
  * @module model/AuthMethod
- * @version 5.0.33
+ * @version 5.0.34
  */
 class AuthMethod {
     /**
@@ -249,7 +249,7 @@ AuthMethod.prototype['auth_method_name'] = undefined;
 AuthMethod.prototype['auth_method_roles_assoc'] = undefined;
 
 /**
- * BookmarkLoginURLTemplate is an OIDC login URL template for console bookmarks. SaaS-owned methods use {redirect_uri} for client substitution; AuthViaGw embeds the GW console callback.
+ * BookmarkLoginURLTemplate is an OIDC/SAML login URL template for console bookmarks. SaaS-owned methods use {redirect_uri} for client substitution; AuthViaGw embeds the GW console callback.
  * @member {String} bookmark_login_url_template
  */
 AuthMethod.prototype['bookmark_login_url_template'] = undefined;

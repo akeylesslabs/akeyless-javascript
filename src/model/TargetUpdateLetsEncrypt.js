@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateLetsEncrypt model module.
  * @module model/TargetUpdateLetsEncrypt
- * @version 5.0.33
+ * @version 5.0.34
  */
 class TargetUpdateLetsEncrypt {
     /**
@@ -92,6 +92,12 @@ class TargetUpdateLetsEncrypt {
             if (data.hasOwnProperty('lets-encrypt-url')) {
                 obj['lets-encrypt-url'] = ApiClient.convertToType(data['lets-encrypt-url'], 'String');
             }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
+            }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
@@ -103,6 +109,9 @@ class TargetUpdateLetsEncrypt {
             }
             if (data.hasOwnProperty('resource-group')) {
                 obj['resource-group'] = ApiClient.convertToType(data['resource-group'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('timeout')) {
                 obj['timeout'] = ApiClient.convertToType(data['timeout'], 'String');
@@ -174,6 +183,14 @@ class TargetUpdateLetsEncrypt {
             throw new Error("Expected the field `lets-encrypt-url` to be a primitive type in the JSON string but got " + data['lets-encrypt-url']);
         }
         // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
             throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
         }
@@ -188,6 +205,10 @@ class TargetUpdateLetsEncrypt {
         // ensure the json data is a string
         if (data['resource-group'] && !(typeof data['resource-group'] === 'string' || data['resource-group'] instanceof String)) {
             throw new Error("Expected the field `resource-group` to be a primitive type in the JSON string but got " + data['resource-group']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is a string
         if (data['timeout'] && !(typeof data['timeout'] === 'string' || data['timeout'] instanceof String)) {
@@ -284,6 +305,18 @@ TargetUpdateLetsEncrypt.prototype['key'] = undefined;
 TargetUpdateLetsEncrypt.prototype['lets-encrypt-url'] = 'production';
 
 /**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+TargetUpdateLetsEncrypt.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+TargetUpdateLetsEncrypt.prototype['lock-ttl'] = undefined;
+
+/**
  * Set the maximum number of versions, limited by the account settings defaults.
  * @member {String} max-versions
  */
@@ -306,6 +339,12 @@ TargetUpdateLetsEncrypt.prototype['new-name'] = undefined;
  * @member {String} resource-group
  */
 TargetUpdateLetsEncrypt.prototype['resource-group'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+TargetUpdateLetsEncrypt.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * @member {String} timeout

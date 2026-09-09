@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateDockerhub model module.
  * @module model/RotatedSecretCreateDockerhub
- * @version 5.0.33
+ * @version 5.0.34
  */
 class RotatedSecretCreateDockerhub {
     /**
@@ -68,6 +68,12 @@ class RotatedSecretCreateDockerhub {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
+                obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable-ai-quorum')) {
+                obj['enable-ai-quorum'] = ApiClient.convertToType(data['enable-ai-quorum'], 'Boolean');
+            }
             if (data.hasOwnProperty('input-rule')) {
                 obj['input-rule'] = ApiClient.convertToType(data['input-rule'], ['String']);
             }
@@ -80,6 +86,12 @@ class RotatedSecretCreateDockerhub {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
+            }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
@@ -91,6 +103,9 @@ class RotatedSecretCreateDockerhub {
             }
             if (data.hasOwnProperty('password-length')) {
                 obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('rotation-event-in')) {
                 obj['rotation-event-in'] = ApiClient.convertToType(data['rotation-event-in'], ['String']);
@@ -169,6 +184,14 @@ class RotatedSecretCreateDockerhub {
             throw new Error("Expected the field `key` to be a primitive type in the JSON string but got " + data['key']);
         }
         // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
             throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
         }
@@ -183,6 +206,10 @@ class RotatedSecretCreateDockerhub {
         // ensure the json data is a string
         if (data['password-length'] && !(typeof data['password-length'] === 'string' || data['password-length'] instanceof String)) {
             throw new Error("Expected the field `password-length` to be a primitive type in the JSON string but got " + data['password-length']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['rotation-event-in'])) {
@@ -268,6 +295,18 @@ RotatedSecretCreateDockerhub.prototype['delete_protection'] = undefined;
 RotatedSecretCreateDockerhub.prototype['description'] = undefined;
 
 /**
+ * EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.
+ * @member {Boolean} enable-agentic-runtime-authority
+ */
+RotatedSecretCreateDockerhub.prototype['enable-agentic-runtime-authority'] = undefined;
+
+/**
+ * Turns on AI Quorum checks for this item.
+ * @member {Boolean} enable-ai-quorum
+ */
+RotatedSecretCreateDockerhub.prototype['enable-ai-quorum'] = undefined;
+
+/**
  * Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)
  * @member {Array.<String>} input-rule
  */
@@ -292,6 +331,18 @@ RotatedSecretCreateDockerhub.prototype['json'] = false;
 RotatedSecretCreateDockerhub.prototype['key'] = undefined;
 
 /**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+RotatedSecretCreateDockerhub.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+RotatedSecretCreateDockerhub.prototype['lock-ttl'] = undefined;
+
+/**
  * Set the maximum number of versions, limited by the account settings defaults.
  * @member {String} max-versions
  */
@@ -314,6 +365,12 @@ RotatedSecretCreateDockerhub.prototype['output-rule'] = undefined;
  * @member {String} password-length
  */
 RotatedSecretCreateDockerhub.prototype['password-length'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+RotatedSecretCreateDockerhub.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * How many days before the rotation of the item would you like to be notified

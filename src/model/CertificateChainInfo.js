@@ -19,7 +19,7 @@ import NullString from './NullString';
 /**
  * The CertificateChainInfo model module.
  * @module model/CertificateChainInfo
- * @version 5.0.33
+ * @version 5.0.34
  */
 class CertificateChainInfo {
     /**
@@ -101,11 +101,17 @@ class CertificateChainInfo {
             if (data.hasOwnProperty('issuance_status')) {
                 obj['issuance_status'] = ApiClient.convertToType(data['issuance_status'], 'String');
             }
+            if (data.hasOwnProperty('leaf_certificate_pem')) {
+                obj['leaf_certificate_pem'] = ApiClient.convertToType(data['leaf_certificate_pem'], 'String');
+            }
             if (data.hasOwnProperty('not_before')) {
                 obj['not_before'] = ApiClient.convertToType(data['not_before'], 'Date');
             }
             if (data.hasOwnProperty('renew_before_expiration_in_days')) {
                 obj['renew_before_expiration_in_days'] = ApiClient.convertToType(data['renew_before_expiration_in_days'], 'Number');
+            }
+            if (data.hasOwnProperty('split_certificate_chain')) {
+                obj['split_certificate_chain'] = ApiClient.convertToType(data['split_certificate_chain'], 'Boolean');
             }
         }
         return obj;
@@ -176,6 +182,10 @@ class CertificateChainInfo {
         // ensure the json data is a string
         if (data['issuance_status'] && !(typeof data['issuance_status'] === 'string' || data['issuance_status'] instanceof String)) {
             throw new Error("Expected the field `issuance_status` to be a primitive type in the JSON string but got " + data['issuance_status']);
+        }
+        // ensure the json data is a string
+        if (data['leaf_certificate_pem'] && !(typeof data['leaf_certificate_pem'] === 'string' || data['leaf_certificate_pem'] instanceof String)) {
+            throw new Error("Expected the field `leaf_certificate_pem` to be a primitive type in the JSON string but got " + data['leaf_certificate_pem']);
         }
 
         return true;
@@ -273,6 +283,12 @@ CertificateChainInfo.prototype['external_ca_id'] = undefined;
 CertificateChainInfo.prototype['issuance_status'] = undefined;
 
 /**
+ * LeafCertificatePem contains only the leaf certificate, derived from CertificatePem. Populated only when the certificate was issued with SplitCertificateChain enabled.
+ * @member {String} leaf_certificate_pem
+ */
+CertificateChainInfo.prototype['leaf_certificate_pem'] = undefined;
+
+/**
  * @member {Date} not_before
  */
 CertificateChainInfo.prototype['not_before'] = undefined;
@@ -281,6 +297,12 @@ CertificateChainInfo.prototype['not_before'] = undefined;
  * @member {Number} renew_before_expiration_in_days
  */
 CertificateChainInfo.prototype['renew_before_expiration_in_days'] = undefined;
+
+/**
+ * SplitCertificateChain reflects whether this certificate was issued while its PKI Cert Issuer had split-certificate-chain enabled. When true, LeafCertificatePem is populated in addition to CertificatePem (which always holds the full chain).
+ * @member {Boolean} split_certificate_chain
+ */
+CertificateChainInfo.prototype['split_certificate_chain'] = undefined;
 
 
 

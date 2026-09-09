@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**assocRoleAuthMethod**](V2Api.md#assocRoleAuthMethod) | **POST** /assoc-role-am | 
 [**assocTargetItem**](V2Api.md#assocTargetItem) | **POST** /assoc-target-item | 
 [**auth**](V2Api.md#auth) | **POST** /auth | 
+[**authMethodCreateAliCloud**](V2Api.md#authMethodCreateAliCloud) | **POST** /auth-method-create-alicloud | 
 [**authMethodCreateApiKey**](V2Api.md#authMethodCreateApiKey) | **POST** /auth-method-create-api-key | 
 [**authMethodCreateAwsIam**](V2Api.md#authMethodCreateAwsIam) | **POST** /auth-method-create-aws-iam | 
 [**authMethodCreateAzureAD**](V2Api.md#authMethodCreateAzureAD) | **POST** /auth-method-create-azure-ad | 
@@ -30,6 +31,7 @@ Method | HTTP request | Description
 [**authMethodDelete**](V2Api.md#authMethodDelete) | **POST** /auth-method-delete | 
 [**authMethodGet**](V2Api.md#authMethodGet) | **POST** /auth-method-get | 
 [**authMethodList**](V2Api.md#authMethodList) | **POST** /auth-method-list | 
+[**authMethodUpdateAliCloud**](V2Api.md#authMethodUpdateAliCloud) | **POST** /auth-method-update-alicloud | 
 [**authMethodUpdateApiKey**](V2Api.md#authMethodUpdateApiKey) | **POST** /auth-method-update-api-key | 
 [**authMethodUpdateAwsIam**](V2Api.md#authMethodUpdateAwsIam) | **POST** /auth-method-update-aws-iam | 
 [**authMethodUpdateAzureAD**](V2Api.md#authMethodUpdateAzureAD) | **POST** /auth-method-update-azure-ad | 
@@ -1042,6 +1044,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## authMethodCreateAliCloud
+
+> AuthMethodCreateOutput authMethodCreateAliCloud(authMethodCreateAliCloud)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let authMethodCreateAliCloud = new akeyless.AuthMethodCreateAliCloud(); // AuthMethodCreateAliCloud | 
+apiInstance.authMethodCreateAliCloud(authMethodCreateAliCloud).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authMethodCreateAliCloud** | [**AuthMethodCreateAliCloud**](AuthMethodCreateAliCloud.md)|  | 
+
+### Return type
+
+[**AuthMethodCreateOutput**](AuthMethodCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## authMethodCreateApiKey
 
 > AuthMethodCreateOutput authMethodCreateApiKey(authMethodCreateApiKey)
@@ -1745,6 +1789,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListAuthMethodsOutput**](ListAuthMethodsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## authMethodUpdateAliCloud
+
+> AuthMethodUpdateOutput authMethodUpdateAliCloud(authMethodUpdateAliCloud)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let authMethodUpdateAliCloud = new akeyless.AuthMethodUpdateAliCloud(); // AuthMethodUpdateAliCloud | 
+apiInstance.authMethodUpdateAliCloud(authMethodUpdateAliCloud).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authMethodUpdateAliCloud** | [**AuthMethodUpdateAliCloud**](AuthMethodUpdateAliCloud.md)|  | 
+
+### Return type
+
+[**AuthMethodUpdateOutput**](AuthMethodUpdateOutput.md)
 
 ### Authorization
 

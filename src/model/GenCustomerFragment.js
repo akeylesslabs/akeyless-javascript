@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenCustomerFragment model module.
  * @module model/GenCustomerFragment
- * @version 5.0.33
+ * @version 5.0.34
  */
 class GenCustomerFragment {
     /**
@@ -34,6 +34,7 @@ class GenCustomerFragment {
      * Only for internal use.
      */
     static initialize(obj) { 
+        obj['hsm-provider'] = 'pkcs11';
         obj['json'] = false;
         obj['type'] = 'standard';
     }
@@ -54,6 +55,12 @@ class GenCustomerFragment {
             }
             if (data.hasOwnProperty('hsm-key-label')) {
                 obj['hsm-key-label'] = ApiClient.convertToType(data['hsm-key-label'], 'String');
+            }
+            if (data.hasOwnProperty('hsm-provider')) {
+                obj['hsm-provider'] = ApiClient.convertToType(data['hsm-provider'], 'String');
+            }
+            if (data.hasOwnProperty('hsm-wrap-alg')) {
+                obj['hsm-wrap-alg'] = ApiClient.convertToType(data['hsm-wrap-alg'], 'String');
             }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
@@ -86,6 +93,14 @@ class GenCustomerFragment {
             throw new Error("Expected the field `hsm-key-label` to be a primitive type in the JSON string but got " + data['hsm-key-label']);
         }
         // ensure the json data is a string
+        if (data['hsm-provider'] && !(typeof data['hsm-provider'] === 'string' || data['hsm-provider'] instanceof String)) {
+            throw new Error("Expected the field `hsm-provider` to be a primitive type in the JSON string but got " + data['hsm-provider']);
+        }
+        // ensure the json data is a string
+        if (data['hsm-wrap-alg'] && !(typeof data['hsm-wrap-alg'] === 'string' || data['hsm-wrap-alg'] instanceof String)) {
+            throw new Error("Expected the field `hsm-wrap-alg` to be a primitive type in the JSON string but got " + data['hsm-wrap-alg']);
+        }
+        // ensure the json data is a string
         if (data['metadata'] && !(typeof data['metadata'] === 'string' || data['metadata'] instanceof String)) {
             throw new Error("Expected the field `metadata` to be a primitive type in the JSON string but got " + data['metadata']);
         }
@@ -113,10 +128,23 @@ class GenCustomerFragment {
 GenCustomerFragment.prototype['description'] = undefined;
 
 /**
- * The label of the hsm key to use for customer fragment operations (relevant for hsm_wrapped/hsm_protected customer fragments)
+ * The label of the hsm key to use for customer fragment operations (relevant for hsm wrap customer fragments)
  * @member {String} hsm-key-label
  */
 GenCustomerFragment.prototype['hsm-key-label'] = undefined;
+
+/**
+ * The HSM provider to use for hsm wrap customer fragments
+ * @member {String} hsm-provider
+ * @default 'pkcs11'
+ */
+GenCustomerFragment.prototype['hsm-provider'] = 'pkcs11';
+
+/**
+ * The HSM wrap algorithm to use for hsm_wrap_encrypt  default for hsm_wrap_encrypt: rsa-oaep-sha256
+ * @member {String} hsm-wrap-alg
+ */
+GenCustomerFragment.prototype['hsm-wrap-alg'] = undefined;
 
 /**
  * Set output format to JSON
@@ -138,7 +166,7 @@ GenCustomerFragment.prototype['metadata'] = undefined;
 GenCustomerFragment.prototype['name'] = undefined;
 
 /**
- * Customer fragment type [standard/hsm_wrapped/hsm_secured]
+ * Customer fragment type [standard/hsm_wrap_hmac/hsm_wrap_encrypt/hsm_secured]
  * @member {String} type
  * @default 'standard'
  */

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscGet model module.
  * @module model/UscGet
- * @version 5.0.33
+ * @version 5.0.34
  */
 class UscGet {
     /**
@@ -145,7 +145,7 @@ class UscGet {
 UscGet.RequiredProperties = ["secret-id", "usc-name"];
 
 /**
- * GCP Project ID (Relevant only for GCP targets)
+ * The GCP project the secret resides in (GCP only). Used when getting a secret by name in a connector that spans multiple projects or uses folder/organization scope.
  * @member {String} gcp-project-id
  */
 UscGet.prototype['gcp-project-id'] = undefined;

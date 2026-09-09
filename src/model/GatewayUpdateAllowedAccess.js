@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateAllowedAccess model module.
  * @module model/GatewayUpdateAllowedAccess
- * @version 5.0.33
+ * @version 5.0.34
  */
 class GatewayUpdateAllowedAccess {
     /**
@@ -188,7 +188,7 @@ GatewayUpdateAllowedAccess.prototype['name'] = undefined;
 GatewayUpdateAllowedAccess.prototype['new-name'] = undefined;
 
 /**
- * Permissions  Comma-seperated list of permissions for this allowed access. Available permissions: [defaults,targets,classic_keys,automatic_migration,ldap_auth,dynamic_secret,k8s_auth,log_forwarding,zero_knowledge_encryption,rotated_secret,caching,event_forwarding,admin,kmip,general,rotate_secret_value]
+ * Permissions  Comma-seperated list of permissions for this allowed access. Available permissions: [defaults,targets,classic_keys,automatic_migration,ldap_auth,kerberos_auth,dynamic_secret,k8s_auth,log_forwarding,zero_knowledge_encryption,rotated_secret,caching,event_forwarding,admin,kmip,general,sra_config,hsm,acme,sdr,rotate_secret_value]
  * @member {String} permissions
  */
 GatewayUpdateAllowedAccess.prototype['permissions'] = undefined;

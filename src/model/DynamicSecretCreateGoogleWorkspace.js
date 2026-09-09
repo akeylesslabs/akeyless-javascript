@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateGoogleWorkspace model module.
  * @module model/DynamicSecretCreateGoogleWorkspace
- * @version 5.0.33
+ * @version 5.0.34
  */
 class DynamicSecretCreateGoogleWorkspace {
     /**
@@ -74,6 +74,12 @@ class DynamicSecretCreateGoogleWorkspace {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
+                obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable-ai-quorum')) {
+                obj['enable-ai-quorum'] = ApiClient.convertToType(data['enable-ai-quorum'], 'Boolean');
             }
             if (data.hasOwnProperty('fixed-user-claim-keyname')) {
                 obj['fixed-user-claim-keyname'] = ApiClient.convertToType(data['fixed-user-claim-keyname'], 'String');
@@ -288,6 +294,18 @@ DynamicSecretCreateGoogleWorkspace.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 DynamicSecretCreateGoogleWorkspace.prototype['description'] = undefined;
+
+/**
+ * EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.
+ * @member {Boolean} enable-agentic-runtime-authority
+ */
+DynamicSecretCreateGoogleWorkspace.prototype['enable-agentic-runtime-authority'] = undefined;
+
+/**
+ * Turns on AI Quorum checks for this item.
+ * @member {Boolean} enable-ai-quorum
+ */
+DynamicSecretCreateGoogleWorkspace.prototype['enable-ai-quorum'] = undefined;
 
 /**
  * For externally provided users, denotes the key-name of IdP claim to extract the username from

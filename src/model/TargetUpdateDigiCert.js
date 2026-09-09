@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateDigiCert model module.
  * @module model/TargetUpdateDigiCert
- * @version 5.0.33
+ * @version 5.0.34
  */
 class TargetUpdateDigiCert {
     /**
@@ -59,6 +59,9 @@ class TargetUpdateDigiCert {
             if (data.hasOwnProperty('acme-challenge')) {
                 obj['acme-challenge'] = ApiClient.convertToType(data['acme-challenge'], 'String');
             }
+            if (data.hasOwnProperty('delete_protection')) {
+                obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
+            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
@@ -95,6 +98,12 @@ class TargetUpdateDigiCert {
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
+            if (data.hasOwnProperty('lock-on-read')) {
+                obj['lock-on-read'] = ApiClient.convertToType(data['lock-on-read'], 'String');
+            }
+            if (data.hasOwnProperty('lock-ttl')) {
+                obj['lock-ttl'] = ApiClient.convertToType(data['lock-ttl'], 'String');
+            }
             if (data.hasOwnProperty('max-versions')) {
                 obj['max-versions'] = ApiClient.convertToType(data['max-versions'], 'String');
             }
@@ -106,6 +115,9 @@ class TargetUpdateDigiCert {
             }
             if (data.hasOwnProperty('resource-group')) {
                 obj['resource-group'] = ApiClient.convertToType(data['resource-group'], 'String');
+            }
+            if (data.hasOwnProperty('rotate-on-unlock')) {
+                obj['rotate-on-unlock'] = ApiClient.convertToType(data['rotate-on-unlock'], 'String');
             }
             if (data.hasOwnProperty('timeout')) {
                 obj['timeout'] = ApiClient.convertToType(data['timeout'], 'String');
@@ -135,6 +147,10 @@ class TargetUpdateDigiCert {
         // ensure the json data is a string
         if (data['acme-challenge'] && !(typeof data['acme-challenge'] === 'string' || data['acme-challenge'] instanceof String)) {
             throw new Error("Expected the field `acme-challenge` to be a primitive type in the JSON string but got " + data['acme-challenge']);
+        }
+        // ensure the json data is a string
+        if (data['delete_protection'] && !(typeof data['delete_protection'] === 'string' || data['delete_protection'] instanceof String)) {
+            throw new Error("Expected the field `delete_protection` to be a primitive type in the JSON string but got " + data['delete_protection']);
         }
         // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
@@ -181,6 +197,14 @@ class TargetUpdateDigiCert {
             throw new Error("Expected the field `key` to be a primitive type in the JSON string but got " + data['key']);
         }
         // ensure the json data is a string
+        if (data['lock-on-read'] && !(typeof data['lock-on-read'] === 'string' || data['lock-on-read'] instanceof String)) {
+            throw new Error("Expected the field `lock-on-read` to be a primitive type in the JSON string but got " + data['lock-on-read']);
+        }
+        // ensure the json data is a string
+        if (data['lock-ttl'] && !(typeof data['lock-ttl'] === 'string' || data['lock-ttl'] instanceof String)) {
+            throw new Error("Expected the field `lock-ttl` to be a primitive type in the JSON string but got " + data['lock-ttl']);
+        }
+        // ensure the json data is a string
         if (data['max-versions'] && !(typeof data['max-versions'] === 'string' || data['max-versions'] instanceof String)) {
             throw new Error("Expected the field `max-versions` to be a primitive type in the JSON string but got " + data['max-versions']);
         }
@@ -195,6 +219,10 @@ class TargetUpdateDigiCert {
         // ensure the json data is a string
         if (data['resource-group'] && !(typeof data['resource-group'] === 'string' || data['resource-group'] instanceof String)) {
             throw new Error("Expected the field `resource-group` to be a primitive type in the JSON string but got " + data['resource-group']);
+        }
+        // ensure the json data is a string
+        if (data['rotate-on-unlock'] && !(typeof data['rotate-on-unlock'] === 'string' || data['rotate-on-unlock'] instanceof String)) {
+            throw new Error("Expected the field `rotate-on-unlock` to be a primitive type in the JSON string but got " + data['rotate-on-unlock']);
         }
         // ensure the json data is a string
         if (data['timeout'] && !(typeof data['timeout'] === 'string' || data['timeout'] instanceof String)) {
@@ -223,6 +251,12 @@ TargetUpdateDigiCert.RequiredProperties = ["email", "name"];
  * @default 'dns'
  */
 TargetUpdateDigiCert.prototype['acme-challenge'] = 'dns';
+
+/**
+ * Protection from accidental deletion of this object [true/false]
+ * @member {String} delete_protection
+ */
+TargetUpdateDigiCert.prototype['delete_protection'] = undefined;
 
 /**
  * Description of the object
@@ -299,6 +333,18 @@ TargetUpdateDigiCert.prototype['keep-prev-version'] = undefined;
 TargetUpdateDigiCert.prototype['key'] = undefined;
 
 /**
+ * Lock this secret after each successful value read
+ * @member {String} lock-on-read
+ */
+TargetUpdateDigiCert.prototype['lock-on-read'] = undefined;
+
+/**
+ * Lock TTL in minutes
+ * @member {String} lock-ttl
+ */
+TargetUpdateDigiCert.prototype['lock-ttl'] = undefined;
+
+/**
  * Set the maximum number of versions, limited by the account settings defaults.
  * @member {String} max-versions
  */
@@ -321,6 +367,12 @@ TargetUpdateDigiCert.prototype['new-name'] = undefined;
  * @member {String} resource-group
  */
 TargetUpdateDigiCert.prototype['resource-group'] = undefined;
+
+/**
+ * Rotate this secret after it is unlocked
+ * @member {String} rotate-on-unlock
+ */
+TargetUpdateDigiCert.prototype['rotate-on-unlock'] = undefined;
 
 /**
  * Timeout for challenge validation

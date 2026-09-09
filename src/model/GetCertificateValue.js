@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCertificateValue model module.
  * @module model/GetCertificateValue
- * @version 5.0.33
+ * @version 5.0.34
  */
 class GetCertificateValue {
     /**
@@ -34,6 +34,7 @@ class GetCertificateValue {
      * Only for internal use.
      */
     static initialize(obj) { 
+        obj['format'] = 'pem';
         obj['ignore-cache'] = 'false';
         obj['json'] = false;
     }
@@ -55,8 +56,14 @@ class GetCertificateValue {
             if (data.hasOwnProperty('display-id')) {
                 obj['display-id'] = ApiClient.convertToType(data['display-id'], 'String');
             }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
             if (data.hasOwnProperty('ignore-cache')) {
                 obj['ignore-cache'] = ApiClient.convertToType(data['ignore-cache'], 'String');
+            }
+            if (data.hasOwnProperty('include-private-key')) {
+                obj['include-private-key'] = ApiClient.convertToType(data['include-private-key'], 'Boolean');
             }
             if (data.hasOwnProperty('issuance-token')) {
                 obj['issuance-token'] = ApiClient.convertToType(data['issuance-token'], 'String');
@@ -64,8 +71,14 @@ class GetCertificateValue {
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
+            if (data.hasOwnProperty('leaf-only')) {
+                obj['leaf-only'] = ApiClient.convertToType(data['leaf-only'], 'Boolean');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -95,6 +108,10 @@ class GetCertificateValue {
             throw new Error("Expected the field `display-id` to be a primitive type in the JSON string but got " + data['display-id']);
         }
         // ensure the json data is a string
+        if (data['format'] && !(typeof data['format'] === 'string' || data['format'] instanceof String)) {
+            throw new Error("Expected the field `format` to be a primitive type in the JSON string but got " + data['format']);
+        }
+        // ensure the json data is a string
         if (data['ignore-cache'] && !(typeof data['ignore-cache'] === 'string' || data['ignore-cache'] instanceof String)) {
             throw new Error("Expected the field `ignore-cache` to be a primitive type in the JSON string but got " + data['ignore-cache']);
         }
@@ -105,6 +122,10 @@ class GetCertificateValue {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['password'] && !(typeof data['password'] === 'string' || data['password'] instanceof String)) {
+            throw new Error("Expected the field `password` to be a primitive type in the JSON string but got " + data['password']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -136,11 +157,24 @@ GetCertificateValue.prototype['cert-issuer-name'] = undefined;
 GetCertificateValue.prototype['display-id'] = undefined;
 
 /**
+ * Format to download the certificate in [pem/pfx/jks], pfx/jks require a password
+ * @member {String} format
+ * @default 'pem'
+ */
+GetCertificateValue.prototype['format'] = 'pem';
+
+/**
  * Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI
  * @member {String} ignore-cache
  * @default 'false'
  */
 GetCertificateValue.prototype['ignore-cache'] = 'false';
+
+/**
+ * If set, includes the private key in the pfx/jks file, only relevant when format is pfx or jks
+ * @member {Boolean} include-private-key
+ */
+GetCertificateValue.prototype['include-private-key'] = undefined;
 
 /**
  * Token for getting the issued certificate
@@ -156,10 +190,22 @@ GetCertificateValue.prototype['issuance-token'] = undefined;
 GetCertificateValue.prototype['json'] = false;
 
 /**
+ * If set, downloads only the leaf certificate instead of the full chain, only available for certificates issued with split certificate chain enabled
+ * @member {Boolean} leaf-only
+ */
+GetCertificateValue.prototype['leaf-only'] = undefined;
+
+/**
  * Certificate name
  * @member {String} name
  */
 GetCertificateValue.prototype['name'] = undefined;
+
+/**
+ * Password to protect the pfx/jks file, required when format is pfx or jks
+ * @member {String} password
+ */
+GetCertificateValue.prototype['password'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResetAccessKey model module.
  * @module model/ResetAccessKey
- * @version 5.0.33
+ * @version 5.0.34
  */
 class ResetAccessKey {
     /**

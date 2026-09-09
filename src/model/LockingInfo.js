@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LockingInfo model module.
  * @module model/LockingInfo
- * @version 5.0.33
+ * @version 5.0.34
  */
 class LockingInfo {
     /**
@@ -53,6 +53,12 @@ class LockingInfo {
             if (data.hasOwnProperty('expire_at')) {
                 obj['expire_at'] = ApiClient.convertToType(data['expire_at'], 'Number');
             }
+            if (data.hasOwnProperty('lock_origin')) {
+                obj['lock_origin'] = ApiClient.convertToType(data['lock_origin'], 'String');
+            }
+            if (data.hasOwnProperty('locked_at')) {
+                obj['locked_at'] = ApiClient.convertToType(data['locked_at'], 'Number');
+            }
             if (data.hasOwnProperty('locked_by')) {
                 obj['locked_by'] = ApiClient.convertToType(data['locked_by'], 'String');
             }
@@ -72,6 +78,10 @@ class LockingInfo {
         // ensure the json data is an array
         if (!Array.isArray(data['actions'])) {
             throw new Error("Expected the field `actions` to be an array in the JSON data but got " + data['actions']);
+        }
+        // ensure the json data is a string
+        if (data['lock_origin'] && !(typeof data['lock_origin'] === 'string' || data['lock_origin'] instanceof String)) {
+            throw new Error("Expected the field `lock_origin` to be a primitive type in the JSON string but got " + data['lock_origin']);
         }
         // ensure the json data is a string
         if (data['locked_by'] && !(typeof data['locked_by'] === 'string' || data['locked_by'] instanceof String)) {
@@ -99,6 +109,16 @@ LockingInfo.prototype['actions'] = undefined;
  * @member {Number} expire_at
  */
 LockingInfo.prototype['expire_at'] = undefined;
+
+/**
+ * @member {String} lock_origin
+ */
+LockingInfo.prototype['lock_origin'] = undefined;
+
+/**
+ * @member {Number} locked_at
+ */
+LockingInfo.prototype['locked_at'] = undefined;
 
 /**
  * @member {String} locked_by

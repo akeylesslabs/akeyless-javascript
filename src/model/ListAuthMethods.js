@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListAuthMethods model module.
  * @module model/ListAuthMethods
- * @version 5.0.33
+ * @version 5.0.34
  */
 class ListAuthMethods {
     /**
@@ -132,7 +132,7 @@ ListAuthMethods.prototype['pagination-token'] = undefined;
 ListAuthMethods.prototype['token'] = undefined;
 
 /**
- * The Auth method types list of the requested method. In case it is empty, all types of auth methods will be returned. options: [api_key, azure_ad, oauth2/jwt, saml2, ldap, aws_iam, oidc, universal_identity, gcp, k8s, cert]
+ * The Auth method types list of the requested method. In case it is empty, all types of auth methods will be returned. options: [api_key, azure_ad, oauth2/jwt, saml2, ldap, aws_iam, alicloud, oidc, universal_identity, gcp, k8s, cert]
  * @member {Array.<String>} type
  */
 ListAuthMethods.prototype['type'] = undefined;

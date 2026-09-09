@@ -41,7 +41,10 @@ import AgenticRule from './model/AgenticRule';
 import AgenticRules from './model/AgenticRules';
 import AiInsightsConfigPart from './model/AiInsightsConfigPart';
 import AiInsightsSetting from './model/AiInsightsSetting';
+import AiModelEntry from './model/AiModelEntry';
+import AiQuorumSetting from './model/AiQuorumSetting';
 import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
+import AliCloudAccessRules from './model/AliCloudAccessRules';
 import AliasDetails from './model/AliasDetails';
 import AliasDetailsOutput from './model/AliasDetailsOutput';
 import AllAnalyticsData from './model/AllAnalyticsData';
@@ -59,6 +62,7 @@ import AuthExpirationEvent from './model/AuthExpirationEvent';
 import AuthMethod from './model/AuthMethod';
 import AuthMethodAccessInfo from './model/AuthMethodAccessInfo';
 import AuthMethodAdditionalData from './model/AuthMethodAdditionalData';
+import AuthMethodCreateAliCloud from './model/AuthMethodCreateAliCloud';
 import AuthMethodCreateApiKey from './model/AuthMethodCreateApiKey';
 import AuthMethodCreateAwsIam from './model/AuthMethodCreateAwsIam';
 import AuthMethodCreateAzureAD from './model/AuthMethodCreateAzureAD';
@@ -79,6 +83,7 @@ import AuthMethodDeleteOutput from './model/AuthMethodDeleteOutput';
 import AuthMethodGet from './model/AuthMethodGet';
 import AuthMethodList from './model/AuthMethodList';
 import AuthMethodRoleAssociation from './model/AuthMethodRoleAssociation';
+import AuthMethodUpdateAliCloud from './model/AuthMethodUpdateAliCloud';
 import AuthMethodUpdateApiKey from './model/AuthMethodUpdateApiKey';
 import AuthMethodUpdateAwsIam from './model/AuthMethodUpdateAwsIam';
 import AuthMethodUpdateAzureAD from './model/AuthMethodUpdateAzureAD';
@@ -823,6 +828,10 @@ import LockingInfo from './model/LockingInfo';
 import LogForwardingConfigPart from './model/LogForwardingConfigPart';
 import LogstashLogForwardingConfig from './model/LogstashLogForwardingConfig';
 import LogzIoLogForwardingConfig from './model/LogzIoLogForwardingConfig';
+import MigrationDownloadJob from './model/MigrationDownloadJob';
+import MigrationDownloadReport from './model/MigrationDownloadReport';
+import MigrationDownloadSecret from './model/MigrationDownloadSecret';
+import MigrationDownloadSummary from './model/MigrationDownloadSummary';
 import MigrationGeneral from './model/MigrationGeneral';
 import MigrationItems from './model/MigrationItems';
 import MigrationStatus from './model/MigrationStatus';
@@ -968,6 +977,7 @@ import SAMLAttribute from './model/SAMLAttribute';
 import SSHCertificateIssueDetails from './model/SSHCertificateIssueDetails';
 import SSHTargetDetails from './model/SSHTargetDetails';
 import SalesforceTargetDetails from './model/SalesforceTargetDetails';
+import SamlSpConfigPart from './model/SamlSpConfigPart';
 import ScanResults from './model/ScanResults';
 import SecretInfo from './model/SecretInfo';
 import SecretSyncOutput from './model/SecretSyncOutput';
@@ -1308,7 +1318,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.33
+* @version 5.0.34
 */
 export {
     /**
@@ -1486,10 +1496,28 @@ export {
     AiInsightsSetting,
 
     /**
+     * The AiModelEntry model constructor.
+     * @property {module:model/AiModelEntry}
+     */
+    AiModelEntry,
+
+    /**
+     * The AiQuorumSetting model constructor.
+     * @property {module:model/AiQuorumSetting}
+     */
+    AiQuorumSetting,
+
+    /**
      * The AkeylessGatewayConfig model constructor.
      * @property {module:model/AkeylessGatewayConfig}
      */
     AkeylessGatewayConfig,
+
+    /**
+     * The AliCloudAccessRules model constructor.
+     * @property {module:model/AliCloudAccessRules}
+     */
+    AliCloudAccessRules,
 
     /**
      * The AliasDetails model constructor.
@@ -1592,6 +1620,12 @@ export {
      * @property {module:model/AuthMethodAdditionalData}
      */
     AuthMethodAdditionalData,
+
+    /**
+     * The AuthMethodCreateAliCloud model constructor.
+     * @property {module:model/AuthMethodCreateAliCloud}
+     */
+    AuthMethodCreateAliCloud,
 
     /**
      * The AuthMethodCreateApiKey model constructor.
@@ -1712,6 +1746,12 @@ export {
      * @property {module:model/AuthMethodRoleAssociation}
      */
     AuthMethodRoleAssociation,
+
+    /**
+     * The AuthMethodUpdateAliCloud model constructor.
+     * @property {module:model/AuthMethodUpdateAliCloud}
+     */
+    AuthMethodUpdateAliCloud,
 
     /**
      * The AuthMethodUpdateApiKey model constructor.
@@ -6178,6 +6218,30 @@ export {
     LogzIoLogForwardingConfig,
 
     /**
+     * The MigrationDownloadJob model constructor.
+     * @property {module:model/MigrationDownloadJob}
+     */
+    MigrationDownloadJob,
+
+    /**
+     * The MigrationDownloadReport model constructor.
+     * @property {module:model/MigrationDownloadReport}
+     */
+    MigrationDownloadReport,
+
+    /**
+     * The MigrationDownloadSecret model constructor.
+     * @property {module:model/MigrationDownloadSecret}
+     */
+    MigrationDownloadSecret,
+
+    /**
+     * The MigrationDownloadSummary model constructor.
+     * @property {module:model/MigrationDownloadSummary}
+     */
+    MigrationDownloadSummary,
+
+    /**
      * The MigrationGeneral model constructor.
      * @property {module:model/MigrationGeneral}
      */
@@ -7046,6 +7110,12 @@ export {
      * @property {module:model/SalesforceTargetDetails}
      */
     SalesforceTargetDetails,
+
+    /**
+     * The SamlSpConfigPart model constructor.
+     * @property {module:model/SamlSpConfigPart}
+     */
+    SamlSpConfigPart,
 
     /**
      * The ScanResults model constructor.

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LDAPAccessRules model module.
  * @module model/LDAPAccessRules
- * @version 5.0.33
+ * @version 5.0.34
  */
 class LDAPAccessRules {
     /**

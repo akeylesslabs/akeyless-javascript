@@ -18,7 +18,7 @@ import KMIPCA from './KMIPCA';
 /**
  * The KMIPServer model module.
  * @module model/KMIPServer
- * @version 5.0.33
+ * @version 5.0.34
  */
 class KMIPServer {
     /**

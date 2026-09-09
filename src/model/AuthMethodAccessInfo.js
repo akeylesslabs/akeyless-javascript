@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import APIKeyAccessRules from './APIKeyAccessRules';
 import AWSIAMAccessRules from './AWSIAMAccessRules';
+import AliCloudAccessRules from './AliCloudAccessRules';
 import AzureADAccessRules from './AzureADAccessRules';
 import CertAccessRules from './CertAccessRules';
 import EmailPassAccessRules from './EmailPassAccessRules';
@@ -32,7 +33,7 @@ import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 5.0.33
+ * @version 5.0.34
  */
 class AuthMethodAccessInfo {
     /**
@@ -68,6 +69,9 @@ class AuthMethodAccessInfo {
             }
             if (data.hasOwnProperty('access_id_alias')) {
                 obj['access_id_alias'] = ApiClient.convertToType(data['access_id_alias'], 'String');
+            }
+            if (data.hasOwnProperty('alicloud_access_rules')) {
+                obj['alicloud_access_rules'] = AliCloudAccessRules.constructFromObject(data['alicloud_access_rules']);
             }
             if (data.hasOwnProperty('allowed_client_type')) {
                 obj['allowed_client_type'] = ApiClient.convertToType(data['allowed_client_type'], ['String']);
@@ -157,6 +161,10 @@ class AuthMethodAccessInfo {
         // ensure the json data is a string
         if (data['access_id_alias'] && !(typeof data['access_id_alias'] === 'string' || data['access_id_alias'] instanceof String)) {
             throw new Error("Expected the field `access_id_alias` to be a primitive type in the JSON string but got " + data['access_id_alias']);
+        }
+        // validate the optional field `alicloud_access_rules`
+        if (data['alicloud_access_rules']) { // data not null
+          AliCloudAccessRules.validateJSON(data['alicloud_access_rules']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['allowed_client_type'])) {
@@ -275,6 +283,11 @@ AuthMethodAccessInfo.prototype['access_expires'] = undefined;
  * @member {String} access_id_alias
  */
 AuthMethodAccessInfo.prototype['access_id_alias'] = undefined;
+
+/**
+ * @member {module:model/AliCloudAccessRules} alicloud_access_rules
+ */
+AuthMethodAccessInfo.prototype['alicloud_access_rules'] = undefined;
 
 /**
  * @member {Array.<String>} allowed_client_type

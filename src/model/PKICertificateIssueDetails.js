@@ -17,7 +17,7 @@ import CertificateExpirationEvent from './CertificateExpirationEvent';
 /**
  * The PKICertificateIssueDetails model module.
  * @module model/PKICertificateIssueDetails
- * @version 5.0.33
+ * @version 5.0.34
  */
 class PKICertificateIssueDetails {
     /**
@@ -179,6 +179,9 @@ class PKICertificateIssueDetails {
             }
             if (data.hasOwnProperty('server_flag')) {
                 obj['server_flag'] = ApiClient.convertToType(data['server_flag'], 'Boolean');
+            }
+            if (data.hasOwnProperty('split_certificate_chain')) {
+                obj['split_certificate_chain'] = ApiClient.convertToType(data['split_certificate_chain'], 'Boolean');
             }
             if (data.hasOwnProperty('street_address')) {
                 obj['street_address'] = ApiClient.convertToType(data['street_address'], ['String']);
@@ -507,6 +510,12 @@ PKICertificateIssueDetails.prototype['require_cn'] = undefined;
  * @member {Boolean} server_flag
  */
 PKICertificateIssueDetails.prototype['server_flag'] = undefined;
+
+/**
+ * SplitCertificateChain, when enabled, separates the leaf certificate from the certificate chain.
+ * @member {Boolean} split_certificate_chain
+ */
+PKICertificateIssueDetails.prototype['split_certificate_chain'] = undefined;
 
 /**
  * @member {Array.<String>} street_address

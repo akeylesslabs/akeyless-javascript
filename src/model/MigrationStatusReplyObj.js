@@ -12,13 +12,14 @@
  */
 
 import ApiClient from '../ApiClient';
+import MigrationDownloadReport from './MigrationDownloadReport';
 import MigrationItems from './MigrationItems';
 import SyncCounters from './SyncCounters';
 
 /**
  * The MigrationStatusReplyObj model module.
  * @module model/MigrationStatusReplyObj
- * @version 5.0.33
+ * @version 5.0.34
  */
 class MigrationStatusReplyObj {
     /**
@@ -54,6 +55,9 @@ class MigrationStatusReplyObj {
             }
             if (data.hasOwnProperty('computers')) {
                 obj['computers'] = ApiClient.convertToType(data['computers'], 'Number');
+            }
+            if (data.hasOwnProperty('download_report')) {
+                obj['download_report'] = MigrationDownloadReport.constructFromObject(data['download_report']);
             }
             if (data.hasOwnProperty('duration_time')) {
                 obj['duration_time'] = ApiClient.convertToType(data['duration_time'], 'String');
@@ -113,6 +117,10 @@ class MigrationStatusReplyObj {
         // validate the optional field `certificates`
         if (data['certificates']) { // data not null
           MigrationItems.validateJSON(data['certificates']);
+        }
+        // validate the optional field `download_report`
+        if (data['download_report']) { // data not null
+          MigrationDownloadReport.validateJSON(data['download_report']);
         }
         // ensure the json data is a string
         if (data['duration_time'] && !(typeof data['duration_time'] === 'string' || data['duration_time'] instanceof String)) {
@@ -184,6 +192,11 @@ MigrationStatusReplyObj.prototype['certificates'] = undefined;
  * @member {Number} computers
  */
 MigrationStatusReplyObj.prototype['computers'] = undefined;
+
+/**
+ * @member {module:model/MigrationDownloadReport} download_report
+ */
+MigrationStatusReplyObj.prototype['download_report'] = undefined;
 
 /**
  * @member {String} duration_time

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 5.0.33
+ * @version 5.0.34
  */
 class Auth {
     /**
@@ -296,7 +296,7 @@ Auth.prototype['access-id'] = undefined;
 Auth.prototype['access-key'] = undefined;
 
 /**
- * Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/universal_identity/jwt/gcp/cert/oci/kerberos)
+ * Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/alicloud/universal_identity/jwt/gcp/cert/oci/kerberos)
  * @member {String} access-type
  * @default 'access_key'
  */
@@ -340,7 +340,7 @@ Auth.prototype['cert-challenge'] = undefined;
 Auth.prototype['cert-data'] = undefined;
 
 /**
- * The cloud identity (relevant only for access-type=azure_ad,aws_iam,gcp)
+ * The cloud identity (relevant only for access-type=azure_ad,aws_iam,alicloud,gcp,oci)
  * @member {String} cloud-id
  */
 Auth.prototype['cloud-id'] = undefined;
