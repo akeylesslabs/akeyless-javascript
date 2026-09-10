@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLdapTargetOutput model module.
  * @module model/CreateLdapTargetOutput
- * @version 5.0.35
+ * @version 5.0.36
  */
 class CreateLdapTargetOutput {
     /**

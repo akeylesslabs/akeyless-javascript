@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateGrok model module.
  * @module model/TargetCreateGrok
- * @version 5.0.35
+ * @version 5.0.36
  */
 class TargetCreateGrok {
     /**

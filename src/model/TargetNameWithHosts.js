@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetNameWithHosts model module.
  * @module model/TargetNameWithHosts
- * @version 5.0.35
+ * @version 5.0.36
  */
 class TargetNameWithHosts {
     /**

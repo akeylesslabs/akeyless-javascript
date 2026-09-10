@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CertificateScanTarget model module.
  * @module model/CertificateScanTarget
- * @version 5.0.35
+ * @version 5.0.36
  */
 class CertificateScanTarget {
     /**

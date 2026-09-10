@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RuntimeAuthorityCommand model module.
  * @module model/RuntimeAuthorityCommand
- * @version 5.0.35
+ * @version 5.0.36
  */
 class RuntimeAuthorityCommand {
     /**

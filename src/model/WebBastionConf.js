@@ -18,7 +18,7 @@ import WebBastionRdpRecord from './WebBastionRdpRecord';
 /**
  * The WebBastionConf model module.
  * @module model/WebBastionConf
- * @version 5.0.35
+ * @version 5.0.36
  */
 class WebBastionConf {
     /**

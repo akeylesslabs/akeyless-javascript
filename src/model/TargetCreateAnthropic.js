@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateAnthropic model module.
  * @module model/TargetCreateAnthropic
- * @version 5.0.35
+ * @version 5.0.36
  */
 class TargetCreateAnthropic {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FolderDeleteSync model module.
  * @module model/FolderDeleteSync
- * @version 5.0.35
+ * @version 5.0.36
  */
 class FolderDeleteSync {
     /**

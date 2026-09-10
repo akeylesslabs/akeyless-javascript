@@ -18,7 +18,7 @@ import MigrationDownloadSecret from './MigrationDownloadSecret';
 /**
  * The MigrationDownloadReport model module.
  * @module model/MigrationDownloadReport
- * @version 5.0.35
+ * @version 5.0.36
  */
 class MigrationDownloadReport {
     /**

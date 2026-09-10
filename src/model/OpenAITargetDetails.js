@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OpenAITargetDetails model module.
  * @module model/OpenAITargetDetails
- * @version 5.0.35
+ * @version 5.0.36
  */
 class OpenAITargetDetails {
     /**

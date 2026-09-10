@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayGetDefaults model module.
  * @module model/GatewayGetDefaults
- * @version 5.0.35
+ * @version 5.0.36
  */
 class GatewayGetDefaults {
     /**

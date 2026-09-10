@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePKICertIssuer model module.
  * @module model/UpdatePKICertIssuer
- * @version 5.0.35
+ * @version 5.0.36
  */
 class UpdatePKICertIssuer {
     /**

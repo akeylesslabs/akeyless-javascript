@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GodaddyTargetDetails model module.
  * @module model/GodaddyTargetDetails
- * @version 5.0.35
+ * @version 5.0.36
  */
 class GodaddyTargetDetails {
     /**

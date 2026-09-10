@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NetappStorage model module.
  * @module model/NetappStorage
- * @version 5.0.35
+ * @version 5.0.36
  */
 class NetappStorage {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateSalesforce model module.
  * @module model/TargetUpdateSalesforce
- * @version 5.0.35
+ * @version 5.0.36
  */
 class TargetUpdateSalesforce {
     /**
