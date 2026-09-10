@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AiModelEntry model module.
  * @module model/AiModelEntry
- * @version 5.0.36
+ * @version 5.0.37
  */
 class AiModelEntry {
     /**

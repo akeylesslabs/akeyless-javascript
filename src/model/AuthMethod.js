@@ -21,7 +21,7 @@ import UidExpirationEvent from './UidExpirationEvent';
 /**
  * The AuthMethod model module.
  * @module model/AuthMethod
- * @version 5.0.36
+ * @version 5.0.37
  */
 class AuthMethod {
     /**

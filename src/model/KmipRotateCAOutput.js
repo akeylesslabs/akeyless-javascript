@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipRotateCAOutput model module.
  * @module model/KmipRotateCAOutput
- * @version 5.0.36
+ * @version 5.0.37
  */
 class KmipRotateCAOutput {
     /**

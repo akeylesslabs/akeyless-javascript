@@ -17,7 +17,7 @@ import AiModelEntry from './AiModelEntry';
 /**
  * The AiInsightsConfigPart model module.
  * @module model/AiInsightsConfigPart
- * @version 5.0.36
+ * @version 5.0.37
  */
 class AiInsightsConfigPart {
     /**

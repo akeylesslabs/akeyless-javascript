@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventForwarderUpdateServiceNow model module.
  * @module model/EventForwarderUpdateServiceNow
- * @version 5.0.36
+ * @version 5.0.37
  */
 class EventForwarderUpdateServiceNow {
     /**

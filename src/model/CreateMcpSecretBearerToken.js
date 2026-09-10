@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateMcpSecretBearerToken model module.
  * @module model/CreateMcpSecretBearerToken
- * @version 5.0.36
+ * @version 5.0.37
  */
 class CreateMcpSecretBearerToken {
     /**

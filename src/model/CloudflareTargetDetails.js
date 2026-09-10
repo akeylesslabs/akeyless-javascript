@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CloudflareTargetDetails model module.
  * @module model/CloudflareTargetDetails
- * @version 5.0.36
+ * @version 5.0.37
  */
 class CloudflareTargetDetails {
     /**

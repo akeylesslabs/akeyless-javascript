@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The F5BigIpTargetDetails model module.
  * @module model/F5BigIpTargetDetails
- * @version 5.0.36
+ * @version 5.0.37
  */
 class F5BigIpTargetDetails {
     /**

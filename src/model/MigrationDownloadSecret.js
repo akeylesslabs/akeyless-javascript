@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MigrationDownloadSecret model module.
  * @module model/MigrationDownloadSecret
- * @version 5.0.36
+ * @version 5.0.37
  */
 class MigrationDownloadSecret {
     /**

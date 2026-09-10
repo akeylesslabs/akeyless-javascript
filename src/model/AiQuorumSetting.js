@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AiQuorumSetting model module.
  * @module model/AiQuorumSetting
- * @version 5.0.36
+ * @version 5.0.37
  */
 class AiQuorumSetting {
     /**
