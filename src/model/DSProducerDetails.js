@@ -23,7 +23,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 5.0.34
+ * @version 5.0.35
  */
 class DSProducerDetails {
     /**

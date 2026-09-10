@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateMysql model module.
  * @module model/RotatedSecretCreateMysql
- * @version 5.0.34
+ * @version 5.0.35
  */
 class RotatedSecretCreateMysql {
     /**

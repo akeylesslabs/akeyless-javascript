@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateEks model module.
  * @module model/TargetUpdateEks
- * @version 5.0.34
+ * @version 5.0.35
  */
 class TargetUpdateEks {
     /**

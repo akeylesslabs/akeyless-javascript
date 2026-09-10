@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscList model module.
  * @module model/UscList
- * @version 5.0.34
+ * @version 5.0.35
  */
 class UscList {
     /**
@@ -66,6 +66,9 @@ class UscList {
             if (data.hasOwnProperty('page-token')) {
                 obj['page-token'] = ApiClient.convertToType(data['page-token'], 'String');
             }
+            if (data.hasOwnProperty('search')) {
+                obj['search'] = ApiClient.convertToType(data['search'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
@@ -102,6 +105,10 @@ class UscList {
         // ensure the json data is a string
         if (data['page-token'] && !(typeof data['page-token'] === 'string' || data['page-token'] instanceof String)) {
             throw new Error("Expected the field `page-token` to be a primitive type in the JSON string but got " + data['page-token']);
+        }
+        // ensure the json data is a string
+        if (data['search'] && !(typeof data['search'] === 'string' || data['search'] instanceof String)) {
+            throw new Error("Expected the field `search` to be a primitive type in the JSON string but got " + data['search']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -143,7 +150,7 @@ UscList.prototype['json'] = false;
 UscList.prototype['object-type'] = undefined;
 
 /**
- * Optional: number of items requested per response (Azure KV). When set, response may include next_token
+ * Optional: number of items requested per response. When set, response may include next_token
  * @member {Number} page-size
  */
 UscList.prototype['page-size'] = undefined;
@@ -153,6 +160,12 @@ UscList.prototype['page-size'] = undefined;
  * @member {String} page-token
  */
 UscList.prototype['page-token'] = undefined;
+
+/**
+ * Search query used to match secret names and paths.
+ * @member {String} search
+ */
+UscList.prototype['search'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

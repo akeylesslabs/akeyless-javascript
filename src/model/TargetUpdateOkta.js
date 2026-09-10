@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateOkta model module.
  * @module model/TargetUpdateOkta
- * @version 5.0.34
+ * @version 5.0.35
  */
 class TargetUpdateOkta {
     /**

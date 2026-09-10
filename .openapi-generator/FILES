@@ -2555,13 +2555,3 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/AiModelEntry.spec.js
-test/model/AiQuorumSetting.spec.js
-test/model/AliCloudAccessRules.spec.js
-test/model/AuthMethodCreateAliCloud.spec.js
-test/model/AuthMethodUpdateAliCloud.spec.js
-test/model/MigrationDownloadJob.spec.js
-test/model/MigrationDownloadReport.spec.js
-test/model/MigrationDownloadSecret.spec.js
-test/model/MigrationDownloadSummary.spec.js
-test/model/SamlSpConfigPart.spec.js

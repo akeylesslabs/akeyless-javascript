@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateGoogleTrust model module.
  * @module model/TargetCreateGoogleTrust
- * @version 5.0.34
+ * @version 5.0.35
  */
 class TargetCreateGoogleTrust {
     /**

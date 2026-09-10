@@ -985,7 +985,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.34
+* @version 5.0.35
 */
 export default class V2Api {
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateF5BigIp model module.
  * @module model/TargetUpdateF5BigIp
- * @version 5.0.34
+ * @version 5.0.35
  */
 class TargetUpdateF5BigIp {
     /**
