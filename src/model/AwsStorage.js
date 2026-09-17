@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AwsStorage model module.
  * @module model/AwsStorage
- * @version 5.0.37
+ * @version 5.0.38
  */
 class AwsStorage {
     /**

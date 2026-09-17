@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateOracleDb model module.
  * @module model/DynamicSecretUpdateOracleDb
- * @version 5.0.37
+ * @version 5.0.38
  */
 class DynamicSecretUpdateOracleDb {
     /**
@@ -140,8 +140,8 @@ class DynamicSecretUpdateOracleDb {
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
             }
-            if (data.hasOwnProperty('skip_dry_run')) {
-                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            if (data.hasOwnProperty('skip-dry-run')) {
+                obj['skip-dry-run'] = ApiClient.convertToType(data['skip-dry-run'], 'Boolean');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -273,10 +273,6 @@ class DynamicSecretUpdateOracleDb {
         // ensure the json data is an array
         if (!Array.isArray(data['secure-access-host'])) {
             throw new Error("Expected the field `secure-access-host` to be an array in the JSON data but got " + data['secure-access-host']);
-        }
-        // ensure the json data is a string
-        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
-            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
@@ -497,10 +493,10 @@ DynamicSecretUpdateOracleDb.prototype['secure-access-host'] = undefined;
 DynamicSecretUpdateOracleDb.prototype['secure-access-web'] = false;
 
 /**
- * If set, dry-run will be skipped
- * @member {String} skip_dry_run
+ * If set, dry-run will be skipped [true/false]
+ * @member {Boolean} skip-dry-run
  */
-DynamicSecretUpdateOracleDb.prototype['skip_dry_run'] = undefined;
+DynamicSecretUpdateOracleDb.prototype['skip-dry-run'] = undefined;
 
 /**
  * Add tags attached to this object

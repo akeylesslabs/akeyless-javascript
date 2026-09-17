@@ -52,7 +52,7 @@ Name | Type | Description | Notes
 **secureAccessWeb** | **Boolean** | Enable Web Secure Remote Access | [optional] [default to true]
 **secureAccessWebBrowsing** | **Boolean** | Secure browser via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to false]
 **secureAccessWebProxy** | **Boolean** | Web-Proxy via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to false]
-**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
+**skipDryRun** | **Boolean** | If set, dry-run will be skipped [true/false] | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **target** | **[String]** | A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times | [optional] 
 **targetName** | **String** | The target name to associate | 

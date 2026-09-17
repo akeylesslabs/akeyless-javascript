@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UsageReportSummary model module.
  * @module model/UsageReportSummary
- * @version 5.0.37
+ * @version 5.0.38
  */
 class UsageReportSummary {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateOpenAI model module.
  * @module model/DynamicSecretUpdateOpenAI
- * @version 5.0.37
+ * @version 5.0.38
  */
 class DynamicSecretUpdateOpenAI {
     /**
@@ -94,8 +94,8 @@ class DynamicSecretUpdateOpenAI {
             if (data.hasOwnProperty('project-id')) {
                 obj['project-id'] = ApiClient.convertToType(data['project-id'], 'String');
             }
-            if (data.hasOwnProperty('skip_dry_run')) {
-                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            if (data.hasOwnProperty('skip-dry-run')) {
+                obj['skip-dry-run'] = ApiClient.convertToType(data['skip-dry-run'], 'Boolean');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -163,10 +163,6 @@ class DynamicSecretUpdateOpenAI {
         // ensure the json data is a string
         if (data['project-id'] && !(typeof data['project-id'] === 'string' || data['project-id'] instanceof String)) {
             throw new Error("Expected the field `project-id` to be a primitive type in the JSON string but got " + data['project-id']);
-        }
-        // ensure the json data is a string
-        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
-            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
@@ -283,10 +279,10 @@ DynamicSecretUpdateOpenAI.prototype['producer-encryption-key-name'] = undefined;
 DynamicSecretUpdateOpenAI.prototype['project-id'] = undefined;
 
 /**
- * If set, dry-run will be skipped
- * @member {String} skip_dry_run
+ * If set, dry-run will be skipped [true/false]
+ * @member {Boolean} skip-dry-run
  */
-DynamicSecretUpdateOpenAI.prototype['skip_dry_run'] = undefined;
+DynamicSecretUpdateOpenAI.prototype['skip-dry-run'] = undefined;
 
 /**
  * Add tags attached to this object

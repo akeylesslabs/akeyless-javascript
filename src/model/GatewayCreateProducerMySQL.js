@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerMySQL model module.
  * @module model/GatewayCreateProducerMySQL
- * @version 5.0.37
+ * @version 5.0.38
  */
 class GatewayCreateProducerMySQL {
     /**
@@ -140,8 +140,8 @@ class GatewayCreateProducerMySQL {
             if (data.hasOwnProperty('secure-access-web')) {
                 obj['secure-access-web'] = ApiClient.convertToType(data['secure-access-web'], 'Boolean');
             }
-            if (data.hasOwnProperty('skip_dry_run')) {
-                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            if (data.hasOwnProperty('skip-dry-run')) {
+                obj['skip-dry-run'] = ApiClient.convertToType(data['skip-dry-run'], 'Boolean');
             }
             if (data.hasOwnProperty('ssl')) {
                 obj['ssl'] = ApiClient.convertToType(data['ssl'], 'Boolean');
@@ -275,10 +275,6 @@ class GatewayCreateProducerMySQL {
         // ensure the json data is an array
         if (!Array.isArray(data['secure-access-host'])) {
             throw new Error("Expected the field `secure-access-host` to be an array in the JSON data but got " + data['secure-access-host']);
-        }
-        // ensure the json data is a string
-        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
-            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
         }
         // ensure the json data is a string
         if (data['ssl-certificate'] && !(typeof data['ssl-certificate'] === 'string' || data['ssl-certificate'] instanceof String)) {
@@ -502,10 +498,10 @@ GatewayCreateProducerMySQL.prototype['secure-access-host'] = undefined;
 GatewayCreateProducerMySQL.prototype['secure-access-web'] = false;
 
 /**
- * If set, dry-run will be skipped
- * @member {String} skip_dry_run
+ * If set, dry-run will be skipped [true/false]
+ * @member {Boolean} skip-dry-run
  */
-GatewayCreateProducerMySQL.prototype['skip_dry_run'] = undefined;
+GatewayCreateProducerMySQL.prototype['skip-dry-run'] = undefined;
 
 /**
  * Enable/Disable SSL [true/false]

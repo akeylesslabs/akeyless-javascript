@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **rotationEventIn** | **[String]** | How many days before the rotation of the item would you like to be notified | [optional] 
 **rotationHour** | **Number** |  | [optional] 
 **rotationInterval** | **String** |  | [optional] 
-**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
+**skipDryRun** | **Boolean** | If set, dry-run will be skipped [true/false] | [optional] 
 **splunkToken** | **String** | For rotator-type&#x3D;token, optionally set/replace the stored Splunk authentication token value. | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **tokenOwner** | **String** | For rotator-type&#x3D;token, specify the Splunk username that the new token should be issued for. (Splunk 10 requires name&#x3D;&lt;token-owner&gt; when creating auth tokens.) | [optional] 

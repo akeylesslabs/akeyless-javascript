@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerLdap model module.
  * @module model/GatewayUpdateProducerLdap
- * @version 5.0.37
+ * @version 5.0.38
  */
 class GatewayUpdateProducerLdap {
     /**
@@ -144,8 +144,8 @@ class GatewayUpdateProducerLdap {
             if (data.hasOwnProperty('secure-access-rdp-domain')) {
                 obj['secure-access-rdp-domain'] = ApiClient.convertToType(data['secure-access-rdp-domain'], 'String');
             }
-            if (data.hasOwnProperty('skip_dry_run')) {
-                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            if (data.hasOwnProperty('skip-dry-run')) {
+                obj['skip-dry-run'] = ApiClient.convertToType(data['skip-dry-run'], 'Boolean');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -293,10 +293,6 @@ class GatewayUpdateProducerLdap {
         // ensure the json data is a string
         if (data['secure-access-rdp-domain'] && !(typeof data['secure-access-rdp-domain'] === 'string' || data['secure-access-rdp-domain'] instanceof String)) {
             throw new Error("Expected the field `secure-access-rdp-domain` to be a primitive type in the JSON string but got " + data['secure-access-rdp-domain']);
-        }
-        // ensure the json data is a string
-        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
-            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
@@ -542,10 +538,10 @@ GatewayUpdateProducerLdap.prototype['secure-access-rd-gateway-server'] = undefin
 GatewayUpdateProducerLdap.prototype['secure-access-rdp-domain'] = undefined;
 
 /**
- * If set, dry-run will be skipped
- * @member {String} skip_dry_run
+ * If set, dry-run will be skipped [true/false]
+ * @member {Boolean} skip-dry-run
  */
-GatewayUpdateProducerLdap.prototype['skip_dry_run'] = undefined;
+GatewayUpdateProducerLdap.prototype['skip-dry-run'] = undefined;
 
 /**
  * Add tags attached to this object

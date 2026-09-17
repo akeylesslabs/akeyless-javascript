@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AllowedClientType model module.
  * @module model/AllowedClientType
- * @version 5.0.37
+ * @version 5.0.38
  */
 class AllowedClientType {
     /**

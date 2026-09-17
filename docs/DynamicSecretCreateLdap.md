@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **secureAccessHost** | **[String]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
 **secureAccessRdGatewayServer** | **String** | RD Gateway server | [optional] 
 **secureAccessRdpDomain** | **String** | Required when the Dynamic Secret is used for a domain user | [optional] 
-**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
+**skipDryRun** | **Boolean** | If set, dry-run will be skipped [true/false] | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **target** | **[String]** | A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times | [optional] 
 **targetName** | **String** | Target name | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SystemAccessCredentialsReplyObj model module.
  * @module model/SystemAccessCredentialsReplyObj
- * @version 5.0.37
+ * @version 5.0.38
  */
 class SystemAccessCredentialsReplyObj {
     /**
@@ -71,11 +71,17 @@ class SystemAccessCredentialsReplyObj {
             if (data.hasOwnProperty('required_mfa')) {
                 obj['required_mfa'] = ApiClient.convertToType(data['required_mfa'], 'String');
             }
+            if (data.hasOwnProperty('sub_claims')) {
+                obj['sub_claims'] = ApiClient.convertToType(data['sub_claims'], {'String': ['String']});
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('uam_creds')) {
                 obj['uam_creds'] = ApiClient.convertToType(data['uam_creds'], 'String');
+            }
+            if (data.hasOwnProperty('unique_id')) {
+                obj['unique_id'] = ApiClient.convertToType(data['unique_id'], 'String');
             }
         }
         return obj;
@@ -118,6 +124,10 @@ class SystemAccessCredentialsReplyObj {
         // ensure the json data is a string
         if (data['uam_creds'] && !(typeof data['uam_creds'] === 'string' || data['uam_creds'] instanceof String)) {
             throw new Error("Expected the field `uam_creds` to be a primitive type in the JSON string but got " + data['uam_creds']);
+        }
+        // ensure the json data is a string
+        if (data['unique_id'] && !(typeof data['unique_id'] === 'string' || data['unique_id'] instanceof String)) {
+            throw new Error("Expected the field `unique_id` to be a primitive type in the JSON string but got " + data['unique_id']);
         }
 
         return true;
@@ -175,6 +185,12 @@ SystemAccessCredentialsReplyObj.prototype['recovery_key_id'] = undefined;
 SystemAccessCredentialsReplyObj.prototype['required_mfa'] = undefined;
 
 /**
+ * SubClaims carries the IdP-verified RBAC claims for offline placeholder creds (empty UAM JWT); parsed from the ID token at callback time.
+ * @member {Object.<String, Array.<String>>} sub_claims
+ */
+SystemAccessCredentialsReplyObj.prototype['sub_claims'] = undefined;
+
+/**
  * Credentials tmp token
  * @member {String} token
  */
@@ -185,6 +201,12 @@ SystemAccessCredentialsReplyObj.prototype['token'] = undefined;
  * @member {String} uam_creds
  */
 SystemAccessCredentialsReplyObj.prototype['uam_creds'] = undefined;
+
+/**
+ * UniqueId is set only on Gateway-minted offline placeholder creds (empty UAM JWT), carrying the IdP unique identifier so usage-time RBAC can resolve identity.
+ * @member {String} unique_id
+ */
+SystemAccessCredentialsReplyObj.prototype['unique_id'] = undefined;
 
 
 

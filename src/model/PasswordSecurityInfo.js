@@ -18,7 +18,7 @@ import PasswordScoreInfo from './PasswordScoreInfo';
 /**
  * The PasswordSecurityInfo model module.
  * @module model/PasswordSecurityInfo
- * @version 5.0.37
+ * @version 5.0.38
  */
 class PasswordSecurityInfo {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateOIDC model module.
  * @module model/AuthMethodCreateOIDC
- * @version 5.0.37
+ * @version 5.0.38
  */
 class AuthMethodCreateOIDC {
     /**
@@ -90,6 +90,9 @@ class AuthMethodCreateOIDC {
             }
             if (data.hasOwnProperty('force-sub-claims')) {
                 obj['force-sub-claims'] = ApiClient.convertToType(data['force-sub-claims'], 'Boolean');
+            }
+            if (data.hasOwnProperty('gateway-url')) {
+                obj['gateway-url'] = ApiClient.convertToType(data['gateway-url'], 'String');
             }
             if (data.hasOwnProperty('gw-bound-ips')) {
                 obj['gw-bound-ips'] = ApiClient.convertToType(data['gw-bound-ips'], ['String']);
@@ -182,6 +185,10 @@ class AuthMethodCreateOIDC {
         // ensure the json data is an array
         if (!Array.isArray(data['expiration-event-in'])) {
             throw new Error("Expected the field `expiration-event-in` to be an array in the JSON data but got " + data['expiration-event-in']);
+        }
+        // ensure the json data is a string
+        if (data['gateway-url'] && !(typeof data['gateway-url'] === 'string' || data['gateway-url'] instanceof String)) {
+            throw new Error("Expected the field `gateway-url` to be a primitive type in the JSON string but got " + data['gateway-url']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['gw-bound-ips'])) {
@@ -304,6 +311,12 @@ AuthMethodCreateOIDC.prototype['expiration-event-in'] = undefined;
  * @member {Boolean} force-sub-claims
  */
 AuthMethodCreateOIDC.prototype['force-sub-claims'] = undefined;
+
+/**
+ * Akeyless Gateway URL (Configuration Management port). Relevant only when working with Gateway mode
+ * @member {String} gateway-url
+ */
+AuthMethodCreateOIDC.prototype['gateway-url'] = undefined;
 
 /**
  * A CIDR whitelist with the GW IPs that the access is restricted to

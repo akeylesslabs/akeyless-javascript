@@ -18,7 +18,7 @@ import SharingItemFullInfo from './SharingItemFullInfo';
 /**
  * The ShareItemOutput model module.
  * @module model/ShareItemOutput
- * @version 5.0.37
+ * @version 5.0.38
  */
 class ShareItemOutput {
     /**

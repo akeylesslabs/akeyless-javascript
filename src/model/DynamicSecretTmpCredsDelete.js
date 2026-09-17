@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretTmpCredsDelete model module.
  * @module model/DynamicSecretTmpCredsDelete
- * @version 5.0.37
+ * @version 5.0.38
  */
 class DynamicSecretTmpCredsDelete {
     /**
@@ -78,8 +78,8 @@ class DynamicSecretTmpCredsDelete {
             if (data.hasOwnProperty('revoke-all')) {
                 obj['revoke-all'] = ApiClient.convertToType(data['revoke-all'], 'Boolean');
             }
-            if (data.hasOwnProperty('skip_dry_run')) {
-                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            if (data.hasOwnProperty('skip-dry-run')) {
+                obj['skip-dry-run'] = ApiClient.convertToType(data['skip-dry-run'], 'Boolean');
             }
             if (data.hasOwnProperty('soft-delete')) {
                 obj['soft-delete'] = ApiClient.convertToType(data['soft-delete'], 'Boolean');
@@ -124,10 +124,6 @@ class DynamicSecretTmpCredsDelete {
         // ensure the json data is an array
         if (!Array.isArray(data['output-rule'])) {
             throw new Error("Expected the field `output-rule` to be an array in the JSON data but got " + data['output-rule']);
-        }
-        // ensure the json data is a string
-        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
-            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
         }
         // ensure the json data is a string
         if (data['tmp-creds-id'] && !(typeof data['tmp-creds-id'] === 'string' || data['tmp-creds-id'] instanceof String)) {
@@ -206,10 +202,10 @@ DynamicSecretTmpCredsDelete.prototype['output-rule'] = undefined;
 DynamicSecretTmpCredsDelete.prototype['revoke-all'] = undefined;
 
 /**
- * If set, dry-run will be skipped
- * @member {String} skip_dry_run
+ * If set, dry-run will be skipped [true/false]
+ * @member {Boolean} skip-dry-run
  */
-DynamicSecretTmpCredsDelete.prototype['skip_dry_run'] = undefined;
+DynamicSecretTmpCredsDelete.prototype['skip-dry-run'] = undefined;
 
 /**
  * Soft Delete

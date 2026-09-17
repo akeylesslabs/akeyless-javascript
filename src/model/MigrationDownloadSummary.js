@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MigrationDownloadSummary model module.
  * @module model/MigrationDownloadSummary
- * @version 5.0.37
+ * @version 5.0.38
  */
 class MigrationDownloadSummary {
     /**

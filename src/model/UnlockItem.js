@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UnlockItem model module.
  * @module model/UnlockItem
- * @version 5.0.37
+ * @version 5.0.38
  */
 class UnlockItem {
     /**

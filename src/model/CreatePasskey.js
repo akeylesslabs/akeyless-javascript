@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePasskey model module.
  * @module model/CreatePasskey
- * @version 5.0.37
+ * @version 5.0.38
  */
 class CreatePasskey {
     /**

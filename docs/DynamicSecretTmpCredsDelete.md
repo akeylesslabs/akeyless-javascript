@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **name** | **String** | Dynamic secret name | 
 **outputRule** | **[String]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
 **revokeAll** | **Boolean** | Revoke All Temp Creds | [optional] 
-**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
+**skipDryRun** | **Boolean** | If set, dry-run will be skipped [true/false] | [optional] 
 **softDelete** | **Boolean** | Soft Delete | [optional] 
 **tmpCredsId** | **String** | Tmp Creds ID | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailCustomizationAccountInformationValues model module.
  * @module model/EmailCustomizationAccountInformationValues
- * @version 5.0.37
+ * @version 5.0.38
  */
 class EmailCustomizationAccountInformationValues {
     /**

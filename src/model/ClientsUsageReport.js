@@ -17,7 +17,7 @@ import ClientUsageInfo from './ClientUsageInfo';
 /**
  * The ClientsUsageReport model module.
  * @module model/ClientsUsageReport
- * @version 5.0.37
+ * @version 5.0.38
  */
 class ClientsUsageReport {
     /**

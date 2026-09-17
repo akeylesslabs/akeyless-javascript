@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateSnowflake model module.
  * @module model/DynamicSecretUpdateSnowflake
- * @version 5.0.37
+ * @version 5.0.38
  */
 class DynamicSecretUpdateSnowflake {
     /**
@@ -119,8 +119,8 @@ class DynamicSecretUpdateSnowflake {
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'String');
             }
-            if (data.hasOwnProperty('skip_dry_run')) {
-                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            if (data.hasOwnProperty('skip-dry-run')) {
+                obj['skip-dry-run'] = ApiClient.convertToType(data['skip-dry-run'], 'Boolean');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -235,10 +235,6 @@ class DynamicSecretUpdateSnowflake {
         // ensure the json data is a string
         if (data['role'] && !(typeof data['role'] === 'string' || data['role'] instanceof String)) {
             throw new Error("Expected the field `role` to be a primitive type in the JSON string but got " + data['role']);
-        }
-        // ensure the json data is a string
-        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
-            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
@@ -423,10 +419,10 @@ DynamicSecretUpdateSnowflake.prototype['private-key-passphrase'] = undefined;
 DynamicSecretUpdateSnowflake.prototype['role'] = undefined;
 
 /**
- * If set, dry-run will be skipped
- * @member {String} skip_dry_run
+ * If set, dry-run will be skipped [true/false]
+ * @member {Boolean} skip-dry-run
  */
-DynamicSecretUpdateSnowflake.prototype['skip_dry_run'] = undefined;
+DynamicSecretUpdateSnowflake.prototype['skip-dry-run'] = undefined;
 
 /**
  * Add tags attached to this object

@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 **secureAccessWeb** | **Boolean** | Enable Web Secure Remote Access | [optional] [default to false]
 **secureAccessWebBrowsing** | **Boolean** | Secure browser via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to false]
 **secureAccessWebProxy** | **Boolean** | Web-Proxy via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to false]
-**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
+**skipDryRun** | **Boolean** | If set, dry-run will be skipped [true/false] | [optional] 
 **target** | **[String]** | A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times | [optional] 
 **timeoutSec** | **Number** | Maximum allowed time in seconds for the custom rotator to return the results | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

@@ -18,7 +18,7 @@ import CertificateScanTarget from './CertificateScanTarget';
 /**
  * The CertificatePayload model module.
  * @module model/CertificatePayload
- * @version 5.0.37
+ * @version 5.0.38
  */
 class CertificatePayload {
     /**

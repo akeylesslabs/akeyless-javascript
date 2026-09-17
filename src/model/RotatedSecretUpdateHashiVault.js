@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateHashiVault model module.
  * @module model/RotatedSecretUpdateHashiVault
- * @version 5.0.37
+ * @version 5.0.38
  */
 class RotatedSecretUpdateHashiVault {
     /**
@@ -123,8 +123,8 @@ class RotatedSecretUpdateHashiVault {
             if (data.hasOwnProperty('rotation-interval')) {
                 obj['rotation-interval'] = ApiClient.convertToType(data['rotation-interval'], 'String');
             }
-            if (data.hasOwnProperty('skip_dry_run')) {
-                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            if (data.hasOwnProperty('skip-dry-run')) {
+                obj['skip-dry-run'] = ApiClient.convertToType(data['skip-dry-run'], 'Boolean');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -231,10 +231,6 @@ class RotatedSecretUpdateHashiVault {
         // ensure the json data is a string
         if (data['rotation-interval'] && !(typeof data['rotation-interval'] === 'string' || data['rotation-interval'] instanceof String)) {
             throw new Error("Expected the field `rotation-interval` to be a primitive type in the JSON string but got " + data['rotation-interval']);
-        }
-        // ensure the json data is a string
-        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
-            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -412,10 +408,10 @@ RotatedSecretUpdateHashiVault.prototype['rotation-hour'] = undefined;
 RotatedSecretUpdateHashiVault.prototype['rotation-interval'] = undefined;
 
 /**
- * If set, dry-run will be skipped
- * @member {String} skip_dry_run
+ * If set, dry-run will be skipped [true/false]
+ * @member {Boolean} skip-dry-run
  */
-RotatedSecretUpdateHashiVault.prototype['skip_dry_run'] = undefined;
+RotatedSecretUpdateHashiVault.prototype['skip-dry-run'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerCassandra model module.
  * @module model/GatewayUpdateProducerCassandra
- * @version 5.0.37
+ * @version 5.0.38
  */
 class GatewayUpdateProducerCassandra {
     /**
@@ -108,8 +108,8 @@ class GatewayUpdateProducerCassandra {
             if (data.hasOwnProperty('producer-encryption-key-name')) {
                 obj['producer-encryption-key-name'] = ApiClient.convertToType(data['producer-encryption-key-name'], 'String');
             }
-            if (data.hasOwnProperty('skip_dry_run')) {
-                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            if (data.hasOwnProperty('skip-dry-run')) {
+                obj['skip-dry-run'] = ApiClient.convertToType(data['skip-dry-run'], 'Boolean');
             }
             if (data.hasOwnProperty('ssl')) {
                 obj['ssl'] = ApiClient.convertToType(data['ssl'], 'Boolean');
@@ -211,10 +211,6 @@ class GatewayUpdateProducerCassandra {
         // ensure the json data is a string
         if (data['producer-encryption-key-name'] && !(typeof data['producer-encryption-key-name'] === 'string' || data['producer-encryption-key-name'] instanceof String)) {
             throw new Error("Expected the field `producer-encryption-key-name` to be a primitive type in the JSON string but got " + data['producer-encryption-key-name']);
-        }
-        // ensure the json data is a string
-        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
-            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
         }
         // ensure the json data is a string
         if (data['ssl-certificate'] && !(typeof data['ssl-certificate'] === 'string' || data['ssl-certificate'] instanceof String)) {
@@ -376,10 +372,10 @@ GatewayUpdateProducerCassandra.prototype['password-length'] = undefined;
 GatewayUpdateProducerCassandra.prototype['producer-encryption-key-name'] = undefined;
 
 /**
- * If set, dry-run will be skipped
- * @member {String} skip_dry_run
+ * If set, dry-run will be skipped [true/false]
+ * @member {Boolean} skip-dry-run
  */
-GatewayUpdateProducerCassandra.prototype['skip_dry_run'] = undefined;
+GatewayUpdateProducerCassandra.prototype['skip-dry-run'] = undefined;
 
 /**
  * Enable/Disable SSL [true/false]

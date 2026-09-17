@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
 **secureAccessHost** | **[String]** | Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts) | [optional] 
 **secureAccessWeb** | **Boolean** | Enable Web Secure Remote Access | [optional] [default to false]
-**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
+**skipDryRun** | **Boolean** | If set, dry-run will be skipped [true/false] | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | Target name | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateAerospike model module.
  * @module model/DynamicSecretCreateAerospike
- * @version 5.0.37
+ * @version 5.0.38
  */
 class DynamicSecretCreateAerospike {
     /**
@@ -90,8 +90,8 @@ class DynamicSecretCreateAerospike {
             if (data.hasOwnProperty('password-length')) {
                 obj['password-length'] = ApiClient.convertToType(data['password-length'], 'String');
             }
-            if (data.hasOwnProperty('skip_dry_run')) {
-                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            if (data.hasOwnProperty('skip-dry-run')) {
+                obj['skip-dry-run'] = ApiClient.convertToType(data['skip-dry-run'], 'Boolean');
             }
             if (data.hasOwnProperty('target-name')) {
                 obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
@@ -164,10 +164,6 @@ class DynamicSecretCreateAerospike {
         // ensure the json data is a string
         if (data['password-length'] && !(typeof data['password-length'] === 'string' || data['password-length'] instanceof String)) {
             throw new Error("Expected the field `password-length` to be a primitive type in the JSON string but got " + data['password-length']);
-        }
-        // ensure the json data is a string
-        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
-            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
         }
         // ensure the json data is a string
         if (data['target-name'] && !(typeof data['target-name'] === 'string' || data['target-name'] instanceof String)) {
@@ -289,10 +285,10 @@ DynamicSecretCreateAerospike.prototype['output-rule'] = undefined;
 DynamicSecretCreateAerospike.prototype['password-length'] = undefined;
 
 /**
- * If set, dry-run will be skipped
- * @member {String} skip_dry_run
+ * If set, dry-run will be skipped [true/false]
+ * @member {Boolean} skip-dry-run
  */
-DynamicSecretCreateAerospike.prototype['skip_dry_run'] = undefined;
+DynamicSecretCreateAerospike.prototype['skip-dry-run'] = undefined;
 
 /**
  * @member {String} target-name

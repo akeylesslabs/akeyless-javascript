@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateSsh model module.
  * @module model/RotatedSecretUpdateSsh
- * @version 5.0.37
+ * @version 5.0.38
  */
 class RotatedSecretUpdateSsh {
     /**
@@ -215,8 +215,8 @@ class RotatedSecretUpdateSsh {
             if (data.hasOwnProperty('secure-access-web-proxy')) {
                 obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
-            if (data.hasOwnProperty('skip_dry_run')) {
-                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            if (data.hasOwnProperty('skip-dry-run')) {
+                obj['skip-dry-run'] = ApiClient.convertToType(data['skip-dry-run'], 'Boolean');
             }
             if (data.hasOwnProperty('target')) {
                 obj['target'] = ApiClient.convertToType(data['target'], ['String']);
@@ -418,10 +418,6 @@ class RotatedSecretUpdateSsh {
         // ensure the json data is a string
         if (data['secure-access-url'] && !(typeof data['secure-access-url'] === 'string' || data['secure-access-url'] instanceof String)) {
             throw new Error("Expected the field `secure-access-url` to be a primitive type in the JSON string but got " + data['secure-access-url']);
-        }
-        // ensure the json data is a string
-        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
-            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['target'])) {
@@ -776,10 +772,10 @@ RotatedSecretUpdateSsh.prototype['secure-access-web-browsing'] = false;
 RotatedSecretUpdateSsh.prototype['secure-access-web-proxy'] = false;
 
 /**
- * If set, dry-run will be skipped
- * @member {String} skip_dry_run
+ * If set, dry-run will be skipped [true/false]
+ * @member {Boolean} skip-dry-run
  */
-RotatedSecretUpdateSsh.prototype['skip_dry_run'] = undefined;
+RotatedSecretUpdateSsh.prototype['skip-dry-run'] = undefined;
 
 /**
  * A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times

@@ -17,7 +17,7 @@ import KubeconfigContext from './KubeconfigContext';
 /**
  * The KubeconfigNamedContext model module.
  * @module model/KubeconfigNamedContext
- * @version 5.0.37
+ * @version 5.0.38
  */
 class KubeconfigNamedContext {
     /**

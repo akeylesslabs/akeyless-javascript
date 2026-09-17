@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GwUpdateRemoteAccessSessionLogsGoogleChronicle model module.
  * @module model/GwUpdateRemoteAccessSessionLogsGoogleChronicle
- * @version 5.0.37
+ * @version 5.0.38
  */
 class GwUpdateRemoteAccessSessionLogsGoogleChronicle {
     /**

@@ -33,7 +33,7 @@ import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 5.0.37
+ * @version 5.0.38
  */
 class AuthMethodAccessInfo {
     /**
@@ -96,6 +96,9 @@ class AuthMethodAccessInfo {
             }
             if (data.hasOwnProperty('email_pass_access_rules')) {
                 obj['email_pass_access_rules'] = EmailPassAccessRules.constructFromObject(data['email_pass_access_rules']);
+            }
+            if (data.hasOwnProperty('enforce_client_type')) {
+                obj['enforce_client_type'] = ApiClient.convertToType(data['enforce_client_type'], 'Boolean');
             }
             if (data.hasOwnProperty('force_sub_claims')) {
                 obj['force_sub_claims'] = ApiClient.convertToType(data['force_sub_claims'], 'Boolean');
@@ -328,6 +331,12 @@ AuthMethodAccessInfo.prototype['cidr_whitelist'] = undefined;
  * @member {module:model/EmailPassAccessRules} email_pass_access_rules
  */
 AuthMethodAccessInfo.prototype['email_pass_access_rules'] = undefined;
+
+/**
+ * EnforceClientType mirrors the SaaS Auth client-type enforcement decision (GwAuthEligibilityReply.EnforceClientType) captured online, so Gateway-owned offline auth and cached-creds usage honor the same enforce flag SaaS uses (see base_access.AuthenticateClientType). When false, client-type mismatches are not rejected.
+ * @member {Boolean} enforce_client_type
+ */
+AuthMethodAccessInfo.prototype['enforce_client_type'] = undefined;
 
 /**
  * if true the role associated with this auth method must include sub claims

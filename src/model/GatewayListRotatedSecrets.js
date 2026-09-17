@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayListRotatedSecrets model module.
  * @module model/GatewayListRotatedSecrets
- * @version 5.0.37
+ * @version 5.0.38
  */
 class GatewayListRotatedSecrets {
     /**

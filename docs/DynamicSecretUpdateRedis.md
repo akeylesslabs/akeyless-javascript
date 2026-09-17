@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **passwordLength** | **String** | The length of the password to be generated | [optional] 
 **port** | **String** | Redis Port | [optional] [default to &#39;6379&#39;]
 **producerEncryptionKeyName** | **String** | Dynamic producer encryption key | [optional] 
-**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
+**skipDryRun** | **Boolean** | If set, dry-run will be skipped [true/false] | [optional] 
 **ssl** | **Boolean** | Enable/Disable SSL [true/false] | [optional] [default to false]
 **sslCertificate** | **String** | SSL CA certificate in base64 encoding generated from a trusted Certificate Authority (CA) | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 

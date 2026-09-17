@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LockItem model module.
  * @module model/LockItem
- * @version 5.0.37
+ * @version 5.0.38
  */
 class LockItem {
     /**

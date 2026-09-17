@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SignOutput model module.
  * @module model/SignOutput
- * @version 5.0.37
+ * @version 5.0.38
  */
 class SignOutput {
     /**

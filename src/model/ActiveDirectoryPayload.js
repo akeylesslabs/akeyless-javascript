@@ -18,7 +18,7 @@ import PasswordPolicyInfo from './PasswordPolicyInfo';
 /**
  * The ActiveDirectoryPayload model module.
  * @module model/ActiveDirectoryPayload
- * @version 5.0.37
+ * @version 5.0.38
  */
 class ActiveDirectoryPayload {
     /**

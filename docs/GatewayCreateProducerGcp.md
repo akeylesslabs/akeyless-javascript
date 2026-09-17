@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **secureAccessWebBrowsing** | **Boolean** | Secure browser via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to false]
 **secureAccessWebProxy** | **Boolean** | Web-Proxy via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to false]
 **serviceAccountType** | **String** | The type of the GCP service account. Options [fixed, dynamic] (Relevant only when --access-type&#x3D;sa) | [optional] [default to &#39;fixed&#39;]
-**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
+**skipDryRun** | **Boolean** | If set, dry-run will be skipped [true/false] | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | Target name | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

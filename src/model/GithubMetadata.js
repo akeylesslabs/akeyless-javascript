@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GithubMetadata model module.
  * @module model/GithubMetadata
- * @version 5.0.37
+ * @version 5.0.38
  */
 class GithubMetadata {
     /**

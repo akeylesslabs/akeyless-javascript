@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerVenafi model module.
  * @module model/GatewayCreateProducerVenafi
- * @version 5.0.37
+ * @version 5.0.38
  */
 class GatewayCreateProducerVenafi {
     /**
@@ -109,8 +109,8 @@ class GatewayCreateProducerVenafi {
             if (data.hasOwnProperty('signer-key-name')) {
                 obj['signer-key-name'] = ApiClient.convertToType(data['signer-key-name'], 'String');
             }
-            if (data.hasOwnProperty('skip_dry_run')) {
-                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            if (data.hasOwnProperty('skip-dry-run')) {
+                obj['skip-dry-run'] = ApiClient.convertToType(data['skip-dry-run'], 'Boolean');
             }
             if (data.hasOwnProperty('store-private-key')) {
                 obj['store-private-key'] = ApiClient.convertToType(data['store-private-key'], 'Boolean');
@@ -198,10 +198,6 @@ class GatewayCreateProducerVenafi {
         // ensure the json data is a string
         if (data['signer-key-name'] && !(typeof data['signer-key-name'] === 'string' || data['signer-key-name'] instanceof String)) {
             throw new Error("Expected the field `signer-key-name` to be a primitive type in the JSON string but got " + data['signer-key-name']);
-        }
-        // ensure the json data is a string
-        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
-            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
@@ -368,10 +364,10 @@ GatewayCreateProducerVenafi.prototype['sign-using-akeyless-pki'] = undefined;
 GatewayCreateProducerVenafi.prototype['signer-key-name'] = undefined;
 
 /**
- * If set, dry-run will be skipped
- * @member {String} skip_dry_run
+ * If set, dry-run will be skipped [true/false]
+ * @member {Boolean} skip-dry-run
  */
-GatewayCreateProducerVenafi.prototype['skip_dry_run'] = undefined;
+GatewayCreateProducerVenafi.prototype['skip-dry-run'] = undefined;
 
 /**
  * Store private key

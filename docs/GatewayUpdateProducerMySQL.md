@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
 **secureAccessHost** | **[String]** | Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts) | [optional] 
 **secureAccessWeb** | **Boolean** | Enable Web Secure Remote Access | [optional] [default to false]
-**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
+**skipDryRun** | **Boolean** | If set, dry-run will be skipped [true/false] | [optional] 
 **ssl** | **Boolean** | Enable/Disable SSL [true/false] | [optional] [default to false]
 **sslCertificate** | **String** | SSL connection certificate | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 

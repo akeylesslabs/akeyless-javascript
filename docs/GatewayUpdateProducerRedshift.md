@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **redshiftUsername** | **String** | Redshift Username | [optional] 
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
 **secureAccessHost** | **[String]** | Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts) | [optional] 
-**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
+**skipDryRun** | **Boolean** | If set, dry-run will be skipped [true/false] | [optional] 
 **ssl** | **Boolean** | Enable/Disable SSL [true/false] | [optional] [default to false]
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | Target name | [optional] 

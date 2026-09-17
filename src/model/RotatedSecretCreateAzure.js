@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateAzure model module.
  * @module model/RotatedSecretCreateAzure
- * @version 5.0.37
+ * @version 5.0.38
  */
 class RotatedSecretCreateAzure {
     /**
@@ -182,8 +182,8 @@ class RotatedSecretCreateAzure {
             if (data.hasOwnProperty('secure-access-web-proxy')) {
                 obj['secure-access-web-proxy'] = ApiClient.convertToType(data['secure-access-web-proxy'], 'Boolean');
             }
-            if (data.hasOwnProperty('skip_dry_run')) {
-                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            if (data.hasOwnProperty('skip-dry-run')) {
+                obj['skip-dry-run'] = ApiClient.convertToType(data['skip-dry-run'], 'Boolean');
             }
             if (data.hasOwnProperty('storage-account-key-name')) {
                 obj['storage-account-key-name'] = ApiClient.convertToType(data['storage-account-key-name'], 'String');
@@ -350,10 +350,6 @@ class RotatedSecretCreateAzure {
         // ensure the json data is a string
         if (data['secure-access-url'] && !(typeof data['secure-access-url'] === 'string' || data['secure-access-url'] instanceof String)) {
             throw new Error("Expected the field `secure-access-url` to be a primitive type in the JSON string but got " + data['secure-access-url']);
-        }
-        // ensure the json data is a string
-        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
-            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
         }
         // ensure the json data is a string
         if (data['storage-account-key-name'] && !(typeof data['storage-account-key-name'] === 'string' || data['storage-account-key-name'] instanceof String)) {
@@ -653,10 +649,10 @@ RotatedSecretCreateAzure.prototype['secure-access-web-browsing'] = false;
 RotatedSecretCreateAzure.prototype['secure-access-web-proxy'] = false;
 
 /**
- * If set, dry-run will be skipped
- * @member {String} skip_dry_run
+ * If set, dry-run will be skipped [true/false]
+ * @member {Boolean} skip-dry-run
  */
-RotatedSecretCreateAzure.prototype['skip_dry_run'] = undefined;
+RotatedSecretCreateAzure.prototype['skip-dry-run'] = undefined;
 
 /**
  * The name of the storage account key to rotate [key1/key2/kerb1/kerb2] (relevat to azure-storage-account)

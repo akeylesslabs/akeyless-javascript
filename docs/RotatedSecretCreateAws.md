@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **secureAccessBastionIssuer** | **String** | Deprecated. use secure-access-certificate-issuer | [optional] 
 **secureAccessCertificateIssuer** | **String** | Path to the SSH Certificate Issuer for your Akeyless Secure Access | [optional] 
 **secureAccessEnable** | **String** | Enable/Disable secure remote access [true/false] | [optional] 
-**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
+**skipDryRun** | **Boolean** | If set, dry-run will be skipped [true/false] | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | The target name to associate | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

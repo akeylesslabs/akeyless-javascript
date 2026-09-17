@@ -27,7 +27,7 @@ import ServerInventoryMigration from './ServerInventoryMigration';
 /**
  * The MigrationsConfigPart model module.
  * @module model/MigrationsConfigPart
- * @version 5.0.37
+ * @version 5.0.38
  */
 class MigrationsConfigPart {
     /**

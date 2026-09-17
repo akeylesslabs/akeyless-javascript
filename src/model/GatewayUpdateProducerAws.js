@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerAws model module.
  * @module model/GatewayUpdateProducerAws
- * @version 5.0.37
+ * @version 5.0.38
  */
 class GatewayUpdateProducerAws {
     /**
@@ -165,8 +165,8 @@ class GatewayUpdateProducerAws {
             if (data.hasOwnProperty('session-tags')) {
                 obj['session-tags'] = ApiClient.convertToType(data['session-tags'], 'String');
             }
-            if (data.hasOwnProperty('skip_dry_run')) {
-                obj['skip_dry_run'] = ApiClient.convertToType(data['skip_dry_run'], 'String');
+            if (data.hasOwnProperty('skip-dry-run')) {
+                obj['skip-dry-run'] = ApiClient.convertToType(data['skip-dry-run'], 'Boolean');
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
@@ -297,10 +297,6 @@ class GatewayUpdateProducerAws {
         // ensure the json data is a string
         if (data['session-tags'] && !(typeof data['session-tags'] === 'string' || data['session-tags'] instanceof String)) {
             throw new Error("Expected the field `session-tags` to be a primitive type in the JSON string but got " + data['session-tags']);
-        }
-        // ensure the json data is a string
-        if (data['skip_dry_run'] && !(typeof data['skip_dry_run'] === 'string' || data['skip_dry_run'] instanceof String)) {
-            throw new Error("Expected the field `skip_dry_run` to be a primitive type in the JSON string but got " + data['skip_dry_run']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['tags'])) {
@@ -570,10 +566,10 @@ GatewayUpdateProducerAws.prototype['secure-access-web-proxy'] = false;
 GatewayUpdateProducerAws.prototype['session-tags'] = undefined;
 
 /**
- * If set, dry-run will be skipped
- * @member {String} skip_dry_run
+ * If set, dry-run will be skipped [true/false]
+ * @member {Boolean} skip-dry-run
  */
-GatewayUpdateProducerAws.prototype['skip_dry_run'] = undefined;
+GatewayUpdateProducerAws.prototype['skip-dry-run'] = undefined;
 
 /**
  * Add tags attached to this object

@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **rotationEventIn** | **[String]** | How many days before the rotation of the item would you like to be notified | [optional] 
 **rotationHour** | **Number** |  | [optional] 
 **rotationInterval** | **String** |  | [optional] 
-**skipDryRun** | **String** | If set, dry-run will be skipped | [optional] 
+**skipDryRun** | **Boolean** | If set, dry-run will be skipped [true/false] | [optional] 
 **tags** | **[String]** | Add tags attached to this object | [optional] 
 **targetName** | **String** | The target name to associate | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
