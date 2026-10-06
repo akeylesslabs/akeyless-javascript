@@ -2569,10 +2569,3 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/ClientEvent.spec.js
-test/model/ClientEventOutput.spec.js
-test/model/GenerateIntermediateCA.spec.js
-test/model/GenerateIntermediateCAOutput.spec.js
-test/model/InjectorCertificateEvent.spec.js
-test/model/RotatedSecretCreateOkta.spec.js
-test/model/RotatedSecretUpdateOkta.spec.js
