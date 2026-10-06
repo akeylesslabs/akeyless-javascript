@@ -17,7 +17,7 @@ import HTTPChallengeInfo from './HTTPChallengeInfo';
 /**
  * The GetPKICertificateOutput model module.
  * @module model/GetPKICertificateOutput
- * @version 5.0.38
+ * @version 5.0.39
  */
 class GetPKICertificateOutput {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GoogleTrustTargetDetails model module.
  * @module model/GoogleTrustTargetDetails
- * @version 5.0.38
+ * @version 5.0.39
  */
 class GoogleTrustTargetDetails {
     /**
@@ -60,11 +60,23 @@ class GoogleTrustTargetDetails {
             if (data.hasOwnProperty('challenge_type')) {
                 obj['challenge_type'] = ApiClient.convertToType(data['challenge_type'], 'String');
             }
+            if (data.hasOwnProperty('dns_propagation_wait')) {
+                obj['dns_propagation_wait'] = ApiClient.convertToType(data['dns_propagation_wait'], 'Number');
+            }
+            if (data.hasOwnProperty('dns_resolvers')) {
+                obj['dns_resolvers'] = ApiClient.convertToType(data['dns_resolvers'], ['String']);
+            }
+            if (data.hasOwnProperty('dns_skip_precheck')) {
+                obj['dns_skip_precheck'] = ApiClient.convertToType(data['dns_skip_precheck'], 'Boolean');
+            }
             if (data.hasOwnProperty('dns_target_name')) {
                 obj['dns_target_name'] = ApiClient.convertToType(data['dns_target_name'], 'String');
             }
             if (data.hasOwnProperty('dns_target_type')) {
                 obj['dns_target_type'] = ApiClient.convertToType(data['dns_target_type'], 'String');
+            }
+            if (data.hasOwnProperty('dns_timeout')) {
+                obj['dns_timeout'] = ApiClient.convertToType(data['dns_timeout'], 'Number');
             }
             if (data.hasOwnProperty('dns_zone')) {
                 obj['dns_zone'] = ApiClient.convertToType(data['dns_zone'], 'String');
@@ -115,6 +127,10 @@ class GoogleTrustTargetDetails {
         // ensure the json data is a string
         if (data['challenge_type'] && !(typeof data['challenge_type'] === 'string' || data['challenge_type'] instanceof String)) {
             throw new Error("Expected the field `challenge_type` to be a primitive type in the JSON string but got " + data['challenge_type']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['dns_resolvers'])) {
+            throw new Error("Expected the field `dns_resolvers` to be an array in the JSON data but got " + data['dns_resolvers']);
         }
         // ensure the json data is a string
         if (data['dns_target_name'] && !(typeof data['dns_target_name'] === 'string' || data['dns_target_name'] instanceof String)) {
@@ -186,6 +202,24 @@ GoogleTrustTargetDetails.prototype['acme_environment'] = undefined;
 GoogleTrustTargetDetails.prototype['challenge_type'] = undefined;
 
 /**
+ * A Duration represents the elapsed time between two instants as an int64 nanosecond count. The representation limits the largest representable duration to approximately 290 years.
+ * @member {Number} dns_propagation_wait
+ */
+GoogleTrustTargetDetails.prototype['dns_propagation_wait'] = undefined;
+
+/**
+ * Custom recursive DNS resolvers (ip:port) for propagation checks.
+ * @member {Array.<String>} dns_resolvers
+ */
+GoogleTrustTargetDetails.prototype['dns_resolvers'] = undefined;
+
+/**
+ * Skip authoritative nameserver propagation pre-check.
+ * @member {Boolean} dns_skip_precheck
+ */
+GoogleTrustTargetDetails.prototype['dns_skip_precheck'] = undefined;
+
+/**
  * Name of DNS target (transient field - not stored in DB) Used by CLI to pass DNS target name to SDK for creating target_object_assoc Retrieved from target_object_assoc when reading target Required when ChallengeType is \"dns\"
  * @member {String} dns_target_name
  */
@@ -195,6 +229,12 @@ GoogleTrustTargetDetails.prototype['dns_target_name'] = undefined;
  * @member {String} dns_target_type
  */
 GoogleTrustTargetDetails.prototype['dns_target_type'] = undefined;
+
+/**
+ * A Duration represents the elapsed time between two instants as an int64 nanosecond count. The representation limits the largest representable duration to approximately 290 years.
+ * @member {Number} dns_timeout
+ */
+GoogleTrustTargetDetails.prototype['dns_timeout'] = undefined;
 
 /**
  * Cloudflare zone identifier Required when DNSTargetType is Cloudflare

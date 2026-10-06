@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LdapTargetDetails model module.
  * @module model/LdapTargetDetails
- * @version 5.0.38
+ * @version 5.0.39
  */
 class LdapTargetDetails {
     /**
@@ -69,6 +69,9 @@ class LdapTargetDetails {
             if (data.hasOwnProperty('ldap_url')) {
                 obj['ldap_url'] = ApiClient.convertToType(data['ldap_url'], 'String');
             }
+            if (data.hasOwnProperty('ldap_username')) {
+                obj['ldap_username'] = ApiClient.convertToType(data['ldap_username'], 'String');
+            }
         }
         return obj;
     }
@@ -106,6 +109,10 @@ class LdapTargetDetails {
         // ensure the json data is a string
         if (data['ldap_url'] && !(typeof data['ldap_url'] === 'string' || data['ldap_url'] instanceof String)) {
             throw new Error("Expected the field `ldap_url` to be a primitive type in the JSON string but got " + data['ldap_url']);
+        }
+        // ensure the json data is a string
+        if (data['ldap_username'] && !(typeof data['ldap_username'] === 'string' || data['ldap_username'] instanceof String)) {
+            throw new Error("Expected the field `ldap_username` to be a primitive type in the JSON string but got " + data['ldap_username']);
         }
 
         return true;
@@ -150,6 +157,11 @@ LdapTargetDetails.prototype['ldap_token_expiration'] = undefined;
  * @member {String} ldap_url
  */
 LdapTargetDetails.prototype['ldap_url'] = undefined;
+
+/**
+ * @member {String} ldap_username
+ */
+LdapTargetDetails.prototype['ldap_username'] = undefined;
 
 
 

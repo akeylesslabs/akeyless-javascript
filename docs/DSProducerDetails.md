@@ -205,6 +205,7 @@ Name | Type | Description | Notes
 **ldapUrl** | **String** |  | [optional] 
 **ldapUserAttr** | **String** |  | [optional] 
 **ldapUserDn** | **String** |  | [optional] 
+**ldapUsername** | **String** |  | [optional] 
 **metadata** | **String** |  | [optional] 
 **mongodbAtlasApiPrivateKey** | **String** |  | [optional] 
 **mongodbAtlasApiPublicKey** | **String** |  | [optional] 

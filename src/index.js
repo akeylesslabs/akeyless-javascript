@@ -143,6 +143,8 @@ import ClassicKeyDetailsInfo from './model/ClassicKeyDetailsInfo';
 import ClassicKeyStatusInfo from './model/ClassicKeyStatusInfo';
 import ClassicKeyTargetInfo from './model/ClassicKeyTargetInfo';
 import ClientData from './model/ClientData';
+import ClientEvent from './model/ClientEvent';
+import ClientEventOutput from './model/ClientEventOutput';
 import ClientUsageInfo from './model/ClientUsageInfo';
 import ClientsUsageReport from './model/ClientsUsageReport';
 import CloudflareTargetDetails from './model/CloudflareTargetDetails';
@@ -662,6 +664,8 @@ import GenerateCA from './model/GenerateCA';
 import GenerateCAOutput from './model/GenerateCAOutput';
 import GenerateCsr from './model/GenerateCsr';
 import GenerateCsrOutput from './model/GenerateCsrOutput';
+import GenerateIntermediateCA from './model/GenerateIntermediateCA';
+import GenerateIntermediateCAOutput from './model/GenerateIntermediateCAOutput';
 import GetAccountSettings from './model/GetAccountSettings';
 import GetAccountSettingsCommandOutput from './model/GetAccountSettingsCommandOutput';
 import GetAnalyticsData from './model/GetAnalyticsData';
@@ -726,6 +730,7 @@ import HuaweiAccessRules from './model/HuaweiAccessRules';
 import ImportPasswords from './model/ImportPasswords';
 import ImportPasswordsOutput from './model/ImportPasswordsOutput';
 import ImporterInfo from './model/ImporterInfo';
+import InjectorCertificateEvent from './model/InjectorCertificateEvent';
 import IssuerOverviewInfo from './model/IssuerOverviewInfo';
 import Item from './model/Item';
 import ItemCustomFieldsDetails from './model/ItemCustomFieldsDetails';
@@ -925,6 +930,7 @@ import RotatedSecretCreateLdap from './model/RotatedSecretCreateLdap';
 import RotatedSecretCreateMongodb from './model/RotatedSecretCreateMongodb';
 import RotatedSecretCreateMssql from './model/RotatedSecretCreateMssql';
 import RotatedSecretCreateMysql from './model/RotatedSecretCreateMysql';
+import RotatedSecretCreateOkta from './model/RotatedSecretCreateOkta';
 import RotatedSecretCreateOpenAI from './model/RotatedSecretCreateOpenAI';
 import RotatedSecretCreateOracledb from './model/RotatedSecretCreateOracledb';
 import RotatedSecretCreateOutput from './model/RotatedSecretCreateOutput';
@@ -956,6 +962,7 @@ import RotatedSecretUpdateLdap from './model/RotatedSecretUpdateLdap';
 import RotatedSecretUpdateMongodb from './model/RotatedSecretUpdateMongodb';
 import RotatedSecretUpdateMssql from './model/RotatedSecretUpdateMssql';
 import RotatedSecretUpdateMysql from './model/RotatedSecretUpdateMysql';
+import RotatedSecretUpdateOkta from './model/RotatedSecretUpdateOkta';
 import RotatedSecretUpdateOpenAI from './model/RotatedSecretUpdateOpenAI';
 import RotatedSecretUpdateOracledb from './model/RotatedSecretUpdateOracledb';
 import RotatedSecretUpdateOutput from './model/RotatedSecretUpdateOutput';
@@ -1318,7 +1325,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.38
+* @version 5.0.39
 */
 export {
     /**
@@ -2106,6 +2113,18 @@ export {
      * @property {module:model/ClientData}
      */
     ClientData,
+
+    /**
+     * The ClientEvent model constructor.
+     * @property {module:model/ClientEvent}
+     */
+    ClientEvent,
+
+    /**
+     * The ClientEventOutput model constructor.
+     * @property {module:model/ClientEventOutput}
+     */
+    ClientEventOutput,
 
     /**
      * The ClientUsageInfo model constructor.
@@ -5222,6 +5241,18 @@ export {
     GenerateCsrOutput,
 
     /**
+     * The GenerateIntermediateCA model constructor.
+     * @property {module:model/GenerateIntermediateCA}
+     */
+    GenerateIntermediateCA,
+
+    /**
+     * The GenerateIntermediateCAOutput model constructor.
+     * @property {module:model/GenerateIntermediateCAOutput}
+     */
+    GenerateIntermediateCAOutput,
+
+    /**
      * The GetAccountSettings model constructor.
      * @property {module:model/GetAccountSettings}
      */
@@ -5604,6 +5635,12 @@ export {
      * @property {module:model/ImporterInfo}
      */
     ImporterInfo,
+
+    /**
+     * The InjectorCertificateEvent model constructor.
+     * @property {module:model/InjectorCertificateEvent}
+     */
+    InjectorCertificateEvent,
 
     /**
      * The IssuerOverviewInfo model constructor.
@@ -6800,6 +6837,12 @@ export {
     RotatedSecretCreateMysql,
 
     /**
+     * The RotatedSecretCreateOkta model constructor.
+     * @property {module:model/RotatedSecretCreateOkta}
+     */
+    RotatedSecretCreateOkta,
+
+    /**
      * The RotatedSecretCreateOpenAI model constructor.
      * @property {module:model/RotatedSecretCreateOpenAI}
      */
@@ -6984,6 +7027,12 @@ export {
      * @property {module:model/RotatedSecretUpdateMysql}
      */
     RotatedSecretUpdateMysql,
+
+    /**
+     * The RotatedSecretUpdateOkta model constructor.
+     * @property {module:model/RotatedSecretUpdateOkta}
+     */
+    RotatedSecretUpdateOkta,
 
     /**
      * The RotatedSecretUpdateOpenAI model constructor.

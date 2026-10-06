@@ -17,7 +17,7 @@ import ValidateCertificateChallengeOutput from './ValidateCertificateChallengeOu
 /**
  * The ValidateCertificateChallenge model module.
  * @module model/ValidateCertificateChallenge
- * @version 5.0.38
+ * @version 5.0.39
  */
 class ValidateCertificateChallenge {
     /**

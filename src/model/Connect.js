@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Connect model module.
  * @module model/Connect
- * @version 5.0.38
+ * @version 5.0.39
  */
 class Connect {
     /**
@@ -87,6 +87,9 @@ class Connect {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('requested-ttl')) {
+                obj['requested-ttl'] = ApiClient.convertToType(data['requested-ttl'], 'Number');
             }
             if (data.hasOwnProperty('sra-ctrl-path')) {
                 obj['sra-ctrl-path'] = ApiClient.convertToType(data['sra-ctrl-path'], 'String');
@@ -300,6 +303,12 @@ Connect.prototype['justification'] = undefined;
  * @member {String} name
  */
 Connect.prototype['name'] = undefined;
+
+/**
+ * For how long to grant the requested access, in minutes
+ * @member {Number} requested-ttl
+ */
+Connect.prototype['requested-ttl'] = undefined;
 
 /**
  * The Bastion API path

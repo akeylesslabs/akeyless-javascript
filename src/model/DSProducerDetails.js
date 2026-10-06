@@ -23,7 +23,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 5.0.38
+ * @version 5.0.39
  */
 class DSProducerDetails {
     /**
@@ -656,6 +656,9 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('ldap_user_dn')) {
                 obj['ldap_user_dn'] = ApiClient.convertToType(data['ldap_user_dn'], 'String');
+            }
+            if (data.hasOwnProperty('ldap_username')) {
+                obj['ldap_username'] = ApiClient.convertToType(data['ldap_username'], 'String');
             }
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
@@ -1673,6 +1676,10 @@ class DSProducerDetails {
         // ensure the json data is a string
         if (data['ldap_user_dn'] && !(typeof data['ldap_user_dn'] === 'string' || data['ldap_user_dn'] instanceof String)) {
             throw new Error("Expected the field `ldap_user_dn` to be a primitive type in the JSON string but got " + data['ldap_user_dn']);
+        }
+        // ensure the json data is a string
+        if (data['ldap_username'] && !(typeof data['ldap_username'] === 'string' || data['ldap_username'] instanceof String)) {
+            throw new Error("Expected the field `ldap_username` to be a primitive type in the JSON string but got " + data['ldap_username']);
         }
         // ensure the json data is a string
         if (data['metadata'] && !(typeof data['metadata'] === 'string' || data['metadata'] instanceof String)) {
@@ -3027,6 +3034,11 @@ DSProducerDetails.prototype['ldap_user_attr'] = undefined;
  * @member {String} ldap_user_dn
  */
 DSProducerDetails.prototype['ldap_user_dn'] = undefined;
+
+/**
+ * @member {String} ldap_username
+ */
+DSProducerDetails.prototype['ldap_username'] = undefined;
 
 /**
  * @member {String} metadata

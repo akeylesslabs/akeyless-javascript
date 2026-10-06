@@ -19,7 +19,7 @@ import TargetItemAssociation from './TargetItemAssociation';
 /**
  * The Target model module.
  * @module model/Target
- * @version 5.0.38
+ * @version 5.0.39
  */
 class Target {
     /**
@@ -76,6 +76,9 @@ class Target {
             }
             if (data.hasOwnProperty('is_access_request_enabled')) {
                 obj['is_access_request_enabled'] = ApiClient.convertToType(data['is_access_request_enabled'], 'Boolean');
+            }
+            if (data.hasOwnProperty('last_access_request_status')) {
+                obj['last_access_request_status'] = ApiClient.convertToType(data['last_access_request_status'], 'String');
             }
             if (data.hasOwnProperty('last_version')) {
                 obj['last_version'] = ApiClient.convertToType(data['last_version'], 'Number');
@@ -141,6 +144,10 @@ class Target {
         // ensure the json data is a string
         if (data['comment'] && !(typeof data['comment'] === 'string' || data['comment'] instanceof String)) {
             throw new Error("Expected the field `comment` to be a primitive type in the JSON string but got " + data['comment']);
+        }
+        // ensure the json data is a string
+        if (data['last_access_request_status'] && !(typeof data['last_access_request_status'] === 'string' || data['last_access_request_status'] instanceof String)) {
+            throw new Error("Expected the field `last_access_request_status` to be a primitive type in the JSON string but got " + data['last_access_request_status']);
         }
         // validate the optional field `locking_info`
         if (data['locking_info']) { // data not null
@@ -244,6 +251,11 @@ Target.prototype['delete_protection'] = undefined;
  * @member {Boolean} is_access_request_enabled
  */
 Target.prototype['is_access_request_enabled'] = undefined;
+
+/**
+ * @member {String} last_access_request_status
+ */
+Target.prototype['last_access_request_status'] = undefined;
 
 /**
  * @member {Number} last_version

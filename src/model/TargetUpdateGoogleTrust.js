@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateGoogleTrust model module.
  * @module model/TargetUpdateGoogleTrust
- * @version 5.0.38
+ * @version 5.0.39
  */
 class TargetUpdateGoogleTrust {
     /**
@@ -65,8 +65,20 @@ class TargetUpdateGoogleTrust {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('dns-propagation-wait')) {
+                obj['dns-propagation-wait'] = ApiClient.convertToType(data['dns-propagation-wait'], 'String');
+            }
+            if (data.hasOwnProperty('dns-resolvers')) {
+                obj['dns-resolvers'] = ApiClient.convertToType(data['dns-resolvers'], ['String']);
+            }
+            if (data.hasOwnProperty('dns-skip-precheck')) {
+                obj['dns-skip-precheck'] = ApiClient.convertToType(data['dns-skip-precheck'], 'Boolean');
+            }
             if (data.hasOwnProperty('dns-target-creds')) {
                 obj['dns-target-creds'] = ApiClient.convertToType(data['dns-target-creds'], 'String');
+            }
+            if (data.hasOwnProperty('dns-timeout')) {
+                obj['dns-timeout'] = ApiClient.convertToType(data['dns-timeout'], 'String');
             }
             if (data.hasOwnProperty('dns-zone')) {
                 obj['dns-zone'] = ApiClient.convertToType(data['dns-zone'], 'String');
@@ -157,8 +169,20 @@ class TargetUpdateGoogleTrust {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
         // ensure the json data is a string
+        if (data['dns-propagation-wait'] && !(typeof data['dns-propagation-wait'] === 'string' || data['dns-propagation-wait'] instanceof String)) {
+            throw new Error("Expected the field `dns-propagation-wait` to be a primitive type in the JSON string but got " + data['dns-propagation-wait']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['dns-resolvers'])) {
+            throw new Error("Expected the field `dns-resolvers` to be an array in the JSON data but got " + data['dns-resolvers']);
+        }
+        // ensure the json data is a string
         if (data['dns-target-creds'] && !(typeof data['dns-target-creds'] === 'string' || data['dns-target-creds'] instanceof String)) {
             throw new Error("Expected the field `dns-target-creds` to be a primitive type in the JSON string but got " + data['dns-target-creds']);
+        }
+        // ensure the json data is a string
+        if (data['dns-timeout'] && !(typeof data['dns-timeout'] === 'string' || data['dns-timeout'] instanceof String)) {
+            throw new Error("Expected the field `dns-timeout` to be a primitive type in the JSON string but got " + data['dns-timeout']);
         }
         // ensure the json data is a string
         if (data['dns-zone'] && !(typeof data['dns-zone'] === 'string' || data['dns-zone'] instanceof String)) {
@@ -265,10 +289,34 @@ TargetUpdateGoogleTrust.prototype['delete_protection'] = undefined;
 TargetUpdateGoogleTrust.prototype['description'] = undefined;
 
 /**
+ * Fixed wait after TXT publish (e.g. 30s, 2m). If omitted with pre-check on, no extra sleep (polling only). If omitted with --dns-skip-precheck, gateway uses 30s. DNS challenge only
+ * @member {String} dns-propagation-wait
+ */
+TargetUpdateGoogleTrust.prototype['dns-propagation-wait'] = undefined;
+
+/**
+ * Custom DNS resolvers (ip:port) for DNS-01. Repeat for multiple. If omitted, Lego uses /etc/resolv.conf or Google Public DNS. DNS challenge only
+ * @member {Array.<String>} dns-resolvers
+ */
+TargetUpdateGoogleTrust.prototype['dns-resolvers'] = undefined;
+
+/**
+ * Skip DNS TXT pre-check before CA validation. If --dns-propagation-wait is omitted and this flag is set, gateway waits 30s before CA validation. DNS challenge only
+ * @member {Boolean} dns-skip-precheck
+ */
+TargetUpdateGoogleTrust.prototype['dns-skip-precheck'] = undefined;
+
+/**
  * Name of existing cloud target for DNS credentials. Required when challenge type is dns. Supported providers: AWS, Azure, GCP, Cloudflare
  * @member {String} dns-target-creds
  */
 TargetUpdateGoogleTrust.prototype['dns-target-creds'] = undefined;
+
+/**
+ * Per-query DNS lookup timeout during pre-check (e.g. 10s), not total poll time. If omitted with pre-check on, Lego library default applies (10s per query on Linux). Ignored when --dns-skip-precheck is set. DNS challenge only
+ * @member {String} dns-timeout
+ */
+TargetUpdateGoogleTrust.prototype['dns-timeout'] = undefined;
 
 /**
  * Cloudflare DNS zone identifier. Required when DNS credentials target is Cloudflare

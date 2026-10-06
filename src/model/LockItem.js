@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LockItem model module.
  * @module model/LockItem
- * @version 5.0.38
+ * @version 5.0.39
  */
 class LockItem {
     /**
@@ -123,7 +123,7 @@ LockItem.prototype['actions'] = undefined;
 LockItem.prototype['json'] = false;
 
 /**
- * Lock TTL in minutes
+ * Lock TTL in minutes.
  * @member {Number} lock-ttl
  */
 LockItem.prototype['lock-ttl'] = undefined;

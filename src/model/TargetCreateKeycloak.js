@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateKeycloak model module.
  * @module model/TargetCreateKeycloak
- * @version 5.0.38
+ * @version 5.0.39
  */
 class TargetCreateKeycloak {
     /**

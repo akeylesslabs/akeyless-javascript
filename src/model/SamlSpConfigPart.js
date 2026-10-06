@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SamlSpConfigPart model module.
  * @module model/SamlSpConfigPart
- * @version 5.0.38
+ * @version 5.0.39
  */
 class SamlSpConfigPart {
     /**

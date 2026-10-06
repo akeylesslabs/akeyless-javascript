@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateF5BigIp model module.
  * @module model/TargetCreateF5BigIp
- * @version 5.0.38
+ * @version 5.0.39
  */
 class TargetCreateF5BigIp {
     /**

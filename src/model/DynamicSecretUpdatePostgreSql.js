@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdatePostgreSql model module.
  * @module model/DynamicSecretUpdatePostgreSql
- * @version 5.0.38
+ * @version 5.0.39
  */
 class DynamicSecretUpdatePostgreSql {
     /**

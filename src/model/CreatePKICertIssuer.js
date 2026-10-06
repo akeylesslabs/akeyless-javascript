@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePKICertIssuer model module.
  * @module model/CreatePKICertIssuer
- * @version 5.0.38
+ * @version 5.0.39
  */
 class CreatePKICertIssuer {
     /**
@@ -124,6 +124,9 @@ class CreatePKICertIssuer {
             if (data.hasOwnProperty('enable-acme')) {
                 obj['enable-acme'] = ApiClient.convertToType(data['enable-acme'], 'Boolean');
             }
+            if (data.hasOwnProperty('enable-scep')) {
+                obj['enable-scep'] = ApiClient.convertToType(data['enable-scep'], 'Boolean');
+            }
             if (data.hasOwnProperty('expiration-event-in')) {
                 obj['expiration-event-in'] = ApiClient.convertToType(data['expiration-event-in'], ['String']);
             }
@@ -177,6 +180,12 @@ class CreatePKICertIssuer {
             }
             if (data.hasOwnProperty('province')) {
                 obj['province'] = ApiClient.convertToType(data['province'], 'String');
+            }
+            if (data.hasOwnProperty('scep-challenge-type')) {
+                obj['scep-challenge-type'] = ApiClient.convertToType(data['scep-challenge-type'], 'String');
+            }
+            if (data.hasOwnProperty('scep-password')) {
+                obj['scep-password'] = ApiClient.convertToType(data['scep-password'], 'String');
             }
             if (data.hasOwnProperty('scheduled-renew')) {
                 obj['scheduled-renew'] = ApiClient.convertToType(data['scheduled-renew'], 'Number');
@@ -308,6 +317,14 @@ class CreatePKICertIssuer {
         // ensure the json data is a string
         if (data['province'] && !(typeof data['province'] === 'string' || data['province'] instanceof String)) {
             throw new Error("Expected the field `province` to be a primitive type in the JSON string but got " + data['province']);
+        }
+        // ensure the json data is a string
+        if (data['scep-challenge-type'] && !(typeof data['scep-challenge-type'] === 'string' || data['scep-challenge-type'] instanceof String)) {
+            throw new Error("Expected the field `scep-challenge-type` to be a primitive type in the JSON string but got " + data['scep-challenge-type']);
+        }
+        // ensure the json data is a string
+        if (data['scep-password'] && !(typeof data['scep-password'] === 'string' || data['scep-password'] instanceof String)) {
+            throw new Error("Expected the field `scep-password` to be a primitive type in the JSON string but got " + data['scep-password']);
         }
         // ensure the json data is a string
         if (data['signer-key-name'] && !(typeof data['signer-key-name'] === 'string' || data['signer-key-name'] instanceof String)) {
@@ -482,6 +499,12 @@ CreatePKICertIssuer.prototype['disable-wildcards'] = undefined;
 CreatePKICertIssuer.prototype['enable-acme'] = undefined;
 
 /**
+ * If set, the cert issuer will support the scep protocol
+ * @member {Boolean} enable-scep
+ */
+CreatePKICertIssuer.prototype['enable-scep'] = undefined;
+
+/**
  * How many days before the expiration of the certificate would you like to be notified.
  * @member {Array.<String>} expiration-event-in
  */
@@ -591,6 +614,18 @@ CreatePKICertIssuer.prototype['protect-certificates'] = undefined;
  * @member {String} province
  */
 CreatePKICertIssuer.prototype['province'] = undefined;
+
+/**
+ * SCEP challenge type. Only static is supported in this stage
+ * @member {String} scep-challenge-type
+ */
+CreatePKICertIssuer.prototype['scep-challenge-type'] = undefined;
+
+/**
+ * SCEP static challenge password. Request-only; never returned by Describe
+ * @member {String} scep-password
+ */
+CreatePKICertIssuer.prototype['scep-password'] = undefined;
 
 /**
  * Number of days before expiration to renew certificates

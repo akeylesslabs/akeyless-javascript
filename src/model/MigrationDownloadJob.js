@@ -17,7 +17,7 @@ import MigrationDownloadSummary from './MigrationDownloadSummary';
 /**
  * The MigrationDownloadJob model module.
  * @module model/MigrationDownloadJob
- * @version 5.0.38
+ * @version 5.0.39
  */
 class MigrationDownloadJob {
     /**

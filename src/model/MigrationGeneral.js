@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MigrationGeneral model module.
  * @module model/MigrationGeneral
- * @version 5.0.38
+ * @version 5.0.39
  */
 class MigrationGeneral {
     /**
@@ -53,6 +53,12 @@ class MigrationGeneral {
             if (data.hasOwnProperty('last_migration')) {
                 obj['last_migration'] = ApiClient.convertToType(data['last_migration'], 'String');
             }
+            if (data.hasOwnProperty('last_modified')) {
+                obj['last_modified'] = ApiClient.convertToType(data['last_modified'], 'Date');
+            }
+            if (data.hasOwnProperty('message')) {
+                obj['message'] = ApiClient.convertToType(data['message'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -64,6 +70,9 @@ class MigrationGeneral {
             }
             if (data.hasOwnProperty('protection_key')) {
                 obj['protection_key'] = ApiClient.convertToType(data['protection_key'], 'String');
+            }
+            if (data.hasOwnProperty('schedule')) {
+                obj['schedule'] = ApiClient.convertToType(data['schedule'], 'String');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -90,6 +99,10 @@ class MigrationGeneral {
             throw new Error("Expected the field `last_migration` to be a primitive type in the JSON string but got " + data['last_migration']);
         }
         // ensure the json data is a string
+        if (data['message'] && !(typeof data['message'] === 'string' || data['message'] instanceof String)) {
+            throw new Error("Expected the field `message` to be a primitive type in the JSON string but got " + data['message']);
+        }
+        // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
         }
@@ -104,6 +117,10 @@ class MigrationGeneral {
         // ensure the json data is a string
         if (data['protection_key'] && !(typeof data['protection_key'] === 'string' || data['protection_key'] instanceof String)) {
             throw new Error("Expected the field `protection_key` to be a primitive type in the JSON string but got " + data['protection_key']);
+        }
+        // ensure the json data is a string
+        if (data['schedule'] && !(typeof data['schedule'] === 'string' || data['schedule'] instanceof String)) {
+            throw new Error("Expected the field `schedule` to be a primitive type in the JSON string but got " + data['schedule']);
         }
         // ensure the json data is a string
         if (data['status'] && !(typeof data['status'] === 'string' || data['status'] instanceof String)) {
@@ -133,6 +150,16 @@ MigrationGeneral.prototype['id'] = undefined;
 MigrationGeneral.prototype['last_migration'] = undefined;
 
 /**
+ * @member {Date} last_modified
+ */
+MigrationGeneral.prototype['last_modified'] = undefined;
+
+/**
+ * @member {String} message
+ */
+MigrationGeneral.prototype['message'] = undefined;
+
+/**
  * @member {String} name
  */
 MigrationGeneral.prototype['name'] = undefined;
@@ -151,6 +178,11 @@ MigrationGeneral.prototype['prefix'] = undefined;
  * @member {String} protection_key
  */
 MigrationGeneral.prototype['protection_key'] = undefined;
+
+/**
+ * @member {String} schedule
+ */
+MigrationGeneral.prototype['schedule'] = undefined;
 
 /**
  * @member {String} status

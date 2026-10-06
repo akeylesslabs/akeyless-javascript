@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateLdap model module.
  * @module model/TargetCreateLdap
- * @version 5.0.38
+ * @version 5.0.39
  */
 class TargetCreateLdap {
     /**
@@ -109,6 +109,9 @@ class TargetCreateLdap {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            }
         }
         return obj;
     }
@@ -188,6 +191,10 @@ class TargetCreateLdap {
         // ensure the json data is a string
         if (data['uid-token'] && !(typeof data['uid-token'] === 'string' || data['uid-token'] instanceof String)) {
             throw new Error("Expected the field `uid-token` to be a primitive type in the JSON string but got " + data['uid-token']);
+        }
+        // ensure the json data is a string
+        if (data['username'] && !(typeof data['username'] === 'string' || data['username'] instanceof String)) {
+            throw new Error("Expected the field `username` to be a primitive type in the JSON string but got " + data['username']);
         }
 
         return true;
@@ -301,6 +308,12 @@ TargetCreateLdap.prototype['token-expiration'] = undefined;
  * @member {String} uid-token
  */
 TargetCreateLdap.prototype['uid-token'] = undefined;
+
+/**
+ * Username returned for Rotated Secrets. Use the format required by your application, such as sAMAccountName, with or without the domain.
+ * @member {String} username
+ */
+TargetCreateLdap.prototype['username'] = undefined;
 
 
 

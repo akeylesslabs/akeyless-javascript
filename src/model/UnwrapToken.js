@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UnwrapToken model module.
  * @module model/UnwrapToken
- * @version 5.0.38
+ * @version 5.0.39
  */
 class UnwrapToken {
     /**

@@ -17,7 +17,7 @@ import CertificateExpirationEvent from './CertificateExpirationEvent';
 /**
  * The PKICertificateIssueDetails model module.
  * @module model/PKICertificateIssueDetails
- * @version 5.0.38
+ * @version 5.0.39
  */
 class PKICertificateIssueDetails {
     /**
@@ -177,6 +177,12 @@ class PKICertificateIssueDetails {
             if (data.hasOwnProperty('require_cn')) {
                 obj['require_cn'] = ApiClient.convertToType(data['require_cn'], 'Boolean');
             }
+            if (data.hasOwnProperty('scep_challenge_mode')) {
+                obj['scep_challenge_mode'] = ApiClient.convertToType(data['scep_challenge_mode'], 'String');
+            }
+            if (data.hasOwnProperty('scep_enabled')) {
+                obj['scep_enabled'] = ApiClient.convertToType(data['scep_enabled'], 'Boolean');
+            }
             if (data.hasOwnProperty('server_flag')) {
                 obj['server_flag'] = ApiClient.convertToType(data['server_flag'], 'Boolean');
             }
@@ -269,6 +275,10 @@ class PKICertificateIssueDetails {
         // ensure the json data is an array
         if (!Array.isArray(data['province'])) {
             throw new Error("Expected the field `province` to be an array in the JSON data but got " + data['province']);
+        }
+        // ensure the json data is a string
+        if (data['scep_challenge_mode'] && !(typeof data['scep_challenge_mode'] === 'string' || data['scep_challenge_mode'] instanceof String)) {
+            throw new Error("Expected the field `scep_challenge_mode` to be a primitive type in the JSON string but got " + data['scep_challenge_mode']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['street_address'])) {
@@ -505,6 +515,18 @@ PKICertificateIssueDetails.prototype['renew_before_expiration_in_days'] = undefi
  * @member {Boolean} require_cn
  */
 PKICertificateIssueDetails.prototype['require_cn'] = undefined;
+
+/**
+ * ScepChallengeMode is the SCEP challenge mode. Stage 1 supports only \"static\".
+ * @member {String} scep_challenge_mode
+ */
+PKICertificateIssueDetails.prototype['scep_challenge_mode'] = undefined;
+
+/**
+ * ScepEnabled turns on SCEP enrollment for this dedicated PKI issuer.
+ * @member {Boolean} scep_enabled
+ */
+PKICertificateIssueDetails.prototype['scep_enabled'] = undefined;
 
 /**
  * @member {Boolean} server_flag

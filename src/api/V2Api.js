@@ -75,6 +75,8 @@ import CalcPasswordSecurityInfo from '../model/CalcPasswordSecurityInfo';
 import CertificateDiscovery from '../model/CertificateDiscovery';
 import CertificateDiscoveryOutput from '../model/CertificateDiscoveryOutput';
 import ChangeAdminAccountPassword from '../model/ChangeAdminAccountPassword';
+import ClientEvent from '../model/ClientEvent';
+import ClientEventOutput from '../model/ClientEventOutput';
 import Configure from '../model/Configure';
 import ConfigureOutput from '../model/ConfigureOutput';
 import Connect from '../model/Connect';
@@ -535,6 +537,8 @@ import GenerateCA from '../model/GenerateCA';
 import GenerateCAOutput from '../model/GenerateCAOutput';
 import GenerateCsr from '../model/GenerateCsr';
 import GenerateCsrOutput from '../model/GenerateCsrOutput';
+import GenerateIntermediateCA from '../model/GenerateIntermediateCA';
+import GenerateIntermediateCAOutput from '../model/GenerateIntermediateCAOutput';
 import GetAccountSettings from '../model/GetAccountSettings';
 import GetAccountSettingsCommandOutput from '../model/GetAccountSettingsCommandOutput';
 import GetAnalyticsData from '../model/GetAnalyticsData';
@@ -688,6 +692,7 @@ import RotatedSecretCreateLdap from '../model/RotatedSecretCreateLdap';
 import RotatedSecretCreateMongodb from '../model/RotatedSecretCreateMongodb';
 import RotatedSecretCreateMssql from '../model/RotatedSecretCreateMssql';
 import RotatedSecretCreateMysql from '../model/RotatedSecretCreateMysql';
+import RotatedSecretCreateOkta from '../model/RotatedSecretCreateOkta';
 import RotatedSecretCreateOpenAI from '../model/RotatedSecretCreateOpenAI';
 import RotatedSecretCreateOracledb from '../model/RotatedSecretCreateOracledb';
 import RotatedSecretCreateOutput from '../model/RotatedSecretCreateOutput';
@@ -718,6 +723,7 @@ import RotatedSecretUpdateLdap from '../model/RotatedSecretUpdateLdap';
 import RotatedSecretUpdateMongodb from '../model/RotatedSecretUpdateMongodb';
 import RotatedSecretUpdateMssql from '../model/RotatedSecretUpdateMssql';
 import RotatedSecretUpdateMysql from '../model/RotatedSecretUpdateMysql';
+import RotatedSecretUpdateOkta from '../model/RotatedSecretUpdateOkta';
 import RotatedSecretUpdateOpenAI from '../model/RotatedSecretUpdateOpenAI';
 import RotatedSecretUpdateOracledb from '../model/RotatedSecretUpdateOracledb';
 import RotatedSecretUpdateOutput from '../model/RotatedSecretUpdateOutput';
@@ -985,7 +991,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.38
+* @version 5.0.39
 */
 export default class V2Api {
 
@@ -2943,6 +2949,49 @@ export default class V2Api {
      */
     changeAdminAccountPassword(changeAdminAccountPassword) {
       return this.changeAdminAccountPasswordWithHttpInfo(changeAdminAccountPassword)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/ClientEvent} clientEvent 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClientEventOutput} and HTTP response
+     */
+    clientEventWithHttpInfo(clientEvent) {
+      let postBody = clientEvent;
+      // verify the required parameter 'clientEvent' is set
+      if (clientEvent === undefined || clientEvent === null) {
+        throw new Error("Missing the required parameter 'clientEvent' when calling clientEvent");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ClientEventOutput;
+      return this.apiClient.callApi(
+        '/client-event', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/ClientEvent} clientEvent 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClientEventOutput}
+     */
+    clientEvent(clientEvent) {
+      return this.clientEventWithHttpInfo(clientEvent)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -15501,6 +15550,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GenerateIntermediateCA} generateIntermediateCA 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GenerateIntermediateCAOutput} and HTTP response
+     */
+    generateIntermediateCAWithHttpInfo(generateIntermediateCA) {
+      let postBody = generateIntermediateCA;
+      // verify the required parameter 'generateIntermediateCA' is set
+      if (generateIntermediateCA === undefined || generateIntermediateCA === null) {
+        throw new Error("Missing the required parameter 'generateIntermediateCA' when calling generateIntermediateCA");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GenerateIntermediateCAOutput;
+      return this.apiClient.callApi(
+        '/generate-intermediate-ca', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GenerateIntermediateCA} generateIntermediateCA 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GenerateIntermediateCAOutput}
+     */
+    generateIntermediateCA(generateIntermediateCA) {
+      return this.generateIntermediateCAWithHttpInfo(generateIntermediateCA)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
     getAccountLogoWithHttpInfo() {
@@ -18050,6 +18142,8 @@ export default class V2Api {
 
 
     /**
+     * Lists SRA sessions.
+     * Results are returned newest first, ordered by start time, then by session ID. Responses contain up to 1000 sessions.  Pagination: Pass the response's `next_page` value as the `pagination-token` in subsequent requests to fetch the next page. Pagination is complete when `next_page` is empty. Sending an empty `pagination-token` retrieves the first page. Filters must remain identical across paginated requests to maintain cursor validity.
      * @param {module:model/ListSRASessions} listSRASessions 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ListSraSessionsOutput} and HTTP response
      */
@@ -18081,6 +18175,8 @@ export default class V2Api {
     }
 
     /**
+     * Lists SRA sessions.
+     * Results are returned newest first, ordered by start time, then by session ID. Responses contain up to 1000 sessions.  Pagination: Pass the response's `next_page` value as the `pagination-token` in subsequent requests to fetch the next page. Pagination is complete when `next_page` is empty. Sending an empty `pagination-token` retrieves the first page. Filters must remain identical across paginated requests to maintain cursor validity.
      * @param {module:model/ListSRASessions} listSRASessions 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ListSraSessionsOutput}
      */
@@ -19677,6 +19773,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/RotatedSecretCreateOkta} rotatedSecretCreateOkta 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateOktaWithHttpInfo(rotatedSecretCreateOkta) {
+      let postBody = rotatedSecretCreateOkta;
+      // verify the required parameter 'rotatedSecretCreateOkta' is set
+      if (rotatedSecretCreateOkta === undefined || rotatedSecretCreateOkta === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretCreateOkta' when calling rotatedSecretCreateOkta");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-okta', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateOkta} rotatedSecretCreateOkta 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateOkta(rotatedSecretCreateOkta) {
+      return this.rotatedSecretCreateOktaWithHttpInfo(rotatedSecretCreateOkta)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/RotatedSecretCreateOpenAI} rotatedSecretCreateOpenAI 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
      */
@@ -20831,6 +20970,49 @@ export default class V2Api {
      */
     rotatedSecretUpdateMysql(rotatedSecretUpdateMysql) {
       return this.rotatedSecretUpdateMysqlWithHttpInfo(rotatedSecretUpdateMysql)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretUpdateOkta} rotatedSecretUpdateOkta 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateOktaWithHttpInfo(rotatedSecretUpdateOkta) {
+      let postBody = rotatedSecretUpdateOkta;
+      // verify the required parameter 'rotatedSecretUpdateOkta' is set
+      if (rotatedSecretUpdateOkta === undefined || rotatedSecretUpdateOkta === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretUpdateOkta' when calling rotatedSecretUpdateOkta");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-okta', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateOkta} rotatedSecretUpdateOkta 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateOkta(rotatedSecretUpdateOkta) {
+      return this.rotatedSecretUpdateOktaWithHttpInfo(rotatedSecretUpdateOkta)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

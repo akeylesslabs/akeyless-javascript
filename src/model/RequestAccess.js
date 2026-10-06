@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RequestAccess model module.
  * @module model/RequestAccess
- * @version 5.0.38
+ * @version 5.0.39
  */
 class RequestAccess {
     /**
@@ -68,6 +68,9 @@ class RequestAccess {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('requested_ttl')) {
+                obj['requested_ttl'] = ApiClient.convertToType(data['requested_ttl'], 'Number');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -161,6 +164,12 @@ RequestAccess.prototype['json'] = false;
  * @member {String} name
  */
 RequestAccess.prototype['name'] = undefined;
+
+/**
+ * Requested access TTL in minutes. Allowed range is 1 to 1440. Defaults to 60 when omitted.
+ * @member {Number} requested_ttl
+ */
+RequestAccess.prototype['requested_ttl'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

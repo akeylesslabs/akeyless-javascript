@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The ListSRASessions model module.
  * @module model/ListSRASessions
- * @version 5.0.38
+ * @version 5.0.39
  */
 class ListSRASessions {
     /**
      * Constructs a new <code>ListSRASessions</code>.
-     * listSRASessions is a command that returns sra sessions of the given user
+     * listSRASessions is a command that returns the sra sessions the caller is entitled to see
      * @alias module:model/ListSRASessions
      */
     constructor() { 
@@ -52,6 +52,9 @@ class ListSRASessions {
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
+            if (data.hasOwnProperty('pagination-token')) {
+                obj['pagination-token'] = ApiClient.convertToType(data['pagination-token'], 'String');
+            }
             if (data.hasOwnProperty('resource-type')) {
                 obj['resource-type'] = ApiClient.convertToType(data['resource-type'], ['String']);
             }
@@ -74,6 +77,10 @@ class ListSRASessions {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ListSRASessions</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['pagination-token'] && !(typeof data['pagination-token'] === 'string' || data['pagination-token'] instanceof String)) {
+            throw new Error("Expected the field `pagination-token` to be a primitive type in the JSON string but got " + data['pagination-token']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['resource-type'])) {
             throw new Error("Expected the field `resource-type` to be an array in the JSON data but got " + data['resource-type']);
@@ -105,6 +112,12 @@ class ListSRASessions {
  * @default false
  */
 ListSRASessions.prototype['json'] = false;
+
+/**
+ * Next page reference
+ * @member {String} pagination-token
+ */
+ListSRASessions.prototype['pagination-token'] = undefined;
 
 /**
  * session resource type. In case it is empty, all resources type will be returned. options: [mysql, k8s, ssh, mongodb, mssql, postgres, aws, eks, gke, rdp]

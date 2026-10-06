@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LockTarget model module.
  * @module model/LockTarget
- * @version 5.0.38
+ * @version 5.0.39
  */
 class LockTarget {
     /**

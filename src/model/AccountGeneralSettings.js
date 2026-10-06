@@ -34,7 +34,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 5.0.38
+ * @version 5.0.39
  */
 class AccountGeneralSettings {
     /**

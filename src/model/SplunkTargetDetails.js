@@ -17,7 +17,7 @@ import SplunkPayload from './SplunkPayload';
 /**
  * The SplunkTargetDetails model module.
  * @module model/SplunkTargetDetails
- * @version 5.0.38
+ * @version 5.0.39
  */
 class SplunkTargetDetails {
     /**

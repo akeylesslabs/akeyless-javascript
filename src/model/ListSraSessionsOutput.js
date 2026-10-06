@@ -18,7 +18,7 @@ import SraSessionEntryOut from './SraSessionEntryOut';
 /**
  * The ListSraSessionsOutput model module.
  * @module model/ListSraSessionsOutput
- * @version 5.0.38
+ * @version 5.0.39
  */
 class ListSraSessionsOutput {
     /**
@@ -102,16 +102,19 @@ class ListSraSessionsOutput {
 
 
 /**
+ * Gateways whose sessions the caller may see in full. Omitted when the request asks for own sessions only, and when it carries a pagination token
  * @member {Array.<module:model/GatewayNameInfo>} allowed_gateways
  */
 ListSraSessionsOutput.prototype['allowed_gateways'] = undefined;
 
 /**
+ * Cursor for the following page, sent back as the pagination token. Empty when the result set is exhausted, so stop when it is empty rather than waiting for the field to disappear
  * @member {String} next_page
  */
 ListSraSessionsOutput.prototype['next_page'] = undefined;
 
 /**
+ * The requested page of sessions, newest first by start time then session id
  * @member {Array.<module:model/SraSessionEntryOut>} sessions
  */
 ListSraSessionsOutput.prototype['sessions'] = undefined;

@@ -29,7 +29,7 @@ import TargetItemVersion from './TargetItemVersion';
 /**
  * The Item model module.
  * @module model/Item
- * @version 5.0.38
+ * @version 5.0.39
  */
 class Item {
     /**
@@ -152,6 +152,9 @@ class Item {
             }
             if (data.hasOwnProperty('item_versions')) {
                 obj['item_versions'] = ApiClient.convertToType(data['item_versions'], [ItemVersion]);
+            }
+            if (data.hasOwnProperty('last_access_request_status')) {
+                obj['last_access_request_status'] = ApiClient.convertToType(data['last_access_request_status'], 'String');
             }
             if (data.hasOwnProperty('last_rotation_date')) {
                 obj['last_rotation_date'] = ApiClient.convertToType(data['last_rotation_date'], 'Date');
@@ -312,6 +315,10 @@ class Item {
             for (const item of data['item_versions']) {
                 ItemVersion.validateJSON(item);
             };
+        }
+        // ensure the json data is a string
+        if (data['last_access_request_status'] && !(typeof data['last_access_request_status'] === 'string' || data['last_access_request_status'] instanceof String)) {
+            throw new Error("Expected the field `last_access_request_status` to be a primitive type in the JSON string but got " + data['last_access_request_status']);
         }
         // validate the optional field `linked_details`
         if (data['linked_details']) { // data not null
@@ -521,6 +528,11 @@ Item.prototype['item_type'] = undefined;
  * @member {Array.<module:model/ItemVersion>} item_versions
  */
 Item.prototype['item_versions'] = undefined;
+
+/**
+ * @member {String} last_access_request_status
+ */
+Item.prototype['last_access_request_status'] = undefined;
 
 /**
  * @member {Date} last_rotation_date

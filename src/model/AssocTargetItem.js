@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocTargetItem model module.
  * @module model/AssocTargetItem
- * @version 5.0.38
+ * @version 5.0.39
  */
 class AssocTargetItem {
     /**
@@ -37,6 +37,7 @@ class AssocTargetItem {
      * Only for internal use.
      */
     static initialize(obj, name, targetName) { 
+        obj['certificate-format'] = 'pem';
         obj['disable-previous-key-version'] = false;
         obj['json'] = false;
         obj['multi-region'] = 'false';
@@ -59,6 +60,9 @@ class AssocTargetItem {
 
             if (data.hasOwnProperty('bind-ssl-profiles')) {
                 obj['bind-ssl-profiles'] = ApiClient.convertToType(data['bind-ssl-profiles'], ['String']);
+            }
+            if (data.hasOwnProperty('certificate-format')) {
+                obj['certificate-format'] = ApiClient.convertToType(data['certificate-format'], 'String');
             }
             if (data.hasOwnProperty('certificate-path')) {
                 obj['certificate-path'] = ApiClient.convertToType(data['certificate-path'], 'String');
@@ -92,6 +96,9 @@ class AssocTargetItem {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('pfx-password')) {
+                obj['pfx-password'] = ApiClient.convertToType(data['pfx-password'], 'String');
             }
             if (data.hasOwnProperty('post-provision-command')) {
                 obj['post-provision-command'] = ApiClient.convertToType(data['post-provision-command'], 'String');
@@ -150,6 +157,10 @@ class AssocTargetItem {
             throw new Error("Expected the field `bind-ssl-profiles` to be an array in the JSON data but got " + data['bind-ssl-profiles']);
         }
         // ensure the json data is a string
+        if (data['certificate-format'] && !(typeof data['certificate-format'] === 'string' || data['certificate-format'] instanceof String)) {
+            throw new Error("Expected the field `certificate-format` to be a primitive type in the JSON string but got " + data['certificate-format']);
+        }
+        // ensure the json data is a string
         if (data['certificate-path'] && !(typeof data['certificate-path'] === 'string' || data['certificate-path'] instanceof String)) {
             throw new Error("Expected the field `certificate-path` to be a primitive type in the JSON string but got " + data['certificate-path']);
         }
@@ -184,6 +195,10 @@ class AssocTargetItem {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['pfx-password'] && !(typeof data['pfx-password'] === 'string' || data['pfx-password'] instanceof String)) {
+            throw new Error("Expected the field `pfx-password` to be a primitive type in the JSON string but got " + data['pfx-password']);
         }
         // ensure the json data is a string
         if (data['post-provision-command'] && !(typeof data['post-provision-command'] === 'string' || data['post-provision-command'] instanceof String)) {
@@ -239,10 +254,17 @@ class AssocTargetItem {
 AssocTargetItem.RequiredProperties = ["name", "target-name"];
 
 /**
- * Bind the provisioned certificate to an existing client-ssl/server-ssl profile, in the format <type>:<partition>:<name> (relevant only for F5 BIG-IP certificate provisioning). Leave the partition empty to use the certificate's partition. Repeat the parameter to bind several profiles.
+ * Bind the provisioned certificate to an existing client-ssl/server-ssl profile, in the format <type>:<partition>:<name> (relevant only for F5 BIG-IP certificate provisioning). Leave the partition empty to use the certificate's partition. For a profile in a folder, add the folder to the partition, for example client-ssl:Common/Shared:my-profile. Repeat the parameter to bind several profiles.
  * @member {Array.<String>} bind-ssl-profiles
  */
 AssocTargetItem.prototype['bind-ssl-profiles'] = undefined;
+
+/**
+ * The format the certificate will be provisioned with, available options: pem,pfx (relevant only for certificate provisioning)
+ * @member {String} certificate-format
+ * @default 'pem'
+ */
+AssocTargetItem.prototype['certificate-format'] = 'pem';
 
 /**
  * A path on the target to store the certificate pem file (relevant only for certificate provisioning)
@@ -312,6 +334,12 @@ AssocTargetItem.prototype['multi-region'] = 'false';
  * @member {String} name
  */
 AssocTargetItem.prototype['name'] = undefined;
+
+/**
+ * Password used to protect the provisioned PFX file. Required when --certificate-format=pfx (relevant only for certificate provisioning)
+ * @member {String} pfx-password
+ */
+AssocTargetItem.prototype['pfx-password'] = undefined;
 
 /**
  * A custom command to run on the remote target after successful provisioning (relevant only for SSH and Windows certificate provisioning, not supported for F5 BIG-IP)

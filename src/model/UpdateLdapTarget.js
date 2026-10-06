@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateLdapTarget model module.
  * @module model/UpdateLdapTarget
- * @version 5.0.38
+ * @version 5.0.39
  */
 class UpdateLdapTarget {
     /**
@@ -117,6 +117,9 @@ class UpdateLdapTarget {
             if (data.hasOwnProperty('update-version')) {
                 obj['update-version'] = ApiClient.convertToType(data['update-version'], 'Boolean');
             }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            }
         }
         return obj;
     }
@@ -204,6 +207,10 @@ class UpdateLdapTarget {
         // ensure the json data is a string
         if (data['uid-token'] && !(typeof data['uid-token'] === 'string' || data['uid-token'] instanceof String)) {
             throw new Error("Expected the field `uid-token` to be a primitive type in the JSON string but got " + data['uid-token']);
+        }
+        // ensure the json data is a string
+        if (data['username'] && !(typeof data['username'] === 'string' || data['username'] instanceof String)) {
+            throw new Error("Expected the field `username` to be a primitive type in the JSON string but got " + data['username']);
         }
 
         return true;
@@ -334,6 +341,12 @@ UpdateLdapTarget.prototype['uid-token'] = undefined;
  * @member {Boolean} update-version
  */
 UpdateLdapTarget.prototype['update-version'] = undefined;
+
+/**
+ * Username returned for Rotated Secrets. Use the format required by your application, such as sAMAccountName, with or without the domain.
+ * @member {String} username
+ */
+UpdateLdapTarget.prototype['username'] = undefined;
 
 
 

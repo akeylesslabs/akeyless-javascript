@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateWindowsTargetOutput model module.
  * @module model/CreateWindowsTargetOutput
- * @version 5.0.38
+ * @version 5.0.39
  */
 class CreateWindowsTargetOutput {
     /**

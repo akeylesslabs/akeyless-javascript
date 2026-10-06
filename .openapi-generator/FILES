@@ -132,6 +132,8 @@ docs/ClassicKeyDetailsInfo.md
 docs/ClassicKeyStatusInfo.md
 docs/ClassicKeyTargetInfo.md
 docs/ClientData.md
+docs/ClientEvent.md
+docs/ClientEventOutput.md
 docs/ClientUsageInfo.md
 docs/ClientsUsageReport.md
 docs/CloudflareTargetDetails.md
@@ -651,6 +653,8 @@ docs/GenerateCA.md
 docs/GenerateCAOutput.md
 docs/GenerateCsr.md
 docs/GenerateCsrOutput.md
+docs/GenerateIntermediateCA.md
+docs/GenerateIntermediateCAOutput.md
 docs/GetAccountSettings.md
 docs/GetAccountSettingsCommandOutput.md
 docs/GetAnalyticsData.md
@@ -715,6 +719,7 @@ docs/HuaweiAccessRules.md
 docs/ImportPasswords.md
 docs/ImportPasswordsOutput.md
 docs/ImporterInfo.md
+docs/InjectorCertificateEvent.md
 docs/IssuerOverviewInfo.md
 docs/Item.md
 docs/ItemCustomFieldsDetails.md
@@ -914,6 +919,7 @@ docs/RotatedSecretCreateLdap.md
 docs/RotatedSecretCreateMongodb.md
 docs/RotatedSecretCreateMssql.md
 docs/RotatedSecretCreateMysql.md
+docs/RotatedSecretCreateOkta.md
 docs/RotatedSecretCreateOpenAI.md
 docs/RotatedSecretCreateOracledb.md
 docs/RotatedSecretCreateOutput.md
@@ -945,6 +951,7 @@ docs/RotatedSecretUpdateLdap.md
 docs/RotatedSecretUpdateMongodb.md
 docs/RotatedSecretUpdateMssql.md
 docs/RotatedSecretUpdateMysql.md
+docs/RotatedSecretUpdateOkta.md
 docs/RotatedSecretUpdateOpenAI.md
 docs/RotatedSecretUpdateOracledb.md
 docs/RotatedSecretUpdateOutput.md
@@ -1412,6 +1419,8 @@ src/model/ClassicKeyDetailsInfo.js
 src/model/ClassicKeyStatusInfo.js
 src/model/ClassicKeyTargetInfo.js
 src/model/ClientData.js
+src/model/ClientEvent.js
+src/model/ClientEventOutput.js
 src/model/ClientUsageInfo.js
 src/model/ClientsUsageReport.js
 src/model/CloudflareTargetDetails.js
@@ -1931,6 +1940,8 @@ src/model/GenerateCA.js
 src/model/GenerateCAOutput.js
 src/model/GenerateCsr.js
 src/model/GenerateCsrOutput.js
+src/model/GenerateIntermediateCA.js
+src/model/GenerateIntermediateCAOutput.js
 src/model/GetAccountSettings.js
 src/model/GetAccountSettingsCommandOutput.js
 src/model/GetAnalyticsData.js
@@ -1995,6 +2006,7 @@ src/model/HuaweiAccessRules.js
 src/model/ImportPasswords.js
 src/model/ImportPasswordsOutput.js
 src/model/ImporterInfo.js
+src/model/InjectorCertificateEvent.js
 src/model/IssuerOverviewInfo.js
 src/model/Item.js
 src/model/ItemCustomFieldsDetails.js
@@ -2194,6 +2206,7 @@ src/model/RotatedSecretCreateLdap.js
 src/model/RotatedSecretCreateMongodb.js
 src/model/RotatedSecretCreateMssql.js
 src/model/RotatedSecretCreateMysql.js
+src/model/RotatedSecretCreateOkta.js
 src/model/RotatedSecretCreateOpenAI.js
 src/model/RotatedSecretCreateOracledb.js
 src/model/RotatedSecretCreateOutput.js
@@ -2225,6 +2238,7 @@ src/model/RotatedSecretUpdateLdap.js
 src/model/RotatedSecretUpdateMongodb.js
 src/model/RotatedSecretUpdateMssql.js
 src/model/RotatedSecretUpdateMysql.js
+src/model/RotatedSecretUpdateOkta.js
 src/model/RotatedSecretUpdateOpenAI.js
 src/model/RotatedSecretUpdateOracledb.js
 src/model/RotatedSecretUpdateOutput.js
@@ -2555,3 +2569,10 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
+test/model/ClientEvent.spec.js
+test/model/ClientEventOutput.spec.js
+test/model/GenerateIntermediateCA.spec.js
+test/model/GenerateIntermediateCAOutput.spec.js
+test/model/InjectorCertificateEvent.spec.js
+test/model/RotatedSecretCreateOkta.spec.js
+test/model/RotatedSecretUpdateOkta.spec.js

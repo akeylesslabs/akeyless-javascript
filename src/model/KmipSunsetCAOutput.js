@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipSunsetCAOutput model module.
  * @module model/KmipSunsetCAOutput
- * @version 5.0.38
+ * @version 5.0.39
  */
 class KmipSunsetCAOutput {
     /**

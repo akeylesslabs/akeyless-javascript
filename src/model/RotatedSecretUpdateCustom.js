@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateCustom model module.
  * @module model/RotatedSecretUpdateCustom
- * @version 5.0.38
+ * @version 5.0.39
  */
 class RotatedSecretUpdateCustom {
     /**

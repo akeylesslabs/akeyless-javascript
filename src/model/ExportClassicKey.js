@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExportClassicKey model module.
  * @module model/ExportClassicKey
- * @version 5.0.38
+ * @version 5.0.39
  */
 class ExportClassicKey {
     /**

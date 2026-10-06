@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateAerospike model module.
  * @module model/RotatedSecretCreateAerospike
- * @version 5.0.38
+ * @version 5.0.39
  */
 class RotatedSecretCreateAerospike {
     /**
