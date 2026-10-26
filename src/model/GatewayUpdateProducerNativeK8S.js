@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerNativeK8S model module.
  * @module model/GatewayUpdateProducerNativeK8S
- * @version 5.0.39
+ * @version 5.0.40
  */
 class GatewayUpdateProducerNativeK8S {
     /**
@@ -129,6 +129,9 @@ class GatewayUpdateProducerNativeK8S {
             }
             if (data.hasOwnProperty('secure-access-allow-port-forwading')) {
                 obj['secure-access-allow-port-forwading'] = ApiClient.convertToType(data['secure-access-allow-port-forwading'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-allow-port-forwarding')) {
+                obj['secure-access-allow-port-forwarding'] = ApiClient.convertToType(data['secure-access-allow-port-forwarding'], 'Boolean');
             }
             if (data.hasOwnProperty('secure-access-bastion-issuer')) {
                 obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
@@ -465,10 +468,16 @@ GatewayUpdateProducerNativeK8S.prototype['output-rule'] = undefined;
 GatewayUpdateProducerNativeK8S.prototype['producer-encryption-key-name'] = undefined;
 
 /**
- * Enable Port forwarding while using CLI access
+ * Deprecated: old misspelled param, kept for backwards-compatibility. Hidden from help; use secure-access-allow-port-forwarding instead.
  * @member {Boolean} secure-access-allow-port-forwading
  */
 GatewayUpdateProducerNativeK8S.prototype['secure-access-allow-port-forwading'] = undefined;
+
+/**
+ * Enable Port forwarding while using CLI access
+ * @member {Boolean} secure-access-allow-port-forwarding
+ */
+GatewayUpdateProducerNativeK8S.prototype['secure-access-allow-port-forwarding'] = undefined;
 
 /**
  * Deprecated. use secure-access-certificate-issuer

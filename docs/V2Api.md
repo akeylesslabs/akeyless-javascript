@@ -359,6 +359,7 @@ Method | HTTP request | Description
 [**getRole**](V2Api.md#getRole) | **POST** /get-role | 
 [**getRotatedSecretValue**](V2Api.md#getRotatedSecretValue) | **POST** /get-rotated-secret-value | 
 [**getSSHCertificate**](V2Api.md#getSSHCertificate) | **POST** /get-ssh-certificate | 
+[**getScimStatus**](V2Api.md#getScimStatus) | **POST** /get-scim-status | 
 [**getSecretValue**](V2Api.md#getSecretValue) | **POST** /get-secret-value | 
 [**getTags**](V2Api.md#getTags) | **POST** /get-tags | 
 [**getTarget**](V2Api.md#getTarget) | **POST** /get-target | 
@@ -428,6 +429,7 @@ Method | HTTP request | Description
 [**rotateOidcClientSecret**](V2Api.md#rotateOidcClientSecret) | **POST** /rotate-oidc-client-secret | 
 [**rotateSecret**](V2Api.md#rotateSecret) | **POST** /gateway-rotate-secret | 
 [**rotatedSecretCreateAerospike**](V2Api.md#rotatedSecretCreateAerospike) | **POST** /rotated-secret-create-aerospike | 
+[**rotatedSecretCreateAliCloud**](V2Api.md#rotatedSecretCreateAliCloud) | **POST** /rotated-secret-create-alicloud | 
 [**rotatedSecretCreateAws**](V2Api.md#rotatedSecretCreateAws) | **POST** /rotated-secret-create-aws | 
 [**rotatedSecretCreateAzure**](V2Api.md#rotatedSecretCreateAzure) | **POST** /rotated-secret-create-azure | 
 [**rotatedSecretCreateCassandra**](V2Api.md#rotatedSecretCreateCassandra) | **POST** /rotated-secret-create-cassandra | 
@@ -457,6 +459,7 @@ Method | HTTP request | Description
 [**rotatedSecretList**](V2Api.md#rotatedSecretList) | **POST** /rotated-secret-list | 
 [**rotatedSecretSync**](V2Api.md#rotatedSecretSync) | **POST** /rotated-secret-sync | 
 [**rotatedSecretUpdateAerospike**](V2Api.md#rotatedSecretUpdateAerospike) | **POST** /rotated-secret-update-aerospike | 
+[**rotatedSecretUpdateAliCloud**](V2Api.md#rotatedSecretUpdateAliCloud) | **POST** /rotated-secret-update-alicloud | 
 [**rotatedSecretUpdateAws**](V2Api.md#rotatedSecretUpdateAws) | **POST** /rotated-secret-update-aws | 
 [**rotatedSecretUpdateAzure**](V2Api.md#rotatedSecretUpdateAzure) | **POST** /rotated-secret-update-azure | 
 [**rotatedSecretUpdateCassandra**](V2Api.md#rotatedSecretUpdateCassandra) | **POST** /rotated-secret-update-cassandra | 
@@ -494,6 +497,7 @@ Method | HTTP request | Description
 [**staticSecretDeleteSync**](V2Api.md#staticSecretDeleteSync) | **POST** /static-secret-delete-sync | 
 [**staticSecretSync**](V2Api.md#staticSecretSync) | **POST** /static-secret-sync | 
 [**targetCreateAerospike**](V2Api.md#targetCreateAerospike) | **POST** /target-create-aerospike | 
+[**targetCreateAliCloud**](V2Api.md#targetCreateAliCloud) | **POST** /target-create-alicloud | 
 [**targetCreateAnthropic**](V2Api.md#targetCreateAnthropic) | **POST** /target-create-anthropic | 
 [**targetCreateArtifactory**](V2Api.md#targetCreateArtifactory) | **POST** /target-create-artifactory | 
 [**targetCreateAws**](V2Api.md#targetCreateAws) | **POST** /target-create-aws | 
@@ -538,6 +542,7 @@ Method | HTTP request | Description
 [**targetGetDetails**](V2Api.md#targetGetDetails) | **POST** /target-get-details | 
 [**targetList**](V2Api.md#targetList) | **POST** /target-list | 
 [**targetUpdateAerospike**](V2Api.md#targetUpdateAerospike) | **POST** /target-update-aerospike | 
+[**targetUpdateAliCloud**](V2Api.md#targetUpdateAliCloud) | **POST** /target-update-alicloud | 
 [**targetUpdateAnthropic**](V2Api.md#targetUpdateAnthropic) | **POST** /target-update-anthropic | 
 [**targetUpdateArtifactory**](V2Api.md#targetUpdateArtifactory) | **POST** /target-update-artifactory | 
 [**targetUpdateAws**](V2Api.md#targetUpdateAws) | **POST** /target-update-aws | 
@@ -15586,6 +15591,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## getScimStatus
+
+> ScimStatus getScimStatus(getScimStatus)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let getScimStatus = new akeyless.GetScimStatus(); // GetScimStatus | 
+apiInstance.getScimStatus(getScimStatus).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **getScimStatus** | [**GetScimStatus**](GetScimStatus.md)|  | 
+
+### Return type
+
+[**ScimStatus**](ScimStatus.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## getSecretValue
 
 > Object getSecretValue(getSecretValue)
@@ -18518,6 +18565,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## rotatedSecretCreateAliCloud
+
+> RotatedSecretCreateOutput rotatedSecretCreateAliCloud(rotatedSecretCreateAliCloud)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretCreateAliCloud = new akeyless.RotatedSecretCreateAliCloud(); // RotatedSecretCreateAliCloud | 
+apiInstance.rotatedSecretCreateAliCloud(rotatedSecretCreateAliCloud).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretCreateAliCloud** | [**RotatedSecretCreateAliCloud**](RotatedSecretCreateAliCloud.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## rotatedSecretCreateAws
 
 > RotatedSecretCreateOutput rotatedSecretCreateAws(rotatedSecretCreateAws)
@@ -19736,6 +19825,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## rotatedSecretUpdateAliCloud
+
+> RotatedSecretUpdateOutput rotatedSecretUpdateAliCloud(rotatedSecretUpdateAliCloud)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretUpdateAliCloud = new akeyless.RotatedSecretUpdateAliCloud(); // RotatedSecretUpdateAliCloud | 
+apiInstance.rotatedSecretUpdateAliCloud(rotatedSecretUpdateAliCloud).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretUpdateAliCloud** | [**RotatedSecretUpdateAliCloud**](RotatedSecretUpdateAliCloud.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## rotatedSecretUpdateAws
 
 > RotatedSecretUpdateOutput rotatedSecretUpdateAws(rotatedSecretUpdateAws)
@@ -20662,7 +20793,7 @@ No authorization required
 
 ## runtimeAuthority
 
-> runtimeAuthority(runtimeAuthorityCommand)
+> [Number] runtimeAuthority(runtimeAuthorityCommand)
 
 
 
@@ -20673,8 +20804,8 @@ import akeyless from 'akeyless';
 
 let apiInstance = new akeyless.V2Api();
 let runtimeAuthorityCommand = new akeyless.RuntimeAuthorityCommand(); // RuntimeAuthorityCommand | 
-apiInstance.runtimeAuthority(runtimeAuthorityCommand).then(() => {
-  console.log('API called successfully.');
+apiInstance.runtimeAuthority(runtimeAuthorityCommand).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -20690,7 +20821,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**[Number]**
 
 ### Authorization
 
@@ -21275,6 +21406,48 @@ apiInstance.targetCreateAerospike(targetCreateAerospike).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetCreateAerospike** | [**TargetCreateAerospike**](TargetCreateAerospike.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetCreateAliCloud
+
+> TargetCreateOutput targetCreateAliCloud(targetCreateAliCloud)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateAliCloud = new akeyless.TargetCreateAliCloud(); // TargetCreateAliCloud | 
+apiInstance.targetCreateAliCloud(targetCreateAliCloud).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateAliCloud** | [**TargetCreateAliCloud**](TargetCreateAliCloud.md)|  | 
 
 ### Return type
 
@@ -23123,6 +23296,48 @@ apiInstance.targetUpdateAerospike(targetUpdateAerospike).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetUpdateAerospike** | [**TargetUpdateAerospike**](TargetUpdateAerospike.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetUpdateAliCloud
+
+> TargetUpdateOutput targetUpdateAliCloud(targetUpdateAliCloud)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateAliCloud = new akeyless.TargetUpdateAliCloud(); // TargetUpdateAliCloud | 
+apiInstance.targetUpdateAliCloud(targetUpdateAliCloud).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateAliCloud** | [**TargetUpdateAliCloud**](TargetUpdateAliCloud.md)|  | 
 
 ### Return type
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateAliCloud model module.
  * @module model/AuthMethodUpdateAliCloud
- * @version 5.0.39
+ * @version 5.0.40
  */
 class AuthMethodUpdateAliCloud {
     /**

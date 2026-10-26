@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SyncCounters model module.
  * @module model/SyncCounters
- * @version 5.0.39
+ * @version 5.0.40
  */
 class SyncCounters {
     /**

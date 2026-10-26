@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GithubTargetDetails model module.
  * @module model/GithubTargetDetails
- * @version 5.0.39
+ * @version 5.0.40
  */
 class GithubTargetDetails {
     /**

@@ -17,7 +17,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DbTargetDetails model module.
  * @module model/DbTargetDetails
- * @version 5.0.39
+ * @version 5.0.40
  */
 class DbTargetDetails {
     /**

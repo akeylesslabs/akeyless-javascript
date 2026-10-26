@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import AccessPermissionAssignment from './AccessPermissionAssignment';
+import GrantedRole from './GrantedRole';
 
 /**
  * The GetGroupOutput model module.
  * @module model/GetGroupOutput
- * @version 5.0.39
+ * @version 5.0.40
  */
 class GetGroupOutput {
     /**
@@ -57,6 +58,12 @@ class GetGroupOutput {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('granted_roles')) {
+                obj['granted_roles'] = ApiClient.convertToType(data['granted_roles'], [GrantedRole]);
+            }
+            if (data.hasOwnProperty('granted_roles_known')) {
+                obj['granted_roles_known'] = ApiClient.convertToType(data['granted_roles_known'], 'Boolean');
+            }
             if (data.hasOwnProperty('group_alias')) {
                 obj['group_alias'] = ApiClient.convertToType(data['group_alias'], 'String');
             }
@@ -72,8 +79,20 @@ class GetGroupOutput {
             if (data.hasOwnProperty('modification_date')) {
                 obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
             }
+            if (data.hasOwnProperty('scim_external_id')) {
+                obj['scim_external_id'] = ApiClient.convertToType(data['scim_external_id'], 'String');
+            }
+            if (data.hasOwnProperty('scim_managed')) {
+                obj['scim_managed'] = ApiClient.convertToType(data['scim_managed'], 'Boolean');
+            }
+            if (data.hasOwnProperty('scim_provisioned_access_id')) {
+                obj['scim_provisioned_access_id'] = ApiClient.convertToType(data['scim_provisioned_access_id'], 'String');
+            }
             if (data.hasOwnProperty('user_assignments')) {
                 obj['user_assignments'] = ApiClient.convertToType(data['user_assignments'], [AccessPermissionAssignment]);
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
         }
         return obj;
@@ -93,6 +112,16 @@ class GetGroupOutput {
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
+        if (data['granted_roles']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['granted_roles'])) {
+                throw new Error("Expected the field `granted_roles` to be an array in the JSON data but got " + data['granted_roles']);
+            }
+            // validate the optional field `granted_roles` (array)
+            for (const item of data['granted_roles']) {
+                GrantedRole.validateJSON(item);
+            };
+        }
         // ensure the json data is a string
         if (data['group_alias'] && !(typeof data['group_alias'] === 'string' || data['group_alias'] instanceof String)) {
             throw new Error("Expected the field `group_alias` to be a primitive type in the JSON string but got " + data['group_alias']);
@@ -105,6 +134,14 @@ class GetGroupOutput {
         if (data['group_name'] && !(typeof data['group_name'] === 'string' || data['group_name'] instanceof String)) {
             throw new Error("Expected the field `group_name` to be a primitive type in the JSON string but got " + data['group_name']);
         }
+        // ensure the json data is a string
+        if (data['scim_external_id'] && !(typeof data['scim_external_id'] === 'string' || data['scim_external_id'] instanceof String)) {
+            throw new Error("Expected the field `scim_external_id` to be a primitive type in the JSON string but got " + data['scim_external_id']);
+        }
+        // ensure the json data is a string
+        if (data['scim_provisioned_access_id'] && !(typeof data['scim_provisioned_access_id'] === 'string' || data['scim_provisioned_access_id'] instanceof String)) {
+            throw new Error("Expected the field `scim_provisioned_access_id` to be a primitive type in the JSON string but got " + data['scim_provisioned_access_id']);
+        }
         if (data['user_assignments']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['user_assignments'])) {
@@ -114,6 +151,10 @@ class GetGroupOutput {
             for (const item of data['user_assignments']) {
                 AccessPermissionAssignment.validateJSON(item);
             };
+        }
+        // ensure the json data is a string
+        if (data['version'] && !(typeof data['version'] === 'string' || data['version'] instanceof String)) {
+            throw new Error("Expected the field `version` to be a primitive type in the JSON string but got " + data['version']);
         }
 
         return true;
@@ -138,6 +179,18 @@ GetGroupOutput.prototype['creation_date'] = undefined;
  * @member {String} description
  */
 GetGroupOutput.prototype['description'] = undefined;
+
+/**
+ * GrantedRoles are the roles a member of this group gets at login, through the group's akeyless_groups claim. Read-only, and filled only for the SCIM bearer that owns the group: a group name on its own says nothing about the access it carries, which is what a reviewer certifying the entitlement has to judge.
+ * @member {Array.<module:model/GrantedRole>} granted_roles
+ */
+GetGroupOutput.prototype['granted_roles'] = undefined;
+
+/**
+ * GrantedRolesKnown is set when GrantedRoles was computed, so an empty list means \"grants no role\" rather than \"not computed\" (another caller, or an older UAM).
+ * @member {Boolean} granted_roles_known
+ */
+GetGroupOutput.prototype['granted_roles_known'] = undefined;
 
 /**
  * @member {String} group_alias
@@ -165,9 +218,30 @@ GetGroupOutput.prototype['is_subclaims_with_operator'] = undefined;
 GetGroupOutput.prototype['modification_date'] = undefined;
 
 /**
+ * @member {String} scim_external_id
+ */
+GetGroupOutput.prototype['scim_external_id'] = undefined;
+
+/**
+ * @member {Boolean} scim_managed
+ */
+GetGroupOutput.prototype['scim_managed'] = undefined;
+
+/**
+ * @member {String} scim_provisioned_access_id
+ */
+GetGroupOutput.prototype['scim_provisioned_access_id'] = undefined;
+
+/**
  * @member {Array.<module:model/AccessPermissionAssignment>} user_assignments
  */
 GetGroupOutput.prototype['user_assignments'] = undefined;
+
+/**
+ * Version identifies the member assignments this group was read with. Pass it back as UpdateGroupInput.ExpectedVersion to make the update conditional.
+ * @member {String} version
+ */
+GetGroupOutput.prototype['version'] = undefined;
 
 
 

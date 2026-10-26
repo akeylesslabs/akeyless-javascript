@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateItem model module.
  * @module model/UpdateItem
- * @version 5.0.39
+ * @version 5.0.40
  */
 class UpdateItem {
     /**
@@ -145,6 +145,9 @@ class UpdateItem {
             }
             if (data.hasOwnProperty('secure-access-allow-port-forwading')) {
                 obj['secure-access-allow-port-forwading'] = ApiClient.convertToType(data['secure-access-allow-port-forwading'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-allow-port-forwarding')) {
+                obj['secure-access-allow-port-forwarding'] = ApiClient.convertToType(data['secure-access-allow-port-forwarding'], 'Boolean');
             }
             if (data.hasOwnProperty('secure-access-api')) {
                 obj['secure-access-api'] = ApiClient.convertToType(data['secure-access-api'], 'String');
@@ -661,10 +664,16 @@ UpdateItem.prototype['secure-access-add-host'] = undefined;
 UpdateItem.prototype['secure-access-allow-external-user'] = undefined;
 
 /**
- * Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)
+ * Deprecated: old misspelled param, kept for backwards-compatibility. Hidden from help; use secure-access-allow-port-forwarding instead.
  * @member {Boolean} secure-access-allow-port-forwading
  */
 UpdateItem.prototype['secure-access-allow-port-forwading'] = undefined;
+
+/**
+ * Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)
+ * @member {Boolean} secure-access-allow-port-forwarding
+ */
+UpdateItem.prototype['secure-access-allow-port-forwarding'] = undefined;
 
 /**
  * Bastion's SSH control API endpoint. E.g. https://my.sra-server:9900 (relevant only for ssh cert issuer)

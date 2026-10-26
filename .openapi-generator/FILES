@@ -34,6 +34,7 @@ docs/AiModelEntry.md
 docs/AiQuorumSetting.md
 docs/AkeylessGatewayConfig.md
 docs/AliCloudAccessRules.md
+docs/AliCloudTargetDetails.md
 docs/AliasDetails.md
 docs/AliasDetailsOutput.md
 docs/AllAnalyticsData.md
@@ -681,6 +682,7 @@ docs/GetRole.md
 docs/GetRotatedSecretValue.md
 docs/GetSSHCertificate.md
 docs/GetSSHCertificateOutput.md
+docs/GetScimStatus.md
 docs/GetSecretValue.md
 docs/GetTags.md
 docs/GetTarget.md
@@ -695,6 +697,7 @@ docs/GlobalSignGCCTargetDetails.md
 docs/GodaddyTargetDetails.md
 docs/GoogleChronicleForwardingConfig.md
 docs/GoogleTrustTargetDetails.md
+docs/GrantedRole.md
 docs/GrokTargetDetails.md
 docs/Group.md
 docs/GwClusterIdentity.md
@@ -906,6 +909,7 @@ docs/RotateOidcClientOutput.md
 docs/RotateOidcClientSecret.md
 docs/RotateSecret.md
 docs/RotatedSecretCreateAerospike.md
+docs/RotatedSecretCreateAliCloud.md
 docs/RotatedSecretCreateAws.md
 docs/RotatedSecretCreateAzure.md
 docs/RotatedSecretCreateCassandra.md
@@ -939,6 +943,7 @@ docs/RotatedSecretList.md
 docs/RotatedSecretOutput.md
 docs/RotatedSecretSync.md
 docs/RotatedSecretUpdateAerospike.md
+docs/RotatedSecretUpdateAliCloud.md
 docs/RotatedSecretUpdateAws.md
 docs/RotatedSecretUpdateAzure.md
 docs/RotatedSecretUpdateCassandra.md
@@ -975,6 +980,8 @@ docs/SSHTargetDetails.md
 docs/SalesforceTargetDetails.md
 docs/SamlSpConfigPart.md
 docs/ScanResults.md
+docs/ScimSettings.md
+docs/ScimStatus.md
 docs/SecretInfo.md
 docs/SecretSyncOutput.md
 docs/SectigoTargetDetails.md
@@ -1026,6 +1033,7 @@ docs/SystemAccessCredentialsReplyObj.md
 docs/SystemAccessCredsSettings.md
 docs/Target.md
 docs/TargetCreateAerospike.md
+docs/TargetCreateAliCloud.md
 docs/TargetCreateAnthropic.md
 docs/TargetCreateArtifactory.md
 docs/TargetCreateAws.md
@@ -1076,6 +1084,7 @@ docs/TargetList.md
 docs/TargetNameWithHosts.md
 docs/TargetTypeDetailsInput.md
 docs/TargetUpdateAerospike.md
+docs/TargetUpdateAliCloud.md
 docs/TargetUpdateAnthropic.md
 docs/TargetUpdateArtifactory.md
 docs/TargetUpdateAws.md
@@ -1321,6 +1330,7 @@ src/model/AiModelEntry.js
 src/model/AiQuorumSetting.js
 src/model/AkeylessGatewayConfig.js
 src/model/AliCloudAccessRules.js
+src/model/AliCloudTargetDetails.js
 src/model/AliasDetails.js
 src/model/AliasDetailsOutput.js
 src/model/AllAnalyticsData.js
@@ -1968,6 +1978,7 @@ src/model/GetRole.js
 src/model/GetRotatedSecretValue.js
 src/model/GetSSHCertificate.js
 src/model/GetSSHCertificateOutput.js
+src/model/GetScimStatus.js
 src/model/GetSecretValue.js
 src/model/GetTags.js
 src/model/GetTarget.js
@@ -1982,6 +1993,7 @@ src/model/GlobalSignGCCTargetDetails.js
 src/model/GodaddyTargetDetails.js
 src/model/GoogleChronicleForwardingConfig.js
 src/model/GoogleTrustTargetDetails.js
+src/model/GrantedRole.js
 src/model/GrokTargetDetails.js
 src/model/Group.js
 src/model/GwClusterIdentity.js
@@ -2193,6 +2205,7 @@ src/model/RotateOidcClientOutput.js
 src/model/RotateOidcClientSecret.js
 src/model/RotateSecret.js
 src/model/RotatedSecretCreateAerospike.js
+src/model/RotatedSecretCreateAliCloud.js
 src/model/RotatedSecretCreateAws.js
 src/model/RotatedSecretCreateAzure.js
 src/model/RotatedSecretCreateCassandra.js
@@ -2226,6 +2239,7 @@ src/model/RotatedSecretList.js
 src/model/RotatedSecretOutput.js
 src/model/RotatedSecretSync.js
 src/model/RotatedSecretUpdateAerospike.js
+src/model/RotatedSecretUpdateAliCloud.js
 src/model/RotatedSecretUpdateAws.js
 src/model/RotatedSecretUpdateAzure.js
 src/model/RotatedSecretUpdateCassandra.js
@@ -2262,6 +2276,8 @@ src/model/SSHTargetDetails.js
 src/model/SalesforceTargetDetails.js
 src/model/SamlSpConfigPart.js
 src/model/ScanResults.js
+src/model/ScimSettings.js
+src/model/ScimStatus.js
 src/model/SecretInfo.js
 src/model/SecretSyncOutput.js
 src/model/SectigoTargetDetails.js
@@ -2313,6 +2329,7 @@ src/model/SystemAccessCredentialsReplyObj.js
 src/model/SystemAccessCredsSettings.js
 src/model/Target.js
 src/model/TargetCreateAerospike.js
+src/model/TargetCreateAliCloud.js
 src/model/TargetCreateAnthropic.js
 src/model/TargetCreateArtifactory.js
 src/model/TargetCreateAws.js
@@ -2363,6 +2380,7 @@ src/model/TargetList.js
 src/model/TargetNameWithHosts.js
 src/model/TargetTypeDetailsInput.js
 src/model/TargetUpdateAerospike.js
+src/model/TargetUpdateAliCloud.js
 src/model/TargetUpdateAnthropic.js
 src/model/TargetUpdateArtifactory.js
 src/model/TargetUpdateAws.js
@@ -2569,3 +2587,12 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
+test/model/AliCloudTargetDetails.spec.js
+test/model/GetScimStatus.spec.js
+test/model/GrantedRole.spec.js
+test/model/RotatedSecretCreateAliCloud.spec.js
+test/model/RotatedSecretUpdateAliCloud.spec.js
+test/model/ScimSettings.spec.js
+test/model/ScimStatus.spec.js
+test/model/TargetCreateAliCloud.spec.js
+test/model/TargetUpdateAliCloud.spec.js

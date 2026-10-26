@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventForwarderUpdateEmail model module.
  * @module model/EventForwarderUpdateEmail
- * @version 5.0.39
+ * @version 5.0.40
  */
 class EventForwarderUpdateEmail {
     /**
@@ -275,7 +275,7 @@ EventForwarderUpdateEmail.prototype['name'] = undefined;
 EventForwarderUpdateEmail.prototype['new-name'] = undefined;
 
 /**
- * Override Akeyless default URL with your Gateway url (port 18888)
+ * Override the Akeyless event link with the cluster URL of an active gateway in this account
  * @member {String} override-url
  */
 EventForwarderUpdateEmail.prototype['override-url'] = undefined;

@@ -34,7 +34,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 5.0.39
+ * @version 5.0.40
  */
 class AccountGeneralSettings {
     /**
@@ -122,6 +122,9 @@ class AccountGeneralSettings {
             }
             if (data.hasOwnProperty('enable_search_history')) {
                 obj['enable_search_history'] = ApiClient.convertToType(data['enable_search_history'], 'Boolean');
+            }
+            if (data.hasOwnProperty('event_forwarder_allowed_email_domains')) {
+                obj['event_forwarder_allowed_email_domains'] = ApiClient.convertToType(data['event_forwarder_allowed_email_domains'], ['String']);
             }
             if (data.hasOwnProperty('hide_personal_folder')) {
                 obj['hide_personal_folder'] = ApiClient.convertToType(data['hide_personal_folder'], 'Boolean');
@@ -226,6 +229,10 @@ class AccountGeneralSettings {
         // validate the optional field `email_customization`
         if (data['email_customization']) { // data not null
           EmailCustomization.validateJSON(data['email_customization']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['event_forwarder_allowed_email_domains'])) {
+            throw new Error("Expected the field `event_forwarder_allowed_email_domains` to be an array in the JSON data but got " + data['event_forwarder_allowed_email_domains']);
         }
         // ensure the json data is a string
         if (data['invalid_characters'] && !(typeof data['invalid_characters'] === 'string' || data['invalid_characters'] instanceof String)) {
@@ -369,6 +376,12 @@ AccountGeneralSettings.prototype['enable_request_for_access'] = undefined;
  * @member {Boolean} enable_search_history
  */
 AccountGeneralSettings.prototype['enable_search_history'] = undefined;
+
+/**
+ * EventForwarderAllowedEmailDomains lists extra recipient domains for email event forwarders. The signup email domain is always allowed as well. Account-settings updates leave this field unchanged.
+ * @member {Array.<String>} event_forwarder_allowed_email_domains
+ */
+AccountGeneralSettings.prototype['event_forwarder_allowed_email_domains'] = undefined;
 
 /**
  * @member {Boolean} hide_personal_folder

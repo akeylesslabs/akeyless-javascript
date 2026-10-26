@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGke model module.
  * @module model/DynamicSecretUpdateGke
- * @version 5.0.39
+ * @version 5.0.40
  */
 class DynamicSecretUpdateGke {
     /**
@@ -106,6 +106,9 @@ class DynamicSecretUpdateGke {
             }
             if (data.hasOwnProperty('secure-access-allow-port-forwading')) {
                 obj['secure-access-allow-port-forwading'] = ApiClient.convertToType(data['secure-access-allow-port-forwading'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-allow-port-forwarding')) {
+                obj['secure-access-allow-port-forwarding'] = ApiClient.convertToType(data['secure-access-allow-port-forwarding'], 'Boolean');
             }
             if (data.hasOwnProperty('secure-access-bastion-issuer')) {
                 obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
@@ -356,10 +359,16 @@ DynamicSecretUpdateGke.prototype['output-rule'] = undefined;
 DynamicSecretUpdateGke.prototype['producer-encryption-key-name'] = undefined;
 
 /**
- * Enable Port forwarding while using CLI access
+ * Deprecated: old misspelled param, kept for backwards-compatibility. Hidden from help; use secure-access-allow-port-forwarding instead.
  * @member {Boolean} secure-access-allow-port-forwading
  */
 DynamicSecretUpdateGke.prototype['secure-access-allow-port-forwading'] = undefined;
+
+/**
+ * Enable Port forwarding while using CLI access
+ * @member {Boolean} secure-access-allow-port-forwarding
+ */
+DynamicSecretUpdateGke.prototype['secure-access-allow-port-forwarding'] = undefined;
 
 /**
  * Deprecated. use secure-access-certificate-issuer

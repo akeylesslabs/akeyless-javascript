@@ -17,7 +17,7 @@ import InjectorCertificateEvent from './InjectorCertificateEvent';
 /**
  * The ClientEvent model module.
  * @module model/ClientEvent
- * @version 5.0.39
+ * @version 5.0.40
  */
 class ClientEvent {
     /**

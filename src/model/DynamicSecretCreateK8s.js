@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateK8s model module.
  * @module model/DynamicSecretCreateK8s
- * @version 5.0.39
+ * @version 5.0.40
  */
 class DynamicSecretCreateK8s {
     /**
@@ -129,6 +129,9 @@ class DynamicSecretCreateK8s {
             }
             if (data.hasOwnProperty('secure-access-allow-port-forwading')) {
                 obj['secure-access-allow-port-forwading'] = ApiClient.convertToType(data['secure-access-allow-port-forwading'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-allow-port-forwarding')) {
+                obj['secure-access-allow-port-forwarding'] = ApiClient.convertToType(data['secure-access-allow-port-forwarding'], 'Boolean');
             }
             if (data.hasOwnProperty('secure-access-bastion-issuer')) {
                 obj['secure-access-bastion-issuer'] = ApiClient.convertToType(data['secure-access-bastion-issuer'], 'String');
@@ -465,10 +468,16 @@ DynamicSecretCreateK8s.prototype['output-rule'] = undefined;
 DynamicSecretCreateK8s.prototype['producer-encryption-key-name'] = undefined;
 
 /**
- * Enable Port forwarding while using CLI access
+ * Deprecated: old misspelled param, kept for backwards-compatibility. Hidden from help; use secure-access-allow-port-forwarding instead.
  * @member {Boolean} secure-access-allow-port-forwading
  */
 DynamicSecretCreateK8s.prototype['secure-access-allow-port-forwading'] = undefined;
+
+/**
+ * Enable Port forwarding while using CLI access
+ * @member {Boolean} secure-access-allow-port-forwarding
+ */
+DynamicSecretCreateK8s.prototype['secure-access-allow-port-forwarding'] = undefined;
 
 /**
  * Deprecated. use secure-access-certificate-issuer

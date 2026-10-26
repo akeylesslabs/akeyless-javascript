@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscCreate model module.
  * @module model/UscCreate
- * @version 5.0.39
+ * @version 5.0.40
  */
 class UscCreate {
     /**
@@ -55,6 +55,9 @@ class UscCreate {
         if (data) {
             obj = obj || new UscCreate();
 
+            if (data.hasOwnProperty('aws-account-id')) {
+                obj['aws-account-id'] = ApiClient.convertToType(data['aws-account-id'], 'String');
+            }
             if (data.hasOwnProperty('binary-value')) {
                 obj['binary-value'] = ApiClient.convertToType(data['binary-value'], 'Boolean');
             }
@@ -126,6 +129,10 @@ class UscCreate {
             }
         }
         // ensure the json data is a string
+        if (data['aws-account-id'] && !(typeof data['aws-account-id'] === 'string' || data['aws-account-id'] instanceof String)) {
+            throw new Error("Expected the field `aws-account-id` to be a primitive type in the JSON string but got " + data['aws-account-id']);
+        }
+        // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
@@ -195,6 +202,12 @@ class UscCreate {
 UscCreate.RequiredProperties = ["secret-name", "usc-name", "value"];
 
 /**
+ * The AWS account ID to create the secret in. Required when the connector spans multiple account IDs.
+ * @member {String} aws-account-id
+ */
+UscCreate.prototype['aws-account-id'] = undefined;
+
+/**
  * Use this option if the universal secrets value is a base64 encoded binary
  * @member {Boolean} binary-value
  */
@@ -237,7 +250,7 @@ UscCreate.prototype['object-type'] = undefined;
 UscCreate.prototype['pfx-password'] = undefined;
 
 /**
- * Optional, create secret in a specific region (GCP only). If empty, a global secret will be created (provider default).
+ * AWS Organization scope region or GCP regional secret location. GCP creates a global secret when empty.
  * @member {String} region
  */
 UscCreate.prototype['region'] = undefined;

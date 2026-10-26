@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateUSC model module.
  * @module model/CreateUSC
- * @version 5.0.39
+ * @version 5.0.40
  */
 class CreateUSC {
     /**
@@ -57,6 +57,9 @@ class CreateUSC {
         if (data) {
             obj = obj || new CreateUSC();
 
+            if (data.hasOwnProperty('aws-organization-id')) {
+                obj['aws-organization-id'] = ApiClient.convertToType(data['aws-organization-id'], 'String');
+            }
             if (data.hasOwnProperty('azure-kv-name')) {
                 obj['azure-kv-name'] = ApiClient.convertToType(data['azure-kv-name'], 'String');
             }
@@ -147,6 +150,10 @@ class CreateUSC {
             if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
+        }
+        // ensure the json data is a string
+        if (data['aws-organization-id'] && !(typeof data['aws-organization-id'] === 'string' || data['aws-organization-id'] instanceof String)) {
+            throw new Error("Expected the field `aws-organization-id` to be a primitive type in the JSON string but got " + data['aws-organization-id']);
         }
         // ensure the json data is a string
         if (data['azure-kv-name'] && !(typeof data['azure-kv-name'] === 'string' || data['azure-kv-name'] instanceof String)) {
@@ -244,6 +251,12 @@ class CreateUSC {
 }
 
 CreateUSC.RequiredProperties = ["name", "target-to-associate"];
+
+/**
+ * The AWS Organization ID to use for a multi-account connector. Requires a target in the AWS Management Account or a delegated administrator account.
+ * @member {String} aws-organization-id
+ */
+CreateUSC.prototype['aws-organization-id'] = undefined;
 
 /**
  * Azure Key Vault name (Relevant only for Azure targets)

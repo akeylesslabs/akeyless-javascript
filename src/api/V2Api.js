@@ -564,6 +564,7 @@ import GetRole from '../model/GetRole';
 import GetRotatedSecretValue from '../model/GetRotatedSecretValue';
 import GetSSHCertificate from '../model/GetSSHCertificate';
 import GetSSHCertificateOutput from '../model/GetSSHCertificateOutput';
+import GetScimStatus from '../model/GetScimStatus';
 import GetSecretValue from '../model/GetSecretValue';
 import GetTags from '../model/GetTags';
 import GetTarget from '../model/GetTarget';
@@ -679,6 +680,7 @@ import RotateOidcClientOutput from '../model/RotateOidcClientOutput';
 import RotateOidcClientSecret from '../model/RotateOidcClientSecret';
 import RotateSecret from '../model/RotateSecret';
 import RotatedSecretCreateAerospike from '../model/RotatedSecretCreateAerospike';
+import RotatedSecretCreateAliCloud from '../model/RotatedSecretCreateAliCloud';
 import RotatedSecretCreateAws from '../model/RotatedSecretCreateAws';
 import RotatedSecretCreateAzure from '../model/RotatedSecretCreateAzure';
 import RotatedSecretCreateCassandra from '../model/RotatedSecretCreateCassandra';
@@ -711,6 +713,7 @@ import RotatedSecretList from '../model/RotatedSecretList';
 import RotatedSecretOutput from '../model/RotatedSecretOutput';
 import RotatedSecretSync from '../model/RotatedSecretSync';
 import RotatedSecretUpdateAerospike from '../model/RotatedSecretUpdateAerospike';
+import RotatedSecretUpdateAliCloud from '../model/RotatedSecretUpdateAliCloud';
 import RotatedSecretUpdateAws from '../model/RotatedSecretUpdateAws';
 import RotatedSecretUpdateAzure from '../model/RotatedSecretUpdateAzure';
 import RotatedSecretUpdateCassandra from '../model/RotatedSecretUpdateCassandra';
@@ -735,6 +738,7 @@ import RotatedSecretUpdateSplunk from '../model/RotatedSecretUpdateSplunk';
 import RotatedSecretUpdateSsh from '../model/RotatedSecretUpdateSsh';
 import RotatedSecretUpdateWindows from '../model/RotatedSecretUpdateWindows';
 import RuntimeAuthorityCommand from '../model/RuntimeAuthorityCommand';
+import ScimStatus from '../model/ScimStatus';
 import SecretSyncOutput from '../model/SecretSyncOutput';
 import SetItemState from '../model/SetItemState';
 import SetRoleRule from '../model/SetRoleRule';
@@ -762,6 +766,7 @@ import StaticSecretSync from '../model/StaticSecretSync';
 import SystemAccessCredentialsReplyObj from '../model/SystemAccessCredentialsReplyObj';
 import Target from '../model/Target';
 import TargetCreateAerospike from '../model/TargetCreateAerospike';
+import TargetCreateAliCloud from '../model/TargetCreateAliCloud';
 import TargetCreateAnthropic from '../model/TargetCreateAnthropic';
 import TargetCreateArtifactory from '../model/TargetCreateArtifactory';
 import TargetCreateAws from '../model/TargetCreateAws';
@@ -807,6 +812,7 @@ import TargetGet from '../model/TargetGet';
 import TargetGetDetails from '../model/TargetGetDetails';
 import TargetList from '../model/TargetList';
 import TargetUpdateAerospike from '../model/TargetUpdateAerospike';
+import TargetUpdateAliCloud from '../model/TargetUpdateAliCloud';
 import TargetUpdateAnthropic from '../model/TargetUpdateAnthropic';
 import TargetUpdateArtifactory from '../model/TargetUpdateArtifactory';
 import TargetUpdateAws from '../model/TargetUpdateAws';
@@ -991,7 +997,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.39
+* @version 5.0.40
 */
 export default class V2Api {
 
@@ -16275,6 +16281,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/GetScimStatus} getScimStatus 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ScimStatus} and HTTP response
+     */
+    getScimStatusWithHttpInfo(getScimStatus) {
+      let postBody = getScimStatus;
+      // verify the required parameter 'getScimStatus' is set
+      if (getScimStatus === undefined || getScimStatus === null) {
+        throw new Error("Missing the required parameter 'getScimStatus' when calling getScimStatus");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ScimStatus;
+      return this.apiClient.callApi(
+        '/get-scim-status', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/GetScimStatus} getScimStatus 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ScimStatus}
+     */
+    getScimStatus(getScimStatus) {
+      return this.getScimStatusWithHttpInfo(getScimStatus)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/GetSecretValue} getSecretValue 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
@@ -19214,6 +19263,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/RotatedSecretCreateAliCloud} rotatedSecretCreateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
+     */
+    rotatedSecretCreateAliCloudWithHttpInfo(rotatedSecretCreateAliCloud) {
+      let postBody = rotatedSecretCreateAliCloud;
+      // verify the required parameter 'rotatedSecretCreateAliCloud' is set
+      if (rotatedSecretCreateAliCloud === undefined || rotatedSecretCreateAliCloud === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretCreateAliCloud' when calling rotatedSecretCreateAliCloud");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-create-alicloud', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretCreateAliCloud} rotatedSecretCreateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretCreateOutput}
+     */
+    rotatedSecretCreateAliCloud(rotatedSecretCreateAliCloud) {
+      return this.rotatedSecretCreateAliCloudWithHttpInfo(rotatedSecretCreateAliCloud)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/RotatedSecretCreateAws} rotatedSecretCreateAws 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretCreateOutput} and HTTP response
      */
@@ -20461,6 +20553,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/RotatedSecretUpdateAliCloud} rotatedSecretUpdateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
+     */
+    rotatedSecretUpdateAliCloudWithHttpInfo(rotatedSecretUpdateAliCloud) {
+      let postBody = rotatedSecretUpdateAliCloud;
+      // verify the required parameter 'rotatedSecretUpdateAliCloud' is set
+      if (rotatedSecretUpdateAliCloud === undefined || rotatedSecretUpdateAliCloud === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretUpdateAliCloud' when calling rotatedSecretUpdateAliCloud");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-update-alicloud', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretUpdateAliCloud} rotatedSecretUpdateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretUpdateOutput}
+     */
+    rotatedSecretUpdateAliCloud(rotatedSecretUpdateAliCloud) {
+      return this.rotatedSecretUpdateAliCloudWithHttpInfo(rotatedSecretUpdateAliCloud)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/RotatedSecretUpdateAws} rotatedSecretUpdateAws 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretUpdateOutput} and HTTP response
      */
@@ -21408,7 +21543,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/RuntimeAuthorityCommand} runtimeAuthorityCommand 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<Number>} and HTTP response
      */
     runtimeAuthorityWithHttpInfo(runtimeAuthorityCommand) {
       let postBody = runtimeAuthorityCommand;
@@ -21429,7 +21564,7 @@ export default class V2Api {
       let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = null;
+      let returnType = ['Number'];
       return this.apiClient.callApi(
         '/runtime-authority', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -21439,7 +21574,7 @@ export default class V2Api {
 
     /**
      * @param {module:model/RuntimeAuthorityCommand} runtimeAuthorityCommand 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<Number>}
      */
     runtimeAuthority(runtimeAuthorityCommand) {
       return this.runtimeAuthorityWithHttpInfo(runtimeAuthorityCommand)
@@ -22045,6 +22180,49 @@ export default class V2Api {
      */
     targetCreateAerospike(targetCreateAerospike) {
       return this.targetCreateAerospikeWithHttpInfo(targetCreateAerospike)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateAliCloud} targetCreateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateAliCloudWithHttpInfo(targetCreateAliCloud) {
+      let postBody = targetCreateAliCloud;
+      // verify the required parameter 'targetCreateAliCloud' is set
+      if (targetCreateAliCloud === undefined || targetCreateAliCloud === null) {
+        throw new Error("Missing the required parameter 'targetCreateAliCloud' when calling targetCreateAliCloud");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-alicloud', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateAliCloud} targetCreateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateAliCloud(targetCreateAliCloud) {
+      return this.targetCreateAliCloudWithHttpInfo(targetCreateAliCloud)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -23937,6 +24115,49 @@ export default class V2Api {
      */
     targetUpdateAerospike(targetUpdateAerospike) {
       return this.targetUpdateAerospikeWithHttpInfo(targetUpdateAerospike)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateAliCloud} targetUpdateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateAliCloudWithHttpInfo(targetUpdateAliCloud) {
+      let postBody = targetUpdateAliCloud;
+      // verify the required parameter 'targetUpdateAliCloud' is set
+      if (targetUpdateAliCloud === undefined || targetUpdateAliCloud === null) {
+        throw new Error("Missing the required parameter 'targetUpdateAliCloud' when calling targetUpdateAliCloud");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-alicloud', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateAliCloud} targetUpdateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateAliCloud(targetUpdateAliCloud) {
+      return this.targetUpdateAliCloudWithHttpInfo(targetUpdateAliCloud)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodCreateOutput model module.
  * @module model/AuthMethodCreateOutput
- * @version 5.0.39
+ * @version 5.0.40
  */
 class AuthMethodCreateOutput {
     /**
@@ -59,6 +59,9 @@ class AuthMethodCreateOutput {
             if (data.hasOwnProperty('prv_key')) {
                 obj['prv_key'] = ApiClient.convertToType(data['prv_key'], 'String');
             }
+            if (data.hasOwnProperty('scim_base_url')) {
+                obj['scim_base_url'] = ApiClient.convertToType(data['scim_base_url'], 'String');
+            }
         }
         return obj;
     }
@@ -84,6 +87,10 @@ class AuthMethodCreateOutput {
         // ensure the json data is a string
         if (data['prv_key'] && !(typeof data['prv_key'] === 'string' || data['prv_key'] instanceof String)) {
             throw new Error("Expected the field `prv_key` to be a primitive type in the JSON string but got " + data['prv_key']);
+        }
+        // ensure the json data is a string
+        if (data['scim_base_url'] && !(typeof data['scim_base_url'] === 'string' || data['scim_base_url'] instanceof String)) {
+            throw new Error("Expected the field `scim_base_url` to be a primitive type in the JSON string but got " + data['scim_base_url']);
         }
 
         return true;
@@ -113,6 +120,12 @@ AuthMethodCreateOutput.prototype['name'] = undefined;
  * @member {String} prv_key
  */
 AuthMethodCreateOutput.prototype['prv_key'] = undefined;
+
+/**
+ * SCIM Base URL the IdP calls, set when SCIM flags were given
+ * @member {String} scim_base_url
+ */
+AuthMethodCreateOutput.prototype['scim_base_url'] = undefined;
 
 
 

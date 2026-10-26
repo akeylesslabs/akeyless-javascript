@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocTargetItem model module.
  * @module model/AssocTargetItem
- * @version 5.0.39
+ * @version 5.0.40
  */
 class AssocTargetItem {
     /**
@@ -39,6 +39,7 @@ class AssocTargetItem {
     static initialize(obj, name, targetName) { 
         obj['certificate-format'] = 'pem';
         obj['disable-previous-key-version'] = false;
+        obj['f5-save-config'] = false;
         obj['json'] = false;
         obj['multi-region'] = 'false';
         obj['name'] = name;
@@ -61,8 +62,14 @@ class AssocTargetItem {
             if (data.hasOwnProperty('bind-ssl-profiles')) {
                 obj['bind-ssl-profiles'] = ApiClient.convertToType(data['bind-ssl-profiles'], ['String']);
             }
+            if (data.hasOwnProperty('certificate-arn')) {
+                obj['certificate-arn'] = ApiClient.convertToType(data['certificate-arn'], 'String');
+            }
             if (data.hasOwnProperty('certificate-format')) {
                 obj['certificate-format'] = ApiClient.convertToType(data['certificate-format'], 'String');
+            }
+            if (data.hasOwnProperty('certificate-name')) {
+                obj['certificate-name'] = ApiClient.convertToType(data['certificate-name'], 'String');
             }
             if (data.hasOwnProperty('certificate-path')) {
                 obj['certificate-path'] = ApiClient.convertToType(data['certificate-path'], 'String');
@@ -76,11 +83,20 @@ class AssocTargetItem {
             if (data.hasOwnProperty('external-key-name')) {
                 obj['external-key-name'] = ApiClient.convertToType(data['external-key-name'], 'String');
             }
+            if (data.hasOwnProperty('f5-save-config')) {
+                obj['f5-save-config'] = ApiClient.convertToType(data['f5-save-config'], 'Boolean');
+            }
+            if (data.hasOwnProperty('f5-sync-device-group')) {
+                obj['f5-sync-device-group'] = ApiClient.convertToType(data['f5-sync-device-group'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
             if (data.hasOwnProperty('key-operations')) {
                 obj['key-operations'] = ApiClient.convertToType(data['key-operations'], ['String']);
+            }
+            if (data.hasOwnProperty('key-vault')) {
+                obj['key-vault'] = ApiClient.convertToType(data['key-vault'], 'String');
             }
             if (data.hasOwnProperty('keyring-name')) {
                 obj['keyring-name'] = ApiClient.convertToType(data['keyring-name'], 'String');
@@ -90,6 +106,9 @@ class AssocTargetItem {
             }
             if (data.hasOwnProperty('location-id')) {
                 obj['location-id'] = ApiClient.convertToType(data['location-id'], 'String');
+            }
+            if (data.hasOwnProperty('location-scope')) {
+                obj['location-scope'] = ApiClient.convertToType(data['location-scope'], 'String');
             }
             if (data.hasOwnProperty('multi-region')) {
                 obj['multi-region'] = ApiClient.convertToType(data['multi-region'], 'String');
@@ -157,8 +176,16 @@ class AssocTargetItem {
             throw new Error("Expected the field `bind-ssl-profiles` to be an array in the JSON data but got " + data['bind-ssl-profiles']);
         }
         // ensure the json data is a string
+        if (data['certificate-arn'] && !(typeof data['certificate-arn'] === 'string' || data['certificate-arn'] instanceof String)) {
+            throw new Error("Expected the field `certificate-arn` to be a primitive type in the JSON string but got " + data['certificate-arn']);
+        }
+        // ensure the json data is a string
         if (data['certificate-format'] && !(typeof data['certificate-format'] === 'string' || data['certificate-format'] instanceof String)) {
             throw new Error("Expected the field `certificate-format` to be a primitive type in the JSON string but got " + data['certificate-format']);
+        }
+        // ensure the json data is a string
+        if (data['certificate-name'] && !(typeof data['certificate-name'] === 'string' || data['certificate-name'] instanceof String)) {
+            throw new Error("Expected the field `certificate-name` to be a primitive type in the JSON string but got " + data['certificate-name']);
         }
         // ensure the json data is a string
         if (data['certificate-path'] && !(typeof data['certificate-path'] === 'string' || data['certificate-path'] instanceof String)) {
@@ -172,9 +199,17 @@ class AssocTargetItem {
         if (data['external-key-name'] && !(typeof data['external-key-name'] === 'string' || data['external-key-name'] instanceof String)) {
             throw new Error("Expected the field `external-key-name` to be a primitive type in the JSON string but got " + data['external-key-name']);
         }
+        // ensure the json data is a string
+        if (data['f5-sync-device-group'] && !(typeof data['f5-sync-device-group'] === 'string' || data['f5-sync-device-group'] instanceof String)) {
+            throw new Error("Expected the field `f5-sync-device-group` to be a primitive type in the JSON string but got " + data['f5-sync-device-group']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['key-operations'])) {
             throw new Error("Expected the field `key-operations` to be an array in the JSON data but got " + data['key-operations']);
+        }
+        // ensure the json data is a string
+        if (data['key-vault'] && !(typeof data['key-vault'] === 'string' || data['key-vault'] instanceof String)) {
+            throw new Error("Expected the field `key-vault` to be a primitive type in the JSON string but got " + data['key-vault']);
         }
         // ensure the json data is a string
         if (data['keyring-name'] && !(typeof data['keyring-name'] === 'string' || data['keyring-name'] instanceof String)) {
@@ -187,6 +222,10 @@ class AssocTargetItem {
         // ensure the json data is a string
         if (data['location-id'] && !(typeof data['location-id'] === 'string' || data['location-id'] instanceof String)) {
             throw new Error("Expected the field `location-id` to be a primitive type in the JSON string but got " + data['location-id']);
+        }
+        // ensure the json data is a string
+        if (data['location-scope'] && !(typeof data['location-scope'] === 'string' || data['location-scope'] instanceof String)) {
+            throw new Error("Expected the field `location-scope` to be a primitive type in the JSON string but got " + data['location-scope']);
         }
         // ensure the json data is a string
         if (data['multi-region'] && !(typeof data['multi-region'] === 'string' || data['multi-region'] instanceof String)) {
@@ -260,11 +299,23 @@ AssocTargetItem.RequiredProperties = ["name", "target-name"];
 AssocTargetItem.prototype['bind-ssl-profiles'] = undefined;
 
 /**
+ * The ARN of an existing imported ACM certificate to re-import into, which replaces its certificate and key; if empty, a new ACM certificate is created on every provisioning, including after renewal (relevant only for AWS certificate provisioning)
+ * @member {String} certificate-arn
+ */
+AssocTargetItem.prototype['certificate-arn'] = undefined;
+
+/**
  * The format the certificate will be provisioned with, available options: pem,pfx (relevant only for certificate provisioning)
  * @member {String} certificate-format
  * @default 'pem'
  */
 AssocTargetItem.prototype['certificate-format'] = 'pem';
+
+/**
+ * The name of the certificate object in the cloud provider (relevant only for AWS, Azure, and GCP certificate provisioning)
+ * @member {String} certificate-name
+ */
+AssocTargetItem.prototype['certificate-name'] = undefined;
 
 /**
  * A path on the target to store the certificate pem file (relevant only for certificate provisioning)
@@ -292,6 +343,19 @@ AssocTargetItem.prototype['disable-previous-key-version'] = false;
 AssocTargetItem.prototype['external-key-name'] = undefined;
 
 /**
+ * Save the F5 running configuration after each successful provisioning, so the certificate survives a reboot. This also saves any other unsaved change on the device (relevant only for F5 BIG-IP certificate provisioning)
+ * @member {Boolean} f5-save-config
+ * @default false
+ */
+AssocTargetItem.prototype['f5-save-config'] = false;
+
+/**
+ * Sync the F5 configuration to this device group after each successful provisioning, so the HA peer serves the same certificate. This overwrites unsynced changes on the other members of the group. Implies f5-save-config (relevant only for F5 BIG-IP certificate provisioning)
+ * @member {String} f5-sync-device-group
+ */
+AssocTargetItem.prototype['f5-sync-device-group'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  * @default false
@@ -303,6 +367,12 @@ AssocTargetItem.prototype['json'] = false;
  * @member {Array.<String>} key-operations
  */
 AssocTargetItem.prototype['key-operations'] = undefined;
+
+/**
+ * The Azure Key Vault name to provision the certificate to (relevant only for Azure certificate provisioning)
+ * @member {String} key-vault
+ */
+AssocTargetItem.prototype['key-vault'] = undefined;
 
 /**
  * Keyring name of the GCP KMS (required for gcp targets)
@@ -321,6 +391,12 @@ AssocTargetItem.prototype['kms-algorithm'] = undefined;
  * @member {String} location-id
  */
 AssocTargetItem.prototype['location-id'] = undefined;
+
+/**
+ * The GCP Certificate Manager location to provision the certificate to: global or a region such as us-central1 (relevant only for GCP certificate provisioning)
+ * @member {String} location-scope
+ */
+AssocTargetItem.prototype['location-scope'] = undefined;
 
 /**
  * Set to 'true' to create a multi-region managed key. (Relevant only for Classic Key AWS targets)

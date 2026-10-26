@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscList model module.
  * @module model/UscList
- * @version 5.0.39
+ * @version 5.0.40
  */
 class UscList {
     /**
@@ -51,6 +51,9 @@ class UscList {
         if (data) {
             obj = obj || new UscList();
 
+            if (data.hasOwnProperty('aws-account-id')) {
+                obj['aws-account-id'] = ApiClient.convertToType(data['aws-account-id'], 'String');
+            }
             if (data.hasOwnProperty('gcp-project-id')) {
                 obj['gcp-project-id'] = ApiClient.convertToType(data['gcp-project-id'], 'String');
             }
@@ -65,6 +68,9 @@ class UscList {
             }
             if (data.hasOwnProperty('page-token')) {
                 obj['page-token'] = ApiClient.convertToType(data['page-token'], 'String');
+            }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
             if (data.hasOwnProperty('search')) {
                 obj['search'] = ApiClient.convertToType(data['search'], 'String');
@@ -95,6 +101,10 @@ class UscList {
             }
         }
         // ensure the json data is a string
+        if (data['aws-account-id'] && !(typeof data['aws-account-id'] === 'string' || data['aws-account-id'] instanceof String)) {
+            throw new Error("Expected the field `aws-account-id` to be a primitive type in the JSON string but got " + data['aws-account-id']);
+        }
+        // ensure the json data is a string
         if (data['gcp-project-id'] && !(typeof data['gcp-project-id'] === 'string' || data['gcp-project-id'] instanceof String)) {
             throw new Error("Expected the field `gcp-project-id` to be a primitive type in the JSON string but got " + data['gcp-project-id']);
         }
@@ -105,6 +115,10 @@ class UscList {
         // ensure the json data is a string
         if (data['page-token'] && !(typeof data['page-token'] === 'string' || data['page-token'] instanceof String)) {
             throw new Error("Expected the field `page-token` to be a primitive type in the JSON string but got " + data['page-token']);
+        }
+        // ensure the json data is a string
+        if (data['region'] && !(typeof data['region'] === 'string' || data['region'] instanceof String)) {
+            throw new Error("Expected the field `region` to be a primitive type in the JSON string but got " + data['region']);
         }
         // ensure the json data is a string
         if (data['search'] && !(typeof data['search'] === 'string' || data['search'] instanceof String)) {
@@ -130,6 +144,12 @@ class UscList {
 }
 
 UscList.RequiredProperties = ["usc-name"];
+
+/**
+ * The AWS account ID to list secrets from. Required when the connector spans multiple account IDs.
+ * @member {String} aws-account-id
+ */
+UscList.prototype['aws-account-id'] = undefined;
 
 /**
  * The GCP project to list secrets from (GCP only). Required when the connector spans multiple projects or uses folder/organization scope.
@@ -160,6 +180,12 @@ UscList.prototype['page-size'] = undefined;
  * @member {String} page-token
  */
 UscList.prototype['page-token'] = undefined;
+
+/**
+ * The AWS region to list secrets from (AWS only). If empty, the target's region is used.
+ * @member {String} region
+ */
+UscList.prototype['region'] = undefined;
 
 /**
  * Search query used to match secret names and paths.

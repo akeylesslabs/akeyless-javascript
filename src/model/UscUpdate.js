@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscUpdate model module.
  * @module model/UscUpdate
- * @version 5.0.39
+ * @version 5.0.40
  */
 class UscUpdate {
     /**
@@ -55,6 +55,9 @@ class UscUpdate {
         if (data) {
             obj = obj || new UscUpdate();
 
+            if (data.hasOwnProperty('aws-account-id')) {
+                obj['aws-account-id'] = ApiClient.convertToType(data['aws-account-id'], 'String');
+            }
             if (data.hasOwnProperty('binary-value')) {
                 obj['binary-value'] = ApiClient.convertToType(data['binary-value'], 'Boolean');
             }
@@ -72,6 +75,9 @@ class UscUpdate {
             }
             if (data.hasOwnProperty('pfx-password')) {
                 obj['pfx-password'] = ApiClient.convertToType(data['pfx-password'], 'String');
+            }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
             if (data.hasOwnProperty('remote-secret-activation-date')) {
                 obj['remote-secret-activation-date'] = ApiClient.convertToType(data['remote-secret-activation-date'], 'String');
@@ -120,6 +126,10 @@ class UscUpdate {
             }
         }
         // ensure the json data is a string
+        if (data['aws-account-id'] && !(typeof data['aws-account-id'] === 'string' || data['aws-account-id'] instanceof String)) {
+            throw new Error("Expected the field `aws-account-id` to be a primitive type in the JSON string but got " + data['aws-account-id']);
+        }
+        // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
@@ -134,6 +144,10 @@ class UscUpdate {
         // ensure the json data is a string
         if (data['pfx-password'] && !(typeof data['pfx-password'] === 'string' || data['pfx-password'] instanceof String)) {
             throw new Error("Expected the field `pfx-password` to be a primitive type in the JSON string but got " + data['pfx-password']);
+        }
+        // ensure the json data is a string
+        if (data['region'] && !(typeof data['region'] === 'string' || data['region'] instanceof String)) {
+            throw new Error("Expected the field `region` to be a primitive type in the JSON string but got " + data['region']);
         }
         // ensure the json data is a string
         if (data['remote-secret-activation-date'] && !(typeof data['remote-secret-activation-date'] === 'string' || data['remote-secret-activation-date'] instanceof String)) {
@@ -181,6 +195,12 @@ class UscUpdate {
 UscUpdate.RequiredProperties = ["secret-id", "usc-name", "value"];
 
 /**
+ * The AWS account ID that contains the secret. Required when the connector spans multiple account IDs.
+ * @member {String} aws-account-id
+ */
+UscUpdate.prototype['aws-account-id'] = undefined;
+
+/**
  * Use this option if the universal secrets value is a base64 encoded binary
  * @member {Boolean} binary-value
  */
@@ -215,6 +235,12 @@ UscUpdate.prototype['object-type'] = undefined;
  * @member {String} pfx-password
  */
 UscUpdate.prototype['pfx-password'] = undefined;
+
+/**
+ * The AWS region that contains the secret (AWS only). If empty, uses the target region.
+ * @member {String} region
+ */
+UscUpdate.prototype['region'] = undefined;
 
 /**
  * Activation date for the secret on the remote endpoint, in UTC format: YYYY-MM-DDTHH:MM:SSZ

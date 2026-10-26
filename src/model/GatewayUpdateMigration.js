@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateMigration model module.
  * @module model/GatewayUpdateMigration
- * @version 5.0.39
+ * @version 5.0.40
  */
 class GatewayUpdateMigration {
     /**
@@ -267,6 +267,9 @@ class GatewayUpdateMigration {
             }
             if (data.hasOwnProperty('protection-key')) {
                 obj['protection-key'] = ApiClient.convertToType(data['protection-key'], 'String');
+            }
+            if (data.hasOwnProperty('schedule-sync')) {
+                obj['schedule-sync'] = ApiClient.convertToType(data['schedule-sync'], 'String');
             }
             if (data.hasOwnProperty('si-auto-rotate')) {
                 obj['si-auto-rotate'] = ApiClient.convertToType(data['si-auto-rotate'], 'String');
@@ -572,6 +575,10 @@ class GatewayUpdateMigration {
         // ensure the json data is a string
         if (data['protection-key'] && !(typeof data['protection-key'] === 'string' || data['protection-key'] instanceof String)) {
             throw new Error("Expected the field `protection-key` to be a primitive type in the JSON string but got " + data['protection-key']);
+        }
+        // ensure the json data is a string
+        if (data['schedule-sync'] && !(typeof data['schedule-sync'] === 'string' || data['schedule-sync'] instanceof String)) {
+            throw new Error("Expected the field `schedule-sync` to be a primitive type in the JSON string but got " + data['schedule-sync']);
         }
         // ensure the json data is a string
         if (data['si-auto-rotate'] && !(typeof data['si-auto-rotate'] === 'string' || data['si-auto-rotate'] instanceof String)) {
@@ -1036,6 +1043,12 @@ GatewayUpdateMigration.prototype['port-ranges'] = '443';
  * @member {String} protection-key
  */
 GatewayUpdateMigration.prototype['protection-key'] = undefined;
+
+/**
+ * Runs the migration automatically on the specified schedule in UTC. Accepts standard cron syntax. Limited to at most once every 24 hours.
+ * @member {String} schedule-sync
+ */
+GatewayUpdateMigration.prototype['schedule-sync'] = undefined;
 
 /**
  * Enable/Disable automatic/recurrent rotation for migrated secrets. Default is false: only manual rotation is allowed for migrated secrets. If set to true, this command should be combined with --si-rotation-interval and --si-rotation-hour parameters (Relevant only for Server Inventory migration)

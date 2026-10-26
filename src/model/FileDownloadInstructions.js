@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FileDownloadInstructions model module.
  * @module model/FileDownloadInstructions
- * @version 5.0.39
+ * @version 5.0.40
  */
 class FileDownloadInstructions {
     /**

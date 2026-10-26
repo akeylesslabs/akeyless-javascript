@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDFCKeyOutput model module.
  * @module model/CreateDFCKeyOutput
- * @version 5.0.39
+ * @version 5.0.40
  */
 class CreateDFCKeyOutput {
     /**

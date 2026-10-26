@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateAzure model module.
  * @module model/RotatedSecretUpdateAzure
- * @version 5.0.39
+ * @version 5.0.40
  */
 class RotatedSecretUpdateAzure {
     /**
@@ -423,7 +423,7 @@ RotatedSecretUpdateAzure.prototype['api-id'] = undefined;
 RotatedSecretUpdateAzure.prototype['api-key'] = undefined;
 
 /**
- * Id of the azure app that hold the serect to be rotated (relevant only for rotator-type=api-key & authentication-credentials=use-target-creds)
+ * Id of the azure app that hold the serect to be rotated (relevant only for rotator-type=api-key)
  * @member {String} application-id
  */
 RotatedSecretUpdateAzure.prototype['application-id'] = undefined;

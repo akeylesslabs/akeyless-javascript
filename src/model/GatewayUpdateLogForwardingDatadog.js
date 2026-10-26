@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLogForwardingDatadog model module.
  * @module model/GatewayUpdateLogForwardingDatadog
- * @version 5.0.39
+ * @version 5.0.40
  */
 class GatewayUpdateLogForwardingDatadog {
     /**

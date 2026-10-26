@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscDelete model module.
  * @module model/UscDelete
- * @version 5.0.39
+ * @version 5.0.40
  */
 class UscDelete {
     /**
@@ -53,6 +53,9 @@ class UscDelete {
         if (data) {
             obj = obj || new UscDelete();
 
+            if (data.hasOwnProperty('aws-account-id')) {
+                obj['aws-account-id'] = ApiClient.convertToType(data['aws-account-id'], 'String');
+            }
             if (data.hasOwnProperty('force-delete')) {
                 obj['force-delete'] = ApiClient.convertToType(data['force-delete'], 'Boolean');
             }
@@ -64,6 +67,9 @@ class UscDelete {
             }
             if (data.hasOwnProperty('object-type')) {
                 obj['object-type'] = ApiClient.convertToType(data['object-type'], 'String');
+            }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
             if (data.hasOwnProperty('secret-id')) {
                 obj['secret-id'] = ApiClient.convertToType(data['secret-id'], 'String');
@@ -97,12 +103,20 @@ class UscDelete {
             }
         }
         // ensure the json data is a string
+        if (data['aws-account-id'] && !(typeof data['aws-account-id'] === 'string' || data['aws-account-id'] instanceof String)) {
+            throw new Error("Expected the field `aws-account-id` to be a primitive type in the JSON string but got " + data['aws-account-id']);
+        }
+        // ensure the json data is a string
         if (data['namespace'] && !(typeof data['namespace'] === 'string' || data['namespace'] instanceof String)) {
             throw new Error("Expected the field `namespace` to be a primitive type in the JSON string but got " + data['namespace']);
         }
         // ensure the json data is a string
         if (data['object-type'] && !(typeof data['object-type'] === 'string' || data['object-type'] instanceof String)) {
             throw new Error("Expected the field `object-type` to be a primitive type in the JSON string but got " + data['object-type']);
+        }
+        // ensure the json data is a string
+        if (data['region'] && !(typeof data['region'] === 'string' || data['region'] instanceof String)) {
+            throw new Error("Expected the field `region` to be a primitive type in the JSON string but got " + data['region']);
         }
         // ensure the json data is a string
         if (data['secret-id'] && !(typeof data['secret-id'] === 'string' || data['secret-id'] instanceof String)) {
@@ -134,6 +148,12 @@ class UscDelete {
 UscDelete.RequiredProperties = ["secret-id", "usc-name"];
 
 /**
+ * The AWS account ID that contains the secret. Required when the connector spans multiple account IDs.
+ * @member {String} aws-account-id
+ */
+UscDelete.prototype['aws-account-id'] = undefined;
+
+/**
  * Force delete objects that are soft deleted by default (relavent only for Azure target)
  * @member {Boolean} force-delete
  */
@@ -156,6 +176,12 @@ UscDelete.prototype['namespace'] = undefined;
  * @member {String} object-type
  */
 UscDelete.prototype['object-type'] = undefined;
+
+/**
+ * The AWS region that contains the secret (AWS only). If empty, uses the target region.
+ * @member {String} region
+ */
+UscDelete.prototype['region'] = undefined;
 
 /**
  * The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to delete

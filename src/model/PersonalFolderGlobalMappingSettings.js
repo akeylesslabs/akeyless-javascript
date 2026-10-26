@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PersonalFolderGlobalMappingSettings model module.
  * @module model/PersonalFolderGlobalMappingSettings
- * @version 5.0.39
+ * @version 5.0.40
  */
 class PersonalFolderGlobalMappingSettings {
     /**

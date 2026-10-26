@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateOIDC model module.
  * @module model/AuthMethodUpdateOIDC
- * @version 5.0.39
+ * @version 5.0.40
  */
 class AuthMethodUpdateOIDC {
     /**
@@ -121,6 +121,18 @@ class AuthMethodUpdateOIDC {
             if (data.hasOwnProperty('required-scopes-prefix')) {
                 obj['required-scopes-prefix'] = ApiClient.convertToType(data['required-scopes-prefix'], 'String');
             }
+            if (data.hasOwnProperty('scim-bearer-access-id')) {
+                obj['scim-bearer-access-id'] = ApiClient.convertToType(data['scim-bearer-access-id'], 'String');
+            }
+            if (data.hasOwnProperty('scim-enabled')) {
+                obj['scim-enabled'] = ApiClient.convertToType(data['scim-enabled'], 'String');
+            }
+            if (data.hasOwnProperty('scim-endpoint')) {
+                obj['scim-endpoint'] = ApiClient.convertToType(data['scim-endpoint'], 'String');
+            }
+            if (data.hasOwnProperty('scim-gateway-url')) {
+                obj['scim-gateway-url'] = ApiClient.convertToType(data['scim-gateway-url'], 'String');
+            }
             if (data.hasOwnProperty('subclaims-delimiters')) {
                 obj['subclaims-delimiters'] = ApiClient.convertToType(data['subclaims-delimiters'], ['String']);
             }
@@ -220,6 +232,22 @@ class AuthMethodUpdateOIDC {
         // ensure the json data is a string
         if (data['required-scopes-prefix'] && !(typeof data['required-scopes-prefix'] === 'string' || data['required-scopes-prefix'] instanceof String)) {
             throw new Error("Expected the field `required-scopes-prefix` to be a primitive type in the JSON string but got " + data['required-scopes-prefix']);
+        }
+        // ensure the json data is a string
+        if (data['scim-bearer-access-id'] && !(typeof data['scim-bearer-access-id'] === 'string' || data['scim-bearer-access-id'] instanceof String)) {
+            throw new Error("Expected the field `scim-bearer-access-id` to be a primitive type in the JSON string but got " + data['scim-bearer-access-id']);
+        }
+        // ensure the json data is a string
+        if (data['scim-enabled'] && !(typeof data['scim-enabled'] === 'string' || data['scim-enabled'] instanceof String)) {
+            throw new Error("Expected the field `scim-enabled` to be a primitive type in the JSON string but got " + data['scim-enabled']);
+        }
+        // ensure the json data is a string
+        if (data['scim-endpoint'] && !(typeof data['scim-endpoint'] === 'string' || data['scim-endpoint'] instanceof String)) {
+            throw new Error("Expected the field `scim-endpoint` to be a primitive type in the JSON string but got " + data['scim-endpoint']);
+        }
+        // ensure the json data is a string
+        if (data['scim-gateway-url'] && !(typeof data['scim-gateway-url'] === 'string' || data['scim-gateway-url'] instanceof String)) {
+            throw new Error("Expected the field `scim-gateway-url` to be a primitive type in the JSON string but got " + data['scim-gateway-url']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['subclaims-delimiters'])) {
@@ -380,6 +408,30 @@ AuthMethodUpdateOIDC.prototype['required-scopes'] = undefined;
  * @member {String} required-scopes-prefix
  */
 AuthMethodUpdateOIDC.prototype['required-scopes-prefix'] = undefined;
+
+/**
+ * Access ID of the API Key auth method the IdP uses as the SCIM bearer
+ * @member {String} scim-bearer-access-id
+ */
+AuthMethodUpdateOIDC.prototype['scim-bearer-access-id'] = undefined;
+
+/**
+ * Enable SCIM provisioning for this auth method [true/false]
+ * @member {String} scim-enabled
+ */
+AuthMethodUpdateOIDC.prototype['scim-enabled'] = undefined;
+
+/**
+ * Where the IdP reaches the SCIM endpoint [public/private]. public is served by Akeyless, private by your own Akeyless Gateway
+ * @member {String} scim-endpoint
+ */
+AuthMethodUpdateOIDC.prototype['scim-endpoint'] = undefined;
+
+/**
+ * URL of the Akeyless Gateway that serves the SCIM endpoint to the IdP, for example https://gateway.example.com:8000. Required for the private endpoint
+ * @member {String} scim-gateway-url
+ */
+AuthMethodUpdateOIDC.prototype['scim-gateway-url'] = undefined;
 
 /**
  * A list of additional sub claims delimiters (relevant only for SAML, OIDC, OAuth2/JWT)

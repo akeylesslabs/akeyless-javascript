@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import AWSTargetDetails from './AWSTargetDetails';
 import AerospikeTargetDetails from './AerospikeTargetDetails';
+import AliCloudTargetDetails from './AliCloudTargetDetails';
 import AnthropicTargetDetails from './AnthropicTargetDetails';
 import ArtifactoryTargetDetails from './ArtifactoryTargetDetails';
 import AzureTargetDetails from './AzureTargetDetails';
@@ -60,7 +61,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 5.0.39
+ * @version 5.0.40
  */
 class TargetTypeDetailsInput {
     /**
@@ -93,6 +94,9 @@ class TargetTypeDetailsInput {
 
             if (data.hasOwnProperty('aerospike_target_details')) {
                 obj['aerospike_target_details'] = AerospikeTargetDetails.constructFromObject(data['aerospike_target_details']);
+            }
+            if (data.hasOwnProperty('alicloud_target_details')) {
+                obj['alicloud_target_details'] = AliCloudTargetDetails.constructFromObject(data['alicloud_target_details']);
             }
             if (data.hasOwnProperty('anthropic_target_details')) {
                 obj['anthropic_target_details'] = AnthropicTargetDetails.constructFromObject(data['anthropic_target_details']);
@@ -236,6 +240,10 @@ class TargetTypeDetailsInput {
         // validate the optional field `aerospike_target_details`
         if (data['aerospike_target_details']) { // data not null
           AerospikeTargetDetails.validateJSON(data['aerospike_target_details']);
+        }
+        // validate the optional field `alicloud_target_details`
+        if (data['alicloud_target_details']) { // data not null
+          AliCloudTargetDetails.validateJSON(data['alicloud_target_details']);
         }
         // validate the optional field `anthropic_target_details`
         if (data['anthropic_target_details']) { // data not null
@@ -422,6 +430,11 @@ class TargetTypeDetailsInput {
  * @member {module:model/AerospikeTargetDetails} aerospike_target_details
  */
 TargetTypeDetailsInput.prototype['aerospike_target_details'] = undefined;
+
+/**
+ * @member {module:model/AliCloudTargetDetails} alicloud_target_details
+ */
+TargetTypeDetailsInput.prototype['alicloud_target_details'] = undefined;
 
 /**
  * @member {module:model/AnthropicTargetDetails} anthropic_target_details

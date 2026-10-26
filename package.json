@@ -34,7 +34,7 @@
   "files": [
     "dist"
   ],
-  "license": "Unlicense",
+  "license": "Apache-2.0",
   "main": "dist/index.js",
   "name": "akeyless",
   "overrides": {
@@ -48,5 +48,5 @@
     "prepare": "npm run build",
     "test": "mocha --require @babel/register --recursive"
   },
-  "version": "5.0.39"
+  "version": "5.0.40"
 }

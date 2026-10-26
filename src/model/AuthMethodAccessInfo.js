@@ -27,13 +27,14 @@ import OAuth2AccessRules from './OAuth2AccessRules';
 import OCIAccessRules from './OCIAccessRules';
 import OIDCAccessRules from './OIDCAccessRules';
 import SAMLAccessRules from './SAMLAccessRules';
+import ScimSettings from './ScimSettings';
 import UidExpirationEvent from './UidExpirationEvent';
 import UniversalIdentityAccessRules from './UniversalIdentityAccessRules';
 
 /**
  * The AuthMethodAccessInfo model module.
  * @module model/AuthMethodAccessInfo
- * @version 5.0.39
+ * @version 5.0.40
  */
 class AuthMethodAccessInfo {
     /**
@@ -142,6 +143,9 @@ class AuthMethodAccessInfo {
             if (data.hasOwnProperty('saml_access_rules')) {
                 obj['saml_access_rules'] = SAMLAccessRules.constructFromObject(data['saml_access_rules']);
             }
+            if (data.hasOwnProperty('scim')) {
+                obj['scim'] = ScimSettings.constructFromObject(data['scim']);
+            }
             if (data.hasOwnProperty('sub_claims_delimiters')) {
                 obj['sub_claims_delimiters'] = ApiClient.convertToType(data['sub_claims_delimiters'], ['String']);
             }
@@ -248,6 +252,10 @@ class AuthMethodAccessInfo {
         // validate the optional field `saml_access_rules`
         if (data['saml_access_rules']) { // data not null
           SAMLAccessRules.validateJSON(data['saml_access_rules']);
+        }
+        // validate the optional field `scim`
+        if (data['scim']) { // data not null
+          ScimSettings.validateJSON(data['scim']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['sub_claims_delimiters'])) {
@@ -409,6 +417,11 @@ AuthMethodAccessInfo.prototype['rules_type'] = undefined;
  * @member {module:model/SAMLAccessRules} saml_access_rules
  */
 AuthMethodAccessInfo.prototype['saml_access_rules'] = undefined;
+
+/**
+ * @member {module:model/ScimSettings} scim
+ */
+AuthMethodAccessInfo.prototype['scim'] = undefined;
 
 /**
  * @member {Array.<String>} sub_claims_delimiters

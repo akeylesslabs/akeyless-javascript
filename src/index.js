@@ -45,6 +45,7 @@ import AiModelEntry from './model/AiModelEntry';
 import AiQuorumSetting from './model/AiQuorumSetting';
 import AkeylessGatewayConfig from './model/AkeylessGatewayConfig';
 import AliCloudAccessRules from './model/AliCloudAccessRules';
+import AliCloudTargetDetails from './model/AliCloudTargetDetails';
 import AliasDetails from './model/AliasDetails';
 import AliasDetailsOutput from './model/AliasDetailsOutput';
 import AllAnalyticsData from './model/AllAnalyticsData';
@@ -692,6 +693,7 @@ import GetRole from './model/GetRole';
 import GetRotatedSecretValue from './model/GetRotatedSecretValue';
 import GetSSHCertificate from './model/GetSSHCertificate';
 import GetSSHCertificateOutput from './model/GetSSHCertificateOutput';
+import GetScimStatus from './model/GetScimStatus';
 import GetSecretValue from './model/GetSecretValue';
 import GetTags from './model/GetTags';
 import GetTarget from './model/GetTarget';
@@ -706,6 +708,7 @@ import GlobalSignGCCTargetDetails from './model/GlobalSignGCCTargetDetails';
 import GodaddyTargetDetails from './model/GodaddyTargetDetails';
 import GoogleChronicleForwardingConfig from './model/GoogleChronicleForwardingConfig';
 import GoogleTrustTargetDetails from './model/GoogleTrustTargetDetails';
+import GrantedRole from './model/GrantedRole';
 import GrokTargetDetails from './model/GrokTargetDetails';
 import Group from './model/Group';
 import GwClusterIdentity from './model/GwClusterIdentity';
@@ -917,6 +920,7 @@ import RotateOidcClientOutput from './model/RotateOidcClientOutput';
 import RotateOidcClientSecret from './model/RotateOidcClientSecret';
 import RotateSecret from './model/RotateSecret';
 import RotatedSecretCreateAerospike from './model/RotatedSecretCreateAerospike';
+import RotatedSecretCreateAliCloud from './model/RotatedSecretCreateAliCloud';
 import RotatedSecretCreateAws from './model/RotatedSecretCreateAws';
 import RotatedSecretCreateAzure from './model/RotatedSecretCreateAzure';
 import RotatedSecretCreateCassandra from './model/RotatedSecretCreateCassandra';
@@ -950,6 +954,7 @@ import RotatedSecretList from './model/RotatedSecretList';
 import RotatedSecretOutput from './model/RotatedSecretOutput';
 import RotatedSecretSync from './model/RotatedSecretSync';
 import RotatedSecretUpdateAerospike from './model/RotatedSecretUpdateAerospike';
+import RotatedSecretUpdateAliCloud from './model/RotatedSecretUpdateAliCloud';
 import RotatedSecretUpdateAws from './model/RotatedSecretUpdateAws';
 import RotatedSecretUpdateAzure from './model/RotatedSecretUpdateAzure';
 import RotatedSecretUpdateCassandra from './model/RotatedSecretUpdateCassandra';
@@ -986,6 +991,8 @@ import SSHTargetDetails from './model/SSHTargetDetails';
 import SalesforceTargetDetails from './model/SalesforceTargetDetails';
 import SamlSpConfigPart from './model/SamlSpConfigPart';
 import ScanResults from './model/ScanResults';
+import ScimSettings from './model/ScimSettings';
+import ScimStatus from './model/ScimStatus';
 import SecretInfo from './model/SecretInfo';
 import SecretSyncOutput from './model/SecretSyncOutput';
 import SectigoTargetDetails from './model/SectigoTargetDetails';
@@ -1037,6 +1044,7 @@ import SystemAccessCredentialsReplyObj from './model/SystemAccessCredentialsRepl
 import SystemAccessCredsSettings from './model/SystemAccessCredsSettings';
 import Target from './model/Target';
 import TargetCreateAerospike from './model/TargetCreateAerospike';
+import TargetCreateAliCloud from './model/TargetCreateAliCloud';
 import TargetCreateAnthropic from './model/TargetCreateAnthropic';
 import TargetCreateArtifactory from './model/TargetCreateArtifactory';
 import TargetCreateAws from './model/TargetCreateAws';
@@ -1087,6 +1095,7 @@ import TargetList from './model/TargetList';
 import TargetNameWithHosts from './model/TargetNameWithHosts';
 import TargetTypeDetailsInput from './model/TargetTypeDetailsInput';
 import TargetUpdateAerospike from './model/TargetUpdateAerospike';
+import TargetUpdateAliCloud from './model/TargetUpdateAliCloud';
 import TargetUpdateAnthropic from './model/TargetUpdateAnthropic';
 import TargetUpdateArtifactory from './model/TargetUpdateArtifactory';
 import TargetUpdateAws from './model/TargetUpdateAws';
@@ -1325,7 +1334,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.39
+* @version 5.0.40
 */
 export {
     /**
@@ -1525,6 +1534,12 @@ export {
      * @property {module:model/AliCloudAccessRules}
      */
     AliCloudAccessRules,
+
+    /**
+     * The AliCloudTargetDetails model constructor.
+     * @property {module:model/AliCloudTargetDetails}
+     */
+    AliCloudTargetDetails,
 
     /**
      * The AliasDetails model constructor.
@@ -5409,6 +5424,12 @@ export {
     GetSSHCertificateOutput,
 
     /**
+     * The GetScimStatus model constructor.
+     * @property {module:model/GetScimStatus}
+     */
+    GetScimStatus,
+
+    /**
      * The GetSecretValue model constructor.
      * @property {module:model/GetSecretValue}
      */
@@ -5491,6 +5512,12 @@ export {
      * @property {module:model/GoogleTrustTargetDetails}
      */
     GoogleTrustTargetDetails,
+
+    /**
+     * The GrantedRole model constructor.
+     * @property {module:model/GrantedRole}
+     */
+    GrantedRole,
 
     /**
      * The GrokTargetDetails model constructor.
@@ -6759,6 +6786,12 @@ export {
     RotatedSecretCreateAerospike,
 
     /**
+     * The RotatedSecretCreateAliCloud model constructor.
+     * @property {module:model/RotatedSecretCreateAliCloud}
+     */
+    RotatedSecretCreateAliCloud,
+
+    /**
      * The RotatedSecretCreateAws model constructor.
      * @property {module:model/RotatedSecretCreateAws}
      */
@@ -6955,6 +6988,12 @@ export {
      * @property {module:model/RotatedSecretUpdateAerospike}
      */
     RotatedSecretUpdateAerospike,
+
+    /**
+     * The RotatedSecretUpdateAliCloud model constructor.
+     * @property {module:model/RotatedSecretUpdateAliCloud}
+     */
+    RotatedSecretUpdateAliCloud,
 
     /**
      * The RotatedSecretUpdateAws model constructor.
@@ -7171,6 +7210,18 @@ export {
      * @property {module:model/ScanResults}
      */
     ScanResults,
+
+    /**
+     * The ScimSettings model constructor.
+     * @property {module:model/ScimSettings}
+     */
+    ScimSettings,
+
+    /**
+     * The ScimStatus model constructor.
+     * @property {module:model/ScimStatus}
+     */
+    ScimStatus,
 
     /**
      * The SecretInfo model constructor.
@@ -7479,6 +7530,12 @@ export {
     TargetCreateAerospike,
 
     /**
+     * The TargetCreateAliCloud model constructor.
+     * @property {module:model/TargetCreateAliCloud}
+     */
+    TargetCreateAliCloud,
+
+    /**
      * The TargetCreateAnthropic model constructor.
      * @property {module:model/TargetCreateAnthropic}
      */
@@ -7777,6 +7834,12 @@ export {
      * @property {module:model/TargetUpdateAerospike}
      */
     TargetUpdateAerospike,
+
+    /**
+     * The TargetUpdateAliCloud model constructor.
+     * @property {module:model/TargetUpdateAliCloud}
+     */
+    TargetUpdateAliCloud,
 
     /**
      * The TargetUpdateAnthropic model constructor.

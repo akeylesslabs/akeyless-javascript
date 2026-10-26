@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AgenticRule model module.
  * @module model/AgenticRule
- * @version 5.0.39
+ * @version 5.0.40
  */
 class AgenticRule {
     /**

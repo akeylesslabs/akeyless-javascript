@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateCloudflare model module.
  * @module model/TargetUpdateCloudflare
- * @version 5.0.39
+ * @version 5.0.40
  */
 class TargetUpdateCloudflare {
     /**

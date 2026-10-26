@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**awsAccountId** | **String** | The AWS account ID to create the secret in. Required when the connector spans multiple account IDs. | [optional] 
 **binaryValue** | **Boolean** | Use this option if the universal secrets value is a base64 encoded binary | [optional] 
 **description** | **String** | Description of the universal secrets | [optional] 
 **gcpProjectId** | **String** | The GCP project to create the secret in (GCP only). Required when the connector spans multiple projects or uses folder/organization scope. | [optional] 
@@ -11,7 +12,7 @@ Name | Type | Description | Notes
 **namespace** | **String** | The namespace (relevant for Hashi vault target) | [optional] 
 **objectType** | **String** |  | [optional] 
 **pfxPassword** | **String** | Optional, the passphrase that protects the private key within the pfx certificate (Relevant only for Azure KV certificates) | [optional] 
-**region** | **String** | Optional, create secret in a specific region (GCP only). If empty, a global secret will be created (provider default). | [optional] 
+**region** | **String** | AWS Organization scope region or GCP regional secret location. GCP creates a global secret when empty. | [optional] 
 **remoteSecretActivationDate** | **String** | Activation date for the secret on the remote endpoint, in UTC format: YYYY-MM-DDTHH:MM:SSZ | [optional] 
 **remoteSecretExpires** | **String** | Expiration time for the secret on the remote endpoint, in UTC format: YYYY-MM-DDTHH:MM:SSZ | [optional] 
 **secretName** | **String** | Name for the new universal secrets | 

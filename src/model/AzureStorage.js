@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AzureStorage model module.
  * @module model/AzureStorage
- * @version 5.0.39
+ * @version 5.0.40
  */
 class AzureStorage {
     /**

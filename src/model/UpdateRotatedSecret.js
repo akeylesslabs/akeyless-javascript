@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRotatedSecret model module.
  * @module model/UpdateRotatedSecret
- * @version 5.0.39
+ * @version 5.0.40
  */
 class UpdateRotatedSecret {
     /**
@@ -154,6 +154,9 @@ class UpdateRotatedSecret {
             }
             if (data.hasOwnProperty('secure-access-allow-port-forwading')) {
                 obj['secure-access-allow-port-forwading'] = ApiClient.convertToType(data['secure-access-allow-port-forwading'], 'Boolean');
+            }
+            if (data.hasOwnProperty('secure-access-allow-port-forwarding')) {
+                obj['secure-access-allow-port-forwarding'] = ApiClient.convertToType(data['secure-access-allow-port-forwarding'], 'Boolean');
             }
             if (data.hasOwnProperty('secure-access-aws-account-id')) {
                 obj['secure-access-aws-account-id'] = ApiClient.convertToType(data['secure-access-aws-account-id'], 'String');
@@ -642,10 +645,16 @@ UpdateRotatedSecret.prototype['same-password'] = undefined;
 UpdateRotatedSecret.prototype['secure-access-allow-external-user'] = undefined;
 
 /**
- * Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)
+ * Deprecated: old misspelled param, kept for backwards-compatibility. Hidden from help; use secure-access-allow-port-forwarding instead.
  * @member {Boolean} secure-access-allow-port-forwading
  */
 UpdateRotatedSecret.prototype['secure-access-allow-port-forwading'] = undefined;
+
+/**
+ * Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)
+ * @member {Boolean} secure-access-allow-port-forwarding
+ */
+UpdateRotatedSecret.prototype['secure-access-allow-port-forwarding'] = undefined;
 
 /**
  * The AWS account id (relevant only for aws)

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateCustomDns model module.
  * @module model/TargetUpdateCustomDns
- * @version 5.0.39
+ * @version 5.0.40
  */
 class TargetUpdateCustomDns {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscGet model module.
  * @module model/UscGet
- * @version 5.0.39
+ * @version 5.0.40
  */
 class UscGet {
     /**
@@ -53,6 +53,9 @@ class UscGet {
         if (data) {
             obj = obj || new UscGet();
 
+            if (data.hasOwnProperty('aws-account-id')) {
+                obj['aws-account-id'] = ApiClient.convertToType(data['aws-account-id'], 'String');
+            }
             if (data.hasOwnProperty('gcp-project-id')) {
                 obj['gcp-project-id'] = ApiClient.convertToType(data['gcp-project-id'], 'String');
             }
@@ -64,6 +67,9 @@ class UscGet {
             }
             if (data.hasOwnProperty('object-type')) {
                 obj['object-type'] = ApiClient.convertToType(data['object-type'], 'String');
+            }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
             if (data.hasOwnProperty('secret-id')) {
                 obj['secret-id'] = ApiClient.convertToType(data['secret-id'], 'String');
@@ -100,6 +106,10 @@ class UscGet {
             }
         }
         // ensure the json data is a string
+        if (data['aws-account-id'] && !(typeof data['aws-account-id'] === 'string' || data['aws-account-id'] instanceof String)) {
+            throw new Error("Expected the field `aws-account-id` to be a primitive type in the JSON string but got " + data['aws-account-id']);
+        }
+        // ensure the json data is a string
         if (data['gcp-project-id'] && !(typeof data['gcp-project-id'] === 'string' || data['gcp-project-id'] instanceof String)) {
             throw new Error("Expected the field `gcp-project-id` to be a primitive type in the JSON string but got " + data['gcp-project-id']);
         }
@@ -110,6 +120,10 @@ class UscGet {
         // ensure the json data is a string
         if (data['object-type'] && !(typeof data['object-type'] === 'string' || data['object-type'] instanceof String)) {
             throw new Error("Expected the field `object-type` to be a primitive type in the JSON string but got " + data['object-type']);
+        }
+        // ensure the json data is a string
+        if (data['region'] && !(typeof data['region'] === 'string' || data['region'] instanceof String)) {
+            throw new Error("Expected the field `region` to be a primitive type in the JSON string but got " + data['region']);
         }
         // ensure the json data is a string
         if (data['secret-id'] && !(typeof data['secret-id'] === 'string' || data['secret-id'] instanceof String)) {
@@ -145,6 +159,12 @@ class UscGet {
 UscGet.RequiredProperties = ["secret-id", "usc-name"];
 
 /**
+ * The AWS account ID that contains the secret. Required when the connector spans multiple account IDs.
+ * @member {String} aws-account-id
+ */
+UscGet.prototype['aws-account-id'] = undefined;
+
+/**
  * The GCP project the secret resides in (GCP only). Used when getting a secret by name in a connector that spans multiple projects or uses folder/organization scope.
  * @member {String} gcp-project-id
  */
@@ -167,6 +187,12 @@ UscGet.prototype['namespace'] = undefined;
  * @member {String} object-type
  */
 UscGet.prototype['object-type'] = undefined;
+
+/**
+ * The AWS region that contains the secret (AWS only). If empty, uses the target region.
+ * @member {String} region
+ */
+UscGet.prototype['region'] = undefined;
 
 /**
  * The secret id (or name, for AWS, Azure, K8s or Hashi vault targets) to get from the Universal Secrets Connector

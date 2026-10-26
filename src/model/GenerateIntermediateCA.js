@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateIntermediateCA model module.
  * @module model/GenerateIntermediateCA
- * @version 5.0.39
+ * @version 5.0.40
  */
 class GenerateIntermediateCA {
     /**
