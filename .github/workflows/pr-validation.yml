@@ -104,9 +104,10 @@ jobs:
         env:
           AKEYLESS_ACCESS_ID: ${{ secrets.AKEYLESS_ACCESS_ID }}
           AKEYLESS_ACCESS_KEY: ${{ secrets.AKEYLESS_ACCESS_KEY }}
+          AKEYLESS_SMOKE_SECRET_NAME: ${{ secrets.AKEYLESS_SMOKE_SECRET }}
         run: |
-          if [ -z "$AKEYLESS_ACCESS_ID" ] || [ -z "$AKEYLESS_ACCESS_KEY" ]; then
-            echo "::warning::AKEYLESS_ACCESS_ID/AKEYLESS_ACCESS_KEY are not available to this run; skipping smoke tests"
+          if [ -z "$AKEYLESS_ACCESS_ID" ] || [ -z "$AKEYLESS_ACCESS_KEY" ] || [ -z "$AKEYLESS_SMOKE_SECRET_NAME" ]; then
+            echo "::warning::AKEYLESS_ACCESS_ID/AKEYLESS_ACCESS_KEY/AKEYLESS_SMOKE_SECRET are not available to this run; skipping smoke tests"
             echo "available=false" >> "$GITHUB_OUTPUT"
           else
             echo "available=true" >> "$GITHUB_OUTPUT"
@@ -126,5 +127,5 @@ jobs:
           AKEYLESS_API_URL: ${{ vars.AKEYLESS_API_URL }}
           AKEYLESS_ACCESS_ID: ${{ secrets.AKEYLESS_ACCESS_ID }}
           AKEYLESS_ACCESS_KEY: ${{ secrets.AKEYLESS_ACCESS_KEY }}
-          AKEYLESS_SMOKE_SECRET_NAME: ${{ vars.AKEYLESS_SMOKE_SECRET_NAME }}
+          AKEYLESS_SMOKE_SECRET_NAME: ${{ secrets.AKEYLESS_SMOKE_SECRET }}
         run: node scripts/smoke/get-secret-value.js
