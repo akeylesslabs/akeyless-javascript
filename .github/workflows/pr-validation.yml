@@ -1,0 +1,131 @@
+name: Pull Request Validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+# package.json is regenerated on every SDK release, so CI tools are run through
+# npx at pinned versions instead of being added as devDependencies.
+env:
+  ESLINT_VERSION: 10.14.0
+  TYPESCRIPT_VERSION: 7.0.2
+
+jobs:
+  validate:
+    name: Lint, test, compile
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Lint
+        run: npx --yes "eslint@${ESLINT_VERSION}" src
+
+      - name: Test
+        run: npm test
+
+      - name: Compile
+        run: npm run build
+
+      - name: Verify compiled package
+        run: |
+          test -f dist/index.js
+          node -e "
+            const sdk = require('./dist');
+            for (const name of ['ApiClient', 'V2Api', 'Auth', 'GetSecretValue']) {
+              if (typeof sdk[name] !== 'function') {
+                console.error('dist is missing export ' + name);
+                process.exit(1);
+              }
+            }
+          "
+
+      - name: Type-check smoke tests against dist
+        run: npx --yes -p "typescript@${TYPESCRIPT_VERSION}" tsc -p scripts/smoke/tsconfig.json
+
+      - name: Upload compiled package
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dist
+          path: dist/
+          retention-days: 7
+
+  smoke:
+    name: Smoke tests
+    runs-on: ubuntu-latest
+    needs: validate
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install runtime dependencies
+        run: npm ci --ignore-scripts --omit=dev
+
+      - name: Download compiled package
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: dist
+          path: dist/
+
+      # Fork PRs get no secrets. Dependabot PRs only get Dependabot secrets, so
+      # the credentials must be configured in both places.
+      - name: Check credentials
+        id: creds
+        env:
+          AKEYLESS_ACCESS_ID: ${{ secrets.AKEYLESS_ACCESS_ID }}
+          AKEYLESS_ACCESS_KEY: ${{ secrets.AKEYLESS_ACCESS_KEY }}
+          AKEYLESS_SMOKE_SECRET_NAME: ${{ secrets.AKEYLESS_SMOKE_SECRET }}
+        run: |
+          if [ -z "$AKEYLESS_ACCESS_ID" ] || [ -z "$AKEYLESS_ACCESS_KEY" ] || [ -z "$AKEYLESS_SMOKE_SECRET_NAME" ]; then
+            echo "::warning::AKEYLESS_ACCESS_ID/AKEYLESS_ACCESS_KEY/AKEYLESS_SMOKE_SECRET are not available to this run; skipping smoke tests"
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Smoke test - auth
+        if: steps.creds.outputs.available == 'true'
+        env:
+          AKEYLESS_API_URL: ${{ vars.AKEYLESS_API_URL }}
+          AKEYLESS_ACCESS_ID: ${{ secrets.AKEYLESS_ACCESS_ID }}
+          AKEYLESS_ACCESS_KEY: ${{ secrets.AKEYLESS_ACCESS_KEY }}
+        run: node scripts/smoke/auth.js
+
+      - name: Smoke test - get-secret-value
+        if: steps.creds.outputs.available == 'true'
+        env:
+          AKEYLESS_API_URL: ${{ vars.AKEYLESS_API_URL }}
+          AKEYLESS_ACCESS_ID: ${{ secrets.AKEYLESS_ACCESS_ID }}
+          AKEYLESS_ACCESS_KEY: ${{ secrets.AKEYLESS_ACCESS_KEY }}
+          AKEYLESS_SMOKE_SECRET_NAME: ${{ secrets.AKEYLESS_SMOKE_SECRET }}
+        run: node scripts/smoke/get-secret-value.js
