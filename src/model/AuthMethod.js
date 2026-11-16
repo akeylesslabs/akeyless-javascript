@@ -21,7 +21,7 @@ import UidExpirationEvent from './UidExpirationEvent';
 /**
  * The AuthMethod model module.
  * @module model/AuthMethod
- * @version 5.0.40
+ * @version 5.0.41
  */
 class AuthMethod {
     /**
@@ -106,6 +106,9 @@ class AuthMethod {
             if (data.hasOwnProperty('modification_date')) {
                 obj['modification_date'] = ApiClient.convertToType(data['modification_date'], 'Date');
             }
+            if (data.hasOwnProperty('owner')) {
+                obj['owner'] = ApiClient.convertToType(data['owner'], 'String');
+            }
             if (data.hasOwnProperty('uid_expiration_events')) {
                 obj['uid_expiration_events'] = ApiClient.convertToType(data['uid_expiration_events'], [UidExpirationEvent]);
             }
@@ -178,6 +181,10 @@ class AuthMethod {
             for (const item of data['expiration_events']) {
                 AuthExpirationEvent.validateJSON(item);
             };
+        }
+        // ensure the json data is a string
+        if (data['owner'] && !(typeof data['owner'] === 'string' || data['owner'] instanceof String)) {
+            throw new Error("Expected the field `owner` to be a primitive type in the JSON string but got " + data['owner']);
         }
         if (data['uid_expiration_events']) { // data not null
             // ensure the json data is an array
@@ -288,6 +295,11 @@ AuthMethod.prototype['is_approved'] = undefined;
  * @member {Date} modification_date
  */
 AuthMethod.prototype['modification_date'] = undefined;
+
+/**
+ * @member {String} owner
+ */
+AuthMethod.prototype['owner'] = undefined;
 
 /**
  * @member {Array.<module:model/UidExpirationEvent>} uid_expiration_events

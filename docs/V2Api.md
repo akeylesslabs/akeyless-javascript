@@ -141,6 +141,7 @@ Method | HTTP request | Description
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
 [**detokenizeBatch**](V2Api.md#detokenizeBatch) | **POST** /detokenize-batch | 
 [**dynamicSecretCreateAerospike**](V2Api.md#dynamicSecretCreateAerospike) | **POST** /dynamic-secret-create-aerospike | 
+[**dynamicSecretCreateAliCloud**](V2Api.md#dynamicSecretCreateAliCloud) | **POST** /dynamic-secret-create-alicloud | 
 [**dynamicSecretCreateArtifactory**](V2Api.md#dynamicSecretCreateArtifactory) | **POST** /dynamic-secret-create-artifactory | 
 [**dynamicSecretCreateAws**](V2Api.md#dynamicSecretCreateAws) | **POST** /dynamic-secret-create-aws | 
 [**dynamicSecretCreateAzure**](V2Api.md#dynamicSecretCreateAzure) | **POST** /dynamic-secret-create-azure | 
@@ -177,6 +178,7 @@ Method | HTTP request | Description
 [**dynamicSecretTmpCredsGet**](V2Api.md#dynamicSecretTmpCredsGet) | **POST** /dynamic-secret-tmp-creds-get | 
 [**dynamicSecretTmpCredsUpdate**](V2Api.md#dynamicSecretTmpCredsUpdate) | **POST** /dynamic-secret-tmp-creds-update | 
 [**dynamicSecretUpdateAerospike**](V2Api.md#dynamicSecretUpdateAerospike) | **POST** /dynamic-secret-update-aerospike | 
+[**dynamicSecretUpdateAliCloud**](V2Api.md#dynamicSecretUpdateAliCloud) | **POST** /dynamic-secret-update-alicloud | 
 [**dynamicSecretUpdateArtifactory**](V2Api.md#dynamicSecretUpdateArtifactory) | **POST** /dynamic-secret-update-artifactory | 
 [**dynamicSecretUpdateAws**](V2Api.md#dynamicSecretUpdateAws) | **POST** /dynamic-secret-update-aws | 
 [**dynamicSecretUpdateAzure**](V2Api.md#dynamicSecretUpdateAzure) | **POST** /dynamic-secret-update-azure | 
@@ -457,6 +459,10 @@ Method | HTTP request | Description
 [**rotatedSecretDeleteSync**](V2Api.md#rotatedSecretDeleteSync) | **POST** /rotated-secret-delete-sync | 
 [**rotatedSecretGetValue**](V2Api.md#rotatedSecretGetValue) | **POST** /rotated-secret-get-value | 
 [**rotatedSecretList**](V2Api.md#rotatedSecretList) | **POST** /rotated-secret-list | 
+[**rotatedSecretProvisionCreate**](V2Api.md#rotatedSecretProvisionCreate) | **POST** /rotated-secret-provision-create | 
+[**rotatedSecretProvisionDelete**](V2Api.md#rotatedSecretProvisionDelete) | **POST** /rotated-secret-provision-delete | 
+[**rotatedSecretProvisionPush**](V2Api.md#rotatedSecretProvisionPush) | **POST** /rotated-secret-provision-push | 
+[**rotatedSecretProvisionUpdate**](V2Api.md#rotatedSecretProvisionUpdate) | **POST** /rotated-secret-provision-update | 
 [**rotatedSecretSync**](V2Api.md#rotatedSecretSync) | **POST** /rotated-secret-sync | 
 [**rotatedSecretUpdateAerospike**](V2Api.md#rotatedSecretUpdateAerospike) | **POST** /rotated-secret-update-aerospike | 
 [**rotatedSecretUpdateAliCloud**](V2Api.md#rotatedSecretUpdateAliCloud) | **POST** /rotated-secret-update-alicloud | 
@@ -500,6 +506,7 @@ Method | HTTP request | Description
 [**targetCreateAliCloud**](V2Api.md#targetCreateAliCloud) | **POST** /target-create-alicloud | 
 [**targetCreateAnthropic**](V2Api.md#targetCreateAnthropic) | **POST** /target-create-anthropic | 
 [**targetCreateArtifactory**](V2Api.md#targetCreateArtifactory) | **POST** /target-create-artifactory | 
+[**targetCreateAtlassian**](V2Api.md#targetCreateAtlassian) | **POST** /target-create-atlassian | 
 [**targetCreateAws**](V2Api.md#targetCreateAws) | **POST** /target-create-aws | 
 [**targetCreateAzure**](V2Api.md#targetCreateAzure) | **POST** /target-create-azure | 
 [**targetCreateBedrock**](V2Api.md#targetCreateBedrock) | **POST** /target-create-bedrock | 
@@ -545,6 +552,7 @@ Method | HTTP request | Description
 [**targetUpdateAliCloud**](V2Api.md#targetUpdateAliCloud) | **POST** /target-update-alicloud | 
 [**targetUpdateAnthropic**](V2Api.md#targetUpdateAnthropic) | **POST** /target-update-anthropic | 
 [**targetUpdateArtifactory**](V2Api.md#targetUpdateArtifactory) | **POST** /target-update-artifactory | 
+[**targetUpdateAtlassian**](V2Api.md#targetUpdateAtlassian) | **POST** /target-update-atlassian | 
 [**targetUpdateAws**](V2Api.md#targetUpdateAws) | **POST** /target-update-aws | 
 [**targetUpdateAzure**](V2Api.md#targetUpdateAzure) | **POST** /target-update-azure | 
 [**targetUpdateBedrock**](V2Api.md#targetUpdateBedrock) | **POST** /target-update-bedrock | 
@@ -6429,6 +6437,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## dynamicSecretCreateAliCloud
+
+> DynamicSecretCreateOutput dynamicSecretCreateAliCloud(dynamicSecretCreateAliCloud)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let dynamicSecretCreateAliCloud = new akeyless.DynamicSecretCreateAliCloud(); // DynamicSecretCreateAliCloud | 
+apiInstance.dynamicSecretCreateAliCloud(dynamicSecretCreateAliCloud).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dynamicSecretCreateAliCloud** | [**DynamicSecretCreateAliCloud**](DynamicSecretCreateAliCloud.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## dynamicSecretCreateArtifactory
 
 > DynamicSecretCreateOutput dynamicSecretCreateArtifactory(dynamicSecretCreateArtifactory)
@@ -7928,6 +7978,48 @@ apiInstance.dynamicSecretUpdateAerospike(dynamicSecretUpdateAerospike).then((dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dynamicSecretUpdateAerospike** | [**DynamicSecretUpdateAerospike**](DynamicSecretUpdateAerospike.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## dynamicSecretUpdateAliCloud
+
+> DynamicSecretUpdateOutput dynamicSecretUpdateAliCloud(dynamicSecretUpdateAliCloud)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let dynamicSecretUpdateAliCloud = new akeyless.DynamicSecretUpdateAliCloud(); // DynamicSecretUpdateAliCloud | 
+apiInstance.dynamicSecretUpdateAliCloud(dynamicSecretUpdateAliCloud).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dynamicSecretUpdateAliCloud** | [**DynamicSecretUpdateAliCloud**](DynamicSecretUpdateAliCloud.md)|  | 
 
 ### Return type
 
@@ -19741,6 +19833,174 @@ No authorization required
 - **Accept**: application/json
 
 
+## rotatedSecretProvisionCreate
+
+> RotatedSecretProvisionAssocOutput rotatedSecretProvisionCreate(rotatedSecretProvisionCreate)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretProvisionCreate = new akeyless.RotatedSecretProvisionCreate(); // RotatedSecretProvisionCreate | 
+apiInstance.rotatedSecretProvisionCreate(rotatedSecretProvisionCreate).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretProvisionCreate** | [**RotatedSecretProvisionCreate**](RotatedSecretProvisionCreate.md)|  | 
+
+### Return type
+
+[**RotatedSecretProvisionAssocOutput**](RotatedSecretProvisionAssocOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretProvisionDelete
+
+> RotatedSecretProvisionAssocOutput rotatedSecretProvisionDelete(rotatedSecretProvisionDelete)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretProvisionDelete = new akeyless.RotatedSecretProvisionDelete(); // RotatedSecretProvisionDelete | 
+apiInstance.rotatedSecretProvisionDelete(rotatedSecretProvisionDelete).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretProvisionDelete** | [**RotatedSecretProvisionDelete**](RotatedSecretProvisionDelete.md)|  | 
+
+### Return type
+
+[**RotatedSecretProvisionAssocOutput**](RotatedSecretProvisionAssocOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretProvisionPush
+
+> ProvisionSSHRotatedSecretOutput rotatedSecretProvisionPush(rotatedSecretProvisionPush)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretProvisionPush = new akeyless.RotatedSecretProvisionPush(); // RotatedSecretProvisionPush | 
+apiInstance.rotatedSecretProvisionPush(rotatedSecretProvisionPush).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretProvisionPush** | [**RotatedSecretProvisionPush**](RotatedSecretProvisionPush.md)|  | 
+
+### Return type
+
+[**ProvisionSSHRotatedSecretOutput**](ProvisionSSHRotatedSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rotatedSecretProvisionUpdate
+
+> RotatedSecretProvisionAssocOutput rotatedSecretProvisionUpdate(rotatedSecretProvisionUpdate)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let rotatedSecretProvisionUpdate = new akeyless.RotatedSecretProvisionUpdate(); // RotatedSecretProvisionUpdate | 
+apiInstance.rotatedSecretProvisionUpdate(rotatedSecretProvisionUpdate).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotatedSecretProvisionUpdate** | [**RotatedSecretProvisionUpdate**](RotatedSecretProvisionUpdate.md)|  | 
+
+### Return type
+
+[**RotatedSecretProvisionAssocOutput**](RotatedSecretProvisionAssocOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## rotatedSecretSync
 
 > Object rotatedSecretSync(rotatedSecretSync)
@@ -21532,6 +21792,48 @@ apiInstance.targetCreateArtifactory(targetCreateArtifactory).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetCreateArtifactory** | [**TargetCreateArtifactory**](TargetCreateArtifactory.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetCreateAtlassian
+
+> TargetCreateOutput targetCreateAtlassian(targetCreateAtlassian)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateAtlassian = new akeyless.TargetCreateAtlassian(); // TargetCreateAtlassian | 
+apiInstance.targetCreateAtlassian(targetCreateAtlassian).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateAtlassian** | [**TargetCreateAtlassian**](TargetCreateAtlassian.md)|  | 
 
 ### Return type
 
@@ -23422,6 +23724,48 @@ apiInstance.targetUpdateArtifactory(targetUpdateArtifactory).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetUpdateArtifactory** | [**TargetUpdateArtifactory**](TargetUpdateArtifactory.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetUpdateAtlassian
+
+> TargetUpdateOutput targetUpdateAtlassian(targetUpdateAtlassian)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateAtlassian = new akeyless.TargetUpdateAtlassian(); // TargetUpdateAtlassian | 
+apiInstance.targetUpdateAtlassian(targetUpdateAtlassian).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateAtlassian** | [**TargetUpdateAtlassian**](TargetUpdateAtlassian.md)|  | 
 
 ### Return type
 

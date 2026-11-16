@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventForwarderCreateEmail model module.
  * @module model/EventForwarderCreateEmail
- * @version 5.0.40
+ * @version 5.0.41
  */
 class EventForwarderCreateEmail {
     /**
@@ -207,7 +207,7 @@ EventForwarderCreateEmail.prototype['description'] = undefined;
 EventForwarderCreateEmail.prototype['email-to'] = undefined;
 
 /**
- * List of event types to notify about [request-access, access-request-expired, access-request-approved, access-request-denied, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated, rate-limiting, usage-report, secret-sync, locked-user, unlocked-user, password-reset]
+ * List of event types to notify about [request-access, access-request-expired, access-request-approved, access-request-denied, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, ssh-key-provisioning-success, ssh-key-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated, rate-limiting, usage-report, secret-sync, locked-user, unlocked-user, password-reset]
  * @member {Array.<String>} event-types
  */
 EventForwarderCreateEmail.prototype['event-types'] = undefined;

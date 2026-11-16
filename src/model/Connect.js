@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Connect model module.
  * @module model/Connect
- * @version 5.0.40
+ * @version 5.0.41
  */
 class Connect {
     /**
@@ -239,7 +239,7 @@ class Connect {
 Connect.prototype['Helper'] = undefined;
 
 /**
- * used to override .akeyless-connect.rc in tests
+ * test only: the rc file to read instead of the home rc files
  * @member {String} RcFileOverride
  */
 Connect.prototype['RcFileOverride'] = undefined;

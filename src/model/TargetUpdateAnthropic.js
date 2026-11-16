@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateAnthropic model module.
  * @module model/TargetUpdateAnthropic
- * @version 5.0.40
+ * @version 5.0.41
  */
 class TargetUpdateAnthropic {
     /**
@@ -102,6 +102,27 @@ class TargetUpdateAnthropic {
             if (data.hasOwnProperty('uid-token')) {
                 obj['uid-token'] = ApiClient.convertToType(data['uid-token'], 'String');
             }
+            if (data.hasOwnProperty('use-gw-cloud-identity')) {
+                obj['use-gw-cloud-identity'] = ApiClient.convertToType(data['use-gw-cloud-identity'], 'Boolean');
+            }
+            if (data.hasOwnProperty('wif-azure-audience')) {
+                obj['wif-azure-audience'] = ApiClient.convertToType(data['wif-azure-audience'], 'String');
+            }
+            if (data.hasOwnProperty('wif-federation-rule-id')) {
+                obj['wif-federation-rule-id'] = ApiClient.convertToType(data['wif-federation-rule-id'], 'String');
+            }
+            if (data.hasOwnProperty('wif-identity-token-source')) {
+                obj['wif-identity-token-source'] = ApiClient.convertToType(data['wif-identity-token-source'], 'String');
+            }
+            if (data.hasOwnProperty('wif-organization-id')) {
+                obj['wif-organization-id'] = ApiClient.convertToType(data['wif-organization-id'], 'String');
+            }
+            if (data.hasOwnProperty('wif-service-account-id')) {
+                obj['wif-service-account-id'] = ApiClient.convertToType(data['wif-service-account-id'], 'String');
+            }
+            if (data.hasOwnProperty('wif-workspace-id')) {
+                obj['wif-workspace-id'] = ApiClient.convertToType(data['wif-workspace-id'], 'String');
+            }
         }
         return obj;
     }
@@ -177,6 +198,30 @@ class TargetUpdateAnthropic {
         // ensure the json data is a string
         if (data['uid-token'] && !(typeof data['uid-token'] === 'string' || data['uid-token'] instanceof String)) {
             throw new Error("Expected the field `uid-token` to be a primitive type in the JSON string but got " + data['uid-token']);
+        }
+        // ensure the json data is a string
+        if (data['wif-azure-audience'] && !(typeof data['wif-azure-audience'] === 'string' || data['wif-azure-audience'] instanceof String)) {
+            throw new Error("Expected the field `wif-azure-audience` to be a primitive type in the JSON string but got " + data['wif-azure-audience']);
+        }
+        // ensure the json data is a string
+        if (data['wif-federation-rule-id'] && !(typeof data['wif-federation-rule-id'] === 'string' || data['wif-federation-rule-id'] instanceof String)) {
+            throw new Error("Expected the field `wif-federation-rule-id` to be a primitive type in the JSON string but got " + data['wif-federation-rule-id']);
+        }
+        // ensure the json data is a string
+        if (data['wif-identity-token-source'] && !(typeof data['wif-identity-token-source'] === 'string' || data['wif-identity-token-source'] instanceof String)) {
+            throw new Error("Expected the field `wif-identity-token-source` to be a primitive type in the JSON string but got " + data['wif-identity-token-source']);
+        }
+        // ensure the json data is a string
+        if (data['wif-organization-id'] && !(typeof data['wif-organization-id'] === 'string' || data['wif-organization-id'] instanceof String)) {
+            throw new Error("Expected the field `wif-organization-id` to be a primitive type in the JSON string but got " + data['wif-organization-id']);
+        }
+        // ensure the json data is a string
+        if (data['wif-service-account-id'] && !(typeof data['wif-service-account-id'] === 'string' || data['wif-service-account-id'] instanceof String)) {
+            throw new Error("Expected the field `wif-service-account-id` to be a primitive type in the JSON string but got " + data['wif-service-account-id']);
+        }
+        // ensure the json data is a string
+        if (data['wif-workspace-id'] && !(typeof data['wif-workspace-id'] === 'string' || data['wif-workspace-id'] instanceof String)) {
+            throw new Error("Expected the field `wif-workspace-id` to be a primitive type in the JSON string but got " + data['wif-workspace-id']);
         }
 
         return true;
@@ -286,6 +331,48 @@ TargetUpdateAnthropic.prototype['token'] = undefined;
  * @member {String} uid-token
  */
 TargetUpdateAnthropic.prototype['uid-token'] = undefined;
+
+/**
+ * Use the Gateway's cloud identity (Anthropic Workload Identity Federation) instead of an API key
+ * @member {Boolean} use-gw-cloud-identity
+ */
+TargetUpdateAnthropic.prototype['use-gw-cloud-identity'] = undefined;
+
+/**
+ * Identifier URI (api://<app-id>) of the Entra app registration for the Claude API audience, required with the azure source
+ * @member {String} wif-azure-audience
+ */
+TargetUpdateAnthropic.prototype['wif-azure-audience'] = undefined;
+
+/**
+ * Federation rule ID (fdrl_...), required with use-gw-cloud-identity
+ * @member {String} wif-federation-rule-id
+ */
+TargetUpdateAnthropic.prototype['wif-federation-rule-id'] = undefined;
+
+/**
+ * Where the Gateway reads its identity token: file (default), gcp, aws or azure
+ * @member {String} wif-identity-token-source
+ */
+TargetUpdateAnthropic.prototype['wif-identity-token-source'] = undefined;
+
+/**
+ * Anthropic organization ID (UUID), required with use-gw-cloud-identity
+ * @member {String} wif-organization-id
+ */
+TargetUpdateAnthropic.prototype['wif-organization-id'] = undefined;
+
+/**
+ * Claude service account ID (svac_...), required with use-gw-cloud-identity
+ * @member {String} wif-service-account-id
+ */
+TargetUpdateAnthropic.prototype['wif-service-account-id'] = undefined;
+
+/**
+ * Workspace ID (wrkspc_...), needed only when the federation rule covers more than one workspace
+ * @member {String} wif-workspace-id
+ */
+TargetUpdateAnthropic.prototype['wif-workspace-id'] = undefined;
 
 
 

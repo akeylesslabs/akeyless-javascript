@@ -17,7 +17,7 @@ import WindowsService from './WindowsService';
 /**
  * The RotatedSecretDetailsInfo model module.
  * @module model/RotatedSecretDetailsInfo
- * @version 5.0.40
+ * @version 5.0.41
  */
 class RotatedSecretDetailsInfo {
     /**
@@ -94,6 +94,9 @@ class RotatedSecretDetailsInfo {
             if (data.hasOwnProperty('number_of_versions_to_save')) {
                 obj['number_of_versions_to_save'] = ApiClient.convertToType(data['number_of_versions_to_save'], 'Number');
             }
+            if (data.hasOwnProperty('public_key')) {
+                obj['public_key'] = ApiClient.convertToType(data['public_key'], 'String');
+            }
             if (data.hasOwnProperty('public_key_remote_path')) {
                 obj['public_key_remote_path'] = ApiClient.convertToType(data['public_key_remote_path'], 'String');
             }
@@ -166,6 +169,10 @@ class RotatedSecretDetailsInfo {
         // ensure the json data is a string
         if (data['next_auto_rotate_type'] && !(typeof data['next_auto_rotate_type'] === 'string' || data['next_auto_rotate_type'] instanceof String)) {
             throw new Error("Expected the field `next_auto_rotate_type` to be a primitive type in the JSON string but got " + data['next_auto_rotate_type']);
+        }
+        // ensure the json data is a string
+        if (data['public_key'] && !(typeof data['public_key'] === 'string' || data['public_key'] instanceof String)) {
+            throw new Error("Expected the field `public_key` to be a primitive type in the JSON string but got " + data['public_key']);
         }
         // ensure the json data is a string
         if (data['public_key_remote_path'] && !(typeof data['public_key_remote_path'] === 'string' || data['public_key_remote_path'] instanceof String)) {
@@ -281,6 +288,12 @@ RotatedSecretDetailsInfo.prototype['next_auto_rotate_type'] = undefined;
  * @member {Number} number_of_versions_to_save
  */
 RotatedSecretDetailsInfo.prototype['number_of_versions_to_save'] = undefined;
+
+/**
+ * PublicKey is the OpenSSH authorized_keys line for an SSH rotated secret. Stored in the clear on item attributes so describe-item can return it under list permission.
+ * @member {String} public_key
+ */
+RotatedSecretDetailsInfo.prototype['public_key'] = undefined;
 
 /**
  * @member {String} public_key_remote_path

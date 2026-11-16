@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateOidcApp model module.
  * @module model/UpdateOidcApp
- * @version 5.0.40
+ * @version 5.0.41
  */
 class UpdateOidcApp {
     /**

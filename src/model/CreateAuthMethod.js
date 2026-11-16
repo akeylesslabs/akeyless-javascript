@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateAuthMethod model module.
  * @module model/CreateAuthMethod
- * @version 5.0.40
+ * @version 5.0.41
  */
 class CreateAuthMethod {
     /**
@@ -89,6 +89,9 @@ class CreateAuthMethod {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('owner')) {
+                obj['owner'] = ApiClient.convertToType(data['owner'], 'String');
+            }
             if (data.hasOwnProperty('product-type')) {
                 obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
@@ -145,6 +148,10 @@ class CreateAuthMethod {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['owner'] && !(typeof data['owner'] === 'string' || data['owner'] instanceof String)) {
+            throw new Error("Expected the field `owner` to be a primitive type in the JSON string but got " + data['owner']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['product-type'])) {
@@ -241,6 +248,12 @@ CreateAuthMethod.prototype['jwt-ttl'] = 0;
  * @member {String} name
  */
 CreateAuthMethod.prototype['name'] = undefined;
+
+/**
+ * Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it
+ * @member {String} owner
+ */
+CreateAuthMethod.prototype['owner'] = undefined;
 
 /**
  * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]

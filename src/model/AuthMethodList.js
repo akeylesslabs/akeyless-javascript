@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodList model module.
  * @module model/AuthMethodList
- * @version 5.0.40
+ * @version 5.0.41
  */
 class AuthMethodList {
     /**
@@ -55,6 +55,9 @@ class AuthMethodList {
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
             }
+            if (data.hasOwnProperty('owner')) {
+                obj['owner'] = ApiClient.convertToType(data['owner'], 'String');
+            }
             if (data.hasOwnProperty('pagination-token')) {
                 obj['pagination-token'] = ApiClient.convertToType(data['pagination-token'], 'String');
             }
@@ -80,6 +83,10 @@ class AuthMethodList {
         // ensure the json data is a string
         if (data['filter'] && !(typeof data['filter'] === 'string' || data['filter'] instanceof String)) {
             throw new Error("Expected the field `filter` to be a primitive type in the JSON string but got " + data['filter']);
+        }
+        // ensure the json data is a string
+        if (data['owner'] && !(typeof data['owner'] === 'string' || data['owner'] instanceof String)) {
+            throw new Error("Expected the field `owner` to be a primitive type in the JSON string but got " + data['owner']);
         }
         // ensure the json data is a string
         if (data['pagination-token'] && !(typeof data['pagination-token'] === 'string' || data['pagination-token'] instanceof String)) {
@@ -118,6 +125,12 @@ AuthMethodList.prototype['filter'] = undefined;
  * @default false
  */
 AuthMethodList.prototype['json'] = false;
+
+/**
+ * Filter by auth method owner or part of it
+ * @member {String} owner
+ */
+AuthMethodList.prototype['owner'] = undefined;
 
 /**
  * Next page reference

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateLdap model module.
  * @module model/AuthMethodUpdateLdap
- * @version 5.0.40
+ * @version 5.0.41
  */
 class AuthMethodUpdateLdap {
     /**
@@ -96,6 +96,9 @@ class AuthMethodUpdateLdap {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
+            if (data.hasOwnProperty('owner')) {
+                obj['owner'] = ApiClient.convertToType(data['owner'], 'String');
+            }
             if (data.hasOwnProperty('product-type')) {
                 obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
@@ -166,6 +169,10 @@ class AuthMethodUpdateLdap {
         // ensure the json data is a string
         if (data['new-name'] && !(typeof data['new-name'] === 'string' || data['new-name'] instanceof String)) {
             throw new Error("Expected the field `new-name` to be a primitive type in the JSON string but got " + data['new-name']);
+        }
+        // ensure the json data is a string
+        if (data['owner'] && !(typeof data['owner'] === 'string' || data['owner'] instanceof String)) {
+            throw new Error("Expected the field `owner` to be a primitive type in the JSON string but got " + data['owner']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['product-type'])) {
@@ -282,6 +289,12 @@ AuthMethodUpdateLdap.prototype['name'] = undefined;
  * @member {String} new-name
  */
 AuthMethodUpdateLdap.prototype['new-name'] = undefined;
+
+/**
+ * Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it
+ * @member {String} owner
+ */
+AuthMethodUpdateLdap.prototype['owner'] = undefined;
 
 /**
  * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]

@@ -17,6 +17,7 @@ import AerospikeTargetDetails from './AerospikeTargetDetails';
 import AliCloudTargetDetails from './AliCloudTargetDetails';
 import AnthropicTargetDetails from './AnthropicTargetDetails';
 import ArtifactoryTargetDetails from './ArtifactoryTargetDetails';
+import AtlassianTargetDetails from './AtlassianTargetDetails';
 import AzureTargetDetails from './AzureTargetDetails';
 import BedrockTargetDetails from './BedrockTargetDetails';
 import ChefTargetDetails from './ChefTargetDetails';
@@ -61,7 +62,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 5.0.40
+ * @version 5.0.41
  */
 class TargetTypeDetailsInput {
     /**
@@ -103,6 +104,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('artifactory_target_details')) {
                 obj['artifactory_target_details'] = ArtifactoryTargetDetails.constructFromObject(data['artifactory_target_details']);
+            }
+            if (data.hasOwnProperty('atlassian_target_details')) {
+                obj['atlassian_target_details'] = AtlassianTargetDetails.constructFromObject(data['atlassian_target_details']);
             }
             if (data.hasOwnProperty('aws_target_details')) {
                 obj['aws_target_details'] = AWSTargetDetails.constructFromObject(data['aws_target_details']);
@@ -252,6 +256,10 @@ class TargetTypeDetailsInput {
         // validate the optional field `artifactory_target_details`
         if (data['artifactory_target_details']) { // data not null
           ArtifactoryTargetDetails.validateJSON(data['artifactory_target_details']);
+        }
+        // validate the optional field `atlassian_target_details`
+        if (data['atlassian_target_details']) { // data not null
+          AtlassianTargetDetails.validateJSON(data['atlassian_target_details']);
         }
         // validate the optional field `aws_target_details`
         if (data['aws_target_details']) { // data not null
@@ -445,6 +453,11 @@ TargetTypeDetailsInput.prototype['anthropic_target_details'] = undefined;
  * @member {module:model/ArtifactoryTargetDetails} artifactory_target_details
  */
 TargetTypeDetailsInput.prototype['artifactory_target_details'] = undefined;
+
+/**
+ * @member {module:model/AtlassianTargetDetails} atlassian_target_details
+ */
+TargetTypeDetailsInput.prototype['atlassian_target_details'] = undefined;
 
 /**
  * @member {module:model/AWSTargetDetails} aws_target_details

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateAliCloud model module.
  * @module model/TargetCreateAliCloud
- * @version 5.0.40
+ * @version 5.0.41
  */
 class TargetCreateAliCloud {
     /**

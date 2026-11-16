@@ -34,7 +34,7 @@ import UsageEventSetting from './UsageEventSetting';
 /**
  * The AccountGeneralSettings model module.
  * @module model/AccountGeneralSettings
- * @version 5.0.40
+ * @version 5.0.41
  */
 class AccountGeneralSettings {
     /**
@@ -161,6 +161,9 @@ class AccountGeneralSettings {
             }
             if (data.hasOwnProperty('protect_items_by_default')) {
                 obj['protect_items_by_default'] = ApiClient.convertToType(data['protect_items_by_default'], 'Boolean');
+            }
+            if (data.hasOwnProperty('require_auth_method_owner')) {
+                obj['require_auth_method_owner'] = ApiClient.convertToType(data['require_auth_method_owner'], 'Boolean');
             }
             if (data.hasOwnProperty('rotation_secret_max_interval')) {
                 obj['rotation_secret_max_interval'] = RotationSecretMaxInterval.constructFromObject(data['rotation_secret_max_interval']);
@@ -444,6 +447,12 @@ AccountGeneralSettings.prototype['personal_folder_global_mapping'] = undefined;
  * @member {Boolean} protect_items_by_default
  */
 AccountGeneralSettings.prototype['protect_items_by_default'] = undefined;
+
+/**
+ * RequireAuthMethodOwner makes an owner mandatory when creating auth methods and on general-info updates of auth methods (see AuthMethodGeneralInfoUpdateModes).
+ * @member {Boolean} require_auth_method_owner
+ */
+AccountGeneralSettings.prototype['require_auth_method_owner'] = undefined;
 
 /**
  * @member {module:model/RotationSecretMaxInterval} rotation_secret_max_interval

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Auth model module.
  * @module model/Auth
- * @version 5.0.40
+ * @version 5.0.41
  */
 class Auth {
     /**
@@ -69,6 +69,9 @@ class Auth {
             }
             if (data.hasOwnProperty('admin-password')) {
                 obj['admin-password'] = ApiClient.convertToType(data['admin-password'], 'String');
+            }
+            if (data.hasOwnProperty('auth-via-gateway')) {
+                obj['auth-via-gateway'] = ApiClient.convertToType(data['auth-via-gateway'], 'Boolean');
             }
             if (data.hasOwnProperty('azure-cloud')) {
                 obj['azure-cloud'] = ApiClient.convertToType(data['azure-cloud'], 'String');
@@ -319,6 +322,12 @@ Auth.prototype['admin-email'] = undefined;
  * @member {String} admin-password
  */
 Auth.prototype['admin-password'] = undefined;
+
+/**
+ * Route the interactive OIDC/SAML browser login through the Gateway (gateway-url) instead of Akeyless Auth (relevant only for access-type=saml/oidc)
+ * @member {Boolean} auth-via-gateway
+ */
+Auth.prototype['auth-via-gateway'] = undefined;
 
 /**
  * Azure cloud environment to use. Values: AzureCloud (default), AzureUSGovernment, AzureChinaCloud.

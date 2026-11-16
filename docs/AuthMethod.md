@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **expirationEvents** | [**[AuthExpirationEvent]**](AuthExpirationEvent.md) |  | [optional] 
 **isApproved** | **Boolean** |  | [optional] 
 **modificationDate** | **Date** |  | [optional] 
+**owner** | **String** |  | [optional] 
 **uidExpirationEvents** | [**[UidExpirationEvent]**](UidExpirationEvent.md) |  | [optional] 
 
 

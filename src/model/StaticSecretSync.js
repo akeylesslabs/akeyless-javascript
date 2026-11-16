@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StaticSecretSync model module.
  * @module model/StaticSecretSync
- * @version 5.0.40
+ * @version 5.0.41
  */
 class StaticSecretSync {
     /**
