@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DigiCertTargetDetails model module.
  * @module model/DigiCertTargetDetails
- * @version 5.0.40
+ * @version 5.0.41
  */
 class DigiCertTargetDetails {
     /**
@@ -52,6 +52,9 @@ class DigiCertTargetDetails {
             }
             if (data.hasOwnProperty('account_url')) {
                 obj['account_url'] = ApiClient.convertToType(data['account_url'], 'String');
+            }
+            if (data.hasOwnProperty('cert_central_api_key')) {
+                obj['cert_central_api_key'] = ApiClient.convertToType(data['cert_central_api_key'], 'String');
             }
             if (data.hasOwnProperty('challenge_type')) {
                 obj['challenge_type'] = ApiClient.convertToType(data['challenge_type'], 'String');
@@ -118,6 +121,10 @@ class DigiCertTargetDetails {
         // ensure the json data is a string
         if (data['account_url'] && !(typeof data['account_url'] === 'string' || data['account_url'] instanceof String)) {
             throw new Error("Expected the field `account_url` to be a primitive type in the JSON string but got " + data['account_url']);
+        }
+        // ensure the json data is a string
+        if (data['cert_central_api_key'] && !(typeof data['cert_central_api_key'] === 'string' || data['cert_central_api_key'] instanceof String)) {
+            throw new Error("Expected the field `cert_central_api_key` to be a primitive type in the JSON string but got " + data['cert_central_api_key']);
         }
         // ensure the json data is a string
         if (data['challenge_type'] && !(typeof data['challenge_type'] === 'string' || data['challenge_type'] instanceof String)) {
@@ -187,6 +194,12 @@ DigiCertTargetDetails.prototype['account_key_pem'] = undefined;
  * @member {String} account_url
  */
 DigiCertTargetDetails.prototype['account_url'] = undefined;
+
+/**
+ * DigiCert CertCentral API key (X-DC-DEVKEY). Optional. When set, renewals look up the DigiCert order of the existing certificate and ask DigiCert to reissue it (free, uses the existing order) instead of placing a new, billable ACME order.
+ * @member {String} cert_central_api_key
+ */
+DigiCertTargetDetails.prototype['cert_central_api_key'] = undefined;
 
 /**
  * ACMEChallengeType defines ACME challenge type for Let's Encrypt

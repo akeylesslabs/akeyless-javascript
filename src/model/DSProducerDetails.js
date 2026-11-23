@@ -23,7 +23,7 @@ import WalletDetails from './WalletDetails';
 /**
  * The DSProducerDetails model module.
  * @module model/DSProducerDetails
- * @version 5.0.40
+ * @version 5.0.41
  */
 class DSProducerDetails {
     /**
@@ -54,6 +54,12 @@ class DSProducerDetails {
         if (data) {
             obj = obj || new DSProducerDetails();
 
+            if (data.hasOwnProperty('access_key')) {
+                obj['access_key'] = ApiClient.convertToType(data['access_key'], 'String');
+            }
+            if (data.hasOwnProperty('access_key_id')) {
+                obj['access_key_id'] = ApiClient.convertToType(data['access_key_id'], 'String');
+            }
             if (data.hasOwnProperty('access_token_manager_id')) {
                 obj['access_token_manager_id'] = ApiClient.convertToType(data['access_token_manager_id'], 'String');
             }
@@ -128,6 +134,39 @@ class DSProducerDetails {
             }
             if (data.hasOwnProperty('agentic_rules')) {
                 obj['agentic_rules'] = AgenticRules.constructFromObject(data['agentic_rules']);
+            }
+            if (data.hasOwnProperty('alicloud_access_mode')) {
+                obj['alicloud_access_mode'] = ApiClient.convertToType(data['alicloud_access_mode'], 'String');
+            }
+            if (data.hasOwnProperty('alicloud_external_id')) {
+                obj['alicloud_external_id'] = ApiClient.convertToType(data['alicloud_external_id'], 'String');
+            }
+            if (data.hasOwnProperty('alicloud_role_arns')) {
+                obj['alicloud_role_arns'] = ApiClient.convertToType(data['alicloud_role_arns'], 'String');
+            }
+            if (data.hasOwnProperty('alicloud_session_policy')) {
+                obj['alicloud_session_policy'] = ApiClient.convertToType(data['alicloud_session_policy'], 'String');
+            }
+            if (data.hasOwnProperty('alicloud_set_source_identity')) {
+                obj['alicloud_set_source_identity'] = ApiClient.convertToType(data['alicloud_set_source_identity'], 'Boolean');
+            }
+            if (data.hasOwnProperty('alicloud_site')) {
+                obj['alicloud_site'] = ApiClient.convertToType(data['alicloud_site'], 'String');
+            }
+            if (data.hasOwnProperty('alicloud_user_console_access')) {
+                obj['alicloud_user_console_access'] = ApiClient.convertToType(data['alicloud_user_console_access'], 'Boolean');
+            }
+            if (data.hasOwnProperty('alicloud_user_groups')) {
+                obj['alicloud_user_groups'] = ApiClient.convertToType(data['alicloud_user_groups'], 'String');
+            }
+            if (data.hasOwnProperty('alicloud_user_inline_policy')) {
+                obj['alicloud_user_inline_policy'] = ApiClient.convertToType(data['alicloud_user_inline_policy'], 'String');
+            }
+            if (data.hasOwnProperty('alicloud_user_policies')) {
+                obj['alicloud_user_policies'] = ApiClient.convertToType(data['alicloud_user_policies'], 'String');
+            }
+            if (data.hasOwnProperty('alicloud_user_programmatic_access')) {
+                obj['alicloud_user_programmatic_access'] = ApiClient.convertToType(data['alicloud_user_programmatic_access'], 'Boolean');
             }
             if (data.hasOwnProperty('api_key')) {
                 obj['api_key'] = ApiClient.convertToType(data['api_key'], 'String');
@@ -813,6 +852,9 @@ class DSProducerDetails {
             if (data.hasOwnProperty('redshift_creation_statements')) {
                 obj['redshift_creation_statements'] = ApiClient.convertToType(data['redshift_creation_statements'], 'String');
             }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
+            }
             if (data.hasOwnProperty('restricted_scopes')) {
                 obj['restricted_scopes'] = ApiClient.convertToType(data['restricted_scopes'], ['String']);
             }
@@ -962,6 +1004,14 @@ class DSProducerDetails {
      */
     static validateJSON(data) {
         // ensure the json data is a string
+        if (data['access_key'] && !(typeof data['access_key'] === 'string' || data['access_key'] instanceof String)) {
+            throw new Error("Expected the field `access_key` to be a primitive type in the JSON string but got " + data['access_key']);
+        }
+        // ensure the json data is a string
+        if (data['access_key_id'] && !(typeof data['access_key_id'] === 'string' || data['access_key_id'] instanceof String)) {
+            throw new Error("Expected the field `access_key_id` to be a primitive type in the JSON string but got " + data['access_key_id']);
+        }
+        // ensure the json data is a string
         if (data['access_token_manager_id'] && !(typeof data['access_token_manager_id'] === 'string' || data['access_token_manager_id'] instanceof String)) {
             throw new Error("Expected the field `access_token_manager_id` to be a primitive type in the JSON string but got " + data['access_token_manager_id']);
         }
@@ -1040,6 +1090,38 @@ class DSProducerDetails {
         // validate the optional field `agentic_rules`
         if (data['agentic_rules']) { // data not null
           AgenticRules.validateJSON(data['agentic_rules']);
+        }
+        // ensure the json data is a string
+        if (data['alicloud_access_mode'] && !(typeof data['alicloud_access_mode'] === 'string' || data['alicloud_access_mode'] instanceof String)) {
+            throw new Error("Expected the field `alicloud_access_mode` to be a primitive type in the JSON string but got " + data['alicloud_access_mode']);
+        }
+        // ensure the json data is a string
+        if (data['alicloud_external_id'] && !(typeof data['alicloud_external_id'] === 'string' || data['alicloud_external_id'] instanceof String)) {
+            throw new Error("Expected the field `alicloud_external_id` to be a primitive type in the JSON string but got " + data['alicloud_external_id']);
+        }
+        // ensure the json data is a string
+        if (data['alicloud_role_arns'] && !(typeof data['alicloud_role_arns'] === 'string' || data['alicloud_role_arns'] instanceof String)) {
+            throw new Error("Expected the field `alicloud_role_arns` to be a primitive type in the JSON string but got " + data['alicloud_role_arns']);
+        }
+        // ensure the json data is a string
+        if (data['alicloud_session_policy'] && !(typeof data['alicloud_session_policy'] === 'string' || data['alicloud_session_policy'] instanceof String)) {
+            throw new Error("Expected the field `alicloud_session_policy` to be a primitive type in the JSON string but got " + data['alicloud_session_policy']);
+        }
+        // ensure the json data is a string
+        if (data['alicloud_site'] && !(typeof data['alicloud_site'] === 'string' || data['alicloud_site'] instanceof String)) {
+            throw new Error("Expected the field `alicloud_site` to be a primitive type in the JSON string but got " + data['alicloud_site']);
+        }
+        // ensure the json data is a string
+        if (data['alicloud_user_groups'] && !(typeof data['alicloud_user_groups'] === 'string' || data['alicloud_user_groups'] instanceof String)) {
+            throw new Error("Expected the field `alicloud_user_groups` to be a primitive type in the JSON string but got " + data['alicloud_user_groups']);
+        }
+        // ensure the json data is a string
+        if (data['alicloud_user_inline_policy'] && !(typeof data['alicloud_user_inline_policy'] === 'string' || data['alicloud_user_inline_policy'] instanceof String)) {
+            throw new Error("Expected the field `alicloud_user_inline_policy` to be a primitive type in the JSON string but got " + data['alicloud_user_inline_policy']);
+        }
+        // ensure the json data is a string
+        if (data['alicloud_user_policies'] && !(typeof data['alicloud_user_policies'] === 'string' || data['alicloud_user_policies'] instanceof String)) {
+            throw new Error("Expected the field `alicloud_user_policies` to be a primitive type in the JSON string but got " + data['alicloud_user_policies']);
         }
         // ensure the json data is a string
         if (data['api_key'] && !(typeof data['api_key'] === 'string' || data['api_key'] instanceof String)) {
@@ -1873,6 +1955,10 @@ class DSProducerDetails {
         if (data['redshift_creation_statements'] && !(typeof data['redshift_creation_statements'] === 'string' || data['redshift_creation_statements'] instanceof String)) {
             throw new Error("Expected the field `redshift_creation_statements` to be a primitive type in the JSON string but got " + data['redshift_creation_statements']);
         }
+        // ensure the json data is a string
+        if (data['region'] && !(typeof data['region'] === 'string' || data['region'] instanceof String)) {
+            throw new Error("Expected the field `region` to be a primitive type in the JSON string but got " + data['region']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['restricted_scopes'])) {
             throw new Error("Expected the field `restricted_scopes` to be an array in the JSON data but got " + data['restricted_scopes']);
@@ -2015,6 +2101,16 @@ class DSProducerDetails {
 
 
 /**
+ * @member {String} access_key
+ */
+DSProducerDetails.prototype['access_key'] = undefined;
+
+/**
+ * @member {String} access_key_id
+ */
+DSProducerDetails.prototype['access_key_id'] = undefined;
+
+/**
  * @member {String} access_token_manager_id
  */
 DSProducerDetails.prototype['access_token_manager_id'] = undefined;
@@ -2138,6 +2234,61 @@ DSProducerDetails.prototype['aerospike_ssl_connection_mode'] = undefined;
  * @member {module:model/AgenticRules} agentic_rules
  */
 DSProducerDetails.prototype['agentic_rules'] = undefined;
+
+/**
+ * @member {String} alicloud_access_mode
+ */
+DSProducerDetails.prototype['alicloud_access_mode'] = undefined;
+
+/**
+ * @member {String} alicloud_external_id
+ */
+DSProducerDetails.prototype['alicloud_external_id'] = undefined;
+
+/**
+ * @member {String} alicloud_role_arns
+ */
+DSProducerDetails.prototype['alicloud_role_arns'] = undefined;
+
+/**
+ * @member {String} alicloud_session_policy
+ */
+DSProducerDetails.prototype['alicloud_session_policy'] = undefined;
+
+/**
+ * @member {Boolean} alicloud_set_source_identity
+ */
+DSProducerDetails.prototype['alicloud_set_source_identity'] = undefined;
+
+/**
+ * @member {String} alicloud_site
+ */
+DSProducerDetails.prototype['alicloud_site'] = undefined;
+
+/**
+ * @member {Boolean} alicloud_user_console_access
+ */
+DSProducerDetails.prototype['alicloud_user_console_access'] = undefined;
+
+/**
+ * @member {String} alicloud_user_groups
+ */
+DSProducerDetails.prototype['alicloud_user_groups'] = undefined;
+
+/**
+ * @member {String} alicloud_user_inline_policy
+ */
+DSProducerDetails.prototype['alicloud_user_inline_policy'] = undefined;
+
+/**
+ * @member {String} alicloud_user_policies
+ */
+DSProducerDetails.prototype['alicloud_user_policies'] = undefined;
+
+/**
+ * @member {Boolean} alicloud_user_programmatic_access
+ */
+DSProducerDetails.prototype['alicloud_user_programmatic_access'] = undefined;
 
 /**
  * @member {String} api_key
@@ -3304,6 +3455,11 @@ DSProducerDetails.prototype['redirect_uris'] = undefined;
  * @member {String} redshift_creation_statements
  */
 DSProducerDetails.prototype['redshift_creation_statements'] = undefined;
+
+/**
+ * @member {String} region
+ */
+DSProducerDetails.prototype['region'] = undefined;
 
 /**
  * @member {Array.<String>} restricted_scopes

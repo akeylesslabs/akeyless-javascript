@@ -17,7 +17,7 @@ import CertificateStore from './CertificateStore';
 /**
  * The CaCertificatesConfigPart model module.
  * @module model/CaCertificatesConfigPart
- * @version 5.0.40
+ * @version 5.0.41
  */
 class CaCertificatesConfigPart {
     /**

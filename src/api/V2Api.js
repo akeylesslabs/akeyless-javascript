@@ -239,6 +239,7 @@ import DescribeSubClaimsOutput from '../model/DescribeSubClaimsOutput';
 import Detokenize from '../model/Detokenize';
 import DetokenizeOutput from '../model/DetokenizeOutput';
 import DynamicSecretCreateAerospike from '../model/DynamicSecretCreateAerospike';
+import DynamicSecretCreateAliCloud from '../model/DynamicSecretCreateAliCloud';
 import DynamicSecretCreateArtifactory from '../model/DynamicSecretCreateArtifactory';
 import DynamicSecretCreateAws from '../model/DynamicSecretCreateAws';
 import DynamicSecretCreateAzure from '../model/DynamicSecretCreateAzure';
@@ -277,6 +278,7 @@ import DynamicSecretTmpCredsDelete from '../model/DynamicSecretTmpCredsDelete';
 import DynamicSecretTmpCredsGet from '../model/DynamicSecretTmpCredsGet';
 import DynamicSecretTmpCredsUpdate from '../model/DynamicSecretTmpCredsUpdate';
 import DynamicSecretUpdateAerospike from '../model/DynamicSecretUpdateAerospike';
+import DynamicSecretUpdateAliCloud from '../model/DynamicSecretUpdateAliCloud';
 import DynamicSecretUpdateArtifactory from '../model/DynamicSecretUpdateArtifactory';
 import DynamicSecretUpdateAws from '../model/DynamicSecretUpdateAws';
 import DynamicSecretUpdateAzure from '../model/DynamicSecretUpdateAzure';
@@ -658,6 +660,7 @@ import PolicyCreateKeys from '../model/PolicyCreateKeys';
 import PolicyUpdateKeys from '../model/PolicyUpdateKeys';
 import ProvisionCertificate from '../model/ProvisionCertificate';
 import ProvisionCertificateOutput from '../model/ProvisionCertificateOutput';
+import ProvisionSSHRotatedSecretOutput from '../model/ProvisionSSHRotatedSecretOutput';
 import RawCreds from '../model/RawCreds';
 import RefreshKey from '../model/RefreshKey';
 import RefreshKeyOutput from '../model/RefreshKeyOutput';
@@ -711,6 +714,11 @@ import RotatedSecretDeleteSyncOutput from '../model/RotatedSecretDeleteSyncOutpu
 import RotatedSecretGetValue from '../model/RotatedSecretGetValue';
 import RotatedSecretList from '../model/RotatedSecretList';
 import RotatedSecretOutput from '../model/RotatedSecretOutput';
+import RotatedSecretProvisionAssocOutput from '../model/RotatedSecretProvisionAssocOutput';
+import RotatedSecretProvisionCreate from '../model/RotatedSecretProvisionCreate';
+import RotatedSecretProvisionDelete from '../model/RotatedSecretProvisionDelete';
+import RotatedSecretProvisionPush from '../model/RotatedSecretProvisionPush';
+import RotatedSecretProvisionUpdate from '../model/RotatedSecretProvisionUpdate';
 import RotatedSecretSync from '../model/RotatedSecretSync';
 import RotatedSecretUpdateAerospike from '../model/RotatedSecretUpdateAerospike';
 import RotatedSecretUpdateAliCloud from '../model/RotatedSecretUpdateAliCloud';
@@ -769,6 +777,7 @@ import TargetCreateAerospike from '../model/TargetCreateAerospike';
 import TargetCreateAliCloud from '../model/TargetCreateAliCloud';
 import TargetCreateAnthropic from '../model/TargetCreateAnthropic';
 import TargetCreateArtifactory from '../model/TargetCreateArtifactory';
+import TargetCreateAtlassian from '../model/TargetCreateAtlassian';
 import TargetCreateAws from '../model/TargetCreateAws';
 import TargetCreateAzure from '../model/TargetCreateAzure';
 import TargetCreateBedrock from '../model/TargetCreateBedrock';
@@ -815,6 +824,7 @@ import TargetUpdateAerospike from '../model/TargetUpdateAerospike';
 import TargetUpdateAliCloud from '../model/TargetUpdateAliCloud';
 import TargetUpdateAnthropic from '../model/TargetUpdateAnthropic';
 import TargetUpdateArtifactory from '../model/TargetUpdateArtifactory';
+import TargetUpdateAtlassian from '../model/TargetUpdateAtlassian';
 import TargetUpdateAws from '../model/TargetUpdateAws';
 import TargetUpdateAzure from '../model/TargetUpdateAzure';
 import TargetUpdateBedrock from '../model/TargetUpdateBedrock';
@@ -997,7 +1007,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.40
+* @version 5.0.41
 */
 export default class V2Api {
 
@@ -6918,6 +6928,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/DynamicSecretCreateAliCloud} dynamicSecretCreateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
+     */
+    dynamicSecretCreateAliCloudWithHttpInfo(dynamicSecretCreateAliCloud) {
+      let postBody = dynamicSecretCreateAliCloud;
+      // verify the required parameter 'dynamicSecretCreateAliCloud' is set
+      if (dynamicSecretCreateAliCloud === undefined || dynamicSecretCreateAliCloud === null) {
+        throw new Error("Missing the required parameter 'dynamicSecretCreateAliCloud' when calling dynamicSecretCreateAliCloud");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretCreateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-create-alicloud', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretCreateAliCloud} dynamicSecretCreateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretCreateOutput}
+     */
+    dynamicSecretCreateAliCloud(dynamicSecretCreateAliCloud) {
+      return this.dynamicSecretCreateAliCloudWithHttpInfo(dynamicSecretCreateAliCloud)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/DynamicSecretCreateArtifactory} dynamicSecretCreateArtifactory 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretCreateOutput} and HTTP response
      */
@@ -8458,6 +8511,49 @@ export default class V2Api {
      */
     dynamicSecretUpdateAerospike(dynamicSecretUpdateAerospike) {
       return this.dynamicSecretUpdateAerospikeWithHttpInfo(dynamicSecretUpdateAerospike)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/DynamicSecretUpdateAliCloud} dynamicSecretUpdateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DynamicSecretUpdateOutput} and HTTP response
+     */
+    dynamicSecretUpdateAliCloudWithHttpInfo(dynamicSecretUpdateAliCloud) {
+      let postBody = dynamicSecretUpdateAliCloud;
+      // verify the required parameter 'dynamicSecretUpdateAliCloud' is set
+      if (dynamicSecretUpdateAliCloud === undefined || dynamicSecretUpdateAliCloud === null) {
+        throw new Error("Missing the required parameter 'dynamicSecretUpdateAliCloud' when calling dynamicSecretUpdateAliCloud");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = DynamicSecretUpdateOutput;
+      return this.apiClient.callApi(
+        '/dynamic-secret-update-alicloud', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/DynamicSecretUpdateAliCloud} dynamicSecretUpdateAliCloud 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DynamicSecretUpdateOutput}
+     */
+    dynamicSecretUpdateAliCloud(dynamicSecretUpdateAliCloud) {
+      return this.dynamicSecretUpdateAliCloudWithHttpInfo(dynamicSecretUpdateAliCloud)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -20467,6 +20563,178 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/RotatedSecretProvisionCreate} rotatedSecretProvisionCreate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretProvisionAssocOutput} and HTTP response
+     */
+    rotatedSecretProvisionCreateWithHttpInfo(rotatedSecretProvisionCreate) {
+      let postBody = rotatedSecretProvisionCreate;
+      // verify the required parameter 'rotatedSecretProvisionCreate' is set
+      if (rotatedSecretProvisionCreate === undefined || rotatedSecretProvisionCreate === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretProvisionCreate' when calling rotatedSecretProvisionCreate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretProvisionAssocOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-provision-create', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretProvisionCreate} rotatedSecretProvisionCreate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretProvisionAssocOutput}
+     */
+    rotatedSecretProvisionCreate(rotatedSecretProvisionCreate) {
+      return this.rotatedSecretProvisionCreateWithHttpInfo(rotatedSecretProvisionCreate)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretProvisionDelete} rotatedSecretProvisionDelete 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretProvisionAssocOutput} and HTTP response
+     */
+    rotatedSecretProvisionDeleteWithHttpInfo(rotatedSecretProvisionDelete) {
+      let postBody = rotatedSecretProvisionDelete;
+      // verify the required parameter 'rotatedSecretProvisionDelete' is set
+      if (rotatedSecretProvisionDelete === undefined || rotatedSecretProvisionDelete === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretProvisionDelete' when calling rotatedSecretProvisionDelete");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretProvisionAssocOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-provision-delete', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretProvisionDelete} rotatedSecretProvisionDelete 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretProvisionAssocOutput}
+     */
+    rotatedSecretProvisionDelete(rotatedSecretProvisionDelete) {
+      return this.rotatedSecretProvisionDeleteWithHttpInfo(rotatedSecretProvisionDelete)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretProvisionPush} rotatedSecretProvisionPush 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProvisionSSHRotatedSecretOutput} and HTTP response
+     */
+    rotatedSecretProvisionPushWithHttpInfo(rotatedSecretProvisionPush) {
+      let postBody = rotatedSecretProvisionPush;
+      // verify the required parameter 'rotatedSecretProvisionPush' is set
+      if (rotatedSecretProvisionPush === undefined || rotatedSecretProvisionPush === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretProvisionPush' when calling rotatedSecretProvisionPush");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ProvisionSSHRotatedSecretOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-provision-push', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretProvisionPush} rotatedSecretProvisionPush 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProvisionSSHRotatedSecretOutput}
+     */
+    rotatedSecretProvisionPush(rotatedSecretProvisionPush) {
+      return this.rotatedSecretProvisionPushWithHttpInfo(rotatedSecretProvisionPush)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/RotatedSecretProvisionUpdate} rotatedSecretProvisionUpdate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RotatedSecretProvisionAssocOutput} and HTTP response
+     */
+    rotatedSecretProvisionUpdateWithHttpInfo(rotatedSecretProvisionUpdate) {
+      let postBody = rotatedSecretProvisionUpdate;
+      // verify the required parameter 'rotatedSecretProvisionUpdate' is set
+      if (rotatedSecretProvisionUpdate === undefined || rotatedSecretProvisionUpdate === null) {
+        throw new Error("Missing the required parameter 'rotatedSecretProvisionUpdate' when calling rotatedSecretProvisionUpdate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = RotatedSecretProvisionAssocOutput;
+      return this.apiClient.callApi(
+        '/rotated-secret-provision-update', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/RotatedSecretProvisionUpdate} rotatedSecretProvisionUpdate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RotatedSecretProvisionAssocOutput}
+     */
+    rotatedSecretProvisionUpdate(rotatedSecretProvisionUpdate) {
+      return this.rotatedSecretProvisionUpdateWithHttpInfo(rotatedSecretProvisionUpdate)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/RotatedSecretSync} rotatedSecretSync 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
@@ -22309,6 +22577,49 @@ export default class V2Api {
      */
     targetCreateArtifactory(targetCreateArtifactory) {
       return this.targetCreateArtifactoryWithHttpInfo(targetCreateArtifactory)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetCreateAtlassian} targetCreateAtlassian 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateAtlassianWithHttpInfo(targetCreateAtlassian) {
+      let postBody = targetCreateAtlassian;
+      // verify the required parameter 'targetCreateAtlassian' is set
+      if (targetCreateAtlassian === undefined || targetCreateAtlassian === null) {
+        throw new Error("Missing the required parameter 'targetCreateAtlassian' when calling targetCreateAtlassian");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-atlassian', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateAtlassian} targetCreateAtlassian 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateAtlassian(targetCreateAtlassian) {
+      return this.targetCreateAtlassianWithHttpInfo(targetCreateAtlassian)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -24244,6 +24555,49 @@ export default class V2Api {
      */
     targetUpdateArtifactory(targetUpdateArtifactory) {
       return this.targetUpdateArtifactoryWithHttpInfo(targetUpdateArtifactory)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateAtlassian} targetUpdateAtlassian 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateAtlassianWithHttpInfo(targetUpdateAtlassian) {
+      let postBody = targetUpdateAtlassian;
+      // verify the required parameter 'targetUpdateAtlassian' is set
+      if (targetUpdateAtlassian === undefined || targetUpdateAtlassian === null) {
+        throw new Error("Missing the required parameter 'targetUpdateAtlassian' when calling targetUpdateAtlassian");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-atlassian', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateAtlassian} targetUpdateAtlassian 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateAtlassian(targetUpdateAtlassian) {
+      return this.targetUpdateAtlassianWithHttpInfo(targetUpdateAtlassian)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

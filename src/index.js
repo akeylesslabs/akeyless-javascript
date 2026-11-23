@@ -57,6 +57,7 @@ import AnthropicTargetDetails from './model/AnthropicTargetDetails';
 import ArtifactoryTargetDetails from './model/ArtifactoryTargetDetails';
 import AssocRoleAuthMethod from './model/AssocRoleAuthMethod';
 import AssocTargetItem from './model/AssocTargetItem';
+import AtlassianTargetDetails from './model/AtlassianTargetDetails';
 import AttributeTypeAndValue from './model/AttributeTypeAndValue';
 import Auth from './model/Auth';
 import AuthExpirationEvent from './model/AuthExpirationEvent';
@@ -331,6 +332,7 @@ import DetokenizeOutput from './model/DetokenizeOutput';
 import DigiCertTargetDetails from './model/DigiCertTargetDetails';
 import DockerhubTargetDetails from './model/DockerhubTargetDetails';
 import DynamicSecretCreateAerospike from './model/DynamicSecretCreateAerospike';
+import DynamicSecretCreateAliCloud from './model/DynamicSecretCreateAliCloud';
 import DynamicSecretCreateArtifactory from './model/DynamicSecretCreateArtifactory';
 import DynamicSecretCreateAws from './model/DynamicSecretCreateAws';
 import DynamicSecretCreateAzure from './model/DynamicSecretCreateAzure';
@@ -372,6 +374,7 @@ import DynamicSecretTmpCredsDelete from './model/DynamicSecretTmpCredsDelete';
 import DynamicSecretTmpCredsGet from './model/DynamicSecretTmpCredsGet';
 import DynamicSecretTmpCredsUpdate from './model/DynamicSecretTmpCredsUpdate';
 import DynamicSecretUpdateAerospike from './model/DynamicSecretUpdateAerospike';
+import DynamicSecretUpdateAliCloud from './model/DynamicSecretUpdateAliCloud';
 import DynamicSecretUpdateArtifactory from './model/DynamicSecretUpdateArtifactory';
 import DynamicSecretUpdateAws from './model/DynamicSecretUpdateAws';
 import DynamicSecretUpdateAzure from './model/DynamicSecretUpdateAzure';
@@ -891,6 +894,7 @@ import Producer from './model/Producer';
 import ProducersConfigPart from './model/ProducersConfigPart';
 import ProvisionCertificate from './model/ProvisionCertificate';
 import ProvisionCertificateOutput from './model/ProvisionCertificateOutput';
+import ProvisionSSHRotatedSecretOutput from './model/ProvisionSSHRotatedSecretOutput';
 import RabbitMQTargetDetails from './model/RabbitMQTargetDetails';
 import RawCreds from './model/RawCreds';
 import RefreshKey from './model/RefreshKey';
@@ -952,6 +956,11 @@ import RotatedSecretDetailsInfo from './model/RotatedSecretDetailsInfo';
 import RotatedSecretGetValue from './model/RotatedSecretGetValue';
 import RotatedSecretList from './model/RotatedSecretList';
 import RotatedSecretOutput from './model/RotatedSecretOutput';
+import RotatedSecretProvisionAssocOutput from './model/RotatedSecretProvisionAssocOutput';
+import RotatedSecretProvisionCreate from './model/RotatedSecretProvisionCreate';
+import RotatedSecretProvisionDelete from './model/RotatedSecretProvisionDelete';
+import RotatedSecretProvisionPush from './model/RotatedSecretProvisionPush';
+import RotatedSecretProvisionUpdate from './model/RotatedSecretProvisionUpdate';
 import RotatedSecretSync from './model/RotatedSecretSync';
 import RotatedSecretUpdateAerospike from './model/RotatedSecretUpdateAerospike';
 import RotatedSecretUpdateAliCloud from './model/RotatedSecretUpdateAliCloud';
@@ -1047,6 +1056,7 @@ import TargetCreateAerospike from './model/TargetCreateAerospike';
 import TargetCreateAliCloud from './model/TargetCreateAliCloud';
 import TargetCreateAnthropic from './model/TargetCreateAnthropic';
 import TargetCreateArtifactory from './model/TargetCreateArtifactory';
+import TargetCreateAtlassian from './model/TargetCreateAtlassian';
 import TargetCreateAws from './model/TargetCreateAws';
 import TargetCreateAzure from './model/TargetCreateAzure';
 import TargetCreateBedrock from './model/TargetCreateBedrock';
@@ -1098,6 +1108,7 @@ import TargetUpdateAerospike from './model/TargetUpdateAerospike';
 import TargetUpdateAliCloud from './model/TargetUpdateAliCloud';
 import TargetUpdateAnthropic from './model/TargetUpdateAnthropic';
 import TargetUpdateArtifactory from './model/TargetUpdateArtifactory';
+import TargetUpdateAtlassian from './model/TargetUpdateAtlassian';
 import TargetUpdateAws from './model/TargetUpdateAws';
 import TargetUpdateAzure from './model/TargetUpdateAzure';
 import TargetUpdateBedrock from './model/TargetUpdateBedrock';
@@ -1334,7 +1345,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.40
+* @version 5.0.41
 */
 export {
     /**
@@ -1606,6 +1617,12 @@ export {
      * @property {module:model/AssocTargetItem}
      */
     AssocTargetItem,
+
+    /**
+     * The AtlassianTargetDetails model constructor.
+     * @property {module:model/AtlassianTargetDetails}
+     */
+    AtlassianTargetDetails,
 
     /**
      * The AttributeTypeAndValue model constructor.
@@ -3252,6 +3269,12 @@ export {
     DynamicSecretCreateAerospike,
 
     /**
+     * The DynamicSecretCreateAliCloud model constructor.
+     * @property {module:model/DynamicSecretCreateAliCloud}
+     */
+    DynamicSecretCreateAliCloud,
+
+    /**
      * The DynamicSecretCreateArtifactory model constructor.
      * @property {module:model/DynamicSecretCreateArtifactory}
      */
@@ -3496,6 +3519,12 @@ export {
      * @property {module:model/DynamicSecretUpdateAerospike}
      */
     DynamicSecretUpdateAerospike,
+
+    /**
+     * The DynamicSecretUpdateAliCloud model constructor.
+     * @property {module:model/DynamicSecretUpdateAliCloud}
+     */
+    DynamicSecretUpdateAliCloud,
 
     /**
      * The DynamicSecretUpdateArtifactory model constructor.
@@ -6612,6 +6641,12 @@ export {
     ProvisionCertificateOutput,
 
     /**
+     * The ProvisionSSHRotatedSecretOutput model constructor.
+     * @property {module:model/ProvisionSSHRotatedSecretOutput}
+     */
+    ProvisionSSHRotatedSecretOutput,
+
+    /**
      * The RabbitMQTargetDetails model constructor.
      * @property {module:model/RabbitMQTargetDetails}
      */
@@ -6976,6 +7011,36 @@ export {
      * @property {module:model/RotatedSecretOutput}
      */
     RotatedSecretOutput,
+
+    /**
+     * The RotatedSecretProvisionAssocOutput model constructor.
+     * @property {module:model/RotatedSecretProvisionAssocOutput}
+     */
+    RotatedSecretProvisionAssocOutput,
+
+    /**
+     * The RotatedSecretProvisionCreate model constructor.
+     * @property {module:model/RotatedSecretProvisionCreate}
+     */
+    RotatedSecretProvisionCreate,
+
+    /**
+     * The RotatedSecretProvisionDelete model constructor.
+     * @property {module:model/RotatedSecretProvisionDelete}
+     */
+    RotatedSecretProvisionDelete,
+
+    /**
+     * The RotatedSecretProvisionPush model constructor.
+     * @property {module:model/RotatedSecretProvisionPush}
+     */
+    RotatedSecretProvisionPush,
+
+    /**
+     * The RotatedSecretProvisionUpdate model constructor.
+     * @property {module:model/RotatedSecretProvisionUpdate}
+     */
+    RotatedSecretProvisionUpdate,
 
     /**
      * The RotatedSecretSync model constructor.
@@ -7548,6 +7613,12 @@ export {
     TargetCreateArtifactory,
 
     /**
+     * The TargetCreateAtlassian model constructor.
+     * @property {module:model/TargetCreateAtlassian}
+     */
+    TargetCreateAtlassian,
+
+    /**
      * The TargetCreateAws model constructor.
      * @property {module:model/TargetCreateAws}
      */
@@ -7852,6 +7923,12 @@ export {
      * @property {module:model/TargetUpdateArtifactory}
      */
     TargetUpdateArtifactory,
+
+    /**
+     * The TargetUpdateAtlassian model constructor.
+     * @property {module:model/TargetUpdateAtlassian}
+     */
+    TargetUpdateAtlassian,
 
     /**
      * The TargetUpdateAws model constructor.

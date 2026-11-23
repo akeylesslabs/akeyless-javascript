@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthMethodUpdateAwsIam model module.
  * @module model/AuthMethodUpdateAwsIam
- * @version 5.0.40
+ * @version 5.0.41
  */
 class AuthMethodUpdateAwsIam {
     /**
@@ -116,6 +116,9 @@ class AuthMethodUpdateAwsIam {
             if (data.hasOwnProperty('new-name')) {
                 obj['new-name'] = ApiClient.convertToType(data['new-name'], 'String');
             }
+            if (data.hasOwnProperty('owner')) {
+                obj['owner'] = ApiClient.convertToType(data['owner'], 'String');
+            }
             if (data.hasOwnProperty('product-type')) {
                 obj['product-type'] = ApiClient.convertToType(data['product-type'], ['String']);
             }
@@ -210,6 +213,10 @@ class AuthMethodUpdateAwsIam {
         // ensure the json data is a string
         if (data['new-name'] && !(typeof data['new-name'] === 'string' || data['new-name'] instanceof String)) {
             throw new Error("Expected the field `new-name` to be a primitive type in the JSON string but got " + data['new-name']);
+        }
+        // ensure the json data is a string
+        if (data['owner'] && !(typeof data['owner'] === 'string' || data['owner'] instanceof String)) {
+            throw new Error("Expected the field `owner` to be a primitive type in the JSON string but got " + data['owner']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['product-type'])) {
@@ -362,6 +369,12 @@ AuthMethodUpdateAwsIam.prototype['name'] = undefined;
  * @member {String} new-name
  */
 AuthMethodUpdateAwsIam.prototype['new-name'] = undefined;
+
+/**
+ * Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it
+ * @member {String} owner
+ */
+AuthMethodUpdateAwsIam.prototype['owner'] = undefined;
 
 /**
  * Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]

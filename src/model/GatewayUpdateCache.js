@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateCache model module.
  * @module model/GatewayUpdateCache
- * @version 5.0.40
+ * @version 5.0.41
  */
 class GatewayUpdateCache {
     /**
@@ -55,6 +55,9 @@ class GatewayUpdateCache {
             if (data.hasOwnProperty('backup-interval')) {
                 obj['backup-interval'] = ApiClient.convertToType(data['backup-interval'], 'String');
             }
+            if (data.hasOwnProperty('cache-item-metadata')) {
+                obj['cache-item-metadata'] = ApiClient.convertToType(data['cache-item-metadata'], 'String');
+            }
             if (data.hasOwnProperty('enable-cache')) {
                 obj['enable-cache'] = ApiClient.convertToType(data['enable-cache'], 'String');
             }
@@ -89,6 +92,10 @@ class GatewayUpdateCache {
         // ensure the json data is a string
         if (data['backup-interval'] && !(typeof data['backup-interval'] === 'string' || data['backup-interval'] instanceof String)) {
             throw new Error("Expected the field `backup-interval` to be a primitive type in the JSON string but got " + data['backup-interval']);
+        }
+        // ensure the json data is a string
+        if (data['cache-item-metadata'] && !(typeof data['cache-item-metadata'] === 'string' || data['cache-item-metadata'] instanceof String)) {
+            throw new Error("Expected the field `cache-item-metadata` to be a primitive type in the JSON string but got " + data['cache-item-metadata']);
         }
         // ensure the json data is a string
         if (data['enable-cache'] && !(typeof data['enable-cache'] === 'string' || data['enable-cache'] instanceof String)) {
@@ -129,6 +136,12 @@ class GatewayUpdateCache {
  * @default '1'
  */
 GatewayUpdateCache.prototype['backup-interval'] = '1';
+
+/**
+ * Serve item metadata (describe-item and classic key details) from an on-demand cache, refreshed after the minimum fetching interval [true/false]
+ * @member {String} cache-item-metadata
+ */
+GatewayUpdateCache.prototype['cache-item-metadata'] = undefined;
 
 /**
  * Enable cache [true/false]

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProvisionCertificateOutput model module.
  * @module model/ProvisionCertificateOutput
- * @version 5.0.40
+ * @version 5.0.41
  */
 class ProvisionCertificateOutput {
     /**
@@ -53,11 +53,20 @@ class ProvisionCertificateOutput {
             if (data.hasOwnProperty('SuccessMessage')) {
                 obj['SuccessMessage'] = ApiClient.convertToType(data['SuccessMessage'], 'String');
             }
+            if (data.hasOwnProperty('association_id')) {
+                obj['association_id'] = ApiClient.convertToType(data['association_id'], 'String');
+            }
             if (data.hasOwnProperty('host_names')) {
                 obj['host_names'] = ApiClient.convertToType(data['host_names'], ['String']);
             }
             if (data.hasOwnProperty('provisioned_at')) {
                 obj['provisioned_at'] = ApiClient.convertToType(data['provisioned_at'], 'Date');
+            }
+            if (data.hasOwnProperty('results')) {
+                obj['results'] = ApiClient.convertToType(data['results'], [ProvisionCertificateOutput]);
+            }
+            if (data.hasOwnProperty('target_name')) {
+                obj['target_name'] = ApiClient.convertToType(data['target_name'], 'String');
             }
         }
         return obj;
@@ -77,9 +86,27 @@ class ProvisionCertificateOutput {
         if (data['SuccessMessage'] && !(typeof data['SuccessMessage'] === 'string' || data['SuccessMessage'] instanceof String)) {
             throw new Error("Expected the field `SuccessMessage` to be a primitive type in the JSON string but got " + data['SuccessMessage']);
         }
+        // ensure the json data is a string
+        if (data['association_id'] && !(typeof data['association_id'] === 'string' || data['association_id'] instanceof String)) {
+            throw new Error("Expected the field `association_id` to be a primitive type in the JSON string but got " + data['association_id']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['host_names'])) {
             throw new Error("Expected the field `host_names` to be an array in the JSON data but got " + data['host_names']);
+        }
+        if (data['results']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['results'])) {
+                throw new Error("Expected the field `results` to be an array in the JSON data but got " + data['results']);
+            }
+            // validate the optional field `results` (array)
+            for (const item of data['results']) {
+                ProvisionCertificateOutput.validateJSON(item);
+            };
+        }
+        // ensure the json data is a string
+        if (data['target_name'] && !(typeof data['target_name'] === 'string' || data['target_name'] instanceof String)) {
+            throw new Error("Expected the field `target_name` to be a primitive type in the JSON string but got " + data['target_name']);
         }
 
         return true;
@@ -101,6 +128,12 @@ ProvisionCertificateOutput.prototype['FailMessage'] = undefined;
 ProvisionCertificateOutput.prototype['SuccessMessage'] = undefined;
 
 /**
+ * AssociationID and TargetName identify the row of a Results entry.
+ * @member {String} association_id
+ */
+ProvisionCertificateOutput.prototype['association_id'] = undefined;
+
+/**
  * @member {Array.<String>} host_names
  */
 ProvisionCertificateOutput.prototype['host_names'] = undefined;
@@ -109,6 +142,17 @@ ProvisionCertificateOutput.prototype['host_names'] = undefined;
  * @member {Date} provisioned_at
  */
 ProvisionCertificateOutput.prototype['provisioned_at'] = undefined;
+
+/**
+ * Results holds one entry per row. It is set only when several rows were handled; the top-level fields then summarize them.
+ * @member {Array.<module:model/ProvisionCertificateOutput>} results
+ */
+ProvisionCertificateOutput.prototype['results'] = undefined;
+
+/**
+ * @member {String} target_name
+ */
+ProvisionCertificateOutput.prototype['target_name'] = undefined;
 
 
 

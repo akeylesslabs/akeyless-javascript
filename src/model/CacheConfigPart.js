@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CacheConfigPart model module.
  * @module model/CacheConfigPart
- * @version 5.0.40
+ * @version 5.0.41
  */
 class CacheConfigPart {
     /**
@@ -52,6 +52,9 @@ class CacheConfigPart {
             }
             if (data.hasOwnProperty('cache_encryption_key')) {
                 obj['cache_encryption_key'] = ApiClient.convertToType(data['cache_encryption_key'], 'String');
+            }
+            if (data.hasOwnProperty('cache_item_metadata')) {
+                obj['cache_item_metadata'] = ApiClient.convertToType(data['cache_item_metadata'], 'Boolean');
             }
             if (data.hasOwnProperty('cache_ttl')) {
                 obj['cache_ttl'] = ApiClient.convertToType(data['cache_ttl'], 'String');
@@ -112,6 +115,11 @@ CacheConfigPart.prototype['cache_enable'] = undefined;
  * @member {String} cache_encryption_key
  */
 CacheConfigPart.prototype['cache_encryption_key'] = undefined;
+
+/**
+ * @member {Boolean} cache_item_metadata
+ */
+CacheConfigPart.prototype['cache_item_metadata'] = undefined;
 
 /**
  * @member {String} cache_ttl

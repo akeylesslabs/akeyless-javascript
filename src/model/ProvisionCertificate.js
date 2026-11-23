@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProvisionCertificate model module.
  * @module model/ProvisionCertificate
- * @version 5.0.40
+ * @version 5.0.41
  */
 class ProvisionCertificate {
     /**
@@ -38,6 +38,7 @@ class ProvisionCertificate {
     static initialize(obj, name) { 
         obj['json'] = false;
         obj['name'] = name;
+        obj['target-name'] = 'all targets associated with the certificate)';
     }
 
     /**
@@ -62,6 +63,9 @@ class ProvisionCertificate {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('target-name')) {
+                obj['target-name'] = ApiClient.convertToType(data['target-name'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -92,6 +96,10 @@ class ProvisionCertificate {
         // ensure the json data is a string
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['target-name'] && !(typeof data['target-name'] === 'string' || data['target-name'] instanceof String)) {
+            throw new Error("Expected the field `target-name` to be a primitive type in the JSON string but got " + data['target-name']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -134,6 +142,12 @@ ProvisionCertificate.prototype['json'] = false;
  * @member {String} name
  */
 ProvisionCertificate.prototype['name'] = undefined;
+
+/**
+ * @member {String} target-name
+ * @default 'all targets associated with the certificate)'
+ */
+ProvisionCertificate.prototype['target-name'] = 'all targets associated with the certificate)';
 
 /**
  * Authentication token (see `/auth` and `/configure`)

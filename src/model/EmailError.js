@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailError model module.
  * @module model/EmailError
- * @version 5.0.40
+ * @version 5.0.41
  */
 class EmailError {
     /**

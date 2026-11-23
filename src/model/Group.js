@@ -18,7 +18,7 @@ import GrantedRole from './GrantedRole';
 /**
  * The Group model module.
  * @module model/Group
- * @version 5.0.40
+ * @version 5.0.41
  */
 class Group {
     /**

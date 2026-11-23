@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAccountSettings model module.
  * @module model/UpdateAccountSettings
- * @version 5.0.40
+ * @version 5.0.41
  */
 class UpdateAccountSettings {
     /**
@@ -180,6 +180,9 @@ class UpdateAccountSettings {
             }
             if (data.hasOwnProperty('postal-code')) {
                 obj['postal-code'] = ApiClient.convertToType(data['postal-code'], 'String');
+            }
+            if (data.hasOwnProperty('require-auth-method-owner')) {
+                obj['require-auth-method-owner'] = ApiClient.convertToType(data['require-auth-method-owner'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -361,6 +364,10 @@ class UpdateAccountSettings {
         // ensure the json data is a string
         if (data['postal-code'] && !(typeof data['postal-code'] === 'string' || data['postal-code'] instanceof String)) {
             throw new Error("Expected the field `postal-code` to be a primitive type in the JSON string but got " + data['postal-code']);
+        }
+        // ensure the json data is a string
+        if (data['require-auth-method-owner'] && !(typeof data['require-auth-method-owner'] === 'string' || data['require-auth-method-owner'] instanceof String)) {
+            throw new Error("Expected the field `require-auth-method-owner` to be a primitive type in the JSON string but got " + data['require-auth-method-owner']);
         }
         // ensure the json data is a string
         if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
@@ -668,6 +675,12 @@ UpdateAccountSettings.prototype['phone'] = undefined;
  * @member {String} postal-code
  */
 UpdateAccountSettings.prototype['postal-code'] = undefined;
+
+/**
+ * Require an owner when creating or updating authentication methods [true/false]
+ * @member {String} require-auth-method-owner
+ */
+UpdateAccountSettings.prototype['require-auth-method-owner'] = undefined;
 
 /**
  * Authentication token (see `/auth` and `/configure`)

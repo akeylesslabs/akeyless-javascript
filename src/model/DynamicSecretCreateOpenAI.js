@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateOpenAI model module.
  * @module model/DynamicSecretCreateOpenAI
- * @version 5.0.40
+ * @version 5.0.41
  */
 class DynamicSecretCreateOpenAI {
     /**

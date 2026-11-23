@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayNameInfo model module.
  * @module model/GatewayNameInfo
- * @version 5.0.40
+ * @version 5.0.41
  */
 class GatewayNameInfo {
     /**
