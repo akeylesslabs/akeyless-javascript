@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **azureAnalyticsConfig** | [**AzureLogAnalyticsForwardingConfig**](AzureLogAnalyticsForwardingConfig.md) |  | [optional] 
 **datadogConfig** | [**DatadogForwardingConfig**](DatadogForwardingConfig.md) |  | [optional] 
 **elasticsearchConfig** | [**ElasticsearchLogForwardingConfig**](ElasticsearchLogForwardingConfig.md) |  | [optional] 
+**googleChronicleConfig** | [**GoogleChronicleForwardingConfig**](GoogleChronicleForwardingConfig.md) |  | [optional] 
 **jsonOutput** | **Boolean** |  | [optional] 
 **loganEnable** | **Boolean** |  | [optional] 
 **loganUrl** | **String** |  | [optional] 
@@ -15,6 +16,7 @@ Name | Type | Description | Notes
 **logzIoConfig** | [**LogzIoLogForwardingConfig**](LogzIoLogForwardingConfig.md) |  | [optional] 
 **pullIntervalSec** | **String** |  | [optional] 
 **splunkConfig** | [**SplunkLogForwardingConfig**](SplunkLogForwardingConfig.md) |  | [optional] 
+**sumoLogicConfig** | [**SumologicLogForwardingConfig**](SumologicLogForwardingConfig.md) |  | [optional] 
 **syslogConfig** | [**SyslogLogForwardingConfig**](SyslogLogForwardingConfig.md) |  | [optional] 
 **targetLogType** | **String** |  | [optional] 
 

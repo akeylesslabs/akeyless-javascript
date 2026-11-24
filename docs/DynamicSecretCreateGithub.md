@@ -1,0 +1,32 @@
+# akeyless.DynamicSecretCreateGithub
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**araEnabled** | **Boolean** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
+**deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
+**description** | **String** | Description of the object | [optional] 
+**enableAgenticRuntimeAuthority** | **Boolean** | EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias. | [optional] 
+**enableAiQuorum** | **Boolean** | Turns on AI Quorum checks for this item. | [optional] 
+**githubAppId** | **Number** | Github app id | [optional] 
+**githubAppPrivateKey** | **String** | App private key | [optional] 
+**githubBaseUrl** | **String** | Base URL | [optional] [default to &#39;https://api.github.com/&#39;]
+**inputRule** | **[String]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout). | [optional] 
+**installationId** | **Number** | GitHub application installation id | [optional] 
+**installationOrganization** | **String** | Optional, mutually exclusive with installation id, GitHub organization name | [optional] 
+**installationRepository** | **String** | Optional, mutually exclusive with installation id, GitHub repository &#39;&lt;owner&gt;/&lt;repo-name&gt;&#39; | [optional] 
+**itemCustomFields** | **{String: String}** | Additional custom fields to associate with the item | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
+**name** | **String** | Dynamic secret name | 
+**outputRule** | **[String]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
+**skipDryRun** | **Boolean** | If set, dry-run will be skipped [true/false] | [optional] 
+**tags** | **[String]** | Add tags attached to this object | [optional] 
+**targetName** | **String** | Target name | [optional] 
+**token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
+**tokenPermissions** | **[String]** | Optional - installation token&#39;s allowed permissions | [optional] 
+**tokenRepositories** | **[String]** | Optional - installation token&#39;s allowed repositories | [optional] 
+**tokenTtl** | **String** | Token TTL | [optional] [default to &#39;60m&#39;]
+**uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
+
+

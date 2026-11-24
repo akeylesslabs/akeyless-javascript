@@ -5,8 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessDate** | **Date** |  | [optional] 
+**accessDateDisplay** | **String** |  | [optional] 
 **accessRequestStatus** | **String** |  | [optional] 
 **autoRotate** | **Boolean** |  | [optional] 
+**bastionDetails** | [**BastionsList**](BastionsList.md) |  | [optional] 
 **certIssuerSignerKeyName** | **String** |  | [optional] 
 **certificateIssueDetails** | [**CertificateIssueInfo**](CertificateIssueInfo.md) |  | [optional] 
 **certificates** | **String** |  | [optional] 
@@ -16,9 +18,12 @@ Name | Type | Description | Notes
 **deleteProtection** | **Boolean** |  | [optional] 
 **deletionDate** | **Date** |  | [optional] 
 **displayId** | **String** |  | [optional] 
+**fileDownload** | [**FileDownloadInstructions**](FileDownloadInstructions.md) |  | [optional] 
+**gatewayDetails** | [**[GatewayDetailsForItemReplyObj]**](GatewayDetailsForItemReplyObj.md) |  | [optional] 
 **isAccessRequestEnabled** | **Boolean** |  | [optional] 
 **isEnabled** | **Boolean** |  | [optional] 
 **itemAccessibility** | **Number** |  | [optional] 
+**itemCustomFieldsDetails** | [**[ItemCustomFieldsDetails]**](ItemCustomFieldsDetails.md) |  | [optional] 
 **itemGeneralInfo** | [**ItemGeneralInfo**](ItemGeneralInfo.md) |  | [optional] 
 **itemId** | **Number** |  | [optional] 
 **itemMetadata** | **String** |  | [optional] 
@@ -30,7 +35,11 @@ Name | Type | Description | Notes
 **itemTargetsAssoc** | [**[ItemTargetAssociation]**](ItemTargetAssociation.md) |  | [optional] 
 **itemType** | **String** |  | [optional] 
 **itemVersions** | [**[ItemVersion]**](ItemVersion.md) |  | [optional] 
+**lastAccessRequestStatus** | **String** |  | [optional] 
+**lastRotationDate** | **Date** |  | [optional] 
 **lastVersion** | **Number** |  | [optional] 
+**linkedDetails** | [**LinkedDetails**](LinkedDetails.md) |  | [optional] 
+**lockingInfo** | [**LockingInfo**](LockingInfo.md) |  | [optional] 
 **modificationDate** | **Date** |  | [optional] 
 **nextRotationDate** | **Date** |  | [optional] 
 **protectionKeyName** | **String** |  | [optional] 
@@ -39,6 +48,7 @@ Name | Type | Description | Notes
 **rotationInterval** | **Number** |  | [optional] 
 **sharedBy** | [**RuleAssigner**](RuleAssigner.md) |  | [optional] 
 **targetVersions** | [**[TargetItemVersion]**](TargetItemVersion.md) |  | [optional] 
+**uscSyncAssociatedItems** | [**[ItemUSCSyncAssociation]**](ItemUSCSyncAssociation.md) | for USC item, hold rotated-secrets that are associated to him for rotated-secret, holds the associated USCs | [optional] 
 **withCustomerFragment** | **Boolean** |  | [optional] 
 
 

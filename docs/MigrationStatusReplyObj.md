@@ -4,7 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**certificates** | [**MigrationItems**](MigrationItems.md) |  | [optional] 
+**computers** | **Number** |  | [optional] 
+**downloadReport** | [**MigrationDownloadReport**](MigrationDownloadReport.md) |  | [optional] 
 **durationTime** | **String** |  | [optional] 
+**error** | **String** |  | [optional] 
 **lastStatusMessage** | **String** |  | [optional] 
 **maxNameLength** | **Number** |  | [optional] 
 **maxValueLength** | **Number** |  | [optional] 
@@ -13,6 +17,10 @@ Name | Type | Description | Notes
 **migrationName** | **String** |  | [optional] 
 **migrationState** | **String** |  | [optional] 
 **migrationType** | **String** |  | [optional] 
+**migrationTypeName** | **String** |  | [optional] 
+**rotatedSecrets** | [**MigrationItems**](MigrationItems.md) |  | [optional] 
 **startTime** | **String** |  | [optional] 
+**sync** | [**SyncCounters**](SyncCounters.md) |  | [optional] 
+**targets** | [**MigrationItems**](MigrationItems.md) |  | [optional] 
 
 

@@ -1,0 +1,28 @@
+# akeyless.SecretInfo
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**activationDate** | **Date** |  | [optional] 
+**created** | **Date** |  | [optional] 
+**description** | **String** |  | [optional] 
+**expiration** | **Date** |  | [optional] 
+**github** | [**GithubMetadata**](GithubMetadata.md) |  | [optional] 
+**keyId** | **String** |  | [optional] 
+**lastRetrieved** | **Date** |  | [optional] 
+**location** | **Object** |  | [optional] 
+**name** | **String** |  | [optional] 
+**namespace** | **String** |  | [optional] 
+**project** | **String** |  | [optional] 
+**region** | **String** |  | [optional] 
+**secretId** | **String** |  | [optional] 
+**status** | **Boolean** |  | [optional] 
+**tags** | **{String: String}** |  | [optional] 
+**thumbprint** | **String** |  | [optional] 
+**type** | **String** |  | [optional] 
+**version** | **Number** |  | [optional] 
+**versionId** | **String** |  | [optional] 
+**versionIds** | **[String]** |  | [optional] 
+
+

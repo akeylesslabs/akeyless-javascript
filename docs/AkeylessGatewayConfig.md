@@ -5,11 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **admins** | [**AdminsConfigPart**](AdminsConfigPart.md) |  | [optional] 
+**aiInsights** | [**AiInsightsConfigPart**](AiInsightsConfigPart.md) |  | [optional] 
+**caCertificates** | [**CaCertificatesConfigPart**](CaCertificatesConfigPart.md) |  | [optional] 
 **cache** | [**CacheConfigPart**](CacheConfigPart.md) |  | [optional] 
 **cf** | [**CFConfigPart**](CFConfigPart.md) |  | [optional] 
 **configProtectionKeyName** | **String** |  | [optional] 
 **general** | [**GeneralConfigPart**](GeneralConfigPart.md) |  | [optional] 
 **k8sAuths** | [**K8SAuthsConfigPart**](K8SAuthsConfigPart.md) |  | [optional] 
+**kerberos** | [**KerberosConfigPart**](KerberosConfigPart.md) |  | [optional] 
 **kmipClients** | [**KMIPConfigPart**](KMIPConfigPart.md) |  | [optional] 
 **ldap** | [**LdapConfigPart**](LdapConfigPart.md) |  | [optional] 
 **leadership** | [**LeadershipConfigPart**](LeadershipConfigPart.md) |  | [optional] 
@@ -19,6 +22,7 @@ Name | Type | Description | Notes
 **producers** | [**ProducersConfigPart**](ProducersConfigPart.md) |  | [optional] 
 **rotators** | [**RotatorsConfigPart**](RotatorsConfigPart.md) |  | [optional] 
 **saml** | [**DefaultConfigPart**](DefaultConfigPart.md) |  | [optional] 
+**samlSp** | [**SamlSpConfigPart**](SamlSpConfigPart.md) |  | [optional] 
 **version** | **Number** |  | [optional] 
 
 

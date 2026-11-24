@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **producers** | [**[Producer]**](Producer.md) |  | [optional] 
-**producersErrors** | [**Object**](.md) |  | [optional] 
+**producersErrors** | **Object** |  | [optional] 
 
 

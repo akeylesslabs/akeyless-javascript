@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **caCert** | **[Number]** |  | [optional] 
 **certificateIssueDate** | **Date** |  | [optional] 
 **certificateTtlInSeconds** | **Number** |  | [optional] 
+**expirationEvents** | [**[CertificateExpirationEvent]**](CertificateExpirationEvent.md) |  | [optional] 
 **hostname** | **String** |  | [optional] 
 **root** | **String** |  | [optional] 
 

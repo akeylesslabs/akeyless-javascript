@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **admins** | **String** |  | [optional] 
+**aiInsights** | **String** |  | [optional] 
 **cache** | **String** |  | [optional] 
 **customerFragements** | **String** |  | [optional] 
 **general** | **String** |  | [optional] 
@@ -16,10 +17,11 @@ Name | Type | Description | Notes
 **mQueue** | **String** |  | [optional] 
 **migrationStatus** | **String** |  | [optional] 
 **migrations** | **String** |  | [optional] 
-**producers** | [**Object**](.md) |  | [optional] 
+**producers** | **Object** |  | [optional] 
 **producersStatus** | **String** |  | [optional] 
-**rotators** | [**Object**](.md) |  | [optional] 
+**rotators** | **Object** |  | [optional] 
 **saml** | **String** |  | [optional] 
+**samlSp** | **String** |  | [optional] 
 **universalIdentity** | **String** |  | [optional] 
 
 

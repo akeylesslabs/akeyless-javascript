@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **[Number]** |  | [optional] 
-**value** | [**Object**](.md) |  | [optional] 
+**value** | **String** |  | [optional] 
 
 

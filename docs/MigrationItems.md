@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **migrated** | **Number** |  | [optional] 
 **skipped** | **Number** |  | [optional] 
 **total** | **Number** |  | [optional] 
+**updated** | **Number** |  | [optional] 
 
 

@@ -6,19 +6,25 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **adminName** | **String** | Workstation Admin Name | [optional] 
 **adminPwd** | **String** | Workstation Admin password | [optional] 
-**comment** | **String** | Comment about the EventForwarder | [optional] 
-**emailTo** | **String** | A comma seperated list of email addresses to send event to (relevant only for \\\&quot;email\\\&quot; Event Forwarder) | [optional] 
+**appPrivateKeyBase64** | **String** | The RSA Private Key PEM formatted in base64 to use when connecting to ServiceNow with jwt authentication | [optional] 
+**authType** | **String** | The authentication type to use when connecting to ServiceNow (user-pass / jwt) | [optional] [default to &#39;user-pass&#39;]
+**clientId** | **String** | The client ID to use when connecting to ServiceNow with jwt authentication | [optional] 
+**clientSecret** | **String** | The client secret to use when connecting to ServiceNow with jwt authentication | [optional] 
+**comment** | **String** | Deprecated - use description | [optional] 
+**description** | **String** | Description of the object | [optional] 
+**emailTo** | **String** | A comma seperated list of email addresses to send event to (relevant only for \&quot;email\&quot; Event Forwarder) | [optional] 
 **eventSourceLocations** | **[String]** | Event sources | 
-**eventSourceType** | **String** | Event Source type [item, target] | [optional] [default to &#39;item&#39;]
-**eventTypes** | **[String]** | Event types | [optional] 
+**eventSourceType** | **String** | Event Source type [item, target, auth_method, gateway] | [optional] [default to &#39;item&#39;]
+**eventTypes** | **[String]** | List of event types to notify about [request-access, access-request-approved, access-request-denied, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, ssh-key-provisioning-success, ssh-key-provisioning-failure, auth-method-pending-expiration, auth-method-expired, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated] | [optional] 
 **every** | **String** | Rate of periodic runner repetition in hours | [optional] 
 **forwarderType** | **String** |  | 
 **host** | **String** | Workstation Host | [optional] 
-**json** | **Boolean** | Set output format to JSON | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **key** | **String** | The name of a key that used to encrypt the EventForwarder secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **String** | EventForwarder name | 
 **runnerType** | **String** |  | 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**userEmail** | **String** | The user email to use when connecting to ServiceNow with jwt authentication | [optional] 
 
 

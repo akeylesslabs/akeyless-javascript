@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **extKeyUsage** | **[Number]** |  | [optional] 
 **keyUsage** | **Number** | KeyUsage represents the set of actions that are valid for a given key. It&#39;s a bitmap of the KeyUsage* constants. | [optional] 
+**crlDistributionPoints** | **[String]** |  | [optional] 
 **dnsNames** | **[String]** |  | [optional] 
 **emailAddresses** | **[String]** |  | [optional] 
 **extensions** | [**[Extension]**](Extension.md) |  | [optional] 

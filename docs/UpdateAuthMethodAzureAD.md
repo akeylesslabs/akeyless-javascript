@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessExpires** | **Number** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
-**audience** | **String** | The audience in the JWT | [optional] [default to &#39;https://management.azure.com/&#39;]
+**allowedClientType** | **[String]** | limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension] | [optional] 
+**audience** | **String** | Deprecated (Deprecated) The audience in the JWT | [optional] [default to &#39;https://management.azure.com/&#39;]
+**auditLogsClaims** | **[String]** | Subclaims to include in audit logs, e.g \&quot;--audit-logs-claims email --audit-logs-claims username\&quot; | [optional] 
 **boundGroupId** | **[String]** | A list of group ids that the access is restricted to | [optional] 
 **boundIps** | **[String]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
 **boundProviders** | **[String]** | A list of resource providers that the access is restricted to (e.g, Microsoft.Compute, Microsoft.ManagedIdentity, etc) | [optional] 
@@ -16,15 +18,21 @@ Name | Type | Description | Notes
 **boundSpid** | **[String]** | A list of service principal IDs that the access is restricted to | [optional] 
 **boundSubId** | **[String]** | A list of subscription ids that the access is restricted to | [optional] 
 **boundTenantId** | **String** | The Azure tenant id that the access is restricted to | 
+**deleteProtection** | **String** | Protection from accidental deletion of this object [true/false] | [optional] 
+**description** | **String** | Auth Method description | [optional] 
+**expirationEventIn** | **[String]** | How many days before the expiration of the auth method would you like to be notified. | [optional] 
 **forceSubClaims** | **Boolean** | if true: enforce role-association must include sub claims | [optional] 
 **gwBoundIps** | **[String]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **issuer** | **String** | Issuer URL | [optional] [default to &#39;https://sts.windows.net/---bound_tenant_id---&#39;]
-**json** | **Boolean** | Set output format to JSON | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
 **jwksUri** | **String** | The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server. | [optional] [default to &#39;https://login.microsoftonline.com/common/discovery/keys&#39;]
-**jwtTtl** | **Number** | Jwt TTL | [optional] 
+**jwtTtl** | **Number** | Jwt TTL | [optional] [default to 0]
 **name** | **String** | Auth Method name | 
 **newName** | **String** | Auth Method new name | [optional] 
+**owner** | **String** | Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it | [optional] 
+**productType** | **[String]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara] | [optional] 
 **token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**uniqueIdentifier** | **String** | A unique identifier (ID) value which is a \&quot;sub claim\&quot; name that contains details uniquely identifying that resource. This \&quot;sub claim\&quot; is used to distinguish between different identities. | [optional] 
 
 

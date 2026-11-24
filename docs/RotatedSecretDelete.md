@@ -1,0 +1,14 @@
+# akeyless.RotatedSecretDelete
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**forceDelete** | **Boolean** | Delete the rotated secret only from Akeyless if failed to delete it from the third-party provider | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
+**name** | **String** | Rotated secret name | 
+**token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
+**uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**version** | **Number** | The specific version you want to delete, -1&#x3D;entire item with all versions (default) | [optional] [default to -1]
+
+

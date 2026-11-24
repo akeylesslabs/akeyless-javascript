@@ -1,0 +1,17 @@
+# akeyless.UscSyncInfo
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**deleteRemote** | **Boolean** |  | [optional] 
+**jqSecretFilter** | **String** |  | [optional] 
+**lastError** | **String** |  | [optional] 
+**namespace** | **String** |  | [optional] 
+**project** | **String** |  | [optional] 
+**secretId** | **String** |  | [optional] 
+**secretName** | **String** |  | [optional] 
+**selectedEnvironments** | **String** |  | [optional] 
+**selectedRepositories** | **String** |  | [optional] 
+
+

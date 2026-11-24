@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **adEndpoint** | **String** | The audience in the JWT. | [optional] 
+**azureCloud** | **String** | Azure cloud environment [AzureCloud/AzureUSGovernment/AzureChinaCloud]. For create/update, cloud is inferred from jwks_uri. | [optional] 
 **boundGroupIds** | **[String]** | The list of group ids that login is restricted to. | [optional] 
 **boundResourceGroups** | **[String]** | The list of resource groups that login is restricted to. | [optional] 
 **boundResourceIds** | **[String]** | The list of full resource ids that the login is restricted to. | [optional] 
@@ -16,5 +17,6 @@ Name | Type | Description | Notes
 **boundTenantId** | **String** | The tenants id for the Azure Active Directory organization. | [optional] 
 **issuer** | **String** | Issuer URL | [optional] 
 **jwksUri** | **String** | The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server. | [optional] 
+**uniqueIdentifier** | **String** | A unique identifier to distinguish different users | [optional] 
 
 

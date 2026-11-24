@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **creationDate** | **Date** |  | [optional] 
 **customTtl** | **Number** |  | [optional] 
 **dynamicSecretType** | **String** |  | [optional] 
+**encryptedSecret** | **String** |  | [optional] 
 **host** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
 **subClaims** | **{String: [String]}** |  | [optional] 

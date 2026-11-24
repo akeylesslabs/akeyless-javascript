@@ -1,0 +1,23 @@
+# akeyless.UpdateMcpSecretBearerToken
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**accessibility** | **String** | for personal password manager | [optional] [default to &#39;regular&#39;]
+**araEnabled** | **Boolean** | Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag. | [optional] 
+**bearerToken** | **String** | Bearer token value | [optional] 
+**enableAgenticRuntimeAuthority** | **Boolean** | EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working. | [optional] 
+**enableAiQuorum** | **Boolean** | Turns on AI Quorum checks for this item. | [optional] 
+**inputRule** | **[String]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) | [optional] 
+**json** | **Boolean** | Set output format to JSON | [optional] [default to false]
+**keepPrevVersion** | **String** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
+**key** | **String** |  | [optional] 
+**lastVersion** | **Number** |  | [optional] 
+**name** | **String** | Secret name | 
+**outputRule** | **[String]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
+**token** | **String** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
+**uidToken** | **String** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**url** | **String** | URL of the service | [optional] 
+
+
