@@ -3,7 +3,7 @@
     "fs": false
   },
   "dependencies": {
-    "@babel/cli": "^7.0.0",
+    "@babel/cli": "^8.1.0",
     "superagent": "^5.3.0"
   },
   "description": "The purpose of this application is to provide access to Akeyless API.",
