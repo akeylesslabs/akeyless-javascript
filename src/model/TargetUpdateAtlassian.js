@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateAtlassian model module.
  * @module model/TargetUpdateAtlassian
- * @version 5.0.42
+ * @version 5.0.43
  */
 class TargetUpdateAtlassian {
     /**

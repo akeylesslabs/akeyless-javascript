@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GrantedRole model module.
  * @module model/GrantedRole
- * @version 5.0.42
+ * @version 5.0.43
  */
 class GrantedRole {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateOutput model module.
  * @module model/RotatedSecretCreateOutput
- * @version 5.0.42
+ * @version 5.0.43
  */
 class RotatedSecretCreateOutput {
     /**

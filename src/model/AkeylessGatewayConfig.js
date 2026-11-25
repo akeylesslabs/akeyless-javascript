@@ -34,7 +34,7 @@ import SamlSpConfigPart from './SamlSpConfigPart';
 /**
  * The AkeylessGatewayConfig model module.
  * @module model/AkeylessGatewayConfig
- * @version 5.0.42
+ * @version 5.0.43
  */
 class AkeylessGatewayConfig {
     /**

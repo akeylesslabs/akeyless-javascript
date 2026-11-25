@@ -17,7 +17,7 @@ import GatewayNameInfo from './GatewayNameInfo';
 /**
  * The SraSessionEntryOut model module.
  * @module model/SraSessionEntryOut
- * @version 5.0.42
+ * @version 5.0.43
  */
 class SraSessionEntryOut {
     /**

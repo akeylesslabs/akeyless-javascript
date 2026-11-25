@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateAzure model module.
  * @module model/DynamicSecretCreateAzure
- * @version 5.0.42
+ * @version 5.0.43
  */
 class DynamicSecretCreateAzure {
     /**

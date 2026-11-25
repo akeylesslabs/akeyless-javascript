@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BedrockTargetDetails model module.
  * @module model/BedrockTargetDetails
- * @version 5.0.42
+ * @version 5.0.43
  */
 class BedrockTargetDetails {
     /**

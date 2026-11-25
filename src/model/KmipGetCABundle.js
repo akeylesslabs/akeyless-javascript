@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KmipGetCABundle model module.
  * @module model/KmipGetCABundle
- * @version 5.0.42
+ * @version 5.0.43
  */
 class KmipGetCABundle {
     /**

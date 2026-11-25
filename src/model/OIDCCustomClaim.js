@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OIDCCustomClaim model module.
  * @module model/OIDCCustomClaim
- * @version 5.0.42
+ * @version 5.0.43
  */
 class OIDCCustomClaim {
     /**

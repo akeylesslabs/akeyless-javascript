@@ -17,7 +17,7 @@ import UscSyncInfo from './UscSyncInfo';
 /**
  * The ItemUSCSyncAssociation model module.
  * @module model/ItemUSCSyncAssociation
- * @version 5.0.42
+ * @version 5.0.43
  */
 class ItemUSCSyncAssociation {
     /**

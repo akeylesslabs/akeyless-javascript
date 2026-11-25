@@ -1009,7 +1009,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.42
+* @version 5.0.43
 */
 export default class V2Api {
 

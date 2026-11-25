@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateCustom model module.
  * @module model/DynamicSecretUpdateCustom
- * @version 5.0.42
+ * @version 5.0.43
  */
 class DynamicSecretUpdateCustom {
     /**

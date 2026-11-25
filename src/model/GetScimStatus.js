@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetScimStatus model module.
  * @module model/GetScimStatus
- * @version 5.0.42
+ * @version 5.0.43
  */
 class GetScimStatus {
     /**

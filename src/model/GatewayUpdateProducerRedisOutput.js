@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayUpdateProducerRedisOutput model module.
  * @module model/GatewayUpdateProducerRedisOutput
- * @version 5.0.42
+ * @version 5.0.43
  */
 class GatewayUpdateProducerRedisOutput {
     /**

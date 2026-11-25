@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateHanaDb model module.
  * @module model/DynamicSecretCreateHanaDb
- * @version 5.0.42
+ * @version 5.0.43
  */
 class DynamicSecretCreateHanaDb {
     /**

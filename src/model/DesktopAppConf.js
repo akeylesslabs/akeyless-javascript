@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DesktopAppConf model module.
  * @module model/DesktopAppConf
- * @version 5.0.42
+ * @version 5.0.43
  */
 class DesktopAppConf {
     /**

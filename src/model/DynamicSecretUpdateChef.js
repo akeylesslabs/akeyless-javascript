@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateChef model module.
  * @module model/DynamicSecretUpdateChef
- * @version 5.0.42
+ * @version 5.0.43
  */
 class DynamicSecretUpdateChef {
     /**

@@ -17,7 +17,7 @@ import DSProducerDetails from './DSProducerDetails';
 /**
  * The GatewayCreateProducerPostgreSQLOutput model module.
  * @module model/GatewayCreateProducerPostgreSQLOutput
- * @version 5.0.42
+ * @version 5.0.43
  */
 class GatewayCreateProducerPostgreSQLOutput {
     /**

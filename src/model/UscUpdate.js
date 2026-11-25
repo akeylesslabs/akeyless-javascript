@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UscUpdate model module.
  * @module model/UscUpdate
- * @version 5.0.42
+ * @version 5.0.43
  */
 class UscUpdate {
     /**

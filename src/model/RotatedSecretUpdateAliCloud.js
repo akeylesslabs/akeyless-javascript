@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateAliCloud model module.
  * @module model/RotatedSecretUpdateAliCloud
- * @version 5.0.42
+ * @version 5.0.43
  */
 class RotatedSecretUpdateAliCloud {
     /**

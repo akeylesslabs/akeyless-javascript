@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGlobalSignAtlasTargetOutput model module.
  * @module model/CreateGlobalSignAtlasTargetOutput
- * @version 5.0.42
+ * @version 5.0.43
  */
 class CreateGlobalSignAtlasTargetOutput {
     /**

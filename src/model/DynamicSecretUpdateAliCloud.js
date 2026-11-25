@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateAliCloud model module.
  * @module model/DynamicSecretUpdateAliCloud
- * @version 5.0.42
+ * @version 5.0.43
  */
 class DynamicSecretUpdateAliCloud {
     /**
