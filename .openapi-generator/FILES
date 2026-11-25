@@ -2617,7 +2617,3 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/CustomLLMTargetDetails.spec.js
-test/model/DomainCoverage.spec.js
-test/model/TargetCreateCustomLLM.spec.js
-test/model/TargetUpdateCustomLLM.spec.js
