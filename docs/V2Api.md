@@ -512,6 +512,7 @@ Method | HTTP request | Description
 [**targetCreateBedrock**](V2Api.md#targetCreateBedrock) | **POST** /target-create-bedrock | 
 [**targetCreateCloudflare**](V2Api.md#targetCreateCloudflare) | **POST** /target-create-cloudflare | 
 [**targetCreateCustomDns**](V2Api.md#targetCreateCustomDns) | **POST** /target-create-custom-dns | 
+[**targetCreateCustomLLM**](V2Api.md#targetCreateCustomLLM) | **POST** /target-create-custom-llm | 
 [**targetCreateDB**](V2Api.md#targetCreateDB) | **POST** /target-create-db | 
 [**targetCreateDigiCert**](V2Api.md#targetCreateDigiCert) | **POST** /target-create-digicert | 
 [**targetCreateDockerhub**](V2Api.md#targetCreateDockerhub) | **POST** /target-create-dockerhub | 
@@ -558,6 +559,7 @@ Method | HTTP request | Description
 [**targetUpdateBedrock**](V2Api.md#targetUpdateBedrock) | **POST** /target-update-bedrock | 
 [**targetUpdateCloudflare**](V2Api.md#targetUpdateCloudflare) | **POST** /target-update-cloudflare | 
 [**targetUpdateCustomDns**](V2Api.md#targetUpdateCustomDns) | **POST** /target-update-custom-dns | 
+[**targetUpdateCustomLLM**](V2Api.md#targetUpdateCustomLLM) | **POST** /target-update-custom-llm | 
 [**targetUpdateDB**](V2Api.md#targetUpdateDB) | **POST** /target-update-db | 
 [**targetUpdateDigiCert**](V2Api.md#targetUpdateDigiCert) | **POST** /target-update-digicert | 
 [**targetUpdateDockerhub**](V2Api.md#targetUpdateDockerhub) | **POST** /target-update-dockerhub | 
@@ -22059,6 +22061,48 @@ No authorization required
 - **Accept**: application/json
 
 
+## targetCreateCustomLLM
+
+> TargetCreateOutput targetCreateCustomLLM(targetCreateCustomLLM)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetCreateCustomLLM = new akeyless.TargetCreateCustomLLM(); // TargetCreateCustomLLM | 
+apiInstance.targetCreateCustomLLM(targetCreateCustomLLM).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetCreateCustomLLM** | [**TargetCreateCustomLLM**](TargetCreateCustomLLM.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## targetCreateDB
 
 > TargetCreateOutput targetCreateDB(targetCreateDB)
@@ -23976,6 +24020,48 @@ apiInstance.targetUpdateCustomDns(targetUpdateCustomDns).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **targetUpdateCustomDns** | [**TargetUpdateCustomDns**](TargetUpdateCustomDns.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## targetUpdateCustomLLM
+
+> TargetUpdateOutput targetUpdateCustomLLM(targetUpdateCustomLLM)
+
+
+
+### Example
+
+```javascript
+import akeyless from 'akeyless';
+
+let apiInstance = new akeyless.V2Api();
+let targetUpdateCustomLLM = new akeyless.TargetUpdateCustomLLM(); // TargetUpdateCustomLLM | 
+apiInstance.targetUpdateCustomLLM(targetUpdateCustomLLM).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUpdateCustomLLM** | [**TargetUpdateCustomLLM**](TargetUpdateCustomLLM.md)|  | 
 
 ### Return type
 

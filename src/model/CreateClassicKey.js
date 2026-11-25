@@ -16,14 +16,14 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClassicKey model module.
  * @module model/CreateClassicKey
- * @version 5.0.41
+ * @version 5.0.42
  */
 class CreateClassicKey {
     /**
      * Constructs a new <code>CreateClassicKey</code>.
      * CreateClassicKey is a command that creates classic key
      * @alias module:model/CreateClassicKey
-     * @param alg {String} Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384, GPG]
+     * @param alg {String} Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384, GPG, MLDSA44, MLDSA65, MLDSA87, MLKEM768, MLKEM1024, MLKEM768X25519]
      * @param name {String} ClassicKey name
      */
     constructor(alg, name) { 
@@ -267,7 +267,7 @@ class CreateClassicKey {
 CreateClassicKey.RequiredProperties = ["alg", "name"];
 
 /**
- * Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384, GPG]
+ * Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384, GPG, MLDSA44, MLDSA65, MLDSA87, MLKEM768, MLKEM1024, MLKEM768X25519]
  * @member {String} alg
  */
 CreateClassicKey.prototype['alg'] = undefined;

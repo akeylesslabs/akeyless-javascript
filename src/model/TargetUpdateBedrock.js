@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateBedrock model module.
  * @module model/TargetUpdateBedrock
- * @version 5.0.41
+ * @version 5.0.42
  */
 class TargetUpdateBedrock {
     /**

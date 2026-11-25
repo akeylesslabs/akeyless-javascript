@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssocTargetItem model module.
  * @module model/AssocTargetItem
- * @version 5.0.41
+ * @version 5.0.42
  */
 class AssocTargetItem {
     /**
@@ -40,6 +40,8 @@ class AssocTargetItem {
         obj['certificate-format'] = 'pem';
         obj['disable-previous-key-version'] = false;
         obj['f5-save-config'] = false;
+        obj['iis-create-binding'] = false;
+        obj['iis-restart-website'] = false;
         obj['json'] = false;
         obj['multi-region'] = 'false';
         obj['name'] = name;
@@ -89,8 +91,32 @@ class AssocTargetItem {
             if (data.hasOwnProperty('f5-sync-device-group')) {
                 obj['f5-sync-device-group'] = ApiClient.convertToType(data['f5-sync-device-group'], 'String');
             }
+            if (data.hasOwnProperty('iis-binding-hostname')) {
+                obj['iis-binding-hostname'] = ApiClient.convertToType(data['iis-binding-hostname'], 'String');
+            }
+            if (data.hasOwnProperty('iis-binding-ip-address')) {
+                obj['iis-binding-ip-address'] = ApiClient.convertToType(data['iis-binding-ip-address'], 'String');
+            }
+            if (data.hasOwnProperty('iis-binding-port')) {
+                obj['iis-binding-port'] = ApiClient.convertToType(data['iis-binding-port'], 'Number');
+            }
+            if (data.hasOwnProperty('iis-create-binding')) {
+                obj['iis-create-binding'] = ApiClient.convertToType(data['iis-create-binding'], 'Boolean');
+            }
+            if (data.hasOwnProperty('iis-restart-website')) {
+                obj['iis-restart-website'] = ApiClient.convertToType(data['iis-restart-website'], 'Boolean');
+            }
+            if (data.hasOwnProperty('iis-website-name')) {
+                obj['iis-website-name'] = ApiClient.convertToType(data['iis-website-name'], 'String');
+            }
+            if (data.hasOwnProperty('jks-password')) {
+                obj['jks-password'] = ApiClient.convertToType(data['jks-password'], 'String');
+            }
             if (data.hasOwnProperty('json')) {
                 obj['json'] = ApiClient.convertToType(data['json'], 'Boolean');
+            }
+            if (data.hasOwnProperty('key-alias')) {
+                obj['key-alias'] = ApiClient.convertToType(data['key-alias'], 'String');
             }
             if (data.hasOwnProperty('key-operations')) {
                 obj['key-operations'] = ApiClient.convertToType(data['key-operations'], ['String']);
@@ -130,6 +156,12 @@ class AssocTargetItem {
             }
             if (data.hasOwnProperty('protection-level')) {
                 obj['protection-level'] = ApiClient.convertToType(data['protection-level'], 'String');
+            }
+            if (data.hasOwnProperty('provisioning-schedule-days')) {
+                obj['provisioning-schedule-days'] = ApiClient.convertToType(data['provisioning-schedule-days'], 'String');
+            }
+            if (data.hasOwnProperty('provisioning-schedule-time')) {
+                obj['provisioning-schedule-time'] = ApiClient.convertToType(data['provisioning-schedule-time'], 'String');
             }
             if (data.hasOwnProperty('purpose')) {
                 obj['purpose'] = ApiClient.convertToType(data['purpose'], 'String');
@@ -203,6 +235,26 @@ class AssocTargetItem {
         if (data['f5-sync-device-group'] && !(typeof data['f5-sync-device-group'] === 'string' || data['f5-sync-device-group'] instanceof String)) {
             throw new Error("Expected the field `f5-sync-device-group` to be a primitive type in the JSON string but got " + data['f5-sync-device-group']);
         }
+        // ensure the json data is a string
+        if (data['iis-binding-hostname'] && !(typeof data['iis-binding-hostname'] === 'string' || data['iis-binding-hostname'] instanceof String)) {
+            throw new Error("Expected the field `iis-binding-hostname` to be a primitive type in the JSON string but got " + data['iis-binding-hostname']);
+        }
+        // ensure the json data is a string
+        if (data['iis-binding-ip-address'] && !(typeof data['iis-binding-ip-address'] === 'string' || data['iis-binding-ip-address'] instanceof String)) {
+            throw new Error("Expected the field `iis-binding-ip-address` to be a primitive type in the JSON string but got " + data['iis-binding-ip-address']);
+        }
+        // ensure the json data is a string
+        if (data['iis-website-name'] && !(typeof data['iis-website-name'] === 'string' || data['iis-website-name'] instanceof String)) {
+            throw new Error("Expected the field `iis-website-name` to be a primitive type in the JSON string but got " + data['iis-website-name']);
+        }
+        // ensure the json data is a string
+        if (data['jks-password'] && !(typeof data['jks-password'] === 'string' || data['jks-password'] instanceof String)) {
+            throw new Error("Expected the field `jks-password` to be a primitive type in the JSON string but got " + data['jks-password']);
+        }
+        // ensure the json data is a string
+        if (data['key-alias'] && !(typeof data['key-alias'] === 'string' || data['key-alias'] instanceof String)) {
+            throw new Error("Expected the field `key-alias` to be a primitive type in the JSON string but got " + data['key-alias']);
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['key-operations'])) {
             throw new Error("Expected the field `key-operations` to be an array in the JSON data but got " + data['key-operations']);
@@ -256,6 +308,14 @@ class AssocTargetItem {
             throw new Error("Expected the field `protection-level` to be a primitive type in the JSON string but got " + data['protection-level']);
         }
         // ensure the json data is a string
+        if (data['provisioning-schedule-days'] && !(typeof data['provisioning-schedule-days'] === 'string' || data['provisioning-schedule-days'] instanceof String)) {
+            throw new Error("Expected the field `provisioning-schedule-days` to be a primitive type in the JSON string but got " + data['provisioning-schedule-days']);
+        }
+        // ensure the json data is a string
+        if (data['provisioning-schedule-time'] && !(typeof data['provisioning-schedule-time'] === 'string' || data['provisioning-schedule-time'] instanceof String)) {
+            throw new Error("Expected the field `provisioning-schedule-time` to be a primitive type in the JSON string but got " + data['provisioning-schedule-time']);
+        }
+        // ensure the json data is a string
         if (data['purpose'] && !(typeof data['purpose'] === 'string' || data['purpose'] instanceof String)) {
             throw new Error("Expected the field `purpose` to be a primitive type in the JSON string but got " + data['purpose']);
         }
@@ -305,7 +365,7 @@ AssocTargetItem.prototype['bind-ssl-profiles'] = undefined;
 AssocTargetItem.prototype['certificate-arn'] = undefined;
 
 /**
- * The format the certificate will be provisioned with, available options: pem,pfx (relevant only for certificate provisioning)
+ * The format the certificate will be provisioned with, available options: pem,pfx,jks (jks uses --jks-password); pfx requires gateway version 5.5.0 or higher, and jks and pfx for Azure Key Vault require 5.8.0 or higher, or the association is rejected (relevant only for certificate provisioning)
  * @member {String} certificate-format
  * @default 'pem'
  */
@@ -356,11 +416,61 @@ AssocTargetItem.prototype['f5-save-config'] = false;
 AssocTargetItem.prototype['f5-sync-device-group'] = undefined;
 
 /**
+ * The optional host name of the IIS binding, which enables SNI for a binding that is created (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)
+ * @member {String} iis-binding-hostname
+ */
+AssocTargetItem.prototype['iis-binding-hostname'] = undefined;
+
+/**
+ * Comma-separated IP addresses of the IIS bindings to update (or create with --iis-create-binding), one binding per address, or * for all unassigned addresses; required with --iis-website-name (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)
+ * @member {String} iis-binding-ip-address
+ */
+AssocTargetItem.prototype['iis-binding-ip-address'] = undefined;
+
+/**
+ * The port of the IIS binding, 443 when omitted (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)
+ * @member {Number} iis-binding-port
+ */
+AssocTargetItem.prototype['iis-binding-port'] = undefined;
+
+/**
+ * Create the IIS https binding if the website has none matching the given IP addresses, port and host name; without it the run fails when such a binding does not exist (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)
+ * @member {Boolean} iis-create-binding
+ * @default false
+ */
+AssocTargetItem.prototype['iis-create-binding'] = false;
+
+/**
+ * Restart the IIS website after the certificate is bound (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)
+ * @member {Boolean} iis-restart-website
+ * @default false
+ */
+AssocTargetItem.prototype['iis-restart-website'] = false;
+
+/**
+ * The IIS website to bind the provisioned certificate to (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)
+ * @member {String} iis-website-name
+ */
+AssocTargetItem.prototype['iis-website-name'] = undefined;
+
+/**
+ * JKS file password; required when certificate-format is jks (relevant only for certificate provisioning)
+ * @member {String} jks-password
+ */
+AssocTargetItem.prototype['jks-password'] = undefined;
+
+/**
  * Set output format to JSON
  * @member {Boolean} json
  * @default false
  */
 AssocTargetItem.prototype['json'] = false;
+
+/**
+ * Alias the entry is stored under in the JKS file, default certificate (max 128 characters). Only relevant when --certificate-format=jks
+ * @member {String} key-alias
+ */
+AssocTargetItem.prototype['key-alias'] = undefined;
 
 /**
  * A list of allowed operations for the key (required for azure targets)
@@ -412,7 +522,7 @@ AssocTargetItem.prototype['multi-region'] = 'false';
 AssocTargetItem.prototype['name'] = undefined;
 
 /**
- * Password used to protect the provisioned PFX file. Required when --certificate-format=pfx (relevant only for certificate provisioning)
+ * PFX file password; required when certificate-format is pfx (relevant only for certificate provisioning)
  * @member {String} pfx-password
  */
 AssocTargetItem.prototype['pfx-password'] = undefined;
@@ -441,6 +551,18 @@ AssocTargetItem.prototype['project-id'] = undefined;
  * @default 'software'
  */
 AssocTargetItem.prototype['protection-level'] = 'software';
+
+/**
+ * Comma-separated UTC weekdays (sun,mon,tue,wed,thu,fri,sat) on which the certificate is provisioned after a renewal, together with provisioning-schedule-time. Provisioning is not run when the association is created. Without a schedule, provisioning runs right away (relevant only for certificate provisioning)
+ * @member {String} provisioning-schedule-days
+ */
+AssocTargetItem.prototype['provisioning-schedule-days'] = undefined;
+
+/**
+ * The UTC time of day, as HH:MM, at which the certificate is provisioned on the scheduled days. A renewed certificate waits for the first such time (relevant only for certificate provisioning)
+ * @member {String} provisioning-schedule-time
+ */
+AssocTargetItem.prototype['provisioning-schedule-time'] = undefined;
 
 /**
  * Purpose of the key in GCP KMS (required for gcp targets)

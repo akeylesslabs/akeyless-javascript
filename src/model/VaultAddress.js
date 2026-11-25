@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VaultAddress model module.
  * @module model/VaultAddress
- * @version 5.0.41
+ * @version 5.0.42
  */
 class VaultAddress {
     /**

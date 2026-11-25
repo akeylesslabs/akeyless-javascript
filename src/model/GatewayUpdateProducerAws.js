@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateProducerAws model module.
  * @module model/GatewayUpdateProducerAws
- * @version 5.0.41
+ * @version 5.0.42
  */
 class GatewayUpdateProducerAws {
     /**
@@ -36,10 +36,8 @@ class GatewayUpdateProducerAws {
      * Only for internal use.
      */
     static initialize(obj, name) { 
-        obj['admin-rotation-interval-days'] = 0;
         obj['aws-user-console-access'] = false;
         obj['aws-user-programmatic-access'] = true;
-        obj['enable-admin-rotation'] = false;
         obj['json'] = false;
         obj['name'] = name;
         obj['region'] = 'us-east-2';
@@ -62,9 +60,6 @@ class GatewayUpdateProducerAws {
 
             if (data.hasOwnProperty('access-mode')) {
                 obj['access-mode'] = ApiClient.convertToType(data['access-mode'], 'String');
-            }
-            if (data.hasOwnProperty('admin-rotation-interval-days')) {
-                obj['admin-rotation-interval-days'] = ApiClient.convertToType(data['admin-rotation-interval-days'], 'Number');
             }
             if (data.hasOwnProperty('ara-enabled')) {
                 obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
@@ -98,9 +93,6 @@ class GatewayUpdateProducerAws {
             }
             if (data.hasOwnProperty('delete_protection')) {
                 obj['delete_protection'] = ApiClient.convertToType(data['delete_protection'], 'String');
-            }
-            if (data.hasOwnProperty('enable-admin-rotation')) {
-                obj['enable-admin-rotation'] = ApiClient.convertToType(data['enable-admin-rotation'], 'Boolean');
             }
             if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
                 obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
@@ -353,13 +345,6 @@ GatewayUpdateProducerAws.RequiredProperties = ["name"];
 GatewayUpdateProducerAws.prototype['access-mode'] = undefined;
 
 /**
- * Admin credentials rotation interval (days)
- * @member {Number} admin-rotation-interval-days
- * @default 0
- */
-GatewayUpdateProducerAws.prototype['admin-rotation-interval-days'] = 0;
-
-/**
  * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
  * @member {Boolean} ara-enabled
  */
@@ -426,13 +411,6 @@ GatewayUpdateProducerAws.prototype['custom-username-template'] = undefined;
  * @member {String} delete_protection
  */
 GatewayUpdateProducerAws.prototype['delete_protection'] = undefined;
-
-/**
- * Automatic admin credentials rotation
- * @member {Boolean} enable-admin-rotation
- * @default false
- */
-GatewayUpdateProducerAws.prototype['enable-admin-rotation'] = false;
 
 /**
  * EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.

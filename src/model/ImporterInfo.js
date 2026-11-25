@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ImporterInfo model module.
  * @module model/ImporterInfo
- * @version 5.0.41
+ * @version 5.0.42
  */
 class ImporterInfo {
     /**
@@ -50,6 +50,9 @@ class ImporterInfo {
             if (data.hasOwnProperty('external_item_id')) {
                 obj['external_item_id'] = ApiClient.convertToType(data['external_item_id'], 'String');
             }
+            if (data.hasOwnProperty('source_version')) {
+                obj['source_version'] = ApiClient.convertToType(data['source_version'], 'Number');
+            }
             if (data.hasOwnProperty('version')) {
                 obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
@@ -80,6 +83,12 @@ class ImporterInfo {
  * @member {String} external_item_id
  */
 ImporterInfo.prototype['external_item_id'] = undefined;
+
+/**
+ * SourceVersion is the last version imported from the source system (Vault KV v2). 0 means not tracked.
+ * @member {Number} source_version
+ */
+ImporterInfo.prototype['source_version'] = undefined;
 
 /**
  * @member {Number} version

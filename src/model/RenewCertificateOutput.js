@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RenewCertificateOutput model module.
  * @module model/RenewCertificateOutput
- * @version 5.0.41
+ * @version 5.0.42
  */
 class RenewCertificateOutput {
     /**
@@ -62,6 +62,9 @@ class RenewCertificateOutput {
             if (data.hasOwnProperty('private_key')) {
                 obj['private_key'] = ApiClient.convertToType(data['private_key'], 'String');
             }
+            if (data.hasOwnProperty('provisioning_schedule_errors')) {
+                obj['provisioning_schedule_errors'] = ApiClient.convertToType(data['provisioning_schedule_errors'], ['String']);
+            }
             if (data.hasOwnProperty('reading_token')) {
                 obj['reading_token'] = ApiClient.convertToType(data['reading_token'], 'String');
             }
@@ -94,6 +97,10 @@ class RenewCertificateOutput {
         // ensure the json data is a string
         if (data['private_key'] && !(typeof data['private_key'] === 'string' || data['private_key'] instanceof String)) {
             throw new Error("Expected the field `private_key` to be a primitive type in the JSON string but got " + data['private_key']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['provisioning_schedule_errors'])) {
+            throw new Error("Expected the field `provisioning_schedule_errors` to be an array in the JSON data but got " + data['provisioning_schedule_errors']);
         }
         // ensure the json data is a string
         if (data['reading_token'] && !(typeof data['reading_token'] === 'string' || data['reading_token'] instanceof String)) {
@@ -132,6 +139,12 @@ RenewCertificateOutput.prototype['parent_cert'] = undefined;
  * @member {String} private_key
  */
 RenewCertificateOutput.prototype['private_key'] = undefined;
+
+/**
+ * ProvisioningScheduleErrors lists the targets whose provisioning could not be scheduled, as \"<target>: <error>\". The renewal itself succeeded.
+ * @member {Array.<String>} provisioning_schedule_errors
+ */
+RenewCertificateOutput.prototype['provisioning_schedule_errors'] = undefined;
 
 /**
  * @member {String} reading_token

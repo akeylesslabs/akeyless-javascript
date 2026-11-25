@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateOkta model module.
  * @module model/RotatedSecretCreateOkta
- * @version 5.0.41
+ * @version 5.0.42
  */
 class RotatedSecretCreateOkta {
     /**

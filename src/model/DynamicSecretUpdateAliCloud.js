@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateAliCloud model module.
  * @module model/DynamicSecretUpdateAliCloud
- * @version 5.0.41
+ * @version 5.0.42
  */
 class DynamicSecretUpdateAliCloud {
     /**
@@ -36,12 +36,10 @@ class DynamicSecretUpdateAliCloud {
      * Only for internal use.
      */
     static initialize(obj, name) { 
-        obj['admin-rotation-interval-days'] = 0;
         obj['alicloud-set-source-identity'] = false;
         obj['alicloud-site'] = 'international';
         obj['alicloud-user-console-access'] = false;
         obj['alicloud-user-programmatic-access'] = true;
-        obj['enable-admin-rotation'] = false;
         obj['json'] = false;
         obj['name'] = name;
         obj['user-ttl'] = '60m';
@@ -58,9 +56,6 @@ class DynamicSecretUpdateAliCloud {
         if (data) {
             obj = obj || new DynamicSecretUpdateAliCloud();
 
-            if (data.hasOwnProperty('admin-rotation-interval-days')) {
-                obj['admin-rotation-interval-days'] = ApiClient.convertToType(data['admin-rotation-interval-days'], 'Number');
-            }
             if (data.hasOwnProperty('alicloud-access-key-id')) {
                 obj['alicloud-access-key-id'] = ApiClient.convertToType(data['alicloud-access-key-id'], 'String');
             }
@@ -114,9 +109,6 @@ class DynamicSecretUpdateAliCloud {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
-            }
-            if (data.hasOwnProperty('enable-admin-rotation')) {
-                obj['enable-admin-rotation'] = ApiClient.convertToType(data['enable-admin-rotation'], 'Boolean');
             }
             if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
                 obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
@@ -320,13 +312,6 @@ class DynamicSecretUpdateAliCloud {
 DynamicSecretUpdateAliCloud.RequiredProperties = ["name"];
 
 /**
- * Admin credentials rotation interval (days)
- * @member {Number} admin-rotation-interval-days
- * @default 0
- */
-DynamicSecretUpdateAliCloud.prototype['admin-rotation-interval-days'] = 0;
-
-/**
  * AliCloud RAM access key ID
  * @member {String} alicloud-access-key-id
  */
@@ -436,13 +421,6 @@ DynamicSecretUpdateAliCloud.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 DynamicSecretUpdateAliCloud.prototype['description'] = undefined;
-
-/**
- * Automatic admin credentials rotation
- * @member {Boolean} enable-admin-rotation
- * @default false
- */
-DynamicSecretUpdateAliCloud.prototype['enable-admin-rotation'] = false;
 
 /**
  * EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.

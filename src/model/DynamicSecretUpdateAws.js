@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateAws model module.
  * @module model/DynamicSecretUpdateAws
- * @version 5.0.41
+ * @version 5.0.42
  */
 class DynamicSecretUpdateAws {
     /**
@@ -36,10 +36,8 @@ class DynamicSecretUpdateAws {
      * Only for internal use.
      */
     static initialize(obj, name) { 
-        obj['admin-rotation-interval-days'] = 0;
         obj['aws-user-console-access'] = false;
         obj['aws-user-programmatic-access'] = true;
-        obj['enable-admin-rotation'] = false;
         obj['json'] = false;
         obj['name'] = name;
         obj['region'] = 'us-east-2';
@@ -62,9 +60,6 @@ class DynamicSecretUpdateAws {
 
             if (data.hasOwnProperty('access-mode')) {
                 obj['access-mode'] = ApiClient.convertToType(data['access-mode'], 'String');
-            }
-            if (data.hasOwnProperty('admin-rotation-interval-days')) {
-                obj['admin-rotation-interval-days'] = ApiClient.convertToType(data['admin-rotation-interval-days'], 'Number');
             }
             if (data.hasOwnProperty('ara-enabled')) {
                 obj['ara-enabled'] = ApiClient.convertToType(data['ara-enabled'], 'Boolean');
@@ -101,9 +96,6 @@ class DynamicSecretUpdateAws {
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
-            }
-            if (data.hasOwnProperty('enable-admin-rotation')) {
-                obj['enable-admin-rotation'] = ApiClient.convertToType(data['enable-admin-rotation'], 'Boolean');
             }
             if (data.hasOwnProperty('enable-agentic-runtime-authority')) {
                 obj['enable-agentic-runtime-authority'] = ApiClient.convertToType(data['enable-agentic-runtime-authority'], 'Boolean');
@@ -360,13 +352,6 @@ DynamicSecretUpdateAws.RequiredProperties = ["name"];
 DynamicSecretUpdateAws.prototype['access-mode'] = undefined;
 
 /**
- * Admin credentials rotation interval (days)
- * @member {Number} admin-rotation-interval-days
- * @default 0
- */
-DynamicSecretUpdateAws.prototype['admin-rotation-interval-days'] = 0;
-
-/**
  * Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.
  * @member {Boolean} ara-enabled
  */
@@ -439,13 +424,6 @@ DynamicSecretUpdateAws.prototype['delete_protection'] = undefined;
  * @member {String} description
  */
 DynamicSecretUpdateAws.prototype['description'] = undefined;
-
-/**
- * Automatic admin credentials rotation
- * @member {Boolean} enable-admin-rotation
- * @default false
- */
-DynamicSecretUpdateAws.prototype['enable-admin-rotation'] = false;
 
 /**
  * EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.

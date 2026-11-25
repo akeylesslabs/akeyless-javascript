@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateOpenAI model module.
  * @module model/RotatedSecretUpdateOpenAI
- * @version 5.0.41
+ * @version 5.0.42
  */
 class RotatedSecretUpdateOpenAI {
     /**

@@ -275,6 +275,7 @@ import CreateWindowsTargetOutput from './model/CreateWindowsTargetOutput';
 import CreateZeroSSLTarget from './model/CreateZeroSSLTarget';
 import CreateZeroSSLTargetOutput from './model/CreateZeroSSLTargetOutput';
 import CustomDnsTargetDetails from './model/CustomDnsTargetDetails';
+import CustomLLMTargetDetails from './model/CustomLLMTargetDetails';
 import CustomTargetDetails from './model/CustomTargetDetails';
 import CustomerFragmentConfig from './model/CustomerFragmentConfig';
 import CustomerFragmentsConfigJson from './model/CustomerFragmentsConfigJson';
@@ -331,6 +332,7 @@ import Detokenize from './model/Detokenize';
 import DetokenizeOutput from './model/DetokenizeOutput';
 import DigiCertTargetDetails from './model/DigiCertTargetDetails';
 import DockerhubTargetDetails from './model/DockerhubTargetDetails';
+import DomainCoverage from './model/DomainCoverage';
 import DynamicSecretCreateAerospike from './model/DynamicSecretCreateAerospike';
 import DynamicSecretCreateAliCloud from './model/DynamicSecretCreateAliCloud';
 import DynamicSecretCreateArtifactory from './model/DynamicSecretCreateArtifactory';
@@ -1062,6 +1064,7 @@ import TargetCreateAzure from './model/TargetCreateAzure';
 import TargetCreateBedrock from './model/TargetCreateBedrock';
 import TargetCreateCloudflare from './model/TargetCreateCloudflare';
 import TargetCreateCustomDns from './model/TargetCreateCustomDns';
+import TargetCreateCustomLLM from './model/TargetCreateCustomLLM';
 import TargetCreateDB from './model/TargetCreateDB';
 import TargetCreateDigiCert from './model/TargetCreateDigiCert';
 import TargetCreateDockerhub from './model/TargetCreateDockerhub';
@@ -1114,6 +1117,7 @@ import TargetUpdateAzure from './model/TargetUpdateAzure';
 import TargetUpdateBedrock from './model/TargetUpdateBedrock';
 import TargetUpdateCloudflare from './model/TargetUpdateCloudflare';
 import TargetUpdateCustomDns from './model/TargetUpdateCustomDns';
+import TargetUpdateCustomLLM from './model/TargetUpdateCustomLLM';
 import TargetUpdateDB from './model/TargetUpdateDB';
 import TargetUpdateDigiCert from './model/TargetUpdateDigiCert';
 import TargetUpdateDockerhub from './model/TargetUpdateDockerhub';
@@ -1345,7 +1349,7 @@ import V2Api from './api/V2Api';
 * </pre>
 * </p>
 * @module index
-* @version 5.0.41
+* @version 5.0.42
 */
 export {
     /**
@@ -2927,6 +2931,12 @@ export {
     CustomDnsTargetDetails,
 
     /**
+     * The CustomLLMTargetDetails model constructor.
+     * @property {module:model/CustomLLMTargetDetails}
+     */
+    CustomLLMTargetDetails,
+
+    /**
      * The CustomTargetDetails model constructor.
      * @property {module:model/CustomTargetDetails}
      */
@@ -3261,6 +3271,12 @@ export {
      * @property {module:model/DockerhubTargetDetails}
      */
     DockerhubTargetDetails,
+
+    /**
+     * The DomainCoverage model constructor.
+     * @property {module:model/DomainCoverage}
+     */
+    DomainCoverage,
 
     /**
      * The DynamicSecretCreateAerospike model constructor.
@@ -7649,6 +7665,12 @@ export {
     TargetCreateCustomDns,
 
     /**
+     * The TargetCreateCustomLLM model constructor.
+     * @property {module:model/TargetCreateCustomLLM}
+     */
+    TargetCreateCustomLLM,
+
+    /**
      * The TargetCreateDB model constructor.
      * @property {module:model/TargetCreateDB}
      */
@@ -7959,6 +7981,12 @@ export {
      * @property {module:model/TargetUpdateCustomDns}
      */
     TargetUpdateCustomDns,
+
+    /**
+     * The TargetUpdateCustomLLM model constructor.
+     * @property {module:model/TargetUpdateCustomLLM}
+     */
+    TargetUpdateCustomLLM,
 
     /**
      * The TargetUpdateDB model constructor.

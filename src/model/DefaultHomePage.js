@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DefaultHomePage model module.
  * @module model/DefaultHomePage
- * @version 5.0.41
+ * @version 5.0.42
  */
 class DefaultHomePage {
     /**

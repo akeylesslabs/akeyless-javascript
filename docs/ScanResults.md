@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **countHosts** | **Number** |  | [optional] 
 **countNew** | **Number** |  | [optional] 
 **countSubdomains** | **Number** |  | [optional] 
+**domainCoverage** | [**[DomainCoverage]**](DomainCoverage.md) | DomainCoverage says, per public domain, how much of it subdomain discovery managed to cover. Clients that predate it ignore it, and a scan with no public domain omits it. | [optional] 
 **error** | **String** |  | [optional] 
 **failedTargets** | [**[TargetError]**](TargetError.md) |  | [optional] 
 **itemNames** | **[String]** |  | [optional] 

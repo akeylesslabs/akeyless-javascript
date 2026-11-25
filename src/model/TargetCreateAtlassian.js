@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateAtlassian model module.
  * @module model/TargetCreateAtlassian
- * @version 5.0.41
+ * @version 5.0.42
  */
 class TargetCreateAtlassian {
     /**

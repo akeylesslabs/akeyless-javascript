@@ -19,7 +19,7 @@ import NullString from './NullString';
 /**
  * The CertificateChainInfo model module.
  * @module model/CertificateChainInfo
- * @version 5.0.41
+ * @version 5.0.42
  */
 class CertificateChainInfo {
     /**
@@ -103,6 +103,9 @@ class CertificateChainInfo {
             }
             if (data.hasOwnProperty('leaf_certificate_pem')) {
                 obj['leaf_certificate_pem'] = ApiClient.convertToType(data['leaf_certificate_pem'], 'String');
+            }
+            if (data.hasOwnProperty('next_auto_renewal_date')) {
+                obj['next_auto_renewal_date'] = ApiClient.convertToType(data['next_auto_renewal_date'], 'Date');
             }
             if (data.hasOwnProperty('not_before')) {
                 obj['not_before'] = ApiClient.convertToType(data['not_before'], 'Date');
@@ -287,6 +290,12 @@ CertificateChainInfo.prototype['issuance_status'] = undefined;
  * @member {String} leaf_certificate_pem
  */
 CertificateChainInfo.prototype['leaf_certificate_pem'] = undefined;
+
+/**
+ * NextAutoRenewalDate is when auto-renewal will next renew the certificate. It is worked out when the certificate is described and never stored, and it is empty when the certificate will not be auto-renewed.
+ * @member {Date} next_auto_renewal_date
+ */
+CertificateChainInfo.prototype['next_auto_renewal_date'] = undefined;
 
 /**
  * @member {Date} not_before

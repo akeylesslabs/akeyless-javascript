@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AtlassianTargetDetails model module.
  * @module model/AtlassianTargetDetails
- * @version 5.0.41
+ * @version 5.0.42
  */
 class AtlassianTargetDetails {
     /**

@@ -264,6 +264,7 @@ docs/CreateWindowsTargetOutput.md
 docs/CreateZeroSSLTarget.md
 docs/CreateZeroSSLTargetOutput.md
 docs/CustomDnsTargetDetails.md
+docs/CustomLLMTargetDetails.md
 docs/CustomTargetDetails.md
 docs/CustomerFragmentConfig.md
 docs/CustomerFragmentsConfigJson.md
@@ -320,6 +321,7 @@ docs/Detokenize.md
 docs/DetokenizeOutput.md
 docs/DigiCertTargetDetails.md
 docs/DockerhubTargetDetails.md
+docs/DomainCoverage.md
 docs/DynamicSecretCreateAerospike.md
 docs/DynamicSecretCreateAliCloud.md
 docs/DynamicSecretCreateArtifactory.md
@@ -1051,6 +1053,7 @@ docs/TargetCreateAzure.md
 docs/TargetCreateBedrock.md
 docs/TargetCreateCloudflare.md
 docs/TargetCreateCustomDns.md
+docs/TargetCreateCustomLLM.md
 docs/TargetCreateDB.md
 docs/TargetCreateDigiCert.md
 docs/TargetCreateDockerhub.md
@@ -1103,6 +1106,7 @@ docs/TargetUpdateAzure.md
 docs/TargetUpdateBedrock.md
 docs/TargetUpdateCloudflare.md
 docs/TargetUpdateCustomDns.md
+docs/TargetUpdateCustomLLM.md
 docs/TargetUpdateDB.md
 docs/TargetUpdateDigiCert.md
 docs/TargetUpdateDockerhub.md
@@ -1571,6 +1575,7 @@ src/model/CreateWindowsTargetOutput.js
 src/model/CreateZeroSSLTarget.js
 src/model/CreateZeroSSLTargetOutput.js
 src/model/CustomDnsTargetDetails.js
+src/model/CustomLLMTargetDetails.js
 src/model/CustomTargetDetails.js
 src/model/CustomerFragmentConfig.js
 src/model/CustomerFragmentsConfigJson.js
@@ -1627,6 +1632,7 @@ src/model/Detokenize.js
 src/model/DetokenizeOutput.js
 src/model/DigiCertTargetDetails.js
 src/model/DockerhubTargetDetails.js
+src/model/DomainCoverage.js
 src/model/DynamicSecretCreateAerospike.js
 src/model/DynamicSecretCreateAliCloud.js
 src/model/DynamicSecretCreateArtifactory.js
@@ -2358,6 +2364,7 @@ src/model/TargetCreateAzure.js
 src/model/TargetCreateBedrock.js
 src/model/TargetCreateCloudflare.js
 src/model/TargetCreateCustomDns.js
+src/model/TargetCreateCustomLLM.js
 src/model/TargetCreateDB.js
 src/model/TargetCreateDigiCert.js
 src/model/TargetCreateDockerhub.js
@@ -2410,6 +2417,7 @@ src/model/TargetUpdateAzure.js
 src/model/TargetUpdateBedrock.js
 src/model/TargetUpdateCloudflare.js
 src/model/TargetUpdateCustomDns.js
+src/model/TargetUpdateCustomLLM.js
 src/model/TargetUpdateDB.js
 src/model/TargetUpdateDigiCert.js
 src/model/TargetUpdateDockerhub.js
@@ -2609,14 +2617,7 @@ src/model/WindowsService.js
 src/model/WindowsServiceAttributes.js
 src/model/WindowsTargetDetails.js
 src/model/ZeroSSLTargetDetails.js
-test/model/AtlassianTargetDetails.spec.js
-test/model/DynamicSecretCreateAliCloud.spec.js
-test/model/DynamicSecretUpdateAliCloud.spec.js
-test/model/ProvisionSSHRotatedSecretOutput.spec.js
-test/model/RotatedSecretProvisionAssocOutput.spec.js
-test/model/RotatedSecretProvisionCreate.spec.js
-test/model/RotatedSecretProvisionDelete.spec.js
-test/model/RotatedSecretProvisionPush.spec.js
-test/model/RotatedSecretProvisionUpdate.spec.js
-test/model/TargetCreateAtlassian.spec.js
-test/model/TargetUpdateAtlassian.spec.js
+test/model/CustomLLMTargetDetails.spec.js
+test/model/DomainCoverage.spec.js
+test/model/TargetCreateCustomLLM.spec.js
+test/model/TargetUpdateCustomLLM.spec.js

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateOkta model module.
  * @module model/TargetCreateOkta
- * @version 5.0.41
+ * @version 5.0.42
  */
 class TargetCreateOkta {
     /**

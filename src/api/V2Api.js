@@ -783,6 +783,7 @@ import TargetCreateAzure from '../model/TargetCreateAzure';
 import TargetCreateBedrock from '../model/TargetCreateBedrock';
 import TargetCreateCloudflare from '../model/TargetCreateCloudflare';
 import TargetCreateCustomDns from '../model/TargetCreateCustomDns';
+import TargetCreateCustomLLM from '../model/TargetCreateCustomLLM';
 import TargetCreateDB from '../model/TargetCreateDB';
 import TargetCreateDigiCert from '../model/TargetCreateDigiCert';
 import TargetCreateDockerhub from '../model/TargetCreateDockerhub';
@@ -830,6 +831,7 @@ import TargetUpdateAzure from '../model/TargetUpdateAzure';
 import TargetUpdateBedrock from '../model/TargetUpdateBedrock';
 import TargetUpdateCloudflare from '../model/TargetUpdateCloudflare';
 import TargetUpdateCustomDns from '../model/TargetUpdateCustomDns';
+import TargetUpdateCustomLLM from '../model/TargetUpdateCustomLLM';
 import TargetUpdateDB from '../model/TargetUpdateDB';
 import TargetUpdateDigiCert from '../model/TargetUpdateDigiCert';
 import TargetUpdateDockerhub from '../model/TargetUpdateDockerhub';
@@ -1007,7 +1009,7 @@ import VerifyRsaSsaPss from '../model/VerifyRsaSsaPss';
 /**
 * V2 service.
 * @module api/V2Api
-* @version 5.0.41
+* @version 5.0.42
 */
 export default class V2Api {
 
@@ -22842,6 +22844,49 @@ export default class V2Api {
 
 
     /**
+     * @param {module:model/TargetCreateCustomLLM} targetCreateCustomLLM 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
+     */
+    targetCreateCustomLLMWithHttpInfo(targetCreateCustomLLM) {
+      let postBody = targetCreateCustomLLM;
+      // verify the required parameter 'targetCreateCustomLLM' is set
+      if (targetCreateCustomLLM === undefined || targetCreateCustomLLM === null) {
+        throw new Error("Missing the required parameter 'targetCreateCustomLLM' when calling targetCreateCustomLLM");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetCreateOutput;
+      return this.apiClient.callApi(
+        '/target-create-custom-llm', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetCreateCustomLLM} targetCreateCustomLLM 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetCreateOutput}
+     */
+    targetCreateCustomLLM(targetCreateCustomLLM) {
+      return this.targetCreateCustomLLMWithHttpInfo(targetCreateCustomLLM)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * @param {module:model/TargetCreateDB} targetCreateDB 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetCreateOutput} and HTTP response
      */
@@ -24813,6 +24858,49 @@ export default class V2Api {
      */
     targetUpdateCustomDns(targetUpdateCustomDns) {
       return this.targetUpdateCustomDnsWithHttpInfo(targetUpdateCustomDns)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * @param {module:model/TargetUpdateCustomLLM} targetUpdateCustomLLM 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TargetUpdateOutput} and HTTP response
+     */
+    targetUpdateCustomLLMWithHttpInfo(targetUpdateCustomLLM) {
+      let postBody = targetUpdateCustomLLM;
+      // verify the required parameter 'targetUpdateCustomLLM' is set
+      if (targetUpdateCustomLLM === undefined || targetUpdateCustomLLM === null) {
+        throw new Error("Missing the required parameter 'targetUpdateCustomLLM' when calling targetUpdateCustomLLM");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TargetUpdateOutput;
+      return this.apiClient.callApi(
+        '/target-update-custom-llm', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * @param {module:model/TargetUpdateCustomLLM} targetUpdateCustomLLM 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TargetUpdateOutput}
+     */
+    targetUpdateCustomLLM(targetUpdateCustomLLM) {
+      return this.targetUpdateCustomLLMWithHttpInfo(targetUpdateCustomLLM)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

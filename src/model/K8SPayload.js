@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The K8SPayload model module.
  * @module model/K8SPayload
- * @version 5.0.41
+ * @version 5.0.42
  */
 class K8SPayload {
     /**

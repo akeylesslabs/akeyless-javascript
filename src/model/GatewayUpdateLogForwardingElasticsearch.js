@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLogForwardingElasticsearch model module.
  * @module model/GatewayUpdateLogForwardingElasticsearch
- * @version 5.0.41
+ * @version 5.0.42
  */
 class GatewayUpdateLogForwardingElasticsearch {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateAws model module.
  * @module model/TargetUpdateAws
- * @version 5.0.41
+ * @version 5.0.42
  */
 class TargetUpdateAws {
     /**

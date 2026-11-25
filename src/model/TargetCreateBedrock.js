@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateBedrock model module.
  * @module model/TargetCreateBedrock
- * @version 5.0.41
+ * @version 5.0.42
  */
 class TargetCreateBedrock {
     /**

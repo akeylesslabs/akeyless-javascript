@@ -23,6 +23,7 @@ import BedrockTargetDetails from './BedrockTargetDetails';
 import ChefTargetDetails from './ChefTargetDetails';
 import CloudflareTargetDetails from './CloudflareTargetDetails';
 import CustomDnsTargetDetails from './CustomDnsTargetDetails';
+import CustomLLMTargetDetails from './CustomLLMTargetDetails';
 import CustomTargetDetails from './CustomTargetDetails';
 import DbTargetDetails from './DbTargetDetails';
 import DigiCertTargetDetails from './DigiCertTargetDetails';
@@ -62,7 +63,7 @@ import ZeroSSLTargetDetails from './ZeroSSLTargetDetails';
 /**
  * The TargetTypeDetailsInput model module.
  * @module model/TargetTypeDetailsInput
- * @version 5.0.41
+ * @version 5.0.42
  */
 class TargetTypeDetailsInput {
     /**
@@ -125,6 +126,9 @@ class TargetTypeDetailsInput {
             }
             if (data.hasOwnProperty('custom_dns_target_details')) {
                 obj['custom_dns_target_details'] = CustomDnsTargetDetails.constructFromObject(data['custom_dns_target_details']);
+            }
+            if (data.hasOwnProperty('custom_llm_target_details')) {
+                obj['custom_llm_target_details'] = CustomLLMTargetDetails.constructFromObject(data['custom_llm_target_details']);
             }
             if (data.hasOwnProperty('custom_target_details')) {
                 obj['custom_target_details'] = CustomTargetDetails.constructFromObject(data['custom_target_details']);
@@ -284,6 +288,10 @@ class TargetTypeDetailsInput {
         // validate the optional field `custom_dns_target_details`
         if (data['custom_dns_target_details']) { // data not null
           CustomDnsTargetDetails.validateJSON(data['custom_dns_target_details']);
+        }
+        // validate the optional field `custom_llm_target_details`
+        if (data['custom_llm_target_details']) { // data not null
+          CustomLLMTargetDetails.validateJSON(data['custom_llm_target_details']);
         }
         // validate the optional field `custom_target_details`
         if (data['custom_target_details']) { // data not null
@@ -488,6 +496,11 @@ TargetTypeDetailsInput.prototype['cloudflare_target_details'] = undefined;
  * @member {module:model/CustomDnsTargetDetails} custom_dns_target_details
  */
 TargetTypeDetailsInput.prototype['custom_dns_target_details'] = undefined;
+
+/**
+ * @member {module:model/CustomLLMTargetDetails} custom_llm_target_details
+ */
+TargetTypeDetailsInput.prototype['custom_llm_target_details'] = undefined;
 
 /**
  * @member {module:model/CustomTargetDetails} custom_target_details

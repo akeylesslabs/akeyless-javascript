@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import DomainCoverage from './DomainCoverage';
 import TargetError from './TargetError';
 
 /**
  * The ScanResults model module.
  * @module model/ScanResults
- * @version 5.0.41
+ * @version 5.0.42
  */
 class ScanResults {
     /**
@@ -64,6 +65,9 @@ class ScanResults {
             if (data.hasOwnProperty('CountSubdomains')) {
                 obj['CountSubdomains'] = ApiClient.convertToType(data['CountSubdomains'], 'Number');
             }
+            if (data.hasOwnProperty('DomainCoverage')) {
+                obj['DomainCoverage'] = ApiClient.convertToType(data['DomainCoverage'], [DomainCoverage]);
+            }
             if (data.hasOwnProperty('Error')) {
                 obj['Error'] = ApiClient.convertToType(data['Error'], 'String');
             }
@@ -83,6 +87,16 @@ class ScanResults {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ScanResults</code>.
      */
     static validateJSON(data) {
+        if (data['DomainCoverage']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['DomainCoverage'])) {
+                throw new Error("Expected the field `DomainCoverage` to be an array in the JSON data but got " + data['DomainCoverage']);
+            }
+            // validate the optional field `DomainCoverage` (array)
+            for (const item of data['DomainCoverage']) {
+                DomainCoverage.validateJSON(item);
+            };
+        }
         // ensure the json data is a string
         if (data['Error'] && !(typeof data['Error'] === 'string' || data['Error'] instanceof String)) {
             throw new Error("Expected the field `Error` to be a primitive type in the JSON string but got " + data['Error']);
@@ -134,6 +148,12 @@ ScanResults.prototype['CountNew'] = undefined;
  * @member {Number} CountSubdomains
  */
 ScanResults.prototype['CountSubdomains'] = undefined;
+
+/**
+ * DomainCoverage says, per public domain, how much of it subdomain discovery managed to cover. Clients that predate it ignore it, and a scan with no public domain omits it.
+ * @member {Array.<module:model/DomainCoverage>} DomainCoverage
+ */
+ScanResults.prototype['DomainCoverage'] = undefined;
 
 /**
  * @member {String} Error

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SSHTargetDetails model module.
  * @module model/SSHTargetDetails
- * @version 5.0.41
+ * @version 5.0.42
  */
 class SSHTargetDetails {
     /**
@@ -47,6 +47,9 @@ class SSHTargetDetails {
         if (data) {
             obj = obj || new SSHTargetDetails();
 
+            if (data.hasOwnProperty('auth_type')) {
+                obj['auth_type'] = ApiClient.convertToType(data['auth_type'], 'String');
+            }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
             }
@@ -75,6 +78,10 @@ class SSHTargetDetails {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>SSHTargetDetails</code>.
      */
     static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['auth_type'] && !(typeof data['auth_type'] === 'string' || data['auth_type'] instanceof String)) {
+            throw new Error("Expected the field `auth_type` to be a primitive type in the JSON string but got " + data['auth_type']);
+        }
         // ensure the json data is a string
         if (data['host'] && !(typeof data['host'] === 'string' || data['host'] instanceof String)) {
             throw new Error("Expected the field `host` to be a primitive type in the JSON string but got " + data['host']);
@@ -107,6 +114,12 @@ class SSHTargetDetails {
 }
 
 
+
+/**
+ * AuthType is a non-secret auth indication (password | private_key). Prefer Target.Attributes[auth_type] for list responses; this field may be populated on get-target-details for convenience.
+ * @member {String} auth_type
+ */
+SSHTargetDetails.prototype['auth_type'] = undefined;
 
 /**
  * @member {String} host

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConjurPayload model module.
  * @module model/ConjurPayload
- * @version 5.0.41
+ * @version 5.0.42
  */
 class ConjurPayload {
     /**

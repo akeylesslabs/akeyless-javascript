@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateGitlab model module.
  * @module model/DynamicSecretCreateGitlab
- * @version 5.0.41
+ * @version 5.0.42
  */
 class DynamicSecretCreateGitlab {
     /**
