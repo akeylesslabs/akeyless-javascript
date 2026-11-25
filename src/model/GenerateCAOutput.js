@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateCAOutput model module.
  * @module model/GenerateCAOutput
- * @version 5.0.43
+ * @version 5.0.44
  */
 class GenerateCAOutput {
     /**

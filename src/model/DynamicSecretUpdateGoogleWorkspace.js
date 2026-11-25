@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateGoogleWorkspace model module.
  * @module model/DynamicSecretUpdateGoogleWorkspace
- * @version 5.0.43
+ * @version 5.0.44
  */
 class DynamicSecretUpdateGoogleWorkspace {
     /**

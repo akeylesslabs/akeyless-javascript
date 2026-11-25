@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FolderUSCSyncConfig model module.
  * @module model/FolderUSCSyncConfig
- * @version 5.0.43
+ * @version 5.0.44
  */
 class FolderUSCSyncConfig {
     /**

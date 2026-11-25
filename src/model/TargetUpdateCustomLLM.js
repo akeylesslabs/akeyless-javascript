@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateCustomLLM model module.
  * @module model/TargetUpdateCustomLLM
- * @version 5.0.43
+ * @version 5.0.44
  */
 class TargetUpdateCustomLLM {
     /**

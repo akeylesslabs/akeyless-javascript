@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateAerospike model module.
  * @module model/TargetUpdateAerospike
- * @version 5.0.43
+ * @version 5.0.44
  */
 class TargetUpdateAerospike {
     /**

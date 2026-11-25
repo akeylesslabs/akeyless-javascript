@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScimSettings model module.
  * @module model/ScimSettings
- * @version 5.0.43
+ * @version 5.0.44
  */
 class ScimSettings {
     /**

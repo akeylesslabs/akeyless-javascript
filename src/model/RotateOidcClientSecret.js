@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotateOidcClientSecret model module.
  * @module model/RotateOidcClientSecret
- * @version 5.0.43
+ * @version 5.0.44
  */
 class RotateOidcClientSecret {
     /**

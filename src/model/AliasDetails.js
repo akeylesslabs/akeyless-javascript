@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AliasDetails model module.
  * @module model/AliasDetails
- * @version 5.0.43
+ * @version 5.0.44
  */
 class AliasDetails {
     /**

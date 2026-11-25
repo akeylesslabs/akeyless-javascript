@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateSnowflake model module.
  * @module model/RotatedSecretCreateSnowflake
- * @version 5.0.43
+ * @version 5.0.44
  */
 class RotatedSecretCreateSnowflake {
     /**

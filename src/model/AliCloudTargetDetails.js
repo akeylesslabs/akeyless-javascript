@@ -17,7 +17,7 @@ import AWSGatewayCloudIdentityExternalIdOpt from './AWSGatewayCloudIdentityExter
 /**
  * The AliCloudTargetDetails model module.
  * @module model/AliCloudTargetDetails
- * @version 5.0.43
+ * @version 5.0.44
  */
 class AliCloudTargetDetails {
     /**

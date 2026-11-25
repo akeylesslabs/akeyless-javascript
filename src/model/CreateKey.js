@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateKey model module.
  * @module model/CreateKey
- * @version 5.0.43
+ * @version 5.0.44
  */
 class CreateKey {
     /**

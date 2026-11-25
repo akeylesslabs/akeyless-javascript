@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreatePing model module.
  * @module model/DynamicSecretCreatePing
- * @version 5.0.43
+ * @version 5.0.44
  */
 class DynamicSecretCreatePing {
     /**

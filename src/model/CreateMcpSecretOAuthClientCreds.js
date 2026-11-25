@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateMcpSecretOAuthClientCreds model module.
  * @module model/CreateMcpSecretOAuthClientCreds
- * @version 5.0.43
+ * @version 5.0.44
  */
 class CreateMcpSecretOAuthClientCreds {
     /**

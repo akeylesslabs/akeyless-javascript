@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateAerospike model module.
  * @module model/DynamicSecretUpdateAerospike
- * @version 5.0.43
+ * @version 5.0.44
  */
 class DynamicSecretUpdateAerospike {
     /**

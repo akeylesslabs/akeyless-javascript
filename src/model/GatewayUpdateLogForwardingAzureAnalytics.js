@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayUpdateLogForwardingAzureAnalytics model module.
  * @module model/GatewayUpdateLogForwardingAzureAnalytics
- * @version 5.0.43
+ * @version 5.0.44
  */
 class GatewayUpdateLogForwardingAzureAnalytics {
     /**

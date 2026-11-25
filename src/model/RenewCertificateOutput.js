@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RenewCertificateOutput model module.
  * @module model/RenewCertificateOutput
- * @version 5.0.43
+ * @version 5.0.44
  */
 class RenewCertificateOutput {
     /**

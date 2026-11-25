@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetItemAssociation model module.
  * @module model/TargetItemAssociation
- * @version 5.0.43
+ * @version 5.0.44
  */
 class TargetItemAssociation {
     /**

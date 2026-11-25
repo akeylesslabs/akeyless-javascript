@@ -17,7 +17,7 @@ import MigrationItems from './MigrationItems';
 /**
  * The GatewayMigratePersonalItemsOutput model module.
  * @module model/GatewayMigratePersonalItemsOutput
- * @version 5.0.43
+ * @version 5.0.44
  */
 class GatewayMigratePersonalItemsOutput {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayCreateProducerRedis model module.
  * @module model/GatewayCreateProducerRedis
- * @version 5.0.43
+ * @version 5.0.44
  */
 class GatewayCreateProducerRedis {
     /**

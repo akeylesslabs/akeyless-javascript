@@ -17,7 +17,7 @@ import PolicyOutput from './PolicyOutput';
 /**
  * The PoliciesGetOutput model module.
  * @module model/PoliciesGetOutput
- * @version 5.0.43
+ * @version 5.0.44
  */
 class PoliciesGetOutput {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GwUpdateRemoteAccessSessionLogsAwsS3 model module.
  * @module model/GwUpdateRemoteAccessSessionLogsAwsS3
- * @version 5.0.43
+ * @version 5.0.44
  */
 class GwUpdateRemoteAccessSessionLogsAwsS3 {
     /**

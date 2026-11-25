@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateArtifactoryTarget model module.
  * @module model/UpdateArtifactoryTarget
- * @version 5.0.43
+ * @version 5.0.44
  */
 class UpdateArtifactoryTarget {
     /**

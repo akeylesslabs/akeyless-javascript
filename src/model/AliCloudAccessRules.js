@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AliCloudAccessRules model module.
  * @module model/AliCloudAccessRules
- * @version 5.0.43
+ * @version 5.0.44
  */
 class AliCloudAccessRules {
     /**
