@@ -17,7 +17,7 @@ import KMIPCAListEntry from './KMIPCAListEntry';
 /**
  * The KmipListCAsOutput model module.
  * @module model/KmipListCAsOutput
- * @version 5.0.44
+ * @version 5.0.45
  */
 class KmipListCAsOutput {
     /**

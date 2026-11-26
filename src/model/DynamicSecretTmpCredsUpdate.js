@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretTmpCredsUpdate model module.
  * @module model/DynamicSecretTmpCredsUpdate
- * @version 5.0.44
+ * @version 5.0.45
  */
 class DynamicSecretTmpCredsUpdate {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProvisionSSHRotatedSecretOutput model module.
  * @module model/ProvisionSSHRotatedSecretOutput
- * @version 5.0.44
+ * @version 5.0.45
  */
 class ProvisionSSHRotatedSecretOutput {
     /**

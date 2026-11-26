@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRoleAuthMethodAssocOutput model module.
  * @module model/CreateRoleAuthMethodAssocOutput
- * @version 5.0.44
+ * @version 5.0.45
  */
 class CreateRoleAuthMethodAssocOutput {
     /**

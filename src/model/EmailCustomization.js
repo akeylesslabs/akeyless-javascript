@@ -18,7 +18,7 @@ import EmailCustomizationAccountInformationValues from './EmailCustomizationAcco
 /**
  * The EmailCustomization model module.
  * @module model/EmailCustomization
- * @version 5.0.44
+ * @version 5.0.45
  */
 class EmailCustomization {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClientEventOutput model module.
  * @module model/ClientEventOutput
- * @version 5.0.44
+ * @version 5.0.45
  */
 class ClientEventOutput {
     /**

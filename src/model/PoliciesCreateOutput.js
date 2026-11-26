@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PoliciesCreateOutput model module.
  * @module model/PoliciesCreateOutput
- * @version 5.0.44
+ * @version 5.0.45
  */
 class PoliciesCreateOutput {
     /**

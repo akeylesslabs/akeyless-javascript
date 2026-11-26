@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretUpdateCassandra model module.
  * @module model/DynamicSecretUpdateCassandra
- * @version 5.0.44
+ * @version 5.0.45
  */
 class DynamicSecretUpdateCassandra {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyRsaSsaPss model module.
  * @module model/VerifyRsaSsaPss
- * @version 5.0.44
+ * @version 5.0.45
  */
 class VerifyRsaSsaPss {
     /**

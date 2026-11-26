@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateCustomLLM model module.
  * @module model/TargetCreateCustomLLM
- * @version 5.0.44
+ * @version 5.0.45
  */
 class TargetCreateCustomLLM {
     /**

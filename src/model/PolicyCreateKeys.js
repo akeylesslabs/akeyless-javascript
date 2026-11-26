@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PolicyCreateKeys model module.
  * @module model/PolicyCreateKeys
- * @version 5.0.44
+ * @version 5.0.45
  */
 class PolicyCreateKeys {
     /**

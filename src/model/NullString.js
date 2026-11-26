@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NullString model module.
  * @module model/NullString
- * @version 5.0.44
+ * @version 5.0.45
  */
 class NullString {
     /**

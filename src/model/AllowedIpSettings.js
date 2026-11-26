@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AllowedIpSettings model module.
  * @module model/AllowedIpSettings
- * @version 5.0.44
+ * @version 5.0.45
  */
 class AllowedIpSettings {
     /**

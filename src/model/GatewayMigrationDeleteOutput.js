@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GatewayMigrationDeleteOutput model module.
  * @module model/GatewayMigrationDeleteOutput
- * @version 5.0.44
+ * @version 5.0.45
  */
 class GatewayMigrationDeleteOutput {
     /**

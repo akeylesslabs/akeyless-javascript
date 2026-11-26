@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KMIPCA model module.
  * @module model/KMIPCA
- * @version 5.0.44
+ * @version 5.0.45
  */
 class KMIPCA {
     /**

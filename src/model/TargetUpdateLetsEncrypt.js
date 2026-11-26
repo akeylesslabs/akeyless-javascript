@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetUpdateLetsEncrypt model module.
  * @module model/TargetUpdateLetsEncrypt
- * @version 5.0.44
+ * @version 5.0.45
  */
 class TargetUpdateLetsEncrypt {
     /**

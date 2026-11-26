@@ -18,7 +18,7 @@ import GrantedRole from './GrantedRole';
 /**
  * The GetGroupOutput model module.
  * @module model/GetGroupOutput
- * @version 5.0.44
+ * @version 5.0.45
  */
 class GetGroupOutput {
     /**

@@ -17,7 +17,7 @@ import Group from './Group';
 /**
  * The ListGroupsOutput model module.
  * @module model/ListGroupsOutput
- * @version 5.0.44
+ * @version 5.0.45
  */
 class ListGroupsOutput {
     /**

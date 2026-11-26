@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetCreateGcp model module.
  * @module model/TargetCreateGcp
- * @version 5.0.44
+ * @version 5.0.45
  */
 class TargetCreateGcp {
     /**

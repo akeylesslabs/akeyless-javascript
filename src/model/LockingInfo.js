@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LockingInfo model module.
  * @module model/LockingInfo
- * @version 5.0.44
+ * @version 5.0.45
  */
 class LockingInfo {
     /**

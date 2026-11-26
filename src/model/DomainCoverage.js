@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DomainCoverage model module.
  * @module model/DomainCoverage
- * @version 5.0.44
+ * @version 5.0.45
  */
 class DomainCoverage {
     /**

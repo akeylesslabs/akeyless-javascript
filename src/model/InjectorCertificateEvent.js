@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InjectorCertificateEvent model module.
  * @module model/InjectorCertificateEvent
- * @version 5.0.44
+ * @version 5.0.45
  */
 class InjectorCertificateEvent {
     /**

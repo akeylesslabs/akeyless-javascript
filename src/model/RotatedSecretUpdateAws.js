@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretUpdateAws model module.
  * @module model/RotatedSecretUpdateAws
- * @version 5.0.44
+ * @version 5.0.45
  */
 class RotatedSecretUpdateAws {
     /**

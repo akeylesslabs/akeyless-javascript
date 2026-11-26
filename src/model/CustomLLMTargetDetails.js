@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomLLMTargetDetails model module.
  * @module model/CustomLLMTargetDetails
- * @version 5.0.44
+ * @version 5.0.45
  */
 class CustomLLMTargetDetails {
     /**

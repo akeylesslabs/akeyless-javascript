@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DynamicSecretCreateMySql model module.
  * @module model/DynamicSecretCreateMySql
- * @version 5.0.44
+ * @version 5.0.45
  */
 class DynamicSecretCreateMySql {
     /**

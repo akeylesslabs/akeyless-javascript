@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DefaultAuthMethodSettings model module.
  * @module model/DefaultAuthMethodSettings
- * @version 5.0.44
+ * @version 5.0.45
  */
 class DefaultAuthMethodSettings {
     /**

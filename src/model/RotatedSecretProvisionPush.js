@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretProvisionPush model module.
  * @module model/RotatedSecretProvisionPush
- * @version 5.0.44
+ * @version 5.0.45
  */
 class RotatedSecretProvisionPush {
     /**

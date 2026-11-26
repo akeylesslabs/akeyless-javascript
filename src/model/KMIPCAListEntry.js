@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KMIPCAListEntry model module.
  * @module model/KMIPCAListEntry
- * @version 5.0.44
+ * @version 5.0.45
  */
 class KMIPCAListEntry {
     /**

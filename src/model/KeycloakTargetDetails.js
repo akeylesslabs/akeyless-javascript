@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KeycloakTargetDetails model module.
  * @module model/KeycloakTargetDetails
- * @version 5.0.44
+ * @version 5.0.45
  */
 class KeycloakTargetDetails {
     /**

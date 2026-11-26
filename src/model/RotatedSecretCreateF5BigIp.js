@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotatedSecretCreateF5BigIp model module.
  * @module model/RotatedSecretCreateF5BigIp
- * @version 5.0.44
+ * @version 5.0.45
  */
 class RotatedSecretCreateF5BigIp {
     /**
